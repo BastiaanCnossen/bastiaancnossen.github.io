@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The universal property of quotient logoi | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/entry/universal-property-of-quotient-logoi/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+<style>
+    .publication-fragment-notice { margin: 2rem 0; padding: 1rem; border: 1px solid #b6aa91; background: #faf7ef; }
+    .publication-fragment-notice:not(:target) { display: none; }
+  </style>
+  <script>
+    (() => {
+      const targets = {"lem:Universal_Property_Quotient_Logos":"./#prop:Universal_Property_Quotient_Logos","proof-lem:Universal_Property_Quotient_Logos-main":"./#proof-prop:Universal_Property_Quotient_Logos-main"};
+      const fragment = decodeURIComponent(location.hash.slice(1));
+      if (targets[fragment]) location.replace(targets[fragment]);
+    })();
+  </script>
+</head>
+<body class="entry-page has-context-nav" data-record-id="universal-property-of-quotient-logoi" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">›</span> <a href="../../section/presentations-of-logoi/index.html">Section 4.2: Presentations of logoi</a></p>
+      <h1>The universal property of quotient logoi</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Nearby entries
+    </button>
+    <article class="notes-page">
+      
+<section class="theorem proposition" id="prop:Universal_Property_Quotient_Logos">
+  <p class="theorem-heading"><span>Proposition 4.18.</span></p>
+  <div class="theorem-statement"><p>For every logos <span class="math-inline">\(S\)</span>, restriction along <span class="math-inline">\(T \to T/K\)</span> induces a fully faithful functor</p>
+<div class="math-display">\[\Fun_{\bbLog}(T/K, S) \quad \hookrightarrow \quad \Fun_{\bbLog}(T,S).\]</div>
+<p>Its essential image consists of those morphisms of logoi <span class="math-inline">\(\phi\colon T \to S\)</span> that invert <span class="math-inline">\(K\)</span> (i.e. <span class="math-inline">\(K \subseteq \ker(\phi)\)</span>).</p></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Universal_Property_Quotient_Logos-main" data-owner-entry="universal-property-of-quotient-logoi" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">By definition of localization, restriction along <span class="math-inline">\(T \to T/K\)</span> induces a fully faithful functor <div class="math-display">\[\Fun(T/K,S) \hookrightarrow \Fun(T,S),\]</div> with essential image those functors <span class="math-inline">\(T \to S\)</span> that invert <span class="math-inline">\(K\)</span>. It remains to show that a functor <span class="math-inline">\(T/K \to S\)</span> preserves colimits and finite limits if and only if the composite <span class="math-inline">\(T \to T/K \to S\)</span> does.<div class="proof-paragraph-break" aria-hidden="true"></div>The `only if' direction is clear. For the `if' direction, note that every diagram in <span class="math-inline">\(T/K\)</span> may be regarded as a diagram in <span class="math-inline">\(T\)</span> via the inclusion. Since <span class="math-inline">\(T \to T/K\)</span> preserves colimits and finite limits, colimits and finite limits in <span class="math-inline">\(T/K\)</span> may be computed by forming them first in <span class="math-inline">\(T\)</span> and then localizing. Thus if <span class="math-inline">\(T \to S\)</span> is a logos morphism, then so is <span class="math-inline">\(T/K \to S\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+    </article>
+      <aside class="context-nav" id="context-navigation" data-context-nav aria-label="Nearby entries">
+      <button class="context-nav-collapse" type="button" data-context-nav-collapse data-collapsed-label="Nearby entries" aria-controls="context-navigation" aria-expanded="true" aria-label="Hide Nearby entries">
+      <span aria-hidden="true">›</span>
+    </button>
+      <p class="context-chapter-link"><a href="../../chapter/topoi-logoi/index.html">The categories of topoi and logoi</a></p>
+      <p class="context-nav-kicker">Section 4.2</p>
+      <h2><a href="../../section/presentations-of-logoi/index.html">Presentations of logoi</a></h2>
+      <p class="context-nav-description"><a href="../../section/presentations-of-logoi/index.html#prop:Universal_Property_Quotient_Logos">Read this result in the continuous section</a></p>
+      <ol class="context-entry-list context-entry-list-nearby">
+        <li><a href="../left-exact-localizations-and-congruences/index.html">
+          <span class="context-entry-heading">Corollary 4.16</span>
+          <span class="context-entry-title">Left exact localizations and congruences</span>
+        </a></li>
+<li><a href="../quotient-logoi/index.html">
+          <span class="context-entry-heading">Definition 4.17</span>
+          <span class="context-entry-title">Quotient logoi</span>
+        </a></li>
+<li><a href="#prop:Universal_Property_Quotient_Logos" aria-current="page">
+          <span class="context-entry-heading">Proposition 4.18</span>
+          <span class="context-entry-title">The universal property of quotient logoi</span>
+        </a></li>
+<li><a href="../quotient-maps-of-logoi/index.html">
+          <span class="context-entry-heading">Definition 4.19</span>
+          <span class="context-entry-title">Quotient maps of logoi</span>
+        </a></li>
+<li><a href="../quotient-maps-are-epimorphisms/index.html">
+          <span class="context-entry-heading">Lemma 4.20</span>
+          <span class="context-entry-title">Quotient maps are epimorphisms</span>
+        </a></li>
+      </ol>
+      <nav class="context-step-links" aria-label="Previous and next entries"><a rel="prev" href="../quotient-logoi/index.html"><span>Previous</span>Quotient logoi</a>
+<a rel="next" href="../quotient-maps-of-logoi/index.html"><span>Next</span>Quotient maps of logoi</a></nav>
+    </aside>
+  <aside class="publication-fragment-notice" id="lem:Universal_Property_Quotient_Logos"><strong>Retired fragment.</strong> The result is now a proposition in the authoritative source. It now appears at <a href="./#prop:Universal_Property_Quotient_Logos">this address</a>.</aside>
+<aside class="publication-fragment-notice" id="proof-lem:Universal_Property_Quotient_Logos-main"><strong>Retired fragment.</strong> The proof fragment follows the proposition label used by its owner. It now appears at <a href="./#proof-prop:Universal_Property_Quotient_Logos-main">this address</a>.</aside>
+</main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

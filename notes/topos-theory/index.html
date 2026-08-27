@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lectures on Higher Topos Theory | Web edition</title>
+  <meta name="description" content="These notes develop higher topos theory following Marc Hoyois’ course at Universität Regensburg. They cover descent, truncation and connectivity, topoi and logoi, modalities, the structure theory of topoi, and sheaf cohomology.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "_assets/reader-v1/mathjax/fonts" } },
+      tex: { inlineMath: [["\\(", "\\)"]], displayMath: [["\\[", "\\]"]], macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"} },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="_assets/reader-v1/script.js"></script>
+</head>
+<body class="work-page has-context-nav">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow">Web edition</p>
+      <h1>Lectures on Higher Topos Theory</h1>
+      <p class="lede">Notes for Marc Hoyois’ course at Universität Regensburg, Winter 2025/26.</p>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page work-landing">
+      <section class="landing-introduction manuscript-frontmatter" aria-label="Prefatory material">
+        
+<h2 id="section-abstract">Abstract</h2>
+<p>This course surveys the theory of <span class="math-inline">\(\infty\)</span>-topoi. After introducing the basic notions (descent, univalence, modalities, ...), we discuss general constructions (limits and colimits, congruences, parametrization, Grothendieck topologies) and a range of examples, including Goodwillie calculus, finitary functors, geometric structures and schemes in Lurie's framework, and analytic stacks in the sense of Clausen–Scholze.</p>
+<h2 id="section-preface">Preface</h2>
+<p>These are lecture notes based on the course <em>Higher Topos Theory</em> taught by Marc Hoyois at the University of Regensburg in the winter term 2025/2026, written by Bastiaan Cnossen. The presentation is at times different from the original lectures. The notations and terminology follow the preferred conventions of the note-taker, which usually match those of the lecturer. The following are exceptions:</p>
+<ul><li><p>We say `animae' for the plural of `anima'.</p></li><li><p>The presheaf category of a category <span class="math-inline">\(C\)</span> is denoted <span class="math-inline">\(\PSh(C)\)</span> rather than <span class="math-inline">\(P(C)\)</span>.</p></li><li><p>Given topoi <span class="math-inline">\(S\)</span> and <span class="math-inline">\(T\)</span>, we refer to a left exact colimit-preserving functor <span class="math-inline">\(f^*\colon S \to T\)</span> as a <em>morphism of logoi</em> rather than a <em>geometric morphism</em>. We refer to the right adjoint <span class="math-inline">\(f_*\colon T \to S\)</span> as a <em>morphism of topoi</em>. We write <span class="math-inline">\(\Logos\)</span> and <span class="math-inline">\(\Topos\)</span> for the resulting (non-full) subcategories of <span class="math-inline">\(\Cat\)</span>, so that <span class="math-inline">\(\Logos \simeq \Topos\catop\)</span>. This terminology is due to <span class="citation-group">Anel and Joyal (<a class="citation" href="#bib-Anel_Joyal_Topologie">2021</a>)</span>.</p></li></ul><section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-Anel_Joyal_Topologie">Mathieu Anel, André Joyal. <em>Topo-logie</em>. In New spaces in mathematics. Formal and conceptual reflections, 155–257, Cambridge: Cambridge University Press. 2021.</li></ol></section>
+      </section>
+      <section class="available-sections" aria-labelledby="contents-heading">
+        <h2 id="contents-heading">Contents</h2>
+        <div class="chapter-card-grid">
+          
+      <article class="chapter-card">
+        <p class="section-card-meta">Chapter 1</p>
+        <h3><a href="chapter/introduction/index.html">Introduction</a></h3>
+        <p>The geometric viewpoint on higher topoi, descent, and an overview of the manuscript.</p>
+      </article>
+
+      <article class="chapter-card">
+        <p class="section-card-meta">Chapter 2</p>
+        <h3><a href="chapter/foundations/index.html">Foundations</a></h3>
+        <p>Descent, effective epimorphisms, the Giraud axioms, and the subobject classifier.</p>
+      </article>
+
+      <article class="chapter-card">
+        <p class="section-card-meta">Chapter 3</p>
+        <h3><a href="chapter/truncation-connectivity/index.html">Truncation and connectivity</a></h3>
+        <p>Truncated and connected morphisms, homotopy group objects, hypercompletion, and gerbes.</p>
+      </article>
+
+      <article class="chapter-card">
+        <p class="section-card-meta">Chapter 4</p>
+        <h3><a href="chapter/topoi-logoi/index.html">The categories of topoi and logoi</a></h3>
+        <p>The algebraic and geometric viewpoints on topoi, presentations of logoi, categorical limits and colimits, and étale morphisms.</p>
+      </article>
+
+      <article class="chapter-card">
+        <p class="section-card-meta">Chapter 5</p>
+        <h3><a href="chapter/modalities/index.html">Modalities</a></h3>
+        <p>Modalities and congruences, the Blakers–Massey theorem, the structure theory of topoi, and Goodwillie approximation.</p>
+      </article>
+
+      <article class="chapter-card">
+        <p class="section-card-meta">Chapter 6</p>
+        <h3><a href="chapter/topics-in-topos-theory/index.html">Topics in topos theory</a></h3>
+        <p>Sheaf topoi, shape theory, hypercovers, boundedness, coherence, pretopoi, exponentiability, and parametrized objects.</p>
+      </article>
+
+      <article class="chapter-card">
+        <p class="section-card-meta">Chapter 7</p>
+        <h3><a href="chapter/geometry/index.html">Geometry</a></h3>
+        <p>Schemes, geometries, fractured topoi, six-functor formalisms, analytic stacks, and Gestalten.</p>
+      </article>
+
+      <article class="chapter-card">
+        <p class="section-card-meta">Appendix A</p>
+        <h3><a href="chapter/factorization-systems-and-saturated-classes/index.html">Factorization systems and saturated classes</a></h3>
+        <p>Orthogonality, factorization systems, saturated classes, and accessible localizations.</p>
+      </article>
+
+      <article class="chapter-card">
+        <p class="section-card-meta">Appendix B</p>
+        <h3><a href="chapter/limits-and-colimits-in-categories-of-sections/index.html">Limits and colimits in categories of sections</a></h3>
+        <p>Pointwise limits and colimits in categories of sections of cartesian and cocartesian fibrations.</p>
+      </article>
+        </div>
+        
+      </section>
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Manuscript navigation">
+    <div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="true">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="chapter/introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="chapter/foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="chapter/truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="chapter/topoi-logoi/index.html">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="chapter/modalities/index.html">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="chapter/topics-in-topos-theory/index.html">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="chapter/geometry/index.html">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="chapter/factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="chapter/limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section></div>
+  </aside>
+  </main>
+  <footer><p class="source-note">This static web edition is generated from the same LaTeX source as the PDFs.</p></footer>
+</body>
+</html>

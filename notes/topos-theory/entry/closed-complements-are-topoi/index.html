@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Closed complements are topoi | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/entry/closed-complements-are-topoi/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="entry-page has-context-nav" data-record-id="closed-complements-are-topoi" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">›</span> <a href="../../section/open-and-closed-immersions/index.html">Section 5.4: Open and closed immersions</a></p>
+      <h1>Closed complements are topoi</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Nearby entries
+    </button>
+    <article class="notes-page">
+      
+<section class="theorem lemma" id="lem:Closed_Complement_Is_Topos">
+  <p class="theorem-heading"><span>Lemma 5.47.</span></p>
+  <div class="theorem-statement"><p>Given an open immersion <span class="math-inline">\(j\colon \Uu \hookrightarrow \Xx\)</span>, the closed complement <span class="math-inline">\(\Zz := \Xx / \Uu\)</span> is a topos, and the inclusion <span class="math-inline">\(i\colon \Zz \hookrightarrow \Xx\)</span> is a morphism of topoi.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Closed_Complement_Is_Topos-main" data-owner-entry="closed-complements-are-topoi" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">By <a href="../open-immersions-as-slices/index.html#lem:Open_Immersion_Is_Slice_Over_-1_Truncated_Object">Lemma 5.45</a>, we may identify <span class="math-inline">\(\Uu\)</span> with the slice <span class="math-inline">\(\Xx_{/U}\)</span> for some <span class="math-inline">\((-1)\)</span>-truncated object <span class="math-inline">\(U\)</span> of <span class="math-inline">\(\Xx\)</span>. Given <span class="math-inline">\(X \in \Xx\)</span>, we then have <span class="math-inline">\(X \in \Zz\)</span> if and only if the projection map <span class="math-inline">\(X \times U \to U\)</span> is an isomorphism. Equivalently, given an object <span class="math-inline">\(Y \in \Xx\)</span>, every morphism <span class="math-inline">\(Y \to U\)</span> admits a unique lift <span class="math-inline">\(Y \to U \times X\)</span>. We conclude that the subcategory <span class="math-inline">\(\Zz = \Xx / \Uu\)</span> consists precisely of those objects that are local with respect to the following class of morphisms: <div class="math-display">\[S_U := \{\,\emptyset \to V \mid \text{there exists a map } V \to U\,\}.\]</div> Choose a small set of generators <span class="math-inline">\(\mathcal G\)</span> of <span class="math-inline">\(\Xx\)</span>. The objects <span class="math-inline">\(g\colon G\to U\)</span>, with <span class="math-inline">\(G\in\mathcal G\)</span> and <span class="math-inline">\(g\)</span> ranging through all morphisms to <span class="math-inline">\(U\)</span>, form a small set of generators of the slice <span class="math-inline">\(\Xx_{/U}\)</span>. It therefore suffices to impose locality with respect to the corresponding set <div class="math-display">\[S_U^0:=\{\,\emptyset\to G\mid G\in\mathcal G, g\colon G\to U\,\},\]</div> Indeed, every object of <span class="math-inline">\(\Xx_{/U}\)</span> is a colimit of these generators, and mapping out of this colimit identifies locality with respect to <span class="math-inline">\(S_U^0\)</span> with locality with respect to the entire class <span class="math-inline">\(S_U\)</span>. Consequently, <a href="../strongly-saturated-class-gives-localization/index.html#prop:Strongly_Saturated_Is_Localization">Proposition A.15</a> gives a left adjoint <span class="math-inline">\(\Xx\to\Zz\)</span> to the inclusion.<div class="proof-paragraph-break" aria-hidden="true"></div>It remains to show that this left adjoint preserves finite limits, or equivalently that the strong saturation of <span class="math-inline">\(S_U^0\)</span>, which agrees with the strong saturation of <span class="math-inline">\(S_U\)</span>, is a congruence. The class <span class="math-inline">\(S_U\)</span> is closed under base change, so <span class="math-inline">\((S_U)^s=(S_U)^m\)</span> by <a href="../generated-modalities-as-saturations-of-base-changes/index.html#prop:Generated_Modality_Is_Saturation_Of_Base_Changes">Proposition 5.32</a>. Moreover, its morphisms are monomorphisms, whence <span class="math-inline">\((S_U)^m=(S_U)^c\)</span> by <a href="../modalities-generated-by-monomorphisms-are-congruences/index.html#cor:Modality_Generated_By_Monomorphisms_Is_Congruence">Corollary 5.43</a>. We deduce that the localization <span class="math-inline">\(\Xx\to\Zz\)</span> is left exact, exhibiting <span class="math-inline">\(\Zz\)</span> as a topos and its inclusion into <span class="math-inline">\(\Xx\)</span> as a morphism of topoi.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+    </article>
+      <aside class="context-nav" id="context-navigation" data-context-nav aria-label="Nearby entries">
+      <button class="context-nav-collapse" type="button" data-context-nav-collapse data-collapsed-label="Nearby entries" aria-controls="context-navigation" aria-expanded="true" aria-label="Hide Nearby entries">
+      <span aria-hidden="true">›</span>
+    </button>
+      <p class="context-chapter-link"><a href="../../chapter/modalities/index.html">Modalities</a></p>
+      <p class="context-nav-kicker">Section 5.4</p>
+      <h2><a href="../../section/open-and-closed-immersions/index.html">Open and closed immersions</a></h2>
+      <p class="context-nav-description"><a href="../../section/open-and-closed-immersions/index.html#lem:Closed_Complement_Is_Topos">Read this result in the continuous section</a></p>
+      <ol class="context-entry-list context-entry-list-nearby">
+        <li><a href="../open-immersions-as-slices/index.html">
+          <span class="context-entry-heading">Lemma 5.45</span>
+          <span class="context-entry-title">Open immersions as slices</span>
+        </a></li>
+<li><a href="../closed-complements-and-closed-immersions/index.html">
+          <span class="context-entry-heading">Definition 5.46</span>
+          <span class="context-entry-title">Closed complements and closed immersions</span>
+        </a></li>
+<li><a href="#lem:Closed_Complement_Is_Topos" aria-current="page">
+          <span class="context-entry-heading">Lemma 5.47</span>
+          <span class="context-entry-title">Closed complements are topoi</span>
+        </a></li>
+<li><a href="../recollement-from-a-left-exact-functor/index.html">
+          <span class="context-entry-heading">Construction 5.48</span>
+          <span class="context-entry-title">Recollement from a left exact functor</span>
+        </a></li>
+<li><a href="../recollement-of-topoi/index.html">
+          <span class="context-entry-heading">Lemma 5.49</span>
+          <span class="context-entry-title">Recollement of topoi</span>
+        </a></li>
+      </ol>
+      <nav class="context-step-links" aria-label="Previous and next entries"><a rel="prev" href="../closed-complements-and-closed-immersions/index.html"><span>Previous</span>Closed complements and closed immersions</a>
+<a rel="next" href="../recollement-from-a-left-exact-functor/index.html"><span>Next</span>Recollement from a left exact functor</a></nav>
+    </aside>
+  </main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

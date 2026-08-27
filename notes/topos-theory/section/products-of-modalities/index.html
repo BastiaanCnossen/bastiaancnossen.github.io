@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Products of modalities | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/section/products-of-modalities/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+<style>
+    .publication-fragment-notice { margin: 2rem 0; padding: 1rem; border: 1px solid #b6aa91; background: #faf7ef; }
+    .publication-fragment-notice:not(:target) { display: none; }
+  </style>
+  <script>
+    (() => {
+      const targets = {"rem:Acyclic_Classes_Form_Commutative_Algebra":"./#prop:Acyclic_Classes_Form_Commutative_Algebra"};
+      const fragment = decodeURIComponent(location.hash.slice(1));
+      if (targets[fragment]) location.replace(targets[fragment]);
+    })();
+  </script>
+</head>
+<body class="section-page has-context-nav" data-record-id="products-of-modalities" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">·</span> Section 5.6</p>
+      <h1>Products of modalities</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page">
+      
+<h2 id="sec:Products_Of_Modalities"><span>5.6.</span> Products of acyclic classes</h2>
+<p>Given two ideals <span class="math-inline">\(I\)</span> and <span class="math-inline">\(J\)</span> in a commutative ring <span class="math-inline">\(R\)</span>, we may form their <em>product</em> <span class="math-inline">\(IJ \subseteq R\)</span>, the ideal generated by the products <span class="math-inline">\(ij\)</span> for <span class="math-inline">\(i\in I\)</span> and <span class="math-inline">\(j \in J\)</span>. There is an analogous construction for classes of morphisms in a topos. Its natural domain is the partially ordered set <span class="math-inline">\(\Acyc(T)\)</span> of acyclic classes, rather than only the smaller collection of modalities.</p>
+<h3 id="subsec:Acyclic_Product"><span>5.6.1.</span> The acyclic product</h3>
+
+<section class="theorem definition" id="def:Pushout_Product_Of_Morphisms">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/pushout-products-of-morphisms/index.html">Definition 5.71.</a></span></p>
+  <div class="theorem-statement"><p>For <span class="math-inline">\(u\colon A \to B\)</span> and <span class="math-inline">\(v\colon C \to D\)</span>, the <em>pushout product</em></p>
+<div class="math-display">\[u \ssquare v\colon (B \times C) \sqcup_{A \times C} (A \times D) \longrightarrow B \times D\]</div>
+<p>is the cogap map of the commutative square</p>
+<figure class="diagram"><img src="diagrams/tikzcd-880b3b12591e.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>We already encountered this operation before in <a href="../../entry/day-convolution-on-slices/index.html">Notation 5.15</a>.</p></div>
+</section>
+
+<section class="theorem definition" id="def:Product_Of_Modalities">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/products-of-modalities/index.html">Definition 5.72.</a></span></p>
+  <div class="theorem-statement"><p>For acyclic classes <span class="math-inline">\(K\)</span> and <span class="math-inline">\(L\)</span>, define their <em>product</em> as the acyclic class</p>
+<div class="math-display">\[KL \quad := \quad (K \ssquare L)^{m},\]</div>
+<p>where <span class="math-inline">\(K \ssquare L\)</span> is the class of morphisms of the form <span class="math-inline">\(u \ssquare v\)</span> for <span class="math-inline">\(u \in K\)</span> and <span class="math-inline">\(v \in L\)</span>.</p></div>
+</section>
+
+<section class="theorem lemma" id="lem:Product_Of_Modalities_Contained_In_Intersection">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/products-of-modalities-lie-in-the-intersection/index.html">Lemma 5.73.</a></span></p>
+  <div class="theorem-statement"><p>We have an inclusion <span class="math-inline">\(KL \subseteq K \cap L\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Product_Of_Modalities_Contained_In_Intersection-main" data-owner-entry="products-of-modalities-lie-in-the-intersection" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">By symmetry, it suffices to show <span class="math-inline">\(KL \subseteq K\)</span>. If <span class="math-inline">\(u \in K\)</span> and <span class="math-inline">\(v \in L\)</span>, then also the maps <span class="math-inline">\(u \times C\)</span> and <span class="math-inline">\(u \times D\)</span> are in <span class="math-inline">\(K\)</span>, hence so is the cobase change <span class="math-inline">\(A \times D \to (B \times C) \sqcup_{A \times C} (A \times D)\)</span>. By right cancellation, it follows that the cogap map <span class="math-inline">\(u \ssquare v\)</span> is in <span class="math-inline">\(K\)</span> as well.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>By definition, <span class="math-inline">\(KL\)</span> is again an acyclic class. If <span class="math-inline">\(K\)</span> and <span class="math-inline">\(L\)</span> are of small generation, the following lemma shows that their product is of small generation as well and hence defines a modality.</p>
+<section class="theorem lemma" id="lem:Generators_Of_Product_Of_Modalities">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/generators-for-products-of-modalities/index.html">Lemma 5.74.</a></span></p>
+  <div class="theorem-statement"><p>Given two classes of maps <span class="math-inline">\(\Sigma,\Sigma'\)</span> in <span class="math-inline">\(T\)</span>, we have <span class="math-inline">\(\Sigma^m\,{\Sigma'}^m \;=\; (\Sigma \ssquare \Sigma')^m\)</span>. In particular, if <span class="math-inline">\(K\)</span> and <span class="math-inline">\(L\)</span> are acyclic classes of small generation, then so is <span class="math-inline">\(KL\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Generators_Of_Product_Of_Modalities-main" data-owner-entry="generators-for-products-of-modalities" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">The inclusion <span class="math-inline">\((\Sigma \ssquare \Sigma')^m \subseteq \Sigma^m \, {\Sigma'}^m\)</span> is clear. For the converse, it suffices to show that <span class="math-inline">\((\Sigma \ssquare \Sigma')^m\)</span> contains <span class="math-inline">\(\Sigma^m \ssquare {\Sigma'}^m\)</span>. Let us first show that it contains <span class="math-inline">\(\Sigma \ssquare {\Sigma'}^m\)</span>. For a fixed morphism <span class="math-inline">\(u \in \Sigma\)</span>, consider the collection of morphisms <span class="math-inline">\(v \in \Ar(T)\)</span> such that <span class="math-inline">\(u \ssquare v \in (\Sigma \ssquare \Sigma')^m\)</span>. This collection clearly contains <span class="math-inline">\(\Sigma'\)</span>, hence to show it contains all of <span class="math-inline">\({\Sigma'}^m\)</span> it remains to show that it is a saturated class closed under base change.<div class="proof-paragraph-break" aria-hidden="true"></div>Closure under base change follows from universality of colimits: if <span class="math-inline">\(v'\)</span> is a base change of <span class="math-inline">\(v\)</span>, then <span class="math-inline">\(u\ssquare v'\)</span> is the corresponding base change of <span class="math-inline">\(u\ssquare v\)</span>. The class clearly contains all isomorphisms. For closure under composition, let <span class="math-inline">\(C\xrightarrow{v}D\xrightarrow{w}E\)</span> be composable. The map <span class="math-inline">\(u\ssquare(wv)\)</span> factors as <div class="math-display">\[(B\times C)\sqcup_{A\times C}(A\times E)
+		\longrightarrow
+		(B\times D)\sqcup_{A\times D}(A\times E)
+		\longrightarrow B\times E.\]</div> The first map is a cobase change of <span class="math-inline">\(u\ssquare v\)</span>, and the second is <span class="math-inline">\(u\ssquare w\)</span>. Thus it belongs to <span class="math-inline">\((\Sigma\ssquare\Sigma')^m\)</span> whenever both <span class="math-inline">\(u\ssquare v\)</span> and <span class="math-inline">\(u\ssquare w\)</span> do. Finally, closure under colimits follows because <span class="math-inline">\(u\ssquare-\colon\Ar(T)\to\Ar(T)\)</span> preserves colimits.<div class="proof-paragraph-break" aria-hidden="true"></div>We may now repeat the argument to show that for fixed <span class="math-inline">\(v \in {\Sigma'}^m\)</span> the collection of <span class="math-inline">\(u \in \Ar(T)\)</span> such that <span class="math-inline">\(u \ssquare v \in (\Sigma \ssquare \Sigma')^m\)</span> contains <span class="math-inline">\(\Sigma\)</span> and is a saturated class closed under base change, hence contains all of <span class="math-inline">\(\Sigma^m\)</span>. This finishes the proof.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem proposition" id="prop:Acyclic_Classes_Form_Commutative_Algebra">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/acyclic-classes-as-a-commutative-algebra/index.html">Proposition 5.75.</a></span> (<span class="citation-group">[Anel et al. <a class="citation" href="#bib-ABFJ_Acyclic_Product">2025, Theorem 3.2.2</a>]</span>)</p>
+  <div class="theorem-statement"><p>This product turns <span class="math-inline">\(\Acyc(T)\)</span> into a commutative algebra object in the category <span class="math-inline">\(\Pos^{\cocompl}\)</span> of cocomplete posets. Its unit is the acyclic class <span class="math-inline">\(\All\)</span> of all morphisms.</p></div>
+</section>
+
+<section class="theorem corollary" id="cor:Product_Of_Monogenic_Modalities">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/products-of-monogenic-modalities/index.html">Corollary 5.76.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(K\)</span> and <span class="math-inline">\(L\)</span> be monogenic acyclic classes. Then <span class="math-inline">\(KL\)</span> is monogenic. If <span class="math-inline">\(K\)</span> and <span class="math-inline">\(L\)</span> are of small generation, then so is <span class="math-inline">\(KL\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-cor:Product_Of_Monogenic_Modalities-main" data-owner-entry="products-of-monogenic-modalities" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">By monogenicity, we may write <span class="math-inline">\(K=\Sigma^m\)</span> and <span class="math-inline">\(L={\Sigma'}^m\)</span> with <span class="math-inline">\(\Sigma=K\cap\Mono\)</span> and <span class="math-inline">\(\Sigma'=L\cap\Mono\)</span>. The class <span class="math-inline">\(\Sigma\ssquare\Sigma'\)</span> consists of monomorphisms, so <a href="#lem:Generators_Of_Product_Of_Modalities">Lemma 5.74</a> shows that <span class="math-inline">\(KL\)</span> is monogenic. If <span class="math-inline">\(K\)</span> and <span class="math-inline">\(L\)</span> are of small generation, <a href="../../entry/monogenic-parts-via-images/index.html">Lemma 5.56</a> allows us to choose <span class="math-inline">\(\Sigma\)</span> and <span class="math-inline">\(\Sigma'\)</span> to be sets, which also proves small generation of <span class="math-inline">\(KL\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem corollary" id="cor:Monogenic_Modalities_Idempotent">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/monogenic-modalities-are-idempotent/index.html">Corollary 5.77.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(K\)</span> be a monogenic acyclic class. Then <span class="math-inline">\(K^2 = K\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-cor:Monogenic_Modalities_Idempotent-main" data-owner-entry="monogenic-modalities-are-idempotent" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">The inclusion <span class="math-inline">\(K^2 \subseteq K\)</span> is immediate from <a href="#lem:Product_Of_Modalities_Contained_In_Intersection">Lemma 5.73</a>. For the converse, we may assume that <span class="math-inline">\(K = \Sigma^m\)</span> for a class of monomorphisms <span class="math-inline">\(\Sigma\)</span>, and it will suffice to show that <span class="math-inline">\(u \in K^2\)</span> for every morphism <span class="math-inline">\(u\colon A \hookrightarrow B\)</span> in <span class="math-inline">\(\Sigma\)</span>. By construction, the morphism <span class="math-inline">\(u \ssquare u\colon (B \times A) \sqcup_{A \times A} (A \times B) \to B \times B\)</span> is in <span class="math-inline">\(K^2\)</span>, hence so is its base change along <span class="math-inline">\(\Delta\colon B \to B \times B\)</span>. Universality of pushouts identifies this base change with <span class="math-inline">\(A \sqcup_{A\times_B A} A \to B\)</span>. Since <span class="math-inline">\(u\)</span> is a monomorphism, we have <span class="math-inline">\(A \iso A \times_B A\)</span>, so this map identifies with <span class="math-inline">\(u\colon A \to B\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<h3 id="subsec:Acyclic_Product_Examples"><span>5.6.2.</span> Examples and division</h3>
+<p>We now discuss various examples of products of acyclic classes.</p>
+<section class="theorem example" id="ex:Products_Of_Connected_Modalities">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/products-of-connected-modalities/index.html">Example 5.78.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(L=\Conn_n\)</span> be the <span class="math-inline">\(n\)</span>-connected maps. As a modality this is generated by the constant map <span class="math-inline">\(S^{n+1}\to *\)</span> in <span class="math-inline">\(T\)</span>. The pushout product of <span class="math-inline">\(S^{n+1} \to *\)</span> with <span class="math-inline">\(S^{m+1} \to *\)</span> is <span class="math-inline">\(S^{n+m+3} \to *\)</span>, so by <a href="#lem:Generators_Of_Product_Of_Modalities">Lemma 5.74</a> we get</p>
+<div class="math-display">\[(\Conn_n)(\Conn_m) \;=\; \Conn_{n+m+2}.\]</div>
+<p>As a special case, for <span class="math-inline">\(\EffEpi = (S^0 \to *)^{m}\)</span> we get <span class="math-inline">\(\Conn_n = \EffEpi^{\,n+2}\)</span>.</p>
+<p>More generally, note that for any morphism <span class="math-inline">\(u\colon X \to Y\)</span>, the pushout product <span class="math-inline">\((S^0\to *) \ssquare u\)</span> is the codiagonal <span class="math-inline">\(\nabla_u\colon Y \sqcup_X Y \to Y\)</span>. It follows that for every acyclic class <span class="math-inline">\(L\)</span> we have</p>
+<div class="math-display">\[\EffEpi \cdot L \;=\; \nabla(L)^{m}.\]</div></div>
+</section>
+
+<section class="theorem example" id="ex:Square_Of_Epimorphism_Modality">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/square-of-the-epimorphism-modality/index.html">Example 5.79.</a></span></p>
+  <div class="theorem-statement"><p>For any topos <span class="math-inline">\(T\)</span>, one has <span class="math-inline">\(\Epi^{\,2} \subseteq \Conn_{\infty}\)</span>. Indeed, recall from <a href="../../entry/epimorphisms-are-zero-connected/index.html">Proposition 5.9</a> that every epimorphism is <span class="math-inline">\(0\)</span>-connected, so that</p>
+<div class="math-display">\[\Epi^{\,2} \subseteq \Conn_0^{\,2} = \Conn_2 \subseteq \Conn_1.\]</div>
+<p>We claim that we also have an inclusion <span class="math-inline">\(\Epi \cap \Conn_1 \subseteq \Conn_{\infty}\)</span>. Indeed, if <span class="math-inline">\(f\colon X \to Y\)</span> is an epimorphism, then we get a pushout square</p>
+<figure class="diagram"><img src="diagrams/tikzcd-1fd0931b72b0.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>If <span class="math-inline">\(f \in \Conn_n\)</span> for some <span class="math-inline">\(n\)</span>, then <span class="math-inline">\(\Delta_f \in \Conn_{n-1}\)</span>. The relative pushout product <span class="math-inline">\(\Delta_f \ssquare_X \Delta_f\)</span> is a base change of the ordinary pushout product, hence belongs to</p>
+<div class="math-display">\[\Conn_{n-1}\Conn_{n-1}=\Conn_{2n}.\]</div>
+<p>Since the gap map of this square is <span class="math-inline">\(f\)</span>, Blakers–Massey implies that <span class="math-inline">\(f \in \Conn_{2n}\)</span>. Assuming <span class="math-inline">\(f \in \Conn_1\)</span>, it follows inductively that <span class="math-inline">\(f \in \Conn_{2^k}\)</span> for all <span class="math-inline">\(k\)</span>, so <span class="math-inline">\(f \in \Conn_{\infty}\)</span>.</p></div>
+</section>
+
+<section class="theorem construction" id="con:Internal_Hom_Of_Modalities">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/internal-homs-of-modalities/index.html">Construction 5.80.</a></span></p>
+  <div class="theorem-statement"><p>Given acyclic classes <span class="math-inline">\(K\)</span> and <span class="math-inline">\(L\)</span>, we define</p>
+<div class="math-display">\[K \backslash L := \{\,f \mid K \ssquare f \subseteq L\,\}.\]</div>
+<p>This is again an acyclic class by <span class="citation-group">[Anel et al. <a class="citation" href="#bib-ABFJ_Acyclic_Product">2025, Lemma 3.1.2 and Theorem 3.2.2</a>]</span>. If <span class="math-inline">\(M\)</span> is a third acyclic class, then we have</p>
+<div class="math-display">\[KM \subseteq L \iff M \subseteq K \backslash L,\]</div>
+<p>so that <span class="math-inline">\(K\backslash L\)</span> functions as an internal hom in <span class="math-inline">\(\Acyc(T)\)</span>.</p></div>
+</section>
+
+<section class="theorem example" id="ex:Cotruncated_Morphisms_As_Internal_Hom">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/cotruncated-morphisms-as-an-internal-hom/index.html">Example 5.81.</a></span></p>
+  <div class="theorem-statement"><p>Since <span class="math-inline">\((S^0\to *) \ssquare u = \nabla(u)\)</span>, we see that <span class="math-inline">\(u \in \EffEpi \backslash \Iso\)</span> if and only if <span class="math-inline">\(u\)</span> is an epimorphism. More generally, we inductively get</p>
+<div class="math-display">\[\Cotr_{n+1} = \EffEpi \backslash \Cotr_n.\]</div></div>
+</section>
+
+<h3 id="subsec:Products_Of_Congruences"><span>5.6.3.</span> Products of congruences</h3>
+<p>We now show that the acyclic product of two congruences is again a congruence. The following is the key input.</p>
+<section class="theorem lemma" id="lem:Key_Lemma_Product_Congruences">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/key-lemma-for-products-of-congruences/index.html">Lemma 5.82.</a></span> (Key lemma, <span class="citation-group">[Anel et al. <a class="citation" href="#bib-ABFJ_Acyclic_Product">2025, Lemmas 2.3.27 and 2.3.28</a>]</span>)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(L\)</span> be an acyclic class.</p>
+<ol><li><p><span class="math-inline">\(\Delta \nabla(L) \subseteq L\)</span>.</p></li><li><p><span class="math-inline">\(\Delta^{-1}(L) \cap \EffEpi \subseteq \EffEpi \cdot L\)</span>.</p></li></ol></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Key_Lemma_Product_Congruences-main" data-owner-entry="key-lemma-for-products-of-congruences" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">(1) For <span class="math-inline">\(u\colon A \to B\)</span> in <span class="math-inline">\(L\)</span>, the morphism <span class="math-inline">\(\Delta \nabla(u)\)</span> takes the form <div class="math-display">\[\Delta \nabla(u)\colon B \sqcup_A B \longrightarrow (B \sqcup_A B) \times_B (B \sqcup_A B).\]</div> The two summand inclusions <span class="math-inline">\(i_k\colon B \to B \sqcup_A B\)</span> induce two maps <span class="math-inline">\(i_k \times \id \colon B \times_B (B \sqcup_A B) \to (B \sqcup_A B) \times_B (B \sqcup_A B)\)</span> which are jointly an effective epimorphism. Since <span class="math-inline">\(L\)</span> is local, it suffices to show that the left vertical map in the following pullback square is in <span class="math-inline">\(L\)</span>: <figure class="diagram"><img src="diagrams/tikzcd-7509d2f3e5bc.svg" alt="Commutative diagram generated from the LaTeX source"></figure> This holds since <span class="math-inline">\(i_k\)</span> is a cobase change of <span class="math-inline">\(u\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>(2) This is the substantive direction of the suspension theorem for acyclic classes, proved in <span class="citation-group">[Anel et al. <a class="citation" href="#bib-ABFJ_Acyclic_Product">2025, Lemma 2.3.28</a>]</span>. The assumption that <span class="math-inline">\(u\)</span> is an effective epimorphism identifies <span class="math-inline">\(B\)</span> with the colimit of the Čech nerve of <span class="math-inline">\(u\)</span>. The condition <span class="math-inline">\(\Delta_u\in L\)</span>, together with base-change stability and composition, controls all higher maps in this Čech nerve. The simplicial orthogonality argument of the cited lemma then shows that <span class="math-inline">\(u\)</span> belongs to the acyclic class generated by the codiagonals of maps in <span class="math-inline">\(L\)</span>. By <a href="#ex:Products_Of_Connected_Modalities">Example 5.78</a>, this class is <div class="math-display">\[\nabla(L)^m=\EffEpi\cdot L,\]</div> as required.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem corollary" id="cor:Product_With_EffEpi">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/product-with-effective-epimorphisms/index.html">Corollary 5.83.</a></span> (<span class="citation-group">[Anel et al. <a class="citation" href="#bib-ABFJ_Acyclic_Product">2025, Theorem 2.3.22</a>]</span>)</p>
+  <div class="theorem-statement"><p>For any acyclic class <span class="math-inline">\(L\)</span>, we have</p>
+<div class="math-display">\[D(L) \cap \EffEpi \;=\; \EffEpi \cdot L .\]</div>
+<p>In particular, if <span class="math-inline">\(K\)</span> is a congruence we get</p>
+<div class="math-display">\[K^{\epi} = K \cap \EffEpi = \EffEpi \cdot K.\]</div></div>
+</section>
+
+<details class="proof-shell" id="proof-cor:Product_With_EffEpi-main" data-owner-entry="product-with-effective-epimorphisms" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Since <span class="math-inline">\(D(L) = L \cap \Delta^{-1}(L)\)</span>, the inclusion “<span class="math-inline">\(\subseteq\)</span>” holds by (2) of the previous lemma. Conversely, <a href="#lem:Product_Of_Modalities_Contained_In_Intersection">Lemma 5.73</a> gives <span class="math-inline">\(\EffEpi\cdot L\subseteq L\)</span>. We also have <span class="math-inline">\(\EffEpi \cdot L = \nabla(L)^m\)</span>, so it remains to show that <span class="math-inline">\(\nabla(L) \subseteq \Delta^{-1}(L)\)</span>. This is precisely part (1) of the previous lemma.<div class="proof-paragraph-break" aria-hidden="true"></div>The last statement holds because <span class="math-inline">\(D(K) = K\)</span> for any congruence <span class="math-inline">\(K\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>We now prove that the product of two congruences is again a congruence.</p>
+<section class="theorem theorem" id="thm:Product_Of_Congruences">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/product-of-congruences/index.html">Theorem 5.84.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(K, L \in \Cong(T)\)</span> be congruences. Then their product <span class="math-inline">\(KL\)</span> is also a congruence.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-thm:Product_Of_Congruences-main" data-owner-entry="product-of-congruences" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">By (5) of <a href="../../entry/characterizations-of-congruences/index.html">Proposition 5.35</a>, it suffices to show that it is closed under diagonals, i.e. <span class="math-inline">\(KL \subseteq D(KL)\)</span>. Recall that any acyclic class <span class="math-inline">\(M\)</span> decomposes as <span class="math-inline">\(M = M^{\mono} \vee M^{\epi}\)</span>. Applying this to <span class="math-inline">\(K\)</span> and <span class="math-inline">\(L\)</span>, we can distribute the product: <div class="math-display">\[KL = (K^{\epi} \vee K^{\mono})(L^{\epi} \vee L^{\mono}) = K^{\epi}L^{\epi} \vee K^{\epi}L^{\mono} \vee K^{\mono}L^{\epi} \vee K^{\mono}L^{\mono}.\]</div> The product distributes over joins by <a href="#prop:Acyclic_Classes_Form_Commutative_Algebra">Proposition 5.75</a>. Using that <span class="math-inline">\(K^{\epi} = \EffEpi \cdot K\)</span> and <span class="math-inline">\(L^{\epi} = \EffEpi \cdot L\)</span>, we see that the first three terms are contained in <span class="math-inline">\(\EffEpi \cdot K \cdot L\)</span>, which by <a href="#cor:Product_With_EffEpi">Corollary 5.83</a> is contained in <span class="math-inline">\(D(KL)\)</span>. It thus remains to show that <span class="math-inline">\(K^{\mono} L^{\mono} \subseteq D(KL)\)</span>. The product <span class="math-inline">\(K^{\mono}L^{\mono}\)</span> is monogenic by <a href="#cor:Product_Of_Monogenic_Modalities">Corollary 5.76</a>, and it is contained in <span class="math-inline">\(KL\)</span>. Hence it is contained in the largest monogenic acyclic class below <span class="math-inline">\(KL\)</span>, namely <span class="math-inline">\((KL)^{\mono}\)</span>. By <a href="../../entry/monogenic-modalities-are-congruences/index.html">Lemma 5.60</a>, the latter is a congruence and therefore closed under diagonals. Thus <span class="math-inline">\((KL)^{\mono} \subseteq D(KL)\)</span>, finishing the proof.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-ABFJ_Acyclic_Product">Mathieu Anel, Georg Biedermann, Eric Finster, André Joyal. <em>Left-exact localizations of $\infty$-topoi III: The acyclic product</em>. 2025.</li></ol></section>
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+      <a class="context-step-control" rel="prev" href="../structure-theory-for-topoi/index.html" aria-label="Previous section: Structure theory for topoi" title="Previous section: Structure theory for topoi"><span aria-hidden="true">←</span></a>
+      <a class="context-step-control" rel="next" href="../goodwillie-tower/index.html" aria-label="Next section: The Goodwillie tower of a topos" title="Next section: The Goodwillie tower of a topos"><span aria-hidden="true">→</span></a>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../chapter/introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../../chapter/foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../../chapter/truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../../chapter/topoi-logoi/index.html">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../../chapter/modalities/index.html" aria-current="location">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../../chapter/topics-in-topos-theory/index.html">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../../chapter/geometry/index.html">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../../chapter/factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../../chapter/limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../epimorphisms-and-acyclic-maps/index.html">
+          <span class="context-entry-heading">Section 5.1</span>
+          <span class="context-entry-title">Epimorphisms and acyclic maps</span>
+        </a></li>
+<li><a href="../blakers-massey/index.html">
+          <span class="context-entry-heading">Section 5.2</span>
+          <span class="context-entry-title">The Blakers–Massey theorem</span>
+        </a></li>
+<li><a href="../congruences-modalities-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Section 5.3</span>
+          <span class="context-entry-title">Congruences, modalities, and saturated classes</span>
+        </a></li>
+<li><a href="../open-and-closed-immersions/index.html">
+          <span class="context-entry-heading">Section 5.4</span>
+          <span class="context-entry-title">Open and closed immersions</span>
+        </a></li>
+<li><a href="../structure-theory-for-topoi/index.html">
+          <span class="context-entry-heading">Section 5.5</span>
+          <span class="context-entry-title">Structure theory for topoi</span>
+        </a></li>
+<li><a href="../products-of-modalities/index.html" aria-current="page">
+          <span class="context-entry-heading">Section 5.6</span>
+          <span class="context-entry-title">Products of modalities</span>
+        </a></li>
+<li><a href="../goodwillie-tower/index.html">
+          <span class="context-entry-heading">Section 5.7</span>
+          <span class="context-entry-title">The Goodwillie tower of a topos</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <p class="context-nav-kicker">Section 5.6</p>
+      <p class="context-nav-description">Products of modalities</p>
+      <ol class="context-entry-list">
+        <li><a href="#def:Pushout_Product_Of_Morphisms" data-section-target="def:Pushout_Product_Of_Morphisms">
+          <span class="context-entry-heading">Definition 5.71</span>
+          <span class="context-entry-title">Pushout products of morphisms</span>
+        </a></li>
+<li><a href="#def:Product_Of_Modalities" data-section-target="def:Product_Of_Modalities">
+          <span class="context-entry-heading">Definition 5.72</span>
+          <span class="context-entry-title">Products of modalities</span>
+        </a></li>
+<li><a href="#lem:Product_Of_Modalities_Contained_In_Intersection" data-section-target="lem:Product_Of_Modalities_Contained_In_Intersection">
+          <span class="context-entry-heading">Lemma 5.73</span>
+          <span class="context-entry-title">Products of modalities lie in the intersection</span>
+        </a></li>
+<li><a href="#lem:Generators_Of_Product_Of_Modalities" data-section-target="lem:Generators_Of_Product_Of_Modalities">
+          <span class="context-entry-heading">Lemma 5.74</span>
+          <span class="context-entry-title">Generators for products of modalities</span>
+        </a></li>
+<li><a href="#prop:Acyclic_Classes_Form_Commutative_Algebra" data-section-target="prop:Acyclic_Classes_Form_Commutative_Algebra">
+          <span class="context-entry-heading">Proposition 5.75</span>
+          <span class="context-entry-title">Acyclic classes as a commutative algebra</span>
+        </a></li>
+<li><a href="#cor:Product_Of_Monogenic_Modalities" data-section-target="cor:Product_Of_Monogenic_Modalities">
+          <span class="context-entry-heading">Corollary 5.76</span>
+          <span class="context-entry-title">Products of monogenic modalities</span>
+        </a></li>
+<li><a href="#cor:Monogenic_Modalities_Idempotent" data-section-target="cor:Monogenic_Modalities_Idempotent">
+          <span class="context-entry-heading">Corollary 5.77</span>
+          <span class="context-entry-title">Monogenic modalities are idempotent</span>
+        </a></li>
+<li><a href="#ex:Products_Of_Connected_Modalities" data-section-target="ex:Products_Of_Connected_Modalities">
+          <span class="context-entry-heading">Example 5.78</span>
+          <span class="context-entry-title">Products of connected modalities</span>
+        </a></li>
+<li><a href="#ex:Square_Of_Epimorphism_Modality" data-section-target="ex:Square_Of_Epimorphism_Modality">
+          <span class="context-entry-heading">Example 5.79</span>
+          <span class="context-entry-title">The square of the epimorphism modality</span>
+        </a></li>
+<li><a href="#con:Internal_Hom_Of_Modalities" data-section-target="con:Internal_Hom_Of_Modalities">
+          <span class="context-entry-heading">Construction 5.80</span>
+          <span class="context-entry-title">Internal homs of modalities</span>
+        </a></li>
+<li><a href="#ex:Cotruncated_Morphisms_As_Internal_Hom" data-section-target="ex:Cotruncated_Morphisms_As_Internal_Hom">
+          <span class="context-entry-heading">Example 5.81</span>
+          <span class="context-entry-title">Cotruncated morphisms as an internal hom</span>
+        </a></li>
+<li><a href="#lem:Key_Lemma_Product_Congruences" data-section-target="lem:Key_Lemma_Product_Congruences">
+          <span class="context-entry-heading">Lemma 5.82</span>
+          <span class="context-entry-title">The key lemma for products of congruences</span>
+        </a></li>
+<li><a href="#cor:Product_With_EffEpi" data-section-target="cor:Product_With_EffEpi">
+          <span class="context-entry-heading">Corollary 5.83</span>
+          <span class="context-entry-title">Product with effective epimorphisms</span>
+        </a></li>
+<li><a href="#thm:Product_Of_Congruences" data-section-target="thm:Product_Of_Congruences">
+          <span class="context-entry-heading">Theorem 5.84</span>
+          <span class="context-entry-title">Products of congruences</span>
+        </a></li>
+      </ol>
+    </nav>
+  </section></div>
+  </aside>
+  <aside class="publication-fragment-notice" id="rem:Acyclic_Classes_Form_Commutative_Algebra"><strong>Retired fragment.</strong> The result is now a proposition in the authoritative source. It now appears at <a href="./#prop:Acyclic_Classes_Form_Commutative_Algebra">this address</a>.</aside>
+</main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

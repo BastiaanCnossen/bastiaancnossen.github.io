@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Characterizing connected morphisms by diagonals | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/entry/characterizing-connected-morphisms-by-diagonals/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="entry-page has-context-nav" data-record-id="characterizing-connected-morphisms-by-diagonals" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">›</span> <a href="../../section/homotopy-group-objects/index.html">Section 3.3: Homotopy group objects</a></p>
+      <h1>Characterizing connected morphisms by diagonals</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Nearby entries
+    </button>
+    <article class="notes-page">
+      
+<section class="theorem theorem" id="thm:Characterization_n_Connected">
+  <p class="theorem-heading"><span>Theorem 3.22.</span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(n \geq 0\)</span>. Then a morphism <span class="math-inline">\(f\colon X \to Y\)</span> is <span class="math-inline">\(n\)</span>-connected if and only if it is an effective epimorphism and <span class="math-inline">\(\Delta_f\colon X \to X \times_Y X\)</span> is <span class="math-inline">\((n-1)\)</span>-connected.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-thm:Characterization_n_Connected-main" data-owner-entry="characterizing-connected-morphisms-by-diagonals" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">We must show that <span class="math-inline">\(f\)</span> is <span class="math-inline">\(n\)</span>-connected if and only if it is an effective epimorphism and <span class="math-inline">\(\Delta_f\)</span> is <span class="math-inline">\((n-1)\)</span>-connected.<div class="proof-paragraph-break" aria-hidden="true"></div>By the proposition, <span class="math-inline">\(f\)</span> is <span class="math-inline">\(n\)</span>-connected if and only if it is an effective epimorphism and <span class="math-inline">\(\pi_k(f)=*\)</span> for <span class="math-inline">\(0\leq k\leq n\)</span>. Similarly, <span class="math-inline">\(\Delta_f\)</span> is <span class="math-inline">\((n-1)\)</span>-connected if and only if it is an effective epimorphism and <span class="math-inline">\(\pi_k(\Delta_f)=*\)</span> for <span class="math-inline">\(0\leq k\leq n-1\)</span>. By <a href="../relative-homotopy-groups-and-diagonals/index.html#rem:Relative_Homotopy_Group_Object_Diagonal">Remark 3.28</a>, the latter vanishing condition is equivalent to <span class="math-inline">\(\pi_k(f)=*\)</span> for <span class="math-inline">\(1\leq k\leq n\)</span>. It remains to compare the two conditions in degree zero.<div class="proof-paragraph-break" aria-hidden="true"></div>Work in the slice topos <span class="math-inline">\(T_{/Y}\)</span>, write <span class="math-inline">\(Z\)</span> for the object corresponding to <span class="math-inline">\(f\)</span>, and let <span class="math-inline">\(U=\tau_0Z\)</span>. Suppose that <span class="math-inline">\(f\)</span>, or equivalently <span class="math-inline">\(Z\to *\)</span>, is an effective epimorphism. Then <span class="math-inline">\(U\to *\)</span> is an effective epimorphism by <a href="../effective-epimorphisms-detected-on-zero-truncation/index.html#lem:Key_Lemma_Eff_Epi_Pi0">Lemma 3.13</a>. By the description of <span class="math-inline">\(\pi_0\)</span> in <a href="../zeroth-homotopy-object/index.html#ex:Zeroth_Homotopy_Object">Example 3.24</a>, the morphism <span class="math-inline">\(\pi_0(f)\to Z\)</span> is the pullback of <span class="math-inline">\(U\to *\)</span> along <span class="math-inline">\(Z\to *\)</span>. Since pullback along the effective epimorphism <span class="math-inline">\(Z\to *\)</span> is conservative by <a href="../pullback-along-effective-epimorphisms/index.html#lem:Pullback_Along_Effective_Epimorphism_Conservative">Lemma 2.29</a>, we have <span class="math-inline">\(\pi_0(f)=*\)</span> if and only if <span class="math-inline">\(U\to *\)</span> is an isomorphism.<div class="proof-paragraph-break" aria-hidden="true"></div>On the other hand, <a href="../effective-epimorphisms-detected-on-zero-truncation/index.html#lem:Key_Lemma_Eff_Epi_Pi0">Lemma 3.13</a> and <a href="../truncation-preserves-finite-products/index.html#lem:Truncation_Preserves_Finite_Products">Lemma 3.9</a> show that <span class="math-inline">\(\Delta_f\)</span> is an effective epimorphism if and only if the diagonal <span class="math-inline">\(\Delta_U\colon U\to U\times U\)</span> is an effective epimorphism. Since <span class="math-inline">\(U\)</span> is <span class="math-inline">\(0\)</span>-truncated, <span class="math-inline">\(\Delta_U\)</span> is a monomorphism. Consequently, if <span class="math-inline">\(\Delta_U\)</span> is an effective epimorphism, it is an isomorphism, so <span class="math-inline">\(U\to *\)</span> is a monomorphism. Together with the effective epimorphism <span class="math-inline">\(U\to *\)</span>, this makes <span class="math-inline">\(U\)</span> terminal. The converse is immediate. We have therefore proved, under the effective-epimorphism hypothesis on <span class="math-inline">\(f\)</span>, that <div class="math-display">\[\pi_0(f)=* \quad\Longleftrightarrow\quad \Delta_f\text{ is an effective epimorphism}.\]</div> Combining this equivalence with the higher homotopy-group conditions proves the theorem.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+    </article>
+      <aside class="context-nav" id="context-navigation" data-context-nav aria-label="Nearby entries">
+      <button class="context-nav-collapse" type="button" data-context-nav-collapse data-collapsed-label="Nearby entries" aria-controls="context-navigation" aria-expanded="true" aria-label="Hide Nearby entries">
+      <span aria-hidden="true">›</span>
+    </button>
+      <p class="context-chapter-link"><a href="../../chapter/truncation-connectivity/index.html">Truncation and connectivity</a></p>
+      <p class="context-nav-kicker">Section 3.3</p>
+      <h2><a href="../../section/homotopy-group-objects/index.html">Homotopy group objects</a></h2>
+      <p class="context-nav-description"><a href="../../section/homotopy-group-objects/index.html#thm:Characterization_n_Connected">Read this result in the continuous section</a></p>
+      <ol class="context-entry-list context-entry-list-nearby">
+        <li><a href="#thm:Characterization_n_Connected" aria-current="page">
+          <span class="context-entry-heading">Theorem 3.22</span>
+          <span class="context-entry-title">Characterizing connected morphisms by diagonals</span>
+        </a></li>
+<li><a href="../homotopy-group-objects/index.html">
+          <span class="context-entry-heading">Definition 3.23</span>
+          <span class="context-entry-title">Homotopy group objects</span>
+        </a></li>
+<li><a href="../zeroth-homotopy-object/index.html">
+          <span class="context-entry-heading">Example 3.24</span>
+          <span class="context-entry-title">The zeroth homotopy object</span>
+        </a></li>
+<li><a href="../functors-preserving-homotopy-group-objects/index.html">
+          <span class="context-entry-heading">Lemma 3.25</span>
+          <span class="context-entry-title">Functors preserving homotopy group objects</span>
+        </a></li>
+<li><a href="../homotopy-group-objects-preserve-products/index.html">
+          <span class="context-entry-heading">Lemma 3.26</span>
+          <span class="context-entry-title">Homotopy group objects preserve products</span>
+        </a></li>
+      </ol>
+      <nav class="context-step-links" aria-label="Previous and next entries"><a rel="next" href="../homotopy-group-objects/index.html"><span>Next</span>Homotopy group objects</a></nav>
+    </aside>
+  </main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

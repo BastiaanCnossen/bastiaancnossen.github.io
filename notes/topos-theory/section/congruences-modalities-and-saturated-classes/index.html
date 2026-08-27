@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Congruences, modalities, and saturated classes | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/section/congruences-modalities-and-saturated-classes/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="section-page has-context-nav" data-record-id="congruences-modalities-and-saturated-classes" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">·</span> Section 5.3</p>
+      <h1>Congruences, modalities, and saturated classes</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page">
+      
+<h2 id="sec:Congruences_Modalities"><span>5.3.</span> Congruences, modalities, and saturated classes</h2>
+<p>Four closure notions meet in this section. Their definitions, and the smallness hypotheses needed to turn them into categorical constructions, are summarized as follows: \begin{center} \small \begin{tabularx}{\textwidth}{@{}lXX@{}} \toprule Class &amp; Closure properties &amp; Small-generation consequence \\ \midrule Saturated &amp; Isomorphisms, composition, colimits &amp; Left class of a factorization system. \\ Acyclic &amp; Saturated and stable under base change &amp; Left class of a modality. \\ Strongly saturated &amp; Saturated and 2-out-of-3 &amp; Kernel of an accessible localization. \\ Congruence &amp; Strongly saturated and stable under base change &amp; Kernel of a logos morphism. \\ \bottomrule \end{tabularx} \end{center} In particular, neither “acyclic class” nor “congruence” includes a smallness condition. Small generation is stated separately whenever it is needed to produce a modality or a quotient logos.</p>
+<p>We will establish three relations among these notions. First, the acyclic class <span class="math-inline">\(\Sigma^m\)</span> generated by a set <span class="math-inline">\(\Sigma\)</span> is of small generation and hence defines a modality. Second, congruences are precisely the acyclic classes closed under diagonals. Third, closing a set under iterated diagonals before taking its acyclic closure gives the generated congruence:</p>
+<div class="math-display">\[\Sigma^c=(\Sigma^{\Delta})^m.\]</div>
+<p>These results will be our main tool for checking that localizations of topoi are again topoi. As an application, they give a short proof that the category of sheaves on a Grothendieck site is a topos; we spell this out in <span class="cross-reference-unlinked">Section 6.1</span>. This application seems to be a new observation by Marc Hoyois which, to the note-taker's knowledge, does not appear in the literature.</p>
+<section class="theorem notation" id="not:Posets_Of_Morphism_Classes">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/posets-of-morphism-classes/index.html">Notation 5.30.</a></span></p>
+  <div class="theorem-statement"><p>We denote by</p>
+<div class="math-display">\[\Sat(T), \qquad \SSat(T), \qquad \Acyc(T), \qquad \Mdl(T), \qquad\text{and}\qquad \Cong(T)\]</div>
+<p>the partially ordered sets of saturated classes, strongly saturated classes, acyclic classes, modalities, and congruences in <span class="math-inline">\(T\)</span>, with partial order given by inclusion. We regard a modality as its left class, giving inclusions <span class="math-inline">\(\Mdl(T)\subseteq\Acyc(T)\subseteq\Sat(T)\)</span>, while <span class="math-inline">\(\Cong(T)\subseteq\Acyc(T)\cap\SSat(T)\)</span>.</p></div>
+</section>
+
+<section class="theorem notation" id="not:Generated_Closure_Classes">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/generated-closure-classes/index.html">Notation 5.31.</a></span></p>
+  <div class="theorem-statement"><p>Given a class of morphisms <span class="math-inline">\(\Sigma \subseteq \Ar(T)\)</span>, we define the following closures:</p>
+<ul><li><p><span class="math-inline">\(\Sigma^s\)</span>: the <em>saturation</em> (closure under composition, identities, and colimits).</p></li><li><p><span class="math-inline">\(\Sigma^{ss}\)</span>: the <em>strong saturation</em> (closure under composition, colimits, and 2-out-of-3).</p></li><li><p><span class="math-inline">\(\Sigma^m\)</span>: the smallest acyclic class containing <span class="math-inline">\(\Sigma\)</span>.</p></li><li><p><span class="math-inline">\(\Sigma^c\)</span>: the smallest strongly saturated class closed under base change containing <span class="math-inline">\(\Sigma\)</span>.</p></li></ul></div>
+</section>
+
+<h3 id="subsec:Generated_Acyclic_Classes_And_Modalities"><span>5.3.1.</span> Generated acyclic classes and modalities</h3>
+<p>The notation <span class="math-inline">\(\Sigma^m\)</span> refers a priori only to an acyclic class. We now show that if <span class="math-inline">\(\Sigma\)</span> is a set, this acyclic class is of small generation and therefore is the left class of a modality.</p>
+<section class="theorem proposition" id="prop:Generated_Modality_Is_Saturation_Of_Base_Changes">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/generated-modalities-as-saturations-of-base-changes/index.html">Proposition 5.32.</a></span> (<span class="citation-group">[Anel et al. <a class="citation" href="#bib-ABFJ_Higher_Sheaves">2022, Lemma 3.2.13, Proposition 3.2.18, Corollary 3.2.19</a>]</span>)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a topos, let <span class="math-inline">\(\Sigma\)</span> be a set of morphisms, and let <span class="math-inline">\(\Gg\)</span> be a set of generators of <span class="math-inline">\(T\)</span>. Let <span class="math-inline">\(\Sigma^{bc}\)</span> denote the set of base changes of morphisms in <span class="math-inline">\(\Sigma\)</span> to objects in <span class="math-inline">\(\Gg\)</span>. Then we have</p>
+<div class="math-display">\[\Sigma^m \quad = \quad (\Sigma^{bc})^s.\]</div>
+<p>In particular, <span class="math-inline">\(\Sigma^m\)</span> is a modality of small generation.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Generated_Modality_Is_Saturation_Of_Base_Changes-main" data-owner-entry="generated-modalities-as-saturations-of-base-changes" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Write <span class="math-inline">\(\Sigma' := (\Sigma^{bc})^s\)</span>, the saturation of <span class="math-inline">\(\Sigma^{bc}\)</span>. It is clear that <span class="math-inline">\(\Sigma' \subseteq \Sigma^m\)</span>, so it remains to show that also <span class="math-inline">\(\Sigma^m \subseteq \Sigma'\)</span>. To this end, consider the following class of morphisms <div class="math-display">\[\Sigma'' := \{\,u \in \Sigma' \mid \textup{every base change of $u$ lies in $\Sigma'$}\,\}.\]</div> We have <span class="math-inline">\(\Sigma'' \subseteq \Sigma'\)</span>, so it remains to show that in fact <span class="math-inline">\(\Sigma^m \subseteq \Sigma''\)</span>. We will do this by showing that <span class="math-inline">\(\Sigma''\)</span> is a saturated class closed under base change which contains <span class="math-inline">\(\Sigma\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>It is clear that <span class="math-inline">\(\Sigma''\)</span> is closed under base change. We claim that it is also saturated. It is clear that <span class="math-inline">\(\Sigma''\)</span> is closed under composition and contains all isomorphisms, so it remains to show that it is closed under colimits. Consider a diagram of maps <span class="math-inline">\(X_{\bullet} \to Y_{\bullet}\)</span> in <span class="math-inline">\(\Sigma''\)</span>, and let <span class="math-inline">\(Z \to \colim_i Y_i\)</span> be a map. We need to show that the base change <span class="math-inline">\(Z \times_{\colim_i Y_i} \colim_i X_i \to Z\)</span> lies in <span class="math-inline">\(\Sigma'\)</span>. By descent, we may write <span class="math-inline">\(Z\)</span> as <span class="math-inline">\(\colim_i Z_i\)</span>, and hence this base change map may be written as the colimit of the maps <span class="math-inline">\(Z_i \times_{Y_i} X_i \to Z_i\)</span>. Since each of these base changes lies in <span class="math-inline">\(\Sigma'\)</span> by definition of <span class="math-inline">\(\Sigma''\)</span>, the claim follows from the fact that <span class="math-inline">\(\Sigma'\)</span> is closed under colimits.<div class="proof-paragraph-break" aria-hidden="true"></div>It remains to show that <span class="math-inline">\(\Sigma''\)</span> contains <span class="math-inline">\(\Sigma\)</span>. In other words, given a morphism <span class="math-inline">\(u\colon A \to B\)</span> in <span class="math-inline">\(\Sigma\)</span> and an arbitrary map <span class="math-inline">\(Z \to B\)</span>, we need to show that the base change <span class="math-inline">\(Z \times_B A \to Z\)</span> lies in <span class="math-inline">\(\Sigma'\)</span>. To this end, let <span class="math-inline">\(\Ee \subseteq T_{/B}\)</span> be the full subcategory spanned by those <span class="math-inline">\(Z \to B\)</span> for which this condition holds. By definition of <span class="math-inline">\(\Sigma'\)</span>, we have <span class="math-inline">\(\Sigma^{bc} \subseteq \Sigma'\)</span>, and in particular <span class="math-inline">\(\Ee\)</span> contains all maps <span class="math-inline">\(Z \to B\)</span> with <span class="math-inline">\(Z \in \Gg\)</span>. Since <span class="math-inline">\(\Sigma'\)</span> is closed under colimits, it follows from descent that <span class="math-inline">\(\Ee \subseteq T_{/B}\)</span> is closed under colimits. But since <span class="math-inline">\(\Gg\)</span> is a set of generators, it follows that <span class="math-inline">\(\Ee = T_{/B}\)</span>, showing the claim.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem remark" id="rem:Generated_Modality_And_Congruence_Adjunctions">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/adjunctions-for-generated-modalities-and-congruences/index.html">Remark 5.33.</a></span></p>
+  <div class="theorem-statement"><p>On classes of small generation, the assignments <span class="math-inline">\(\Sigma \mapsto \Sigma^m\)</span> and <span class="math-inline">\(\Sigma \mapsto \Sigma^c\)</span> define the respective left adjoints to the inclusions of modalities and congruences into saturated classes. Without a smallness restriction, the same closure operations are left adjoint to the inclusions <span class="math-inline">\(\Acyc(T)\hookrightarrow\Sat(T)\)</span> and <span class="math-inline">\(\Cong(T)\hookrightarrow\Sat(T)\)</span> at the level of partially ordered classes.</p></div>
+</section>
+
+<h3 id="subsec:Characterizations_Of_Congruences"><span>5.3.2.</span> Characterizations of congruences</h3>
+<p>The definition of <span class="math-inline">\(\Sigma^c\)</span> involves closure under 2-out-of-3, an operation over which we have little explicit control. The following characterizations replace it by finite-limit or diagonal closure.</p>
+<section class="theorem lemma" id="lem:Closure_Under_Finite_Limits_Implies_Left_Cancellation">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/finite-limit-closure-implies-left-cancellation/index.html">Lemma 5.34.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\Ee\)</span> be a category with finite limits and let <span class="math-inline">\(K\)</span> be a class of morphisms in <span class="math-inline">\(\Ee\)</span> which contains all identities and is closed under finite limits. Then <span class="math-inline">\(K\)</span> satisfies the left cancellation property. Dually, a class containing all identities and closed under finite colimits satisfies the right cancellation property.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Closure_Under_Finite_Limits_Implies_Left_Cancellation-main" data-owner-entry="finite-limit-closure-implies-left-cancellation" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">It suffices to prove the first claim, as the second one is dual. Given morphisms <span class="math-inline">\(f\colon X \to Y\)</span> and <span class="math-inline">\(g\colon Y \to Z\)</span>, the following commutative square in <span class="math-inline">\(\Ar(T)\)</span> exhibits <span class="math-inline">\(f\)</span> as a limit in <span class="math-inline">\(\Ar(T)\)</span> of the morphisms <span class="math-inline">\(\id_Y\)</span>, <span class="math-inline">\(gf\)</span> and <span class="math-inline">\(g\)</span>: <figure class="diagram"><img src="diagrams/tikzcd-a2a25c287014.svg" alt="Commutative diagram generated from the LaTeX source"></figure> Since <span class="math-inline">\(K\)</span> contains identities and is closed under finite limits, if <span class="math-inline">\(g, gf \in K\)</span>, then <span class="math-inline">\(f \in K\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem proposition" id="prop:Characterization_Congruences">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/characterizations-of-congruences/index.html">Proposition 5.35.</a></span></p>
+  <div class="theorem-statement"><p>The following conditions are equivalent for a class of morphisms <span class="math-inline">\(K\)</span>:</p>
+<ol><li><p><span class="math-inline">\(K\)</span> is a congruence;</p></li><li><p><span class="math-inline">\(K\)</span> is strongly saturated and stable under base change;</p></li><li><p><span class="math-inline">\(K\)</span> is strongly saturated and closed under finite limits;</p></li><li><p><span class="math-inline">\(K\)</span> is saturated and closed under finite limits;</p></li><li><p><span class="math-inline">\(K\)</span> is an acyclic class and is closed under diagonals: if <span class="math-inline">\(f\colon X \to Y\)</span> is in <span class="math-inline">\(K\)</span>, then so is <span class="math-inline">\(\Delta_f\colon X \to X \times_Y X\)</span>.</p></li></ol></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Characterization_Congruences-main" data-owner-entry="characterizations-of-congruences" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">The equivalence between (1) and (2) is the definition. A congruence is closed under finite limits in <span class="math-inline">\(\Ar(T)\)</span>, see <span class="citation-group">[Anel et al. <a class="citation" href="#bib-ABFJ_Higher_Sheaves">2022, Proposition 4.2.3</a>]</span>, which gives (2)<span class="math-inline">\(\Rightarrow\)</span>(3). Clearly (3) implies (4). Conversely, finite-limit closure implies stability under base change, since a base-change square is a pullback in <span class="math-inline">\(\Ar(T)\)</span>. Moreover, <a href="#lem:Closure_Under_Finite_Limits_Implies_Left_Cancellation">Lemma 5.34</a> gives left cancellation. Saturation already gives composition and right cancellation, so <span class="math-inline">\(K\)</span> satisfies 2-out-of-3. This proves (4)<span class="math-inline">\(\Rightarrow\)</span>(2).<div class="proof-paragraph-break" aria-hidden="true"></div>Condition (2) implies (5): the projection <span class="math-inline">\(X\times_YX\to X\)</span> is a base change of <span class="math-inline">\(f\)</span>, and its section <span class="math-inline">\(\Delta_f\)</span> belongs to <span class="math-inline">\(K\)</span> by 2-out-of-3. Conversely, assume (5). Since <span class="math-inline">\(K\)</span> is saturated, it is closed under composition and has right cancellation. It remains to check left cancellation. Given <span class="math-inline">\(X \xrightarrow{f} Y \xrightarrow{g} Z\)</span> with <span class="math-inline">\(g, gf \in K\)</span>, factor <span class="math-inline">\(f\)</span> as <div class="math-display">\[X \xrightarrow{(\id, f)} X \times_Z Y \xrightarrow{\pr_Y} Y.\]</div> The second map is a base change of <span class="math-inline">\(gf \in K\)</span>, hence in <span class="math-inline">\(K\)</span>. The first is a base change of <span class="math-inline">\(\Delta_g\)</span>, which is in <span class="math-inline">\(K\)</span> by assumption. Thus <span class="math-inline">\(f \in K\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<h3 id="subsec:Decalage_And_Generated_Congruences"><span>5.3.3.</span> Décalage and generated congruences</h3>
+<p>We now extract the largest congruence contained in an acyclic class. Iterating this construction will turn diagonal closure into the explicit formula for a generated congruence.</p>
+<section class="theorem definition" id="def:Decalage_Of_Modality">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/decalage-of-a-modality/index.html">Definition 5.36.</a></span> (<span class="citation-group">[Anel et al. <a class="citation" href="#bib-ABFJ_Grothendieck_Topologies">2024, Section 2.2.7</a>]</span>)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(L\)</span> be an acyclic class in <span class="math-inline">\(T\)</span>. We define the <em>décalage</em> of <span class="math-inline">\(L\)</span> by</p>
+<div class="math-display">\[D(L) := \{\,u \in L \mid \Delta_u \in L\,\} \subseteq L.\]</div>
+<p>We inductively define <span class="math-inline">\(D^n(L)\)</span> by <span class="math-inline">\(D^0(L) := L\)</span> and <span class="math-inline">\(D^{n+1}(L) := D(D^n(L))\)</span>. Finally, we set <span class="math-inline">\(D^{\infty}(L) := \cap_n D^n(L)\)</span>.</p></div>
+</section>
+
+<section class="theorem proposition" id="lem:ABFJ_Lemma2">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/abfj-lemma/index.html">Proposition 5.37.</a></span> (<span class="citation-group">[Anel et al. <a class="citation" href="#bib-ABFJ_Grothendieck_Topologies">2024, Section 2.2.7</a>]</span>)</p>
+  <div class="theorem-statement"><p>If <span class="math-inline">\(L\)</span> is an acyclic class, then <span class="math-inline">\(D(L)\)</span> is again an acyclic class. If <span class="math-inline">\(L\)</span> is of small generation, then so is <span class="math-inline">\(D(L)\)</span>; in this case both classes are left classes of modalities.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:ABFJ_Lemma2-main" data-owner-entry="abfj-lemma" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Stability under base change and the inclusion of all isomorphisms are immediate. For composition, let <span class="math-inline">\(A \xrightarrow{f} B \xrightarrow{g} C\)</span> lie in <span class="math-inline">\(D(L)\)</span>. Then <span class="math-inline">\(gf\in L\)</span>, and <span class="math-inline">\(\Delta_{gf}\)</span> factors as <div class="math-display">\[A \xrightarrow{ \Delta_f } A \times_B A \longrightarrow A \times_C A ,\]</div> where the second map is a base change of <span class="math-inline">\(\Delta_g\)</span>. Since <span class="math-inline">\(\Delta_f,\Delta_g\in L\)</span> and <span class="math-inline">\(L\)</span> is an acyclic class, <span class="math-inline">\(\Delta_{gf}\in L\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>For colimits, let <span class="math-inline">\(f_{\bullet}\colon X_{\bullet}\to Y_{\bullet}\)</span> be a diagram in <span class="math-inline">\(\Ar(T)\)</span> with every <span class="math-inline">\(f_i\in D(L)\)</span>, and write <span class="math-inline">\(f\colon X\to Y\)</span> for its colimit. We already know <span class="math-inline">\(f\in L\)</span>. The acyclic-descent argument of <span class="citation-group">[Anel et al. <a class="citation" href="#bib-ABFJ_Grothendieck_Topologies">2024, Section 2.2.7</a>]</span> says that colimits of <span class="math-inline">\(L\)</span>-cartesian transformations remain <span class="math-inline">\(L\)</span>-cartesian. We spell out its application here, since it also fixes the variance of the maps involved.<div class="proof-paragraph-break" aria-hidden="true"></div>For a morphism <span class="math-inline">\(i\to j\)</span> in the indexing category, the gap map of the naturality square is <div class="math-display">\[X_i\longrightarrow Y_i\times_{Y_j}X_j.\]</div> It factors as <div class="math-display">\[X_i\longrightarrow X_i\times_{Y_j}X_j
+			\longrightarrow Y_i\times_{Y_j}X_j.\]</div> The first map is a base change of <span class="math-inline">\(\Delta_{f_j}\)</span>, and the second is a base change of <span class="math-inline">\(f_i\)</span>. Both lie in <span class="math-inline">\(L\)</span>, so the transformation <span class="math-inline">\(f_{\bullet}\)</span> is <span class="math-inline">\(L\)</span>-cartesian. Acyclic descent now shows that for every <span class="math-inline">\(i\)</span> the square <figure class="diagram"><img src="diagrams/tikzcd-54d76be49c37.svg" alt="Commutative diagram generated from the LaTeX source"></figure> is <span class="math-inline">\(L\)</span>-cartesian. Equivalently, the gap map <span class="math-inline">\(h_i\colon X_i\to Y_i\times_YX\)</span> lies in <span class="math-inline">\(L\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>By universality of colimits, the diagonal <span class="math-inline">\(\Delta_f\)</span> is the colimit of the maps <span class="math-inline">\(X_i\to X_i\times_YX\)</span>. Each of these factors as <div class="math-display">\[X_i\xrightarrow{\Delta_{f_i}}X_i\times_{Y_i}X_i
+			\longrightarrow X_i\times_YX,\]</div> where the second map is a base change of <span class="math-inline">\(h_i\)</span>. Thus both maps lie in <span class="math-inline">\(L\)</span>. Closure under colimits gives <span class="math-inline">\(\Delta_f\in L\)</span>, proving that <span class="math-inline">\(D(L)\)</span> is saturated. The small-generation assertion is the accessibility part of the cited décalage result.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem corollary" id="cor:Largest_Congruence_Inside_Modality">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/largest-congruence-inside-a-modality/index.html">Corollary 5.38.</a></span></p>
+  <div class="theorem-statement"><p>For an acyclic class <span class="math-inline">\(L\)</span> in <span class="math-inline">\(T\)</span>, the class <span class="math-inline">\(D^{\infty}(L)\)</span> is a congruence. Moreover, it is the largest congruence contained in <span class="math-inline">\(L\)</span>. Thus <span class="math-inline">\(L\mapsto D^{\infty}(L)\)</span> defines a right adjoint <span class="math-inline">\(\Acyc(T)\to\Cong(T)\)</span> to the inclusion <span class="math-inline">\(\Cong(T)\hookrightarrow\Acyc(T)\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-cor:Largest_Congruence_Inside_Modality-main" data-owner-entry="largest-congruence-inside-a-modality" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">By <a href="#lem:ABFJ_Lemma2">Proposition 5.37</a>, each <span class="math-inline">\(D^n(L)\)</span> is an acyclic class. Intersections of acyclic classes are acyclic, so <span class="math-inline">\(D^{\infty}(L)=\bigcap_{n\geq0}D^n(L)\)</span> is acyclic. It is closed under diagonals by construction and hence is a congruence by <a href="#prop:Characterization_Congruences">Proposition 5.35</a>.<div class="proof-paragraph-break" aria-hidden="true"></div>If <span class="math-inline">\(K\subseteq L\)</span> is any congruence, then <span class="math-inline">\(K\)</span> is closed under diagonals. Inductively, every <span class="math-inline">\(f\in K\)</span> belongs to <span class="math-inline">\(D^n(L)\)</span> for all <span class="math-inline">\(n\)</span>, so <span class="math-inline">\(K\subseteq D^{\infty}(L)\)</span>. This proves maximality and the adjunction.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>We now state and prove the main result of this section. Given a class of morphisms <span class="math-inline">\(\Sigma\)</span>, write <span class="math-inline">\(\Sigma^{\Delta}\)</span> for the closure of <span class="math-inline">\(\Sigma\)</span> under diagonals <span class="math-inline">\(f \mapsto \Delta_f\)</span>. Thus <span class="math-inline">\(\Sigma^{\Delta}\)</span> consists of the maps in <span class="math-inline">\(\Sigma\)</span> and all their iterated diagonals.</p>
+<section class="theorem theorem" id="thm:ABFJ_Formula">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/abfj-formula/index.html">Theorem 5.39.</a></span> (Anel–Biedermann–Finster–Joyal, <span class="citation-group">[Anel et al. <a class="citation" href="#bib-ABFJ_Higher_Sheaves">2022, Proposition 4.2.12</a>]</span>)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a topos and let <span class="math-inline">\(\Sigma \subseteq \Ar(T)\)</span> be a set of maps. Then the congruence <span class="math-inline">\(\Sigma^c\)</span> is given by</p>
+<div class="math-display">\[\Sigma^c = (\Sigma^{\Delta})^m,\]</div>
+<p>the acyclic class generated by the iterated diagonals of <span class="math-inline">\(\Sigma\)</span>. This class is of small generation and hence is the left class of a modality.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-thm:ABFJ_Formula-main" data-owner-entry="abfj-formula" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Set <span class="math-inline">\(L:=(\Sigma^{\Delta})^m\)</span>. Since <span class="math-inline">\(\Sigma^{\Delta}\)</span> is again a set, <a href="#prop:Generated_Modality_Is_Saturation_Of_Base_Changes">Proposition 5.32</a> shows that <span class="math-inline">\(L\)</span> is of small generation. Let <span class="math-inline">\(K:=D^{\infty}(L)\)</span>, the largest congruence contained in <span class="math-inline">\(L\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>For <span class="math-inline">\(f\in\Sigma\)</span>, every iterated diagonal <span class="math-inline">\(\Delta^nf\)</span> belongs to <span class="math-inline">\(\Sigma^{\Delta}\subseteq L\)</span>. Hence <span class="math-inline">\(f\in D^n(L)\)</span> for every <span class="math-inline">\(n\)</span>, and therefore <span class="math-inline">\(f\in K\)</span>. Thus <span class="math-inline">\(K\)</span> is a congruence containing <span class="math-inline">\(\Sigma\)</span>, which gives <span class="math-inline">\(\Sigma^c\subseteq K\)</span>. Conversely, <span class="math-inline">\(\Sigma^c\)</span> is an acyclic class containing <span class="math-inline">\(\Sigma^{\Delta}\)</span>, since it is closed under diagonals by <a href="#prop:Characterization_Congruences">Proposition 5.35</a>. It therefore contains the acyclic closure <span class="math-inline">\(L\)</span>. We obtain <div class="math-display">\[\Sigma^c\subseteq K\subseteq L\subseteq\Sigma^c,\]</div> so all three classes agree.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem remark" id="rem:ABFJ_Formula_For_Classes">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/abfj-formula-for-classes/index.html">Remark 5.40.</a></span></p>
+  <div class="theorem-statement"><p>The same formula holds for an arbitrary class <span class="math-inline">\(\Sigma\)</span>, see <span class="citation-group">[Anel et al. <a class="citation" href="#bib-ABFJ_Higher_Sheaves">2022, Proposition 4.2.12</a>]</span>. One writes <span class="math-inline">\(\Sigma\)</span> as the union of a filtered system of sets closed under taking the diagonals that have already appeared and then uses that both acyclic and congruence closure preserve these filtered unions. The set case above is the form needed in these notes, and it has the additional advantage that <span class="math-inline">\((\Sigma^{\Delta})^m\)</span> automatically defines a modality.</p></div>
+</section>
+
+<section class="theorem warning" id="warn:Congruence_Not_Strong_Saturation_Of_Base_Changes">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/congruence-not-generated-by-strong-saturation-and-base-change/index.html">Warning 5.41.</a></span></p>
+  <div class="theorem-statement"><p>The formula <span class="math-inline">\(\Sigma^m = (\Sigma^{bc})^s\)</span> for the acyclic class generated by a set <span class="math-inline">\(\Sigma\)</span> does <em>not</em> have the naive congruence analogue: we generally have <span class="math-inline">\(\Sigma^c \neq (\Sigma^{bc})^{ss}\)</span>. Indeed, the right-hand side generally has no reason to be closed under base change.</p></div>
+</section>
+
+<section class="theorem remark" id="rmk:Generated_Congruence_Of_Small_Generation">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/small-generation-of-generated-congruences/index.html">Remark 5.42.</a></span></p>
+  <div class="theorem-statement"><p>For a set <span class="math-inline">\(\Sigma\)</span>, <a href="#thm:ABFJ_Formula">Theorem 5.39</a> and <a href="#prop:Generated_Modality_Is_Saturation_Of_Base_Changes">Proposition 5.32</a> show that the congruence <span class="math-inline">\(\Sigma^c=(\Sigma^{\Delta})^m\)</span> is of small generation. Thus the quotient by the generated congruence exists as a quotient logos.</p></div>
+</section>
+
+<section class="theorem corollary" id="cor:Modality_Generated_By_Monomorphisms_Is_Congruence">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/modalities-generated-by-monomorphisms-are-congruences/index.html">Corollary 5.43.</a></span></p>
+  <div class="theorem-statement"><p>If <span class="math-inline">\(\Sigma \subseteq \Ar(T)\)</span> consists of monomorphisms, then <span class="math-inline">\(\Sigma^c = \Sigma^m\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-cor:Modality_Generated_By_Monomorphisms_Is_Congruence-main" data-owner-entry="modalities-generated-by-monomorphisms-are-congruences" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">If <span class="math-inline">\(f\)</span> is a monomorphism, <span class="math-inline">\(\Delta_f\)</span> is an isomorphism, hence automatically contained in <span class="math-inline">\(\Sigma^m\)</span>. The class version of the ABFJ formula from <a href="#rem:ABFJ_Formula_For_Classes">Remark 5.40</a> therefore gives <span class="math-inline">\(\Sigma^c = (\Sigma^{\Delta})^m = \Sigma^m\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-ABFJ_Higher_Sheaves">Mathieu Anel, Georg Biedermann, Eric Finster, André Joyal. <em>Left-exact localizations of ∞-topoi. I: Higher sheaves</em>. Adv. Math., 400, 64. 2022.</li>
+<li id="bib-ABFJ_Grothendieck_Topologies">Mathieu Anel, Georg Biedermann, Eric Finster, André Joyal. <em>Left-exact localizations of ∞-topoi. II: Grothendieck topologies</em>. J. Pure Appl. Algebra, 228 (3), 63. 2024.</li></ol></section>
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+      <a class="context-step-control" rel="prev" href="../blakers-massey/index.html" aria-label="Previous section: The Blakers–Massey theorem" title="Previous section: The Blakers–Massey theorem"><span aria-hidden="true">←</span></a>
+      <a class="context-step-control" rel="next" href="../open-and-closed-immersions/index.html" aria-label="Next section: Open and closed immersions" title="Next section: Open and closed immersions"><span aria-hidden="true">→</span></a>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../chapter/introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../../chapter/foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../../chapter/truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../../chapter/topoi-logoi/index.html">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../../chapter/modalities/index.html" aria-current="location">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../../chapter/topics-in-topos-theory/index.html">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../../chapter/geometry/index.html">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../../chapter/factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../../chapter/limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../epimorphisms-and-acyclic-maps/index.html">
+          <span class="context-entry-heading">Section 5.1</span>
+          <span class="context-entry-title">Epimorphisms and acyclic maps</span>
+        </a></li>
+<li><a href="../blakers-massey/index.html">
+          <span class="context-entry-heading">Section 5.2</span>
+          <span class="context-entry-title">The Blakers–Massey theorem</span>
+        </a></li>
+<li><a href="../congruences-modalities-and-saturated-classes/index.html" aria-current="page">
+          <span class="context-entry-heading">Section 5.3</span>
+          <span class="context-entry-title">Congruences, modalities, and saturated classes</span>
+        </a></li>
+<li><a href="../open-and-closed-immersions/index.html">
+          <span class="context-entry-heading">Section 5.4</span>
+          <span class="context-entry-title">Open and closed immersions</span>
+        </a></li>
+<li><a href="../structure-theory-for-topoi/index.html">
+          <span class="context-entry-heading">Section 5.5</span>
+          <span class="context-entry-title">Structure theory for topoi</span>
+        </a></li>
+<li><a href="../products-of-modalities/index.html">
+          <span class="context-entry-heading">Section 5.6</span>
+          <span class="context-entry-title">Products of modalities</span>
+        </a></li>
+<li><a href="../goodwillie-tower/index.html">
+          <span class="context-entry-heading">Section 5.7</span>
+          <span class="context-entry-title">The Goodwillie tower of a topos</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <p class="context-nav-kicker">Section 5.3</p>
+      <p class="context-nav-description">Congruences, modalities, and saturated classes</p>
+      <ol class="context-entry-list">
+        <li><a href="#not:Posets_Of_Morphism_Classes" data-section-target="not:Posets_Of_Morphism_Classes">
+          <span class="context-entry-heading">Notation 5.30</span>
+          <span class="context-entry-title">Posets of morphism classes</span>
+        </a></li>
+<li><a href="#not:Generated_Closure_Classes" data-section-target="not:Generated_Closure_Classes">
+          <span class="context-entry-heading">Notation 5.31</span>
+          <span class="context-entry-title">Generated closure classes</span>
+        </a></li>
+<li><a href="#prop:Generated_Modality_Is_Saturation_Of_Base_Changes" data-section-target="prop:Generated_Modality_Is_Saturation_Of_Base_Changes">
+          <span class="context-entry-heading">Proposition 5.32</span>
+          <span class="context-entry-title">Generated modalities as saturations of base changes</span>
+        </a></li>
+<li><a href="#rem:Generated_Modality_And_Congruence_Adjunctions" data-section-target="rem:Generated_Modality_And_Congruence_Adjunctions">
+          <span class="context-entry-heading">Remark 5.33</span>
+          <span class="context-entry-title">Adjunctions for generated modalities and congruences</span>
+        </a></li>
+<li><a href="#lem:Closure_Under_Finite_Limits_Implies_Left_Cancellation" data-section-target="lem:Closure_Under_Finite_Limits_Implies_Left_Cancellation">
+          <span class="context-entry-heading">Lemma 5.34</span>
+          <span class="context-entry-title">Finite-limit closure implies left cancellation</span>
+        </a></li>
+<li><a href="#prop:Characterization_Congruences" data-section-target="prop:Characterization_Congruences">
+          <span class="context-entry-heading">Proposition 5.35</span>
+          <span class="context-entry-title">Characterizations of congruences</span>
+        </a></li>
+<li><a href="#def:Decalage_Of_Modality" data-section-target="def:Decalage_Of_Modality">
+          <span class="context-entry-heading">Definition 5.36</span>
+          <span class="context-entry-title">Decalage of a modality</span>
+        </a></li>
+<li><a href="#lem:ABFJ_Lemma2" data-section-target="lem:ABFJ_Lemma2">
+          <span class="context-entry-heading">Proposition 5.37</span>
+          <span class="context-entry-title">The ABFJ lemma</span>
+        </a></li>
+<li><a href="#cor:Largest_Congruence_Inside_Modality" data-section-target="cor:Largest_Congruence_Inside_Modality">
+          <span class="context-entry-heading">Corollary 5.38</span>
+          <span class="context-entry-title">The largest congruence inside a modality</span>
+        </a></li>
+<li><a href="#thm:ABFJ_Formula" data-section-target="thm:ABFJ_Formula">
+          <span class="context-entry-heading">Theorem 5.39</span>
+          <span class="context-entry-title">The ABFJ formula</span>
+        </a></li>
+<li><a href="#rem:ABFJ_Formula_For_Classes" data-section-target="rem:ABFJ_Formula_For_Classes">
+          <span class="context-entry-heading">Remark 5.40</span>
+          <span class="context-entry-title">The ABFJ formula for classes</span>
+        </a></li>
+<li><a href="#warn:Congruence_Not_Strong_Saturation_Of_Base_Changes" data-section-target="warn:Congruence_Not_Strong_Saturation_Of_Base_Changes">
+          <span class="context-entry-heading">Warning 5.41</span>
+          <span class="context-entry-title">Congruences and strong saturation under base change</span>
+        </a></li>
+<li><a href="#rmk:Generated_Congruence_Of_Small_Generation" data-section-target="rmk:Generated_Congruence_Of_Small_Generation">
+          <span class="context-entry-heading">Remark 5.42</span>
+          <span class="context-entry-title">Small generation of generated congruences</span>
+        </a></li>
+<li><a href="#cor:Modality_Generated_By_Monomorphisms_Is_Congruence" data-section-target="cor:Modality_Generated_By_Monomorphisms_Is_Congruence">
+          <span class="context-entry-heading">Corollary 5.43</span>
+          <span class="context-entry-title">Modalities generated by monomorphisms are congruences</span>
+        </a></li>
+      </ol>
+    </nav>
+  </section></div>
+  </aside>
+  </main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

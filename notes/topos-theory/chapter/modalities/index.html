@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 5: Modalities | Higher Topos Theory</title>
+  <meta name="description" content="Modalities and congruences, the Blakers–Massey theorem, the structure theory of topoi, and Goodwillie approximation.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/chapter/modalities/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: { inlineMath: [["\\(", "\\)"]], displayMath: [["\\[", "\\]"]], macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"} },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="work-page chapter-page has-context-nav">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> · Chapter 5</p>
+      <h1>Modalities</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page chapter-landing">
+      <section class="chapter-introduction" id="chap:Modalities_And_Congruences" data-source-label="chap:Modalities_And_Congruences" aria-label="Chapter introduction">
+        <p>The factorization systems constructed in <a href="../truncation-connectivity/index.html">Chapter 3</a> are not isolated constructions. For every <span class="math-inline">\(-2 \leq n \leq \infty\)</span>, the factorization into an <span class="math-inline">\(n\)</span>-connected map followed by an <span class="math-inline">\(n\)</span>-truncated map is preserved by base change and therefore behaves uniformly in every slice of the topos. This raises a general question: which factorization systems on a topos have this fiberwise stability, and what additional structure follows from it?</p>
+<p>A <em>modality</em> is a factorization system <span class="math-inline">\((L,R)\)</span> whose left class is stable under base change. Modalities were developed systematically in a series of articles by <span class="citation-group">Anel et al. (<a class="citation" href="#bib-ABFJ_Goodwillie">2018</a>, <a class="citation" href="#bib-ABFJ2020GeneralizedBlakersMassey">2020</a>, <a class="citation" href="#bib-ABFJ_Higher_Sheaves">2022</a>, <a class="citation" href="#bib-ABFJ_Grothendieck_Topologies">2024</a>, <a class="citation" href="#bib-ABFJ_Acyclic_Product">2025</a>)</span>. They provide a common language for factorization, descent, localization, and excision phenomena in topoi.</p>
+<p>We begin with a basic but less familiar example of a modality. In <a href="../../section/epimorphisms-and-acyclic-maps/index.html">Section 5.1</a>, we show that the epimorphisms form a modality and identify the epimorphisms in <span class="math-inline">\(\An\)</span> with the acyclic maps; the associated reflection recovers Quillen's plus construction. We then turn to excision. In <a href="../../section/blakers-massey/index.html">Section 5.2</a>, we prove a generalized Blakers–Massey theorem for an arbitrary modality. It gives a condition on the pushout product of the diagonals of two maps which ensures that the gap map of their pushout square lies in the left class of the modality. Its proof rests on a modal form of descent.</p>
+<p>The next part of the chapter connects fiberwise closure properties to localizations of topoi. An <em>acyclic class</em> is a saturated class stable under base change, while a <em>congruence</em> is an acyclic class satisfying 2-out-of-3. Small generation upgrades the former to a modality and identifies the latter with the class inverted by a left exact localization. The decisive relation, proved in <a href="../../section/congruences-modalities-and-saturated-classes/index.html">Section 5.3</a>, is that the congruence generated by a set <span class="math-inline">\(\Sigma\)</span> is the acyclic class generated by all iterated diagonals of maps in <span class="math-inline">\(\Sigma\)</span>:</p>
+<div class="math-display">\[\Sigma^c = (\Sigma^{\Delta})^m.\]</div>
+<p>Equivalently, congruences are precisely the acyclic classes closed under diagonals. This formula gives explicit control over left exact localization and will later yield a short proof that sheafification on a Grothendieck site is left exact.</p>
+<p>These ideas also lead to structure theory. We construct closed complements of open immersions in <a href="../../section/open-and-closed-immersions/index.html">Section 5.4</a>, and in <a href="../../section/structure-theory-for-topoi/index.html">Section 5.5</a> we factor every morphism of logoi into a monogenic quotient, an epigenic quotient, and a conservative morphism. Finally, products of acyclic classes restrict to products of congruences and give rise to adic filtrations of topoi. Applied to the congruence of <span class="math-inline">\(\infty\)</span>-connected maps, this construction produces the Goodwillie tower of a topos; for functor topoi it recovers Goodwillie's polynomial approximations and their stable layers. This is developed in <a href="../../section/products-of-modalities/index.html">Section 5.6</a> and <a href="../../section/goodwillie-tower/index.html">Section 5.7</a>.</p>
+<section class="theorem definition" id="def:Modality">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/modality/index.html">Definition 5.1.</a></span></p>
+  <div class="theorem-statement"><p>A <em>modality in <span class="math-inline">\(T\)</span></em> is a factorization system <span class="math-inline">\((L,R)\)</span> in <span class="math-inline">\(T\)</span> such that <span class="math-inline">\(L\)</span> is stable under base change.</p></div>
+</section>
+
+<section class="theorem definition" id="def:Acyclic_Class">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/acyclic-classes/index.html">Definition 5.2.</a></span></p>
+  <div class="theorem-statement"><p>An <em>acyclic class</em> in <span class="math-inline">\(T\)</span> is a saturated class of morphisms that is stable under base change. We write <span class="math-inline">\(\Acyc(T)\)</span> for the partially ordered set of acyclic classes in <span class="math-inline">\(T\)</span>.</p></div>
+</section>
+<p>Thus the left class of every modality is an acyclic class. Conversely, an acyclic class of small generation is the left class of a modality by <a href="../../entry/saturated-class-gives-factorization-system/index.html#prop:Saturated_Class_Gives_Factorization_System">Proposition A.11</a>. The distinction is useful: closure arguments can often be carried out for arbitrary acyclic classes, whereas orthogonal factorizations require a modality.</p>
+<section class="theorem terminology" id="term:Modality_From_Left_Class">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/modality-from-the-left-class/index.html">Terminology 5.3.</a></span></p>
+  <div class="theorem-statement"><p>Recall from <a href="../../entry/closure-properties-of-factorization-systems/index.html#prop:FS_Closure_Properties">Proposition A.3</a> that the morphisms in <span class="math-inline">\(R\)</span> are precisely those that are right orthogonal to the morphisms in <span class="math-inline">\(L\)</span>. In particular, a modality is completely determined by the class <span class="math-inline">\(L\)</span>. In what follows, we may sometimes refer to a class of morphisms <span class="math-inline">\(L\)</span> as a <em>modality</em> if the pair <span class="math-inline">\((L,L^{\perp})\)</span> is a modality.</p></div>
+</section>
+
+<section class="theorem lemma" id="lem:Classes_In_Modality_Local">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/classes-in-a-modality-are-local/index.html">Lemma 5.4.</a></span></p>
+  <div class="theorem-statement"><p>Every acyclic class in <span class="math-inline">\(T\)</span> is local, in the sense of <a href="../../entry/local-classes/index.html#def:Local_Class">Definition 2.46</a>. In a modality <span class="math-inline">\((L,R)\)</span> on <span class="math-inline">\(T\)</span>, the right class <span class="math-inline">\(R\)</span> is local as well.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Classes_In_Modality_Local-main" data-owner-entry="classes-in-a-modality-are-local" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Let <span class="math-inline">\(L\)</span> be an acyclic class, let <span class="math-inline">\(f\colon X \to Z\)</span> be a morphism, and let <span class="math-inline">\(p\colon Z' \to Z\)</span> be an effective epimorphism such that the base change <span class="math-inline">\(f'\colon X \times_Z Z' \to Z'\)</span> lies in <span class="math-inline">\(L\)</span>. Form the Čech nerve <span class="math-inline">\(Z'_{\bullet}\to Z\)</span> of <span class="math-inline">\(p\)</span>. Every level of the induced morphism <div class="math-display">\[X\times_Z Z'_{\bullet}\longrightarrow Z'_{\bullet}\]</div> is a base change of <span class="math-inline">\(f'\)</span>, hence lies in <span class="math-inline">\(L\)</span>. Since <span class="math-inline">\(p\)</span> is an effective epimorphism, the colimit of this morphism in <span class="math-inline">\(\Ar(T)\)</span> is <span class="math-inline">\(f\)</span>. The class <span class="math-inline">\(L\)</span> is saturated and therefore closed under colimits, so <span class="math-inline">\(f\in L\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>Now let <span class="math-inline">\((L,R)\)</span> be a modality and assume instead that <span class="math-inline">\(f'\in R\)</span>. Factor <span class="math-inline">\(f\)</span> as <span class="math-inline">\(X\xrightarrow{l}Y\xrightarrow{r}Z\)</span> with <span class="math-inline">\(l\in L\)</span> and <span class="math-inline">\(r\in R\)</span>. After base change along <span class="math-inline">\(p\)</span>, this is an <span class="math-inline">\((L,R)\)</span>-factorization of <span class="math-inline">\(f'\)</span>. Hence the base change of <span class="math-inline">\(l\)</span> is an isomorphism. Since pullback along an effective epimorphism is conservative, <span class="math-inline">\(l\)</span> is an isomorphism and <span class="math-inline">\(f\in R\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-ABFJ_Goodwillie">Mathieu Anel, Georg Biedermann, Eric Finster, André Joyal. <em>Goodwillie's calculus of functors and higher topos theory</em>. J. Topol., 11 (4), 1100–1132. 2018.</li>
+<li id="bib-ABFJ2020GeneralizedBlakersMassey">Mathieu Anel, Georg Biedermann, Eric Finster, André Joyal. <em>A generalized Blakers-Massey theorem</em>. J. Topol., 13 (4), 1521–1553. 2020.</li>
+<li id="bib-ABFJ_Higher_Sheaves">Mathieu Anel, Georg Biedermann, Eric Finster, André Joyal. <em>Left-exact localizations of ∞-topoi. I: Higher sheaves</em>. Adv. Math., 400, 64. 2022.</li>
+<li id="bib-ABFJ_Grothendieck_Topologies">Mathieu Anel, Georg Biedermann, Eric Finster, André Joyal. <em>Left-exact localizations of ∞-topoi. II: Grothendieck topologies</em>. J. Pure Appl. Algebra, 228 (3), 63. 2024.</li>
+<li id="bib-ABFJ_Acyclic_Product">Mathieu Anel, Georg Biedermann, Eric Finster, André Joyal. <em>Left-exact localizations of $\infty$-topoi III: The acyclic product</em>. 2025.</li></ol></section>
+      </section>
+      
+      <section class="available-sections" aria-labelledby="chapter-sections-heading">
+        <h2 id="chapter-sections-heading">Sections</h2>
+        <div class="section-card-grid">
+          
+      <article class="section-card">
+        <p class="section-card-meta">Section 5.1</p>
+        <h3><a href="../../section/epimorphisms-and-acyclic-maps/index.html">Epimorphisms and acyclic maps</a></h3>
+        <p>Cotruncated morphisms, epimorphisms, and their relation to connectivity.</p>
+      </article>
+
+      <article class="section-card">
+        <p class="section-card-meta">Section 5.2</p>
+        <h3><a href="../../section/blakers-massey/index.html">The Blakers–Massey theorem</a></h3>
+        <p>The generalized Blakers–Massey theorem, modal descent, and Wärn’s zigzag construction.</p>
+      </article>
+
+      <article class="section-card">
+        <p class="section-card-meta">Section 5.3</p>
+        <h3><a href="../../section/congruences-modalities-and-saturated-classes/index.html">Congruences, modalities, and saturated classes</a></h3>
+        <p>Generated modalities and congruences, decalage, and the ABFJ formula.</p>
+      </article>
+
+      <article class="section-card">
+        <p class="section-card-meta">Section 5.4</p>
+        <h3><a href="../../section/open-and-closed-immersions/index.html">Open and closed immersions</a></h3>
+        <p>Open immersions, closed complements, and recollement of topoi.</p>
+      </article>
+
+      <article class="section-card">
+        <p class="section-card-meta">Section 5.5</p>
+        <h3><a href="../../section/structure-theory-for-topoi/index.html">Structure theory for topoi</a></h3>
+        <p>Monogenic and epigenic modalities, hypercompletion, and images of morphisms of logoi.</p>
+      </article>
+
+      <article class="section-card">
+        <p class="section-card-meta">Section 5.6</p>
+        <h3><a href="../../section/products-of-modalities/index.html">Products of modalities</a></h3>
+        <p>Pushout products, products and internal homs of modalities, and products of congruences.</p>
+      </article>
+
+      <article class="section-card">
+        <p class="section-card-meta">Section 5.7</p>
+        <h3><a href="../../section/goodwillie-tower/index.html">The Goodwillie tower of a topos</a></h3>
+        <p>Adic filtrations, excisive functors, and the Goodwillie tower of a topos.</p>
+      </article>
+        </div>
+      </section>
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Chapter navigation">
+    <nav class="context-step-controls" aria-label="Previous and next chapters">
+      <a class="context-step-control" rel="prev" href="../topoi-logoi/index.html" aria-label="Previous chapter: The categories of topoi and logoi" title="Previous chapter: The categories of topoi and logoi"><span aria-hidden="true">←</span></a>
+      <a class="context-step-control" rel="next" href="../topics-in-topos-theory/index.html" aria-label="Next chapter: Topics in topos theory" title="Next chapter: Topics in topos theory"><span aria-hidden="true">→</span></a>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../topoi-logoi/index.html">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../modalities/index.html" aria-current="page">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../topics-in-topos-theory/index.html">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../geometry/index.html">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="true">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="../../section/epimorphisms-and-acyclic-maps/index.html">
+          <span class="context-entry-heading">Section 5.1</span>
+          <span class="context-entry-title">Epimorphisms and acyclic maps</span>
+        </a></li>
+<li><a href="../../section/blakers-massey/index.html">
+          <span class="context-entry-heading">Section 5.2</span>
+          <span class="context-entry-title">The Blakers–Massey theorem</span>
+        </a></li>
+<li><a href="../../section/congruences-modalities-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Section 5.3</span>
+          <span class="context-entry-title">Congruences, modalities, and saturated classes</span>
+        </a></li>
+<li><a href="../../section/open-and-closed-immersions/index.html">
+          <span class="context-entry-heading">Section 5.4</span>
+          <span class="context-entry-title">Open and closed immersions</span>
+        </a></li>
+<li><a href="../../section/structure-theory-for-topoi/index.html">
+          <span class="context-entry-heading">Section 5.5</span>
+          <span class="context-entry-title">Structure theory for topoi</span>
+        </a></li>
+<li><a href="../../section/products-of-modalities/index.html">
+          <span class="context-entry-heading">Section 5.6</span>
+          <span class="context-entry-title">Products of modalities</span>
+        </a></li>
+<li><a href="../../section/goodwillie-tower/index.html">
+          <span class="context-entry-heading">Section 5.7</span>
+          <span class="context-entry-title">The Goodwillie tower of a topos</span>
+        </a></li></ol>
+    </nav>
+  </section></div>
+  </aside>
+  </main>
+  <footer><p class="source-note">This static web edition is generated from the same LaTeX source as the PDFs.</p></footer>
+</body>
+</html>

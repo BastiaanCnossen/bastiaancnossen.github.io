@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gerbes | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/section/gerbes/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+<style>
+    .publication-fragment-notice { margin: 2rem 0; padding: 1rem; border: 1px solid #b6aa91; background: #faf7ef; }
+    .publication-fragment-notice:not(:target) { display: none; }
+  </style>
+  <script>
+    (() => {
+      const targets = {"rem:Torsors_As_Pointed_Maps":"./#rem:Torsors_As_Maps_To_Delooping"};
+      const fragment = decodeURIComponent(location.hash.slice(1));
+      if (targets[fragment]) location.replace(targets[fragment]);
+    })();
+  </script>
+</head>
+<body class="section-page has-context-nav" data-record-id="gerbes" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">·</span> Section 3.5</p>
+      <h1>Gerbes</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page">
+      
+<h2 id="sec:Gerbes"><span>3.5.</span> Gerbes</h2>
+
+<h3 id="subsec:Gerbes_And_Eilenberg_MacLane_Objects"><span>3.5.1.</span> Gerbes and Eilenberg–MacLane objects</h3>
+<p>Consider an object <span class="math-inline">\(X \in T\)</span>. We have the Postnikov tower</p>
+<div class="math-display">\[X \to \dots \to \tau_n X \to \tau_{n-1} X \to \dots \to \tau_0 X \to \tau_{-1} X \to \tau_{-2} X = * .\]</div>
+<p>The object <span class="math-inline">\(\tau_n X \in T_{/\,\tau_{n-1} X}\)</span> is <span class="math-inline">\(n\)</span>-truncated by <a href="../../entry/cancellation-for-truncated-morphisms/index.html">Lemma 3.7</a> and <span class="math-inline">\((n-1)\)</span>-connected by <a href="../../entry/connected-truncated-factorization-system/index.html">Proposition 3.18</a>. Maps with this property are known as <em>gerbes</em>:</p>
+<section class="theorem definition" id="def:Gerbes_And_Eilenberg_MacLane_Objects">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/gerbes-and-eilenberg-maclane-objects/index.html">Definition 3.41.</a></span></p>
+  <div class="theorem-statement"><p>Given <span class="math-inline">\(n \geq 0\)</span>, we say an object <span class="math-inline">\(X \in T\)</span> is an <em><span class="math-inline">\(n\)</span>-gerbe</em> if it is <span class="math-inline">\(n\)</span>-truncated and <span class="math-inline">\((n-1)\)</span>-connected. We define an <em>Eilenberg–MacLane object of degree <span class="math-inline">\(n\)</span></em> to be a pointed <span class="math-inline">\(n\)</span>-gerbe. We denote by</p>
+<div class="math-display">\[\mathrm{Gerb}_n(T) \subseteq T \qquadtext{ and } \mathrm{EM}_n(T) \subseteq T_*\]</div>
+<p>the resulting full subcategories. More generally, we refer to a morphism <span class="math-inline">\(X \to Y\)</span> as an <em><span class="math-inline">\(n\)</span>-gerbe</em> if it is an <span class="math-inline">\(n\)</span>-gerbe in the slice topos <span class="math-inline">\(T_{/Y}\)</span>.</p></div>
+</section>
+
+<section class="theorem example" id="ex:n_Gerbe_From_n_Plus_One_Gerbe">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/looping-gerbes/index.html">Example 3.42.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(K\)</span> be an <span class="math-inline">\((n+1)\)</span>-gerbe in <span class="math-inline">\(T\)</span>, and consider two maps <span class="math-inline">\(a,b\colon * \to K\)</span>. Define <span class="math-inline">\(P\)</span> as the following pullback:</p>
+<figure class="diagram"><img src="diagrams/tikzcd-45f5d58f7c53.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>Then <span class="math-inline">\(P\)</span> is an <span class="math-inline">\(n\)</span>-gerbe. Indeed, the map <span class="math-inline">\(b\colon * \to K\)</span> is an <span class="math-inline">\(n\)</span>-gerbe by the cancellation properties of truncated and connected maps from <a href="../../entry/cancellation-for-truncated-morphisms/index.html">Lemma 3.7</a> and <a href="../../entry/cancellation-for-connected-morphisms/index.html">Corollary 3.33</a>, hence the base change <span class="math-inline">\(P \to *\)</span> is also an <span class="math-inline">\(n\)</span>-gerbe.</p></div>
+</section>
+<p>The Eilenberg–MacLane objects can in fact be completely classified in terms of abelian group objects in <span class="math-inline">\(T\)</span>, just as for the Eilenberg–MacLane animae in classical homotopy theory. To do this, we need an iterated version of the delooping principle from <a href="../../entry/delooping-principle/index.html">Proposition 2.35</a>.</p>
+<section class="theorem definition" id="def:Iterated_Group_Objects">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/iterated-group-objects/index.html">Definition 3.43.</a></span></p>
+  <div class="theorem-statement"><p>Given a category <span class="math-inline">\(C\)</span> with finite products, we inductively define for every <span class="math-inline">\(n \geq 0\)</span> the category <span class="math-inline">\(E_n\Grp(C)\)</span> of <em><span class="math-inline">\(E_n\)</span>-groups in <span class="math-inline">\(C\)</span></em> by setting</p>
+<div class="math-display">\[E_0\Grp(C) := C_* \qquadtext{ and } E_{n+1}\Grp(C) := \Grp(E_n\Grp(C)).\]</div></div>
+</section>
+
+<section class="theorem proposition" id="prop:Iterated_Delooping_Principle">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/iterated-delooping-principle/index.html">Proposition 3.44.</a></span> (Iterated delooping principle)</p>
+  <div class="theorem-statement"><p>For every <span class="math-inline">\(n \geq 0\)</span>, there is an equivalence</p>
+<div class="math-display">\[\bB^n\colon E_n\Grp(T) \;\rightleftarrows\; T^{\geq n}_* \noloc \bOmega^n.\]</div></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Iterated_Delooping_Principle-main" data-owner-entry="iterated-delooping-principle" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">First observe that there is an equivalence <span class="math-inline">\(T^{\geq 0}_* \simeq T_*\)</span>. That is, every pointed object in <span class="math-inline">\(T\)</span> is automatically <span class="math-inline">\((-1)\)</span>-connected. Indeed, any map <span class="math-inline">\(x\colon * \to X\)</span> is a section of <span class="math-inline">\(X \to *\)</span>, so the latter is an effective epimorphism by <a href="../../entry/split-effective-epimorphisms/index.html">Lemma 2.38</a>.<div class="proof-paragraph-break" aria-hidden="true"></div>Consider now the `delooping equivalence' <div class="math-display">\[\bB\colon \Grp(T) \rightleftarrows T_*^{\geq 1} \noloc \bOmega\]</div> from <a href="../../entry/delooping-principle/index.html">Proposition 2.35</a>. By passing to <span class="math-inline">\(E_{n-1}\)</span>-groups, this results in an equivalence <span class="math-inline">\(E_n\Grp(T) \simeq E_{n-1}\Grp(T_*^{\geq 1})\)</span>. Since the equivalence is implemented by taking loops, <a href="../../entry/looping-detects-connectivity-and-truncation/index.html">Corollary 3.34</a> implies that it restricts to an equivalence <div class="math-display">\[\bB \colon E_n\Grp(T^{\geq k-1}) \; \rightleftarrows \; E_{n-1}\Grp(T_*^{\geq k})\noloc \bOmega\]</div> for every <span class="math-inline">\(k \geq 1\)</span>. Since <span class="math-inline">\(\Grp(C_*) \simeq \Grp(C)\)</span> for any <span class="math-inline">\(C\)</span>, we may now paste together all these equivalences to obtain the result: <div class="math-display">\[\bB^n \colon E_n\Grp(T) \simeq E_{n-1}\Grp(T_*^{\geq 1})  \simeq \dots \simeq E_1\Grp(T_*^{\geq n-1}) \simeq E_0\Grp(T_*^{\geq n}) = T_*^{\geq n} \noloc \bOmega^n.\]</div><span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem corollary" id="cor:Classification_Of_Eilenberg_MacLane_Objects">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/classification-of-eilenberg-maclane-objects/index.html">Corollary 3.45.</a></span></p>
+  <div class="theorem-statement"><p>For <span class="math-inline">\(n \geq 0\)</span> there are equivalences</p>
+<div class="math-display">\[\mathrm{EM}_0(T) \simeq (T_{\leq 0})_*,  \qquad \mathrm{EM}_1(T) \simeq \Grp(T_{\leq 0}), \quad \qquadtext{and} \quad \mathrm{EM}_n(T) \simeq \Ab(T_{\leq 0}) \quad \textup{ for $n \geq 2$.}\]</div></div>
+</section>
+
+<details class="proof-shell" id="proof-cor:Classification_Of_Eilenberg_MacLane_Objects-main" data-owner-entry="classification-of-eilenberg-maclane-objects" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">By <a href="../../entry/looping-detects-connectivity-and-truncation/index.html">Corollary 3.34</a>, the equivalence <span class="math-inline">\(\bOmega^n\colon T^{\geq n}_* \iso E_n\Grp(T)\)</span> from <a href="#prop:Iterated_Delooping_Principle">Proposition 3.44</a> restricts to an equivalence <div class="math-display">\[\bOmega^n\colon \mathrm{EM}_n(T) \iso E_n\Grp(T_{\leq 0})\]</div> for all <span class="math-inline">\(n\)</span>, with inverse given by <span class="math-inline">\(\bB^n\)</span>. But since <span class="math-inline">\(T_{\leq 0}\)</span> is a 1-category, we have <span class="math-inline">\(E_n\Grp(T_{\leq 0}) \simeq \Ab(T_{\leq 0})\)</span> for all <span class="math-inline">\(n \geq 2\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<h3 id="subsec:Banded_Gerbes_And_Cohomology"><span>3.5.2.</span> Banded gerbes and cohomology</h3>
+<p>The <span class="math-inline">\(n\)</span>-gerbes play an important role in <em>obstruction theory</em>. Given objects <span class="math-inline">\(Y, X \in T\)</span> and a map <span class="math-inline">\(Y \to \tau_0X\)</span>, we could ask whether we can lift this map to <span class="math-inline">\(X\)</span>. Often, we can proceed inductively along the Postnikov tower of <span class="math-inline">\(X\)</span>. Assuming we have already found a lift <span class="math-inline">\(Y \to \tau_{n-1} X\)</span>, we may ask whether it lifts further to a map <span class="math-inline">\(Y \to \tau_n X\)</span>:</p>
+<figure class="diagram"><img src="diagrams/tikzcd-87f7f3014ae6.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>In the remainder of this section we will explain how to reformulate this question in terms of the vanishing of a certain class in the cohomology of <span class="math-inline">\(Y\)</span>.</p>
+<section class="theorem lemma" id="lem:Homotopy_Group_Object_Of_Gerbe_Is_Constant">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/homotopy-group-object-of-a-gerbe/index.html">Lemma 3.46.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(n \geq 2\)</span>, and let <span class="math-inline">\(X\)</span> be an <span class="math-inline">\(n\)</span>-gerbe. Then there exists a unique <span class="math-inline">\(A \in \Ab(T_{\leq 0})\)</span> such that <span class="math-inline">\(\pi_n X \cong X \times A\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Homotopy_Group_Object_Of_Gerbe_Is_Constant-main" data-owner-entry="homotopy-group-object-of-a-gerbe" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Since <span class="math-inline">\(X\)</span> is <span class="math-inline">\((n-1)\)</span>-connected, the functor <span class="math-inline">\(X \times -\colon T \to T_{/X}\)</span> induces an equivalence <span class="math-inline">\(T_{\leq n-2} \iso (T_{/X})_{\leq n-2}\)</span> on <span class="math-inline">\((n-2)\)</span>-truncated objects, by <a href="../../entry/connected-morphisms-and-truncated-objects/index.html">Corollary 3.35</a>. In particular, the abelian group object <span class="math-inline">\(\pi_n(X) \in \Ab((T_{/X})_{\leq 0})\)</span> corresponds to an object <span class="math-inline">\(A \in \Ab(T_{\leq 0})\)</span> under this equivalence.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem remark" id="rem:Band_Of_One_Gerbe">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/bands-of-one-gerbes/index.html">Remark 3.47.</a></span></p>
+  <div class="theorem-statement"><p>If <span class="math-inline">\(n = 1\)</span>, then <span class="math-inline">\(A \in \Grp(T_{\leq 0})\)</span> is unique if it exists, but it might not exist.</p></div>
+</section>
+
+<section class="theorem definition" id="def:Banded_Gerbe">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/banded-gerbes/index.html">Definition 3.48.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(n\geq1\)</span>, let <span class="math-inline">\(X\)</span> be an <span class="math-inline">\(n\)</span>-gerbe, and consider <span class="math-inline">\(A \in \Ab(T_{\leq 0})\)</span>. We say that <span class="math-inline">\(X\)</span> is <em>banded by <span class="math-inline">\(A\)</span></em> if it comes equipped with an isomorphism <span class="math-inline">\(\pi_n X \cong X \times A\)</span> in <span class="math-inline">\(E_n\Grp((T_{/X})_{\leq 0})\)</span>. We denote by</p>
+<div class="math-display">\[\Gerb_n^A(T)\]</div>
+<p>the anima of pairs consisting of an <span class="math-inline">\(n\)</span>-gerbe <span class="math-inline">\(X\)</span> together with an isomorphism <span class="math-inline">\(\pi_n X \cong X \times A\)</span>. Its morphisms are the band-preserving isomorphisms of <span class="math-inline">\(n\)</span>-gerbes.</p></div>
+</section>
+
+<section class="theorem lemma" id="lem:EM_Banded_By_A">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/trivial-banded-gerbes/index.html">Lemma 3.49.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(n\geq1\)</span>. The trivial <span class="math-inline">\(n\)</span>-gerbe <span class="math-inline">\(\bB^n A\)</span> is banded by <span class="math-inline">\(A\)</span>. Moreover, the anima of pointed <span class="math-inline">\(n\)</span>-gerbes banded by <span class="math-inline">\(A\)</span> and band-preserving pointed isomorphisms is contractible, with distinguished object <span class="math-inline">\(\bB^nA\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:EM_Banded_By_A-main" data-owner-entry="trivial-banded-gerbes" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">For the first claim, consider the two canonical maps <span class="math-inline">\(\bB^nA \to (\bB^nA)^{S^n}\)</span> and <span class="math-inline">\(\Omega^n\bB^nA \to (\bB^nA)^{S^n}\)</span>. Using that <span class="math-inline">\(\bB^nA \in \CGrp(T)\)</span>, this induces a map <div class="math-display">\[\bB^nA \times A \simeq \bB^nA \times \Omega^n\bB^nA \to (\bB^nA)^{S^n}\]</div> in <span class="math-inline">\(T_{/\bB^nA}\)</span>. We need to show that this induces an isomorphism on <span class="math-inline">\(0\)</span>-truncations. Since <span class="math-inline">\(n\geq1\)</span>, the map <span class="math-inline">\(* \twoheadrightarrow \bB^nA\)</span> is an effective epimorphism. Pullback along it is conservative by <a href="../../entry/pullback-along-effective-epimorphisms/index.html">Lemma 2.29</a>, so the claim may be checked after this base change. There the map becomes the identity on <span class="math-inline">\(\Omega^n\bB^nA\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>For the second claim, apply the equivalence <span class="math-inline">\(\bOmega^n\colon \mathrm{EM}_n(T)\iso E_n\Grp(T_{\leq0})\)</span> from <a href="#cor:Classification_Of_Eilenberg_MacLane_Objects">Corollary 3.45</a>. Under this equivalence, a band on <span class="math-inline">\(X\)</span> is precisely an isomorphism <span class="math-inline">\(\bOmega^nX\cong A\)</span>. The anima of pairs consisting of an object <span class="math-inline">\(A'\)</span> and an isomorphism <span class="math-inline">\(A'\cong A\)</span> is contractible. Transporting this statement across the equivalence proves the claim, including uniqueness of the band-preserving pointed isomorphism.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem theorem" id="thm:Classification_Of_Banded_Gerbes">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/classification-of-banded-gerbes/index.html">Theorem 3.50.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(A \in \Ab(T_{\leq 0})\)</span> and <span class="math-inline">\(n \geq 1\)</span>. Then for any object <span class="math-inline">\(X \in T\)</span> there is an equivalence</p>
+<div class="math-display">\[\Hom_T(X,\bB^{n+1}A) \quad\simeq\quad  \Gerb_n^A(T_{/X}), \qquad \qquad f \mapsto \fib_0(f).\]</div></div>
+</section>
+
+<details class="proof-shell" id="proof-thm:Classification_Of_Banded_Gerbes-main" data-owner-entry="classification-of-banded-gerbes" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">First, note that the functor is well-defined. By <a href="#ex:n_Gerbe_From_n_Plus_One_Gerbe">Example 3.42</a>, the map <span class="math-inline">\(0\colon *\to \bB^{n+1}A\)</span> is an <span class="math-inline">\(n\)</span>-gerbe. Its fiber is <span class="math-inline">\(\bB^nA\)</span>, so <a href="#lem:EM_Banded_By_A">Lemma 3.49</a> supplies it with a canonical band by <span class="math-inline">\(A\)</span>, which is inherited by every pullback. The claim is that this is the <em>universal</em> <span class="math-inline">\(n\)</span>-gerbe banded by <span class="math-inline">\(A\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>To see this, consider an <span class="math-inline">\(n\)</span>-gerbe <span class="math-inline">\(\widetilde{X} \to X\)</span> banded by <span class="math-inline">\(A\)</span>. There is a <em>unique</em> cartesian square of the form <figure class="diagram"><img src="diagrams/tikzcd-2cbe2f093fa2.svg" alt="Commutative diagram generated from the LaTeX source"></figure> Here the cartesian square is required to identify the given band on <span class="math-inline">\(\widetilde X\)</span> with the band pulled back from the universal gerbe. More formally, the homotopy fiber of the functor in the statement over <span class="math-inline">\(\widetilde X\to X\)</span> is the subanima of <div class="math-display">\[\Hom_{\Ar^{\pb}(T)}\!\bigl(\widetilde{X} \to X,\; * \to \bB^{n+1}A\bigr)\]</div> spanned by the band-compatible cartesian squares. We show that this subanima is contractible.<div class="proof-paragraph-break" aria-hidden="true"></div><em>Step 1:</em> Suppose first that <span class="math-inline">\(\widetilde{X} \to X\)</span> admits a section <span class="math-inline">\(s\colon X \to \widetilde{X}\)</span>. In the slice topos <span class="math-inline">\(T_{/X}\)</span>, the section makes <span class="math-inline">\(\widetilde X\)</span> into a pointed <span class="math-inline">\(n\)</span>-gerbe. By <a href="#lem:EM_Banded_By_A">Lemma 3.49</a>, there is a unique band-preserving pointed isomorphism <span class="math-inline">\(\widetilde X\iso X\times\bB^nA\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>A band-compatible cartesian square with the universal gerbe is now the same as a map <span class="math-inline">\(u\colon X\to\bB^{n+1}A\)</span> together with a trivialization of its fiber <span class="math-inline">\(P_u:=X\times_{\bB^{n+1}A}*\to X\)</span>. Such a trivialization is equivalently a section of <span class="math-inline">\(P_u\to X\)</span>, or equivalently a nullhomotopy of <span class="math-inline">\(u\)</span>. The anima of pairs consisting of a map <span class="math-inline">\(u\colon X\to\bB^{n+1}A\)</span> and a nullhomotopy of <span class="math-inline">\(u\)</span> is <span class="math-inline">\(\Hom_T(X,*)\)</span>, which is contractible. The band compatibility is built into the unique pointed identification supplied by <a href="#lem:EM_Banded_By_A">Lemma 3.49</a>. This proves the claim in the pointed case.<div class="proof-paragraph-break" aria-hidden="true"></div><em>Step 2:</em> We now prove the claim in general. Since <span class="math-inline">\(n\geq1\)</span>, the map <span class="math-inline">\(\widetilde X\to X\)</span> is an effective epimorphism. We may therefore take <span class="math-inline">\(U=\widetilde X\)</span>; the pullback <span class="math-inline">\(\widetilde X\times_XU\to U\)</span> admits the diagonal as a section. Let <span class="math-inline">\(\check{C}(U/X)\)</span> denote the Čech nerve, and write <span class="math-inline">\(U_k:=\check{C}(U/X)_k\)</span> and <span class="math-inline">\(\widetilde U_k:=\widetilde X\times_XU_k\)</span>. Each map <span class="math-inline">\(\widetilde U_k\to U_k\)</span> is an <span class="math-inline">\(n\)</span>-gerbe banded by <span class="math-inline">\(A\)</span> admitting a section. Step 1 therefore shows that the anima of band-compatible cartesian squares <div class="math-display">\[\widetilde U_k\to U_k \quad\longrightarrow\quad *\to\bB^{n+1}A\]</div> is contractible for every <span class="math-inline">\(k\)</span>. Objects, isomorphisms, and identifications of their bands satisfy descent along effective epimorphisms. Hence the anima of band-compatible cartesian squares from <span class="math-inline">\(\widetilde X\to X\)</span> to the universal gerbe is the limit of these contractible animae, and is therefore contractible. Thus every homotopy fiber of the functor in the statement is contractible, proving that it is an equivalence.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem remark" id="rem:Torsors_As_Maps_To_Delooping">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/torsors-as-pointed-maps/index.html">Remark 3.51.</a></span></p>
+  <div class="theorem-statement"><p>Under the equivalence <span class="math-inline">\(T_{/\bB G} \simeq \Mod_G(T)\)</span>, passing to fibers over <span class="math-inline">\(T\)</span> (with respect to the forgetful functor <span class="math-inline">\(T_{/\bB G} \to T\)</span> and the quotient functor <span class="math-inline">\(\Mod_G(T) \to T\)</span>) yields</p>
+<div class="math-display">\[\Hom_T(*,\bB G) \;\simeq\; \{\text{$G$-torsors in $T$}\}^{\simeq} .\]</div></div>
+</section>
+<p>Let us now return to the question of obstruction theory. Given an object <span class="math-inline">\(X\)</span> and <span class="math-inline">\(n\geq2\)</span>, the map <span class="math-inline">\(\tau_n X \to \tau_{n-1} X\)</span> is an <span class="math-inline">\(n\)</span>-gerbe. By <a href="#lem:Homotopy_Group_Object_Of_Gerbe_Is_Constant">Lemma 3.46</a>, it is banded by a static abelian group object</p>
+<div class="math-display">\[A\in\Ab\bigl((T_{/\tau_{n-1}X})_{\leq0}\bigr).\]</div>
+<p>Applying <a href="#thm:Classification_Of_Banded_Gerbes">Theorem 3.50</a> in the slice topos <span class="math-inline">\(T_{/\tau_{n-1}X}\)</span>, we may write it as a pullback</p>
+<figure class="diagram"><img src="diagrams/tikzcd-18fbf5002782.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>Here <span class="math-inline">\(\bB^{n+1}A\)</span> is formed in the slice over <span class="math-inline">\(\tau_{n-1}X\)</span>, and the upper-right object is the terminal object of this slice. In particular, finding a lift <span class="math-inline">\(Y \to \tau_n X\)</span> of a map <span class="math-inline">\(Y \to \tau_{n-1} X\)</span> is equivalent to nullhomotoping the induced map <span class="math-inline">\(Y \to \bB^{n+1}A\)</span> in the slice. We wish to think of this as the question of whether a certain cohomology class vanishes:</p>
+<section class="theorem definition" id="def:Cohomology_With_Coefficients">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/cohomology-with-coefficients/index.html">Definition 3.52.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(A\)</span> be an abelian group object in <span class="math-inline">\(T_{\leq 0}\)</span>, and let <span class="math-inline">\(Y \in T\)</span>. We define the <em><span class="math-inline">\(n\)</span>-th cohomology of <span class="math-inline">\(Y\)</span> with coefficients in <span class="math-inline">\(A\)</span></em> as</p>
+<div class="math-display">\[H^n(Y,A) := \pi_0\,\Hom_T(Y,\bB^n A) \in \Ab .\]</div></div>
+</section>
+
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+      <a class="context-step-control" rel="prev" href="../hypercompletion/index.html" aria-label="Previous section: Hypercompletion" title="Previous section: Hypercompletion"><span aria-hidden="true">←</span></a>
+      <a class="context-step-control" rel="next" href="../topoi-and-logoi/index.html" aria-label="Next section: Topoi and logoi" title="Next section: Topoi and logoi"><span aria-hidden="true">→</span></a>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../chapter/introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../../chapter/foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../../chapter/truncation-connectivity/index.html" aria-current="location">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../../chapter/topoi-logoi/index.html">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../../chapter/modalities/index.html">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../../chapter/topics-in-topos-theory/index.html">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../../chapter/geometry/index.html">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../../chapter/factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../../chapter/limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../truncation/index.html">
+          <span class="context-entry-heading">Section 3.1</span>
+          <span class="context-entry-title">Truncation</span>
+        </a></li>
+<li><a href="../connectivity/index.html">
+          <span class="context-entry-heading">Section 3.2</span>
+          <span class="context-entry-title">Connectivity</span>
+        </a></li>
+<li><a href="../homotopy-group-objects/index.html">
+          <span class="context-entry-heading">Section 3.3</span>
+          <span class="context-entry-title">Homotopy group objects</span>
+        </a></li>
+<li><a href="../hypercompletion/index.html">
+          <span class="context-entry-heading">Section 3.4</span>
+          <span class="context-entry-title">Hypercompletion</span>
+        </a></li>
+<li><a href="../gerbes/index.html" aria-current="page">
+          <span class="context-entry-heading">Section 3.5</span>
+          <span class="context-entry-title">Gerbes</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <p class="context-nav-kicker">Section 3.5</p>
+      <p class="context-nav-description">Gerbes</p>
+      <ol class="context-entry-list">
+        <li><a href="#def:Gerbes_And_Eilenberg_MacLane_Objects" data-section-target="def:Gerbes_And_Eilenberg_MacLane_Objects">
+          <span class="context-entry-heading">Definition 3.41</span>
+          <span class="context-entry-title">Gerbes and Eilenberg–MacLane objects</span>
+        </a></li>
+<li><a href="#ex:n_Gerbe_From_n_Plus_One_Gerbe" data-section-target="ex:n_Gerbe_From_n_Plus_One_Gerbe">
+          <span class="context-entry-heading">Example 3.42</span>
+          <span class="context-entry-title">Looping gerbes</span>
+        </a></li>
+<li><a href="#def:Iterated_Group_Objects" data-section-target="def:Iterated_Group_Objects">
+          <span class="context-entry-heading">Definition 3.43</span>
+          <span class="context-entry-title">Iterated group objects</span>
+        </a></li>
+<li><a href="#prop:Iterated_Delooping_Principle" data-section-target="prop:Iterated_Delooping_Principle">
+          <span class="context-entry-heading">Proposition 3.44</span>
+          <span class="context-entry-title">The iterated delooping principle</span>
+        </a></li>
+<li><a href="#cor:Classification_Of_Eilenberg_MacLane_Objects" data-section-target="cor:Classification_Of_Eilenberg_MacLane_Objects">
+          <span class="context-entry-heading">Corollary 3.45</span>
+          <span class="context-entry-title">Classification of Eilenberg–MacLane objects</span>
+        </a></li>
+<li><a href="#lem:Homotopy_Group_Object_Of_Gerbe_Is_Constant" data-section-target="lem:Homotopy_Group_Object_Of_Gerbe_Is_Constant">
+          <span class="context-entry-heading">Lemma 3.46</span>
+          <span class="context-entry-title">The homotopy group object of a gerbe</span>
+        </a></li>
+<li><a href="#rem:Band_Of_One_Gerbe" data-section-target="rem:Band_Of_One_Gerbe">
+          <span class="context-entry-heading">Remark 3.47</span>
+          <span class="context-entry-title">Bands of one-gerbes</span>
+        </a></li>
+<li><a href="#def:Banded_Gerbe" data-section-target="def:Banded_Gerbe">
+          <span class="context-entry-heading">Definition 3.48</span>
+          <span class="context-entry-title">Banded gerbes</span>
+        </a></li>
+<li><a href="#lem:EM_Banded_By_A" data-section-target="lem:EM_Banded_By_A">
+          <span class="context-entry-heading">Lemma 3.49</span>
+          <span class="context-entry-title">Trivial banded gerbes</span>
+        </a></li>
+<li><a href="#thm:Classification_Of_Banded_Gerbes" data-section-target="thm:Classification_Of_Banded_Gerbes">
+          <span class="context-entry-heading">Theorem 3.50</span>
+          <span class="context-entry-title">Classification of banded gerbes</span>
+        </a></li>
+<li><a href="#rem:Torsors_As_Maps_To_Delooping" data-section-target="rem:Torsors_As_Maps_To_Delooping">
+          <span class="context-entry-heading">Remark 3.51</span>
+          <span class="context-entry-title">Torsors as pointed maps</span>
+        </a></li>
+<li><a href="#def:Cohomology_With_Coefficients" data-section-target="def:Cohomology_With_Coefficients">
+          <span class="context-entry-heading">Definition 3.52</span>
+          <span class="context-entry-title">Cohomology with coefficients</span>
+        </a></li>
+      </ol>
+    </nav>
+  </section></div>
+  </aside>
+  <aside class="publication-fragment-notice" id="rem:Torsors_As_Pointed_Maps"><strong>Retired fragment.</strong> The source remark received a more precise typed label. It now appears at <a href="./#rem:Torsors_As_Maps_To_Delooping">this address</a>.</aside>
+</main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

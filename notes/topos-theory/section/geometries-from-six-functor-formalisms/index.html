@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Geometries from six-functor formalisms | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/section/geometries-from-six-functor-formalisms/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+<style>
+    .publication-fragment-notice { margin: 2rem 0; padding: 1rem; border: 1px solid #b6aa91; background: #faf7ef; }
+    .publication-fragment-notice:not(:target) { display: none; }
+  </style>
+  <script>
+    (() => {
+      const targets = {"ex:Admissible_Maps_D_Topology":"./#def:Representably_Admissible_Sheaf_Map"};
+      const fragment = decodeURIComponent(location.hash.slice(1));
+      if (targets[fragment]) location.replace(targets[fragment]);
+    })();
+  </script>
+</head>
+<body class="section-page has-context-nav" data-record-id="geometries-from-six-functor-formalisms" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">·</span> Section 7.4</p>
+      <h1>Geometries from six-functor formalisms</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page">
+      
+<h2 id="sec:Six_Functor_Formalisms"><span>7.4.</span> Geometries from six-functor formalisms</h2>
+<p>Six-functor formalisms, developed systematically in <span class="citation-group">[Scholze <a class="citation" href="#bib-Scholze_Six_Functors">2025</a>]</span>, provide a categorification of classical cohomology theories. The key insight relevant to our discussion is that every six-functor formalism on a category with an admissibility structure canonically determines a topology, the <span class="math-inline">\(D\)</span>-topology, and hence gives rise to a geometric site and a fractured topos.</p>
+<h3 id="subsec:D_Topology"><span>7.4.1.</span> The D-topology</h3>
+
+<section class="theorem definition" id="def:Presentable_Six_Functor_Formalism">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/presentable-six-functor-formalism/index.html">Definition 7.25.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> be a category with finite limits and let <span class="math-inline">\(C^{\ad}\subseteq C\)</span> be an admissibility structure. A <em>presentable six-functor formalism</em> is a lax symmetric monoidal functor</p>
+<div class="math-display">\[D\colon \Span(C,C^{\ad}) \longrightarrow \Pr.\]</div></div>
+</section>
+
+<section class="theorem definition" id="def:D_Topology">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/d-topology/index.html">Definition 7.26.</a></span></p>
+  <div class="theorem-statement"><p>A family <span class="math-inline">\((X_i\to X)_i\)</span> in <span class="math-inline">\(C^{\ad}\)</span> is a <em><span class="math-inline">\(D\)</span>-cover</em> if it is a covering family for the canonical topology on <span class="math-inline">\(C\)</span> and satisfies universal <span class="math-inline">\(!\)</span>-descent: after every base change <span class="math-inline">\(Y\to X\)</span>, the resulting family <span class="math-inline">\((X_i\times_XY\to Y)_i\)</span> satisfies descent for <span class="math-inline">\(D^!\)</span>. The <em><span class="math-inline">\(D\)</span>-topology</em> <span class="math-inline">\(\tau_D\)</span> is the topology whose covering families are the <span class="math-inline">\(D\)</span>-covers.</p></div>
+</section>
+
+<section class="theorem proposition" id="prop:D_Topology_Geometric_Site">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/d-topology-gives-geometric-site/index.html">Proposition 7.27.</a></span></p>
+  <div class="theorem-statement"><p>The triple <span class="math-inline">\((C,C^{\ad},\tau_D)\)</span> is a geometric site.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:D_Topology_Geometric_Site-main" data-owner-entry="d-topology-gives-geometric-site" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">The canonical-cover condition is stable under base change and composition, and universal <span class="math-inline">\(!\)</span>-descent has the same stability properties. Since every <span class="math-inline">\(D\)</span>-cover consists of admissible morphisms, the resulting topology is compatible with <span class="math-inline">\(C^{\ad}\)</span>. See <span class="citation-group">[Scholze <a class="citation" href="#bib-Scholze_Six_Functors">2025, Definition 5.13</a>]</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem corollary" id="cor:D_Topology_Fractured_Topos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/d-topology-gives-fractured-topos/index.html">Corollary 7.28.</a></span></p>
+  <div class="theorem-statement"><p>The functor</p>
+<div class="math-display">\[\Shv_{\tau_D^{\ad}}(C^{\ad})\longrightarrow \Shv_{\tau_D}(C)\]</div>
+<p>exhibits <span class="math-inline">\(\Shv_{\tau_D}(C)\)</span> as a complete fractured topos. In particular, it determines a geometric admissibility structure <span class="math-inline">\(\Shv_{\tau_D}(C)^{\ad}\)</span>.</p></div>
+</section>
+
+<h3 id="subsec:Six_Functor_Passage_To_Sheaves"><span>7.4.2.</span> Passage to sheaves</h3>
+<p>Set <span class="math-inline">\(\widetilde C:=\Shv_{\tau_D}(C)\)</span>. There are several natural candidates for the class of admissible morphisms in <span class="math-inline">\(\widetilde C\)</span>, and they should not be identified without argument. We begin with the class directly controlled by the extension theorem.</p>
+<section class="theorem definition" id="def:Representably_Admissible_Sheaf_Map">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/admissible-maps-for-d-topology/index.html">Definition 7.29.</a></span></p>
+  <div class="theorem-statement"><p>A map <span class="math-inline">\(f\colon Y\to X\)</span> in <span class="math-inline">\(\widetilde C\)</span> is <em>representably admissible</em> if, for every map <span class="math-inline">\(h_U\to X\)</span> from a representable sheaf, the pullback <span class="math-inline">\(Y\times_Xh_U\)</span> is representable and the induced morphism to <span class="math-inline">\(h_U\)</span> comes from a morphism in <span class="math-inline">\(C^{\ad}\)</span>. We write <span class="math-inline">\(\widetilde C^{\ad}_0\)</span> for the resulting admissibility structure.</p></div>
+</section>
+
+<section class="theorem proposition" id="prop:Six_Functor_Extension">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/six-functor-extension/index.html">Proposition 7.30.</a></span> (Mann–Scholze)</p>
+  <div class="theorem-statement"><p>The six-functor formalism <span class="math-inline">\(D\)</span> extends uniquely from <span class="math-inline">\((C,C^{\ad})\)</span> to <span class="math-inline">\((\widetilde C,\widetilde C^{\ad}_0)\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Six_Functor_Extension-main" data-owner-entry="six-functor-extension" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">See <span class="citation-group">[Mann <a class="citation" href="#bib-mann2022sixFunctor">2022, Proposition A.5.16</a>]</span> and <span class="citation-group">[Scholze <a class="citation" href="#bib-Scholze_Six_Functors">2025, Proposition 5.16</a>]</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem remark" id="rmk:Stronger_Six_Functor_Extension_Lecture">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/scope-of-the-six-functor-extension/index.html">Remark 7.31.</a></span></p>
+  <div class="theorem-statement"><p>Marc stated in the lectures that <span class="math-inline">\(D\)</span> extends to the entire fracture-derived admissibility structure <span class="math-inline">\(\Shv_{\tau_D}(C)^{\ad}\)</span> of <a href="#cor:D_Topology_Fractured_Topos">Corollary 7.28</a>. No proof was given. The cited results establish the extension first for the representably admissible class <span class="math-inline">\(\widetilde C_0^{\ad}\)</span> and then for Scholze's minimal local enlargement <span class="math-inline">\(\widetilde C_D^{\ad}\)</span>; they do not identify either class with <span class="math-inline">\(\Shv_{\tau_D}(C)^{\ad}\)</span>.</p></div>
+</section>
+<p>Scholze constructs the further enlargement mentioned in the remark. More precisely, there is a minimal class <span class="math-inline">\(\widetilde C_D^{\ad}\)</span> containing <span class="math-inline">\(\widetilde C_0^{\ad}\)</span> which is stable under disjoint unions, local on the target, local on the source, and tame. The formalism extends to <span class="math-inline">\((\widetilde C,\widetilde C_D^{\ad})\)</span>; see <span class="citation-group">[Scholze <a class="citation" href="#bib-Scholze_Six_Functors">2025, Theorem 5.19</a>]</span>.</p>
+<h3 id="subsec:Further_Congruence_Localization"><span>7.4.3.</span> A further congruence localization</h3>
+<p>The <span class="math-inline">\(D\)</span>-topology imposes descent along covering families. One may localize further by all morphisms which are universally invisible to <span class="math-inline">\(D^!\)</span>. This second step need not arise from a Grothendieck topology.</p>
+<section class="theorem construction" id="con:Sigma_D_Localization">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/sigma-d-localization/index.html">Construction 7.32.</a></span></p>
+  <div class="theorem-statement"><p>Consider the functor</p>
+<div class="math-display">\[D^!\colon \Shv_{\tau_D^{\ad}}(C^{\ad})\catop\longrightarrow\Cat.\]</div>
+<p>Let <span class="math-inline">\(\Sigma_D\)</span> be the largest congruence contained in the inverse image of the isomorphisms under this functor. More explicitly,</p>
+<div class="math-display">\[\Sigma_D=\{f\mid \text{every base change of every $\Delta^nf$ is a $D^!$-isomorphism}\}.\]</div>
+<p>Every morphism of <span class="math-inline">\(\Sigma_D\)</span> is <span class="math-inline">\(\infty\)</span>-connected: the condition for <span class="math-inline">\(n=0\)</span> implies that every base change is a <span class="math-inline">\(D\)</span>-cover and hence an effective epimorphism, and the same applies to every diagonal.</p>
+<p>Assume that <span class="math-inline">\(\Sigma_D\)</span> has small generation, so that it defines an accessible left exact localization. We define <span class="math-inline">\(\Shv_{\tau_D}^+(C)\)</span> by the pullback square</p>
+<figure class="diagram"><img src="diagrams/tikzcd-1cf6abf82e22.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>where the bottom functor is the fully faithful right adjoint of the localization. The top functor is likewise the fully faithful right adjoint of a left exact localization. The left vertical functor admits a left adjoint, and the pair</p>
+<div class="math-display">\[\left(\Shv_{\tau_D}^+(C),\Shv_{\tau_D^{\ad}}(C^{\ad})[\Sigma_D^{-1}]\right)\]</div>
+<p>is a fractured topos.</p></div>
+</section>
+
+<section class="theorem remark" id="rmk:Fractured_Localization">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/fractured-localization/index.html">Remark 7.33.</a></span></p>
+  <div class="theorem-statement"><p>There is a general formalism of <em>fractured localization</em>, in which a compatible localization of the corporeal topos induces a localization of the ambient topos and a new fracture. The preceding construction is an instance of this formalism.</p></div>
+</section>
+
+<section class="theorem lemma" id="lem:Six_Functor_Descends">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/six-functor-formalism-descends/index.html">Lemma 7.34.</a></span></p>
+  <div class="theorem-statement"><p>The six-functor formalism descends further to a functor</p>
+<div class="math-display">\[D\colon \Span\left(\Shv_{\tau_D}^+(C), \Shv_{\tau_D^{\ad}}(C^{\ad})[\Sigma^{-1}_D]\right) \to \PrL.\]</div></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Six_Functor_Descends-main" data-owner-entry="six-functor-formalism-descends" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">By construction, <span class="math-inline">\(D^!\)</span> inverts <span class="math-inline">\(\Sigma_D\)</span>. The span formalism is self-dual along admissible morphisms: the duality exchanges the pullback and lower-shriek operations. Hence every universal <span class="math-inline">\(D^!\)</span>-isomorphism is also a universal <span class="math-inline">\(D^*\)</span>-isomorphism. The four operations therefore descend through the two localizations, and the Beck–Chevalley and projection-formula transformations descend with them.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem remark" id="rmk:D_Shriek_Iso_Implies_D_Star_Iso">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/d-shriek-isomorphisms-imply-d-star-isomorphisms/index.html">Remark 7.35.</a></span></p>
+  <div class="theorem-statement"><p>The self-duality used in the proof is also the reason that universal <span class="math-inline">\(!\)</span>-descent implies universal <span class="math-inline">\(*\)</span>-descent. It is important here that descent is required after every base change: this makes the class compatible with composition of spans.</p></div>
+</section>
+<section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-Scholze_Six_Functors">Peter Scholze. <em>Six-Functor Formalisms</em>. 2025.</li>
+<li id="bib-mann2022sixFunctor">Lucas Mann. <em>A $p$-Adic 6-Functor Formalism in Rigid-Analytic Geometry</em>. arXiv preprint arXiv:2206.02022. 2022.</li></ol></section>
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+      <a class="context-step-control" rel="prev" href="../fractured-topoi/index.html" aria-label="Previous section: Fractured topoi" title="Previous section: Fractured topoi"><span aria-hidden="true">←</span></a>
+      <a class="context-step-control" rel="next" href="../analytic-stacks/index.html" aria-label="Next section: Analytic stacks" title="Next section: Analytic stacks"><span aria-hidden="true">→</span></a>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../chapter/introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../../chapter/foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../../chapter/truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../../chapter/topoi-logoi/index.html">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../../chapter/modalities/index.html">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../../chapter/topics-in-topos-theory/index.html">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../../chapter/geometry/index.html" aria-current="location">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../../chapter/factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../../chapter/limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../schemes/index.html">
+          <span class="context-entry-heading">Section 7.1</span>
+          <span class="context-entry-title">Schemes</span>
+        </a></li>
+<li><a href="../geometries/index.html">
+          <span class="context-entry-heading">Section 7.2</span>
+          <span class="context-entry-title">Geometries</span>
+        </a></li>
+<li><a href="../fractured-topoi/index.html">
+          <span class="context-entry-heading">Section 7.3</span>
+          <span class="context-entry-title">Fractured topoi</span>
+        </a></li>
+<li><a href="../geometries-from-six-functor-formalisms/index.html" aria-current="page">
+          <span class="context-entry-heading">Section 7.4</span>
+          <span class="context-entry-title">Geometries from six-functor formalisms</span>
+        </a></li>
+<li><a href="../analytic-stacks/index.html">
+          <span class="context-entry-heading">Section 7.5</span>
+          <span class="context-entry-title">Analytic stacks</span>
+        </a></li>
+<li><a href="../gestalten/index.html">
+          <span class="context-entry-heading">Section 7.6</span>
+          <span class="context-entry-title">Gestalten</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <p class="context-nav-kicker">Section 7.4</p>
+      <p class="context-nav-description">Geometries from six-functor formalisms</p>
+      <ol class="context-entry-list">
+        <li><a href="#def:Presentable_Six_Functor_Formalism" data-section-target="def:Presentable_Six_Functor_Formalism">
+          <span class="context-entry-heading">Definition 7.25</span>
+          <span class="context-entry-title">Presentable six-functor formalism</span>
+        </a></li>
+<li><a href="#def:D_Topology" data-section-target="def:D_Topology">
+          <span class="context-entry-heading">Definition 7.26</span>
+          <span class="context-entry-title">The D-topology</span>
+        </a></li>
+<li><a href="#prop:D_Topology_Geometric_Site" data-section-target="prop:D_Topology_Geometric_Site">
+          <span class="context-entry-heading">Proposition 7.27</span>
+          <span class="context-entry-title">The D-topology gives a geometric site</span>
+        </a></li>
+<li><a href="#cor:D_Topology_Fractured_Topos" data-section-target="cor:D_Topology_Fractured_Topos">
+          <span class="context-entry-heading">Corollary 7.28</span>
+          <span class="context-entry-title">The D-topology gives a fractured topos</span>
+        </a></li>
+<li><a href="#def:Representably_Admissible_Sheaf_Map" data-section-target="def:Representably_Admissible_Sheaf_Map">
+          <span class="context-entry-heading">Definition 7.29</span>
+          <span class="context-entry-title">Representably admissible sheaf maps</span>
+        </a></li>
+<li><a href="#prop:Six_Functor_Extension" data-section-target="prop:Six_Functor_Extension">
+          <span class="context-entry-heading">Proposition 7.30</span>
+          <span class="context-entry-title">Extension of a six-functor formalism</span>
+        </a></li>
+<li><a href="#rmk:Stronger_Six_Functor_Extension_Lecture" data-section-target="rmk:Stronger_Six_Functor_Extension_Lecture">
+          <span class="context-entry-heading">Remark 7.31</span>
+          <span class="context-entry-title">Scope of the six-functor extension</span>
+        </a></li>
+<li><a href="#con:Sigma_D_Localization" data-section-target="con:Sigma_D_Localization">
+          <span class="context-entry-heading">Construction 7.32</span>
+          <span class="context-entry-title">The Sigma D localization</span>
+        </a></li>
+<li><a href="#rmk:Fractured_Localization" data-section-target="rmk:Fractured_Localization">
+          <span class="context-entry-heading">Remark 7.33</span>
+          <span class="context-entry-title">Fractured localization</span>
+        </a></li>
+<li><a href="#lem:Six_Functor_Descends" data-section-target="lem:Six_Functor_Descends">
+          <span class="context-entry-heading">Lemma 7.34</span>
+          <span class="context-entry-title">The six-functor formalism descends</span>
+        </a></li>
+<li><a href="#rmk:D_Shriek_Iso_Implies_D_Star_Iso" data-section-target="rmk:D_Shriek_Iso_Implies_D_Star_Iso">
+          <span class="context-entry-heading">Remark 7.35</span>
+          <span class="context-entry-title">D-shriek isomorphisms imply D-star isomorphisms</span>
+        </a></li>
+      </ol>
+    </nav>
+  </section></div>
+  </aside>
+  <aside class="publication-fragment-notice" id="ex:Admissible_Maps_D_Topology"><strong>Retired fragment.</strong> The former example was replaced by the precise definition of representably admissible maps. It now appears at <a href="./#def:Representably_Admissible_Sheaf_Map">this address</a>.</aside>
+</main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

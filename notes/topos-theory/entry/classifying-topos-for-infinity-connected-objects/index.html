@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The classifying topos for infinity-connected objects | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/entry/classifying-topos-for-infinity-connected-objects/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="entry-page has-context-nav" data-record-id="classifying-topos-for-infinity-connected-objects" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">›</span> <a href="../../section/goodwillie-tower/index.html">Section 5.7: The Goodwillie tower of a topos</a></p>
+      <h1>The classifying topos for infinity-connected objects</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Nearby entries
+    </button>
+    <article class="notes-page">
+      
+<section class="theorem lemma" id="lem:Classifying_Topos_For_Infinity_Connected_Objects">
+  <p class="theorem-heading"><span>Lemma 5.93.</span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C = \An^{\fin}\)</span> be the category of finite animae. Then the inclusion <span class="math-inline">\(i\colon \An^{\fin} \hookrightarrow \An\)</span> defines an <span class="math-inline">\(\infty\)</span>-connected object in the topos <span class="math-inline">\(\Shv(\An^{\fin,\op})\)</span>. Moreover, it exhibits <span class="math-inline">\(\Shv(\An^{\fin,\op})\)</span> as the classifying topos for <span class="math-inline">\(\infty\)</span>-connected objects: for every topos <span class="math-inline">\(T\)</span>, evaluation at <span class="math-inline">\(i\)</span> induces an equivalence of categories</p>
+<div class="math-display">\[\Geom(T,\Shv(\An^{\fin,\op})) \iso T^{\geq \infty}, \qquad \varphi \mapsto \varphi^*(i).\]</div></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Classifying_Topos_For_Infinity_Connected_Objects-main" data-owner-entry="classifying-topos-for-infinity-connected-objects" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Every object <span class="math-inline">\(X \in T\)</span> determines a morphism of logoi <span class="math-inline">\(\PSh(\An^{\fin,\op}) \to T\)</span> given on generators by <span class="math-inline">\(A \mapsto X^A\)</span>. The object <span class="math-inline">\(X\)</span> is <span class="math-inline">\(\infty\)</span>-connected if and only if, for every morphism <span class="math-inline">\(f\colon A\to B\)</span> of finite animae, the induced map <div class="math-display">\[X^B\longrightarrow X^A\]</div> is an effective epimorphism. One direction follows by building finite animae from finitely many cells and using stability of effective epimorphisms under base change and composition. Conversely, the maps between finite spheres include the tests asserting that every iterated diagonal of <span class="math-inline">\(X\to *\)</span> is an effective epimorphism. This criterion is also recorded in <span class="citation-group">[Anel et al. <a class="citation" href="#bib-ABFJ_Acyclic_Product">2025, Example 2.1.16(g)</a>]</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>Let <span class="math-inline">\(K\)</span> be the kernel of <span class="math-inline">\(\colim\colon\Fun(\An^{\fin},\An)\to\An\)</span>. By <a href="../monogenic-parts-via-images/index.html#lem:Monogenic_Part_Via_Images">Lemma 5.56</a>, its monogenic part is generated by the monomorphisms <span class="math-inline">\(\im(y(f))\)</span> for maps <span class="math-inline">\(f\)</span> of finite animae. A morphism of logoi preserves epi–mono factorizations, so the morphism classified by <span class="math-inline">\(X\)</span> sends <span class="math-inline">\(\im(y(f))\)</span> to an isomorphism if and only if it sends <span class="math-inline">\(y(f)\)</span> to an effective epimorphism, which is precisely the condition above. Thus the free morphism classified by <span class="math-inline">\(X\)</span> factors through <span class="math-inline">\(\Fun(\An^{\fin},\An)/K^{\mono}\)</span> exactly when <span class="math-inline">\(X\)</span> is <span class="math-inline">\(\infty\)</span>-connected. The universal property of the free logos therefore restricts from <div class="math-display">\[\Fun_{\bbLog}(\PSh(\An^{\fin,\op}), T) \iso T, \qquad \varphi \mapsto \varphi(i)\]</div> to the desired equivalence <div class="math-display">\[\Fun_{\bbLog}(\Shv(\An^{\fin,\op}), T) \iso T^{\geq \infty}.\]</div><span class="qed" aria-label="End of proof"></span></div>
+</details>
+<section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-ABFJ_Acyclic_Product">Mathieu Anel, Georg Biedermann, Eric Finster, André Joyal. <em>Left-exact localizations of $\infty$-topoi III: The acyclic product</em>. 2025.</li></ol></section>
+    </article>
+      <aside class="context-nav" id="context-navigation" data-context-nav aria-label="Nearby entries">
+      <button class="context-nav-collapse" type="button" data-context-nav-collapse data-collapsed-label="Nearby entries" aria-controls="context-navigation" aria-expanded="true" aria-label="Hide Nearby entries">
+      <span aria-hidden="true">›</span>
+    </button>
+      <p class="context-chapter-link"><a href="../../chapter/modalities/index.html">Modalities</a></p>
+      <p class="context-nav-kicker">Section 5.7</p>
+      <h2><a href="../../section/goodwillie-tower/index.html">The Goodwillie tower of a topos</a></h2>
+      <p class="context-nav-description"><a href="../../section/goodwillie-tower/index.html#lem:Classifying_Topos_For_Infinity_Connected_Objects">Read this result in the continuous section</a></p>
+      <ol class="context-entry-list context-entry-list-nearby">
+        <li><a href="../zero-excisive-functors-are-constant/index.html">
+          <span class="context-entry-heading">Remark 5.91</span>
+          <span class="context-entry-title">Zero-excisive functors are constant</span>
+        </a></li>
+<li><a href="../goodwillie-tower-from-an-adic-filtration/index.html">
+          <span class="context-entry-heading">Theorem 5.92</span>
+          <span class="context-entry-title">The Goodwillie tower from an adic filtration</span>
+        </a></li>
+<li><a href="#lem:Classifying_Topos_For_Infinity_Connected_Objects" aria-current="page">
+          <span class="context-entry-heading">Lemma 5.93</span>
+          <span class="context-entry-title">The classifying topos for infinity-connected objects</span>
+        </a></li>
+<li><a href="../classifying-topos-for-pointed-infinity-connected-objects/index.html">
+          <span class="context-entry-heading">Remark 5.94</span>
+          <span class="context-entry-title">The classifying topos for pointed infinity-connected objects</span>
+        </a></li>
+<li><a href="../linear-excisive-functors-as-parametrized-spectra/index.html">
+          <span class="context-entry-heading">Proposition 5.95</span>
+          <span class="context-entry-title">Linear excisive functors as parametrized spectra</span>
+        </a></li>
+      </ol>
+      <nav class="context-step-links" aria-label="Previous and next entries"><a rel="prev" href="../goodwillie-tower-from-an-adic-filtration/index.html"><span>Previous</span>The Goodwillie tower from an adic filtration</a>
+<a rel="next" href="../classifying-topos-for-pointed-infinity-connected-objects/index.html"><span>Next</span>The classifying topos for pointed infinity-connected objects</a></nav>
+    </aside>
+  </main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

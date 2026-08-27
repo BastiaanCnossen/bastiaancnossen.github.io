@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Appendix B: Limits and colimits in categories of sections | Higher Topos Theory</title>
+  <meta name="description" content="Pointwise limits and colimits in categories of sections of cartesian and cocartesian fibrations.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/chapter/limits-and-colimits-in-categories-of-sections/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: { inlineMath: [["\\(", "\\)"]], displayMath: [["\\[", "\\]"]], macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"} },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+<style>
+    .publication-fragment-notice { margin: 2rem 0; padding: 1rem; border: 1px solid #b6aa91; background: #faf7ef; }
+    .publication-fragment-notice:not(:target) { display: none; }
+  </style>
+  <script>
+    (() => {
+      const targets = {"cor:Limits_In_Categories_Of_Cartesian_Sections":"./#prop:Pointwise_Limits_And_Colimits_In_Sections","proof-cor:Limits_In_Categories_Of_Cartesian_Sections-main":"./#proof-prop:Pointwise_Limits_And_Colimits_In_Sections-main","proof-prop:Colimits_In_Categories_Of_Sections-main":"./#proof-prop:Pointwise_Limits_And_Colimits_In_Sections-main","prop:Colimits_In_Categories_Of_Sections":"./#prop:Pointwise_Limits_And_Colimits_In_Sections","rmk:Limits_In_Categories_Of_Sections":"./#prop:Pointwise_Limits_And_Colimits_In_Sections"};
+      const fragment = decodeURIComponent(location.hash.slice(1));
+      if (targets[fragment]) location.replace(targets[fragment]);
+    })();
+  </script>
+</head>
+<body class="work-page chapter-page has-context-nav">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> · Appendix B</p>
+      <h1>Limits and colimits in categories of sections</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page chapter-landing">
+      <section class="chapter-introduction" id="chap:Limits_And_Colimits_Of_Sections" data-source-label="chap:Limits_And_Colimits_Of_Sections" aria-label="Appendix introduction">
+        <p>A category of sections is assembled from the fibers of a cartesian or cocartesian fibration. Its limits and colimits are therefore often computed fiberwise, but the required hypotheses depend on the variance. Colimits of sections of a cocartesian fibration require cocartesian transport to preserve the colimits in question, whereas limits require no preservation hypothesis. Dually, limits of sections of a cartesian fibration require preservation by cartesian transport, whereas colimits do not. The following proposition records all four cases. It is used in the analysis of filtered limits of topoi in <a href="../../section/limits-and-colimits-of-topoi/index.html">Section 4.3</a>.</p>
+<section class="theorem proposition" id="prop:Pointwise_Limits_And_Colimits_In_Sections">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/pointwise-limits-and-colimits-in-sections/index.html">Proposition B.1.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(K\)</span> and <span class="math-inline">\(I\)</span> be categories, let <span class="math-inline">\(F\colon I\to\Cat\)</span>, and let <span class="math-inline">\(G\colon I\catop\to\Cat\)</span>. Write</p>
+<div class="math-display">\[p\colon \int^{\cc}_I F\longrightarrow I
+		\qquadtext{and}\qquad
+		q\colon \int^{\ct}_I G\longrightarrow I\]</div>
+<p>for the associated cocartesian and cartesian fibrations, respectively.</p>
+<ol><li><p>Suppose that every <span class="math-inline">\(F(i)\)</span> admits <span class="math-inline">\(K\)</span>-indexed colimits and that every cocartesian transport functor <span class="math-inline">\(\alpha_!\colon F(i)\to F(j)\)</span> preserves them. Then <span class="math-inline">\(\Gamma_I(p)\)</span> admits <span class="math-inline">\(K\)</span>-indexed colimits.</p></li><li><p>Suppose that every <span class="math-inline">\(F(i)\)</span> admits <span class="math-inline">\(K\)</span>-indexed limits. Then <span class="math-inline">\(\Gamma_I(p)\)</span> admits <span class="math-inline">\(K\)</span>-indexed limits.</p></li><li><p>Suppose that every <span class="math-inline">\(G(i)\)</span> admits <span class="math-inline">\(K\)</span>-indexed limits and that every cartesian transport functor <span class="math-inline">\(\alpha^*\colon G(j)\to G(i)\)</span> preserves them. Then <span class="math-inline">\(\Gamma_I(q)\)</span> admits <span class="math-inline">\(K\)</span>-indexed limits.</p></li><li><p>Suppose that every <span class="math-inline">\(G(i)\)</span> admits <span class="math-inline">\(K\)</span>-indexed colimits. Then <span class="math-inline">\(\Gamma_I(q)\)</span> admits <span class="math-inline">\(K\)</span>-indexed colimits.</p></li></ol>
+<p>In every case, the indicated limits or colimits are computed pointwise. In particular, all evaluation functors preserve them.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Pointwise_Limits_And_Colimits_In_Sections-main" data-owner-entry="pointwise-limits-and-colimits-in-sections" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">We first prove (1). Consider the full subcategory of <span class="math-inline">\(\Cat_{/I}\)</span> spanned by those functors <span class="math-inline">\(u\colon J\to I\)</span> for which the category of sections of <span class="math-inline">\(u^*p\)</span> admits <span class="math-inline">\(K\)</span>-indexed colimits computed pointwise. This subcategory is closed under colimits. Indeed, if <span class="math-inline">\(J\simeq\colim_aJ_a\)</span> in <span class="math-inline">\(\Cat_{/I}\)</span>, then <div class="math-display">\[\Fun_{/I}\left(J,\int_I^{\cc}F\right)
+		\simeq
+		\lim_a\Fun_{/I}\left(J_a,\int_I^{\cc}F\right).\]</div> The restriction functors in this limit preserve pointwise colimits, so if all the categories on the right admit <span class="math-inline">\(K\)</span>-indexed colimits computed pointwise, then so does the category on the left.<div class="proof-paragraph-break" aria-hidden="true"></div>Every category is a colimit of simplices, and each <span class="math-inline">\([n]\)</span> is an iterated pushout of copies of <span class="math-inline">\([1]\)</span> along <span class="math-inline">\([0]\)</span>. It therefore suffices to consider maps <span class="math-inline">\([0]\to I\)</span> and <span class="math-inline">\([1]\to I\)</span>. The first case is precisely the assumption that each fiber admits <span class="math-inline">\(K\)</span>-indexed colimits. A map <span class="math-inline">\([1]\to I\)</span> classifies a morphism <span class="math-inline">\(\alpha\colon i\to j\)</span>. The category of sections of the resulting cocartesian fibration sits in a pullback square <figure class="diagram"><img src="diagrams/tikzcd-8ad6872dd608.svg" alt="Commutative diagram generated from the LaTeX source"></figure> The categories in the other three corners admit <span class="math-inline">\(K\)</span>-indexed colimits, the source evaluation <span class="math-inline">\(s\)</span> preserves them, and <span class="math-inline">\(\alpha_!\)</span> preserves them by assumption. Hence the pullback admits <span class="math-inline">\(K\)</span>-indexed colimits computed by the two projections. This proves (1).<div class="proof-paragraph-break" aria-hidden="true"></div>Statement (4) is <span class="citation-group">[Lurie <a class="citation" href="#bib-lurie2009HTT">2009, Proposition 5.1.2.2</a>]</span>, applied to the cartesian fibration <span class="math-inline">\(q\)</span>. Passing to opposite categories and using <span class="math-inline">\(K\catop\)</span> as the indexing category gives (2): the functor <span class="math-inline">\(p\catop\colon (\int_I^{\cc}F)\catop\to I\catop\)</span> is a cartesian fibration with fibers <span class="math-inline">\(F(i)\catop\)</span>, and <div class="math-display">\[\Gamma_I(p)\catop\simeq\Gamma_{I\catop}(p\catop).\]</div> Finally, applying (1), with indexing category <span class="math-inline">\(K\catop\)</span>, to the cocartesian fibration <span class="math-inline">\(q\catop\colon (\int_I^{\ct}G)\catop\to I\catop\)</span> proves (3), because the opposite of a cartesian transport functor <span class="math-inline">\(\alpha^*\colon G(j)\to G(i)\)</span> preserves <span class="math-inline">\(K\catop\)</span>-indexed colimits precisely when <span class="math-inline">\(\alpha^*\)</span> preserves <span class="math-inline">\(K\)</span>-indexed limits. The pointwise descriptions in these arguments also show that all evaluation functors preserve the indicated limits or colimits.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>\addtocontents{toc}{\vskip 10pt}</p><section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-lurie2009HTT">Jacob Lurie. <em>Higher topos theory</em>. Ann. Math. Stud. 170, Princeton, NJ: Princeton University Press. 2009.</li></ol></section>
+      </section>
+      
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Chapter navigation">
+    <nav class="context-step-controls" aria-label="Previous and next chapters">
+      <a class="context-step-control" rel="prev" href="../factorization-systems-and-saturated-classes/index.html" aria-label="Previous chapter: Factorization systems and saturated classes" title="Previous chapter: Factorization systems and saturated classes"><span aria-hidden="true">←</span></a>
+      <span class="context-step-control" aria-disabled="true"><span aria-hidden="true">→</span></span>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../topoi-logoi/index.html">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../modalities/index.html">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../topics-in-topos-theory/index.html">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../geometry/index.html">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../limits-and-colimits-in-categories-of-sections/index.html" aria-current="page">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section></div>
+  </aside>
+  <aside class="publication-fragment-notice" id="cor:Limits_In_Categories_Of_Cartesian_Sections"><strong>Retired fragment.</strong> The result was consolidated into the pointwise limits and colimits proposition. It now appears at <a href="./#prop:Pointwise_Limits_And_Colimits_In_Sections">this address</a>.</aside>
+<aside class="publication-fragment-notice" id="proof-cor:Limits_In_Categories_Of_Cartesian_Sections-main"><strong>Retired fragment.</strong> The proof now belongs to the consolidated proposition. It now appears at <a href="./#proof-prop:Pointwise_Limits_And_Colimits_In_Sections-main">this address</a>.</aside>
+<aside class="publication-fragment-notice" id="proof-prop:Colimits_In_Categories_Of_Sections-main"><strong>Retired fragment.</strong> The proof now belongs to the consolidated proposition. It now appears at <a href="./#proof-prop:Pointwise_Limits_And_Colimits_In_Sections-main">this address</a>.</aside>
+<aside class="publication-fragment-notice" id="prop:Colimits_In_Categories_Of_Sections"><strong>Retired fragment.</strong> The result was consolidated into the pointwise limits and colimits proposition. It now appears at <a href="./#prop:Pointwise_Limits_And_Colimits_In_Sections">this address</a>.</aside>
+<aside class="publication-fragment-notice" id="rmk:Limits_In_Categories_Of_Sections"><strong>Retired fragment.</strong> The remark was incorporated into the consolidated proposition. It now appears at <a href="./#prop:Pointwise_Limits_And_Colimits_In_Sections">this address</a>.</aside>
+</main>
+  <footer><p class="source-note">This static web edition is generated from the same LaTeX source as the PDFs.</p></footer>
+</body>
+</html>

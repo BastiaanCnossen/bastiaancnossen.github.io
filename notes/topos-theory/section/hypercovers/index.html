@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hypercovers | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/section/hypercovers/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="section-page has-context-nav" data-record-id="hypercovers" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">·</span> Section 6.3</p>
+      <h1>Hypercovers</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page">
+      
+<h2 id="sec:Hypercovers"><span>6.3.</span> Hypercovers</h2>
+<p>In <span class="cross-reference-unlinked">Section 3.4</span>, we defined a topos <span class="math-inline">\(T\)</span> to be <em>hypercomplete</em> if every <span class="math-inline">\(\infty\)</span>-connected morphism is an isomorphism, and showed that the <span class="math-inline">\(\infty\)</span>-connected and <span class="math-inline">\(\infty\)</span>-truncated morphisms form a factorization system. In this section, we give an alternative characterization of hypercompleteness in terms of <em>hypercovers</em>.</p>
+<p>Recall that an effective epimorphism <span class="math-inline">\(f\colon X \twoheadrightarrow Y\)</span> in a topos <span class="math-inline">\(T\)</span> may be thought of as a <em>cover</em> of <span class="math-inline">\(Y\)</span>. The Čech nerve <span class="math-inline">\(\check{C}(f)\)</span> encodes all the iterated self-intersections <span class="math-inline">\(X^{\times_Y^n}\)</span> of <span class="math-inline">\(X\)</span> over <span class="math-inline">\(Y\)</span>, and since <span class="math-inline">\(f\)</span> is an effective epimorphism this expresses <span class="math-inline">\(Y\)</span> as a colimit of these iterated self-intersections.</p>
+<p>A <em>hypercover</em> allows these intersections to be refined coherently in every simplicial degree. It begins with an effective epimorphism <span class="math-inline">\(U_0\twoheadrightarrow Y\)</span>; the object <span class="math-inline">\(U_1\)</span> covers the pairwise intersections, while in degree <span class="math-inline">\(n\)</span> the object <span class="math-inline">\(U_n\)</span> covers the object of compatible boundary data determined by the preceding degrees. We will show that the realization of any hypercover of <span class="math-inline">\(Y\)</span> maps <span class="math-inline">\(\infty\)</span>-connectedly to <span class="math-inline">\(Y\)</span>. Thus every hypercover is effective in a hypercomplete topos, and the converse holds as well:</p>
+<section class="theorem theorem" id="thm:Hypercomplete_Iff_Hypercovers_Effective">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/hypercomplete-iff-hypercovers-effective/index.html">Theorem 6.40.</a></span> (<span class="citation-group">[Lurie <a class="citation" href="#bib-lurie2009HTT">2009, Theorem 6.5.3.12</a>]</span>)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a topos. The following conditions are equivalent:</p>
+<ol><li><p>The topos <span class="math-inline">\(T\)</span> is hypercomplete.</p></li><li><p>For every object <span class="math-inline">\(X \in T\)</span>, every hypercover of <span class="math-inline">\(X\)</span> is effective.</p></li></ol></div>
+</section>
+<p>We start by defining hypercovers and establishing their basic formal properties. We then prove the connectivity statement which relates their effectiveness to hypercompleteness.</p>
+<h3 id="subsec:Hypercovers_Matching_Objects"><span>6.3.1.</span> Hypercovers and matching objects</h3>
+
+<section class="theorem notation" id="not:Skeleta_And_Coskeleta">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/skeleta-and-coskeleta/index.html">Notation 6.41.</a></span></p>
+  <div class="theorem-statement"><p>For each natural number <span class="math-inline">\(n \geq 0\)</span>, let <span class="math-inline">\(\simp^{\leq n}\)</span> denote the full subcategory of <span class="math-inline">\(\simp\)</span> spanned by the objects <span class="math-inline">\(\{[0], [1], \dots, [n]\}\)</span>, and set <span class="math-inline">\(\simp^{\leq -1}:=\emptyset\)</span>. If <span class="math-inline">\(T\)</span> is a topos, the restriction functor</p>
+<div class="math-display">\[(-)\vert_{\simp^{\leq n}} \colon \Fun(\simp\catop,T) \to \Fun((\simp^{\leq n})\catop,T)\]</div>
+<p>admits a right adjoint given by right Kan extension along the inclusion <span class="math-inline">\((\simp^{\leq n})\catop \hookrightarrow \simp\catop\)</span>. We let</p>
+<div class="math-display">\[\cosk_n\colon \Fun(\simp\catop,T) \to \Fun(\simp\catop,T)\]</div>
+<p>denote the composition of the restriction functor with its right adjoint and refer to <span class="math-inline">\(\cosk_n\)</span> as the <em><span class="math-inline">\(n\)</span>-coskeleton functor</em>. In particular, <span class="math-inline">\(\cosk_{-1}\)</span> is the constant simplicial object at the terminal object of <span class="math-inline">\(T\)</span>. A simplicial object <span class="math-inline">\(U_\bullet\)</span> is called <em><span class="math-inline">\(n\)</span>-coskeletal</em> if the unit map <span class="math-inline">\(U_\bullet \to \cosk_n(U_\bullet)\)</span> is an isomorphism, or equivalently if <span class="math-inline">\(U_\bullet\)</span> is a right Kan extension of its restriction to <span class="math-inline">\((\simp^{\leq n})\catop\)</span>.</p></div>
+</section>
+
+<section class="theorem definition" id="def:Hypercover">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/hypercover/index.html">Definition 6.42.</a></span> (Hypercover)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a topos. A simplicial object <span class="math-inline">\(U_{\bullet} \in \Fun(\simp\catop,T)\)</span> is called a <em>hypercover in <span class="math-inline">\(T\)</span></em> if, for each <span class="math-inline">\(n \geq 0\)</span>, the canonical map</p>
+<div class="math-display">\[U_n \to (\cosk_{n-1} U_{\bullet})_n\]</div>
+<p>is an effective epimorphism. We say that <span class="math-inline">\(U_{\bullet}\)</span> is an <em>effective hypercover</em> if the colimit of <span class="math-inline">\(U_{\bullet}\)</span> is a terminal object of <span class="math-inline">\(T\)</span>.</p>
+<p>For an object <span class="math-inline">\(X \in T\)</span>, a <em>hypercover of <span class="math-inline">\(X\)</span></em> is a hypercover in the slice topos <span class="math-inline">\(T_{/X}\)</span>.</p></div>
+</section>
+
+<section class="theorem remark" id="rmk:Matching_Object_Finite_Limit">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/matching-object-finite-limit/index.html">Remark 6.43.</a></span></p>
+  <div class="theorem-statement"><p>The object <span class="math-inline">\((\cosk_{n-1} U_{\bullet})_n\)</span> is known as the <em><span class="math-inline">\(n\)</span>-th matching object</em> of <span class="math-inline">\(U_\bullet\)</span>. By the pointwise formula for right Kan extensions, it may be computed as a limit over the category <span class="math-inline">\((\simp^{\leq n-1})_{/[n]}\)</span>. Since this category is finite, the object <span class="math-inline">\((\cosk_{n-1} U_\bullet)_n\)</span> is a finite limit of the objects <span class="math-inline">\(U_0, \ldots, U_{n-1}\)</span>.</p></div>
+</section>
+<p>Let us spell out the hypercover condition for small <span class="math-inline">\(n\)</span>:</p>
+<ul><li><p>For <span class="math-inline">\(n = 0\)</span>, the <span class="math-inline">\((-1)\)</span>-coskeleton of any simplicial object is constant at the terminal object, so <span class="math-inline">\((\cosk_{-1} U_\bullet)_0 = *\)</span>. The condition thus says that <span class="math-inline">\(U_0 \to *\)</span> is an effective epimorphism.</p></li><li><p>For <span class="math-inline">\(n = 1\)</span>, the <span class="math-inline">\(0\)</span>-coskeleton is determined by <span class="math-inline">\(U_0\)</span>, and one computes <span class="math-inline">\((\cosk_0 U_\bullet)_1 = U_0 \times U_0\)</span>. The condition thus says that the map <span class="math-inline">\((d_1, d_0)\colon U_1 \to U_0 \times U_0\)</span> is an effective epimorphism.</p></li><li><p>For <span class="math-inline">\(n = 2\)</span>, the matching object is the finite limit parametrizing compatible triples of edges which form the boundary of a <span class="math-inline">\(2\)</span>-simplex. More explicitly, it can be written as</p>
+<div class="math-display">\[(\cosk_1 U_\bullet)_2
+		\iso
+		\bigl(U_1\mathbin{\mathop{\times}_{d_0,U_0,d_1}}U_1\bigr)
+		\mathbin{\mathop{\times}_{U_0\times U_0}}U_1,\]</div>
+<p>where the first factor maps to <span class="math-inline">\(U_0\times U_0\)</span> by <span class="math-inline">\((d_1\pr_1,d_0\pr_2)\)</span> and the second by <span class="math-inline">\((d_1,d_0)\)</span>. The hypercover condition says that <span class="math-inline">\(U_2\)</span> covers this object of compatible boundary data.</p></li></ul>
+<section class="theorem example" id="ex:Cech_Nerve_Is_Hypercover">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/cech-nerve-is-hypercover/index.html">Example 6.44.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(f\colon X \twoheadrightarrow Y\)</span> be an effective epimorphism in <span class="math-inline">\(T\)</span>. Then the Čech nerve <span class="math-inline">\(\check{C}(f)\)</span>, viewed as a simplicial object in <span class="math-inline">\(T_{/Y}\)</span>, is a hypercover of <span class="math-inline">\(Y\)</span>. Its matching map in degree zero is <span class="math-inline">\(f\)</span>, hence is an effective epimorphism. By <a href="../../entry/characterizing-cech-nerves/index.html">Lemma 2.20</a>, the simplicial object <span class="math-inline">\(\check{C}(f)\)</span> is <span class="math-inline">\(0\)</span>-coskeletal, so its matching maps in every positive degree are isomorphisms.</p></div>
+</section>
+<p>In preparation of the proof of <a href="#thm:Hypercomplete_Iff_Hypercovers_Effective">Theorem 6.40</a>, we establish various basic properties of hypercovers.</p>
+<section class="theorem lemma" id="lem:Logos_Morphism_Preserves_Hypercovers">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/logos-morphism-preserves-hypercovers/index.html">Lemma 6.45.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\phi^*\colon S \to T\)</span> be a morphism of logoi and let <span class="math-inline">\(U_\bullet\)</span> be a hypercover in <span class="math-inline">\(S\)</span>. Then <span class="math-inline">\(\phi^*(U_\bullet)\)</span> is a hypercover in <span class="math-inline">\(T\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Logos_Morphism_Preserves_Hypercovers-main" data-owner-entry="logos-morphism-preserves-hypercovers" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Since <span class="math-inline">\(\phi^*\)</span> is left exact and the matching object <span class="math-inline">\((\cosk_{n-1} U_\bullet)_n\)</span> is a finite limit (<a href="#rmk:Matching_Object_Finite_Limit">Remark 6.43</a>), we have <span class="math-inline">\(\phi^*((\cosk_{n-1} U_\bullet)_n) \simeq (\cosk_{n-1} \phi^*(U_\bullet))_n\)</span>. Since <span class="math-inline">\(\phi^*\)</span> preserves effective epimorphisms, the result follows.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem corollary" id="cor:Hypercover_In_Hypercompletion">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/hypercover-in-hypercompletion/index.html">Corollary 6.46.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a topos with hypercompletion <span class="math-inline">\(L\colon T \to T^{\hyp}\)</span>. A simplicial object <span class="math-inline">\(U_\bullet\)</span> is a hypercover in <span class="math-inline">\(T\)</span> if and only if <span class="math-inline">\(L(U_\bullet)\)</span> is a hypercover in <span class="math-inline">\(T^{\hyp}\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-cor:Hypercover_In_Hypercompletion-main" data-owner-entry="hypercover-in-hypercompletion" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">The “only if” direction is <a href="#lem:Logos_Morphism_Preserves_Hypercovers">Lemma 6.45</a>. Conversely, suppose that <span class="math-inline">\(L(U_\bullet)\)</span> is a hypercover. Since <span class="math-inline">\(L\)</span> is left exact, it preserves the matching objects, so it sends every matching map <div class="math-display">\[f_n\colon U_n\longrightarrow(\cosk_{n-1}U_\bullet)_n\]</div> to an effective epimorphism. Factor <span class="math-inline">\(f_n\)</span> as an effective epimorphism followed by its image monomorphism <span class="math-inline">\(m_n\)</span>. The functor <span class="math-inline">\(L\)</span> preserves this factorization. Since <span class="math-inline">\(L(f_n)\)</span> is an effective epimorphism, right cancellation shows that <span class="math-inline">\(L(m_n)\)</span> is an effective epimorphism; being monic, it is an isomorphism. Hence <span class="math-inline">\(m_n\)</span> belongs to the kernel of hypercompletion and is therefore <span class="math-inline">\(\infty\)</span>-connected. Since it is also a monomorphism, it is an isomorphism. Thus <span class="math-inline">\(f_n\)</span> is an effective epimorphism for every <span class="math-inline">\(n\)</span>, proving that <span class="math-inline">\(U_\bullet\)</span> is a hypercover.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem lemma" id="lem:Constant_Simplicial_Object_Hypercover">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/constant-simplicial-object-hypercover/index.html">Lemma 6.47.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(U \in T\)</span> be an <span class="math-inline">\(\infty\)</span>-connected object. Then the constant simplicial object with value <span class="math-inline">\(U\)</span> is a hypercover in <span class="math-inline">\(T\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Constant_Simplicial_Object_Hypercover-main" data-owner-entry="constant-simplicial-object-hypercover" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">By <a href="#cor:Hypercover_In_Hypercompletion">Corollary 6.46</a>, we may assume that <span class="math-inline">\(T\)</span> is hypercomplete. Then <span class="math-inline">\(U \simeq *\)</span>, so the constant simplicial object with value <span class="math-inline">\(U\)</span> is the terminal object of <span class="math-inline">\(\Fun(\simp\catop, T)\)</span>. Since the coskeleton functors preserve limits, the matching maps are all isomorphisms.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<h3 id="subsec:Hypercover_Effectiveness_Hypercompleteness"><span>6.3.2.</span> Effectiveness and hypercompleteness</h3>
+<p>The key point is that an arbitrary hypercover can be approximated by coskeletal ones. The latter are effective, and comparison with these approximations shows that the realization of any hypercover is <span class="math-inline">\(\infty\)</span>-connected.</p>
+<section class="theorem lemma" id="lem:Coskeletal_Hypercover_Effective">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/coskeletal-hypercover-effective/index.html">Lemma 6.48.</a></span> (<span class="citation-group">[Lurie <a class="citation" href="#bib-lurie2009HTT">2009, Lemma 6.5.3.9</a>]</span>)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a topos and let <span class="math-inline">\(U_\bullet\)</span> be an <span class="math-inline">\(n\)</span>-coskeletal hypercover in <span class="math-inline">\(T\)</span>. Then <span class="math-inline">\(U_\bullet\)</span> is effective.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Coskeletal_Hypercover_Effective-main" data-owner-entry="coskeletal-hypercover-effective" data-proof-id="main">
+  <summary>Proof sketch</summary>
+  <div class="proof-body">The details of the proof are intricate; we refer to <span class="citation-group">[Lurie <a class="citation" href="#bib-lurie2009HTT">2009, Lemma 6.5.3.9</a>]</span> for a detailed argument. We only sketch the idea of Lurie's proof.<div class="proof-paragraph-break" aria-hidden="true"></div>We proceed by induction on <span class="math-inline">\(n\)</span>. If <span class="math-inline">\(n = 0\)</span>, then <span class="math-inline">\(U_\bullet\)</span> can be identified with (the underlying groupoid object of) the Čech nerve of the map <span class="math-inline">\(U_0 \to *\)</span>. Since <span class="math-inline">\(U_\bullet\)</span> is a hypercover, this map is an effective epimorphism, so the Čech nerve is a colimit diagram and <span class="math-inline">\(\abs{U_\bullet} \simeq *\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>Now assume <span class="math-inline">\(n &gt; 0\)</span> and let <span class="math-inline">\(V_\bullet = \cosk_{n-1} U_\bullet\)</span>. This is an <span class="math-inline">\((n-1)\)</span>-coskeletal hypercover, so <span class="math-inline">\(\abs{V_\bullet}\simeq *\)</span> by induction. The unit <span class="math-inline">\(f_\bullet\colon U_\bullet \to V_\bullet\)</span> is an isomorphism below degree <span class="math-inline">\(n\)</span>. Moreover, each <span class="math-inline">\(f_m\)</span> is a finite composite of pullbacks of the matching map <span class="math-inline">\(f_n\)</span>, and hence is an effective epimorphism.<div class="proof-paragraph-break" aria-hidden="true"></div>Form the degreewise Čech nerve <span class="math-inline">\(W^+\)</span> of <span class="math-inline">\(f_\bullet\)</span>, regarded as an augmented bisimplicial object. Realizing in the Čech direction gives <span class="math-inline">\(V_\bullet\)</span>, and then realizing in the other direction gives <span class="math-inline">\(\abs{V_\bullet}\simeq *\)</span>. By cofinality of the diagonal, the diagonal simplicial object <span class="math-inline">\(D_\bullet\)</span> of the underlying bisimplicial object therefore has terminal realization. Lurie constructs a retract of the underlying semisimplicial object of <span class="math-inline">\(D_\bullet\)</span> onto that of <span class="math-inline">\(U_\bullet\)</span>. Forgetting degeneracies does not change geometric realizations, so <span class="math-inline">\(\abs{U_\bullet}\)</span> is a retract of <span class="math-inline">\(\abs{D_\bullet}\simeq *\)</span> and is therefore terminal.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem lemma" id="lem:Truncated_Comparison_Connectivity">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/truncated-comparison-connectivity/index.html">Lemma 6.49.</a></span> (<span class="citation-group">[Lurie <a class="citation" href="#bib-lurie2009HTT">2009, Lemma 6.5.3.10</a>]</span>)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(f_\bullet\colon U_\bullet \to V_\bullet\)</span> be a morphism of simplicial objects in <span class="math-inline">\(T\)</span>. Suppose that <span class="math-inline">\(f_k\colon U_k \to V_k\)</span> is an isomorphism for all <span class="math-inline">\(k \leq n\)</span>. Then the induced map <span class="math-inline">\(\abs{f_\bullet}\colon \abs{U_\bullet} \to \abs{V_\bullet}\)</span> is <span class="math-inline">\(n\)</span>-connected.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Truncated_Comparison_Connectivity-main" data-owner-entry="truncated-comparison-connectivity" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">This is <span class="citation-group">[Lurie <a class="citation" href="#bib-lurie2009HTT">2009, Lemma 6.5.3.10</a>]</span>. Lurie reduces first to animae and then proves the claim using projectively cofibrant simplicial Kan-complex models.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem lemma" id="lem:Hypercover_Infty_Connected">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/hypercover-infty-connected/index.html">Lemma 6.50.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a topos and let <span class="math-inline">\(U_\bullet\)</span> be a hypercover in <span class="math-inline">\(T\)</span>. Then the canonical map <span class="math-inline">\(\abs{U_\bullet} \to *\)</span> is <span class="math-inline">\(\infty\)</span>-connected.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Hypercover_Infty_Connected-main" data-owner-entry="hypercover-infty-connected" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">We show that <span class="math-inline">\(\abs{U_\bullet}\)</span> is <span class="math-inline">\(n\)</span>-connected for every <span class="math-inline">\(n \geq 0\)</span>. Let <span class="math-inline">\(V_\bullet = \cosk_{n+1} U_\bullet\)</span> and let <span class="math-inline">\(u_\bullet\colon U_\bullet \to V_\bullet\)</span> be the unit map. The matching maps of <span class="math-inline">\(V_\bullet\)</span> agree with those of <span class="math-inline">\(U_\bullet\)</span> through degree <span class="math-inline">\(n+1\)</span> and are isomorphisms thereafter, so <span class="math-inline">\(V_\bullet\)</span> is again a hypercover. Moreover, <span class="math-inline">\(u_m\)</span> is an isomorphism for <span class="math-inline">\(m \leq n+1\)</span>. By <a href="#lem:Truncated_Comparison_Connectivity">Lemma 6.49</a>, the induced map <span class="math-inline">\(\abs{U_\bullet} \to \abs{V_\bullet}\)</span> is <span class="math-inline">\(n\)</span>-connected. By <a href="#lem:Coskeletal_Hypercover_Effective">Lemma 6.48</a>, <span class="math-inline">\(\abs{V_\bullet} \simeq *\)</span>. It follows that <span class="math-inline">\(\abs{U_\bullet}\)</span> is <span class="math-inline">\(n\)</span>-connected.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>We are now ready to prove the main result of this section.</p>
+<details class="proof-shell" id="proof-thm:Hypercomplete_Iff_Hypercovers_Effective-main" data-owner-entry="hypercomplete-iff-hypercovers-effective" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body"><span class="math-inline">\((1) \Rightarrow (2)\)</span>: Let <span class="math-inline">\(U_\bullet\)</span> be a hypercover in <span class="math-inline">\(T_{/X}\)</span>, or equivalently a hypercover of <span class="math-inline">\(X\)</span>. By <a href="#lem:Hypercover_Infty_Connected">Lemma 6.50</a>, the canonical map <span class="math-inline">\(\abs{U_\bullet} \to X\)</span> is <span class="math-inline">\(\infty\)</span>-connected. Since <span class="math-inline">\(T\)</span> is hypercomplete, so is <span class="math-inline">\(T_{/X}\)</span>, hence this map is an isomorphism. Thus <span class="math-inline">\(U_\bullet\)</span> is effective.<div class="proof-paragraph-break" aria-hidden="true"></div><span class="math-inline">\((2) \Rightarrow (1)\)</span>: Let <span class="math-inline">\(f\colon U \to X\)</span> be an <span class="math-inline">\(\infty\)</span>-connected morphism in <span class="math-inline">\(T\)</span>. Consider <span class="math-inline">\(f\)</span> as an object of <span class="math-inline">\(T_{/X}\)</span> and let <span class="math-inline">\(f_\bullet\)</span> be the constant simplicial object with value <span class="math-inline">\(f\)</span>. By <a href="#lem:Constant_Simplicial_Object_Hypercover">Lemma 6.47</a>, <span class="math-inline">\(f_\bullet\)</span> is a hypercover in <span class="math-inline">\(T_{/X}\)</span>. By assumption, <span class="math-inline">\(f_\bullet\)</span> is effective, so its realization is the terminal object <span class="math-inline">\(\id_X\)</span> of <span class="math-inline">\(T_{/X}\)</span>. On the other hand, the realization of a constant simplicial object is its constant value, so <span class="math-inline">\(\abs{f_\bullet}\iso f\)</span>. Hence <span class="math-inline">\(f\)</span> is an isomorphism, showing that <span class="math-inline">\(T\)</span> is hypercomplete.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem remark" id="rem:Testing_Hypercompleteness_With_Hypercovers">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/testing-hypercompleteness-with-hypercovers/index.html">Remark 6.51.</a></span></p>
+  <div class="theorem-statement"><p><a href="#thm:Hypercomplete_Iff_Hypercovers_Effective">Theorem 6.40</a> is often useful in practice: to show that a topos <span class="math-inline">\(T\)</span> is hypercomplete, it suffices to verify that all hypercovers are effective. For sheaf topoi <span class="math-inline">\(\Shv(X)\)</span> on a topological space <span class="math-inline">\(X\)</span>, one may work with open hypercovers when these are sufficiently plentiful. Ordinary open covers alone do not detect hypercompleteness, since their Čech nerves are effective in every topos. The dimension criteria of <span class="cross-reference-unlinked">Section 6.5</span> provide more concrete sufficient conditions.</p></div>
+</section>
+<section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-lurie2009HTT">Jacob Lurie. <em>Higher topos theory</em>. Ann. Math. Stud. 170, Princeton, NJ: Princeton University Press. 2009.</li></ol></section>
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+      <a class="context-step-control" rel="prev" href="../groupoid-actions-and-principal-bundles/index.html" aria-label="Previous section: Groupoid actions and principal bundles" title="Previous section: Groupoid actions and principal bundles"><span aria-hidden="true">←</span></a>
+      <a class="context-step-control" rel="next" href="../localic-topoi-postnikov-completeness-and-boundedness/index.html" aria-label="Next section: Localic topoi, Postnikov-completeness, and boundedness" title="Next section: Localic topoi, Postnikov-completeness, and boundedness"><span aria-hidden="true">→</span></a>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../chapter/introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../../chapter/foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../../chapter/truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../../chapter/topoi-logoi/index.html">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../../chapter/modalities/index.html">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../../chapter/topics-in-topos-theory/index.html" aria-current="location">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../../chapter/geometry/index.html">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../../chapter/factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../../chapter/limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../sheaf-topoi/index.html">
+          <span class="context-entry-heading">Section 6.1</span>
+          <span class="context-entry-title">Sheaf topoi</span>
+        </a></li>
+<li><a href="../groupoid-actions-and-principal-bundles/index.html">
+          <span class="context-entry-heading">Section 6.2</span>
+          <span class="context-entry-title">Groupoid actions and principal bundles</span>
+        </a></li>
+<li><a href="../hypercovers/index.html" aria-current="page">
+          <span class="context-entry-heading">Section 6.3</span>
+          <span class="context-entry-title">Hypercovers</span>
+        </a></li>
+<li><a href="../localic-topoi-postnikov-completeness-and-boundedness/index.html">
+          <span class="context-entry-heading">Section 6.4</span>
+          <span class="context-entry-title">Localic topoi, Postnikov-completeness, and boundedness</span>
+        </a></li>
+<li><a href="../dimension-theory/index.html">
+          <span class="context-entry-heading">Section 6.5</span>
+          <span class="context-entry-title">Dimension theory</span>
+        </a></li>
+<li><a href="../essential-morphisms-and-shape-theory/index.html">
+          <span class="context-entry-heading">Section 6.6</span>
+          <span class="context-entry-title">Essential morphisms and shape theory</span>
+        </a></li>
+<li><a href="../coherence/index.html">
+          <span class="context-entry-heading">Section 6.7</span>
+          <span class="context-entry-title">Coherence</span>
+        </a></li>
+<li><a href="../pretopoi/index.html">
+          <span class="context-entry-heading">Section 6.8</span>
+          <span class="context-entry-title">Pretopoi</span>
+        </a></li>
+<li><a href="../makkai-completeness/index.html">
+          <span class="context-entry-heading">Section 6.9</span>
+          <span class="context-entry-title">Makkai completeness</span>
+        </a></li>
+<li><a href="../compactly-assembled-categories-and-exponentiability/index.html">
+          <span class="context-entry-heading">Section 6.10</span>
+          <span class="context-entry-title">Compactly assembled categories and exponentiability</span>
+        </a></li>
+<li><a href="../topoi-of-parametrized-objects/index.html">
+          <span class="context-entry-heading">Section 6.11</span>
+          <span class="context-entry-title">Topoi of parametrized objects</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <p class="context-nav-kicker">Section 6.3</p>
+      <p class="context-nav-description">Hypercovers</p>
+      <ol class="context-entry-list">
+        <li><a href="#thm:Hypercomplete_Iff_Hypercovers_Effective" data-section-target="thm:Hypercomplete_Iff_Hypercovers_Effective">
+          <span class="context-entry-heading">Theorem 6.40</span>
+          <span class="context-entry-title">Hypercomplete if and only if hypercovers effective</span>
+        </a></li>
+<li><a href="#not:Skeleta_And_Coskeleta" data-section-target="not:Skeleta_And_Coskeleta">
+          <span class="context-entry-heading">Notation 6.41</span>
+          <span class="context-entry-title">Skeleta and coskeleta</span>
+        </a></li>
+<li><a href="#def:Hypercover" data-section-target="def:Hypercover">
+          <span class="context-entry-heading">Definition 6.42</span>
+          <span class="context-entry-title">Hypercover</span>
+        </a></li>
+<li><a href="#rmk:Matching_Object_Finite_Limit" data-section-target="rmk:Matching_Object_Finite_Limit">
+          <span class="context-entry-heading">Remark 6.43</span>
+          <span class="context-entry-title">Matching object finite limit</span>
+        </a></li>
+<li><a href="#ex:Cech_Nerve_Is_Hypercover" data-section-target="ex:Cech_Nerve_Is_Hypercover">
+          <span class="context-entry-heading">Example 6.44</span>
+          <span class="context-entry-title">Čech nerve is hypercover</span>
+        </a></li>
+<li><a href="#lem:Logos_Morphism_Preserves_Hypercovers" data-section-target="lem:Logos_Morphism_Preserves_Hypercovers">
+          <span class="context-entry-heading">Lemma 6.45</span>
+          <span class="context-entry-title">Logos morphism preserves hypercovers</span>
+        </a></li>
+<li><a href="#cor:Hypercover_In_Hypercompletion" data-section-target="cor:Hypercover_In_Hypercompletion">
+          <span class="context-entry-heading">Corollary 6.46</span>
+          <span class="context-entry-title">Hypercover in hypercompletion</span>
+        </a></li>
+<li><a href="#lem:Constant_Simplicial_Object_Hypercover" data-section-target="lem:Constant_Simplicial_Object_Hypercover">
+          <span class="context-entry-heading">Lemma 6.47</span>
+          <span class="context-entry-title">Constant simplicial object hypercover</span>
+        </a></li>
+<li><a href="#lem:Coskeletal_Hypercover_Effective" data-section-target="lem:Coskeletal_Hypercover_Effective">
+          <span class="context-entry-heading">Lemma 6.48</span>
+          <span class="context-entry-title">Coskeletal hypercover effective</span>
+        </a></li>
+<li><a href="#lem:Truncated_Comparison_Connectivity" data-section-target="lem:Truncated_Comparison_Connectivity">
+          <span class="context-entry-heading">Lemma 6.49</span>
+          <span class="context-entry-title">Truncated comparison connectivity</span>
+        </a></li>
+<li><a href="#lem:Hypercover_Infty_Connected" data-section-target="lem:Hypercover_Infty_Connected">
+          <span class="context-entry-heading">Lemma 6.50</span>
+          <span class="context-entry-title">Hypercover infinity connected</span>
+        </a></li>
+<li><a href="#rem:Testing_Hypercompleteness_With_Hypercovers" data-section-target="rem:Testing_Hypercompleteness_With_Hypercovers">
+          <span class="context-entry-heading">Remark 6.51</span>
+          <span class="context-entry-title">Testing hypercompleteness with hypercovers</span>
+        </a></li>
+      </ol>
+    </nav>
+  </section></div>
+  </aside>
+  </main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Postnikov and bounded reflections | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/entry/postnikov-and-bounded-reflections/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="entry-page has-context-nav" data-record-id="postnikov-and-bounded-reflections" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">›</span> <a href="../../section/localic-topoi-postnikov-completeness-and-boundedness/index.html">Section 6.4: Localic topoi, Postnikov-completeness, and boundedness</a></p>
+      <h1>Postnikov and bounded reflections</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Nearby entries
+    </button>
+    <article class="notes-page">
+      
+<section class="theorem proposition" id="prop:Postnikov_And_Bounded_Reflections">
+  <p class="theorem-heading"><span>Proposition 6.66.</span> ({cf. <span class="citation-group">[Lurie <a class="citation" href="#bib-SAG">2018, Proposition A.7.1.5 and Corollary A.7.2.8</a>]</span>})</p>
+  <div class="theorem-statement"><p>The functor <span class="math-inline">\(L_*\colon \Topos \to \lim_n \Topos_n\)</span> admits fully faithful adjoints on both sides.</p>
+<ul><li><p>A topos <span class="math-inline">\(T\)</span> lies in the image of the left adjoint if and only if it is Postnikov complete.</p></li><li><p>A topos <span class="math-inline">\(T\)</span> lies in the image of the right adjoint if and only if it is bounded.</p></li></ul></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Postnikov_And_Bounded_Reflections-main" data-owner-entry="postnikov-and-bounded-reflections" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">The right adjoint sends a compatible system <span class="math-inline">\((T_n)_n\)</span> to <span class="math-inline">\(\lim_nT_n\)</span>. By <a href="../localic-reflection-preserves-filtered-limits/index.html#lem:Localic_Reflection_Preserves_Filtered_Limits">Lemma 6.65</a>, <div class="math-display">\[L_m\bigl(\lim_nT_n\bigr)\iso\lim_nL_mT_n\iso T_m.\]</div> Thus the right adjoint is fully faithful, and its essential image consists precisely of the bounded topoi. In particular, the bounded reflection of an arbitrary topos is <div class="math-display">\[T^b:=\lim_nL_nT.\]</div><div class="proof-paragraph-break" aria-hidden="true"></div>We next identify the left adjoint. For arbitrary topoi <span class="math-inline">\(T\)</span> and <span class="math-inline">\(S\)</span>, the universal properties of truncation and localic reflection give \begin{align*} \Geom(\widehat T,S) &amp;\iso \lim_n\Fun^{\lex,\colim}(S_{\leq n},T_{\leq n}), \\ \Geom(T,S^b) &amp;\iso \lim_n\Geom(T,L_nS) \\ &amp;\iso \lim_n\Fun^{\lex,\colim}(S_{\leq n-1},T_{\leq n-1}). \end{align*} Reindexing gives a natural equivalence <span class="math-inline">\(\Geom(\widehat T,S)\iso\Geom(T,S^b)\)</span>. Thus Postnikov-completion is left adjoint to bounded reflection.<div class="proof-paragraph-break" aria-hidden="true"></div>The Postnikov-completion <span class="math-inline">\(\widehat T\)</span> is Postnikov-complete and has the same truncated objects as <span class="math-inline">\(T\)</span>. Conversely, if <span class="math-inline">\(T\)</span> is Postnikov-complete, then <span class="math-inline">\(T\iso\widehat T\iso\widehat{T^b}\)</span>. Hence the essential image of the fully faithful left adjoint is exactly <span class="math-inline">\(\Topos^{\post}\)</span>, while the essential image of the right adjoint is <span class="math-inline">\(\Topos^b\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-SAG">Jacob Lurie. <em>Spectral Algebraic Geometry</em>. under construction (version dated February 2018), www.math.ias.edu/~lurie/papers/SAG-rootfile.pdf. 2018.</li></ol></section>
+    </article>
+      <aside class="context-nav" id="context-navigation" data-context-nav aria-label="Nearby entries">
+      <button class="context-nav-collapse" type="button" data-context-nav-collapse data-collapsed-label="Nearby entries" aria-controls="context-navigation" aria-expanded="true" aria-label="Hide Nearby entries">
+      <span aria-hidden="true">›</span>
+    </button>
+      <p class="context-chapter-link"><a href="../../chapter/topics-in-topos-theory/index.html">Topics in topos theory</a></p>
+      <p class="context-nav-kicker">Section 6.4</p>
+      <h2><a href="../../section/localic-topoi-postnikov-completeness-and-boundedness/index.html">Localic topoi, Postnikov-completeness, and boundedness</a></h2>
+      <p class="context-nav-description"><a href="../../section/localic-topoi-postnikov-completeness-and-boundedness/index.html#prop:Postnikov_And_Bounded_Reflections">Read this result in the continuous section</a></p>
+      <ol class="context-entry-list context-entry-list-nearby">
+        <li><a href="../postnikov-complete-implies-hypercomplete/index.html">
+          <span class="context-entry-heading">Lemma 6.62</span>
+          <span class="context-entry-title">Postnikov complete implies hypercomplete</span>
+        </a></li>
+<li><a href="../postnikov-complete-and-hypercomplete-topoi/index.html">
+          <span class="context-entry-heading">Notation 6.63</span>
+          <span class="context-entry-title">Postnikov complete and hypercomplete topoi</span>
+        </a></li>
+<li><a href="../bounded-topos/index.html">
+          <span class="context-entry-heading">Definition 6.64</span>
+          <span class="context-entry-title">Bounded topos</span>
+        </a></li>
+<li><a href="../localic-reflection-preserves-filtered-limits/index.html">
+          <span class="context-entry-heading">Lemma 6.65</span>
+          <span class="context-entry-title">Localic reflection preserves filtered limits</span>
+        </a></li>
+<li><a href="#prop:Postnikov_And_Bounded_Reflections" aria-current="page">
+          <span class="context-entry-heading">Proposition 6.66</span>
+          <span class="context-entry-title">Postnikov and bounded reflections</span>
+        </a></li>
+      </ol>
+      <nav class="context-step-links" aria-label="Previous and next entries"><a rel="prev" href="../localic-reflection-preserves-filtered-limits/index.html"><span>Previous</span>Localic reflection preserves filtered limits</a></nav>
+    </aside>
+  </main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

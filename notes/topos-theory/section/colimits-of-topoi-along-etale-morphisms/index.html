@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Colimits of topoi along étale morphisms | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/section/colimits-of-topoi-along-etale-morphisms/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="section-page has-context-nav" data-record-id="colimits-of-topoi-along-etale-morphisms" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">·</span> Section 4.5</p>
+      <h1>Colimits of topoi along étale morphisms</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page">
+      
+<h2 id="sec:Colimits_In_Top_Etale"><span>4.5.</span> Colimits of topoi along étale morphisms</h2>
+<p>Recall from <a href="../../entry/etale-morphisms/index.html">Definition 4.35</a> the wide subcategory <span class="math-inline">\(\Topos^{\et} \subseteq \Topos\)</span> spanned by the étale morphisms of topoi. The goal in this section is the following somewhat surprising theorem:</p>
+<section class="theorem theorem" id="thm:Colimits_Topos_Et">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/colimits-of-topoi-along-etale-morphisms/index.html">Theorem 4.41.</a></span> (<span class="citation-group">[Uemura <a class="citation" href="#bib-Uemura_Colimits_Topoi_Etale">2025, Theorem 5.15</a>]</span>)</p>
+  <div class="theorem-statement"><p>The category <span class="math-inline">\(\Topos^{\et}\)</span> admits colimits, and these colimits are preserved by the inclusion <span class="math-inline">\(\Topos^{\et} \hookrightarrow \Topos\)</span>.</p></div>
+</section>
+<p>There are two distinct issues in this theorem. For a fixed base topos <span class="math-inline">\(T\)</span>, the classification <span class="math-inline">\(\Topos^{\et}_{/T}\simeq T\)</span> and descent in <span class="math-inline">\(T\)</span> make colimits of étale morphisms over <span class="math-inline">\(T\)</span> comparatively easy to control. The difficult point is global: if a diagram in <span class="math-inline">\(\Topos\)</span> has étale transition morphisms, one must prove that its structure morphisms into the colimit are again étale.</p>
+<p>We follow the proof of <span class="citation-group">Uemura (<a class="citation" href="#bib-Uemura_Colimits_Topoi_Etale">2025, Theorem 5.15</a>)</span>. After passing to logoi, the problem becomes one about the projections from a limit of a diagram with étale transition morphisms. Uemura recognizes étale morphisms by two properties: preservation of dependent products and the existence of enough univalent families. The first property is stable under limits. For the second, univalent completion allows an initially unrelated tuple of families to be enlarged, by a fixed-point construction, to a compatible tuple in the limit logos. A general criterion for colimits in wide subcategories then completes the proof.</p>
+<p>The theorem may also be viewed as a descent statement for the assignment <span class="math-inline">\(T\mapsto\Topos^{\et}_{/T}\simeq T\)</span>. This perspective connects with the small and large topoi associated to geometric objects, which will reappear in <span class="cross-reference-unlinked">Section 7.2</span> and <span class="cross-reference-unlinked">Section 7.3</span>; it is not needed for the proof here. We thank David Wärn for bringing Uemura's article to our attention.</p>
+<h3 id="subsec:Univalent_Families"><span>4.5.1.</span> Univalent families</h3>
+<p>A univalent family is one for which being obtained by pullback is a property rather than additional structure. The main result of this subsection is that every family admits a universal map to a univalent family. Besides avoiding the use of a larger universe of object classifiers, this has an important coherence consequence: maps between univalent families form propositions. Consequently, once compatible maps have been constructed in both directions, all higher compatibility data are automatic. The material in this subsection follows <span class="citation-group">[Uemura <a class="citation" href="#bib-Uemura_Colimits_Topoi_Etale">2025, Section 4</a>]</span>.</p>
+<section class="theorem definition" id="def:Univalent_Family">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/univalent-families/index.html">Definition 4.42.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a topos. We write</p>
+<div class="math-display">\[\Fam(T) := \Ar^{\pb}(T)\]</div>
+<p>for the wide subcategory of <span class="math-inline">\(\Ar(T)\)</span> whose morphisms are pullback squares. We call an object <span class="math-inline">\(u\colon E \to B\)</span> of <span class="math-inline">\(\Fam(T)\)</span> a <em>family in <span class="math-inline">\(T\)</span></em>, and we call its codomain <span class="math-inline">\(B\)</span> the <em>base</em> of the family.</p>
+<p>A family <span class="math-inline">\(u \in \Fam(T)\)</span> is <em>univalent</em> if it is a <span class="math-inline">\((-1)\)</span>-truncated object of the category <span class="math-inline">\(\Fam(T)\)</span>. We write</p>
+<div class="math-display">\[\Fam^{\univ}(T) \subseteq \Fam(T)\]</div>
+<p>for the full subcategory spanned by the univalent families.</p></div>
+</section>
+<p>Informally, a morphism <span class="math-inline">\(u\colon E \to B\)</span> is univalent if it is a <em>property</em> for an arbitrary morphism <span class="math-inline">\(v\)</span> in <span class="math-inline">\(T\)</span> to be a pullback of <span class="math-inline">\(u\)</span>, i.e. if the anima <span class="math-inline">\(\Hom_{\Fam(T)}(v,u)\)</span> is <span class="math-inline">\((-1)\)</span>-truncated. Once we know that <span class="math-inline">\(\Fam(T)\)</span> admits binary products, this is equivalently the condition that the diagonal</p>
+<div class="math-display">\[u \longrightarrow u \times u\]</div>
+<p>is an isomorphism in <span class="math-inline">\(\Fam(T)\)</span>.</p>
+<section class="theorem lemma" id="lem:Family_Slice_Equivalent_To_Base_Slice">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/slices-of-family-categories/index.html">Lemma 4.43.</a></span> (<span class="citation-group">[Uemura <a class="citation" href="#bib-Uemura_Colimits_Topoi_Etale">2025, Lemma 4.2</a>]</span>)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(u\colon E \to B\)</span> be a family in a topos <span class="math-inline">\(T\)</span>. The functor</p>
+<div class="math-display">\[\Fam(T)_{/u} \longrightarrow T_{/B}\]</div>
+<p>sending a pullback square <span class="math-inline">\(v \to u\)</span> to the induced morphism from the base of <span class="math-inline">\(v\)</span> to <span class="math-inline">\(B\)</span> is an equivalence.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Family_Slice_Equivalent_To_Base_Slice-main" data-owner-entry="slices-of-family-categories" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">The inverse sends a morphism <span class="math-inline">\(f\colon X \to B\)</span> to the pullback family <span class="math-inline">\(f^*u\)</span>. Since morphisms in <span class="math-inline">\(\Fam(T)\)</span> are by definition pullback squares, these two constructions are inverse to each other.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem lemma" id="lem:Families_Closed_Under_Colimits">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/colimits-and-pullbacks-of-families/index.html">Lemma 4.44.</a></span> (<span class="citation-group">[Uemura <a class="citation" href="#bib-Uemura_Colimits_Topoi_Etale">2025, Lemma 4.3</a>]</span>)</p>
+  <div class="theorem-statement"><p>The wide subcategory <span class="math-inline">\(\Fam(T) \subseteq \Ar(T)\)</span> is closed under small colimits and pullbacks.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Families_Closed_Under_Colimits-main" data-owner-entry="colimits-and-pullbacks-of-families" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">The assertion about colimits is precisely the topos direction of <a href="../../entry/descent-via-pullback-squares/index.html">Proposition 2.16</a>, after identifying <span class="math-inline">\(\Fam(T)\)</span> with <span class="math-inline">\(\Ar^{\pb}(T)\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>For pullbacks, note that <span class="math-inline">\(\Fam(T)\)</span> admits pullbacks if and only if for each <span class="math-inline">\(u \in \Fam(T)\)</span> the slice category <span class="math-inline">\(\Fam(T)_{/u}\)</span> admits binary products, which is immediate from <a href="#lem:Family_Slice_Equivalent_To_Base_Slice">Lemma 4.43</a>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem proposition" id="prop:Family_Category_Binary_Products">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/binary-products-of-families/index.html">Proposition 4.45.</a></span> (<span class="citation-group">[Uemura <a class="citation" href="#bib-Uemura_Colimits_Topoi_Etale">2025, Lemma 4.4</a>]</span>)</p>
+  <div class="theorem-statement"><p>The category <span class="math-inline">\(\Fam(T)\)</span> has binary products, and these products preserve small colimits in each variable.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Family_Category_Binary_Products-main" data-owner-entry="binary-products-of-families" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Let <span class="math-inline">\(u_1\colon E_1 \to B_1\)</span> and <span class="math-inline">\(u_2\colon E_2 \to B_2\)</span> be families. For an object <span class="math-inline">\(X \to B_1 \times B_2\)</span>, write <span class="math-inline">\(f_i\colon X \to B_i\)</span> for the two projections. Consider the presheaf on <span class="math-inline">\(T_{/B_1 \times B_2}\)</span> which sends <span class="math-inline">\(X\)</span> to <div class="math-display">\[\operatorname{Iso}_{T_{/X}}\!\left(f_1^*u_1,f_2^*u_2\right),\]</div> the anima of isomorphisms in <span class="math-inline">\(T_{/X}\)</span> between the pullbacks of <span class="math-inline">\(u_1\)</span> and <span class="math-inline">\(u_2\)</span> to <span class="math-inline">\(X\)</span>. This presheaf preserves limits: if <span class="math-inline">\(X \simeq \colim_i X_i\)</span> in <span class="math-inline">\(T_{/B_1 \times B_2}\)</span>, then descent identifies <span class="math-inline">\(T_{/X}\)</span> with <span class="math-inline">\(\lim_i T_{/X_i}\)</span>, and under this identification the two pulled-back families are the compatible systems of their pullbacks to the <span class="math-inline">\(X_i\)</span>. Thus isomorphisms between them are computed as the limit of the isomorphism animae over the <span class="math-inline">\(X_i\)</span>. By the adjoint functor theorem, the presheaf is therefore representable by some object <span class="math-inline">\(P \to B_1 \times B_2\)</span>. Pulling back either <span class="math-inline">\(u_1\)</span> or <span class="math-inline">\(u_2\)</span> along the universal isomorphism gives a family over <span class="math-inline">\(P\)</span>, and this family is the product <span class="math-inline">\(u_1 \times u_2\)</span> in <span class="math-inline">\(\Fam(T)\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>It remains to prove preservation of colimits in each variable. Fix a family <span class="math-inline">\(u_1\colon E_1 \to B_1\)</span>. To show that <span class="math-inline">\(u_1 \times -\colon \Fam(T) \to \Fam(T)\)</span> preserves colimits, we may equivalently show that for any family <span class="math-inline">\(v\colon E' \to B'\)</span> the functor <div class="math-display">\[\Fam(T)_{/v} \longrightarrow \Fam(T)_{/u_1\times v}\]</div> induced by <span class="math-inline">\(u_1 \times -\)</span> preserves colimits, since slices detect colimits. Let <span class="math-inline">\(P'\)</span> denote the base of the product <span class="math-inline">\(u_1\times v\)</span>. We claim that under the equivalences <span class="math-inline">\(\Fam(T)_{/v} \simeq T_{/B'}\)</span> and <span class="math-inline">\(\Fam(T)_{/u_1\times v} \simeq T_{/P'}\)</span> from <a href="#lem:Family_Slice_Equivalent_To_Base_Slice">Lemma 4.43</a>, the functor identifies with pullback along the projection map <span class="math-inline">\(P' \to B'\)</span>. Since this functor preserves colimits by descent in <span class="math-inline">\(T\)</span>, this will finish the proof. To show the claim, we must show that for every <span class="math-inline">\(f\colon u_2 \to v\)</span> in <span class="math-inline">\(\Fam(T)\)</span> with base <span class="math-inline">\(f_B\colon B_2 \to B'\)</span>, the square of bases <figure class="diagram"><img src="diagrams/tikzcd-32e88bd97c00.svg" alt="Commutative diagram generated from the LaTeX source"></figure> is a pullback square in <span class="math-inline">\(T\)</span>. We compare the presheaves represented by the two objects over <span class="math-inline">\(B_1\times B_2\)</span>. Let <span class="math-inline">\(X\to B_1\times B_2\)</span> be an object, and write <span class="math-inline">\(g_1\colon X\to B_1\)</span> and <span class="math-inline">\(g_2\colon X\to B_2\)</span> for the two projections. The object <span class="math-inline">\(P\)</span> represents the presheaf <div class="math-display">\[X \longmapsto \operatorname{Iso}_{T_{/X}}\!\left(g_1^*u_1,g_2^*u_2\right).\]</div> On the other hand, the pullback <span class="math-inline">\((B_1\times B_2)\times_{B_1\times B'}P'\)</span> represents the presheaf <div class="math-display">\[X \longmapsto \operatorname{Iso}_{T_{/X}}\!\left(g_1^*u_1,(f_Bg_2)^*v\right),\]</div> because <span class="math-inline">\(P'\)</span> represents the analogous equivalence presheaf for <span class="math-inline">\(u_1\)</span> and <span class="math-inline">\(v\)</span> over <span class="math-inline">\(B_1\times B'\)</span>. Since <span class="math-inline">\(f\colon u_2\to v\)</span> is a morphism in <span class="math-inline">\(\Fam(T)\)</span>, the family <span class="math-inline">\(u_2\)</span> is the pullback <span class="math-inline">\(f_B^*v\)</span>, and hence <span class="math-inline">\(g_2^*u_2\simeq (f_Bg_2)^*v\)</span>. These two presheaves are therefore naturally equivalent, proving that the square is a pullback.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem corollary" id="cor:Univalent_Families_Closed_Under_Sequential_Colimits">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/sequential-colimits-of-univalent-families/index.html">Corollary 4.46.</a></span> (<span class="citation-group">[Uemura <a class="citation" href="#bib-Uemura_Colimits_Topoi_Etale">2025, Corollary 4.6</a>]</span>)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(u_{\bullet}\colon [\omega] \to \Fam(T)\)</span> be a sequence of univalent families. Then <span class="math-inline">\(\colim_n u_n\)</span> is univalent.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-cor:Univalent_Families_Closed_Under_Sequential_Colimits-main" data-owner-entry="sequential-colimits-of-univalent-families" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">By <a href="#prop:Family_Category_Binary_Products">Proposition 4.45</a>, we have <div class="equation" id="eq:Univalent_Families_Closed_Under_Sequential_Colimits"><div class="math-display">\[\left(\colim_n u_n\right)\times\left(\colim_m u_m\right)
+			\simeq
+			\colim_{(n,m)\in [\omega]\times[\omega]}(u_n\times u_m).\]</div><span class="equation-number">(1)</span></div> The diagonal functor <span class="math-inline">\([\omega] \to [\omega]\times[\omega]\)</span> is final, so this is further equivalent to <span class="math-inline">\(\colim_n (u_n\times u_n)\)</span>. The diagonal of <span class="math-inline">\(\colim_n u_n\)</span> is therefore the colimit of the diagonals <span class="math-inline">\(u_n \to u_n\times u_n\)</span>, which are isomorphisms by univalence.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem proposition" id="prop:Univalent_Completion">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/univalent-completion/index.html">Proposition 4.47.</a></span> (<span class="citation-group">[Uemura <a class="citation" href="#bib-Uemura_Colimits_Topoi_Etale">2025, Proposition 4.7</a>]</span>)</p>
+  <div class="theorem-statement"><p>The inclusion</p>
+<div class="math-display">\[\Fam^{\univ}(T) \hookrightarrow \Fam(T)\]</div>
+<p>admits a left adjoint. We call it the <em>univalent completion functor</em>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Univalent_Completion-main" data-owner-entry="univalent-completion" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Let <span class="math-inline">\(u\)</span> be a family. We construct a sequence <span class="math-inline">\(u_0 \to u_1 \to u_2 \to \cdots\)</span> in <span class="math-inline">\(\Fam(T)\)</span> by setting <span class="math-inline">\(u_0=u\)</span> and defining <span class="math-inline">\(u_{n+1}\)</span> by the pushout square <figure class="diagram"><img src="diagrams/tikzcd-d05aa654057a.svg" alt="Commutative diagram generated from the LaTeX source"></figure> Let <span class="math-inline">\(u_{\infty}:=\colim_n u_n\)</span>. We claim that <span class="math-inline">\(u_{\infty}\)</span> is univalent. Indeed, the pushout square gives a canonical map <span class="math-inline">\(q_n\colon u_n\times u_n \to u_{n+1}\)</span> for which both composites <span class="math-inline">\(u_n\rightrightarrows u_n\times u_n \to u_{n+1}\)</span> agree with the structure map <span class="math-inline">\(u_n\to u_{n+1}\)</span>. In other words, <span class="math-inline">\(q_n\)</span> is a diagonal filler for <figure class="diagram"><img src="diagrams/tikzcd-d6b484feebf8.svg" alt="Commutative diagram generated from the LaTeX source"></figure> Moreover, the composites <div class="math-display">\[u_n \longrightarrow u_n\times u_n \xrightarrow{q_n} u_{n+1}
+			\qquadtext{ and } \qquad
+			u_n\times u_n \xrightarrow{q_n} u_{n+1} \longrightarrow u_{n+1}\times u_{n+1}\]</div> are the structure maps of the shifted sequence <span class="math-inline">\((u_{n+1})_n\)</span> and of the sequence <span class="math-inline">\((u_n\times u_n)_n\)</span>, respectively. Since the shift <span class="math-inline">\([\omega]_{\geq 1}\hookrightarrow [\omega]\)</span> is final, and since <a href="#eq:Univalent_Families_Closed_Under_Sequential_Colimits">((1))</a> holds without assuming the <span class="math-inline">\(u_n\)</span> are univalent, passing to colimits identifies the resulting map with the diagonal <div class="math-display">\[u_{\infty}\longrightarrow u_{\infty}\times u_{\infty}\]</div> and the maps <span class="math-inline">\(q_n\)</span> induce an inverse. Hence this diagonal is an isomorphism.<div class="proof-paragraph-break" aria-hidden="true"></div>Now let <span class="math-inline">\(v\)</span> be a univalent family. We show that restriction along <span class="math-inline">\(u \to u_{\infty}\)</span> induces an equivalence <div class="math-display">\[\Hom_{\Fam(T)}(u_{\infty},v) \longrightarrow \Hom_{\Fam(T)}(u,v).\]</div> Given a map <span class="math-inline">\(u_n \to v\)</span>, the two induced maps <span class="math-inline">\(u_n\times u_n \rightrightarrows v\)</span> agree because <span class="math-inline">\(v\)</span> is <span class="math-inline">\((-1)\)</span>-truncated in <span class="math-inline">\(\Fam(T)\)</span>. Hence the map <span class="math-inline">\(u_n \to v\)</span> extends uniquely across the pushout defining <span class="math-inline">\(u_{n+1}\)</span>. Iterating and passing to the limit gives the desired isomorphism. This proves the adjunction.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem remark" id="rem:Univalent_Completion_As_Join_Construction">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/univalent-completion-as-join-construction/index.html">Remark 4.48.</a></span></p>
+  <div class="theorem-statement"><p>This construction is the join construction for propositional truncation, transplanted from homotopy type theory to the category <span class="math-inline">\(\Fam(T)\)</span>; compare <span class="citation-group">[Uemura <a class="citation" href="#bib-Uemura_Colimits_Topoi_Etale">2025, Proposition 4.7</a>]</span>.</p></div>
+</section>
+<p>From this point on, we formulate the proof in the logos direction. Thus an étale morphism of logoi is, after choosing an object <span class="math-inline">\(X\)</span>, the canonical functor <span class="math-inline">\(T \to T_{/X}\)</span> sending <span class="math-inline">\(U\)</span> to <span class="math-inline">\(U\times X\)</span>, dual to the corresponding geometric morphism of topoi.</p>
+<h3 id="subsec:Dependent_Products"><span>4.5.2.</span> Dependent products</h3>
+<p>If <span class="math-inline">\(T\)</span> is a logos and <span class="math-inline">\(p\colon X \to Y\)</span> is a morphism in <span class="math-inline">\(T\)</span>, then the pullback functor</p>
+<div class="math-display">\[p^*\colon T_{/Y} \longrightarrow T_{/X}\]</div>
+<p>preserves colimits by descent, hence admits a right adjoint <span class="math-inline">\(\Pi_p\)</span>, called <em>dependent product along <span class="math-inline">\(p\)</span></em>.</p>
+<section class="theorem definition" id="def:Preservation_Of_Dependent_Products">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/preservation-of-dependent-products/index.html">Definition 4.49.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\phi^*\colon T \to S\)</span> be a morphism of logoi. We say that <span class="math-inline">\(\phi^*\)</span> <em>preserves dependent products</em> if, for every morphism <span class="math-inline">\(p\colon X \to Y\)</span> in <span class="math-inline">\(T\)</span>, the canonical comparison</p>
+<div class="math-display">\[\phi^*(\Pi_p Z) \longrightarrow \Pi_{\phi^*(p)}\phi^*(Z)\]</div>
+<p>is an isomorphism for every <span class="math-inline">\(Z \in T_{/X}\)</span>.</p></div>
+</section>
+
+<section class="theorem proposition" id="prop:Dependent_Product_Preserving_Morphisms_Closed_Under_Limits">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/dependent-product-preserving-morphisms-closed-under-limits/index.html">Proposition 4.50.</a></span> (<span class="citation-group">[Uemura <a class="citation" href="#bib-Uemura_Colimits_Topoi_Etale">2025, Proposition 3.13</a>]</span>)</p>
+  <div class="theorem-statement"><p>The wide subcategory of <span class="math-inline">\(\Logos\)</span> spanned by the morphisms which preserve dependent products is closed under small limits.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Dependent_Product_Preserving_Morphisms_Closed_Under_Limits-main" data-owner-entry="dependent-product-preserving-morphisms-closed-under-limits" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Let <span class="math-inline">\(T_{\bullet}\colon I\to\Logos\)</span> be a diagram whose transition morphisms preserve dependent products, and let <span class="math-inline">\(T:=\lim_iT_i\)</span>. By <a href="../../entry/limits-of-logoi-computed-in-categories/index.html">Proposition 4.30</a>, the underlying category of <span class="math-inline">\(T\)</span> is the limit of the categories <span class="math-inline">\(T_i\)</span>. Slices, pullback functors, and their right adjoints are therefore computed pointwise. Hence every projection <span class="math-inline">\(T\to T_i\)</span> preserves dependent products. The same pointwise description shows that the universal cone remains a limit cone in the wide subcategory, which proves the claim.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem definition" id="def:Indexed_Left_Adjoint">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/indexed-left-adjoints/index.html">Definition 4.51.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\phi^*\colon T \to S\)</span> be a morphism of logoi and suppose that <span class="math-inline">\(\phi^*\)</span> admits a left adjoint <span class="math-inline">\(\phi_{\sharp}\colon S \to T\)</span>. We say that <span class="math-inline">\(\phi_{\sharp}\)</span> is <em><span class="math-inline">\(T\)</span>-indexed</em> if, for every morphism <span class="math-inline">\(p\colon X' \to X\)</span> in <span class="math-inline">\(T\)</span> and every pullback square in <span class="math-inline">\(S\)</span> of the form</p>
+<figure class="diagram"><img src="diagrams/tikzcd-957405ac3712.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>the transposed square</p>
+<figure class="diagram"><img src="diagrams/tikzcd-3d7695efdfaf.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>is a pullback in <span class="math-inline">\(T\)</span>.</p></div>
+</section>
+
+<section class="theorem lemma" id="lem:Dependent_Products_Indexed_Left_Adjoint">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/dependent-products-and-indexed-left-adjoints/index.html">Lemma 4.52.</a></span> (<span class="citation-group">[Uemura <a class="citation" href="#bib-Uemura_Colimits_Topoi_Etale">2025, Proposition 3.16</a>]</span>)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\phi^*\colon T \to S\)</span> be a morphism of logoi. Then <span class="math-inline">\(\phi^*\)</span> preserves dependent products if and only if it admits a <span class="math-inline">\(T\)</span>-indexed left adjoint.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Dependent_Products_Indexed_Left_Adjoint-main" data-owner-entry="dependent-products-and-indexed-left-adjoints" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">First suppose that <span class="math-inline">\(\phi^*\)</span> admits a left adjoint <span class="math-inline">\(\phi_{\sharp}\colon S\to T\)</span>. For every object <span class="math-inline">\(X\in T\)</span>, the induced functor <div class="math-display">\[\phi_X^*\colon T_{/X}\longrightarrow S_{/\phi^*(X)}\]</div> has a left adjoint <div class="math-display">\[\phi_{\sharp,X}\colon S_{/\phi^*(X)}\longrightarrow T_{/X},\]</div> which sends a map <span class="math-inline">\(Y\to \phi^*(X)\)</span> to its transpose <span class="math-inline">\(\phi_{\sharp}(Y)\to X\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>Now let <span class="math-inline">\(p\colon X'\to X\)</span> be a morphism in <span class="math-inline">\(T\)</span>. Since <span class="math-inline">\(\phi^*\)</span> is left exact, we have a commutative square of pullback functors <figure class="diagram"><img src="diagrams/tikzcd-e2cb22c8d599.svg" alt="Commutative diagram generated from the LaTeX source"></figure> The assertion that <span class="math-inline">\(\phi^*\)</span> preserves dependent products along <span class="math-inline">\(p\)</span> is precisely that the corresponding right Beck–Chevalley comparison <div class="math-display">\[\phi_X^*\Pi_p \longrightarrow \Pi_{\phi^*(p)}\phi_{X'}^*\]</div> is an isomorphism. Taking mates under the adjunctions <span class="math-inline">\(\phi_{\sharp,X}\dashv \phi_X^*\)</span>, <span class="math-inline">\(\phi_{\sharp,X'}\dashv \phi_{X'}^*\)</span>, <span class="math-inline">\(p^*\dashv \Pi_p\)</span>, and <span class="math-inline">\(\phi^*(p)^*\dashv \Pi_{\phi^*(p)}\)</span>, this is equivalent to the left Beck–Chevalley comparison <div class="math-display">\[\phi_{\sharp,X'}\phi^*(p)^* \longrightarrow p^*\phi_{\sharp,X}\]</div> being an isomorphism. Evaluating this comparison on a map <span class="math-inline">\(Y\to \phi^*(X)\)</span> gives the canonical map from the transpose of the pullback square <figure class="diagram"><img src="diagrams/tikzcd-e485d1838c4e.svg" alt="Commutative diagram generated from the LaTeX source"></figure> to the pullback of <span class="math-inline">\(\phi_{\sharp}(Y)\to X\)</span> along <span class="math-inline">\(p\)</span>. Thus the left Beck–Chevalley comparison is an isomorphism exactly when every such transposed square is a pullback. This is precisely the condition that <span class="math-inline">\(\phi_{\sharp}\)</span> is <span class="math-inline">\(T\)</span>-indexed.<div class="proof-paragraph-break" aria-hidden="true"></div>It remains to note that preservation of dependent products implies that <span class="math-inline">\(\phi^*\)</span> has a left adjoint. Let <span class="math-inline">\(\{X_i\}_{i\in I}\)</span> be a small family of objects in <span class="math-inline">\(T\)</span>. The product <span class="math-inline">\(\prod_i X_i\)</span> can be constructed as the dependent product of the object <div class="math-display">\[\coprod_{i\in I} X_i \longrightarrow \coprod_{i\in I} *\]</div> along the fold map <span class="math-inline">\(\coprod_{i\in I} *\to *\)</span>. Since <span class="math-inline">\(\phi^*\)</span> preserves colimits, the coproducts in this construction are carried to the corresponding coproducts in <span class="math-inline">\(S\)</span>, and by assumption <span class="math-inline">\(\phi^*\)</span> preserves the dependent product. Hence <span class="math-inline">\(\phi^*\)</span> preserves small products. Together with left exactness, this implies that <span class="math-inline">\(\phi^*\)</span> preserves all small limits. Since <span class="math-inline">\(\phi^*\)</span> is an accessible functor between presentable categories, the adjoint functor theorem gives a left adjoint to <span class="math-inline">\(\phi^*\)</span>. The first part of the proof then shows that this left adjoint is <span class="math-inline">\(T\)</span>-indexed.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem lemma" id="lem:Dependent_Product_Functor_Preserves_Univalent_Families">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/dependent-products-preserve-univalent-families/index.html">Lemma 4.53.</a></span> (<span class="citation-group">[Uemura <a class="citation" href="#bib-Uemura_Colimits_Topoi_Etale">2025, Proposition 4.10</a>]</span>)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\phi^*\colon T \to S\)</span> be a morphism of logoi which preserves dependent products. Then <span class="math-inline">\(\phi^*\)</span> sends univalent families in <span class="math-inline">\(T\)</span> to univalent families in <span class="math-inline">\(S\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Dependent_Product_Functor_Preserves_Univalent_Families-main" data-owner-entry="dependent-products-preserve-univalent-families" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Let <span class="math-inline">\(\phi_{\sharp}\)</span> be the <span class="math-inline">\(T\)</span>-indexed left adjoint of <span class="math-inline">\(\phi^*\)</span> from <a href="#lem:Dependent_Products_Indexed_Left_Adjoint">Lemma 4.52</a>. The adjunction gives a natural isomorphism on arrow categories <div class="math-display">\[\Hom_{\Ar(S)}(v,\phi^*(u)) \simeq \Hom_{\Ar(T)}(\phi_{\sharp}(v),u).\]</div> Under this isomorphism, the <span class="math-inline">\(T\)</span>-indexed condition says that any morphism <span class="math-inline">\(v\to \phi^*(u)\)</span> whose square in <span class="math-inline">\(S\)</span> is a pullback is sent to a morphism <span class="math-inline">\(\phi_{\sharp}(v)\to u\)</span> whose square in <span class="math-inline">\(T\)</span> is a pullback. Thus we get a map <div class="math-display">\[\Hom_{\Fam(S)}(v,\phi^*(u)) \longrightarrow \Hom_{\Fam(T)}(\phi_{\sharp}(v),u).\]</div> This map is a monomorphism of animae: both sides are subanimae of the corresponding arrow-category mapping animae, and the ambient map is an isomorphism. If <span class="math-inline">\(u\)</span> is univalent, then <span class="math-inline">\(\Hom_{\Fam(T)}(\phi_{\sharp}(v),u)\)</span> is <span class="math-inline">\((-1)\)</span>-truncated; hence its subanima <span class="math-inline">\(\Hom_{\Fam(S)}(v,\phi^*(u))\)</span> is also <span class="math-inline">\((-1)\)</span>-truncated. Thus <span class="math-inline">\(\phi^*(u)\)</span> is univalent.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<h3 id="subsec:Characterization_Of_Etale_Morphisms"><span>4.5.3.</span> Characterization of étale morphisms</h3>
+<p>We now combine dependent products with univalent families to recognize étale morphisms. Preservation of dependent products supplies an indexed left adjoint and hence a fully faithful factorization through a slice. The remaining question is whether that fully faithful factor is essentially surjective. The existence of enough families detects this, while univalence rigidifies the families sufficiently for the condition to survive the limit construction in the next subsection.</p>
+<section class="theorem definition" id="def:Enough_Families_And_Object_Generation">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/enough-families-and-object-generation/index.html">Definition 4.54.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\phi^*\colon T \to S\)</span> be a morphism of logoi.</p>
+<ol><li><p>We say that <span class="math-inline">\(\phi^*\)</span> <em>provides enough families</em> if, for every family <span class="math-inline">\(v\)</span> in <span class="math-inline">\(S\)</span>, there exists a family <span class="math-inline">\(u\)</span> in <span class="math-inline">\(T\)</span> and a morphism <span class="math-inline">\(v \to \phi^*(u)\)</span> in <span class="math-inline">\(\Fam(S)\)</span>.</p></li><li><p>If <span class="math-inline">\(\phi^*\)</span> preserves dependent products, we say that <span class="math-inline">\(\phi^*\)</span> <em>provides enough univalent families</em> if the same condition holds after restricting to univalent families.</p></li><li><p>We say that <span class="math-inline">\(\phi^*\)</span> is <em>object-generating</em> if the closure of the image of <span class="math-inline">\(\phi^*\)</span> under colimits and finite limits is all of <span class="math-inline">\(S\)</span>.</p></li></ol></div>
+</section>
+
+<section class="theorem lemma" id="lem:Indexed_Left_Adjoint_Etale_Factorization">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/indexed-left-adjoint-etale-factorization/index.html">Lemma 4.55.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\phi^*\colon T \to S\)</span> be a morphism of logoi with a <span class="math-inline">\(T\)</span>-indexed left adjoint <span class="math-inline">\(\phi_{\sharp}\)</span>. Then <span class="math-inline">\(\phi^*\)</span> factors as</p>
+<div class="math-display">\[T \xrightarrow{(-)\times \phi_{\sharp}(*)} T_{/\phi_{\sharp}(*)} \xrightarrow{\psi^*} S,\]</div>
+<p>where <span class="math-inline">\(\psi^*\)</span> is fully faithful.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Indexed_Left_Adjoint_Etale_Factorization-main" data-owner-entry="indexed-left-adjoint-etale-factorization" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Let <span class="math-inline">\(\eta\colon \id_S \to \phi^* \phi_{\sharp}\)</span> be the unit of the adjunction <span class="math-inline">\(\phi_{\sharp} \dashv \phi^*\)</span>. Define <div class="math-display">\[\psi^*\colon T_{/\phi_{\sharp}(*)} \longrightarrow S\]</div> as the composite <div class="math-display">\[T_{/\phi_{\sharp}(*)} \xrightarrow{\phi^*} S_{/\phi^* \phi_{\sharp}(*)} \xrightarrow{\eta_*^*} S,\]</div> where <span class="math-inline">\(\eta_*\colon * \to \phi^* \phi_{\sharp}(*)\)</span> is the unit at the terminal object of <span class="math-inline">\(S\)</span> and the second functor is pullback along <span class="math-inline">\(\eta_*\)</span>. For <span class="math-inline">\(X\in T\)</span>, the object <span class="math-inline">\(\psi^*(X\times \phi_{\sharp}(*))\)</span> is the pullback of <span class="math-inline">\(\phi^*(X)\times \phi^* \phi_{\sharp}(*) \to \phi^* \phi_{\sharp}(*)\)</span> along <span class="math-inline">\(\eta_*\)</span>, hence is equivalent to <span class="math-inline">\(\phi^*(X)\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>The left adjoint of <span class="math-inline">\(\psi^*\)</span> is <span class="math-inline">\(\phi_{\sharp}\)</span> followed by the evident map to <span class="math-inline">\(\phi_{\sharp}(*)\)</span>. The counit is identified, by the <span class="math-inline">\(T\)</span>-indexed condition, with the transpose of a pullback square, and is therefore an isomorphism. Hence <span class="math-inline">\(\psi^*\)</span> is fully faithful.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem proposition" id="prop:Etale_Morphism_Characterization">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/characterizations-of-etale-morphisms/index.html">Proposition 4.56.</a></span> ({Uemura, <span class="citation-group">[Uemura <a class="citation" href="#bib-Uemura_Colimits_Topoi_Etale">2025, Proposition 5.10</a>]</span>})</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\phi^*\colon T \to S\)</span> be a morphism of logoi which preserves dependent products. Then the following conditions are equivalent:</p>
+<ol><li><p><span class="math-inline">\(\phi^*\)</span> is an étale morphism.</p></li><li><p>The unit <span class="math-inline">\(\id_S \to \phi^*\phi_{\sharp}\)</span> of the indexed adjunction is cartesian.</p></li><li><p><span class="math-inline">\(\phi^*\)</span> provides enough families.</p></li><li><p><span class="math-inline">\(\phi^*\)</span> provides enough univalent families.</p></li><li><p><span class="math-inline">\(\phi^*\)</span> is object-generating.</p></li></ol>
+<p>If these conditions hold, then <span class="math-inline">\(\phi^*\)</span> is equivalent, under <span class="math-inline">\(T\)</span>, to the canonical étale morphism <span class="math-inline">\(T \to T_{/\phi_{\sharp}(*)}\)</span>, <span class="math-inline">\(Y\mapsto Y\times \phi_{\sharp}(*)\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Etale_Morphism_Characterization-main" data-owner-entry="characterizations-of-etale-morphisms" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Assume first that <span class="math-inline">\(\phi^*\)</span> is an étale morphism. Choose <span class="math-inline">\(X\in T\)</span> and identify <span class="math-inline">\(S\)</span> with <span class="math-inline">\(T_{/X}\)</span> so that <span class="math-inline">\(\phi^*\)</span> is the functor <span class="math-inline">\(Y\mapsto Y\times X\)</span>. Then the left adjoint is the forgetful functor <span class="math-inline">\(T_{/X}\to T\)</span>, and the unit is cartesian because a morphism in a slice is recovered by pulling back its total space along the corresponding map to <span class="math-inline">\(X\)</span>. This gives (1) <span class="math-inline">\(\Rightarrow\)</span> (2).<div class="proof-paragraph-break" aria-hidden="true"></div>If the unit is cartesian and <span class="math-inline">\(v\colon Y'\to Y\)</span> is a family in <span class="math-inline">\(S\)</span>, then the naturality square <figure class="diagram"><img src="diagrams/tikzcd-3c1d0a82e5d2.svg" alt="Commutative diagram generated from the LaTeX source"></figure> exhibits <span class="math-inline">\(v\)</span> as a pullback of the family <span class="math-inline">\(\phi_{\sharp}(v)\)</span> after applying <span class="math-inline">\(\phi^*\)</span>. Thus (2) implies (3).<div class="proof-paragraph-break" aria-hidden="true"></div>Condition (3) implies (5): applying (3) to the family <span class="math-inline">\(Y\to *\)</span> gives a family <span class="math-inline">\(u\colon E\to B\)</span> in <span class="math-inline">\(T\)</span> and a pullback square <figure class="diagram"><img src="diagrams/tikzcd-80bdcfc9020c.svg" alt="Commutative diagram generated from the LaTeX source"></figure> Since <span class="math-inline">\(* \simeq \phi^*(*)\)</span>, the object <span class="math-inline">\(Y\)</span> is a finite limit of objects in the image of <span class="math-inline">\(\phi^*\)</span>. Hence <span class="math-inline">\(\phi^*\)</span> is object-generating.<div class="proof-paragraph-break" aria-hidden="true"></div>Now assume (5). By <a href="#lem:Indexed_Left_Adjoint_Etale_Factorization">Lemma 4.55</a>, the morphism <span class="math-inline">\(\phi^*\)</span> factors as an étale morphism followed by a fully faithful morphism <span class="math-inline">\(\psi^*\)</span>. Since <span class="math-inline">\(\phi^*\)</span> is object-generating, so is <span class="math-inline">\(\psi^*\)</span>. A fully faithful morphism of logoi which is object-generating is an equivalence, because its essential image is already closed under colimits and finite limits. Hence <span class="math-inline">\(\phi^*\)</span> is an étale morphism. This proves (5) <span class="math-inline">\(\Rightarrow\)</span> (1).<div class="proof-paragraph-break" aria-hidden="true"></div>It remains to compare (3) and (4). The implication (4) <span class="math-inline">\(\Rightarrow\)</span> (3) follows by applying univalent completion from <a href="#prop:Univalent_Completion">Proposition 4.47</a> to the target family. Conversely, if (3) holds and <span class="math-inline">\(v\)</span> is univalent in <span class="math-inline">\(S\)</span>, choose a family <span class="math-inline">\(u\)</span> in <span class="math-inline">\(T\)</span> and a map <span class="math-inline">\(v\to \phi^*(u)\)</span>. Let <span class="math-inline">\(u^{\univ}\)</span> be the univalent completion of <span class="math-inline">\(u\)</span>. By <a href="#lem:Dependent_Product_Functor_Preserves_Univalent_Families">Lemma 4.53</a>, <span class="math-inline">\(\phi^*(u^{\univ})\)</span> is univalent, and the composite <div class="math-display">\[v \longrightarrow \phi^*(u) \longrightarrow \phi^*(u^{\univ})\]</div> shows that (4) holds.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem proposition" id="prop:Coslice_Etale_Morphisms">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/coslices-of-etale-morphisms/index.html">Proposition 4.57.</a></span> (<span class="citation-group">[Uemura <a class="citation" href="#bib-Uemura_Colimits_Topoi_Etale">2025, Corollary 5.11 and Lemma 5.12</a>]</span>)</p>
+  <div class="theorem-statement"><p>For every logos <span class="math-inline">\(C\)</span>, the functor</p>
+<div class="math-display">\[C\catop \longrightarrow \Logos^{\et}_{C/}, \qquad X \longmapsto (C \to C_{/X})\]</div>
+<p>is an equivalence. Under this equivalence, the inclusion <span class="math-inline">\(\Logos^{\et}_{C/}\hookrightarrow \Logos_{C/}\)</span> preserves limits.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Coslice_Etale_Morphisms-main" data-owner-entry="coslices-of-etale-morphisms" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Essential surjectivity and full faithfulness are the slice classification of étale morphisms from <a href="../../entry/etale-morphisms-over-a-topos/index.html">Proposition 4.38</a>, translated to logoi. Explicitly, an étale morphism <span class="math-inline">\(\phi^*\colon C\to S\)</span> is equivalent to <span class="math-inline">\(C\to C_{/\phi_{\sharp}(*)}\)</span> by <a href="#prop:Etale_Morphism_Characterization">Proposition 4.56</a>.<div class="proof-paragraph-break" aria-hidden="true"></div>For preservation of limits, let <span class="math-inline">\(X_{\bullet}\colon I\to C\)</span> be a diagram with colimit <span class="math-inline">\(X\)</span>. Descent gives <div class="math-display">\[C_{/X} \simeq \lim_i C_{/X_i}\]</div> in <span class="math-inline">\(\Logos_{C/}\)</span>. Passing to <span class="math-inline">\(C\catop\)</span>, this says exactly that <span class="math-inline">\(X\mapsto C_{/X}\)</span> preserves the relevant limits.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<h3 id="subsec:Proof_Of_Colimits_Topoi_Etale"><span>4.5.4.</span> Proof of the main theorem</h3>
+<p>We are now in a position to prove <a href="#thm:Colimits_Topos_Et">Theorem 4.41</a>, i.e. the fact that <span class="math-inline">\(\Topos^{\et} \subseteq \Topos\)</span> is closed under colimits, or equivalently that <span class="math-inline">\(\Logos^{\et} \subseteq \Logos\)</span> is closed under limits.</p>
+<section class="theorem lemma" id="lem:Product_Projections_Etale">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/product-projections-are-etale/index.html">Lemma 4.58.</a></span> (<span class="citation-group">[Uemura <a class="citation" href="#bib-Uemura_Colimits_Topoi_Etale">2025, Lemma 5.13</a>]</span>)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\{C_i\}_{i\in I}\)</span> be a small family of logoi. Then every projection</p>
+<div class="math-display">\[\prod_{j\in I} C_j \longrightarrow C_i\]</div>
+<p>is an étale morphism.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Product_Projections_Etale-main" data-owner-entry="product-projections-are-etale" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Let <span class="math-inline">\(D=\prod_{j\in I}C_j\)</span>. Define an object <span class="math-inline">\(x\in D\)</span> by taking <span class="math-inline">\(x_i=*\)</span> and <span class="math-inline">\(x_j=\emptyset\)</span> for <span class="math-inline">\(j\neq i\)</span>. Then <div class="math-display">\[D_{/x} \simeq \prod_{j\in I}(C_j)_{/x_j} \simeq C_i,\]</div> since the slice over the initial object is terminal. Under this equivalence, the canonical étale functor <span class="math-inline">\(D\to D_{/x}\)</span> is the projection to <span class="math-inline">\(C_i\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem lemma" id="lem:Limit_Projections_Etale">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/limit-projections-are-etale/index.html">Lemma 4.59.</a></span> (<span class="citation-group">[Uemura <a class="citation" href="#bib-Uemura_Colimits_Topoi_Etale">2025, Lemma 5.14</a>]</span>)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C_{\bullet}\colon I\to \Logos^{\et}\)</span> be a small diagram, and let</p>
+<div class="math-display">\[C_{-\infty}:=\lim_{i\in I} C_i\]</div>
+<p>be its limit in <span class="math-inline">\(\Logos\)</span>. Then every projection <span class="math-inline">\(\pi_i\colon C_{-\infty}\to C_i\)</span> is an étale morphism.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Limit_Projections_Etale-main" data-owner-entry="limit-projections-are-etale" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Let <span class="math-inline">\(D:=\prod_{i\in I} C_i\)</span>. By <a href="#lem:Product_Projections_Etale">Lemma 4.58</a>, it suffices to prove that the forgetful morphism <div class="math-display">\[\pi\colon C_{-\infty}\longrightarrow D\]</div> is an étale morphism. By <a href="#prop:Etale_Morphism_Characterization">Proposition 4.56</a>, it is enough to show that <span class="math-inline">\(\pi\)</span> preserves dependent products and provides enough univalent families.<div class="proof-paragraph-break" aria-hidden="true"></div>Every étale morphism preserves dependent products by <a href="../../entry/characterizing-etale-morphisms-by-left-adjoints/index.html">Proposition 4.37</a> and <a href="#lem:Dependent_Products_Indexed_Left_Adjoint">Lemma 4.52</a>. Hence <a href="#prop:Dependent_Product_Preserving_Morphisms_Closed_Under_Limits">Proposition 4.50</a> shows that <span class="math-inline">\(\pi\)</span> preserves dependent products.<div class="proof-paragraph-break" aria-hidden="true"></div>Let <span class="math-inline">\(u=(u_i)_{i\in I}\)</span> be a univalent family in <span class="math-inline">\(D\)</span>, i.e. a tuple of univalent families <span class="math-inline">\(u_i\in \Fam^{\univ}(C_i)\)</span> without imposing the transition equivalences. Since limits of logoi are computed in <span class="math-inline">\(\Cat\)</span>, we have <span class="math-inline">\(\Fam(C_{-\infty})\simeq \lim_i\Fam(C_i)\)</span>. Hence <span class="math-inline">\(\Fam^{\univ}(C_{-\infty})\)</span> is the full subposet of <span class="math-inline">\(\Fam^{\univ}(D)\)</span> spanned by the tuples equipped with equivalences <span class="math-inline">\(s^*(u_i)\simeq u_j\)</span> for all arrows <span class="math-inline">\(s\colon i\to j\)</span> in <span class="math-inline">\(I\)</span>; the higher coherences are automatic because univalent families form a poset. We will enlarge <span class="math-inline">\(u\)</span> to such a compatible tuple.<div class="proof-paragraph-break" aria-hidden="true"></div>For a morphism <span class="math-inline">\(s\colon i\to j\)</span> in <span class="math-inline">\(I\)</span>, write <span class="math-inline">\(s^*\colon C_i\to C_j\)</span> for the corresponding étale morphism of logoi, and write <span class="math-inline">\(s_{\sharp}\colon C_j\to C_i\)</span> for its left adjoint. Both functors induce functors on families. For <span class="math-inline">\(s^*\)</span> this follows from left exactness. For <span class="math-inline">\(s_{\sharp}\)</span> it follows from the indexed condition in <a href="#lem:Dependent_Products_Indexed_Left_Adjoint">Lemma 4.52</a>; after identifying <span class="math-inline">\(s^*\)</span> with a pullback functor into a slice, <span class="math-inline">\(s_{\sharp}\)</span> is the total-object functor and therefore preserves pullback squares. Both induced functors preserve colimits of families: <span class="math-inline">\(s^*\)</span> preserves colimits as a morphism of logoi, while <span class="math-inline">\(s_{\sharp}\)</span> preserves them as a left adjoint, and colimits in <span class="math-inline">\(\Fam(C_i)\)</span> and <span class="math-inline">\(\Fam(C_j)\)</span> are computed in the corresponding arrow categories by <a href="#lem:Families_Closed_Under_Colimits">Lemma 4.44</a>.<div class="proof-paragraph-break" aria-hidden="true"></div>Define an endofunctor <span class="math-inline">\(\Phi\)</span> of <span class="math-inline">\(\Fam(D)\)</span> by <div class="math-display">\[\Phi(u)_i :=
+			\coprod_{(s\colon j\to i)} s^*(u_j)
+			\sqcup
+			\coprod_{(s\colon i\to j)} s_{\sharp}(u_j).\]</div> Let <span class="math-inline">\(G\)</span> be the endofunctor of <span class="math-inline">\(\Fam^{\univ}(D)\)</span> obtained by applying univalent completion componentwise to <span class="math-inline">\(\Phi\)</span>. The summands indexed by the identity morphisms give a natural map <span class="math-inline">\(u\to G(u)\)</span>. Moreover, for every <span class="math-inline">\(s\colon i\to j\)</span> there are natural maps <div class="math-display">\[s^*(u_i) \longrightarrow G(u)_j
+			\qquadtext{ and } \qquad
+			u_j \longrightarrow s^*G(u)_i,\]</div> the second obtained by adjunction from <span class="math-inline">\(s_{\sharp}(u_j)\to G(u)_i\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>Now form the chain <div class="math-display">\[u \longrightarrow G(u) \longrightarrow G^2(u) \longrightarrow \cdots\]</div> and set <span class="math-inline">\(u^{\infty}:=\colim_n G^n(u)\)</span>. This colimit is computed in <span class="math-inline">\(\Fam(D)\)</span> and remains univalent by <a href="#cor:Univalent_Families_Closed_Under_Sequential_Colimits">Corollary 4.46</a>. The functor <span class="math-inline">\(G\)</span> preserves sequential colimits: the functor <span class="math-inline">\(\Phi\)</span> does so by the preceding paragraph, and univalent completion does so because it is a left adjoint. Consequently, <div class="math-display">\[G(u^{\infty})\simeq\colim_nG^{n+1}(u).\]</div> Here it is essential that univalent families form a poset. In particular, the two morphisms <span class="math-inline">\(G(u)\to G^2(u)\)</span> obtained by applying <span class="math-inline">\(G\)</span> to <span class="math-inline">\(u\to G(u)\)</span> and by evaluating the natural transformation <span class="math-inline">\(\id\to G\)</span> at <span class="math-inline">\(G(u)\)</span> agree, and all higher compatibilities are unique. Thus applying <span class="math-inline">\(G\)</span> to the displayed chain gives its tail. Under the resulting identification, the natural map <div class="math-display">\[u^{\infty}\longrightarrow G(u^{\infty})\]</div> agrees with the map induced by the structure maps <span class="math-inline">\(G^n(u)\to G^{n+1}(u)\)</span>. It is an isomorphism because the inclusion of the tail of <span class="math-inline">\([\omega]\)</span> is final. This is the usual Adámek fixed-point argument <span class="citation-group">[Adamek <a class="citation" href="#bib-Adamek_Free_Algebras_Automata">1974</a>]</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>For every arrow <span class="math-inline">\(s\colon i\to j\)</span>, the displayed maps for <span class="math-inline">\(G\)</span> pass to the colimit and give morphisms <div class="math-display">\[s^*(u^{\infty}_i) \longrightarrow u^{\infty}_j
+			\qquadtext{ and } \qquad
+			u^{\infty}_j \longrightarrow s^*(u^{\infty}_i)\]</div> between univalent families. Here the fixed-point equivalence identifies the shifted colimits appearing in the construction with <span class="math-inline">\(u^{\infty}\)</span>. Since univalent families form a poset inside <span class="math-inline">\(\Fam(C_j)\)</span>, these two maps exhibit <span class="math-inline">\(s^*(u^{\infty}_i)\)</span> and <span class="math-inline">\(u^{\infty}_j\)</span> as equivalent. The higher compatibility data are unique for the same reason. Thus <span class="math-inline">\(u^{\infty}\)</span> is a univalent family in the limit logos <span class="math-inline">\(C_{-\infty}\)</span>, and the map <span class="math-inline">\(u\to u^{\infty}\)</span> shows that <span class="math-inline">\(\pi\)</span> provides enough univalent families.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem proposition" id="prop:Wide_Subcategory_Colimit_Criterion">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/wide-subcategory-colimit-criterion/index.html">Proposition 4.60.</a></span> (<span class="citation-group">[Uemura <a class="citation" href="#bib-Uemura_Colimits_Topoi_Etale">2025, Proposition 2.6</a>]</span>)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> be a category with small colimits, and let <span class="math-inline">\(D\subseteq C\)</span> be a wide subcategory. Suppose that:</p>
+<ol><li><p>For every object <span class="math-inline">\(X\in C\)</span>, the wide subcategory <span class="math-inline">\(D_{/X}\subseteq C_{/X}\)</span> is closed under small colimits.</p></li><li><p>For every small diagram <span class="math-inline">\(X_{\bullet}\colon I\to D\)</span>, if <span class="math-inline">\(X=\colim_i X_i\)</span> is computed in <span class="math-inline">\(C\)</span>, then all structure maps <span class="math-inline">\(X_i\to X\)</span> lie in <span class="math-inline">\(D\)</span>.</p></li></ol>
+<p>Then <span class="math-inline">\(D\)</span> is closed under small colimits in <span class="math-inline">\(C\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Wide_Subcategory_Colimit_Criterion-main" data-owner-entry="wide-subcategory-colimit-criterion" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Let <span class="math-inline">\(X_{\bullet}\colon I\to D\)</span> be a diagram and let <span class="math-inline">\(X=\colim_i X_i\)</span> in <span class="math-inline">\(C\)</span>. We need to show that <span class="math-inline">\(X\)</span> has the universal property of a colimit in <span class="math-inline">\(D\)</span>. For any object <span class="math-inline">\(Y\)</span>, a morphism <span class="math-inline">\(f\colon X\to Y\)</span> belongs to <span class="math-inline">\(D\)</span> if and only if all composites <span class="math-inline">\(X_i\to X\to Y\)</span> belong to <span class="math-inline">\(D\)</span>: the forward direction follows from (2), and the reverse direction follows from (1), since <span class="math-inline">\(f\)</span> is the colimit in <span class="math-inline">\(C_{/Y}\)</span> of the diagram of the composites <span class="math-inline">\(X_i\to Y\)</span>. This identifies the mapping anima from <span class="math-inline">\(X\)</span> to <span class="math-inline">\(Y\)</span> in <span class="math-inline">\(D\)</span> with the limit of the mapping animae from the <span class="math-inline">\(X_i\)</span> to <span class="math-inline">\(Y\)</span> in <span class="math-inline">\(D\)</span>, as desired.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>We finally get to the main result.</p>
+<details class="proof-shell" id="proof-thm:Colimits_Topos_Et-main" data-owner-entry="colimits-of-topoi-along-etale-morphisms" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">We apply <a href="#prop:Wide_Subcategory_Colimit_Criterion">Proposition 4.60</a> to the wide subcategory <span class="math-inline">\(\Topos^{\et}\subseteq \Topos\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>First fix a topos <span class="math-inline">\(S\)</span>. We claim that <span class="math-inline">\((\Topos^{\et})_{/S}\subseteq \Topos_{/S}\)</span> is closed under colimits. Under the equivalence <div class="math-display">\[S \simeq \Topos^{\et}_{/S}, \qquad X\longmapsto S_{/X}\]</div> from <a href="../../entry/etale-morphisms-over-a-topos/index.html">Proposition 4.38</a>, a diagram of étale morphisms over <span class="math-inline">\(S\)</span> corresponds to a diagram <span class="math-inline">\(X_{\bullet}\)</span> in <span class="math-inline">\(S\)</span>. If <span class="math-inline">\(X=\colim_i X_i\)</span>, descent in <span class="math-inline">\(S\)</span> gives <div class="math-display">\[S_{/X} \simeq \lim_i S_{/X_i},\]</div> which says that the corresponding colimit in <span class="math-inline">\(\Topos_{/S}\)</span> is again étale over <span class="math-inline">\(S\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>It remains to verify the structure-map condition. Let <span class="math-inline">\(T_{\bullet}\colon I\to \Topos^{\et}\)</span> be a diagram, and let <span class="math-inline">\(T=\colim_i T_i\)</span> be its colimit in <span class="math-inline">\(\Topos\)</span>. Passing to logoi, this is the limit of the opposite diagram in <span class="math-inline">\(\Logos^{\et}\)</span>. By <a href="#lem:Limit_Projections_Etale">Lemma 4.59</a>, each projection <span class="math-inline">\(T\to T_i\)</span> on the logos side is an étale morphism. Equivalently, each structure morphism <span class="math-inline">\(T_i\to T\)</span> on the topos side is étale.<div class="proof-paragraph-break" aria-hidden="true"></div>The criterion therefore shows that <span class="math-inline">\(\Topos^{\et}\)</span> is closed under colimits in <span class="math-inline">\(\Topos\)</span>, and that the colimit computed in <span class="math-inline">\(\Topos\)</span> has the universal property in <span class="math-inline">\(\Topos^{\et}\)</span>. Hence the inclusion preserves these colimits.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-Uemura_Colimits_Topoi_Etale">Taichi Uemura. <em>Colimits in the ∞-category of ∞-topoi and étale morphisms</em>. 2025.</li>
+<li id="bib-Adamek_Free_Algebras_Automata">Jiri Adamek. <em>Free algebras and automata realizations in the language of categories</em>. Commentat. Math. Univ. Carol., 15, 589–602. 1974.</li></ol></section>
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+      <a class="context-step-control" rel="prev" href="../etale-morphisms/index.html" aria-label="Previous section: Étale morphisms" title="Previous section: Étale morphisms"><span aria-hidden="true">←</span></a>
+      <a class="context-step-control" rel="next" href="../epimorphisms-and-acyclic-maps/index.html" aria-label="Next section: Epimorphisms and acyclic maps" title="Next section: Epimorphisms and acyclic maps"><span aria-hidden="true">→</span></a>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../chapter/introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../../chapter/foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../../chapter/truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../../chapter/topoi-logoi/index.html" aria-current="location">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../../chapter/modalities/index.html">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../../chapter/topics-in-topos-theory/index.html">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../../chapter/geometry/index.html">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../../chapter/factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../../chapter/limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../topoi-and-logoi/index.html">
+          <span class="context-entry-heading">Section 4.1</span>
+          <span class="context-entry-title">Topoi and logoi</span>
+        </a></li>
+<li><a href="../presentations-of-logoi/index.html">
+          <span class="context-entry-heading">Section 4.2</span>
+          <span class="context-entry-title">Presentations of logoi</span>
+        </a></li>
+<li><a href="../limits-and-colimits-of-topoi/index.html">
+          <span class="context-entry-heading">Section 4.3</span>
+          <span class="context-entry-title">Limits and colimits of topoi</span>
+        </a></li>
+<li><a href="../etale-morphisms/index.html">
+          <span class="context-entry-heading">Section 4.4</span>
+          <span class="context-entry-title">Étale morphisms</span>
+        </a></li>
+<li><a href="../colimits-of-topoi-along-etale-morphisms/index.html" aria-current="page">
+          <span class="context-entry-heading">Section 4.5</span>
+          <span class="context-entry-title">Colimits of topoi along étale morphisms</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <p class="context-nav-kicker">Section 4.5</p>
+      <p class="context-nav-description">Colimits of topoi along étale morphisms</p>
+      <ol class="context-entry-list">
+        <li><a href="#thm:Colimits_Topos_Et" data-section-target="thm:Colimits_Topos_Et">
+          <span class="context-entry-heading">Theorem 4.41</span>
+          <span class="context-entry-title">Colimits of topoi along étale morphisms</span>
+        </a></li>
+<li><a href="#def:Univalent_Family" data-section-target="def:Univalent_Family">
+          <span class="context-entry-heading">Definition 4.42</span>
+          <span class="context-entry-title">Univalent families</span>
+        </a></li>
+<li><a href="#lem:Family_Slice_Equivalent_To_Base_Slice" data-section-target="lem:Family_Slice_Equivalent_To_Base_Slice">
+          <span class="context-entry-heading">Lemma 4.43</span>
+          <span class="context-entry-title">Slices of family categories</span>
+        </a></li>
+<li><a href="#lem:Families_Closed_Under_Colimits" data-section-target="lem:Families_Closed_Under_Colimits">
+          <span class="context-entry-heading">Lemma 4.44</span>
+          <span class="context-entry-title">Colimits and pullbacks of families</span>
+        </a></li>
+<li><a href="#prop:Family_Category_Binary_Products" data-section-target="prop:Family_Category_Binary_Products">
+          <span class="context-entry-heading">Proposition 4.45</span>
+          <span class="context-entry-title">Binary products of families</span>
+        </a></li>
+<li><a href="#cor:Univalent_Families_Closed_Under_Sequential_Colimits" data-section-target="cor:Univalent_Families_Closed_Under_Sequential_Colimits">
+          <span class="context-entry-heading">Corollary 4.46</span>
+          <span class="context-entry-title">Sequential colimits of univalent families</span>
+        </a></li>
+<li><a href="#prop:Univalent_Completion" data-section-target="prop:Univalent_Completion">
+          <span class="context-entry-heading">Proposition 4.47</span>
+          <span class="context-entry-title">Univalent completion</span>
+        </a></li>
+<li><a href="#rem:Univalent_Completion_As_Join_Construction" data-section-target="rem:Univalent_Completion_As_Join_Construction">
+          <span class="context-entry-heading">Remark 4.48</span>
+          <span class="context-entry-title">Univalent completion as a join construction</span>
+        </a></li>
+<li><a href="#def:Preservation_Of_Dependent_Products" data-section-target="def:Preservation_Of_Dependent_Products">
+          <span class="context-entry-heading">Definition 4.49</span>
+          <span class="context-entry-title">Preservation of dependent products</span>
+        </a></li>
+<li><a href="#prop:Dependent_Product_Preserving_Morphisms_Closed_Under_Limits" data-section-target="prop:Dependent_Product_Preserving_Morphisms_Closed_Under_Limits">
+          <span class="context-entry-heading">Proposition 4.50</span>
+          <span class="context-entry-title">Dependent-product-preserving morphisms are closed under limits</span>
+        </a></li>
+<li><a href="#def:Indexed_Left_Adjoint" data-section-target="def:Indexed_Left_Adjoint">
+          <span class="context-entry-heading">Definition 4.51</span>
+          <span class="context-entry-title">Indexed left adjoints</span>
+        </a></li>
+<li><a href="#lem:Dependent_Products_Indexed_Left_Adjoint" data-section-target="lem:Dependent_Products_Indexed_Left_Adjoint">
+          <span class="context-entry-heading">Lemma 4.52</span>
+          <span class="context-entry-title">Dependent products and indexed left adjoints</span>
+        </a></li>
+<li><a href="#lem:Dependent_Product_Functor_Preserves_Univalent_Families" data-section-target="lem:Dependent_Product_Functor_Preserves_Univalent_Families">
+          <span class="context-entry-heading">Lemma 4.53</span>
+          <span class="context-entry-title">Dependent products preserve univalent families</span>
+        </a></li>
+<li><a href="#def:Enough_Families_And_Object_Generation" data-section-target="def:Enough_Families_And_Object_Generation">
+          <span class="context-entry-heading">Definition 4.54</span>
+          <span class="context-entry-title">Enough families and object generation</span>
+        </a></li>
+<li><a href="#lem:Indexed_Left_Adjoint_Etale_Factorization" data-section-target="lem:Indexed_Left_Adjoint_Etale_Factorization">
+          <span class="context-entry-heading">Lemma 4.55</span>
+          <span class="context-entry-title">The étale factorization of an indexed left adjoint</span>
+        </a></li>
+<li><a href="#prop:Etale_Morphism_Characterization" data-section-target="prop:Etale_Morphism_Characterization">
+          <span class="context-entry-heading">Proposition 4.56</span>
+          <span class="context-entry-title">Characterizations of étale morphisms</span>
+        </a></li>
+<li><a href="#prop:Coslice_Etale_Morphisms" data-section-target="prop:Coslice_Etale_Morphisms">
+          <span class="context-entry-heading">Proposition 4.57</span>
+          <span class="context-entry-title">Coslices of étale morphisms</span>
+        </a></li>
+<li><a href="#lem:Product_Projections_Etale" data-section-target="lem:Product_Projections_Etale">
+          <span class="context-entry-heading">Lemma 4.58</span>
+          <span class="context-entry-title">Product projections are étale</span>
+        </a></li>
+<li><a href="#lem:Limit_Projections_Etale" data-section-target="lem:Limit_Projections_Etale">
+          <span class="context-entry-heading">Lemma 4.59</span>
+          <span class="context-entry-title">Limit projections are étale</span>
+        </a></li>
+<li><a href="#prop:Wide_Subcategory_Colimit_Criterion" data-section-target="prop:Wide_Subcategory_Colimit_Criterion">
+          <span class="context-entry-heading">Proposition 4.60</span>
+          <span class="context-entry-title">A wide-subcategory colimit criterion</span>
+        </a></li>
+      </ol>
+    </nav>
+  </section></div>
+  </aside>
+  </main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

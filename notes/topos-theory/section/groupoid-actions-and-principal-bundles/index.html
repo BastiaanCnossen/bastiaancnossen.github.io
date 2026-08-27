@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Groupoid actions and principal bundles | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/section/groupoid-actions-and-principal-bundles/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+<style>
+    .publication-fragment-notice { margin: 2rem 0; padding: 1rem; border: 1px solid #b6aa91; background: #faf7ef; }
+    .publication-fragment-notice:not(:target) { display: none; }
+  </style>
+  <script>
+    (() => {
+      const targets = {"rem:Groupoid_Actions_Section_Provenance":"./#sec:Groupoid_Actions_Principal_Bundles"};
+      const fragment = decodeURIComponent(location.hash.slice(1));
+      if (targets[fragment]) location.replace(targets[fragment]);
+    })();
+  </script>
+</head>
+<body class="section-page has-context-nav" data-record-id="groupoid-actions-and-principal-bundles" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">·</span> Section 6.2</p>
+      <h1>Groupoid actions and principal bundles</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page">
+      
+<h2 id="sec:Groupoid_Actions_Principal_Bundles"><span>6.2.</span> Groupoid actions and principal bundles</h2>
+<p>In this section, we discuss actions of groupoid objects in a topos <span class="math-inline">\(T\)</span> and prove that the category of such actions is equivalent to the slice over the classifying object. We then characterize principal bundles as regular actions with effective-epimorphic atlas and show that they are classified by maps into the classifying object. Our treatment is based on <span class="citation-group">[Nikolaus et al. <a class="citation" href="#bib-NSS2015Principal">2015</a>]</span> and <span class="citation-group">[Sati and Schreiber <a class="citation" href="#bib-satiSchreiber2021equivariant">2021, Section 3.2</a>]</span>, where the analogous situation for <em>group</em> actions is discussed.</p>
+<p>Throughout this section, we fix a topos <span class="math-inline">\(T\)</span> and a groupoid object <span class="math-inline">\(\Gg\colon \simp\catop \to T\)</span>.</p>
+<h3 id="subsec:Actions_By_Groupoid_Objects"><span>6.2.1.</span> Actions by groupoid objects</h3>
+<p>We introduce the notion of an action of a groupoid object, generalizing the treatment of group actions in <span class="citation-group">[Sati and Schreiber <a class="citation" href="#bib-satiSchreiber2021equivariant">2021</a>]</span>.</p>
+<section class="theorem definition" id="def:Groupoid_Action">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/groupoid-action/index.html">Definition 6.27.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\Gg\)</span> be a groupoid object in <span class="math-inline">\(T\)</span>, and let <span class="math-inline">\(X \in T\)</span> be an object. An <em>action</em> of <span class="math-inline">\(\Gg\)</span> on <span class="math-inline">\(X\)</span> consists of the following data:</p>
+<ol><li><p>A groupoid object <span class="math-inline">\(\Gg \ltimes X\)</span> in <span class="math-inline">\(T\)</span>;</p></li><li><p>An isomorphism <span class="math-inline">\((\Gg \ltimes X)_0 \simeq X\)</span>;</p></li><li><p>A cartesian natural transformation <span class="math-inline">\(c\colon \Gg \ltimes X \to \Gg\)</span> of simplicial objects in <span class="math-inline">\(T\)</span>.</p></li></ol>
+<p>We let <span class="math-inline">\(\Act_{\Gg}(T) \subseteq \Grpd(T)_{/\Gg}\)</span> denote the full subcategory spanned by the <span class="math-inline">\(\Gg\)</span>-actions in <span class="math-inline">\(T\)</span>.</p></div>
+</section>
+
+<section class="theorem remark" id="rmk:Identification_Action_Groupoid">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/identification-action-groupoid/index.html">Remark 6.28.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\Gg \ltimes X\)</span> be an action of <span class="math-inline">\(\Gg\)</span> on <span class="math-inline">\(X\)</span>. Since <span class="math-inline">\((\Gg \ltimes X)_0 \simeq X\)</span>, the map <span class="math-inline">\(c\colon \Gg \ltimes X \to \Gg\)</span> induces a structure map <span class="math-inline">\(c_0\colon X \to \Gg_0\)</span>. Since <span class="math-inline">\(c\)</span> is a cartesian natural transformation, there are cartesian squares</p>
+<figure class="diagram"><img src="diagrams/tikzcd-8735cc63301e.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>and in particular we obtain isomorphisms \begin{align*} (\Gg \ltimes X)_1 &amp;\simeq \Gg_1 \times_{\Gg_0} X, \\ (\Gg \ltimes X)_2 &amp;\simeq \Gg_2 \times_{\Gg_0} X \simeq \Gg_1 \times_{\Gg_0} \Gg_1 \times_{\Gg_0} X, \end{align*} and so on. Under these isomorphisms, the map <span class="math-inline">\(d_1\colon (\Gg \ltimes X)_1 \to (\Gg \ltimes X)_0\)</span> corresponds to a map <span class="math-inline">\(a\colon \Gg_1 \times_{\Gg_0} X \to X\)</span>, which we think of as the <em>action map</em>. The rest of the simplicial diagram <span class="math-inline">\(\Gg \ltimes X\)</span> encodes the data witnessing that this action is unital and associative up to coherent homotopy.</p></div>
+</section>
+
+<section class="theorem definition" id="def:Classifying_Stack_And_Action_Quotient">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/classifying-stack-and-action-quotient/index.html">Definition 6.29.</a></span></p>
+  <div class="theorem-statement"><p>For a groupoid object <span class="math-inline">\(\Gg\)</span>, we define its <em>classifying object</em> as the geometric realization <span class="math-inline">\(\bB \Gg := \abs{\Gg}\)</span>.</p>
+<p>If <span class="math-inline">\(\Gg \ltimes X\)</span> is an action of a groupoid object <span class="math-inline">\(\Gg\)</span> on an object <span class="math-inline">\(X \in T\)</span>, we define the <em>quotient</em> <span class="math-inline">\(X \quot \Gg\)</span> as the geometric realization of <span class="math-inline">\(\Gg \ltimes X\)</span>:</p>
+<div class="math-display">\[X \quot \Gg \quad:=\quad \abs{\Gg \ltimes X} \quad\simeq\quad \colim_{[n] \in \simp\catop} \Gg_n \times_{\Gg_0} X.\]</div>
+<p>The cartesian transformation <span class="math-inline">\(\Gg \ltimes X \to \Gg\)</span> induces a map <span class="math-inline">\(X \quot \Gg \to \abs{\Gg} = \bB\Gg\)</span> on geometric realizations, and this defines a functor</p>
+<div class="math-display">\[-\quot\Gg \colon \Act_{\Gg}(T) \to T_{/\bB\Gg}.\]</div></div>
+</section>
+<p>The following result shows that groupoid actions are classified by the classifying object:</p>
+<section class="theorem proposition" id="prop:Groupoid_Actions_Vs_Slice">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/groupoid-actions-vs-slice/index.html">Proposition 6.30.</a></span> (Classification of groupoid actions)</p>
+  <div class="theorem-statement"><p>The quotient functor is an equivalence of categories:</p>
+<div class="math-display">\[-\quot\Gg \colon \Act_{\Gg}(T) \iso T_{/\bB\Gg}.\]</div></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Groupoid_Actions_Vs_Slice-main" data-owner-entry="groupoid-actions-vs-slice" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Recall from <a href="../../entry/groupoids-and-effective-epimorphisms/index.html">Lemma 2.33</a> that sending a groupoid <span class="math-inline">\(\Gg\)</span> to the map <span class="math-inline">\(\Gg_0 \to \bB \Gg\)</span> defines an equivalence <div class="math-display">\[\Grpd(T) \; \iso \; \EffEpi(T)\]</div> between the categories of groupoid objects and effective epimorphisms in <span class="math-inline">\(T\)</span>. Moreover, it follows from descent that a morphism of groupoids <span class="math-inline">\(f\colon \Hh \to \Gg\)</span> is cartesian if and only if the induced square <figure class="diagram"><img src="diagrams/tikzcd-d44d72eba4f1.svg" alt="Commutative diagram generated from the LaTeX source"></figure> is a pullback square, giving an equivalence of categories <span class="math-inline">\(\Grpd(T)^{\cart} \; \iso \; \EffEpi(T)^{\cart}\)</span>. Passing to slices over <span class="math-inline">\(\Gg\)</span>, this results in an equivalence <div class="math-display">\[\Act_{\Gg}(T) \quad = \quad (\Grpd(T)^{\cart})_{/\Gg} \quad \iso \quad (\EffEpi(T)^{\cart})_{/(\Gg_0 \to \bB \Gg)} \quad \iso \quad T_{/\bB \Gg}.\]</div> Here the last equivalence is induced by the target map. Restricted to cartesian morphisms over the fixed effective epimorphism <span class="math-inline">\(\Gg_0\to\bB\Gg\)</span>, this functor is an equivalence: its inverse sends a morphism <span class="math-inline">\(B \to \bB\Gg\)</span> to the pullback square <figure class="diagram"><img src="diagrams/tikzcd-6b80011e1d4c.svg" alt="Commutative diagram generated from the LaTeX source"></figure><span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<h3 id="subsec:Free_And_Transitive_Actions"><span>6.2.2.</span> Free and transitive actions</h3>
+<p>Given a <span class="math-inline">\(\Gg\)</span>-action in <span class="math-inline">\(T\)</span>, one can define when the action is <em>free</em> or <em>transitive</em>. Actions which are both free and transitive will correspond to principal <span class="math-inline">\(\Gg\)</span>-bundles.</p>
+<section class="theorem definition" id="def:Shear_Map">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/shear-map/index.html">Definition 6.31.</a></span> (Shear maps)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\Gg \ltimes X\)</span> be an action of a groupoid object <span class="math-inline">\(\Gg\)</span> on an object <span class="math-inline">\(X\)</span> in <span class="math-inline">\(T\)</span>. We define the <em>shear map</em> of <span class="math-inline">\(\Gg \ltimes X\)</span> as the map</p>
+<div class="math-display">\[\shear_1 = (a, \pr_X)\colon \Gg_1 \times_{\Gg_0} X \to X \times X,\]</div>
+<p>where <span class="math-inline">\(a\colon \Gg_1 \times_{\Gg_0} X \to X\)</span> is the action map and <span class="math-inline">\(\pr_X\)</span> is the projection onto <span class="math-inline">\(X\)</span>.</p>
+<p>More generally, we define the <em>higher shear maps</em> as follows. The atlas <span class="math-inline">\(X\to X\quot\Gg\)</span> is an effective epimorphism, and the equivalence of <a href="../../entry/groupoids-and-effective-epimorphisms/index.html">Lemma 2.33</a> identifies the action groupoid <span class="math-inline">\(\Gg\ltimes X\)</span> with its Čech nerve <span class="math-inline">\(\check{C}(X\to X\quot\Gg)\)</span>. Consider now the commutative square</p>
+<figure class="diagram"><img src="diagrams/tikzcd-5b68f500be66.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>Regarding this as a morphism from <span class="math-inline">\(X \twoheadrightarrow X\quot\Gg\)</span> to <span class="math-inline">\(X \to *\)</span> in <span class="math-inline">\(\Ar(T)\)</span> and passing to Čech nerves, we obtain a morphism of groupoid objects</p>
+<div class="math-display">\[\shear\colon (\Gg \ltimes X) \to \check{C}(X \to *).\]</div>
+<p>Under the identifications of <a href="#rmk:Identification_Action_Groupoid">Remark 6.28</a>, this may be displayed as follows:</p>
+<figure class="diagram"><img src="diagrams/tikzcd-3320f221d3aa.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div>
+</section>
+
+<section class="theorem definition" id="def:Free_Transitive_Regular">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/free-transitive-regular/index.html">Definition 6.32.</a></span> (Free, transitive and regular actions)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\Gg \ltimes X\)</span> be an action of a groupoid object <span class="math-inline">\(\Gg\)</span> on an object <span class="math-inline">\(X \in T\)</span>. We say that this action is</p>
+<ol><li><p><em>Free</em> if its shear map <span class="math-inline">\(\shear_1\)</span> is a monomorphism;</p></li><li><p><em>Transitive</em> if its shear map <span class="math-inline">\(\shear_1\)</span> is an effective epimorphism;</p></li><li><p><em>Regular</em> if its shear map <span class="math-inline">\(\shear_1\)</span> is an isomorphism.</p></li></ol>
+<p>Note that <span class="math-inline">\(\Gg \ltimes X\)</span> is regular if and only if it is both free and transitive.</p></div>
+</section>
+<p>In case the morphism <span class="math-inline">\(X \to *\)</span> is an effective epimorphism in <span class="math-inline">\(T\)</span>, regularity of <span class="math-inline">\(\Gg \ltimes X\)</span> can be expressed as the triviality of the quotient:</p>
+<section class="theorem lemma" id="lem:Regular_Action_Iff_Trivial_Quotient">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/regular-action-iff-trivial-quotient/index.html">Lemma 6.33.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(X \in T\)</span> be an object such that <span class="math-inline">\(X \to *\)</span> is an effective epimorphism. Let <span class="math-inline">\(\Gg \ltimes X\)</span> be an action of a groupoid object on <span class="math-inline">\(X\)</span>. Then the action is regular if and only if the quotient <span class="math-inline">\(X\quot\Gg\)</span> is the terminal object of <span class="math-inline">\(T\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Regular_Action_Iff_Trivial_Quotient-main" data-owner-entry="regular-action-iff-trivial-quotient" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">First assume that <span class="math-inline">\(X\quot\Gg \simeq *\)</span>. Then the map <span class="math-inline">\(X \twoheadrightarrow X\quot\Gg\)</span> is equivalent to the map <span class="math-inline">\(X \to *\)</span>. It follows that the shear map <span class="math-inline">\(\shear\colon (\Gg \ltimes X) \to \check{C}(X \to *)\)</span> is an isomorphism, being defined by applying Čech nerves to these two equivalent morphisms.<div class="proof-paragraph-break" aria-hidden="true"></div>Conversely, assume that <span class="math-inline">\(\Gg \ltimes X\)</span> is regular and that <span class="math-inline">\(X \twoheadrightarrow *\)</span> is an effective epimorphism. The map <span class="math-inline">\(X\quot\Gg \to *\)</span> is obtained from the higher shear map <span class="math-inline">\(\shear\colon (\Gg \ltimes X) \to \check{C}(X \to *)\)</span> by passing to colimits. It thus suffices to show that each higher shear map <span class="math-inline">\(\shear_n\colon \Gg_n \times_{\Gg_0} X \to X^{n+1}\)</span> is an isomorphism. Both its source and target are groupoid objects with object of objects <span class="math-inline">\(X\)</span>. By the Segal condition, their terms in degree <span class="math-inline">\(n\)</span> are the <span class="math-inline">\(n\)</span>-fold iterated fiber products of their terms in degree <span class="math-inline">\(1\)</span> over <span class="math-inline">\(X\)</span>, and <span class="math-inline">\(\shear_n\)</span> is the corresponding iterated pullback of <span class="math-inline">\(\shear_1\)</span>. Since <span class="math-inline">\(\shear_1\)</span> is an isomorphism by regularity, every <span class="math-inline">\(\shear_n\)</span> is an isomorphism.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<h3 id="subsec:Principal_Bundles"><span>6.2.3.</span> Principal bundles</h3>
+<p>Given a groupoid object <span class="math-inline">\(\Gg\)</span> in <span class="math-inline">\(T\)</span> and an object <span class="math-inline">\(B \in T\)</span>, we obtain a notion of <em>principal <span class="math-inline">\(\Gg\)</span>-bundles over <span class="math-inline">\(B\)</span></em> by applying the definition of regular actions to the slice topos <span class="math-inline">\(T_{/B}\)</span>. Observe that <span class="math-inline">\(\Gg\)</span> gives rise to a groupoid <span class="math-inline">\(\Gg \times B\)</span> in the slice <span class="math-inline">\(T_{/B}\)</span> by applying the pullback functor <span class="math-inline">\(B \times -\colon T \to T_{/B}\)</span>. For every object <span class="math-inline">\(P \in T_{/B}\)</span>, there is an isomorphism</p>
+<div class="math-display">\[(\Gg_n \times B) \times_{\Gg_0 \times B} P \;\simeq\; \Gg_{n} \times_{\Gg_0} P \qquad\text{in } T_{/B},\]</div>
+<p>and thus a <span class="math-inline">\((\Gg \times B)\)</span>-action on <span class="math-inline">\(P\)</span> is the same as a <span class="math-inline">\(\Gg\)</span>-action on the underlying object of <span class="math-inline">\(P\)</span> for which the map <span class="math-inline">\(P\to B\)</span> is invariant. For this reason, we will refer to a <span class="math-inline">\((\Gg \times B)\)</span>-action in the slice <span class="math-inline">\(T_{/B}\)</span> simply as a <em><span class="math-inline">\(\Gg\)</span>-action over <span class="math-inline">\(B\)</span></em>.</p>
+<section class="theorem definition" id="def:Principal_Bundles">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/principal-bundles/index.html">Definition 6.34.</a></span> (Principal bundles)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(B \in T\)</span> be an object and let <span class="math-inline">\(\Gg\)</span> be a groupoid object in <span class="math-inline">\(T\)</span>.</p>
+<ol><li><p>Let <span class="math-inline">\(p\colon P \to B\)</span> be an object of <span class="math-inline">\(T_{/B}\)</span> equipped with a <span class="math-inline">\(\Gg\)</span>-action over <span class="math-inline">\(B\)</span>. We say that <span class="math-inline">\(p\)</span> is a <em>formally principal <span class="math-inline">\(\Gg\)</span>-bundle over <span class="math-inline">\(B\)</span></em> if this action is regular as a <span class="math-inline">\((\Gg \times B)\)</span>-action in the slice <span class="math-inline">\(T_{/B}\)</span>, i.e. if the shear map</p>
+<div class="math-display">\[\shear_{1}\colon \Gg_1 \times_{\Gg_0} P \iso P \times_B P\]</div>
+<p>is an isomorphism.</p></li><li><p>A formally principal <span class="math-inline">\(\Gg\)</span>-bundle <span class="math-inline">\(p\colon P \to B\)</span> is called a <em>principal <span class="math-inline">\(\Gg\)</span>-bundle</em> if <span class="math-inline">\(p\)</span> is an effective epimorphism.</p></li><li><p>We write</p>
+<div class="math-display">\[\Bun_{\Gg}(B) \quad \subseteq \quad \Act_{\Gg\times B}(T_{/B})\]</div>
+<p>for the full subcategory of principal <span class="math-inline">\(\Gg\)</span>-bundles over <span class="math-inline">\(B\)</span>.</p></li></ol></div>
+</section>
+
+<section class="theorem remark" id="rem:Pullback_Of_Principal_Bundle">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/pullback-of-principal-bundle/index.html">Remark 6.35.</a></span></p>
+  <div class="theorem-statement"><p>For any morphism <span class="math-inline">\(f\colon B' \to B\)</span> in <span class="math-inline">\(T\)</span>, the pullback functor <span class="math-inline">\(f^*\colon T_{/B} \to T_{/B'}\)</span> preserves principal <span class="math-inline">\(\Gg\)</span>-bundles.</p></div>
+</section>
+
+<section class="theorem lemma" id="lem:Principal_Bundle_Iff_Trivial_Quotient">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/principal-bundle-iff-trivial-quotient/index.html">Lemma 6.36.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(p\colon P \twoheadrightarrow B\)</span> be an effective epimorphism equipped with a <span class="math-inline">\(\Gg\)</span>-action over <span class="math-inline">\(B\)</span>, and let <span class="math-inline">\(P\quot\Gg \in T_{/B}\)</span> denote the quotient. Then <span class="math-inline">\(p\)</span> is a principal <span class="math-inline">\(\Gg\)</span>-bundle if and only if the canonical map <span class="math-inline">\(P\quot\Gg \to B\)</span> is an isomorphism.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Principal_Bundle_Iff_Trivial_Quotient-main" data-owner-entry="principal-bundle-iff-trivial-quotient" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">This is an instance of <a href="#lem:Regular_Action_Iff_Trivial_Quotient">Lemma 6.33</a> applied in the slice topos <span class="math-inline">\(T_{/B}\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>It follows from <a href="#lem:Principal_Bundle_Iff_Trivial_Quotient">Lemma 6.36</a> that the forgetful functor from principal <span class="math-inline">\(\Gg\)</span>-bundles over <span class="math-inline">\(B\)</span> to <span class="math-inline">\(\Gg\)</span>-actions in <span class="math-inline">\(T\)</span> lands in the fiber over <span class="math-inline">\(B\)</span> of the composite</p>
+<div class="math-display">\[\Act_{\Gg}(T)\xrightarrow{-\quot\Gg}T_{/\bB\Gg}\longrightarrow T.\]</div>
+<section class="theorem proposition" id="prop:Principal_Bundles_Vs_Actions_With_Fixed_Quotient">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/principal-bundles-vs-actions-with-fixed-quotient/index.html">Proposition 6.37.</a></span></p>
+  <div class="theorem-statement"><p>The forgetful functor induces an equivalence of categories</p>
+<div class="math-display">\[\Bun_{\Gg}(B) \iso \Act_{\Gg}(T) \times_{T} \{B\}.\]</div></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Principal_Bundles_Vs_Actions_With_Fixed_Quotient-main" data-owner-entry="principal-bundles-vs-actions-with-fixed-quotient" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">We construct an explicit inverse. Consider a <span class="math-inline">\(\Gg\)</span>-action <span class="math-inline">\(c\colon\Gg \ltimes P\to\Gg\)</span> in <span class="math-inline">\(T\)</span> equipped with an isomorphism <span class="math-inline">\(B \iso P\quot\Gg\)</span>. The colimit cocone exhibiting <span class="math-inline">\(B\)</span> as the realization of <span class="math-inline">\(\Gg\ltimes P\)</span> supplies compatible maps <span class="math-inline">\((\Gg\ltimes P)_n\to B\)</span> and hence lifts the action groupoid to a groupoid object in <span class="math-inline">\(T_{/B}\)</span>. Pairing these structure maps with <span class="math-inline">\(c\)</span> gives a morphism of groupoid objects <div class="math-display">\[\Gg\ltimes P\longrightarrow\Gg\times B\]</div> in <span class="math-inline">\(T_{/B}\)</span>. Its underlying morphism in <span class="math-inline">\(T\)</span> is <span class="math-inline">\(c\)</span>, so it is cartesian and therefore defines a <span class="math-inline">\((\Gg\times B)\)</span>-action in the slice. This construction defines a functor <div class="math-display">\[\Act_{\Gg}(T) \times_{T} \{B\} \to \Act_{\Gg\times B}(T_{/B}).\]</div> The map <span class="math-inline">\(P\to B\)</span> is an effective epimorphism because it is the atlas of the realization of the groupoid object <span class="math-inline">\(\Gg\ltimes P\)</span>, and its quotient in <span class="math-inline">\(T_{/B}\)</span> is the terminal object <span class="math-inline">\(B\to B\)</span>. Thus <a href="#lem:Principal_Bundle_Iff_Trivial_Quotient">Lemma 6.36</a> shows that the resulting action is principal. Conversely, starting from a principal bundle, the same lemma identifies its quotient with <span class="math-inline">\(B\)</span>, and the colimit cocone recovers its original structure maps to <span class="math-inline">\(B\)</span>. Hence the two constructions are inverse.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>We are now ready to state the main classification result:</p>
+<section class="theorem theorem" id="thm:Classification_Principal_Bundles">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/classification-principal-bundles/index.html">Theorem 6.38.</a></span> (Classification of principal bundles)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\Gg\)</span> be a groupoid object in <span class="math-inline">\(T\)</span> and let <span class="math-inline">\(B \in T\)</span> be an object. There is an equivalence of categories</p>
+<div class="math-display">\[\Hom_{T}(B,\bB\Gg) \iso \Bun_{\Gg}(B),\]</div>
+<p>given on objects by sending a morphism <span class="math-inline">\(c\colon B \to \bB\Gg\)</span> to the principal <span class="math-inline">\(\Gg\)</span>-bundle <span class="math-inline">\(P \to B\)</span> defined by the pullback square</p>
+<figure class="diagram"><img src="diagrams/tikzcd-b0feb3494a93.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div>
+</section>
+
+<details class="proof-shell" id="proof-thm:Classification_Principal_Bundles-main" data-owner-entry="classification-principal-bundles" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Recall from <a href="#prop:Groupoid_Actions_Vs_Slice">Proposition 6.30</a> the equivalence <span class="math-inline">\(-\quot\Gg \colon \Act_{\Gg}(T) \iso T_{/\bB\Gg}\)</span>, which induces an equivalence on fibers over <span class="math-inline">\(T\)</span>: <div class="math-display">\[\Act_{\Gg}(T) \times_{T} \{B\} \;\simeq\; T_{/\bB\Gg} \times_{T} \{B\} \;\simeq\; \Hom_{T}(B,\bB\Gg).\]</div> The inverse sends a morphism <span class="math-inline">\(c\colon B \to \bB\Gg\)</span> to the base change <span class="math-inline">\(P = B \times_{\bB\Gg} \Gg_0 \twoheadrightarrow B\)</span> of the atlas <span class="math-inline">\(\Gg_0 \twoheadrightarrow \bB\Gg\)</span> along <span class="math-inline">\(c\)</span>. Combining with the equivalence from <a href="#prop:Principal_Bundles_Vs_Actions_With_Fixed_Quotient">Proposition 6.37</a> finishes the proof.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem corollary" id="cor:Principal_Bundles_Form_Groupoid">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/principal-bundles-form-groupoid/index.html">Corollary 6.39.</a></span></p>
+  <div class="theorem-statement"><p>For every groupoid object <span class="math-inline">\(\Gg\)</span> in <span class="math-inline">\(T\)</span> and every object <span class="math-inline">\(B \in T\)</span>, the category <span class="math-inline">\(\Bun_{\Gg}(B)\)</span> is an anima. <span class="qed" aria-label="End of proof"></span></p></div>
+</section>
+<section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-NSS2015Principal">Thomas Nikolaus, Urs Schreiber, Danny Stevenson. <em>Principal \(\infty \)-bundles: general theory</em>. J. Homotopy Relat. Struct., 10 (4), 749–801. 2015.</li>
+<li id="bib-satiSchreiber2021equivariant">Hisham Sati, Urs Schreiber. <em>Equivariant principal infinity-bundles</em>. arXiv preprint arXiv:2112.13654. 2021.</li></ol></section>
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+      <a class="context-step-control" rel="prev" href="../sheaf-topoi/index.html" aria-label="Previous section: Sheaf topoi" title="Previous section: Sheaf topoi"><span aria-hidden="true">←</span></a>
+      <a class="context-step-control" rel="next" href="../hypercovers/index.html" aria-label="Next section: Hypercovers" title="Next section: Hypercovers"><span aria-hidden="true">→</span></a>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../chapter/introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../../chapter/foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../../chapter/truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../../chapter/topoi-logoi/index.html">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../../chapter/modalities/index.html">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../../chapter/topics-in-topos-theory/index.html" aria-current="location">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../../chapter/geometry/index.html">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../../chapter/factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../../chapter/limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../sheaf-topoi/index.html">
+          <span class="context-entry-heading">Section 6.1</span>
+          <span class="context-entry-title">Sheaf topoi</span>
+        </a></li>
+<li><a href="../groupoid-actions-and-principal-bundles/index.html" aria-current="page">
+          <span class="context-entry-heading">Section 6.2</span>
+          <span class="context-entry-title">Groupoid actions and principal bundles</span>
+        </a></li>
+<li><a href="../hypercovers/index.html">
+          <span class="context-entry-heading">Section 6.3</span>
+          <span class="context-entry-title">Hypercovers</span>
+        </a></li>
+<li><a href="../localic-topoi-postnikov-completeness-and-boundedness/index.html">
+          <span class="context-entry-heading">Section 6.4</span>
+          <span class="context-entry-title">Localic topoi, Postnikov-completeness, and boundedness</span>
+        </a></li>
+<li><a href="../dimension-theory/index.html">
+          <span class="context-entry-heading">Section 6.5</span>
+          <span class="context-entry-title">Dimension theory</span>
+        </a></li>
+<li><a href="../essential-morphisms-and-shape-theory/index.html">
+          <span class="context-entry-heading">Section 6.6</span>
+          <span class="context-entry-title">Essential morphisms and shape theory</span>
+        </a></li>
+<li><a href="../coherence/index.html">
+          <span class="context-entry-heading">Section 6.7</span>
+          <span class="context-entry-title">Coherence</span>
+        </a></li>
+<li><a href="../pretopoi/index.html">
+          <span class="context-entry-heading">Section 6.8</span>
+          <span class="context-entry-title">Pretopoi</span>
+        </a></li>
+<li><a href="../makkai-completeness/index.html">
+          <span class="context-entry-heading">Section 6.9</span>
+          <span class="context-entry-title">Makkai completeness</span>
+        </a></li>
+<li><a href="../compactly-assembled-categories-and-exponentiability/index.html">
+          <span class="context-entry-heading">Section 6.10</span>
+          <span class="context-entry-title">Compactly assembled categories and exponentiability</span>
+        </a></li>
+<li><a href="../topoi-of-parametrized-objects/index.html">
+          <span class="context-entry-heading">Section 6.11</span>
+          <span class="context-entry-title">Topoi of parametrized objects</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <p class="context-nav-kicker">Section 6.2</p>
+      <p class="context-nav-description">Groupoid actions and principal bundles</p>
+      <ol class="context-entry-list">
+        <li><a href="#def:Groupoid_Action" data-section-target="def:Groupoid_Action">
+          <span class="context-entry-heading">Definition 6.27</span>
+          <span class="context-entry-title">Groupoid action</span>
+        </a></li>
+<li><a href="#rmk:Identification_Action_Groupoid" data-section-target="rmk:Identification_Action_Groupoid">
+          <span class="context-entry-heading">Remark 6.28</span>
+          <span class="context-entry-title">Identification action groupoid</span>
+        </a></li>
+<li><a href="#def:Classifying_Stack_And_Action_Quotient" data-section-target="def:Classifying_Stack_And_Action_Quotient">
+          <span class="context-entry-heading">Definition 6.29</span>
+          <span class="context-entry-title">Classifying stack and action quotient</span>
+        </a></li>
+<li><a href="#prop:Groupoid_Actions_Vs_Slice" data-section-target="prop:Groupoid_Actions_Vs_Slice">
+          <span class="context-entry-heading">Proposition 6.30</span>
+          <span class="context-entry-title">Groupoid actions versus slice</span>
+        </a></li>
+<li><a href="#def:Shear_Map" data-section-target="def:Shear_Map">
+          <span class="context-entry-heading">Definition 6.31</span>
+          <span class="context-entry-title">Shear map</span>
+        </a></li>
+<li><a href="#def:Free_Transitive_Regular" data-section-target="def:Free_Transitive_Regular">
+          <span class="context-entry-heading">Definition 6.32</span>
+          <span class="context-entry-title">Free transitive regular</span>
+        </a></li>
+<li><a href="#lem:Regular_Action_Iff_Trivial_Quotient" data-section-target="lem:Regular_Action_Iff_Trivial_Quotient">
+          <span class="context-entry-heading">Lemma 6.33</span>
+          <span class="context-entry-title">Regular action if and only if trivial quotient</span>
+        </a></li>
+<li><a href="#def:Principal_Bundles" data-section-target="def:Principal_Bundles">
+          <span class="context-entry-heading">Definition 6.34</span>
+          <span class="context-entry-title">Principal bundles</span>
+        </a></li>
+<li><a href="#rem:Pullback_Of_Principal_Bundle" data-section-target="rem:Pullback_Of_Principal_Bundle">
+          <span class="context-entry-heading">Remark 6.35</span>
+          <span class="context-entry-title">Pullback of principal bundle</span>
+        </a></li>
+<li><a href="#lem:Principal_Bundle_Iff_Trivial_Quotient" data-section-target="lem:Principal_Bundle_Iff_Trivial_Quotient">
+          <span class="context-entry-heading">Lemma 6.36</span>
+          <span class="context-entry-title">Principal bundle if and only if trivial quotient</span>
+        </a></li>
+<li><a href="#prop:Principal_Bundles_Vs_Actions_With_Fixed_Quotient" data-section-target="prop:Principal_Bundles_Vs_Actions_With_Fixed_Quotient">
+          <span class="context-entry-heading">Proposition 6.37</span>
+          <span class="context-entry-title">Principal bundles versus actions with fixed quotient</span>
+        </a></li>
+<li><a href="#thm:Classification_Principal_Bundles" data-section-target="thm:Classification_Principal_Bundles">
+          <span class="context-entry-heading">Theorem 6.38</span>
+          <span class="context-entry-title">Classification principal bundles</span>
+        </a></li>
+<li><a href="#cor:Principal_Bundles_Form_Groupoid" data-section-target="cor:Principal_Bundles_Form_Groupoid">
+          <span class="context-entry-heading">Corollary 6.39</span>
+          <span class="context-entry-title">Principal bundles form groupoid</span>
+        </a></li>
+      </ol>
+    </nav>
+  </section></div>
+  </aside>
+  <aside class="publication-fragment-notice" id="rem:Groupoid_Actions_Section_Provenance"><strong>Retired fragment.</strong> The provenance remark was incorporated into the section introduction. It now appears at <a href="./#sec:Groupoid_Actions_Principal_Bundles">this address</a>.</aside>
+</main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

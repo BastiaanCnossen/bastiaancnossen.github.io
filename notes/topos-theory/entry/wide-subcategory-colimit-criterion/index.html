@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A wide-subcategory colimit criterion | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/entry/wide-subcategory-colimit-criterion/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="entry-page has-context-nav" data-record-id="wide-subcategory-colimit-criterion" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">›</span> <a href="../../section/colimits-of-topoi-along-etale-morphisms/index.html">Section 4.5: Colimits of topoi along étale morphisms</a></p>
+      <h1>A wide-subcategory colimit criterion</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Nearby entries
+    </button>
+    <article class="notes-page">
+      
+<section class="theorem proposition" id="prop:Wide_Subcategory_Colimit_Criterion">
+  <p class="theorem-heading"><span>Proposition 4.60.</span> (<span class="citation-group">[Uemura <a class="citation" href="#bib-Uemura_Colimits_Topoi_Etale">2025, Proposition 2.6</a>]</span>)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> be a category with small colimits, and let <span class="math-inline">\(D\subseteq C\)</span> be a wide subcategory. Suppose that:</p>
+<ol><li><p>For every object <span class="math-inline">\(X\in C\)</span>, the wide subcategory <span class="math-inline">\(D_{/X}\subseteq C_{/X}\)</span> is closed under small colimits.</p></li><li><p>For every small diagram <span class="math-inline">\(X_{\bullet}\colon I\to D\)</span>, if <span class="math-inline">\(X=\colim_i X_i\)</span> is computed in <span class="math-inline">\(C\)</span>, then all structure maps <span class="math-inline">\(X_i\to X\)</span> lie in <span class="math-inline">\(D\)</span>.</p></li></ol>
+<p>Then <span class="math-inline">\(D\)</span> is closed under small colimits in <span class="math-inline">\(C\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Wide_Subcategory_Colimit_Criterion-main" data-owner-entry="wide-subcategory-colimit-criterion" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Let <span class="math-inline">\(X_{\bullet}\colon I\to D\)</span> be a diagram and let <span class="math-inline">\(X=\colim_i X_i\)</span> in <span class="math-inline">\(C\)</span>. We need to show that <span class="math-inline">\(X\)</span> has the universal property of a colimit in <span class="math-inline">\(D\)</span>. For any object <span class="math-inline">\(Y\)</span>, a morphism <span class="math-inline">\(f\colon X\to Y\)</span> belongs to <span class="math-inline">\(D\)</span> if and only if all composites <span class="math-inline">\(X_i\to X\to Y\)</span> belong to <span class="math-inline">\(D\)</span>: the forward direction follows from (2), and the reverse direction follows from (1), since <span class="math-inline">\(f\)</span> is the colimit in <span class="math-inline">\(C_{/Y}\)</span> of the diagram of the composites <span class="math-inline">\(X_i\to Y\)</span>. This identifies the mapping anima from <span class="math-inline">\(X\)</span> to <span class="math-inline">\(Y\)</span> in <span class="math-inline">\(D\)</span> with the limit of the mapping animae from the <span class="math-inline">\(X_i\)</span> to <span class="math-inline">\(Y\)</span> in <span class="math-inline">\(D\)</span>, as desired.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-Uemura_Colimits_Topoi_Etale">Taichi Uemura. <em>Colimits in the ∞-category of ∞-topoi and étale morphisms</em>. 2025.</li></ol></section>
+    </article>
+      <aside class="context-nav" id="context-navigation" data-context-nav aria-label="Nearby entries">
+      <button class="context-nav-collapse" type="button" data-context-nav-collapse data-collapsed-label="Nearby entries" aria-controls="context-navigation" aria-expanded="true" aria-label="Hide Nearby entries">
+      <span aria-hidden="true">›</span>
+    </button>
+      <p class="context-chapter-link"><a href="../../chapter/topoi-logoi/index.html">The categories of topoi and logoi</a></p>
+      <p class="context-nav-kicker">Section 4.5</p>
+      <h2><a href="../../section/colimits-of-topoi-along-etale-morphisms/index.html">Colimits of topoi along étale morphisms</a></h2>
+      <p class="context-nav-description"><a href="../../section/colimits-of-topoi-along-etale-morphisms/index.html#prop:Wide_Subcategory_Colimit_Criterion">Read this result in the continuous section</a></p>
+      <ol class="context-entry-list context-entry-list-nearby">
+        <li><a href="../characterizations-of-etale-morphisms/index.html">
+          <span class="context-entry-heading">Proposition 4.56</span>
+          <span class="context-entry-title">Characterizations of étale morphisms</span>
+        </a></li>
+<li><a href="../coslices-of-etale-morphisms/index.html">
+          <span class="context-entry-heading">Proposition 4.57</span>
+          <span class="context-entry-title">Coslices of étale morphisms</span>
+        </a></li>
+<li><a href="../product-projections-are-etale/index.html">
+          <span class="context-entry-heading">Lemma 4.58</span>
+          <span class="context-entry-title">Product projections are étale</span>
+        </a></li>
+<li><a href="../limit-projections-are-etale/index.html">
+          <span class="context-entry-heading">Lemma 4.59</span>
+          <span class="context-entry-title">Limit projections are étale</span>
+        </a></li>
+<li><a href="#prop:Wide_Subcategory_Colimit_Criterion" aria-current="page">
+          <span class="context-entry-heading">Proposition 4.60</span>
+          <span class="context-entry-title">A wide-subcategory colimit criterion</span>
+        </a></li>
+      </ol>
+      <nav class="context-step-links" aria-label="Previous and next entries"><a rel="prev" href="../limit-projections-are-etale/index.html"><span>Previous</span>Limit projections are étale</a></nav>
+    </aside>
+  </main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

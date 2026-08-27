@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dimension theory | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/section/dimension-theory/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="section-page has-context-nav" data-record-id="dimension-theory" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">·</span> Section 6.5</p>
+      <h1>Dimension theory</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page">
+      
+<h2 id="sec:Dimension_Theory"><span>6.5.</span> Dimension theory</h2>
+<p>The homotopy dimension of a topos measures how far its global sections functor can lower connectivity. For a slice topos <span class="math-inline">\(\An_{/X}\)</span>, this recovers a classical finiteness invariant of the anima <span class="math-inline">\(X\)</span>: it asks whether <span class="math-inline">\(X\)</span> is a retract of a finite-dimensional CW-complex. Dimension also controls the convergence problem from the preceding section. A local finite-dimensionality hypothesis forces Postnikov towers to converge, and a uniform local bound also ensures that every compatible system of truncations is realized by an object.</p>
+<h3 id="subsec:Homotopy_Dimension_And_Examples"><span>6.5.1.</span> Homotopy dimension and examples</h3>
+
+<section class="theorem definition" id="def:Dimension_Of_Topos_Morphism">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/dimension-of-topos-morphism/index.html">Definition 6.67.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\phi_*\colon S \to T\)</span> be a morphism of topoi. We say that <span class="math-inline">\(\phi_*\)</span> <em>has dimension <span class="math-inline">\(\leq d\)</span></em> if, for every <span class="math-inline">\(n \geq d-1\)</span>, the functor <span class="math-inline">\(\phi_*\)</span> sends <span class="math-inline">\(n\)</span>-connected maps to <span class="math-inline">\((n-d)\)</span>-connected maps.</p>
+<p>We say that <span class="math-inline">\(T\)</span> <em>has dimension <span class="math-inline">\(\leq d\)</span></em> if the terminal morphism <span class="math-inline">\(\Gamma_* = \Hom_T(*,-)\colon T \to \An\)</span> has dimension <span class="math-inline">\(\leq d\)</span>.</p></div>
+</section>
+
+<section class="theorem lemma" id="lem:Dimension_Iff_Connected_Objects_Have_Sections">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/dimension-iff-connected-objects-have-sections/index.html">Lemma 6.68.</a></span></p>
+  <div class="theorem-statement"><p>A topos <span class="math-inline">\(T\)</span> has dimension <span class="math-inline">\(\leq d\)</span> if and only if every <span class="math-inline">\((d-1)\)</span>-connected object of <span class="math-inline">\(T\)</span> has a global section.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Dimension_Iff_Connected_Objects_Have_Sections-main" data-owner-entry="dimension-iff-connected-objects-have-sections" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">For the `only if'-direction, suppose <span class="math-inline">\(T\)</span> has dimension <span class="math-inline">\(\leq d\)</span>, and let <span class="math-inline">\(X\)</span> be a <span class="math-inline">\((d-1)\)</span>-connected object. Then the unique map <span class="math-inline">\(X \to *\)</span> is <span class="math-inline">\((d-1)\)</span>-connected. By the dimension condition, the induced map <span class="math-inline">\(\Gamma_*(X) \to \Gamma_*(*) = *\)</span> is <span class="math-inline">\((-1)\)</span>-connected. A map to the terminal object being <span class="math-inline">\((-1)\)</span>-connected means that its domain is nonempty, so <span class="math-inline">\(X\)</span> has a global section.<div class="proof-paragraph-break" aria-hidden="true"></div>For the `if'-direction, suppose every <span class="math-inline">\((d-1)\)</span>-connected object of <span class="math-inline">\(T\)</span> has a global section. We prove by induction on <span class="math-inline">\(n \geq d-1\)</span> that <span class="math-inline">\(\Gamma_*\)</span> sends <span class="math-inline">\(n\)</span>-connected maps to <span class="math-inline">\((n-d)\)</span>-connected maps.<div class="proof-paragraph-break" aria-hidden="true"></div>For the initial case, let <span class="math-inline">\(f\colon X \to Y\)</span> be <span class="math-inline">\((d-1)\)</span>-connected. An effective epimorphism of animae is characterized by having nonempty fibers over every point. Given <span class="math-inline">\(y\colon * \to Y\)</span>, the fiber of <span class="math-inline">\(\Gamma_*(f)\)</span> over <span class="math-inline">\(y\)</span> is <div class="math-display">\[\Gamma_*(X) \times_{\Gamma_*(Y)} \{y\} \;\simeq\; \Hom_T(*, X \times_Y *) \;=\; \Gamma_*(X_y),\]</div> where <span class="math-inline">\(X_y := X \times_Y *\)</span>. Since <span class="math-inline">\(X_y\)</span> is <span class="math-inline">\((d-1)\)</span>-connected, it has a global section by assumption. Hence the displayed fiber is nonempty, so <span class="math-inline">\(\Gamma_*(f)\)</span> is an effective epimorphism, i.e. it is <span class="math-inline">\((-1)\)</span>-connected.<div class="proof-paragraph-break" aria-hidden="true"></div>Now let <span class="math-inline">\(n \geq d\)</span> and let <span class="math-inline">\(f\)</span> be <span class="math-inline">\(n\)</span>-connected. It is in particular <span class="math-inline">\((d-1)\)</span>-connected, so <span class="math-inline">\(\Gamma_*(f)\)</span> is an effective epimorphism. Since <span class="math-inline">\(\Gamma_*\)</span> preserves limits, the diagonal of <span class="math-inline">\(\Gamma_*(f)\)</span> is <span class="math-inline">\(\Gamma_*(\Delta_f)\)</span>. The map <span class="math-inline">\(\Delta_f\)</span> is <span class="math-inline">\((n-1)\)</span>-connected, so the induction hypothesis shows that its image is <span class="math-inline">\((n-d-1)\)</span>-connected. The characterization of connected maps by their diagonals in <a href="../../entry/characterizing-connected-morphisms-by-diagonals/index.html">Theorem 3.22</a> now shows that <span class="math-inline">\(\Gamma_*(f)\)</span> is <span class="math-inline">\((n-d)\)</span>-connected.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem definition" id="def:Locally_Finite_Dimensional_Topos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/locally-finite-dimensional-topos/index.html">Definition 6.69.</a></span></p>
+  <div class="theorem-statement"><p>We say that a topos <span class="math-inline">\(T\)</span> is <em>locally of dimension <span class="math-inline">\(\leq d\)</span></em> (resp. <em>locally of finite dimension</em>) if it is generated under colimits by objects <span class="math-inline">\(U\)</span> such that the slice topos <span class="math-inline">\(T_{/U}\)</span> has dimension <span class="math-inline">\(\leq d\)</span> (resp. has some finite dimension).</p></div>
+</section>
+<p>Here are some basic sources of dimension bounds.</p>
+<section class="theorem example" id="ex:Dimension_Of_Anima_Slice">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/dimension-of-anima-slice/index.html">Example 6.70.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(X \in \An\)</span>. If <span class="math-inline">\(X\)</span> is represented by a <span class="math-inline">\(d\)</span>-dimensional CW-complex, or by a <span class="math-inline">\(d\)</span>-dimensional simplicial set, then <span class="math-inline">\(\dim(\An_{/X}) \leq d\)</span>.</p>
+<p>More precisely, <span class="math-inline">\(\dim(\An_{/X}) \leq d\)</span> if and only if <span class="math-inline">\(X\)</span> is a retract, in the homotopy category of animae, of an anima represented by a <span class="math-inline">\(d\)</span>-dimensional CW-complex. If <span class="math-inline">\(d \neq 2\)</span>, this is further equivalent to <span class="math-inline">\(X\)</span> itself admitting a <span class="math-inline">\(d\)</span>-dimensional CW-model. For <span class="math-inline">\(d=2\)</span>, the retract condition implies that <span class="math-inline">\(X\)</span> admits a <span class="math-inline">\(3\)</span>-dimensional CW-model, but it need not admit a <span class="math-inline">\(2\)</span>-dimensional one. See <span class="citation-group">[Lurie <a class="citation" href="#bib-lurie2009HTT">2009, Example 7.2.1.4</a>]</span>.</p></div>
+</section>
+
+<section class="theorem example" id="ex:Presheaf_Topos_With_Terminal_Object_Dimension_Zero">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/presheaf-topos-with-terminal-object-dimension-zero/index.html">Example 6.71.</a></span></p>
+  <div class="theorem-statement"><p>If <span class="math-inline">\(C\)</span> admits a terminal object <span class="math-inline">\(1\)</span>, then <span class="math-inline">\(\PSh(C)\)</span> has dimension <span class="math-inline">\(\leq 0\)</span>. Indeed, global sections are given by evaluation at <span class="math-inline">\(1\)</span>, and evaluation preserves effective epimorphisms. Equivalently, if <span class="math-inline">\(\Ff\)</span> is <span class="math-inline">\((-1)\)</span>-connected, then <span class="math-inline">\(\Gamma_*(\Ff) \iso \Ff(1)\)</span> is nonempty. See <span class="citation-group">[Lurie <a class="citation" href="#bib-lurie2009HTT">2009, Example 7.2.1.3</a>]</span>.</p></div>
+</section>
+
+<section class="theorem example" id="ex:Presheaves_On_Natural_Numbers_Dimension_One">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/presheaves-on-natural-numbers-dimension-one/index.html">Example 6.72.</a></span></p>
+  <div class="theorem-statement"><p>The presheaf category <span class="math-inline">\(\PSh(\N)\)</span> on the poset of natural numbers has dimension <span class="math-inline">\(\leq 1\)</span>. Indeed, a <span class="math-inline">\(0\)</span>-connected presheaf is a tower</p>
+<div class="math-display">\[\cdots \longrightarrow X_2 \longrightarrow X_1 \longrightarrow X_0\]</div>
+<p>of connected animae. Its limit is nonempty: after replacing the tower by a tower of Kan fibrations, one may choose a point of <span class="math-inline">\(X_0\)</span> and lift it successively through the tower. Thus every <span class="math-inline">\(0\)</span>-connected object has a global section, and <a href="#lem:Dimension_Iff_Connected_Objects_Have_Sections">Lemma 6.68</a> applies.</p></div>
+</section>
+
+<section class="theorem example" id="ex:Covering_Dimension_Bounds_Sheaf_Topos_Dimension">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/covering-dimension-bounds-sheaf-topos-dimension/index.html">Example 6.73.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(X\)</span> be a paracompact Hausdorff space. We say that <span class="math-inline">\(X\)</span> has <em>covering dimension <span class="math-inline">\(\leq d\)</span></em> if every open covering is refined by one with empty <span class="math-inline">\((d+2)\)</span>-fold intersections. Then</p>
+<div class="math-display">\[\dim \Shv(X) \leq d
+		\quad\Longleftrightarrow\quad
+		\text{$X$ has covering dimension $\leq d$}.\]</div>
+<p>This applies, for example, to every CW-complex of dimension <span class="math-inline">\(\leq d\)</span>. See <span class="citation-group">[Lurie <a class="citation" href="#bib-lurie2009HTT">2009, Theorem 7.2.3.6 and Corollary 7.2.3.7</a>]</span>.</p></div>
+</section>
+
+<section class="theorem example" id="ex:Krull_Dimension_Bounds_Sheaf_Topos_Dimension">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/krull-dimension-bounds-sheaf-topos-dimension/index.html">Example 6.74.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(X\)</span> be a spectral space of Krull dimension <span class="math-inline">\(\leq d\)</span>. Then <span class="math-inline">\(\Shv(X)\)</span> has dimension <span class="math-inline">\(\leq d\)</span>; see <span class="citation-group">[Clausen and Mathew <a class="citation" href="#bib-Clausen_Mathew_Hyperdescent">2021, Theorem 3.12</a>]</span>.</p></div>
+</section>
+
+<section class="theorem example" id="ex:Dimension_Bounds_For_Scheme_Sites">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/dimension-bounds-for-scheme-sites/index.html">Example 6.75.</a></span></p>
+  <div class="theorem-statement"><p>If <span class="math-inline">\(X\)</span> is a qcqs scheme, then the following bounds hold:</p>
+<ul><li><p><span class="math-inline">\(\dim(X_{\mathrm{Nis}}) \leq \dim_{\mathrm{Krull}}(X)\)</span>; see <span class="citation-group">[Clausen and Mathew <a class="citation" href="#bib-Clausen_Mathew_Hyperdescent">2021, Theorem 3.18</a>]</span>.</p></li><li><p><span class="math-inline">\(\dim(X_{\mathrm{cdh}}) \leq \dim_{\mathrm{val}}(X)\)</span>; see <span class="citation-group">[Elmanto et al. <a class="citation" href="#bib-Elmanto_Hoyois_Iwasa_Kelly_Cdh_Descent">2021, Theorem 2.4.15</a>]</span>.</p></li></ul></div>
+</section>
+
+<h3 id="subsec:Dimension_And_Postnikov_Convergence"><span>6.5.2.</span> Convergence and Postnikov-completeness</h3>
+<p>The following result explains why dimension enters the comparison among the completion conditions in <span class="cross-reference-unlinked">Section 6.4</span>. Its first part is local and only concerns Postnikov towers of existing objects. Essential surjectivity of <span class="math-inline">\(T \to \widehat T\)</span> requires a uniform local bound.</p>
+<section class="theorem proposition" id="prop:Finite_Dimension_Implies_Postnikov_Properties">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/finite-dimension-implies-postnikov-properties/index.html">Proposition 6.76.</a></span> (<span class="citation-group">[Lurie <a class="citation" href="#bib-lurie2009HTT">2009, Proposition 7.2.1.10 and Corollary 7.2.1.12</a>]</span>)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a topos.</p>
+<ol><li><p>If <span class="math-inline">\(T\)</span> is locally of finite dimension, then for all <span class="math-inline">\(X \in T\)</span>, the map <span class="math-inline">\(X \iso \lim_n \tau_n X\)</span> is an isomorphism. In particular, <span class="math-inline">\(T\)</span> is hypercomplete.</p></li><li><p>If <span class="math-inline">\(T\)</span> is locally of dimension <span class="math-inline">\(\leq d\)</span> for some <span class="math-inline">\(d\)</span>, then <span class="math-inline">\(T\)</span> is Postnikov-complete.</p></li></ol></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Finite_Dimension_Implies_Postnikov_Properties-main" data-owner-entry="finite-dimension-implies-postnikov-properties" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">(1) Let <span class="math-inline">\(\{U_\alpha\}\)</span> be a collection of generators such that every slice <span class="math-inline">\(T_{/U_\alpha}\)</span> has finite dimension, say at most <span class="math-inline">\(d_\alpha\)</span>. For every <span class="math-inline">\(X \in T\)</span>, the dimension bound shows that <div class="math-display">\[\Hom_T(U_\alpha,X) \longrightarrow \Hom_T(U_\alpha,\tau_nX)\]</div> is <span class="math-inline">\((n-d_\alpha)\)</span>-connected. The target is <span class="math-inline">\(n\)</span>-truncated. The standard convergence criterion for towers of animae therefore identifies <span class="math-inline">\(\Hom_T(U_\alpha,X)\)</span> with <span class="math-inline">\(\lim_n\Hom_T(U_\alpha,\tau_nX)\)</span>: in each fixed degree, the homotopy groups and the transition maps stabilize. This is also the mapping-anima argument in the proof of <span class="citation-group">[Lurie <a class="citation" href="#bib-lurie2009HTT">2009, Proposition 7.2.1.10</a>]</span>. Since the <span class="math-inline">\(U_\alpha\)</span> generate <span class="math-inline">\(T\)</span>, it follows that <span class="math-inline">\(X \to \lim_n\tau_nX\)</span> is an isomorphism.<div class="proof-paragraph-break" aria-hidden="true"></div>If <span class="math-inline">\(f\colon X\to Y\)</span> is <span class="math-inline">\(\infty\)</span>-connected, then <span class="math-inline">\(\tau_nf\)</span> is an isomorphism for every <span class="math-inline">\(n\)</span>. Applying the convergence statement to <span class="math-inline">\(X\)</span> and <span class="math-inline">\(Y\)</span> shows that <span class="math-inline">\(f\)</span> itself is an isomorphism. Hence <span class="math-inline">\(T\)</span> is hypercomplete, in agreement with <span class="citation-group">[Lurie <a class="citation" href="#bib-lurie2009HTT">2009, Corollary 7.2.1.12</a>]</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>(2) By (1), the comparison <span class="math-inline">\(T \to \widehat T\)</span> is fully faithful. Let <span class="math-inline">\((X_n)_n \in \widehat T\)</span> and put <span class="math-inline">\(X:=\lim_nX_n\)</span>. The transition map <span class="math-inline">\(X_{m+1}\to X_m\iso\tau_mX_{m+1}\)</span> is <span class="math-inline">\(m\)</span>-connected. The highly connected tower criterion proved in <span class="citation-group">[Lurie <a class="citation" href="#bib-lurie2009HTT">2009, Proposition 7.2.1.10</a>]</span>, applied with the uniform bound <span class="math-inline">\(d\)</span>, shows that, for every <span class="math-inline">\(n\)</span>, the map <span class="math-inline">\(X\to X_m\)</span> is <span class="math-inline">\(n\)</span>-connected for all sufficiently large <span class="math-inline">\(m\)</span>. For <span class="math-inline">\(m\geq n\)</span>, the composite <div class="math-display">\[X \longrightarrow X_m \longrightarrow X_n\]</div> is therefore <span class="math-inline">\(n\)</span>-connected. Since <span class="math-inline">\(X_n\)</span> is <span class="math-inline">\(n\)</span>-truncated, this identifies <span class="math-inline">\(X_n\)</span> with <span class="math-inline">\(\tau_nX\)</span>. Thus every object of <span class="math-inline">\(\widehat T\)</span> is the Postnikov tower of an object of <span class="math-inline">\(T\)</span>, so <span class="math-inline">\(T\to\widehat T\)</span> is essentially surjective.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-lurie2009HTT">Jacob Lurie. <em>Higher topos theory</em>. Ann. Math. Stud. 170, Princeton, NJ: Princeton University Press. 2009.</li>
+<li id="bib-Clausen_Mathew_Hyperdescent">Dustin Clausen, Akhil Mathew. <em>Hyperdescent and étale $K$-theory</em>. Invent. Math., 225 (3), 981–1076. 2021.</li>
+<li id="bib-Elmanto_Hoyois_Iwasa_Kelly_Cdh_Descent">Elden Elmanto, Marc Hoyois, Ryomei Iwasa, Shane Kelly. <em>Cdh descent, cdarc descent, and Milnor excision</em>. Math. Ann., 379 (3--4), 1011–1045. 2021.</li></ol></section>
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+      <a class="context-step-control" rel="prev" href="../localic-topoi-postnikov-completeness-and-boundedness/index.html" aria-label="Previous section: Localic topoi, Postnikov-completeness, and boundedness" title="Previous section: Localic topoi, Postnikov-completeness, and boundedness"><span aria-hidden="true">←</span></a>
+      <a class="context-step-control" rel="next" href="../essential-morphisms-and-shape-theory/index.html" aria-label="Next section: Essential morphisms and shape theory" title="Next section: Essential morphisms and shape theory"><span aria-hidden="true">→</span></a>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../chapter/introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../../chapter/foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../../chapter/truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../../chapter/topoi-logoi/index.html">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../../chapter/modalities/index.html">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../../chapter/topics-in-topos-theory/index.html" aria-current="location">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../../chapter/geometry/index.html">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../../chapter/factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../../chapter/limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../sheaf-topoi/index.html">
+          <span class="context-entry-heading">Section 6.1</span>
+          <span class="context-entry-title">Sheaf topoi</span>
+        </a></li>
+<li><a href="../groupoid-actions-and-principal-bundles/index.html">
+          <span class="context-entry-heading">Section 6.2</span>
+          <span class="context-entry-title">Groupoid actions and principal bundles</span>
+        </a></li>
+<li><a href="../hypercovers/index.html">
+          <span class="context-entry-heading">Section 6.3</span>
+          <span class="context-entry-title">Hypercovers</span>
+        </a></li>
+<li><a href="../localic-topoi-postnikov-completeness-and-boundedness/index.html">
+          <span class="context-entry-heading">Section 6.4</span>
+          <span class="context-entry-title">Localic topoi, Postnikov-completeness, and boundedness</span>
+        </a></li>
+<li><a href="../dimension-theory/index.html" aria-current="page">
+          <span class="context-entry-heading">Section 6.5</span>
+          <span class="context-entry-title">Dimension theory</span>
+        </a></li>
+<li><a href="../essential-morphisms-and-shape-theory/index.html">
+          <span class="context-entry-heading">Section 6.6</span>
+          <span class="context-entry-title">Essential morphisms and shape theory</span>
+        </a></li>
+<li><a href="../coherence/index.html">
+          <span class="context-entry-heading">Section 6.7</span>
+          <span class="context-entry-title">Coherence</span>
+        </a></li>
+<li><a href="../pretopoi/index.html">
+          <span class="context-entry-heading">Section 6.8</span>
+          <span class="context-entry-title">Pretopoi</span>
+        </a></li>
+<li><a href="../makkai-completeness/index.html">
+          <span class="context-entry-heading">Section 6.9</span>
+          <span class="context-entry-title">Makkai completeness</span>
+        </a></li>
+<li><a href="../compactly-assembled-categories-and-exponentiability/index.html">
+          <span class="context-entry-heading">Section 6.10</span>
+          <span class="context-entry-title">Compactly assembled categories and exponentiability</span>
+        </a></li>
+<li><a href="../topoi-of-parametrized-objects/index.html">
+          <span class="context-entry-heading">Section 6.11</span>
+          <span class="context-entry-title">Topoi of parametrized objects</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <p class="context-nav-kicker">Section 6.5</p>
+      <p class="context-nav-description">Dimension theory</p>
+      <ol class="context-entry-list">
+        <li><a href="#def:Dimension_Of_Topos_Morphism" data-section-target="def:Dimension_Of_Topos_Morphism">
+          <span class="context-entry-heading">Definition 6.67</span>
+          <span class="context-entry-title">Dimension of topos morphism</span>
+        </a></li>
+<li><a href="#lem:Dimension_Iff_Connected_Objects_Have_Sections" data-section-target="lem:Dimension_Iff_Connected_Objects_Have_Sections">
+          <span class="context-entry-heading">Lemma 6.68</span>
+          <span class="context-entry-title">Dimension if and only if connected objects have sections</span>
+        </a></li>
+<li><a href="#def:Locally_Finite_Dimensional_Topos" data-section-target="def:Locally_Finite_Dimensional_Topos">
+          <span class="context-entry-heading">Definition 6.69</span>
+          <span class="context-entry-title">Locally finite dimensional topos</span>
+        </a></li>
+<li><a href="#ex:Dimension_Of_Anima_Slice" data-section-target="ex:Dimension_Of_Anima_Slice">
+          <span class="context-entry-heading">Example 6.70</span>
+          <span class="context-entry-title">Dimension of anima slice</span>
+        </a></li>
+<li><a href="#ex:Presheaf_Topos_With_Terminal_Object_Dimension_Zero" data-section-target="ex:Presheaf_Topos_With_Terminal_Object_Dimension_Zero">
+          <span class="context-entry-heading">Example 6.71</span>
+          <span class="context-entry-title">Presheaf topos with terminal object dimension zero</span>
+        </a></li>
+<li><a href="#ex:Presheaves_On_Natural_Numbers_Dimension_One" data-section-target="ex:Presheaves_On_Natural_Numbers_Dimension_One">
+          <span class="context-entry-heading">Example 6.72</span>
+          <span class="context-entry-title">Presheaves on natural numbers dimension one</span>
+        </a></li>
+<li><a href="#ex:Covering_Dimension_Bounds_Sheaf_Topos_Dimension" data-section-target="ex:Covering_Dimension_Bounds_Sheaf_Topos_Dimension">
+          <span class="context-entry-heading">Example 6.73</span>
+          <span class="context-entry-title">Covering dimension bounds sheaf topos dimension</span>
+        </a></li>
+<li><a href="#ex:Krull_Dimension_Bounds_Sheaf_Topos_Dimension" data-section-target="ex:Krull_Dimension_Bounds_Sheaf_Topos_Dimension">
+          <span class="context-entry-heading">Example 6.74</span>
+          <span class="context-entry-title">Krull dimension bounds sheaf topos dimension</span>
+        </a></li>
+<li><a href="#ex:Dimension_Bounds_For_Scheme_Sites" data-section-target="ex:Dimension_Bounds_For_Scheme_Sites">
+          <span class="context-entry-heading">Example 6.75</span>
+          <span class="context-entry-title">Dimension bounds for scheme sites</span>
+        </a></li>
+<li><a href="#prop:Finite_Dimension_Implies_Postnikov_Properties" data-section-target="prop:Finite_Dimension_Implies_Postnikov_Properties">
+          <span class="context-entry-heading">Proposition 6.76</span>
+          <span class="context-entry-title">Finite dimension implies Postnikov properties</span>
+        </a></li>
+      </ol>
+    </nav>
+  </section></div>
+  </aside>
+  </main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

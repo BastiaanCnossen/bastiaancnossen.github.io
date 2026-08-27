@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Topoi and descent | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/section/topoi-and-descent/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="section-page has-context-nav" data-record-id="topoi-and-descent" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">·</span> Section 2.1</p>
+      <h1>Topoi and descent</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page">
+      
+<h2 id="sec:Topoi_And_Descent"><span>2.1.</span> Topoi and descent</h2>
+<p>The definition of topoi relies on the concept of <em>descent</em>.</p>
+<section class="theorem definition" id="def:Descent">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/descent-for-indexed-colimits/index.html">Definition 2.1.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(I\)</span> be a small category, and let <span class="math-inline">\(T\)</span> be a category with pullbacks and <span class="math-inline">\(I\)</span>-indexed colimits. We say that <em><span class="math-inline">\(T\)</span> satisfies descent for <span class="math-inline">\(I\)</span>-indexed colimits</em>, or that <em><span class="math-inline">\(I\)</span>-indexed colimits are van Kampen</em>, if the functor \begin{align*} T\catop \to \Cat, \qquad X \mapsto T_{/X} \end{align*} takes <span class="math-inline">\(I\)</span>-indexed colimit diagrams in <span class="math-inline">\(T\)</span> to limit diagrams in <span class="math-inline">\(\Cat\)</span>. Explicitly, for every diagram <span class="math-inline">\(X_{\bullet}\colon I \to T\)</span> the canonical functor</p>
+<div class="math-display">\[T_{/\,\colim_{i \in I}X_i} \longrightarrow \lim_{i \in I\catop} T_{/X_i}\]</div>
+<p>is an equivalence.</p></div>
+</section>
+
+<section class="theorem definition" id="def:Topos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/topoi/index.html">Definition 2.2.</a></span></p>
+  <div class="theorem-statement"><p>A <em>topos</em> is a presentable category satisfying descent for all colimits. We will alternatively refer to a topos as a <em>logos</em>.</p></div>
+</section>
+<p>Let us unwind this definition. Given a small category <span class="math-inline">\(I\)</span> and an <span class="math-inline">\(I\)</span>-indexed diagram <span class="math-inline">\(X_{\bullet} \colon I \to T\)</span>, set <span class="math-inline">\(X := \colim_i X_i\)</span>. The objects of the limit <span class="math-inline">\(\lim_{i \in I\catop}T_{/X_i}\)</span> are families of objects over the <span class="math-inline">\(X_i\)</span> equipped with compatible base-change identifications. Descent asserts that every such family is obtained uniquely from an object over <span class="math-inline">\(X\)</span>.</p>
+<p>To understand this condition better, we provide an alternative description of this limit in terms of cartesian natural transformations.</p>
+<section class="theorem definition" id="def:Cartesian_Natural_Transformation">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/cartesian-natural-transformations/index.html">Definition 2.3.</a></span></p>
+  <div class="theorem-statement"><p>Given two functors <span class="math-inline">\(F,G\colon I \to T\)</span>, a natural transformation <span class="math-inline">\(\alpha\colon F \to G\)</span> is called <em>cartesian</em> if for every morphism <span class="math-inline">\(i \to j\)</span> in <span class="math-inline">\(I\)</span> the naturality square</p>
+<figure class="diagram"><img src="diagrams/tikzcd-a74fe2d536c0.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>is a pullback square. We denote by <span class="math-inline">\(\Fun^{\cart}(I,T) \subseteq \Fun(I,T)\)</span> the wide subcategory spanned by the cartesian natural transformations.</p></div>
+</section>
+<p>Given a diagram <span class="math-inline">\(X_{\bullet}\colon I \to T\)</span>, evaluation at <span class="math-inline">\(i \in I\)</span> determines a functor <span class="math-inline">\(\ev_i\colon \Fun^{\cart}(I,T)_{/X_{\bullet}} \to T_{/X_i}\)</span>. Furthermore, by definition of cartesianness these evaluation functors are compatible with base change, resulting in a comparison functor <span class="math-inline">\(\Fun^{\cart}(I,T)_{/X_{\bullet}} \to \lim_{i \in I\catop} T_{/X_i}\)</span>.</p>
+<section class="theorem lemma" id="lem:Limit_Of_Slices_Vs_Cartesian_Transformations">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/limits-of-slices-and-cartesian-transformations/index.html">Lemma 2.4.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> be a category with pullbacks and let <span class="math-inline">\(X_{\bullet}\colon I \to C\)</span> be a functor. Then the functor <span class="math-inline">\(\Fun^{\cart}(I,C)_{/X_{\bullet}} \to \lim_{i \in I\catop} C_{/X_i}\)</span> is an equivalence.</p>
+<p>More informally, objects of the limit are given by <span class="math-inline">\(I\)</span>-indexed diagrams <span class="math-inline">\(Y_{\bullet}\)</span> in <span class="math-inline">\(C\)</span> equipped with a cartesian natural transformation <span class="math-inline">\(Y_{\bullet} \to X_{\bullet}\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Limit_Of_Slices_Vs_Cartesian_Transformations-main" data-owner-entry="limits-of-slices-and-cartesian-transformations" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Recall that a limit of a diagram <span class="math-inline">\(I\catop \to \Cat\)</span> of categories may be computed as the category of cartesian sections of the cartesian unstraightening of the diagram. By definition, the functor <span class="math-inline">\(C_{/-}\colon C\catop \to \Cat_{\infty}\)</span> is the cartesian straightening of the target map <span class="math-inline">\(t\colon \Ar(C) \to C\)</span>, so the unstraightening of <span class="math-inline">\(C_{/-}\)</span> is <span class="math-inline">\(t\)</span>. It follows that the unstraightening of the functor <span class="math-inline">\(i \mapsto C_{/X_i}\)</span> is the base change of <span class="math-inline">\(t\)</span> along <span class="math-inline">\(X_{\bullet}\)</span>: <figure class="diagram"><img src="diagrams/tikzcd-46481832d0ac.svg" alt="Commutative diagram generated from the LaTeX source"></figure> The category of sections <span class="math-inline">\(I \to C/X_{\bullet}\)</span> of this map is equivalent to the category of maps <span class="math-inline">\(I \to \Ar(C)\)</span> whose target projection is <span class="math-inline">\(X_{\bullet}\colon I \to C\)</span>, which in turn is equivalent to the slice-category <span class="math-inline">\(\Fun(I,C)_{/X_{\bullet}}\)</span>. It thus remains to show that a section <span class="math-inline">\(\sigma\colon I \to C/X_{\bullet}\)</span> is cartesian precisely if the corresponding natural transformation <span class="math-inline">\(Y_{\bullet} \to X_{\bullet}\)</span> is a cartesian natural transformation. But this is an immediate consequence of the fact that the <span class="math-inline">\(t\)</span>-cartesian morphisms in <span class="math-inline">\(\Ar(C)\)</span> are precisely the pullback squares in <span class="math-inline">\(C\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>With this alternative description of <span class="math-inline">\(\lim_i T_{/X_i}\)</span> at hand, we can immediately deduce that the functor <span class="math-inline">\(T_{/X} \to \lim_i T_{/X_i}\)</span> admits a left adjoint:</p>
+<section class="theorem lemma" id="lem:Map_To_Limit_Of_Slices_Admits_Left_Adjoint">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/left-adjoint-to-the-comparison-of-slices/index.html">Lemma 2.5.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a category with pullbacks and <span class="math-inline">\(I\)</span>-indexed colimits, and let <span class="math-inline">\(X = \colim_i X_i\)</span> be a colimit in <span class="math-inline">\(T\)</span>. Then the functor <span class="math-inline">\(T_{/X} \to \lim_i T_{/X_i}\)</span> admits a left adjoint</p>
+<div class="math-display">\[\colim \colon \lim_i T_{/X_i} \to T_{/X}\]</div>
+<p>sending a cartesian transformation <span class="math-inline">\(Y_{\bullet} \to X_{\bullet}\)</span> to its colimit <span class="math-inline">\(\colim_i Y_i \to \colim_i X_i\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Map_To_Limit_Of_Slices_Admits_Left_Adjoint-main" data-owner-entry="left-adjoint-to-the-comparison-of-slices" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">The colimit functor <span class="math-inline">\(\colim\colon \Fun(I,T) \to T\)</span> admits a right adjoint <span class="math-inline">\(\const\colon T \to \Fun(I,T)\)</span> sending an object <span class="math-inline">\(Y\)</span> to the constant functor on <span class="math-inline">\(Y\)</span>. By slicing this adjunction over an arbitrary diagram <span class="math-inline">\(X_{\bullet} \in \Fun(I,T)\)</span>, with colimit denoted <span class="math-inline">\(X\)</span>, we obtain another adjunction <div class="math-display">\[\colim \colon \Fun(I,T)_{/X_{\bullet}} \rightleftarrows T_{/X},\]</div> see <span class="citation-group">[Lurie <a class="citation" href="#bib-lurie2009HTT">2009, Proposition 5.2.5.1</a>]</span>. The right adjoint in this adjunction is given by the composite <span class="math-inline">\(T_{/X} \xrightarrow{\const} \Fun(I,T)_{/\const X} \to \Fun(I,T)_{/X_{\bullet}}\)</span>, with the second map given by base change along the colimit cocone <span class="math-inline">\(X_{\bullet} \to \const_X\)</span>. We now make the following two observations: <ul class="proof-list"><li>The category <span class="math-inline">\(\Fun(I,T)_{/X_{\bullet}}\)</span> contains the limit <span class="math-inline">\(\lim_{i \in I\catop} T_{/X_i} \simeq \Fun^{\cart}(I,T)_{/X_{\bullet}}\)</span> as a full subcategory: given transformations <span class="math-inline">\(Y_{\bullet} \to Z_{\bullet} \to X_{\bullet}\)</span>, if both <span class="math-inline">\(Z_{\bullet} \to X_{\bullet}\)</span> and <span class="math-inline">\(Y_{\bullet} \to X_{\bullet}\)</span> are cartesian transformations, then so is <span class="math-inline">\(Y_{\bullet} \to Z_{\bullet}\)</span> by the pasting law for pullback squares.</li><li>Since any transformation <span class="math-inline">\(\const Y \to \const X\)</span> between constant diagrams is cartesian, and cartesian transformations are closed under base change, the right adjoint <span class="math-inline">\(T_{/X} \to \Fun(I,T)_{/X_{\bullet}}\)</span> lands in this full subcategory.</li></ul> It follows that the adjunction restricts to an adjunction <span class="math-inline">\(\lim_i T_{/X_i} \rightleftarrows T_{/X}\)</span>, as desired.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>We can now characterize when the functor <span class="math-inline">\(T_{/X} \to \lim_i T_{/X_i}\)</span> is an equivalence. By <a href="#lem:Map_To_Limit_Of_Slices_Admits_Left_Adjoint">Lemma 2.5</a>, this happens precisely when the unit and counit of the adjunction are natural isomorphisms. Explicitly, this means:</p>
+<ol><li><p><strong>Counit:</strong> For any map <span class="math-inline">\(Y \to X = \colim_i X_i\)</span> in <span class="math-inline">\(T\)</span>, the canonical map <span class="math-inline">\(\colim_i (X_i \times_X Y) \to Y\)</span> is an isomorphism.</p></li><li><p><strong>Unit:</strong> Given a cartesian transformation <span class="math-inline">\(Y_{\bullet} \to X_{\bullet}\)</span> of functors <span class="math-inline">\(I \to T\)</span>, each of the maps <span class="math-inline">\(Y_i \to (\colim_i Y_i) \times_{\colim_i X_i} X_i\)</span> is an isomorphism.</p></li></ol>
+<p>Since these conditions will frequently show up in the remainder of these notes, it is useful to give them names:</p>
+<section class="theorem definition" id="def:Effective_Colimits">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/effective-colimits/index.html">Definition 2.6.</a></span> (Effective colimits)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a category with pullbacks and <span class="math-inline">\(I\)</span>-indexed colimits. We say that <em><span class="math-inline">\(I\)</span>-indexed colimits in <span class="math-inline">\(T\)</span> are effective</em> if, for every cartesian transformation <span class="math-inline">\(Y_{\bullet} \to X_{\bullet}\)</span> of functors <span class="math-inline">\(I \to T\)</span>, the extended natural transformation <span class="math-inline">\(\overline{Y}_{\bullet} \to \overline{X}_{\bullet}\)</span> of colimit cocones <span class="math-inline">\(I^{\triangleright} \to T\)</span> is again cartesian, i.e. for every <span class="math-inline">\(j \in I\)</span> the commutative square</p>
+<figure class="diagram"><img src="diagrams/tikzcd-9cc6ab5d9900.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>is a pullback square.</p></div>
+</section>
+
+<section class="theorem definition" id="def:Universal_Colimits">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/universal-colimits/index.html">Definition 2.7.</a></span> (Universal colimits)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a category with pullbacks and <span class="math-inline">\(I\)</span>-indexed colimits. We say that <em><span class="math-inline">\(I\)</span>-indexed colimits in <span class="math-inline">\(T\)</span> are universal</em> if, for every morphism <span class="math-inline">\(f\colon A \to B\)</span>, the pullback functor <span class="math-inline">\(f^*\colon T_{/B} \to T_{/A}\)</span> preserves <span class="math-inline">\(I\)</span>-indexed colimits.</p></div>
+</section>
+
+<section class="theorem lemma" id="lem:Universality_Of_Colimits">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/characterizations-of-universal-colimits/index.html">Lemma 2.8.</a></span></p>
+  <div class="theorem-statement"><p>For a category <span class="math-inline">\(T\)</span> with pullbacks and <span class="math-inline">\(I\)</span>-indexed colimits, the following conditions are equivalent:</p>
+<ol><li><p><span class="math-inline">\(I\)</span>-indexed colimits are universal in <span class="math-inline">\(T\)</span>;</p></li><li><p>For every diagram <span class="math-inline">\(X_{\bullet}\colon I \to T\)</span>, the counit of the adjunction <span class="math-inline">\(T_{/X} \leftrightarrows \lim_i T_{/X_i}\)</span> is an isomorphism;</p></li><li><p>For every diagram <span class="math-inline">\(X_{\bullet}\colon I \to T\)</span>, the functor <span class="math-inline">\(T_{/X} \to \lim_i T_{/X_i}\)</span> is fully faithful.</p></li></ol></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Universality_Of_Colimits-main" data-owner-entry="characterizations-of-universal-colimits" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">The equivalence between (2) and (3) is the standard characterization of a fully faithful right adjoint. If colimits are universal, then for every <span class="math-inline">\(Y \to X=\colim_iX_i\)</span> we have <div class="math-display">\[\colim_i(X_i\times_XY) \iso X\times_XY \iso Y,\]</div> so the counit is an isomorphism.<div class="proof-paragraph-break" aria-hidden="true"></div>Conversely, assume (2), let <span class="math-inline">\(A \to B\)</span> be a morphism, and let <span class="math-inline">\(X_{\bullet}\)</span> be an <span class="math-inline">\(I\)</span>-indexed diagram in <span class="math-inline">\(T_{/B}\)</span> with colimit <span class="math-inline">\(X \to B\)</span>. Apply (2) to the underlying diagram <span class="math-inline">\(X_{\bullet}\)</span> and the object <span class="math-inline">\(A\times_BX \to X\)</span>. The resulting counit is <div class="math-display">\[\colim_i\bigl(X_i\times_X(A\times_BX)\bigr) \iso A\times_BX.\]</div> Since <span class="math-inline">\(X_i\times_X(A\times_BX)\iso A\times_BX_i\)</span>, this says exactly that pullback along <span class="math-inline">\(A\to B\)</span> preserves the given colimit. Hence <span class="math-inline">\(I\)</span>-indexed colimits are universal.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>With this terminology, we may summarize the above discussion as follows:</p>
+<section class="theorem corollary" id="cor:Descent_Iff_Colimits_Effective_And_Universal">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/descent-is-effectivity-plus-universality/index.html">Corollary 2.9.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a category with pullbacks and <span class="math-inline">\(I\)</span>-indexed colimits. Then <span class="math-inline">\(T\)</span> satisfies descent for <span class="math-inline">\(I\)</span>-indexed colimits if and only if <span class="math-inline">\(I\)</span>-indexed colimits are both effective and universal. <span class="qed" aria-label="End of proof"></span></p></div>
+</section>
+<p>In particular, we get:</p>
+<section class="theorem corollary" id="cor:Topos_Iff_Effective_And_Universal_Colimits">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/topoi-via-effective-and-universal-colimits/index.html">Corollary 2.10.</a></span></p>
+  <div class="theorem-statement"><p>A category <span class="math-inline">\(T\)</span> is a topos if and only if it is presentable and <span class="math-inline">\(I\)</span>-indexed colimits are both effective and universal for every small category <span class="math-inline">\(I\)</span>. <span class="qed" aria-label="End of proof"></span></p></div>
+</section>
+
+<h3 id="subsec:Examples_Of_Descent"><span>2.1.1.</span> Examples of descent</h3>
+<p>Let us illustrate the descent condition by giving some examples.</p>
+<section class="theorem example" id="ex:Strictly_Initial_Object">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/strictly-initial-objects/index.html">Example 2.11.</a></span> (Initial object)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a category with an initial object. Then the initial object <span class="math-inline">\(\emptyset\)</span> is van Kampen if and only if it is <em>strictly initial</em>, meaning that any morphism <span class="math-inline">\(X \to \emptyset\)</span> is an isomorphism.</p>
+<p>Indeed, by definition <span class="math-inline">\(\emptyset\)</span> is van Kampen if and only if the functor <span class="math-inline">\(T_{/\emptyset} \to *\)</span> is an equivalence. This functor admits a fully faithful left adjoint <span class="math-inline">\(* \to T_{/\emptyset}\)</span> hitting the identity <span class="math-inline">\(\id_{\emptyset}\)</span>. For the functor to be an equivalence, the counit <span class="math-inline">\(\emptyset \to X\)</span> must be an isomorphism for every <span class="math-inline">\(X \in T_{/\emptyset}\)</span>, which is precisely the universality condition.</p></div>
+</section>
+
+<section class="theorem example" id="ex:Disjoint_Coproducts">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/disjoint-coproducts/index.html">Example 2.12.</a></span> (Coproducts)</p>
+  <div class="theorem-statement"><p>For a category <span class="math-inline">\(T\)</span> with arbitrary coproducts, we say that <em>coproducts are disjoint</em> if for all <span class="math-inline">\(X, Y \in T\)</span> the diagram</p>
+<figure class="diagram"><img src="diagrams/tikzcd-dff156c25228.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>is a pullback square. We claim that arbitrary coproducts in <span class="math-inline">\(T\)</span> are van Kampen if and only if they are universal and <span class="math-inline">\(T\)</span> has disjoint coproducts.</p>
+<p>By definition, coproducts are van Kampen if and only if they are universal and for every collection of maps <span class="math-inline">\(\{Y_i \to X_i\}_{i \in I}\)</span> the commutative square</p>
+<figure class="diagram"><img src="diagrams/tikzcd-17c3b41e9143.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>is a pullback square for every <span class="math-inline">\(j \in I\)</span>. To see that this reduces to disjointness, consider <span class="math-inline">\(X' := \bigsqcup_{i \in I \setminus \{j\}} X_i\)</span> and <span class="math-inline">\(Y' := \bigsqcup_{i \in I \setminus \{j\}} Y_i\)</span>. We may write <span class="math-inline">\(X = X_j \sqcup X'\)</span> and <span class="math-inline">\(Y = Y_j \sqcup Y'\)</span>. Invoking universality of coproducts once more shows that the condition reduces to disjointness of binary coproducts.</p></div>
+</section>
+
+<section class="theorem example" id="ex:Group_Actions">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/group-actions-and-descent/index.html">Example 2.13.</a></span> (Group actions)</p>
+  <div class="theorem-statement"><p>This example previews the groupoid objects introduced in <span class="cross-reference-unlinked">Subsection 2.2.1</span>. Informally, a groupoid object is a simplicial object encoding objects, invertible morphisms between them, and all the coherences for composition. A group object is the special case in which the object of objects is terminal.</p>
+<p>Let <span class="math-inline">\(T\)</span> be a topos, and let <span class="math-inline">\(G\)</span> be a group object in <span class="math-inline">\(T\)</span>, regarded as a groupoid object <span class="math-inline">\(G_{\bullet}\colon \simp\catop \to T\)</span> satisfying <span class="math-inline">\(G_{0} = *\)</span>. Let <span class="math-inline">\(\bB G := \colim_{[n] \in \simp\catop} G_n\)</span>. Then there is an equivalence</p>
+<div class="math-display">\[T_{/\bB G} \quad \simeq \quad \lim_{[n] \in \simp} T_{/G^n} \quad=:\quad \Mod_G(T).\]</div>
+<p>In other words, a <em>module over <span class="math-inline">\(G\)</span></em> is a simplicial object <span class="math-inline">\(X_{\bullet}\)</span> with a cartesian transformation <span class="math-inline">\(X_{\bullet} \to G_{\bullet}\)</span>, which we can depict (suppressing degeneracies) as a simplicial diagram of face maps:</p>
+<figure class="diagram"><img src="diagrams/tikzcd-dd7d251f4e6c.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>with each square cartesian. In particular, this implies <span class="math-inline">\(X_1 \simeq G \times X_0\)</span>. The two maps <span class="math-inline">\(G \times X_0 \simeq X_1 \to X_0\)</span> can then be interpreted as the projection map and an <em>action map</em>. The rest of the simplicial diagram <span class="math-inline">\(X_{\bullet}\)</span> records the higher coherences of this <span class="math-inline">\(G\)</span>-action on <span class="math-inline">\(X_0\)</span>.</p></div>
+</section>
+
+<section class="theorem example" id="ex:Grothendieck_Construction">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/grothendieck-construction/index.html">Example 2.14.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a topos. Given an anima <span class="math-inline">\(A \in \An\)</span>, we obtain an equivalence</p>
+<div class="math-display">\[\Fun(A,T) \quad=\quad \lim_A T_{/*} \quad\simeq\quad T_{/\,\colim_A *}.\]</div>
+<p>We refer to this equivalence as the <em>Grothendieck construction</em>.</p></div>
+</section>
+
+<section class="theorem exercise" id="ex:Van_Kampen_Colimits">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/van-kampen-colimits-exercise/index.html">Exercise 2.15.</a></span></p>
+  <div class="theorem-statement"><p>Figure out which colimits are van Kampen in the following categories:</p>
+<ul><li><p>The category <span class="math-inline">\(\Set\)</span> of sets, the category <span class="math-inline">\(\An_{\leq n}\)</span> of <span class="math-inline">\(n\)</span>-truncated animae;</p></li><li><p>A stable cocomplete category;</p></li><li><p>The opposite category <span class="math-inline">\(\An\catop\)</span>.</p></li></ul></div>
+</section>
+
+<h3 id="subsec:Descent_Via_Pullback_Squares"><span>2.1.2.</span> Descent via pullback squares</h3>
+<p>The descent condition can be reformulated in terms of colimits in the category <span class="math-inline">\(\Ar^{\pb}(T)\)</span> of pullback squares in <span class="math-inline">\(T\)</span>. This is defined as the wide subcategory of <span class="math-inline">\(\Ar(T)\)</span> whose morphisms are the pullback squares in <span class="math-inline">\(T\)</span>.</p>
+<section class="theorem proposition" id="prop:Descent_Via_Pullback_Squares">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/descent-via-pullback-squares/index.html">Proposition 2.16.</a></span> (Rezk)</p>
+  <div class="theorem-statement"><p>A presentable category <span class="math-inline">\(T\)</span> is a topos if and only if <span class="math-inline">\(\Ar^{\pb}(T)\)</span> admits colimits and the inclusion <span class="math-inline">\(\Ar^{\pb}(T) \hookrightarrow \Ar(T)\)</span> preserves colimits.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Descent_Via_Pullback_Squares-main" data-owner-entry="descent-via-pullback-squares" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">First assume that <span class="math-inline">\(T\)</span> is a topos. We claim that the subcategory <span class="math-inline">\(\Ar^{\pb}(T) \hookrightarrow \Ar(T)\)</span> is closed under colimits. To see this, note that a functor <span class="math-inline">\(I \to \Ar^{\pb}(T)\)</span> corresponds under currying to a cartesian natural transformation <span class="math-inline">\(Y_{\bullet} \to X_{\bullet}\)</span>. Passing to colimits in <span class="math-inline">\(T\)</span> extends this to a natural transformation of colimit cocones <span class="math-inline">\(\overline{Y}_{\bullet} \to \overline{X}_{\bullet}\)</span>. By effectivity of <span class="math-inline">\(I\)</span>-indexed colimits, this remains a cartesian natural transformation, hence corresponds to a cocone <span class="math-inline">\(I^{\triangleright} \to \Ar^{\pb}(T)\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>We must show this is a colimit cocone. In other words, we must show that a commutative square in <span class="math-inline">\(T\)</span> of the form <figure class="diagram"><img src="diagrams/tikzcd-8e3f8cb88a3a.svg" alt="Commutative diagram generated from the LaTeX source"></figure> is a pullback square if and only if each of the composite squares <figure class="diagram"><img src="diagrams/tikzcd-3a2c26583766.svg" alt="Commutative diagram generated from the LaTeX source"></figure> is a pullback square. This is an immediate consequence of universality of colimits.<div class="proof-paragraph-break" aria-hidden="true"></div>For the converse, assume that <span class="math-inline">\(\Ar^{\pb}(T)\)</span> admits colimits and the inclusion preserves them. The fact that colimit cocones in <span class="math-inline">\(\Ar^{\pb}(T)\)</span> agree with colimit cocones in <span class="math-inline">\(\Ar(T)\)</span> immediately implies effectivity of colimits.<div class="proof-paragraph-break" aria-hidden="true"></div>To prove universality, fix a map <span class="math-inline">\(A\to B\)</span> and a diagram <span class="math-inline">\(X_{\bullet}\)</span> in <span class="math-inline">\(T_{/B}\)</span> with colimit <span class="math-inline">\(X\to B\)</span>. The pullback arrows <span class="math-inline">\(A\times_BX_i\to X_i\)</span> form a diagram in <span class="math-inline">\(\Ar^{\pb}(T)\)</span>, and the maps to <span class="math-inline">\(A\to B\)</span> form a cocone in <span class="math-inline">\(\Ar^{\pb}(T)\)</span>. Its colimit in <span class="math-inline">\(\Ar(T)\)</span> is the arrow <div class="math-display">\[\colim_i(A\times_BX_i)\longrightarrow X.\]</div> Since the inclusion <span class="math-inline">\(\Ar^{\pb}(T)\hookrightarrow\Ar(T)\)</span> preserves this colimit, the induced morphism from this arrow to <span class="math-inline">\(A\to B\)</span> is a pullback square. Consequently, <div class="math-display">\[\colim_i(A\times_BX_i)\iso A\times_BX,\]</div> which proves universality.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem corollary" id="cor:Lex_Localization_Of_Topos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/left-exact-localizations-of-topoi/index.html">Corollary 2.17.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a topos and let <span class="math-inline">\(L\colon T \to T'\)</span> be a left exact functor localization. Then also <span class="math-inline">\(T'\)</span> is a topos.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-cor:Lex_Localization_Of_Topos-main" data-owner-entry="left-exact-localizations-of-topoi" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Let <span class="math-inline">\(R\colon T' \hookrightarrow T\)</span> denote the fully faithful right adjoint to <span class="math-inline">\(L\)</span>. Then this adjunction induces an adjunction <div class="math-display">\[L_*\colon \Ar(T) \rightleftarrows \Ar(T')\colon R_*\]</div> on arrow categories. Moreover, since both <span class="math-inline">\(L\)</span> and <span class="math-inline">\(R\)</span> preserve pullback squares, this adjunction restricts to an adjunction <div class="math-display">\[\Ar^{\pb}(T) \rightleftarrows \Ar^{\pb}(T').\]</div> The claim now follows from <a href="#prop:Descent_Via_Pullback_Squares">Proposition 2.16</a>, as <span class="math-inline">\(\Ar^{\pb}(T')\)</span> inherits its colimits from <span class="math-inline">\(\Ar^{\pb}(T)\)</span> and these are compatible with the ones in <span class="math-inline">\(\Ar(T')\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-lurie2009HTT">Jacob Lurie. <em>Higher topos theory</em>. Ann. Math. Stud. 170, Princeton, NJ: Princeton University Press. 2009.</li></ol></section>
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+      <span class="context-step-control" aria-disabled="true"><span aria-hidden="true">←</span></span>
+      <a class="context-step-control" rel="next" href="../effective-epimorphisms/index.html" aria-label="Next section: Effective epimorphisms" title="Next section: Effective epimorphisms"><span aria-hidden="true">→</span></a>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../chapter/introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../../chapter/foundations/index.html" aria-current="location">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../../chapter/truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../../chapter/topoi-logoi/index.html">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../../chapter/modalities/index.html">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../../chapter/topics-in-topos-theory/index.html">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../../chapter/geometry/index.html">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../../chapter/factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../../chapter/limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../topoi-and-descent/index.html" aria-current="page">
+          <span class="context-entry-heading">Section 2.1</span>
+          <span class="context-entry-title">Topoi and descent</span>
+        </a></li>
+<li><a href="../effective-epimorphisms/index.html">
+          <span class="context-entry-heading">Section 2.2</span>
+          <span class="context-entry-title">Effective epimorphisms</span>
+        </a></li>
+<li><a href="../characterizations-of-topoi/index.html">
+          <span class="context-entry-heading">Section 2.3</span>
+          <span class="context-entry-title">Characterizations of topoi</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <p class="context-nav-kicker">Section 2.1</p>
+      <p class="context-nav-description">Topoi and descent</p>
+      <ol class="context-entry-list">
+        <li><a href="#def:Descent" data-section-target="def:Descent">
+          <span class="context-entry-heading">Definition 2.1</span>
+          <span class="context-entry-title">Descent for indexed colimits</span>
+        </a></li>
+<li><a href="#def:Topos" data-section-target="def:Topos">
+          <span class="context-entry-heading">Definition 2.2</span>
+          <span class="context-entry-title">Topoi</span>
+        </a></li>
+<li><a href="#def:Cartesian_Natural_Transformation" data-section-target="def:Cartesian_Natural_Transformation">
+          <span class="context-entry-heading">Definition 2.3</span>
+          <span class="context-entry-title">Cartesian natural transformations</span>
+        </a></li>
+<li><a href="#lem:Limit_Of_Slices_Vs_Cartesian_Transformations" data-section-target="lem:Limit_Of_Slices_Vs_Cartesian_Transformations">
+          <span class="context-entry-heading">Lemma 2.4</span>
+          <span class="context-entry-title">Limits of slices and cartesian transformations</span>
+        </a></li>
+<li><a href="#lem:Map_To_Limit_Of_Slices_Admits_Left_Adjoint" data-section-target="lem:Map_To_Limit_Of_Slices_Admits_Left_Adjoint">
+          <span class="context-entry-heading">Lemma 2.5</span>
+          <span class="context-entry-title">The left adjoint to the comparison of slices</span>
+        </a></li>
+<li><a href="#def:Effective_Colimits" data-section-target="def:Effective_Colimits">
+          <span class="context-entry-heading">Definition 2.6</span>
+          <span class="context-entry-title">Effective colimits</span>
+        </a></li>
+<li><a href="#def:Universal_Colimits" data-section-target="def:Universal_Colimits">
+          <span class="context-entry-heading">Definition 2.7</span>
+          <span class="context-entry-title">Universal colimits</span>
+        </a></li>
+<li><a href="#lem:Universality_Of_Colimits" data-section-target="lem:Universality_Of_Colimits">
+          <span class="context-entry-heading">Lemma 2.8</span>
+          <span class="context-entry-title">Characterizations of universal colimits</span>
+        </a></li>
+<li><a href="#cor:Descent_Iff_Colimits_Effective_And_Universal" data-section-target="cor:Descent_Iff_Colimits_Effective_And_Universal">
+          <span class="context-entry-heading">Corollary 2.9</span>
+          <span class="context-entry-title">Descent is effectivity plus universality</span>
+        </a></li>
+<li><a href="#cor:Topos_Iff_Effective_And_Universal_Colimits" data-section-target="cor:Topos_Iff_Effective_And_Universal_Colimits">
+          <span class="context-entry-heading">Corollary 2.10</span>
+          <span class="context-entry-title">Topoi via effective and universal colimits</span>
+        </a></li>
+<li><a href="#ex:Strictly_Initial_Object" data-section-target="ex:Strictly_Initial_Object">
+          <span class="context-entry-heading">Example 2.11</span>
+          <span class="context-entry-title">Strictly initial objects</span>
+        </a></li>
+<li><a href="#ex:Disjoint_Coproducts" data-section-target="ex:Disjoint_Coproducts">
+          <span class="context-entry-heading">Example 2.12</span>
+          <span class="context-entry-title">Disjoint coproducts</span>
+        </a></li>
+<li><a href="#ex:Group_Actions" data-section-target="ex:Group_Actions">
+          <span class="context-entry-heading">Example 2.13</span>
+          <span class="context-entry-title">Group actions and descent</span>
+        </a></li>
+<li><a href="#ex:Grothendieck_Construction" data-section-target="ex:Grothendieck_Construction">
+          <span class="context-entry-heading">Example 2.14</span>
+          <span class="context-entry-title">The Grothendieck construction</span>
+        </a></li>
+<li><a href="#ex:Van_Kampen_Colimits" data-section-target="ex:Van_Kampen_Colimits">
+          <span class="context-entry-heading">Exercise 2.15</span>
+          <span class="context-entry-title">Examples of van Kampen colimits</span>
+        </a></li>
+<li><a href="#prop:Descent_Via_Pullback_Squares" data-section-target="prop:Descent_Via_Pullback_Squares">
+          <span class="context-entry-heading">Proposition 2.16</span>
+          <span class="context-entry-title">Descent via pullback squares</span>
+        </a></li>
+<li><a href="#cor:Lex_Localization_Of_Topos" data-section-target="cor:Lex_Localization_Of_Topos">
+          <span class="context-entry-heading">Corollary 2.17</span>
+          <span class="context-entry-title">Left exact localizations of topoi</span>
+        </a></li>
+      </ol>
+    </nav>
+  </section></div>
+  </aside>
+  </main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

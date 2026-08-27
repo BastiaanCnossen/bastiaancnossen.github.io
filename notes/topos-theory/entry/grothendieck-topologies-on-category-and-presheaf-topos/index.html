@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grothendieck topologies on category and presheaf topos | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/entry/grothendieck-topologies-on-category-and-presheaf-topos/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="entry-page has-context-nav" data-record-id="grothendieck-topologies-on-category-and-presheaf-topos" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">›</span> <a href="../../section/sheaf-topoi/index.html">Section 6.1: Sheaf topoi</a></p>
+      <h1>Grothendieck topologies on category and presheaf topos</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Nearby entries
+    </button>
+    <article class="notes-page">
+      
+<section class="theorem lemma" id="lem:Grothendieck_Topologies_On_Category_And_Presheaf_Topos">
+  <p class="theorem-heading"><span>Lemma 6.8.</span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> be a small category. Then there is a bijection between Grothendieck topologies on <span class="math-inline">\(C\)</span> in the sense of <a href="../grothendieck-topology-site/index.html#def:Grothendieck_Topology_Site">Definition 6.7</a> and Grothendieck topologies on <span class="math-inline">\(\PSh(C)\)</span> in the sense of <a href="../grothendieck-topology/index.html#def:Grothendieck_Topology">Definition 6.3</a>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Grothendieck_Topologies_On_Category_And_Presheaf_Topos-main" data-owner-entry="grothendieck-topologies-on-category-and-presheaf-topos" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">If <span class="math-inline">\(\tau\)</span> is a Grothendieck topology on <span class="math-inline">\(\PSh(C)\)</span>, we declare a sieve <span class="math-inline">\(U \hookrightarrow y(X)\)</span> to be covering if it is a covering monomorphism in <span class="math-inline">\(\PSh(C)\)</span>, i.e. if it belongs to <span class="math-inline">\(\tau\)</span>. Conditions (1) and (2) follow from (a) and base-change stability. For (3), let <span class="math-inline">\(i\colon U \hookrightarrow y(X)\)</span> be a covering sieve and let <span class="math-inline">\(j\colon V \hookrightarrow y(X)\)</span> be a sieve such that for every map <span class="math-inline">\(f\colon y(Y) \to U\)</span> from a representable the projection <span class="math-inline">\(y(Y) \times_{y(X)} V \hookrightarrow y(Y)\)</span> is a covering monomorphism. Since <span class="math-inline">\(\tau\)</span> is local, it follows by descent that <span class="math-inline">\(U \times_{y(X)} V \to U\)</span> is a covering monomorphism. Its composite with <span class="math-inline">\(U \hookrightarrow y(X)\)</span> is covering by (c), and hence <span class="math-inline">\(V \hookrightarrow y(X)\)</span> is covering by (d).<div class="proof-paragraph-break" aria-hidden="true"></div>Conversely, given a Grothendieck topology on <span class="math-inline">\(C\)</span>, we define a monomorphism <span class="math-inline">\(U \hookrightarrow X\)</span> in <span class="math-inline">\(\PSh(C)\)</span> to be covering if its pullback along every map <span class="math-inline">\(y(Y) \to X\)</span> from a representable is a covering sieve. We verify properties (a)–(d).<div class="proof-paragraph-break" aria-hidden="true"></div>For (a), all isomorphisms are covering. Moreover, the saturation <span class="math-inline">\(\tau^s\)</span> is generated by the set of covering sieves on representables. Indeed, every monomorphism <span class="math-inline">\(U \hookrightarrow X\)</span> is the colimit in <span class="math-inline">\(\Ar(\PSh(C))\)</span> of its pullbacks along maps <span class="math-inline">\(y(Y) \to X\)</span>, by the density of the Yoneda embedding. Hence every covering monomorphism belongs to the saturation of the covering sieves.<div class="proof-paragraph-break" aria-hidden="true"></div>For (b), stability under base change follows directly from the definition, and closure under coproducts follows because every map from a representable into a coproduct factors through one of its summands. For descent, consider a pullback square as in <a href="../local-classes/index.html#def:Local_Class">Definition 2.46</a> in which the bottom map is an effective epimorphism and the upper vertical map is covering. After pulling back along a map from a representable, the bottom effective epimorphism admits a section: this follows by evaluating it at the object representing its target. The corresponding pullback of the lower vertical map is therefore a base change of the upper vertical map and hence is covering.<div class="proof-paragraph-break" aria-hidden="true"></div>For (c), let <span class="math-inline">\(V \hookrightarrow U\)</span> and <span class="math-inline">\(U \hookrightarrow X\)</span> be covering monomorphisms. To show that <span class="math-inline">\(V \hookrightarrow X\)</span> is covering, we may pull back along a map from a representable and thus assume that <span class="math-inline">\(X = y(X')\)</span>. Then <span class="math-inline">\(U \hookrightarrow y(X')\)</span> is a covering sieve. By axiom (3), it suffices to show that for every <span class="math-inline">\(f\colon Y \to X'\)</span> in <span class="math-inline">\(U\)</span>, the pullback sieve <span class="math-inline">\(f^*V \hookrightarrow y(Y)\)</span> is covering. This map is a base change of <span class="math-inline">\(V \hookrightarrow U\)</span>, so it is covering by assumption.<div class="proof-paragraph-break" aria-hidden="true"></div>For (d), consider monomorphisms <span class="math-inline">\(V \xhookrightarrow{f} U \xhookrightarrow{g} X\)</span> such that <span class="math-inline">\(gf \in \tau\)</span>. We may again assume that <span class="math-inline">\(X = y(X')\)</span> is representable. Then <span class="math-inline">\(V \hookrightarrow y(X')\)</span> is a covering sieve. By axiom (3), it suffices to show that for every <span class="math-inline">\(h\colon Y \to X'\)</span> in <span class="math-inline">\(V\)</span>, the pullback <span class="math-inline">\(h^*U \hookrightarrow y(Y)\)</span> is covering. Since <span class="math-inline">\(h\)</span> factors through <span class="math-inline">\(V \hookrightarrow U\)</span>, this pullback is the identity of <span class="math-inline">\(y(Y)\)</span> and hence is covering.<div class="proof-paragraph-break" aria-hidden="true"></div>It is immediate from the construction that these two assignments are inverse to each other, finishing the proof.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+    </article>
+      <aside class="context-nav" id="context-navigation" data-context-nav aria-label="Nearby entries">
+      <button class="context-nav-collapse" type="button" data-context-nav-collapse data-collapsed-label="Nearby entries" aria-controls="context-navigation" aria-expanded="true" aria-label="Hide Nearby entries">
+      <span aria-hidden="true">›</span>
+    </button>
+      <p class="context-chapter-link"><a href="../../chapter/topics-in-topos-theory/index.html">Topics in topos theory</a></p>
+      <p class="context-nav-kicker">Section 6.1</p>
+      <h2><a href="../../section/sheaf-topoi/index.html">Sheaf topoi</a></h2>
+      <p class="context-nav-description"><a href="../../section/sheaf-topoi/index.html#lem:Grothendieck_Topologies_On_Category_And_Presheaf_Topos">Read this result in the continuous section</a></p>
+      <ol class="context-entry-list context-entry-list-nearby">
+        <li><a href="../pullback-of-sieve/index.html">
+          <span class="context-entry-heading">Notation 6.6</span>
+          <span class="context-entry-title">Pullback of sieve</span>
+        </a></li>
+<li><a href="../grothendieck-topology-site/index.html">
+          <span class="context-entry-heading">Definition 6.7</span>
+          <span class="context-entry-title">Grothendieck topology site</span>
+        </a></li>
+<li><a href="#lem:Grothendieck_Topologies_On_Category_And_Presheaf_Topos" aria-current="page">
+          <span class="context-entry-heading">Lemma 6.8</span>
+          <span class="context-entry-title">Grothendieck topologies on category and presheaf topos</span>
+        </a></li>
+<li><a href="../grothendieck-topology-monogenic-congruence-bijection/index.html">
+          <span class="context-entry-heading">Proposition 6.9</span>
+          <span class="context-entry-title">Grothendieck topology monogenic congruence bijection</span>
+        </a></li>
+<li><a href="../sheaf-topos/index.html">
+          <span class="context-entry-heading">Definition 6.10</span>
+          <span class="context-entry-title">Sheaf topos</span>
+        </a></li>
+      </ol>
+      <nav class="context-step-links" aria-label="Previous and next entries"><a rel="prev" href="../grothendieck-topology-site/index.html"><span>Previous</span>Grothendieck topology site</a>
+<a rel="next" href="../grothendieck-topology-monogenic-congruence-bijection/index.html"><span>Next</span>Grothendieck topology monogenic congruence bijection</a></nav>
+    </aside>
+  </main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

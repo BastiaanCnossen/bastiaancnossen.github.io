@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compactly assembled categories and exponentiability | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/section/compactly-assembled-categories-and-exponentiability/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="section-page has-context-nav" data-record-id="compactly-assembled-categories-and-exponentiability" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">·</span> Section 6.10</p>
+      <h1>Compactly assembled categories and exponentiability</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page">
+      
+<h2 id="sec:Compactly_Assembled"><span>6.10.</span> Compactly assembled categories and exponentiability</h2>
+<p>In this section we characterize the exponentiable topoi, i.e. those topoi <span class="math-inline">\(T\)</span> for which the exponential <span class="math-inline">\(S^T\)</span> exists for all topoi <span class="math-inline">\(S\)</span>. The answer is provided by the notion of compactly assembled categories: a topos is exponentiable if and only if it is compactly assembled as a presentable category. We begin by studying finitary functors as an auxiliary notion, then introduce compactly assembled categories and establish their connection to classifying topoi, before proving the characterization of exponentiable topoi.</p>
+<h3 id="subsec:Finitary_Functor_Topoi"><span>6.10.1.</span> Finitary functor topoi</h3>
+<p>We write <span class="math-inline">\(\Fun^{\kappa}(C,T) \subseteq \Fun(C,T)\)</span> for the full subcategory of <span class="math-inline">\(\kappa\)</span>-filtered-colimit-preserving functors. We write <span class="math-inline">\(\Cat^{\acc,\kappa}\)</span> for the category of accessible categories admitting <span class="math-inline">\(\kappa\)</span>-filtered colimits and functors preserving those colimits.</p>
+<section class="theorem proposition" id="prop:Finitary_Functor_Topos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/finitary-functor-topos/index.html">Proposition 6.139.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> be an accessible category with <span class="math-inline">\(\kappa\)</span>-filtered colimits, let <span class="math-inline">\(T\)</span> be a topos. Then <span class="math-inline">\(\Fun^{\kappa}(C,T)\)</span> is a topos.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Finitary_Functor_Topos-main" data-owner-entry="finitary-functor-topos" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">We may write <span class="math-inline">\(C = \Ind_{\lambda}(C_0)\)</span> for some small category <span class="math-inline">\(C_0\)</span>, and some regular cardinal <span class="math-inline">\(\lambda \gg \kappa\)</span>. It then follows that <div class="math-display">\[\Fun^{\kappa}(C,T) \subseteq \Fun^{\lambda}(C,T) \simeq \Fun(C_0,T).\]</div> Note that <span class="math-inline">\(\Fun(C_0,T)\)</span> is a topos. Moreover, <span class="math-inline">\(\Fun^{\kappa}(C,T)\)</span> is closed under colimits and finite limits. It remains to show that <span class="math-inline">\(\Fun^{\kappa}(C,T)\)</span> is accessible. We will do this by cutting it out of <span class="math-inline">\(\Fun(C_0,T)\)</span> by imposing a small set of conditions.<div class="proof-paragraph-break" aria-hidden="true"></div>Note that a functor <span class="math-inline">\(F \in \Fun^{\lambda}(C,T)\)</span> preserves <span class="math-inline">\(\kappa\)</span>-filtered colimits if and only if <span class="math-inline">\(F\)</span> preserves colimits indexed by <span class="math-inline">\(\kappa\)</span>-filtered posets. Using <span class="math-inline">\(\lambda \gg \kappa\)</span>, we may write every <span class="math-inline">\(\kappa\)</span>-filtered poset as a <span class="math-inline">\(\lambda\)</span>-filtered colimit of <span class="math-inline">\(\lambda\)</span>-small <span class="math-inline">\(\kappa\)</span>-filtered colimits, so the condition is equivalent to <span class="math-inline">\(F\)</span> preserving <span class="math-inline">\(\lambda\)</span>-small <span class="math-inline">\(\kappa\)</span>-filtered colimits.<div class="proof-paragraph-break" aria-hidden="true"></div>There is only a set of isomorphism classes of <span class="math-inline">\(\lambda\)</span>-small <span class="math-inline">\(\kappa\)</span>-filtered posets. For each such poset <span class="math-inline">\(A\)</span>, the category <span class="math-inline">\(\Fun(A,C)\)</span> is accessible, so choose a small generating family of diagrams <span class="math-inline">\(\alpha\colon A\to C\)</span>. Preservation of the colimit of these generators implies preservation for every <span class="math-inline">\(A\)</span>-diagram, because both sides of the comparison commute with sufficiently filtered colimits of diagrams. We therefore obtain a pullback square <figure class="diagram"><img src="diagrams/tikzcd-52592f9a7c33.svg" alt="Commutative diagram generated from the LaTeX source"></figure> where the right vertical functor sends <span class="math-inline">\(F\)</span> to the collection of comparison maps <span class="math-inline">\(\colim_A F\alpha\to F(\colim_A\alpha)\)</span>, and the bottom map sends a family of objects to the corresponding family of identity arrows. All three other corners and all functors in this square are accessible. Hence <span class="math-inline">\(\Fun^\kappa(C,T)\)</span> is accessible. Since it is a full subcategory of the topos <span class="math-inline">\(\Fun(C_0,T)\)</span> closed under colimits and finite limits, it is itself a topos.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem remark" id="rmk:Finitary_Functor_Universal_Property">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/finitary-functor-universal-property/index.html">Remark 6.140.</a></span></p>
+  <div class="theorem-statement"><p>The category <span class="math-inline">\(\Fun^{\kappa}(C,T)\)</span> has a universal property: for every topos <span class="math-inline">\(S\)</span>, there is a natural equivalence</p>
+<div class="math-display">\[\Geom(\Fun^{\kappa}(C,T), S) \simeq \Fun^{\kappa}(C, \Geom(T,S)).\]</div>
+<p>Both sides are naturally a full subcategory of <span class="math-inline">\(\Fun(C \times S, T)\)</span>, and one can check that in both cases we precisely get those functors <span class="math-inline">\(C \times S \to T\)</span> that preserve <span class="math-inline">\(\kappa\)</span>-filtered colimits in the left variable, and preserve finite limits and colimits in the second variable.</p></div>
+</section>
+
+<section class="theorem corollary" id="cor:Points_Functor_Adjoint">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/points-functor-adjoint/index.html">Corollary 6.141.</a></span></p>
+  <div class="theorem-statement"><p>The functor <span class="math-inline">\(\Pt\colon \Topos \to \Cat^{\acc, \kappa}\)</span> admits a (<span class="math-inline">\(2\)</span>-categorical) left adjoint</p>
+<div class="math-display">\[\Cat^{\acc,\kappa} \to \Topos, \qquad C \mapsto \Fun^{\kappa}(C,\An).\]</div></div>
+</section>
+
+<h3 id="subsec:Compactly_Assembled_Categories"><span>6.10.2.</span> Compactly assembled categories</h3>
+<p>We now introduce the central notion of this section. A category is called compactly assembled if it satisfies certain retract conditions with respect to ind-categories. The following proposition provides three equivalent characterizations.</p>
+<section class="theorem proposition" id="prop:Compactly_Assembled_Characterization">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/compactly-assembled-characterization/index.html">Proposition 6.142.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> be a category with filtered colimits. Then the following are equivalent:</p>
+<ol><li><p>There exists a small category <span class="math-inline">\(C_0\)</span> such that <span class="math-inline">\(C\)</span> is a retract of <span class="math-inline">\(\Ind(C_0)\)</span> in <span class="math-inline">\(\Cat^{\omega}\)</span> (the category of categories with filtered colimits).</p></li><li><p>There exists a small category <span class="math-inline">\(C_0\)</span> such that there exists an adjunction <span class="math-inline">\(C \rightleftarrows \Ind(C_0)\)</span> in <span class="math-inline">\(\Cat^{\omega}\)</span> such that <span class="math-inline">\(C \hookrightarrow \Ind(C_0)\)</span> is fully faithful.</p></li><li><p><span class="math-inline">\(C\)</span> is accessible, and the “colimit functor” <span class="math-inline">\(\colim\colon \Ind(C) \to C\)</span> (defined as the left adjoint to <span class="math-inline">\(y\colon C \hookrightarrow \Ind(C)\)</span>) admits a further left adjoint <span class="math-inline">\(y'\colon C \hookrightarrow \Ind(C)\)</span>.</p></li></ol></div>
+</section>
+
+<section class="theorem definition" id="def:Compactly_Assembled">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/compactly-assembled/index.html">Definition 6.143.</a></span></p>
+  <div class="theorem-statement"><p>A category satisfying the equivalent conditions of <a href="#prop:Compactly_Assembled_Characterization">Proposition 6.142</a> is called <em>compactly assembled</em>. We write <span class="math-inline">\(\Cat^{\mathrm{ca}}\)</span> for the category of compactly assembled categories and filtered-colimit-preserving functors.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Compactly_Assembled_Characterization-main" data-owner-entry="compactly-assembled-characterization" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Note that (2) clearly implies (1), since the unit of the adjunction exhibits the map <span class="math-inline">\(\Ind(C_0) \to C\)</span> as a retraction of <span class="math-inline">\(C \hookrightarrow \Ind(C_0)\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>For (3) <span class="math-inline">\(\implies\)</span> (2), we write <span class="math-inline">\(\Ind(C) = \bigcup_{\lambda &gt; \kappa} \Ind(C^{\lambda})\)</span>, where <span class="math-inline">\(C\)</span> is <span class="math-inline">\(\kappa\)</span>-accessible. Since <span class="math-inline">\(C^{\kappa}\)</span> is small, we have <span class="math-inline">\(y'(C^{\kappa}) \subseteq \Ind(C^{\lambda})\)</span> for some <span class="math-inline">\(\lambda\)</span>. Since <span class="math-inline">\(C\)</span> is generated under colimits by <span class="math-inline">\(C^{\kappa}\)</span> and <span class="math-inline">\(y'\)</span> preserves colimits, this implies that <span class="math-inline">\(y'(C) \subseteq \Ind(C^{\lambda})\)</span>. But then the functor <span class="math-inline">\(y'\colon C \to \Ind(C^{\lambda})\)</span> is a left adjoint to <span class="math-inline">\(\colim\colon \Ind(C^{\lambda}) \to C\)</span>, giving (2).<div class="proof-paragraph-break" aria-hidden="true"></div>Finally, we prove that (1) <span class="math-inline">\(\implies\)</span> (3). The assumption gives us functors <div class="math-display">\[C \xrightarrow{u} \Ind(C_0) \xrightarrow{v} C\]</div> satisfying <span class="math-inline">\(vu = \id_C\)</span>. We may now consider the idempotent <span class="math-inline">\(uv\colon \Ind(C_0) \to \Ind(C_0)\)</span>. We may then write <div class="math-display">\[C = \lim(\dots \to \Ind(C_0) \xrightarrow{uv} \Ind(C_0) \xrightarrow{uv} \Ind(C_0)),\]</div> and in particular <span class="math-inline">\(C\)</span> is a limit of accessible categories, hence itself accessible. Consider the following diagram <figure class="diagram"><img src="diagrams/tikzcd-bec00966117e.svg" alt="Commutative diagram generated from the LaTeX source"></figure> The middle vertical map admits a left adjoint <span class="math-inline">\(y'\colon \Ind(C_0) \hookrightarrow \Ind(\Ind(C_0))\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>Now, we show that the left adjoint <span class="math-inline">\(y'\colon C \hookrightarrow \Ind(C)\)</span> exists. We may do this pointwise, so consider some <span class="math-inline">\(X \in C\)</span>. The map <span class="math-inline">\(\Hom(X,\colim(-))\)</span> is a retract of the representable copresheaf <span class="math-inline">\(\Hom(\hat{v}y'u(X),-)\)</span> in <span class="math-inline">\(\Fun(\Ind(C),\An)\)</span>. Since <span class="math-inline">\(\Ind(C)\)</span> is idempotent complete, this means that <span class="math-inline">\(\Hom(X,\colim(-))\)</span> is representable. Hence there exists some <span class="math-inline">\(y'(X) \in \Ind(C)\)</span>, which then provides the desired left adjoint object to <span class="math-inline">\(X\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem corollary" id="cor:Compactly_Assembled_Retract">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/compactly-assembled-retract/index.html">Corollary 6.144.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> be a presentable category. Then <span class="math-inline">\(C\)</span> is compactly assembled if and only if it is a retract in <span class="math-inline">\(\PrL\)</span> of a compactly generated category.</p></div>
+</section>
+
+<h3 id="subsec:Classifying_Topoi_Compactly_Assembled"><span>6.10.3.</span> Classifying topoi</h3>
+<p>The key property of compactly assembled categories is that they admit classifying topoi for sheaves valued in them. We establish this through an equivalence relating functors out of <span class="math-inline">\(\Fun^{\omega}(C,\An)\)</span> to functors from <span class="math-inline">\(C^{\op}\)</span>.</p>
+<section class="theorem proposition" id="prop:Colimit_Preserving_Equivalence">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/colimit-preserving-equivalence/index.html">Proposition 6.145.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> be compactly assembled, and let <span class="math-inline">\(D\)</span> be presentable. Then there is an equivalence</p>
+<div class="math-display">\[\FunL(\Fun^{\omega}(C,\An),D) \simeq \Fun_{\omega}(C\catop,D),\]</div>
+<p>where the RHS means those functors that preserve cofiltered limits.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Colimit_Preserving_Equivalence-main" data-owner-entry="colimit-preserving-equivalence" data-proof-id="main">
+  <summary>Proof sketch</summary>
+  <div class="proof-body">If <span class="math-inline">\(C = \Ind(C_0)\)</span> is compactly generated, we have <span class="math-inline">\(\Fun^{\omega}(C,\An) = \Fun(C_0,\An) = \PSh(C_0\catop)\)</span>, whereas <span class="math-inline">\(\Fun_{\omega}(C\catop,D) = \Fun(C_0\catop,D)\)</span>. We would like to say: the claim now follows as every <span class="math-inline">\(C\)</span> is a retract of a compactly generated one. However, for this reasoning to work, we need to find a way to write down the comparison map for the compactly generated case in a way that does not rely on picking an identification <span class="math-inline">\(C = \Ind(C_0)\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>To this end, consider the category <div class="math-display">\[\Fun^+(C,\An) := \Fun^{\omega}(C,\An) \cup \Fun^{\rep}(C,\An) \subseteq \Fun(C,\An).\]</div> Consider a functor <span class="math-inline">\(F\colon \Fun^+(C,\An) \to D\)</span>. Then, if <span class="math-inline">\(C = \Ind(C_0)\)</span>, one can show that: <ul class="proof-list"><li><span class="math-inline">\(F\)</span> is left Kan extended from <span class="math-inline">\(\Fun^{\rep}\)</span> if and only if <span class="math-inline">\(F\vert_{\Fun^{\omega}}\)</span> preserves colimits.</li><li><span class="math-inline">\(F\)</span> is right Kan extended from <span class="math-inline">\(\Fun^{\omega}\)</span> if and only if <span class="math-inline">\(F\vert_{\Fun^{\rep}}\)</span> preserves cofiltered limits.</li></ul> Using the adjunction <span class="math-inline">\(C \rightleftarrows \Ind(C_0)\)</span>, we then deduce that the following are equivalent: <ul class="proof-list"><li><span class="math-inline">\(F\)</span> is left Kan extended from <span class="math-inline">\(\Fun^{\rep}\)</span> and <span class="math-inline">\(F\vert_{\Fun^{\rep}}\)</span> preserves cofiltered limits.</li><li><span class="math-inline">\(F\)</span> is right Kan extended from <span class="math-inline">\(\Fun^{\omega}\)</span> and <span class="math-inline">\(F\vert_{\Fun^{\omega}}\)</span> preserves colimits.</li></ul> It follows that both sides <span class="math-inline">\(\FunL(\Fun^{\omega}(C,\An), D)\)</span> and <span class="math-inline">\(\Fun_{\omega}(C\catop,D)\)</span> agree with the full subcategory of <span class="math-inline">\(\Fun(\Fun^+(C,\An), D)\)</span> satisfying these two equivalent conditions.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem corollary" id="cor:Logos_Functor_Equivalence">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/logos-functor-equivalence/index.html">Corollary 6.146.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a topos and <span class="math-inline">\(C\)</span> a presentable category which is compactly assembled. Then the equivalence</p>
+<div class="math-display">\[\FunL(\Fun^{\omega}(C,\An), T) \simeq \Fun_{\omega}(C\catop,T)\]</div>
+<p>restricts to an equivalence</p>
+<div class="math-display">\[\Fun_{\Logos}(\Fun^{\omega}(C,\An), T) \simeq \FunR(C\catop,T).\]</div></div>
+</section>
+
+<section class="theorem remark" id="rmk:C_Valued_Sheaves">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/c-valued-sheaves/index.html">Remark 6.147.</a></span></p>
+  <div class="theorem-statement"><p>Recall that the category <span class="math-inline">\(\FunR(C\catop,T)\)</span> is the Lurie tensor product <span class="math-inline">\(C \otimes T\)</span> in <span class="math-inline">\(\PrL\)</span>, which in turn may be written as <span class="math-inline">\(\FunR(T\catop,C)\)</span>. We denote this category by <span class="math-inline">\(\Shv_C(T)\)</span> and call it the category of <em><span class="math-inline">\(C\)</span>-valued sheaves on <span class="math-inline">\(T\)</span></em>. Keeping track of the functoriality in <span class="math-inline">\(T\)</span> shows that the topos <span class="math-inline">\(\Fun^{\omega}(C,\An)\)</span> classifies <span class="math-inline">\(C\)</span>-valued sheaves.</p></div>
+</section>
+<p>We have thus shown that if <span class="math-inline">\(C\)</span> is compactly assembled, then a classifying topos for <span class="math-inline">\(C\)</span>-valued sheaves exists. It turns out that the converse is also true:</p>
+<section class="theorem proposition" id="prop:Classifying_Topos_Iff_Compactly_Assembled">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/classifying-topos-iff-compactly-assembled/index.html">Proposition 6.148.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> be a presentable category. Then a classifying topos for <span class="math-inline">\(C\)</span>-valued sheaves exists if and only if <span class="math-inline">\(C\)</span> is compactly assembled.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Classifying_Topos_Iff_Compactly_Assembled-main" data-owner-entry="classifying-topos-iff-compactly-assembled" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">It remains to show the “only if” part. Let <span class="math-inline">\(E\)</span> be such a classifying topos, and write it as a left exact localization <span class="math-inline">\(i_*\colon E \hookrightarrow \PSh(D)\)</span> of a presheaf category. This induces a geometric morphism <span class="math-inline">\(i_*\colon \Shv_C(E) \hookrightarrow \Shv_C(\PSh(D))\)</span>. Let <span class="math-inline">\(F_{\univ} \in \Shv_C(E)\)</span> be the universal <span class="math-inline">\(C\)</span>-valued sheaf on <span class="math-inline">\(E\)</span>. By universality, there exists a morphism of topoi <span class="math-inline">\(f\colon \PSh(D) \to E\)</span> satisfying <span class="math-inline">\(i_*(F_{\univ}) \simeq f^*(F_{\univ})\)</span>. By full faithfulness of <span class="math-inline">\(i_*\)</span>, we have <span class="math-inline">\(F_{\univ} \simeq i^*i_*(F_{\univ}) \simeq (f \circ i)^*(F_{\univ})\)</span>. Universality again gives <span class="math-inline">\(f \circ i \simeq \id_E\)</span>, so <span class="math-inline">\(E\)</span> is a retract of <span class="math-inline">\(\PSh(D)\)</span> in <span class="math-inline">\(\Topos\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>Applying <span class="math-inline">\(\Pt(-)\)</span> shows that <span class="math-inline">\(C \simeq \Shv_C(\An) \simeq \FunR(\An,E)\)</span> is a retract of <span class="math-inline">\(\Pt(\PSh(D))\)</span> in <span class="math-inline">\(\Cat^{\omega}\)</span>. Points of <span class="math-inline">\(\PSh(D)\)</span> are flat functors <span class="math-inline">\(D\to\An\)</span>, and their category is the filtered-colimit completion <span class="math-inline">\(\Ind(D\catop)\)</span>. It is therefore compactly generated. Hence <span class="math-inline">\(C\)</span> is a retract of a compactly generated category in <span class="math-inline">\(\Cat^\omega\)</span>, and is compactly assembled by <a href="#prop:Compactly_Assembled_Characterization">Proposition 6.142</a>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem remark" id="rmk:Points_Of_Classifying_Topos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/points-of-classifying-topos/index.html">Remark 6.149.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> be a compactly assembled category. Then there is an equivalence</p>
+<div class="math-display">\[\Pt(\Fun^{\omega}(C,\An)) \simeq C,\]</div>
+<p>under which <span class="math-inline">\(X \in C\)</span> corresponds to the evaluation functor <span class="math-inline">\(\ev_X\colon \Fun^{\omega}(C,\An) \to \An\)</span>.</p></div>
+</section>
+
+<section class="theorem lemma" id="lem:Classifying_Topos_Fully_Faithful">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/classifying-topos-fully-faithful/index.html">Lemma 6.150.</a></span></p>
+  <div class="theorem-statement"><p>The functor <span class="math-inline">\(\Cat^{\mathrm{ca}} \to \Topos\)</span> given by <span class="math-inline">\(C \mapsto \Fun^{\omega}(C,\An)\)</span> is a fully faithful <span class="math-inline">\(2\)</span>-functor.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Classifying_Topos_Fully_Faithful-main" data-owner-entry="classifying-topos-fully-faithful" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">By <a href="#cor:Points_Functor_Adjoint">Corollary 6.141</a>, the functor <span class="math-inline">\(\Pt\colon \Topos \to \Cat^{\acc,\omega}\)</span> admits a left adjoint given by <span class="math-inline">\(C \mapsto \Fun^{\omega}(C,\An)\)</span>. The unit of this adjunction provides a map <span class="math-inline">\(C \to \Pt(\Fun^{\omega}(C,\An))\)</span>, which by <a href="#rmk:Points_Of_Classifying_Topos">Remark 6.149</a> is an equivalence when <span class="math-inline">\(C\)</span> is compactly assembled. Therefore the restriction of this adjunction to <span class="math-inline">\(\Cat^{\mathrm{ca}}\)</span> exhibits <span class="math-inline">\(\Cat^{\mathrm{ca}} \to \Topos\)</span> as fully faithful.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<h3 id="subsec:Exponentiable_Topoi"><span>6.10.4.</span> Exponentiable topoi</h3>
+<p>Having established that compactly assembled categories have classifying topoi, we now turn to the main application: characterizing exponentiable topoi. Recall that the exponential <span class="math-inline">\(S^T\)</span> in <span class="math-inline">\(\Topos\)</span>, if it exists, represents the functor <span class="math-inline">\(U \mapsto \Hom_{\Topos}(U \otimes T, S)\)</span>.</p>
+<p>Let <span class="math-inline">\(S\)</span> and <span class="math-inline">\(T\)</span> be topoi. If the <em>exponential</em> (internal hom) in <span class="math-inline">\(\Topos\)</span> exists, it will be denoted <span class="math-inline">\(S^T\)</span>. In other words, this is a topos <span class="math-inline">\(S^T\)</span> equipped with a morphism of topoi <span class="math-inline">\(S^T \otimes T \to S\)</span> which induces an equivalence</p>
+<div class="math-display">\[\Hom_{\Topos}(U,S^T) \simeq \Hom_{\Topos}(U \otimes T,S).\]</div>
+<section class="theorem observation" id="obs:Exponential_2_Categorical">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/exponential-2-categorical/index.html">Observation 6.151.</a></span></p>
+  <div class="theorem-statement"><p>If <span class="math-inline">\(S^T\)</span> exists, it is automatically a <span class="math-inline">\(2\)</span>-categorical exponential. Indeed, for every topos <span class="math-inline">\(U\)</span>, the arrow topos <span class="math-inline">\(\Ar(U)\)</span> represents arrows between geometric morphisms out of <span class="math-inline">\(U\)</span>, and \begin{align*} \Hom_{\Cat}([1],\Geom(U,S^T)) &amp;\iso \Hom_{\Topos}(\Ar(U),S^T) \\ &amp;\iso \Hom_{\Topos}(\Ar(U) \otimes T, S) \\ &amp;\iso \Hom_{\Topos}(\Ar(U \otimes T),S) \\ &amp;\iso \Hom_{\Cat}([1],\Geom(U \otimes T,S)). \end{align*} Together with the original universal property on objects, this identifies the entire Hom categories. Equivalently, one may repeat the same argument with the topos of <span class="math-inline">\([n]\)</span>-diagrams for every <span class="math-inline">\(n\)</span> and use the complete Segal description of a category.</p></div>
+</section>
+
+<section class="theorem remark" id="rmk:Points_Of_Exponential">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/points-of-exponential/index.html">Remark 6.152.</a></span></p>
+  <div class="theorem-statement"><p>We have <span class="math-inline">\(\Pt(S^T) \simeq \Geom(T,S)\)</span>.</p></div>
+</section>
+
+<section class="theorem definition" id="def:Exponentiable_Topos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/exponentiable-topos/index.html">Definition 6.153.</a></span></p>
+  <div class="theorem-statement"><p>We say that a topos <span class="math-inline">\(T\)</span> is <em>exponentiable</em> if <span class="math-inline">\(S^T\)</span> exists for all <span class="math-inline">\(S\)</span>.</p></div>
+</section>
+
+<section class="theorem lemma" id="lem:Compact_Assembly_Tensor_Stability">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/compact-assembly-and-tensor-products/index.html">Lemma 6.154.</a></span></p>
+  <div class="theorem-statement"><p>If <span class="math-inline">\(C\)</span> is compactly assembled and <span class="math-inline">\(D\)</span> is compactly generated, then <span class="math-inline">\(C\otimes D\)</span> is compactly assembled.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Compact_Assembly_Tensor_Stability-main" data-owner-entry="compact-assembly-and-tensor-products" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Choose a retraction of <span class="math-inline">\(C\)</span> from a compactly generated presentable category <span class="math-inline">\(C'\)</span>. Tensoring with <span class="math-inline">\(D\)</span> gives a retraction of <span class="math-inline">\(C\otimes D\)</span> from <span class="math-inline">\(C'\otimes D\)</span>. The tensor product of compactly generated presentable categories is compactly generated: if <span class="math-inline">\(C'\simeq\Ind(C'_0)\)</span> and <span class="math-inline">\(D\simeq\Ind(D_0)\)</span>, it is generated under filtered colimits by the objects <span class="math-inline">\(c\otimes d\)</span> with <span class="math-inline">\(c\in C'_0\)</span> and <span class="math-inline">\(d\in D_0\)</span>. The claim follows from <a href="#cor:Compactly_Assembled_Retract">Corollary 6.144</a>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem lemma" id="lem:Topos_Pullback_Of_Presheaf_Topoi">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/topoi-as-pullbacks-of-presheaf-topoi/index.html">Lemma 6.155.</a></span></p>
+  <div class="theorem-statement"><p>Every topos is a pullback in <span class="math-inline">\(\Topos\)</span> of a diagram of presheaf topoi <span class="math-inline">\(\PSh(D)\)</span> with <span class="math-inline">\(D\)</span> admitting finite limits.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Topos_Pullback_Of_Presheaf_Topoi-main" data-owner-entry="topoi-as-pullbacks-of-presheaf-topoi" data-proof-id="main">
+  <summary>Proof sketch</summary>
+  <div class="proof-body">Present the topos as a left exact localization of a presheaf topos. The localization is the equalizer of the identity and its idempotent localization functor. Replacing this equalizer by the usual pullback involving an arrow category expresses the original topos as a pullback of three presheaf topoi. Closing the small indexing categories under finite limits gives the stated form. See <span class="citation-group">[Anel and Lejay <a class="citation" href="#bib-Anel_Lejay_Exponentiable_Higher_Toposes">2018, Section 4, in particular the construction preceding Theorem 4.33</a>]</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem theorem" id="thm:Exponentiable_Iff_Compactly_Assembled">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/exponentiable-iff-compactly-assembled/index.html">Theorem 6.156.</a></span></p>
+  <div class="theorem-statement"><p>A topos <span class="math-inline">\(T\)</span> is exponentiable if and only if it is compactly assembled.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-thm:Exponentiable_Iff_Compactly_Assembled-main" data-owner-entry="exponentiable-iff-compactly-assembled" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">For the “only if” direction, assume that <span class="math-inline">\(T\)</span> is exponentiable. To show it is compactly assembled, consider some compactly assembled category <span class="math-inline">\(C\)</span> and consider <span class="math-inline">\(S := \Fun^{\omega}(C,\An)\)</span>. By assumption, the exponential <span class="math-inline">\(S^T\)</span> exists. Moreover, we have <div class="math-display">\[\Geom(U,S^T) \simeq \Geom(U \otimes T, S) \simeq \Shv_{C}(U \otimes T) \simeq \Shv_{C \otimes T}(U).\]</div> In particular, taking <span class="math-inline">\(C = \An\)</span>, we see that <span class="math-inline">\(S^T\)</span> classifies <span class="math-inline">\(T\)</span>-valued sheaves. By <a href="#prop:Classifying_Topos_Iff_Compactly_Assembled">Proposition 6.148</a>, it follows that <span class="math-inline">\(T\)</span> is compactly assembled.<div class="proof-paragraph-break" aria-hidden="true"></div>For the “if” direction, assume <span class="math-inline">\(T\)</span> is compactly assembled. By <a href="#lem:Topos_Pullback_Of_Presheaf_Topoi">Lemma 6.155</a>, we may write <span class="math-inline">\(S\)</span> as a pullback in <span class="math-inline">\(\Topos\)</span> of a square of the form <figure class="diagram"><img src="diagrams/tikzcd-85bc54c5ddbe.svg" alt="Commutative diagram generated from the LaTeX source"></figure> where <span class="math-inline">\(A_0\)</span>, <span class="math-inline">\(B_0\)</span> and <span class="math-inline">\(C_0\)</span> are presheaf topoi. Since exponentiation by <span class="math-inline">\(T\)</span>, whenever defined, is right adjoint to <span class="math-inline">\((-)\otimes T\)</span>, it preserves limits. It is therefore enough to construct <span class="math-inline">\(S^T\)</span> when <span class="math-inline">\(S\)</span> is a presheaf topos.<div class="proof-paragraph-break" aria-hidden="true"></div>Assume then that <span class="math-inline">\(S = \PSh(D)\)</span>, where <span class="math-inline">\(D\)</span> has finite limits. We have <div class="math-display">\[S = \PSh(D) \iso \Fun^{\omega}(\Ind(D\catop),\An).\]</div> Set <span class="math-inline">\(K:=\Ind(D\catop)\)</span>. The category <span class="math-inline">\(K\)</span> is compactly generated, so <span class="math-inline">\(K\otimes T\)</span> is compactly assembled by <a href="#lem:Compact_Assembly_Tensor_Stability">Lemma 6.154</a>. Its classifying topos <span class="math-inline">\(E\)</span> exists by <a href="#prop:Classifying_Topos_Iff_Compactly_Assembled">Proposition 6.148</a>, and for every topos <span class="math-inline">\(U\)</span> we have <div class="math-display">\[\Geom(U,E)\simeq\Shv_{K\otimes T}(U)\simeq\Shv_K(U\otimes T)\simeq\Geom(U\otimes T,\PSh(D)).\]</div> Thus <span class="math-inline">\(E\simeq S^T\)</span>. This proves the theorem; compare <span class="citation-group">[Anel and Lejay <a class="citation" href="#bib-Anel_Lejay_Exponentiable_Higher_Toposes">2018, Theorem 4.33</a>]</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-Anel_Lejay_Exponentiable_Higher_Toposes">Mathieu Anel, Damien Lejay. <em>Exponentiable higher toposes</em>. 2018.</li></ol></section>
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+      <a class="context-step-control" rel="prev" href="../makkai-completeness/index.html" aria-label="Previous section: Makkai completeness" title="Previous section: Makkai completeness"><span aria-hidden="true">←</span></a>
+      <a class="context-step-control" rel="next" href="../topoi-of-parametrized-objects/index.html" aria-label="Next section: Topoi of parametrized objects" title="Next section: Topoi of parametrized objects"><span aria-hidden="true">→</span></a>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../chapter/introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../../chapter/foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../../chapter/truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../../chapter/topoi-logoi/index.html">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../../chapter/modalities/index.html">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../../chapter/topics-in-topos-theory/index.html" aria-current="location">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../../chapter/geometry/index.html">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../../chapter/factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../../chapter/limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../sheaf-topoi/index.html">
+          <span class="context-entry-heading">Section 6.1</span>
+          <span class="context-entry-title">Sheaf topoi</span>
+        </a></li>
+<li><a href="../groupoid-actions-and-principal-bundles/index.html">
+          <span class="context-entry-heading">Section 6.2</span>
+          <span class="context-entry-title">Groupoid actions and principal bundles</span>
+        </a></li>
+<li><a href="../hypercovers/index.html">
+          <span class="context-entry-heading">Section 6.3</span>
+          <span class="context-entry-title">Hypercovers</span>
+        </a></li>
+<li><a href="../localic-topoi-postnikov-completeness-and-boundedness/index.html">
+          <span class="context-entry-heading">Section 6.4</span>
+          <span class="context-entry-title">Localic topoi, Postnikov-completeness, and boundedness</span>
+        </a></li>
+<li><a href="../dimension-theory/index.html">
+          <span class="context-entry-heading">Section 6.5</span>
+          <span class="context-entry-title">Dimension theory</span>
+        </a></li>
+<li><a href="../essential-morphisms-and-shape-theory/index.html">
+          <span class="context-entry-heading">Section 6.6</span>
+          <span class="context-entry-title">Essential morphisms and shape theory</span>
+        </a></li>
+<li><a href="../coherence/index.html">
+          <span class="context-entry-heading">Section 6.7</span>
+          <span class="context-entry-title">Coherence</span>
+        </a></li>
+<li><a href="../pretopoi/index.html">
+          <span class="context-entry-heading">Section 6.8</span>
+          <span class="context-entry-title">Pretopoi</span>
+        </a></li>
+<li><a href="../makkai-completeness/index.html">
+          <span class="context-entry-heading">Section 6.9</span>
+          <span class="context-entry-title">Makkai completeness</span>
+        </a></li>
+<li><a href="../compactly-assembled-categories-and-exponentiability/index.html" aria-current="page">
+          <span class="context-entry-heading">Section 6.10</span>
+          <span class="context-entry-title">Compactly assembled categories and exponentiability</span>
+        </a></li>
+<li><a href="../topoi-of-parametrized-objects/index.html">
+          <span class="context-entry-heading">Section 6.11</span>
+          <span class="context-entry-title">Topoi of parametrized objects</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <p class="context-nav-kicker">Section 6.10</p>
+      <p class="context-nav-description">Compactly assembled categories and exponentiability</p>
+      <ol class="context-entry-list">
+        <li><a href="#prop:Finitary_Functor_Topos" data-section-target="prop:Finitary_Functor_Topos">
+          <span class="context-entry-heading">Proposition 6.139</span>
+          <span class="context-entry-title">Finitary functor topos</span>
+        </a></li>
+<li><a href="#rmk:Finitary_Functor_Universal_Property" data-section-target="rmk:Finitary_Functor_Universal_Property">
+          <span class="context-entry-heading">Remark 6.140</span>
+          <span class="context-entry-title">Finitary functor universal property</span>
+        </a></li>
+<li><a href="#cor:Points_Functor_Adjoint" data-section-target="cor:Points_Functor_Adjoint">
+          <span class="context-entry-heading">Corollary 6.141</span>
+          <span class="context-entry-title">Points functor adjoint</span>
+        </a></li>
+<li><a href="#prop:Compactly_Assembled_Characterization" data-section-target="prop:Compactly_Assembled_Characterization">
+          <span class="context-entry-heading">Proposition 6.142</span>
+          <span class="context-entry-title">Compactly assembled characterization</span>
+        </a></li>
+<li><a href="#def:Compactly_Assembled" data-section-target="def:Compactly_Assembled">
+          <span class="context-entry-heading">Definition 6.143</span>
+          <span class="context-entry-title">Compactly assembled</span>
+        </a></li>
+<li><a href="#cor:Compactly_Assembled_Retract" data-section-target="cor:Compactly_Assembled_Retract">
+          <span class="context-entry-heading">Corollary 6.144</span>
+          <span class="context-entry-title">Compactly assembled retract</span>
+        </a></li>
+<li><a href="#prop:Colimit_Preserving_Equivalence" data-section-target="prop:Colimit_Preserving_Equivalence">
+          <span class="context-entry-heading">Proposition 6.145</span>
+          <span class="context-entry-title">Colimit preserving equivalence</span>
+        </a></li>
+<li><a href="#cor:Logos_Functor_Equivalence" data-section-target="cor:Logos_Functor_Equivalence">
+          <span class="context-entry-heading">Corollary 6.146</span>
+          <span class="context-entry-title">Logos functor equivalence</span>
+        </a></li>
+<li><a href="#rmk:C_Valued_Sheaves" data-section-target="rmk:C_Valued_Sheaves">
+          <span class="context-entry-heading">Remark 6.147</span>
+          <span class="context-entry-title">C-valued sheaves</span>
+        </a></li>
+<li><a href="#prop:Classifying_Topos_Iff_Compactly_Assembled" data-section-target="prop:Classifying_Topos_Iff_Compactly_Assembled">
+          <span class="context-entry-heading">Proposition 6.148</span>
+          <span class="context-entry-title">Classifying topos if and only if compactly assembled</span>
+        </a></li>
+<li><a href="#rmk:Points_Of_Classifying_Topos" data-section-target="rmk:Points_Of_Classifying_Topos">
+          <span class="context-entry-heading">Remark 6.149</span>
+          <span class="context-entry-title">Points of classifying topos</span>
+        </a></li>
+<li><a href="#lem:Classifying_Topos_Fully_Faithful" data-section-target="lem:Classifying_Topos_Fully_Faithful">
+          <span class="context-entry-heading">Lemma 6.150</span>
+          <span class="context-entry-title">Classifying topos fully faithful</span>
+        </a></li>
+<li><a href="#obs:Exponential_2_Categorical" data-section-target="obs:Exponential_2_Categorical">
+          <span class="context-entry-heading">Observation 6.151</span>
+          <span class="context-entry-title">Exponential 2 categorical</span>
+        </a></li>
+<li><a href="#rmk:Points_Of_Exponential" data-section-target="rmk:Points_Of_Exponential">
+          <span class="context-entry-heading">Remark 6.152</span>
+          <span class="context-entry-title">Points of exponential</span>
+        </a></li>
+<li><a href="#def:Exponentiable_Topos" data-section-target="def:Exponentiable_Topos">
+          <span class="context-entry-heading">Definition 6.153</span>
+          <span class="context-entry-title">Exponentiable topos</span>
+        </a></li>
+<li><a href="#lem:Compact_Assembly_Tensor_Stability" data-section-target="lem:Compact_Assembly_Tensor_Stability">
+          <span class="context-entry-heading">Lemma 6.154</span>
+          <span class="context-entry-title">Compact assembly and tensor products</span>
+        </a></li>
+<li><a href="#lem:Topos_Pullback_Of_Presheaf_Topoi" data-section-target="lem:Topos_Pullback_Of_Presheaf_Topoi">
+          <span class="context-entry-heading">Lemma 6.155</span>
+          <span class="context-entry-title">Topoi as pullbacks of presheaf topoi</span>
+        </a></li>
+<li><a href="#thm:Exponentiable_Iff_Compactly_Assembled" data-section-target="thm:Exponentiable_Iff_Compactly_Assembled">
+          <span class="context-entry-heading">Theorem 6.156</span>
+          <span class="context-entry-title">Exponentiable if and only if compactly assembled</span>
+        </a></li>
+      </ol>
+    </nav>
+  </section></div>
+  </aside>
+  </main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

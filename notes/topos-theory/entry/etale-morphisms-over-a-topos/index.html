@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Étale morphisms over a topos | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/entry/etale-morphisms-over-a-topos/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+<style>
+    .publication-fragment-notice { margin: 2rem 0; padding: 1rem; border: 1px solid #b6aa91; background: #faf7ef; }
+    .publication-fragment-notice:not(:target) { display: none; }
+  </style>
+  <script>
+    (() => {
+      const targets = {"proof-thm:Etale_Morphisms_Over_Topos-main":"./#proof-prop:Etale_Morphisms_Over_Topos-main","thm:Etale_Morphisms_Over_Topos":"./#prop:Etale_Morphisms_Over_Topos"};
+      const fragment = decodeURIComponent(location.hash.slice(1));
+      if (targets[fragment]) location.replace(targets[fragment]);
+    })();
+  </script>
+</head>
+<body class="entry-page has-context-nav" data-record-id="etale-morphisms-over-a-topos" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">›</span> <a href="../../section/etale-morphisms/index.html">Section 4.4: Étale morphisms</a></p>
+      <h1>Étale morphisms over a topos</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Nearby entries
+    </button>
+    <article class="notes-page">
+      
+<section class="theorem proposition" id="prop:Etale_Morphisms_Over_Topos">
+  <p class="theorem-heading"><span>Proposition 4.38.</span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a topos.</p>
+<ol><li><p>There is an equivalence of <span class="math-inline">\(2\)</span>-categories</p>
+<div class="math-display">\[T \;\simeq\; \Topos^{\et}_{/T}, \qquad X \longmapsto T_{/X}.\]</div>
+<p>In particular, <span class="math-inline">\(\Topos^{\et}_{/T}\)</span> is a <span class="math-inline">\(1\)</span>-category.</p></li><li><p>For every morphism of topoi <span class="math-inline">\(\phi\colon S \to T\)</span> and every <span class="math-inline">\(X \in T\)</span>, the square</p>
+<figure class="diagram"><img src="diagrams/tikzcd-2942c91e4a05.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>is a pullback in <span class="math-inline">\(\Topos\)</span>. In particular, the category <span class="math-inline">\(\Topos^{\et}\)</span> admits pullbacks, and the inclusion <span class="math-inline">\(\Topos^{\et} \hookrightarrow \Topos\)</span> preserves pullbacks.</p></li></ol></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Etale_Morphisms_Over_Topos-main" data-owner-entry="etale-morphisms-over-a-topos" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Given a morphism of topoi <span class="math-inline">\(\phi\colon S \to T\)</span> and an object <span class="math-inline">\(X \in T\)</span>, we claim there is a natural equivalence <div class="math-display">\[\Geom_{/T}(S, T_{/X}) \;\simeq\; \Hom_S(*, \phi^*X).\]</div> This immediately gives (2), and it gives (1) by taking <span class="math-inline">\(S = T_{/Y}\)</span> and noticing that <span class="math-inline">\(\Hom_{T_{/Y}}(Y,X \times Y) \simeq \Hom_T(Y,X)\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>To prove the claim, we will start by producing a natural equivalence <div class="math-display">\[\Fun^{\lex}_{T/}(T_{/X}, S) \;\simeq \; \Hom_S(*,\phi^*X).\]</div> <ul class="proof-list"><li>Given <span class="math-inline">\(F\colon T_{/X} \to S\)</span> in <span class="math-inline">\(\Fun^{\lex}_{T/}\)</span>, consider the morphism <div class="math-display">\[f_F := F(\Delta)\colon F(X) \longrightarrow F(X \times X)\]</div> induced by the diagonal <span class="math-inline">\(\Delta\colon X \to X \times X\)</span>, viewed as a morphism in <span class="math-inline">\(T_{/X}\)</span>. Since <span class="math-inline">\((X,\id_X)\)</span> is terminal in <span class="math-inline">\(T_{/X}\)</span>, we have <span class="math-inline">\(F(X) \simeq *\)</span>. Moreover, because <span class="math-inline">\(F\)</span> is a functor under <span class="math-inline">\(T\)</span>, we identify <span class="math-inline">\(F(X \times X)\)</span> with <span class="math-inline">\(\phi^*X\)</span>. So <span class="math-inline">\(f_F\)</span> is a point in <span class="math-inline">\(\Hom_S(*,\phi^*X)\)</span>.</li><li>Conversely, given a morphism <span class="math-inline">\(f\colon * \to \phi^*X\)</span>, define <span class="math-inline">\(F_f\colon T_{/X} \to S\)</span> by sending <span class="math-inline">\(U \to X\)</span> to the pullback <figure class="diagram"><img src="diagrams/tikzcd-23ca9db51697.svg" alt="Commutative diagram generated from the LaTeX source"></figure> The functor <span class="math-inline">\(F_f\)</span> preserves finite limits because it is the composite of <span class="math-inline">\(\phi^*\colon T_{/X}\to S_{/\phi^*X}\)</span> with pullback along <span class="math-inline">\(f\)</span>. It also preserves colimits: the first functor does so objectwise, while the second does so by descent in <span class="math-inline">\(S\)</span>. When <span class="math-inline">\(U=X\times Y\)</span> for some <span class="math-inline">\(Y\in T\)</span>, we have <span class="math-inline">\(F_f(U)\simeq\phi^*(Y)\)</span>, showing that <span class="math-inline">\(F_f\)</span> is a functor under <span class="math-inline">\(T\)</span>.</li></ul><div class="proof-paragraph-break" aria-hidden="true"></div>Now, applying <span class="math-inline">\(F_{f}\)</span> to the diagonal map <span class="math-inline">\(\Delta\colon X \to X \times X\)</span> reproduces the original map <span class="math-inline">\(f\)</span>. Conversely, given any left exact functor <span class="math-inline">\(F\colon T_{/X} \to S\)</span> under <span class="math-inline">\(T\)</span> and any <span class="math-inline">\(U \in T_{/X}\)</span>, we may always write <span class="math-inline">\(U\)</span> as the pullback in <span class="math-inline">\(T_{/X}\)</span> of the diagram <figure class="diagram"><img src="diagrams/tikzcd-99409cd94be7.svg" alt="Commutative diagram generated from the LaTeX source"></figure> and thus we get a pullback square <figure class="diagram"><img src="diagrams/tikzcd-3f0b3004ee29.svg" alt="Commutative diagram generated from the LaTeX source"></figure> showing that <span class="math-inline">\(F\)</span> is naturally equivalent to <span class="math-inline">\(F_{f_F}\)</span>. This constructs the equivalence <span class="math-inline">\(\Fun^{\lex}_{T/}(T_{/X}, S) \simeq \Hom_S(*,\phi^*X)\)</span>. The preceding description of <span class="math-inline">\(F_f\)</span> also shows that every such left exact functor preserves colimits. Hence the forgetful functor <div class="math-display">\[\Geom_{/T}(S,T_{/X}) \to \Fun^{\lex}_{T/}(T_{/X},S)\]</div> is an equivalence. This finishes the proof.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+    </article>
+      <aside class="context-nav" id="context-navigation" data-context-nav aria-label="Nearby entries">
+      <button class="context-nav-collapse" type="button" data-context-nav-collapse data-collapsed-label="Nearby entries" aria-controls="context-navigation" aria-expanded="true" aria-label="Hide Nearby entries">
+      <span aria-hidden="true">›</span>
+    </button>
+      <p class="context-chapter-link"><a href="../../chapter/topoi-logoi/index.html">The categories of topoi and logoi</a></p>
+      <p class="context-nav-kicker">Section 4.4</p>
+      <h2><a href="../../section/etale-morphisms/index.html">Étale morphisms</a></h2>
+      <p class="context-nav-description"><a href="../../section/etale-morphisms/index.html#prop:Etale_Morphisms_Over_Topos">Read this result in the continuous section</a></p>
+      <ol class="context-entry-list context-entry-list-nearby">
+        <li><a href="../etale-maps-of-spaces-and-topoi/index.html">
+          <span class="context-entry-heading">Remark 4.36</span>
+          <span class="context-entry-title">Étale maps of spaces and topoi</span>
+        </a></li>
+<li><a href="../characterizing-etale-morphisms-by-left-adjoints/index.html">
+          <span class="context-entry-heading">Proposition 4.37</span>
+          <span class="context-entry-title">Characterizing étale morphisms by left adjoints</span>
+        </a></li>
+<li><a href="#prop:Etale_Morphisms_Over_Topos" aria-current="page">
+          <span class="context-entry-heading">Proposition 4.38</span>
+          <span class="context-entry-title">Étale morphisms over a topos</span>
+        </a></li>
+<li><a href="../slices-of-etale-topoi/index.html">
+          <span class="context-entry-heading">Corollary 4.39</span>
+          <span class="context-entry-title">Slices of étale topoi</span>
+        </a></li>
+<li><a href="../cancellation-for-etale-morphisms-of-topoi/index.html">
+          <span class="context-entry-heading">Corollary 4.40</span>
+          <span class="context-entry-title">Cancellation for étale morphisms of topoi</span>
+        </a></li>
+      </ol>
+      <nav class="context-step-links" aria-label="Previous and next entries"><a rel="prev" href="../characterizing-etale-morphisms-by-left-adjoints/index.html"><span>Previous</span>Characterizing étale morphisms by left adjoints</a>
+<a rel="next" href="../slices-of-etale-topoi/index.html"><span>Next</span>Slices of étale topoi</a></nav>
+    </aside>
+  <aside class="publication-fragment-notice" id="proof-thm:Etale_Morphisms_Over_Topos-main"><strong>Retired fragment.</strong> The proof fragment follows the proposition label used by its owner. It now appears at <a href="./#proof-prop:Etale_Morphisms_Over_Topos-main">this address</a>.</aside>
+<aside class="publication-fragment-notice" id="thm:Etale_Morphisms_Over_Topos"><strong>Retired fragment.</strong> The result is now a proposition in the authoritative source. It now appears at <a href="./#prop:Etale_Morphisms_Over_Topos">this address</a>.</aside>
+</main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

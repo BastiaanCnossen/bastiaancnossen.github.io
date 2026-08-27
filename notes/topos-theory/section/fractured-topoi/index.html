@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fractured topoi | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/section/fractured-topoi/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="section-page has-context-nav" data-record-id="fractured-topoi" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">·</span> Section 7.3</p>
+      <h1>Fractured topoi</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page">
+      
+<h2 id="sec:Fractured_Topoi"><span>7.3.</span> Fractured topoi</h2>
+<p>A geometry produces two closely related sheaf topoi: the topos of all sheaves on the affine test objects, and the topos obtained by restricting to admissible morphisms. Lurie's notion of <em>fractured topos</em> abstracts the structure retained by such a pair. In the Zariski case, this is the structure behind the four equivalent descriptions encountered above: corporeal objects, admissible morphisms, factorization systems, and local morphisms of structured topoi.</p>
+<section class="theorem definition" id="def:Fractured_Topos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/fractured-topos/index.html">Definition 7.12.</a></span></p>
+  <div class="theorem-statement"><p>A <em>fractured topos</em> is a topos <span class="math-inline">\(E\)</span> equipped with a functor <span class="math-inline">\(j_!\colon E^{\corp} \to E\)</span> satisfying the following properties:</p>
+<ol><li><p>The functor <span class="math-inline">\(j_!\)</span> is faithful and induces a fully faithful functor on groupoid cores.</p></li><li><p>The category <span class="math-inline">\(E^{\corp}\)</span> admits fiber products and <span class="math-inline">\(j_!\)</span> preserves them.</p></li><li><p>The functor <span class="math-inline">\(j_!\)</span> admits a right adjoint <span class="math-inline">\(j^*\)</span> which is conservative and preserves colimits.</p></li><li><p>For every morphism <span class="math-inline">\(U \to V\)</span> in <span class="math-inline">\(E^{\corp}\)</span>, the commutative square</p>
+<figure class="diagram"><img src="diagrams/tikzcd-ae8b14be8af0.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>is a pullback square.</p></li></ol>
+<p>We refer to objects of <span class="math-inline">\(E^{\corp}\)</span>, and to their images in <span class="math-inline">\(E\)</span>, as <em>corporeal objects</em>. The functor <span class="math-inline">\(j_!\)</span> is generally not fully faithful. The fractured topos is called <em>complete</em> if every retract in <span class="math-inline">\(E\)</span> of a corporeal object is corporeal.</p></div>
+</section>
+
+<section class="theorem proposition" id="prop:Basic_Properties_Fractured_Topos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/basic-properties-of-fractured-topoi/index.html">Proposition 7.13.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\((E,E^{\corp})\)</span> be a fractured topos. Then:</p>
+<ol><li><p>The category <span class="math-inline">\(E^{\corp}\)</span> is a topos.</p></li><li><p>For every <span class="math-inline">\(X\in E^{\corp}\)</span>, the functor</p>
+<div class="math-display">\[j_!\colon E^{\corp}_{/X}\longrightarrow E_{/j_!X}\]</div>
+<p>is fully faithful.</p></li><li><p>The topos <span class="math-inline">\(E\)</span> is generated under colimits by corporeal objects.</p></li><li><p>The functor <span class="math-inline">\(j^*\)</span> admits a right adjoint <span class="math-inline">\(j_*\colon E^{\corp}\to E\)</span>, and the adjunction <span class="math-inline">\(j^*\dashv j_*\)</span> is a morphism of topoi.</p></li></ol></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Basic_Properties_Fractured_Topos-main" data-owner-entry="basic-properties-of-fractured-topoi" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">See <span class="citation-group">[Lurie <a class="citation" href="#bib-SAG">2018, Propositions 20.1.3.1 and 20.1.3.3, Corollary 20.1.3.4, and Remark 20.1.3.6</a>]</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>We will now discuss how to construct fractured topoi.</p>
+<h3 id="subsec:Fractures_From_Geometries"><span>7.3.1.</span> Fractures from geometries</h3>
+
+<section class="theorem construction" id="constr:Fractured_From_Geometric_Site">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/fracture-from-geometric-site/index.html">Construction 7.14.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\((C,C^{\ad},\tau)\)</span> be a geometric site. The category <span class="math-inline">\(C^{\ad}\)</span> inherits a topology <span class="math-inline">\(\tau^{\ad}\)</span>: a sieve in <span class="math-inline">\(C^{\ad}_{/X}\)</span> is covering if its image generates a <span class="math-inline">\(\tau\)</span>-covering sieve in <span class="math-inline">\(C_{/X}\)</span>. Restriction along <span class="math-inline">\(j\colon C^{\ad}\hookrightarrow C\)</span> defines a functor</p>
+<div class="math-display">\[j^*\colon \Shv_{\tau}(C)\longrightarrow \Shv_{\tau^{\ad}}(C^{\ad}).\]</div>
+<p>Its left adjoint <span class="math-inline">\(j_!\)</span> is obtained by left Kan extension followed by sheafification.</p></div>
+</section>
+
+<section class="theorem theorem" id="thm:Geometric_Site_Gives_Fractured">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/geometric-site-gives-fractured-topos/index.html">Theorem 7.15.</a></span></p>
+  <div class="theorem-statement"><p>The functor</p>
+<div class="math-display">\[j_!\colon \Shv_{\tau^{\ad}}(C^{\ad})\longrightarrow \Shv_{\tau}(C)\]</div>
+<p>exhibits <span class="math-inline">\(\Shv_{\tau}(C)\)</span> as a complete fractured topos.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-thm:Geometric_Site_Gives_Fractured-main" data-owner-entry="geometric-site-gives-fractured-topos" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">See <span class="citation-group">[Lurie <a class="citation" href="#bib-SAG">2018, Theorem 20.6.3.4</a>]</span>; completeness follows from the associated geometric admissibility structure, by <span class="citation-group">[Lurie <a class="citation" href="#bib-SAG">2018, Theorem 20.3.4.4</a>]</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem example" id="ex:Fractured_Topoi">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/examples-of-fractured-topoi/index.html">Example 7.16.</a></span></p>
+  <div class="theorem-statement"><p>Every geometry listed in <span class="cross-reference-unlinked">Section 7.2</span> gives a fractured topos by this construction. For instance, the classical Zariski geometry gives the pair</p>
+<div class="math-display">\[\Shv_{\Zar}((\CRing^{\mathrm{fp},\ad})\catop)
+		\longrightarrow
+		\Shv_{\Zar}((\CRing^{\mathrm{fp}})\catop),\]</div>
+<p>which is the fractured topos underlying the topos-theoretic description of ordinary schemes above.</p></div>
+</section>
+
+<section class="theorem definition" id="def:Admissible_Morphism_Fractured">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/admissible-morphisms-in-fractured-topos/index.html">Definition 7.17.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\((E,E^{\corp})\)</span> be a fractured topos. A morphism <span class="math-inline">\(f\colon Y\to X\)</span> in <span class="math-inline">\(E\)</span> is <em>admissible</em> if, for every map <span class="math-inline">\(j_!U\to X\)</span> with <span class="math-inline">\(U\in E^{\corp}\)</span>, the pullback</p>
+<div class="math-display">\[Y\times_Xj_!U\longrightarrow j_!U\]</div>
+<p>belongs to the image of <span class="math-inline">\(E^{\corp}_{/U}\to E_{/j_!U}\)</span>. This determines a wide subcategory <span class="math-inline">\(E^{\ad}\subseteq E\)</span>.</p></div>
+</section>
+
+<section class="theorem definition" id="def:Local_Admissibility_Structure">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/local-admissibility-structure/index.html">Definition 7.18.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(E\)</span> be a topos. An admissibility structure <span class="math-inline">\(E^{\ad}\)</span> is called <em>local</em> if the following conditions are satisfied:</p>
+<ul><li><p>The class <span class="math-inline">\(E^{\ad}\)</span> is a local class of maps.</p></li><li><p>For every <span class="math-inline">\(X \in E\)</span>, the slice <span class="math-inline">\(E^{\ad}_{/X} := (E^{\ad})_{/X}\)</span> is presentable, and the inclusion <span class="math-inline">\(E^{\ad}_{/X} \to E_{/X}\)</span> preserves colimits. In particular, it admits a right adjoint <span class="math-inline">\(\rho_X\colon E_{/X} \to E^{\ad}_{/X}\)</span>.</p></li></ul>
+<p>Given a local admissibility structure on <span class="math-inline">\(E\)</span>, we say that an object <span class="math-inline">\(X \in E\)</span> is <em>corporeal</em> if the functor <span class="math-inline">\(\rho_X\colon E_{/X} \to E^{\ad}_{/X}\)</span> preserves colimits. We denote by</p>
+<div class="math-display">\[E^{\corp} \subseteq E^{\ad}\]</div>
+<p>the full subcategory spanned by the corporeal objects. We say that <span class="math-inline">\(E^{\ad}\)</span> is <em>geometric</em> if, moreover, <span class="math-inline">\(E\)</span> is generated under colimits by corporeal objects.</p></div>
+</section>
+
+<section class="theorem theorem" id="thm:Fractured_Admissibility_Equivalence">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/fractured-admissibility-equivalence/index.html">Theorem 7.19.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(E\)</span> be a topos. The assignments <span class="math-inline">\((E,E^{\corp}) \mapsto (E,E^{\ad})\)</span> and <span class="math-inline">\((E,E^{\ad}) \mapsto (E,E^{\corp})\)</span> determine an equivalence of posets</p>
+<div class="math-display">\[\{\text{Complete fractured structures on $E$}\} \simeq \{\text{Geometric admissibility structures on $E$}\}.\]</div></div>
+</section>
+
+<details class="proof-shell" id="proof-thm:Fractured_Admissibility_Equivalence-main" data-owner-entry="fractured-admissibility-equivalence" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">This is <span class="citation-group">[Lurie <a class="citation" href="#bib-SAG">2018, Theorem 20.3.4.4 and Remark 20.3.4.6</a>]</span>. The completeness hypothesis is essential: without it, the admissible morphisms recover the closure of the corporeal objects under retracts, rather than necessarily recovering the original fracture.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<h3 id="subsec:Local_Maps"><span>7.3.2.</span> Local maps</h3>
+<p>Consider a fractured topos <span class="math-inline">\((E,E^{\corp})\)</span>. Consider two morphisms of topoi <span class="math-inline">\(f,g\colon T \to E\)</span>, and let <span class="math-inline">\(\alpha\colon f^* \to g^*\)</span> be a natural transformation. We say that <span class="math-inline">\(\alpha\)</span> is <em>local</em> if for every morphism <span class="math-inline">\(h\colon U \to V\)</span> in <span class="math-inline">\(E^{\corp}\)</span>, the following square is a pullback square:</p>
+<figure class="diagram"><img src="diagrams/tikzcd-fcfa4d8b4008.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>This determines a collection of maps in <span class="math-inline">\(\Geom(T,E)\)</span> which is the right class of a factorization system on <span class="math-inline">\(\Geom(T,E)\)</span>. We denote by</p>
+<div class="math-display">\[(\Topos_{//E})^{\loc} \subseteq \Topos_{//E}\]</div>
+<p>the wide subcategory consisting of those morphisms corresponding to maps <span class="math-inline">\(S \to T\)</span> with a local natural transformation <span class="math-inline">\(\alpha\)</span> of morphisms <span class="math-inline">\(S \to E\)</span>.</p>
+<section class="theorem example" id="ex:Local_Maps_Ringed_Topoi">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/local-maps-of-ringed-topoi/index.html">Example 7.20.</a></span></p>
+  <div class="theorem-statement"><p>For <span class="math-inline">\(E = \PSh(\CRing^{\mathrm{fp},\op})\)</span>, the lax slice <span class="math-inline">\(\Topos_{//E}\)</span> is the category of ringed topoi. For <span class="math-inline">\(E = \Shv_{\Zar}(\CRing^{\mathrm{fp},\op})\)</span>, the lax slice <span class="math-inline">\(\Topos_{//E}\)</span> is the full subcategory of the previous one spanned by the locally ringed topoi. Here, the fracture <span class="math-inline">\(E^{\corp} = \Shv_{\Zar}(\CRing^{\mathrm{fp}, \ad, \op}) \to E\)</span> determines the subcategory <span class="math-inline">\((\Topos_{//E})^{\loc}\)</span> consisting of the <em>local</em> morphisms of locally ringed topoi.</p></div>
+</section>
+<p>We now explain how to recover the notion of schemes from the notion of local morphisms.</p>
+<section class="theorem theorem" id="thm:Recovering_Schemes">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/recovering-schemes/index.html">Theorem 7.21.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\((E,E^{\corp})\)</span> be a complete fractured topos. Consider the functor</p>
+<div class="math-display">\[E \to \Fun(\Topos^{\loc}_{//E}, \An), \qquad X \mapsto \Gamma^X : (f\colon T \to E) \mapsto \Gamma(f^*(X)).\]</div>
+<p></p>
+<ol><li><p>If <span class="math-inline">\(X\)</span> is corporeal, then <span class="math-inline">\(\Gamma^X\)</span> is representable by the pair <span class="math-inline">\((E^{\ad}_{/X}, E^{\ad}_{/X} \hookrightarrow E_{/X} \to E)\)</span>.</p></li><li><p>The resulting functor</p>
+<div class="math-display">\[E^{\corp} \xrightarrow{\mathrm{Re}} \Topos^{\loc}_{//E}\]</div>
+<p>is fully faithful.</p></li><li><p>A morphism <span class="math-inline">\(f\colon Y \to X\)</span> in <span class="math-inline">\(E\)</span> is admissible if and only if, after every base change <span class="math-inline">\(f'\colon Y'\to X'\)</span> for which <span class="math-inline">\(\Gamma^{X'}\)</span> is represented by an object of <span class="math-inline">\(\Topos^{\loc}_{//E}\)</span>, the functor <span class="math-inline">\(\Gamma^{Y'}\)</span> is represented by an object étale over it.</p></li></ol>
+<p>Combining these statements, it follows that the subcategory <span class="math-inline">\(\Topos^{\loc}_{//E}\subseteq \Topos_{//E}\)</span> determines the fracture structure on <span class="math-inline">\(E\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-thm:Recovering_Schemes-main" data-owner-entry="recovering-schemes" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">These assertions summarize the reconstruction results of <span class="citation-group">[Lurie <a class="citation" href="#bib-SAG">2018, Chapter 20</a>]</span>. The third assertion uses the usual identification of étale objects over a topos with objects of that topos.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<h3 id="subsec:Schemes"><span>7.3.3.</span> Schemes</h3>
+<p>In <span class="cross-reference-unlinked">Section 7.1</span>, we provided a topos-theoretic perspective on the classical notion of a scheme. We may extend this definition to an arbitrary geometric site <span class="math-inline">\(\Gg = (C,C^{\ad},\tau)\)</span>.</p>
+<section class="theorem construction" id="con:Geometry_Spectrum_Adjunction">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/geometry-spectrum-adjunction/index.html">Construction 7.22.</a></span></p>
+  <div class="theorem-statement"><p>Consider the fractured topos <span class="math-inline">\(E = \Shv_{\tau}(C)\)</span>, <span class="math-inline">\(E^{\corp} := \Shv_{\tau}(C^{\ad})\)</span>. By <a href="#thm:Recovering_Schemes">Theorem 7.21</a>, we obtain a functor</p>
+<div class="math-display">\[\Gamma\colon \Topos^{\loc}_{//E} \to \Pt(\PSh(C))\catop \simeq \Pro(C),\]</div>
+<p>An object <span class="math-inline">\(f\colon T\to E\)</span> is sent to the pro-object classified by the left exact functor</p>
+<div class="math-display">\[C \hookrightarrow \PSh(C) \twoheadrightarrow \Shv_{\tau}(C) = E \xrightarrow{f^*} T \xrightarrow{\Gamma} \An.\]</div>
+<p>The functor <span class="math-inline">\(\Gamma\)</span> admits a right adjoint</p>
+<div class="math-display">\[\Spec_{\Gg}\colon \Pro(C) \to \Topos^{\loc}_{//E}\]</div>
+<p>called the <em>spectrum functor</em>. If <span class="math-inline">\(\tau\)</span> is subcanonical, then <span class="math-inline">\(\Spec_{\Gg}\)</span> is fully faithful. See <span class="citation-group">[Lurie <a class="citation" href="#bib-Lurie_DAG_V">2011, Chapter 2</a>]</span> for this structured-topos formulation of the spectrum construction.</p></div>
+</section>
+
+<section class="theorem definition" id="def:G_Schemes">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/schemes-for-a-geometry/index.html">Definition 7.23.</a></span></p>
+  <div class="theorem-statement"><p>We define the subcategory</p>
+<div class="math-display">\[\Sch_{\Gg} \quad \subseteq \quad \Topos^{\loc}_{//E}\]</div>
+<p>of <em><span class="math-inline">\(\Gg\)</span>-schemes</em> as the full subcategory on those objects which are locally in the image of <span class="math-inline">\(\Spec_{\Gg}\)</span>. Concretely, a <span class="math-inline">\(\Gg\)</span>-scheme admits a jointly surjective family of étale morphisms from affine objects <span class="math-inline">\(\Spec_{\Gg}(A)\)</span> with <span class="math-inline">\(A\in\Pro(C)\)</span>.</p></div>
+</section>
+
+<section class="theorem question" id="quest:G_Schemes_Depend_On_Site">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/dependence-of-schemes-on-geometric-site/index.html">Question 7.24.</a></span></p>
+  <div class="theorem-statement"><p>Does this category depend only on the fractured topos <span class="math-inline">\((E,E^{\corp})\)</span>, or is the choice of geometric site important?</p></div>
+</section>
+<section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-SAG">Jacob Lurie. <em>Spectral Algebraic Geometry</em>. under construction (version dated February 2018), www.math.ias.edu/~lurie/papers/SAG-rootfile.pdf. 2018.</li>
+<li id="bib-Lurie_DAG_V">Jacob Lurie. <em>Derived algebraic geometry V: Structured spaces</em>. 2011.</li></ol></section>
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+      <a class="context-step-control" rel="prev" href="../geometries/index.html" aria-label="Previous section: Geometries" title="Previous section: Geometries"><span aria-hidden="true">←</span></a>
+      <a class="context-step-control" rel="next" href="../geometries-from-six-functor-formalisms/index.html" aria-label="Next section: Geometries from six-functor formalisms" title="Next section: Geometries from six-functor formalisms"><span aria-hidden="true">→</span></a>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../chapter/introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../../chapter/foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../../chapter/truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../../chapter/topoi-logoi/index.html">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../../chapter/modalities/index.html">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../../chapter/topics-in-topos-theory/index.html">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../../chapter/geometry/index.html" aria-current="location">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../../chapter/factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../../chapter/limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../schemes/index.html">
+          <span class="context-entry-heading">Section 7.1</span>
+          <span class="context-entry-title">Schemes</span>
+        </a></li>
+<li><a href="../geometries/index.html">
+          <span class="context-entry-heading">Section 7.2</span>
+          <span class="context-entry-title">Geometries</span>
+        </a></li>
+<li><a href="../fractured-topoi/index.html" aria-current="page">
+          <span class="context-entry-heading">Section 7.3</span>
+          <span class="context-entry-title">Fractured topoi</span>
+        </a></li>
+<li><a href="../geometries-from-six-functor-formalisms/index.html">
+          <span class="context-entry-heading">Section 7.4</span>
+          <span class="context-entry-title">Geometries from six-functor formalisms</span>
+        </a></li>
+<li><a href="../analytic-stacks/index.html">
+          <span class="context-entry-heading">Section 7.5</span>
+          <span class="context-entry-title">Analytic stacks</span>
+        </a></li>
+<li><a href="../gestalten/index.html">
+          <span class="context-entry-heading">Section 7.6</span>
+          <span class="context-entry-title">Gestalten</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <p class="context-nav-kicker">Section 7.3</p>
+      <p class="context-nav-description">Fractured topoi</p>
+      <ol class="context-entry-list">
+        <li><a href="#def:Fractured_Topos" data-section-target="def:Fractured_Topos">
+          <span class="context-entry-heading">Definition 7.12</span>
+          <span class="context-entry-title">Fractured topos</span>
+        </a></li>
+<li><a href="#prop:Basic_Properties_Fractured_Topos" data-section-target="prop:Basic_Properties_Fractured_Topos">
+          <span class="context-entry-heading">Proposition 7.13</span>
+          <span class="context-entry-title">Basic properties of fractured topoi</span>
+        </a></li>
+<li><a href="#constr:Fractured_From_Geometric_Site" data-section-target="constr:Fractured_From_Geometric_Site">
+          <span class="context-entry-heading">Construction 7.14</span>
+          <span class="context-entry-title">Fracture from a geometric site</span>
+        </a></li>
+<li><a href="#thm:Geometric_Site_Gives_Fractured" data-section-target="thm:Geometric_Site_Gives_Fractured">
+          <span class="context-entry-heading">Theorem 7.15</span>
+          <span class="context-entry-title">A geometric site gives a fractured topos</span>
+        </a></li>
+<li><a href="#ex:Fractured_Topoi" data-section-target="ex:Fractured_Topoi">
+          <span class="context-entry-heading">Example 7.16</span>
+          <span class="context-entry-title">Examples of fractured topoi</span>
+        </a></li>
+<li><a href="#def:Admissible_Morphism_Fractured" data-section-target="def:Admissible_Morphism_Fractured">
+          <span class="context-entry-heading">Definition 7.17</span>
+          <span class="context-entry-title">Admissible morphisms in a fractured topos</span>
+        </a></li>
+<li><a href="#def:Local_Admissibility_Structure" data-section-target="def:Local_Admissibility_Structure">
+          <span class="context-entry-heading">Definition 7.18</span>
+          <span class="context-entry-title">Local admissibility structure</span>
+        </a></li>
+<li><a href="#thm:Fractured_Admissibility_Equivalence" data-section-target="thm:Fractured_Admissibility_Equivalence">
+          <span class="context-entry-heading">Theorem 7.19</span>
+          <span class="context-entry-title">Fractured topoi and admissibility structures</span>
+        </a></li>
+<li><a href="#ex:Local_Maps_Ringed_Topoi" data-section-target="ex:Local_Maps_Ringed_Topoi">
+          <span class="context-entry-heading">Example 7.20</span>
+          <span class="context-entry-title">Local maps of ringed topoi</span>
+        </a></li>
+<li><a href="#thm:Recovering_Schemes" data-section-target="thm:Recovering_Schemes">
+          <span class="context-entry-heading">Theorem 7.21</span>
+          <span class="context-entry-title">Recovering schemes</span>
+        </a></li>
+<li><a href="#con:Geometry_Spectrum_Adjunction" data-section-target="con:Geometry_Spectrum_Adjunction">
+          <span class="context-entry-heading">Construction 7.22</span>
+          <span class="context-entry-title">The spectrum adjunction for a geometry</span>
+        </a></li>
+<li><a href="#def:G_Schemes" data-section-target="def:G_Schemes">
+          <span class="context-entry-heading">Definition 7.23</span>
+          <span class="context-entry-title">Schemes for a geometry</span>
+        </a></li>
+<li><a href="#quest:G_Schemes_Depend_On_Site" data-section-target="quest:G_Schemes_Depend_On_Site">
+          <span class="context-entry-heading">Question 7.24</span>
+          <span class="context-entry-title">Dependence of schemes on the geometric site</span>
+        </a></li>
+      </ol>
+    </nav>
+  </section></div>
+  </aside>
+  </main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

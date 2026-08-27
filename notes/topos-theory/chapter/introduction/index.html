@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 1: Introduction | Higher Topos Theory</title>
+  <meta name="description" content="The geometric viewpoint on higher topoi, descent, and an overview of the manuscript.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/chapter/introduction/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: { inlineMath: [["\\(", "\\)"]], displayMath: [["\\[", "\\]"]], macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"} },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="work-page chapter-page has-context-nav">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> · Chapter 1</p>
+      <h1>Introduction</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page chapter-landing">
+      <section class="chapter-introduction" id="chap:Introduction" data-source-label="chap:Introduction" aria-label="Chapter introduction">
+        <p>Topos theory grew out of Grothendieck's work on étale cohomology. Its basic objects are categories of sheaves, which encode how local data can be glued. Higher topos theory replaces set-valued sheaves by sheaves of animae, so that both the objects and their descent data retain their full homotopy-coherent structure. Consequently, the resulting notion of topos carries an internal homotopy theory, including truncations and connected covers, loop and delooping constructions, homotopy group objects, and Eilenberg–MacLane objects. In this way, the higher-categorical notion of a topos directly captures the cohomology theory, without a need to talk about derived functors.</p>
+<p>In these notes, we take this higher-categorical notion as the primary one. Classical topos theory appears as the <span class="math-inline">\(0\)</span>-truncated part of the higher theory: Given a topos <span class="math-inline">\(T\)</span>, the full subcategory <span class="math-inline">\(T_{\leq 0}\)</span> of <span class="math-inline">\(0\)</span>-truncated objects is a classical topos. We accordingly use “topos” for the higher notion and “classical topos” when we specifically mean the classical one.</p>
+<p>As a rough guide, higher topos theory may be viewed as classical topos theory with sets replaced by animae:</p>
+<div class="math-display">\[\text{Higher topos theory} \quad\sim\quad \text{Classical topos theory with sets replaced by animae}.\]</div>
+<p>As will become clear during the course, this analogy does not capture the entire theory, and the left-hand side is a lot richer than the right-hand side suggests. For example, higher topoi support approximation procedures, such as Postnikov and Goodwillie towers, which cannot be seen within the classical topos <span class="math-inline">\(T_{\leq 0}\)</span> alone.</p>
+<h2 id="subsection-descent">Descent</h2>
+<p>The organizing idea in topos theory is <em>descent</em>: reconstructing global objects from local data together with gluing information.</p>
+<p>Consider first the familiar setting of vector bundles on a manifold <span class="math-inline">\(M\)</span>. Given an open cover <span class="math-inline">\(\{U_i\}\)</span> of <span class="math-inline">\(M\)</span>, a vector bundle on <span class="math-inline">\(M\)</span> is completely determined by its restrictions to each open set <span class="math-inline">\(U_i\)</span>, together with transition functions on the overlaps <span class="math-inline">\(U_i \cap U_j\)</span> satisfying the usual cocycle condition on triple overlaps. In categorical terms, the category <span class="math-inline">\(\Vect(M)\)</span> of vector bundles on <span class="math-inline">\(M\)</span> satisfies descent for open covers.</p>
+<p>This same pattern appears in algebraic geometry. A scheme is built by gluing affine pieces <span class="math-inline">\(\Spec(R)\)</span> along Zariski open subschemes. For an affine scheme <span class="math-inline">\(\Spec(R)\)</span>, a quasi-coherent sheaf is simply an <span class="math-inline">\(R\)</span>-module. For a general scheme <span class="math-inline">\(X\)</span> obtained by gluing affines, the category <span class="math-inline">\(\QCoh(X)\)</span> of quasi-coherent sheaves on <span class="math-inline">\(X\)</span> can be defined via descent: we specify compatible <span class="math-inline">\(R\)</span>-modules for all affine maps <span class="math-inline">\(\Spec(R) \to X\)</span>, where these modules must satisfy gluing conditions on overlaps. The assignment <span class="math-inline">\(X \mapsto \QCoh(X)\)</span> thus satisfies descent for affine covers, by construction.</p>
+<p>These examples motivate the classical notion of a <em>Grothendieck topos</em>. One starts with a small category <span class="math-inline">\(C\)</span> of “local models” (such as open subsets of a topological space, or affine schemes), equips it with a notion of “coverings” generalizing open covers, and forms the category of sheaves on <span class="math-inline">\(C\)</span> with respect to these coverings. This sheaf category is a left exact localization of the presheaf category of <span class="math-inline">\(C\)</span>. The presheaf category freely adds colimits to the local models, while the localization imposes the relations expressing that covering families glue effectively.</p>
+<p>But the presentation in terms of a category <span class="math-inline">\(C\)</span> with coverings is not intrinsic to the resulting topos: different choices of <span class="math-inline">\((C, \text{coverings})\)</span> can give rise to equivalent sheaf categories. The invariant content is the descent property itself, and this can be recognized directly on the category. An object parametrized by <span class="math-inline">\(X \in T\)</span> is an object of the slice category <span class="math-inline">\(T_{/X}\)</span>. If <span class="math-inline">\(X\)</span> is exhibited as the colimit of a diagram <span class="math-inline">\(X_{\bullet}\)</span>, such an object restricts to a compatible family of objects parametrized by the <span class="math-inline">\(X_i\)</span>; descent says that every compatible family arises uniquely in this way. Equivalently, the assignment <span class="math-inline">\(X \mapsto T_{/X}\)</span> takes colimits in <span class="math-inline">\(T\)</span> to limits of categories. This leads to the definition of a topos as a presentable category satisfying descent for all colimits.</p>
+<h2 id="subsection-the-geometric-viewpoint">The geometric viewpoint</h2>
+<p>Even though a topos is defined as a category satisfying descent, we often think of it as a geometric object in its own right. This viewpoint is justified already by the basic example coming from topology.</p>
+<p>Indeed, every topological space <span class="math-inline">\(X\)</span> gives rise to a topos <span class="math-inline">\(\Shv(X)\)</span>, its category of sheaves of animae. This assignment determines a functor <span class="math-inline">\(\Top \to \Topos\)</span>, which is fully faithful when restricted to sober spaces, including all Hausdorff spaces. Thus we may “do topology” by studying topoi rather than topological spaces. In fact, the terminology “topos” itself was chosen by the Grothendieck school to reflect the view that topology is fundamentally the study of topoi <span class="citation-group">[McLarty <a class="citation" href="#bib-McLarty_History_Topos_Theory">1990</a>]</span>.</p>
+<p>Classical geometric structures generalize naturally to this setting. For instance, the notion of a <em>locally ringed space</em>, a topological space equipped with a structure sheaf of rings, extends to that of a <em>locally ringed topos</em>. One can develop a theory of schemes as certain locally ringed topoi, recovering classical algebraic geometry while allowing for higher categorical phenomena.</p>
+<p>Taking the geometric viewpoint seriously leads to a natural convention regarding morphisms. Every continuous map <span class="math-inline">\(f\colon X \to Y\)</span> of topological spaces induces a pullback functor <span class="math-inline">\(f^*\colon \Shv(Y) \to \Shv(X)\)</span>. This functor is left exact and preserves all colimits; in other words, it preserves the descent structure on the sheaf categories. Given topoi <span class="math-inline">\(S\)</span> and <span class="math-inline">\(T\)</span>, a natural class of functors <span class="math-inline">\(f^*\colon S \to T\)</span> between them is the class of left exact colimit-preserving functors. Following the geometric viewpoint, we treat such a functor as a morphism of topoi from <span class="math-inline">\(T\)</span> to <span class="math-inline">\(S\)</span>, rather than the other way around.</p>
+<h2 id="subsection-content">Content</h2>
+<p>The notes follow three intertwined developments. The first concerns the intrinsic structure of a single topos. In <a href="../foundations/index.html">Chapter 2</a>, we formulate descent as an exactness property of colimits, identify effective epimorphisms as the intrinsic covers, and prove the Giraud and presheaf-localization characterizations of topoi. <a href="../truncation-connectivity/index.html">Chapter 3</a> then develops the internal homotopy theory made possible by this exactness: connected–truncated factorization systems, homotopy group objects, hypercompletion, and gerbes.</p>
+<p>The second development concerns morphisms, quotients, and approximation procedures. In <a href="../topoi-logoi/index.html">Chapter 4</a>, the algebraic perspective of logoi leads to presentations by generators and relations and hence to limits and colimits of topoi, while the geometric perspective identifies étale topoi over <span class="math-inline">\(T\)</span> with objects of <span class="math-inline">\(T\)</span>. <a href="../modalities/index.html">Chapter 5</a> studies fiberwise factorization systems and their relation to left exact localizations. The generalized Blakers–Massey theorem, the description of generated congruences by iterated diagonals, and products of modalities culminate in the Goodwillie tower of a topos.</p>
+<p>The third development applies the general theory and explores further structural and geometric topics. <a href="../topics-in-topos-theory/index.html">Chapter 6</a> treats sites, groupoid actions and principal bundles, hypercovers, convergence and dimension, shape, coherence and pretopoi, exponentiable topoi, and parametrized objects. Finally, <a href="../geometry/index.html">Chapter 7</a> explains how schemes and other locally defined geometric objects are encoded by structured and fractured topoi, how six-functor formalisms produce such structures, and how these ideas appear in analytic stacks and Gestalten.</p>
+<p><strong>Appendices.</strong> <a href="../factorization-systems-and-saturated-classes/index.html">Appendix A</a> collects background on factorization systems and saturated classes used throughout the text. <a href="../limits-and-colimits-in-categories-of-sections/index.html">Appendix B</a> records basic facts about limits and colimits in categories of sections of cartesian and cocartesian fibrations.</p><section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-McLarty_History_Topos_Theory">Colin McLarty. <em>The uses and abuses of the history of topos theory</em>. Br. J. Philos. Sci., 41 (3), 351–375. 1990.</li></ol></section>
+      </section>
+      
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Chapter navigation">
+    <nav class="context-step-controls" aria-label="Previous and next chapters">
+      <span class="context-step-control" aria-disabled="true"><span aria-hidden="true">←</span></span>
+      <a class="context-step-control" rel="next" href="../foundations/index.html" aria-label="Next chapter: Foundations" title="Next chapter: Foundations"><span aria-hidden="true">→</span></a>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../introduction/index.html" aria-current="page">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../topoi-logoi/index.html">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../modalities/index.html">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../topics-in-topos-theory/index.html">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../geometry/index.html">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section></div>
+  </aside>
+  </main>
+  <footer><p class="source-note">This static web edition is generated from the same LaTeX source as the PDFs.</p></footer>
+</body>
+</html>

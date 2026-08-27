@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 4: The categories of topoi and logoi | Higher Topos Theory</title>
+  <meta name="description" content="The algebraic and geometric viewpoints on topoi, presentations of logoi, categorical limits and colimits, and étale morphisms.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/chapter/topoi-logoi/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: { inlineMath: [["\\(", "\\)"]], displayMath: [["\\[", "\\]"]], macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"} },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="work-page chapter-page has-context-nav">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> · Chapter 4</p>
+      <h1>The categories of topoi and logoi</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page chapter-landing">
+      <section class="chapter-introduction" id="chap:Category_Of_Topoi" data-source-label="chap:Category_Of_Topoi" aria-label="Chapter introduction">
+        <p>A morphism between topoi can be viewed in two opposite directions. The <em>algebraic</em> direction records a left exact colimit-preserving functor <span class="math-inline">\(f^*\colon S \to T\)</span>, while the <em>geometric</em> direction records its right adjoint <span class="math-inline">\(f_*\colon T \to S\)</span>. We write <span class="math-inline">\(\Logos\)</span> and <span class="math-inline">\(\Topos\)</span> for the resulting categories. Although a morphism carries the same adjunction in either language, the two directions illuminate different constructions: generators, relations, and quotients are most naturally expressed in <span class="math-inline">\(\Logos\)</span>, while slices, base change, and geometric morphisms are most naturally expressed in <span class="math-inline">\(\Topos\)</span>.</p>
+<p>The algebraic perspective allows topoi to be constructed by presentations. Given a small category <span class="math-inline">\(C\)</span>, we first form the free logos <span class="math-inline">\(\An[C]\)</span> generated by <span class="math-inline">\(C\)</span>. Given a congruence <span class="math-inline">\(K\)</span> in a logos <span class="math-inline">\(T\)</span>, we then form a quotient <span class="math-inline">\(T/K\)</span> in which the morphisms of <span class="math-inline">\(K\)</span> become invertible. Combining these constructions produces presentations by generators and relations, and every logos admits such a presentation. In <a href="../../section/presentations-of-logoi/index.html">Section 4.2</a>, we develop this formalism and its universal properties.</p>
+<p>Presentations provide enough control to construct all small limits and colimits in <span class="math-inline">\(\Logos\)</span> and <span class="math-inline">\(\Topos\)</span>. Some of these constructions are computed in the underlying categories, while others require choosing presentations and combining their generators and relations. We carry this out in <a href="../../section/limits-and-colimits-of-topoi/index.html">Section 4.3</a>; among the consequences are that <span class="math-inline">\(\An\)</span> is the terminal topos and that products of topoi are given by the tensor product of cocomplete categories.</p>
+<p>The geometric part of the chapter concerns <em>étale morphisms</em>, the topos-theoretic analogues of local homeomorphisms. The fundamental classification says that the étale topoi over a fixed topos <span class="math-inline">\(T\)</span> are precisely its slice topoi:</p>
+<div class="math-display">\[T \simeq \Topos^{\et}_{/T}, \qquad X \longmapsto T_{/X}.\]</div>
+<p>Thus the internal objects of <span class="math-inline">\(T\)</span> classify a distinguished class of geometric objects over <span class="math-inline">\(T\)</span>. The class of étale morphisms is stable under base change, and, more surprisingly, the wide subcategory <span class="math-inline">\(\Topos^{\et} \subseteq \Topos\)</span> admits colimits which are preserved by its inclusion into <span class="math-inline">\(\Topos\)</span>. The proof of this colimit theorem occupies <a href="../../section/colimits-of-topoi-along-etale-morphisms/index.html">Section 4.5</a>; its main ingredients are univalent families, dependent products, and a recognition criterion for étale morphisms.</p>
+      </section>
+      
+      <section class="available-sections" aria-labelledby="chapter-sections-heading">
+        <h2 id="chapter-sections-heading">Sections</h2>
+        <div class="section-card-grid">
+          
+      <article class="section-card">
+        <p class="section-card-meta">Section 4.1</p>
+        <h3><a href="../../section/topoi-and-logoi/index.html">Topoi and logoi</a></h3>
+        <p>Morphisms of topoi and logoi, their 2-categories, and points of a topos.</p>
+      </article>
+
+      <article class="section-card">
+        <p class="section-card-meta">Section 4.2</p>
+        <h3><a href="../../section/presentations-of-logoi/index.html">Presentations of logoi</a></h3>
+        <p>Free logoi, congruences, quotient logoi, and presentations by generators and relations.</p>
+      </article>
+
+      <article class="section-card">
+        <p class="section-card-meta">Section 4.3</p>
+        <h3><a href="../../section/limits-and-colimits-of-topoi/index.html">Limits and colimits of topoi</a></h3>
+        <p>Small limits and colimits of topoi and logoi, including products and filtered limits.</p>
+      </article>
+
+      <article class="section-card">
+        <p class="section-card-meta">Section 4.4</p>
+        <h3><a href="../../section/etale-morphisms/index.html">Étale morphisms</a></h3>
+        <p>Slice topoi, intrinsic characterizations of étale morphisms, and base change.</p>
+      </article>
+
+      <article class="section-card">
+        <p class="section-card-meta">Section 4.5</p>
+        <h3><a href="../../section/colimits-of-topoi-along-etale-morphisms/index.html">Colimits of topoi along étale morphisms</a></h3>
+        <p>Univalent families, dependent products, and closure of étale morphisms under colimits.</p>
+      </article>
+        </div>
+      </section>
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Chapter navigation">
+    <nav class="context-step-controls" aria-label="Previous and next chapters">
+      <a class="context-step-control" rel="prev" href="../truncation-connectivity/index.html" aria-label="Previous chapter: Truncation and connectivity" title="Previous chapter: Truncation and connectivity"><span aria-hidden="true">←</span></a>
+      <a class="context-step-control" rel="next" href="../modalities/index.html" aria-label="Next chapter: Modalities" title="Next chapter: Modalities"><span aria-hidden="true">→</span></a>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../topoi-logoi/index.html" aria-current="page">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../modalities/index.html">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../topics-in-topos-theory/index.html">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../geometry/index.html">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="true">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="../../section/topoi-and-logoi/index.html">
+          <span class="context-entry-heading">Section 4.1</span>
+          <span class="context-entry-title">Topoi and logoi</span>
+        </a></li>
+<li><a href="../../section/presentations-of-logoi/index.html">
+          <span class="context-entry-heading">Section 4.2</span>
+          <span class="context-entry-title">Presentations of logoi</span>
+        </a></li>
+<li><a href="../../section/limits-and-colimits-of-topoi/index.html">
+          <span class="context-entry-heading">Section 4.3</span>
+          <span class="context-entry-title">Limits and colimits of topoi</span>
+        </a></li>
+<li><a href="../../section/etale-morphisms/index.html">
+          <span class="context-entry-heading">Section 4.4</span>
+          <span class="context-entry-title">Étale morphisms</span>
+        </a></li>
+<li><a href="../../section/colimits-of-topoi-along-etale-morphisms/index.html">
+          <span class="context-entry-heading">Section 4.5</span>
+          <span class="context-entry-title">Colimits of topoi along étale morphisms</span>
+        </a></li></ol>
+    </nav>
+  </section></div>
+  </aside>
+  </main>
+  <footer><p class="source-note">This static web edition is generated from the same LaTeX source as the PDFs.</p></footer>
+</body>
+</html>

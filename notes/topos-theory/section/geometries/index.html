@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Geometries | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/section/geometries/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="section-page has-context-nav" data-record-id="geometries" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">·</span> Section 7.2</p>
+      <h1>Geometries</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page">
+      
+<h2 id="sec:Geometries"><span>7.2.</span> Geometries</h2>
+<p>Classical algebraic geometry is built from affine schemes, basic open immersions, and covers by basic opens. Lurie's notion of a geometry abstracts exactly this pattern; see <span class="citation-group">[Lurie <a class="citation" href="#bib-Lurie_DAG_V">2011</a>]</span>:</p>
+<div class="math-display">\[\begin{array}{rcl}
+		\text{affine test objects} &amp; \rightsquigarrow &amp; \text{objects of a category } C, \\
+		\text{basic open immersions} &amp; \rightsquigarrow &amp; \text{admissible morphisms}, \\
+		\text{covers by basic opens} &amp; \rightsquigarrow &amp; \text{admissible covers}.
+	\end{array}\]</div>
+<p>For the applications below, we will use the following slightly site-theoretic formulation.</p>
+<section class="theorem definition" id="def:Admissibility_Structure">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/admissibility-structure/index.html">Definition 7.9.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> be a category with finite limits. An <em>admissibility structure</em> is a wide subcategory <span class="math-inline">\(C^{\ad} \subseteq C\)</span> of <em>admissible morphisms</em> satisfying the following properties:</p>
+<ul><li><p><span class="math-inline">\(C^{\ad}\)</span> is closed under base change in <span class="math-inline">\(C\)</span>;</p></li><li><p><span class="math-inline">\(C^{\ad}\)</span> is left cancellable: given morphisms <span class="math-inline">\(f\colon X \to Y\)</span> and <span class="math-inline">\(g\colon Y \to Z\)</span>, if <span class="math-inline">\(g\)</span> and <span class="math-inline">\(gf\)</span> are admissible morphisms, then so is <span class="math-inline">\(f\)</span>;</p></li><li><p>admissible morphisms are closed under retracts.</p></li></ul></div>
+</section>
+
+<section class="theorem definition" id="def:Geometric_Site">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/geometric-site/index.html">Definition 7.10.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\((C,C^{\ad})\)</span> be a category with an admissibility structure. A topology <span class="math-inline">\(\tau\)</span> is said to be <em>compatible with <span class="math-inline">\(C^{\ad}\)</span></em> if every <span class="math-inline">\(\tau\)</span>-covering sieve contains a <span class="math-inline">\(\tau\)</span>-covering sieve generated by admissible maps. We refer to such triples</p>
+<div class="math-display">\[\Gg = (C,C^{\ad},\tau)\]</div>
+<p>as <em>geometric sites</em>. Covering families generated by admissible morphisms will be called <em>admissible covers</em>. If <span class="math-inline">\(C\)</span> is small and idempotent complete, we will also call such a triple a <em>geometry</em>.</p></div>
+</section>
+
+<h3 id="subsec:Zariski_Geometries"><span>7.2.1.</span> Zariski geometries</h3>
+<p>The basic example is the <em>classical Zariski geometry</em>. Its underlying category is</p>
+<div class="math-display">\[\GZar^{\mathrm{cl}} := (\CRing^{\mathrm{fp}})\catop,\]</div>
+<p>where <span class="math-inline">\(\CRing^{\mathrm{fp}}\)</span> denotes the category of finitely presented ordinary commutative rings. Since <span class="math-inline">\(\GZar^{\mathrm{cl}}\)</span> is the opposite of a category of rings, we will describe its morphisms in terms of the corresponding maps of rings in the opposite direction.</p>
+<p>The admissible morphisms in <span class="math-inline">\(\GZar^{\mathrm{cl}}\)</span> correspond to principal localizations</p>
+<div class="math-display">\[R \longrightarrow R[f^{-1}],
+	\qquad f \in R.\]</div>
+<p>Geometrically, this is the inclusion of the principal open</p>
+<div class="math-display">\[D(f) = \Spec(R[f^{-1}]) \hookrightarrow \Spec(R).\]</div>
+<p>A finite family</p>
+<div class="math-display">\[\{R \to R[f_i^{-1}]\}_{i \in I}\]</div>
+<p>generates a covering sieve precisely when the elements <span class="math-inline">\(f_i\)</span> generate the unit ideal in <span class="math-inline">\(R\)</span>.</p>
+<section class="theorem lemma" id="lem:Classical_Zariski_Geometry">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/classical-zariski-geometry/index.html">Lemma 7.11.</a></span></p>
+  <div class="theorem-statement"><p>The preceding data define a geometry <span class="math-inline">\(\GZar^{\mathrm{cl}}\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Classical_Zariski_Geometry-main" data-owner-entry="classical-zariski-geometry" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Finite limits in <span class="math-inline">\(\GZar^{\mathrm{cl}}\)</span> are finite colimits of finitely presented rings. The topology is generated by admissible covers by definition. Base change of admissible morphisms follows from the formula <div class="math-display">\[S \otimes_R R[f^{-1}] \cong S[\varphi(f)^{-1}]\]</div> for a map <span class="math-inline">\(\varphi\colon R \to S\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>For left cancellability, suppose that a principal localization <span class="math-inline">\(R \to R[g^{-1}]\)</span> factors through another principal localization <span class="math-inline">\(R \to R[f^{-1}]\)</span>. Then <span class="math-inline">\(f\)</span> is already invertible in <span class="math-inline">\(R[g^{-1}]\)</span>, and hence <div class="math-display">\[R[g^{-1}] \cong R[g^{-1}][f^{-1}] \cong R[f^{-1}][g^{-1}].\]</div> It follows that the induced map <span class="math-inline">\(R[f^{-1}] \to R[g^{-1}]\)</span> is again a principal localization.<div class="proof-paragraph-break" aria-hidden="true"></div>It remains to check closure under retracts. Consider a retract diagram <figure class="diagram"><img src="diagrams/tikzcd-d0fb64a5a66e.svg" alt="Commutative diagram generated from the LaTeX source"></figure> in <span class="math-inline">\(\CRing^{\mathrm{fp}}\)</span>, where <span class="math-inline">\(\ell\)</span> is localization at <span class="math-inline">\(f\)</span>. For every ring <span class="math-inline">\(C\)</span>, the restriction map <div class="math-display">\[\Hom_{\CRing}(B,C) \longrightarrow \Hom_{\CRing}(A,C)\]</div> is a retract of <div class="math-display">\[\Hom_{\CRing}(R[f^{-1}],C) \longrightarrow \Hom_{\CRing}(R,C).\]</div> The latter map is a monomorphism whose image consists of the maps that send <span class="math-inline">\(f\)</span> to a unit. Consequently, restriction along <span class="math-inline">\(\varphi\)</span> is also a monomorphism. If <span class="math-inline">\(a:=\rho(f)\in A\)</span>, the retract identities show that a map <span class="math-inline">\(A\to C\)</span> extends across <span class="math-inline">\(\varphi\)</span> if and only if it sends <span class="math-inline">\(a\)</span> to a unit. The universal property of localization therefore gives an isomorphism <span class="math-inline">\(B\cong A[a^{-1}]\)</span> under <span class="math-inline">\(A\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>There is also a <em>spectral Zariski geometry</em></p>
+<div class="math-display">\[\GZar^{\mathrm{sp}} := (\CAlg^{\omega})\catop,\]</div>
+<p>where <span class="math-inline">\(\CAlg^{\omega}\)</span> denotes the category of compact commutative <span class="math-inline">\(\Einf\)</span>-rings. The admissible morphisms are again principal localizations</p>
+<div class="math-display">\[R \longrightarrow R[f^{-1}],
+	\qquad f \in \pi_0(R),\]</div>
+<p>and a finite family <span class="math-inline">\(\{R \to R[f_i^{-1}]\}_{i \in I}\)</span> is a cover precisely when the elements <span class="math-inline">\(f_i\)</span> generate the unit ideal in <span class="math-inline">\(\pi_0(R)\)</span>. The verification is the same as in the classical case, using the corresponding localization formula for commutative <span class="math-inline">\(\Einf\)</span>-rings.</p>
+<h3 id="subsec:Other_Geometries"><span>7.2.2.</span> Other examples</h3>
+<p>Here are some other geometries obtained by changing the category of affine test objects, the admissible morphisms, or the topology:</p>
+<ul><li><p><em>Derived Zariski geometry</em>: the analogous Zariski geometry based on compact animated rings.</p></li><li><p><em>Classical étale geometry</em>: take <span class="math-inline">\(C = (\CRing^{\mathrm{fp}})\catop\)</span>, take <span class="math-inline">\(\tau\)</span> to be the étale topology, and let <span class="math-inline">\(C^{\ad}\)</span> be the class of morphisms corresponding to étale maps of rings.</p></li><li><p><em>Derived étale geometry</em>: the analogous version based on compact animated rings.</p></li><li><p><em>Spectral étale geometry</em>: replace ordinary rings by compact commutative <span class="math-inline">\(\Einf\)</span>-rings and use the spectral étale topology.</p></li><li><p><em>Differential geometry</em>: use finitely presented <span class="math-inline">\(C^{\infty}\)</span>-rings, with admissible maps encoding open immersions.</p></li></ul>
+<h3 id="subsec:Structured_Topoi"><span>7.2.3.</span> Structured topoi</h3>
+<p>Let <span class="math-inline">\(\Gg = (C,C^{\ad},\tau)\)</span> be a geometry and let <span class="math-inline">\(T\)</span> be a topos. A <em><span class="math-inline">\(\Gg\)</span>-structure</em> on <span class="math-inline">\(T\)</span> is a left exact functor</p>
+<div class="math-display">\[\Oo\colon C \to T\]</div>
+<p>such that for every admissible cover <span class="math-inline">\(\{U_i \to X\}_{i \in I}\)</span>, the induced map</p>
+<div class="math-display">\[\coprod_{i \in I} \Oo(U_i) \longrightarrow \Oo(X)\]</div>
+<p>is an effective epimorphism in <span class="math-inline">\(T\)</span>. We denote by <span class="math-inline">\(\Str_{\Gg}(T)\)</span> the full subcategory of <span class="math-inline">\(\Fun^{\lex}(C,T)\)</span> spanned by the <span class="math-inline">\(\Gg\)</span>-structures.</p>
+<p>In the classical Zariski case, the equivalence</p>
+<div class="math-display">\[\Ind((\GZar^{\mathrm{cl}})\catop) \simeq \CRing\]</div>
+<p>identifies a left exact functor <span class="math-inline">\(\GZar^{\mathrm{cl}} \to \An\)</span> with an ordinary commutative ring <span class="math-inline">\(A\)</span>. Indeed, every ordinary ring is a filtered colimit of finitely presented rings, and filtered colimits of discrete animae are discrete. Under this identification, the functor associated to <span class="math-inline">\(A\)</span> sends a finitely presented ring <span class="math-inline">\(S\)</span> to</p>
+<div class="math-display">\[\Hom_{\CRing}(S,A).\]</div>
+<p>The Zariski cover condition says that, whenever <span class="math-inline">\(f_1,\dots,f_n \in S\)</span> generate the unit ideal, the map</p>
+<div class="math-display">\[\coprod_i \Hom_{\CRing}(S[f_i^{-1}],A)
+	\longrightarrow
+	\Hom_{\CRing}(S,A)\]</div>
+<p>is surjective. In concrete terms: for every map <span class="math-inline">\(\varphi\colon S \to A\)</span>, at least one of the elements <span class="math-inline">\(\varphi(f_i) \in A\)</span> must be invertible.</p>
+<p>This condition is equivalent to <span class="math-inline">\(A\)</span> being a local ring. Indeed, if <span class="math-inline">\(A\)</span> is local, then not all of the elements <span class="math-inline">\(\varphi(f_i)\)</span> can lie in the maximal ideal, so one must be invertible. Conversely, suppose that the displayed condition holds. If <span class="math-inline">\(a+b=1\)</span>, apply it to the map</p>
+<div class="math-display">\[\mathbb{Z}[x,y]/(x+y-1) \longrightarrow A, \qquad x\longmapsto a,\quad y\longmapsto b,\]</div>
+<p>and to the cover by <span class="math-inline">\(D(x)\)</span> and <span class="math-inline">\(D(y)\)</span>. It follows that either <span class="math-inline">\(a\)</span> or <span class="math-inline">\(b\)</span> is invertible. Replacing <span class="math-inline">\((a,b)\)</span> by <span class="math-inline">\((-a,a+b)\)</span> shows that the sum of two nonunits is again a nonunit. Since the nonunits are also closed under multiplication by arbitrary elements, they form an ideal, necessarily the unique maximal ideal. All in all, we see that</p>
+<div class="math-display">\[\Str_{\GZar^{\mathrm{cl}}}(\An)
+	\simeq
+	\{\text{ordinary local rings}\}.\]</div>
+<p>In the spectral Zariski case, the same argument starts from</p>
+<div class="math-display">\[\Ind((\GZar^{\mathrm{sp}})\catop) \simeq \CAlg\]</div>
+<p>and identifies a left exact functor <span class="math-inline">\(\GZar^{\mathrm{sp}} \to \An\)</span> with a commutative ring spectrum <span class="math-inline">\(R\)</span>. The cover condition says that if <span class="math-inline">\(f_1,\dots,f_n \in \pi_0(S)\)</span> generate the unit ideal, then for every map <span class="math-inline">\(\varphi\colon S \to R\)</span> at least one of the elements <span class="math-inline">\(\varphi(f_i) \in \pi_0(R)\)</span> is invertible. Equivalently, <span class="math-inline">\(\pi_0(R)\)</span> is a local ring. Thus</p>
+<div class="math-display">\[\Str_{\GZar^{\mathrm{sp}}}(\An)
+	\simeq
+	\{\text{local commutative ring spectra}\}.\]</div>
+<p>The upshot of this discussion is that Zariski structures provide a point-free version of the usual locality condition on stalks. Left exact functors from the Zariski geometry to a topos <span class="math-inline">\(T\)</span> correspond to internal commutative ring objects of <span class="math-inline">\(T\)</span>. Pulling such a functor back along a point <span class="math-inline">\(x^*\colon T \to \An\)</span> produces the corresponding stalk. If <span class="math-inline">\(T\)</span> admits enough points, then these inverse-image functors jointly detect effective epimorphisms, so the admissible-cover condition is equivalent to requiring every stalk to be a local ring. If <span class="math-inline">\(T\)</span> does not admit enough points, the definition in terms of admissible covers remains meaningful and supplies the correct point-free replacement.</p>
+<h3 id="subsec:Local_Morphisms_Of_Structures"><span>7.2.4.</span> Local morphisms of structures</h3>
+<p>Let <span class="math-inline">\(\Oo,\Oo' \in \Str_{\Gg}(T)\)</span> be two <span class="math-inline">\(\Gg\)</span>-structures. A natural transformation</p>
+<div class="math-display">\[\alpha\colon \Oo \to \Oo'\]</div>
+<p>is called <em>local</em> if for every admissible morphism <span class="math-inline">\(U \to X\)</span> in <span class="math-inline">\(C\)</span>, the square</p>
+<figure class="diagram"><img src="diagrams/tikzcd-4374d5f9d15c.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>is a pullback square in <span class="math-inline">\(T\)</span>.</p>
+<p>For the classical Zariski geometry and <span class="math-inline">\(T=\An\)</span>, this recovers the usual notion of a local homomorphism. A map of Zariski structures corresponds to a map of local rings <span class="math-inline">\(A \to B\)</span>. Testing locality on an admissible map <span class="math-inline">\(S \to S[f^{-1}]\)</span> says that the square</p>
+<figure class="diagram"><img src="diagrams/tikzcd-14343ac2648b.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>is a pullback. In other words, an element of <span class="math-inline">\(A\)</span> is invertible if and only if its image in <span class="math-inline">\(B\)</span> is invertible. For local rings this is equivalent to the classical condition that the preimage of the maximal ideal of <span class="math-inline">\(B\)</span> is the maximal ideal of <span class="math-inline">\(A\)</span>. The spectral case is identical after passing to <span class="math-inline">\(\pi_0\)</span>: a map <span class="math-inline">\(R \to R'\)</span> of local commutative <span class="math-inline">\(\Einf\)</span>-rings is local precisely when <span class="math-inline">\(\pi_0(R) \to \pi_0(R')\)</span> is local in the classical sense.</p><section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-Lurie_DAG_V">Jacob Lurie. <em>Derived algebraic geometry V: Structured spaces</em>. 2011.</li></ol></section>
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+      <a class="context-step-control" rel="prev" href="../schemes/index.html" aria-label="Previous section: Schemes" title="Previous section: Schemes"><span aria-hidden="true">←</span></a>
+      <a class="context-step-control" rel="next" href="../fractured-topoi/index.html" aria-label="Next section: Fractured topoi" title="Next section: Fractured topoi"><span aria-hidden="true">→</span></a>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../chapter/introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../../chapter/foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../../chapter/truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../../chapter/topoi-logoi/index.html">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../../chapter/modalities/index.html">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../../chapter/topics-in-topos-theory/index.html">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../../chapter/geometry/index.html" aria-current="location">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../../chapter/factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../../chapter/limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../schemes/index.html">
+          <span class="context-entry-heading">Section 7.1</span>
+          <span class="context-entry-title">Schemes</span>
+        </a></li>
+<li><a href="../geometries/index.html" aria-current="page">
+          <span class="context-entry-heading">Section 7.2</span>
+          <span class="context-entry-title">Geometries</span>
+        </a></li>
+<li><a href="../fractured-topoi/index.html">
+          <span class="context-entry-heading">Section 7.3</span>
+          <span class="context-entry-title">Fractured topoi</span>
+        </a></li>
+<li><a href="../geometries-from-six-functor-formalisms/index.html">
+          <span class="context-entry-heading">Section 7.4</span>
+          <span class="context-entry-title">Geometries from six-functor formalisms</span>
+        </a></li>
+<li><a href="../analytic-stacks/index.html">
+          <span class="context-entry-heading">Section 7.5</span>
+          <span class="context-entry-title">Analytic stacks</span>
+        </a></li>
+<li><a href="../gestalten/index.html">
+          <span class="context-entry-heading">Section 7.6</span>
+          <span class="context-entry-title">Gestalten</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <p class="context-nav-kicker">Section 7.2</p>
+      <p class="context-nav-description">Geometries</p>
+      <ol class="context-entry-list">
+        <li><a href="#def:Admissibility_Structure" data-section-target="def:Admissibility_Structure">
+          <span class="context-entry-heading">Definition 7.9</span>
+          <span class="context-entry-title">Admissibility structure</span>
+        </a></li>
+<li><a href="#def:Geometric_Site" data-section-target="def:Geometric_Site">
+          <span class="context-entry-heading">Definition 7.10</span>
+          <span class="context-entry-title">Geometric site</span>
+        </a></li>
+<li><a href="#lem:Classical_Zariski_Geometry" data-section-target="lem:Classical_Zariski_Geometry">
+          <span class="context-entry-heading">Lemma 7.11</span>
+          <span class="context-entry-title">The classical Zariski geometry</span>
+        </a></li>
+      </ol>
+    </nav>
+  </section></div>
+  </aside>
+  </main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Topoi of parametrized objects | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/section/topoi-of-parametrized-objects/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="section-page has-context-nav" data-record-id="topoi-of-parametrized-objects" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">·</span> Section 6.11</p>
+      <h1>Topoi of parametrized objects</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page">
+      
+<h2 id="sec:Categories_Of_Infty_Connected_Objects"><span>6.11.</span> Topoi of parametrized objects</h2>
+<p>The Grothendieck construction <span class="math-inline">\(\int_{\An}C\)</span> organizes families of objects of <span class="math-inline">\(C\)</span> parametrized by animae. Its universal property separates arbitrary colimits into anima-indexed colimits and weakly contractible colimits, and this makes the van Kampen condition particularly transparent. The main result characterizes those accessible categories <span class="math-inline">\(C\)</span> for which <span class="math-inline">\(\int_T C\)</span> is a topos for every topos <span class="math-inline">\(T\)</span>: these are the <em>loci</em>, the categories whose weakly contractible colimits are van Kampen. This also identifies stable categories and categories of <span class="math-inline">\(\infty\)</span>-connected objects as two manifestations of the same construction. The section is logically independent of the later chapters, but the results provide a useful application of descent and may also be found in <span class="citation-group">[Hoyois <a class="citation" href="#bib-Hoyois_Topoi_Parametrized">2019</a>]</span>.</p>
+<h3 id="subsec:An_Parametrized_Objects"><span>6.11.1.</span> Categories of <span class="math-inline">\(\An\)</span>-parametrized objects</h3>
+
+<section class="theorem definition" id="def:An_Parametrized_Objects">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/an-parametrized-objects/index.html">Definition 6.157.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> be a category, not necessarily small. We define the functor <span class="math-inline">\(\pi\colon \int_{\An}C \to \An\)</span> as the cartesian unstraightening of the functor</p>
+<div class="math-display">\[\Fun(-,C)\colon \An\catop \to \Cat, \qquad A \mapsto \Fun(A,C).\]</div>
+<p>We refer to <span class="math-inline">\(\int_{\An}C\)</span> as the category of <em><span class="math-inline">\(\An\)</span>-parametrized objects of <span class="math-inline">\(C\)</span></em>. Note that an object of <span class="math-inline">\(\int_{\An}C\)</span> is a pair <span class="math-inline">\((A,X)\)</span>, where <span class="math-inline">\(A \in \An\)</span> is an anima and <span class="math-inline">\(X\colon A \to C\)</span> is an <span class="math-inline">\(A\)</span>-indexed family of objects of <span class="math-inline">\(C\)</span>. A morphism <span class="math-inline">\((A,X) \to (B,Y)\)</span> consists of a morphism of animae <span class="math-inline">\(f\colon A \to B\)</span> and a map <span class="math-inline">\(X \to f^*Y\)</span> in <span class="math-inline">\(\Fun(A,C)\)</span>, where <span class="math-inline">\(f^*Y := Y \circ f\colon A \to C\)</span>.</p>
+<p>The fiber of <span class="math-inline">\(\int_{\An}C\)</span> over <span class="math-inline">\(A \in \An\)</span> is <span class="math-inline">\(\Fun(A,C)\)</span>. By taking <span class="math-inline">\(A = *\)</span>, we in particular obtain an inclusion <span class="math-inline">\(C \hookrightarrow \int_{\An}C\)</span>. Note that this is fully faithful, since <span class="math-inline">\(\{*\} \hookrightarrow \An\)</span> is fully faithful.</p></div>
+</section>
+<p>While we gave an explicit construction of <span class="math-inline">\(\int_{\An}C\)</span>, we will show next that it can also be characterized via the following two universal properties:</p>
+<ol><li><p>For arbitrary <span class="math-inline">\(C\)</span>, the category <span class="math-inline">\(\int_{\An}C\)</span> is obtained from <span class="math-inline">\(C\)</span> by freely adding anima-indexed colimits;</p></li><li><p>If <span class="math-inline">\(C\)</span> admits weakly contractible colimits, then <span class="math-inline">\(\int_{\An}C\)</span> admits all small colimits, the inclusion <span class="math-inline">\(C \hookrightarrow \int_{\An}C\)</span> preserves weakly contractible colimits, and <span class="math-inline">\(\int_{\An}C\)</span> is the free category with a functor from <span class="math-inline">\(C\)</span> satisfying these two properties.</p></li></ol>
+<p>We start with property (a), which is relatively straightforward to prove.</p>
+<section class="theorem lemma" id="lem:Colimits_In_Parametrized_Objects">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/colimits-in-parametrized-objects/index.html">Lemma 6.158.</a></span></p>
+  <div class="theorem-statement"><p>The category <span class="math-inline">\(\int_{\An}C\)</span> admits anima-indexed colimits, and the functor <span class="math-inline">\(\pi\colon \int_{\An}C \to \An\)</span> preserves anima-indexed colimits.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Colimits_In_Parametrized_Objects-main" data-owner-entry="colimits-in-parametrized-objects" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Consider a functor <span class="math-inline">\(F = (A_{\bullet},X_{\bullet})\colon I \to \int_{\An} C\)</span> for which we wish to construct a colimit, where <span class="math-inline">\(I\)</span> is an anima. Consider the colimit <span class="math-inline">\(A := \colim_{i \in I} A_i\)</span> of the underlying animae, thus extending <span class="math-inline">\(A_{\bullet}\)</span> to a colimit cocone <span class="math-inline">\(\overline{A}_{\bullet}\colon I^{\triangleright} \to \An\)</span>. Denote by <span class="math-inline">\(f_i\colon A_i \to A\)</span> the maps in the colimit cocone. The diagram <span class="math-inline">\(F\)</span> is a lift of <span class="math-inline">\(A_{\bullet}\colon I \to \An\)</span>, corresponding to a section of the cartesian fibration <span class="math-inline">\(I \times_{\An} \int_{\An} C \to I\)</span>. Since <span class="math-inline">\(I\)</span> is an anima, this section is automatically a cartesian section, and it thus defines an object of the category <div class="math-display">\[\Gamma_I^{\mathrm{cart}}(I \times_{\An} \int_{\An} C \to I) \quad \simeq \quad \lim_{i \in I\catop} \Fun(A_i, C) \quad \simeq \quad \Fun(\colim_i A_i, C) \quad \simeq \quad \Fun(A,C).\]</div> This defines an object <span class="math-inline">\(X \in \Fun(A,C)\)</span>, hence an object <span class="math-inline">\((A,X) \in \int_{\An}C\)</span>. Applying a similar reasoning to the diagram <span class="math-inline">\(\overline{A}_{\bullet}\colon I^{\triangleright} \to \An\)</span>, we see that <div class="math-display">\[\Gamma_{I^{\triangleright}}^{\mathrm{cart}}(I^{\triangleright} \times_{\An} \int_{\An} C \to I^{\triangleright}) \quad \simeq \quad \lim_{i \in (I^{\triangleright})\catop} \Fun(A_i,C) = \Fun(A,C),\]</div> so that the object <span class="math-inline">\(X\)</span> gives rise to a cartesian section <span class="math-inline">\((\overline{A}_{\bullet},\overline{X}_{\bullet})\colon I^{\triangleright} \to \int_{\An}C\)</span> lifting <span class="math-inline">\(\overline{A}_{\bullet}\)</span>, which essentially by construction extends <span class="math-inline">\(X_{\bullet}\)</span>. We will show that this is a colimit cocone in <span class="math-inline">\(\int_{\An}C\)</span>, which simultaneously establishes both claims of the lemma.<div class="proof-paragraph-break" aria-hidden="true"></div>To this end, consider another object <span class="math-inline">\((B,Y) \in \int_{\An}C\)</span>. We need to show that top map in the following commutative diagram is an equivalence: <figure class="diagram"><img src="diagrams/tikzcd-1f0a8987ad6b.svg" alt="Commutative diagram generated from the LaTeX source"></figure> The bottom map in this diagram is an equivalence by definition of <span class="math-inline">\(A\)</span> as a colimit. Therefore, it suffices to check that the square induces equivalences on vertical fibers over every map of animae <span class="math-inline">\(f\colon A \to B\)</span>. Letting <span class="math-inline">\(f_i \colon A_i \to A \xrightarrow{f} B\)</span> denote the composite maps for all <span class="math-inline">\(i\)</span>, this map on fibers takes the following form: <div class="math-display">\[\Hom_{\Fun(A,C)}(X,f^*Y) \to \lim_{i \in I\catop} \Hom_{\Fun(A_i,C)}(X_i, f_i^*Y).\]</div> But this map is an isomorphism, since the pullback functors along the maps <span class="math-inline">\(A_i \to A\)</span> induce an equivalence <span class="math-inline">\(\Fun(A,C) \iso \lim_{i \in I\catop} \Fun(A_i,C)\)</span>, and the restriction of <span class="math-inline">\(X\)</span> to <span class="math-inline">\(A_i\)</span> is <span class="math-inline">\(X_i\)</span> by construction. This finishes the proof.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem lemma" id="lem:Colimit_Left_Adjoint_To_Parametrized_Inclusion">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/colimit-left-adjoint-to-parametrized-inclusion/index.html">Lemma 6.159.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(D\)</span> be a category admitting anima-indexed colimits. Then the inclusion <span class="math-inline">\(D \hookrightarrow \int_{\An}D\)</span> admits a left adjoint <span class="math-inline">\(\colim \colon \int_{\An} D \to D\)</span>, given on objects by sending <span class="math-inline">\((A,X)\)</span> to <span class="math-inline">\(\colim_{a \in A} X_a\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Colimit_Left_Adjoint_To_Parametrized_Inclusion-main" data-owner-entry="colimit-left-adjoint-to-parametrized-inclusion" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Since left adjoints may be constructed objectwise, it will suffice to show that for every <span class="math-inline">\(Y \in D\)</span> there is a natural equivalence <div class="math-display">\[\Hom_{\int_{\An}D}((A,X), (*,Y))  \iso \Hom_{D}(\colim_{a \in A} X_a,Y).\]</div> But this is clear: since there is a unique map <span class="math-inline">\(A \to *\)</span> in <span class="math-inline">\(\An\)</span>, the left-hand side simplifies to <span class="math-inline">\(\Hom_{\Fun(A,D)}(X, \const_Y)\)</span>, which by the very definition of colimits in <span class="math-inline">\(D\)</span> is also the right-hand side.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem lemma" id="lem:Parametrized_Objects_Adjunction">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/parametrized-objects-adjunction/index.html">Lemma 6.160.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\Cat^{\An\text{-}\colim}\)</span> denote the subcategory of <span class="math-inline">\(\Cat\)</span> consisting of the categories with anima-indexed colimits and functors preserving anima-indexed colimits. Then the construction <span class="math-inline">\(C \mapsto \int_{\An}C\)</span> defines a left adjoint to the inclusion <span class="math-inline">\(\Cat^{\An\text{-}\colim} \hookrightarrow \Cat\)</span>, with unit and counit given by the functors</p>
+<div class="math-display">\[i\colon C \hookrightarrow\int_{\An}C \qquadtext{ and } \colim\colon \int_{\An}D \to D,\]</div>
+<p>respectively.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Parametrized_Objects_Adjunction-main" data-owner-entry="parametrized-objects-adjunction" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">We check that the two triangle identities are satisfied. The first one takes the form <figure class="diagram"><img src="diagrams/tikzcd-edc8ebe1d188.svg" alt="Commutative diagram generated from the LaTeX source"></figure> This commutes via the counit map <span class="math-inline">\(\colim \circ i \to \id_D\)</span>, which is an isomorphism as <span class="math-inline">\(i\)</span> is fully faithful. The second triangle identity amounts to the claim that for every object <span class="math-inline">\((A,X) \in \int_{\An} C\)</span>, the canonical map <span class="math-inline">\(\colim_{a \in A} (\{a\}, X_a) \to (A,X)\)</span> in <span class="math-inline">\(\int_{\An}C\)</span> is an isomorphism, which as observed before is an immediate consequence of the computation of colimits in <span class="math-inline">\(\int_{\An}C\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>We may now deduce the first claimed universal property of <span class="math-inline">\(\int_{\An}C\)</span>:</p>
+<section class="theorem proposition" id="prop:Free_Anima_Cocompletion">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/free-anima-cocompletion/index.html">Proposition 6.161.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> and <span class="math-inline">\(D\)</span> be categories and assume that <span class="math-inline">\(D\)</span> admits anima-indexed colimits. Then restriction along <span class="math-inline">\(i\colon C \hookrightarrow \int_{\An}C\)</span> induces an equivalence</p>
+<div class="math-display">\[\Fun^{\An\text{-}\colim}(\int_{\An}C,D) \iso \Fun(C,D).\]</div></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Free_Anima_Cocompletion-main" data-owner-entry="free-anima-cocompletion" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">By the Yoneda lemma, we may check this after applying <span class="math-inline">\(\Hom_{\Cat}(E,-)\)</span> for all <span class="math-inline">\(E \in \Cat\)</span>. Observe that <span class="math-inline">\(\Fun(E,D)\)</span> still admits anima-indexed colimits, which are computed pointwise in <span class="math-inline">\(D\)</span>. Under currying-uncurrying, the map in question then translates to the map <div class="math-display">\[\Hom_{\Cat^{\An\text{-}\colim}}(\int_{\An}C, \Fun(E,D)) \to \Hom_{\Cat}(C,\Fun(E,D))\]</div> given by restriction along <span class="math-inline">\(i \colon C \hookrightarrow \int_{\An}C\)</span>. This is an isomorphism by the adjunction from the previous lemma.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<h3 id="subsec:Weakly_Contractible_Free_Cocompletion"><span>6.11.2.</span> Weakly contractible colimits and free cocompletion</h3>
+<p>We now move on to the second universal property of <span class="math-inline">\(\int_{\An}C\)</span>, which is more subtle; Marc said that he has not seen this formulation in the literature. For the proof, we use the category <span class="math-inline">\(\PSh^{\mathrm{small}}(C)\)</span> of <em>small presheaves</em> on <span class="math-inline">\(C\)</span>, i.e. the full subcategory of <span class="math-inline">\(\PSh(C)\)</span> generated by the representable presheaves under small colimits. The inclusion <span class="math-inline">\(C \hookrightarrow \PSh^{\mathrm{small}}(C)\)</span> is the universal functor from <span class="math-inline">\(C\)</span> into a category with small colimits. Recall that <span class="math-inline">\(\PSh^{\mathrm{small}}(C) = \PSh(C)\)</span> whenever <span class="math-inline">\(C\)</span> is small, but not for arbitrary <span class="math-inline">\(C\)</span>. The small presheaves may be characterized as those <span class="math-inline">\(\Ff\)</span> for which the category of elements <span class="math-inline">\(\El(\Ff) = C_{/\Ff} \subseteq \PSh(C)_{/\Ff}\)</span> admits a final functor from a small category.</p>
+<section class="theorem proposition" id="prop:Free_Anima_Cocompletion_Has_Colimits">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/free-anima-cocompletion-has-colimits/index.html">Proposition 6.162.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> be a category admitting small weakly contractible colimits.</p>
+<ol><li><p>The inclusion <span class="math-inline">\(C \hookrightarrow \int_{\An}C\)</span> preserves weakly contractible colimits.</p></li><li><p>The inclusion <span class="math-inline">\(C \hookrightarrow \int_{\An} C\)</span> uniquely extends to a left adjoint <span class="math-inline">\(L\colon \PSh^{\mathrm{small}}(C) \to \int_{\An} C\)</span>.</p></li><li><p>The right adjoint <span class="math-inline">\(R\colon \int_{\An} C \hookrightarrow \PSh^{\mathrm{small}}(C)\)</span> is fully faithful, exhibiting <span class="math-inline">\(\int_{\An}C\)</span> as a Bousfield localization of <span class="math-inline">\(\PSh^{\mathrm{small}}(C)\)</span>. In particular, <span class="math-inline">\(\int_{\An} C\)</span> admits small colimits.</p></li><li><p>For a category <span class="math-inline">\(D\)</span> with small colimits, a colimit-preserving functor <span class="math-inline">\(F\colon \PSh^{\mathrm{small}}(C) \to D\)</span> inverts <span class="math-inline">\(L\)</span>-local maps if and only if its restriction <span class="math-inline">\(C \to D\)</span> preserves weakly contractible colimits.</p></li></ol></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Free_Anima_Cocompletion_Has_Colimits-main" data-owner-entry="free-anima-cocompletion-has-colimits" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">(1) Consider a functor <span class="math-inline">\(X_{\bullet}\colon I \to C\)</span>, where <span class="math-inline">\(I\)</span> is weakly contractible, and set <span class="math-inline">\(X := \colim_{i \in I} X_i\)</span>. We have to show that the colimit of this diagram in <span class="math-inline">\(\int_{\An}C\)</span> is <span class="math-inline">\((*, x)\)</span>. This amounts to the claim that for every object <span class="math-inline">\((B,Y) \in \int_{\An} C\)</span>, the canonical map <div class="math-display">\[\Hom_{\int_{\An}C}((*,X), (B,Y)) \to \lim_{i \in I\catop} \Hom_{\int_{\An}C}((*,X_i),(B,Y))\]</div> is an isomorphism. Since this map lives over <span class="math-inline">\(\Hom_{\An}(*,B) = B\)</span>, it suffices to show that the induced map on fibers over each <span class="math-inline">\(b \in B\)</span> is an isomorphism. But this map on fibers is the map <span class="math-inline">\(\Hom_C(X,Y_b) \to \lim_{i \in I\catop} \Hom_C(X_i, Y_b)\)</span>, which is an isomorphism by construction of <span class="math-inline">\(X\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>(2) We will show that the left Kan extension of the inclusion <span class="math-inline">\(C \hookrightarrow \int_{\An} C\)</span> along the Yoneda embedding <span class="math-inline">\(C \hookrightarrow \PSh^{\mathrm{small}}(C)\)</span> exists. Given a small presheaf <span class="math-inline">\(\Ff\)</span>, the pointwise formula for left Kan extensions tells us that it suffices to show that in <span class="math-inline">\(\int_{\An}C\)</span> we may form the colimit of the functor <div class="math-display">\[\El(\Ff) = C_{/\Ff} \xrightarrow{\fgt} C \hookrightarrow \int_{\An} C.\]</div> By assumption on <span class="math-inline">\(\Ff\)</span>, the category <span class="math-inline">\(\El(\Ff)\)</span> comes with a final functor <span class="math-inline">\(I \to \El(\Ff)\)</span> from some small category <span class="math-inline">\(I\)</span>. It will thus suffice to show that for any small category <span class="math-inline">\(I\)</span> and any functor <span class="math-inline">\(X\colon I \to C\)</span> the colimit of <span class="math-inline">\(I \to \int_{\An}C\)</span> exists. We do this in two steps: <ul class="proof-list"><li>Consider the map <span class="math-inline">\(p\colon I \to \abs{I}\)</span> to the geometric realization of <span class="math-inline">\(I\)</span>. We will show that the Kan extension of <span class="math-inline">\(X\)</span> along <span class="math-inline">\(p\)</span> exists in <span class="math-inline">\(\int_{\An}C\)</span>. Since <span class="math-inline">\(p\)</span> is a cofinal functor, its relative slices are weakly contractible by Quillen's Theorem A. By part (1), this means that the Kan extension of <span class="math-inline">\(X\)</span> along <span class="math-inline">\(p\)</span> exists in <span class="math-inline">\(C\)</span>, and that it is preserved by the inclusion <span class="math-inline">\(C \hookrightarrow \int_{\An}C\)</span>.</li><li>The colimit <span class="math-inline">\(\colim_i X_i\)</span> in <span class="math-inline">\(\int_{\An}C\)</span> is now computed as the colimit of the left Kan extension <span class="math-inline">\(p_!X\colon \abs{I} \to \int_{\An}C\)</span>, which exists since <span class="math-inline">\(\abs{I}\)</span> is an anima and we established the existence of anima-indexed colimits in <a href="#lem:Colimits_In_Parametrized_Objects">Lemma 6.158</a>.</li></ul> By general nonsense, it follows that the left Kan extension <span class="math-inline">\(L\colon \PSh^{\mathrm{small}}(C) \to \int_{\An}C\)</span> preserves all colimits. A right adjoint <span class="math-inline">\(R\)</span> to <span class="math-inline">\(L\)</span> is given explicitly as follows: <div class="math-display">\[R\colon \int_{\An} C \to \PSh^{\mathrm{small}}(C), \qquad R((A,X))(Y) := \Hom_{\int_{\An}C}((*,Y), (A,X)).\]</div> The functor <span class="math-inline">\(\pi\colon \int_{\An} C \to \An\)</span> induces a map <span class="math-inline">\(\Hom_{\int_{\An}C}((*,Y), (A,X)) \to \Hom_{\An}(*,A) \cong A\)</span>, whose fiber over <span class="math-inline">\(a \in A\)</span> is <span class="math-inline">\(\Hom_C(Y,X_a)\)</span>, so we obtain isomorphisms <div class="math-display">\[R((A,X))(Y) \; \cong \; \colim_{a \in A} \Hom_C(Y,X_a) \; \cong \; \colim_{a \in A} y(X_a)(Y).\]</div> In particular, we see that <span class="math-inline">\(R((A,X)) \simeq \colim_{a \in A} y(X_a)\)</span> is a small colimit of representables, so that it is indeed contained in <span class="math-inline">\(\PSh^{\mathrm{small}}(C)\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>(3) To show that <span class="math-inline">\(R\)</span> is fully faithful, we must show that for every object <span class="math-inline">\((A,X) \in \int_{\An}C\)</span>, the counit <span class="math-inline">\(LR(A,X) \to (A,X)\)</span> is an isomorphism. But this is clear from the computation <span class="math-inline">\(R(A,X) \cong \colim_{a \in A} y(X_a)\)</span> from before, and the fact that <span class="math-inline">\((A,X) \cong \colim_{a \in A} (*,X_a)\)</span> by the explicit description of anima indexed colimits from <a href="#lem:Colimits_In_Parametrized_Objects">Lemma 6.158</a>.<div class="proof-paragraph-break" aria-hidden="true"></div>(4) If <span class="math-inline">\(F\)</span> inverts all <span class="math-inline">\(L\)</span>-local maps, then <span class="math-inline">\(F\)</span> in particular inverts the canonical map <span class="math-inline">\(\colim_{i \in I} y(X_i) \to y(\colim_{i \in I} X_i)\)</span> for every weakly contractible diagram <span class="math-inline">\(X\colon I \to C\)</span>, so that <span class="math-inline">\(F(y(\colim_i X_i)) \simeq \colim_i F(y(X_i))\)</span>. Conversely, assume <span class="math-inline">\(F \circ y\colon C \to D\)</span> preserves weakly contractible colimits. It will suffice to show that <span class="math-inline">\(F\)</span> inverts the unit map <span class="math-inline">\(\Ff \to RL(\Ff)\)</span> for all <span class="math-inline">\(\Ff \in \PSh^{\mathrm{small}}(C)\)</span>. Choose a final map <span class="math-inline">\(I \to \El(\Ff)\)</span> from a small category. Writing <span class="math-inline">\(\Ff\)</span> as the associated colimit of representables and left Kan extending along <span class="math-inline">\(p\colon I \to \abs{I}\)</span> expresses <span class="math-inline">\(\Ff\)</span> as an <span class="math-inline">\(\abs{I}\)</span>-indexed colimit of objects <span class="math-inline">\(\colim_{i \in I_x}y(X_i)\)</span>, where <span class="math-inline">\(I_x=\fib_x(I\to\abs I)\)</span> is weakly contractible. The same construction in <span class="math-inline">\(C\)</span> expresses <span class="math-inline">\(RL(\Ff)\)</span> as the corresponding <span class="math-inline">\(\abs I\)</span>-indexed colimit of <span class="math-inline">\(y(\colim_{i\in I_x}X_i)\)</span>. Thus the unit <span class="math-inline">\(\Ff\to RL(\Ff)\)</span> is an <span class="math-inline">\(\abs I\)</span>-indexed colimit of the canonical maps which <span class="math-inline">\(F\)</span> inverts by assumption. Since <span class="math-inline">\(F\)</span> preserves colimits, it inverts the unit.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem lemma" id="lem:Colimit_Preserving_Iff_Anima_Colimits_And_Weakly_Contractible_Colimits">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/colimit-preserving-iff-anima-colimits-and-weakly-contractible-colimits/index.html">Lemma 6.163.</a></span></p>
+  <div class="theorem-statement"><p>A category <span class="math-inline">\(C\)</span> admits small colimits if and only if it admits anima-indexed colimits and weakly contractible colimits. Similarly, if <span class="math-inline">\(C\)</span> and <span class="math-inline">\(D\)</span> are categories with small colimits, then a functor <span class="math-inline">\(F\colon C \to D\)</span> preserves small colimits if and only if it preserves both anima-indexed colimits and weakly contractible colimits.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Colimit_Preserving_Iff_Anima_Colimits_And_Weakly_Contractible_Colimits-main" data-owner-entry="colimit-preserving-iff-anima-colimits-and-weakly-contractible-colimits" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Assume that <span class="math-inline">\(C\)</span> admits anima-indexed colimits and weakly contractible colimits. We need to show that it admits a colimit for an arbitrary diagram <span class="math-inline">\(X\colon I \to C\)</span>, where <span class="math-inline">\(I\)</span> is a small category. To this end, consider the localization functor <span class="math-inline">\(p\colon I \to \abs{I}\)</span> inverting all morphisms in <span class="math-inline">\(I\)</span>. As discussed before, the finality of <span class="math-inline">\(p\)</span> implies that the relative slices of <span class="math-inline">\(p\)</span> are weakly contractible, so that the left Kan extension <span class="math-inline">\(p_!X \colon \abs{I} \to C\)</span> of <span class="math-inline">\(X\)</span> along <span class="math-inline">\(p\)</span> exists in <span class="math-inline">\(C\)</span>. Moreover, the colimit of <span class="math-inline">\(p_!X\)</span> exists in <span class="math-inline">\(C\)</span> since <span class="math-inline">\(\abs{I}\)</span> is an anima. Since Kan extensions compose, we conclude that the colimit of <span class="math-inline">\(X\)</span> exists in <span class="math-inline">\(C\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>The argument for preservation of colimits is entirely analogous.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>We are now ready to establish the second universal property of <span class="math-inline">\(\int_{\An}C\)</span>. To formulate this precisely, let us denote by <span class="math-inline">\(\Cat^{\wccolim}\)</span> the subcategory of <span class="math-inline">\(\Cat\)</span> spanned by the categories admitting weakly contractible colimits and those functors that preserve weakly contractible colimits. Note that it contains the category <span class="math-inline">\(\Cat^{\colim}\)</span> of categories with colimits and colimit-preserving functors.</p>
+<section class="theorem proposition" id="prop:Parametrized_Objects_Universal_Property_2">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/parametrized-objects-universal-property-2/index.html">Proposition 6.164.</a></span></p>
+  <div class="theorem-statement"><p>The adjunction <span class="math-inline">\(\Cat \rightleftarrows \Cat^{\An\text{-}\colim}\)</span> from <a href="#lem:Parametrized_Objects_Adjunction">Lemma 6.160</a> restricts to an adjunction</p>
+<div class="math-display">\[\Cat^{\wccolim} \rightleftarrows \Cat^{\colim}.\]</div>
+<p>In particular, if <span class="math-inline">\(C\)</span> is a category with small weakly contractible colimits and <span class="math-inline">\(D\)</span> is a category with small colimits, then restriction along the inclusion <span class="math-inline">\(C \hookrightarrow \int_{\An}C\)</span> induces an equivalence</p>
+<div class="math-display">\[\Fun^{\colim}(\int_{\An}C, D) \iso \Fun^{\wccolim}(C,D).\]</div></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Parametrized_Objects_Universal_Property_2-main" data-owner-entry="parametrized-objects-universal-property-2" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">We saw in <a href="#prop:Free_Anima_Cocompletion">Proposition 6.161</a> that restriction along the inclusion induces an equivalence <div class="math-display">\[\Fun^{\An\text{-}\colim}(\int_{\An}C, D) \iso \Fun(C,D).\]</div> By part (1) of <a href="#prop:Free_Anima_Cocompletion_Has_Colimits">Proposition 6.162</a>, this restriction functor restricts to a fully faithful functor <div class="math-display">\[\Fun^{\colim}(\int_{\An}C, D) \hookrightarrow \Fun^{\wccolim}(C,D).\]</div> For essential surjectivity, let <span class="math-inline">\(F\colon C \to D\)</span> be a functor preserving weakly contractible colimits, and consider its colimit-preserving extension <span class="math-inline">\(\PSh^{\mathrm{small}}(C) \to D\)</span>. By part (4) of <a href="#prop:Free_Anima_Cocompletion_Has_Colimits">Proposition 6.162</a>, this inverts the <span class="math-inline">\(L\)</span>-local maps in <span class="math-inline">\(\PSh^{\mathrm{small}}(C)\)</span>, and so descends to a colimit-preserving functor <span class="math-inline">\(\int_{\An}C \to D\)</span> extending <span class="math-inline">\(F\)</span>. This finishes the proof.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<h3 id="subsec:Objects_Parametrized_By_Topoi"><span>6.11.3.</span> Categories of objects parametrized by topoi</h3>
+<p>The construction of <span class="math-inline">\(\int_{\An}C\)</span> may be generalized, replacing <span class="math-inline">\(\An\)</span> by an arbitrary topos.</p>
+<section class="theorem definition" id="def:T_Parametrized_Objects">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/t-parametrized-objects/index.html">Definition 6.165.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a cocomplete category and let <span class="math-inline">\(C\)</span> be a category admitting weakly contractible colimits. We define the <em>category of <span class="math-inline">\(T\)</span>-parametrized objects of <span class="math-inline">\(C\)</span></em> as the tensor product</p>
+<div class="math-display">\[\int_T C \quad := \quad T \otimes \int_{\An} C\]</div>
+<p>in the category <span class="math-inline">\(\Cat^{\colim}\)</span> of cocomplete categories (using that <span class="math-inline">\(\int_{\An}C\)</span> admits colimits by <a href="#prop:Free_Anima_Cocompletion_Has_Colimits">Proposition 6.162</a>).</p></div>
+</section>
+
+<section class="theorem corollary" id="cor:T_Parametrized_Objects_Universal_Property">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/t-parametrized-objects-universal-property/index.html">Corollary 6.166.</a></span></p>
+  <div class="theorem-statement"><p>The functor <span class="math-inline">\(T \times C \hookrightarrow T \times \int_{\An} C \to \int_T C\)</span> is universal among functors <span class="math-inline">\(F\colon T \times C \to D\)</span> into a cocomplete category <span class="math-inline">\(D\)</span> which preserve all colimits in the first variable and weakly contractible colimits in the second variable.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-cor:T_Parametrized_Objects_Universal_Property-main" data-owner-entry="t-parametrized-objects-universal-property" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">By definition, the tensor product <span class="math-inline">\(\int_TC = T \otimes \int_{\An} C\)</span> comes equipped with a functor from <span class="math-inline">\(T \times \int_{\An}C\)</span> satisfying the universal property that for every other cocomplete category <span class="math-inline">\(D\)</span>, precomposition with this functor defines an equivalence <div class="math-display">\[\Fun^{\colim}(\int_TC, D) \iso \Fun^{\colim,\colim}(T \times \int_{\An} C,D) \iso \Fun^{\colim}(T, \Fun^{\colim}(\int_{\An}C,D)).\]</div> The claimed universal property for <span class="math-inline">\(\int_T C\)</span> thus follows immediately from the universal property of <span class="math-inline">\(\int_{\An}C\)</span> established in <a href="#prop:Parametrized_Objects_Universal_Property_2">Proposition 6.164</a>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>The projection <span class="math-inline">\(\pi\colon \int_{\An} C \to \An\)</span> preserves all colimits. Indeed, its restriction to <span class="math-inline">\(C\)</span> is the constant functor with value <span class="math-inline">\(*\)</span>, which preserves weakly contractible colimits, and its colimit-preserving extension under <a href="#prop:Parametrized_Objects_Universal_Property_2">Proposition 6.164</a> sends <span class="math-inline">\((A,X)\)</span> to <span class="math-inline">\(\colim_A*=A\)</span>. Hence it is precisely <span class="math-inline">\(\pi\)</span>. Tensoring with <span class="math-inline">\(T\)</span> in <span class="math-inline">\(\Cat^{\colim}\)</span> gives an analogous functor <span class="math-inline">\(\pi_T\colon \int_TC \to T\)</span>. We will now identify the fiber of <span class="math-inline">\(\pi_T\)</span> over <span class="math-inline">\(A \in T\)</span> with the category of <span class="math-inline">\(A\)</span>-parametrized objects of <span class="math-inline">\(C\)</span>.</p>
+<section class="theorem proposition" id="prop:T_Parametrized_Objects_Bicartesian_Fibration">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/t-parametrized-objects-bicartesian-fibration/index.html">Proposition 6.167.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> and <span class="math-inline">\(C\)</span> be presentable categories. Then the functor <span class="math-inline">\(\pi_T\colon \int_T C \to T\)</span> is a bicartesian fibration, which is classified by both of the following functors:</p>
+<div class="math-display">\[T \to \Cat, \qquad A \mapsto T_{/A} \otimes C,\]</div>
+<p>and</p>
+<div class="math-display">\[T\catop \to \Cat, \qquad A \mapsto \Fun^{\lim}(T_{/A}\catop, C).\]</div></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:T_Parametrized_Objects_Bicartesian_Fibration-main" data-owner-entry="t-parametrized-objects-bicartesian-fibration" data-proof-id="main">
+  <summary>Proof sketch</summary>
+  <div class="proof-body">Note that the first functor takes the form <span class="math-inline">\(T \to \PrL\)</span>, hence its cocartesian unstraightening is always a bicartesian fibration whose cartesian straightening is the corresponding functor <span class="math-inline">\(T\catop \to \PrR\)</span> obtained by passing to right adjoints, which by Lurie's explicit formula for tensor products in <span class="math-inline">\(\PrL\)</span> is given by <span class="math-inline">\(A \mapsto \Fun^{\lim}(T\catop_{/A},C)\)</span>. It thus suffices to prove the first claim.<div class="proof-paragraph-break" aria-hidden="true"></div>Since <span class="math-inline">\(T\)</span> is presentable, write it as an accessible localization of a presheaf category <span class="math-inline">\(\PSh(D)\)</span>. Both constructions in the statement commute with such localizations, so it suffices to treat <span class="math-inline">\(T=\PSh(D)\)</span>. In this case <div class="math-display">\[\PSh(D)\otimes\int_{\An}C\simeq\Fun(D\catop,\int_{\An}C),\]</div> and the projection to <span class="math-inline">\(\PSh(D)\)</span> is computed pointwise. Its fiber over a presheaf <span class="math-inline">\(A\colon D\catop\to\An\)</span> is therefore the category of compatible <span class="math-inline">\(C\)</span>-valued families indexed contravariantly by the category of elements <span class="math-inline">\(\El(A)\)</span>, namely <span class="math-inline">\(\Fun(\El(A)\catop,C)\)</span>. On the other hand, <span class="math-inline">\(\PSh(D)_{/A}\simeq\PSh(\El(A))\)</span>, so <div class="math-display">\[\PSh(D)_{/A}\otimes C\simeq\Fun(\El(A)\catop,C).\]</div> These identifications are natural in <span class="math-inline">\(A\)</span> and identify the cocartesian transport. Passing to right adjoints identifies the cartesian straightening with <span class="math-inline">\(A\mapsto\Fun^{\lim}(T_{/A}\catop,C)\)</span>, as claimed.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<h3 id="subsec:Loci"><span>6.11.4.</span> Loci</h3>
+<p>We now turn to the problem of characterizing when parametrized objects form a topos.</p>
+<section class="theorem question" id="quest:When_Parametrized_Objects_Form_Topos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/when-parametrized-objects-form-topos/index.html">Question 6.168.</a></span></p>
+  <div class="theorem-statement"><p>Given a topos <span class="math-inline">\(T\)</span> and a category <span class="math-inline">\(C\)</span>, when is the <span class="math-inline">\(T\)</span>-parametrization <span class="math-inline">\(\int_T C\)</span> a topos?</p></div>
+</section>
+<p>This is interesting because of examples like <span class="math-inline">\(\int_T \Sp = \Exc^1(\An^{\fin}_*,T)\)</span>, which is a topos. To answer this, we introduce the concept of a <em>locus</em>.</p>
+<section class="theorem definition" id="def:Locus">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/locus/index.html">Definition 6.169.</a></span></p>
+  <div class="theorem-statement"><p>A <em>locus</em> is an accessible category with pullbacks and van Kampen weakly contractible colimits.</p></div>
+</section>
+
+<section class="theorem lemma" id="lem:Conservative_Criterion_For_Locus">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/conservative-criterion-for-locus/index.html">Lemma 6.170.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> and <span class="math-inline">\(C'\)</span> be accessible categories with pullbacks and weakly contractible colimits, and let <span class="math-inline">\(G\colon C' \to C\)</span> be a conservative functor which preserves pullbacks and weakly contractible colimits. If <span class="math-inline">\(C\)</span> is a locus, then also <span class="math-inline">\(C'\)</span> is a locus.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Conservative_Criterion_For_Locus-main" data-owner-entry="conservative-criterion-for-locus" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Consider a diagram <span class="math-inline">\(X_{\bullet}\colon I \to C'\)</span>, with <span class="math-inline">\(I\)</span> weakly contractible, and set <span class="math-inline">\(X := \colim_{i \in I} X_i\)</span>. We need to show that the top adjunction in the following diagram is an adjoint equivalence: <figure class="diagram"><img src="diagrams/tikzcd-0dda4f6a69be.svg" alt="Commutative diagram generated from the LaTeX source"></figure> By assumption, the bottom adjunction is an adjoint equivalence. Moreover, since <span class="math-inline">\(G\)</span> preserves pullbacks and weakly contractible colimits, the vertical maps (are defined and) commute with both of the adjoint functors. It then follows from conservativity of <span class="math-inline">\(G\)</span> that both the unit and counit of the top adjunction are isomorphisms, proving the claim.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem corollary" id="cor:Fibers_Of_Loci_Are_Loci">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/fibers-of-loci-are-loci/index.html">Corollary 6.171.</a></span></p>
+  <div class="theorem-statement"><p>If <span class="math-inline">\(C\)</span> and <span class="math-inline">\(C'\)</span> are loci, and <span class="math-inline">\(F\colon C' \to C\)</span> is accessible and preserves pullbacks and weakly contractible colimits, then also the fibers of <span class="math-inline">\(F\)</span> are loci.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-cor:Fibers_Of_Loci_Are_Loci-main" data-owner-entry="fibers-of-loci-are-loci" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">For an object <span class="math-inline">\(c \in C\)</span>, the fiber <span class="math-inline">\(F^{-1}(c)\)</span> is the pullback of <span class="math-inline">\(C' \xrightarrow{F} C \leftarrow *\)</span>. Since <span class="math-inline">\(F\)</span> is accessible, this pullback is an accessible category. Pullbacks and weakly contractible colimits in the fiber are computed in <span class="math-inline">\(C'\)</span>, since both <span class="math-inline">\(F\)</span> and the inclusion <span class="math-inline">\(c\colon * \to C\)</span> preserve them. The functor <span class="math-inline">\(F^{-1}(c) \to C'\)</span> is conservative, so the claim follows from the previous lemma.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem corollary" id="cor:Slices_And_Coslices_Of_Locus">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/slices-and-coslices-of-locus/index.html">Corollary 6.172.</a></span></p>
+  <div class="theorem-statement"><p>If <span class="math-inline">\(C\)</span> is a locus, then all slices <span class="math-inline">\(C_{/X}\)</span> and <span class="math-inline">\(C_{X/}\)</span> are loci.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-cor:Slices_And_Coslices_Of_Locus-main" data-owner-entry="slices-and-coslices-of-locus" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Note that <span class="math-inline">\(\Ar(C)\)</span> is a locus, so the claim follows from the previous corollary.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem example" id="ex:Excisive_Functor_Categories_Are_Loci">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/excisive-functor-categories-are-loci/index.html">Example 6.173.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> be a locus with a final object, and let <span class="math-inline">\(A\)</span> be a small category with finite colimits and a final object. Then the subcategory</p>
+<div class="math-display">\[\Exc^{[m,n]}(A,C) \subseteq \Fun(A,C)\]</div>
+<p>of <span class="math-inline">\(n\)</span>-reduced <span class="math-inline">\(m\)</span>-excisive functors is a locus. Indeed, it is the fiber of the functor</p>
+<div class="math-display">\[P_{n-1}\colon \Exc^{m}(A,C) \longrightarrow \Exc^{n-1}(A,C).\]</div></div>
+</section>
+<p>For example, we have <span class="math-inline">\(\Exc^{[n,1]}(A,C) = \Exc^n_*(A,C)\)</span>.</p>
+<section class="theorem lemma" id="lem:Topos_Iff_Locus_With_Strict_Initial_Object">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/topos-iff-locus-with-strict-initial-object/index.html">Lemma 6.174.</a></span></p>
+  <div class="theorem-statement"><p>Every topos is a locus. Conversely, a locus <span class="math-inline">\(T\)</span> is a topos if and only if it admits a strictly initial object.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Topos_Iff_Locus_With_Strict_Initial_Object-main" data-owner-entry="topos-iff-locus-with-strict-initial-object" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">It is clear that every topos is a locus admitting a strictly initial object. Conversely, if <span class="math-inline">\(T\)</span> is a locus admitting a strictly initial object, then it in particular admits colimits, so <span class="math-inline">\(T\)</span> is presentable. Moreover, the functor <span class="math-inline">\(T\catop \to \Cat, X \mapsto T_{/X}\)</span> preserves weakly contractible limits (<span class="math-inline">\(T\)</span> a locus) and the terminal object (as <span class="math-inline">\(\emptyset \in T\)</span> strictly initial, see <a href="../../entry/strictly-initial-objects/index.html">Example 2.11</a>), hence all limits.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem lemma" id="lem:Stable_Categories_Are_Loci">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/stable-categories-are-loci/index.html">Lemma 6.175.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> be an accessible category with weakly contractible colimits. If <span class="math-inline">\(C\)</span> is stable, then it is a locus.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Stable_Categories_Are_Loci-main" data-owner-entry="stable-categories-are-loci" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Let <span class="math-inline">\(C\)</span> be a stable accessible category with weakly contractible colimits. It has all finite limits, so in particular pullbacks. First, weakly contractible colimits are universal. Given a map <span class="math-inline">\(Y \to X = \colim_{i \in I} X_i\)</span>, form the pullback squares <figure class="diagram"><img src="diagrams/tikzcd-626034719987.svg" alt="Commutative diagram generated from the LaTeX source"></figure> Since pullback squares agree with pushout squares, they are closed under colimits, so the induced square <figure class="diagram"><img src="diagrams/tikzcd-1159f2103843.svg" alt="Commutative diagram generated from the LaTeX source"></figure> is still a pullback square. In particular, the top map is an isomorphism.<div class="proof-paragraph-break" aria-hidden="true"></div>It remains to verify the full van Kampen condition. Let <span class="math-inline">\(X\colon I\to C\)</span> with <span class="math-inline">\(I\)</span> weakly contractible. A cartesian transformation <span class="math-inline">\(Y\to X\)</span> determines cofiber sequences <div class="math-display">\[Y_i\longrightarrow X_i\longrightarrow K_i.\]</div> Since every naturality square is a pullback and hence also a pushout, every map <span class="math-inline">\(K_i\to K_j\)</span> is an isomorphism. Thus <span class="math-inline">\(K\colon I\to C\)</span> factors through the maximal anima of <span class="math-inline">\(C\)</span>. Since <span class="math-inline">\(\abs I\)</span> is contractible, <span class="math-inline">\(K\)</span> is uniquely equivalent to a constant diagram. Consequently, cartesian transformations <span class="math-inline">\(Y\to X\)</span> are equivalently pairs consisting of an object <span class="math-inline">\(K\in C\)</span> and a map <span class="math-inline">\(X\to\const_K\)</span>. Taking colimits identifies these with pairs <span class="math-inline">\((K,\colim_I X\to K)\)</span>, which in turn are equivalent, by taking fibers, to objects of <span class="math-inline">\(C_{/\colim_I X}\)</span>. Hence <div class="math-display">\[C_{/\colim_I X}\simeq\lim_{i\in I\catop}C_{/X_i},\]</div> so the colimit is van Kampen. Compare <span class="citation-group">[Hoyois <a class="citation" href="#bib-Hoyois_Topoi_Parametrized">2019, Example 7</a>]</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem lemma" id="lem:Infinity_Connected_Objects_Form_Locus">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/infinity-connected-objects-form-locus/index.html">Lemma 6.176.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a topos. Then <span class="math-inline">\(T^{\geq \infty}\)</span> is a locus in which every map is an effective epimorphism.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Infinity_Connected_Objects_Form_Locus-main" data-owner-entry="infinity-connected-objects-form-locus" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">The subcategory <span class="math-inline">\(T^{\geq \infty}\)</span> of <span class="math-inline">\(T\)</span> spanned by <span class="math-inline">\(\infty\)</span>-connected objects is closed under colimits and finite limits in <span class="math-inline">\(T\)</span> by <a href="../../entry/infinity-connected-factorization-system/index.html">Proposition 3.39</a>. Since weakly contractible colimits in <span class="math-inline">\(T\)</span> are van Kampen, <span class="math-inline">\(T^{\geq \infty}\)</span> inherits this condition.<div class="proof-paragraph-break" aria-hidden="true"></div>For any <span class="math-inline">\(X \in T^{\geq \infty}\)</span>, the map <span class="math-inline">\(X \to *\)</span> is <span class="math-inline">\(\infty\)</span>-connected by definition. It follows from left cancellation that any map <span class="math-inline">\(X \to Y\)</span> is <span class="math-inline">\(\infty\)</span>-connected, so in particular an effective epimorphism in <span class="math-inline">\(T\)</span>. Since <span class="math-inline">\(T^{\geq \infty}\)</span> is closed under finite limits and geometric realizations, it is then also an effective epimorphism in <span class="math-inline">\(T^{\geq \infty}\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>The following is our main theorem of this section:</p>
+<section class="theorem theorem" id="thm:Topos_Of_Parametrized_Objects">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/topos-of-parametrized-objects/index.html">Theorem 6.177.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> be a category with pullbacks and weakly contractible colimits. Then the following conditions are equivalent:</p>
+<ol><li><p>The category <span class="math-inline">\(C\)</span> is a locus;</p></li><li><p>The category <span class="math-inline">\(\int_{\An} C\)</span> is a topos;</p></li><li><p>For every topos <span class="math-inline">\(T\)</span>, the category <span class="math-inline">\(\int_T C\)</span> is a topos.</p></li></ol>
+<p>Moreover, the following conditions are equivalent to each other:</p>
+<ol><li><p>The category <span class="math-inline">\(C\)</span> is a locus in which every map is an effective epimorphism;</p></li><li><p>There exists a topos <span class="math-inline">\(T\)</span> such that <span class="math-inline">\(C = T^{\geq \infty}\)</span>.</p></li><li><p>There exists a topos <span class="math-inline">\(T\)</span> such that <span class="math-inline">\(T_{\leq \infty} = \An\)</span> and <span class="math-inline">\(T^{\geq \infty} = C\)</span>.</p></li></ol></div>
+</section>
+
+<section class="theorem remark" id="rem:Loci_As_Nilpotent_Thickenings_Of_Point">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/loci-as-nilpotent-thickenings-of-point/index.html">Remark 6.178.</a></span></p>
+  <div class="theorem-statement"><p>We may think of the categories in (4-6) as “nilpotent thickenings of the point”. They include all stable categories.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-thm:Topos_Of_Parametrized_Objects-main" data-owner-entry="topos-of-parametrized-objects" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">We momentarily assume the equivalence between (1)–(3) and deduce the equivalence between (4)–(6). It is clear that (6) implies (5), while (5) implies (4) by <a href="#lem:Infinity_Connected_Objects_Form_Locus">Lemma 6.176</a>. Assume (4), and set <span class="math-inline">\(T=\int_{\An}C\)</span>, which is a topos by (2). The terminal object of <span class="math-inline">\(T\)</span> lies over <span class="math-inline">\(*\in\An\)</span>, and therefore determines a terminal object <span class="math-inline">\(*\in C\)</span>. Since every map in <span class="math-inline">\(C\)</span> is an effective epimorphism, every truncated object of <span class="math-inline">\(C\)</span> is terminal. Indeed, for a <span class="math-inline">\(0\)</span>-truncated object the diagonal is both a monomorphism and an effective epimorphism, hence an isomorphism, and the claim follows; the general case follows inductively by applying the same argument to iterated diagonals.<div class="proof-paragraph-break" aria-hidden="true"></div>The projection <span class="math-inline">\(\pi\colon T\to\An\)</span> has a fully faithful right adjoint <span class="math-inline">\(r(A)=(A,\const_*)\)</span>. For every <span class="math-inline">\((A,X)\in T\)</span>, the map <span class="math-inline">\((A,X)\to r(A)\)</span> is <span class="math-inline">\(\infty\)</span>-connected: its iterated diagonals are computed in <span class="math-inline">\(C\)</span>, where every map is an effective epimorphism. Hence <span class="math-inline">\(r(A)\)</span> is the hypercompletion of <span class="math-inline">\((A,X)\)</span>. It follows that <span class="math-inline">\(T_{\leq\infty}\simeq\An\)</span>. Moreover, <span class="math-inline">\((A,X)\)</span> is <span class="math-inline">\(\infty\)</span>-connected precisely when <span class="math-inline">\(A\simeq *\)</span>, so the fiber <span class="math-inline">\(C\)</span> over <span class="math-inline">\(*\)</span> identifies with <span class="math-inline">\(T^{\geq\infty}\)</span>. This proves (6).<div class="proof-paragraph-break" aria-hidden="true"></div>For the equivalence of (1)–(3), first note that (2) is equivalent to (3), since <span class="math-inline">\(\int_T C = T \otimes \int_{\An} C\)</span>, where the right-hand side is the product of topoi if <span class="math-inline">\(\int_{\An}C\)</span> is a topos. For (2) <span class="math-inline">\(\implies\)</span> (1), the projection <span class="math-inline">\(\int_{\An}C\to\An\)</span> is an accessible functor between presentable categories and <span class="math-inline">\(C\)</span> is its fiber over <span class="math-inline">\(*\)</span>. Thus <a href="#cor:Fibers_Of_Loci_Are_Loci">Corollary 6.171</a> applies. It remains to show that (1) implies (2).<div class="proof-paragraph-break" aria-hidden="true"></div>Choose a regular cardinal <span class="math-inline">\(\kappa\)</span> for which <span class="math-inline">\(C\)</span> is <span class="math-inline">\(\kappa\)</span>-accessible and its weakly contractible colimit operations are accessible. The usual accessibility argument for Grothendieck constructions shows that <span class="math-inline">\(\int_{\An}C\)</span> is generated under <span class="math-inline">\(\kappa\)</span>-filtered colimits by pairs <span class="math-inline">\((A,X)\)</span> with <span class="math-inline">\(A\)</span> <span class="math-inline">\(\kappa\)</span>-compact and <span class="math-inline">\(X\)</span> taking values in a small subcategory of <span class="math-inline">\(\kappa\)</span>-compact objects of <span class="math-inline">\(C\)</span>. Hence <span class="math-inline">\(\int_{\An}C\)</span> is accessible. It has all colimits by <a href="#prop:Free_Anima_Cocompletion_Has_Colimits">Proposition 6.162</a>, so it is presentable. It remains to show that its colimits are van Kampen.<div class="proof-paragraph-break" aria-hidden="true"></div>Consider a diagram <span class="math-inline">\((X_{\bullet}, E_{\bullet}) \colon I \to \int_{\An}C\)</span>, where <span class="math-inline">\(X_i \in \An\)</span> and <span class="math-inline">\(E_i \in \Fun(X_i, C)\)</span>. We need to show that the functor <span class="math-inline">\(\colim \colon \Fun^{\cart}(I,\int_{\An}C)_{/(X_{\bullet}, E_{\bullet})} \to (\int_{\An}C)_{/(X,E)}\)</span> is an equivalence. Note that this functor fits in a commutative diagram as follows: <figure class="diagram"><img src="diagrams/tikzcd-3d653d23be67.svg" alt="Commutative diagram generated from the LaTeX source"></figure> The vertical two maps are cartesian fibrations and the bottom map is an equivalence, so it will suffice to show that the top map induces equivalences on fibers.<div class="proof-paragraph-break" aria-hidden="true"></div>Note that <span class="math-inline">\((\int_{\An}C)_{/(X,E)} \simeq \lim_{x \in X} (\int_{\An}C)_{/(*,E_x)}\)</span>, so it will suffice to prove the claim when <span class="math-inline">\(X = *\)</span>. In that case <span class="math-inline">\(\An_{/X} \simeq \An\)</span>. Given <span class="math-inline">\(Y \in \An\)</span>, the map on fibers over <span class="math-inline">\(Y\)</span> is identified with a limit over <span class="math-inline">\(y \in Y\)</span> of copies of the following map <div class="math-display">\[\lim_{i \in I\catop} \Fun(X_i, C)_{/E_i} \to C_{/E},\]</div> and it remains to show this is an equivalence. Rewriting the left-hand side as a limit over the category of elements <span class="math-inline">\(\El(X_{\bullet})\)</span>, the map becomes <div class="math-display">\[\lim_{x \in \El(X_{\bullet})\catop} C_{/E_x} \longrightarrow C_{/E}.\]</div> The realization of <span class="math-inline">\(\El(X_{\bullet})\)</span> is <span class="math-inline">\(X\simeq *\)</span>, so this indexing category is weakly contractible. The map is therefore an equivalence by the van Kampen condition in <span class="math-inline">\(C\)</span>. This proves (1)–(3); compare <span class="citation-group">[Hoyois <a class="citation" href="#bib-Hoyois_Topoi_Parametrized">2019, Corollary 5</a>]</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<h3 id="subsec:Generalized_Parametrized_Objects"><span>6.11.5.</span> Further questions on relative cocompletions</h3>
+<p>The category <span class="math-inline">\(\int_{\An}C\)</span> is a special case of a relative free-cocompletion construction <span class="math-inline">\(\Pp^{K'}_K(C)\)</span>. This viewpoint explains why anima-indexed and weakly contractible colimits occur together, and suggests a broader question about when relative cocompletions are topoi. We first record the formal statements that follow from the universal properties, then separate the cases presently known from the open ones. Some of this discussion is related to <span class="citation-group">[Rezk <a class="citation" href="#bib-Rezk_Free_Cocompletions">2025</a>]</span>.</p>
+<section class="theorem notation" id="nota:Relative_Cocompletion">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/relative-cocompletion/index.html">Notation 6.179.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(K \subseteq K'\)</span> be two classes of small categories. Given a category <span class="math-inline">\(C\)</span> with <span class="math-inline">\(K\)</span>-indexed colimits, we may form a functor</p>
+<div class="math-display">\[C \to \Pp^{K'}_K(C)\]</div>
+<p>which is universal among <span class="math-inline">\(K\)</span>-colimit preserving functors into a category with <span class="math-inline">\(K'\)</span>-indexed colimits.</p></div>
+</section>
+
+<section class="theorem remark" id="rmk:Relative_Cocompletion_As_Presheaves">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/relative-cocompletion-as-presheaves/index.html">Remark 6.180.</a></span></p>
+  <div class="theorem-statement"><p>Assume for simplicity that <span class="math-inline">\(C\)</span> is small. If <span class="math-inline">\(K'\)</span> consists of all small categories and <span class="math-inline">\(K\)</span> of none, <span class="math-inline">\(\Pp^{\all}(C) = \PSh(C)\)</span> is simply the presheaf category. For arbitrary <span class="math-inline">\(K\)</span> (but still <span class="math-inline">\(K'=\mathrm{all}\)</span>), we may identify <span class="math-inline">\(\Pp^{\all}_K(C)\)</span> with the localization of <span class="math-inline">\(\PSh(C)\)</span> at the class of maps</p>
+<div class="math-display">\[\{\alpha_X\colon \colim_{i \in I} y(X_i) \to y(\colim_{i \in I} X_i) \mid I \in K, X \colon I \to C\}:\]</div>
+<p>for every cocomplete category <span class="math-inline">\(D\)</span>, a colimit-preserving functor <span class="math-inline">\(\PSh(C)\to D\)</span> is determined by its restriction to <span class="math-inline">\(C\)</span>, and it factors through the localization if and only if it inverts each <span class="math-inline">\(\alpha_X\)</span>, which is exactly the condition that the restriction preserve <span class="math-inline">\(K\)</span>-indexed colimits.</p>
+<p>It follows from Yoneda that we may identify <span class="math-inline">\(\Pp^{\all}_{K}(C)\)</span> with the full subcategory of <span class="math-inline">\(\PSh(C)\)</span> consisting of those presheaves <span class="math-inline">\(F\colon C\catop \to \An\)</span> which send <span class="math-inline">\(K\)</span>-indexed colimits in <span class="math-inline">\(C\)</span> to limits in <span class="math-inline">\(\An\)</span>.</p></div>
+</section>
+
+<section class="theorem example" id="ex:Parametrized_Objects_As_Relative_Cocompletion">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/parametrized-objects-as-relative-cocompletion/index.html">Example 6.181.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(K'\)</span> be the class of all small categories and let <span class="math-inline">\(K\)</span> be the class of the weakly contractible categories. If <span class="math-inline">\(C\)</span> is a category with weakly contractible colimits, the category <span class="math-inline">\(\Pp^{\all}_{\mathrm{wc}}(C)\)</span> is universal among functors <span class="math-inline">\(C \to C'\)</span> into a cocomplete category <span class="math-inline">\(C'\)</span> which preserve weakly contractible colimits. Since this is also precisely the universal property of the category <span class="math-inline">\(\int_{\An} C\)</span> established in <a href="#prop:Parametrized_Objects_Universal_Property_2">Proposition 6.164</a>, we obtain an equivalence</p>
+<div class="math-display">\[\int_{\An}C \iso \Pp^{\all}_{\mathrm{wc}}(C).\]</div></div>
+</section>
+<p>Together with <a href="#prop:Free_Anima_Cocompletion">Proposition 6.161</a>, the preceding example gives</p>
+<div class="math-display">\[\Pp^{\mathrm{animae}}(C)\simeq\Pp^{\all}_{\mathrm{wc}}(C).\]</div>
+<p>Thus freely adjoining anima-indexed colimits is the same as freely adjoining all colimits while preserving the weakly contractible colimits already present in <span class="math-inline">\(C\)</span>. This motivates the following terminology.</p>
+<section class="theorem notation" id="not:Complementary_Classes_Of_Categories">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/complementary-classes-of-categories/index.html">Notation 6.182.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(K\)</span> and <span class="math-inline">\(K'\)</span> be two classes of small categories. We write <span class="math-inline">\(K \perp K'\)</span>, and say that <em><span class="math-inline">\(K\)</span> is complementary to <span class="math-inline">\(K'\)</span></em>, if for every category <span class="math-inline">\(C\)</span> with <span class="math-inline">\(K'\)</span>-indexed colimits, the categories <span class="math-inline">\(\Pp^K(C)\)</span> and <span class="math-inline">\(\Pp^{\all}_{K'}(C)\)</span> define the same full subcategory of <span class="math-inline">\(\PSh(C)\)</span> (or of the category of small presheaves, if <span class="math-inline">\(C\)</span> is large), under the identifications from <a href="#rmk:Relative_Cocompletion_As_Presheaves">Remark 6.180</a>.</p>
+<p>Equivalently, the unique <span class="math-inline">\(K\)</span>-colimit-preserving extension</p>
+<div class="math-display">\[\Pp^K(C) \to \Pp^{\all}_{K'}(C)\]</div>
+<p>of <span class="math-inline">\(C \to \Pp^{\all}_{K'}(C)\)</span> is an equivalence.</p></div>
+</section>
+
+<section class="theorem warning" id="warn:Complementarity_Not_Symmetric">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/complementarity-not-symmetric/index.html">Warning 6.183.</a></span></p>
+  <div class="theorem-statement"><p>This relation is <em>not</em> symmetric: <span class="math-inline">\(K\)</span> being complementary to <span class="math-inline">\(K'\)</span> does not imply that <span class="math-inline">\(K'\)</span> is complementary to <span class="math-inline">\(K\)</span>.</p></div>
+</section>
+
+<section class="theorem lemma" id="lem:Consequences_Of_Complementary_Classes">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/consequences-of-complementary-classes/index.html">Lemma 6.184.</a></span></p>
+  <div class="theorem-statement"><p>If <span class="math-inline">\(K \perp K'\)</span>, then the following two conditions are satisfied:</p>
+<ol><li><p>For every category <span class="math-inline">\(D\)</span>, the unique <span class="math-inline">\((K \cup K')\)</span>-colimit-preserving extension <span class="math-inline">\(\Pp^{K \cup K'}(D) \to \Pp^{\all}(D)\)</span> of <span class="math-inline">\(D \to \Pp^{\all}(D)\)</span> is an equivalence. Equivalently, <span class="math-inline">\(\PSh(D)\)</span> is generated by representables under <span class="math-inline">\(K\)</span>-colimits and <span class="math-inline">\(K'\)</span>-colimits.</p></li><li><p>In <span class="math-inline">\(\An\)</span>, <span class="math-inline">\(K\)</span>-indexed colimits commute with <span class="math-inline">\(K'\)</span>-indexed limits.</p></li></ol></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Consequences_Of_Complementary_Classes-main" data-owner-entry="consequences-of-complementary-classes" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">For (1), take <span class="math-inline">\(C=\Pp^{K'}(D)\)</span> in the definition of complementarity. The relative completion <span class="math-inline">\(\Pp^{\all}_{K'}(\Pp^{K'}(D))\)</span> is <span class="math-inline">\(\Pp^{\all}(D)\)</span> by the two universal properties. Hence every presheaf on <span class="math-inline">\(D\)</span> is obtained from representables by first forming <span class="math-inline">\(K'\)</span>-indexed colimits and then <span class="math-inline">\(K\)</span>-indexed colimits. In particular, the subcategory generated under both classes is all of <span class="math-inline">\(\PSh(D)\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>For (2), let <span class="math-inline">\(I \in K'\)</span>, <span class="math-inline">\(J \in K\)</span>, and let <span class="math-inline">\(X\colon I \times J \to \An\)</span> be a diagram. We must show that the canonical map <span class="math-inline">\(\colim_{j \in J}\lim_{i \in I} X_{i,j} \to \lim_{i \in I}\colim_{j \in J} X_{i,j}\)</span> is an isomorphism. Let <span class="math-inline">\(C := \PSh(I\catop)\)</span>, and for each <span class="math-inline">\(j \in J\)</span> let <span class="math-inline">\(d_j \in C\)</span> be the presheaf <span class="math-inline">\(i \mapsto X_{i,j}\)</span>. Also let <div class="math-display">\[u := \colim_{i \in I\catop} y(i) \qin C \qquadtext{ and } F := \colim_{j \in J} y(d_j) \qin \PSh(C).\]</div> By the large-<span class="math-inline">\(C\)</span> variant of <a href="#rmk:Relative_Cocompletion_As_Presheaves">Remark 6.180</a> (using small presheaves), <span class="math-inline">\(\Pp^{\all}_{K'}(C)\)</span> is a full subcategory of <span class="math-inline">\(\PSh(C)\)</span>. Using the assumption <span class="math-inline">\(K \perp K'\)</span>, this full subcategory agrees with <span class="math-inline">\(\Pp^K(C) \subseteq \PSh(C)\)</span>, hence is closed under <span class="math-inline">\(K\)</span>-indexed colimits. Since each <span class="math-inline">\(y(d_j)\)</span> belongs to it, it follows that <span class="math-inline">\(F \in \Pp^{\all}_{K'}(C)\)</span>, and thus <span class="math-inline">\(F\)</span> sends the <span class="math-inline">\(I\catop\)</span>-indexed colimit <span class="math-inline">\(u=\colim_{i \in I\catop} y(i)\)</span> in <span class="math-inline">\(C\)</span> to an <span class="math-inline">\(I\)</span>-indexed limit in <span class="math-inline">\(\An\)</span>: <div class="math-display">\[F(u) \simeq \lim_{i \in I} F(y(i)).\]</div> Now compute both sides using pointwise colimits and Yoneda: <div class="math-display">\[F(u)
+			\simeq
+			\colim_{j \in J}\Hom_C(u,d_j)
+			\simeq
+			\colim_{j \in J}\lim_{i \in I}\Hom_C(y(i),d_j)
+			\simeq
+			\colim_{j \in J}\lim_{i \in I} X_{i,j},\]</div> while <div class="math-display">\[\lim_{i \in I}F(y(i))
+			\simeq
+			\lim_{i \in I}\colim_{j \in J}\Hom_C(y(i),d_j)
+			\simeq
+			\lim_{i \in I}\colim_{j \in J} X_{i,j}.\]</div> This proves (2).<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem example" id="ex:Complementary_Classes_Of_Categories">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/examples-of-complementary-classes-of-categories/index.html">Example 6.185.</a></span></p>
+  <div class="theorem-statement"><p>The following are examples of complementary classes:</p>
+<ul><li><p>Filtered categories are complementary to finite categories.</p></li><li><p>Sifted categories are complementary to finite sets.</p></li><li><p>Weakly contractible categories are complementary to the empty category.</p></li><li><p>All small categories are complementary to the empty class.</p></li><li><p>Animae are complementary to weakly contractible categories, by <a href="#prop:Parametrized_Objects_Universal_Property_2">Proposition 6.164</a>.</p></li></ul></div>
+</section>
+<p>The question about <span class="math-inline">\(\int_{\An}C\)</span> being a topos now has the following natural generalization:</p>
+<section class="theorem question" id="quest:Relative_Cocompletion_Is_Topos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/relative-cocompletion-is-topos/index.html">Question 6.186.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(K \perp K'\)</span> be complementary and let <span class="math-inline">\(C\)</span> be a category which has <span class="math-inline">\(K'\)</span>-indexed colimits which are van Kampen. Is <span class="math-inline">\(\Pp^K(C) = \Pp^{\all}_{K'}(C)\)</span> necessarily a topos?</p></div>
+</section>
+<p>Marc says he doesn't know whether this is true in general. But it is true when <span class="math-inline">\(K\)</span> is one of the following classes of categories:</p>
+<ul><li><p>Weakly contractible categories. In this case, <span class="math-inline">\(\Pp^{\mathrm{w.c.}}(C)\)</span> is also known as <span class="math-inline">\(\Pp_{\emptyset}(C)\)</span>, the full subcategory of <span class="math-inline">\(\Fun(C\catop,\An)\)</span> spanned by those functors <span class="math-inline">\(F\)</span> satisfying <span class="math-inline">\(F(\emptyset) = *\)</span>. It is readily verified that both weakly contractible colimits and the initial object are van Kampen, so that <span class="math-inline">\(\Pp_{\emptyset}(C)\)</span> is a topos.</p></li><li><p>Sifted categories. In this case, <span class="math-inline">\(\Pp^{\mathrm{sifted}}(C)\)</span> is also known as <span class="math-inline">\(\Pp_{\Sigma}(C)\)</span>, the subcategory of <span class="math-inline">\(\Fun(C\catop,\An)\)</span> spanned by the finite-product-preserving functors. This is in fact a sheaf category, hence a topos; see <span class="citation-group">[Bachmann and Hoyois <a class="citation" href="#bib-BachmannHoyois2021Norms">2021, Lemma 2.4</a>]</span> for a proof.</p></li><li><p>All categories. In this case, <span class="math-inline">\(\Pp^{\all}(C)\)</span> is also known as the presheaf category <span class="math-inline">\(\PSh(C)\)</span>, which is a topos.</p></li><li><p>All animae. In this case, <span class="math-inline">\(\Pp^{\mathrm{animae}}(C) = \int_{\An}C\)</span>, so this is a topos by <a href="#thm:Topos_Of_Parametrized_Objects">Theorem 6.177</a>.</p></li></ul>
+<p>It is natural to ask whether the same conclusion holds for <span class="math-inline">\(n\)</span>-groupoids paired with weakly <span class="math-inline">\(n\)</span>-connected indexing categories. We do not record this as an established case. However, it seems to Marc that this is <em>not</em> true when <span class="math-inline">\(K= \{\text{Filtered categories}\}\)</span>. You would need to show that if <span class="math-inline">\(C\)</span> is a category with finite colimits which are van Kampen, then <span class="math-inline">\(\Ind(C)\)</span> is a topos. Although Marc does not know an explicit counterexample, he expects this to fail in general.</p><section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-Hoyois_Topoi_Parametrized">Marc Hoyois. <em>Topoi of parametrized objects</em>. Theory Appl. Categ., 34, 243–248. 2019.</li>
+<li id="bib-Rezk_Free_Cocompletions">Charles Rezk. <em>Free colimit completion in ∞-categories</em>. Homology Homotopy Appl., 27 (1), 275–292. 2025.</li>
+<li id="bib-BachmannHoyois2021Norms">Tom Bachmann, Marc Hoyois. <em>Norms in motivic homotopy theory</em>. Astérisque 425, Paris: Société Mathématique de France (SMF). 2021.</li></ol></section>
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+      <a class="context-step-control" rel="prev" href="../compactly-assembled-categories-and-exponentiability/index.html" aria-label="Previous section: Compactly assembled categories and exponentiability" title="Previous section: Compactly assembled categories and exponentiability"><span aria-hidden="true">←</span></a>
+      <a class="context-step-control" rel="next" href="../schemes/index.html" aria-label="Next section: Schemes" title="Next section: Schemes"><span aria-hidden="true">→</span></a>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../chapter/introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../../chapter/foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../../chapter/truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../../chapter/topoi-logoi/index.html">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../../chapter/modalities/index.html">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../../chapter/topics-in-topos-theory/index.html" aria-current="location">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../../chapter/geometry/index.html">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../../chapter/factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../../chapter/limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../sheaf-topoi/index.html">
+          <span class="context-entry-heading">Section 6.1</span>
+          <span class="context-entry-title">Sheaf topoi</span>
+        </a></li>
+<li><a href="../groupoid-actions-and-principal-bundles/index.html">
+          <span class="context-entry-heading">Section 6.2</span>
+          <span class="context-entry-title">Groupoid actions and principal bundles</span>
+        </a></li>
+<li><a href="../hypercovers/index.html">
+          <span class="context-entry-heading">Section 6.3</span>
+          <span class="context-entry-title">Hypercovers</span>
+        </a></li>
+<li><a href="../localic-topoi-postnikov-completeness-and-boundedness/index.html">
+          <span class="context-entry-heading">Section 6.4</span>
+          <span class="context-entry-title">Localic topoi, Postnikov-completeness, and boundedness</span>
+        </a></li>
+<li><a href="../dimension-theory/index.html">
+          <span class="context-entry-heading">Section 6.5</span>
+          <span class="context-entry-title">Dimension theory</span>
+        </a></li>
+<li><a href="../essential-morphisms-and-shape-theory/index.html">
+          <span class="context-entry-heading">Section 6.6</span>
+          <span class="context-entry-title">Essential morphisms and shape theory</span>
+        </a></li>
+<li><a href="../coherence/index.html">
+          <span class="context-entry-heading">Section 6.7</span>
+          <span class="context-entry-title">Coherence</span>
+        </a></li>
+<li><a href="../pretopoi/index.html">
+          <span class="context-entry-heading">Section 6.8</span>
+          <span class="context-entry-title">Pretopoi</span>
+        </a></li>
+<li><a href="../makkai-completeness/index.html">
+          <span class="context-entry-heading">Section 6.9</span>
+          <span class="context-entry-title">Makkai completeness</span>
+        </a></li>
+<li><a href="../compactly-assembled-categories-and-exponentiability/index.html">
+          <span class="context-entry-heading">Section 6.10</span>
+          <span class="context-entry-title">Compactly assembled categories and exponentiability</span>
+        </a></li>
+<li><a href="../topoi-of-parametrized-objects/index.html" aria-current="page">
+          <span class="context-entry-heading">Section 6.11</span>
+          <span class="context-entry-title">Topoi of parametrized objects</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <p class="context-nav-kicker">Section 6.11</p>
+      <p class="context-nav-description">Topoi of parametrized objects</p>
+      <ol class="context-entry-list">
+        <li><a href="#def:An_Parametrized_Objects" data-section-target="def:An_Parametrized_Objects">
+          <span class="context-entry-heading">Definition 6.157</span>
+          <span class="context-entry-title">Anima-parametrized objects</span>
+        </a></li>
+<li><a href="#lem:Colimits_In_Parametrized_Objects" data-section-target="lem:Colimits_In_Parametrized_Objects">
+          <span class="context-entry-heading">Lemma 6.158</span>
+          <span class="context-entry-title">Colimits in parametrized objects</span>
+        </a></li>
+<li><a href="#lem:Colimit_Left_Adjoint_To_Parametrized_Inclusion" data-section-target="lem:Colimit_Left_Adjoint_To_Parametrized_Inclusion">
+          <span class="context-entry-heading">Lemma 6.159</span>
+          <span class="context-entry-title">Colimit left adjoint to parametrized inclusion</span>
+        </a></li>
+<li><a href="#lem:Parametrized_Objects_Adjunction" data-section-target="lem:Parametrized_Objects_Adjunction">
+          <span class="context-entry-heading">Lemma 6.160</span>
+          <span class="context-entry-title">Parametrized objects adjunction</span>
+        </a></li>
+<li><a href="#prop:Free_Anima_Cocompletion" data-section-target="prop:Free_Anima_Cocompletion">
+          <span class="context-entry-heading">Proposition 6.161</span>
+          <span class="context-entry-title">Free anima cocompletion</span>
+        </a></li>
+<li><a href="#prop:Free_Anima_Cocompletion_Has_Colimits" data-section-target="prop:Free_Anima_Cocompletion_Has_Colimits">
+          <span class="context-entry-heading">Proposition 6.162</span>
+          <span class="context-entry-title">Free anima cocompletion has colimits</span>
+        </a></li>
+<li><a href="#lem:Colimit_Preserving_Iff_Anima_Colimits_And_Weakly_Contractible_Colimits" data-section-target="lem:Colimit_Preserving_Iff_Anima_Colimits_And_Weakly_Contractible_Colimits">
+          <span class="context-entry-heading">Lemma 6.163</span>
+          <span class="context-entry-title">Colimit preserving if and only if anima colimits and weakly contractible colimits</span>
+        </a></li>
+<li><a href="#prop:Parametrized_Objects_Universal_Property_2" data-section-target="prop:Parametrized_Objects_Universal_Property_2">
+          <span class="context-entry-heading">Proposition 6.164</span>
+          <span class="context-entry-title">Universal property of parametrized objects</span>
+        </a></li>
+<li><a href="#def:T_Parametrized_Objects" data-section-target="def:T_Parametrized_Objects">
+          <span class="context-entry-heading">Definition 6.165</span>
+          <span class="context-entry-title">T-parametrized objects</span>
+        </a></li>
+<li><a href="#cor:T_Parametrized_Objects_Universal_Property" data-section-target="cor:T_Parametrized_Objects_Universal_Property">
+          <span class="context-entry-heading">Corollary 6.166</span>
+          <span class="context-entry-title">T-parametrized objects universal property</span>
+        </a></li>
+<li><a href="#prop:T_Parametrized_Objects_Bicartesian_Fibration" data-section-target="prop:T_Parametrized_Objects_Bicartesian_Fibration">
+          <span class="context-entry-heading">Proposition 6.167</span>
+          <span class="context-entry-title">T-parametrized objects bicartesian fibration</span>
+        </a></li>
+<li><a href="#quest:When_Parametrized_Objects_Form_Topos" data-section-target="quest:When_Parametrized_Objects_Form_Topos">
+          <span class="context-entry-heading">Question 6.168</span>
+          <span class="context-entry-title">When parametrized objects form topos</span>
+        </a></li>
+<li><a href="#def:Locus" data-section-target="def:Locus">
+          <span class="context-entry-heading">Definition 6.169</span>
+          <span class="context-entry-title">Locus</span>
+        </a></li>
+<li><a href="#lem:Conservative_Criterion_For_Locus" data-section-target="lem:Conservative_Criterion_For_Locus">
+          <span class="context-entry-heading">Lemma 6.170</span>
+          <span class="context-entry-title">Conservative criterion for locus</span>
+        </a></li>
+<li><a href="#cor:Fibers_Of_Loci_Are_Loci" data-section-target="cor:Fibers_Of_Loci_Are_Loci">
+          <span class="context-entry-heading">Corollary 6.171</span>
+          <span class="context-entry-title">Fibers of loci are loci</span>
+        </a></li>
+<li><a href="#cor:Slices_And_Coslices_Of_Locus" data-section-target="cor:Slices_And_Coslices_Of_Locus">
+          <span class="context-entry-heading">Corollary 6.172</span>
+          <span class="context-entry-title">Slices and coslices of locus</span>
+        </a></li>
+<li><a href="#ex:Excisive_Functor_Categories_Are_Loci" data-section-target="ex:Excisive_Functor_Categories_Are_Loci">
+          <span class="context-entry-heading">Example 6.173</span>
+          <span class="context-entry-title">Excisive functor categories are loci</span>
+        </a></li>
+<li><a href="#lem:Topos_Iff_Locus_With_Strict_Initial_Object" data-section-target="lem:Topos_Iff_Locus_With_Strict_Initial_Object">
+          <span class="context-entry-heading">Lemma 6.174</span>
+          <span class="context-entry-title">Topos if and only if locus with strict initial object</span>
+        </a></li>
+<li><a href="#lem:Stable_Categories_Are_Loci" data-section-target="lem:Stable_Categories_Are_Loci">
+          <span class="context-entry-heading">Lemma 6.175</span>
+          <span class="context-entry-title">Stable categories are loci</span>
+        </a></li>
+<li><a href="#lem:Infinity_Connected_Objects_Form_Locus" data-section-target="lem:Infinity_Connected_Objects_Form_Locus">
+          <span class="context-entry-heading">Lemma 6.176</span>
+          <span class="context-entry-title">Infinity connected objects form locus</span>
+        </a></li>
+<li><a href="#thm:Topos_Of_Parametrized_Objects" data-section-target="thm:Topos_Of_Parametrized_Objects">
+          <span class="context-entry-heading">Theorem 6.177</span>
+          <span class="context-entry-title">Topos of parametrized objects</span>
+        </a></li>
+<li><a href="#rem:Loci_As_Nilpotent_Thickenings_Of_Point" data-section-target="rem:Loci_As_Nilpotent_Thickenings_Of_Point">
+          <span class="context-entry-heading">Remark 6.178</span>
+          <span class="context-entry-title">Loci as nilpotent thickenings of point</span>
+        </a></li>
+<li><a href="#nota:Relative_Cocompletion" data-section-target="nota:Relative_Cocompletion">
+          <span class="context-entry-heading">Notation 6.179</span>
+          <span class="context-entry-title">Relative cocompletion</span>
+        </a></li>
+<li><a href="#rmk:Relative_Cocompletion_As_Presheaves" data-section-target="rmk:Relative_Cocompletion_As_Presheaves">
+          <span class="context-entry-heading">Remark 6.180</span>
+          <span class="context-entry-title">Relative cocompletion as presheaves</span>
+        </a></li>
+<li><a href="#ex:Parametrized_Objects_As_Relative_Cocompletion" data-section-target="ex:Parametrized_Objects_As_Relative_Cocompletion">
+          <span class="context-entry-heading">Example 6.181</span>
+          <span class="context-entry-title">Parametrized objects as relative cocompletion</span>
+        </a></li>
+<li><a href="#not:Complementary_Classes_Of_Categories" data-section-target="not:Complementary_Classes_Of_Categories">
+          <span class="context-entry-heading">Notation 6.182</span>
+          <span class="context-entry-title">Complementary classes of categories</span>
+        </a></li>
+<li><a href="#warn:Complementarity_Not_Symmetric" data-section-target="warn:Complementarity_Not_Symmetric">
+          <span class="context-entry-heading">Warning 6.183</span>
+          <span class="context-entry-title">Complementarity not symmetric</span>
+        </a></li>
+<li><a href="#lem:Consequences_Of_Complementary_Classes" data-section-target="lem:Consequences_Of_Complementary_Classes">
+          <span class="context-entry-heading">Lemma 6.184</span>
+          <span class="context-entry-title">Consequences of complementary classes</span>
+        </a></li>
+<li><a href="#ex:Complementary_Classes_Of_Categories" data-section-target="ex:Complementary_Classes_Of_Categories">
+          <span class="context-entry-heading">Example 6.185</span>
+          <span class="context-entry-title">Examples of complementary classes of categories</span>
+        </a></li>
+<li><a href="#quest:Relative_Cocompletion_Is_Topos" data-section-target="quest:Relative_Cocompletion_Is_Topos">
+          <span class="context-entry-heading">Question 6.186</span>
+          <span class="context-entry-title">Relative cocompletion is topos</span>
+        </a></li>
+      </ol>
+    </nav>
+  </section></div>
+  </aside>
+  </main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

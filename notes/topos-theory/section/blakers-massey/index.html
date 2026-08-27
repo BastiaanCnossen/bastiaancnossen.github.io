@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Blakers–Massey theorem | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/section/blakers-massey/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+<style>
+    .publication-fragment-notice { margin: 2rem 0; padding: 1rem; border: 1px solid #b6aa91; background: #faf7ef; }
+    .publication-fragment-notice:not(:target) { display: none; }
+  </style>
+  <script>
+    (() => {
+      const targets = {"ex:Connectivity_Of_Pushout_Products":"./#lem:Connectivity_Of_Pushout_Products"};
+      const fragment = decodeURIComponent(location.hash.slice(1));
+      if (targets[fragment]) location.replace(targets[fragment]);
+    })();
+  </script>
+</head>
+<body class="section-page has-context-nav" data-record-id="blakers-massey" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">·</span> Section 5.2</p>
+      <h1>The Blakers–Massey theorem</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page">
+      
+<h2 id="sec:Blakers_Massey"><span>5.2.</span> The Blakers–Massey theorem</h2>
+<p>Recall from classical algebraic topology the important <em>Blakers–Massey theorem</em>:</p>
+<section class="theorem theorem" id="thm:Classical_Blakers_Massey">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/classical-blakers-massey/index.html">Theorem 5.14.</a></span> (Classical Blakers–Massey theorem)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(X\)</span> be a topological space and let <span class="math-inline">\(A, B \subseteq X\)</span> be two subspaces whose interiors cover <span class="math-inline">\(X\)</span>. Assume that <span class="math-inline">\(A\)</span> and <span class="math-inline">\(B\)</span> are connected and that their intersection <span class="math-inline">\(C := A \cap B\)</span> is (connected and) simply connected. If the pair <span class="math-inline">\((A,C)\)</span> is <span class="math-inline">\((m-1)\)</span>-connected and the pair <span class="math-inline">\((B,C)\)</span> is <span class="math-inline">\((n-1)\)</span>-connected, <span class="math-inline">\(m,n \geq 3\)</span>, then the triple <span class="math-inline">\((X;A,B)\)</span> is <span class="math-inline">\((m+n-2)\)</span>-connected.</p></div>
+</section>
+<p>In homotopy-theoretic language, we may think of <span class="math-inline">\(X\)</span>, <span class="math-inline">\(A\)</span>, <span class="math-inline">\(B\)</span> and <span class="math-inline">\(C\)</span> as animae, where <span class="math-inline">\(X = A \sqcup_C B\)</span> is the (homotopy) pushout of two maps <span class="math-inline">\(f\colon C \to A\)</span> and <span class="math-inline">\(g\colon C \to B\)</span>. The assumptions then require <span class="math-inline">\(f\)</span> to be <span class="math-inline">\(n\)</span>-connected and <span class="math-inline">\(g\)</span> to be <span class="math-inline">\(m\)</span>-connected (recall from <a href="../../entry/connectivity-terminology-shift/index.html">Warning 3.17</a> the shift in terminology) and the conclusion translates to the condition that the map <span class="math-inline">\(C \to A \times_X B\)</span> is <span class="math-inline">\((m+n)\)</span>-connected.</p>
+<p>It turns out that this statement holds in an arbitrary topos, and in fact admits a purely topos-theoretic proof. It will be a special case of a more general version of the Blakers–Massey theorem, due to <span class="citation-group">Anel et al. (<a class="citation" href="#bib-ABFJ2020GeneralizedBlakersMassey">2020</a>)</span>, which can be formulated for an arbitrary modality <span class="math-inline">\(L\)</span>.</p>
+<section class="theorem notation" id="nota:Pushout_Product">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/day-convolution-on-slices/index.html">Notation 5.15.</a></span> (Day convolution on slices)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\square_X\)</span> denote Day convolution in <span class="math-inline">\(\Ar(T_{/X})\)</span>, with respect to the minimum operation on <span class="math-inline">\([1]\)</span>, where <span class="math-inline">\(\Ar(T_{/X})=\Fun([1],T_{/X})\)</span>. Given maps <span class="math-inline">\(u\colon A \to B\)</span> and <span class="math-inline">\(v\colon C \to D\)</span> in <span class="math-inline">\(T_{/X}\)</span>, the map <span class="math-inline">\(u \square_X v\)</span> is the dashed arrow in the pushout square:</p>
+<figure class="diagram"><img src="diagrams/tikzcd-5f495f0ac3d2.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>This operation is also known as the <em>pushout product of <span class="math-inline">\(u\)</span> and <span class="math-inline">\(v\)</span> over <span class="math-inline">\(X\)</span></em>.</p></div>
+</section>
+
+<section class="theorem theorem" id="thm:Generalized_Blakers_Massey">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/generalized-blakers-massey/index.html">Theorem 5.16.</a></span> (Generalized Blakers–Massey, <span class="citation-group">Anel et al. (<a class="citation" href="#bib-ABFJ2020GeneralizedBlakersMassey">2020</a>)</span>)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\((L,R)\)</span> be a modality in <span class="math-inline">\(T\)</span>, and consider a pushout square</p>
+<figure class="diagram"><img src="diagrams/tikzcd-35cf673ca69c.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>If <span class="math-inline">\(\Delta_f \square_Z \Delta_g\)</span> lies in <span class="math-inline">\(L\)</span>, then also the gap map <span class="math-inline">\(Z \to X \times_W Y\)</span> lies in <span class="math-inline">\(L\)</span>.</p></div>
+</section>
+<p>In the statement we regard <span class="math-inline">\(\Delta_f\)</span> and <span class="math-inline">\(\Delta_g\)</span> as maps in <span class="math-inline">\(T_{/Z}\)</span> via the projections <span class="math-inline">\(p_1\colon Z \times_X Z \to Z\)</span> and <span class="math-inline">\(p_1\colon Z \times_Y Z \to Z\)</span>.</p>
+<p>We prove this theorem below. We first deduce the ordinary Blakers–Massey theorem.</p>
+<section class="theorem lemma" id="lem:Connectivity_Of_Pushout_Products">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/connectivity-of-pushout-products/index.html">Lemma 5.17.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(u\)</span> and <span class="math-inline">\(v\)</span> be maps in <span class="math-inline">\(T_{/Z}\)</span>. If <span class="math-inline">\(u\)</span> is <span class="math-inline">\(m\)</span>-connected and <span class="math-inline">\(v\)</span> is <span class="math-inline">\(n\)</span>-connected, then <span class="math-inline">\(u \square_Z v\)</span> is <span class="math-inline">\((m+n+2)\)</span>-connected.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Connectivity_Of_Pushout_Products-main" data-owner-entry="connectivity-of-pushout-products" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">We work in the topos <span class="math-inline">\(T_{/Z}\)</span>. Choose a small collection <span class="math-inline">\(\Gg\)</span> of generators. The class of <span class="math-inline">\(m\)</span>-connected maps is the saturation of the maps <div class="math-display">\[S^{m+1}\otimes U\longrightarrow U,
+			\qquad U\in\Gg.\]</div> Indeed, a map is right orthogonal to these generators precisely when its fibers are <span class="math-inline">\(m\)</span>-truncated, by the characterization of truncated objects in <span class="cross-reference-unlinked">Section 3.1</span>. The same description holds for the <span class="math-inline">\(n\)</span>-connected maps.<div class="proof-paragraph-break" aria-hidden="true"></div>The pushout product preserves colimits separately in both variables. It therefore suffices to take <span class="math-inline">\(u\)</span> and <span class="math-inline">\(v\)</span> of the displayed form, allowing arbitrary objects <span class="math-inline">\(U\)</span> and <span class="math-inline">\(V\)</span>. Their pushout product is <div class="math-display">\[(S^{m+1}*S^{n+1})\otimes(U\times_ZV)
+			\longrightarrow U\times_ZV,\]</div> where <span class="math-inline">\(*\)</span> denotes the join of animae. Since <span class="math-inline">\(S^{m+1}*S^{n+1}\iso S^{m+n+3}\)</span>, this map is <span class="math-inline">\((m+n+2)\)</span>-connected. The <span class="math-inline">\((m+n+2)\)</span>-connected maps form a saturated class, so the same follows for arbitrary <span class="math-inline">\(u\)</span> and <span class="math-inline">\(v\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem corollary" id="cor:Blakers_Massey">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/blakers-massey-connectivity-theorem/index.html">Corollary 5.18.</a></span> (Blakers–Massey)</p>
+  <div class="theorem-statement"><p>Assume <span class="math-inline">\(f\)</span> is <span class="math-inline">\(m\)</span>-connected and <span class="math-inline">\(g\)</span> is <span class="math-inline">\(n\)</span>-connected. Then the map <span class="math-inline">\(Z \to X \times_W Y\)</span> is <span class="math-inline">\((m+n)\)</span>-connected.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-cor:Blakers_Massey-main" data-owner-entry="blakers-massey-connectivity-theorem" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">The map <span class="math-inline">\(\Delta_f\)</span> is <span class="math-inline">\((m-1)\)</span>-connected while <span class="math-inline">\(\Delta_g\)</span> is <span class="math-inline">\((n-1)\)</span>-connected. By <a href="#lem:Connectivity_Of_Pushout_Products">Lemma 5.17</a>, this means that <span class="math-inline">\(\Delta_f \square_Z \Delta_g\)</span> is <span class="math-inline">\((m-1 + (n-1) + 2)\)</span>-connected, and thus the theorem applies.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem remark" id="rem:Dual_Blakers_Massey">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/dual-blakers-massey/index.html">Remark 5.19.</a></span></p>
+  <div class="theorem-statement"><p>While the proof of the Blakers–Massey theorem is quite involved, the <em>dual Blakers–Massey theorem</em> is easy to prove. It states that for a pullback square</p>
+<figure class="diagram"><img src="diagrams/tikzcd-fd8288f100d2.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>if the absolute pushout product <span class="math-inline">\(f \square g\)</span> lies in <span class="math-inline">\(L\)</span>, then the cogap map <span class="math-inline">\(X \sqcup_W Y \to Z\)</span> lies in <span class="math-inline">\(L\)</span>. Indeed, the cogap map is the base change of</p>
+<div class="math-display">\[f\square g\colon (X\times Z)\sqcup_{X\times Y}(Z\times Y)\longrightarrow Z\times Z\]</div>
+<p>along the diagonal <span class="math-inline">\(\Delta_Z\colon Z\to Z\times Z\)</span>. The claim therefore follows from stability of <span class="math-inline">\(L\)</span> under base change.</p></div>
+</section>
+
+<h3 id="subsec:Modal_Descent"><span>5.2.1.</span> Modal descent</h3>
+<p>We first give a proof of <a href="#thm:Generalized_Blakers_Massey">Theorem 5.16</a> using modal descent, which is the proof given by <span class="citation-group">Anel et al. (<a class="citation" href="#bib-ABFJ2020GeneralizedBlakersMassey">2020</a>)</span>. We start by introducing some terminology.</p>
+<section class="theorem definition" id="def:L_Cartesian_Square">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/l-cartesian-squares/index.html">Definition 5.20.</a></span></p>
+  <div class="theorem-statement"><p>A commutative square in <span class="math-inline">\(T\)</span> is called <em><span class="math-inline">\(L\)</span>-cartesian</em> if its gap map lies in <span class="math-inline">\(L\)</span>.</p></div>
+</section>
+
+<section class="theorem proposition" id="prop:Properties_L_Cartesian_Squares">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/properties-of-l-cartesian-squares/index.html">Proposition 5.21.</a></span> (Properties of <span class="math-inline">\(L\)</span>-cartesian squares)</p>
+  <div class="theorem-statement"><p>Consider two composable squares</p>
+<figure class="diagram"><img src="diagrams/tikzcd-b2dbf72ac75d.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p></p>
+<ol><li><p>If <span class="math-inline">\(A\)</span> and <span class="math-inline">\(B\)</span> are <span class="math-inline">\(L\)</span>-cartesian, then their composite <span class="math-inline">\(A+B\)</span> is <span class="math-inline">\(L\)</span>-cartesian.</p></li><li><p>If <span class="math-inline">\(A\)</span> and <span class="math-inline">\(A+B\)</span> are <span class="math-inline">\(L\)</span>-cartesian and <span class="math-inline">\(f\)</span> is an effective epimorphism, then <span class="math-inline">\(B\)</span> is <span class="math-inline">\(L\)</span>-cartesian.</p></li><li><p>If <span class="math-inline">\(B\)</span> is cartesian and <span class="math-inline">\(A+B\)</span> is <span class="math-inline">\(L\)</span>-cartesian, then <span class="math-inline">\(A\)</span> is <span class="math-inline">\(L\)</span>-cartesian.</p></li></ol></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Properties_L_Cartesian_Squares-main" data-owner-entry="properties-of-l-cartesian-squares" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">The gap map <span class="math-inline">\(X \to Y \times_{Y''} X''\)</span> of <span class="math-inline">\(A+B\)</span> may be factored as <div class="math-display">\[X \to Y \times_{Y'} X' \to Y \times_{Y''} X'',\]</div> where the first map is the gap map of <span class="math-inline">\(A\)</span> and the second map is the base change along <span class="math-inline">\(Y \to Y'\)</span> of the gap map of <span class="math-inline">\(B\)</span>. This immediately implies (1). For (2), it follows from right cancellation that the base change along <span class="math-inline">\(Y \to Y'\)</span> of the gap map of <span class="math-inline">\(B\)</span> lies in <span class="math-inline">\(L\)</span>, hence so does the gap map itself by <a href="../../entry/classes-in-a-modality-are-local/index.html">Lemma 5.4</a>.<div class="proof-paragraph-break" aria-hidden="true"></div>Part (3) is clear: if <span class="math-inline">\(B\)</span> is cartesian, then the gap map of <span class="math-inline">\(A\)</span> agrees with that of <span class="math-inline">\(A+B\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem lemma" id="lem:L_Cartesian_Gives_Pullback_Square">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/factorization-criterion-for-l-cartesian-squares/index.html">Lemma 5.22.</a></span></p>
+  <div class="theorem-statement"><p>Consider a commutative diagram of the form</p>
+<figure class="diagram"><img src="diagrams/tikzcd-618e31b98e78.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>where the four maps lie in <span class="math-inline">\(L\)</span> and <span class="math-inline">\(R\)</span> as indicated. If the outer square is <span class="math-inline">\(L\)</span>-cartesian, then the bottom square is cartesian.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:L_Cartesian_Gives_Pullback_Square-main" data-owner-entry="factorization-criterion-for-l-cartesian-squares" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">By left cancellation, the gap map <span class="math-inline">\(Z \to Y \times_{Y'} Z'\)</span> of the bottom square lies in <span class="math-inline">\(R\)</span>. Consider the commutative diagram <figure class="diagram"><img src="diagrams/tikzcd-dc9d23b34512.svg" alt="Commutative diagram generated from the LaTeX source"></figure> Then the three maps lie in <span class="math-inline">\(L\)</span> as indicated, hence by right cancellation so does the map <span class="math-inline">\(Z \to Y \times_{Y'} Z'\)</span>. Since <span class="math-inline">\((L,R)\)</span> is a factorization system, it follows that this map is an isomorphism, as desired.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem proposition" id="prop:Modal_Descent">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/modal-descent/index.html">Proposition 5.23.</a></span> (Modal descent)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(X_{\bullet},Y_{\bullet} \in \Fun(I,T)\)</span> be two diagrams with colimits <span class="math-inline">\(X\)</span> and <span class="math-inline">\(Y\)</span>. If we are given an <span class="math-inline">\(L\)</span>-cartesian transformation <span class="math-inline">\(X_{\bullet} \to Y_{\bullet}\)</span>, then the square</p>
+<figure class="diagram"><img src="diagrams/tikzcd-7966be0fbc54.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>is <span class="math-inline">\(L\)</span>-cartesian. Equivalently: the subcategory <span class="math-inline">\(\Ar^{L\text{-}\cart}(T) \subseteq \Ar(T)\)</span> is closed under colimits.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Modal_Descent-main" data-owner-entry="modal-descent" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Let <span class="math-inline">\(P_{\bullet}:=Y_{\bullet}\times_YX\)</span>. The transformation <span class="math-inline">\(X_{\bullet}\to P_{\bullet}\)</span> has the same gap maps as <span class="math-inline">\(X_{\bullet}\to Y_{\bullet}\)</span> and is therefore <span class="math-inline">\(L\)</span>-cartesian, while <span class="math-inline">\(P_{\bullet}\to Y_{\bullet}\)</span> is cartesian. Since colimits in a topos are universal, <span class="math-inline">\(\colim P_{\bullet}\iso X\)</span>. By <a href="#prop:Properties_L_Cartesian_Squares">Proposition 5.21</a>, it is therefore enough to treat the transformation <span class="math-inline">\(X_{\bullet}\to P_{\bullet}\)</span>. Replacing <span class="math-inline">\(Y_{\bullet}\)</span> by <span class="math-inline">\(P_{\bullet}\)</span>, we may assume that the induced map <span class="math-inline">\(X\to Y\)</span> on colimits is an isomorphism.<div class="proof-paragraph-break" aria-hidden="true"></div>Factor the transformation pointwise as <div class="math-display">\[X_{\bullet}\xrightarrow{\in L}Z_{\bullet}\xrightarrow{\in R}Y_{\bullet},\]</div> and consider the resulting commutative diagram: <figure class="diagram"><img src="diagrams/tikzcd-60e2973a2c2a.svg" alt="Commutative diagram generated from the LaTeX source"></figure> By <a href="#lem:L_Cartesian_Gives_Pullback_Square">Lemma 5.22</a>, the transformation <span class="math-inline">\(Z_{\bullet} \to Y_{\bullet}\)</span> is cartesian. Descent then implies that the bottom square is a pullback. Since <span class="math-inline">\(L\)</span> is closed under colimits in <span class="math-inline">\(\Ar(T)\)</span>, the map <span class="math-inline">\(X \to Z\)</span> lies in <span class="math-inline">\(L\)</span>. Its composite <span class="math-inline">\(X\to Z\to Y\)</span> is an isomorphism and hence lies in <span class="math-inline">\(L\)</span>, so right cancellation gives <span class="math-inline">\(Z\to Y\in L\)</span>. Each map <span class="math-inline">\(Z_i\to Y_i\)</span> is a base change of <span class="math-inline">\(Z\to Y\)</span>, because the bottom square is cartesian, and hence also belongs to <span class="math-inline">\(L\)</span>. But it belongs to <span class="math-inline">\(R\)</span> by construction, so it is an isomorphism. Thus <span class="math-inline">\(Z_{\bullet}\to Y_{\bullet}\)</span> and <span class="math-inline">\(Z\to Y\)</span> are isomorphisms. Under these identifications, the gap maps <span class="math-inline">\(X_i\to Y_i\times_YX\)</span> are precisely the maps <span class="math-inline">\(X_i\to Z_i\)</span>, which lie in <span class="math-inline">\(L\)</span> by construction.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<details class="proof-shell" id="proof-thm:Generalized_Blakers_Massey-modal-descent" data-owner-entry="generalized-blakers-massey" data-proof-id="modal-descent">
+  <summary>Proof</summary>
+  <div class="proof-body">The proof has three steps. We first replace one leg by its effective-epimorphism part. We then encode the assumed pushout product as the gap map of one face of a cube. Modal descent propagates this information across the cube, after which cancellation identifies the original square as <span class="math-inline">\(L\)</span>-cartesian.<div class="proof-paragraph-break" aria-hidden="true"></div>Consider a pushout square <figure class="diagram"><img src="diagrams/tikzcd-587412dc38f6.svg" alt="Commutative diagram generated from the LaTeX source"></figure> where <span class="math-inline">\(\Delta_f \square_Z \Delta_g \in L\)</span>. We must show that also <span class="math-inline">\(Z \to X \times_W Y \in L\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>We first reduce to the case where <span class="math-inline">\(f\)</span> is an effective epimorphism. Indeed, letting <span class="math-inline">\(X'\)</span> be the image of <span class="math-inline">\(f\)</span>, we get a commutative diagram <figure class="diagram"><img src="diagrams/tikzcd-a28a6eadcd65.svg" alt="Commutative diagram generated from the LaTeX source"></figure> where the two displayed squares are still pushouts. By <a href="../../entry/pushouts-along-monomorphisms/index.html">Proposition 3.11</a>, the lower square is a pullback square. We then observe that the diagonal <span class="math-inline">\(\Delta_f\)</span> is isomorphic to the diagonal <span class="math-inline">\(\Delta_{f'}\)</span>, and that the gap map <span class="math-inline">\(Z \to X \times_W Y\)</span> agrees with the gap map <span class="math-inline">\(Z \to X' \times_{W'} Y\)</span> of the top square. <button type="button" class="detail-toggle" id="detail-generalized-blakers-massey--why-passage-to-the-image-preserves-the-relevant-maps" data-detail-toggle="detail-generalized-blakers-massey--why-passage-to-the-image-preserves-the-relevant-maps" data-depth="1" aria-expanded="false" aria-controls="detail-generalized-blakers-massey--why-passage-to-the-image-preserves-the-relevant-maps-content" aria-label="Expand: Why passage to the image preserves the relevant maps" title="Why passage to the image preserves the relevant maps">
+  <span class="detail-toggle-symbol" aria-hidden="true">+</span><span class="detail-toggle-title">Why passage to the image preserves the relevant maps</span>
+</button><div class="proof-detail depth-1" id="detail-generalized-blakers-massey--why-passage-to-the-image-preserves-the-relevant-maps-content" data-detail-id="detail-generalized-blakers-massey--why-passage-to-the-image-preserves-the-relevant-maps" data-depth="1" hidden>Since <span class="math-inline">\(X' \to X\)</span> is a monomorphism and <span class="math-inline">\(f\)</span> factors through <span class="math-inline">\(X'\)</span>, the canonical map <span class="math-inline">\(Z \times_{X'} Z \to Z \times_X Z\)</span> is an isomorphism. Under this isomorphism the two diagonal maps from <span class="math-inline">\(Z\)</span> agree. Moreover, the lower pullback square identifies <span class="math-inline">\(X'\)</span> with <span class="math-inline">\(X \times_W W'\)</span>. Since <span class="math-inline">\(Y \to W\)</span> factors through <span class="math-inline">\(W'\)</span>, we obtain <div class="math-display">\[X \times_W Y \iso (X \times_W W') \times_{W'} Y \iso X' \times_{W'} Y.\]</div> These identifications commute with the maps from <span class="math-inline">\(Z\)</span>. <button type="button" class="detail-toggle" id="detail-generalized-blakers-massey--universal-property-check-for-the-two-pullbacks" data-detail-toggle="detail-generalized-blakers-massey--universal-property-check-for-the-two-pullbacks" data-depth="2" aria-expanded="false" aria-controls="detail-generalized-blakers-massey--universal-property-check-for-the-two-pullbacks-content" aria-label="Expand: Universal-property check for the two pullbacks" title="Universal-property check for the two pullbacks">
+  <span class="detail-toggle-symbol" aria-hidden="true">+</span><span class="detail-toggle-title">Universal-property check for the two pullbacks</span>
+</button><div class="proof-detail depth-2" id="detail-generalized-blakers-massey--universal-property-check-for-the-two-pullbacks-content" data-detail-id="detail-generalized-blakers-massey--universal-property-check-for-the-two-pullbacks" data-depth="2" hidden>Mapping an arbitrary object <span class="math-inline">\(K\)</span> into <span class="math-inline">\(Z \times_X Z\)</span> amounts to giving two maps <span class="math-inline">\(K \rightrightarrows Z\)</span> whose composites to <span class="math-inline">\(X\)</span> agree. Because <span class="math-inline">\(X' \to X\)</span> is a monomorphism, this agreement is equivalent to agreement after mapping to <span class="math-inline">\(X'\)</span>, which gives the first isomorphism. Similarly, a map <span class="math-inline">\(K \to X \times_W Y\)</span> is a pair of maps to <span class="math-inline">\(X\)</span> and <span class="math-inline">\(Y\)</span> agreeing over <span class="math-inline">\(W\)</span>. The map to <span class="math-inline">\(Y\)</span> already determines a map to <span class="math-inline">\(W'\)</span>, and the pullback square forces the map to <span class="math-inline">\(X\)</span> to factor uniquely through <span class="math-inline">\(X'\)</span>, giving the second isomorphism.</div></div> It thus suffices to prove the statement for the top square, or equivalently in the case where <span class="math-inline">\(f\)</span> is an effective epimorphism.<div class="proof-paragraph-break" aria-hidden="true"></div>Unwinding definitions, we see that the map <div class="math-display">\[\Delta_f \square_Z \Delta_g\colon
+		\bigl(Z \times_X Z\bigr) \sqcup_Z \bigl(Z \times_Y Z\bigr)
+		\longrightarrow
+		\bigl(Z \times_X Z\bigr) \times_Z \bigl(Z \times_Y Z\bigr)\]</div> is given on the first component by <span class="math-inline">\((p_1,p_2,p_1,p_1)\)</span> and on the second by <span class="math-inline">\((p_1,p_1,p_1,p_2)\)</span>. <button type="button" class="detail-toggle" id="detail-generalized-blakers-massey--unwinding-the-relative-pushout-product" data-detail-toggle="detail-generalized-blakers-massey--unwinding-the-relative-pushout-product" data-depth="1" aria-expanded="false" aria-controls="detail-generalized-blakers-massey--unwinding-the-relative-pushout-product-content" aria-label="Expand: Unwinding the relative pushout product" title="Unwinding the relative pushout product">
+  <span class="detail-toggle-symbol" aria-hidden="true">+</span><span class="detail-toggle-title">Unwinding the relative pushout product</span>
+</button><div class="proof-detail depth-1" id="detail-generalized-blakers-massey--unwinding-the-relative-pushout-product-content" data-detail-id="detail-generalized-blakers-massey--unwinding-the-relative-pushout-product" data-depth="1" hidden>Regard <span class="math-inline">\(Z \times_X Z\)</span> and <span class="math-inline">\(Z \times_Y Z\)</span> as pointed objects of <span class="math-inline">\(T_{/Z}\)</span>, with structure map <span class="math-inline">\(p_1\)</span> and basepoint given by the corresponding diagonal. The pushout product of the two basepoints is the canonical map from their wedge to their product. Its source is therefore <span class="math-inline">\((Z \times_X Z) \sqcup_Z (Z \times_Y Z)\)</span>, while its target is their fiber product over <span class="math-inline">\(Z\)</span>. <button type="button" class="detail-toggle" id="detail-generalized-blakers-massey--projection-bookkeeping" data-detail-toggle="detail-generalized-blakers-massey--projection-bookkeeping" data-depth="2" aria-expanded="false" aria-controls="detail-generalized-blakers-massey--projection-bookkeeping-content" aria-label="Expand: Projection bookkeeping" title="Projection bookkeeping">
+  <span class="detail-toggle-symbol" aria-hidden="true">+</span><span class="detail-toggle-title">Projection bookkeeping</span>
+</button><div class="proof-detail depth-2" id="detail-generalized-blakers-massey--projection-bookkeeping-content" data-detail-id="detail-generalized-blakers-massey--projection-bookkeeping" data-depth="2" hidden>On the summand <span class="math-inline">\(Z \times_X Z\)</span>, the map to the first factor of the product is the identity <span class="math-inline">\((p_1,p_2)\)</span>, while the map to <span class="math-inline">\(Z \times_Y Z\)</span> is the diagonal applied to <span class="math-inline">\(p_1\)</span>, namely <span class="math-inline">\((p_1,p_1)\)</span>. This gives <span class="math-inline">\((p_1,p_2,p_1,p_1)\)</span>. The calculation on the other summand is symmetric and gives <span class="math-inline">\((p_1,p_1,p_1,p_2)\)</span>. The fiber product is taken using the first projections, which is why the repeated coordinate is <span class="math-inline">\(p_1\)</span>.</div></div> In particular, this map is the gap map of the top face of the following commutative cube: <figure class="diagram"><img src="diagrams/tikzcd-2a9ee0e87df3.svg" alt="Commutative diagram generated from the LaTeX source"></figure> We now make the following series of claims: <ul class="proof-list"><li>The top face is a pushout. More generally, for objects <span class="math-inline">\(A,B\)</span> in some pointed category <span class="math-inline">\(C\)</span> (here <span class="math-inline">\(C = T_{Z//Z}\)</span>) the lower-right corner of <figure class="diagram"><img src="diagrams/tikzcd-434031030805.svg" alt="Commutative diagram generated from the LaTeX source"></figure> is a pushout, by the pasting property of pushout squares. <button type="button" class="detail-toggle" id="detail-generalized-blakers-massey--how-the-pointed-pushout-identifies-the-top-face" data-detail-toggle="detail-generalized-blakers-massey--how-the-pointed-pushout-identifies-the-top-face" data-depth="1" aria-expanded="false" aria-controls="detail-generalized-blakers-massey--how-the-pointed-pushout-identifies-the-top-face-content" aria-label="Expand: How the pointed pushout identifies the top face" title="How the pointed pushout identifies the top face">
+  <span class="detail-toggle-symbol" aria-hidden="true">+</span><span class="detail-toggle-title">How the pointed pushout identifies the top face</span>
+</button><div class="proof-detail depth-1" id="detail-generalized-blakers-massey--how-the-pointed-pushout-identifies-the-top-face-content" data-detail-id="detail-generalized-blakers-massey--how-the-pointed-pushout-identifies-the-top-face" data-depth="1" hidden>In <span class="math-inline">\(C=T_{Z//Z}\)</span> the zero object is the identity of <span class="math-inline">\(Z\)</span>. Take <span class="math-inline">\(A=Z \times_X Z\)</span> and <span class="math-inline">\(B=Z \times_Y Z\)</span>, with their diagonal basepoints and first projections as structure maps. Then <span class="math-inline">\(A \vee B\)</span> is exactly <span class="math-inline">\((Z \times_X Z) \sqcup_Z (Z \times_Y Z)\)</span>, and the lower-right square in the displayed <span class="math-inline">\(3\)</span>-by-<span class="math-inline">\(3\)</span> diagram is the top face of the cube. <button type="button" class="detail-toggle" id="detail-generalized-blakers-massey--the-pasting-check" data-detail-toggle="detail-generalized-blakers-massey--the-pasting-check" data-depth="2" aria-expanded="false" aria-controls="detail-generalized-blakers-massey--the-pasting-check-content" aria-label="Expand: The pasting check" title="The pasting check">
+  <span class="detail-toggle-symbol" aria-hidden="true">+</span><span class="detail-toggle-title">The pasting check</span>
+</button><div class="proof-detail depth-2" id="detail-generalized-blakers-massey--the-pasting-check-content" data-detail-id="detail-generalized-blakers-massey--the-pasting-check" data-depth="2" hidden>Call the upper-left, upper-right, and lower-right squares <span class="math-inline">\((a)\)</span>, <span class="math-inline">\((b)\)</span>, and <span class="math-inline">\((c)\)</span>. The square <span class="math-inline">\((a)\)</span> is the pushout square defining <span class="math-inline">\(A \vee B\)</span>. The composite rectangles <span class="math-inline">\((a)+(b)\)</span> and <span class="math-inline">\((b)+(c)\)</span> are trivial pushout squares. Since <span class="math-inline">\((a)\)</span> and <span class="math-inline">\((a)+(b)\)</span> are pushouts, the pushout pasting law first shows that <span class="math-inline">\((b)\)</span> is a pushout. Since <span class="math-inline">\((b)\)</span> and <span class="math-inline">\((b)+(c)\)</span> are pushouts, it then shows that <span class="math-inline">\((c)\)</span> is a pushout. This is the required lower-right square.</div></div></li><li>The left and back faces are <span class="math-inline">\(L\)</span>-cartesian. By symmetry it suffices to do this for the left face. Writing <span class="math-inline">\(\sigma\colon Z \times_Y Z \xrightarrow{\cong} Z \times_Y Z\)</span> for the swap map, this face decomposes as <figure class="diagram"><img src="diagrams/tikzcd-a2920126ae8b.svg" alt="Commutative diagram generated from the LaTeX source"></figure> The left square is <span class="math-inline">\(L\)</span>-cartesian by hypothesis. The right square is a pullback square. It follows that the outer rectangle is <span class="math-inline">\(L\)</span>-cartesian. <button type="button" class="detail-toggle" id="detail-generalized-blakers-massey--matching-the-factorization-with-the-hypothesis" data-detail-toggle="detail-generalized-blakers-massey--matching-the-factorization-with-the-hypothesis" data-depth="1" aria-expanded="false" aria-controls="detail-generalized-blakers-massey--matching-the-factorization-with-the-hypothesis-content" aria-label="Expand: Matching the factorization with the hypothesis" title="Matching the factorization with the hypothesis">
+  <span class="detail-toggle-symbol" aria-hidden="true">+</span><span class="detail-toggle-title">Matching the factorization with the hypothesis</span>
+</button><div class="proof-detail depth-1" id="detail-generalized-blakers-massey--matching-the-factorization-with-the-hypothesis-content" data-detail-id="detail-generalized-blakers-massey--matching-the-factorization-with-the-hypothesis" data-depth="1" hidden>The gap map of the left square is the assumed map <span class="math-inline">\(\Delta_f \square_Z \Delta_g\)</span>, precomposed with the isomorphism <span class="math-inline">\(\id \sqcup \sigma\)</span>. Hence it lies in <span class="math-inline">\(L\)</span>. The gap map of the right square is an isomorphism because that square is cartesian, so it also lies in <span class="math-inline">\(L\)</span>. Part (1) of <a href="#prop:Properties_L_Cartesian_Squares">Proposition 5.21</a> then shows that their composite, which is the left face of the cube, is <span class="math-inline">\(L\)</span>-cartesian. <button type="button" class="detail-toggle" id="detail-generalized-blakers-massey--why-the-swap-causes-no-change" data-detail-toggle="detail-generalized-blakers-massey--why-the-swap-causes-no-change" data-depth="2" aria-expanded="false" aria-controls="detail-generalized-blakers-massey--why-the-swap-causes-no-change-content" aria-label="Expand: Why the swap causes no change" title="Why the swap causes no change">
+  <span class="detail-toggle-symbol" aria-hidden="true">+</span><span class="detail-toggle-title">Why the swap causes no change</span>
+</button><div class="proof-detail depth-2" id="detail-generalized-blakers-massey--why-the-swap-causes-no-change-content" data-detail-id="detail-generalized-blakers-massey--why-the-swap-causes-no-change" data-depth="2" hidden>The automorphism <span class="math-inline">\(\id \sqcup \sigma\)</span> changes only the ordering of the two coordinates coming from <span class="math-inline">\(Z \times_Y Z\)</span>. Precomposition by an isomorphism produces an isomorphic arrow. Since every isomorphism lies in <span class="math-inline">\(L\)</span> and <span class="math-inline">\(L\)</span> is closed under composition, membership in <span class="math-inline">\(L\)</span> is unchanged.</div></div></li><li>By modal descent applied when <span class="math-inline">\(I\)</span> is the span diagram <span class="math-inline">\(\pushout\)</span>, the front and right faces are <span class="math-inline">\(L\)</span>-cartesian. <button type="button" class="detail-toggle" id="detail-generalized-blakers-massey--modal-descent-as-an-l-cartesian-cube-lemma" data-detail-toggle="detail-generalized-blakers-massey--modal-descent-as-an-l-cartesian-cube-lemma" data-depth="1" aria-expanded="false" aria-controls="detail-generalized-blakers-massey--modal-descent-as-an-l-cartesian-cube-lemma-content" aria-label="Expand: Modal descent as an $L$-cartesian cube lemma" title="Modal descent as an $L$-cartesian cube lemma">
+  <span class="detail-toggle-symbol" aria-hidden="true">+</span><span class="detail-toggle-title">Modal descent as an $L$-cartesian cube lemma</span>
+</button><div class="proof-detail depth-1" id="detail-generalized-blakers-massey--modal-descent-as-an-l-cartesian-cube-lemma-content" data-detail-id="detail-generalized-blakers-massey--modal-descent-as-an-l-cartesian-cube-lemma" data-depth="1" hidden>The cube is a pushout square in the arrow category: its top and bottom faces are pushouts, while its left and back faces are the two input morphisms. Those input faces are <span class="math-inline">\(L\)</span>-cartesian by the preceding claims. Since <a href="#prop:Modal_Descent">Proposition 5.23</a> says that <span class="math-inline">\(L\)</span>-cartesian arrows are closed under colimits, the remaining two structure maps in this pushout square, namely the front and right faces, are also <span class="math-inline">\(L\)</span>-cartesian. <button type="button" class="detail-toggle" id="detail-generalized-blakers-massey--the-span-indexed-formulation" data-detail-toggle="detail-generalized-blakers-massey--the-span-indexed-formulation" data-depth="2" aria-expanded="false" aria-controls="detail-generalized-blakers-massey--the-span-indexed-formulation-content" aria-label="Expand: The span-indexed formulation" title="The span-indexed formulation">
+  <span class="detail-toggle-symbol" aria-hidden="true">+</span><span class="detail-toggle-title">The span-indexed formulation</span>
+</button><div class="proof-detail depth-2" id="detail-generalized-blakers-massey--the-span-indexed-formulation-content" data-detail-id="detail-generalized-blakers-massey--the-span-indexed-formulation" data-depth="2" hidden>Let <span class="math-inline">\(I\)</span> be the category indexing a span. The top and bottom faces are obtained by taking the colimits of the corresponding spans in the upper and lower levels of the cube. The left and back faces give the naturality squares of an <span class="math-inline">\(L\)</span>-cartesian transformation between these spans. Applying modal descent to the two endpoint inclusions into the colimit gives precisely the front and right faces. <button type="button" class="detail-toggle" id="detail-generalized-blakers-massey--exact-input-used-here" data-detail-toggle="detail-generalized-blakers-massey--exact-input-used-here" data-depth="3" aria-expanded="false" aria-controls="detail-generalized-blakers-massey--exact-input-used-here-content" aria-label="Expand: Exact input used here" title="Exact input used here">
+  <span class="detail-toggle-symbol" aria-hidden="true">+</span><span class="detail-toggle-title">Exact input used here</span>
+</button><div class="proof-detail depth-3" id="detail-generalized-blakers-massey--exact-input-used-here-content" data-detail-id="detail-generalized-blakers-massey--exact-input-used-here" data-depth="3" hidden>No separate stability theorem for cubical diagrams is being invoked. The only inputs are that the two horizontal faces are pushouts, that the two adjacent faces are <span class="math-inline">\(L\)</span>-cartesian, and that the subcategory of <span class="math-inline">\(L\)</span>-cartesian arrows is closed under the span-shaped colimit, exactly as asserted by <a href="#prop:Modal_Descent">Proposition 5.23</a>.</div></div></div></li><li>Finally, we may decompose the right face of the diagram as the composite of two squares: <figure class="diagram"><img src="diagrams/tikzcd-3c8e7cbef67b.svg" alt="Commutative diagram generated from the LaTeX source"></figure> Here the left square is cartesian, <span class="math-inline">\(f\)</span> was assumed to be an effective epimorphism, and the outer rectangle is <span class="math-inline">\(L\)</span>-cartesian by the previous point. It follows from <a href="#prop:Properties_L_Cartesian_Squares">Proposition 5.21</a> that the right square is <span class="math-inline">\(L\)</span>-cartesian. <button type="button" class="detail-toggle" id="detail-generalized-blakers-massey--the-precise-cancellation-clause" data-detail-toggle="detail-generalized-blakers-massey--the-precise-cancellation-clause" data-depth="1" aria-expanded="false" aria-controls="detail-generalized-blakers-massey--the-precise-cancellation-clause-content" aria-label="Expand: The precise cancellation clause" title="The precise cancellation clause">
+  <span class="detail-toggle-symbol" aria-hidden="true">+</span><span class="detail-toggle-title">The precise cancellation clause</span>
+</button><div class="proof-detail depth-1" id="detail-generalized-blakers-massey--the-precise-cancellation-clause-content" data-detail-id="detail-generalized-blakers-massey--the-precise-cancellation-clause" data-depth="1" hidden>Apply part (2) of <a href="#prop:Properties_L_Cartesian_Squares">Proposition 5.21</a>. Its square <span class="math-inline">\(A\)</span> is the cartesian left square displayed above, its composite <span class="math-inline">\(A+B\)</span> is the <span class="math-inline">\(L\)</span>-cartesian outer rectangle, and the map called <span class="math-inline">\(f\)</span> there is the effective epimorphism <span class="math-inline">\(Z \to X\)</span> along their common lower edge. The conclusion is that <span class="math-inline">\(B\)</span>, the right square, is <span class="math-inline">\(L\)</span>-cartesian. <button type="button" class="detail-toggle" id="detail-generalized-blakers-massey--checking-all-three-hypotheses" data-detail-toggle="detail-generalized-blakers-massey--checking-all-three-hypotheses" data-depth="2" aria-expanded="false" aria-controls="detail-generalized-blakers-massey--checking-all-three-hypotheses-content" aria-label="Expand: Checking all three hypotheses" title="Checking all three hypotheses">
+  <span class="detail-toggle-symbol" aria-hidden="true">+</span><span class="detail-toggle-title">Checking all three hypotheses</span>
+</button><div class="proof-detail depth-2" id="detail-generalized-blakers-massey--checking-all-three-hypotheses-content" data-detail-id="detail-generalized-blakers-massey--checking-all-three-hypotheses" data-depth="2" hidden>The left square is cartesian because <span class="math-inline">\(Z \times_X Z\)</span> is the pullback of <span class="math-inline">\(f\)</span> along itself. A cartesian square is <span class="math-inline">\(L\)</span>-cartesian since its gap map is an isomorphism. The outer rectangle is the right face of the cube and was shown <span class="math-inline">\(L\)</span>-cartesian by modal descent. Finally, the image reduction made <span class="math-inline">\(f\)</span> an effective epimorphism. Thus every hypothesis of part (2) is used exactly once.</div></div></li></ul> This gives the claim. <button type="button" class="detail-toggle" id="detail-generalized-blakers-massey--identifying-the-final-gap-map" data-detail-toggle="detail-generalized-blakers-massey--identifying-the-final-gap-map" data-depth="1" aria-expanded="false" aria-controls="detail-generalized-blakers-massey--identifying-the-final-gap-map-content" aria-label="Expand: Identifying the final gap map" title="Identifying the final gap map">
+  <span class="detail-toggle-symbol" aria-hidden="true">+</span><span class="detail-toggle-title">Identifying the final gap map</span>
+</button><div class="proof-detail depth-1" id="detail-generalized-blakers-massey--identifying-the-final-gap-map-content" data-detail-id="detail-generalized-blakers-massey--identifying-the-final-gap-map" data-depth="1" hidden>The right square just proved <span class="math-inline">\(L\)</span>-cartesian is the original pushout square with vertices <span class="math-inline">\(Z,Y,X,W\)</span>. Its gap map is, by definition, the canonical map <span class="math-inline">\(Z \to X \times_W Y\)</span>. Thus its being <span class="math-inline">\(L\)</span>-cartesian is exactly the desired conclusion.</div><span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<h3 id="subsec:Warn_Alternative_Proof"><span>5.2.2.</span> Wärn's alternative proof</h3>
+<p>We now explain a second proof of <a href="#thm:Generalized_Blakers_Massey">Theorem 5.16</a>, following the description of path spaces of pushouts due to <span class="citation-group">Wärn (<a class="citation" href="#bib-Warn_Path_Spaces">2025</a>)</span>. The main point of this approach is that the pullback <span class="math-inline">\(B \times_D C\)</span> of a pushout</p>
+<figure class="diagram"><img src="diagrams/tikzcd-e2cdff84108a.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>can be built as a sequential colimit of objects of zigzags. The first non-trivial step in this filtration is the relative pushout product <span class="math-inline">\(\Delta_f \square_A \Delta_g\)</span>. So if we can show that all later maps in the filtration lie in the modality <span class="math-inline">\(L\)</span>, then so does the gap map <span class="math-inline">\(A \to B \times_D C\)</span>.</p>
+<section class="theorem construction" id="constr:Warn_Making_Leg_Cartesian">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/making-one-leg-cartesian/index.html">Construction 5.24.</a></span> (Making one leg cartesian)</p>
+  <div class="theorem-statement"><p>Fix a span <span class="math-inline">\(B \leftarrow A \to C\)</span>. A <em>span over</em> this span is a diagram of the form</p>
+<figure class="diagram"><img src="diagrams/tikzcd-340edd509e8d.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>Given such a span, we define two new spans over <span class="math-inline">\(B \leftarrow A \to C\)</span> as follows.</p>
+<ol><li><p>The span obtained by <em>making the left leg cartesian</em> is</p>
+<div class="math-display">\[Q^{\ell} := Q, \qquad P^{\ell} := Q \times_B A, \qquad R^{\ell} := P^{\ell} \sqcup_P R .\]</div></li><li><p>The span obtained by <em>making the right leg cartesian</em> is</p>
+<div class="math-display">\[R^{r} := R, \qquad P^{r} := R \times_C A, \qquad Q^{r} := P^{r} \sqcup_P Q .\]</div></li></ol></div>
+</section>
+
+<section class="theorem lemma" id="lem:Warn_Cartesianization_Preserves_Pushouts">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/cartesianization-preserves-pushouts/index.html">Lemma 5.25.</a></span></p>
+  <div class="theorem-statement"><p>In both cases, the evident map from the original span to the new span induces an equivalence on pushouts.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Warn_Cartesianization_Preserves_Pushouts-main" data-owner-entry="cartesianization-preserves-pushouts" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">For the left construction, the new pushout is <div class="math-display">\[Q^{\ell} \sqcup_{P^{\ell}} R^{\ell}
+			\simeq
+			Q \sqcup_{P^{\ell}} (P^{\ell} \sqcup_P R)
+			\simeq
+			Q \sqcup_P R,\]</div> by pasting of pushout squares. The right construction is symmetric.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem construction" id="constr:Warn_Zigzag">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/warn-zigzag-construction/index.html">Construction 5.26.</a></span> (Zigzag construction, <span class="citation-group">Wärn (<a class="citation" href="#bib-Warn_Path_Spaces">2025</a>)</span>)</p>
+  <div class="theorem-statement"><p>Starting with a span <span class="math-inline">\(Q_0 \leftarrow P_0 \to R_0\)</span> over <span class="math-inline">\(B \leftarrow A \to C\)</span>, define a sequence of spans</p>
+<div class="math-display">\[Q_n \leftarrow P_n \to R_n\]</div>
+<p>by alternately making the left and right legs cartesian: for odd <span class="math-inline">\(n\)</span> we apply the left construction to the previous span, and for even <span class="math-inline">\(n \geq 2\)</span> we apply the right construction. Let</p>
+<div class="math-display">\[Q_{\infty} := \colim_n Q_n, \qquad P_{\infty} := \colim_n P_n, \qquad R_{\infty} := \colim_n R_n .\]</div></div>
+</section>
+<p>The zigzag construction computes pullbacks of pushouts in the following precise sense.</p>
+<section class="theorem theorem" id="thm:Warn_Path_Spaces_Of_Pushouts">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/warn-path-animae-of-pushouts/index.html">Theorem 5.27.</a></span> (<span class="citation-group">Wärn (<a class="citation" href="#bib-Warn_Path_Spaces">2025, Theorem 3.6</a>)</span>)</p>
+  <div class="theorem-statement"><p>Let</p>
+<figure class="diagram"><img src="diagrams/tikzcd-1961cd43616f.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>be a pushout square in <span class="math-inline">\(T\)</span>. Let <span class="math-inline">\(Q_0 \leftarrow P_0 \to R_0\)</span> be a span over <span class="math-inline">\(B \leftarrow A \to C\)</span>, and write</p>
+<div class="math-display">\[S := Q_0 \sqcup_{P_0} R_0.\]</div>
+<p>Then the colimit span <span class="math-inline">\(Q_{\infty} \leftarrow P_{\infty} \to R_{\infty}\)</span> from <a href="#constr:Warn_Zigzag">Construction 5.26</a> has pushout <span class="math-inline">\(S\)</span>, and the canonical maps</p>
+<div class="math-display">\[Q_{\infty} \to S \times_D B, \qquad
+			P_{\infty} \to S \times_D A, \qquad
+			R_{\infty} \to S \times_D C\]</div>
+<p>are isomorphisms.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-thm:Warn_Path_Spaces_Of_Pushouts-main" data-owner-entry="warn-path-animae-of-pushouts" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">By <a href="#constr:Warn_Making_Leg_Cartesian">Construction 5.24</a>, each step in the zigzag construction preserves the pushout of the span. Since colimits commute with colimits, the pushout of <span class="math-inline">\(Q_{\infty} \leftarrow P_{\infty} \to R_{\infty}\)</span> is again <span class="math-inline">\(S\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>For odd <span class="math-inline">\(n\)</span>, the map <span class="math-inline">\(P_n \to Q_n\)</span> is cartesian over <span class="math-inline">\(A \to B\)</span> by construction. Since the odd natural numbers are cofinal in <span class="math-inline">\(\N\)</span>, and since sequential colimits in a topos are universal, it follows that <span class="math-inline">\(P_{\infty} \to Q_{\infty}\)</span> is cartesian over <span class="math-inline">\(A \to B\)</span>. Similarly, using the even stages, <span class="math-inline">\(P_{\infty} \to R_{\infty}\)</span> is cartesian over <span class="math-inline">\(A \to C\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>Now compare the pushout square <span class="math-inline">\(Q_{\infty} \sqcup_{P_{\infty}} R_{\infty} \simeq S\)</span> with the original pushout square <span class="math-inline">\(B \sqcup_A C \simeq D\)</span>:<div class="proof-paragraph-break" aria-hidden="true"></div><figure class="diagram"><img src="diagrams/tikzcd-5ccfcff70e4c.svg" alt="Commutative diagram generated from the LaTeX source"></figure> The left and back faces of the cube are cartesian by the previous paragraph, while the top and bottom faces are pushouts. Descent for pushouts therefore implies that the front and right faces are cartesian. This gives <span class="math-inline">\(Q_{\infty} \iso S \times_D B\)</span> and <span class="math-inline">\(R_{\infty} \iso S \times_D C\)</span>, and then also <span class="math-inline">\(P_{\infty} \iso S \times_D A\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>We wish to apply this result to the Blakers–Massey problem, where we start with <span class="math-inline">\(B \leftarrow \emptyset \to \emptyset\)</span>. The following is the starting observation:</p>
+<section class="theorem lemma" id="lem:Warn_First_Transition">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/warn-first-zigzag-transition/index.html">Lemma 5.28.</a></span></p>
+  <div class="theorem-statement"><p>For the zigzag construction associated to the initial span <span class="math-inline">\(B \leftarrow \emptyset \to \emptyset\)</span> over <span class="math-inline">\(B \xleftarrow{f} A \xrightarrow{g} C\)</span>, the map <span class="math-inline">\(P_2\to P_3\)</span> is a pushout of <span class="math-inline">\(\Delta_f\square_A\Delta_g\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Warn_First_Transition-main" data-owner-entry="warn-first-zigzag-transition" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">The first step gives <div class="math-display">\[Q_1\simeq B, \qquad P_1\simeq A, \qquad R_1\simeq A.\]</div> The second step makes the right leg cartesian, hence gives <div class="math-display">\[R_2\simeq A, \qquad P_2\simeq A\times_C A, \qquad Q_2\simeq (A\times_C A)\sqcup_A B,\]</div> where the map <span class="math-inline">\(A\to A\times_C A\)</span> is <span class="math-inline">\(\Delta_g\)</span> and <span class="math-inline">\(A\to B\)</span> is <span class="math-inline">\(f\)</span>. The third step makes the left leg cartesian, so <div class="math-display">\[P_3\simeq Q_2\times_B A \simeq ((A\times_C A)\times_B A)\sqcup_{A\times_B A} A,\]</div> where we used universality of pushouts. Observe that we may rewrite <span class="math-inline">\((A\times_C A)\times_B A\)</span> as <span class="math-inline">\((A\times_C A)\times_A (A \times_B A)\)</span>. Write <span class="math-inline">\(j_C\)</span> and <span class="math-inline">\(j_B\)</span> for the two coprojections into <span class="math-inline">\((A\times_C A)\sqcup_A(A\times_B A)\)</span>, and write <span class="math-inline">\(q\)</span> for the canonical map from this pushout to the corresponding product. Consider now the following commutative diagram:<div class="proof-paragraph-break" aria-hidden="true"></div><figure class="diagram"><img src="diagrams/tikzcd-79597d030499.svg" alt="Commutative diagram generated from the LaTeX source"></figure> The bottom rectangle is the pushout square defining <span class="math-inline">\(P_3\)</span>. The upper-left square is the pushout square defining the source of <span class="math-inline">\(q\)</span>, and the left rectangle is a pushout by construction. The pasting law therefore shows that the lower-right square is a pushout. Hence <span class="math-inline">\(P_2=A\times_CA\to P_3\)</span> is the cobase change of <span class="math-inline">\(q=\Delta_g\square_A\Delta_f\)</span>. By symmetry of the pushout product, this is isomorphic to <span class="math-inline">\(\Delta_f\square_A\Delta_g\)</span>, as desired.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>The next observation is that passing to the next stage of the zigzag construction preserves any existing connectivity estimates of the current stage.</p>
+<section class="theorem lemma" id="lem:Warn_Propagation">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/warn-zigzag-propagation/index.html">Lemma 5.29.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(L\)</span> be a modality, and consider the zigzag construction associated to a span <span class="math-inline">\(Q_0 \leftarrow P_0 \to R_0\)</span> over <span class="math-inline">\(B \leftarrow A \to C\)</span>. If <span class="math-inline">\(P_{n-1} \to P_n\)</span> lies in <span class="math-inline">\(L\)</span> for some <span class="math-inline">\(n\geq 2\)</span>, then also <span class="math-inline">\(P_n \to P_{n+1}\)</span> lies in <span class="math-inline">\(L\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Warn_Propagation-main" data-owner-entry="warn-zigzag-propagation" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Suppose first that <span class="math-inline">\(P_n\)</span> is obtained from <span class="math-inline">\(P_{n-1}\)</span> by making the left leg cartesian, so that the next step makes the right leg cartesian. Since <span class="math-inline">\(n\geq 2\)</span>, the preceding step made the right leg cartesian, so <div class="math-display">\[P_{n-1} \iso R_{n-1}\times_C A.\]</div> Unwinding the definitions of these two consecutive steps gives <div class="math-display">\[R_n \iso P_n \sqcup_{P_{n-1}} R_{n-1}
+			\qquad\text{and}\qquad
+			P_{n+1} \iso R_n\times_C A.\]</div> Since pushouts are universal, it follows that <div class="math-display">\[P_{n+1}
+			\iso (P_n\times_C A)\sqcup_{P_{n-1}\times_C A}(R_{n-1}\times_C A)
+			\iso (P_n\times_C A)\sqcup_{P_{n-1}\times_C A}P_{n-1}.\]</div> Under this identification, the composite <span class="math-inline">\(P_{n-1}\to P_n\to P_{n+1}\)</span> is the canonical map from the second summand. It is therefore the pushout of <div class="math-display">\[P_{n-1}\times_C A \longrightarrow P_n\times_C A\]</div> along <span class="math-inline">\(P_{n-1}\times_C A\to P_{n-1}\)</span>. The displayed map is a base change of <span class="math-inline">\(P_{n-1}\to P_n\)</span>, hence lies in <span class="math-inline">\(L\)</span>. It follows that the composite <span class="math-inline">\(P_{n-1}\to P_{n+1}\)</span> lies in <span class="math-inline">\(L\)</span>. Since <span class="math-inline">\(P_{n-1}\to P_n\)</span> lies in <span class="math-inline">\(L\)</span> by assumption, right cancellation for the class <span class="math-inline">\(L\)</span> now implies that <span class="math-inline">\(P_n\to P_{n+1}\)</span> lies in <span class="math-inline">\(L\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>The case where <span class="math-inline">\(P_n\)</span> is obtained by making the right leg cartesian is symmetric, with <span class="math-inline">\(B\)</span> in place of <span class="math-inline">\(C\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>Combining the previous two lemmas, we obtain a neat simple proof of the generalized Blakers–Massey theorem.</p>
+<details class="proof-shell" id="proof-thm:Generalized_Blakers_Massey-warn-zigzag" data-owner-entry="generalized-blakers-massey" data-proof-id="warn-zigzag">
+  <summary>Wärn's zigzag proof of <a href="#thm:Generalized_Blakers_Massey">Theorem 5.16</a></summary>
+  <div class="proof-body">Consider a pushout square <figure class="diagram"><img src="diagrams/tikzcd-37a5181537d9.svg" alt="Commutative diagram generated from the LaTeX source"></figure> and let <span class="math-inline">\(L\)</span> be a modality such that <span class="math-inline">\(\Delta_f \square_A \Delta_g\)</span> lies in <span class="math-inline">\(L\)</span>. We must show that the gap map <span class="math-inline">\(A \to B \times_D C\)</span> lies in <span class="math-inline">\(L\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>Apply the zigzag construction to the span <span class="math-inline">\(B \leftarrow \emptyset \to \emptyset\)</span>. The first step produces the span <div class="math-display">\[B \leftarrow A \xrightarrow{=} A,\]</div> so that <span class="math-inline">\(R_1 \simeq A\)</span>. Note that <span class="math-inline">\(S = B \sqcup_{\emptyset} \emptyset = B\)</span>, so by <a href="#thm:Warn_Path_Spaces_Of_Pushouts">Theorem 5.27</a> we have <span class="math-inline">\(R_{\infty} \iso B \times_D C\)</span>. The gap map <span class="math-inline">\(A \to B \times_D C\)</span> identifies with <div class="math-display">\[R_1 \longrightarrow R_{\infty}.\]</div> Since morphisms in <span class="math-inline">\(L\)</span> are closed under transfinite composites, it thus remains to show that each map <span class="math-inline">\(R_m \to R_{m+1}\)</span> is in <span class="math-inline">\(L\)</span> for <span class="math-inline">\(m \geq 1\)</span>. For <span class="math-inline">\(m\)</span> odd, these maps are isomorphisms. For <span class="math-inline">\(m\)</span> even, these maps are pushouts of <span class="math-inline">\(P_m \to P_{m+1}\)</span>, so it remains to show that all these maps are in <span class="math-inline">\(L\)</span>. By <a href="#lem:Warn_Propagation">Lemma 5.29</a>, it suffices to check this for <span class="math-inline">\(m=2\)</span>. But by <a href="#lem:Warn_First_Transition">Lemma 5.28</a>, the map <span class="math-inline">\(P_2\to P_3\)</span> is a pushout of <span class="math-inline">\(\Delta_f\square_A\Delta_g\)</span>, hence lies in <span class="math-inline">\(L\)</span> by assumption.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-ABFJ2020GeneralizedBlakersMassey">Mathieu Anel, Georg Biedermann, Eric Finster, André Joyal. <em>A generalized Blakers-Massey theorem</em>. J. Topol., 13 (4), 1521–1553. 2020.</li>
+<li id="bib-Warn_Path_Spaces">David Wärn. <em>Path spaces of pushouts</em>. 2025.</li></ol></section>
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+      <a class="context-step-control" rel="prev" href="../epimorphisms-and-acyclic-maps/index.html" aria-label="Previous section: Epimorphisms and acyclic maps" title="Previous section: Epimorphisms and acyclic maps"><span aria-hidden="true">←</span></a>
+      <a class="context-step-control" rel="next" href="../congruences-modalities-and-saturated-classes/index.html" aria-label="Next section: Congruences, modalities, and saturated classes" title="Next section: Congruences, modalities, and saturated classes"><span aria-hidden="true">→</span></a>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../chapter/introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../../chapter/foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../../chapter/truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../../chapter/topoi-logoi/index.html">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../../chapter/modalities/index.html" aria-current="location">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../../chapter/topics-in-topos-theory/index.html">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../../chapter/geometry/index.html">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../../chapter/factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../../chapter/limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../epimorphisms-and-acyclic-maps/index.html">
+          <span class="context-entry-heading">Section 5.1</span>
+          <span class="context-entry-title">Epimorphisms and acyclic maps</span>
+        </a></li>
+<li><a href="../blakers-massey/index.html" aria-current="page">
+          <span class="context-entry-heading">Section 5.2</span>
+          <span class="context-entry-title">The Blakers–Massey theorem</span>
+        </a></li>
+<li><a href="../congruences-modalities-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Section 5.3</span>
+          <span class="context-entry-title">Congruences, modalities, and saturated classes</span>
+        </a></li>
+<li><a href="../open-and-closed-immersions/index.html">
+          <span class="context-entry-heading">Section 5.4</span>
+          <span class="context-entry-title">Open and closed immersions</span>
+        </a></li>
+<li><a href="../structure-theory-for-topoi/index.html">
+          <span class="context-entry-heading">Section 5.5</span>
+          <span class="context-entry-title">Structure theory for topoi</span>
+        </a></li>
+<li><a href="../products-of-modalities/index.html">
+          <span class="context-entry-heading">Section 5.6</span>
+          <span class="context-entry-title">Products of modalities</span>
+        </a></li>
+<li><a href="../goodwillie-tower/index.html">
+          <span class="context-entry-heading">Section 5.7</span>
+          <span class="context-entry-title">The Goodwillie tower of a topos</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <p class="context-nav-kicker">Section 5.2</p>
+      <p class="context-nav-description">The Blakers–Massey theorem</p>
+      <ol class="context-entry-list">
+        <li><a href="#thm:Classical_Blakers_Massey" data-section-target="thm:Classical_Blakers_Massey">
+          <span class="context-entry-heading">Theorem 5.14</span>
+          <span class="context-entry-title">The classical Blakers–Massey theorem</span>
+        </a></li>
+<li><a href="#nota:Pushout_Product" data-section-target="nota:Pushout_Product">
+          <span class="context-entry-heading">Notation 5.15</span>
+          <span class="context-entry-title">Day convolution on slices</span>
+        </a></li>
+<li><a href="#thm:Generalized_Blakers_Massey" data-section-target="thm:Generalized_Blakers_Massey">
+          <span class="context-entry-heading">Theorem 5.16</span>
+          <span class="context-entry-title">The generalized Blakers–Massey theorem</span>
+        </a></li>
+<li><a href="#lem:Connectivity_Of_Pushout_Products" data-section-target="lem:Connectivity_Of_Pushout_Products">
+          <span class="context-entry-heading">Lemma 5.17</span>
+          <span class="context-entry-title">Connectivity of pushout products</span>
+        </a></li>
+<li><a href="#cor:Blakers_Massey" data-section-target="cor:Blakers_Massey">
+          <span class="context-entry-heading">Corollary 5.18</span>
+          <span class="context-entry-title">The Blakers–Massey connectivity theorem</span>
+        </a></li>
+<li><a href="#rem:Dual_Blakers_Massey" data-section-target="rem:Dual_Blakers_Massey">
+          <span class="context-entry-heading">Remark 5.19</span>
+          <span class="context-entry-title">The dual Blakers–Massey theorem</span>
+        </a></li>
+<li><a href="#def:L_Cartesian_Square" data-section-target="def:L_Cartesian_Square">
+          <span class="context-entry-heading">Definition 5.20</span>
+          <span class="context-entry-title">L-cartesian squares</span>
+        </a></li>
+<li><a href="#prop:Properties_L_Cartesian_Squares" data-section-target="prop:Properties_L_Cartesian_Squares">
+          <span class="context-entry-heading">Proposition 5.21</span>
+          <span class="context-entry-title">Properties of L-cartesian squares</span>
+        </a></li>
+<li><a href="#lem:L_Cartesian_Gives_Pullback_Square" data-section-target="lem:L_Cartesian_Gives_Pullback_Square">
+          <span class="context-entry-heading">Lemma 5.22</span>
+          <span class="context-entry-title">A factorization criterion for L-cartesian squares</span>
+        </a></li>
+<li><a href="#prop:Modal_Descent" data-section-target="prop:Modal_Descent">
+          <span class="context-entry-heading">Proposition 5.23</span>
+          <span class="context-entry-title">Modal descent</span>
+        </a></li>
+<li><a href="#constr:Warn_Making_Leg_Cartesian" data-section-target="constr:Warn_Making_Leg_Cartesian">
+          <span class="context-entry-heading">Construction 5.24</span>
+          <span class="context-entry-title">Making one leg cartesian</span>
+        </a></li>
+<li><a href="#lem:Warn_Cartesianization_Preserves_Pushouts" data-section-target="lem:Warn_Cartesianization_Preserves_Pushouts">
+          <span class="context-entry-heading">Lemma 5.25</span>
+          <span class="context-entry-title">Cartesianization preserves pushouts</span>
+        </a></li>
+<li><a href="#constr:Warn_Zigzag" data-section-target="constr:Warn_Zigzag">
+          <span class="context-entry-heading">Construction 5.26</span>
+          <span class="context-entry-title">Wärn’s zigzag construction</span>
+        </a></li>
+<li><a href="#thm:Warn_Path_Spaces_Of_Pushouts" data-section-target="thm:Warn_Path_Spaces_Of_Pushouts">
+          <span class="context-entry-heading">Theorem 5.27</span>
+          <span class="context-entry-title">Wärn’s path-anima description of pushouts</span>
+        </a></li>
+<li><a href="#lem:Warn_First_Transition" data-section-target="lem:Warn_First_Transition">
+          <span class="context-entry-heading">Lemma 5.28</span>
+          <span class="context-entry-title">The first nontrivial zigzag transition</span>
+        </a></li>
+<li><a href="#lem:Warn_Propagation" data-section-target="lem:Warn_Propagation">
+          <span class="context-entry-heading">Lemma 5.29</span>
+          <span class="context-entry-title">Propagation through the zigzag construction</span>
+        </a></li>
+      </ol>
+    </nav>
+  </section></div>
+  </aside>
+  <aside class="publication-fragment-notice" id="ex:Connectivity_Of_Pushout_Products"><strong>Retired fragment.</strong> The exercise is now a lemma in the authoritative source. It now appears at <a href="./#lem:Connectivity_Of_Pushout_Products">this address</a>.</aside>
+</main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

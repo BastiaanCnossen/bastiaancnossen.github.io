@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestalten | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/section/gestalten/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="section-page has-context-nav" data-record-id="gestalten" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">·</span> Section 7.6</p>
+      <h1>Gestalten</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page">
+      
+<h2 id="sec:Gestalten"><span>7.6.</span> Gestalten</h2>
+<p>We finish the lecture course with the recent framework of <em>Gestalten</em>, developed by Scholze and Stefanich <span class="citation-group">[Scholze <a class="citation" href="#bib-Scholze_Gestalten">2026</a>]</span>. Its purpose is to regard all the categorical layers attached to a geometric object as a single ring-like invariant. The construction from a six-functor formalism and its finite-limit and descent properties are precise. The ambient category of all Gestalten, however, is too large to be a topos. The actual topos theorem applies after fixing a base and a finite étaleness level, and after restricting to countable colimits.</p>
+<section class="theorem construction" id="con:Higher_Pr">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/higher-presentable-categories/index.html">Construction 7.45.</a></span></p>
+  <div class="theorem-statement"><p>There are presentably symmetric monoidal categories <span class="math-inline">\(n\Pr\)</span> for all <span class="math-inline">\(n\geq 0\)</span>, with</p>
+<div class="math-display">\[0\Pr = \An, \qquad 1\Pr = \Pr.\]</div>
+<p>The construction is iterated by passing to presentable module categories. Throughout this section the relevant presentability cardinal is <span class="math-inline">\(\aleph_1\)</span>, so that “presentable” means compatible with countable colimits. We suppress this cardinal from the notation.</p></div>
+</section>
+
+<section class="theorem definition" id="def:Stefanich_Ring">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/stefanich-ring/index.html">Definition 7.46.</a></span></p>
+  <div class="theorem-statement"><p>The category of <em>Stefanich rings</em> is</p>
+<div class="math-display">\[\StRing
+		:=\colim_{1\Pr}\bigl(\CAlg(\An)\longrightarrow\CAlg(1\Pr)\longrightarrow\CAlg(2\Pr)\longrightarrow\cdots\bigr).\]</div>
+<p>Equivalently,</p>
+<div class="math-display">\[\StRing
+		\simeq\lim_{\CAT}\bigl(\CAlg(\An)\longleftarrow\CAlg(1\Pr)\longleftarrow\CAlg(2\Pr)\longleftarrow\cdots\bigr),\]</div>
+<p>where the transition functor sends a symmetric monoidal category to the endomorphism object of its unit. Thus a Stefanich ring may be written as a sequence <span class="math-inline">\(A=(A_0,A_1,A_2,\ldots)\)</span> with <span class="math-inline">\(A_n\in\CAlg(n\Pr)\)</span> and compatible isomorphisms</p>
+<div class="math-display">\[A_n\cong\End_{A_{n+1}}(\unit).\]</div></div>
+</section>
+
+<section class="theorem definition" id="def:Gestalten">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/gestalten/index.html">Definition 7.47.</a></span></p>
+  <div class="theorem-statement"><p>The category of <em>Gestalten</em> is defined as</p>
+<div class="math-display">\[\Gest := \StRing\catop.\]</div></div>
+</section>
+
+<section class="theorem theorem" id="thm:Gestalten_Topos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/gestalten-form-a-topos/index.html">Theorem 7.48.</a></span> (Scholze–Stefanich)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(A\)</span> be a Stefanich ring and let <span class="math-inline">\(n\geq 0\)</span>. The opposite of the category <span class="math-inline">\(\StRing^{n\text{-}\et}_{A/}\)</span> of <span class="math-inline">\(n\)</span>-étale Stefanich <span class="math-inline">\(A\)</span>-algebras is a countable topos. More precisely,</p>
+<div class="math-display">\[\Ind_{\aleph_1}\!\left(\bigl(\StRing^{n\text{-}\et}_{A/}\bigr)\catop\right)\]</div>
+<p>is a topos.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-thm:Gestalten_Topos-main" data-owner-entry="gestalten-form-a-topos" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">This is <span class="citation-group">[Scholze <a class="citation" href="#bib-Scholze_Gestalten">2026, Theorem 7.1</a>]</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>Thus one should not say that the entire category <span class="math-inline">\(\Gest\)</span> is a topos. In applications one works in a countable topos of <span class="math-inline">\(n\)</span>-étale Gestalten over a fixed base. The restriction to a finite <span class="math-inline">\(n\)</span> is substantive, although many geometric examples are already <span class="math-inline">\(1\)</span>- or <span class="math-inline">\(2\)</span>-étale.</p>
+<section class="theorem construction" id="con:n_Affine_Embedding">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/n-affine-embedding/index.html">Construction 7.49.</a></span></p>
+  <div class="theorem-statement"><p>For every <span class="math-inline">\(n\)</span>, there is a fully faithful functor</p>
+<div class="math-display">\[\CAlg(n\Pr)\catop \hookrightarrow \Gest.\]</div>
+<p>Indeed, an object <span class="math-inline">\(A_n\in\CAlg(n\Pr)\)</span> admits a canonical delooping <span class="math-inline">\(A_{n+1}:=\Mod_{A_n}(n\Pr)\)</span>. Iterating this construction supplies the higher terms of a Stefanich ring, while the lower terms are obtained by taking endomorphisms of the unit.</p></div>
+</section>
+
+<section class="theorem definition" id="def:n_Affine_Gestalt">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/n-affine-gestalt/index.html">Definition 7.50.</a></span></p>
+  <div class="theorem-statement"><p>A Gestalt <span class="math-inline">\(A\)</span> is called <em><span class="math-inline">\(n\)</span>-affine</em> if it lies in the image of this fully faithful functor. Equivalently, its corresponding Stefanich ring satisfies <span class="math-inline">\(A_{k+1} \cong \Mod_{A_k}(k\Pr)\)</span> for all <span class="math-inline">\(k \geq n\)</span>.</p></div>
+</section>
+
+<section class="theorem example" id="ex:0_Affine_Gestalten">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/zero-affine-gestalten/index.html">Example 7.51.</a></span></p>
+  <div class="theorem-statement"><p>The <span class="math-inline">\(0\)</span>-affine Gestalten are precisely the commutative monoids:</p>
+<div class="math-display">\[\CMon(\An)\catop = \CAlg(\An)\catop \hookrightarrow \Gest.\]</div>
+<p>Since <span class="math-inline">\(\Pr_{\st} \subseteq \Pr\)</span> is fully faithful, we similarly get a fully faithful functor</p>
+<div class="math-display">\[\CAlg(\Sp)\catop \hookrightarrow \Gest.\]</div></div>
+</section>
+
+<section class="theorem remark" id="rmk:Relative_Affine_Gestalten">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/relative-affine-gestalten/index.html">Remark 7.52.</a></span></p>
+  <div class="theorem-statement"><p>Objects in the image of <span class="math-inline">\(\CAlg(\Sp)\)</span> are <span class="math-inline">\(1\)</span>-affine, but not <span class="math-inline">\(0\)</span>-affine in the absolute sense. One may instead work relative to the sphere, in the slice</p>
+<div class="math-display">\[\Gest_{\S} := \Gest_{/\Gest(\Sp)}.\]</div>
+<p>For every ring spectrum <span class="math-inline">\(R\in\CAlg(\Sp)\)</span>, the induced object over <span class="math-inline">\(\Gest(\Sp)\)</span> is <span class="math-inline">\(0\)</span>-affine relative to this base.</p></div>
+</section>
+
+<h3 id="subsec:Gestalten_Six_Functor"><span>7.6.1.</span> Gestalten from six-functor formalisms</h3>
+<p>Consider a presentable six-functor formalism</p>
+<div class="math-display">\[D\colon \Span(C,C^{\ad}) \to \Pr.\]</div>
+<p>For every <span class="math-inline">\(X\in C\)</span>, restriction to the admissible slice gives a lax symmetric monoidal functor</p>
+<div class="math-display">\[D_X\colon \Span(C^{\ad}_{/X})\longrightarrow\Pr.\]</div>
+<p>The functor category</p>
+<div class="math-display">\[\Fun\bigl(\Span(C^{\ad}_{/X}),\Pr\bigr)\]</div>
+<p>carries its Day convolution symmetric monoidal structure, with respect to which <span class="math-inline">\(D_X\)</span> is a commutative algebra object. The <em>category of kernels</em> at <span class="math-inline">\(X\)</span> is</p>
+<div class="math-display">\[K_D(X):=\Mod_{D_X}\!\left(\Fun\bigl(\Span(C^{\ad}_{/X}),\Pr\bigr)\right)\qin 2\Pr.\]</div>
+<p>It is functorial in <span class="math-inline">\(X\)</span>, and its pullback functors admit compatible left and right adjoints. It deloops <span class="math-inline">\(D\)</span> in the sense that</p>
+<div class="math-display">\[\End_{K_D(X)}(\unit) \cong D(X)\]</div>
+<p>for all <span class="math-inline">\(X\in C\)</span>.</p>
+<p>Iterating the kernel construction produces a Stefanich ring</p>
+<div class="math-display">\[A_{D,X}:=(D(X),K_D(X),K_D^2(X),\ldots).\]</div>
+<p>For the final object <span class="math-inline">\(*\)</span> of <span class="math-inline">\(C\)</span>, write <span class="math-inline">\(A_D:=A_{D,*}\)</span>. Passing to opposites gives the <em>transmutation functor</em></p>
+<div class="math-display">\[[-]_D\colon C\longrightarrow \Gest_{/\Gest(A_D)},
+	\qquad
+	X\longmapsto [X]_D:=\Gest(A_{D,X}).\]</div>
+<section class="theorem definition" id="def:Kunneth">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/kunneth-condition/index.html">Definition 7.53.</a></span></p>
+  <div class="theorem-statement"><p>We say that <em><span class="math-inline">\(D\)</span> satisfies Künneth</em> if, for all <span class="math-inline">\(X,Y\in C\)</span>, the canonical tensor comparison</p>
+<div class="math-display">\[D(X)\otimes_{D(*)}D(Y)\longrightarrow D(X\times Y)\]</div>
+<p>is an isomorphism.</p></div>
+</section>
+<p>The comparison controls affineness at the first categorified level. In particular, <span class="math-inline">\(D\)</span> satisfies Künneth if and only if there is an equivalence</p>
+<div class="math-display">\[K_D(*)\simeq\Mod_{D(*)}(1\Pr).\]</div>
+<p>Analogous relative comparisons in every slice identify <span class="math-inline">\(K_D(X)\)</span> with <span class="math-inline">\(\Mod_{D(X)}(1\Pr)\)</span> and make <span class="math-inline">\([X]_D\)</span> <span class="math-inline">\(1\)</span>-affine. No identification of all higher kernel categories is automatic from the first comparison alone.</p>
+<section class="theorem example" id="ex:Analytic_Rings_Kunneth">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/analytic-rings-satisfy-kunneth/index.html">Example 7.54.</a></span></p>
+  <div class="theorem-statement"><p>The six-functor formalism <span class="math-inline">\(D\)</span> on <span class="math-inline">\(\AnRing\catop\)</span> constructed above satisfies Künneth; see <span class="citation-group">[Scholze <a class="citation" href="#bib-Scholze_Gestalten">2026, Lecture IX</a>]</span>.</p></div>
+</section>
+
+<section class="theorem proposition" id="prop:Gestalt_Functor_Pullbacks">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/gestalt-functor-preserves-pullbacks/index.html">Proposition 7.55.</a></span></p>
+  <div class="theorem-statement"><p>The functor</p>
+<div class="math-display">\[[-]_D\colon C\longrightarrow\Gest_{/\Gest(A_D)}\]</div>
+<p>preserves finite limits. Moreover, every map <span class="math-inline">\([Y]_D\to[X]_D\)</span> induced by a morphism <span class="math-inline">\(Y\to X\)</span> in <span class="math-inline">\(C\)</span> is <span class="math-inline">\(1\)</span>-étale and <span class="math-inline">\(1\)</span>-proper.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Gestalt_Functor_Pullbacks-main" data-owner-entry="gestalt-functor-preserves-pullbacks" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">See <span class="citation-group">[Scholze <a class="citation" href="#bib-Scholze_Gestalten">2026, Proposition 9.5</a>]</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem proposition" id="prop:D_Cover_Effective_Epi">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/d-covers-as-effective-epimorphisms/index.html">Proposition 7.56.</a></span></p>
+  <div class="theorem-statement"><p>If a family <span class="math-inline">\((X_i\to X)_i\)</span> satisfies universal <span class="math-inline">\(!\)</span>-descent, then the map</p>
+<div class="math-display">\[\bigsqcup_i[X_i]_D\longrightarrow[X]_D\]</div>
+<p>is an effective epimorphism in the relevant countable topos of Gestalten.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:D_Cover_Effective_Epi-main" data-owner-entry="d-covers-as-effective-epimorphisms" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">This is <span class="citation-group">[Scholze <a class="citation" href="#bib-Scholze_Gestalten">2026, Proposition 9.7</a>]</span>. The converse is not asserted there.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>Combining finite-limit preservation with the preceding descent statement gives the following extension. Let <span class="math-inline">\(\Shv_D(C)_{\mathrm{ctbl}}\)</span> denote the countable-colimit completion of the representables inside the <span class="math-inline">\(D\)</span>-sheaf topos. Then <span class="math-inline">\([-]_D\)</span> extends to a functor</p>
+<div class="math-display">\[F\colon \Shv_D(C)_{\mathrm{ctbl}}\longrightarrow \Gest^{1\text{-}\et}_{/\Gest(A_D)}\]</div>
+<p>which preserves countable colimits and finite limits; see <span class="citation-group">[Scholze <a class="citation" href="#bib-Scholze_Gestalten">2026, Corollary 9.8</a>]</span>.</p>
+<p>Applying the same construction to the admissible site gives a functor <span class="math-inline">\(F^{\ad}\)</span> on the countable part of <span class="math-inline">\(\Shv_{\tau_D^{\ad}}(C^{\ad})\)</span>. Its kernel congruence satisfies</p>
+<div class="math-display">\[(F^{\ad})^{-1}(\Iso)\subseteq\Sigma_D.\]</div>
+<p>This inclusion does <em>not</em> by itself imply that <span class="math-inline">\(F^{\ad}\)</span> factors through the localization at <span class="math-inline">\(\Sigma_D\)</span>: such a factorization requires the opposite inclusion <span class="math-inline">\(\Sigma_D\subseteq(F^{\ad})^{-1}(\Iso)\)</span>.</p>
+<section class="theorem remark" id="rmk:Sigma_D_Equality">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/equality-for-sigma-d/index.html">Remark 7.57.</a></span></p>
+  <div class="theorem-statement"><p>For analytic rings, Scholze states that the two congruences are equal; see <span class="citation-group">[Scholze <a class="citation" href="#bib-Scholze_Gestalten">2026, Lecture IX</a>]</span>. Under this additional assertion, the Gestalt-valued functor does factor through the further localization used to define analytic stacks. Marc expects the equality to hold more generally, but the preceding argument proves only the displayed inclusion.</p></div>
+</section>
+<p>The chapter has therefore passed through three increasingly global encodings of geometry. A geometry specifies affine tests and admissible covers; a fractured topos records their local behavior intrinsically; a six-functor formalism can generate such a geometry and, after transmutation, a Gestalt-valued invariant. The last step is promising precisely because it remembers every categorical level at once, but its strongest descent and comparison statements remain part of an active theory.</p>
+<p>\appendix</p>
+<p>\titleformat{\chapter}{\normalfont\huge\bfseries}{\Alph{chapter}}{20pt}{\Huge} \titleformat{\section}{\Large\bfseries}{\Alph{chapter}.\arabic{section}}{10pt}{\Large} \titleformat{\subsection}{\large\normalfont}{\Alph{chapter}.\arabic{section}.\arabic{subsection}}{6pt}{\large} \titleformat{\subsubsection}{\large\bfseries}{}{6pt}{\large} \addtocontents{toc}{\vskip 15pt} \renewcommand{\thechapter}{\Alph{chapter}} \renewcommand{\thesection}{\Alph{chapter}.\arabic{section}} \renewcommand{\thesubsection}{\Alph{chapter}.\arabic{section}.\arabic{subsection}} \renewcommand{\thetheorem}{\Alph{chapter}.\arabic{theorem}}</p><section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-Scholze_Gestalten">Peter Scholze. <em>Geometry and Higher Category Theory</em>. 2026.</li></ol></section>
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+      <a class="context-step-control" rel="prev" href="../analytic-stacks/index.html" aria-label="Previous section: Analytic stacks" title="Previous section: Analytic stacks"><span aria-hidden="true">←</span></a>
+      <a class="context-step-control" rel="next" href="../factorization-systems/index.html" aria-label="Next section: Factorization systems" title="Next section: Factorization systems"><span aria-hidden="true">→</span></a>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../chapter/introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../../chapter/foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../../chapter/truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../../chapter/topoi-logoi/index.html">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../../chapter/modalities/index.html">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../../chapter/topics-in-topos-theory/index.html">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../../chapter/geometry/index.html" aria-current="location">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../../chapter/factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../../chapter/limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../schemes/index.html">
+          <span class="context-entry-heading">Section 7.1</span>
+          <span class="context-entry-title">Schemes</span>
+        </a></li>
+<li><a href="../geometries/index.html">
+          <span class="context-entry-heading">Section 7.2</span>
+          <span class="context-entry-title">Geometries</span>
+        </a></li>
+<li><a href="../fractured-topoi/index.html">
+          <span class="context-entry-heading">Section 7.3</span>
+          <span class="context-entry-title">Fractured topoi</span>
+        </a></li>
+<li><a href="../geometries-from-six-functor-formalisms/index.html">
+          <span class="context-entry-heading">Section 7.4</span>
+          <span class="context-entry-title">Geometries from six-functor formalisms</span>
+        </a></li>
+<li><a href="../analytic-stacks/index.html">
+          <span class="context-entry-heading">Section 7.5</span>
+          <span class="context-entry-title">Analytic stacks</span>
+        </a></li>
+<li><a href="../gestalten/index.html" aria-current="page">
+          <span class="context-entry-heading">Section 7.6</span>
+          <span class="context-entry-title">Gestalten</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <p class="context-nav-kicker">Section 7.6</p>
+      <p class="context-nav-description">Gestalten</p>
+      <ol class="context-entry-list">
+        <li><a href="#con:Higher_Pr" data-section-target="con:Higher_Pr">
+          <span class="context-entry-heading">Construction 7.45</span>
+          <span class="context-entry-title">Higher presentable categories</span>
+        </a></li>
+<li><a href="#def:Stefanich_Ring" data-section-target="def:Stefanich_Ring">
+          <span class="context-entry-heading">Definition 7.46</span>
+          <span class="context-entry-title">Stefanich ring</span>
+        </a></li>
+<li><a href="#def:Gestalten" data-section-target="def:Gestalten">
+          <span class="context-entry-heading">Definition 7.47</span>
+          <span class="context-entry-title">Gestalten</span>
+        </a></li>
+<li><a href="#thm:Gestalten_Topos" data-section-target="thm:Gestalten_Topos">
+          <span class="context-entry-heading">Theorem 7.48</span>
+          <span class="context-entry-title">Gestalten form a topos</span>
+        </a></li>
+<li><a href="#con:n_Affine_Embedding" data-section-target="con:n_Affine_Embedding">
+          <span class="context-entry-heading">Construction 7.49</span>
+          <span class="context-entry-title">The n-affine embedding</span>
+        </a></li>
+<li><a href="#def:n_Affine_Gestalt" data-section-target="def:n_Affine_Gestalt">
+          <span class="context-entry-heading">Definition 7.50</span>
+          <span class="context-entry-title">n-affine Gestalt</span>
+        </a></li>
+<li><a href="#ex:0_Affine_Gestalten" data-section-target="ex:0_Affine_Gestalten">
+          <span class="context-entry-heading">Example 7.51</span>
+          <span class="context-entry-title">Zero-affine Gestalten</span>
+        </a></li>
+<li><a href="#rmk:Relative_Affine_Gestalten" data-section-target="rmk:Relative_Affine_Gestalten">
+          <span class="context-entry-heading">Remark 7.52</span>
+          <span class="context-entry-title">Relative affine Gestalten</span>
+        </a></li>
+<li><a href="#def:Kunneth" data-section-target="def:Kunneth">
+          <span class="context-entry-heading">Definition 7.53</span>
+          <span class="context-entry-title">Künneth condition</span>
+        </a></li>
+<li><a href="#ex:Analytic_Rings_Kunneth" data-section-target="ex:Analytic_Rings_Kunneth">
+          <span class="context-entry-heading">Example 7.54</span>
+          <span class="context-entry-title">Analytic rings satisfy Künneth</span>
+        </a></li>
+<li><a href="#prop:Gestalt_Functor_Pullbacks" data-section-target="prop:Gestalt_Functor_Pullbacks">
+          <span class="context-entry-heading">Proposition 7.55</span>
+          <span class="context-entry-title">The Gestalt functor preserves pullbacks</span>
+        </a></li>
+<li><a href="#prop:D_Cover_Effective_Epi" data-section-target="prop:D_Cover_Effective_Epi">
+          <span class="context-entry-heading">Proposition 7.56</span>
+          <span class="context-entry-title">D-covers as effective epimorphisms</span>
+        </a></li>
+<li><a href="#rmk:Sigma_D_Equality" data-section-target="rmk:Sigma_D_Equality">
+          <span class="context-entry-heading">Remark 7.57</span>
+          <span class="context-entry-title">Equality for Sigma D</span>
+        </a></li>
+      </ol>
+    </nav>
+  </section></div>
+  </aside>
+  </main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

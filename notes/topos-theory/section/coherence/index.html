@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coherence | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/section/coherence/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+<style>
+    .publication-fragment-notice { margin: 2rem 0; padding: 1rem; border: 1px solid #b6aa91; background: #faf7ef; }
+    .publication-fragment-notice:not(:target) { display: none; }
+  </style>
+  <script>
+    (() => {
+      const targets = {"def:Ultracategory":"../makkai-completeness/#def:Ultracategory","quest:Recover_Topos_From_Category_Of_Points":"../makkai-completeness/#quest:Recover_Topos_From_Category_Of_Points","rmk:Condensed_And_Ultra":"../makkai-completeness/#rmk:Condensed_And_Ultra","thm:Makkai_Completeness":"../makkai-completeness/#thm:Makkai_Completeness"};
+      const fragment = decodeURIComponent(location.hash.slice(1));
+      if (targets[fragment]) location.replace(targets[fragment]);
+    })();
+  </script>
+</head>
+<body class="section-page has-context-nav" data-record-id="coherence" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">·</span> Section 6.7</p>
+      <h1>Coherence</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page">
+      
+<h2 id="sec:Coherence"><span>6.7.</span> Coherence</h2>
+<p>We will now discuss the notion of <em>coherent topoi</em>. While this is a somewhat technical topic, it plays an important role in topos theory, and also shows up prominently in algebraic geometry, so it seems worth at least briefly discussing it. An alternative detailed treatment may be found in <span class="citation-group">[Barwick et al. <a class="citation" href="#bib-Barwick_Glasman_Haine_Exodromy">2018, Chapter 3</a>]</span>.</p>
+<h3 id="subsec:Coherence_Overview"><span>6.7.1.</span> An overview</h3>
+<p>Before diving into the technical details, let us provide an overview of the results of this section.</p>
+<p>The main concept introduced in this section is that of <em>coherent objects</em>. For intuition, the example to keep in mind is the coherent objects in <span class="math-inline">\(\An\)</span>, which as we will see are precisely the animae <span class="math-inline">\(X\)</span> for which <span class="math-inline">\(\pi_0(X)\)</span> is finite and every homotopy group <span class="math-inline">\(\pi_i(X,x)\)</span> with <span class="math-inline">\(i \geq 1\)</span> is finite. We may think of coherence as a strong finiteness condition on an object of a topos. For example, we will prove the following compactness result below in <a href="#thm:Compactness_Coherent_Objects">Theorem 6.114</a>:</p>
+<section class="theorem theorem unnumbered">
+  <p class="theorem-heading"><span>Theorem.</span> (Compactness theorem)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(X \in T\)</span> be a coherent object. Then <span class="math-inline">\(\tau_n X \in T_{\leq n}\)</span> is compact for all <span class="math-inline">\(n \geq -1\)</span>.</p></div>
+</section>
+
+<section class="theorem corollary" id="cor:Cohomology_Of_Coherent_Objects_Preserves_Filtered_Colimits">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/cohomology-of-coherent-objects-preserves-filtered-colimits/index.html">Corollary 6.90.</a></span></p>
+  <div class="theorem-statement"><p>For a coherent object <span class="math-inline">\(X \in T\)</span>, the functor <span class="math-inline">\(\Ab(T_{\leq 0}) \to \Ab^{\Z}, A \mapsto H^*(X;A)\)</span> preserves filtered colimits.</p></div>
+</section>
+<p>This theorem can be thought of as the underlying reason for various compactness results in the literature. For example, it is the reason that étale cohomology groups preserve filtered colimits: the étale topos is coherent.</p>
+<p>While the theorem says that all truncations of a coherent object <span class="math-inline">\(X\)</span> are compact, the object <span class="math-inline">\(X\)</span> itself need not be compact! In particular, this notion of “finiteness” behaves quite differently from the other usual notion of finiteness that we are used to from homotopy theory, namely the subcategory <span class="math-inline">\(\An^{\fin} \subseteq \An\)</span> of finite animae, obtained from the point by closing up under pushouts and finite coproducts.</p>
+<p>There is another, quite unrelated, result that we will discuss, called the <em>completeness theorem</em>. In the higher categorical setting this is due to Lurie, but it follows a classical result for classical topoi due to Deligne.</p>
+<section class="theorem definition" id="def:Locally_Coherent_Topos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/locally-coherent-topos/index.html">Definition 6.91.</a></span></p>
+  <div class="theorem-statement"><p>A topos <span class="math-inline">\(T\)</span> is called <em>locally coherent</em> if every object <span class="math-inline">\(X \in T\)</span> admits a cover <span class="math-inline">\(\bigsqcup_{\alpha} U_{\alpha} \twoheadrightarrow X\)</span> by coherent objects.</p></div>
+</section>
+
+<section class="theorem theorem unnumbered">
+  <p class="theorem-heading"><span>Theorem.</span> (Completeness theorem, see <a href="#thm:Completeness_Theorem">Theorem 6.118</a>)</p>
+  <div class="theorem-statement"><p>Every locally coherent topos admits a surjection\footnote{The notion of “surjection” of topoi was defined in <a href="../../entry/structure-theory-of-topoi/index.html">Remark 5.70</a>.} from a topos of the form <span class="math-inline">\(\An_{/S}\)</span> for some set\footnote{Recall that by “set” we mean a <span class="math-inline">\(0\)</span>-truncated anima.} <span class="math-inline">\(S\)</span>.</p></div>
+</section>
+<p>Applying this result to an anima <span class="math-inline">\(A\)</span>, regarded as a topos by forming the slice <span class="math-inline">\(\An_{/A}\)</span>, this recovers the basic fact that there exists a surjection <span class="math-inline">\(S \twoheadrightarrow A\)</span> from a set <span class="math-inline">\(S\)</span>.</p>
+<p>A generic way to apply this theorem is to reduce suitable types of statements in locally coherent topoi to statements in sets/animae.</p>
+<section class="theorem example" id="ex:Surjection_From_Set_Topos_Is_Conservative">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/surjection-from-set-topos-is-conservative/index.html">Example 6.92.</a></span></p>
+  <div class="theorem-statement"><p>If <span class="math-inline">\(T\)</span> is a hypercomplete locally coherent topos, we get a surjection <span class="math-inline">\(\An_{/S} \twoheadrightarrow T\)</span>, for which the pullback functor is conservative.</p></div>
+</section>
+
+<section class="theorem example" id="ex:Kan_Fibrations_Are_Realization_Fibrations">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/kan-fibrations-are-realization-fibrations/index.html">Example 6.93.</a></span></p>
+  <div class="theorem-statement"><p>A Kan fibration in any hypercomplete topos is a ``realization-fibration&quot;, i.e. pullback along a Kan fibration commutes with geometric realizations: if <span class="math-inline">\(X_{\bullet} \to Z_{\bullet}\)</span> is a Kan fibration and <span class="math-inline">\(Y_{\bullet} \to Z_{\bullet}\)</span> is arbitrary, we have</p>
+<div class="math-display">\[\colim_n X_n \times_{Z_n} Y_n \iso (\colim_n X_n) \times_{\colim_n Z_n} (\colim_n Y_n).\]</div></div>
+</section>
+<p>In the next couple of subsections, we will provide proper definitions and discuss the proofs of these theorems. We start in <a href="#subsec:Coherent_Objects">Section 6.7.2</a> with the definition of <span class="math-inline">\(n\)</span>-coherent objects for all <span class="math-inline">\(n\)</span>, and prove criteria for <span class="math-inline">\(n\)</span>-coherence. In <a href="#subsec:Finitary_Sites">Section 6.7.3</a> we define what it means for a site to be <em>finitary</em>, and show that the hypercomplete locally coherent topoi are precisely the hypercompletions of sheaves on finitary sites with pullbacks. In <a href="#subsec:Compactness_Theorem">Section 6.7.4</a> we prove the compactness theorem and in <a href="#thm:Completeness_Theorem">Theorem 6.118</a> we prove the completeness theorem.</p>
+<h3 id="subsec:Coherent_Objects"><span>6.7.2.</span> Coherent objects</h3>
+<p>The notion of coherence is closely related to the notion of quasi-compact objects in a topos:</p>
+<section class="theorem definition" id="def:Quasi_Compact_Object_And_Topos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/quasi-compact-object-and-topos/index.html">Definition 6.94.</a></span></p>
+  <div class="theorem-statement"><p>An object <span class="math-inline">\(X \in T\)</span> is called <em>quasi-compact</em> if any cover <span class="math-inline">\(\bigsqcup_{i} U_{i} \twoheadrightarrow X\)</span> can be refined to a finite cover, i.e. there is a finite subset <span class="math-inline">\(J \subseteq I\)</span> such that the map <span class="math-inline">\(\bigsqcup_{j \in J} U_j \to X\)</span> is still an effective epimorphism.</p>
+<p>We say a topos <span class="math-inline">\(T\)</span> is <em>quasi-compact</em> if <span class="math-inline">\(* \in T\)</span> is quasi-compact.</p></div>
+</section>
+<p>One problem with the notion of quasi-compactness is that it is not closed under the formation of fiber products. We may think of the collection of coherent objects in a topos as the universal approximation of the collection of quasi-compact objects by a collection of objects closed under fiber products. As a first approximation, we may consider the following class of objects:</p>
+<section class="theorem definition" id="def:Quasi_Separated_Object">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/quasi-separated-object/index.html">Definition 6.95.</a></span></p>
+  <div class="theorem-statement"><p>An object <span class="math-inline">\(X \in T\)</span> is called <em>quasi-separated</em> if for any two maps <span class="math-inline">\(Y \to X\)</span> and <span class="math-inline">\(Z \to X\)</span> from quasi-compact objects <span class="math-inline">\(Y\)</span> and <span class="math-inline">\(Z\)</span>, also the fiber product <span class="math-inline">\(Y \times_X Z\)</span> is quasi-compact.</p></div>
+</section>
+<p>The quasi-separatedness condition is very familiar for people working in algebraic geometry. However, it does not yet achieve our goal: there is in general no reason that quasi-separated objects are closed under base change. Now, in principle one could iterate this condition, and consider objects <span class="math-inline">\(X\)</span> such that the quasi-separated objects are closed under pullbacks, etcetera. However, what we would like to argue here is that this is not the correct way to think about things. In fact, this notion of quasi-separated objects is not really well-behaved in an arbitrary topos; one might argue it is somewhat of a “coincidence” that it works in algebraic geometry. For example, in algebraic geometry it is true that <span class="math-inline">\(Y \times_X Z\)</span> is quasi-compact for all <span class="math-inline">\(Y,Z\)</span> if and only if <span class="math-inline">\(\Delta_X\)</span> is relatively quasi-compact, but this fails to hold in an arbitrary topos; the “if”-direction always holds, but the “only if”-direction fails: <span class="math-inline">\(\Delta_X\)</span> being relatively quasi-compact is generally stronger. The reason this works in algebraic geometry is that you can cover any scheme by affine schemes, which are both quasi-compact and quasi-separated. After unwinding, you will find that the question reduces to the property that the product of two qcqs schemes over <span class="math-inline">\(\Spec(\Z)\)</span> is again qcqs. Note that this condition is precisely the next one in the hierarchy we hinted at before. More generally, this fact about <span class="math-inline">\(\Delta_X\)</span> being relatively quasi-compact will hold in a topos <span class="math-inline">\(T\)</span> whenever the following conditions are satisfied:</p>
+<ul><li><p>Every object in <span class="math-inline">\(T\)</span> is covered by qcqs objects.</p></li><li><p>The terminal object of <span class="math-inline">\(T\)</span> is “2-coherent”, meaning that products of qcqs objects are again qcqs.</p></li></ul>
+<section class="theorem warning" id="warn:Coherence_Terminology">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/coherence-terminology/index.html">Warning 6.96.</a></span></p>
+  <div class="theorem-statement"><p>The terminology on “coherence” can be somewhat confusing in the literature. For example, in SGA the word “coherent” is used in the following three different ways:</p>
+<ul><li><p>There is a notion for an <em>object</em> <span class="math-inline">\(X \in T\)</span> to be coherent; it just means that it is qcqs.</p></li><li><p>There is a notion for a <em>morphism</em> <span class="math-inline">\(X \to Y\)</span> to be coherent. Confusingly, this is <em>not</em> equivalent to the condition that the morphism <span class="math-inline">\(X \to Y\)</span> is qcqs when regarded as an object in <span class="math-inline">\(T_{/Y}\)</span>. Since we would like to stick to the general convention that notions for maps are simply those for the associated object in the slice topos, we will follow Lurie to refer to this other definition by adding the adverb <em>relatively</em>, giving notions like “relatively quasi-compact” and “relatively qcqs”.</p></li><li><p>There is a notion for a <em>topos</em> to be coherent. This is the “correct” notion from the viewpoint of general topos theory. Marc mentioned he finds it quite impressive that Grothendieck managed to find the correct definition of coherence already so early on.</p></li></ul></div>
+</section>
+<p>After all this preamble, let us now give a formal definition of coherent objects.</p>
+<section class="theorem definition" id="def:N_Coherent_Objects_And_Topoi">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/n-coherent-objects-and-topoi/index.html">Definition 6.97.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a topos. We will inductively define what it means for objects to be <em><span class="math-inline">\(n\)</span>-coherent</em> for all <span class="math-inline">\(n \geq 0\)</span>:</p>
+<ul><li><p>We say that an object <span class="math-inline">\(X \in T\)</span> is <em><span class="math-inline">\(0\)</span>-coherent</em> if it is quasi-compact. (This is really a condition on the slice topos <span class="math-inline">\(T_{/X}\)</span>.)</p></li><li><p>We say that <span class="math-inline">\(T\)</span> is <em>locally <span class="math-inline">\(n\)</span>-coherent</em> if any <span class="math-inline">\(X \in T\)</span> has a cover by <span class="math-inline">\(n\)</span>-coherent objects.</p></li><li><p>An object <span class="math-inline">\(X \in T\)</span> is said to be <em><span class="math-inline">\(n\)</span>-coherent</em> if <span class="math-inline">\(T_{/X}\)</span> is <span class="math-inline">\((n-1)\)</span>-coherent, locally <span class="math-inline">\((n-1)\)</span>-coherent, and for all maps <span class="math-inline">\(Y \to X \leftarrow Z\)</span> such that <span class="math-inline">\(Y\)</span> and <span class="math-inline">\(Z\)</span> are <span class="math-inline">\((n-1)\)</span>-coherent, the pullback <span class="math-inline">\(Y \times_X Z\)</span> is <span class="math-inline">\((n-1)\)</span>-coherent.</p></li><li><p>We say <span class="math-inline">\(T\)</span> is <em><span class="math-inline">\(n\)</span>-coherent</em> if the terminal object is <span class="math-inline">\(n\)</span>-coherent.</p></li></ul></div>
+</section>
+
+<section class="theorem example" id="ex:One_And_Two_Coherent_Topoi">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/one-and-two-coherent-topoi/index.html">Example 6.98.</a></span></p>
+  <div class="theorem-statement"><p>A topos is 1-coherent if it is locally quasi-compact, and qcqs. A topos <span class="math-inline">\(T\)</span> is 2-coherent if and only if it is qcqs, locally qcqs, and for all qcqs <span class="math-inline">\(X,Y \in T\)</span> also <span class="math-inline">\(X \times Y\)</span> is qcqs.</p></div>
+</section>
+
+<section class="theorem definition" id="def:Coherent_Objects_And_Topoi">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/coherent-objects-and-topoi/index.html">Definition 6.99.</a></span></p>
+  <div class="theorem-statement"><p>We say that <span class="math-inline">\(X \in T\)</span> is <em>coherent</em> if it is <span class="math-inline">\(n\)</span>-coherent for all <span class="math-inline">\(n\)</span>. We say <span class="math-inline">\(T\)</span> is <em>coherent</em> if <span class="math-inline">\(* \in T\)</span> is coherent and <em>locally coherent</em> if every object <span class="math-inline">\(X \in T\)</span> admits a cover by coherent objects.</p></div>
+</section>
+<p>We denote the resulting subcategories of <span class="math-inline">\(T\)</span> by</p>
+<div class="math-display">\[T \supseteq \dots \supseteq T^{n\mathrm{-coh}} \supseteq T^{(n+1)\mathrm{-coh}} \supseteq \dots \supseteq \bigcap_n T^{n\mathrm{-coh}} =: T^{\mathrm{coh}}.\]</div>
+<section class="theorem example" id="ex:Coherent_Animae">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/coherent-animae/index.html">Example 6.100.</a></span></p>
+  <div class="theorem-statement"><p>One can show that an anima <span class="math-inline">\(X \in \An\)</span> is <span class="math-inline">\(n\)</span>-coherent if and only if <span class="math-inline">\(\pi_0(X)\)</span> is finite and <span class="math-inline">\(\pi_i(X,x)\)</span> is finite for every base point <span class="math-inline">\(x\)</span> and every <span class="math-inline">\(1 \leq i \leq n\)</span>; this can for example be proved using <a href="#prop:Characterization_Coherent_Objects">Proposition 6.105</a> below. Any anima is locally coherent, since it may be covered by points, which are coherent.</p></div>
+</section>
+
+<section class="theorem example" id="ex:Coherent_Locales">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/coherent-locales/index.html">Example 6.101.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(X\)</span> be a locale. An element of <span class="math-inline">\(X\)</span> is <em>compact</em> if every expression of it as a join admits a finite subcover; equivalently, the corresponding subterminal object of <span class="math-inline">\(\Shv(X)\)</span> is quasi-compact. The topos <span class="math-inline">\(\Shv(X)\)</span> is locally coherent if and only if the compact elements form a basis which is closed under finite meets. In this case <span class="math-inline">\(X\)</span> is called a <em>locally coherent locale</em>. It is coherent precisely when, in addition, the top element is compact.</p>
+<p>For locales, local coherence already implies local <span class="math-inline">\(n\)</span>-coherence for every <span class="math-inline">\(n\)</span>. Consequently, the preceding conditions characterize locally coherent and coherent localic topoi, respectively. The completeness theorem below implies that a coherent locale is spatial, and its spatial realization is a spectral space. Conversely, the locale of open subsets of a spectral space is coherent. The corresponding local statement identifies locally coherent spatial locales with locally spectral spaces.</p></div>
+</section>
+
+<section class="theorem definition" id="def:Relatively_N_Coherent_Morphism">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/relatively-n-coherent-morphism/index.html">Definition 6.102.</a></span></p>
+  <div class="theorem-statement"><p>A map <span class="math-inline">\(f\colon Y \to X\)</span> is called <em>relatively <span class="math-inline">\(n\)</span>-coherent</em> if for every <span class="math-inline">\(Z \to X\)</span> with <span class="math-inline">\(Z\)</span> <span class="math-inline">\(n\)</span>-coherent, also <span class="math-inline">\(Z \times_X Y\)</span> is <span class="math-inline">\(n\)</span>-coherent.</p></div>
+</section>
+
+<section class="theorem warning" id="warn:Relative_Coherence_Differs_From_Slice_Coherence">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/relative-coherence-differs-from-slice-coherence/index.html">Warning 6.103.</a></span></p>
+  <div class="theorem-statement"><p>This is <em>not</em> the same as the condition that <span class="math-inline">\(f \in T_{/X}\)</span> is <span class="math-inline">\(n\)</span>-coherent.</p></div>
+</section>
+
+<section class="theorem lemma" id="lem:Relative_Coherence_Over_Coherent_Base">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/relative-coherence-over-coherent-base/index.html">Lemma 6.104.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(f\colon Y \to X\)</span> be a map and assume that <span class="math-inline">\(X\)</span> is <span class="math-inline">\((n+1)\)</span>-coherent. Then <span class="math-inline">\(f\)</span> is relatively <span class="math-inline">\(n\)</span>-coherent if and only if <span class="math-inline">\(Y\)</span> is <span class="math-inline">\(n\)</span>-coherent.</p></div>
+</section>
+
+<section class="theorem proposition" id="prop:Characterization_Coherent_Objects">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/characterization-coherent-objects/index.html">Proposition 6.105.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a topos, and suppose <span class="math-inline">\(T_0 \subseteq T\)</span> is a full subcategory of <span class="math-inline">\(n\)</span>-coherent objects such that every <span class="math-inline">\(X \in T\)</span> is covered by objects of <span class="math-inline">\(T_0\)</span>. Then the following conditions hold:</p>
+<ul><li><p>A morphism <span class="math-inline">\(f\colon Y \to X\)</span> is relatively <span class="math-inline">\(n\)</span>-coherent if and only if for every map <span class="math-inline">\(U \to X\)</span> with <span class="math-inline">\(U \in T_0\)</span> the pullback <span class="math-inline">\(U \times_X Y\)</span> is <span class="math-inline">\(n\)</span>-coherent.</p></li><li><p>An object <span class="math-inline">\(X \in T\)</span> is <span class="math-inline">\((n+1)\)</span>-coherent if and only if <span class="math-inline">\(X\)</span> is quasi-compact and for every pair of maps <span class="math-inline">\(U \to X \leftarrow V\)</span> with <span class="math-inline">\(U ,V \in T_0\)</span>, the pullback <span class="math-inline">\(U \times_X V\)</span> is <span class="math-inline">\(n\)</span>-coherent.</p></li></ul></div>
+</section>
+
+<section class="theorem corollary" id="cor:Locally_Coherent_Characterization">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/locally-coherent-characterization/index.html">Corollary 6.106.</a></span></p>
+  <div class="theorem-statement"><p>A topos <span class="math-inline">\(T\)</span> is locally coherent if and only if there exists a full subcategory <span class="math-inline">\(T_0 \subseteq T\)</span> covering <span class="math-inline">\(T\)</span> which is closed under fiber products and such that every <span class="math-inline">\(X \in T_0\)</span> is quasi-compact.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-cor:Locally_Coherent_Characterization-main" data-owner-entry="locally-coherent-characterization" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">The “only if” is clear: if <span class="math-inline">\(T\)</span> is locally coherent, we may take <span class="math-inline">\(T_0 := T^{\mathrm{coh}}\)</span> the subcategory of coherent objects, which by design are closed under fiber products.<div class="proof-paragraph-break" aria-hidden="true"></div>Conversely, we inductively use the proposition to show that <span class="math-inline">\(T_0 \subseteq T^{n\text{-coh}}\)</span> for all <span class="math-inline">\(n\)</span>. In particular, <span class="math-inline">\(T_0\)</span> consists of coherent objects. Since they cover <span class="math-inline">\(T\)</span>, we see that <span class="math-inline">\(T\)</span> is locally coherent by definition.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem remark" id="rem:Coherent_Basis_Containing_Terminal_Object">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/coherent-basis-containing-terminal-object/index.html">Remark 6.107.</a></span></p>
+  <div class="theorem-statement"><p>If <span class="math-inline">\(T\)</span> is not just locally coherent, but also coherent, then the collection of objects <span class="math-inline">\(T_0\)</span> provided by the corollary may be assumed to contain the final object.</p></div>
+</section>
+
+<section class="theorem proposition" id="prop:Coherence_And_Connectivity">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/coherence-and-connectivity/index.html">Proposition 6.108.</a></span> (Coherence and connectivity)</p>
+  <div class="theorem-statement"><p>Consider a morphism <span class="math-inline">\(f\colon X \to Y\)</span>.</p>
+<ol><li><p>If <span class="math-inline">\(X\)</span> is <span class="math-inline">\(n\)</span>-coherent and <span class="math-inline">\(f\)</span> is <span class="math-inline">\((n-1)\)</span>-connected, then <span class="math-inline">\(Y\)</span> is <span class="math-inline">\(n\)</span>-coherent.</p></li><li><p>If <span class="math-inline">\(Y\)</span> is <span class="math-inline">\(n\)</span>-coherent and <span class="math-inline">\(f\)</span> is <span class="math-inline">\(n\)</span>-connected, then <span class="math-inline">\(X\)</span> is <span class="math-inline">\(n\)</span>-coherent.</p></li><li><p>If <span class="math-inline">\(Y\)</span> is <span class="math-inline">\(n\)</span>-coherent, <span class="math-inline">\(f\)</span> is <span class="math-inline">\((n-2)\)</span>-truncated, and <span class="math-inline">\(X\)</span> is <span class="math-inline">\((n-1)\)</span>-coherent, then <span class="math-inline">\(X\)</span> is <span class="math-inline">\(n\)</span>-coherent.</p></li></ol></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Coherence_And_Connectivity-main" data-owner-entry="coherence-and-connectivity" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">We argue simultaneously for the three assertions by induction on <span class="math-inline">\(n\)</span>. For <span class="math-inline">\(n=0\)</span>, the first assertion says that effective-epimorphic images of quasi-compact objects are quasi-compact, while the second and third reduce to the stability of quasi-compactness under pullback along monomorphisms. Suppose now that the assertions are known in degree <span class="math-inline">\(n-1\)</span>. The characterization in <a href="#prop:Characterization_Coherent_Objects">Proposition 6.105</a> reduces <span class="math-inline">\(n\)</span>-coherence to quasi-compactness together with the <span class="math-inline">\((n-1)\)</span>-coherence of pullbacks against a covering family of <span class="math-inline">\((n-1)\)</span>-coherent objects. After pulling back <span class="math-inline">\(f\)</span> along such a family, its connectivity or truncation bound is unchanged. The three required statements about these pullbacks are then exactly the induction hypotheses in the relevant slice topoi. This proves all three assertions.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem corollary" id="cor:Coherence_Truncation">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/coherence-truncation/index.html">Corollary 6.109.</a></span></p>
+  <div class="theorem-statement"><p>Consider the unique factorization of <span class="math-inline">\(f\colon X \to Y\)</span> as</p>
+<div class="math-display">\[X \to \tau_{n-1}(X/Y) \to Y\]</div>
+<p>into an <span class="math-inline">\((n-1)\)</span>-connected map followed by an <span class="math-inline">\((n-1)\)</span>-truncated map. If <span class="math-inline">\(X\)</span> is <span class="math-inline">\(n\)</span>-coherent and <span class="math-inline">\(Y\)</span> is <span class="math-inline">\(m\)</span>-coherent, then <span class="math-inline">\(\tau_{n-1}(X/Y)\)</span> is <span class="math-inline">\(\max(n,m)\)</span>-coherent.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-cor:Coherence_Truncation-main" data-owner-entry="coherence-truncation" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">By <a href="#prop:Coherence_And_Connectivity">Proposition 6.108</a>(1), the object <span class="math-inline">\(\tau_{n-1}(X/Y)\)</span> is <span class="math-inline">\(n\)</span>-coherent, so we are done if <span class="math-inline">\(n \geq m\)</span>. If <span class="math-inline">\(m &gt; n\)</span>, we may inductively show that <span class="math-inline">\(\tau_{n-1}(X/Y)\)</span> is <span class="math-inline">\((n + k)\)</span>-coherent for all <span class="math-inline">\(k = 0, \ldots, m-n\)</span>. If we already know it is <span class="math-inline">\((n+k-1)\)</span>-coherent, then using that <span class="math-inline">\(Y\)</span> is <span class="math-inline">\(m\)</span>-coherent and <span class="math-inline">\(\tau_{n-1}(X/Y) \to Y\)</span> is <span class="math-inline">\((n-1)\)</span>-truncated, we get by <a href="#prop:Coherence_And_Connectivity">Proposition 6.108</a>(3) that <span class="math-inline">\(\tau_{n-1}(X/Y)\)</span> is <span class="math-inline">\((n+k)\)</span>-coherent.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem corollary" id="cor:n_Localic_Coherent_Implies_Locally_Coherent">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/n-localic-coherent-implies-locally-coherent/index.html">Corollary 6.110.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be an <span class="math-inline">\(n\)</span>-localic topos. If <span class="math-inline">\(T\)</span> is <span class="math-inline">\((n+1)\)</span>-coherent, then <span class="math-inline">\(T\)</span> is coherent and locally coherent.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-cor:n_Localic_Coherent_Implies_Locally_Coherent-main" data-owner-entry="n-localic-coherent-implies-locally-coherent" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">By assumption, every object <span class="math-inline">\(X \in T\)</span> is covered by objects from <span class="math-inline">\(T_{\leq n-1}\)</span>. Let <span class="math-inline">\(X \in T_{\leq n-1}\)</span>. By assumption on <span class="math-inline">\(T\)</span>, there exists an effective epimorphism <span class="math-inline">\(\bigsqcup_i U_i \twoheadrightarrow X\)</span> where each <span class="math-inline">\(U_i\)</span> is <span class="math-inline">\(n\)</span>-coherent. Because <span class="math-inline">\(X\)</span> is <span class="math-inline">\((n-1)\)</span>-truncated, this map descends to a map <span class="math-inline">\(\bigsqcup_i \tau_{n-1}(U_i) \twoheadrightarrow X\)</span>, which is still an effective epimorphism. By <a href="#prop:Coherence_And_Connectivity">Proposition 6.108</a>(1), each <span class="math-inline">\(\tau_{n-1}(U_i)\)</span> is again <span class="math-inline">\(n\)</span>-coherent. We conclude that every <span class="math-inline">\(X \in T\)</span> is covered by objects from <span class="math-inline">\(T_{\leq n-1}^{n\mathrm{-coh}}\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>Since <span class="math-inline">\(T\)</span> is <span class="math-inline">\((n+1)\)</span>-coherent, it follows that <span class="math-inline">\(T_{\leq n-1}^{n\mathrm{-coh}}\)</span> is closed under finite limits. By <a href="#cor:Locally_Coherent_Characterization">Corollary 6.106</a>, it follows that <span class="math-inline">\(T\)</span> is both coherent and locally coherent.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem corollary" id="cor:Bounded_Coherent_Implies_Locally_Coherent">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/bounded-coherent-implies-locally-coherent/index.html">Corollary 6.111.</a></span></p>
+  <div class="theorem-statement"><p>Assume that <span class="math-inline">\(T\)</span> is both bounded and coherent. Then <span class="math-inline">\(T\)</span> is locally coherent.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-cor:Bounded_Coherent_Implies_Locally_Coherent-main" data-owner-entry="bounded-coherent-implies-locally-coherent" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Since <span class="math-inline">\(T\)</span> is bounded, it is generated under colimits by truncated objects. Hence every object of <span class="math-inline">\(T\)</span> admits an effective epimorphism from a coproduct of truncated objects, and it is enough to cover a truncated object <span class="math-inline">\(X \in T_{\leq n}\)</span> by coherent objects. Since <span class="math-inline">\(T\)</span> is coherent, we may find an effective epimorphism <span class="math-inline">\(\bigsqcup_i U_i \twoheadrightarrow X\)</span> where each <span class="math-inline">\(U_i\)</span> is <span class="math-inline">\((n+1)\)</span>-coherent. Because <span class="math-inline">\(X\)</span> is <span class="math-inline">\(n\)</span>-truncated, this map factors through an effective epimorphism <span class="math-inline">\(\bigsqcup_i \tau_n(U_i) \twoheadrightarrow X\)</span>. By <a href="#prop:Coherence_And_Connectivity">Proposition 6.108</a>(1) and (3), each <span class="math-inline">\(\tau_n(U_i)\)</span> is coherent.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<h3 id="subsec:Finitary_Sites"><span>6.7.3.</span> Finitary sites</h3>
+
+<section class="theorem definition" id="def:Finitary_Site">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/finitary-site/index.html">Definition 6.112.</a></span></p>
+  <div class="theorem-statement"><p>A Grothendieck topology <span class="math-inline">\(\tau\)</span> on a category <span class="math-inline">\(C\)</span> is called <em>finitary</em> if every <span class="math-inline">\(\tau\)</span>-covering sieve contains a <span class="math-inline">\(\tau\)</span>-covering sieve which is generated by a finite number of morphisms in <span class="math-inline">\(C\)</span>.</p></div>
+</section>
+
+<section class="theorem proposition" id="prop:Finitary_Sites_And_Coherence">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/finitary-sites-and-coherence/index.html">Proposition 6.113.</a></span></p>
+  <div class="theorem-statement"><p>\leavevmode</p>
+<ol><li><p>If <span class="math-inline">\((C,\tau)\)</span> is a finitary Grothendieck site and <span class="math-inline">\(C\)</span> admits fiber products, then <span class="math-inline">\(\Shv_{\tau}(C)\)</span> is locally coherent. If <span class="math-inline">\(C\)</span> also admits a terminal object, then <span class="math-inline">\(\Shv_{\tau}(C)\)</span> is also coherent.</p></li><li><p>If <span class="math-inline">\(T\)</span> is hypercomplete and locally coherent, then there exists a finitary site <span class="math-inline">\((C,\tau)\)</span> with fiber products such that <span class="math-inline">\(T \simeq \Shv_{\tau}(C)^{\hyp}\)</span>. If <span class="math-inline">\(T\)</span> is also coherent, then we can choose <span class="math-inline">\(C\)</span> to have a terminal object.</p></li></ol></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Finitary_Sites_And_Coherence-main" data-owner-entry="finitary-sites-and-coherence" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">For (1), let <span class="math-inline">\(a\colon C\to\Shv_\tau(C)\)</span> denote sheafified Yoneda. Every sheaf is covered by objects in the image of <span class="math-inline">\(a\)</span>. Finitariness says precisely that each <span class="math-inline">\(a(c)\)</span> is quasi-compact: a cover of <span class="math-inline">\(a(c)\)</span> corresponds to a covering sieve on <span class="math-inline">\(c\)</span>, which admits a finite covering refinement. Since <span class="math-inline">\(C\)</span> admits fiber products and <span class="math-inline">\(a\)</span> preserves them, the image of <span class="math-inline">\(a\)</span> is closed under fiber products. The claim now follows from <a href="#cor:Locally_Coherent_Characterization">Corollary 6.106</a>. If <span class="math-inline">\(C\)</span> has a terminal object, its image is terminal, so the resulting topos is coherent.<div class="proof-paragraph-break" aria-hidden="true"></div>For (2), choose a small full subcategory <span class="math-inline">\(C\subseteq T^{\coh}\)</span> which covers <span class="math-inline">\(T\)</span> and is closed under fiber products; in the coherent case we also arrange that <span class="math-inline">\(C\)</span> contains the terminal object, using <a href="#rem:Coherent_Basis_Containing_Terminal_Object">Remark 6.107</a>. Give <span class="math-inline">\(C\)</span> the topology in which a family <span class="math-inline">\((U_i\to U)\)</span> covers if <span class="math-inline">\(\bigsqcup_iU_i\to U\)</span> is an effective epimorphism in <span class="math-inline">\(T\)</span>. Since <span class="math-inline">\(U\)</span> is quasi-compact, every covering family admits a finite subfamily which still covers, so this topology is finitary.<div class="proof-paragraph-break" aria-hidden="true"></div>Let <span class="math-inline">\(u\colon C \hookrightarrow T\)</span> denote the inclusion. Since <span class="math-inline">\(C\)</span> is closed under fiber products, <a href="../../entry/left-exactness-tested-on-representables/index.html">Proposition 2.43</a> shows that the left Kan extension <div class="math-display">\[u_!\colon \PSh(C) \to T\]</div> is left exact. By definition of <span class="math-inline">\(\tau\)</span>, all generating <span class="math-inline">\(\tau\)</span>-covering sieves are sent to effective epimorphisms in <span class="math-inline">\(T\)</span>, so <span class="math-inline">\(u_!\)</span> factors as <div class="math-display">\[\PSh(C) \to \Shv_{\tau}(C) \to T.\]</div> On the other hand, <a href="../../entry/dense-subcategory-characterization/index.html">Lemma 6.57</a> shows that the restriction functor <span class="math-inline">\(T \to \PSh(C)\)</span> is fully faithful. Since its essential image consists of <span class="math-inline">\(\tau\)</span>-sheaves, the induced functor <span class="math-inline">\(T \to \Shv_{\tau}(C)\)</span> is also fully faithful. Thus <span class="math-inline">\(\Shv_{\tau}(C) \to T\)</span> is a left exact localization. It is epigenic because its kernel is generated by maps from covering sieves to representables, all of which become effective epimorphisms in <span class="math-inline">\(T\)</span>. An epigenic quotient induces an equivalence on hypercompletions by <span class="citation-group">[Anel et al. <a class="citation" href="#bib-ABFJ_Acyclic_Product">2025, Lemma 2.1.33</a>]</span>. Since <span class="math-inline">\(T\)</span> is hypercomplete, we conclude that <span class="math-inline">\(T \simeq \Shv_{\tau}(C)^{\hyp}\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<h3 id="subsec:Compactness_Theorem"><span>6.7.4.</span> Compactness of coherent objects</h3>
+<p>We will now show the compactness result for coherent objects mentioned before.</p>
+<section class="theorem theorem" id="thm:Compactness_Coherent_Objects">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/compactness-coherent-objects/index.html">Theorem 6.114.</a></span></p>
+  <div class="theorem-statement"><p>If <span class="math-inline">\(X \in T\)</span> is <span class="math-inline">\(n\)</span>-coherent, then <span class="math-inline">\(\Hom(X,-)\colon T_{\leq n-1} \to \An\)</span> preserves filtered colimits, i.e. the object <span class="math-inline">\(\tau_{n-1}(X) \in T_{\leq n-1}\)</span> is compact.</p></div>
+</section>
+
+<section class="theorem corollary" id="cor:Locally_n_Coherent_Compactly_Generated">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/locally-n-coherent-compactly-generated/index.html">Corollary 6.115.</a></span></p>
+  <div class="theorem-statement"><p>If <span class="math-inline">\(T\)</span> is locally <span class="math-inline">\(n\)</span>-coherent, then <span class="math-inline">\(T_{\leq n-1}\)</span> is compactly generated.</p></div>
+</section>
+
+<section class="theorem warning" id="warn:Coherent_Does_Not_Imply_Compact">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/coherent-does-not-imply-compact/index.html">Warning 6.116.</a></span></p>
+  <div class="theorem-statement"><p>An object <span class="math-inline">\(X\)</span> being coherent does <em>not</em> imply that it is compact.</p></div>
+</section>
+
+<section class="theorem remark" id="rem:Coherence_Analogous_To_Almost_Perfect">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/coherence-analogous-to-almost-perfect/index.html">Remark 6.117.</a></span></p>
+  <div class="theorem-statement"><p>The property of coherence is analogous to the property of “almost perfect” in the context of modules.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-thm:Compactness_Coherent_Objects-main" data-owner-entry="compactness-coherent-objects" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Pulling a filtered diagram back to the slice <span class="math-inline">\(T_{/X}\)</span> identifies the required mapping anima with the anima of sections. We may therefore replace <span class="math-inline">\(T\)</span> by <span class="math-inline">\(T_{/X}\)</span> and assume that <span class="math-inline">\(X=*\)</span>; the hypothesis becomes the corresponding coherence condition on the terminal object of the slice. We prove the claim by induction on <span class="math-inline">\(n\)</span>. For <span class="math-inline">\(n = 0\)</span>, the assertion is exactly the definition of quasi-compactness, expressed in terms of filtered unions of subterminal objects.<div class="proof-paragraph-break" aria-hidden="true"></div>Now consider a filtered category <span class="math-inline">\(I\)</span> and an object <span class="math-inline">\(Y \in \Fun(I, T_{\leq n-1})\)</span>. We have to show that the canonical comparison map <div class="math-display">\[\beta_Y\colon \colim_i \Hom(X, Y_i) \to \Hom(X, \colim_i Y_i)\]</div> is an isomorphism. We will show the following claim:<div class="proof-paragraph-break" aria-hidden="true"></div><em>Claim.</em> The map <span class="math-inline">\(\beta_Y\)</span> is an effective epimorphism.<div class="proof-paragraph-break" aria-hidden="true"></div>Assuming this for a moment, we may conclude. It remains to check that <span class="math-inline">\(\beta_Y\)</span> induces isomorphisms on path animae. Consider two points <span class="math-inline">\(x,y \in \colim_i \Hom(X,Y_i)\)</span>. We may represent both at a common stage and, after replacing <span class="math-inline">\(I\)</span> by the corresponding undercategory, assume that this stage is an initial object <span class="math-inline">\(0 \in I\)</span>. For each <span class="math-inline">\(i\)</span>, let <div class="math-display">\[E_i:=X\times_{(x_i,y_i),Y_i\times Y_i}Y_i,\]</div> where the second map to <span class="math-inline">\(Y_i\times Y_i\)</span> is the diagonal. The anima of sections of <span class="math-inline">\(E_i\to X\)</span> is the path anima from <span class="math-inline">\(x_i\)</span> to <span class="math-inline">\(y_i\)</span>. Since <span class="math-inline">\(Y_i\)</span> is <span class="math-inline">\((n-1)\)</span>-truncated, <span class="math-inline">\(E_i\to X\)</span> is <span class="math-inline">\((n-2)\)</span>-truncated. Filtered colimits commute with finite limits in a topos, so the analogous object for <span class="math-inline">\(\colim_iY_i\)</span> is <span class="math-inline">\(\colim_iE_i\)</span>. The induction hypothesis in <span class="math-inline">\(T_{/X}\)</span> therefore identifies the two path animae.<div class="proof-paragraph-break" aria-hidden="true"></div>Let us now prove the claim. Given a map <span class="math-inline">\(X \to \colim_i Y_i\)</span>, we need to show that it factors through some finite stage <span class="math-inline">\(Y_i \to \colim_i Y_i\)</span>. Since <span class="math-inline">\(X\)</span> is quasi-compact and locally <span class="math-inline">\((n-1)\)</span>-coherent, there is an effective epimorphism <span class="math-inline">\(U \twoheadrightarrow X\)</span> where <span class="math-inline">\(U\)</span> is <span class="math-inline">\((n-1)\)</span>-coherent, satisfying the additional property that the composite <span class="math-inline">\(U \twoheadrightarrow X \to \colim_i Y_i\)</span> factors through some <span class="math-inline">\(Y_0\)</span>, where <span class="math-inline">\(0 \in I\)</span>. (This uses that <span class="math-inline">\(I\)</span> is filtered.) Letting <span class="math-inline">\(U_{\bullet} := \check{C}_{\bullet}(U \to X)\)</span> and <span class="math-inline">\(V_{i,\bullet} := \check{C}_{\bullet}(Y_0 \to Y_i)\)</span>, then the commutative diagram <figure class="diagram"><img src="diagrams/tikzcd-e224cf7a733b.svg" alt="Commutative diagram generated from the LaTeX source"></figure> induces a map on Čech nerves of the form <div class="math-display">\[U_{\bullet} \to \colim_i V_{i,\bullet}.\]</div><div class="proof-paragraph-break" aria-hidden="true"></div>Since <span class="math-inline">\(U\)</span> is <span class="math-inline">\((n-1)\)</span>-coherent and <span class="math-inline">\(X\)</span> is <span class="math-inline">\(n\)</span>-coherent, each <span class="math-inline">\(U_m\)</span> is <span class="math-inline">\((n-1)\)</span>-coherent.<div class="proof-paragraph-break" aria-hidden="true"></div>By induction on <span class="math-inline">\(m \leq n\)</span>, we show that the map <span class="math-inline">\(\sk_m(U_{\bullet}) \to \colim_i \sk_m(V_{i,\bullet})\)</span> factors through some <span class="math-inline">\(\sk_m(V_{i,\bullet})\)</span>, as semisimplicial objects. Here <span class="math-inline">\(\sk_m\)</span> denotes the <span class="math-inline">\(m\)</span>-skeleton. At the successor step, the boundary of the desired <span class="math-inline">\(m\)</span>-simplex has already been chosen at a finite stage. The remaining extension problem is a problem of sections for the pullback of <div class="math-display">\[V_{i,m}\longrightarrow V_{i,\bullet}[\partial\Delta^m].\]</div> This map is <span class="math-inline">\((n-m-1)\)</span>-truncated, while <span class="math-inline">\(U_m\)</span> is <span class="math-inline">\((n-1)\)</span>-coherent; the induction hypothesis in the relevant slice therefore moves the extension to a finite stage. Filteredness lets us choose one stage for the finitely many faces and degeneracies. With <span class="math-inline">\(m=n\)</span>, we obtain <div class="math-display">\[\tau_{n-1}\abs{\sk_n(U_{\bullet})} \iso \tau_{n-1}(X)\]</div> and since <span class="math-inline">\(\Hom_T(X,Y_i) \cong \Hom_T(\tau_{n-1}(X), Y_i)\)</span> we may conclude.<div class="proof-paragraph-break" aria-hidden="true"></div>This is the skeletal lifting argument of <span class="citation-group">[Lurie <a class="citation" href="#bib-SAG">2018, Proposition A.2.3.1</a>]</span>; the preceding discussion records the coherence and truncation estimates needed in its application here.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<h3 id="subsec:Completeness_Theorem"><span>6.7.5.</span> The completeness theorem</h3>
+<p>Recall that a morphism of logoi <span class="math-inline">\(\phi\colon S \to T\)</span> is called <em>surjective</em> if it detects effective epimorphisms (or equivalently if it detects <span class="math-inline">\(\infty\)</span>-connected maps). The goal of this section is to prove the following theorem:</p>
+<section class="theorem theorem" id="thm:Completeness_Theorem">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/completeness-theorem/index.html">Theorem 6.118.</a></span> (Completeness theorem)</p>
+  <div class="theorem-statement"><p>If <span class="math-inline">\(T\)</span> is locally coherent, then there exists a surjection <span class="math-inline">\(S \to T\)</span>, where <span class="math-inline">\(S = \An^I\)</span> for some (small) set <span class="math-inline">\(I\)</span>.</p></div>
+</section>
+
+<section class="theorem remark" id="rem:Completeness_For_Locales_And_Classical_Topoi">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/completeness-for-locales-and-classical-topoi/index.html">Remark 6.119.</a></span></p>
+  <div class="theorem-statement"><p>For locales, this is exactly the result that says that coherent locales are spatial, i.e. the locale is a spectral space. For locally coherent classical topoi (in the classical sense), this recovers Deligne's completeness theorem.</p></div>
+</section>
+<p>There are several steps in the proof of this theorem which are interesting. Here is an outline of the proof:</p>
+<ol><li><p>First, we reduce to the case where <span class="math-inline">\(T\)</span> is coherent. In this case, we saw that <span class="math-inline">\(T^{\hyp} \simeq \Shv_{\tau}(C)^{\hyp}\)</span>, where <span class="math-inline">\((C,\tau)\)</span> is a finitary site with finite limits.</p></li><li><p>For every site <span class="math-inline">\((C,\tau)\)</span>, there exists a surjection <span class="math-inline">\(\Shv_{\rho}(D) \to \Shv_{\tau}(C)\)</span>, where <span class="math-inline">\(D\)</span> is a poset. (This is called the <em>Diaconescu cover</em>. It is highly non-canonical.)</p></li><li><p>If <span class="math-inline">\(L\)</span> is a 0-localic topos (i.e. a <em>locale</em>), then there exists a surjection <span class="math-inline">\(\Shv(\Lambda) \to L\)</span> where <span class="math-inline">\(\Lambda\)</span> is a Boolean locale (i.e. a complete Boolean algebra).</p></li><li><p>The locale <span class="math-inline">\(\Shv(\Lambda)\)</span> is hypercomplete, so the functor <span class="math-inline">\(\Shv(\Lambda) \to L_0\Shv_{\rho}(D)\)</span> factors through the hypercompletion <span class="math-inline">\((L_0\Shv_{\rho}(D))^{\hyp} \simeq \Shv_{\rho}(D)^{\hyp}\)</span>.</p></li><li><p>If <span class="math-inline">\((C,\tau)\)</span> is a finitary site with finite limits, then any map <span class="math-inline">\(\Shv(\Lambda) \to \Shv_{\tau}(C)\)</span> factors through <span class="math-inline">\(\Shv(\Spec(\Lambda))\)</span>, where <span class="math-inline">\(\Spec(\Lambda)\)</span> is the spectrum of <span class="math-inline">\(\Lambda\)</span>, seen as a commutative ring.</p></li><li><p>For any topological space <span class="math-inline">\(X\)</span>, the topos <span class="math-inline">\(\Shv(X)\)</span> is covered by <span class="math-inline">\(\prod_{x \in X} \An\)</span>.</p></li></ol>
+<p>We illustrate the proof strategy with the following diagram:</p>
+<figure class="diagram"><img src="diagrams/tikzcd-d0f0ec61af77.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>Assuming all these claims, we may give a proof of the theorem. We first consider <span class="math-inline">\(\Shv_{\tau}(C)^{\hyp} \to T\)</span>, reducing us to <span class="math-inline">\(\Shv_{\tau}(C)\)</span>. Then we have some surjection <span class="math-inline">\(\Shv_{\rho}(D) \twoheadrightarrow \Shv_{\tau}(C)\)</span>, where <span class="math-inline">\(D\)</span> is a poset. Consider the 0-localic reflection <span class="math-inline">\(L_0\Shv_{\rho}(D)\)</span>. There is a surjection <span class="math-inline">\(\Shv(\Lambda) \twoheadrightarrow L_0\Shv_{\rho}(D)\)</span>. Now, since <span class="math-inline">\(\Shv(\Lambda)\)</span> is hypercomplete, this surjection will factor through <span class="math-inline">\((L_0\Shv_{\rho}(D))^{\hyp} \simeq \Shv_{\rho}(D)^{\hyp}\)</span>. All in all, we obtain the composite</p>
+<div class="math-display">\[\Shv(\Lambda) \to (\Shv_{\rho}(D))^{\hyp} \to \Shv_{\rho}(D) \twoheadrightarrow \Shv_{\tau}(C).\]</div>
+<p>This then factors through a map <span class="math-inline">\(\Shv(\Spec(\Lambda)) \twoheadrightarrow \Shv_{\tau}(C)\)</span>, which is surjective by cancellation properties. There is a covering <span class="math-inline">\(\prod_{x \in \Spec(\Lambda)} \An \twoheadrightarrow \Shv(\Spec(\Lambda))\)</span>, and since its source is hypercomplete, the map to <span class="math-inline">\(\Shv_{\tau}(C)\)</span> factors through <span class="math-inline">\(\Shv_{\tau}(C)^{\hyp}\)</span>. All in all, we obtain the desired surjection</p>
+<div class="math-display">\[\prod_{x \in \Spec(\Lambda)} \An \twoheadrightarrow \Shv_{\tau}(C)^{\hyp} \simeq T^{\hyp} \twoheadrightarrow T.\]</div>
+<p>In the remainder of this section, we will go through the details of this proof.</p>
+<h4 id="subsec:Boolean_Algebras"><span>6.7.5.</span> Boolean algebras</h4>
+<p>We recall some basic definitions regarding Boolean algebras.</p>
+<section class="theorem definition" id="def:Boolean_Algebra">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/boolean-algebra/index.html">Definition 6.120.</a></span></p>
+  <div class="theorem-statement"><p>A <em>Boolean algebra</em> <span class="math-inline">\(\Lambda\)</span> is a poset with finite joins <span class="math-inline">\(x \lor y\)</span> and meets <span class="math-inline">\(x \land y\)</span>, where <span class="math-inline">\(\land\)</span> distributes over <span class="math-inline">\(\lor\)</span>, and where every <span class="math-inline">\(x \in \Lambda\)</span> has a complement <span class="math-inline">\(x^c\)</span>, i.e. an element satisfying <span class="math-inline">\(x \land x^c = \bot\)</span> and <span class="math-inline">\(x \lor x^c = \top\)</span>.</p></div>
+</section>
+
+<section class="theorem proposition" id="prop:CBA_Has_Dimension_Zero">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/cba-has-dimension-zero/index.html">Proposition 6.121.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\Lambda\)</span> be a complete Boolean algebra. Then <span class="math-inline">\(\Shv(\Lambda)\)</span> has dimension <span class="math-inline">\(\leq 0\)</span>. In particular, it is Postnikov complete.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:CBA_Has_Dimension_Zero-main" data-owner-entry="cba-has-dimension-zero" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">It suffices to show that every <span class="math-inline">\((-1)\)</span>-connected object <span class="math-inline">\(X\in\Shv(\Lambda)\)</span> admits a global section. We construct, by transfinite induction, a strictly increasing family of elements <span class="math-inline">\(U_\alpha\in\Lambda\)</span>, together with compatible sections <span class="math-inline">\(s_\alpha\in X(U_\alpha)\)</span>, for as long as <span class="math-inline">\(U_\alpha\neq\top\)</span>. Start with <span class="math-inline">\(U_0=\bot\)</span> and its unique section. At a limit ordinal <span class="math-inline">\(\lambda\)</span>, set <span class="math-inline">\(U_\lambda=\bigvee_{\alpha&lt;\lambda}U_\alpha\)</span>. The compatible sections glue uniquely to a section over <span class="math-inline">\(U_\lambda\)</span> by the sheaf condition.<div class="proof-paragraph-break" aria-hidden="true"></div>Suppose that <span class="math-inline">\(U_\alpha&lt;\top\)</span>, and let <span class="math-inline">\(V=U_\alpha^c\)</span>. Since <span class="math-inline">\(X\to *\)</span> is an effective epimorphism, there is a covering <span class="math-inline">\(V=\bigvee_iV_i\)</span> such that <span class="math-inline">\(X(V_i)\)</span> is nonempty for every <span class="math-inline">\(i\)</span>. Choose a nonzero <span class="math-inline">\(V_i\)</span> and a section <span class="math-inline">\(t_i\in X(V_i)\)</span>. The intersection <span class="math-inline">\(U_\alpha\land V_i\)</span> is initial, so <span class="math-inline">\(s_\alpha\)</span> and <span class="math-inline">\(t_i\)</span> agree there. They therefore glue to a section over <span class="math-inline">\(U_{\alpha+1}:=U_\alpha\lor V_i\)</span>, and this element strictly contains <span class="math-inline">\(U_\alpha\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>If this process never reached <span class="math-inline">\(\top\)</span>, it would define a strictly increasing map from the class of ordinals to the underlying set of <span class="math-inline">\(\Lambda\)</span>, which is impossible. Hence some <span class="math-inline">\(U_\alpha\)</span> is <span class="math-inline">\(\top\)</span>, and the corresponding section is a global section of <span class="math-inline">\(X\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>To construct the functor (2) in the above diagram, we use the following:</p>
+<section class="theorem proposition" id="prop:CBA_Surjection_To_Locale">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/cba-surjection-to-locale/index.html">Proposition 6.122.</a></span></p>
+  <div class="theorem-statement"><p>For every <span class="math-inline">\(0\)</span>-localic topos <span class="math-inline">\(L\)</span>, there exists a complete Boolean algebra <span class="math-inline">\(\Lambda\)</span> and a surjection <span class="math-inline">\(\Shv(\Lambda) \twoheadrightarrow L\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:CBA_Surjection_To_Locale-main" data-owner-entry="cba-surjection-to-locale" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Write <span class="math-inline">\(L=\Shv(\Uu)\)</span> for a frame <span class="math-inline">\(\Uu\)</span>. For every strict inequality <span class="math-inline">\(u&lt;v\)</span> in <span class="math-inline">\(\Uu\)</span>, consider the interval frame <div class="math-display">\[[u,v]=\{x\in\Uu\mid u\leq x\leq v\}.\]</div> The map <span class="math-inline">\(q_{u,v}\colon\Uu\to[u,v]\)</span> given by <span class="math-inline">\(x\mapsto (x\lor u)\land v\)</span> preserves arbitrary joins and finite meets, and sends <span class="math-inline">\(u\)</span> and <span class="math-inline">\(v\)</span> to the bottom and top elements of the interval, respectively.<div class="proof-paragraph-break" aria-hidden="true"></div>For any frame <span class="math-inline">\(A\)</span>, let <div class="math-display">\[\operatorname{Reg}(A)=\{a\in A\mid \neg\neg a=a\}.\]</div> This is a complete Boolean algebra: finite meets are inherited from <span class="math-inline">\(A\)</span>, joins are given by <span class="math-inline">\(\neg\neg(\bigvee_i a_i)\)</span>, and complementation is given by <span class="math-inline">\(a\mapsto\neg a\)</span>. The double-negation map <span class="math-inline">\(A\to\operatorname{Reg}(A)\)</span>, <span class="math-inline">\(a\mapsto\neg\neg a\)</span>, is a frame homomorphism. Applied to the nontrivial frame <span class="math-inline">\([u,v]\)</span>, it still distinguishes its bottom and top elements. Hence the composite <div class="math-display">\[h_{u,v}\colon\Uu\xrightarrow{q_{u,v}}[u,v]\xrightarrow{\neg\neg}\operatorname{Reg}([u,v])\]</div> distinguishes <span class="math-inline">\(u\)</span> from <span class="math-inline">\(v\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>Now set <div class="math-display">\[\Lambda:=\prod_{u&lt;v}\operatorname{Reg}([u,v])\]</div> and let <span class="math-inline">\(h\colon\Uu\to\Lambda\)</span> have components <span class="math-inline">\(h_{u,v}\)</span>. Products of complete Boolean algebras are complete Boolean algebras, and <span class="math-inline">\(h\)</span> is a frame homomorphism. It is injective, since the component indexed by <span class="math-inline">\((u,v)\)</span> distinguishes any prescribed strict inequality <span class="math-inline">\(u&lt;v\)</span>. The corresponding map of locales therefore has conservative inverse-image functor, which is to say that the induced morphism <span class="math-inline">\(\Shv(\Lambda)\to\Shv(\Uu)\)</span> is surjective.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<h4 id="subsec:Diaconescu_Cover"><span>6.7.5.</span> The Diaconescu cover</h4>
+
+<section class="theorem proposition" id="prop:Diaconescu_Cover">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/diaconescu-cover/index.html">Proposition 6.123.</a></span> (Diaconescu cover)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> be a category with topology <span class="math-inline">\(\tau\)</span>. Then there exists a surjection <span class="math-inline">\(\Shv_{\rho}(D) \twoheadrightarrow \Shv_{\tau}(C)\)</span>, where <span class="math-inline">\(D\)</span> is a poset.</p></div>
+</section>
+<p>We will prove this below. First, we state a corollary:</p>
+<section class="theorem corollary" id="cor:CBA_Surjection_To_Topos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/cba-surjection-to-topos/index.html">Corollary 6.124.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be any topos. Then there exists a surjection <span class="math-inline">\(\Shv(\Lambda) \twoheadrightarrow T\)</span>, where <span class="math-inline">\(\Lambda\)</span> is a complete Boolean algebra.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-cor:CBA_Surjection_To_Topos-main" data-owner-entry="cba-surjection-to-topos" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">We may write <span class="math-inline">\(T^{\hyp} \simeq \Shv_{\tau}(C)^{\hyp}\)</span> for some <span class="math-inline">\(C\)</span>. In light of the surjection <span class="math-inline">\(T^{\hyp} \twoheadrightarrow T\)</span>, we may assume <span class="math-inline">\(T = \Shv_{\tau}(C)^{\hyp}\)</span>. By <a href="#prop:Diaconescu_Cover">Proposition 6.123</a>, there is a surjection <span class="math-inline">\(\Shv_{\rho}(D) \twoheadrightarrow \Shv_{\tau}(C)\)</span>, which induces a surjection <span class="math-inline">\(\Shv_{\rho}(D)^{\hyp} \twoheadrightarrow \Shv_{\tau}(C)^{\hyp}\)</span>. Consider now the 0-localic reflection <span class="math-inline">\(L_0\Shv_{\rho}(D)\)</span> of this sheaf category. By <a href="#prop:CBA_Surjection_To_Locale">Proposition 6.122</a>, this receives a surjection <span class="math-inline">\(\Shv(\Lambda) \twoheadrightarrow L_0\Shv_{\rho}(D)\)</span>. Since <span class="math-inline">\(\Shv(\Lambda)\)</span> is hypercomplete, this functor factors through the hypercompletion <span class="math-inline">\((L_0 \Shv_{\rho}(D))^{\hyp}\)</span>, which is equivalent to <span class="math-inline">\(\Shv_{\rho}(D)^{\hyp}\)</span> by <a href="../../entry/hypercompletion-of-localic-reflection/index.html">Lemma 6.58</a>. It follows that the resulting functor <span class="math-inline">\(\Shv(\Lambda) \twoheadrightarrow \Shv_{\rho}(D)^{\hyp}\)</span> is surjective. All in all, we obtain surjections <div class="math-display">\[\Shv(\Lambda) \twoheadrightarrow (\Shv_{\rho}(D))^{\hyp} \twoheadrightarrow \Shv_{\tau}(C)^{\hyp} \simeq T^{\hyp} \twoheadrightarrow T\]</div> as desired.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<details class="proof-shell" id="proof-prop:Diaconescu_Cover-main" data-owner-entry="diaconescu-cover" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">We claim that there exists a poset <span class="math-inline">\(D\)</span> with a functor <span class="math-inline">\(f\colon D \to C\)</span>, such that: <ol class="proof-list"><li>The functor <span class="math-inline">\(f\)</span> is essentially surjective;</li><li>For all <span class="math-inline">\(x \in D\)</span>, the induced functor <span class="math-inline">\(D_{/x} \to C_{/f(x)}\)</span> is essentially surjective.</li></ol> To this end, let <span class="math-inline">\(\hat{C}\)</span> be a simplicial set whose associated complete Segal anima is <span class="math-inline">\(C\)</span>. Define a poset <span class="math-inline">\(P\)</span> as follows: <div class="math-display">\[P = \{(n, \sigma) \mid n \in \N, \sigma\colon \Delta^n \to \hat{C}\catop\},\]</div> where <span class="math-inline">\((n,\sigma) \leq (n', \sigma')\)</span> if and only if <span class="math-inline">\(n \leq n'\)</span> and <span class="math-inline">\(\sigma = \sigma'\vert_{\Delta^{\{0,1, \dots, n\}}}\)</span>. We may define a functor <span class="math-inline">\(N(P) \to \hat{C}\catop\)</span>, which sends a sequence <span class="math-inline">\((n_0, \sigma_0) \leq \dots \leq (n_k, \sigma_k)\)</span> to the composite <span class="math-inline">\(\Delta^k \xrightarrow{n_0, \dots, n_k} \Delta^{n_k} \xrightarrow{\sigma_k} \hat{C}\catop\)</span>. By passing to realizations, this gives a functor <div class="math-display">\[D := P\catop \to C.\]</div> We prove that this satisfies (1) and (2). Essential surjectivity is clear from the <span class="math-inline">\(0\)</span>-simplices. For (2), consider <span class="math-inline">\(P_{(n,\sigma)/} \to (C\catop)_{\sigma(n)/}\)</span> and an arrow <span class="math-inline">\(\alpha\colon\sigma(n)\to c\)</span> in <span class="math-inline">\(C\catop\)</span>. Together, <span class="math-inline">\(\sigma\)</span> and <span class="math-inline">\(\alpha\)</span> define a map <div class="math-display">\[\Delta^n\cup_{\{n\}}\Delta^1\longrightarrow\widehat C\catop.\]</div> The inclusion <span class="math-inline">\(\Delta^n\cup_{\{n\}}\Delta^1\hookrightarrow\Delta^{n+1}\)</span> is inner anodyne. Since <span class="math-inline">\(\widehat C\catop\)</span> is a category, we may extend this map to a simplex <span class="math-inline">\(\widetilde\sigma\colon\Delta^{n+1}\to\widehat C\catop\)</span>. The object <span class="math-inline">\((n+1,\widetilde\sigma)\)</span> lies above <span class="math-inline">\((n,\sigma)\)</span> and its image represents <span class="math-inline">\(\alpha\)</span>. Thus the indicated functor on undercategories is essentially surjective. Passing to opposites gives (2).<div class="proof-paragraph-break" aria-hidden="true"></div>From now on, fix such an <span class="math-inline">\(f\)</span>. For a sieve <span class="math-inline">\(R\hookrightarrow y(x)\)</span> and a map <span class="math-inline">\(\alpha\colon x'\to x\)</span> in <span class="math-inline">\(D\)</span>, let <span class="math-inline">\(\langle f(\alpha^*R)\rangle\)</span> denote the sieve on <span class="math-inline">\(f(x')\)</span> generated by the image of <span class="math-inline">\(\alpha^*R\)</span>. Declare <span class="math-inline">\(R\)</span> to be a <span class="math-inline">\(\rho\)</span>-cover if <span class="math-inline">\(\langle f(\alpha^*R)\rangle\)</span> is a <span class="math-inline">\(\tau\)</span>-cover of <span class="math-inline">\(f(x')\)</span> for every <span class="math-inline">\(\alpha\)</span>. This defines a Grothendieck topology. The maximal sieve is covering and stability under pullback is built into the definition. For transitivity, suppose that <span class="math-inline">\(R\)</span> covers <span class="math-inline">\(x\)</span> and that a sieve <span class="math-inline">\(S\)</span> on <span class="math-inline">\(x\)</span> pulls back to a cover along every map belonging to <span class="math-inline">\(R\)</span>. After an arbitrary base change <span class="math-inline">\(x'\to x\)</span>, the images under <span class="math-inline">\(f\)</span> of the arrows in the pullback of <span class="math-inline">\(R\)</span> cover <span class="math-inline">\(f(x')\)</span>. Over each of them, the image of the corresponding pullback of <span class="math-inline">\(S\)</span> covers. The local character axiom for <span class="math-inline">\(\tau\)</span> then shows that <span class="math-inline">\(\langle f(S|_{x'})\rangle\)</span> covers <span class="math-inline">\(f(x')\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div><em>Claim.</em> The composite <div class="math-display">\[\PSh(C) \xrightarrow{f^*} \PSh(D) \to \Shv_{\rho}(D)\]</div> factors through <span class="math-inline">\(\Shv_{\tau}(C)\)</span>. Let <span class="math-inline">\(R\hookrightarrow y(c)\)</span> be a <span class="math-inline">\(\tau\)</span>-covering sieve. It suffices to show that <span class="math-inline">\(f^*R\to f^*y(c)\)</span> becomes an effective epimorphism after <span class="math-inline">\(\rho\)</span>-sheafification. Pull it back along a map <span class="math-inline">\(y(d)\to f^*y(c)\)</span>, corresponding to a map <span class="math-inline">\(f(d)\to c\)</span>. The resulting sieve <span class="math-inline">\(S\)</span> on <span class="math-inline">\(d\)</span> consists of those arrows <span class="math-inline">\(e\to d\)</span> whose composite <span class="math-inline">\(f(e)\to c\)</span> belongs to <span class="math-inline">\(R\)</span>. After any base change <span class="math-inline">\(d'\to d\)</span>, the pullback of <span class="math-inline">\(R\)</span> along <span class="math-inline">\(f(d')\to c\)</span> is a <span class="math-inline">\(\tau\)</span>-cover. By (2), every object of its indexing slice is, up to equivalence, the image of an object of <span class="math-inline">\(D_{/d'}\)</span>. It follows that the sieve generated by <span class="math-inline">\(f(S|_{d'})\)</span> is this pullback sieve, and hence is a <span class="math-inline">\(\tau\)</span>-cover. Thus <span class="math-inline">\(S\)</span> is a <span class="math-inline">\(\rho\)</span>-cover. This proves the claim and gives a morphism of logoi <div class="math-display">\[L_\rho f^*\colon\Shv_\tau(C)\longrightarrow\Shv_\rho(D).\]</div><div class="proof-paragraph-break" aria-hidden="true"></div>It remains to prove that <span class="math-inline">\(L_\rho f^*\)</span> detects effective epimorphisms. Let <span class="math-inline">\(X\to Y\)</span> be a map of <span class="math-inline">\(\tau\)</span>-sheaves whose image is an effective epimorphism. To test that <span class="math-inline">\(X\to Y\)</span> is an effective epimorphism, fix <span class="math-inline">\(y(c)\to Y\)</span>. By (1), after replacing <span class="math-inline">\(c\)</span> by an equivalent object we may write <span class="math-inline">\(c=f(d)\)</span>. The corresponding section of <span class="math-inline">\(f^*Y\)</span> over <span class="math-inline">\(d\)</span> lifts locally through <span class="math-inline">\(f^*X\)</span> after a <span class="math-inline">\(\rho\)</span>-covering sieve <span class="math-inline">\(S\)</span> of <span class="math-inline">\(d\)</span>, because the sheafification of <span class="math-inline">\(f^*X\to f^*Y\)</span> is an effective epimorphism. By the definition of <span class="math-inline">\(\rho\)</span>, the sieve generated by <span class="math-inline">\(f(S)\)</span> is a <span class="math-inline">\(\tau\)</span>-cover of <span class="math-inline">\(c\)</span>. Over this cover the original section lifts through <span class="math-inline">\(X\)</span>, so <span class="math-inline">\(X\to Y\)</span> is an effective epimorphism. Hence <span class="math-inline">\(L_\rho f^*\)</span> is conservative on effective epimorphisms, and the corresponding morphism of topoi is surjective.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<h4 id="subsec:Factorization_Through_Spectrum"><span>6.7.5.</span> Factorization through the spectrum</h4>
+<p>Now, let <span class="math-inline">\(\Lambda\)</span> be a complete Boolean algebra. Then <span class="math-inline">\(\Spec(\Lambda)\)</span> is a <span class="math-inline">\(0\)</span>-dimensional spectral space. By some abstract theory we will treat as a black-box, there is an inclusion</p>
+<div class="math-display">\[u\colon \Lambda \hookrightarrow \Open(\Spec(\Lambda)),\]</div>
+<p>which is the inclusion of the quasi-compact open (=clopen) subsets. This inclusion admits a left exact left adjoint</p>
+<div class="math-display">\[v\colon \Open(\Spec(\Lambda)) \to \Lambda,\]</div>
+<p>which is given by sending <span class="math-inline">\(U\)</span> to <span class="math-inline">\(\bigvee_{u(\lambda) \subseteq U} \lambda\)</span>. Thus <span class="math-inline">\(v(U)\)</span> is the join in <span class="math-inline">\(\Lambda\)</span> of all clopen subsets contained in <span class="math-inline">\(U\)</span>; it need not itself correspond to a clopen subset of <span class="math-inline">\(\Spec(\Lambda)\)</span>. This results in a left exact localization</p>
+<div class="math-display">\[\phi_*\colon \Shv(\Lambda) \rightleftarrows \Shv(\Spec(\Lambda)) : \phi^*,\]</div>
+<p>where <span class="math-inline">\(\phi^*\)</span> is the left Kan extension along <span class="math-inline">\(v\)</span>, while <span class="math-inline">\(\phi_*\)</span> is left Kan extension along <span class="math-inline">\(u\)</span>, or equivalently precomposition with <span class="math-inline">\(v\)</span>. Note that <span class="math-inline">\(\phi_*\)</span> is fully faithful.</p>
+<section class="theorem lemma" id="lem:Finite_Effective_Epi_Preserved">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/finite-effective-epi-preserved/index.html">Lemma 6.125.</a></span></p>
+  <div class="theorem-statement"><p>For every effective epimorphism <span class="math-inline">\(\bigsqcup_{i=1}^n Y_i \to X\)</span> in <span class="math-inline">\(\Shv(\Lambda)\)</span>, the map <span class="math-inline">\(\bigsqcup_{i=1}^n \phi_*(Y_i) \to \phi_*(X)\)</span> is an effective epimorphism in <span class="math-inline">\(\Shv(\Spec(\Lambda))\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Finite_Effective_Epi_Preserved-main" data-owner-entry="finite-effective-epi-preserved" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">The category <span class="math-inline">\(\Shv(\Spec(\Lambda))\)</span> is generated under colimits by the image of <span class="math-inline">\(u\)</span>: as <span class="math-inline">\(\Spec(\Lambda)\)</span> is a spectral space, it is generated by the quasi-compact opens. Since we have <div class="math-display">\[\phi_*(Y_i) \times_{\phi_*(X)} u(\lambda) = \phi_*(Y_i \times_X \lambda),\]</div> we may assume that <span class="math-inline">\(X = \lambda \in \Lambda\)</span>. Now, consider the epi-mono factorization <div class="math-display">\[Y_i \overset{u_i}{\twoheadrightarrow} \lambda_i \hookrightarrow \lambda.\]</div> Note that the map <span class="math-inline">\(\lambda_i \hookrightarrow \lambda\)</span> is representable, because any subobject of a representable is representable (since <span class="math-inline">\(\Lambda\)</span> is precisely the subobjects of the terminal sheaf).<div class="proof-paragraph-break" aria-hidden="true"></div>Since <span class="math-inline">\(\Lambda_{/\lambda_i}\)</span> has dimension at most <span class="math-inline">\(0\)</span>, the map <span class="math-inline">\(u_i\)</span> has a section <span class="math-inline">\(s_i\)</span>. So, we then have the composite <div class="math-display">\[\bigsqcup_{i=1}^n u(\lambda_i) \xrightarrow{(s_i)} \bigsqcup_{i=1}^n \phi_*(Y_i) \to u(\lambda),\]</div> which is an effective epimorphism in <span class="math-inline">\(\Shv(\Spec(\Lambda))\)</span>, because <span class="math-inline">\(u\)</span> preserves <em>finite</em> joins. But then it follows that also the second map is an effective epimorphism.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<h4 id="subsec:Proof_Of_Completeness_Theorem"><span>6.7.5.</span> Proof of the completeness theorem</h4>
+<p>We can now finally deduce the proof of the main result.</p>
+<details class="proof-shell" id="proof-thm:Completeness_Theorem-main" data-owner-entry="completeness-theorem" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">First suppose that <span class="math-inline">\(T\)</span> is coherent. By <a href="#prop:Finitary_Sites_And_Coherence">Proposition 6.113</a>, there is a finitary site <span class="math-inline">\((C,\tau)\)</span> with finite limits and an equivalence <span class="math-inline">\(T^{\hyp}\simeq\Shv_\tau(C)^{\hyp}\)</span>. The composite <span class="math-inline">\(T^{\hyp}\to T\)</span> is surjective, so it is enough to construct a surjection onto <span class="math-inline">\(\Shv_\tau(C)^{\hyp}\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>By <a href="#cor:CBA_Surjection_To_Topos">Corollary 6.124</a>, there exists a complete Boolean algebra <span class="math-inline">\(\Lambda\)</span> and a surjection <span class="math-inline">\(\Shv(\Lambda) \twoheadrightarrow \Shv_{\tau}(C)\)</span>. We claim that this factors as follows: <div class="math-display">\[\Shv(\Lambda) \xrightarrow{\phi_*} \Shv(\Spec(\Lambda)) \rightarrow \Shv_{\tau}(C).\]</div> Since <span class="math-inline">\(C\)</span> has finite limits, the given morphism of topoi <span class="math-inline">\(\Shv(\Lambda) \to \Shv_{\tau}(C)\)</span> corresponds to a morphism of logoi <span class="math-inline">\(\Shv_{\tau}(C) \to \Shv(\Lambda)\)</span>, which is obtained by left Kan extending some left exact functor <span class="math-inline">\(C \to \Shv(\Lambda)\)</span>. We may then consider the following composite: <div class="math-display">\[C \to \Shv(\Lambda) \xrightarrow{\phi_*} \Shv(\Spec(\Lambda)).\]</div> This is still left exact. Since <span class="math-inline">\(\tau\)</span> is finitary, it suffices for descent that finite covering families be carried to effective epimorphisms, and this follows from <a href="#lem:Finite_Effective_Epi_Preserved">Lemma 6.125</a>. We therefore obtain a morphism of topoi <span class="math-inline">\(\Shv(\Spec(\Lambda)) \to \Shv_\tau(C)\)</span>. Since <span class="math-inline">\(\phi^*\phi_*\simeq\id\)</span> by full faithfulness of <span class="math-inline">\(\phi_*\)</span>, its composite with <span class="math-inline">\(\Shv(\Lambda)\to\Shv(\Spec(\Lambda))\)</span> is the original surjection. Right cancellation shows that <span class="math-inline">\(\Shv(\Spec(\Lambda))\to\Shv_\tau(C)\)</span> is itself surjective.<div class="proof-paragraph-break" aria-hidden="true"></div>For every point <span class="math-inline">\(x\in\Spec(\Lambda)\)</span>, the stalk functor gives a point <span class="math-inline">\(\An\to\Shv(\Spec(\Lambda))\)</span>. Their coproduct defines a surjection <div class="math-display">\[\prod_{x\in\Spec(\Lambda)}\An\longrightarrow\Shv(\Spec(\Lambda)),\]</div> because stalks at all points jointly detect isomorphisms of sheaves on a topological space. The source is hypercomplete, so the composite with <span class="math-inline">\(\Shv(\Spec(\Lambda))\to\Shv_\tau(C)\)</span> factors through the hypercompletion <span class="math-inline">\(\Shv_\tau(C)^{\hyp}\)</span>. The factor remains surjective, and composing with <span class="math-inline">\(T^{\hyp}\to T\)</span> proves the theorem for coherent <span class="math-inline">\(T\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>Finally, suppose that <span class="math-inline">\(T\)</span> is only locally coherent. Choose a set of coherent objects <span class="math-inline">\((U_i)_{i\in I}\)</span> covering the terminal object. Then <span class="math-inline">\(\prod_{i\in I}T_{/U_i}\to T\)</span> is surjective, and every slice <span class="math-inline">\(T_{/U_i}\)</span> is coherent. Applying the coherent case to each slice and taking the product of the resulting sets gives a surjection <span class="math-inline">\(\An^S\to T\)</span> for a set <span class="math-inline">\(S\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-Barwick_Glasman_Haine_Exodromy">Clark Barwick, Saul Glasman, Peter Haine. <em>Exodromy</em>. 2018.</li>
+<li id="bib-ABFJ_Acyclic_Product">Mathieu Anel, Georg Biedermann, Eric Finster, André Joyal. <em>Left-exact localizations of $\infty$-topoi III: The acyclic product</em>. 2025.</li>
+<li id="bib-SAG">Jacob Lurie. <em>Spectral Algebraic Geometry</em>. under construction (version dated February 2018), www.math.ias.edu/~lurie/papers/SAG-rootfile.pdf. 2018.</li></ol></section>
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+      <a class="context-step-control" rel="prev" href="../essential-morphisms-and-shape-theory/index.html" aria-label="Previous section: Essential morphisms and shape theory" title="Previous section: Essential morphisms and shape theory"><span aria-hidden="true">←</span></a>
+      <a class="context-step-control" rel="next" href="../pretopoi/index.html" aria-label="Next section: Pretopoi" title="Next section: Pretopoi"><span aria-hidden="true">→</span></a>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../chapter/introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../../chapter/foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../../chapter/truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../../chapter/topoi-logoi/index.html">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../../chapter/modalities/index.html">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../../chapter/topics-in-topos-theory/index.html" aria-current="location">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../../chapter/geometry/index.html">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../../chapter/factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../../chapter/limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../sheaf-topoi/index.html">
+          <span class="context-entry-heading">Section 6.1</span>
+          <span class="context-entry-title">Sheaf topoi</span>
+        </a></li>
+<li><a href="../groupoid-actions-and-principal-bundles/index.html">
+          <span class="context-entry-heading">Section 6.2</span>
+          <span class="context-entry-title">Groupoid actions and principal bundles</span>
+        </a></li>
+<li><a href="../hypercovers/index.html">
+          <span class="context-entry-heading">Section 6.3</span>
+          <span class="context-entry-title">Hypercovers</span>
+        </a></li>
+<li><a href="../localic-topoi-postnikov-completeness-and-boundedness/index.html">
+          <span class="context-entry-heading">Section 6.4</span>
+          <span class="context-entry-title">Localic topoi, Postnikov-completeness, and boundedness</span>
+        </a></li>
+<li><a href="../dimension-theory/index.html">
+          <span class="context-entry-heading">Section 6.5</span>
+          <span class="context-entry-title">Dimension theory</span>
+        </a></li>
+<li><a href="../essential-morphisms-and-shape-theory/index.html">
+          <span class="context-entry-heading">Section 6.6</span>
+          <span class="context-entry-title">Essential morphisms and shape theory</span>
+        </a></li>
+<li><a href="../coherence/index.html" aria-current="page">
+          <span class="context-entry-heading">Section 6.7</span>
+          <span class="context-entry-title">Coherence</span>
+        </a></li>
+<li><a href="../pretopoi/index.html">
+          <span class="context-entry-heading">Section 6.8</span>
+          <span class="context-entry-title">Pretopoi</span>
+        </a></li>
+<li><a href="../makkai-completeness/index.html">
+          <span class="context-entry-heading">Section 6.9</span>
+          <span class="context-entry-title">Makkai completeness</span>
+        </a></li>
+<li><a href="../compactly-assembled-categories-and-exponentiability/index.html">
+          <span class="context-entry-heading">Section 6.10</span>
+          <span class="context-entry-title">Compactly assembled categories and exponentiability</span>
+        </a></li>
+<li><a href="../topoi-of-parametrized-objects/index.html">
+          <span class="context-entry-heading">Section 6.11</span>
+          <span class="context-entry-title">Topoi of parametrized objects</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <p class="context-nav-kicker">Section 6.7</p>
+      <p class="context-nav-description">Coherence</p>
+      <ol class="context-entry-list">
+        <li><a href="#cor:Cohomology_Of_Coherent_Objects_Preserves_Filtered_Colimits" data-section-target="cor:Cohomology_Of_Coherent_Objects_Preserves_Filtered_Colimits">
+          <span class="context-entry-heading">Corollary 6.90</span>
+          <span class="context-entry-title">Cohomology of coherent objects preserves filtered colimits</span>
+        </a></li>
+<li><a href="#def:Locally_Coherent_Topos" data-section-target="def:Locally_Coherent_Topos">
+          <span class="context-entry-heading">Definition 6.91</span>
+          <span class="context-entry-title">Locally coherent topos</span>
+        </a></li>
+<li><a href="#ex:Surjection_From_Set_Topos_Is_Conservative" data-section-target="ex:Surjection_From_Set_Topos_Is_Conservative">
+          <span class="context-entry-heading">Example 6.92</span>
+          <span class="context-entry-title">Surjection from set topos is conservative</span>
+        </a></li>
+<li><a href="#ex:Kan_Fibrations_Are_Realization_Fibrations" data-section-target="ex:Kan_Fibrations_Are_Realization_Fibrations">
+          <span class="context-entry-heading">Example 6.93</span>
+          <span class="context-entry-title">Kan fibrations are realization fibrations</span>
+        </a></li>
+<li><a href="#def:Quasi_Compact_Object_And_Topos" data-section-target="def:Quasi_Compact_Object_And_Topos">
+          <span class="context-entry-heading">Definition 6.94</span>
+          <span class="context-entry-title">Quasi-compact object and topos</span>
+        </a></li>
+<li><a href="#def:Quasi_Separated_Object" data-section-target="def:Quasi_Separated_Object">
+          <span class="context-entry-heading">Definition 6.95</span>
+          <span class="context-entry-title">Quasi-separated object</span>
+        </a></li>
+<li><a href="#warn:Coherence_Terminology" data-section-target="warn:Coherence_Terminology">
+          <span class="context-entry-heading">Warning 6.96</span>
+          <span class="context-entry-title">Coherence terminology</span>
+        </a></li>
+<li><a href="#def:N_Coherent_Objects_And_Topoi" data-section-target="def:N_Coherent_Objects_And_Topoi">
+          <span class="context-entry-heading">Definition 6.97</span>
+          <span class="context-entry-title">N coherent objects and topoi</span>
+        </a></li>
+<li><a href="#ex:One_And_Two_Coherent_Topoi" data-section-target="ex:One_And_Two_Coherent_Topoi">
+          <span class="context-entry-heading">Example 6.98</span>
+          <span class="context-entry-title">One and two coherent topoi</span>
+        </a></li>
+<li><a href="#def:Coherent_Objects_And_Topoi" data-section-target="def:Coherent_Objects_And_Topoi">
+          <span class="context-entry-heading">Definition 6.99</span>
+          <span class="context-entry-title">Coherent objects and topoi</span>
+        </a></li>
+<li><a href="#ex:Coherent_Animae" data-section-target="ex:Coherent_Animae">
+          <span class="context-entry-heading">Example 6.100</span>
+          <span class="context-entry-title">Coherent animae</span>
+        </a></li>
+<li><a href="#ex:Coherent_Locales" data-section-target="ex:Coherent_Locales">
+          <span class="context-entry-heading">Example 6.101</span>
+          <span class="context-entry-title">Coherent locales</span>
+        </a></li>
+<li><a href="#def:Relatively_N_Coherent_Morphism" data-section-target="def:Relatively_N_Coherent_Morphism">
+          <span class="context-entry-heading">Definition 6.102</span>
+          <span class="context-entry-title">Relatively n coherent morphism</span>
+        </a></li>
+<li><a href="#warn:Relative_Coherence_Differs_From_Slice_Coherence" data-section-target="warn:Relative_Coherence_Differs_From_Slice_Coherence">
+          <span class="context-entry-heading">Warning 6.103</span>
+          <span class="context-entry-title">Relative coherence differs from slice coherence</span>
+        </a></li>
+<li><a href="#lem:Relative_Coherence_Over_Coherent_Base" data-section-target="lem:Relative_Coherence_Over_Coherent_Base">
+          <span class="context-entry-heading">Lemma 6.104</span>
+          <span class="context-entry-title">Relative coherence over coherent base</span>
+        </a></li>
+<li><a href="#prop:Characterization_Coherent_Objects" data-section-target="prop:Characterization_Coherent_Objects">
+          <span class="context-entry-heading">Proposition 6.105</span>
+          <span class="context-entry-title">Characterization coherent objects</span>
+        </a></li>
+<li><a href="#cor:Locally_Coherent_Characterization" data-section-target="cor:Locally_Coherent_Characterization">
+          <span class="context-entry-heading">Corollary 6.106</span>
+          <span class="context-entry-title">Locally coherent characterization</span>
+        </a></li>
+<li><a href="#rem:Coherent_Basis_Containing_Terminal_Object" data-section-target="rem:Coherent_Basis_Containing_Terminal_Object">
+          <span class="context-entry-heading">Remark 6.107</span>
+          <span class="context-entry-title">Coherent basis containing terminal object</span>
+        </a></li>
+<li><a href="#prop:Coherence_And_Connectivity" data-section-target="prop:Coherence_And_Connectivity">
+          <span class="context-entry-heading">Proposition 6.108</span>
+          <span class="context-entry-title">Coherence and connectivity</span>
+        </a></li>
+<li><a href="#cor:Coherence_Truncation" data-section-target="cor:Coherence_Truncation">
+          <span class="context-entry-heading">Corollary 6.109</span>
+          <span class="context-entry-title">Coherence truncation</span>
+        </a></li>
+<li><a href="#cor:n_Localic_Coherent_Implies_Locally_Coherent" data-section-target="cor:n_Localic_Coherent_Implies_Locally_Coherent">
+          <span class="context-entry-heading">Corollary 6.110</span>
+          <span class="context-entry-title">N localic coherent implies locally coherent</span>
+        </a></li>
+<li><a href="#cor:Bounded_Coherent_Implies_Locally_Coherent" data-section-target="cor:Bounded_Coherent_Implies_Locally_Coherent">
+          <span class="context-entry-heading">Corollary 6.111</span>
+          <span class="context-entry-title">Bounded coherent implies locally coherent</span>
+        </a></li>
+<li><a href="#def:Finitary_Site" data-section-target="def:Finitary_Site">
+          <span class="context-entry-heading">Definition 6.112</span>
+          <span class="context-entry-title">Finitary site</span>
+        </a></li>
+<li><a href="#prop:Finitary_Sites_And_Coherence" data-section-target="prop:Finitary_Sites_And_Coherence">
+          <span class="context-entry-heading">Proposition 6.113</span>
+          <span class="context-entry-title">Finitary sites and coherence</span>
+        </a></li>
+<li><a href="#thm:Compactness_Coherent_Objects" data-section-target="thm:Compactness_Coherent_Objects">
+          <span class="context-entry-heading">Theorem 6.114</span>
+          <span class="context-entry-title">Compactness coherent objects</span>
+        </a></li>
+<li><a href="#cor:Locally_n_Coherent_Compactly_Generated" data-section-target="cor:Locally_n_Coherent_Compactly_Generated">
+          <span class="context-entry-heading">Corollary 6.115</span>
+          <span class="context-entry-title">Locally n coherent compactly generated</span>
+        </a></li>
+<li><a href="#warn:Coherent_Does_Not_Imply_Compact" data-section-target="warn:Coherent_Does_Not_Imply_Compact">
+          <span class="context-entry-heading">Warning 6.116</span>
+          <span class="context-entry-title">Coherent does not imply compact</span>
+        </a></li>
+<li><a href="#rem:Coherence_Analogous_To_Almost_Perfect" data-section-target="rem:Coherence_Analogous_To_Almost_Perfect">
+          <span class="context-entry-heading">Remark 6.117</span>
+          <span class="context-entry-title">Coherence analogous to almost perfect</span>
+        </a></li>
+<li><a href="#thm:Completeness_Theorem" data-section-target="thm:Completeness_Theorem">
+          <span class="context-entry-heading">Theorem 6.118</span>
+          <span class="context-entry-title">Completeness theorem</span>
+        </a></li>
+<li><a href="#rem:Completeness_For_Locales_And_Classical_Topoi" data-section-target="rem:Completeness_For_Locales_And_Classical_Topoi">
+          <span class="context-entry-heading">Remark 6.119</span>
+          <span class="context-entry-title">Completeness for locales and classical topoi</span>
+        </a></li>
+<li><a href="#def:Boolean_Algebra" data-section-target="def:Boolean_Algebra">
+          <span class="context-entry-heading">Definition 6.120</span>
+          <span class="context-entry-title">Boolean algebra</span>
+        </a></li>
+<li><a href="#prop:CBA_Has_Dimension_Zero" data-section-target="prop:CBA_Has_Dimension_Zero">
+          <span class="context-entry-heading">Proposition 6.121</span>
+          <span class="context-entry-title">Complete Boolean algebra has dimension zero</span>
+        </a></li>
+<li><a href="#prop:CBA_Surjection_To_Locale" data-section-target="prop:CBA_Surjection_To_Locale">
+          <span class="context-entry-heading">Proposition 6.122</span>
+          <span class="context-entry-title">Complete Boolean algebra surjection to locale</span>
+        </a></li>
+<li><a href="#prop:Diaconescu_Cover" data-section-target="prop:Diaconescu_Cover">
+          <span class="context-entry-heading">Proposition 6.123</span>
+          <span class="context-entry-title">Diaconescu cover</span>
+        </a></li>
+<li><a href="#cor:CBA_Surjection_To_Topos" data-section-target="cor:CBA_Surjection_To_Topos">
+          <span class="context-entry-heading">Corollary 6.124</span>
+          <span class="context-entry-title">Complete Boolean algebra surjection to topos</span>
+        </a></li>
+<li><a href="#lem:Finite_Effective_Epi_Preserved" data-section-target="lem:Finite_Effective_Epi_Preserved">
+          <span class="context-entry-heading">Lemma 6.125</span>
+          <span class="context-entry-title">Finite effective epi preserved</span>
+        </a></li>
+      </ol>
+    </nav>
+  </section></div>
+  </aside>
+  <aside class="publication-fragment-notice" id="def:Ultracategory"><strong>Retired fragment.</strong> The discussion of Makkai completeness moved from the coherence section to its own section. It now appears at <a href="../makkai-completeness/#def:Ultracategory">this address</a>.</aside>
+<aside class="publication-fragment-notice" id="quest:Recover_Topos_From_Category_Of_Points"><strong>Retired fragment.</strong> The discussion of Makkai completeness moved from the coherence section to its own section. It now appears at <a href="../makkai-completeness/#quest:Recover_Topos_From_Category_Of_Points">this address</a>.</aside>
+<aside class="publication-fragment-notice" id="rmk:Condensed_And_Ultra"><strong>Retired fragment.</strong> The discussion of Makkai completeness moved from the coherence section to its own section. It now appears at <a href="../makkai-completeness/#rmk:Condensed_And_Ultra">this address</a>.</aside>
+<aside class="publication-fragment-notice" id="thm:Makkai_Completeness"><strong>Retired fragment.</strong> The discussion of Makkai completeness moved from the coherence section to its own section. It now appears at <a href="../makkai-completeness/#thm:Makkai_Completeness">this address</a>.</aside>
+</main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

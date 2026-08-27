@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sheaf topoi | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/section/sheaf-topoi/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="section-page has-context-nav" data-record-id="sheaf-topoi" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">·</span> Section 6.1</p>
+      <h1>Sheaf topoi</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page">
+      
+<h2 id="sec:Sheaf_topoi"><span>6.1.</span> Sheaf topoi</h2>
+<p>Sheaves on Grothendieck sites provide one of the fundamental constructions of topoi. We begin by showing that localization at any pullback-stable set of sieves is left exact. We then relate Grothendieck topologies on a small category to intrinsic Grothendieck topologies and monogenic congruences on its presheaf topos. Finally, we describe the resulting sheaves by Čech descent, characterize effective epimorphisms by local sections, and discuss the functoriality induced by continuous and cocontinuous morphisms of sites.</p>
+<section class="theorem definition" id="def:Sieve">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/sieve/index.html">Definition 6.1.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> be a category. A <em>sieve</em> on an object <span class="math-inline">\(X \in C\)</span> is a subfunctor <span class="math-inline">\(U \hookrightarrow y(X)\)</span> of the representable presheaf <span class="math-inline">\(y(X) = \Hom_C(-,X)\)</span>. Equivalently, it is a collection of morphisms with codomain <span class="math-inline">\(X\)</span> that is closed under precomposition.</p></div>
+</section>
+
+<section class="theorem theorem" id="thm:Sheaves_Form_Topos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/sheaves-form-topos/index.html">Theorem 6.2.</a></span> (<span class="citation-group">[Lurie <a class="citation" href="#bib-lurie2009HTT">2009, Proposition 6.2.2.7</a>]</span>)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> be a small category, and let <span class="math-inline">\(\tau\)</span> be a collection of sieves on <span class="math-inline">\(C\)</span> stable under pullbacks. Let</p>
+<div class="math-display">\[\Shv_{\tau}(C) \quad \subseteq \quad \PSh(C)\]</div>
+<p>be the full subcategory spanned by the <span class="math-inline">\(\tau\)</span>-local objects. Then <span class="math-inline">\(\Shv_{\tau}(C)\)</span> is a left exact localization of <span class="math-inline">\(\PSh(C)\)</span>. In particular, <span class="math-inline">\(\Shv_{\tau}(C)\)</span> is a topos.</p></div>
+</section>
+<p>The standard proof of this result (as found for example in <span class="citation-group">[Lurie <a class="citation" href="#bib-lurie2009HTT">2009</a>]</span>) involves a detailed analysis of the “plus-construction”, which is fairly intricate. However, using the machinery of modalities and congruences established in <span class="cross-reference-unlinked">Section 5.3</span>, we can give a much simpler and more conceptual proof. We will freely use the notations introduced in that section.</p>
+<details class="proof-shell" id="proof-thm:Sheaves_Form_Topos-main" data-owner-entry="sheaves-form-topos" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">We know from <a href="../../entry/strongly-saturated-class-gives-localization/index.html">Proposition A.15</a> that the inclusion admits an accessible left adjoint <span class="math-inline">\(L\colon \PSh(C) \to \Shv_{\tau}(C)\)</span>. We need to show that <span class="math-inline">\(L\)</span> is left exact. By <a href="../../entry/left-exact-localizations-and-congruences/index.html">Corollary 4.16</a>, it suffices to show that the class of morphisms <span class="math-inline">\(K\)</span> inverted by <span class="math-inline">\(L\)</span> is a congruence.<div class="proof-paragraph-break" aria-hidden="true"></div>The class <span class="math-inline">\(K\)</span> is precisely the strong saturation <span class="math-inline">\(\tau^{ss}\)</span> of <span class="math-inline">\(\tau\)</span>. We claim that it agrees with <span class="math-inline">\(\tau^c\)</span>. Since <span class="math-inline">\(\tau\)</span> consists of monomorphisms, it follows from <a href="../../entry/modalities-generated-by-monomorphisms-are-congruences/index.html">Corollary 5.43</a> that <span class="math-inline">\(\tau^c = \tau^m\)</span>. Choose the representable presheaves as a set of generators of <span class="math-inline">\(\PSh(C)\)</span>. In the notation of <a href="../../entry/generated-modalities-as-saturations-of-base-changes/index.html">Proposition 5.32</a>, the set <span class="math-inline">\(\tau^{bc}\)</span> then consists of the pullbacks of the sieves in <span class="math-inline">\(\tau\)</span> along maps from representable presheaves. It agrees with <span class="math-inline">\(\tau\)</span>: one inclusion follows from pullback stability, while the other follows by taking the identity map of the codomain of each sieve. Hence <a href="../../entry/generated-modalities-as-saturations-of-base-changes/index.html">Proposition 5.32</a> gives <span class="math-inline">\(\tau^m = (\tau^{bc})^s = \tau^s\)</span>. All in all, we see that <span class="math-inline">\(\tau^{ss} \subseteq \tau^c = \tau^m = \tau^s \subseteq \tau^{ss}\)</span>, and thus all four classes agree. In particular <span class="math-inline">\(\tau^{ss}\)</span> is a congruence, finishing the proof.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<h3 id="subsec:Grothendieck_Sites"><span>6.1.1.</span> Grothendieck sites</h3>
+<p>While not necessary for the definition of <span class="math-inline">\(\Shv_{\tau}(C)\)</span>, the collection <span class="math-inline">\(\tau\)</span> in the previous theorem is usually taken to be a <em>Grothendieck topology</em>. We first formulate an intrinsic, accessible version of this notion in an arbitrary topos:</p>
+<section class="theorem definition" id="def:Grothendieck_Topology">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/grothendieck-topology/index.html">Definition 6.3.</a></span> (<span class="citation-group">[Anel et al. <a class="citation" href="#bib-ABFJ_Grothendieck_Topologies">2024, Definition 3.1.2</a>]</span>)</p>
+  <div class="theorem-statement"><p>An <em>accessible Grothendieck topology</em> on a topos <span class="math-inline">\(T\)</span> is a class <span class="math-inline">\(\tau\)</span> of monomorphisms in <span class="math-inline">\(T\)</span>, called the <em>covering monomorphisms</em>, such that:</p>
+<ol><li><p>The class <span class="math-inline">\(\tau\)</span> contains all isomorphisms, and its saturation <span class="math-inline">\(\tau^s\)</span> is of small generation;</p></li><li><p>The class <span class="math-inline">\(\tau\)</span> is a local class, in the sense of <a href="../../entry/local-classes/index.html">Definition 2.46</a>;</p></li><li><p>Covering monomorphisms are closed under composition;</p></li><li><p>Given monomorphisms <span class="math-inline">\(f\colon X \hookrightarrow Y\)</span> and <span class="math-inline">\(g\colon Y \hookrightarrow Z\)</span> in <span class="math-inline">\(T\)</span>, if <span class="math-inline">\(g \circ f\)</span> is a covering monomorphism, then so is <span class="math-inline">\(g\)</span>.</p></li></ol>
+<p>We refer to a <span class="math-inline">\(\tau\)</span>-local object as a <em><span class="math-inline">\(\tau\)</span>-sheaf</em> and denote the full subcategory of <span class="math-inline">\(\tau\)</span>-sheaves by</p>
+<div class="math-display">\[\Shv_{\tau}(T) \quad \subseteq \quad T.\]</div></div>
+</section>
+
+<section class="theorem remark" id="remark-1-4">
+  <p class="theorem-heading"><span>Remark 1.4.</span></p>
+  <div class="theorem-statement"><p>The small-generation condition is not part of the unrestricted notion of an extended Grothendieck topology in <span class="citation-group">[Anel et al. <a class="citation" href="#bib-ABFJ_Grothendieck_Topologies">2024, Definition 3.1.2</a>]</span>. We impose it here so that localization at the covering monomorphisms is accessible. In the remainder of these notes, “Grothendieck topology on a topos” will always mean an accessible Grothendieck topology in this sense.</p></div>
+</section>
+<p>The argument from <a href="#thm:Sheaves_Form_Topos">Theorem 6.2</a> goes through, showing that the localization functor <span class="math-inline">\(L_{\tau}\colon T \to \Shv_{\tau}(T)\)</span> is left exact.</p>
+<section class="theorem remark" id="rem:Morphisms_Of_Sheaf_Topoi">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/morphisms-of-sheaf-topoi/index.html">Remark 6.5.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\((T,\tau)\)</span> and <span class="math-inline">\((S,\tau')\)</span> be topoi equipped with Grothendieck topologies. A morphism of topoi <span class="math-inline">\(\phi_*\colon T \to S\)</span> restricts to a functor <span class="math-inline">\(\phi^{\Shv}\colon \Shv_{\tau}(T) \to \Shv_{\tau'}(S)\)</span> if and only if its associated logos morphism <span class="math-inline">\(\phi^*\colon S \to T\)</span> preserves covering monomorphisms. Indeed, by adjunction the restriction exists precisely when <span class="math-inline">\(\phi^*\)</span> sends every <span class="math-inline">\(\tau'\)</span>-covering monomorphism to a <span class="math-inline">\(\tau\)</span>-local equivalence. Since <span class="math-inline">\(\phi^*\)</span> is left exact, these images are monomorphisms, and <a href="#prop:Grothendieck_Topology_Monogenic_Congruence_Bijection">Proposition 6.9</a> identifies the <span class="math-inline">\(\tau\)</span>-local equivalences which are monic with the <span class="math-inline">\(\tau\)</span>-covering monomorphisms. In this case, the functor <span class="math-inline">\(\phi^{\Shv}\)</span> is automatically a morphism of topoi. By passing to left adjoints, we see that <span class="math-inline">\(\phi^*\)</span> commutes with sheafification:</p>
+<figure class="diagram"><img src="diagrams/tikzcd-ae29b338171c.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div>
+</section>
+<p>When specializing <a href="#def:Grothendieck_Topology">Definition 6.3</a> to presheaf topoi, we recover the usual notion of a Grothendieck site.</p>
+<section class="theorem notation" id="not:Pullback_Of_Sieve">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/pullback-of-sieve/index.html">Notation 6.6.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(f\colon X \to Y\)</span> be a morphism in some category <span class="math-inline">\(C\)</span>. For every sieve <span class="math-inline">\(U \hookrightarrow y(Y)\)</span>, we denote by <span class="math-inline">\(f^*U \hookrightarrow y(X)\)</span> the sieve obtained by pullback along <span class="math-inline">\(y(f)\colon y(X) \to y(Y)\)</span>. Note that it consists of those morphisms <span class="math-inline">\(g\colon Z \to X\)</span> such that the composite <span class="math-inline">\(f \circ g\)</span> is in the sieve <span class="math-inline">\(U\)</span>.</p></div>
+</section>
+
+<section class="theorem definition" id="def:Grothendieck_Topology_Site">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/grothendieck-topology-site/index.html">Definition 6.7.</a></span> (Grothendieck topology, <span class="citation-group">[Lurie <a class="citation" href="#bib-lurie2009HTT">2009, Definition 6.2.2.1</a>]</span>)</p>
+  <div class="theorem-statement"><p>A <em>Grothendieck topology</em> on a category <span class="math-inline">\(C\)</span> consists of a specification, for each object <span class="math-inline">\(X\)</span> of <span class="math-inline">\(C\)</span>, of a collection of sieves on <span class="math-inline">\(C\)</span> which we will refer to as <em>covering sieves</em>. The collections of covering sieves are required to satisfy the following properties:</p>
+<ol><li><p>For every object <span class="math-inline">\(X\)</span> of <span class="math-inline">\(C\)</span>, the identity <span class="math-inline">\(y(X) \to y(X)\)</span> is a covering sieve;</p></li><li><p>For every morphism <span class="math-inline">\(f\colon X \to Y\)</span> in <span class="math-inline">\(C\)</span> and every covering sieve <span class="math-inline">\(U \hookrightarrow y(Y)\)</span> on <span class="math-inline">\(Y\)</span>, the pullback sieve <span class="math-inline">\(f^*U \hookrightarrow y(X)\)</span> is a covering sieve on <span class="math-inline">\(X\)</span>;</p></li><li><p>Let <span class="math-inline">\(X\)</span> be an object of <span class="math-inline">\(C\)</span>, <span class="math-inline">\(U \hookrightarrow y(X)\)</span> a covering sieve on <span class="math-inline">\(X\)</span>, and <span class="math-inline">\(V \hookrightarrow y(X)\)</span> an arbitrary sieve on <span class="math-inline">\(X\)</span>. Suppose that, for every morphism <span class="math-inline">\(f \colon Y \to X\)</span> belonging to <span class="math-inline">\(U\)</span>, the pullback sieve <span class="math-inline">\(f^*V\)</span> is a covering sieve on <span class="math-inline">\(Y\)</span>. Then <span class="math-inline">\(V\)</span> is a covering sieve on <span class="math-inline">\(X\)</span>.</p></li></ol>
+<p>A <em>Grothendieck site</em> is a category <span class="math-inline">\(C\)</span> equipped with a Grothendieck topology.</p></div>
+</section>
+
+<section class="theorem lemma" id="lem:Grothendieck_Topologies_On_Category_And_Presheaf_Topos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/grothendieck-topologies-on-category-and-presheaf-topos/index.html">Lemma 6.8.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> be a small category. Then there is a bijection between Grothendieck topologies on <span class="math-inline">\(C\)</span> in the sense of <a href="#def:Grothendieck_Topology_Site">Definition 6.7</a> and Grothendieck topologies on <span class="math-inline">\(\PSh(C)\)</span> in the sense of <a href="#def:Grothendieck_Topology">Definition 6.3</a>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Grothendieck_Topologies_On_Category_And_Presheaf_Topos-main" data-owner-entry="grothendieck-topologies-on-category-and-presheaf-topos" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">If <span class="math-inline">\(\tau\)</span> is a Grothendieck topology on <span class="math-inline">\(\PSh(C)\)</span>, we declare a sieve <span class="math-inline">\(U \hookrightarrow y(X)\)</span> to be covering if it is a covering monomorphism in <span class="math-inline">\(\PSh(C)\)</span>, i.e. if it belongs to <span class="math-inline">\(\tau\)</span>. Conditions (1) and (2) follow from (a) and base-change stability. For (3), let <span class="math-inline">\(i\colon U \hookrightarrow y(X)\)</span> be a covering sieve and let <span class="math-inline">\(j\colon V \hookrightarrow y(X)\)</span> be a sieve such that for every map <span class="math-inline">\(f\colon y(Y) \to U\)</span> from a representable the projection <span class="math-inline">\(y(Y) \times_{y(X)} V \hookrightarrow y(Y)\)</span> is a covering monomorphism. Since <span class="math-inline">\(\tau\)</span> is local, it follows by descent that <span class="math-inline">\(U \times_{y(X)} V \to U\)</span> is a covering monomorphism. Its composite with <span class="math-inline">\(U \hookrightarrow y(X)\)</span> is covering by (c), and hence <span class="math-inline">\(V \hookrightarrow y(X)\)</span> is covering by (d).<div class="proof-paragraph-break" aria-hidden="true"></div>Conversely, given a Grothendieck topology on <span class="math-inline">\(C\)</span>, we define a monomorphism <span class="math-inline">\(U \hookrightarrow X\)</span> in <span class="math-inline">\(\PSh(C)\)</span> to be covering if its pullback along every map <span class="math-inline">\(y(Y) \to X\)</span> from a representable is a covering sieve. We verify properties (a)–(d).<div class="proof-paragraph-break" aria-hidden="true"></div>For (a), all isomorphisms are covering. Moreover, the saturation <span class="math-inline">\(\tau^s\)</span> is generated by the set of covering sieves on representables. Indeed, every monomorphism <span class="math-inline">\(U \hookrightarrow X\)</span> is the colimit in <span class="math-inline">\(\Ar(\PSh(C))\)</span> of its pullbacks along maps <span class="math-inline">\(y(Y) \to X\)</span>, by the density of the Yoneda embedding. Hence every covering monomorphism belongs to the saturation of the covering sieves.<div class="proof-paragraph-break" aria-hidden="true"></div>For (b), stability under base change follows directly from the definition, and closure under coproducts follows because every map from a representable into a coproduct factors through one of its summands. For descent, consider a pullback square as in <a href="../../entry/local-classes/index.html">Definition 2.46</a> in which the bottom map is an effective epimorphism and the upper vertical map is covering. After pulling back along a map from a representable, the bottom effective epimorphism admits a section: this follows by evaluating it at the object representing its target. The corresponding pullback of the lower vertical map is therefore a base change of the upper vertical map and hence is covering.<div class="proof-paragraph-break" aria-hidden="true"></div>For (c), let <span class="math-inline">\(V \hookrightarrow U\)</span> and <span class="math-inline">\(U \hookrightarrow X\)</span> be covering monomorphisms. To show that <span class="math-inline">\(V \hookrightarrow X\)</span> is covering, we may pull back along a map from a representable and thus assume that <span class="math-inline">\(X = y(X')\)</span>. Then <span class="math-inline">\(U \hookrightarrow y(X')\)</span> is a covering sieve. By axiom (3), it suffices to show that for every <span class="math-inline">\(f\colon Y \to X'\)</span> in <span class="math-inline">\(U\)</span>, the pullback sieve <span class="math-inline">\(f^*V \hookrightarrow y(Y)\)</span> is covering. This map is a base change of <span class="math-inline">\(V \hookrightarrow U\)</span>, so it is covering by assumption.<div class="proof-paragraph-break" aria-hidden="true"></div>For (d), consider monomorphisms <span class="math-inline">\(V \xhookrightarrow{f} U \xhookrightarrow{g} X\)</span> such that <span class="math-inline">\(gf \in \tau\)</span>. We may again assume that <span class="math-inline">\(X = y(X')\)</span> is representable. Then <span class="math-inline">\(V \hookrightarrow y(X')\)</span> is a covering sieve. By axiom (3), it suffices to show that for every <span class="math-inline">\(h\colon Y \to X'\)</span> in <span class="math-inline">\(V\)</span>, the pullback <span class="math-inline">\(h^*U \hookrightarrow y(Y)\)</span> is covering. Since <span class="math-inline">\(h\)</span> factors through <span class="math-inline">\(V \hookrightarrow U\)</span>, this pullback is the identity of <span class="math-inline">\(y(Y)\)</span> and hence is covering.<div class="proof-paragraph-break" aria-hidden="true"></div>It is immediate from the construction that these two assignments are inverse to each other, finishing the proof.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem proposition" id="prop:Grothendieck_Topology_Monogenic_Congruence_Bijection">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/grothendieck-topology-monogenic-congruence-bijection/index.html">Proposition 6.9.</a></span> (<span class="citation-group">[Anel et al. <a class="citation" href="#bib-ABFJ_Grothendieck_Topologies">2024, Proposition 3.1.10</a>]</span>)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a topos. There is a bijection</p>
+<div class="math-display">\[\left\{\textup{Grothendieck topologies on }T\right\}
+			\xleftrightarrow[\;K \cap \Mono \mathrel{\rotatebox[origin=c]{180}{$\mapsto$}} K\;]{\;\tau \mapsto \tau^c\;}
+			\left\{\textup{monogenic congruences of small generation on }T\right\}.\]</div></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Grothendieck_Topology_Monogenic_Congruence_Bijection-main" data-owner-entry="grothendieck-topology-monogenic-congruence-bijection" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">First let <span class="math-inline">\(\tau\)</span> be a Grothendieck topology on <span class="math-inline">\(T\)</span>. The congruence <span class="math-inline">\(\tau^c\)</span> is monogenic, since <span class="math-inline">\(\tau \subseteq \Mono\)</span> gives <span class="math-inline">\(\tau^c = \tau^m = (\tau \cap \Mono)^m\)</span>, where the first equality uses <a href="../../entry/modalities-generated-by-monomorphisms-are-congruences/index.html">Corollary 5.43</a>. Moreover, the saturation <span class="math-inline">\(\tau^s\)</span> is stable under base change: base-change functors preserve colimits, and a base change of a composite of covering monomorphisms is again such a composite. Hence <span class="math-inline">\(\tau^m=\tau^s\)</span>, and therefore <span class="math-inline">\(\tau^c=\tau^s\)</span>. In particular, <span class="math-inline">\(\tau^c\)</span> is of small generation. We claim that <span class="math-inline">\(\tau^c \cap \Mono = \tau\)</span>. Since <span class="math-inline">\(\tau\)</span> consists of monomorphisms, it suffices to show <span class="math-inline">\(\tau^c \cap \Mono \subseteq \tau\)</span>. Let <div class="math-display">\[E := \{f \in \Ar(T)\mid \im(f)\in\tau\}\]</div> be the class of <em><span class="math-inline">\(\tau\)</span>-coverings</em> (cf. <span class="citation-group">[Anel et al. <a class="citation" href="#bib-ABFJ_Grothendieck_Topologies">2024, Proposition 3.1.10</a>]</span>). We claim that <span class="math-inline">\(E\)</span> is saturated and contains <span class="math-inline">\(\tau\)</span>, hence <span class="math-inline">\(\tau^s\subseteq E\)</span>. Clearly <span class="math-inline">\(E\)</span> contains all isomorphisms, and <span class="math-inline">\(\tau \subseteq E\)</span> since <span class="math-inline">\(\im(m) = m\)</span> for every monomorphism <span class="math-inline">\(m\)</span>. Let us verify the remaining conditions.<div class="proof-paragraph-break" aria-hidden="true"></div><em>Base change.</em> Since the epi-mono factorization is stable under base change and <span class="math-inline">\(\tau\)</span> is closed under base change, <span class="math-inline">\(E\)</span> is closed under base change.<div class="proof-paragraph-break" aria-hidden="true"></div><em>Composition.</em> Let <span class="math-inline">\(f\colon X \to Y\)</span> and <span class="math-inline">\(g\colon Y \to Z\)</span> be morphisms in <span class="math-inline">\(E\)</span>, with epi-mono factorizations <div class="math-display">\[X \overset{\coim(f)}{\twoheadrightarrow} \Im(f) \xhookrightarrow{\im(f)} Y \overset{\coim(g)}{\twoheadrightarrow} \Im(g) \xhookrightarrow{\im(g)} Z,\]</div> so that <span class="math-inline">\(\im(f), \im(g) \in \tau\)</span>. Let <span class="math-inline">\(q\colon \Im(f) \to \Im(g)\)</span> be the composite <span class="math-inline">\(\coim(g) \circ \im(f)\)</span>, with epi-mono factorization <span class="math-inline">\(q = j \circ e_q\)</span> through some <span class="math-inline">\(J\)</span>: <figure class="diagram"><img src="diagrams/tikzcd-3fd41e26b210.svg" alt="Commutative diagram generated from the LaTeX source"></figure> Then <span class="math-inline">\(\im(gf) = \im(g) \circ j\)</span>, so it suffices to show <span class="math-inline">\(j \in \tau\)</span>. Pull back <span class="math-inline">\(j\)</span> along the effective epimorphism <span class="math-inline">\(\coim(g)\colon Y \twoheadrightarrow \Im(g)\)</span> to obtain <span class="math-inline">\(\pi\colon M := Y \times_{\Im(g)} J \hookrightarrow Y\)</span>. Since <span class="math-inline">\(\im(f)\)</span> factors through <span class="math-inline">\(\pi\)</span> (via the map <span class="math-inline">\(\Im(f) \to J\)</span> and the inclusion <span class="math-inline">\(\Im(f) \hookrightarrow Y\)</span>), the composite <span class="math-inline">\(\Im(f) \hookrightarrow M \xhookrightarrow{\pi} Y\)</span> equals <span class="math-inline">\(\im(f) \in \tau\)</span>. By axiom (d), it follows that <span class="math-inline">\(\pi \in \tau\)</span>. Since <span class="math-inline">\(\pi\)</span> is the pullback of <span class="math-inline">\(j\)</span> along an effective epimorphism and <span class="math-inline">\(\tau\)</span> is a local class, we conclude <span class="math-inline">\(j \in \tau\)</span>. Finally, <span class="math-inline">\(\im(gf) = \im(g) \circ j \in \tau\)</span> by axiom (c).<div class="proof-paragraph-break" aria-hidden="true"></div><em>Colimits.</em> First, <span class="math-inline">\(E\)</span> is closed under coproducts: since images commute with coproducts (as both the class of monomorphisms and the class of effective epimorphisms are closed under coproducts), we have <span class="math-inline">\(\im(\coprod f_i) = \coprod \im(f_i)\)</span>, and <span class="math-inline">\(\tau\)</span> is closed under coproducts by locality. For a general colimit <span class="math-inline">\(f'\colon A' \to B'\)</span> of a diagram <span class="math-inline">\(\{f_i\colon A_i \to B_i\}_{i \in I}\)</span> in <span class="math-inline">\(\Ar(T)\)</span>, let <span class="math-inline">\(f\colon A \to B\)</span> be the coproduct <span class="math-inline">\(\coprod_{i \in I} f_i\)</span>, so that <span class="math-inline">\(f \in E\)</span>. The canonical maps <span class="math-inline">\(a\colon A \twoheadrightarrow A'\)</span> and <span class="math-inline">\(b\colon B \twoheadrightarrow B'\)</span> are effective epimorphisms, and <span class="math-inline">\(f'a = bf\)</span>. Since <span class="math-inline">\(b\)</span> is an effective epimorphism (hence in <span class="math-inline">\(E\)</span>) and <span class="math-inline">\(f \in E\)</span>, the composition <span class="math-inline">\(bf = f'a\)</span> lies in <span class="math-inline">\(E\)</span> by the above. Since <span class="math-inline">\(a\)</span> is an effective epimorphism, <span class="math-inline">\(\im(f'a) = \im(f')\)</span>, so <span class="math-inline">\(f' \in E\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>This establishes that <span class="math-inline">\(E\)</span> is saturated. If <span class="math-inline">\(m\in\tau^s\cap\Mono\)</span>, then <span class="math-inline">\(m\in E\)</span>, so <span class="math-inline">\(\im(m)=m\)</span> lies in <span class="math-inline">\(\tau\)</span>. Thus <span class="math-inline">\(\tau^c\cap\Mono = \tau^s\cap\Mono\subseteq\tau\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>Conversely, let <span class="math-inline">\(K\)</span> be a monogenic congruence of small generation and set <span class="math-inline">\(\tau_K := K \cap \Mono\)</span>. The congruence generated by <span class="math-inline">\(\tau_K\)</span> is <div class="math-display">\[\tau_K^c = \tau_K^m = (K \cap \Mono)^m = K,\]</div> where the first equality uses <a href="../../entry/modalities-generated-by-monomorphisms-are-congruences/index.html">Corollary 5.43</a>, and the last is the monogenicity of <span class="math-inline">\(K\)</span>. We now verify that <span class="math-inline">\(\tau_K\)</span> is a Grothendieck topology.<div class="proof-paragraph-break" aria-hidden="true"></div>(a) The class <span class="math-inline">\(\tau_K\)</span> contains all isomorphisms. Since <span class="math-inline">\(K\)</span> is monogenic and of small generation, <a href="../../entry/monogenic-parts-via-images/index.html">Lemma 5.56</a> provides a set <span class="math-inline">\(\Sigma\subseteq\tau_K\)</span> of monomorphisms which generates <span class="math-inline">\(K\)</span> as an acyclic class. Choose a set of generators of <span class="math-inline">\(T\)</span> and let <span class="math-inline">\(\Sigma^{bc}\)</span> be the corresponding set of base changes. Since <span class="math-inline">\(\tau_K\)</span> is closed under base change, we have <span class="math-inline">\(\Sigma^{bc}\subseteq\tau_K\)</span>. Hence <div class="math-display">\[K=\Sigma^m=(\Sigma^{bc})^s\subseteq\tau_K^s\subseteq K,\]</div> where the second equality is <a href="../../entry/generated-modalities-as-saturations-of-base-changes/index.html">Proposition 5.32</a>. Thus <span class="math-inline">\(\tau_K^s=K\)</span>, so <span class="math-inline">\(\tau_K^s\)</span> is of small generation.<div class="proof-paragraph-break" aria-hidden="true"></div>(b) The class <span class="math-inline">\(\tau_K\)</span> is local: <ul class="proof-list"><li>Closure under base change is immediate from base-change stability of <span class="math-inline">\(K\)</span> and <span class="math-inline">\(\Mono\)</span>.</li><li>Closure under small coproducts follows since <span class="math-inline">\(K\)</span> is saturated (hence closed under coproducts in <span class="math-inline">\(\Ar(T)\)</span>), and coproducts of monomorphisms are monomorphisms in a topos.</li><li>For descent along effective epimorphisms, consider a pullback square as in <a href="../../entry/local-classes/index.html">Definition 2.46</a> with <span class="math-inline">\(f' \in \tau_K\)</span>. Then <span class="math-inline">\(f' \in K\)</span>, so <span class="math-inline">\(f \in K\)</span> by locality of <span class="math-inline">\(K\)</span>. Also, since pullback along an effective epimorphism is conservative and preserves monomorphisms, <span class="math-inline">\(f\)</span> is monic. Hence <span class="math-inline">\(f \in K \cap \Mono = \tau_K\)</span>.</li></ul><div class="proof-paragraph-break" aria-hidden="true"></div>(c) If <span class="math-inline">\(f,g \in \tau_K\)</span>, then <span class="math-inline">\(f,g \in K\)</span> and <span class="math-inline">\(f,g\)</span> are monomorphisms. Since <span class="math-inline">\(K\)</span> is saturated, <span class="math-inline">\(gf \in K\)</span>, and since monomorphisms are closed under composition, <span class="math-inline">\(gf \in \Mono\)</span>. Thus <span class="math-inline">\(gf \in \tau_K\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>(d) Let <span class="math-inline">\(V \xhookrightarrow{f} U \xhookrightarrow{g} X\)</span> be monomorphisms with <span class="math-inline">\(gf\in\tau_K\)</span>. Since <span class="math-inline">\(gf\in K\)</span>, the image of <span class="math-inline">\(gf\)</span> in the quotient <span class="math-inline">\(q\colon T\to T/K\)</span> is an isomorphism, and thus <span class="math-inline">\(q(g)\)</span> admits a section. As <span class="math-inline">\(q\)</span> is left exact, <span class="math-inline">\(q(g)\)</span> is a monomorphism, hence an isomorphism, so <span class="math-inline">\(g \in K\)</span>. Since <span class="math-inline">\(g\)</span> is monic, <span class="math-inline">\(g\in K\cap\Mono=\tau_K\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>Hence <span class="math-inline">\(\tau_K\)</span> is a Grothendieck topology. Together with <span class="math-inline">\(\tau_K^c=K\)</span> and <span class="math-inline">\(\tau^c \cap\Mono=\tau\)</span>, this shows the two assignments are inverse.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<h3 id="subsec:Sheaves_And_Cech_Descent"><span>6.1.2.</span> Sheaves and Čech descent</h3>
+<p>We now introduce the category of sheaves on a Grothendieck site, and formulate its objects in terms of Čech descent.</p>
+<section class="theorem definition" id="def:Sheaf_Topos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/sheaf-topos/index.html">Definition 6.10.</a></span> (Sheaf category, <span class="citation-group">[Lurie <a class="citation" href="#bib-lurie2009HTT">2009, Definition 6.2.2.6</a>]</span>)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> be a category equipped with a Grothendieck topology <span class="math-inline">\(\tau\)</span>. We denote by</p>
+<div class="math-display">\[\Shv_{\tau}(C) \quad \subseteq \quad \PSh(C)\]</div>
+<p>the full subcategory of <span class="math-inline">\(\tau\)</span>-sheaves. We denote the left exact left adjoint by</p>
+<div class="math-display">\[L_{\tau}\colon \PSh(C) \to \Shv_{\tau}(C).\]</div></div>
+</section>
+<p>The functor <span class="math-inline">\(L_{\tau}\)</span> is known as the <em>sheafification functor</em>.</p>
+<section class="theorem example" id="ex:Open_Covering_Topology">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/open-covering-topology/index.html">Example 6.11.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(X\)</span> be a topological space. Then the poset <span class="math-inline">\(\Open(X)\)</span> of open subsets admits a Grothendieck topology, called the <em>open covering topology</em>, for which the covering sieves of some <span class="math-inline">\(U \in \Open(X)\)</span> are those sieves generated by open coverings <span class="math-inline">\(U = \bigcup_{i \in I} U_i\)</span>. We denote the resulting topos by</p>
+<div class="math-display">\[\Shv(X) \quad := \quad \Shv_{\open}(\Open(X)).\]</div></div>
+</section>
+
+<section class="theorem definition" id="def:Sheafified_Yoneda">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/sheafified-yoneda/index.html">Definition 6.12.</a></span></p>
+  <div class="theorem-statement"><p>The <em>sheafified Yoneda functor</em> <span class="math-inline">\(y_{\tau}\)</span> is the composite</p>
+<div class="math-display">\[C \xhookrightarrow{y} \PSh(C) \xrightarrow{L_{\tau}} \Shv_{\tau}(C).\]</div></div>
+</section>
+
+<section class="theorem notation" id="not:Sieve_Generated_By_Family">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/sieve-generated-by-family/index.html">Notation 6.13.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\Uu = \{U_i \to X\}_{i\in I}\)</span> be a collection of morphisms in a category <span class="math-inline">\(C\)</span>. The morphism <span class="math-inline">\(\bigsqcup_{i \in I} y(U_i) \to y(X)\)</span> in <span class="math-inline">\(\PSh(C)\)</span> factors as an effective epimorphism followed by a monomorphism:</p>
+<div class="math-display">\[\bigsqcup_{i \in I} y(U_i) \twoheadrightarrow U \hookrightarrow y(X).\]</div>
+<p>We refer to the sieve <span class="math-inline">\(U \hookrightarrow y(X)\)</span> as the <em>sieve generated by <span class="math-inline">\(\Uu\)</span></em>.</p>
+<p>Since limits and colimits in <span class="math-inline">\(\PSh(C)\)</span> are computed pointwise, we see that this epi-mono factorization is also computed pointwise: for every <span class="math-inline">\(Z \in C\)</span>, the subanima</p>
+<div class="math-display">\[U(Z) \subseteq y(X)(Z) = \Hom_C(Z,X)\]</div>
+<p>consists of those morphisms <span class="math-inline">\(Z \to X\)</span> in <span class="math-inline">\(C\)</span> that factor through <span class="math-inline">\(U_i \to X\)</span> for some <span class="math-inline">\(i \in I\)</span>.</p>
+<p>If <span class="math-inline">\(C\)</span> carries a Grothendieck topology <span class="math-inline">\(\tau\)</span>, we say that <span class="math-inline">\(\Uu\)</span> is a <em>covering family</em> if the sieve it generates is a covering sieve.</p></div>
+</section>
+<p>Sheaves on <span class="math-inline">\(C\)</span> may equivalently be described in terms of <em>Čech descent</em>.</p>
+<section class="theorem definition" id="def:Cech_Descent">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/cech-descent/index.html">Definition 6.14.</a></span> (Čech descent)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> be a category and let <span class="math-inline">\(\Uu = \{U_i \to X\}_{i\in I}\)</span> be a collection of morphisms. We will denote by <span class="math-inline">\(\check{C}_{\bullet}(\Uu)\)</span> the Čech nerve of the morphism</p>
+<div class="math-display">\[\bigsqcup_{i \in I} y(U_i) \to y(X)\]</div>
+<p>in <span class="math-inline">\(\PSh(C)\)</span>. A presheaf <span class="math-inline">\(\Ff \in \PSh(C)\)</span> is said to <em>satisfy Čech descent with respect to <span class="math-inline">\(\Uu\)</span></em> if the map</p>
+<div class="math-display">\[\Ff(X) = \Hom_{\PSh(C)}(y(X),\Ff) \to \lim_{[n] \in \simp} \Hom_{\PSh(C)}(\check{C}_n(\Uu),\Ff)\]</div>
+<p>is an equivalence. More concretely, if the relevant iterated fiber products of the <span class="math-inline">\(U_i\)</span> over <span class="math-inline">\(X\)</span> exist in <span class="math-inline">\(C\)</span>, then <span class="math-inline">\(\Ff\)</span> satisfies Čech descent with respect to <span class="math-inline">\(\Uu\)</span> if the diagram</p>
+<figure class="diagram"><img src="diagrams/tikzcd-196fb676b997.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>is a limit diagram.</p></div>
+</section>
+
+<section class="theorem proposition" id="prop:Sheaves_Via_Cech_Descent">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/sheaves-via-cech-descent/index.html">Proposition 6.15.</a></span> ({cf. <span class="citation-group">[Lurie <a class="citation" href="#bib-lurie2009HTT">2009, Lemma 6.2.3.18</a>]</span>})</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\Uu = \{U_i \to X\}_{i\in I}\)</span> be a collection of morphisms in a category <span class="math-inline">\(C\)</span> and let <span class="math-inline">\(U \hookrightarrow y(X)\)</span> be the sieve generated by <span class="math-inline">\(\Uu\)</span>. Then a presheaf <span class="math-inline">\(\Ff\)</span> on <span class="math-inline">\(C\)</span> satisfies Čech descent with respect to <span class="math-inline">\(\Uu\)</span> if and only if it is local with respect to <span class="math-inline">\(U \hookrightarrow y(X)\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Sheaves_Via_Cech_Descent-main" data-owner-entry="sheaves-via-cech-descent" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">By definition, <span class="math-inline">\(U \hookrightarrow y(X)\)</span> is obtained from the epi-mono factorization <span class="math-inline">\(\bigsqcup_{i \in I} y(U_i) \twoheadrightarrow U \hookrightarrow y(X)\)</span>. It follows that <span class="math-inline">\(U\)</span> is equivalent to the colimit of the Čech nerve <span class="math-inline">\(\check{C}(\Uu)\)</span> of <span class="math-inline">\(\Uu\)</span>, and we obtain for every <span class="math-inline">\(\Ff \in \PSh(C)\)</span> an equivalence <div class="math-display">\[\Hom_{\PSh(C)}(U,\Ff) \simeq \Hom_{\PSh(C)}(\colim_{[n] \in \simp\catop} \check{C}_n(\Uu),\Ff) \simeq \lim_{[n] \in \simp}\Hom_{\PSh(C)}(\check{C}_n(\Uu),\Ff).\]</div> The claim now follows immediately.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<h3 id="subsec:Effective_Epimorphisms_In_Sheaf_Topoi"><span>6.1.3.</span> Effective epimorphisms in sheaf topoi</h3>
+<p>The effective epimorphisms in a sheaf topos <span class="math-inline">\(\Shv_{\tau}(C)\)</span> can be characterized as those morphisms which <em>admit local sections</em>, in the following sense:</p>
+<section class="theorem definition" id="def:Local_Sections">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/local-sections/index.html">Definition 6.16.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> be a category equipped with a Grothendieck topology <span class="math-inline">\(\tau\)</span>. Let <span class="math-inline">\(f\colon X \to Y\)</span> be a morphism in <span class="math-inline">\(\Shv_{\tau}(C)\)</span> and assume that <span class="math-inline">\(Y = y_{\tau}(Y')\)</span> lies in the image of the sheafified Yoneda functor. We say that <em><span class="math-inline">\(f\)</span> admits local sections</em> if there exists a covering family <span class="math-inline">\(\{U_i \to Y'\}_{i \in I}\)</span> of <span class="math-inline">\(Y'\)</span> such that the base change</p>
+<div class="math-display">\[X \times_{y_{\tau}(Y')} y_{\tau}(U_i) \to y_{\tau}(U_i)\]</div>
+<p>admits a section for every <span class="math-inline">\(i \in I\)</span>.</p>
+<p>If <span class="math-inline">\(f\colon X \to Y\)</span> is an arbitrary morphism in <span class="math-inline">\(\Shv_{\tau}(C)\)</span>, we say that <span class="math-inline">\(f\)</span> <em>admits local sections</em> if its base change along every map <span class="math-inline">\(y_{\tau}(Y') \to Y\)</span> from a sheafified representable admits local sections.</p></div>
+</section>
+
+<section class="theorem lemma" id="lem:Effective_Epimorphism_Iff_Local_Sections">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/effective-epimorphism-iff-local-sections/index.html">Lemma 6.17.</a></span></p>
+  <div class="theorem-statement"><p>A morphism <span class="math-inline">\(f\colon X \to Y\)</span> in <span class="math-inline">\(\Shv_{\tau}(C)\)</span> is an effective epimorphism if and only if it admits local sections.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Effective_Epimorphism_Iff_Local_Sections-main" data-owner-entry="effective-epimorphism-iff-local-sections" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Suppose first that <span class="math-inline">\(f\)</span> admits local sections. If <span class="math-inline">\(Y=y_{\tau}(Y')\)</span>, choose a covering family <span class="math-inline">\(\{U_i\to Y'\}_{i\in I}\)</span> over which <span class="math-inline">\(f\)</span> admits sections. The induced map <div class="math-display">\[\coprod_{i\in I}y_{\tau}(U_i)\longrightarrow y_{\tau}(Y')\]</div> is an effective epimorphism. After base change along this map, <span class="math-inline">\(f\)</span> is a coproduct of morphisms admitting sections and hence is an effective epimorphism by <a href="../../entry/split-effective-epimorphisms/index.html">Lemma 2.38</a>. Since effective epimorphisms form a local class, <span class="math-inline">\(f\)</span> is an effective epimorphism. For arbitrary <span class="math-inline">\(Y\)</span>, the same argument applies after choosing an effective epimorphism from a coproduct of sheafified representables to <span class="math-inline">\(Y\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>Conversely, assume that <span class="math-inline">\(f\colon X \to Y\)</span> is an effective epimorphism. Since effective epimorphisms are stable under base change, it suffices to treat the case <span class="math-inline">\(Y=y_{\tau}(Y')\)</span>. Let <span class="math-inline">\(i\colon\Shv_{\tau}(C)\hookrightarrow\PSh(C)\)</span> denote the inclusion and form the pullback <div class="math-display">\[\widetilde X:=i(X)\times_{i(y_{\tau}(Y'))}y(Y')\]</div> along the unit <span class="math-inline">\(y(Y')\to i(y_{\tau}(Y'))\)</span>. Consider the epi–mono factorization in <span class="math-inline">\(\PSh(C)\)</span>: <div class="math-display">\[\widetilde X \twoheadrightarrow U_f \hookrightarrow y(Y').\]</div> Applying sheafification <span class="math-inline">\(L_{\tau}\colon \PSh(C)\to \Shv_{\tau}(C)\)</span> gives a factorization <div class="math-display">\[X\twoheadrightarrow L_{\tau}(U_f)\longrightarrow y_{\tau}(Y'),\]</div> where we have used left exactness of <span class="math-inline">\(L_{\tau}\)</span> to identify <span class="math-inline">\(L_{\tau}(\widetilde X)\)</span> with <span class="math-inline">\(X\)</span>. The composite is <span class="math-inline">\(f\)</span>, so right cancellation for effective epimorphisms shows that the map <span class="math-inline">\(L_{\tau}(U_f)\to y_{\tau}(Y')\)</span> is an effective epimorphism. It is also a monomorphism, since <span class="math-inline">\(L_{\tau}\)</span> is left exact, and hence it is an isomorphism.<div class="proof-paragraph-break" aria-hidden="true"></div>Therefore the monomorphism <span class="math-inline">\(U_f\hookrightarrow y(Y')\)</span> is inverted by <span class="math-inline">\(L_{\tau}\)</span>. By <a href="#thm:Sheaves_Form_Topos">Theorem 6.2</a>, the class of morphisms inverted by <span class="math-inline">\(L_{\tau}\)</span> is the congruence <span class="math-inline">\(\tau^c\)</span>. Thus <span class="math-inline">\(U_f \hookrightarrow y(Y')\)</span> lies in <span class="math-inline">\(\tau^c \cap \Mono = \tau\)</span> by <a href="#prop:Grothendieck_Topology_Monogenic_Congruence_Bijection">Proposition 6.9</a>, i.e. it is a covering sieve on <span class="math-inline">\(Y'\)</span>. By construction, a morphism <span class="math-inline">\(U\to Y'\)</span> belongs to <span class="math-inline">\(U_f\)</span> precisely when the corresponding map <span class="math-inline">\(y_{\tau}(U)\to y_{\tau}(Y')\)</span> admits a lift to <span class="math-inline">\(X\)</span>. Taking all morphisms in <span class="math-inline">\(U_f\)</span> as a covering family therefore shows that <span class="math-inline">\(f\)</span> admits local sections.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<h3 id="subsec:Morphisms_Of_Sites"><span>6.1.4.</span> Morphisms of sites</h3>
+<p>Given a functor <span class="math-inline">\(u\colon C \to D\)</span> between two Grothendieck sites, we may ask under what conditions <span class="math-inline">\(u\)</span> induces a topos morphism between the sheaf categories of <span class="math-inline">\(C\)</span> and <span class="math-inline">\(D\)</span>. There are two natural candidates for such a notion, called <em>continuous</em> and <em>cocontinuous</em> morphisms of sites.</p>
+<section class="theorem definition" id="def:Continuous_Functor">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/continuous-functor/index.html">Definition 6.18.</a></span> (Continuous morphism)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\((C,\tau)\)</span> and <span class="math-inline">\((D,\tau')\)</span> be Grothendieck sites. A functor <span class="math-inline">\(u\colon C \to D\)</span> is called <em>continuous</em> if the restriction functor <span class="math-inline">\(u^*\colon \PSh(D) \to \PSh(C)\)</span> preserves sheaves, i.e. restricts to a functor</p>
+<div class="math-display">\[u^*\colon \Shv_{\tau'}(D) \to \Shv_{\tau}(C).\]</div>
+<p>We say that <span class="math-inline">\(u\)</span> is a <em>continuous morphism of sites</em> if this restriction is a morphism of topoi, i.e. its left adjoint is left exact. We denote the category of Grothendieck sites and continuous morphisms of sites by <span class="math-inline">\(\Site^{\cont}\)</span>. By definition, the assignment <span class="math-inline">\((C,\tau) \mapsto \Shv_{\tau}(C) \subseteq \PSh(C)\)</span> determines a contravariant functor</p>
+<div class="math-display">\[\Shv(-)\colon (\Site^{\cont})\catop \to \Topos,\]</div>
+<p>obtained by restricting the precomposition functoriality of the presheaf construction <span class="math-inline">\(\PSh(-)\colon \Cat\catop \to \PrL\)</span>.</p></div>
+</section>
+
+<section class="theorem remark" id="rem:Continuous_Functor_With_Left_Adjoint_Is_Morphism_Of_Sites">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/continuous-functor-with-left-adjoint-is-morphism-of-sites/index.html">Remark 6.19.</a></span></p>
+  <div class="theorem-statement"><p>The left adjoint of the restriction of <span class="math-inline">\(u^*\)</span> is given by the composite</p>
+<div class="math-display">\[\Shv_{\tau}(C) \hookrightarrow \PSh(C) \xrightarrow{u_!} \PSh(D) \xrightarrow{L_{\tau'}} \Shv_{\tau'}(D),\]</div>
+<p>where <span class="math-inline">\(u_!\)</span> is left Kan extension along <span class="math-inline">\(u\)</span>. In particular, any continuous functor <span class="math-inline">\(u\)</span> for which the left Kan extension functor <span class="math-inline">\(u_!\)</span> is left exact is a continuous morphism of sites.</p>
+<p>Note that <span class="math-inline">\(u_!\)</span> is left exact whenever <span class="math-inline">\(u\)</span> admits a left adjoint, since then <span class="math-inline">\(u_!\)</span> is given by restriction along that left adjoint.</p></div>
+</section>
+<p>The following criterion is often useful for checking continuity:</p>
+<section class="theorem lemma" id="lem:Criterion_Continuous_Functor">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/criterion-continuous-functor/index.html">Lemma 6.20.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\((C,\tau)\)</span> and <span class="math-inline">\((D,\tau')\)</span> be Grothendieck sites, and let <span class="math-inline">\(u\colon C \to D\)</span> be a functor. Assume that every covering sieve <span class="math-inline">\(U \hookrightarrow y(X)\)</span> of <span class="math-inline">\(X \in C\)</span> is generated by a collection of morphisms <span class="math-inline">\(\{f_i\colon U_i \to X\}_{i \in I}\)</span> in <span class="math-inline">\(C\)</span> satisfying the following conditions:</p>
+<ul><li><p>Pullbacks along <span class="math-inline">\(f_i\)</span> exist in <span class="math-inline">\(C\)</span> and are preserved by <span class="math-inline">\(u\colon C \to D\)</span>;</p></li><li><p>The sieve on <span class="math-inline">\(y(u(X))\)</span> in <span class="math-inline">\(D\)</span> generated by the maps <span class="math-inline">\(u(f_i)\)</span> is a covering sieve.</p></li></ul>
+<p>Then <span class="math-inline">\(u\)</span> is a continuous functor.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Criterion_Continuous_Functor-main" data-owner-entry="criterion-continuous-functor" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Let <span class="math-inline">\(\Ff\)</span> be a <span class="math-inline">\(\tau'\)</span>-sheaf on <span class="math-inline">\(D\)</span>. We need to show that <span class="math-inline">\(u^*\Ff\)</span> is a <span class="math-inline">\(\tau\)</span>-sheaf on <span class="math-inline">\(C\)</span>. For a covering sieve <span class="math-inline">\(U \hookrightarrow y(X)\)</span>, let <span class="math-inline">\(\Uu = \{f_i \colon U_i \to X\}_{i \in I}\)</span> be a collection of morphisms in <span class="math-inline">\(C\)</span> generating it satisfying the two conditions. Using <a href="#prop:Sheaves_Via_Cech_Descent">Proposition 6.15</a> and the adjunction <span class="math-inline">\(u_! \dashv u^*\)</span>, we may equivalently show that the map <div class="math-display">\[(u^*\Ff)(X) \simeq \Hom_{\PSh(D)}(y(u(X)), \Ff) \to \lim_{[n] \in \simp} \Hom_{\PSh(D)}(u_!(\check{C}_n(\Uu)), \Ff)\]</div> is an isomorphism. The first assumption on <span class="math-inline">\(\Uu\)</span> guarantees that the simplicial object <span class="math-inline">\(u_!(\check{C}_n(\Uu))\)</span> in <span class="math-inline">\(\PSh(D)\)</span> agrees with the Čech nerve of the map <span class="math-inline">\(\bigsqcup_{i \in I} y(u(U_i)) \to y(u(X))\)</span>. The second assumption says that the associated sieve is a covering sieve. So a second application of <a href="#prop:Sheaves_Via_Cech_Descent">Proposition 6.15</a> implies the claim.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem corollary" id="cor:Left_Exact_Continuous_Functor_Defines_Morphism_Of_Sites">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/left-exact-continuous-functor-defines-morphism-of-sites/index.html">Corollary 6.21.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\((C,\tau)\)</span> and <span class="math-inline">\((D,\tau')\)</span> be Grothendieck sites, and assume that the following two conditions are satisfied:</p>
+<ul><li><p>The category <span class="math-inline">\(C\)</span> admits finite limits, and <span class="math-inline">\(u\colon C \to D\)</span> preserves finite limits;</p></li><li><p>The functor <span class="math-inline">\(u\)</span> preserves covering families.</p></li></ul>
+<p>Then <span class="math-inline">\(u\)</span> is a continuous morphism of sites.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-cor:Left_Exact_Continuous_Functor_Defines_Morphism_Of_Sites-main" data-owner-entry="left-exact-continuous-functor-defines-morphism-of-sites" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">The left Kan extension functor <span class="math-inline">\(u_!\colon \PSh(C) \to \PSh(D)\)</span> is left exact by <a href="../../entry/left-exactness-tested-on-representables/index.html">Proposition 2.43</a>, as it is the colimit extension of the left exact functor <span class="math-inline">\(C \xrightarrow{u} D \hookrightarrow \PSh(D)\)</span>. Since <span class="math-inline">\(u\)</span> is a continuous functor by <a href="#lem:Criterion_Continuous_Functor">Lemma 6.20</a>, the claim follows from <a href="#rem:Continuous_Functor_With_Left_Adjoint_Is_Morphism_Of_Sites">Remark 6.19</a>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem example" id="ex:From_Top_To_Topos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/from-top-to-topos/index.html">Example 6.22.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(f\colon X \to Y\)</span> be a continuous map of topological spaces. Then the preimage functor <span class="math-inline">\(f^{-1}\colon \Open(Y) \to \Open(X)\)</span> preserves finite limits and preserves coverings, hence is a continuous morphism of sites. This gives rise to a functor <span class="math-inline">\(\Open(-)\colon \Top\catop \to \Site^{\cont}\)</span>. Composing it with the sheaf functor <span class="math-inline">\((\Site^{\cont})\catop \to \Topos\)</span>, we obtain a functor</p>
+<div class="math-display">\[\Shv\colon \Top \to \Topos.\]</div></div>
+</section>
+<p>We now discuss a second mechanism by which a functor between Grothendieck sites induces a morphism of topoi, namely cocontinuity.</p>
+<section class="theorem definition" id="def:Cocontinuous_Morphism_Of_Sites">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/cocontinuous-morphism-of-sites/index.html">Definition 6.23.</a></span> (Cocontinuous morphism)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\((C,\tau)\)</span> and <span class="math-inline">\((D,\tau')\)</span> be Grothendieck sites. A functor <span class="math-inline">\(u\colon C \to D\)</span> is called a <em>cocontinuous morphism of sites</em> if the right Kan extension functor restricts to a functor</p>
+<div class="math-display">\[u_*\colon \Shv_{\tau}(C) \to \Shv_{\tau'}(D).\]</div>
+<p>In particular, <span class="math-inline">\(u_*\)</span> is a morphism of topoi, with left exact left adjoint given by the composite</p>
+<div class="math-display">\[\Shv_{\tau'}(D) \hookrightarrow \PSh(D) \xrightarrow{u^*} \PSh(C) \xrightarrow{L_{\tau}} \Shv_{\tau}(C).\]</div>
+<p>If we denote by <span class="math-inline">\(\Site^{\cocont}\)</span> the category of Grothendieck sites and cocontinuous morphisms, then the assignment <span class="math-inline">\((C,\tau) \mapsto \Shv_{\tau}(C)\)</span> defines a functor</p>
+<div class="math-display">\[\Site^{\cocont} \to \Topos,\]</div>
+<p>obtained by restricting the right Kan extension functoriality of the presheaf construction <span class="math-inline">\(\PSh\colon \Cat \to \PrR\)</span>.</p></div>
+</section>
+<p>Let us make the cocontinuity condition on <span class="math-inline">\(u\)</span> more concrete.</p>
+<section class="theorem notation" id="not:Pullback_Of_Sieve_Along_Functor">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/pullback-of-sieve-along-functor/index.html">Notation 6.24.</a></span></p>
+  <div class="theorem-statement"><p>Given an object <span class="math-inline">\(X \in C\)</span> and a sieve <span class="math-inline">\(U \hookrightarrow y(u(X))\)</span> of <span class="math-inline">\(u(X)\)</span> in <span class="math-inline">\(D\)</span>, we define its <em>pullback along <span class="math-inline">\(u\)</span></em> as the sieve <span class="math-inline">\(u^{-1}(U) \hookrightarrow y(X)\)</span> of <span class="math-inline">\(X\)</span> obtained by forming the following pullback square in <span class="math-inline">\(\PSh(C)\)</span>:</p>
+<figure class="diagram"><img src="diagrams/tikzcd-8e7abf75e391.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>here the bottom map is the unit map <span class="math-inline">\(y(X) \to u^*u_!y(X) = u^*(y(u(X)))\)</span>. Note that <span class="math-inline">\(u^{-1}(U)\)</span> consists of those morphisms <span class="math-inline">\(Z \to X\)</span> in <span class="math-inline">\(C\)</span> for which the map <span class="math-inline">\(u(Z) \to u(X)\)</span> lies in the sieve <span class="math-inline">\(U\)</span>.</p></div>
+</section>
+
+<section class="theorem lemma" id="lem:Criterion_Cocontinuous_Morphism_Of_Sites">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/criterion-cocontinuous-morphism-of-sites/index.html">Lemma 6.25.</a></span></p>
+  <div class="theorem-statement"><p>A functor <span class="math-inline">\(u\colon C \to D\)</span> is a cocontinuous morphism of sites if and only if for every <span class="math-inline">\(X \in C\)</span> and every covering sieve <span class="math-inline">\(U \hookrightarrow y(u(X))\)</span> of <span class="math-inline">\(u(X)\)</span> in <span class="math-inline">\(D\)</span>, the pullback sieve <span class="math-inline">\(u^{-1}(U) \hookrightarrow y(X)\)</span> is a covering sieve in <span class="math-inline">\(C\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Criterion_Cocontinuous_Morphism_Of_Sites-main" data-owner-entry="criterion-cocontinuous-morphism-of-sites" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">By definition, <span class="math-inline">\(u\)</span> is a cocontinuous morphism if and only if the restriction functor <span class="math-inline">\(u^*\colon \PSh(D) \to \PSh(C)\)</span> preserves the covering monomorphisms, or equivalently if for every covering sieve <span class="math-inline">\(V \hookrightarrow y(Y)\)</span> in <span class="math-inline">\(D\)</span> the map <span class="math-inline">\(u^*(V) \hookrightarrow u^*y(Y)\)</span> is a covering monomorphism in <span class="math-inline">\(\PSh(C)\)</span>. The latter condition means that for any map <span class="math-inline">\(f\colon y(X) \to u^*y(Y)\)</span> in <span class="math-inline">\(\PSh(C)\)</span> from a representable, the base change <span class="math-inline">\(u^*(V) \times_{u^*y(Y)} y(X) \hookrightarrow y(X)\)</span> is a covering sieve. The map <span class="math-inline">\(f\)</span> corresponds to a map <span class="math-inline">\(u(X) \to Y\)</span> in <span class="math-inline">\(D\)</span>, and pulling back the covering sieve <span class="math-inline">\(V \hookrightarrow y(Y)\)</span> gives a covering sieve <span class="math-inline">\(U \hookrightarrow y(u(X))\)</span>. The claim now follows, since we have a pullback square <figure class="diagram"><img src="diagrams/tikzcd-4c6586805f0a.svg" alt="Commutative diagram generated from the LaTeX source"></figure><span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem corollary" id="cor:Cocontinuous_Left_Adjoint_Implies_Morphism_Of_Sites">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/cocontinuous-left-adjoint-implies-morphism-of-sites/index.html">Corollary 6.26.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(v\colon (C,\tau) \to (D,\tau')\)</span> be a functor between sites and assume that <span class="math-inline">\(v\)</span> admits a right adjoint <span class="math-inline">\(u\colon D \to C\)</span>. Then <span class="math-inline">\(v\)</span> is a cocontinuous morphism of sites if and only if <span class="math-inline">\(u\)</span> is a continuous morphism of sites. In this case, we have <span class="math-inline">\(v_* \simeq u^*\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-cor:Cocontinuous_Left_Adjoint_Implies_Morphism_Of_Sites-main" data-owner-entry="cocontinuous-left-adjoint-implies-morphism-of-sites" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">The adjunction <span class="math-inline">\(v \dashv u\)</span> induces an adjunction <span class="math-inline">\(v^* \dashv u^*\)</span> on presheaf categories, showing that <span class="math-inline">\(v_* \simeq u^*\)</span>. By definition, <span class="math-inline">\(v\)</span> is a cocontinuous morphism of sites if and only if <span class="math-inline">\(v_*\)</span> preserves sheaves, while it follows from <a href="#rem:Continuous_Functor_With_Left_Adjoint_Is_Morphism_Of_Sites">Remark 6.19</a> that <span class="math-inline">\(u\)</span> is a continuous morphism of sites if and only if <span class="math-inline">\(u^*\)</span> preserves sheaves, showing the claim.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-lurie2009HTT">Jacob Lurie. <em>Higher topos theory</em>. Ann. Math. Stud. 170, Princeton, NJ: Princeton University Press. 2009.</li>
+<li id="bib-ABFJ_Grothendieck_Topologies">Mathieu Anel, Georg Biedermann, Eric Finster, André Joyal. <em>Left-exact localizations of ∞-topoi. II: Grothendieck topologies</em>. J. Pure Appl. Algebra, 228 (3), 63. 2024.</li></ol></section>
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+      <a class="context-step-control" rel="prev" href="../goodwillie-tower/index.html" aria-label="Previous section: The Goodwillie tower of a topos" title="Previous section: The Goodwillie tower of a topos"><span aria-hidden="true">←</span></a>
+      <a class="context-step-control" rel="next" href="../groupoid-actions-and-principal-bundles/index.html" aria-label="Next section: Groupoid actions and principal bundles" title="Next section: Groupoid actions and principal bundles"><span aria-hidden="true">→</span></a>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../chapter/introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../../chapter/foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../../chapter/truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../../chapter/topoi-logoi/index.html">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../../chapter/modalities/index.html">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../../chapter/topics-in-topos-theory/index.html" aria-current="location">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../../chapter/geometry/index.html">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../../chapter/factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../../chapter/limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../sheaf-topoi/index.html" aria-current="page">
+          <span class="context-entry-heading">Section 6.1</span>
+          <span class="context-entry-title">Sheaf topoi</span>
+        </a></li>
+<li><a href="../groupoid-actions-and-principal-bundles/index.html">
+          <span class="context-entry-heading">Section 6.2</span>
+          <span class="context-entry-title">Groupoid actions and principal bundles</span>
+        </a></li>
+<li><a href="../hypercovers/index.html">
+          <span class="context-entry-heading">Section 6.3</span>
+          <span class="context-entry-title">Hypercovers</span>
+        </a></li>
+<li><a href="../localic-topoi-postnikov-completeness-and-boundedness/index.html">
+          <span class="context-entry-heading">Section 6.4</span>
+          <span class="context-entry-title">Localic topoi, Postnikov-completeness, and boundedness</span>
+        </a></li>
+<li><a href="../dimension-theory/index.html">
+          <span class="context-entry-heading">Section 6.5</span>
+          <span class="context-entry-title">Dimension theory</span>
+        </a></li>
+<li><a href="../essential-morphisms-and-shape-theory/index.html">
+          <span class="context-entry-heading">Section 6.6</span>
+          <span class="context-entry-title">Essential morphisms and shape theory</span>
+        </a></li>
+<li><a href="../coherence/index.html">
+          <span class="context-entry-heading">Section 6.7</span>
+          <span class="context-entry-title">Coherence</span>
+        </a></li>
+<li><a href="../pretopoi/index.html">
+          <span class="context-entry-heading">Section 6.8</span>
+          <span class="context-entry-title">Pretopoi</span>
+        </a></li>
+<li><a href="../makkai-completeness/index.html">
+          <span class="context-entry-heading">Section 6.9</span>
+          <span class="context-entry-title">Makkai completeness</span>
+        </a></li>
+<li><a href="../compactly-assembled-categories-and-exponentiability/index.html">
+          <span class="context-entry-heading">Section 6.10</span>
+          <span class="context-entry-title">Compactly assembled categories and exponentiability</span>
+        </a></li>
+<li><a href="../topoi-of-parametrized-objects/index.html">
+          <span class="context-entry-heading">Section 6.11</span>
+          <span class="context-entry-title">Topoi of parametrized objects</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <p class="context-nav-kicker">Section 6.1</p>
+      <p class="context-nav-description">Sheaf topoi</p>
+      <ol class="context-entry-list">
+        <li><a href="#def:Sieve" data-section-target="def:Sieve">
+          <span class="context-entry-heading">Definition 6.1</span>
+          <span class="context-entry-title">Sieve</span>
+        </a></li>
+<li><a href="#thm:Sheaves_Form_Topos" data-section-target="thm:Sheaves_Form_Topos">
+          <span class="context-entry-heading">Theorem 6.2</span>
+          <span class="context-entry-title">Sheaves form topos</span>
+        </a></li>
+<li><a href="#def:Grothendieck_Topology" data-section-target="def:Grothendieck_Topology">
+          <span class="context-entry-heading">Definition 6.3</span>
+          <span class="context-entry-title">Grothendieck topology</span>
+        </a></li>
+<li><a href="#rem:Morphisms_Of_Sheaf_Topoi" data-section-target="rem:Morphisms_Of_Sheaf_Topoi">
+          <span class="context-entry-heading">Remark 6.5</span>
+          <span class="context-entry-title">Morphisms of sheaf topoi</span>
+        </a></li>
+<li><a href="#not:Pullback_Of_Sieve" data-section-target="not:Pullback_Of_Sieve">
+          <span class="context-entry-heading">Notation 6.6</span>
+          <span class="context-entry-title">Pullback of sieve</span>
+        </a></li>
+<li><a href="#def:Grothendieck_Topology_Site" data-section-target="def:Grothendieck_Topology_Site">
+          <span class="context-entry-heading">Definition 6.7</span>
+          <span class="context-entry-title">Grothendieck topology site</span>
+        </a></li>
+<li><a href="#lem:Grothendieck_Topologies_On_Category_And_Presheaf_Topos" data-section-target="lem:Grothendieck_Topologies_On_Category_And_Presheaf_Topos">
+          <span class="context-entry-heading">Lemma 6.8</span>
+          <span class="context-entry-title">Grothendieck topologies on category and presheaf topos</span>
+        </a></li>
+<li><a href="#prop:Grothendieck_Topology_Monogenic_Congruence_Bijection" data-section-target="prop:Grothendieck_Topology_Monogenic_Congruence_Bijection">
+          <span class="context-entry-heading">Proposition 6.9</span>
+          <span class="context-entry-title">Grothendieck topology monogenic congruence bijection</span>
+        </a></li>
+<li><a href="#def:Sheaf_Topos" data-section-target="def:Sheaf_Topos">
+          <span class="context-entry-heading">Definition 6.10</span>
+          <span class="context-entry-title">Sheaf topos</span>
+        </a></li>
+<li><a href="#ex:Open_Covering_Topology" data-section-target="ex:Open_Covering_Topology">
+          <span class="context-entry-heading">Example 6.11</span>
+          <span class="context-entry-title">Open covering topology</span>
+        </a></li>
+<li><a href="#def:Sheafified_Yoneda" data-section-target="def:Sheafified_Yoneda">
+          <span class="context-entry-heading">Definition 6.12</span>
+          <span class="context-entry-title">Sheafified Yoneda</span>
+        </a></li>
+<li><a href="#not:Sieve_Generated_By_Family" data-section-target="not:Sieve_Generated_By_Family">
+          <span class="context-entry-heading">Notation 6.13</span>
+          <span class="context-entry-title">Sieve generated by family</span>
+        </a></li>
+<li><a href="#def:Cech_Descent" data-section-target="def:Cech_Descent">
+          <span class="context-entry-heading">Definition 6.14</span>
+          <span class="context-entry-title">Čech descent</span>
+        </a></li>
+<li><a href="#prop:Sheaves_Via_Cech_Descent" data-section-target="prop:Sheaves_Via_Cech_Descent">
+          <span class="context-entry-heading">Proposition 6.15</span>
+          <span class="context-entry-title">Sheaves via Čech descent</span>
+        </a></li>
+<li><a href="#def:Local_Sections" data-section-target="def:Local_Sections">
+          <span class="context-entry-heading">Definition 6.16</span>
+          <span class="context-entry-title">Local sections</span>
+        </a></li>
+<li><a href="#lem:Effective_Epimorphism_Iff_Local_Sections" data-section-target="lem:Effective_Epimorphism_Iff_Local_Sections">
+          <span class="context-entry-heading">Lemma 6.17</span>
+          <span class="context-entry-title">Effective epimorphism if and only if local sections</span>
+        </a></li>
+<li><a href="#def:Continuous_Functor" data-section-target="def:Continuous_Functor">
+          <span class="context-entry-heading">Definition 6.18</span>
+          <span class="context-entry-title">Continuous functor</span>
+        </a></li>
+<li><a href="#rem:Continuous_Functor_With_Left_Adjoint_Is_Morphism_Of_Sites" data-section-target="rem:Continuous_Functor_With_Left_Adjoint_Is_Morphism_Of_Sites">
+          <span class="context-entry-heading">Remark 6.19</span>
+          <span class="context-entry-title">Continuous functor with left adjoint is morphism of sites</span>
+        </a></li>
+<li><a href="#lem:Criterion_Continuous_Functor" data-section-target="lem:Criterion_Continuous_Functor">
+          <span class="context-entry-heading">Lemma 6.20</span>
+          <span class="context-entry-title">Criterion continuous functor</span>
+        </a></li>
+<li><a href="#cor:Left_Exact_Continuous_Functor_Defines_Morphism_Of_Sites" data-section-target="cor:Left_Exact_Continuous_Functor_Defines_Morphism_Of_Sites">
+          <span class="context-entry-heading">Corollary 6.21</span>
+          <span class="context-entry-title">Left exact continuous functor defines morphism of sites</span>
+        </a></li>
+<li><a href="#ex:From_Top_To_Topos" data-section-target="ex:From_Top_To_Topos">
+          <span class="context-entry-heading">Example 6.22</span>
+          <span class="context-entry-title">From top to topos</span>
+        </a></li>
+<li><a href="#def:Cocontinuous_Morphism_Of_Sites" data-section-target="def:Cocontinuous_Morphism_Of_Sites">
+          <span class="context-entry-heading">Definition 6.23</span>
+          <span class="context-entry-title">Cocontinuous morphism of sites</span>
+        </a></li>
+<li><a href="#not:Pullback_Of_Sieve_Along_Functor" data-section-target="not:Pullback_Of_Sieve_Along_Functor">
+          <span class="context-entry-heading">Notation 6.24</span>
+          <span class="context-entry-title">Pullback of sieve along functor</span>
+        </a></li>
+<li><a href="#lem:Criterion_Cocontinuous_Morphism_Of_Sites" data-section-target="lem:Criterion_Cocontinuous_Morphism_Of_Sites">
+          <span class="context-entry-heading">Lemma 6.25</span>
+          <span class="context-entry-title">Criterion cocontinuous morphism of sites</span>
+        </a></li>
+<li><a href="#cor:Cocontinuous_Left_Adjoint_Implies_Morphism_Of_Sites" data-section-target="cor:Cocontinuous_Left_Adjoint_Implies_Morphism_Of_Sites">
+          <span class="context-entry-heading">Corollary 6.26</span>
+          <span class="context-entry-title">Cocontinuous left adjoint implies morphism of sites</span>
+        </a></li>
+      </ol>
+    </nav>
+  </section></div>
+  </aside>
+  </main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

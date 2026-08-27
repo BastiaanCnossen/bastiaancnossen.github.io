@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Consequences of complementary classes | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/entry/consequences-of-complementary-classes/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="entry-page has-context-nav" data-record-id="consequences-of-complementary-classes" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">›</span> <a href="../../section/topoi-of-parametrized-objects/index.html">Section 6.11: Topoi of parametrized objects</a></p>
+      <h1>Consequences of complementary classes</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Nearby entries
+    </button>
+    <article class="notes-page">
+      
+<section class="theorem lemma" id="lem:Consequences_Of_Complementary_Classes">
+  <p class="theorem-heading"><span>Lemma 6.184.</span></p>
+  <div class="theorem-statement"><p>If <span class="math-inline">\(K \perp K'\)</span>, then the following two conditions are satisfied:</p>
+<ol><li><p>For every category <span class="math-inline">\(D\)</span>, the unique <span class="math-inline">\((K \cup K')\)</span>-colimit-preserving extension <span class="math-inline">\(\Pp^{K \cup K'}(D) \to \Pp^{\all}(D)\)</span> of <span class="math-inline">\(D \to \Pp^{\all}(D)\)</span> is an equivalence. Equivalently, <span class="math-inline">\(\PSh(D)\)</span> is generated by representables under <span class="math-inline">\(K\)</span>-colimits and <span class="math-inline">\(K'\)</span>-colimits.</p></li><li><p>In <span class="math-inline">\(\An\)</span>, <span class="math-inline">\(K\)</span>-indexed colimits commute with <span class="math-inline">\(K'\)</span>-indexed limits.</p></li></ol></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Consequences_Of_Complementary_Classes-main" data-owner-entry="consequences-of-complementary-classes" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">For (1), take <span class="math-inline">\(C=\Pp^{K'}(D)\)</span> in the definition of complementarity. The relative completion <span class="math-inline">\(\Pp^{\all}_{K'}(\Pp^{K'}(D))\)</span> is <span class="math-inline">\(\Pp^{\all}(D)\)</span> by the two universal properties. Hence every presheaf on <span class="math-inline">\(D\)</span> is obtained from representables by first forming <span class="math-inline">\(K'\)</span>-indexed colimits and then <span class="math-inline">\(K\)</span>-indexed colimits. In particular, the subcategory generated under both classes is all of <span class="math-inline">\(\PSh(D)\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>For (2), let <span class="math-inline">\(I \in K'\)</span>, <span class="math-inline">\(J \in K\)</span>, and let <span class="math-inline">\(X\colon I \times J \to \An\)</span> be a diagram. We must show that the canonical map <span class="math-inline">\(\colim_{j \in J}\lim_{i \in I} X_{i,j} \to \lim_{i \in I}\colim_{j \in J} X_{i,j}\)</span> is an isomorphism. Let <span class="math-inline">\(C := \PSh(I\catop)\)</span>, and for each <span class="math-inline">\(j \in J\)</span> let <span class="math-inline">\(d_j \in C\)</span> be the presheaf <span class="math-inline">\(i \mapsto X_{i,j}\)</span>. Also let <div class="math-display">\[u := \colim_{i \in I\catop} y(i) \qin C \qquadtext{ and } F := \colim_{j \in J} y(d_j) \qin \PSh(C).\]</div> By the large-<span class="math-inline">\(C\)</span> variant of <a href="../relative-cocompletion-as-presheaves/index.html#rmk:Relative_Cocompletion_As_Presheaves">Remark 6.180</a> (using small presheaves), <span class="math-inline">\(\Pp^{\all}_{K'}(C)\)</span> is a full subcategory of <span class="math-inline">\(\PSh(C)\)</span>. Using the assumption <span class="math-inline">\(K \perp K'\)</span>, this full subcategory agrees with <span class="math-inline">\(\Pp^K(C) \subseteq \PSh(C)\)</span>, hence is closed under <span class="math-inline">\(K\)</span>-indexed colimits. Since each <span class="math-inline">\(y(d_j)\)</span> belongs to it, it follows that <span class="math-inline">\(F \in \Pp^{\all}_{K'}(C)\)</span>, and thus <span class="math-inline">\(F\)</span> sends the <span class="math-inline">\(I\catop\)</span>-indexed colimit <span class="math-inline">\(u=\colim_{i \in I\catop} y(i)\)</span> in <span class="math-inline">\(C\)</span> to an <span class="math-inline">\(I\)</span>-indexed limit in <span class="math-inline">\(\An\)</span>: <div class="math-display">\[F(u) \simeq \lim_{i \in I} F(y(i)).\]</div> Now compute both sides using pointwise colimits and Yoneda: <div class="math-display">\[F(u)
+			\simeq
+			\colim_{j \in J}\Hom_C(u,d_j)
+			\simeq
+			\colim_{j \in J}\lim_{i \in I}\Hom_C(y(i),d_j)
+			\simeq
+			\colim_{j \in J}\lim_{i \in I} X_{i,j},\]</div> while <div class="math-display">\[\lim_{i \in I}F(y(i))
+			\simeq
+			\lim_{i \in I}\colim_{j \in J}\Hom_C(y(i),d_j)
+			\simeq
+			\lim_{i \in I}\colim_{j \in J} X_{i,j}.\]</div> This proves (2).<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+    </article>
+      <aside class="context-nav" id="context-navigation" data-context-nav aria-label="Nearby entries">
+      <button class="context-nav-collapse" type="button" data-context-nav-collapse data-collapsed-label="Nearby entries" aria-controls="context-navigation" aria-expanded="true" aria-label="Hide Nearby entries">
+      <span aria-hidden="true">›</span>
+    </button>
+      <p class="context-chapter-link"><a href="../../chapter/topics-in-topos-theory/index.html">Topics in topos theory</a></p>
+      <p class="context-nav-kicker">Section 6.11</p>
+      <h2><a href="../../section/topoi-of-parametrized-objects/index.html">Topoi of parametrized objects</a></h2>
+      <p class="context-nav-description"><a href="../../section/topoi-of-parametrized-objects/index.html#lem:Consequences_Of_Complementary_Classes">Read this result in the continuous section</a></p>
+      <ol class="context-entry-list context-entry-list-nearby">
+        <li><a href="../complementary-classes-of-categories/index.html">
+          <span class="context-entry-heading">Notation 6.182</span>
+          <span class="context-entry-title">Complementary classes of categories</span>
+        </a></li>
+<li><a href="../complementarity-not-symmetric/index.html">
+          <span class="context-entry-heading">Warning 6.183</span>
+          <span class="context-entry-title">Complementarity not symmetric</span>
+        </a></li>
+<li><a href="#lem:Consequences_Of_Complementary_Classes" aria-current="page">
+          <span class="context-entry-heading">Lemma 6.184</span>
+          <span class="context-entry-title">Consequences of complementary classes</span>
+        </a></li>
+<li><a href="../examples-of-complementary-classes-of-categories/index.html">
+          <span class="context-entry-heading">Example 6.185</span>
+          <span class="context-entry-title">Examples of complementary classes of categories</span>
+        </a></li>
+<li><a href="../relative-cocompletion-is-topos/index.html">
+          <span class="context-entry-heading">Question 6.186</span>
+          <span class="context-entry-title">Relative cocompletion is topos</span>
+        </a></li>
+      </ol>
+      <nav class="context-step-links" aria-label="Previous and next entries"><a rel="prev" href="../complementarity-not-symmetric/index.html"><span>Previous</span>Complementarity not symmetric</a>
+<a rel="next" href="../examples-of-complementary-classes-of-categories/index.html"><span>Next</span>Examples of complementary classes of categories</a></nav>
+    </aside>
+  </main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

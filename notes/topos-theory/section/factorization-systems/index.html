@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Factorization systems | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/section/factorization-systems/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="section-page has-context-nav" data-record-id="factorization-systems" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">·</span> Section A.1</p>
+      <h1>Factorization systems</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page">
+      
+<h2 id="sec:App_Factorization_Systems"><span>A.1.</span> Factorization systems</h2>
+<p>We begin with the definition of orthogonality.</p>
+<section class="theorem definition" id="def:Orthogonality">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/orthogonality-of-morphisms/index.html">Definition A.1.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> be a category. A morphism <span class="math-inline">\(l \colon A \to B\)</span> is said to be <em>left orthogonal</em> to a morphism <span class="math-inline">\(r \colon X \to Y\)</span>, written <span class="math-inline">\(l \perp r\)</span>, if the following square is a pullback square:</p>
+<figure class="diagram"><img src="diagrams/tikzcd-9250efac187c.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>Equivalently, for every commutative square</p>
+<figure class="diagram"><img src="diagrams/tikzcd-4dd9e2beac93.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>the anima of dashed fillers making both triangles commute is contractible. In this case, we also say that <span class="math-inline">\(r\)</span> is <em>right orthogonal</em> to <span class="math-inline">\(l\)</span>.</p>
+<p>Given a collection of morphisms <span class="math-inline">\(S\)</span>, we denote by <span class="math-inline">\(S^\perp\)</span> the collection of all morphisms that are right orthogonal to every morphism in <span class="math-inline">\(S\)</span>, and by <span class="math-inline">\({}^\perp S\)</span> the collection of those that are left orthogonal to every morphism in <span class="math-inline">\(S\)</span>.</p></div>
+</section>
+
+<section class="theorem definition" id="def:factorization_system">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/factorization-system/index.html">Definition A.2.</a></span></p>
+  <div class="theorem-statement"><p>A <em>factorization system</em> on a category <span class="math-inline">\(C\)</span> consists of two classes of morphisms <span class="math-inline">\(L\)</span> and <span class="math-inline">\(R\)</span> of <span class="math-inline">\(C\)</span> satisfying the following two conditions:</p>
+<ol><li><p><em>Existence of factorization</em>: Every morphism <span class="math-inline">\(f\colon A\to B\)</span> in <span class="math-inline">\(C\)</span> admits a factorization</p>
+<div class="math-display">\[A\xrightarrow{l}X\xrightarrow{r}B\]</div>
+<p>with <span class="math-inline">\(l\in L\)</span> and <span class="math-inline">\(r\in R\)</span>.</p></li><li><p><em>Orthogonality</em>: Every morphism <span class="math-inline">\(l \in L\)</span> is left orthogonal to every morphism <span class="math-inline">\(r \in R\)</span>.</p></li></ol></div>
+</section>
+<p>The classes of maps in a factorization system satisfy various useful closure properties.</p>
+<section class="theorem proposition" id="prop:FS_Closure_Properties">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/closure-properties-of-factorization-systems/index.html">Proposition A.3.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\((L,R)\)</span> be a factorization system on <span class="math-inline">\(C\)</span>.</p>
+<ol><li><p>We have <span class="math-inline">\(L = {}^{\perp}R\)</span> and <span class="math-inline">\(R = L^{\perp}\)</span>.</p></li><li><p>The classes <span class="math-inline">\(L\)</span> and <span class="math-inline">\(R\)</span> are closed under composition and contain all isomorphisms.</p></li><li><p>The classes <span class="math-inline">\(L\)</span> and <span class="math-inline">\(R\)</span> are closed under retracts.</p></li><li><p>The class <span class="math-inline">\(R\)</span> is closed under base change (pullbacks).</p></li><li><p>The class <span class="math-inline">\(L\)</span> is closed under cobase change (pushouts).</p></li><li><p>The class <span class="math-inline">\(R\)</span> has the left cancellation property: if <span class="math-inline">\(g \circ f \in R\)</span> and <span class="math-inline">\(g \in R\)</span>, then <span class="math-inline">\(f \in R\)</span>.</p></li><li><p>The class <span class="math-inline">\(L\)</span> has the right cancellation property: if <span class="math-inline">\(g \circ f \in L\)</span> and <span class="math-inline">\(f \in L\)</span>, then <span class="math-inline">\(g \in L\)</span>.</p></li><li><p>If <span class="math-inline">\(C\)</span> admits small limits, the class <span class="math-inline">\(R\)</span> is closed under small limits in <span class="math-inline">\(\Ar(C)\)</span>.</p></li><li><p>If <span class="math-inline">\(C\)</span> admits small colimits, the class <span class="math-inline">\(L\)</span> is closed under small colimits in <span class="math-inline">\(\Ar(C)\)</span>.</p></li></ol></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:FS_Closure_Properties-main" data-owner-entry="closure-properties-of-factorization-systems" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">The inclusions <span class="math-inline">\(L\subseteq{}^{\perp}R\)</span> and <span class="math-inline">\(R\subseteq L^{\perp}\)</span> are part of the definition. Conversely, suppose that <span class="math-inline">\(f\in{}^{\perp}R\)</span> and choose a factorization of <span class="math-inline">\(f\)</span> into <span class="math-inline">\(l\in L\)</span> followed by <span class="math-inline">\(r\in R\)</span>. Orthogonality of <span class="math-inline">\(f\)</span> and <span class="math-inline">\(r\)</span> gives a section <span class="math-inline">\(s\)</span> of <span class="math-inline">\(r\)</span>. Comparing the endomorphism <span class="math-inline">\(sr\)</span> of the middle object with its identity, using <span class="math-inline">\(l\perp r\)</span>, shows that <span class="math-inline">\(s\)</span> is also a retraction. Thus <span class="math-inline">\(r\)</span> is an isomorphism and <span class="math-inline">\(f\in L\)</span>. This proves <span class="math-inline">\(L={}^\perp R\)</span>; the proof that <span class="math-inline">\(R=L^\perp\)</span> is dual.<div class="proof-paragraph-break" aria-hidden="true"></div>Orthogonality classes contain the isomorphisms and are closed under composition and retracts, which proves (2) and (3). A lifting problem against a base change of a morphism in <span class="math-inline">\(R\)</span> is equivalently a lifting problem against the original morphism; hence <span class="math-inline">\(R\)</span> is closed under base change. Dually, <span class="math-inline">\(L\)</span> is closed under cobase change. The cancellation properties follow by applying orthogonality successively to the two composable morphisms.<div class="proof-paragraph-break" aria-hidden="true"></div>Finally, if <span class="math-inline">\((r_i)_i\)</span> is a small diagram of morphisms in <span class="math-inline">\(R\)</span>, then for every <span class="math-inline">\(l\in L\)</span> the anima of fillers from <span class="math-inline">\(l\)</span> to <span class="math-inline">\(\lim_i r_i\)</span> is the limit of the contractible animae of fillers from <span class="math-inline">\(l\)</span> to the <span class="math-inline">\(r_i\)</span>. It is therefore contractible, so <span class="math-inline">\(\lim_i r_i\in R\)</span>. The colimit statement for <span class="math-inline">\(L\)</span> is dual. Compare <span class="citation-group">[Lurie <a class="citation" href="#bib-lurie2009HTT">2009, Propositions 5.2.8.6 and 5.2.8.11</a>]</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem lemma" id="lem:Intersection_Is_Iso">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/intersection-of-factorization-classes/index.html">Lemma A.4.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\((L,R)\)</span> be a factorization system on <span class="math-inline">\(C\)</span>. Any morphism <span class="math-inline">\(f\colon X \to Y\)</span> which is both in <span class="math-inline">\(L\)</span> and in <span class="math-inline">\(R\)</span> is an isomorphism.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Intersection_Is_Iso-main" data-owner-entry="intersection-of-factorization-classes" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Consider the commutative square: <figure class="diagram"><img src="diagrams/tikzcd-a70e6cfe1671.svg" alt="Commutative diagram generated from the LaTeX source"></figure> Since <span class="math-inline">\(f \in L\)</span> as the left vertical map and <span class="math-inline">\(f \in R\)</span> as the right vertical map, orthogonality provides a unique filler <span class="math-inline">\(g\)</span>. The two triangles say precisely that <span class="math-inline">\(gf=\id_X\)</span> and <span class="math-inline">\(fg=\id_Y\)</span>, so <span class="math-inline">\(g\)</span> is an inverse to <span class="math-inline">\(f\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem lemma" id="lem:Cancellation_Properties_General">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/cancellation-properties-of-factorization-systems/index.html">Lemma A.5.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\((L,R)\)</span> be a factorization system on <span class="math-inline">\(C\)</span>, and consider morphisms <span class="math-inline">\(X \xrightarrow{f} Y \xrightarrow{g} Z\)</span>.</p>
+<ol><li><p>Assume <span class="math-inline">\(C\)</span> admits pullbacks. If <span class="math-inline">\(gf \in R\)</span> and <span class="math-inline">\(\Delta_g \in R\)</span>, then <span class="math-inline">\(f \in R\)</span>.</p></li><li><p>Assume <span class="math-inline">\(C\)</span> admits pushouts. If <span class="math-inline">\(gf \in L\)</span> and <span class="math-inline">\(\nabla_f \in L\)</span>, then <span class="math-inline">\(g \in L\)</span>.</p></li></ol></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Cancellation_Properties_General-main" data-owner-entry="cancellation-properties-of-factorization-systems" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">We prove (1); the proof for (2) is dual. We may factor <span class="math-inline">\(f\)</span> as the composite <div class="math-display">\[X \xrightarrow{(\id_X, f)} X \times_Z Y \xrightarrow{\pr_Y} Y.\]</div> The second map is a base change of <span class="math-inline">\(gf\colon X \to Z\)</span> along <span class="math-inline">\(g\)</span>, hence lies in <span class="math-inline">\(R\)</span> because <span class="math-inline">\(gf \in R\)</span>. The first map is a base change of the diagonal <span class="math-inline">\(\Delta_g\colon Y \to Y \times_Z Y\)</span> along the map <span class="math-inline">\(f \times \id_Y \colon X \times_Z Y \to Y \times_Z Y\)</span>. Since <span class="math-inline">\(\Delta_g \in R\)</span>, it follows that <span class="math-inline">\((\id_X, f) \in R\)</span>. Since <span class="math-inline">\(R\)</span> is closed under composition, we conclude <span class="math-inline">\(f \in R\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem lemma" id="lem:FactorizationSystemOnSliceCategory">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/factorization-systems-on-slice-categories/index.html">Lemma A.6.</a></span> (<span class="citation-group">[Anel et al. <a class="citation" href="#bib-ABFJ_Higher_Sheaves">2022, Lemma 3.1.8</a>]</span>)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\((L,R)\)</span> be a factorization system on a category <span class="math-inline">\(C\)</span>. Then for every object <span class="math-inline">\(X \in C\)</span> the slice <span class="math-inline">\(C_{/X}\)</span> admits a factorization system in which a morphism lies in the left, resp. right, class if and only if its underlying morphism in <span class="math-inline">\(C\)</span> lies in <span class="math-inline">\(L\)</span>, resp. <span class="math-inline">\(R\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:FactorizationSystemOnSliceCategory-main" data-owner-entry="factorization-systems-on-slice-categories" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Given a morphism <span class="math-inline">\(A\to B\)</span> in <span class="math-inline">\(C_{/X}\)</span>, factor its underlying morphism in <span class="math-inline">\(C\)</span> as <span class="math-inline">\(A\xrightarrow{l}M\xrightarrow{r}B\)</span>. Giving <span class="math-inline">\(M\)</span> the structure map <span class="math-inline">\(M\xrightarrow{r}B\to X\)</span> makes this a factorization in <span class="math-inline">\(C_{/X}\)</span>. Orthogonality in the slice follows from orthogonality in <span class="math-inline">\(C\)</span>: the unique filler of the underlying square automatically commutes with the structure maps to <span class="math-inline">\(X\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem lemma" id="lem:Factorization_Provides_Adjoint">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/factorization-induces-adjoints-on-arrow-categories/index.html">Lemma A.7.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\((L,R)\)</span> be a factorization system on <span class="math-inline">\(C\)</span>.</p>
+<ol><li><p>Let <span class="math-inline">\(\Ar^R(C) \subseteq \Ar(C)\)</span> denote the full subcategory spanned by the morphisms in <span class="math-inline">\(R\)</span>. Then the inclusion <span class="math-inline">\(\Ar^R(C) \hookrightarrow \Ar(C)\)</span> admits a left adjoint. Given a morphism <span class="math-inline">\(f\colon A \to B\)</span> with factorization <span class="math-inline">\(A \xrightarrow{l} C \xrightarrow{r} B\)</span>, this left adjoint sends <span class="math-inline">\(f\)</span> to <span class="math-inline">\(r\)</span>.</p></li><li><p>Similarly, the inclusion <span class="math-inline">\(\Ar^L(C) \hookrightarrow \Ar(C)\)</span> of the morphisms in <span class="math-inline">\(L\)</span> admits a right adjoint, sending <span class="math-inline">\(f\)</span> to <span class="math-inline">\(l\)</span>.</p></li><li><p>For every object <span class="math-inline">\(X\in C\)</span>, let <span class="math-inline">\(R[X]\subseteq C_{/X}\)</span> be the full subcategory spanned by the morphisms in <span class="math-inline">\(R\)</span>. Then <span class="math-inline">\(R[X]\)</span> is reflective in <span class="math-inline">\(C_{/X}\)</span>, and the reflection sends a morphism <span class="math-inline">\(f\colon A\to X\)</span> to its right factor <span class="math-inline">\(r\colon C\to X\)</span>.</p></li></ol></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Factorization_Provides_Adjoint-main" data-owner-entry="factorization-induces-adjoints-on-arrow-categories" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">By symmetry, it suffices to prove statement (1). The morphism <figure class="diagram"><img src="diagrams/tikzcd-9689533af845.svg" alt="Commutative diagram generated from the LaTeX source"></figure> is the unit of the reflection. Indeed, for any <span class="math-inline">\(r'\in\Ar^R(C)\)</span>, the map <div class="math-display">\[\Hom_{\Ar(C)}(r, r') \to \Hom_{\Ar(C)}(f,r')\]</div> is an isomorphism as a consequence of the fact that <span class="math-inline">\(l \perp r'\)</span>. This proves (1), and (2) follows dually. Applying the same argument in the slice factorization system of <a href="#lem:FactorizationSystemOnSliceCategory">Lemma A.6</a> proves (3).<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-lurie2009HTT">Jacob Lurie. <em>Higher topos theory</em>. Ann. Math. Stud. 170, Princeton, NJ: Princeton University Press. 2009.</li>
+<li id="bib-ABFJ_Higher_Sheaves">Mathieu Anel, Georg Biedermann, Eric Finster, André Joyal. <em>Left-exact localizations of ∞-topoi. I: Higher sheaves</em>. Adv. Math., 400, 64. 2022.</li></ol></section>
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+      <a class="context-step-control" rel="prev" href="../gestalten/index.html" aria-label="Previous section: Gestalten" title="Previous section: Gestalten"><span aria-hidden="true">←</span></a>
+      <a class="context-step-control" rel="next" href="../saturated-classes/index.html" aria-label="Next section: Saturated classes" title="Next section: Saturated classes"><span aria-hidden="true">→</span></a>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../chapter/introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../../chapter/foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../../chapter/truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../../chapter/topoi-logoi/index.html">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../../chapter/modalities/index.html">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../../chapter/topics-in-topos-theory/index.html">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../../chapter/geometry/index.html">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../../chapter/factorization-systems-and-saturated-classes/index.html" aria-current="location">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../../chapter/limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../factorization-systems/index.html" aria-current="page">
+          <span class="context-entry-heading">Section A.1</span>
+          <span class="context-entry-title">Factorization systems</span>
+        </a></li>
+<li><a href="../saturated-classes/index.html">
+          <span class="context-entry-heading">Section A.2</span>
+          <span class="context-entry-title">Saturated classes</span>
+        </a></li>
+<li><a href="../strongly-saturated-classes/index.html">
+          <span class="context-entry-heading">Section A.3</span>
+          <span class="context-entry-title">Strongly saturated classes</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <p class="context-nav-kicker">Section A.1</p>
+      <p class="context-nav-description">Factorization systems</p>
+      <ol class="context-entry-list">
+        <li><a href="#def:Orthogonality" data-section-target="def:Orthogonality">
+          <span class="context-entry-heading">Definition A.1</span>
+          <span class="context-entry-title">Orthogonality of morphisms</span>
+        </a></li>
+<li><a href="#def:factorization_system" data-section-target="def:factorization_system">
+          <span class="context-entry-heading">Definition A.2</span>
+          <span class="context-entry-title">Factorization system</span>
+        </a></li>
+<li><a href="#prop:FS_Closure_Properties" data-section-target="prop:FS_Closure_Properties">
+          <span class="context-entry-heading">Proposition A.3</span>
+          <span class="context-entry-title">Closure properties of factorization systems</span>
+        </a></li>
+<li><a href="#lem:Intersection_Is_Iso" data-section-target="lem:Intersection_Is_Iso">
+          <span class="context-entry-heading">Lemma A.4</span>
+          <span class="context-entry-title">Intersection of the factorization classes</span>
+        </a></li>
+<li><a href="#lem:Cancellation_Properties_General" data-section-target="lem:Cancellation_Properties_General">
+          <span class="context-entry-heading">Lemma A.5</span>
+          <span class="context-entry-title">Cancellation properties of factorization systems</span>
+        </a></li>
+<li><a href="#lem:FactorizationSystemOnSliceCategory" data-section-target="lem:FactorizationSystemOnSliceCategory">
+          <span class="context-entry-heading">Lemma A.6</span>
+          <span class="context-entry-title">Factorization systems on slice categories</span>
+        </a></li>
+<li><a href="#lem:Factorization_Provides_Adjoint" data-section-target="lem:Factorization_Provides_Adjoint">
+          <span class="context-entry-heading">Lemma A.7</span>
+          <span class="context-entry-title">Factorization induces adjoints on arrow categories</span>
+        </a></li>
+      </ol>
+    </nav>
+  </section></div>
+  </aside>
+  </main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

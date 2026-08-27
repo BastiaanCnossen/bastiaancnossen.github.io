@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Schemes | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/section/schemes/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="section-page has-context-nav" data-record-id="schemes" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">·</span> Section 7.1</p>
+      <h1>Schemes</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page">
+      
+<h2 id="sec:Schemes"><span>7.1.</span> Schemes</h2>
+<p>We begin with the topos-theoretic formulation of schemes. The point is to isolate the features that will later be abstracted by Lurie's notions of geometry and fractured topos.</p>
+<section class="theorem definition" id="def:Ringed_Topos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/ringed-topos/index.html">Definition 7.1.</a></span></p>
+  <div class="theorem-statement"><p>A <em>ringed topos</em> is a pair <span class="math-inline">\((T,\Oo)\)</span> where <span class="math-inline">\(T\)</span> is a topos and <span class="math-inline">\(\Oo\)</span> is a commutative ring object of <span class="math-inline">\(T\)</span> whose underlying object is <span class="math-inline">\(0\)</span>-truncated. In other words, <span class="math-inline">\(\Oo\)</span> is a sheaf of static commutative rings on <span class="math-inline">\(T\)</span>.</p></div>
+</section>
+
+<section class="theorem definition" id="def:Zariski_Scheme">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/zariski-scheme/index.html">Definition 7.2.</a></span></p>
+  <div class="theorem-statement"><p>A <em>Zariski scheme</em> is a ringed topos <span class="math-inline">\((T,\Oo)\)</span> which is locally isomorphic to <span class="math-inline">\(\Spec(R)_{\Zar}\)</span>, i.e. there exists a covering family <span class="math-inline">\(\{U_i \to *\}_{i \in I}\)</span> in <span class="math-inline">\(T\)</span> such that for every <span class="math-inline">\(i \in I\)</span> the induced ringed topos <span class="math-inline">\((T_{/U_i}, \Oo|_{U_i})\)</span> is isomorphic to <span class="math-inline">\(\Spec(R_i)_{\Zar}\)</span> for some ring <span class="math-inline">\(R_i\)</span>. A <em>morphism of Zariski schemes</em> <span class="math-inline">\((T,\Oo_T) \to (S,\Oo_S)\)</span> is a pair <span class="math-inline">\((f,f^{\sharp})\)</span> consisting of a morphism of topoi <span class="math-inline">\(f\colon T \to S\)</span> together with a morphism of sheaves of static rings <span class="math-inline">\(f^{\sharp}\colon \Oo_S \to f_*\Oo_T\)</span>. We require the adjoint morphism</p>
+<div class="math-display">\[f^*\Oo_S \longrightarrow \Oo_T\]</div>
+<p>to be <em>local</em>, meaning that the following square of objects of <span class="math-inline">\(T\)</span> is a pullback:</p>
+<figure class="diagram"><img src="diagrams/tikzcd-d80123f73328.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>Equivalently, this condition may be tested on sections over every object of <span class="math-inline">\(T\)</span>: a section of <span class="math-inline">\(f^*\Oo_S\)</span> is invertible if and only if its image in <span class="math-inline">\(\Oo_T\)</span> is invertible. This gives a category <span class="math-inline">\(\Sch_{\Zar}\)</span>.</p></div>
+</section>
+
+<section class="theorem definition" id="def:Etale_Scheme">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/etale-scheme/index.html">Definition 7.3.</a></span></p>
+  <div class="theorem-statement"><p>An <em>étale scheme</em> is a ringed topos <span class="math-inline">\((T, \Oo)\)</span> that is locally isomorphic to <span class="math-inline">\(\Spec(R)_{\et}\)</span>. We similarly obtain a category <span class="math-inline">\(\Sch_{\et}\)</span>.</p></div>
+</section>
+
+<section class="theorem example" id="ex:Schemes">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/examples-of-schemes/index.html">Example 7.4.</a></span></p>
+  <div class="theorem-statement"><ul><li><p>A classical scheme is exactly a <span class="math-inline">\(0\)</span>-localic Zariski scheme.</p></li><li><p>A classical Deligne–Mumford stack is exactly a <span class="math-inline">\(1\)</span>-localic étale scheme.</p></li><li><p>If <span class="math-inline">\((T,\Oo)\)</span> is a Zariski scheme, and <span class="math-inline">\(X \in T\)</span>, then <span class="math-inline">\((T_{/X}, \Oo\vert_{T_{/X}})\)</span> is again a Zariski scheme.</p></li></ul></div>
+</section>
+
+<section class="theorem remark" id="rmk:Etale_Schemes_DM_Stacks">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/etale-schemes-and-deligne-mumford-stacks/index.html">Remark 7.5.</a></span></p>
+  <div class="theorem-statement"><p>Étale schemes are also called <em>Deligne–Mumford <span class="math-inline">\(\infty\)</span>-stacks</em>.</p></div>
+</section>
+<p>The following are standard facts from scheme theory, translated into the language of structured topoi; see <span class="citation-group">[Lurie <a class="citation" href="#bib-Lurie_DAG_V">2011, Sections 2 and 3</a>]</span> for this formalism.</p>
+<ul><li><p>The global section functor</p>
+<div class="math-display">\[\mathrm{LocRingTopos} \to \CRing\catop, \qquad (T,\Oo) \mapsto \Oo(T)\]</div>
+<p>admits a fully faithful right adjoint</p>
+<div class="math-display">\[\CRing\catop \to \mathrm{LocRingTopos}, \qquad R \mapsto \Spec(R)_{\Zar}.\]</div></li><li><p>The functor</p>
+<div class="math-display">\[\Sch_{\Zar} \to \Shv_{\Zar}(\CRing\catop), \qquad (T,\Oo) \mapsto \Hom(\Spec(-)_{\Zar}, (T,\Oo))\]</div>
+<p>is fully faithful. Moreover, a Zariski sheaf <span class="math-inline">\(X\)</span> is in the image if and only if there exists an effective epimorphism <span class="math-inline">\(\bigsqcup_i U_i \xrightarrow{f_i} X\)</span> where <span class="math-inline">\(U_i\)</span> is representable and <span class="math-inline">\(f_i\)</span> is representable by an étale map (of ringed topoi).</p></li><li><p>The category <span class="math-inline">\(\Shv_{\Zar}(\CRing^{\mathrm{fp},\op})\)</span> is the classifying topos for local rings.</p></li></ul>
+<p>We have made a number of different definitions here. These constructions fit into a common pattern, which we will now discuss. We first list some more facts about scheme theory which are a bit less standard.</p>
+<section class="theorem definition" id="def:Etale_Morphism_Schemes">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/etale-morphisms-of-schemes/index.html">Definition 7.6.</a></span></p>
+  <div class="theorem-statement"><p>A morphism <span class="math-inline">\((f,f^{\sharp})\colon (T,\Oo_T) \to (S,\Oo_S)\)</span> of Zariski schemes is called <em>étale</em> if the underlying morphism of topoi <span class="math-inline">\(f\)</span> is étale and the adjoint structural morphism</p>
+<div class="math-display">\[f^*\Oo_S \longrightarrow \Oo_T\]</div>
+<p>is an isomorphism. This use of the word étale is unrelated to the notion of an étale scheme from <a href="#def:Etale_Scheme">Definition 7.3</a>. For example, every morphism which is locally on source and target an open immersion of schemes is étale in this sense.</p></div>
+</section>
+<p>We denote the resulting wide subcategory of <span class="math-inline">\(\Sch_{\Zar}\)</span> by</p>
+<div class="math-display">\[\Sch_{\Zar}^{\et} := \Sch_{\Zar} \times_{\Topos} \Topos^{\et} \subseteq \Sch_{\Zar}.\]</div>
+<section class="theorem proposition" id="prop:Etale_Schemes_Is_Topos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/etale-schemes-form-a-topos/index.html">Proposition 7.7.</a></span></p>
+  <div class="theorem-statement"><p>The category <span class="math-inline">\(\Sch_{\Zar}^{\et}\)</span> is (up to size issues) a topos. In fact, there is an equivalence</p>
+<div class="math-display">\[\Sch_{\Zar}^{\et} \simeq \Shv_{\Zar}(\CRing^{\ad,\op}),\]</div>
+<p>where <span class="math-inline">\(\CRing^{\ad}\)</span> is the wide subcategory of <span class="math-inline">\(\CRing\)</span> spanned by the localization maps of the form <span class="math-inline">\(R \to R[s^{-1}]\)</span>.</p></div>
+</section>
+<p>The equivalence identifies a Zariski scheme with its functor of points restricted to open affine morphisms. The structural isomorphism in <a href="#def:Etale_Morphism_Schemes">Definition 7.6</a> is essential here: requiring only that the underlying morphism of topoi be étale would give a larger category.</p>
+<section class="theorem observation" id="obs:Factorization_In_Rings">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/factorization-in-rings/index.html">Observation 7.8.</a></span></p>
+  <div class="theorem-statement"><p>For every topos <span class="math-inline">\(T\)</span>, the category <span class="math-inline">\(\Shv_{\CRing}(T)\)</span> admits a factorization system: every map <span class="math-inline">\(A \to B\)</span> factors uniquely as</p>
+<div class="math-display">\[A \to A[S^{-1}] \to B,\]</div>
+<p>where the second map is a local map. This factorization is functorial in <span class="math-inline">\(T\)</span>.</p></div>
+</section>
+<p>Based on these results and observations, we see that the topos <span class="math-inline">\(E = \Shv_{\Zar}(\CRing^{\mathrm{fp},\op})\)</span> has the following additional structure:</p>
+<ol><li><p>Sheafified left Kan extension along the inclusion <span class="math-inline">\(\CRing^{\mathrm{fp},\ad,\op} \hookrightarrow \CRing^{\mathrm{fp},\op}\)</span> induces a faithful functor</p>
+<div class="math-display">\[E^{\corp} := \Shv_{\Zar}(\CRing^{\mathrm{fp},\ad,\op}) \hookrightarrow \Shv_{\Zar}(\CRing^{\mathrm{fp},\op}) = E\]</div>
+<p>whose image is also a topos. We refer to this subcategory <span class="math-inline">\(E^{\corp}\)</span> as the subcategory of <em>corporeal objects</em>.</p></li><li><p>There exists a wide subcategory <span class="math-inline">\(E^{\ad}\)</span> of <span class="math-inline">\(E\)</span> consisting of the “representable étale maps”.</p></li><li><p>The functor <span class="math-inline">\(\Geom(-,E)\colon \Topos\catop \to \Cat\)</span> factors as</p>
+<div class="math-display">\[\Topos\catop \to \Cat^{\mathrm{fact}} \to \Cat,\]</div>
+<p>where <span class="math-inline">\(\Cat^{\mathrm{fact}}\)</span> is the category of categories equipped with a factorization system.</p></li><li><p>The category <span class="math-inline">\(\Topos_{//E}\)</span> of ringed topoi admits a wide subcategory</p>
+<div class="math-display">\[(\Topos_{//E})^{\loc} \subseteq \Topos_{//E}\]</div>
+<p>consisting of the <em>local</em> morphisms of ringed topoi.</p></li></ol>
+<p>The guiding point is that these four structures are different manifestations of the same geometry. The theory below makes precise the relation between corporeal objects and admissible morphisms, and then explains how local morphisms recover the corresponding notion of scheme.</p>
+<p>In the next two sections we will consider abstract versions of this story: Lurie's notion of a <em>geometry</em> which encapsulates the idea of having affine test objects with morphisms playing the role of open inclusions and the covers they generate, and the resulting notion of a <em>fractured topos</em>.</p><section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-Lurie_DAG_V">Jacob Lurie. <em>Derived algebraic geometry V: Structured spaces</em>. 2011.</li></ol></section>
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+      <a class="context-step-control" rel="prev" href="../topoi-of-parametrized-objects/index.html" aria-label="Previous section: Topoi of parametrized objects" title="Previous section: Topoi of parametrized objects"><span aria-hidden="true">←</span></a>
+      <a class="context-step-control" rel="next" href="../geometries/index.html" aria-label="Next section: Geometries" title="Next section: Geometries"><span aria-hidden="true">→</span></a>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../chapter/introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../../chapter/foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../../chapter/truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../../chapter/topoi-logoi/index.html">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../../chapter/modalities/index.html">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../../chapter/topics-in-topos-theory/index.html">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../../chapter/geometry/index.html" aria-current="location">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../../chapter/factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../../chapter/limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../schemes/index.html" aria-current="page">
+          <span class="context-entry-heading">Section 7.1</span>
+          <span class="context-entry-title">Schemes</span>
+        </a></li>
+<li><a href="../geometries/index.html">
+          <span class="context-entry-heading">Section 7.2</span>
+          <span class="context-entry-title">Geometries</span>
+        </a></li>
+<li><a href="../fractured-topoi/index.html">
+          <span class="context-entry-heading">Section 7.3</span>
+          <span class="context-entry-title">Fractured topoi</span>
+        </a></li>
+<li><a href="../geometries-from-six-functor-formalisms/index.html">
+          <span class="context-entry-heading">Section 7.4</span>
+          <span class="context-entry-title">Geometries from six-functor formalisms</span>
+        </a></li>
+<li><a href="../analytic-stacks/index.html">
+          <span class="context-entry-heading">Section 7.5</span>
+          <span class="context-entry-title">Analytic stacks</span>
+        </a></li>
+<li><a href="../gestalten/index.html">
+          <span class="context-entry-heading">Section 7.6</span>
+          <span class="context-entry-title">Gestalten</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <p class="context-nav-kicker">Section 7.1</p>
+      <p class="context-nav-description">Schemes</p>
+      <ol class="context-entry-list">
+        <li><a href="#def:Ringed_Topos" data-section-target="def:Ringed_Topos">
+          <span class="context-entry-heading">Definition 7.1</span>
+          <span class="context-entry-title">Ringed topos</span>
+        </a></li>
+<li><a href="#def:Zariski_Scheme" data-section-target="def:Zariski_Scheme">
+          <span class="context-entry-heading">Definition 7.2</span>
+          <span class="context-entry-title">Zariski scheme</span>
+        </a></li>
+<li><a href="#def:Etale_Scheme" data-section-target="def:Etale_Scheme">
+          <span class="context-entry-heading">Definition 7.3</span>
+          <span class="context-entry-title">Étale scheme</span>
+        </a></li>
+<li><a href="#ex:Schemes" data-section-target="ex:Schemes">
+          <span class="context-entry-heading">Example 7.4</span>
+          <span class="context-entry-title">Examples of schemes</span>
+        </a></li>
+<li><a href="#rmk:Etale_Schemes_DM_Stacks" data-section-target="rmk:Etale_Schemes_DM_Stacks">
+          <span class="context-entry-heading">Remark 7.5</span>
+          <span class="context-entry-title">Étale schemes and Deligne–Mumford stacks</span>
+        </a></li>
+<li><a href="#def:Etale_Morphism_Schemes" data-section-target="def:Etale_Morphism_Schemes">
+          <span class="context-entry-heading">Definition 7.6</span>
+          <span class="context-entry-title">Étale morphisms of schemes</span>
+        </a></li>
+<li><a href="#prop:Etale_Schemes_Is_Topos" data-section-target="prop:Etale_Schemes_Is_Topos">
+          <span class="context-entry-heading">Proposition 7.7</span>
+          <span class="context-entry-title">Étale schemes form a topos</span>
+        </a></li>
+<li><a href="#obs:Factorization_In_Rings" data-section-target="obs:Factorization_In_Rings">
+          <span class="context-entry-heading">Observation 7.8</span>
+          <span class="context-entry-title">Factorization in rings</span>
+        </a></li>
+      </ol>
+    </nav>
+  </section></div>
+  </aside>
+  </main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

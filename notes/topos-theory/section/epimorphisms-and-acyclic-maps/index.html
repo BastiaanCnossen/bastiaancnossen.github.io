@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Epimorphisms and acyclic maps | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/section/epimorphisms-and-acyclic-maps/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="section-page has-context-nav" data-record-id="epimorphisms-and-acyclic-maps" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">·</span> Section 5.1</p>
+      <h1>Epimorphisms and acyclic maps</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page">
+      
+<h2 id="sec:Epimorphisms"><span>5.1.</span> Epimorphisms and acyclic maps</h2>
+<p>In this section, we discuss in detail the example of a modality given by the <em>epimorphisms</em> in a topos. For <span class="math-inline">\(\An\)</span>, this recovers the acyclic maps: those that induce isomorphisms on cohomology with local coefficients.</p>
+<h3 id="subsec:Cotruncated_Maps_And_Epimorphisms"><span>5.1.1.</span> Cotruncated maps and epimorphisms</h3>
+<p>We first construct the modality of cotruncated maps and establish the perhaps surprising fact that every epimorphism of a topos is already <span class="math-inline">\(0\)</span>-connected.</p>
+<section class="theorem definition" id="def:Cotruncated_Morphisms">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/cotruncated-morphisms/index.html">Definition 5.5.</a></span> (Cotruncation)</p>
+  <div class="theorem-statement"><p>We say that a map <span class="math-inline">\(f\colon X \to Y\)</span> is <em><span class="math-inline">\(n\)</span>-cotruncated</em> if it is <span class="math-inline">\(n\)</span>-truncated in <span class="math-inline">\(T\catop\)</span>. Inductively, this equivalently means that the <span class="math-inline">\((-2)\)</span>-cotruncated maps are precisely the isomorphisms, and that a map <span class="math-inline">\(f\)</span> is <span class="math-inline">\((n+1)\)</span>-cotruncated if and only if its codiagonal <span class="math-inline">\(\nabla_f\colon Y \sqcup_X Y \to Y\)</span> is <span class="math-inline">\(n\)</span>-cotruncated.</p></div>
+</section>
+
+<section class="theorem lemma" id="lem:Cotruncated_Morphisms_Form_Modality">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/cotruncated-morphisms-form-a-modality/index.html">Lemma 5.6.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(L\)</span> be the collection of <span class="math-inline">\(n\)</span>-cotruncated morphisms in <span class="math-inline">\(T\)</span>. Then the pair <span class="math-inline">\((L, L^{\perp})\)</span> forms a modality on <span class="math-inline">\(T\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Cotruncated_Morphisms_Form_Modality-main" data-owner-entry="cotruncated-morphisms-form-a-modality" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">We start by showing that <span class="math-inline">\((L,L^{\perp})\)</span> is a factorization system. In light of <a href="../../entry/saturated-class-gives-factorization-system/index.html">Proposition A.11</a>, it suffices to show that <span class="math-inline">\(L\)</span> is saturated and of small generation.<div class="proof-paragraph-break" aria-hidden="true"></div>Let <span class="math-inline">\(\nabla\colon \Ar(T)\to\Ar(T)\)</span> be the codiagonal functor, which sends <span class="math-inline">\(f\colon X\to Y\)</span> to <span class="math-inline">\(\nabla_f\colon Y\sqcup_XY\to Y\)</span>. This is an accessible functor, since it is constructed from finite colimits. By <a href="#def:Cotruncated_Morphisms">Definition 5.5</a>, a morphism <span class="math-inline">\(f\)</span> is <span class="math-inline">\(n\)</span>-cotruncated if and only if <span class="math-inline">\(\nabla^{n+2}(f)\)</span> is an isomorphism. Consequently, <span class="math-inline">\(L\)</span> is the inverse image under the accessible functor <span class="math-inline">\(\nabla^{n+2}\)</span> of the accessible subcategory of isomorphisms in <span class="math-inline">\(\Ar(T)\)</span>. It follows that <span class="math-inline">\(L\subseteq\Ar(T)\)</span> is accessible and accessibly embedded.<div class="proof-paragraph-break" aria-hidden="true"></div>The class <span class="math-inline">\(L\)</span> is saturated. Indeed, this is immediate for <span class="math-inline">\(n=-2\)</span>, and the inductive step follows because the codiagonal construction preserves colimits in <span class="math-inline">\(\Ar(T)\)</span>. Since <span class="math-inline">\(L\)</span> is accessible, accessibly embedded, and closed under all colimits, it is generated under colimits by a small collection of its objects. In particular, it is the saturation of a small set of morphisms.<div class="proof-paragraph-break" aria-hidden="true"></div>To show that the <span class="math-inline">\(n\)</span>-cotruncated maps are stable under base change, consider a pullback square <figure class="diagram"><img src="diagrams/tikzcd-7e3b9ae3b91e.svg" alt="Commutative diagram generated from the LaTeX source"></figure> and assume that <span class="math-inline">\(f\)</span> is <span class="math-inline">\(n\)</span>-cotruncated. We will show that also <span class="math-inline">\(f'\)</span> is <span class="math-inline">\(n\)</span>-cotruncated. By induction, it will suffice to show that the following square is a pullback square: <figure class="diagram"><img src="diagrams/tikzcd-634c95f8669f.svg" alt="Commutative diagram generated from the LaTeX source"></figure> But this is clear from universality of colimits.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem definition" id="def:Epimorphism">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/epimorphisms/index.html">Definition 5.7.</a></span></p>
+  <div class="theorem-statement"><p>A morphism <span class="math-inline">\(f\colon X \to Y\)</span> in <span class="math-inline">\(T\)</span> is called an <em>epimorphism</em> if it is <span class="math-inline">\((-1)\)</span>-cotruncated, i.e. if the square</p>
+<figure class="diagram"><img src="diagrams/tikzcd-6e604af0ea8e.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>is a pushout square. Let <span class="math-inline">\(T^+\subseteq T\)</span> be the full subcategory of objects <span class="math-inline">\(Z\)</span> for which <span class="math-inline">\(Z\to *\)</span> is right orthogonal to all epimorphisms. The factorization system of <a href="#lem:Cotruncated_Morphisms_Form_Modality">Lemma 5.6</a> gives a reflection <span class="math-inline">\((-)^+\colon T\to T^+\)</span> and hence a factorization</p>
+<div class="math-display">\[X \to X^+ \to *\]</div>
+<p>into an epimorphism followed by a map which is right orthogonal to the epimorphisms.</p></div>
+</section>
+<p>As already mentioned in <a href="../../entry/effective-epimorphism-terminology/index.html">Warning 2.28</a>, the terminology regarding `epimorphism' and `effective epimorphism' is a rather unfortunate historical accident: effective epimorphisms are not generally epimorphisms.</p>
+<section class="theorem example" id="ex:Effective_Epi_Not_Epi">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/effective-epimorphisms-need-not-be-epimorphisms/index.html">Example 5.8.</a></span></p>
+  <div class="theorem-statement"><p>For <span class="math-inline">\(T= \An\)</span>, the map <span class="math-inline">\(S^0 \to *\)</span> is an effective epimorphism (as it is a surjection on path components), but it is not an epimorphism: the pushout of <span class="math-inline">\(S^0 \to *\)</span> along itself is <span class="math-inline">\(S^1\)</span>, which is not isomorphic to <span class="math-inline">\(*\)</span>.</p></div>
+</section>
+<p>The situation is made even more confusing by the fact that the converse <em>does</em> hold.</p>
+<section class="theorem proposition" id="prop:Epimorphisms_Are_Zero_Connected">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/epimorphisms-are-zero-connected/index.html">Proposition 5.9.</a></span></p>
+  <div class="theorem-statement"><p>Every epimorphism in <span class="math-inline">\(T\)</span> is 0-connected, hence in particular an effective epimorphism.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Epimorphisms_Are_Zero_Connected-main" data-owner-entry="epimorphisms-are-zero-connected" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">We may assume that <span class="math-inline">\(Y = *\)</span> by passing to the slice topos: the forgetful functor <span class="math-inline">\(T_{/Y} \to T\)</span> preserves all colimits, hence preserves and detects epimorphisms. So we need to show: if <span class="math-inline">\(X \to *\)</span> is an epimorphism, then <span class="math-inline">\(\tau_0 X\)</span> is terminal.<div class="proof-paragraph-break" aria-hidden="true"></div>Since the suspension functor <span class="math-inline">\(\Sigma^{\infty}\colon T \to \Sp(T)\)</span> preserves colimits, it follows that the commutative square <figure class="diagram"><img src="diagrams/tikzcd-165e2d24113c.svg" alt="Commutative diagram generated from the LaTeX source"></figure> is a pushout square, hence a pullback square by stability. It follows that the map <span class="math-inline">\(\Sigma^{\infty}(X) \to \Sigma^{\infty}(*)\)</span> is an isomorphism. The suspension functor factors as <div class="math-display">\[T \xrightarrow{F^{\CGrp}} \CGrp(T) \xhookrightarrow{\bbB^{\infty}} \Sp(T),\]</div> where the first functor is the free commutative group functor and the second functor is the classifying spectrum functor which identifies commutative groups with connective spectra. By conservativity of <span class="math-inline">\(\bbB^{\infty}\)</span> we conclude that <span class="math-inline">\(F^{\CGrp}(X) \iso F^{\CGrp}(*)\)</span>. Now, since the truncation functor <span class="math-inline">\(\tau_0\colon T \to T_{\leq 0}\)</span> commutes with finite products, it induces a functor <span class="math-inline">\(\tau_0\colon \CGrp(T) \to \CGrp(T_{\leq 0})\)</span>. Since also the inclusion <span class="math-inline">\(T_{\leq 0} \hookrightarrow T\)</span> preserves finite products, it follows that <span class="math-inline">\(\tau_0\)</span> also commutes with the free commutative group construction, giving a commutative diagram as follows: <figure class="diagram"><img src="diagrams/tikzcd-25273cc49f5e.svg" alt="Commutative diagram generated from the LaTeX source"></figure> In particular, we conclude that <span class="math-inline">\(F^{\CGrp}(\tau_0 X) \iso F^{\CGrp}(*)\)</span>. To deduce that <span class="math-inline">\(\tau_0 X = *\)</span>, note that for any <span class="math-inline">\(0\)</span>-truncated object <span class="math-inline">\(X'\)</span> the unit map <span class="math-inline">\(X' \to F^{\CGrp}(X')\)</span> is a monomorphism. Indeed, this is clear for <span class="math-inline">\(T = \An\)</span> (where <span class="math-inline">\(F^{\CGrp}(X') = \Z[X']\)</span> is the free abelian group generated by the set <span class="math-inline">\(X'\)</span>), thus also for any presheaf topos, and then finally for any left exact localization <span class="math-inline">\(f^*\colon \PSh(C) \to T\)</span> of a presheaf topos as <span class="math-inline">\(f^*\)</span> preserves monomorphisms and commutes with the adjunction <span class="math-inline">\(T \rightleftarrows \CGrp(T)\)</span>. From the commutative diagram <figure class="diagram"><img src="diagrams/tikzcd-2ed24d1003dc.svg" alt="Commutative diagram generated from the LaTeX source"></figure> it follows that <span class="math-inline">\(\tau_0 X \to *\)</span> is a monomorphism in <span class="math-inline">\(T_{\leq 0}\)</span>. Since <span class="math-inline">\(\tau_0(-)\)</span> preserves colimits, it is also an epimorphism. But then we are done, as in a classical topos, every monomorphism which is also an epimorphism is an isomorphism, see <a href="#lem:Mono_Plus_Epi_Is_Iso_In_Classical_Topos">Lemma 5.10</a>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem lemma" id="lem:Mono_Plus_Epi_Is_Iso_In_Classical_Topos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/mono-plus-epi-is-iso-in-a-classical-topos/index.html">Lemma 5.10.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a topos, and let <span class="math-inline">\(f\colon X \to Y\)</span> be a morphism in <span class="math-inline">\(T_{\leq 0}\)</span> which is both an epimorphism and a monomorphism. Then <span class="math-inline">\(f\)</span> is an isomorphism.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Mono_Plus_Epi_Is_Iso_In_Classical_Topos-main" data-owner-entry="mono-plus-epi-is-iso-in-a-classical-topos" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Since <span class="math-inline">\(f\)</span> is a monomorphism, it is contained in <span class="math-inline">\((T_{/Y})_{\leq -1}\)</span>. The fact that it is an epimorphism in <span class="math-inline">\(T_{\leq 0}\)</span> means that the map <span class="math-inline">\(\tau_0(Y \sqcup_X Y) \to Y\)</span> induced by the codiagonal is an isomorphism. This <span class="math-inline">\(0\)</span>-truncation is a priori computed in <span class="math-inline">\(T\)</span>, but since <span class="math-inline">\(Y\)</span> is <span class="math-inline">\(0\)</span>-truncated it may as well be computed in <span class="math-inline">\(T_{/Y}\)</span>, so that the map <span class="math-inline">\(f \colon X \to Y\)</span> is also an epimorphism in <span class="math-inline">\((T_{/Y})_{\leq 0}\)</span>. This reduces the claim to <span class="math-inline">\(Y = *\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>In this case, the map <span class="math-inline">\(f\colon X \to *\)</span> to the terminal object is a monomorphism. By definition of the subobject classifier <span class="math-inline">\(\Omega\)</span> from <a href="../../entry/subobject-classifier/index.html">Definition 2.50</a>, this means that there is a pullback square in <span class="math-inline">\(T\)</span> of the following form: <figure class="diagram"><img src="diagrams/tikzcd-65b2aa674326.svg" alt="Commutative diagram generated from the LaTeX source"></figure> Recall from <a href="../../entry/subobject-classifier-is-zero-truncated/index.html">Lemma 2.51</a> that <span class="math-inline">\(\Omega\)</span> is 0-truncated, hence this is a pullback square in <span class="math-inline">\(T_{\leq 0}\)</span>. Since <span class="math-inline">\(f\)</span> is assumed to be an epimorphism in <span class="math-inline">\(T_{\leq 0}\)</span>, it follows that the bottom map <span class="math-inline">\(g\)</span> must agree with the universal monomorphism <span class="math-inline">\(* \hookrightarrow \Omega\)</span>. But then <span class="math-inline">\(X\)</span> is the pullback of the map <span class="math-inline">\(* \hookrightarrow \Omega\)</span> along itself, which implies that <span class="math-inline">\(X \iso *\)</span>. This finishes the proof.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<h3 id="subsec:Acyclic_Maps_And_Plus_Construction"><span>5.1.2.</span> Acyclic maps and the plus construction</h3>
+<p>We now specialize to animae. Cohomology with all local coefficient systems detects precisely the epimorphisms, and the corresponding reflection is Quillen's plus construction. We first record the two detection arguments used in the proof.</p>
+<section class="theorem lemma" id="lem:Local_Coefficients_Detect_Pi_Zero_And_Pi_One">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/local-coefficients-detect-pi-zero-and-pi-one/index.html">Lemma 5.11.</a></span> (Detection by local coefficients)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(f\colon X\to Y\)</span> be a map of animae. If</p>
+<div class="math-display">\[H^0(Y,A)\longrightarrow H^0(X,f^*A)\]</div>
+<p>is an isomorphism for every local system <span class="math-inline">\(A\)</span> of abelian groups on <span class="math-inline">\(Y\)</span>, then <span class="math-inline">\(\pi_0(f)\)</span> is an isomorphism and <span class="math-inline">\(\pi_1(X,x)\to\pi_1(Y,f(x))\)</span> is surjective for every <span class="math-inline">\(x\in X\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Local_Coefficients_Detect_Pi_Zero_And_Pi_One-main" data-owner-entry="local-coefficients-detect-pi-zero-and-pi-one" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Taking <span class="math-inline">\(A\)</span> to be the constant local system <span class="math-inline">\(\mathbb Z/2\)</span> shows that pullback along <span class="math-inline">\(\pi_0(f)\)</span> induces a bijection on functions to <span class="math-inline">\(\mathbb Z/2\)</span>. Hence <span class="math-inline">\(\pi_0(f)\)</span> is a bijection.<div class="proof-paragraph-break" aria-hidden="true"></div>We may therefore work on one connected component. Fix <span class="math-inline">\(x\in X\)</span>, write <span class="math-inline">\(G=\pi_1(Y,f(x))\)</span>, and let <span class="math-inline">\(H\subseteq G\)</span> be the image of <span class="math-inline">\(\pi_1(X,x)\)</span>. If <span class="math-inline">\(H\neq G\)</span>, consider the <span class="math-inline">\(G\)</span>-module <div class="math-display">\[M:=(\mathbb Z/2)^{G/H}\]</div> with the permutation action. The characteristic function of the coset <span class="math-inline">\(H\)</span> is fixed by <span class="math-inline">\(H\)</span> but not by <span class="math-inline">\(G\)</span>. Thus the inclusion <span class="math-inline">\(M^G\to M^H\)</span> is not surjective. This contradicts the assumed isomorphism on <span class="math-inline">\(H^0\)</span>, since <span class="math-inline">\(H^0(Y,M)=M^G\)</span> and <span class="math-inline">\(H^0(X,f^*M)=M^H\)</span>. Therefore <span class="math-inline">\(H=G\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem lemma" id="lem:Whitehead_With_Local_Coefficients">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/whitehead-theorem-with-local-coefficients/index.html">Lemma 5.12.</a></span> (Whitehead theorem with local coefficients)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(f\colon X\to Y\)</span> be a map of animae which induces isomorphisms on <span class="math-inline">\(\pi_0\)</span> and <span class="math-inline">\(\pi_1\)</span>. If <span class="math-inline">\(f\)</span> induces an isomorphism on cohomology with every local system of abelian groups on <span class="math-inline">\(Y\)</span>, then <span class="math-inline">\(f\)</span> is an isomorphism.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Whitehead_With_Local_Coefficients-main" data-owner-entry="whitehead-theorem-with-local-coefficients" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">The claim may be checked componentwise, so suppose <span class="math-inline">\(X\)</span> and <span class="math-inline">\(Y\)</span> are connected and put <span class="math-inline">\(G=\pi_1(Y)\iso\pi_1(X)\)</span>. Choose CW models and lift <span class="math-inline">\(f\)</span> to a <span class="math-inline">\(G\)</span>-equivariant map of universal covers. Let <span class="math-inline">\(Q_*\)</span> be the mapping cone of the induced map of cellular chain complexes over <span class="math-inline">\(\mathbb Z[G]\)</span>. The hypothesis says that <div class="math-display">\[H^*\!\operatorname{Hom}_{\mathbb Z[G]}(Q_*,M)=0\]</div> for every <span class="math-inline">\(\mathbb Z[G]\)</span>-module <span class="math-inline">\(M\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>We claim that <span class="math-inline">\(Q_*\)</span> is acyclic. Otherwise, let <span class="math-inline">\(q\)</span> be the least degree for which <span class="math-inline">\(H_q(Q_*)\)</span> is nonzero, and choose an injective <span class="math-inline">\(\mathbb Z[G]\)</span>-module <span class="math-inline">\(I\)</span> receiving a nonzero map from <span class="math-inline">\(H_q(Q_*)\)</span>. The universal coefficient spectral sequence for the complex of projective <span class="math-inline">\(\mathbb Z[G]\)</span>-modules <span class="math-inline">\(Q_*\)</span> degenerates for the coefficient module <span class="math-inline">\(I\)</span> and gives <div class="math-display">\[H^q\!\operatorname{Hom}_{\mathbb Z[G]}(Q_*,I)
+			\iso \operatorname{Hom}_{\mathbb Z[G]}(H_q(Q_*),I)\neq 0,\]</div> contradicting the hypothesis. Thus the map of universal covers is a homology isomorphism. Since both universal covers are simply connected, the relative Hurewicz theorem implies that it is a homotopy equivalence. The original map <span class="math-inline">\(f\)</span> is therefore an isomorphism of animae.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>We now identify the epimorphisms in the topos of animae.</p>
+<section class="theorem proposition" id="prop:Epimorphisms_In_Animae">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/epimorphisms-in-animae/index.html">Proposition 5.13.</a></span></p>
+  <div class="theorem-statement"><p>Consider the topos <span class="math-inline">\(T = \An\)</span>.</p>
+<ol><li><p>A map of animae <span class="math-inline">\(f\colon X \to Y\)</span> is an epimorphism if and only if <span class="math-inline">\(f\)</span> is <em>acyclic</em>, meaning that for any local system <span class="math-inline">\(A\)</span> of abelian groups on <span class="math-inline">\(Y\)</span>, the induced map</p>
+<div class="math-display">\[H^*(Y,A) \xrightarrow{ \cong } H^*(X,f^*A)\]</div>
+<p>is an isomorphism.</p></li><li><p>A map of animae <span class="math-inline">\(f\colon X \to Y\)</span> is in the right orthogonal class to the epimorphisms if and only if the group <span class="math-inline">\(\pi_1(f) \in \Grp((T_{/Y})_{\leq 0})\)</span> is <em>hypoabelian</em>.</p></li><li><p>For any anima <span class="math-inline">\(X\)</span>, the unique factorization <span class="math-inline">\(X \to *\)</span> as</p>
+<div class="math-display">\[X \xrightarrow{ \mathrm{epi} } X^+ \xrightarrow{ \pi_1\textup{ hypoabelian} } *\]</div>
+<p>is Quillen's <span class="math-inline">\(+\)</span>-construction.</p></li></ol></div>
+</section>
+<p>In (2), we say that a group <span class="math-inline">\(G\)</span> is <em>perfect</em> if it is left orthogonal to abelian groups, i.e. if every map <span class="math-inline">\(G \to A\)</span> into an abelian group is trivial, or equivalently if the abelianization <span class="math-inline">\(G^{\mathrm{ab}}\)</span> is trivial. A group <span class="math-inline">\(A\)</span> is <em>hypoabelian</em> if it is right orthogonal to perfect groups, i.e. if every map <span class="math-inline">\(G \to A\)</span> from a perfect group is trivial, or equivalently if <span class="math-inline">\(A\)</span> has no nontrivial perfect subgroup.</p>
+<details class="proof-shell" id="proof-prop:Epimorphisms_In_Animae-main" data-owner-entry="epimorphisms-in-animae" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">(1) Suppose first that <span class="math-inline">\(f\)</span> is an epimorphism. For any local system <span class="math-inline">\(A\)</span> on <span class="math-inline">\(Y\)</span>, the Mayer–Vietoris sequence associated to the pushout square <figure class="diagram"><img src="diagrams/tikzcd-1fd0931b72b0.svg" alt="Commutative diagram generated from the LaTeX source"></figure> identifies the restriction map <span class="math-inline">\(H^*(Y,A)\to H^*(X,f^*A)\)</span> with an isomorphism. Thus <span class="math-inline">\(f\)</span> is acyclic.<div class="proof-paragraph-break" aria-hidden="true"></div>Conversely, suppose that <span class="math-inline">\(f\)</span> is acyclic and set <span class="math-inline">\(C:=Y\sqcup_XY\)</span>. Let <span class="math-inline">\(i_1,i_2\colon Y\to C\)</span> be the two coprojections. For a local system <span class="math-inline">\(A\)</span> on <span class="math-inline">\(C\)</span>, the Mayer–Vietoris sequence contains <div class="math-display">\[\cdots\longrightarrow H^q(C,A)\longrightarrow
+			H^q(Y,i_1^*A)\oplus H^q(Y,i_2^*A)
+			\longrightarrow H^q(X,f^*i_1^*A)\longrightarrow\cdots.\]</div> The two restrictions of <span class="math-inline">\(A\)</span> to <span class="math-inline">\(X\)</span> are canonically identified, and both restriction maps from the two copies of <span class="math-inline">\(H^q(Y)\)</span> to <span class="math-inline">\(H^q(X)\)</span> are isomorphisms by acyclicity of <span class="math-inline">\(f\)</span>. Exactness therefore identifies <span class="math-inline">\(H^q(C,A)\)</span> with the diagonal copy of <span class="math-inline">\(H^q(Y,i_1^*A)\)</span>. In particular, <span class="math-inline">\(i_1\)</span> is itself acyclic.<div class="proof-paragraph-break" aria-hidden="true"></div>By <a href="#lem:Local_Coefficients_Detect_Pi_Zero_And_Pi_One">Lemma 5.11</a>, the map <span class="math-inline">\(f\)</span> induces an isomorphism on <span class="math-inline">\(\pi_0\)</span> and a surjection on every fundamental group. We may consequently apply the Seifert–van Kampen theorem componentwise to the pushout defining <span class="math-inline">\(C\)</span>. It gives a pushout square <figure class="diagram"><img src="diagrams/tikzcd-3acc1caa45b9.svg" alt="Commutative diagram generated from the LaTeX source"></figure> in groups. Since the two maps out of <span class="math-inline">\(\pi_1(X,x)\)</span> agree and are surjective, the coprojection <span class="math-inline">\(i_1\)</span> induces an isomorphism on fundamental groups. The same van Kampen calculation on components shows that <span class="math-inline">\(i_1\)</span> induces an isomorphism on <span class="math-inline">\(\pi_0\)</span>. Hence <a href="#lem:Whitehead_With_Local_Coefficients">Lemma 5.12</a> applies and shows that <span class="math-inline">\(i_1\)</span> is an isomorphism. Since <span class="math-inline">\(\nabla_f i_1=\id_Y\)</span>, the codiagonal <span class="math-inline">\(\nabla_f\colon C\to Y\)</span> is its inverse. Thus <span class="math-inline">\(f\)</span> is an epimorphism.<div class="proof-paragraph-break" aria-hidden="true"></div>(2) See <span class="citation-group">[Hoyois <a class="citation" href="#bib-Hoyois_Plus_Construction">2019, Corollary 10</a>]</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>(3) By definition, Quillen's <span class="math-inline">\(+\)</span>-construction is the reflection of <span class="math-inline">\(X\)</span> into the subcategory of animae with hypoabelian fundamental group. By (2), this subcategory precisely consists of the objects <span class="math-inline">\(Y\)</span> for which <span class="math-inline">\(Y \to *\)</span> is right orthogonal to the epimorphisms, and the claim follows.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-Hoyois_Plus_Construction">Marc Hoyois. <em>On Quillen’s plus construction</em>. 2019.</li></ol></section>
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+      <a class="context-step-control" rel="prev" href="../colimits-of-topoi-along-etale-morphisms/index.html" aria-label="Previous section: Colimits of topoi along étale morphisms" title="Previous section: Colimits of topoi along étale morphisms"><span aria-hidden="true">←</span></a>
+      <a class="context-step-control" rel="next" href="../blakers-massey/index.html" aria-label="Next section: The Blakers–Massey theorem" title="Next section: The Blakers–Massey theorem"><span aria-hidden="true">→</span></a>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../chapter/introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../../chapter/foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../../chapter/truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../../chapter/topoi-logoi/index.html">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../../chapter/modalities/index.html" aria-current="location">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../../chapter/topics-in-topos-theory/index.html">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../../chapter/geometry/index.html">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../../chapter/factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../../chapter/limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../epimorphisms-and-acyclic-maps/index.html" aria-current="page">
+          <span class="context-entry-heading">Section 5.1</span>
+          <span class="context-entry-title">Epimorphisms and acyclic maps</span>
+        </a></li>
+<li><a href="../blakers-massey/index.html">
+          <span class="context-entry-heading">Section 5.2</span>
+          <span class="context-entry-title">The Blakers–Massey theorem</span>
+        </a></li>
+<li><a href="../congruences-modalities-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Section 5.3</span>
+          <span class="context-entry-title">Congruences, modalities, and saturated classes</span>
+        </a></li>
+<li><a href="../open-and-closed-immersions/index.html">
+          <span class="context-entry-heading">Section 5.4</span>
+          <span class="context-entry-title">Open and closed immersions</span>
+        </a></li>
+<li><a href="../structure-theory-for-topoi/index.html">
+          <span class="context-entry-heading">Section 5.5</span>
+          <span class="context-entry-title">Structure theory for topoi</span>
+        </a></li>
+<li><a href="../products-of-modalities/index.html">
+          <span class="context-entry-heading">Section 5.6</span>
+          <span class="context-entry-title">Products of modalities</span>
+        </a></li>
+<li><a href="../goodwillie-tower/index.html">
+          <span class="context-entry-heading">Section 5.7</span>
+          <span class="context-entry-title">The Goodwillie tower of a topos</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <p class="context-nav-kicker">Section 5.1</p>
+      <p class="context-nav-description">Epimorphisms and acyclic maps</p>
+      <ol class="context-entry-list">
+        <li><a href="#def:Cotruncated_Morphisms" data-section-target="def:Cotruncated_Morphisms">
+          <span class="context-entry-heading">Definition 5.5</span>
+          <span class="context-entry-title">Cotruncated morphisms</span>
+        </a></li>
+<li><a href="#lem:Cotruncated_Morphisms_Form_Modality" data-section-target="lem:Cotruncated_Morphisms_Form_Modality">
+          <span class="context-entry-heading">Lemma 5.6</span>
+          <span class="context-entry-title">Cotruncated morphisms form a modality</span>
+        </a></li>
+<li><a href="#def:Epimorphism" data-section-target="def:Epimorphism">
+          <span class="context-entry-heading">Definition 5.7</span>
+          <span class="context-entry-title">Epimorphisms</span>
+        </a></li>
+<li><a href="#ex:Effective_Epi_Not_Epi" data-section-target="ex:Effective_Epi_Not_Epi">
+          <span class="context-entry-heading">Example 5.8</span>
+          <span class="context-entry-title">Effective epimorphisms need not be epimorphisms</span>
+        </a></li>
+<li><a href="#prop:Epimorphisms_Are_Zero_Connected" data-section-target="prop:Epimorphisms_Are_Zero_Connected">
+          <span class="context-entry-heading">Proposition 5.9</span>
+          <span class="context-entry-title">Epimorphisms are zero-connected</span>
+        </a></li>
+<li><a href="#lem:Mono_Plus_Epi_Is_Iso_In_Classical_Topos" data-section-target="lem:Mono_Plus_Epi_Is_Iso_In_Classical_Topos">
+          <span class="context-entry-heading">Lemma 5.10</span>
+          <span class="context-entry-title">A monomorphism and epimorphism is an isomorphism in a classical topos</span>
+        </a></li>
+<li><a href="#lem:Local_Coefficients_Detect_Pi_Zero_And_Pi_One" data-section-target="lem:Local_Coefficients_Detect_Pi_Zero_And_Pi_One">
+          <span class="context-entry-heading">Lemma 5.11</span>
+          <span class="context-entry-title">Detection by local coefficients</span>
+        </a></li>
+<li><a href="#lem:Whitehead_With_Local_Coefficients" data-section-target="lem:Whitehead_With_Local_Coefficients">
+          <span class="context-entry-heading">Lemma 5.12</span>
+          <span class="context-entry-title">Whitehead theorem with local coefficients</span>
+        </a></li>
+<li><a href="#prop:Epimorphisms_In_Animae" data-section-target="prop:Epimorphisms_In_Animae">
+          <span class="context-entry-heading">Proposition 5.13</span>
+          <span class="context-entry-title">Epimorphisms in animae</span>
+        </a></li>
+      </ol>
+    </nav>
+  </section></div>
+  </aside>
+  </main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

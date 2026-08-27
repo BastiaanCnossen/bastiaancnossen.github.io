@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Structure theory for topoi | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/section/structure-theory-for-topoi/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="section-page has-context-nav" data-record-id="structure-theory-for-topoi" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">·</span> Section 5.5</p>
+      <h1>Structure theory for topoi</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page">
+      
+<h2 id="sec:Structure_Theory"><span>5.5.</span> Structure theory for topoi</h2>
+<p>The epi–mono factorization of individual morphisms induces a parallel structure theory for acyclic classes and morphisms of logoi. We first decompose an acyclic class into its monogenic and epigenic parts. Applied to the kernel of a morphism of logoi, this produces a quotient triple factorization into a monogenic quotient, an epigenic quotient, and a conservative morphism. We then compare monogenic congruences with hypercomplete congruences and refine the conservative factor through the image logos.</p>
+<p>More explicitly, a morphism of logoi <span class="math-inline">\(\varphi\colon T \to S\)</span> admits a factorization</p>
+<div class="math-display">\[T \xrightarrow{\,\varphi^{\mono}\,} T/K^{\mathrm{mono}} \xrightarrow{\,\varphi^{\epi}\,} T/K \xrightarrow{\varphi^{\cons}} S.\]</div>
+<p>The morphism <span class="math-inline">\(\varphi^{\cons}\)</span> in fact factors further as <span class="math-inline">\(T/K \to \lra{\varphi(T)} \hookrightarrow S\)</span>, where the second morphism is fully faithful.</p>
+<h3 id="subsec:Monogenic_And_Epigenic_Modalities"><span>5.5.1.</span> Monogenic and epigenic acyclic classes</h3>
+
+<section class="theorem definition" id="def:Monogenic_Modality">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/monogenic-modalities/index.html">Definition 5.50.</a></span></p>
+  <div class="theorem-statement"><p>For an acyclic class <span class="math-inline">\(L\)</span>, we define</p>
+<div class="math-display">\[L^{\mathrm{epi}} := L \cap \EffEpi,
+		\qquad \qquadtext{ and } \qquad
+		L^{\mathrm{mono}} := (L \cap \Mono)^{m} = (L \cap \Mono)^{c},\]</div>
+<p>where the last equality holds by <a href="../../entry/modalities-generated-by-monomorphisms-are-congruences/index.html">Corollary 5.43</a>. We say <span class="math-inline">\(L\)</span> is <em>monogenic</em> if <span class="math-inline">\(L = L^{\mathrm{mono}}\)</span> (i.e. generated by its monomorphisms), and <em>epigenic</em> if <span class="math-inline">\(L = L^{\mathrm{epi}}\)</span> (i.e. it is contained in the effective epimorphisms).</p></div>
+</section>
+
+<section class="theorem remark" id="rem:Monogenic_And_Epigenic_Terminology">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/monogenic-and-epigenic-terminology/index.html">Remark 5.51.</a></span></p>
+  <div class="theorem-statement"><p>Monogenic/epigenic congruences are also called <em>topological</em>/<em>cotopological</em> in the literature. We will avoid that terminology, as it is less descriptive.</p></div>
+</section>
+<p>Both <span class="math-inline">\(L^{\epi}\)</span> and <span class="math-inline">\(L^{\mono}\)</span> are again acyclic classes. The following lemma explains their relation to epi–mono factorizations and will also determine when they define modalities.</p>
+<section class="theorem lemma" id="lem:Modality_Closed_Under_Epi_Mono_Factorizations">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/modalities-and-epi-mono-factorizations/index.html">Lemma 5.52.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(L\)</span> be an acyclic class, and let <span class="math-inline">\(f\colon A \to B\)</span> be a morphism with epi–mono factorization</p>
+<div class="math-display">\[A \overset{\coim(f)}{\twoheadrightarrow} \Im(f) \xhookrightarrow{\im(f)} B.\]</div>
+<p>Then <span class="math-inline">\(f\)</span> is contained in <span class="math-inline">\(L\)</span> if and only if both <span class="math-inline">\(\im(f)\)</span> and <span class="math-inline">\(\coim(f)\)</span> are contained in <span class="math-inline">\(L\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Modality_Closed_Under_Epi_Mono_Factorizations-main" data-owner-entry="modalities-and-epi-mono-factorizations" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">If both <span class="math-inline">\(\coim(f)\)</span> and <span class="math-inline">\(\im(f)\)</span> lie in <span class="math-inline">\(L\)</span>, then so does their composite <span class="math-inline">\(f\)</span>. Conversely, assume <span class="math-inline">\(f\in L\)</span>. Since <span class="math-inline">\(L\)</span> is local by <a href="../../entry/classes-in-a-modality-are-local/index.html">Lemma 5.4</a> and <span class="math-inline">\(\coim(f)\)</span> is an effective epimorphism, we may test whether <span class="math-inline">\(\coim(f)\)</span> lies in <span class="math-inline">\(L\)</span> after base change along itself. The resulting projection <span class="math-inline">\(A\times_{\Im(f)}A\to A\)</span> is isomorphic to <span class="math-inline">\(A\times_BA\to A\)</span>, because <span class="math-inline">\(\Im(f)\to B\)</span> is a monomorphism. This projection is a base change of <span class="math-inline">\(f\)</span> and hence lies in <span class="math-inline">\(L\)</span>. Thus <span class="math-inline">\(\coim(f)\in L\)</span>, and right cancellation applied to <span class="math-inline">\(f=\im(f)\coim(f)\)</span> gives <span class="math-inline">\(\im(f)\in L\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem corollary" id="cor:Epigenic_Part_Is_Modality">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/epigenic-part-of-a-modality/index.html">Corollary 5.53.</a></span></p>
+  <div class="theorem-statement"><p>Given a modality <span class="math-inline">\(L\)</span>, also <span class="math-inline">\(L^{\epi}\)</span> is a modality.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-cor:Epigenic_Part_Is_Modality-main" data-owner-entry="epigenic-part-of-a-modality" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Let <span class="math-inline">\(R := L^{\perp}\)</span> and define <span class="math-inline">\(R^{\epi} := (L^{\epi})^{\perp}\)</span>. We need to show that the pair <span class="math-inline">\((L^{\epi},R^{\epi})\)</span> is a factorization system. Orthogonality holds by construction, so it remains to check that any morphism <span class="math-inline">\(f\colon A \to B\)</span> admits an <span class="math-inline">\((L^{\epi},R^{\epi})\)</span>-factorization. Since <span class="math-inline">\(L^{\epi} \subset L\)</span>, we get <span class="math-inline">\(R \subseteq R^{\epi}\)</span>. Similarly, from <span class="math-inline">\(L^{\epi} \subseteq \EffEpi\)</span> it follows that <span class="math-inline">\(\Mono \subseteq R^{\epi}\)</span>. Consider the <span class="math-inline">\((L,R)\)</span>-factorization <span class="math-inline">\(A \xrightarrow{l} C \xrightarrow{r} B\)</span> of <span class="math-inline">\(f\)</span>, and consider the epi-mono factorization <span class="math-inline">\(A \overset{\coim(l)}{\twoheadrightarrow} \Im(l) \xhookrightarrow{\im(l)} C\)</span> of <span class="math-inline">\(l\)</span>. By <a href="#lem:Modality_Closed_Under_Epi_Mono_Factorizations">Lemma 5.52</a> we have that <span class="math-inline">\(\coim(l) \in L \cap \EffEpi = L^{\epi}\)</span>, while <span class="math-inline">\(r \circ \im(l) \in R \circ \Mono \subseteq R^{\epi}\)</span> because the right class <span class="math-inline">\(R^{\epi}\)</span> is closed under composition.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>The corollary uses the factorization system and is therefore genuinely a statement about modalities. For <span class="math-inline">\(L^{\mono}\)</span>, small generation will provide the required factorization system.</p>
+<section class="theorem notation" id="not:Epi_Mono_Factorization">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/epi-mono-factorization-notation/index.html">Notation 5.54.</a></span></p>
+  <div class="theorem-statement"><p>Given a morphism <span class="math-inline">\(f \colon A \to B\)</span> in <span class="math-inline">\(T\)</span>, we denote by <span class="math-inline">\(A \overset{\coim(f)}{\twoheadrightarrow} \Im(f) \xhookrightarrow{\im(f)} B\)</span> its epi-mono factorization. If <span class="math-inline">\(\Sigma\)</span> is a class of morphisms in <span class="math-inline">\(T\)</span>, we define</p>
+<div class="math-display">\[\im(\Sigma) := \{\im(f) \mid f \in \Sigma\}  \qquadtext{ and } \coim(\Sigma) := \{\coim(f) \mid f \in \Sigma\}.\]</div></div>
+</section>
+
+<section class="theorem remark" id="rem:Images_And_Coimages_Of_Modality">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/images-and-coimages-of-a-modality/index.html">Remark 5.55.</a></span></p>
+  <div class="theorem-statement"><p>If <span class="math-inline">\(L\)</span> is an acyclic class, it follows from <a href="#lem:Modality_Closed_Under_Epi_Mono_Factorizations">Lemma 5.52</a> that <span class="math-inline">\(\im(L) = L \cap \Mono\)</span> and <span class="math-inline">\(\coim(L) = L \cap \EffEpi\)</span>.</p></div>
+</section>
+
+<section class="theorem lemma" id="lem:Monogenic_Part_Via_Images">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/monogenic-parts-via-images/index.html">Lemma 5.56.</a></span> (<span class="citation-group">[Anel et al. <a class="citation" href="#bib-ABFJ_Grothendieck_Topologies">2024, Proposition 4.1.14</a>]</span>)</p>
+  <div class="theorem-statement"><p>For a set of morphisms <span class="math-inline">\(\Sigma\)</span> in <span class="math-inline">\(T\)</span>, we have</p>
+<div class="math-display">\[(\Sigma^m)^{\mono} = (\im(\Sigma))^m \qquadtext{ and } (\Sigma^c)^{\mono} = (\im(\Sigma^{\Delta}))^m = (\im(\Sigma^{\Delta}))^c.\]</div>
+<p>In particular, if <span class="math-inline">\(L\)</span> is an acyclic class of small generation, then <span class="math-inline">\(L^{\mono}\)</span> is an acyclic class of small generation and hence defines a modality. If <span class="math-inline">\(L\)</span> is a congruence of small generation, then so is <span class="math-inline">\(L^{\mono}\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Monogenic_Part_Via_Images-main" data-owner-entry="monogenic-parts-via-images" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">The second relation follows from the first, since <span class="math-inline">\(\Sigma^c = (\Sigma^{\Delta})^m\)</span> by <a href="../../entry/abfj-formula/index.html">Theorem 5.39</a>. The last two claims immediately follow by writing <span class="math-inline">\(L = \Sigma^m\)</span> and noting that <span class="math-inline">\(\im(\Sigma)\)</span> and <span class="math-inline">\(\im(\Sigma^{\Delta})\)</span> are small. We need to show the first relation.<div class="proof-paragraph-break" aria-hidden="true"></div>Let <span class="math-inline">\(L := \Sigma^m\)</span>. By <a href="#lem:Modality_Closed_Under_Epi_Mono_Factorizations">Lemma 5.52</a>, we have <span class="math-inline">\(\im(\Sigma) \subseteq L^{\mono}\)</span>. Since <span class="math-inline">\(L^{\mono}\)</span> is an acyclic class, it follows that <span class="math-inline">\(\im(\Sigma)^m \subseteq L^{\mono}\)</span>. For the converse, consider the class <span class="math-inline">\(L'\)</span> of morphisms <span class="math-inline">\(f\colon A \to B\)</span> such that <span class="math-inline">\(\im(f) \in \im(\Sigma)^{m}\)</span>. We are done if we can show that <span class="math-inline">\(L \subseteq L'\)</span>, since then <span class="math-inline">\(L \cap \Mono = \im(L) \subseteq \im(\Sigma)^{m}\)</span> and thus also <span class="math-inline">\(L^{\mono} = (L \cap \Mono)^m \subseteq \im(\Sigma)^{m}\)</span>. By construction we have <span class="math-inline">\(\Sigma \subseteq L'\)</span>, so it remains to show that <span class="math-inline">\(L'\)</span> is an acyclic class.<div class="proof-paragraph-break" aria-hidden="true"></div>To this end, note that <span class="math-inline">\(\im(\Sigma)^m = \im(\Sigma)^c\)</span> by <a href="../../entry/modalities-generated-by-monomorphisms-are-congruences/index.html">Corollary 5.43</a>, so in particular <span class="math-inline">\(\im(\Sigma)^m\)</span> is a congruence of small generation. Consider now the quotient map <span class="math-inline">\(T \to T/\im(\Sigma)^m\)</span>. This localization preserves effective epimorphisms because it preserves colimits, and it preserves monomorphisms because it preserves finite limits. It therefore preserves epi–mono factorizations. It follows that <span class="math-inline">\(f \in L'\)</span> if and only if the morphism <span class="math-inline">\(f\)</span> is sent to an effective epimorphism under this localization functor. Since the effective epimorphisms in <span class="math-inline">\(T/\im(\Sigma)^c\)</span> form an acyclic class, the same follows for <span class="math-inline">\(L'\)</span>, finishing the proof.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem corollary" id="cor:Congruence_Generated_By_Monomorphisms_Is_Monogenic">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/congruences-generated-by-monomorphisms-are-monogenic/index.html">Corollary 5.57.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\Sigma\)</span> be a small class of monomorphisms in <span class="math-inline">\(T\)</span>. Then the congruence <span class="math-inline">\(\Sigma^c\)</span> generated by <span class="math-inline">\(\Sigma\)</span> is monogenic.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-cor:Congruence_Generated_By_Monomorphisms_Is_Monogenic-main" data-owner-entry="congruences-generated-by-monomorphisms-are-monogenic" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">For a monomorphism, every positive iterated diagonal is an isomorphism. Thus <span class="math-inline">\(\im(\Sigma^{\Delta})\)</span> consists of the maps in <span class="math-inline">\(\Sigma\)</span> together with isomorphisms, which do not change the acyclic class they generate. The claim is therefore immediate from the lemma.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem remark" id="rmk:Monogenic_Versus_Grothendieck_Topology">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/monogenic-modalities-and-grothendieck-topologies/index.html">Remark 5.58.</a></span></p>
+  <div class="theorem-statement"><p>By definition, a monogenic congruence <span class="math-inline">\(K\)</span> is completely determined by the class of monomorphisms <span class="math-inline">\(K \cap \Mono\)</span>. The classes of monomorphisms in <span class="math-inline">\(T\)</span> arising this way are precisely the <em>Grothendieck topologies on <span class="math-inline">\(T\)</span></em>, see <a href="../../entry/grothendieck-topology-monogenic-congruence-bijection/index.html">Proposition 6.9</a>.</p></div>
+</section>
+
+<section class="theorem corollary" id="cor:Modality_Decomposes_Into_Epigenic_And_Monogenic_Parts">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/epigenic-monogenic-decomposition/index.html">Corollary 5.59.</a></span></p>
+  <div class="theorem-statement"><p>For every acyclic class <span class="math-inline">\(L\)</span>, we have</p>
+<div class="math-display">\[L \;=\; L^{\mathrm{epi}} \,\vee\, L^{\mathrm{mono}},\]</div>
+<p>i.e. <span class="math-inline">\(L\)</span> is the smallest acyclic class containing both <span class="math-inline">\(L^{\mathrm{epi}}\)</span> and <span class="math-inline">\(L^{\mathrm{mono}}\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-cor:Modality_Decomposes_Into_Epigenic_And_Monogenic_Parts-main" data-owner-entry="epigenic-monogenic-decomposition" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">It is clear that <span class="math-inline">\(L\)</span> contains both <span class="math-inline">\(L^{\epi}\)</span> and <span class="math-inline">\(L^{\mono}\)</span>. Conversely, let <span class="math-inline">\(L'\)</span> be an acyclic class containing both parts. For every <span class="math-inline">\(f\in L\)</span>, <a href="#lem:Modality_Closed_Under_Epi_Mono_Factorizations">Lemma 5.52</a> places <span class="math-inline">\(\coim(f)\)</span> in <span class="math-inline">\(L^{\epi}\)</span> and <span class="math-inline">\(\im(f)\)</span> in <span class="math-inline">\(L^{\mono}\)</span>. Hence <span class="math-inline">\(f=\im(f)\coim(f)\)</span> lies in <span class="math-inline">\(L'\)</span>, proving <span class="math-inline">\(L\subseteq L'\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem lemma" id="lem:Monogenic_Modalities_Are_Congruences">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/monogenic-modalities-are-congruences/index.html">Lemma 5.60.</a></span></p>
+  <div class="theorem-statement"><p>If <span class="math-inline">\(L\)</span> is a monogenic acyclic class, then <span class="math-inline">\(L\)</span> is a congruence. In particular, <span class="math-inline">\(L^{\mono}\)</span> is a congruence for every acyclic class <span class="math-inline">\(L\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Monogenic_Modalities_Are_Congruences-main" data-owner-entry="monogenic-modalities-are-congruences" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">By assumption we have <span class="math-inline">\(L = L^{\mono} = (L \cap \Mono)^m\)</span>. Since <span class="math-inline">\(L \cap \Mono\)</span> consists of monomorphisms, it follows from <a href="../../entry/modalities-generated-by-monomorphisms-are-congruences/index.html">Corollary 5.43</a> that <span class="math-inline">\((L \cap \Mono)^m\)</span> agrees with <span class="math-inline">\((L \cap \Mono)^c\)</span>, hence is a congruence.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem lemma" id="lem:Epigenic_Congruences_Are_Infinity_Connected">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/epigenic-congruences-are-infinity-connected/index.html">Lemma 5.61.</a></span></p>
+  <div class="theorem-statement"><p>A congruence <span class="math-inline">\(K\)</span> is epigenic if and only if it is contained in the class of <span class="math-inline">\(\infty\)</span>-connected maps.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Epigenic_Congruences_Are_Infinity_Connected-main" data-owner-entry="epigenic-congruences-are-infinity-connected" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">If <span class="math-inline">\(K\)</span> is contained in <span class="math-inline">\(\Conn_{\infty}\)</span>, then it is in particular contained in <span class="math-inline">\(\EffEpi\)</span>, so that <span class="math-inline">\(K\)</span> is epigenic. Conversely, assume that <span class="math-inline">\(K \subseteq \EffEpi\)</span>. For any morphism <span class="math-inline">\(f\)</span> in <span class="math-inline">\(K\)</span>, the iterated diagonals <span class="math-inline">\(\Delta^n_f\)</span> of <span class="math-inline">\(f\)</span> also lie in <span class="math-inline">\(K\)</span>, hence are effective epimorphisms by assumption. By <a href="../../entry/characterizing-connected-morphisms-by-diagonals/index.html">Theorem 3.22</a> it follows inductively that <span class="math-inline">\(f\)</span> is <span class="math-inline">\(n\)</span>-connected for all <span class="math-inline">\(n\geq 0\)</span>, hence <span class="math-inline">\(\infty\)</span>-connected.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<h3 id="subsec:Quotient_Triple_Factorization"><span>5.5.2.</span> The quotient triple factorization</h3>
+<p>We now discuss the promised triple factorization of morphisms of logoi. The terminology and perspective is due to <span class="citation-group">[Anel et al. <a class="citation" href="#bib-ABFJ_Acyclic_Product">2025</a>]</span>.</p>
+<section class="theorem definition" id="def:Quotient_Triple_Factorization_Classes">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/quotient-triple-factorization-classes/index.html">Definition 5.62.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\varphi\colon T \to S\)</span> be a morphism of logoi.</p>
+<ol><li><p>We call <span class="math-inline">\(\varphi\)</span> a <em>monogenic quotient</em> if it is a quotient map (<a href="../../entry/quotient-maps-of-logoi/index.html">Definition 4.19</a>) whose kernel is a monogenic congruence.</p></li><li><p>We call <span class="math-inline">\(\varphi\)</span> an <em>epigenic quotient</em> if it is a quotient map whose kernel is an epigenic congruence.</p></li><li><p>We call <span class="math-inline">\(\varphi\)</span> <em>conservative</em> if it only inverts isomorphisms.</p></li><li><p>We call <span class="math-inline">\(\varphi\)</span> <em>weakly conservative</em> if it only inverts effective epimorphisms.</p></li></ol></div>
+</section>
+
+<section class="theorem notation" id="not:Quotient_Triple_Factorization">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/quotient-triple-factorization-notation/index.html">Notation 5.63.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\varphi\colon T \to S\)</span> be a morphism of logoi with kernel <span class="math-inline">\(K := \ker(\varphi)\)</span>. Then we have an inclusion <span class="math-inline">\(K^{\mono} \subseteq K\)</span>, giving rise to three morphisms of logoi as follows:</p>
+<div class="math-display">\[T \xrightarrow{\,\varphi^{\mono}\,} T/K^{\mathrm{mono}} \xrightarrow{\,\varphi^{\epi}\,} T/K \xrightarrow{\varphi^{\cons}} S.\]</div>
+<p>We refer to this as the <em>quotient triple factorization</em> of <span class="math-inline">\(\varphi\)</span>. We further write</p>
+<div class="math-display">\[\varphi^{\quottext} := \varphi^{\epi} \circ \varphi^{\mono} \qquadtext{ and } \varphi^{\wcons} := \varphi^{\cons} \circ \varphi^{\epi}.\]</div></div>
+</section>
+
+<section class="theorem proposition" id="prop:Quotient_Triple_Factorization">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/quotient-triple-factorization/index.html">Proposition 5.64.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\varphi\colon T \to S\)</span> be a morphism of logoi.</p>
+<ol><li><p>The morphisms <span class="math-inline">\(\varphi^{\mono}\)</span>, <span class="math-inline">\(\varphi^{\epi}\)</span>, <span class="math-inline">\(\varphi^{\cons}\)</span>, <span class="math-inline">\(\varphi^{\quottext}\)</span> and <span class="math-inline">\(\varphi^{\wcons}\)</span> are, respectively, a monogenic quotient, an epigenic quotient, conservative, a quotient map, and weakly conservative;</p></li><li><p>The decomposition <span class="math-inline">\(\varphi = \varphi^{\cons} \circ \varphi^{\quottext}\)</span> is the unique decomposition of <span class="math-inline">\(\varphi\)</span> into a quotient map followed by a conservative map;</p></li><li><p>The decomposition <span class="math-inline">\(\varphi = \varphi^{\wcons} \circ \varphi^{\mono}\)</span> is the unique decomposition of <span class="math-inline">\(\varphi\)</span> into a monogenic quotient followed by a weakly conservative map;</p></li><li><p>The decomposition <span class="math-inline">\(\varphi = \varphi^{\cons} \circ \varphi^{\epi} \circ \varphi^{\mono}\)</span> is the unique decomposition of <span class="math-inline">\(\varphi\)</span> into a monogenic quotient followed by an epigenic quotient followed by a conservative map.</p></li></ol></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Quotient_Triple_Factorization-main" data-owner-entry="quotient-triple-factorization" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">(1) It is clear that <span class="math-inline">\(\varphi^{\mono}\)</span> is a monogenic quotient, that <span class="math-inline">\(\varphi^{\quottext}\)</span> is a quotient map, and that <span class="math-inline">\(\varphi^{\cons}\)</span> is conservative. Let <span class="math-inline">\(q\colon T\to T/K^{\mono}\)</span> denote the first quotient. The kernel of the induced quotient <span class="math-inline">\(\varphi^{\epi}\colon T/K^{\mono}\to T/K\)</span> is the congruence generated by the image <span class="math-inline">\(q(K)\)</span>. By <span class="citation-group">[Anel et al. <a class="citation" href="#bib-ABFJ_Grothendieck_Topologies">2024, Proposition 4.2.5</a>]</span>, this image congruence is contained in the <span class="math-inline">\(\infty\)</span>-connected maps. It is therefore epigenic by <a href="#lem:Epigenic_Congruences_Are_Infinity_Connected">Lemma 5.61</a>. Consequently, <span class="math-inline">\(\varphi^{\wcons}\)</span> is weakly conservative.<div class="proof-paragraph-break" aria-hidden="true"></div>(2) Given a decomposition <span class="math-inline">\(T \xrightarrow{\psi} T' \to S\)</span> into a quotient map and a conservative map, we see that <span class="math-inline">\(\ker(\psi) = \ker(\varphi) = K\)</span>. Since <span class="math-inline">\(\psi\)</span> is a quotient map, it follows that <span class="math-inline">\(T' \iso T/K\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>(3) Given a decomposition <span class="math-inline">\(T \xrightarrow{\psi} T' \to S\)</span> into a monogenic quotient map and a weakly conservative map, the fact that the second map only inverts effective epimorphisms implies <div class="math-display">\[\ker(\psi)\cap\Mono=\ker(\varphi)\cap\Mono=K\cap\Mono.\]</div> Since <span class="math-inline">\(\psi\)</span> is a monogenic quotient, we have <span class="math-inline">\(\ker(\psi)=\ker(\psi)^{\mono}=K^{\mono}\)</span>, and thus <span class="math-inline">\(T'\iso T/K^{\mono}\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>(4) This follows by first factoring <span class="math-inline">\(\varphi\)</span> as in (2) and then applying (3) to the quotient map <span class="math-inline">\(T\to T/K\)</span>. These identifications also determine the comparison maps between any two such factorizations, proving uniqueness.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem remark" id="rmk:Analogy_Triple_Factorization">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/analogy-for-the-triple-factorization/index.html">Remark 5.65.</a></span></p>
+  <div class="theorem-statement"><p>In <span class="citation-group">[Anel et al. <a class="citation" href="#bib-ABFJ_Acyclic_Product">2025, Remark 2.1.34</a>]</span>, the authors make the following analogy with ring theory. Given a morphism <span class="math-inline">\(\varphi\colon A\to B\)</span> of commutative rings with kernel <span class="math-inline">\(I\)</span>, its usual image factorization is</p>
+<div class="math-display">\[A\longrightarrow A/I\lhook\joinrel\longrightarrow B.\]</div>
+<p>The injectivity of the second map is analogous to the conservativity of <span class="math-inline">\(\varphi^{\cons}\colon T/K\to S\)</span>. Let <span class="math-inline">\(W\subseteq A\)</span> be the multiplicative subset of elements whose images in <span class="math-inline">\(A/I\)</span> are units. Then the quotient map <span class="math-inline">\(A\to A/I\)</span> factors further as</p>
+<div class="math-display">\[A\longrightarrow A[W^{-1}]\longrightarrow A/I.\]</div>
+<p>Altogether, this gives the triple factorization</p>
+<div class="math-display">\[A\longrightarrow A[W^{-1}]\longrightarrow A/I\lhook\joinrel\longrightarrow B,\]</div>
+<p>which the authors compare with the factorization of <span class="math-inline">\(T\to S\)</span> through <span class="math-inline">\(T/K^{\mono}\)</span> and <span class="math-inline">\(T/K\)</span>.</p></div>
+</section>
+
+<h3 id="subsec:Hypercomplete_Congruences"><span>5.5.3.</span> Hypercomplete congruences</h3>
+<p>We now discuss the hypercompletion of a congruence.</p>
+<section class="theorem definition" id="def:Hypercompletion_Of_Congruence">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/hypercompletion-of-a-congruence/index.html">Definition 5.66.</a></span></p>
+  <div class="theorem-statement"><p>Given a congruence <span class="math-inline">\(K\)</span> of small generation, we define its <em>hypercompletion</em> as the kernel of the composite:</p>
+<div class="math-display">\[K^{\hyp} \quad := \quad \ker \bigl( T \to T/K \to (T/K)^{\hyp} \bigr),\]</div>
+<p>where <span class="math-inline">\((-)^{\hyp}\)</span> denotes the hypercompletion of a topos (localization at <span class="math-inline">\(\infty\)</span>-connected maps). Note that we always have <span class="math-inline">\(K \subseteq K^{\hyp}\)</span>. We say a congruence <span class="math-inline">\(K\)</span> is <em>hypercomplete</em> if <span class="math-inline">\(K = K^{\hyp}\)</span>.</p></div>
+</section>
+
+<section class="theorem lemma" id="lem:Hypercompletion_Preserves_Monogenic_Part">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/hypercompletion-preserves-the-monogenic-part/index.html">Lemma 5.67.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(K\)</span> be a congruence of small generation. Hypercompletion does not affect its monogenic part:</p>
+<div class="math-display">\[K^{\hyp} \cap \Mono \;=\; K \cap \Mono.\]</div>
+<p>Furthermore, the hypercompletion only depends on the monogenic part of a congruence: we have</p>
+<div class="math-display">\[(K^{\mono})^{\hyp} = K^{\hyp}.\]</div></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Hypercompletion_Preserves_Monogenic_Part-main" data-owner-entry="hypercompletion-preserves-the-monogenic-part" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">For the first part, consider the sequence of localizations <span class="math-inline">\(T \to T/K \to (T/K)^{\hyp}\)</span>. Let <span class="math-inline">\(f\)</span> be a monomorphism in <span class="math-inline">\(T\)</span> contained in <span class="math-inline">\(K^{\hyp}\)</span>; we need to show that <span class="math-inline">\(f\)</span> is in fact contained in <span class="math-inline">\(K\)</span>. Since <span class="math-inline">\(T \to T/K\)</span> is left exact, the image of <span class="math-inline">\(f\)</span> in <span class="math-inline">\(T/K\)</span> is a monomorphism that becomes an equivalence in the hypercompletion <span class="math-inline">\((T/K)^{\hyp}\)</span>. Thus, in <span class="math-inline">\(T/K\)</span>, the map <span class="math-inline">\(f\)</span> is <span class="math-inline">\(\infty\)</span>-connected. But a map that is both a monomorphism and <span class="math-inline">\(\infty\)</span>-connected is an equivalence. Therefore, <span class="math-inline">\(f\)</span> is already inverted in <span class="math-inline">\(T/K\)</span>, so <span class="math-inline">\(f \in K\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>For the second part, we always have <span class="math-inline">\((K^{\mono})^{\hyp} \subseteq K^{\hyp}\)</span>. For the converse, we may consider the monogenic-epigenic factorization of the quotient <span class="math-inline">\(T \to T/K\)</span>: <div class="math-display">\[T \to T/K^{\mono} \to T/K.\]</div> The second map is an epigenic quotient by <a href="#prop:Quotient_Triple_Factorization">Proposition 5.64</a>, hence its kernel is contained in the <span class="math-inline">\(\infty\)</span>-connected maps. An epigenic quotient induces an equivalence on hypercompletions, see <span class="citation-group">[Anel et al. <a class="citation" href="#bib-ABFJ_Acyclic_Product">2025, Lemma 2.1.33</a>]</span>. We therefore obtain <div class="math-display">\[(T/K^{\mono})^{\hyp}\iso(T/K)^{\hyp}.\]</div> It follows that <span class="math-inline">\((K^{\mono})^{\hyp} = K^{\hyp}\)</span>, as desired.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>Let <span class="math-inline">\(\MonoCong(T)\)</span> and <span class="math-inline">\(\HypCong(T)\)</span> denote the posets of monogenic and hypercomplete congruences of small generation, respectively. It follows from the lemma that hypercompletion defines an equivalence</p>
+<div class="math-display">\[(-)^{\hyp}\colon\MonoCong(T)\iso\HypCong(T),\]</div>
+<p>with inverse <span class="math-inline">\(K\mapsto K^{\mono}\)</span>. The inclusion <span class="math-inline">\(\MonoCong(T)\hookrightarrow\Cong(T)\)</span> has right adjoint <span class="math-inline">\(K\mapsto K^{\mono}\)</span>, while the inclusion of the epigenic congruences has right adjoint <span class="math-inline">\(K\mapsto K^{\epi}\)</span>. Under the preceding equivalence, hypercompletion is the fully faithful further right adjoint to <span class="math-inline">\(K\mapsto K^{\mono}\)</span>, as proved in <span class="citation-group">[Anel et al. <a class="citation" href="#bib-ABFJ_Acyclic_Product">2025, Theorem 2.1.26</a>]</span>. Thus the three constructions record, respectively, the largest monogenic congruence below <span class="math-inline">\(K\)</span>, the largest epigenic congruence below <span class="math-inline">\(K\)</span>, and the largest hypercomplete congruence with the same monomorphisms as <span class="math-inline">\(K\)</span>.</p>
+<h3 id="subsec:Images"><span>5.5.4.</span> Images</h3>
+<p>In <a href="#rmk:Analogy_Triple_Factorization">Remark 5.65</a>, we compared the factorization <span class="math-inline">\(T \to T/K \to S\)</span> of a logos morphism <span class="math-inline">\(\varphi\colon T \to S\)</span> with the image factorization of a ring morphism. The analogy is not yet exact, since <span class="math-inline">\(T/K\to S\)</span> is merely conservative and need not be a monomorphism. We now factor it further through an actual sublogos <span class="math-inline">\(\lra{\varphi(T)}\subseteq S\)</span>.</p>
+<section class="theorem construction" id="con:Image_Of_Logoi_Morphism">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/image-of-a-morphism-of-logoi/index.html">Construction 5.68.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\varphi\colon T \to S\)</span> be a morphism of logoi. We define its <em>image</em> <span class="math-inline">\(\lra{\varphi(T)}\)</span> as the smallest full subcategory of <span class="math-inline">\(S\)</span> that contains the objects <span class="math-inline">\(\varphi(X)\)</span> for all <span class="math-inline">\(X \in T\)</span> and is closed under colimits and finite limits.</p></div>
+</section>
+
+<section class="theorem proposition" id="prop:Image_Of_Logoi_Morphism_Is_Logos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/images-of-morphisms-of-logoi-are-logoi/index.html">Proposition 5.69.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\varphi\colon T \to S\)</span> be a morphism of logoi. Then <span class="math-inline">\(\lra{\varphi(T)}\)</span> is a logos, and the inclusion <span class="math-inline">\(\lra{\varphi(T)} \hookrightarrow S\)</span> is a morphism of logoi. In particular, <span class="math-inline">\(\varphi\)</span> admits a factorization in <span class="math-inline">\(\Logos\)</span> as</p>
+<div class="math-display">\[T \longrightarrow \lra{\varphi(T)} \lhook\joinrel\longrightarrow S,\]</div>
+<p>where the second map is a monomorphism in <span class="math-inline">\(\Logos\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Image_Of_Logoi_Morphism_Is_Logos-main" data-owner-entry="images-of-morphisms-of-logoi-are-logoi" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Presentability is the substantive point and is proved in <span class="citation-group">[Lurie <a class="citation" href="#bib-lurie2009HTT">2009, Proposition 6.3.6.2</a>]</span>. By construction, the inclusion <span class="math-inline">\(\lra{\varphi(T)}\hookrightarrow S\)</span> preserves all colimits and finite limits. Consequently, colimits in the image are universal, coproducts are disjoint, and groupoid objects are effective because the corresponding statements hold in <span class="math-inline">\(S\)</span> and the inclusion preserves and reflects the diagrams involved. Thus the Giraud conditions of <a href="../../entry/giraud-characterizations-of-topoi/index.html">Theorem 2.42</a> hold in <span class="math-inline">\(\lra{\varphi(T)}\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>The inclusion is therefore a morphism of logoi. Since it is fully faithful, it is a monomorphism in <span class="math-inline">\(\Logos\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem remark" id="rmk:Structure_Theory">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/structure-theory-of-topoi/index.html">Remark 5.70.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\varphi\colon T \to S\)</span> be a morphism of logoi with kernel <span class="math-inline">\(K = \ker(\varphi)\)</span>. Combining the quotient triple factorization with the image factorization gives</p>
+<div class="math-display">\[T \xrightarrow{(1)} T/ K^{\mono}
+		\xrightarrow{(2)} T/K
+		\xrightarrow{(3)} \lra{\varphi(T)}
+		\xhookrightarrow{(4)} S .\]</div>
+<p>The four factors isolate the following properties:</p>
+<div class="math-display">\[\begin{array}{c|c|c}
+			\text{factor} &amp; \text{property of the logos morphism} &amp; \text{kernel or image condition} \\
+			\hline
+			(1) &amp; \text{monogenic quotient} &amp; \ker=K^{\mono} \\
+			(2) &amp; \text{epigenic quotient} &amp; \ker\subseteq\Conn_\infty \\
+			(3) &amp; \text{conservative and algebraic} &amp; \text{its image generates the target} \\
+			(4) &amp; \text{fully faithful} &amp; \text{inclusion of the image logos}.
+		\end{array}\]</div>
+<p>The composite <span class="math-inline">\((1)(2)\)</span> is the quotient part of <span class="math-inline">\(\varphi\)</span>, while <span class="math-inline">\((3)(4)\)</span> is its conservative part. The composite <span class="math-inline">\((1)(2)(3)\)</span> is algebraic in Lurie's terminology. Further terminology for composites, especially variants of “surjective”, depends on whether one works with classical or higher topoi, so we will use the explicit properties above.</p></div>
+</section>
+<section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-ABFJ_Grothendieck_Topologies">Mathieu Anel, Georg Biedermann, Eric Finster, André Joyal. <em>Left-exact localizations of ∞-topoi. II: Grothendieck topologies</em>. J. Pure Appl. Algebra, 228 (3), 63. 2024.</li>
+<li id="bib-ABFJ_Acyclic_Product">Mathieu Anel, Georg Biedermann, Eric Finster, André Joyal. <em>Left-exact localizations of $\infty$-topoi III: The acyclic product</em>. 2025.</li>
+<li id="bib-lurie2009HTT">Jacob Lurie. <em>Higher topos theory</em>. Ann. Math. Stud. 170, Princeton, NJ: Princeton University Press. 2009.</li></ol></section>
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+      <a class="context-step-control" rel="prev" href="../open-and-closed-immersions/index.html" aria-label="Previous section: Open and closed immersions" title="Previous section: Open and closed immersions"><span aria-hidden="true">←</span></a>
+      <a class="context-step-control" rel="next" href="../products-of-modalities/index.html" aria-label="Next section: Products of modalities" title="Next section: Products of modalities"><span aria-hidden="true">→</span></a>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../chapter/introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../../chapter/foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../../chapter/truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../../chapter/topoi-logoi/index.html">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../../chapter/modalities/index.html" aria-current="location">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../../chapter/topics-in-topos-theory/index.html">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../../chapter/geometry/index.html">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../../chapter/factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../../chapter/limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../epimorphisms-and-acyclic-maps/index.html">
+          <span class="context-entry-heading">Section 5.1</span>
+          <span class="context-entry-title">Epimorphisms and acyclic maps</span>
+        </a></li>
+<li><a href="../blakers-massey/index.html">
+          <span class="context-entry-heading">Section 5.2</span>
+          <span class="context-entry-title">The Blakers–Massey theorem</span>
+        </a></li>
+<li><a href="../congruences-modalities-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Section 5.3</span>
+          <span class="context-entry-title">Congruences, modalities, and saturated classes</span>
+        </a></li>
+<li><a href="../open-and-closed-immersions/index.html">
+          <span class="context-entry-heading">Section 5.4</span>
+          <span class="context-entry-title">Open and closed immersions</span>
+        </a></li>
+<li><a href="../structure-theory-for-topoi/index.html" aria-current="page">
+          <span class="context-entry-heading">Section 5.5</span>
+          <span class="context-entry-title">Structure theory for topoi</span>
+        </a></li>
+<li><a href="../products-of-modalities/index.html">
+          <span class="context-entry-heading">Section 5.6</span>
+          <span class="context-entry-title">Products of modalities</span>
+        </a></li>
+<li><a href="../goodwillie-tower/index.html">
+          <span class="context-entry-heading">Section 5.7</span>
+          <span class="context-entry-title">The Goodwillie tower of a topos</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <p class="context-nav-kicker">Section 5.5</p>
+      <p class="context-nav-description">Structure theory for topoi</p>
+      <ol class="context-entry-list">
+        <li><a href="#def:Monogenic_Modality" data-section-target="def:Monogenic_Modality">
+          <span class="context-entry-heading">Definition 5.50</span>
+          <span class="context-entry-title">Monogenic and epigenic modalities</span>
+        </a></li>
+<li><a href="#rem:Monogenic_And_Epigenic_Terminology" data-section-target="rem:Monogenic_And_Epigenic_Terminology">
+          <span class="context-entry-heading">Remark 5.51</span>
+          <span class="context-entry-title">Monogenic and epigenic terminology</span>
+        </a></li>
+<li><a href="#lem:Modality_Closed_Under_Epi_Mono_Factorizations" data-section-target="lem:Modality_Closed_Under_Epi_Mono_Factorizations">
+          <span class="context-entry-heading">Lemma 5.52</span>
+          <span class="context-entry-title">Modalities and epi–mono factorizations</span>
+        </a></li>
+<li><a href="#cor:Epigenic_Part_Is_Modality" data-section-target="cor:Epigenic_Part_Is_Modality">
+          <span class="context-entry-heading">Corollary 5.53</span>
+          <span class="context-entry-title">The epigenic part of a modality</span>
+        </a></li>
+<li><a href="#not:Epi_Mono_Factorization" data-section-target="not:Epi_Mono_Factorization">
+          <span class="context-entry-heading">Notation 5.54</span>
+          <span class="context-entry-title">Epi–mono factorization notation</span>
+        </a></li>
+<li><a href="#rem:Images_And_Coimages_Of_Modality" data-section-target="rem:Images_And_Coimages_Of_Modality">
+          <span class="context-entry-heading">Remark 5.55</span>
+          <span class="context-entry-title">Images and coimages of a modality</span>
+        </a></li>
+<li><a href="#lem:Monogenic_Part_Via_Images" data-section-target="lem:Monogenic_Part_Via_Images">
+          <span class="context-entry-heading">Lemma 5.56</span>
+          <span class="context-entry-title">Monogenic parts via images</span>
+        </a></li>
+<li><a href="#cor:Congruence_Generated_By_Monomorphisms_Is_Monogenic" data-section-target="cor:Congruence_Generated_By_Monomorphisms_Is_Monogenic">
+          <span class="context-entry-heading">Corollary 5.57</span>
+          <span class="context-entry-title">Congruences generated by monomorphisms are monogenic</span>
+        </a></li>
+<li><a href="#rmk:Monogenic_Versus_Grothendieck_Topology" data-section-target="rmk:Monogenic_Versus_Grothendieck_Topology">
+          <span class="context-entry-heading">Remark 5.58</span>
+          <span class="context-entry-title">Monogenic modalities and Grothendieck topologies</span>
+        </a></li>
+<li><a href="#cor:Modality_Decomposes_Into_Epigenic_And_Monogenic_Parts" data-section-target="cor:Modality_Decomposes_Into_Epigenic_And_Monogenic_Parts">
+          <span class="context-entry-heading">Corollary 5.59</span>
+          <span class="context-entry-title">The epigenic–monogenic decomposition</span>
+        </a></li>
+<li><a href="#lem:Monogenic_Modalities_Are_Congruences" data-section-target="lem:Monogenic_Modalities_Are_Congruences">
+          <span class="context-entry-heading">Lemma 5.60</span>
+          <span class="context-entry-title">Monogenic modalities are congruences</span>
+        </a></li>
+<li><a href="#lem:Epigenic_Congruences_Are_Infinity_Connected" data-section-target="lem:Epigenic_Congruences_Are_Infinity_Connected">
+          <span class="context-entry-heading">Lemma 5.61</span>
+          <span class="context-entry-title">Epigenic congruences are infinity-connected</span>
+        </a></li>
+<li><a href="#def:Quotient_Triple_Factorization_Classes" data-section-target="def:Quotient_Triple_Factorization_Classes">
+          <span class="context-entry-heading">Definition 5.62</span>
+          <span class="context-entry-title">Quotient triple factorization classes</span>
+        </a></li>
+<li><a href="#not:Quotient_Triple_Factorization" data-section-target="not:Quotient_Triple_Factorization">
+          <span class="context-entry-heading">Notation 5.63</span>
+          <span class="context-entry-title">Quotient triple factorization notation</span>
+        </a></li>
+<li><a href="#prop:Quotient_Triple_Factorization" data-section-target="prop:Quotient_Triple_Factorization">
+          <span class="context-entry-heading">Proposition 5.64</span>
+          <span class="context-entry-title">Quotient triple factorization</span>
+        </a></li>
+<li><a href="#rmk:Analogy_Triple_Factorization" data-section-target="rmk:Analogy_Triple_Factorization">
+          <span class="context-entry-heading">Remark 5.65</span>
+          <span class="context-entry-title">An analogy for the triple factorization</span>
+        </a></li>
+<li><a href="#def:Hypercompletion_Of_Congruence" data-section-target="def:Hypercompletion_Of_Congruence">
+          <span class="context-entry-heading">Definition 5.66</span>
+          <span class="context-entry-title">Hypercompletion of a congruence</span>
+        </a></li>
+<li><a href="#lem:Hypercompletion_Preserves_Monogenic_Part" data-section-target="lem:Hypercompletion_Preserves_Monogenic_Part">
+          <span class="context-entry-heading">Lemma 5.67</span>
+          <span class="context-entry-title">Hypercompletion preserves the monogenic part</span>
+        </a></li>
+<li><a href="#con:Image_Of_Logoi_Morphism" data-section-target="con:Image_Of_Logoi_Morphism">
+          <span class="context-entry-heading">Construction 5.68</span>
+          <span class="context-entry-title">The image of a morphism of logoi</span>
+        </a></li>
+<li><a href="#prop:Image_Of_Logoi_Morphism_Is_Logos" data-section-target="prop:Image_Of_Logoi_Morphism_Is_Logos">
+          <span class="context-entry-heading">Proposition 5.69</span>
+          <span class="context-entry-title">Images of morphisms of logoi are logoi</span>
+        </a></li>
+<li><a href="#rmk:Structure_Theory" data-section-target="rmk:Structure_Theory">
+          <span class="context-entry-heading">Remark 5.70</span>
+          <span class="context-entry-title">The structure theory of topoi</span>
+        </a></li>
+      </ol>
+    </nav>
+  </section></div>
+  </aside>
+  </main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

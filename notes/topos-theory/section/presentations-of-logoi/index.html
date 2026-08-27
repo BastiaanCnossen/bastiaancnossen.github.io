@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Presentations of logoi | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/section/presentations-of-logoi/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+<style>
+    .publication-fragment-notice { margin: 2rem 0; padding: 1rem; border: 1px solid #b6aa91; background: #faf7ef; }
+    .publication-fragment-notice:not(:target) { display: none; }
+  </style>
+  <script>
+    (() => {
+      const targets = {"lem:Universal_Property_Quotient_Logos":"./#prop:Universal_Property_Quotient_Logos","proof-lem:Universal_Property_Quotient_Logos-main":"./#proof-prop:Universal_Property_Quotient_Logos-main"};
+      const fragment = decodeURIComponent(location.hash.slice(1));
+      if (targets[fragment]) location.replace(targets[fragment]);
+    })();
+  </script>
+</head>
+<body class="section-page has-context-nav" data-record-id="presentations-of-logoi" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">·</span> Section 4.2</p>
+      <h1>Presentations of logoi</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page">
+      
+<h2 id="sec:Presentations_Of_Logoi"><span>4.2.</span> Presentations of logoi</h2>
+<p>Algebraic objects can often be presented in terms of `generators and relations'; think of presentations of groups or rings. In the case of commutative rings, one first forms the free commutative ring <span class="math-inline">\(\Z[S]\)</span> on a given set of generators <span class="math-inline">\(S\)</span> (the polynomial ring), and then forms the quotient of <span class="math-inline">\(\Z[S]\)</span> by an ideal generated by a given set of relations. There is an analogous notion of presentations for logoi:</p>
+<ul><li><p>In <a href="#subsec:Free_Logoi">Section 4.2.1</a> we construct the <em>free logos</em> <span class="math-inline">\(\An[C]\)</span> on a given category of generators <span class="math-inline">\(C\)</span>.</p></li><li><p>In <a href="#subsec:Quotients_Of_Logoi">Section 4.2.2</a>, we define the <em>quotient logos</em> <span class="math-inline">\(T/K\)</span> of a logos <span class="math-inline">\(T\)</span> by a congruence <span class="math-inline">\(K\)</span>.</p></li><li><p>In <a href="#subsec:Presentations_Of_Logoi">Section 4.2.3</a>, we introduce <em>logos presentations</em> <span class="math-inline">\((C,\Sigma)\)</span>, consisting of a small category <span class="math-inline">\(C\)</span> and a small collection of morphisms <span class="math-inline">\(\Sigma\)</span> in <span class="math-inline">\(\An[C]\)</span>, and define the logos presented by <span class="math-inline">\((C,\Sigma)\)</span> as <span class="math-inline">\(\lra{C \mid \Sigma} := \An[C] / \Sigma^c\)</span>, where <span class="math-inline">\(\Sigma^c\)</span> is the congruence generated by <span class="math-inline">\(\Sigma\)</span>.</p></li></ul>
+<h3 id="subsec:Free_Logoi"><span>4.2.1.</span> Free logoi</h3>
+<p>We start by constructing the free logos on a small category.</p>
+<section class="theorem construction" id="con:Free_Logos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/free-logoi/index.html">Construction 4.9.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> be a small category. We define the <em>free logos on <span class="math-inline">\(C\)</span></em> as</p>
+<div class="math-display">\[\An[C] \quad := \quad \PSh(C^{\lex}),\]</div>
+<p>where <span class="math-inline">\(C^{\lex} \subseteq \PSh(C\catop)\catop\)</span> is defined as the smallest subcategory containing <span class="math-inline">\(C\)</span> which is closed under finite limits. The category <span class="math-inline">\(\An[C]\)</span> comes equipped with a canonical inclusion</p>
+<div class="math-display">\[C \hookrightarrow C^{\lex} \hookrightarrow \PSh(C^{\lex}) = \An[C].\]</div></div>
+</section>
+
+<section class="theorem proposition" id="prop:Universal_Property_Free_Logos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/universal-property-of-free-logoi/index.html">Proposition 4.10.</a></span></p>
+  <div class="theorem-statement"><p>For any small category <span class="math-inline">\(C\)</span>, the inclusion <span class="math-inline">\(C \hookrightarrow \An[C]\)</span> exhibits <span class="math-inline">\(\An[C]\)</span> as the free logos generated by <span class="math-inline">\(C\)</span>: for any other logos <span class="math-inline">\(T\)</span>, restriction along the inclusion induces an equivalence of categories</p>
+<div class="math-display">\[\Fun_{\bbLog}(\An[C],T) \quad \simeq \quad \Fun(C,T).\]</div></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Universal_Property_Free_Logos-main" data-owner-entry="universal-property-of-free-logoi" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Recall from <span class="citation-group">[Lurie <a class="citation" href="#bib-lurie2009HTT">2009, Proposition 5.3.6.2</a>]</span> that for a small category <span class="math-inline">\(C\)</span>, the subcategory <span class="math-inline">\(C^{\mathrm{rex}} \subseteq \PSh(C)\)</span> generated by the representables under finite colimits is the free finite cocompletion of <span class="math-inline">\(C\)</span>. It follows that <span class="math-inline">\(C^{\lex} = ((C\catop)^{\mathrm{rex}})\catop\)</span> is the free finite limit completion: for any other category <span class="math-inline">\(D\)</span> with finite limits, restriction along <span class="math-inline">\(C \hookrightarrow C^{\lex}\)</span> induces an equivalence <div class="math-display">\[\Fun^{\lex}(C^{\lex},D) \quad \simeq \quad \Fun(C,D).\]</div> By the universal property of the presheaf category, we also see that restriction along <span class="math-inline">\(C^{\lex} \hookrightarrow \PSh(C^{\lex})\)</span> induces an equivalence <div class="math-display">\[\Fun^{\colim}(\PSh(C^{\lex}),T) \quad \simeq \quad \Fun(C^{\lex},T).\]</div> By <a href="../../entry/left-exactness-tested-on-representables/index.html">Proposition 2.43</a>, this functor restricts to the desired equivalence <div class="math-display">\[\Fun_{\bbLog}(\An[C],T) \quad = \quad \Fun^{\colim, \lex}(\PSh(C^{\lex}),T) \quad \simeq \quad \Fun^{\lex}(C^{\lex},T).\]</div><span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem remark" id="rem:Free_Logos_As_Categorified_Polynomial_Ring">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/free-logoi-and-polynomial-rings/index.html">Remark 4.11.</a></span></p>
+  <div class="theorem-statement"><p>We may think of this result as a categorification of the isomorphism <span class="math-inline">\(\Hom_{\CRing}(\Z[S],R) \cong \Hom_{\Set}(S,R)\)</span> for every set <span class="math-inline">\(S\)</span> and every commutative ring <span class="math-inline">\(R\)</span>.</p></div>
+</section>
+
+<section class="theorem example" id="ex:An_Terminal_Topos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/animae-as-terminal-topos/index.html">Example 4.12.</a></span></p>
+  <div class="theorem-statement"><p>For <span class="math-inline">\(C = \emptyset\)</span>, we get <span class="math-inline">\(\emptyset^{\lex} = *\)</span> and so <span class="math-inline">\(\An[\emptyset] = \PSh(*) = \An\)</span>. In particular, <span class="math-inline">\(\An\)</span> is the <em>initial logos</em>:</p>
+<div class="math-display">\[\Fun_{\bbLog}(\An,T) \quad \simeq \quad \Fun(\emptyset,T) \quad \simeq \quad *.\]</div>
+<p>By dualizing, it follows that <span class="math-inline">\(\An \in \Topos\)</span> is the <em>terminal topos</em>.</p></div>
+</section>
+
+<section class="theorem example" id="ex:Free_Logos_On_One_Generator">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/free-logos-on-one-generator/index.html">Example 4.13.</a></span></p>
+  <div class="theorem-statement"><p>When <span class="math-inline">\(C = * = \{X\}\)</span> is the terminal category, we get <span class="math-inline">\(C^{\lex} = (\An^{\fin})\catop\)</span>, the opposite of the category of finite animae. In particular, the <em>free logos on one generator</em> is the logos</p>
+<div class="math-display">\[\An[X] \quad := \quad \An[\{X\}] \quad = \quad \PSh((\An^{\fin})\catop) \quad = \quad \Fun(\An^{\fin},\An).\]</div></div>
+</section>
+
+<h3 id="subsec:Quotients_Of_Logoi"><span>4.2.2.</span> Congruences and quotients of logoi</h3>
+<p>In classical algebra, we can form the quotient of a ring <span class="math-inline">\(R\)</span> by an ideal <span class="math-inline">\(I\)</span>. As we discuss in this section, we may analogously form the quotient of a logos <span class="math-inline">\(T\)</span> by a class of morphisms <span class="math-inline">\(K\)</span>. This produces a new logos <span class="math-inline">\(T/K\)</span> in which the morphisms of <span class="math-inline">\(K\)</span> have been inverted. We begin by defining the precise conditions on <span class="math-inline">\(K\)</span> that ensure such a quotient behaves well.</p>
+<section class="theorem definition" id="def:Congruence">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/congruences/index.html">Definition 4.14.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a logos. A collection of morphisms <span class="math-inline">\(K\)</span> in <span class="math-inline">\(T\)</span> is called a <em>congruence of small generation</em> if it satisfies the following conditions:</p>
+<ol><li><p><span class="math-inline">\(K\)</span> is strongly saturated of small generation (see <span class="cross-reference-unlinked">Section A.3</span>).</p></li><li><p><span class="math-inline">\(K\)</span> is closed under base change.</p></li></ol></div>
+</section>
+<p>Recall from <a href="../../entry/strongly-saturated-class-gives-localization/index.html">Proposition A.15</a> that condition (1) ensures that the localization <span class="math-inline">\(T \to T[K^{-1}]\)</span> exists and is an accessible Bousfield localization (i.e. the target is presentable and the localization functor admits a fully faithful right adjoint). Condition (2) ensures that the localization is compatible with the logos structure, i.e. that it is left exact:</p>
+<section class="theorem lemma" id="lem:Characterization_Left_Exact_Localizations">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/characterization-of-left-exact-localizations/index.html">Lemma 4.15.</a></span> ({cf. <span class="citation-group">[Lurie <a class="citation" href="#bib-lurie2009HTT">2009, Proposition 6.2.1.1</a>]</span>})</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(L\colon C \to D\)</span> be a Bousfield localization, with fully faithful right adjoint <span class="math-inline">\(R\colon D \hookrightarrow C\)</span>. Assume that <span class="math-inline">\(C\)</span> admits finite limits. Then the following conditions are equivalent:</p>
+<ol><li><p>The localization functor <span class="math-inline">\(L\)</span> is left exact.</p></li><li><p>The class of morphisms inverted by <span class="math-inline">\(L\)</span> is closed under finite limits in <span class="math-inline">\(\Ar(C)\)</span>.</p></li><li><p>The class of morphisms inverted by <span class="math-inline">\(L\)</span> is closed under base change.</p></li></ol></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Characterization_Left_Exact_Localizations-main" data-owner-entry="characterization-of-left-exact-localizations" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">The implications (1) <span class="math-inline">\(\implies\)</span> (2) <span class="math-inline">\(\implies\)</span> (3) are clear. For <span class="math-inline">\((3) \implies (1)\)</span>, let <span class="math-inline">\(K\)</span> be the class of morphisms inverted by <span class="math-inline">\(L\)</span>, and assume <span class="math-inline">\(K\)</span> is closed under base change. Observe that an object of <span class="math-inline">\(C\)</span> lies in the essential image of <span class="math-inline">\(R\)</span> if and only if it is local with respect to <span class="math-inline">\(K\)</span>. Since the terminal object <span class="math-inline">\(1\)</span> of <span class="math-inline">\(C\)</span> is clearly <span class="math-inline">\(K\)</span>-local, it follows that <span class="math-inline">\(L(1) \iso 1\)</span>, and so <span class="math-inline">\(L\)</span> preserves the terminal object. It remains to show that <span class="math-inline">\(L\)</span> also preserves pullbacks, so consider two morphisms <span class="math-inline">\(X \to Y \leftarrow Z\)</span>. Since <span class="math-inline">\(K\)</span>-local objects are closed under limits in <span class="math-inline">\(C\)</span>, it follows that <span class="math-inline">\(RLX \times_{RLY} RLZ\)</span> is <span class="math-inline">\(K\)</span>-local; in particular, it defines the pullback in <span class="math-inline">\(D\)</span>. It now remains to show that the canonical map <span class="math-inline">\(X \times_Y Z \to RLX \times_{RLY} RLZ\)</span> lies in <span class="math-inline">\(K\)</span>. We may factor this map as a composite <div class="math-display">\[X \times_Y Z \to X \times_{RLY} Z \to RLX \times_{RLY} Z \to RLX \times_{RLY} RLZ.\]</div> The second and third maps are base changes of morphisms in <span class="math-inline">\(K\)</span>, hence lie in <span class="math-inline">\(K\)</span> again by assumption. The first map is a base change of the diagonal of <span class="math-inline">\(Y \to RLY\)</span>, which is therefore a section of the projection <span class="math-inline">\(\pr_1\colon Y \times_{RLY} Y \to Y\)</span>. Since <span class="math-inline">\(K\)</span> is closed under 2-out-of-3, it suffices to show that <span class="math-inline">\(\pr_1\)</span> is in <span class="math-inline">\(K\)</span>, which is true as it is a base change of <span class="math-inline">\(Y \to RLY\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>We now combine these results with the properties of saturated classes discussed in the appendix to obtain the following characterization. Recall from <a href="../../entry/kernel-of-cocontinuous-functor/index.html">Definition A.13</a> that the <em>kernel</em> of a cocontinuous functor <span class="math-inline">\(\phi\)</span> between presentable categories is defined as the class of morphisms inverted by <span class="math-inline">\(\phi\)</span>.</p>
+<section class="theorem corollary" id="cor:Left_Exact_Localization_Iff_Localization_At_Congruence">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/left-exact-localizations-and-congruences/index.html">Corollary 4.16.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a logos and <span class="math-inline">\(K\)</span> a class of morphisms in <span class="math-inline">\(T\)</span>. The following are equivalent:</p>
+<ol><li><p><span class="math-inline">\(K\)</span> is a congruence of small generation.</p></li><li><p><span class="math-inline">\(K\)</span> is strongly saturated of small generation and is closed under finite limits in <span class="math-inline">\(\Ar(T)\)</span>.</p></li><li><p>The localization functor <span class="math-inline">\(L\colon T \to T[K^{-1}]\)</span> is left exact and admits a fully faithful right adjoint (i.e. it is a Bousfield localization).</p></li><li><p><span class="math-inline">\(K\)</span> is the kernel of some morphism of logoi <span class="math-inline">\(\phi\colon T \to S\)</span>.</p></li></ol></div>
+</section>
+
+<details class="proof-shell" id="proof-cor:Left_Exact_Localization_Iff_Localization_At_Congruence-main" data-owner-entry="left-exact-localizations-and-congruences" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">The equivalence <span class="math-inline">\((1) \iff (3)\)</span> follows immediately from <a href="#def:Congruence">Definition 4.14</a> and <a href="#lem:Characterization_Left_Exact_Localizations">Lemma 4.15</a>, combined with <a href="../../entry/strongly-saturated-class-gives-localization/index.html">Proposition A.15</a>.<div class="proof-paragraph-break" aria-hidden="true"></div>The implication <span class="math-inline">\((3) \implies (4)\)</span> follows since <span class="math-inline">\(K\)</span> is the kernel of <span class="math-inline">\(L\colon T \to T[K^{-1}]\)</span>, see <a href="../../entry/strongly-saturated-class-gives-localization/index.html">Proposition A.15</a>. For <span class="math-inline">\((4) \implies (2)\)</span>, if <span class="math-inline">\(K\)</span> is the kernel of a morphism of logoi <span class="math-inline">\(\phi\)</span>, then <span class="math-inline">\(K\)</span> is closed under finite limits because <span class="math-inline">\(\phi\)</span> is left exact. Furthermore, since <span class="math-inline">\(\phi\)</span> is a morphism of logoi, it preserves colimits, and thus its kernel is strongly saturated of small generation by <span class="citation-group">[Lurie <a class="citation" href="#bib-lurie2009HTT">2009, Proposition 5.5.4.16</a>]</span> (see <a href="../../entry/inverted-maps-form-strongly-saturated-class/index.html">Proposition A.14</a>).<div class="proof-paragraph-break" aria-hidden="true"></div>Finally, for <span class="math-inline">\((2) \implies (1)\)</span>, it suffices to note that a class closed under finite limits is in particular closed under base change.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>We can now define the quotient of a logos.</p>
+<section class="theorem definition" id="def:Quotient_Logos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/quotient-logoi/index.html">Definition 4.17.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(K\)</span> be a congruence of small generation in a logos <span class="math-inline">\(T\)</span>. We define the <em>quotient of <span class="math-inline">\(T\)</span> by <span class="math-inline">\(K\)</span></em> as the localization</p>
+<div class="math-display">\[T/K \quad := \quad T[K^{-1}].\]</div>
+<p>By <a href="#cor:Left_Exact_Localization_Iff_Localization_At_Congruence">Corollary 4.16</a>, <span class="math-inline">\(T/K\)</span> is a logos and the localization map <span class="math-inline">\(T \to T/K\)</span> is a morphism of logoi.</p></div>
+</section>
+<p>This construction satisfies the expected universal property:</p>
+<section class="theorem proposition" id="prop:Universal_Property_Quotient_Logos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/universal-property-of-quotient-logoi/index.html">Proposition 4.18.</a></span></p>
+  <div class="theorem-statement"><p>For every logos <span class="math-inline">\(S\)</span>, restriction along <span class="math-inline">\(T \to T/K\)</span> induces a fully faithful functor</p>
+<div class="math-display">\[\Fun_{\bbLog}(T/K, S) \quad \hookrightarrow \quad \Fun_{\bbLog}(T,S).\]</div>
+<p>Its essential image consists of those morphisms of logoi <span class="math-inline">\(\phi\colon T \to S\)</span> that invert <span class="math-inline">\(K\)</span> (i.e. <span class="math-inline">\(K \subseteq \ker(\phi)\)</span>).</p></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Universal_Property_Quotient_Logos-main" data-owner-entry="universal-property-of-quotient-logoi" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">By definition of localization, restriction along <span class="math-inline">\(T \to T/K\)</span> induces a fully faithful functor <div class="math-display">\[\Fun(T/K,S) \hookrightarrow \Fun(T,S),\]</div> with essential image those functors <span class="math-inline">\(T \to S\)</span> that invert <span class="math-inline">\(K\)</span>. It remains to show that a functor <span class="math-inline">\(T/K \to S\)</span> preserves colimits and finite limits if and only if the composite <span class="math-inline">\(T \to T/K \to S\)</span> does.<div class="proof-paragraph-break" aria-hidden="true"></div>The `only if' direction is clear. For the `if' direction, note that every diagram in <span class="math-inline">\(T/K\)</span> may be regarded as a diagram in <span class="math-inline">\(T\)</span> via the inclusion. Since <span class="math-inline">\(T \to T/K\)</span> preserves colimits and finite limits, colimits and finite limits in <span class="math-inline">\(T/K\)</span> may be computed by forming them first in <span class="math-inline">\(T\)</span> and then localizing. Thus if <span class="math-inline">\(T \to S\)</span> is a logos morphism, then so is <span class="math-inline">\(T/K \to S\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem definition" id="def:Quotient_Map">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/quotient-maps-of-logoi/index.html">Definition 4.19.</a></span></p>
+  <div class="theorem-statement"><p>A morphism of logoi <span class="math-inline">\(\phi\colon T \to S\)</span> is called a <em>quotient map</em> if it is a Bousfield localization, i.e. if its right adjoint is fully faithful.</p></div>
+</section>
+<p>Note that any quotient map <span class="math-inline">\(\phi\colon T \to S\)</span> induces an equivalence of logoi <span class="math-inline">\(T/\ker(\phi) \simeq S\)</span>.</p>
+<section class="theorem lemma" id="lem:Quotient_Maps_Of_Logoi_Are_Epimorphisms">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/quotient-maps-are-epimorphisms/index.html">Lemma 4.20.</a></span></p>
+  <div class="theorem-statement"><p>Any quotient map of logoi is an epimorphism in the category of logoi.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Quotient_Maps_Of_Logoi_Are_Epimorphisms-main" data-owner-entry="quotient-maps-are-epimorphisms" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Let <span class="math-inline">\(\phi^*\colon T \to S\)</span> be a quotient map and put <span class="math-inline">\(K=\ker(\phi^*)\)</span>. The induced morphism <span class="math-inline">\(T/K\to S\)</span> is an equivalence of logoi. By the universal property of the quotient from <a href="#prop:Universal_Property_Quotient_Logos">Proposition 4.18</a>, for every logos <span class="math-inline">\(T'\)</span> the restriction functor <div class="math-display">\[(\phi^*)^*\colon \Hom_{\Logos}(S,T') = \Fun^{\lex,\colim}(S,T')^{\simeq}  \hookrightarrow \Fun^{\lex,\colim}(T,T')^{\simeq} = \Hom_{\Logos}(T,T').\]</div> is fully faithful. This is precisely the assertion that <span class="math-inline">\(\phi^*\)</span> is an epimorphism in <span class="math-inline">\(\Logos\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem remark" id="rem:Quotient_Maps_As_Monomorphisms_Of_Topoi">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/quotient-maps-as-monomorphisms-of-topoi/index.html">Remark 4.21.</a></span></p>
+  <div class="theorem-statement"><p>The previous lemma implies that any quotient map of logoi is a <em>monomorphism</em> when regarded as a morphism in <span class="math-inline">\(\Topos\)</span>. This is analogous to the fact that an epimorphism <span class="math-inline">\(R \to S\)</span> of commutative rings induces a monomorphism <span class="math-inline">\(\Spec(S) \hookrightarrow \Spec(R)\)</span> of affine schemes. Recall that there are two common constructions for commutative rings that give rise to epimorphisms:</p>
+<ol><li><p>Given a commutative ring <span class="math-inline">\(R\)</span> and an ideal <span class="math-inline">\(I\)</span>, we may form the quotient ring <span class="math-inline">\(R \to R/I\)</span> by killing off all elements in <span class="math-inline">\(I\)</span>.</p></li><li><p>Given a commutative ring <span class="math-inline">\(R\)</span> and a set <span class="math-inline">\(S\)</span> of elements of <span class="math-inline">\(R\)</span>, we may form the localization <span class="math-inline">\(R \to R[S^{-1}]\)</span> by formally inverting all elements in <span class="math-inline">\(S\)</span>.</p></li></ol>
+<p>The quotient map <span class="math-inline">\(R \to R/I\)</span> corresponds to a <em>closed immersion</em> of affine schemes. A localization map <span class="math-inline">\(R \to R[S^{-1}]\)</span> induces a flat monomorphism <span class="math-inline">\(\Spec(R[S^{-1}])\to\Spec(R)\)</span>; it is an <em>open immersion</em> when <span class="math-inline">\(S\)</span> is generated by finitely many elements, equivalently when the localization may be written as <span class="math-inline">\(R\to R[f^{-1}]\)</span> for a single <span class="math-inline">\(f\in R\)</span>. We will discuss the analogous notions of open and closed immersions of topoi in <span class="cross-reference-unlinked">Section 5.4</span> below.</p></div>
+</section>
+<p>We conclude with two fundamental examples of congruences.</p>
+<section class="theorem example" id="ex:Generated_Congruence">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/generated-congruences/index.html">Example 4.22.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\Sigma\)</span> be a small set of morphisms in a logos <span class="math-inline">\(T\)</span>. The <em>congruence generated by <span class="math-inline">\(\Sigma\)</span></em>, denoted <span class="math-inline">\(\Sigma^c\)</span>, is defined as the intersection of all strongly saturated classes containing <span class="math-inline">\(\Sigma\)</span> that are closed under base change. It is a non-trivial fact that <span class="math-inline">\(\Sigma^c\)</span> is of small generation (and thus a congruence in the sense of <a href="#def:Congruence">Definition 4.14</a>). This is proved by <span class="citation-group">Lurie (<a class="citation" href="#bib-lurie2009HTT">2009, Proposition 6.2.1.2</a>)</span>. We will give an independent proof below, see <a href="../../entry/small-generation-of-generated-congruences/index.html">Remark 5.42</a>.</p></div>
+</section>
+
+<section class="theorem example" id="ex:Preimage_Of_Congruence">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/preimages-of-congruences/index.html">Example 4.23.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\phi\colon S \to T\)</span> be a morphism of logoi. Given a congruence of small generation <span class="math-inline">\(K\)</span> in <span class="math-inline">\(T\)</span>, we define its <em>preimage</em> as</p>
+<div class="math-display">\[\phi^{-1}(K) \quad := \quad \{g\in \Ar(S) \mid \phi(g) \in K\}.\]</div>
+<p>This is again a congruence of small generation. Indeed, consider the composite morphism of logoi</p>
+<div class="math-display">\[S \xrightarrow{\phi} T \xrightarrow{L} T/K.\]</div>
+<p>As the kernel of <span class="math-inline">\(L\)</span> is <span class="math-inline">\(K\)</span>, the kernel of this composite is precisely <span class="math-inline">\(\phi^{-1}(K)\)</span>. By <a href="#cor:Left_Exact_Localization_Iff_Localization_At_Congruence">Corollary 4.16</a>, the kernel of any morphism of logoi is a congruence of small generation, which proves the claim.</p></div>
+</section>
+
+<h3 id="subsec:Presentations_Of_Logoi"><span>4.2.3.</span> Presentations of logoi</h3>
+<p>We now combine free logoi with quotients of logoi to arrive at the following definition:</p>
+<section class="theorem definition" id="def:Logos_Presentation">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/logos-presentations/index.html">Definition 4.24.</a></span></p>
+  <div class="theorem-statement"><p>A <em>logos presentation</em> is a pair <span class="math-inline">\((C,\Sigma)\)</span> consisting of a small category <span class="math-inline">\(C\)</span> together with a small class of morphisms <span class="math-inline">\(\Sigma\)</span> in <span class="math-inline">\(\An[C]\)</span>. We define the <em>logos presented by <span class="math-inline">\((C,\Sigma)\)</span></em> as the quotient</p>
+<div class="math-display">\[\lra{C \mid \Sigma} \quad := \quad \An[C] \, / \, \Sigma^c\]</div>
+<p>of the free logos on <span class="math-inline">\(C\)</span> by congruence <span class="math-inline">\(\Sigma^c\)</span> from <a href="#ex:Generated_Congruence">Example 4.22</a>. In particular, <span class="math-inline">\(\lra{C \mid \Sigma}\)</span> is a logos and the quotient map <span class="math-inline">\(\An[C] \to \lra{C \mid \Sigma}\)</span> is a logos morphism.</p>
+<p>We wish to think of <span class="math-inline">\(C\)</span> as the `generators' of <span class="math-inline">\(\lra{C \mid \Sigma}\)</span>, and of <span class="math-inline">\(\Sigma\)</span> as the `relations'.</p>
+<p>More explicitly, <span class="math-inline">\(\lra{C \mid \Sigma}\)</span> may be identified with the full subcategory of <span class="math-inline">\(\PSh(C^{\lex})\)</span> spanned by the <span class="math-inline">\(\Sigma^c\)</span>-local presheaves.</p></div>
+</section>
+
+<section class="theorem lemma" id="lem:Universal_Property_Presentation_Logos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/universal-property-of-logos-presentations/index.html">Lemma 4.25.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\((C,\Sigma)\)</span> be a logos presentation. Then the quotient functor <span class="math-inline">\(\An[C] \to \lra{C \mid \Sigma}\)</span> is universal among logos morphisms <span class="math-inline">\(\An[C] \to T\)</span> that invert <span class="math-inline">\(\Sigma\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Universal_Property_Presentation_Logos-main" data-owner-entry="universal-property-of-logos-presentations" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">By <a href="#prop:Universal_Property_Quotient_Logos">Proposition 4.18</a>, <span class="math-inline">\(\An[C] \to \lra{C \mid \Sigma}\)</span> is universal among logos morphisms <span class="math-inline">\(\phi\colon \An[C] \to T\)</span> satisfying <span class="math-inline">\(\Sigma^c \subseteq \ker(\phi)\)</span>. But since <span class="math-inline">\(\ker(\phi)\)</span> is a congruence, this is equivalent to the condition that <span class="math-inline">\(\Sigma \subseteq \ker(\phi)\)</span>, i.e. that <span class="math-inline">\(\phi\)</span> inverts <span class="math-inline">\(\Sigma\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>We now show that every logos admits a presentation.</p>
+<section class="theorem proposition" id="prop:Presentation_Logos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/every-logos-admits-a-presentation/index.html">Proposition 4.26.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a logos. Then there exists a logos presentation <span class="math-inline">\((C,\Sigma)\)</span> and an equivalence of logoi</p>
+<div class="math-display">\[\lra{C \mid \Sigma} \simeq T.\]</div></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Presentation_Logos-main" data-owner-entry="every-logos-admits-a-presentation" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">We saw in the proof of <a href="../../entry/giraud-characterizations-of-topoi/index.html">Theorem 2.42</a> that there is a small category <span class="math-inline">\(C\)</span> with finite limits and an accessible left exact localization <div class="math-display">\[L\colon \PSh(C)\longrightarrow T.\]</div> Let <span class="math-inline">\(i\colon C\hookrightarrow C^{\lex}\)</span> be the canonical functor, and let <span class="math-inline">\(F\colon C^{\lex}\to C\)</span> be the left exact extension of <span class="math-inline">\(\id_C\)</span>. The universal property of <span class="math-inline">\(C^{\lex}\)</span> gives <div class="math-display">\[\Hom_{C^{\lex}}(iX,Y)\simeq\Hom_C(X,FY)\]</div> for <span class="math-inline">\(X\in C\)</span> and <span class="math-inline">\(Y\in C^{\lex}\)</span>. Thus <span class="math-inline">\(i\dashv F\)</span>, and the unit <span class="math-inline">\(\id_C\to Fi\)</span> is an isomorphism.<div class="proof-paragraph-break" aria-hidden="true"></div>The left Kan extension along <span class="math-inline">\(F\)</span> is therefore restriction along <span class="math-inline">\(i\)</span>: <div class="math-display">\[F_!\simeq i^*\colon \PSh(C^{\lex})\longrightarrow\PSh(C).\]</div> In particular, <span class="math-inline">\(F_!\)</span> is left exact. Its right adjoint is the restriction functor <span class="math-inline">\(F^*\colon\PSh(C)\to\PSh(C^{\lex})\)</span>, which is fully faithful because <span class="math-inline">\(Fi\simeq\id_C\)</span>. Hence <span class="math-inline">\(F_!\)</span> is a left exact Bousfield localization. It follows that the composite <div class="math-display">\[Q\colon \An[C]=\PSh(C^{\lex})\xrightarrow{F_!}\PSh(C)\xrightarrow{L}T\]</div> is again a left exact Bousfield localization.<div class="proof-paragraph-break" aria-hidden="true"></div>Its kernel <span class="math-inline">\(K:=\ker(Q)\)</span> is a congruence of small generation by <a href="#cor:Left_Exact_Localization_Iff_Localization_At_Congruence">Corollary 4.16</a>. Choose a small class <span class="math-inline">\(\Sigma\subseteq K\)</span> which generates <span class="math-inline">\(K\)</span> as a strongly saturated class. Since <span class="math-inline">\(K\)</span> is a congruence, <span class="math-inline">\(\Sigma^c\subseteq K\)</span>; conversely, <span class="math-inline">\(\Sigma^c\)</span> is strongly saturated and contains <span class="math-inline">\(\Sigma\)</span>, so <span class="math-inline">\(K\subseteq\Sigma^c\)</span>. Hence <span class="math-inline">\(K=\Sigma^c\)</span>. The universal property of the quotient now identifies <div class="math-display">\[\lra{C\mid\Sigma}=\An[C]/\Sigma^c\simeq T,\]</div> which is the desired presentation.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem example" id="ex:Presentations_Of_Logoi">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/examples-of-logos-presentations/index.html">Example 4.27.</a></span></p>
+  <div class="theorem-statement"><p>The following are some examples of presentations of logoi:</p>
+<ol><li><p>As discussed, the initial logos (no generators and no relations) is <span class="math-inline">\(\An\)</span>:</p>
+<div class="math-display">\[\lra{\emptyset \mid \emptyset} \quad = \quad \An.\]</div></li><li><p>The free logos on a single generator <span class="math-inline">\(X\)</span> is <span class="math-inline">\(\An[X]\)</span>:</p>
+<div class="math-display">\[\lra{\{X\} \mid \emptyset} \quad = \quad \An[X] \quad = \quad \Fun(\An^{\fin}, \An).\]</div></li><li><p>More generally, the logos presented by <span class="math-inline">\((C,\emptyset)\)</span> is simply the free logos generated by <span class="math-inline">\(C\)</span>:</p>
+<div class="math-display">\[\lra{C \mid \emptyset} \quad = \quad \An[C] \quad = \quad \PSh(C^{\lex}).\]</div></li><li><p>The free logos generated by some initial object <span class="math-inline">\(X\)</span> is simply <span class="math-inline">\(\An\)</span>:</p>
+<div class="math-display">\[\lra{\{X\} \mid \emptyset \to X} \quad \simeq \quad \An.\]</div>
+<p>Indeed, logos morphisms <span class="math-inline">\(F\colon \lra{\{X\} \mid \emptyset \to X} \to T\)</span> correspond to logos morphisms <span class="math-inline">\(\An[X] = \lra{\{X\} \mid \emptyset} \to T\)</span> sending the generator <span class="math-inline">\(X\)</span> to the initial object of <span class="math-inline">\(T\)</span>, but by definition of <span class="math-inline">\(\An[X]\)</span> there is a unique such morphism.</p></li><li><p>The free logos in which the initial object is terminal is the one-object logos:</p>
+<div class="math-display">\[\lra{\{X\} \mid \emptyset \to *} \quad \simeq \quad *.\]</div>
+<p>Indeed, any logos in which the initial and terminal objects agree is trivial: for all <span class="math-inline">\(Y\)</span> we have <span class="math-inline">\(\emptyset \simeq \emptyset \times Y \simeq * \times Y \simeq Y\)</span>.</p></li><li><p>The free logos generated by an <span class="math-inline">\(n\)</span>-truncated object is</p>
+<div class="math-display">\[\lra{\{X\} \mid X \to X^{S^{n+1}}} \quad \simeq \quad \Fun((\An_{\leq n})^{\fin},\An),\]</div>
+<p>where <span class="math-inline">\((\An_{\leq n})^{\fin} \subseteq \An_{\leq n}\)</span> is the subcategory generated under finite colimits by the point. The left-hand side classifies the assignment <span class="math-inline">\(T \mapsto T_{\leq n}\)</span> of <span class="math-inline">\(n\)</span>-truncated objects. Indeed, an object of <span class="math-inline">\(T\)</span> corresponds to a left exact functor <span class="math-inline">\((\An^{\fin})\catop\to T\)</span>. This object is <span class="math-inline">\(n\)</span>-truncated precisely when the corresponding functor factors through the opposite of the truncation functor</p>
+<div class="math-display">\[\tau_n\colon \An^{\fin}\longrightarrow (\An_{\leq n})^{\fin}.\]</div></li><li><p>The free logos generated by an <span class="math-inline">\(n\)</span>-connected object <span class="math-inline">\(X\)</span> is</p>
+<div class="math-display">\[\lra{\{X\} \mid \tau_n(X) \to *}.\]</div>
+<p>It arises as a localization of <span class="math-inline">\(\An[X] = \lra{* \mid \emptyset}\)</span>.</p></li><li><p>The <em>pointed object classifier</em> is the logos</p>
+<div class="math-display">\[\lra{[1] \mid \mathrm{source} = *} \quad \simeq \quad \PSh((\An_*^{\fin})\catop).\]</div>
+<p>Note that a logos morphism <span class="math-inline">\(\lra{[1] \mid \mathrm{source} = *} \to T\)</span> is just a morphism in <span class="math-inline">\(T\)</span> whose source is terminal, i.e. a pointed object. But the right-hand side also classifies pointed objects: we have</p>
+<div class="math-display">\[\Fun_{\bbLog}(\PSh((\An_*^{\fin})\catop),T) \, \simeq \, \Fun^{\lex}((\An_*^{\fin})\catop, T) \, \simeq \, \Fun^{\lex}((\An_*^{\fin})\catop, T_*) \, \simeq \, T_*.\]</div></li><li><p>Given a Lawvere theory <span class="math-inline">\(L\)</span>, there is the <em><span class="math-inline">\(L\)</span>-algebra classifier</em> <span class="math-inline">\(\lra{L \mid \text{finite products}}\)</span>: for every logos <span class="math-inline">\(T\)</span> we have</p>
+<div class="math-display">\[\Fun_{\bbLog}(\lra{L \mid \text{finite products}}, T) \quad \simeq \quad \Alg_L(T) \quad := \quad \Fun^{\times}(L,T).\]</div>
+<p>This logos may be explicitly described as</p>
+<div class="math-display">\[\lra{L \mid \text{finite products}} \quad \simeq \quad \PSh((\PSh_{\Sigma}(L)^{\fin})\catop).\]</div>
+<p>Here <span class="math-inline">\(\PSh_{\Sigma}(L)\subseteq\Fun(L\catop,\An)\)</span> denotes the full subcategory of finite-product-preserving presheaves.</p></li></ol></div>
+</section>
+<section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-lurie2009HTT">Jacob Lurie. <em>Higher topos theory</em>. Ann. Math. Stud. 170, Princeton, NJ: Princeton University Press. 2009.</li></ol></section>
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+      <a class="context-step-control" rel="prev" href="../topoi-and-logoi/index.html" aria-label="Previous section: Topoi and logoi" title="Previous section: Topoi and logoi"><span aria-hidden="true">←</span></a>
+      <a class="context-step-control" rel="next" href="../limits-and-colimits-of-topoi/index.html" aria-label="Next section: Limits and colimits of topoi" title="Next section: Limits and colimits of topoi"><span aria-hidden="true">→</span></a>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../chapter/introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../../chapter/foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../../chapter/truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../../chapter/topoi-logoi/index.html" aria-current="location">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../../chapter/modalities/index.html">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../../chapter/topics-in-topos-theory/index.html">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../../chapter/geometry/index.html">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../../chapter/factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../../chapter/limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../topoi-and-logoi/index.html">
+          <span class="context-entry-heading">Section 4.1</span>
+          <span class="context-entry-title">Topoi and logoi</span>
+        </a></li>
+<li><a href="../presentations-of-logoi/index.html" aria-current="page">
+          <span class="context-entry-heading">Section 4.2</span>
+          <span class="context-entry-title">Presentations of logoi</span>
+        </a></li>
+<li><a href="../limits-and-colimits-of-topoi/index.html">
+          <span class="context-entry-heading">Section 4.3</span>
+          <span class="context-entry-title">Limits and colimits of topoi</span>
+        </a></li>
+<li><a href="../etale-morphisms/index.html">
+          <span class="context-entry-heading">Section 4.4</span>
+          <span class="context-entry-title">Étale morphisms</span>
+        </a></li>
+<li><a href="../colimits-of-topoi-along-etale-morphisms/index.html">
+          <span class="context-entry-heading">Section 4.5</span>
+          <span class="context-entry-title">Colimits of topoi along étale morphisms</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <p class="context-nav-kicker">Section 4.2</p>
+      <p class="context-nav-description">Presentations of logoi</p>
+      <ol class="context-entry-list">
+        <li><a href="#con:Free_Logos" data-section-target="con:Free_Logos">
+          <span class="context-entry-heading">Construction 4.9</span>
+          <span class="context-entry-title">Free logoi</span>
+        </a></li>
+<li><a href="#prop:Universal_Property_Free_Logos" data-section-target="prop:Universal_Property_Free_Logos">
+          <span class="context-entry-heading">Proposition 4.10</span>
+          <span class="context-entry-title">The universal property of free logoi</span>
+        </a></li>
+<li><a href="#rem:Free_Logos_As_Categorified_Polynomial_Ring" data-section-target="rem:Free_Logos_As_Categorified_Polynomial_Ring">
+          <span class="context-entry-heading">Remark 4.11</span>
+          <span class="context-entry-title">Free logoi and polynomial rings</span>
+        </a></li>
+<li><a href="#ex:An_Terminal_Topos" data-section-target="ex:An_Terminal_Topos">
+          <span class="context-entry-heading">Example 4.12</span>
+          <span class="context-entry-title">Animae as the terminal topos</span>
+        </a></li>
+<li><a href="#ex:Free_Logos_On_One_Generator" data-section-target="ex:Free_Logos_On_One_Generator">
+          <span class="context-entry-heading">Example 4.13</span>
+          <span class="context-entry-title">The free logos on one generator</span>
+        </a></li>
+<li><a href="#def:Congruence" data-section-target="def:Congruence">
+          <span class="context-entry-heading">Definition 4.14</span>
+          <span class="context-entry-title">Congruences</span>
+        </a></li>
+<li><a href="#lem:Characterization_Left_Exact_Localizations" data-section-target="lem:Characterization_Left_Exact_Localizations">
+          <span class="context-entry-heading">Lemma 4.15</span>
+          <span class="context-entry-title">A characterization of left exact localizations</span>
+        </a></li>
+<li><a href="#cor:Left_Exact_Localization_Iff_Localization_At_Congruence" data-section-target="cor:Left_Exact_Localization_Iff_Localization_At_Congruence">
+          <span class="context-entry-heading">Corollary 4.16</span>
+          <span class="context-entry-title">Left exact localizations and congruences</span>
+        </a></li>
+<li><a href="#def:Quotient_Logos" data-section-target="def:Quotient_Logos">
+          <span class="context-entry-heading">Definition 4.17</span>
+          <span class="context-entry-title">Quotient logoi</span>
+        </a></li>
+<li><a href="#prop:Universal_Property_Quotient_Logos" data-section-target="prop:Universal_Property_Quotient_Logos">
+          <span class="context-entry-heading">Proposition 4.18</span>
+          <span class="context-entry-title">The universal property of quotient logoi</span>
+        </a></li>
+<li><a href="#def:Quotient_Map" data-section-target="def:Quotient_Map">
+          <span class="context-entry-heading">Definition 4.19</span>
+          <span class="context-entry-title">Quotient maps of logoi</span>
+        </a></li>
+<li><a href="#lem:Quotient_Maps_Of_Logoi_Are_Epimorphisms" data-section-target="lem:Quotient_Maps_Of_Logoi_Are_Epimorphisms">
+          <span class="context-entry-heading">Lemma 4.20</span>
+          <span class="context-entry-title">Quotient maps are epimorphisms</span>
+        </a></li>
+<li><a href="#rem:Quotient_Maps_As_Monomorphisms_Of_Topoi" data-section-target="rem:Quotient_Maps_As_Monomorphisms_Of_Topoi">
+          <span class="context-entry-heading">Remark 4.21</span>
+          <span class="context-entry-title">Quotient maps as monomorphisms of topoi</span>
+        </a></li>
+<li><a href="#ex:Generated_Congruence" data-section-target="ex:Generated_Congruence">
+          <span class="context-entry-heading">Example 4.22</span>
+          <span class="context-entry-title">Generated congruences</span>
+        </a></li>
+<li><a href="#ex:Preimage_Of_Congruence" data-section-target="ex:Preimage_Of_Congruence">
+          <span class="context-entry-heading">Example 4.23</span>
+          <span class="context-entry-title">Preimages of congruences</span>
+        </a></li>
+<li><a href="#def:Logos_Presentation" data-section-target="def:Logos_Presentation">
+          <span class="context-entry-heading">Definition 4.24</span>
+          <span class="context-entry-title">Logos presentations</span>
+        </a></li>
+<li><a href="#lem:Universal_Property_Presentation_Logos" data-section-target="lem:Universal_Property_Presentation_Logos">
+          <span class="context-entry-heading">Lemma 4.25</span>
+          <span class="context-entry-title">The universal property of logos presentations</span>
+        </a></li>
+<li><a href="#prop:Presentation_Logos" data-section-target="prop:Presentation_Logos">
+          <span class="context-entry-heading">Proposition 4.26</span>
+          <span class="context-entry-title">Every logos admits a presentation</span>
+        </a></li>
+<li><a href="#ex:Presentations_Of_Logoi" data-section-target="ex:Presentations_Of_Logoi">
+          <span class="context-entry-heading">Example 4.27</span>
+          <span class="context-entry-title">Examples of logos presentations</span>
+        </a></li>
+      </ol>
+    </nav>
+  </section></div>
+  </aside>
+  <aside class="publication-fragment-notice" id="lem:Universal_Property_Quotient_Logos"><strong>Retired fragment.</strong> The result is now a proposition in the authoritative source. It now appears at <a href="./#prop:Universal_Property_Quotient_Logos">this address</a>.</aside>
+<aside class="publication-fragment-notice" id="proof-lem:Universal_Property_Quotient_Logos-main"><strong>Retired fragment.</strong> The proof fragment follows the proposition label used by its owner. It now appears at <a href="./#proof-prop:Universal_Property_Quotient_Logos-main">this address</a>.</aside>
+</main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

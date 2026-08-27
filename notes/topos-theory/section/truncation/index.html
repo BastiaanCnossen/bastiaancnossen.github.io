@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Truncation | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/section/truncation/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="section-page has-context-nav" data-record-id="truncation" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">·</span> Section 3.1</p>
+      <h1>Truncation</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page">
+      
+<h2 id="sec:Truncation"><span>3.1.</span> Truncation</h2>
+<p>Truncation organizes objects and morphisms according to the amount of homotopical information they contain. The definition is recursive: a morphism is <span class="math-inline">\(n\)</span>-truncated when its diagonal is <span class="math-inline">\((n-1)\)</span>-truncated. We first recall this hierarchy and construct the truncation functors in any presentable category. We then develop the relative truncation calculus needed later, with particular attention to its interaction with base change, monomorphisms, and effective epimorphisms.</p>
+<section class="theorem definition" id="def:Truncated_Morphisms">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/truncated-morphisms/index.html">Definition 3.1.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> be a category with pullbacks. A morphism <span class="math-inline">\(f\colon X \to Y\)</span> in <span class="math-inline">\(C\)</span> is called <em><span class="math-inline">\((-2)\)</span>-truncated</em> if it is an isomorphism. For <span class="math-inline">\(n \geq -1\)</span>, we say <span class="math-inline">\(f\)</span> is <em><span class="math-inline">\(n\)</span>-truncated</em> if <span class="math-inline">\(\Delta_f\colon X \to X \times_Y X\)</span> is <span class="math-inline">\((n-1)\)</span>-truncated. We denote by <span class="math-inline">\(C_{\leq n} \subseteq C\)</span> the full subcategory of <span class="math-inline">\(n\)</span>-truncated objects.</p>
+<p>If the inclusion <span class="math-inline">\(C_{\leq n} \hookrightarrow C\)</span> admits a left adjoint, we denote this adjoint by</p>
+<div class="math-display">\[\tau_n\colon C \to C_{\leq n},\]</div>
+<p>and call it the <em><span class="math-inline">\(n\)</span>-truncation functor</em>.</p></div>
+</section>
+
+<section class="theorem remark" id="rem:Minus_One_Truncated_Morphisms_Are_Monomorphisms">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/monomorphisms-as-minus-one-truncated-morphisms/index.html">Remark 3.2.</a></span></p>
+  <div class="theorem-statement"><p>Being <span class="math-inline">\((-1)\)</span>-truncated is the same as being a monomorphism.</p></div>
+</section>
+
+<section class="theorem remark" id="rmk:Existence_Truncation_Functor">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/existence-of-truncation-functors/index.html">Remark 3.3.</a></span></p>
+  <div class="theorem-statement"><p>The truncation functor <span class="math-inline">\(\tau_n\colon C \to C_{\leq n}\)</span> always exists when <span class="math-inline">\(C\)</span> is presentable, hence in particular when <span class="math-inline">\(T\)</span> is a topos.</p>
+<p>To see this, recall that <span class="math-inline">\(C\)</span> admits a tensoring and a cotensoring by the category <span class="math-inline">\(\An\)</span>. There are unique functors</p>
+<div class="math-display">\[- \otimes -\colon \An \times C \to C \qquadtext{ and } (-)^{(-)}\colon \An\catop \times C \to C\]</div>
+<p>satisfying <span class="math-inline">\(* \otimes X \cong X \cong X^*\)</span> for all <span class="math-inline">\(X \in C\)</span> and preserving colimits (resp. limits) in the first variable. Here and below we use the convention <span class="math-inline">\(S^{-1} := \emptyset\)</span>. Thus, for <span class="math-inline">\(n=-2\)</span>, the map below is the terminal map <span class="math-inline">\(X \to X^{\emptyset} \cong *\)</span>. By an easy induction argument, an object <span class="math-inline">\(X \in C\)</span> is <span class="math-inline">\(n\)</span>-truncated if and only if the map <span class="math-inline">\(X \to X^{S^{n+1}}\)</span> induced by <span class="math-inline">\(S^{n+1} \to *\)</span> is an isomorphism.</p>
+<p>Since <span class="math-inline">\(C\)</span> is presentable, there is a small collection of objects <span class="math-inline">\(\{Y\}\)</span> that detect equivalences. Since <span class="math-inline">\(\Hom_C(Y, X^{S^{n+1}}) \simeq \Hom_C(Y \otimes S^{n+1}, X)\)</span>, the <span class="math-inline">\(n\)</span>-truncated objects are precisely the local objects with respect to the small collection of morphisms <span class="math-inline">\(\{S^{n+1} \otimes Y \to * \otimes Y = Y\}\)</span>. In particular, the <span class="math-inline">\(n\)</span>-truncated objects form a reflective subcategory of <span class="math-inline">\(C\)</span>, admitting a reflector <span class="math-inline">\(\tau_n\colon C \to C_{\leq n}\)</span>.</p></div>
+</section>
+
+<section class="theorem exercise" id="ex:Stable_Categories_Have_No_Nonzero_Truncated_Objects">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/stable-categories-have-no-nonzero-truncated-objects/index.html">Exercise 3.4.</a></span></p>
+  <div class="theorem-statement"><p>Show that a stable category does not admit any non-zero <span class="math-inline">\(n\)</span>-truncated objects.</p></div>
+</section>
+<p>We now prove some basic properties of truncated objects.</p>
+<section class="theorem lemma" id="Closure_Properties_Truncated_Maps">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/truncated-morphisms-are-stable-under-base-change/index.html">Lemma 3.5.</a></span></p>
+  <div class="theorem-statement"><p>The <span class="math-inline">\(n\)</span>-truncated morphisms in <span class="math-inline">\(C\)</span> are closed under base change.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-Closure_Properties_Truncated_Maps-main" data-owner-entry="truncated-morphisms-are-stable-under-base-change" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Immediate from the definitions, details left to the reader.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem lemma" id="lem:Detecting_Truncated_Morphisms_On_Mapping_Animae">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/detecting-truncated-morphisms-on-mapping-animae/index.html">Lemma 3.6.</a></span></p>
+  <div class="theorem-statement"><p>A morphism <span class="math-inline">\(f\colon X \to Y\)</span> is <span class="math-inline">\(n\)</span>-truncated if and only if the induced map of animae <span class="math-inline">\(f_*\colon \Hom_C(Z,X) \to \Hom_C(Z,Y)\)</span> is <span class="math-inline">\(n\)</span>-truncated for all <span class="math-inline">\(Z \in C\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Detecting_Truncated_Morphisms_On_Mapping_Animae-main" data-owner-entry="detecting-truncated-morphisms-on-mapping-animae" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Immediate from Yoneda lemma and the fact that <span class="math-inline">\(\Hom_C(Z,-)\)</span> preserves pullbacks.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem lemma" id="lem:Cancellation_Truncated_Maps">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/cancellation-for-truncated-morphisms/index.html">Lemma 3.7.</a></span></p>
+  <div class="theorem-statement"><p>Consider morphisms <span class="math-inline">\(f\colon X \to Y\)</span> and <span class="math-inline">\(g\colon Y \to Z\)</span>.</p>
+<ol><li><p>If <span class="math-inline">\(g\)</span> is <span class="math-inline">\(n\)</span>-truncated, then <span class="math-inline">\(f\)</span> is <span class="math-inline">\(n\)</span>-truncated if and only if <span class="math-inline">\(gf\)</span> is <span class="math-inline">\(n\)</span>-truncated.</p></li><li><p>If <span class="math-inline">\(gf\)</span> is <span class="math-inline">\(n\)</span>-truncated and <span class="math-inline">\(g\)</span> is <span class="math-inline">\((n+1)\)</span>-truncated, then <span class="math-inline">\(f\)</span> is <span class="math-inline">\(n\)</span>-truncated.</p></li></ol></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Cancellation_Truncated_Maps-main" data-owner-entry="cancellation-for-truncated-morphisms" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">(1) We prove the claim by induction on <span class="math-inline">\(n\)</span>. The case <span class="math-inline">\(n = -2\)</span> is clear by 2-out-of-3.<div class="proof-paragraph-break" aria-hidden="true"></div>For <span class="math-inline">\(n \geq -1\)</span>, consider the following commutative triangle: <figure class="diagram"><img src="diagrams/tikzcd-c16c26fad233.svg" alt="Commutative diagram generated from the LaTeX source"></figure> The right diagonal map is a base change of <span class="math-inline">\(\Delta_g\colon Y \to Y \times_Z Y\)</span>, hence is <span class="math-inline">\((n-1)\)</span>-truncated. By the induction hypothesis, <span class="math-inline">\(\Delta_f\)</span> is <span class="math-inline">\((n-1)\)</span>-truncated if and only if <span class="math-inline">\(\Delta_{gf}\)</span> is <span class="math-inline">\((n-1)\)</span>-truncated. This completes the proof.<div class="proof-paragraph-break" aria-hidden="true"></div>(2) We may factor <span class="math-inline">\(f\)</span> as the composite <div class="math-display">\[X \xrightarrow{(\id_X,f)} X \times_Z Y \xrightarrow{\pr_Y} Y.\]</div> The first map is a base change of the <span class="math-inline">\(n\)</span>-truncated map <span class="math-inline">\(\Delta_g\colon Y \to Y \times_Z Y\)</span>. The second map is a base change of the <span class="math-inline">\(n\)</span>-truncated map <span class="math-inline">\(gf\colon X \to Z\)</span>. By (1) and <a href="#Closure_Properties_Truncated_Maps">Lemma 3.5</a>, <span class="math-inline">\(f\)</span> is also <span class="math-inline">\(n\)</span>-truncated.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem lemma" id="lem:Commutation_With_Truncation">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/functors-commuting-with-truncation/index.html">Lemma 3.8.</a></span></p>
+  <div class="theorem-statement"><p>Consider a functor <span class="math-inline">\(F\colon C \to D\)</span>.</p>
+<ol><li><p>If <span class="math-inline">\(F\)</span> preserves pullbacks, then it preserves <span class="math-inline">\(n\)</span>-truncated objects for all <span class="math-inline">\(n \geq -2\)</span>.</p></li><li><p>If <span class="math-inline">\(F\)</span> furthermore admits a right adjoint, and <span class="math-inline">\(C\)</span> and <span class="math-inline">\(D\)</span> admit <span class="math-inline">\(n\)</span>-truncation functors, then <span class="math-inline">\(F\)</span> commutes with <span class="math-inline">\(n\)</span>-truncation: for any <span class="math-inline">\(X \in C\)</span> the canonical map</p>
+<div class="math-display">\[\tau_n(F(X)) \to F(\tau_n X)\]</div>
+<p>is an isomorphism.</p></li></ol></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Commutation_With_Truncation-main" data-owner-entry="functors-commuting-with-truncation" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Part (1) is clear, since <span class="math-inline">\(n\)</span>-truncatedness is formulated in terms of pullbacks.<div class="proof-paragraph-break" aria-hidden="true"></div>For part (2), the claim is equivalent to the claim that the right adjoint <span class="math-inline">\(G\colon D \to C\)</span> of <span class="math-inline">\(F\)</span> preserves <span class="math-inline">\(n\)</span>-truncated objects. This is an instance of (1).<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem lemma" id="lem:Truncation_Preserves_Finite_Products">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/truncation-preserves-finite-products/index.html">Lemma 3.9.</a></span></p>
+  <div class="theorem-statement"><p>For every <span class="math-inline">\(n\geq -2\)</span>, the truncation functor <span class="math-inline">\(\tau_n\colon T\to T_{\leq n}\)</span> of a topos preserves finite products.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Truncation_Preserves_Finite_Products-main" data-owner-entry="truncation-preserves-finite-products" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Choose a left exact localization <span class="math-inline">\(L\colon \PSh(C)\to T\)</span> with fully faithful right adjoint <span class="math-inline">\(R\)</span>. In a presheaf topos, truncation is computed pointwise, and truncation of animae preserves finite products. It follows that <span class="math-inline">\(\tau_n^{\mathrm{pre}}\)</span> preserves finite products in <span class="math-inline">\(\PSh(C)\)</span>. By <a href="#lem:Commutation_With_Truncation">Lemma 3.8</a>, the truncation functor on <span class="math-inline">\(T\)</span> is naturally isomorphic to the composite <span class="math-inline">\(L\tau_n^{\mathrm{pre}}R\)</span>. The functors <span class="math-inline">\(L\)</span> and <span class="math-inline">\(R\)</span> preserve finite limits, so this composite preserves finite products.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem corollary" id="cor:Pullback_Commutes_With_Truncation">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/pullback-commutes-with-truncation/index.html">Corollary 3.10.</a></span></p>
+  <div class="theorem-statement"><p>For a morphism <span class="math-inline">\(f\colon X \to Y\)</span> in a topos <span class="math-inline">\(T\)</span>, the pullback functor <span class="math-inline">\(f^*\colon T_{/Y} \to T_{/X}\)</span> preserves <span class="math-inline">\(n\)</span>-truncated objects and commutes with <span class="math-inline">\(n\)</span>-truncation: for a map <span class="math-inline">\(Z \to Y\)</span> we have <span class="math-inline">\(\tau_n(f^*Z/X) \cong f^*\tau_{n}(Z/Y)\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-cor:Pullback_Commutes_With_Truncation-main" data-owner-entry="pullback-commutes-with-truncation" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body"><a href="#lem:Commutation_With_Truncation">Lemma 3.8</a> applies: the functor <span class="math-inline">\(f^*\)</span> preserves limits (as it has a left adjoint) and preserves colimits (by universality of colimits), so that it admits a right adjoint <span class="math-inline">\(f_*\colon T_{/X} \to T_{/Y}\)</span> by the adjoint functor theorem.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem proposition" id="prop:Pushout_Of_Mono_Is_Mono">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/pushouts-along-monomorphisms/index.html">Proposition 3.11.</a></span> (<span class="citation-group">[Anel et al. <a class="citation" href="#bib-ABFJ2020GeneralizedBlakersMassey">2020, Proposition 2.2.6</a>]</span>)</p>
+  <div class="theorem-statement"><p>Consider a pushout square</p>
+<figure class="diagram"><img src="diagrams/tikzcd-e4e6b00266c1.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>in which the map <span class="math-inline">\(A \hookrightarrow B\)</span> is a monomorphism. Then also <span class="math-inline">\(C \to D\)</span> is a monomorphism and the square is a pullback square.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Pushout_Of_Mono_Is_Mono-main" data-owner-entry="pushouts-along-monomorphisms" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Consider the cube <figure class="diagram"><img src="diagrams/tikzcd-d224c9f072a7.svg" alt="Commutative diagram generated from the LaTeX source"></figure> The top and bottom faces are pushouts, and the left and back faces are pullbacks. By descent (Mather's first cube lemma), the front and right faces are also pullback squares. This says precisely that the starting square is a pullback square and that the map <span class="math-inline">\(C \to D\)</span> is a monomorphism.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem lemma" id="lem:Pi0_Of_Mono">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/zero-truncation-of-monomorphisms/index.html">Lemma 3.12.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(U \hookrightarrow X\)</span> be a monomorphism. Then also <span class="math-inline">\(\tau_0 U \hookrightarrow \tau_0 X\)</span> is a monomorphism, and the square</p>
+<figure class="diagram"><img src="diagrams/tikzcd-34cdd49619de.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>is a pullback square.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Pi0_Of_Mono-main" data-owner-entry="zero-truncation-of-monomorphisms" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Choose a left exact localization <span class="math-inline">\(L\colon \PSh(C) \to T\)</span> with fully faithful right adjoint <span class="math-inline">\(R\colon T \hookrightarrow \PSh(C)\)</span>, as in <a href="../../entry/giraud-characterizations-of-topoi/index.html">Theorem 2.42</a>. Since <span class="math-inline">\(R\)</span> preserves limits, the map <span class="math-inline">\(R(U) \to R(X)\)</span> is again a monomorphism. Truncation and limits in the presheaf topos are computed pointwise. For every <span class="math-inline">\(c \in C\)</span>, the monomorphism of animae <div class="math-display">\[R(U)(c) \hookrightarrow R(X)(c)\]</div> is the inclusion of a union of connected components. Consequently, <span class="math-inline">\(\tau_0R(U)(c) \to \tau_0R(X)(c)\)</span> is a monomorphism and the corresponding naturality square is a pullback. It follows pointwise that the square <figure class="diagram"><img src="diagrams/tikzcd-d5e834bc2818.svg" alt="Commutative diagram generated from the LaTeX source"></figure> is a pullback in <span class="math-inline">\(\PSh(C)\)</span>. Applying the left exact functor <span class="math-inline">\(L\)</span> preserves this pullback square and the monomorphism on the right. Moreover, <a href="#lem:Commutation_With_Truncation">Lemma 3.8</a> identifies <span class="math-inline">\(L\tau_0R(U)\)</span> and <span class="math-inline">\(L\tau_0R(X)\)</span> with <span class="math-inline">\(\tau_0U\)</span> and <span class="math-inline">\(\tau_0X\)</span>, respectively. This gives the asserted square in <span class="math-inline">\(T\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>We now prove a crucial fact: effective epimorphisms in a topos can be tested on 0-truncations.</p>
+<section class="theorem lemma" id="lem:Key_Lemma_Eff_Epi_Pi0">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/effective-epimorphisms-detected-on-zero-truncation/index.html">Lemma 3.13.</a></span> (Key lemma)</p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a topos.</p>
+<ol><li><p>The map <span class="math-inline">\(X \to \tau_0 X\)</span> is an effective epimorphism for every <span class="math-inline">\(X \in T\)</span>.</p></li><li><p>A morphism <span class="math-inline">\(f\colon Y \to X\)</span> is an effective epimorphism if and only if the map <span class="math-inline">\(\tau_0 Y \to \tau_0 X\)</span> is an effective epimorphism.</p></li></ol></div>
+</section>
+
+<section class="theorem remark" id="rem:Circularity_In_HTT_Effective_Epimorphism_Proof">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/htt-circularity-for-effective-epimorphisms/index.html">Remark 3.14.</a></span></p>
+  <div class="theorem-statement"><p>The corresponding argument in <span class="citation-group">Lurie (<a class="citation" href="#bib-lurie2009HTT">2009</a>)</span> contains a circular dependency. Proposition~7.2.1.14 is the analogue of the lemma above. Its proof uses Lemma~7.2.1.13, which invokes Proposition~6.5.1.20; the proof of Proposition~6.5.1.20 in turn appeals to Proposition~7.2.1.14. Proposition~6.5.1.12 also uses Proposition~7.2.1.14.</p>
+<p>There is a related gap in the proof of <span class="citation-group">[Lurie <a class="citation" href="#bib-lurie2009HTT">2009, Proposition 6.5.1.18</a>]</span>: one still has to show that the diagonal of a <span class="math-inline">\(0\)</span>-connected morphism is an effective epimorphism. The proof below establishes the effective-epimorphism criterion independently, and we will use it to supply this step in <a href="../../entry/characterizing-connected-morphisms-by-diagonals/index.html">Theorem 3.22</a>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Key_Lemma_Eff_Epi_Pi0-main" data-owner-entry="effective-epimorphisms-detected-on-zero-truncation" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">(1) Factor the map <span class="math-inline">\(X \to \tau_0 X\)</span> into an effective epimorphism followed by a monomorphism: <div class="math-display">\[X \twoheadrightarrow U \hookrightarrow \tau_0 X.\]</div> We must show that the second map is an isomorphism. Since it is a monomorphism (<span class="math-inline">\((-1)\)</span>-truncated) and <span class="math-inline">\(\tau_0 X\)</span> is <span class="math-inline">\(0\)</span>-truncated, <a href="#lem:Cancellation_Truncated_Maps">Lemma 3.7</a> implies that <span class="math-inline">\(U\)</span> is also <span class="math-inline">\(0\)</span>-truncated. <button type="button" class="detail-toggle" id="detail-effective-epimorphisms-detected-on-zero-truncation--intermediate-object-truncated" data-detail-toggle="detail-effective-epimorphisms-detected-on-zero-truncation--intermediate-object-truncated" data-depth="1" aria-expanded="false" aria-controls="detail-effective-epimorphisms-detected-on-zero-truncation--intermediate-object-truncated-content" aria-label="Expand: The truncatedness of the intermediate object" title="The truncatedness of the intermediate object">
+  <span class="detail-toggle-symbol" aria-hidden="true">+</span><span class="detail-toggle-title">The truncatedness of the intermediate object</span>
+</button><div class="proof-detail depth-1" id="detail-effective-epimorphisms-detected-on-zero-truncation--intermediate-object-truncated-content" data-detail-id="detail-effective-epimorphisms-detected-on-zero-truncation--intermediate-object-truncated" data-depth="1" hidden>More explicitly, the terminal map <span class="math-inline">\(\tau_0 X \to *\)</span> is <span class="math-inline">\(0\)</span>-truncated, while the monomorphism <span class="math-inline">\(U \to \tau_0 X\)</span> is <span class="math-inline">\((-1)\)</span>-truncated and hence also <span class="math-inline">\(0\)</span>-truncated. Part (1) of <a href="#lem:Cancellation_Truncated_Maps">Lemma 3.7</a>, applied to <span class="math-inline">\(U \to \tau_0 X \to *\)</span>, therefore shows that <span class="math-inline">\(U \to *\)</span> is <span class="math-inline">\(0\)</span>-truncated. <button type="button" class="detail-toggle" id="detail-effective-epimorphisms-detected-on-zero-truncation--intermediate-object-cancellation-clause" data-detail-toggle="detail-effective-epimorphisms-detected-on-zero-truncation--intermediate-object-cancellation-clause" data-depth="2" aria-expanded="false" aria-controls="detail-effective-epimorphisms-detected-on-zero-truncation--intermediate-object-cancellation-clause-content" aria-label="Expand: The precise cancellation clause" title="The precise cancellation clause">
+  <span class="detail-toggle-symbol" aria-hidden="true">+</span><span class="detail-toggle-title">The precise cancellation clause</span>
+</button><div class="proof-detail depth-2" id="detail-effective-epimorphisms-detected-on-zero-truncation--intermediate-object-cancellation-clause-content" data-detail-id="detail-effective-epimorphisms-detected-on-zero-truncation--intermediate-object-cancellation-clause" data-depth="2" hidden>In the notation of that lemma, take <span class="math-inline">\(f\colon U \to \tau_0 X\)</span>, <span class="math-inline">\(g\colon \tau_0 X \to *\)</span>, and <span class="math-inline">\(n=0\)</span>. Since both <span class="math-inline">\(f\)</span> and <span class="math-inline">\(g\)</span> are <span class="math-inline">\(0\)</span>-truncated, the implication from the truncatedness of <span class="math-inline">\(f\)</span> to that of <span class="math-inline">\(gf\)</span> says exactly that <span class="math-inline">\(U\)</span> is <span class="math-inline">\(0\)</span>-truncated.</div></div> By definition, <span class="math-inline">\(\tau_0 X\)</span> is the initial <span class="math-inline">\(0\)</span>-truncated object equipped with a map from <span class="math-inline">\(X\)</span>. Therefore the map <span class="math-inline">\(U \hookrightarrow \tau_0 X\)</span> admits a section <span class="math-inline">\(\tau_0 X \to U\)</span>. <button type="button" class="detail-toggle" id="detail-effective-epimorphisms-detected-on-zero-truncation--truncation-universal-property-section" data-detail-toggle="detail-effective-epimorphisms-detected-on-zero-truncation--truncation-universal-property-section" data-depth="1" aria-expanded="false" aria-controls="detail-effective-epimorphisms-detected-on-zero-truncation--truncation-universal-property-section-content" aria-label="Expand: How the universal property produces the section" title="How the universal property produces the section">
+  <span class="detail-toggle-symbol" aria-hidden="true">+</span><span class="detail-toggle-title">How the universal property produces the section</span>
+</button><div class="proof-detail depth-1" id="detail-effective-epimorphisms-detected-on-zero-truncation--truncation-universal-property-section-content" data-detail-id="detail-effective-epimorphisms-detected-on-zero-truncation--truncation-universal-property-section" data-depth="1" hidden>Writing <span class="math-inline">\(\eta_X\colon X \to \tau_0 X\)</span> for the unit, the effective epimorphism <span class="math-inline">\(X \to U\)</span> factors uniquely through <span class="math-inline">\(\eta_X\)</span> because <span class="math-inline">\(U\)</span> is <span class="math-inline">\(0\)</span>-truncated. This gives <span class="math-inline">\(s\colon \tau_0 X \to U\)</span>. The endomorphisms <span class="math-inline">\(ms\)</span> and <span class="math-inline">\(\id_{\tau_0 X}\)</span> agree after precomposition with <span class="math-inline">\(\eta_X\)</span>, so the same universal property gives <span class="math-inline">\(ms=\id_{\tau_0 X}\)</span>. <button type="button" class="detail-toggle" id="detail-effective-epimorphisms-detected-on-zero-truncation--mapping-anima-formulation" data-detail-toggle="detail-effective-epimorphisms-detected-on-zero-truncation--mapping-anima-formulation" data-depth="2" aria-expanded="false" aria-controls="detail-effective-epimorphisms-detected-on-zero-truncation--mapping-anima-formulation-content" aria-label="Expand: Mapping-anima formulation" title="Mapping-anima formulation">
+  <span class="detail-toggle-symbol" aria-hidden="true">+</span><span class="detail-toggle-title">Mapping-anima formulation</span>
+</button><div class="proof-detail depth-2" id="detail-effective-epimorphisms-detected-on-zero-truncation--mapping-anima-formulation-content" data-detail-id="detail-effective-epimorphisms-detected-on-zero-truncation--mapping-anima-formulation" data-depth="2" hidden>Reflection into <span class="math-inline">\(T_{\leq 0}\)</span> gives an equivalence <span class="math-inline">\(\Hom_T(\tau_0 X,U) \iso \Hom_T(X,U)\)</span> for every <span class="math-inline">\(0\)</span>-truncated object <span class="math-inline">\(U\)</span>. The section is the unique inverse image of <span class="math-inline">\(X \to U\)</span> under this equivalence. <button type="button" class="detail-toggle" id="detail-effective-epimorphisms-detected-on-zero-truncation--truncation-literature-location" data-detail-toggle="detail-effective-epimorphisms-detected-on-zero-truncation--truncation-literature-location" data-depth="3" aria-expanded="false" aria-controls="detail-effective-epimorphisms-detected-on-zero-truncation--truncation-literature-location-content" aria-label="Expand: Literature location" title="Literature location">
+  <span class="detail-toggle-symbol" aria-hidden="true">+</span><span class="detail-toggle-title">Literature location</span>
+</button><div class="proof-detail depth-3" id="detail-effective-epimorphisms-detected-on-zero-truncation--truncation-literature-location-content" data-detail-id="detail-effective-epimorphisms-detected-on-zero-truncation--truncation-literature-location" data-depth="3" hidden>This is the universal property of truncation used throughout the discussion of truncation and connectivity in <span class="citation-group">Lurie (<a class="citation" href="#bib-lurie2009HTT">2009, Chapters 6 and 7</a>)</span>.</div></div></div> In particular, it is an isomorphism by <a href="../../entry/monomorphisms-with-sections/index.html">Corollary 2.39</a>.<div class="proof-paragraph-break" aria-hidden="true"></div>(2) The “only if” direction is clear from the commutative diagram: <figure class="diagram"><img src="diagrams/tikzcd-d537671eb3d0.svg" alt="Commutative diagram generated from the LaTeX source"></figure> Indeed, by part (1) the map <span class="math-inline">\(X \to \tau_0 X\)</span> is an effective epimorphism. If <span class="math-inline">\(f\)</span> is also an effective epimorphism, then so is the composite <span class="math-inline">\(Y \to \tau_0 X\)</span> by <a href="../../entry/composition-of-effective-epimorphisms/index.html">Lemma 2.37</a>. Then <span class="math-inline">\(\tau_0 Y \to \tau_0 X\)</span> is also an effective epimorphism by <a href="../../entry/cancellation-for-effective-epimorphisms/index.html">Lemma 2.40</a>. <button type="button" class="detail-toggle" id="detail-effective-epimorphisms-detected-on-zero-truncation--cancellation-factorization-for-zero-truncation" data-detail-toggle="detail-effective-epimorphisms-detected-on-zero-truncation--cancellation-factorization-for-zero-truncation" data-depth="1" aria-expanded="false" aria-controls="detail-effective-epimorphisms-detected-on-zero-truncation--cancellation-factorization-for-zero-truncation-content" aria-label="Expand: The composite used in cancellation" title="The composite used in cancellation">
+  <span class="detail-toggle-symbol" aria-hidden="true">+</span><span class="detail-toggle-title">The composite used in cancellation</span>
+</button><div class="proof-detail depth-1" id="detail-effective-epimorphisms-detected-on-zero-truncation--cancellation-factorization-for-zero-truncation-content" data-detail-id="detail-effective-epimorphisms-detected-on-zero-truncation--cancellation-factorization-for-zero-truncation" data-depth="1" hidden>Naturality of the unit gives <span class="math-inline">\(\eta_X f=(\tau_0 f)\eta_Y\)</span>. Thus the effective epimorphism <span class="math-inline">\(Y \to \tau_0 X\)</span> factors as <span class="math-inline">\(Y \to \tau_0 Y \xrightarrow{\tau_0 f} \tau_0 X\)</span>, and cancellation applies to this factorization.</div><div class="proof-paragraph-break" aria-hidden="true"></div>Conversely, assume that <span class="math-inline">\(\tau_0 f\)</span> is an effective epimorphism. Consider the epi–mono factorization <span class="math-inline">\(Y \twoheadrightarrow U \hookrightarrow X\)</span> of <span class="math-inline">\(f\)</span> and the induced diagram <figure class="diagram"><img src="diagrams/tikzcd-6c9eb42aad34.svg" alt="Commutative diagram generated from the LaTeX source"></figure> By <a href="#lem:Pi0_Of_Mono">Lemma 3.12</a>, the map <span class="math-inline">\(\tau_0 U \to \tau_0 X\)</span> is again a monomorphism, and the right-hand square is a pullback square. Since the composite <span class="math-inline">\(\tau_0 Y \to \tau_0 U \to \tau_0 X\)</span> is an effective epimorphism by assumption, <a href="../../entry/cancellation-for-effective-epimorphisms/index.html">Lemma 2.40</a> implies that <span class="math-inline">\(\tau_0 U \to \tau_0 X\)</span> is an effective epimorphism. <button type="button" class="detail-toggle" id="detail-effective-epimorphisms-detected-on-zero-truncation--cancellation-for-zero-truncation-of-image" data-detail-toggle="detail-effective-epimorphisms-detected-on-zero-truncation--cancellation-for-zero-truncation-of-image" data-depth="1" aria-expanded="false" aria-controls="detail-effective-epimorphisms-detected-on-zero-truncation--cancellation-for-zero-truncation-of-image-content" aria-label="Expand: The cancellation step" title="The cancellation step">
+  <span class="detail-toggle-symbol" aria-hidden="true">+</span><span class="detail-toggle-title">The cancellation step</span>
+</button><div class="proof-detail depth-1" id="detail-effective-epimorphisms-detected-on-zero-truncation--cancellation-for-zero-truncation-of-image-content" data-detail-id="detail-effective-epimorphisms-detected-on-zero-truncation--cancellation-for-zero-truncation-of-image" data-depth="1" hidden>Here functoriality identifies the displayed composite with <span class="math-inline">\(\tau_0 f=(\tau_0 i)(\tau_0 e)\)</span>, where <span class="math-inline">\(i\colon U \hookrightarrow X\)</span> is the monomorphism in the factorization of <span class="math-inline">\(f\)</span>. Cancellation is applied before the mono-plus-effective-epi criterion. <button type="button" class="detail-toggle" id="detail-effective-epimorphisms-detected-on-zero-truncation--why-mono-criterion-is-not-direct" data-detail-toggle="detail-effective-epimorphisms-detected-on-zero-truncation--why-mono-criterion-is-not-direct" data-depth="2" aria-expanded="false" aria-controls="detail-effective-epimorphisms-detected-on-zero-truncation--why-mono-criterion-is-not-direct-content" aria-label="Expand: Why direct application of the criterion would be insufficient" title="Why direct application of the criterion would be insufficient">
+  <span class="detail-toggle-symbol" aria-hidden="true">+</span><span class="detail-toggle-title">Why direct application of the criterion would be insufficient</span>
+</button><div class="proof-detail depth-2" id="detail-effective-epimorphisms-detected-on-zero-truncation--why-mono-criterion-is-not-direct-content" data-detail-id="detail-effective-epimorphisms-detected-on-zero-truncation--why-mono-criterion-is-not-direct" data-depth="2" hidden>The hypothesis says that the composite <span class="math-inline">\(\tau_0 f\)</span> is an effective epimorphism, not immediately that its second factor <span class="math-inline">\(\tau_0 i\)</span> is one. The latter conclusion is exactly the content supplied by <a href="../../entry/cancellation-for-effective-epimorphisms/index.html">Lemma 2.40</a>.</div></div> Since it is also a monomorphism, it is an isomorphism by <a href="../../entry/monomorphisms-with-sections/index.html">Corollary 2.39</a>. Since the right-hand square is a pullback square, <span class="math-inline">\(U \to X\)</span> is also an isomorphism, as desired. <button type="button" class="detail-toggle" id="detail-effective-epimorphisms-detected-on-zero-truncation--pullback-of-zero-truncation-isomorphism" data-detail-toggle="detail-effective-epimorphisms-detected-on-zero-truncation--pullback-of-zero-truncation-isomorphism" data-depth="1" aria-expanded="false" aria-controls="detail-effective-epimorphisms-detected-on-zero-truncation--pullback-of-zero-truncation-isomorphism-content" aria-label="Expand: Why the pullback is an isomorphism" title="Why the pullback is an isomorphism">
+  <span class="detail-toggle-symbol" aria-hidden="true">+</span><span class="detail-toggle-title">Why the pullback is an isomorphism</span>
+</button><div class="proof-detail depth-1" id="detail-effective-epimorphisms-detected-on-zero-truncation--pullback-of-zero-truncation-isomorphism-content" data-detail-id="detail-effective-epimorphisms-detected-on-zero-truncation--pullback-of-zero-truncation-isomorphism" data-depth="1" hidden>Indeed, pullbacks preserve isomorphisms, and <span class="math-inline">\(U \to X\)</span> is the pullback of <span class="math-inline">\(\tau_0 U \to \tau_0 X\)</span>. <button type="button" class="detail-toggle" id="detail-effective-epimorphisms-detected-on-zero-truncation--pullback-of-isomorphism-universal-property" data-detail-toggle="detail-effective-epimorphisms-detected-on-zero-truncation--pullback-of-isomorphism-universal-property" data-depth="2" aria-expanded="false" aria-controls="detail-effective-epimorphisms-detected-on-zero-truncation--pullback-of-isomorphism-universal-property-content" aria-label="Expand: Universal-property check" title="Universal-property check">
+  <span class="detail-toggle-symbol" aria-hidden="true">+</span><span class="detail-toggle-title">Universal-property check</span>
+</button><div class="proof-detail depth-2" id="detail-effective-epimorphisms-detected-on-zero-truncation--pullback-of-isomorphism-universal-property-content" data-detail-id="detail-effective-epimorphisms-detected-on-zero-truncation--pullback-of-isomorphism-universal-property" data-depth="2" hidden><section class="proof-claim" id="proofclaim-2ccd33a0a3e2"><p class="theorem-heading"><strong>Claim.</strong></p><p>The pullback of an isomorphism is an isomorphism.</p></section> An inverse to the lower horizontal map pulls back to a morphism <span class="math-inline">\(X \to U\)</span>. The two inverse identities follow from the uniqueness clause in the pullback universal property.</div></div><span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem corollary" id="cor:Eff_Epi_Iff_Pi0_Terminal">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/effective-epimorphic-points-and-zero-truncation/index.html">Corollary 3.15.</a></span></p>
+  <div class="theorem-statement"><p>A map <span class="math-inline">\(*\to X\)</span> in a topos <span class="math-inline">\(T\)</span> is an effective epimorphism if and only if <span class="math-inline">\(\tau_0 X\)</span> is the terminal object of <span class="math-inline">\(T\)</span>. <span class="qed" aria-label="End of proof"></span></p></div>
+</section>
+<section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-ABFJ2020GeneralizedBlakersMassey">Mathieu Anel, Georg Biedermann, Eric Finster, André Joyal. <em>A generalized Blakers-Massey theorem</em>. J. Topol., 13 (4), 1521–1553. 2020.</li>
+<li id="bib-lurie2009HTT">Jacob Lurie. <em>Higher topos theory</em>. Ann. Math. Stud. 170, Princeton, NJ: Princeton University Press. 2009.</li></ol></section>
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+      <a class="context-step-control" rel="prev" href="../characterizations-of-topoi/index.html" aria-label="Previous section: Characterizations of topoi" title="Previous section: Characterizations of topoi"><span aria-hidden="true">←</span></a>
+      <a class="context-step-control" rel="next" href="../connectivity/index.html" aria-label="Next section: Connectivity" title="Next section: Connectivity"><span aria-hidden="true">→</span></a>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../chapter/introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../../chapter/foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../../chapter/truncation-connectivity/index.html" aria-current="location">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../../chapter/topoi-logoi/index.html">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../../chapter/modalities/index.html">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../../chapter/topics-in-topos-theory/index.html">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../../chapter/geometry/index.html">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../../chapter/factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../../chapter/limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../truncation/index.html" aria-current="page">
+          <span class="context-entry-heading">Section 3.1</span>
+          <span class="context-entry-title">Truncation</span>
+        </a></li>
+<li><a href="../connectivity/index.html">
+          <span class="context-entry-heading">Section 3.2</span>
+          <span class="context-entry-title">Connectivity</span>
+        </a></li>
+<li><a href="../homotopy-group-objects/index.html">
+          <span class="context-entry-heading">Section 3.3</span>
+          <span class="context-entry-title">Homotopy group objects</span>
+        </a></li>
+<li><a href="../hypercompletion/index.html">
+          <span class="context-entry-heading">Section 3.4</span>
+          <span class="context-entry-title">Hypercompletion</span>
+        </a></li>
+<li><a href="../gerbes/index.html">
+          <span class="context-entry-heading">Section 3.5</span>
+          <span class="context-entry-title">Gerbes</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <p class="context-nav-kicker">Section 3.1</p>
+      <p class="context-nav-description">Truncation</p>
+      <ol class="context-entry-list">
+        <li><a href="#def:Truncated_Morphisms" data-section-target="def:Truncated_Morphisms">
+          <span class="context-entry-heading">Definition 3.1</span>
+          <span class="context-entry-title">Truncated morphisms and objects</span>
+        </a></li>
+<li><a href="#rem:Minus_One_Truncated_Morphisms_Are_Monomorphisms" data-section-target="rem:Minus_One_Truncated_Morphisms_Are_Monomorphisms">
+          <span class="context-entry-heading">Remark 3.2</span>
+          <span class="context-entry-title">Monomorphisms as minus-one-truncated morphisms</span>
+        </a></li>
+<li><a href="#rmk:Existence_Truncation_Functor" data-section-target="rmk:Existence_Truncation_Functor">
+          <span class="context-entry-heading">Remark 3.3</span>
+          <span class="context-entry-title">Existence of truncation functors</span>
+        </a></li>
+<li><a href="#ex:Stable_Categories_Have_No_Nonzero_Truncated_Objects" data-section-target="ex:Stable_Categories_Have_No_Nonzero_Truncated_Objects">
+          <span class="context-entry-heading">Exercise 3.4</span>
+          <span class="context-entry-title">Truncated objects in stable categories</span>
+        </a></li>
+<li><a href="#Closure_Properties_Truncated_Maps" data-section-target="Closure_Properties_Truncated_Maps">
+          <span class="context-entry-heading">Lemma 3.5</span>
+          <span class="context-entry-title">Base-change stability of truncated morphisms</span>
+        </a></li>
+<li><a href="#lem:Detecting_Truncated_Morphisms_On_Mapping_Animae" data-section-target="lem:Detecting_Truncated_Morphisms_On_Mapping_Animae">
+          <span class="context-entry-heading">Lemma 3.6</span>
+          <span class="context-entry-title">Detecting truncated morphisms on mapping animae</span>
+        </a></li>
+<li><a href="#lem:Cancellation_Truncated_Maps" data-section-target="lem:Cancellation_Truncated_Maps">
+          <span class="context-entry-heading">Lemma 3.7</span>
+          <span class="context-entry-title">Cancellation for truncated morphisms</span>
+        </a></li>
+<li><a href="#lem:Commutation_With_Truncation" data-section-target="lem:Commutation_With_Truncation">
+          <span class="context-entry-heading">Lemma 3.8</span>
+          <span class="context-entry-title">Functors commuting with truncation</span>
+        </a></li>
+<li><a href="#lem:Truncation_Preserves_Finite_Products" data-section-target="lem:Truncation_Preserves_Finite_Products">
+          <span class="context-entry-heading">Lemma 3.9</span>
+          <span class="context-entry-title">Truncation preserves finite products</span>
+        </a></li>
+<li><a href="#cor:Pullback_Commutes_With_Truncation" data-section-target="cor:Pullback_Commutes_With_Truncation">
+          <span class="context-entry-heading">Corollary 3.10</span>
+          <span class="context-entry-title">Pullback commutes with truncation</span>
+        </a></li>
+<li><a href="#prop:Pushout_Of_Mono_Is_Mono" data-section-target="prop:Pushout_Of_Mono_Is_Mono">
+          <span class="context-entry-heading">Proposition 3.11</span>
+          <span class="context-entry-title">Pushouts along monomorphisms</span>
+        </a></li>
+<li><a href="#lem:Pi0_Of_Mono" data-section-target="lem:Pi0_Of_Mono">
+          <span class="context-entry-heading">Lemma 3.12</span>
+          <span class="context-entry-title">Zero-truncation of monomorphisms</span>
+        </a></li>
+<li><a href="#lem:Key_Lemma_Eff_Epi_Pi0" data-section-target="lem:Key_Lemma_Eff_Epi_Pi0">
+          <span class="context-entry-heading">Lemma 3.13</span>
+          <span class="context-entry-title">Effective epimorphisms detected on zero-truncation</span>
+        </a></li>
+<li><a href="#rem:Circularity_In_HTT_Effective_Epimorphism_Proof" data-section-target="rem:Circularity_In_HTT_Effective_Epimorphism_Proof">
+          <span class="context-entry-heading">Remark 3.14</span>
+          <span class="context-entry-title">A circularity in HTT</span>
+        </a></li>
+<li><a href="#cor:Eff_Epi_Iff_Pi0_Terminal" data-section-target="cor:Eff_Epi_Iff_Pi0_Terminal">
+          <span class="context-entry-heading">Corollary 3.15</span>
+          <span class="context-entry-title">Effective epimorphic points and zero-truncation</span>
+        </a></li>
+      </ol>
+    </nav>
+  </section></div>
+  </aside>
+  </main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

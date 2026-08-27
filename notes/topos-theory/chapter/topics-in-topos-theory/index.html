@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 6: Topics in topos theory | Higher Topos Theory</title>
+  <meta name="description" content="Sheaf topoi, shape theory, hypercovers, boundedness, coherence, pretopoi, exponentiability, and parametrized objects.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/chapter/topics-in-topos-theory/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: { inlineMath: [["\\(", "\\)"]], displayMath: [["\\[", "\\]"]], macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"} },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="work-page chapter-page has-context-nav">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> · Chapter 6</p>
+      <h1>Topics in topos theory</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page chapter-landing">
+      <section class="chapter-introduction" id="chap:Topics_Topos_Theory" data-source-label="chap:Topics_Topos_Theory" aria-label="Chapter introduction">
+        <p>This chapter develops several further parts of topos theory which build on the common foundations of descent, truncation, and geometric morphisms, but which do not form a single linear theory. They fall into four broad groups: concrete forms of descent, convergence and homotopical invariants, finiteness and completeness, and global constructions in the category of topoi. Many of the sections can therefore be read independently.</p>
+<p>The first group gives concrete models for the abstract descent condition. In <a href="../../section/sheaf-topoi/index.html">Section 6.1</a>, we construct the topos <span class="math-inline">\(\Shv_{\tau}(C)\)</span> associated with a Grothendieck site and prove left exactness of sheafification using the theory of generated congruences. In <a href="../../section/groupoid-actions-and-principal-bundles/index.html">Section 6.2</a>, we study actions and principal bundles for a groupoid object <span class="math-inline">\(\Gg\)</span> and their classification by the object <span class="math-inline">\(\bB\Gg\)</span> obtained as the colimit of <span class="math-inline">\(\Gg\)</span>. Hypercovers, treated in <a href="../../section/hypercovers/index.html">Section 6.3</a>, refine Čech nerves at every simplicial degree. They provide a bridge from descent to completion theory: their effectiveness characterizes hypercomplete topoi.</p>
+<p>The second group concerns convergence and homotopical invariants. In <a href="../../section/localic-topoi-postnikov-completeness-and-boundedness/index.html">Section 6.4</a>, we compare localic, hypercomplete, Postnikov-complete, and bounded topoi. These notions need not agree in general. Dimension provides useful sufficient conditions: a topos which is locally of finite dimension is hypercomplete, while a uniform local dimension bound implies Postnikov-completeness. Finally, <a href="../../section/essential-morphisms-and-shape-theory/index.html">Section 6.6</a> studies a different kind of homotopical information. After passage to pro-categories, the inverse image functor of every geometric morphism admits a further left adjoint; its value on the terminal object defines the relative shape, and in particular the shape of a topos as a pro-anima.</p>
+<p>The third group introduces finiteness conditions. Coherent objects provide a higher-categorical analogue of quasi-compact and quasi-separated objects and satisfy strong compactness properties after truncation. The completeness theorem shows that every locally coherent topos admits a surjection <span class="math-inline">\(\An^I \to T\)</span> for some set <span class="math-inline">\(I\)</span>. In <a href="../../section/pretopoi/index.html">Section 6.8</a>, we relate coherent topoi to pretopoi, their finitary counterparts, by means of sheafification for the effective epimorphism topology. Makkai completeness then reconstructs an appropriate coherent topos from its category of points together with its ultraproduct structure.</p>
+<p>The final group studies constructions involving topoi as objects of <span class="math-inline">\(\Topos\)</span>. A topos is exponentiable precisely when its underlying presentable category is compactly assembled; this is proved in <a href="../../section/compactly-assembled-categories-and-exponentiability/index.html">Section 6.10</a>. In <a href="../../section/topoi-of-parametrized-objects/index.html">Section 6.11</a>, we ask when the category <span class="math-inline">\(\int_T C\)</span> of <span class="math-inline">\(T\)</span>-parametrized objects in a category <span class="math-inline">\(C\)</span> is itself a topos. The answer is expressed by the notion of a <em>locus</em>: an accessible category with pullbacks and van Kampen weakly contractible colimits. The parametrized-object material is not used later and may be skipped on a first reading.</p>
+      </section>
+      
+      <section class="available-sections" aria-labelledby="chapter-sections-heading">
+        <h2 id="chapter-sections-heading">Sections</h2>
+        <div class="section-card-grid">
+          
+      <article class="section-card">
+        <p class="section-card-meta">Section 6.1</p>
+        <h3><a href="../../section/sheaf-topoi/index.html">Sheaf topoi</a></h3>
+        <p>Grothendieck topologies, sheafification, Čech descent, and morphisms of sites.</p>
+      </article>
+
+      <article class="section-card">
+        <p class="section-card-meta">Section 6.2</p>
+        <h3><a href="../../section/groupoid-actions-and-principal-bundles/index.html">Groupoid actions and principal bundles</a></h3>
+        <p>Actions of groupoid objects, regular actions, principal bundles, and their classification.</p>
+      </article>
+
+      <article class="section-card">
+        <p class="section-card-meta">Section 6.3</p>
+        <h3><a href="../../section/hypercovers/index.html">Hypercovers</a></h3>
+        <p>Hypercovers, matching objects, effectiveness, and the characterization of hypercomplete topoi.</p>
+      </article>
+
+      <article class="section-card">
+        <p class="section-card-meta">Section 6.4</p>
+        <h3><a href="../../section/localic-topoi-postnikov-completeness-and-boundedness/index.html">Localic topoi, Postnikov-completeness, and boundedness</a></h3>
+        <p>Localic reflections, Postnikov completion, hypercompletion, and bounded topoi.</p>
+      </article>
+
+      <article class="section-card">
+        <p class="section-card-meta">Section 6.5</p>
+        <h3><a href="../../section/dimension-theory/index.html">Dimension theory</a></h3>
+        <p>Cohomological dimension, locally finite-dimensional topoi, and geometric examples.</p>
+      </article>
+
+      <article class="section-card">
+        <p class="section-card-meta">Section 6.6</p>
+        <h3><a href="../../section/essential-morphisms-and-shape-theory/index.html">Essential morphisms and shape theory</a></h3>
+        <p>Essential morphisms, relative shape, locally constant shape, and preservation properties.</p>
+      </article>
+
+      <article class="section-card">
+        <p class="section-card-meta">Section 6.7</p>
+        <h3><a href="../../section/coherence/index.html">Coherence</a></h3>
+        <p>Coherent objects and topoi, compactness, finitary sites, and completeness.</p>
+      </article>
+
+      <article class="section-card">
+        <p class="section-card-meta">Section 6.8</p>
+        <h3><a href="../../section/pretopoi/index.html">Pretopoi</a></h3>
+        <p>Pretopoi and local pretopoi, coherent objects, and reconstruction of coherent topoi.</p>
+      </article>
+
+      <article class="section-card">
+        <p class="section-card-meta">Section 6.9</p>
+        <h3><a href="../../section/makkai-completeness/index.html">Makkai completeness</a></h3>
+        <p>Ultracategories, categories of points, and reconstruction of coherent topoi from their models.</p>
+      </article>
+
+      <article class="section-card">
+        <p class="section-card-meta">Section 6.10</p>
+        <h3><a href="../../section/compactly-assembled-categories-and-exponentiability/index.html">Compactly assembled categories and exponentiability</a></h3>
+        <p>Compactly assembled categories, classifying topoi, and exponentiable topoi.</p>
+      </article>
+
+      <article class="section-card">
+        <p class="section-card-meta">Section 6.11</p>
+        <h3><a href="../../section/topoi-of-parametrized-objects/index.html">Topoi of parametrized objects</a></h3>
+        <p>Parametrized objects, loci, relative cocompletion, and topoi built from infinity-connected objects.</p>
+      </article>
+        </div>
+      </section>
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Chapter navigation">
+    <nav class="context-step-controls" aria-label="Previous and next chapters">
+      <a class="context-step-control" rel="prev" href="../modalities/index.html" aria-label="Previous chapter: Modalities" title="Previous chapter: Modalities"><span aria-hidden="true">←</span></a>
+      <a class="context-step-control" rel="next" href="../geometry/index.html" aria-label="Next chapter: Geometry" title="Next chapter: Geometry"><span aria-hidden="true">→</span></a>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../topoi-logoi/index.html">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../modalities/index.html">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../topics-in-topos-theory/index.html" aria-current="page">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../geometry/index.html">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="true">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="../../section/sheaf-topoi/index.html">
+          <span class="context-entry-heading">Section 6.1</span>
+          <span class="context-entry-title">Sheaf topoi</span>
+        </a></li>
+<li><a href="../../section/groupoid-actions-and-principal-bundles/index.html">
+          <span class="context-entry-heading">Section 6.2</span>
+          <span class="context-entry-title">Groupoid actions and principal bundles</span>
+        </a></li>
+<li><a href="../../section/hypercovers/index.html">
+          <span class="context-entry-heading">Section 6.3</span>
+          <span class="context-entry-title">Hypercovers</span>
+        </a></li>
+<li><a href="../../section/localic-topoi-postnikov-completeness-and-boundedness/index.html">
+          <span class="context-entry-heading">Section 6.4</span>
+          <span class="context-entry-title">Localic topoi, Postnikov-completeness, and boundedness</span>
+        </a></li>
+<li><a href="../../section/dimension-theory/index.html">
+          <span class="context-entry-heading">Section 6.5</span>
+          <span class="context-entry-title">Dimension theory</span>
+        </a></li>
+<li><a href="../../section/essential-morphisms-and-shape-theory/index.html">
+          <span class="context-entry-heading">Section 6.6</span>
+          <span class="context-entry-title">Essential morphisms and shape theory</span>
+        </a></li>
+<li><a href="../../section/coherence/index.html">
+          <span class="context-entry-heading">Section 6.7</span>
+          <span class="context-entry-title">Coherence</span>
+        </a></li>
+<li><a href="../../section/pretopoi/index.html">
+          <span class="context-entry-heading">Section 6.8</span>
+          <span class="context-entry-title">Pretopoi</span>
+        </a></li>
+<li><a href="../../section/makkai-completeness/index.html">
+          <span class="context-entry-heading">Section 6.9</span>
+          <span class="context-entry-title">Makkai completeness</span>
+        </a></li>
+<li><a href="../../section/compactly-assembled-categories-and-exponentiability/index.html">
+          <span class="context-entry-heading">Section 6.10</span>
+          <span class="context-entry-title">Compactly assembled categories and exponentiability</span>
+        </a></li>
+<li><a href="../../section/topoi-of-parametrized-objects/index.html">
+          <span class="context-entry-heading">Section 6.11</span>
+          <span class="context-entry-title">Topoi of parametrized objects</span>
+        </a></li></ol>
+    </nav>
+  </section></div>
+  </aside>
+  </main>
+  <footer><p class="source-note">This static web edition is generated from the same LaTeX source as the PDFs.</p></footer>
+</body>
+</html>

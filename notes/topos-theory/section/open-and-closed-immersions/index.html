@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Open and closed immersions | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/section/open-and-closed-immersions/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="section-page has-context-nav" data-record-id="open-and-closed-immersions" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">·</span> Section 5.4</p>
+      <h1>Open and closed immersions</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page">
+      
+<h2 id="Open_Closed_Immersions"><span>5.4.</span> Open and closed immersions</h2>
+<p>An open subset of a topological space determines both an open subtopos and a complementary closed subtopos, and the ambient topos can be reconstructed by gluing these two pieces. We now develop the corresponding picture for arbitrary topoi. We first characterize open immersions as slices over <span class="math-inline">\((-1)\)</span>-truncated objects, then construct their closed complements using the theory of congruences, and finally describe the resulting recollement.</p>
+<section class="theorem definition" id="def:Open_Immersion">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/open-immersions/index.html">Definition 5.44.</a></span></p>
+  <div class="theorem-statement"><p>A morphism <span class="math-inline">\(\Uu \to \Xx\)</span> is an <em>open immersion</em> if it is both étale and a monomorphism. A morphism in <span class="math-inline">\(\Logos\)</span> is an <em>open localization</em> if its corresponding morphism in <span class="math-inline">\(\Topos\)</span> is an open immersion.</p></div>
+</section>
+
+<section class="theorem lemma" id="lem:Open_Immersion_Is_Slice_Over_-1_Truncated_Object">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/open-immersions-as-slices/index.html">Lemma 5.45.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(j_*\colon \Xx_{/U} \to \Xx\)</span> be an étale morphism of topoi, <span class="math-inline">\(U \in \Xx\)</span>. Then <span class="math-inline">\(j_*\)</span> is an open immersion if and only if <span class="math-inline">\(U\)</span> is <span class="math-inline">\((-1)\)</span>-truncated.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Open_Immersion_Is_Slice_Over_-1_Truncated_Object-main" data-owner-entry="open-immersions-as-slices" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">We saw in <a href="../../entry/etale-morphisms-over-a-topos/index.html">Proposition 4.38</a> that the base change of <span class="math-inline">\(j_*\)</span> along itself is given by the functor <span class="math-inline">\((\Xx_{/U})_{/U \times U} \to \Xx_{/U}\)</span>. This is an equivalence if and only if the object <span class="math-inline">\((U \times U) \in \Xx_{/U}\)</span> is terminal, i.e. if the projection map <span class="math-inline">\(\pr_1\colon U \times U \to U\)</span> is an isomorphism. This in turn is equivalent to the diagonal <span class="math-inline">\(\Delta\colon U \to U \times U\)</span> being an isomorphism, which by definition means that <span class="math-inline">\(U\)</span> is <span class="math-inline">\((-1)\)</span>-truncated.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>If <span class="math-inline">\(U \hookrightarrow X\)</span> is an open embedding of topological spaces, then by definition its complement <span class="math-inline">\(Z := X \setminus U\)</span> is a closed subspace. Its toposic analogue is as follows:</p>
+<section class="theorem definition" id="def:Closed_Complement_And_Closed_Immersion">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/closed-complements-and-closed-immersions/index.html">Definition 5.46.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(j_*\colon \Uu \hookrightarrow \Xx\)</span> be an open immersion of topoi, and let <span class="math-inline">\(j^*\colon \Xx \to \Uu\)</span> be its left adjoint. We define the <em>closed subtopos complementary to <span class="math-inline">\(\Uu\)</span></em> as</p>
+<div class="math-display">\[\Xx / \Uu \quad := \quad \{\,X \in \Xx \mid j^*(X) = *\,\} \quad \subseteq \quad \Xx.\]</div>
+<p>More generally, we say that a morphism of topoi <span class="math-inline">\(i\colon \Zz \to \Xx\)</span> is a <em>closed immersion</em> if there exists a <span class="math-inline">\((-1)\)</span>-truncated object <span class="math-inline">\(U \in \Xx\)</span> such that <span class="math-inline">\(i_*\colon \Zz \to \Xx\)</span> induces an equivalence <span class="math-inline">\(\Zz \iso \Xx / \Uu\)</span>.</p></div>
+</section>
+
+<section class="theorem lemma" id="lem:Closed_Complement_Is_Topos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/closed-complements-are-topoi/index.html">Lemma 5.47.</a></span></p>
+  <div class="theorem-statement"><p>Given an open immersion <span class="math-inline">\(j\colon \Uu \hookrightarrow \Xx\)</span>, the closed complement <span class="math-inline">\(\Zz := \Xx / \Uu\)</span> is a topos, and the inclusion <span class="math-inline">\(i\colon \Zz \hookrightarrow \Xx\)</span> is a morphism of topoi.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Closed_Complement_Is_Topos-main" data-owner-entry="closed-complements-are-topoi" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">By <a href="#lem:Open_Immersion_Is_Slice_Over_-1_Truncated_Object">Lemma 5.45</a>, we may identify <span class="math-inline">\(\Uu\)</span> with the slice <span class="math-inline">\(\Xx_{/U}\)</span> for some <span class="math-inline">\((-1)\)</span>-truncated object <span class="math-inline">\(U\)</span> of <span class="math-inline">\(\Xx\)</span>. Given <span class="math-inline">\(X \in \Xx\)</span>, we then have <span class="math-inline">\(X \in \Zz\)</span> if and only if the projection map <span class="math-inline">\(X \times U \to U\)</span> is an isomorphism. Equivalently, given an object <span class="math-inline">\(Y \in \Xx\)</span>, every morphism <span class="math-inline">\(Y \to U\)</span> admits a unique lift <span class="math-inline">\(Y \to U \times X\)</span>. We conclude that the subcategory <span class="math-inline">\(\Zz = \Xx / \Uu\)</span> consists precisely of those objects that are local with respect to the following class of morphisms: <div class="math-display">\[S_U := \{\,\emptyset \to V \mid \text{there exists a map } V \to U\,\}.\]</div> Choose a small set of generators <span class="math-inline">\(\mathcal G\)</span> of <span class="math-inline">\(\Xx\)</span>. The objects <span class="math-inline">\(g\colon G\to U\)</span>, with <span class="math-inline">\(G\in\mathcal G\)</span> and <span class="math-inline">\(g\)</span> ranging through all morphisms to <span class="math-inline">\(U\)</span>, form a small set of generators of the slice <span class="math-inline">\(\Xx_{/U}\)</span>. It therefore suffices to impose locality with respect to the corresponding set <div class="math-display">\[S_U^0:=\{\,\emptyset\to G\mid G\in\mathcal G, g\colon G\to U\,\},\]</div> Indeed, every object of <span class="math-inline">\(\Xx_{/U}\)</span> is a colimit of these generators, and mapping out of this colimit identifies locality with respect to <span class="math-inline">\(S_U^0\)</span> with locality with respect to the entire class <span class="math-inline">\(S_U\)</span>. Consequently, <a href="../../entry/strongly-saturated-class-gives-localization/index.html">Proposition A.15</a> gives a left adjoint <span class="math-inline">\(\Xx\to\Zz\)</span> to the inclusion.<div class="proof-paragraph-break" aria-hidden="true"></div>It remains to show that this left adjoint preserves finite limits, or equivalently that the strong saturation of <span class="math-inline">\(S_U^0\)</span>, which agrees with the strong saturation of <span class="math-inline">\(S_U\)</span>, is a congruence. The class <span class="math-inline">\(S_U\)</span> is closed under base change, so <span class="math-inline">\((S_U)^s=(S_U)^m\)</span> by <a href="../../entry/generated-modalities-as-saturations-of-base-changes/index.html">Proposition 5.32</a>. Moreover, its morphisms are monomorphisms, whence <span class="math-inline">\((S_U)^m=(S_U)^c\)</span> by <a href="../../entry/modalities-generated-by-monomorphisms-are-congruences/index.html">Corollary 5.43</a>. We deduce that the localization <span class="math-inline">\(\Xx\to\Zz\)</span> is left exact, exhibiting <span class="math-inline">\(\Zz\)</span> as a topos and its inclusion into <span class="math-inline">\(\Xx\)</span> as a morphism of topoi.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>If <span class="math-inline">\(j\colon \Uu \hookrightarrow \Xx\)</span> is an open immersion with closed complement <span class="math-inline">\(i\colon \Zz \hookrightarrow \Xx\)</span>, we may recover the topos <span class="math-inline">\(\Xx\)</span> from the topoi <span class="math-inline">\(\Uu\)</span> and <span class="math-inline">\(\Zz\)</span> together with the composite <span class="math-inline">\(i^*j_*\colon \Uu \to \Zz\)</span>.</p>
+<section class="theorem construction" id="con:Recollement_From_Left_Exact_Functor">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/recollement-from-a-left-exact-functor/index.html">Construction 5.48.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\Uu\)</span> and <span class="math-inline">\(\Zz\)</span> be categories with finite limits, and let <span class="math-inline">\(F\colon \Uu \to \Zz\)</span> preserve terminal objects. We define the category <span class="math-inline">\(\Xx\)</span> as the comma category of <span class="math-inline">\(F\)</span>:</p>
+<div class="math-display">\[\Xx \quad := \quad \Uu \times_{\Zz,\,F} \Ar(\Zz),\]</div>
+<p>where the functor <span class="math-inline">\(\Ar(\Zz)\to\Zz\)</span> is evaluation at the target. In other words, the objects of <span class="math-inline">\(\Xx\)</span> are triples <span class="math-inline">\((U,Z,\varphi)\)</span> where <span class="math-inline">\(U \in \Uu\)</span>, <span class="math-inline">\(Z \in \Zz\)</span> and <span class="math-inline">\(\varphi\colon Z \to F(U)\)</span>.</p>
+<p>Note that the two forgetful functors <span class="math-inline">\(j^*\colon \Xx \to \Uu\)</span> and <span class="math-inline">\(i^*\colon \Xx \to \Zz\)</span> admit canonical right adjoints</p>
+<div class="math-display">\[j_*\colon \Uu \hookrightarrow \Xx, U \mapsto (U,F(U),\id_{F(U)}), \qquadtext{ and } i_*\colon \Zz \hookrightarrow \Xx, Z \mapsto (*,Z,Z\to F(*)\iso *).\]</div></div>
+</section>
+
+<section class="theorem lemma" id="lem:Recollement_Of_Topoi">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/recollement-of-topoi/index.html">Lemma 5.49.</a></span></p>
+  <div class="theorem-statement"><p>Consider topoi <span class="math-inline">\(\Uu\)</span> and <span class="math-inline">\(\Zz\)</span> and an accessible left exact functor <span class="math-inline">\(F\colon \Uu \to \Zz\)</span>.</p>
+<ol><li><p>The associated recollement <span class="math-inline">\(\Xx\)</span> is a topos,</p></li><li><p>The functor <span class="math-inline">\(j_*\colon \Uu \to \Xx\)</span> is an open immersion of topoi,</p></li><li><p>The functor <span class="math-inline">\(i_*\colon \Zz \to \Xx\)</span> is a closed immersion of topoi.</p></li></ol></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Recollement_Of_Topoi-main" data-owner-entry="recollement-of-topoi" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">The comma category <span class="math-inline">\(\Xx\)</span> is accessible, and the results of <a href="../../entry/pointwise-limits-and-colimits-in-sections/index.html">Proposition B.1</a> show that it admits all small colimits and finite limits. Hence <span class="math-inline">\(\Xx\)</span> is presentable. Moreover, the forgetful functor <div class="math-display">\[(j^*,i^*)\colon \Xx\longrightarrow \Uu\times\Zz\]</div> is cocontinuous, left exact, and conservative. The Giraud conditions for <span class="math-inline">\(\Xx\)</span> may therefore be checked after applying this functor, where they follow from the corresponding conditions in <span class="math-inline">\(\Uu\)</span> and <span class="math-inline">\(\Zz\)</span>. Thus <span class="math-inline">\(\Xx\)</span> is a topos.<div class="proof-paragraph-break" aria-hidden="true"></div>Let <div class="math-display">\[V:=(*,\emptyset,\emptyset\to F(*))\in\Xx.\]</div> This object is <span class="math-inline">\((-1)\)</span>-truncated. Base change along <span class="math-inline">\(V\to *\)</span> identifies <span class="math-inline">\(\Xx_{/V}\)</span> with <span class="math-inline">\(\Uu\)</span>: a morphism <span class="math-inline">\((U,Z,\varphi)\to V\)</span> forces <span class="math-inline">\(Z\iso\emptyset\)</span>, and is then determined by <span class="math-inline">\(U\)</span>. Under this equivalence, the inverse-image functor of the étale morphism <span class="math-inline">\(\Xx_{/V}\to\Xx\)</span> identifies with <span class="math-inline">\(j^*\)</span>, and its right adjoint identifies with <span class="math-inline">\(j_*\)</span>. Thus <span class="math-inline">\(j_*\)</span> is an open immersion by <a href="#lem:Open_Immersion_Is_Slice_Over_-1_Truncated_Object">Lemma 5.45</a>.<div class="proof-paragraph-break" aria-hidden="true"></div>Finally, an object <span class="math-inline">\((U,Z,\varphi)\)</span> belongs to the closed complement of this open immersion precisely when <div class="math-display">\[j^*(U,Z,\varphi)=U\iso *.\]</div> Since <span class="math-inline">\(F(*)\iso *\)</span>, such an object is uniquely of the form <span class="math-inline">\((*,Z,Z\to *)=i_*(Z)\)</span>. Hence <span class="math-inline">\(i_*\)</span> identifies <span class="math-inline">\(\Zz\)</span> with the closed complement of <span class="math-inline">\(\Uu\)</span>, and is therefore a closed immersion.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+      <a class="context-step-control" rel="prev" href="../congruences-modalities-and-saturated-classes/index.html" aria-label="Previous section: Congruences, modalities, and saturated classes" title="Previous section: Congruences, modalities, and saturated classes"><span aria-hidden="true">←</span></a>
+      <a class="context-step-control" rel="next" href="../structure-theory-for-topoi/index.html" aria-label="Next section: Structure theory for topoi" title="Next section: Structure theory for topoi"><span aria-hidden="true">→</span></a>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../chapter/introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../../chapter/foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../../chapter/truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../../chapter/topoi-logoi/index.html">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../../chapter/modalities/index.html" aria-current="location">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../../chapter/topics-in-topos-theory/index.html">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../../chapter/geometry/index.html">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../../chapter/factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../../chapter/limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../epimorphisms-and-acyclic-maps/index.html">
+          <span class="context-entry-heading">Section 5.1</span>
+          <span class="context-entry-title">Epimorphisms and acyclic maps</span>
+        </a></li>
+<li><a href="../blakers-massey/index.html">
+          <span class="context-entry-heading">Section 5.2</span>
+          <span class="context-entry-title">The Blakers–Massey theorem</span>
+        </a></li>
+<li><a href="../congruences-modalities-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Section 5.3</span>
+          <span class="context-entry-title">Congruences, modalities, and saturated classes</span>
+        </a></li>
+<li><a href="../open-and-closed-immersions/index.html" aria-current="page">
+          <span class="context-entry-heading">Section 5.4</span>
+          <span class="context-entry-title">Open and closed immersions</span>
+        </a></li>
+<li><a href="../structure-theory-for-topoi/index.html">
+          <span class="context-entry-heading">Section 5.5</span>
+          <span class="context-entry-title">Structure theory for topoi</span>
+        </a></li>
+<li><a href="../products-of-modalities/index.html">
+          <span class="context-entry-heading">Section 5.6</span>
+          <span class="context-entry-title">Products of modalities</span>
+        </a></li>
+<li><a href="../goodwillie-tower/index.html">
+          <span class="context-entry-heading">Section 5.7</span>
+          <span class="context-entry-title">The Goodwillie tower of a topos</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <p class="context-nav-kicker">Section 5.4</p>
+      <p class="context-nav-description">Open and closed immersions</p>
+      <ol class="context-entry-list">
+        <li><a href="#def:Open_Immersion" data-section-target="def:Open_Immersion">
+          <span class="context-entry-heading">Definition 5.44</span>
+          <span class="context-entry-title">Open immersions</span>
+        </a></li>
+<li><a href="#lem:Open_Immersion_Is_Slice_Over_-1_Truncated_Object" data-section-target="lem:Open_Immersion_Is_Slice_Over_-1_Truncated_Object">
+          <span class="context-entry-heading">Lemma 5.45</span>
+          <span class="context-entry-title">Open immersions as slices</span>
+        </a></li>
+<li><a href="#def:Closed_Complement_And_Closed_Immersion" data-section-target="def:Closed_Complement_And_Closed_Immersion">
+          <span class="context-entry-heading">Definition 5.46</span>
+          <span class="context-entry-title">Closed complements and closed immersions</span>
+        </a></li>
+<li><a href="#lem:Closed_Complement_Is_Topos" data-section-target="lem:Closed_Complement_Is_Topos">
+          <span class="context-entry-heading">Lemma 5.47</span>
+          <span class="context-entry-title">Closed complements are topoi</span>
+        </a></li>
+<li><a href="#con:Recollement_From_Left_Exact_Functor" data-section-target="con:Recollement_From_Left_Exact_Functor">
+          <span class="context-entry-heading">Construction 5.48</span>
+          <span class="context-entry-title">Recollement from a left exact functor</span>
+        </a></li>
+<li><a href="#lem:Recollement_Of_Topoi" data-section-target="lem:Recollement_Of_Topoi">
+          <span class="context-entry-heading">Lemma 5.49</span>
+          <span class="context-entry-title">Recollement of topoi</span>
+        </a></li>
+      </ol>
+    </nav>
+  </section></div>
+  </aside>
+  </main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Free anima cocompletion has colimits | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/entry/free-anima-cocompletion-has-colimits/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="entry-page has-context-nav" data-record-id="free-anima-cocompletion-has-colimits" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">›</span> <a href="../../section/topoi-of-parametrized-objects/index.html">Section 6.11: Topoi of parametrized objects</a></p>
+      <h1>Free anima cocompletion has colimits</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Nearby entries
+    </button>
+    <article class="notes-page">
+      
+<section class="theorem proposition" id="prop:Free_Anima_Cocompletion_Has_Colimits">
+  <p class="theorem-heading"><span>Proposition 6.162.</span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(C\)</span> be a category admitting small weakly contractible colimits.</p>
+<ol><li><p>The inclusion <span class="math-inline">\(C \hookrightarrow \int_{\An}C\)</span> preserves weakly contractible colimits.</p></li><li><p>The inclusion <span class="math-inline">\(C \hookrightarrow \int_{\An} C\)</span> uniquely extends to a left adjoint <span class="math-inline">\(L\colon \PSh^{\mathrm{small}}(C) \to \int_{\An} C\)</span>.</p></li><li><p>The right adjoint <span class="math-inline">\(R\colon \int_{\An} C \hookrightarrow \PSh^{\mathrm{small}}(C)\)</span> is fully faithful, exhibiting <span class="math-inline">\(\int_{\An}C\)</span> as a Bousfield localization of <span class="math-inline">\(\PSh^{\mathrm{small}}(C)\)</span>. In particular, <span class="math-inline">\(\int_{\An} C\)</span> admits small colimits.</p></li><li><p>For a category <span class="math-inline">\(D\)</span> with small colimits, a colimit-preserving functor <span class="math-inline">\(F\colon \PSh^{\mathrm{small}}(C) \to D\)</span> inverts <span class="math-inline">\(L\)</span>-local maps if and only if its restriction <span class="math-inline">\(C \to D\)</span> preserves weakly contractible colimits.</p></li></ol></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Free_Anima_Cocompletion_Has_Colimits-main" data-owner-entry="free-anima-cocompletion-has-colimits" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">(1) Consider a functor <span class="math-inline">\(X_{\bullet}\colon I \to C\)</span>, where <span class="math-inline">\(I\)</span> is weakly contractible, and set <span class="math-inline">\(X := \colim_{i \in I} X_i\)</span>. We have to show that the colimit of this diagram in <span class="math-inline">\(\int_{\An}C\)</span> is <span class="math-inline">\((*, x)\)</span>. This amounts to the claim that for every object <span class="math-inline">\((B,Y) \in \int_{\An} C\)</span>, the canonical map <div class="math-display">\[\Hom_{\int_{\An}C}((*,X), (B,Y)) \to \lim_{i \in I\catop} \Hom_{\int_{\An}C}((*,X_i),(B,Y))\]</div> is an isomorphism. Since this map lives over <span class="math-inline">\(\Hom_{\An}(*,B) = B\)</span>, it suffices to show that the induced map on fibers over each <span class="math-inline">\(b \in B\)</span> is an isomorphism. But this map on fibers is the map <span class="math-inline">\(\Hom_C(X,Y_b) \to \lim_{i \in I\catop} \Hom_C(X_i, Y_b)\)</span>, which is an isomorphism by construction of <span class="math-inline">\(X\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>(2) We will show that the left Kan extension of the inclusion <span class="math-inline">\(C \hookrightarrow \int_{\An} C\)</span> along the Yoneda embedding <span class="math-inline">\(C \hookrightarrow \PSh^{\mathrm{small}}(C)\)</span> exists. Given a small presheaf <span class="math-inline">\(\Ff\)</span>, the pointwise formula for left Kan extensions tells us that it suffices to show that in <span class="math-inline">\(\int_{\An}C\)</span> we may form the colimit of the functor <div class="math-display">\[\El(\Ff) = C_{/\Ff} \xrightarrow{\fgt} C \hookrightarrow \int_{\An} C.\]</div> By assumption on <span class="math-inline">\(\Ff\)</span>, the category <span class="math-inline">\(\El(\Ff)\)</span> comes with a final functor <span class="math-inline">\(I \to \El(\Ff)\)</span> from some small category <span class="math-inline">\(I\)</span>. It will thus suffice to show that for any small category <span class="math-inline">\(I\)</span> and any functor <span class="math-inline">\(X\colon I \to C\)</span> the colimit of <span class="math-inline">\(I \to \int_{\An}C\)</span> exists. We do this in two steps: <ul class="proof-list"><li>Consider the map <span class="math-inline">\(p\colon I \to \abs{I}\)</span> to the geometric realization of <span class="math-inline">\(I\)</span>. We will show that the Kan extension of <span class="math-inline">\(X\)</span> along <span class="math-inline">\(p\)</span> exists in <span class="math-inline">\(\int_{\An}C\)</span>. Since <span class="math-inline">\(p\)</span> is a cofinal functor, its relative slices are weakly contractible by Quillen's Theorem A. By part (1), this means that the Kan extension of <span class="math-inline">\(X\)</span> along <span class="math-inline">\(p\)</span> exists in <span class="math-inline">\(C\)</span>, and that it is preserved by the inclusion <span class="math-inline">\(C \hookrightarrow \int_{\An}C\)</span>.</li><li>The colimit <span class="math-inline">\(\colim_i X_i\)</span> in <span class="math-inline">\(\int_{\An}C\)</span> is now computed as the colimit of the left Kan extension <span class="math-inline">\(p_!X\colon \abs{I} \to \int_{\An}C\)</span>, which exists since <span class="math-inline">\(\abs{I}\)</span> is an anima and we established the existence of anima-indexed colimits in <a href="../colimits-in-parametrized-objects/index.html#lem:Colimits_In_Parametrized_Objects">Lemma 6.158</a>.</li></ul> By general nonsense, it follows that the left Kan extension <span class="math-inline">\(L\colon \PSh^{\mathrm{small}}(C) \to \int_{\An}C\)</span> preserves all colimits. A right adjoint <span class="math-inline">\(R\)</span> to <span class="math-inline">\(L\)</span> is given explicitly as follows: <div class="math-display">\[R\colon \int_{\An} C \to \PSh^{\mathrm{small}}(C), \qquad R((A,X))(Y) := \Hom_{\int_{\An}C}((*,Y), (A,X)).\]</div> The functor <span class="math-inline">\(\pi\colon \int_{\An} C \to \An\)</span> induces a map <span class="math-inline">\(\Hom_{\int_{\An}C}((*,Y), (A,X)) \to \Hom_{\An}(*,A) \cong A\)</span>, whose fiber over <span class="math-inline">\(a \in A\)</span> is <span class="math-inline">\(\Hom_C(Y,X_a)\)</span>, so we obtain isomorphisms <div class="math-display">\[R((A,X))(Y) \; \cong \; \colim_{a \in A} \Hom_C(Y,X_a) \; \cong \; \colim_{a \in A} y(X_a)(Y).\]</div> In particular, we see that <span class="math-inline">\(R((A,X)) \simeq \colim_{a \in A} y(X_a)\)</span> is a small colimit of representables, so that it is indeed contained in <span class="math-inline">\(\PSh^{\mathrm{small}}(C)\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>(3) To show that <span class="math-inline">\(R\)</span> is fully faithful, we must show that for every object <span class="math-inline">\((A,X) \in \int_{\An}C\)</span>, the counit <span class="math-inline">\(LR(A,X) \to (A,X)\)</span> is an isomorphism. But this is clear from the computation <span class="math-inline">\(R(A,X) \cong \colim_{a \in A} y(X_a)\)</span> from before, and the fact that <span class="math-inline">\((A,X) \cong \colim_{a \in A} (*,X_a)\)</span> by the explicit description of anima indexed colimits from <a href="../colimits-in-parametrized-objects/index.html#lem:Colimits_In_Parametrized_Objects">Lemma 6.158</a>.<div class="proof-paragraph-break" aria-hidden="true"></div>(4) If <span class="math-inline">\(F\)</span> inverts all <span class="math-inline">\(L\)</span>-local maps, then <span class="math-inline">\(F\)</span> in particular inverts the canonical map <span class="math-inline">\(\colim_{i \in I} y(X_i) \to y(\colim_{i \in I} X_i)\)</span> for every weakly contractible diagram <span class="math-inline">\(X\colon I \to C\)</span>, so that <span class="math-inline">\(F(y(\colim_i X_i)) \simeq \colim_i F(y(X_i))\)</span>. Conversely, assume <span class="math-inline">\(F \circ y\colon C \to D\)</span> preserves weakly contractible colimits. It will suffice to show that <span class="math-inline">\(F\)</span> inverts the unit map <span class="math-inline">\(\Ff \to RL(\Ff)\)</span> for all <span class="math-inline">\(\Ff \in \PSh^{\mathrm{small}}(C)\)</span>. Choose a final map <span class="math-inline">\(I \to \El(\Ff)\)</span> from a small category. Writing <span class="math-inline">\(\Ff\)</span> as the associated colimit of representables and left Kan extending along <span class="math-inline">\(p\colon I \to \abs{I}\)</span> expresses <span class="math-inline">\(\Ff\)</span> as an <span class="math-inline">\(\abs{I}\)</span>-indexed colimit of objects <span class="math-inline">\(\colim_{i \in I_x}y(X_i)\)</span>, where <span class="math-inline">\(I_x=\fib_x(I\to\abs I)\)</span> is weakly contractible. The same construction in <span class="math-inline">\(C\)</span> expresses <span class="math-inline">\(RL(\Ff)\)</span> as the corresponding <span class="math-inline">\(\abs I\)</span>-indexed colimit of <span class="math-inline">\(y(\colim_{i\in I_x}X_i)\)</span>. Thus the unit <span class="math-inline">\(\Ff\to RL(\Ff)\)</span> is an <span class="math-inline">\(\abs I\)</span>-indexed colimit of the canonical maps which <span class="math-inline">\(F\)</span> inverts by assumption. Since <span class="math-inline">\(F\)</span> preserves colimits, it inverts the unit.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+    </article>
+      <aside class="context-nav" id="context-navigation" data-context-nav aria-label="Nearby entries">
+      <button class="context-nav-collapse" type="button" data-context-nav-collapse data-collapsed-label="Nearby entries" aria-controls="context-navigation" aria-expanded="true" aria-label="Hide Nearby entries">
+      <span aria-hidden="true">›</span>
+    </button>
+      <p class="context-chapter-link"><a href="../../chapter/topics-in-topos-theory/index.html">Topics in topos theory</a></p>
+      <p class="context-nav-kicker">Section 6.11</p>
+      <h2><a href="../../section/topoi-of-parametrized-objects/index.html">Topoi of parametrized objects</a></h2>
+      <p class="context-nav-description"><a href="../../section/topoi-of-parametrized-objects/index.html#prop:Free_Anima_Cocompletion_Has_Colimits">Read this result in the continuous section</a></p>
+      <ol class="context-entry-list context-entry-list-nearby">
+        <li><a href="../parametrized-objects-adjunction/index.html">
+          <span class="context-entry-heading">Lemma 6.160</span>
+          <span class="context-entry-title">Parametrized objects adjunction</span>
+        </a></li>
+<li><a href="../free-anima-cocompletion/index.html">
+          <span class="context-entry-heading">Proposition 6.161</span>
+          <span class="context-entry-title">Free anima cocompletion</span>
+        </a></li>
+<li><a href="#prop:Free_Anima_Cocompletion_Has_Colimits" aria-current="page">
+          <span class="context-entry-heading">Proposition 6.162</span>
+          <span class="context-entry-title">Free anima cocompletion has colimits</span>
+        </a></li>
+<li><a href="../colimit-preserving-iff-anima-colimits-and-weakly-contractible-colimits/index.html">
+          <span class="context-entry-heading">Lemma 6.163</span>
+          <span class="context-entry-title">Colimit preserving if and only if anima colimits and weakly contractible colimits</span>
+        </a></li>
+<li><a href="../parametrized-objects-universal-property-2/index.html">
+          <span class="context-entry-heading">Proposition 6.164</span>
+          <span class="context-entry-title">Universal property of parametrized objects</span>
+        </a></li>
+      </ol>
+      <nav class="context-step-links" aria-label="Previous and next entries"><a rel="prev" href="../free-anima-cocompletion/index.html"><span>Previous</span>Free anima cocompletion</a>
+<a rel="next" href="../colimit-preserving-iff-anima-colimits-and-weakly-contractible-colimits/index.html"><span>Next</span>Colimit preserving if and only if anima colimits and weakly contractible colimits</a></nav>
+    </aside>
+  </main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>

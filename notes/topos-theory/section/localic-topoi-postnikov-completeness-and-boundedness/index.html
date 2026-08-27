@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Localic topoi, Postnikov-completeness, and boundedness | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/section/localic-topoi-postnikov-completeness-and-boundedness/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","all":"\\operatorname{all}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/script.js"></script>
+<style>
+    .publication-fragment-notice { margin: 2rem 0; padding: 1rem; border: 1px solid #b6aa91; background: #faf7ef; }
+    .publication-fragment-notice:not(:target) { display: none; }
+  </style>
+  <script>
+    (() => {
+      const targets = {"claim:Postnikov_Completion_Left_Adjoint_To_Bounded_Reflection":"./#prop:Postnikov_And_Bounded_Reflections"};
+      const fragment = decodeURIComponent(location.hash.slice(1));
+      if (targets[fragment]) location.replace(targets[fragment]);
+    })();
+  </script>
+</head>
+<body class="section-page has-context-nav" data-record-id="localic-topoi-postnikov-completeness-and-boundedness" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item" data-utility-item>
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+        <span class="sr-only">Reader settings</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> <span aria-hidden="true">·</span> Section 6.4</p>
+      <h1>Localic topoi, Postnikov-completeness, and boundedness</h1>
+    </div>
+  </header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page">
+      
+<h2 id="sec:Postnikov_Completeness_And_Boundedness"><span>6.4.</span> Localic topoi, Postnikov-completeness, and boundedness</h2>
+<p>Given an anima <span class="math-inline">\(X\)</span>, we may form the truncations <span class="math-inline">\(\tau_n X \in \An_{\leq n}\)</span> for every <span class="math-inline">\(n \geq 0\)</span>. These truncations fit into the <em>Postnikov tower</em></p>
+<div class="math-display">\[X \to \dots \to \tau_{n+1}X \to \tau_nX \to \dots \to \tau_0 X.\]</div>
+<p>Moreover, every anima is canonically the limit of its Postnikov tower; in fact, the functor <span class="math-inline">\(\An \to \lim_{n} \An_{\leq n}\)</span> sending <span class="math-inline">\(X\)</span> to the system <span class="math-inline">\((\tau_n X)_n\)</span> is an equivalence of categories.</p>
+<p>The goal of this section is to study a closely related phenomenon in the world of topoi. Recall that every anima <span class="math-inline">\(X\)</span> gives rise to the slice topos <span class="math-inline">\(\An_{/X}\)</span>. We saw in <a href="../../entry/etale-morphisms-over-a-topos/index.html">Proposition 4.38</a> that the assignment <span class="math-inline">\(X \mapsto \An_{/X}\)</span> defines a fully faithful functor</p>
+<div class="math-display">\[\An \hookrightarrow \Topos.\]</div>
+<p>As we will see in this section, there are subcategories <span class="math-inline">\(\Topos_n \subseteq \Topos\)</span> of `<span class="math-inline">\(n\)</span>-localic topoi' for all <span class="math-inline">\(n\)</span>, and left adjoints <span class="math-inline">\(L_n\colon \Topos \to \Topos_n\)</span>. In the toposic situation, the comparison functor <span class="math-inline">\(\Topos \to \lim_n \Topos_n\)</span> will no longer be an equivalence. Instead, it admits fully faithful left and right adjoints:</p>
+<ul><li><p>The image of the fully faithful left adjoint <span class="math-inline">\(\lim_n \Topos_n \hookrightarrow \Topos\)</span> is given by the <em>Postnikov-complete</em> topoi.</p></li><li><p>The image of the fully faithful right adjoint <span class="math-inline">\(\lim_n \Topos_n \hookrightarrow \Topos\)</span> is given by the <em>bounded</em> topoi.</p></li></ul>
+<p>We now properly define these notions. A great reference for this material is <span class="citation-group">[Barwick et al. <a class="citation" href="#bib-Barwick_Glasman_Haine_Exodromy">2018, Section 3.2</a>]</span>.</p>
+<h3 id="subsec:Localic_Topoi"><span>6.4.1.</span> Localic topoi</h3>
+<p>The <span class="math-inline">\(n\)</span>-localic reflection of a topos retains precisely its <span class="math-inline">\((n-1)\)</span>-truncated objects. Thus localic reflection plays, for topoi, the role played by truncation for animae. We first characterize the topoi which are already determined by this truncated information.</p>
+<section class="theorem definition" id="def:Localic_Topoi">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/localic-topoi/index.html">Definition 6.52.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(n \geq -1\)</span>. A topos <span class="math-inline">\(T\)</span> is called <em><span class="math-inline">\(n\)</span>-localic</em> if for every topos <span class="math-inline">\(S\)</span> the induced functor</p>
+<div class="math-display">\[\Geom(S,T) \longrightarrow \Geom(S_{\leq n-1}, T_{\leq n-1}) := \Fun^{\lex, \colim}(T_{\leq n-1}, S_{\leq n-1})\]</div>
+<p>is an equivalence.</p></div>
+</section>
+
+<section class="theorem notation" id="not:Categories_Of_Localic_Topoi">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/categories-of-localic-topoi/index.html">Notation 6.53.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(\Topos_n \subseteq \Topos\)</span> denote the full subcategory spanned by the <span class="math-inline">\(n\)</span>-localic topoi.</p></div>
+</section>
+
+<section class="theorem proposition" id="prop:Localic_Reflection">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/localic-reflection/index.html">Proposition 6.54.</a></span></p>
+  <div class="theorem-statement"><ol><li><p>For any topos <span class="math-inline">\(T\)</span>, there exists an <span class="math-inline">\((n,1)\)</span>-category <span class="math-inline">\(C\)</span> with finite limits and a Grothendieck topology on <span class="math-inline">\(C\)</span> such that <span class="math-inline">\(T_{\leq n-1} \simeq \Shv_{\tau}(C)_{\leq n-1}\)</span>.</p></li><li><p>The inclusion <span class="math-inline">\(\Topos_n \hookrightarrow \Topos\)</span> admits a left adjoint <span class="math-inline">\(L_n\colon \Topos \to \Topos_n\)</span> such that <span class="math-inline">\(L_nT = \Shv_{\tau}(C)\)</span> for all <span class="math-inline">\((C,\tau)\)</span> as in (1).</p></li></ol></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Localic_Reflection-main" data-owner-entry="localic-reflection" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">The category <span class="math-inline">\(T_{\leq n-1}\)</span> is an <span class="math-inline">\(n\)</span>-topos. The presentation theorem for <span class="math-inline">\(n\)</span>-topoi provides a small <span class="math-inline">\((n,1)\)</span>-category <span class="math-inline">\(C\)</span> with finite limits and a Grothendieck topology <span class="math-inline">\(\tau\)</span> for which <div class="math-display">\[T_{\leq n-1}\iso\Shv_{\tau}(C)_{\leq n-1}.\]</div> One may obtain such a site by choosing a sufficiently large regular cardinal <span class="math-inline">\(\kappa\)</span>, taking a small finite-limit-closed subcategory of <span class="math-inline">\(\kappa\)</span>-compact objects which generates <span class="math-inline">\(T_{\leq n-1}\)</span> as an <span class="math-inline">\(n\)</span>-topos, and equipping it with the effective epimorphism topology. This proves (1); see <span class="citation-group">[Lurie <a class="citation" href="#bib-lurie2009HTT">2009, Theorem 6.4.1.5 and Proposition 6.4.5.9</a>]</span> for the presentation theorem and its localic refinement.<div class="proof-paragraph-break" aria-hidden="true"></div>Set <span class="math-inline">\(L_nT:=\Shv_{\tau}(C)\)</span>. By <span class="citation-group">[Lurie <a class="citation" href="#bib-lurie2009HTT">2009, Proposition 6.4.5.9</a>]</span>, this topos is <span class="math-inline">\(n\)</span>-localic. Its <span class="math-inline">\((n-1)\)</span>-truncated objects are identified with those of <span class="math-inline">\(T\)</span>, independently of the chosen presentation. If <span class="math-inline">\(S\)</span> is any <span class="math-inline">\(n\)</span>-localic topos, then the defining property of <span class="math-inline">\(n\)</span>-localic topoi gives natural equivalences \begin{align*} \Geom(L_nT,S) &amp;\iso \Fun^{\lex,\colim}(S_{\leq n-1},(L_nT)_{\leq n-1}) \\ &amp;\iso \Fun^{\lex,\colim}(S_{\leq n-1},T_{\leq n-1}) \\ &amp;\iso \Geom(T,S). \end{align*} Thus <span class="math-inline">\(L_n\)</span> is left adjoint to the inclusion <span class="math-inline">\(\Topos_n\hookrightarrow\Topos\)</span>, proving (2).<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem example" id="ex:Localic_Reflection_Of_Anima_Slice">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/localic-reflection-of-anima-slice/index.html">Example 6.55.</a></span></p>
+  <div class="theorem-statement"><p>For <span class="math-inline">\(T = \An_{/X}\)</span> we have <span class="math-inline">\(L_n(\An_{/X}) = \An_{/\tau_nX}\)</span>, providing a commutative diagram as follows:</p>
+<figure class="diagram"><img src="diagrams/tikzcd-354b2adc848d.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>So this is the sense in which <span class="math-inline">\(L_n\)</span> “generalizes” the truncation functor <span class="math-inline">\(\tau_n\colon \An \to \An_{\leq n}\)</span>.</p></div>
+</section>
+
+<section class="theorem warning" id="warn:Finite_Limits_Needed_For_Localic_Presheaf_Topos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/finite-limits-needed-for-localic-presheaf-topos/index.html">Warning 6.56.</a></span></p>
+  <div class="theorem-statement"><p>The finite-limit hypothesis in the site presentation is essential. If <span class="math-inline">\((C,\tau)\)</span> is an <span class="math-inline">\((n,1)\)</span>-site whose underlying category does not have finite limits, then <span class="math-inline">\(\Shv_{\tau}(C)\)</span> need not be <span class="math-inline">\(N\)</span>-localic for any <span class="math-inline">\(N\)</span>. For example, <span class="citation-group">[Lurie <a class="citation" href="#bib-SAG">2018, Counterexample 20.4.0.1</a>]</span> constructs a basis <span class="math-inline">\(C\)</span> for the topology of the Hilbert cube</p>
+<div class="math-display">\[Q:=\prod_{k\in\N}[0,1]\]</div>
+<p>such that the topos of sheaves on <span class="math-inline">\(C\)</span> for the induced topology is not <span class="math-inline">\(N\)</span>-localic for any <span class="math-inline">\(N\)</span>. Its hypercompletion nevertheless agrees with the hypercompletion of the <span class="math-inline">\(0\)</span>-localic topos <span class="math-inline">\(\Shv(Q)\)</span>.</p></div>
+</section>
+<p>Despite the previous warning, the presheaf category of an <span class="math-inline">\((n,1)\)</span>-category is still <span class="math-inline">\(n\)</span>-localic <em>after hypercompletion</em>. The proof requires the following auxiliary result:</p>
+<section class="theorem lemma" id="lem:Dense_Subcategory_Characterization">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/dense-subcategory-characterization/index.html">Lemma 6.57.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a topos and let <span class="math-inline">\(u\colon C \to T\)</span> be a functor from a small category. Consider the following four statements:</p>
+<ol><li><p>The restriction functor</p>
+<div class="math-display">\[u^*\colon T \to \PSh(C), \qquad X \mapsto \Hom_T(u(-),X)\]</div>
+<p>is fully faithful.</p></li><li><p><span class="math-inline">\(T\)</span> is generated under colimits by the image of <span class="math-inline">\(u\)</span>.</p></li><li><p>Every <span class="math-inline">\(X \in T\)</span> is covered by the image of <span class="math-inline">\(u\)</span>, i.e. there exist objects <span class="math-inline">\(c_i \in C\)</span> and an effective epimorphism <span class="math-inline">\(\bigsqcup_i u(c_i) \twoheadrightarrow X\)</span>.</p></li><li><p>The counit <span class="math-inline">\(u_!u^*(X) \to X\)</span> is <span class="math-inline">\(\infty\)</span>-connected for every <span class="math-inline">\(X \in T\)</span>.</p></li></ol>
+<p>Then we have implications (1) <span class="math-inline">\(\Rightarrow\)</span> (2) <span class="math-inline">\(\Rightarrow\)</span> (3) <span class="math-inline">\(\Rightarrow\)</span> (4). Moreover, if <span class="math-inline">\(T\)</span> is hypercomplete then all four statements are equivalent.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Dense_Subcategory_Characterization-main" data-owner-entry="dense-subcategory-characterization" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">To see that (1) implies (2), let <span class="math-inline">\(u_!\colon \PSh(C) \to T\)</span> be the left Kan extension of <span class="math-inline">\(u\)</span>. Since <span class="math-inline">\(u^*\)</span> is fully faithful, the counit <span class="math-inline">\(u_!u^* \to \id_T\)</span> is an equivalence. As every presheaf is a colimit of representables and <span class="math-inline">\(u_!(y(c)) = u(c)\)</span>, we conclude that every object of <span class="math-inline">\(T\)</span> is a colimit of objects in the image of <span class="math-inline">\(u\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>For (2) <span class="math-inline">\(\Rightarrow\)</span> (3), observe that the collection of objects receiving such an effective epimorphism is closed under colimits.<div class="proof-paragraph-break" aria-hidden="true"></div>For (3) <span class="math-inline">\(\Rightarrow\)</span> (4), the pointwise formula for left Kan extensions gives <div class="math-display">\[u_!u^*(X) \simeq \colim_{(c,\alpha) \in C_{/X}} u(c),\]</div> where <span class="math-inline">\(C_{/X}\)</span> is the category of pairs <span class="math-inline">\((c,\alpha)\)</span> with <span class="math-inline">\(c\in C\)</span> and <span class="math-inline">\(\alpha\colon u(c)\to X\)</span>. Write the counit as <div class="math-display">\[X' := \colim_{(c,\alpha)\in C_{/X}} u(c) \to X\]</div> induced by the maps <span class="math-inline">\(\alpha\)</span>. The chosen cover of <span class="math-inline">\(X\)</span> by objects in the image of <span class="math-inline">\(u\)</span> factors through this counit, so the counit is an effective epimorphism.<div class="proof-paragraph-break" aria-hidden="true"></div>We now prove inductively that it is <span class="math-inline">\(n\)</span>-connected for every <span class="math-inline">\(n\geq 0\)</span>. Assume that the counit is <span class="math-inline">\((n-1)\)</span>-connected for every object of <span class="math-inline">\(T\)</span>. Universality of colimits identifies <div class="math-display">\[X'\times_X X'\iso
+			\colim_{(c,\alpha),(d,\beta)\in C_{/X}}u(c)\times_Xu(d).\]</div> Under this identification, descent for the colimit defining <span class="math-inline">\(X'\)</span> identifies the diagonal <span class="math-inline">\(X'\to X'\times_XX'\)</span> with the colimit of the counits <div class="math-display">\[\colim_{(e,\gamma)\in C_{/\,u(c)\times_X u(d)}}u(e)
+			\longrightarrow u(c)\times_Xu(d)\]</div> as <span class="math-inline">\((c,\alpha)\)</span> and <span class="math-inline">\((d,\beta)\)</span> vary. Each of these maps is <span class="math-inline">\((n-1)\)</span>-connected by the induction hypothesis. Since <span class="math-inline">\((n-1)\)</span>-connected morphisms are closed under colimits, the diagonal is <span class="math-inline">\((n-1)\)</span>-connected. Together with effective epimorphy, <a href="../../entry/characterizing-connected-morphisms-by-diagonals/index.html">Theorem 3.22</a> shows that the counit is <span class="math-inline">\(n\)</span>-connected. Thus it is <span class="math-inline">\(\infty\)</span>-connected.<div class="proof-paragraph-break" aria-hidden="true"></div>Finally, if <span class="math-inline">\(T\)</span> is hypercomplete and (4) is satisfied, then the counit map <span class="math-inline">\(u_!u^* \to \id\)</span> is a natural isomorphism, and so <span class="math-inline">\(u^*\)</span> is fully faithful, giving (1).<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem lemma" id="lem:Hypercompletion_Of_Localic_Reflection">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/hypercompletion-of-localic-reflection/index.html">Lemma 6.58.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(n \geq -1\)</span>, and let <span class="math-inline">\(T\)</span> be a topos such that every object is covered by <span class="math-inline">\((n-1)\)</span>-truncated objects. Then the map of topoi <span class="math-inline">\(T \to L_n(T)\)</span> induces an equivalence on hypercompletions:</p>
+<div class="math-display">\[T^{\hyp} \; \iso \; (L_nT)^{\hyp}.\]</div></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Hypercompletion_Of_Localic_Reflection-main" data-owner-entry="hypercompletion-of-localic-reflection" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">By <a href="#prop:Localic_Reflection">Proposition 6.54</a>, there is an <span class="math-inline">\((n,1)\)</span>-category <span class="math-inline">\(C\)</span> with finite limits and a Grothendieck topology <span class="math-inline">\(\tau\)</span> such that <span class="math-inline">\(L_nT \simeq \Shv_{\tau}(C)\)</span>. Using the hypothesis on <span class="math-inline">\(T\)</span>, we may choose <span class="math-inline">\(C\subseteq T_{\leq n-1}\)</span> so that every object of <span class="math-inline">\(T\)</span> is covered by objects of <span class="math-inline">\(C\)</span>. Let <span class="math-inline">\(u\colon C\hookrightarrow T\)</span> denote the inclusion. Since <span class="math-inline">\(u\)</span> preserves finite limits, its colimit extension <span class="math-inline">\(u_!\colon\PSh(C)\to T\)</span> is left exact by <a href="../../entry/left-exactness-tested-on-representables/index.html">Proposition 2.43</a>. By <a href="#lem:Dense_Subcategory_Characterization">Lemma 6.57</a>, the counit of <span class="math-inline">\(u_!\dashv u^*\)</span> is <span class="math-inline">\(\infty\)</span>-connected. It follows that the composite <div class="math-display">\[\PSh(C) \xrightarrow{u_!} T \twoheadrightarrow T^{\hyp}\]</div> is a left exact localization.<div class="proof-paragraph-break" aria-hidden="true"></div>Let <span class="math-inline">\(K\)</span> be its kernel. We claim that the monogenic part of <span class="math-inline">\(K\)</span> is <span class="math-inline">\(\tau^c\)</span>. By <a href="../../entry/grothendieck-topology-monogenic-congruence-bijection/index.html">Proposition 6.9</a>, it suffices to test monomorphisms <span class="math-inline">\(R\hookrightarrow y(X)\)</span> which are sieves on representables. Such a sieve is inverted by the displayed localization if and only if <span class="math-inline">\(u_!(R)\to u(X)\)</span> becomes an isomorphism after hypercompletion. Since this map is a monomorphism, this happens if and only if it is already an isomorphism in <span class="math-inline">\(T\)</span>, or equivalently if <span class="math-inline">\(u_!(R)\to u(X)\)</span> is an effective epimorphism. By the definition of the effective epimorphism topology <span class="math-inline">\(\tau\)</span>, this is precisely the condition that <span class="math-inline">\(R\)</span> be a covering sieve. Hence <span class="math-inline">\(K^{\mono}=\tau^c\)</span>.<div class="proof-paragraph-break" aria-hidden="true"></div>The congruence <span class="math-inline">\(K\)</span> is hypercomplete because its quotient is <span class="math-inline">\(T^{\hyp}\)</span>. By <a href="../../entry/hypercompletion-preserves-the-monogenic-part/index.html">Lemma 5.67</a>, a hypercomplete congruence is determined by its monogenic part, so <div class="math-display">\[K=(K^{\mono})^{\hyp}=(\tau^c)^{\hyp}.\]</div> But <span class="math-inline">\((\tau^c)^{\hyp}\)</span> is also the kernel of the localization <span class="math-inline">\(\PSh(C)\to\Shv_{\tau}(C)^{\hyp}=(L_nT)^{\hyp}\)</span>. The two hypercomplete localizations therefore have the same kernel, which proves the asserted equivalence.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<h3 id="subsec:Postnikov_Completeness"><span>6.4.2.</span> Postnikov-completeness</h3>
+<p>Localic reflection records the truncated layers of a topos. Postnikov-completion asks instead whether compatible truncated objects can be assembled into an actual object. This is stronger than convergence of the Postnikov tower of each object: convergence gives full faithfulness of the comparison below, while Postnikov-completeness also requires essential surjectivity.</p>
+<section class="theorem definition" id="def:Postnikov_Completion">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/postnikov-completion/index.html">Definition 6.59.</a></span></p>
+  <div class="theorem-statement"><p>The <em>Postnikov-completion</em> of a presentable category <span class="math-inline">\(C\)</span> is defined as the limit</p>
+<div class="math-display">\[\widehat{C}\quad := \quad \lim_n C_{\leq n}.\]</div>
+<p>Here the transition functor <span class="math-inline">\(C_{\leq n+1}\to C_{\leq n}\)</span> is <span class="math-inline">\(\tau_n\)</span>, and the limit is formed in presentable categories and colimit-preserving functors. We say that <span class="math-inline">\(C\)</span> is <em>Postnikov-complete</em> if the canonical functor <span class="math-inline">\(\tau_*\colon C \to \widehat{C}, X \mapsto (\tau_n X)_n\)</span> is an equivalence.</p></div>
+</section>
+
+<section class="theorem remark" id="rem:Postnikov_Completion_Adjunction">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/postnikov-completion-adjunction/index.html">Remark 6.60.</a></span></p>
+  <div class="theorem-statement"><p>The functor <span class="math-inline">\(\tau_*\)</span> admits a right adjoint <span class="math-inline">\(\lim_n C_{\leq n} \to C\)</span> given by sending a system <span class="math-inline">\((X_n)\)</span> of <span class="math-inline">\(n\)</span>-truncated objects to their limit <span class="math-inline">\(X = \lim_n X_n\)</span>. We see:</p>
+<ul><li><p><span class="math-inline">\(\tau_*\)</span> is fully faithful if and only if the unit map <span class="math-inline">\(X \to \lim_n \tau_n X\)</span> is an isomorphism for all <span class="math-inline">\(X \in C\)</span>, i.e. every object is the limit of its Postnikov tower. Note that this is necessary but not sufficient for <span class="math-inline">\(\tau_*\)</span> to be an equivalence.</p></li><li><p><span class="math-inline">\(\tau_*\)</span> is essentially surjective if and only if every system <span class="math-inline">\((X_n)\)</span> satisfying the compatibility conditions arises as <span class="math-inline">\((\tau_n X)\)</span> for some <span class="math-inline">\(X \in C\)</span>.</p></li></ul></div>
+</section>
+
+<section class="theorem proposition" id="prop:Postnikov_Completion_Is_Topos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/postnikov-completion-is-topos/index.html">Proposition 6.61.</a></span> ({cf. <span class="citation-group">[Lurie <a class="citation" href="#bib-SAG">2018, Corollary A.7.2.8</a>]</span>})</p>
+  <div class="theorem-statement"><p>If <span class="math-inline">\(T\)</span> is a topos, then <span class="math-inline">\(\widehat{T}\)</span> is a topos. For any Postnikov-complete topos <span class="math-inline">\(S\)</span>, the morphism of topoi <span class="math-inline">\(\widehat{T} \to T\)</span> induces an equivalence</p>
+<div class="math-display">\[\Geom(S,\widehat{T}) \iso \Geom(S,T).\]</div></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Postnikov_Completion_Is_Topos-main" data-owner-entry="postnikov-completion-is-topos" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">The category <span class="math-inline">\(\widehat T\)</span> is presentable because it is a limit of presentable categories along accessible colimit-preserving functors, and its colimits are computed levelwise. We verify descent. For <span class="math-inline">\(X=(X_n)_n\in\widehat T\)</span>, slicing commutes with limits of categories and gives <div class="math-display">\[\widehat T_{/X}\iso\lim_n (T_{\leq n})_{/X_n}.\]</div> Each <span class="math-inline">\(T_{\leq n}\)</span> is an <span class="math-inline">\(n\)</span>-topos, so its slice functor sends colimits to limits. Consequently, if <span class="math-inline">\(X=\colim_iX_i\)</span> in <span class="math-inline">\(\widehat T\)</span>, then \begin{align*} \widehat T_{/X} &amp;\iso \lim_n (T_{\leq n})_{/\colim_iX_{i,n}} \\ &amp;\iso \lim_n\lim_i(T_{\leq n})_{/X_{i,n}} \\ &amp;\iso \lim_i\widehat T_{/X_i}. \end{align*} Thus every colimit in <span class="math-inline">\(\widehat T\)</span> is van Kampen, and <span class="math-inline">\(\widehat T\)</span> is a topos by <a href="../../entry/giraud-characterizations-of-topoi/index.html">Theorem 2.42</a>.<div class="proof-paragraph-break" aria-hidden="true"></div>Projection onto the <span class="math-inline">\(n\)</span>-th component identifies <span class="math-inline">\((\widehat T)_{\leq n}\)</span> with <span class="math-inline">\(T_{\leq n}\)</span>. Now let <span class="math-inline">\(S\)</span> be Postnikov-complete. A logos morphism into <span class="math-inline">\(S\iso\lim_nS_{\leq n}\)</span> is the same as a compatible collection of left exact colimit-preserving functors into the <span class="math-inline">\(S_{\leq n}\)</span>. Moreover, a left exact colimit-preserving functor with <span class="math-inline">\(n\)</span>-truncated target factors uniquely through <span class="math-inline">\(n\)</span>-truncation. We therefore obtain natural equivalences \begin{align*} \Fun_{\Logos}(\widehat T,S) &amp;\iso \lim_n\Fun^{\lex,\colim}((\widehat T)_{\leq n},S_{\leq n}) \\ &amp;\iso \lim_n\Fun^{\lex,\colim}(T_{\leq n},S_{\leq n}) \\ &amp;\iso \Fun_{\Logos}(T,S). \end{align*} Passing to the opposite category of topoi gives the asserted universal property.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem lemma" id="lem:Postnikov_Complete_Implies_Hypercomplete">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/postnikov-complete-implies-hypercomplete/index.html">Lemma 6.62.</a></span></p>
+  <div class="theorem-statement"><p>Every Postnikov-complete topos is hypercomplete.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Postnikov_Complete_Implies_Hypercomplete-main" data-owner-entry="postnikov-complete-implies-hypercomplete" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Let <span class="math-inline">\(f\colon X \to Y\)</span> be an <span class="math-inline">\(\infty\)</span>-connected map in <span class="math-inline">\(T\)</span>. Since <span class="math-inline">\(T\)</span> is Postnikov-complete, the map <span class="math-inline">\(f\)</span> is the limit of the maps <span class="math-inline">\(\tau_n X \to \tau_n Y\)</span>, so it suffices to show that each of these maps is an isomorphism. The maps <span class="math-inline">\(X \to \tau_n X\)</span> and <span class="math-inline">\(Y \to \tau_n Y\)</span> are <span class="math-inline">\(n\)</span>-connected, and so is <span class="math-inline">\(f\colon X \to Y\)</span>. By right cancellation, it follows that <span class="math-inline">\(\tau_n X \to \tau_n Y\)</span> is also <span class="math-inline">\(n\)</span>-connected. On the other hand, since <span class="math-inline">\(\tau_n X\)</span> and <span class="math-inline">\(\tau_n Y\)</span> are <span class="math-inline">\(n\)</span>-truncated, the maps <span class="math-inline">\(\tau_n X \to *\)</span> and <span class="math-inline">\(\tau_n Y \to *\)</span> are <span class="math-inline">\(n\)</span>-truncated. By left cancellation, it follows that <span class="math-inline">\(\tau_n X \to \tau_n Y\)</span> is <span class="math-inline">\(n\)</span>-truncated as well. Thus <span class="math-inline">\(\tau_n X \to \tau_n Y\)</span> is both <span class="math-inline">\(n\)</span>-connected and <span class="math-inline">\(n\)</span>-truncated, hence an isomorphism.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem notation" id="not:Postnikov_Complete_And_Hypercomplete_Topoi">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/postnikov-complete-and-hypercomplete-topoi/index.html">Notation 6.63.</a></span></p>
+  <div class="theorem-statement"><p>We denote by <span class="math-inline">\(\Topos^{\post} \subseteq \Topos^{\hyp} \subseteq \Topos\)</span> the full subcategories of Postnikov-complete and hypercomplete topoi. These two inclusions have right adjoints sending <span class="math-inline">\(T\)</span> to <span class="math-inline">\(T^{\hyp} = T_{\leq \infty}\)</span> and <span class="math-inline">\(T \mapsto \widehat{T}\)</span>.</p></div>
+</section>
+
+<h3 id="subsec:Bounded_Topoi"><span>6.4.3.</span> Bounded topoi</h3>
+<p>Postnikov-completion is one reconstruction of a topos from its truncated layers. Bounded topoi arise from the opposite reconstruction: one first takes every localic reflection and then forms their inverse limit in <span class="math-inline">\(\Topos\)</span>.</p>
+<section class="theorem definition" id="def:Bounded_Topos">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/bounded-topos/index.html">Definition 6.64.</a></span></p>
+  <div class="theorem-statement"><p>A topos <span class="math-inline">\(T\)</span> is called <em>bounded</em> if the canonical map <span class="math-inline">\(T\to\lim_nL_nT\)</span> is an equivalence. We write <span class="math-inline">\(\Topos^b \subseteq \Topos\)</span> for the full subcategory of bounded topoi.</p></div>
+</section>
+
+<section class="theorem lemma" id="lem:Localic_Reflection_Preserves_Filtered_Limits">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/localic-reflection-preserves-filtered-limits/index.html">Lemma 6.65.</a></span> (<span class="citation-group">[Lurie <a class="citation" href="#bib-SAG">2018, Lemma A.7.1.4</a>]</span>)</p>
+  <div class="theorem-statement"><p>The functor <span class="math-inline">\(L_n \colon \Topos \to \Topos_n\)</span> preserves colimits and small limits.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Localic_Reflection_Preserves_Filtered_Limits-main" data-owner-entry="localic-reflection-preserves-filtered-limits" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Preservation of colimits follows because <span class="math-inline">\(L_n\)</span> is a left adjoint. The limit-preservation statement is <span class="citation-group">[Lurie <a class="citation" href="#bib-SAG">2018, Lemma A.7.1.4</a>]</span>; it is the additional input needed to commute localic reflection with the inverse tower of localic approximations.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+<section class="theorem proposition" id="prop:Postnikov_And_Bounded_Reflections">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/postnikov-and-bounded-reflections/index.html">Proposition 6.66.</a></span> ({cf. <span class="citation-group">[Lurie <a class="citation" href="#bib-SAG">2018, Proposition A.7.1.5 and Corollary A.7.2.8</a>]</span>})</p>
+  <div class="theorem-statement"><p>The functor <span class="math-inline">\(L_*\colon \Topos \to \lim_n \Topos_n\)</span> admits fully faithful adjoints on both sides.</p>
+<ul><li><p>A topos <span class="math-inline">\(T\)</span> lies in the image of the left adjoint if and only if it is Postnikov complete.</p></li><li><p>A topos <span class="math-inline">\(T\)</span> lies in the image of the right adjoint if and only if it is bounded.</p></li></ul></div>
+</section>
+
+<details class="proof-shell" id="proof-prop:Postnikov_And_Bounded_Reflections-main" data-owner-entry="postnikov-and-bounded-reflections" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">The right adjoint sends a compatible system <span class="math-inline">\((T_n)_n\)</span> to <span class="math-inline">\(\lim_nT_n\)</span>. By <a href="#lem:Localic_Reflection_Preserves_Filtered_Limits">Lemma 6.65</a>, <div class="math-display">\[L_m\bigl(\lim_nT_n\bigr)\iso\lim_nL_mT_n\iso T_m.\]</div> Thus the right adjoint is fully faithful, and its essential image consists precisely of the bounded topoi. In particular, the bounded reflection of an arbitrary topos is <div class="math-display">\[T^b:=\lim_nL_nT.\]</div><div class="proof-paragraph-break" aria-hidden="true"></div>We next identify the left adjoint. For arbitrary topoi <span class="math-inline">\(T\)</span> and <span class="math-inline">\(S\)</span>, the universal properties of truncation and localic reflection give \begin{align*} \Geom(\widehat T,S) &amp;\iso \lim_n\Fun^{\lex,\colim}(S_{\leq n},T_{\leq n}), \\ \Geom(T,S^b) &amp;\iso \lim_n\Geom(T,L_nS) \\ &amp;\iso \lim_n\Fun^{\lex,\colim}(S_{\leq n-1},T_{\leq n-1}). \end{align*} Reindexing gives a natural equivalence <span class="math-inline">\(\Geom(\widehat T,S)\iso\Geom(T,S^b)\)</span>. Thus Postnikov-completion is left adjoint to bounded reflection.<div class="proof-paragraph-break" aria-hidden="true"></div>The Postnikov-completion <span class="math-inline">\(\widehat T\)</span> is Postnikov-complete and has the same truncated objects as <span class="math-inline">\(T\)</span>. Conversely, if <span class="math-inline">\(T\)</span> is Postnikov-complete, then <span class="math-inline">\(T\iso\widehat T\iso\widehat{T^b}\)</span>. Hence the essential image of the fully faithful left adjoint is exactly <span class="math-inline">\(\Topos^{\post}\)</span>, while the essential image of the right adjoint is <span class="math-inline">\(\Topos^b\)</span>.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+<p>We may summarize this in the following diagram:</p>
+<figure class="diagram"><img src="diagrams/tikzcd-3fb8040b7003.svg" alt="Commutative diagram generated from the LaTeX source"></figure>
+<p>Let us emphasize the distinctions among the completion conditions. Hypercompletion forces every <span class="math-inline">\(\infty\)</span>-connected morphism to be an isomorphism. Convergence of Postnikov towers says that each existing object is recovered from its truncations. Postnikov-completeness additionally says that every compatible system of truncated objects is realized by an object. Boundedness reconstructs the topos from the same truncated data through the opposite adjoint, by taking the inverse limit of its localic reflections.</p><section class="bibliography" id="bibliography"><h2>References</h2><ol><li id="bib-Barwick_Glasman_Haine_Exodromy">Clark Barwick, Saul Glasman, Peter Haine. <em>Exodromy</em>. 2018.</li>
+<li id="bib-lurie2009HTT">Jacob Lurie. <em>Higher topos theory</em>. Ann. Math. Stud. 170, Princeton, NJ: Princeton University Press. 2009.</li>
+<li id="bib-SAG">Jacob Lurie. <em>Spectral Algebraic Geometry</em>. under construction (version dated February 2018), www.math.ias.edu/~lurie/papers/SAG-rootfile.pdf. 2018.</li></ol></section>
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+      <a class="context-step-control" rel="prev" href="../hypercovers/index.html" aria-label="Previous section: Hypercovers" title="Previous section: Hypercovers"><span aria-hidden="true">←</span></a>
+      <a class="context-step-control" rel="next" href="../dimension-theory/index.html" aria-label="Next section: Dimension theory" title="Next section: Dimension theory"><span aria-hidden="true">→</span></a>
+    </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../chapter/introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../../chapter/foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../../chapter/truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../../chapter/topoi-logoi/index.html">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../../chapter/modalities/index.html">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../../chapter/topics-in-topos-theory/index.html" aria-current="location">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../../chapter/geometry/index.html">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../../chapter/factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../../chapter/limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../sheaf-topoi/index.html">
+          <span class="context-entry-heading">Section 6.1</span>
+          <span class="context-entry-title">Sheaf topoi</span>
+        </a></li>
+<li><a href="../groupoid-actions-and-principal-bundles/index.html">
+          <span class="context-entry-heading">Section 6.2</span>
+          <span class="context-entry-title">Groupoid actions and principal bundles</span>
+        </a></li>
+<li><a href="../hypercovers/index.html">
+          <span class="context-entry-heading">Section 6.3</span>
+          <span class="context-entry-title">Hypercovers</span>
+        </a></li>
+<li><a href="../localic-topoi-postnikov-completeness-and-boundedness/index.html" aria-current="page">
+          <span class="context-entry-heading">Section 6.4</span>
+          <span class="context-entry-title">Localic topoi, Postnikov-completeness, and boundedness</span>
+        </a></li>
+<li><a href="../dimension-theory/index.html">
+          <span class="context-entry-heading">Section 6.5</span>
+          <span class="context-entry-title">Dimension theory</span>
+        </a></li>
+<li><a href="../essential-morphisms-and-shape-theory/index.html">
+          <span class="context-entry-heading">Section 6.6</span>
+          <span class="context-entry-title">Essential morphisms and shape theory</span>
+        </a></li>
+<li><a href="../coherence/index.html">
+          <span class="context-entry-heading">Section 6.7</span>
+          <span class="context-entry-title">Coherence</span>
+        </a></li>
+<li><a href="../pretopoi/index.html">
+          <span class="context-entry-heading">Section 6.8</span>
+          <span class="context-entry-title">Pretopoi</span>
+        </a></li>
+<li><a href="../makkai-completeness/index.html">
+          <span class="context-entry-heading">Section 6.9</span>
+          <span class="context-entry-title">Makkai completeness</span>
+        </a></li>
+<li><a href="../compactly-assembled-categories-and-exponentiability/index.html">
+          <span class="context-entry-heading">Section 6.10</span>
+          <span class="context-entry-title">Compactly assembled categories and exponentiability</span>
+        </a></li>
+<li><a href="../topoi-of-parametrized-objects/index.html">
+          <span class="context-entry-heading">Section 6.11</span>
+          <span class="context-entry-title">Topoi of parametrized objects</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <p class="context-nav-kicker">Section 6.4</p>
+      <p class="context-nav-description">Localic topoi, Postnikov-completeness, and boundedness</p>
+      <ol class="context-entry-list">
+        <li><a href="#def:Localic_Topoi" data-section-target="def:Localic_Topoi">
+          <span class="context-entry-heading">Definition 6.52</span>
+          <span class="context-entry-title">Localic topoi</span>
+        </a></li>
+<li><a href="#not:Categories_Of_Localic_Topoi" data-section-target="not:Categories_Of_Localic_Topoi">
+          <span class="context-entry-heading">Notation 6.53</span>
+          <span class="context-entry-title">Categories of localic topoi</span>
+        </a></li>
+<li><a href="#prop:Localic_Reflection" data-section-target="prop:Localic_Reflection">
+          <span class="context-entry-heading">Proposition 6.54</span>
+          <span class="context-entry-title">Localic reflection</span>
+        </a></li>
+<li><a href="#ex:Localic_Reflection_Of_Anima_Slice" data-section-target="ex:Localic_Reflection_Of_Anima_Slice">
+          <span class="context-entry-heading">Example 6.55</span>
+          <span class="context-entry-title">Localic reflection of anima slice</span>
+        </a></li>
+<li><a href="#warn:Finite_Limits_Needed_For_Localic_Presheaf_Topos" data-section-target="warn:Finite_Limits_Needed_For_Localic_Presheaf_Topos">
+          <span class="context-entry-heading">Warning 6.56</span>
+          <span class="context-entry-title">Finite limits needed for localic presheaf topos</span>
+        </a></li>
+<li><a href="#lem:Dense_Subcategory_Characterization" data-section-target="lem:Dense_Subcategory_Characterization">
+          <span class="context-entry-heading">Lemma 6.57</span>
+          <span class="context-entry-title">Dense subcategory characterization</span>
+        </a></li>
+<li><a href="#lem:Hypercompletion_Of_Localic_Reflection" data-section-target="lem:Hypercompletion_Of_Localic_Reflection">
+          <span class="context-entry-heading">Lemma 6.58</span>
+          <span class="context-entry-title">Hypercompletion of localic reflection</span>
+        </a></li>
+<li><a href="#def:Postnikov_Completion" data-section-target="def:Postnikov_Completion">
+          <span class="context-entry-heading">Definition 6.59</span>
+          <span class="context-entry-title">Postnikov completion</span>
+        </a></li>
+<li><a href="#rem:Postnikov_Completion_Adjunction" data-section-target="rem:Postnikov_Completion_Adjunction">
+          <span class="context-entry-heading">Remark 6.60</span>
+          <span class="context-entry-title">Postnikov completion adjunction</span>
+        </a></li>
+<li><a href="#prop:Postnikov_Completion_Is_Topos" data-section-target="prop:Postnikov_Completion_Is_Topos">
+          <span class="context-entry-heading">Proposition 6.61</span>
+          <span class="context-entry-title">Postnikov completion is topos</span>
+        </a></li>
+<li><a href="#lem:Postnikov_Complete_Implies_Hypercomplete" data-section-target="lem:Postnikov_Complete_Implies_Hypercomplete">
+          <span class="context-entry-heading">Lemma 6.62</span>
+          <span class="context-entry-title">Postnikov complete implies hypercomplete</span>
+        </a></li>
+<li><a href="#not:Postnikov_Complete_And_Hypercomplete_Topoi" data-section-target="not:Postnikov_Complete_And_Hypercomplete_Topoi">
+          <span class="context-entry-heading">Notation 6.63</span>
+          <span class="context-entry-title">Postnikov complete and hypercomplete topoi</span>
+        </a></li>
+<li><a href="#def:Bounded_Topos" data-section-target="def:Bounded_Topos">
+          <span class="context-entry-heading">Definition 6.64</span>
+          <span class="context-entry-title">Bounded topos</span>
+        </a></li>
+<li><a href="#lem:Localic_Reflection_Preserves_Filtered_Limits" data-section-target="lem:Localic_Reflection_Preserves_Filtered_Limits">
+          <span class="context-entry-heading">Lemma 6.65</span>
+          <span class="context-entry-title">Localic reflection preserves filtered limits</span>
+        </a></li>
+<li><a href="#prop:Postnikov_And_Bounded_Reflections" data-section-target="prop:Postnikov_And_Bounded_Reflections">
+          <span class="context-entry-heading">Proposition 6.66</span>
+          <span class="context-entry-title">Postnikov and bounded reflections</span>
+        </a></li>
+      </ol>
+    </nav>
+  </section></div>
+  </aside>
+  <aside class="publication-fragment-notice" id="claim:Postnikov_Completion_Left_Adjoint_To_Bounded_Reflection"><strong>Retired fragment.</strong> The claim was absorbed into the proof of the proposition. It now appears at <a href="./#prop:Postnikov_And_Bounded_Reflections">this address</a>.</aside>
+</main>
+  <footer><p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p></footer>
+</body>
+</html>
