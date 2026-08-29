@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 14.3: Lax symmetric monoidal functors | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/operads-and-higher-algebra/index.html">Part II</a> · <a href="../../../chapter/basics-on-infinity-operads/index.html">Chapter 14</a> · Section 14.3</p>
+      <h1>Lax symmetric monoidal functors</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Lax_Symmetric_Monoidal_Functors'>The definition of symmetric monoidal \(\infty \)-categories as commutative monoids in \(\Cat _{\infty }\) makes it easy to talk about
+symmetric monoidal functors. It is a priori less clear how to define <span class='ntx-Italic-tlf-t1-x-x-109'>lax </span>symmetric monoidal functors:
+functors \(F\colon C \to D\) that come equipped with <span class='ntx-Italic-tlf-t1-x-x-109'>lax structure maps </span>\[ F(X_1) \otimes \dots \otimes F(X_n) \to F(X_1 \otimes \dots \otimes X_n), \] for \(X_1, \dots , X_n \in C\), that are coherently compatible with the
+symmetric monoidal structures of \(C\) and \(D\). The operadic perspective on symmetric monoidal \(\infty \)-categories
+provides a quick definition:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<a class="entry-heading-link" href="../../../entry/lax-symmetric-monoidal-functor/index.html" aria-label="Definition 14.3.1., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 14.3.1.</span></a>  </span><span id='def:Lax_Symmetric_Monoidal_Functor'></span> Let \(C\) and \(D\) be symmetric monoidal \(\infty \)-categories. A <span class='ntx-Italic-tlf-t1-x-x-109'>lax symmetric monoidal functor</span>
+\(C \to D\) is a morphism of \(\infty \)-operads \(\Mm _C \to \Mm _D\). An <span class='ntx-Italic-tlf-t1-x-x-109'>oplax symmetric monoidal functor </span>is a morphism of \(\infty \)-operads \(\Mm _{C\catop } \to \Mm _{D\catop }\). We
+denote by \[ \Cat _{\infty }^{\otimes \text {-lax}} \quad \subseteq \quad \Op _{\infty } \] the full subcategory spanned by the (multimorphism operads of) symmetric monoidal
+\(\infty \)-categories.
+</p><p class='noindent'>We write \[ \Fun ^{\otimes \text {-lax}}(C,D) := \Fun _{\Op _{\infty }}(\Mm _C,\Mm _D) \] for the \(\infty \)-category of lax symmetric monoidal functors from \(C\) to \(D\).
+</p>
+</div>
+<p class='noindent'>The \(\infty \)-category \(\Fun ^{\otimes }(C,D)\) identifies with the full subcategory of \(\Fun ^{\otimes \text {-lax}}(C,D)\) spanned by the lax symmetric monoidal functors
+whose structure maps are isomorphisms.
+</p><p class='noindent'>Let us unwind how to recover the lax structure maps. An operad map \(\Mm _C \to \Mm _D\) is encoded by a commutative triangle
+of the form</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-4dd3d95a997b.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Passing to fibers over \(\lra {1}\) gives an underlying functor \(F\colon C \to D\). The fact that \(F^{\otimes }\) preserves finite products
+means that on objects it is given as \(F^{\otimes }(X_1, \dots , X_n) = (F(X_1), \dots , F(X_n))\), and this also fully specifies \(F^{\otimes }\) on inert maps. To understand what \(F^{\otimes }\) does on
+active maps, it suffices to consider the case \((X_1, \dots , X_n) \to X_1 \otimes \dots \otimes X_n\), for which the image in \(D^{\otimes }\) takes the form of a map \[ (F(X_1), \dots , F(X_n)) \to F(X_1 \otimes \dots \otimes X_n) \] lifting the span
+\(\lra {n} \xleftarrow {=} \lra {n} \to \lra {1}\). This map uniquely factors through the cocartesian morphism \((F(X_1), \dots , F(X_n)) \to F(X_1) \otimes \dots \otimes F(X_n)\), resulting in the expected lax structure
+map.</p><p class='noindent'>For oplax symmetric monoidal functors the structure maps point the other way.
+</p>
+<div class='newtheorem'>
+                                                                                   
+                                                                                   
+<p class='noindent'><span class='head'>
+<a id='x1-1002r2'></a>
+<a class="entry-heading-link" href="../../../entry/functoriality-algebras-in-lax-monoidal-functors/index.html" aria-label="Construction 14.3.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 14.3.2.</span></a>  </span><span id='cons:Functoriality_Algebras_In_Lax_Monoidal_Functors'></span> For an \(\infty \)-operad \(\Oo \), the construction \(C \mapsto \Alg _{\Oo }(C)\) defines a functor \[ \Alg _{\Oo }(-) := \Fun _{\Op _{\infty }}(\Oo ,-)\colon \Cat _{\infty }^{\otimes \text {-lax}} \to \Cat _{\infty }. \] Given a lax symmetric
+monoidal functor \(F\colon C \to D\), the induced functor \(\Alg _{\Oo }(C) \to \Alg _{\Oo }(D)\) is given by postcomposition with \(\Mm _C \to \Mm _D\). Its functoriality follows
+directly from functoriality of postcomposition in the defining fibers of functor categories.
+</p>
+</div>
+
+<h4 class='subsectionHead' id='symmetric-monoidal-adjunctions'><span class='titlemark'>14.3.1    </span> <a id='x1-200014.3.1'></a>Symmetric monoidal adjunctions</h4>
+<p class='noindent'>The main goal of this subsection is to show that the right adjoint of a symmetric monoidal functor is
+canonically lax symmetric monoidal. We will then use the resulting symmetric monoidal adjunction to
+obtain adjunctions on categories of algebras.
+</p><p class='noindent'>To formulate the compatibility of the lifted adjunction with the maps to \(\Span (\Fin )\), we first record the small amount of
+relative adjunction theory that we will need. Given two functors \(p\colon C \to B\) and \(q\colon D \to B\), we write \[ \Fun _{/B}(C,D) := \Fun (C,D)\times _{\Fun (C,B)}\{p\}, \] where the map to \(\Fun (C,B)\) is given
+by postcomposition with \(q\). Thus an object of \(\Fun _{/B}(C,D)\) consists of a functor \(H\colon C \to D\) together with a specified identification
+\(qH \simeq p\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r3'></a>
+<a class="entry-heading-link" href="../../../entry/relative-adjunction/index.html" aria-label="Definition 14.3.3, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 14.3.3 </span></a>(Relative adjunction)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Relative_Adjunction'></span> Let \(L\) be an object of \(\Fun _{/B}(C,D)\). A <span class='ntx-Italic-tlf-t1-x-x-109'>right adjoint to</span> \(L\) <span class='ntx-Italic-tlf-t1-x-x-109'>relative to</span> \(B\) consists
+of an object \(R \in \Fun _{/B}(D,C)\) together with a morphism \[ \epsilon \colon LR \to \id _D \] in \(\Fun _{/B}(D,D)\) whose image in \(\Fun (D,D)\) exhibits the underlying functor of \(R\) as a
+right adjoint to the underlying functor of \(L\). We then call \(L\dashv R\) an <span class='ntx-Italic-tlf-t1-x-x-109'>adjunction relative to</span> \(B\).
+</p>
+</div>
+<p class='noindent'>The definition is counit-oriented. Equivalently, we may specify the unit as a morphism over the
+base:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2002r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 14.3.4 </span>(Unit formulation of relative adjunctions)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Unit_Formulation_Relative_Adjunction'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(L \in \Fun _{/B}(C,D)\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(R \in \Fun _{/B}(D,C)\)<span class='ntx-Italic-tlf-t1-x-x-109'>. The following data are
+equivalent:</span>
+   </p><dl class='enumerate'><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(1)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>A morphism</span> \(\epsilon \colon LR \to \id _D\) <span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(\Fun _{/B}(D,D)\) <span class='ntx-Italic-tlf-t1-x-x-109'>which exhibits</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>as a right adjoint to</span> \(L\) <span class='ntx-Italic-tlf-t1-x-x-109'>after forgetting to</span> \(\Fun (D,D)\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(2)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>A morphism</span> \(\eta \colon \id _C \to RL\) <span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(\Fun _{/B}(C,C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>which exhibits</span> \(L\) <span class='ntx-Italic-tlf-t1-x-x-109'>as a left adjoint to</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>after forgetting to</span> \(\Fun (C,C)\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-basics-on-infinity-operads-section-03-6" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-basics-on-infinity-operads-section-03-6">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  Suppose  first  that  the  data  in  (1)  are  given.  By  <a class="source-reference" data-label="prop:Characterization_Adjunctions" href="../../../entry/equivalent-data-for-an-adjunction/index.html#prop:Characterization_Adjunctions">Proposition 21.1.2</a>,  composition  with  the  counit  gives  an
+equivalence  \[ \Nat (\id _C,RL) \xrightarrow {\simeq } \Nat (L,L), \qquad \alpha \longmapsto (\epsilon L)(L\alpha ). \]  Under  the  specified  identifications  over  \(B\),  the  fact  that  \(\epsilon \)  is  a  morphism  in  \(\Fun _{/B}(D,D)\)  gives  a
+commutative square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-6ff53f09f785.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>It therefore restricts to an equivalence on the fibers over \(\id _p\), which are the hom
+animae \[ \Hom _{\Fun _{/B}(C,C)}(\id _C,RL) \xrightarrow {\simeq } \Hom _{\Fun _{/B}(C,D)}(L,L). \] The preimage of \(\id _L\) gives a morphism \(\eta \colon \id _C \to RL\) over \(B\), together with an identification \((\epsilon L)(L\eta ) \simeq \id _L\) in \(\Fun _{/B}(C,D)\). After forgetting
+the maps to \(B\), this is the unit corresponding to \(\epsilon \) under <a class="source-reference" data-label="prop:Characterization_Adjunctions" href="../../../entry/equivalent-data-for-an-adjunction/index.html#prop:Characterization_Adjunctions">Proposition 21.1.2</a>, so it gives the data in (2).</p><p class='noindent'>Conversely, starting from (2), composition with the unit gives an equivalence \[ \Nat (LR,\id _D) \xrightarrow {\simeq } \Nat (R,R), \qquad \beta \longmapsto (R\beta )(\eta R). \] It likewise restricts
+to the fibers over the identity transformation of \(q\), and the preimage of \(\id _R\) supplies the counit in (1),
+together with the other triangle identification over \(B\). These constructions are inverse because they are
+the usual equivalence between unit and counit data from <a class="source-reference" data-label="prop:Characterization_Adjunctions" href="../../../entry/equivalent-data-for-an-adjunction/index.html#prop:Characterization_Adjunctions">Proposition 21.1.2</a>, restricted to the indicated fibers.            □
+                                                                                   
+                                                                                   
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2005r5'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 14.3.5 </span>(Relative adjunctions on functor categories)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Relative_Adjunctions_On_Functor_Categories'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(L\colon C\rightleftarrows D\noloc R\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an adjunction relative to</span> \(B\)<span class='ntx-Italic-tlf-t1-x-x-109'>. For
+every functor</span> \(E \to B\)<span class='ntx-Italic-tlf-t1-x-x-109'>, postcomposition induces an adjunction </span>\[ L_*\colon \Fun _{/B}(E,C) \rightleftarrows \Fun _{/B}(E,D)\noloc R_*. \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-basics-on-infinity-operads-section-03-5" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-basics-on-infinity-operads-section-03-5">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The counit in <a class="source-reference" data-label="def:Relative_Adjunction" href="../../../entry/relative-adjunction/index.html#def:Relative_Adjunction">Definition 14.3.3</a> and the corresponding unit of <a class="source-reference" data-label="lem:Unit_Formulation_Relative_Adjunction" href="../../../entry/unit-formulation-relative-adjunction/index.html#lem:Unit_Formulation_Relative_Adjunction">Lemma 14.3.4</a> may both be whiskered with a functor \(E \to C\) or \(E \to D\) over
+\(B\). They therefore give a unit and counit between the displayed functors, with triangle identifications
+inherited from those of \(L\dashv R\). The result follows from <a class="source-reference" data-label="prop:Characterization_Adjunctions" href="../../../entry/equivalent-data-for-an-adjunction/index.html#prop:Characterization_Adjunctions">Proposition 21.1.2</a>.                                                                             □
+</p>
+</div></div>
+<p class='noindent'>We now produce the promised lax symmetric monoidal structure on the right adjoint of a symmetric
+monoidal functor.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2006r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 14.3.6.</span>  </span><span id='prop:Adjoint_To_SymMon_Functor'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(L\colon C \to D\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a symmetric monoidal functor between symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories.
+Assume that</span> \(L\) <span class='ntx-Italic-tlf-t1-x-x-109'>(as a plain functor from</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>to</span> \(D\)<span class='ntx-Italic-tlf-t1-x-x-109'>) admits a right adjoint</span> \(R\colon D \to C\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then the following statements
+hold:</span>
+                                                                                   
+
+                                                                                   
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(L^{\otimes }\colon C^{\otimes } \to D^{\otimes }\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a right adjoint</span> \(R^{\otimes }\colon D^{\otimes } \to C^{\otimes }\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(R^{\otimes }\) <span class='ntx-Italic-tlf-t1-x-x-109'>has a canonical structure as a functor over</span> \(\Span (\Fin )\) <span class='ntx-Italic-tlf-t1-x-x-109'>for which</span> \(L^{\otimes }\dashv R^{\otimes }\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a relative adjunction
+     over</span> \(\Span (\Fin )\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>With this structure,</span> \(R^{\otimes }\) <span class='ntx-Italic-tlf-t1-x-x-109'>defines a morphism of</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operads from</span> \(\Mm _D\) <span class='ntx-Italic-tlf-t1-x-x-109'>to</span> \(\Mm _C\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p></dd><dt class='enumerate'>
+  (4) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The underlying functor of this operad map is</span> \(R\colon D \to C\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p></dd></dl>
+<p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>In particular, the right adjoint of a symmetric monoidal functor is canonically lax symmetric
+monoidal.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-basics-on-infinity-operads-section-03-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-basics-on-infinity-operads-section-03-4">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> (1) By the pointwise criterion for right adjoints from <a class="source-reference" data-label="lem:Pointwise_Criterion_Adjunctions" href="../../../entry/assembly-of-pointwise-adjoint-objects/index.html#lem:Pointwise_Criterion_Adjunctions">Lemma 21.1.4</a>, it will suffice to show that for every object \(Y = \{y_j\}_{j \in J} \in D^{\otimes }\)
+there exists an object \(R^{\otimes }Y\) together with a counit map \(\epsilon _Y\colon L^{\otimes }R^{\otimes }Y \to Y\) such that for every other \(X \in C^{\otimes }\) the composite \begin {equation}  \label {eq:Monoidal_Adjunction} \Hom _{C^{\otimes }}(X,R^{\otimes }Y) \xrightarrow {L^{\otimes }} \Hom _{D^{\otimes }}(L^{\otimes }X,L^{\otimes }R^{\otimes }Y) \xrightarrow {\epsilon _Y \circ -} \Hom _{D^{\otimes }}(L^{\otimes }X,Y)  \end {equation}<a id='x1-2011r1'></a> is an
+equivalence. We define \(R^{\otimes }Y := \{Ry_j\}_{j \in J}\). We then have \(L^{\otimes }R^{\otimes }Y \simeq \{LRy_j\}_{j \in J}\) and so the counit map \(\epsilon _Y\) may be taken to be the collection of
+morphisms \(\epsilon _{y_j}\colon LRy_j \to y_j\), resulting in a morphism in \(D^{\otimes }_J \simeq \prod _{j \in J} D\).
+</p><p class='noindent'>To show that the composite <span class="source-reference equation-reference" data-label="eq:Monoidal_Adjunction">(14.1)</span> is an equivalence, it suffices to show that it induces an equivalence on the fibers
+over any span \(\alpha \colon I \xleftarrow {f} K \xrightarrow {g} J\) in \(\Span (\Fin )\). Let \(\widetilde {\alpha }\colon X \to \alpha _!X\) denote a cocartesian lift of the span \(\alpha \). Since \(L^{\otimes }\) preserves cocartesian morphisms, also
+the map \(L^{\otimes }(\widetilde {\alpha }) \colon L^{\otimes }X \to L^{\otimes }\alpha _!X\) is cocartesian. Precomposition with these maps then induces a commutative diagram</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-a39362413372.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Since the
+vertical maps induce equivalences on fibers over \(\Hom _{\Span (\Fin )}(J,J) \xrightarrow {- \circ \alpha } \Hom _{\Span (\Fin )}(I,J)\), we have thus reduced to the case of the identity span
+\(\alpha = \id _J\). In this case, the fibers are the hom animae in the fibers \(C^{\otimes }_J \simeq \prod _{j \in J} C\) and \(D^{\otimes }_J \simeq \prod _{j \in J} D\) respectively. The claim thus
+                                                                                   
+                                                                                   
+follows from the fact that for every \(j \in J\) the composite \[ \Hom _C((\alpha _!X)_j, Ry_j) \xrightarrow {L} \Hom _D(L(\alpha _!X)_j, LRy_j) \xrightarrow {\epsilon _{y_j} \circ -} \Hom _D(L(\alpha _!X)_j, y_j) \] is an equivalence due to the adjunction
+\(L \dashv R\).</p><p class='noindent'>(2) We will now equip \(R^{\otimes }\) with the structure of a functor over \(\Span (\Fin )\). We claim that it makes the following diagram
+commute:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-78199f3932f4.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>To this end, we claim that the adjunction counit \(\epsilon \colon L^{\otimes } R^{\otimes } \to \id _{D^{\otimes }}\) induces an equivalence \[ p_C R^{\otimes } \simeq p_D L^{\otimes } R^{\otimes } \xrightarrow {p_D \epsilon } p_D \id _{D^{\otimes }} \simeq p_D. \] This may be checked
+objectwise for \(X \in D^{\otimes }\), where it is clear from the construction of \(\epsilon _X\). The displayed identification equips \(R^{\otimes }\) with the
+structure of a functor over \(\Span (\Fin )\) and lifts \(\epsilon \) to a morphism in \(\Fun _{/\Span (\Fin )}(D^{\otimes },D^{\otimes })\). Thus \(L^{\otimes }\dashv R^{\otimes }\) is a relative adjunction over \(\Span (\Fin )\) by
+<a class="source-reference" data-label="def:Relative_Adjunction" href="../../../entry/relative-adjunction/index.html#def:Relative_Adjunction">Definition 14.3.3</a>.</p><p class='noindent'>(3) The functor \(R^{\otimes }\) preserves finite products because it is a right adjoint. Thus \(R^{\otimes }\) is an operad map.
+</p><p class='noindent'>(4) By uniqueness of adjoints, the restriction of \(R^{\otimes }\) to \(D = D^{\otimes }_{\lra {1}}\) is \(R\), and we deduce that \(R^{\otimes }\) is a lax symmetric monoidal
+refinement of \(R\).                                                                                                                                     □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2012r7'></a>
+<a class="entry-heading-link" href="../../../entry/right-adjoint-oplax-monoidal-functor/index.html" aria-label="Remark 14.3.7., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 14.3.7.</span></a>  </span><span id='rmk:Right_Adjoint_Oplax_Monoidal_Functor'></span> In the previous proposition, it does not suffice for \(L\) to be a lax symmetric monoidal
+functor itself. It would suffice for \(L\) to be an <span class='ntx-Italic-tlf-t1-x-x-109'>oplax </span>symmetric monoidal functor, but producing the
+lax symmetric monoidal right adjoint is more subtle in this case. Dually, the left adjoint to a lax
+symmetric monoidal functor is oplax symmetric monoidal. We refer to <span class='citation'>[Haugseng et al. (2023), Proposition A]</span> for a detailed discussion.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2013r8'></a>
+<a class="entry-heading-link" href="../../../entry/symmetric-monoidal-adjunction/index.html" aria-label="Definition 14.3.8., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 14.3.8.</span></a>  </span><span id='def:Symmetric_Monoidal_Adjunction'></span> A <span class='ntx-Italic-tlf-t1-x-x-109'>symmetric monoidal adjunction </span>is an adjunction \[ L\colon C\rightleftarrows D\noloc R \] between symmetric monoidal
+\(\infty \)-categories in which \(L\) is symmetric monoidal and \(R\) is equipped with the canonical lax symmetric
+monoidal structure of <a class="source-reference" data-label="prop:Adjoint_To_SymMon_Functor" href="../../../entry/adjoint-to-symmon-functor/index.html#prop:Adjoint_To_SymMon_Functor">Proposition 14.3.6</a>.
+</p>
+                                                                                   
+                                                                                   
+</div>
+<p class='noindent'>By part (2) of <a class="source-reference" data-label="prop:Adjoint_To_SymMon_Functor" href="../../../entry/adjoint-to-symmon-functor/index.html#prop:Adjoint_To_SymMon_Functor">Proposition 14.3.6</a>, the induced adjunction \(L^{\otimes }\dashv R^{\otimes }\) is relative over \(\Span (\Fin )\). We may deduce from this that symmetric monoidal
+adjunctions induce adjunctions on algebras over every \(\infty \)-operad.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2014r9'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 14.3.9 </span>(Adjunctions on \(\Oo \)-algebras)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Symmetric_Monoidal_Adjunction_On_Algebras'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Every  symmetric  monoidal  adjunction</span>  \(L\dashv R\)  <span class='ntx-Italic-tlf-t1-x-x-109'>induces,  for
+each</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operad</span> \(\Oo \)<span class='ntx-Italic-tlf-t1-x-x-109'>, an adjunction </span>\[ \Alg _{\Oo }(L)\colon \Alg _{\Oo }(C) \rightleftarrows \Alg _{\Oo }(D)\noloc \Alg _{\Oo }(R). \] <span class='ntx-Italic-tlf-t1-x-x-109'>The underlying functors are obtained by applying</span> \(L\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>, respectively,
+at every color of</span> \(\Oo \)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-basics-on-infinity-operads-section-03-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-basics-on-infinity-operads-section-03-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  By  part (2)  of  <a class="source-reference" data-label="prop:Adjoint_To_SymMon_Functor" href="../../../entry/adjoint-to-symmon-functor/index.html#prop:Adjoint_To_SymMon_Functor">Proposition 14.3.6</a>,  the  adjunction  \(L^{\otimes }\dashv R^{\otimes }\)  is  relative  to  \(\Span (\Fin )\).  Applying  <a class="source-reference" data-label="lem:Relative_Adjunctions_On_Functor_Categories" href="../../../entry/relative-adjunctions-on-functor-categories/index.html#lem:Relative_Adjunctions_On_Functor_Categories">Lemma 14.3.5</a>  to  \(p_{\Oo }\colon \Oo ^{\otimes } \to \Span (\Fin )\)  gives  an  adjunction  \[ \Fun _{/\Span (\Fin )}(\Oo ^{\otimes },C^{\otimes }) \rightleftarrows \Fun _{/\Span (\Fin )}(\Oo ^{\otimes },D^{\otimes }). \]
+Postcomposition  with  both  functors  preserves  finite-product-preserving  functors  because  \(L^{\otimes }\)  and  \(R^{\otimes }\)
+are  morphisms  of  \(\infty \)-operads.  Restricting  the  adjunction  to  these  subcategories  gives  the  asserted
+adjunction on \(\Alg _{\Oo }(C)\) and \(\Alg _{\Oo }(D)\).                                                                                                                             □
+</p>
+</div></div>
+<p class='noindent'>As an application, it follows that limits of \(\Oo \)-algebras may be computed pointwise.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2015r10'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 14.3.10 </span>(Limits of \(\Oo \)-algebras)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Limits_Of_O_Algebras'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(C\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  a  symmetric  monoidal</span>  \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category,  let</span>  \(\Oo \)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  an</span>
+\(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operad, and let</span> \(I\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a small</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category such that</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits</span> \(I\)<span class='ntx-Italic-tlf-t1-x-x-109'>-indexed limits. Then</span> \(\Alg _{\Oo }(C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits</span> \(I\)<span class='ntx-Italic-tlf-t1-x-x-109'>-indexed limits,
+and the evaluation functors </span>\[ \ev _x\colon \Alg _{\Oo }(C)\to C, \qquad A\mapsto A_x \qquad (x\in \Oo ^{\simeq }), \] <span class='ntx-Italic-tlf-t1-x-x-109'>jointly create them.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-basics-on-infinity-operads-section-03-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-basics-on-infinity-operads-section-03-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="cor:Limits_As_Adjoints" href="../../../entry/existence-of-limits-and-colimits-via-adjoints/index.html#cor:Limits_As_Adjoints">Corollary 21.2.2</a>, the constant-diagram functor fits into an adjunction \[ \const \colon C\rightleftarrows \Fun (I,C)\noloc \lim _I. \] Being given by restriction along \(I \to *\),
+the functor \(\const \) is symmetric monoidal for the pointwise symmetric monoidal structure, so <a class="source-reference" data-label="prop:Adjoint_To_SymMon_Functor" href="../../../entry/adjoint-to-symmon-functor/index.html#prop:Adjoint_To_SymMon_Functor">Proposition 14.3.6</a> makes this
+a symmetric monoidal adjunction. By <a class="source-reference" data-label="lem:Symmetric_Monoidal_Adjunction_On_Algebras" href="../../../entry/symmetric-monoidal-adjunction-on-algebras/index.html#lem:Symmetric_Monoidal_Adjunction_On_Algebras">Lemma 14.3.9</a>, it induces an adjunction \[ \Alg _{\Oo }(C) \rightleftarrows \Alg _{\Oo }(\Fun (I,C)) \simeq \Fun (I,\Alg _{\Oo }(C)). \] Under the equivalence of <a class="source-reference" data-label="lem:Algebras_In_Pointwise_Monoidal_Structure" href="../../../entry/algebras-in-pointwise-monoidal-structure/index.html#lem:Algebras_In_Pointwise_Monoidal_Structure">Lemma 14.2.12</a>, the left
+adjoint is the constant-diagram functor. The right adjoint consequently computes limits in \(\Alg _{\Oo }(C)\), and its
+value at every color \(x\) is \(\lim _I A_x\). Thus all the evaluation functors preserve these limits. They jointly detect
+isomorphisms: every object of \(\Oo ^{\otimes }\) is a finite product of colors, and algebra maps preserve these products,
+so a natural transformation that is invertible at every color is invertible at every object. Consequently
+the evaluation functors jointly reflect limit cones and hence jointly create the limits.                       □
+</p>
+</div></div>
+
+<h4 class='subsectionHead' id='symmetric-monoidal-left-adjoints'><span class='titlemark'>14.3.2    </span> <a id='x1-300014.3.2'></a>Symmetric monoidal left adjoints</h4>
+<p class='noindent'>As discussed in <a class="source-reference" data-label="rmk:Right_Adjoint_Oplax_Monoidal_Functor" href="../../../entry/right-adjoint-oplax-monoidal-functor/index.html#rmk:Right_Adjoint_Oplax_Monoidal_Functor">Remark 14.3.7</a>, it is possible to show that the left adjoint of a lax symmetric monoidal functor admits a
+canonical oplax symmetric monoidal structure. While this is subtle to construct in general, the
+construction substantially simplifies when this left adjoint happens to be actually symmetric
+monoidal.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+                                                                                   
+                                                                                   
+<a id='x1-3001r11'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 14.3.11.</span>  </span><span id='prop:Strong_Monoidal_Left_Adjoint_To_Lax_Monoidal'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(R\colon D \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a lax symmetric monoidal functor between symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories.
+Assume that</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>(as a plain functor from</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>to</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>) admits a left adjoint</span> \(L\colon C \to D\) <span class='ntx-Italic-tlf-t1-x-x-109'>such that for all</span> \(n \geq 0\) <span class='ntx-Italic-tlf-t1-x-x-109'>and objects</span> \(x_1, \dots , x_n \in C\) <span class='ntx-Italic-tlf-t1-x-x-109'>the composite </span>\[ L(\bigotimes _{i=1}^n x_i) \xrightarrow {L(\bigotimes _{i=1}^n \eta _{x_i})} L(\bigotimes _{i=1}^n RLx_i) \xrightarrow {L(\lax _R)} LR(\bigotimes _{i=1}^n Lx_i) \xrightarrow {\epsilon } \bigotimes _{i=1}^n L(x_i) \]
+<span class='ntx-Italic-tlf-t1-x-x-109'>is an isomorphism in</span> \(D\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then the following statements hold:</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(R^{\otimes }\colon D^{\otimes } \to C^{\otimes }\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a left adjoint</span> \(L^{\otimes }\colon C^{\otimes } \to D^{\otimes }\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(L^{\otimes }\) <span class='ntx-Italic-tlf-t1-x-x-109'>has a canonical structure as a functor over</span> \(\Span (\Fin )\) <span class='ntx-Italic-tlf-t1-x-x-109'>for which</span> \(L^{\otimes }\dashv R^{\otimes }\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a relative adjunction
+     over</span> \(\Span (\Fin )\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>With this structure,</span> \(L^{\otimes }\) <span class='ntx-Italic-tlf-t1-x-x-109'>defines a morphism of</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operads from</span> \(\Mm _C\) <span class='ntx-Italic-tlf-t1-x-x-109'>to</span> \(\Mm _D\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p></dd><dt class='enumerate'>
+  (4) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>This morphism of</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operads comes from a symmetric monoidal functor from</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>to</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>refining</span> \(L\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p></dd></dl>
+<p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>In particular,</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a strong symmetric monoidal left adjoint</span> \(L\colon (C,\otimes _C) \to (D,\otimes _D)\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+<p class='noindent'> Note that by induction it suffices to check the condition on \(L\) for \(n = 0\) and \(n = 2\), i.e. it suffices to show that the two
+canonical maps \[ L(\unit _C) \to \unit _D \qquadtext { and } L(x \otimes y) \to L(x) \otimes L(y) \] are isomorphisms.
+</p>
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-basics-on-infinity-operads-section-03-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-basics-on-infinity-operads-section-03-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> (1) As in the proof of <a class="source-reference" data-label="prop:Adjoint_To_SymMon_Functor" href="../../../entry/adjoint-to-symmon-functor/index.html#prop:Adjoint_To_SymMon_Functor">Proposition 14.3.6</a>, we use the pointwise criterion for left adjoints from <a class="source-reference" data-label="lem:Pointwise_Criterion_Adjunctions" href="../../../entry/assembly-of-pointwise-adjoint-objects/index.html#lem:Pointwise_Criterion_Adjunctions">Lemma 21.1.4</a>. We define \(L^{\otimes }\)
+objectwise as \(L^{\otimes }(\{x_i\}_{i \in I}) := \{L(x_i)\}_{i \in I}\); the unit maps \(\eta _{x_i} \colon x_i \to RLx_i\) induce a candidate unit map \(\eta _X \colon X \to R^{\otimes }L^{\otimes }X\). We must show that for every object \(Y \in D^{\otimes }_J\) the
+                                                                                   
+                                                                                   
+composite \[ \Hom _{D^{\otimes }}(L^{\otimes }X, Y) \xrightarrow {R^{\otimes }} \Hom _{C^{\otimes }}(R^{\otimes }L^{\otimes }X, R^{\otimes }Y) \xrightarrow {- \circ \eta _X} \Hom _{C^{\otimes }}(X, R^{\otimes }Y) \] is an equivalence. This may be tested fiberwise over any span \(\alpha \colon I \xleftarrow {f} K \xrightarrow {g} J\). Let \[ X \to \alpha _!X, \qquad L^{\otimes }X \to \alpha _!L^{\otimes }X, \qquadtext { and } R^{\otimes }L^{\otimes }X \to \alpha _!R^{\otimes }L^{\otimes }X \] denote cocartesian
+lifts of \(\alpha \) in \(C^{\otimes }\) and \(D^{\otimes }\), and let \(\lax _R\colon \alpha _!R^{\otimes }L^{\otimes }X \to R^{\otimes }\alpha _!L^{\otimes }X\) denote the lax structure map of \(R\) associated to \(\alpha \). We then get a commutative
+diagram as follows:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-b4f321034451.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>It will thus suffice to show that the left vertical composite is an equivalence.
+Under the identifications \(C^{\otimes }_J \simeq \prod _{j \in J} C\) and \(D^{\otimes }_J \simeq \prod _{j \in J} D\), this composite is the product over \(j \in J\) of the analogous composites
+associated to the restricted spans \[ \alpha _j \colon I \xleftarrow {f|_{g^{-1}(j)}} g^{-1}(j) \longrightarrow \lra {1}. \] Indeed, \(R^{\otimes }\) is a morphism of \(\infty \)-operads and therefore respects these
+product decompositions; in particular, the \(j\)-th component of \(\lax _R\) is the lax structure map associated
+to \(\alpha _j\). The map \(\alpha _!\eta _X\) decomposes in the same way. It therefore suffices to treat the case \(J = \lra {1}\). Composing the
+vertical composite with the adjunction equivalence \(\Hom _C(\alpha _!X, RY) \simeq \Hom _D(L\alpha _!X, Y)\), we obtain a map \[ \Hom _D(\alpha _!L^{\otimes }X, Y) \to \Hom _D(L\alpha _!X,Y) \] which we must show is an
+equivalence. But unwinding definitions shows that this map is given by precomposition with the
+composite \[ L\alpha _!X \xrightarrow {L\alpha _!\eta _X} L\alpha _!R^{\otimes }L^{\otimes } X\xrightarrow {L(\lax _R)} LR\alpha _!L^{\otimes }X \xrightarrow {\epsilon _{\alpha _!L^{\otimes }X}} \alpha _!L^{\otimes } X. \] This is precisely the comparison map from the hypothesis for the family \(\{x_{f(k)}\}_{k\in K}\), and is therefore
+an isomorphism. This proves the existence of the left adjoint \(L^{\otimes }\).</p><p class='noindent'>(2) The unit maps \(\eta _X\colon X \to R^{\otimes }L^{\otimes }X\) used in the construction lie in the same fibers of \(C^{\otimes } \to \Span (\Fin )\) as their sources. Their images
+in \(\Span (\Fin )\) therefore give a natural identification \(p_D L^{\otimes } \simeq p_C\) which equips \(L^{\otimes }\) with the structure of a functor over \(\Span (\Fin )\) and lifts
+the unit to a morphism in \(\Fun _{/\Span (\Fin )}(C^{\otimes },C^{\otimes })\). By <a class="source-reference" data-label="lem:Unit_Formulation_Relative_Adjunction" href="../../../entry/unit-formulation-relative-adjunction/index.html#lem:Unit_Formulation_Relative_Adjunction">Lemma 14.3.4</a>, this makes \(L^{\otimes }\dashv R^{\otimes }\) a relative adjunction over \(\Span (\Fin )\).
+</p><p class='noindent'>(3) The objectwise formula on tuples shows that \(L^{\otimes }\) preserves finite products. Thus it is a morphism
+of \(\infty \)-operads. Finally, the comparison isomorphism above identifies \(L^{\otimes }\alpha _!X\) with \(\alpha _!L^{\otimes }X\) for every span \(\alpha \). Hence \(L^{\otimes }\)
+preserves cocartesian morphisms and is strong symmetric monoidal.
+</p><p class='noindent'>(4) By its objectwise definition, the restriction of \(L^{\otimes }\) to the fiber over \(\lra {1}\) is \(L\).                                             □
+</p>
+</div></div>
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../symmetric-monoidal-categories-and-algebras-over-operads/index.html" aria-label="Previous section: Symmetric monoidal ∞-categories and algebras over operads" title="Previous section: Symmetric monoidal ∞-categories and algebras over operads"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../o-monoidal-categories/index.html" aria-label="Next section: O-monoidal ∞-categories" title="Next section: O-monoidal ∞-categories"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html" aria-current="page"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/operads-the-heuristics/index.html"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../../../chapter/span-categories/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../../../chapter/basics-on-infinity-operads/index.html" aria-current="page"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../../../chapter/cartesian-and-cocartesian-monoidal-structures/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../../../chapter/day-convolution-and-the-tensor-product-of-spectra/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="../../../chapter/the-envelope-of-an-infinity-operad/index.html"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../../../chapter/operadic-day-convolution-and-stabilization/index.html"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Operadic Day convolution and stabilization</span></a></li><li><a href="../../../chapter/algebras-and-modules/index.html"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../definitions-and-examples/index.html"><span class="context-entry-heading">Section 14.1</span><span class="context-entry-title">Definitions and examples</span></a></li><li><a href="../symmetric-monoidal-categories-and-algebras-over-operads/index.html"><span class="context-entry-heading">Section 14.2</span><span class="context-entry-title">Symmetric monoidal ∞-categories and algebras over operads</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 14.3</span><span class="context-entry-title">Lax symmetric monoidal functors</span></a></li><li><a href="../o-monoidal-categories/index.html"><span class="context-entry-heading">Section 14.4</span><span class="context-entry-title">O-monoidal ∞-categories</span></a></li><li><a href="../monoidal-subcategories-and-monoidal-bousfield-localizations/index.html"><span class="context-entry-heading">Section 14.5</span><span class="context-entry-title">Monoidal subcategories and monoidal Bousfield localizations</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Lax_Symmetric_Monoidal_Functor"><span class="context-entry-heading">Definition 14.3.1</span><span class="context-entry-title">definition</span></a></li><li><a href="#cons:Functoriality_Algebras_In_Lax_Monoidal_Functors"><span class="context-entry-heading">Construction 14.3.2</span><span class="context-entry-title">construction</span></a></li><li><a href="#def:Relative_Adjunction"><span class="context-entry-heading">Definition 14.3.3</span><span class="context-entry-title">Relative adjunction</span></a></li><li><a href="#lem:Unit_Formulation_Relative_Adjunction"><span class="context-entry-heading">Lemma 14.3.4</span><span class="context-entry-title">Unit formulation of relative adjunctions</span></a></li><li><a href="#lem:Relative_Adjunctions_On_Functor_Categories"><span class="context-entry-heading">Lemma 14.3.5</span><span class="context-entry-title">Relative adjunctions on functor categories</span></a></li><li><a href="#prop:Adjoint_To_SymMon_Functor"><span class="context-entry-heading">Proposition 14.3.6</span><span class="context-entry-title">proposition</span></a></li><li><a href="#rmk:Right_Adjoint_Oplax_Monoidal_Functor"><span class="context-entry-heading">Remark 14.3.7</span><span class="context-entry-title">remark</span></a></li><li><a href="#def:Symmetric_Monoidal_Adjunction"><span class="context-entry-heading">Definition 14.3.8</span><span class="context-entry-title">definition</span></a></li><li><a href="#lem:Symmetric_Monoidal_Adjunction_On_Algebras"><span class="context-entry-heading">Lemma 14.3.9</span><span class="context-entry-title">Adjunctions on O-algebras</span></a></li><li><a href="#prop:Limits_Of_O_Algebras"><span class="context-entry-heading">Proposition 14.3.10</span><span class="context-entry-title">Limits of O-algebras</span></a></li><li><a href="#prop:Strong_Monoidal_Left_Adjoint_To_Lax_Monoidal"><span class="context-entry-heading">Proposition 14.3.11</span><span class="context-entry-title">proposition</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

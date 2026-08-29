@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 8.1: Algebras and modules | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/stable-homotopy-theory/index.html">Part I</a> · <a href="../../../chapter/ring-spectra-and-modules/index.html">Chapter 8</a> · Section 8.1</p>
+      <h1>Algebras and modules</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:SHT_Algebras'>The notions of algebras and modules make sense in every symmetric monoidal \(\infty \)-category. We first recall
+some examples of symmetric monoidal structures, and then state the coherent algebra package from Part II
+that we will use throughout the chapter.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<a class="entry-heading-link" href="../../../entry/symmetric-monoidal-infinity-categories/index.html" aria-label="Definition 8.1.1., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 8.1.1.</span></a>  </span><span id='def:Symmetric_Monoidal_Infty_Category'></span> A <span class='ntx-Italic-tlf-t1-x-x-109'>symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category </span>is defined to be a commutative monoid in \(\Cat _{\infty }\). In
+particular, it is an \(\infty \)-category \(C\) which comes equipped with a <span class='ntx-Italic-tlf-t1-x-x-109'>tensor product functor </span>\[ - \otimes - \colon C \times C \to C \] and a <span class='ntx-Italic-tlf-t1-x-x-109'>monoidal
+unit</span> \(\unit \in C\), and the tensor product is coherently unital, associative and commutative. We will often denote
+symmetric monoidal \(\infty \)-categories as \((C,\otimes ,\unit )\), or often also just as \(C\). Given symmetric monoidal \(\infty \)-categories \(C\)
+and \(D\), a <span class='ntx-Italic-tlf-t1-x-x-109'>symmetric monoidal functor</span> \(F\colon C \to D\) is a morphism in \(\CMon (\Cat _{\infty })\). We write \(\Map ^{\otimes }(C,D)\) for the hom anima in \(\CMon (\Cat _{\infty })\).
+</p>
+</div>
+<p class='noindent'> We write \(\Fun ^{\otimes }(C,D)\) for the \(\infty \)-category of symmetric monoidal functors and monoidal natural transformations. We will
+also use the more flexible notion of a <span class='ntx-Italic-tlf-t1-x-x-109'>lax symmetric monoidal functor</span> \(F\colon C \to D\). Concretely, such a functor is
+equipped with coherent structure maps \[ \unit _D\longrightarrow F(\unit _C), \qquad F(X)\otimes F(Y)\longrightarrow F(X\otimes Y) \] compatible with the unit, associativity and symmetry. A lax
+symmetric monoidal functor is symmetric monoidal precisely when these structure maps are isomorphisms.
+We denote the \(\infty \)-category of lax symmetric monoidal functors by \(\Fun ^{\otimes \text {-lax}}(C,D)\). The formal constructions of these functor
+categories are given in <a class="source-reference" data-label="def:Symmetric_Monoidal_Functor_Category" href="../../../entry/symmetric-monoidal-functor-category/index.html#def:Symmetric_Monoidal_Functor_Category">Definition 14.2.3</a>, <a class="source-reference" data-label="def:Lax_Symmetric_Monoidal_Functor" href="../../../entry/lax-symmetric-monoidal-functor/index.html#def:Lax_Symmetric_Monoidal_Functor">Definition 14.3.1</a>.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1002r2'></a>
+<a class="entry-heading-link" href="../../../entry/examples-of-symmetric-monoidal-structures/index.html" aria-label="Example 8.1.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 8.1.2.</span></a>  </span><span id='ex:Example_Monoidal_Structures'></span> The following are examples of symmetric monoidal \(\infty \)-categories:
+                                                                                   
+                                                                                   
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>If \(C\) is an \(\infty \)-category and \(D\) is symmetric monoidal, then \(\Fun (C,D)\) admits the <span class='ntx-Italic-tlf-t1-x-x-109'>pointwise symmetric monoidal
+   structure</span>, with tensor product and unit computed pointwise.
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>An  \(\infty \)-category  \(C\)  with  finite  products  admits  the  <span class='ntx-Italic-tlf-t1-x-x-109'>cartesian  monoidal  structure</span>  \((C,\times ,*)\).  Dually,  finite
+   coproducts give the <span class='ntx-Italic-tlf-t1-x-x-109'>cocartesian monoidal structure</span> \((C,\amalg ,\emptyset )\). These structures are constructed in <a class="source-reference" data-label="sec:Cartesian_Monoidal_Structure" href="../../cartesian-and-cocartesian-monoidal-structures/cartesian-monoidal-structures/index.html#sec:Cartesian_Monoidal_Structure">Section 15.3</a>, <a class="source-reference" data-label="sec:Cocartesian_Monoidal_Structure" href="../../cartesian-and-cocartesian-monoidal-structures/cocartesian-monoidal-structures/index.html#sec:Cocartesian_Monoidal_Structure">Section 15.2</a>.
+   </p></dd><dt class='enumerate'>
+(3) </dt><dd class='enumerate'>
+   <p class='noindent'>Let  \((C,\otimes ,\unit )\)  be  a  symmetric  monoidal  \(\infty \)-category  and  let  \(D\subseteq C\)  be  a  full  subcategory  which  contains  the
+   monoidal unit and is closed under tensor products. Then \(D\) inherits a symmetric monoidal structure
+   for which the inclusion \(D\hookrightarrow C\) is symmetric monoidal. See <a class="source-reference" data-label="lem:Subcategory_SymMon_Structure" href="../../../entry/subcategory-symmon-structure/index.html#lem:Subcategory_SymMon_Structure">Lemma 14.5.2</a> for the construction.
+   </p></dd><dt class='enumerate'>
+(4) </dt><dd class='enumerate'>
+   <p class='noindent'>If \(C\) and \(D\) are symmetric monoidal, \(C\) is small, and \(D\) is cocomplete with tensor product preserving
+   colimits in both variables, then \(\Fun (C,D)\) also admits the <span class='ntx-Italic-tlf-t1-x-x-109'>Day convolution </span>symmetric monoidal structure.
+   We refer to <a class="source-reference" data-label="chap:Day_Convolution" href="../../../chapter/day-convolution-and-the-tensor-product-of-spectra/index.html#chap:Day_Convolution">Chapter 16</a>, especially <a class="source-reference" data-label="prop:Day_Convolution_Is_Monoidal" href="../../../entry/day-convolution-is-monoidal/index.html#prop:Day_Convolution_Is_Monoidal">Proposition 16.2.7</a>, <a class="source-reference" data-label="cor:Day_Convolution_Small_Source" href="../../../entry/day-convolution-small-source/index.html#cor:Day_Convolution_Small_Source">Corollary 16.2.8</a>, for its universal property and construction.
+   </p></dd><dt class='enumerate'>
+(5) </dt><dd class='enumerate'>
+   <p class='noindent'>The \(\infty \)-category \(\Sp \) of spectra admits a symmetric monoidal structure \(\otimes \) satisfying the property that for
+   every spectrum \(X\), the functor \(X \otimes -\colon \Sp \to \Sp \) preserves colimits. Furthermore, \(\Sp \) is <span class='ntx-Italic-tlf-t1-x-x-109'>universal </span>with this structure: if
+   \(D\) is another symmetric monoidal stable \(\infty \)-category which admits colimits and in which the tensor
+   product preserves colimits in both variables, then the \(\infty \)-category of colimit-preserving symmetric
+   monoidal  functors  \(\Sp \to D\)  is  contractible.  We  construct  the  symmetric  monoidal  structure  in  <a class="source-reference" data-label="chap:Day_Convolution" href="../../../chapter/day-convolution-and-the-tensor-product-of-spectra/index.html#chap:Day_Convolution">Chapter 16</a>,  and
+   discuss its universal property in <a class="source-reference" data-label="sec:Mode_Theory" href="../../operadic-day-convolution-and-stabilization/modes-and-universal-properties/index.html#sec:Mode_Theory">Section 18.5</a>.
+   </p></dd><dt class='enumerate'>
+(6) </dt><dd class='enumerate'>
+   <p class='noindent'>The \(\infty \)-categories \(\An _*\), \(\CMon (\An )\) and \(\CGrp (\An )\) similarly admit universal symmetric monoidal structures for pointed,
+   semiadditive, and additive \(\infty \)-categories. In particular, the functors \[ \An \xrightarrow {(-)_+} \An _* \to \CMon (\An ) \xrightarrow {(-)^{\grp }} \CGrp (\An ) \xhookrightarrow {\bB ^{\infty }} \Sp \] are colimit-preserving and
+   symmetric monoidal; see <a class="source-reference" data-label="prop:Group_Completion_Symmetric_Monoidal" href="../../../entry/group-completion-symmetric-monoidal/index.html#prop:Group_Completion_Symmetric_Monoidal">Proposition 16.6.4</a>.
+   </p></dd><dt class='enumerate'>
+(7) </dt><dd class='enumerate'>
+                                                                                   
+                                                                                   
+   <p class='noindent'>Let  \(R\)  be  a  commutative  ring.  Then  the  <span class='ntx-Italic-tlf-t1-x-x-109'>derived</span>  \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category  </span>of  \(R\),  defined  as  the  localization  \[ \D (R) := \Ch (R)[\{\text {quasi-isomorphisms}\}^{-1}] \]  of
+   the category of chain complexes of \(R\)-modules at the quasi-isomorphisms, admits a symmetric
+   monoidal structure \((\D (R),\otimes ,R[0])\) whose monoidal unit is the chain complex \(R[0]\) given by putting \(R\) in degree \(0\). The
+   tensor product corresponds to the <span class='ntx-Italic-tlf-t1-x-x-109'>derived tensor product </span>of chain complexes. A construction of
+   this symmetric monoidal structure is given in <a class="source-reference" data-label="sec:Monoidal_Derived_Categories" href="../../monoidal-dwyer-kan-localizations-and-derived-categories/the-symmetric-monoidal-derived-category/index.html#sec:Monoidal_Derived_Categories">Section 20.2</a>.
+   </p></dd><dt class='enumerate'>
+(8) </dt><dd class='enumerate'>
+   <p class='noindent'>Recall  the  full  subcategory  \(\Cat _1 \subseteq \Cat _{\infty }\)  from  <a class="source-reference" data-label="ex:Fundamental_Adjunctions" href="../../../entry/fundamental-adjunctions-for-animae-and-infinity-categories/index.html#ex:Fundamental_Adjunctions">Example 1.8.14</a><span class="source-reference equation-reference" data-label="it:Cat_1">(2)</span>  spanned  by  the  1-categories.  A  commutative  monoid  in  \(\Cat _1\)
+   is precisely that of a symmetric monoidal category as defined classically. Since the inclusion
+   \(\Cat _1 \hookrightarrow \Cat _{\infty }\) preserves products, this implies that any symmetric monoidal category defines a symmetric
+   monoidal \(\infty \)-category.</p></dd></dl>
+</div>
+<p class='noindent'>Recall from classical algebra that a <span class='ntx-Italic-tlf-t1-x-x-109'>commutative algebra </span>in a symmetric monoidal category \(C\) is an object \(A\) of \(C\)
+that comes equipped with a unit \(1\colon \unit \to A\) and a multiplication map \(m\colon A \otimes A \to A\) such that the following diagrams commute:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-bcab3a2635f6.svg" alt="Commutative diagram generated from the LaTeX source"></figure><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-3ba10ebd9259.svg" alt="Commutative diagram generated from the LaTeX source"></figure><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-304f9bdec4c7.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>In an \(\infty \)-category, these three relations are only the beginning: one must also specify coherent
+higher homotopies between them. The following definition packages all these coherences at
+once.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1011r3'></a>
+<a class="entry-heading-link" href="../../../entry/commutative-algebras/index.html" aria-label="Definition 8.1.3, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 8.1.3 </span></a>(Commutative algebra)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Commutative_Algebra'></span>  Let  \((C,\otimes ,\unit )\)  be  a  symmetric  monoidal  \(\infty \)-category.  We  define  a
+<span class='ntx-Italic-tlf-t1-x-x-109'>commutative algebra in</span> \(C\) to be a symmetric monoidal functor \[ A \colon \Fin \to C, \] where we equip the category \(\Fin \) of finite
+sets with the cocartesian monoidal structure; this functor packages the coherent \(n\)-fold multiplications
+described below. We refer to the object \(A(*)\) in \(C\) as the <span class='ntx-Italic-tlf-t1-x-x-109'>underlying object of</span> \(A\)<span class='ntx-Italic-tlf-t1-x-x-109'>. </span>We will frequently abuse
+notation and simply write \(A\) for \(A(*)\).
+</p><p class='noindent'>We define the \(\infty \)-category of commutative algebras in \(C\) as \[ \CAlg (C) \quad := \quad \Fun ^{\otimes }(\Fin ,C). \]
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1012r4'></a>
+<a class="entry-heading-link" href="../../../entry/commutative-algebras-in-cartesian-monoidal-categories/index.html" aria-label="Remark 8.1.4., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 8.1.4.</span></a>  </span><span id='rmk:Commutative_Algebras_In_Cartesian_Monoidal_Categories'></span>  For  the  cartesian  monoidal  structure  on  an  \(\infty \)-category  \(C\)  with  finite  products,
+commutative algebras are precisely commutative monoids: \(\CAlg (C,\times )\simeq \CMon (C)\) by <a class="source-reference" data-label="cor:CAlg_Vs_CMon" href="../../../entry/calg-vs-cmon/index.html#cor:CAlg_Vs_CMon">Corollary 15.3.13</a>.
+</p>
+</div>
+<p class='noindent'>Since every finite set is a disjoint union of one-point sets, a commutative algebra supplies coherent \(n\)-fold
+multiplication maps \[ A^{\otimes n}\longrightarrow A \] for all \(n\geq 0\). The unit, associativity, and commutativity displayed above are part of this
+structure, together with all higher compatibility data.
+</p><p class='noindent'>There are analogous coherent notions of associative algebras and of modules. We collect the part of their
+theory needed in this chapter.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1013r5'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 8.1.5 </span>(Coherent algebra package)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Coherent_Algebra_Package'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a cocomplete symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category whose
+tensor product preserves colimits separately in both variables.</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>There are</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories</span> \(\Alg (C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(\CAlg (C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>of associative and commutative algebras in</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Their objects have
+     underlying objects of</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>equipped with coherently unital and associative multiplication maps;
+     for commutative algebras the multiplication is coherently commutative as well.</span>
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For every</span> \(A\in \Alg (C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>there are</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories</span> \(\LMod _A(C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(\RMod _A(C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>of left and right</span> \(A\)<span class='ntx-Italic-tlf-t1-x-x-109'>-modules. The forgetful functors to</span> \(C\)
+     <span class='ntx-Italic-tlf-t1-x-x-109'>create every limit admitted by</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>and all colimits, and the free left</span> \(A\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module on</span> \(X\in C\) <span class='ntx-Italic-tlf-t1-x-x-109'>has underlying
+     object</span> \(A\otimes X\)<span class='ntx-Italic-tlf-t1-x-x-109'>. If</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is stable, then</span> \(\LMod _A(C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(\RMod _A(C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>are stable.</span>
+                                                                                   
+
+                                                                                   
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>There is a relative tensor product </span>\[ -\otimes _A-\colon \RMod _A(C)\times \LMod _A(C)\longrightarrow C, \] <span class='ntx-Italic-tlf-t1-x-x-109'>which preserves colimits separately in both variables. It is
+     unital: for every left</span> \(A\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module</span> \(M\) <span class='ntx-Italic-tlf-t1-x-x-109'>and right</span> \(A\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module</span> \(N\) <span class='ntx-Italic-tlf-t1-x-x-109'>there are natural isomorphisms </span>\[ A\otimes _A M\iso M, \qquad N\otimes _A A\iso N. \]
+     </p></dd><dt class='enumerate'>
+  (4) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Every  morphism</span>  \(f\colon A\to B\)  <span class='ntx-Italic-tlf-t1-x-x-109'>in</span>  \(\Alg (C)\)  <span class='ntx-Italic-tlf-t1-x-x-109'>induces  a  restriction  functor  </span>\[ f_*\colon \LMod _B(C)\longrightarrow \LMod _A(C), \]  <span class='ntx-Italic-tlf-t1-x-x-109'>which  admits  the  extension-of-scalars
+     functor </span>\[ f^*:=B\otimes _A-\colon \LMod _A(C)\longrightarrow \LMod _B(C) \] <span class='ntx-Italic-tlf-t1-x-x-109'>as a left adjoint. There is an analogous adjunction for right modules, whose left
+     adjoint is</span> \(-\otimes _A B\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p></dd><dt class='enumerate'>
+  (5) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(R\in \CAlg (C)\)<span class='ntx-Italic-tlf-t1-x-x-109'>, then left and right</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-modules agree, and the resulting</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(\Mod _R(C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is symmetric monoidal
+     under</span> \(-\otimes _R-\)<span class='ntx-Italic-tlf-t1-x-x-109'>. There are natural equivalences </span>\[ \CAlg (\Mod _R(C))\simeq \CAlg (C)_{R/}. \]
+     </p></dd><dt class='enumerate'>
+  (6) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Lax symmetric monoidal functors preserve algebra objects and their modules. In particular,
+     a  symmetric  monoidal  adjunction</span>  \(F\colon C\rightleftarrows D\noloc G\)  <span class='ntx-Italic-tlf-t1-x-x-109'>induces  adjunctions  on  algebras  and  on  their  module
+     categories. If</span> \(A\in \Alg (C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>and the unit</span> \(A\to GF(A)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is an isomorphism, this gives an adjunction </span>\[ \LMod _A(C)\rightleftarrows \LMod _{F(A)}(D) \] <span class='ntx-Italic-tlf-t1-x-x-109'>whose underlying
+     functors are induced by</span> \(F\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(G\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Right adjoints of symmetric monoidal functors are canonically
+     lax symmetric monoidal.</span>
+     </p></dd><dt class='enumerate'>
+  (7) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is presentable, then</span> \(\LMod _A(C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(\RMod _A(C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>are presentable for every</span> \(A\in \Alg (C)\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-ring-spectra-and-modules-section-01-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-ring-spectra-and-modules-section-01-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> These statements are discussed in more detail in Part II and <a class="source-reference" data-label="chap:Presentable_Infty_Categories" href="../../../chapter/presentable-infinity-categories/index.html#chap:Presentable_Infty_Categories">Chapter 22</a>. See <a class="source-reference" data-label="sec:Algebras_and_Modules" href="../../algebras-and-modules/foundations/index.html#sec:Algebras_and_Modules">Section 19.1</a>, <a class="source-reference" data-label="cor:limits_colimits_modules" href="../../../entry/limits-colimits-modules/index.html#cor:limits_colimits_modules">Corollary 19.1.17</a>, <a class="source-reference" data-label="sec:Relative_Tensor_Products" href="../../algebras-and-modules/relative-tensor-products-and-change-of-algebras/index.html#sec:Relative_Tensor_Products">Section 19.2</a>, <a class="source-reference" data-label="prop:Change_Of_Algebras_Modules" href="../../../entry/change-of-algebras-modules/index.html#prop:Change_Of_Algebras_Modules">Proposition 19.2.12</a>, <a class="source-reference" data-label="thm:Mod_R_Symmetric_Monoidal" href="../../../entry/symmetric-monoidal-structure-on-module-categories/index.html#thm:Mod_R_Symmetric_Monoidal">Theorem 19.2.14</a>, <a class="source-reference" data-label="prop:Algebras_In_Modules" href="../../../entry/algebras-in-modules/index.html#prop:Algebras_In_Modules">Proposition 19.2.15</a>, <a class="source-reference" data-label="prop:Adjoint_To_SymMon_Functor" href="../../../entry/adjoint-to-symmon-functor/index.html#prop:Adjoint_To_SymMon_Functor">Proposition 14.3.6</a>, <a class="source-reference" data-label="prop:Presentability_Day_Modules" href="../../../entry/presentability-of-day-convolution-module-categories/index.html#prop:Presentability_Day_Modules">Proposition 22.5.5</a>.                       □
+                                                                                   
+                                                                                   
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1021r6'></a>
+<a class="entry-heading-link" href="../../../entry/ring-spectra-and-modules/index.html" aria-label="Definition 8.1.6, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 8.1.6 </span></a>(Ring spectra and modules)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Ring_Spectra_And_Modules'></span> An <span class='ntx-Italic-tlf-t1-x-x-109'>associative ring spectrum </span>is an associative algebra
+in \((\Sp ,\otimes ,\S )\), and a <span class='ntx-Italic-tlf-t1-x-x-109'>commutative ring spectrum </span>is a commutative algebra in \(\Sp \). Every algebra \(A\) is canonically a
+left and right module over itself via its multiplication \(A\otimes A\to A\); this is called the <span class='ntx-Italic-tlf-t1-x-x-109'>regular</span> \(A\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module</span>. We write \[ \Alg :=\Alg (\Sp ), \qquad \CAlg :=\CAlg (\Sp ) \]
+for their \(\infty \)-categories. For an associative ring spectrum \(R\), we abbreviate \[ \LMod _R:=\LMod _R(\Sp ), \qquad \RMod _R:=\RMod _R(\Sp ). \] If \(R\) is commutative, we write \(\Mod _R:=\Mod _R(\Sp )\)
+for its symmetric monoidal \(\infty \)-category of modules.
+</p>
+</div>
+<p class='noindent'> Unless commutativity is specified, a ring spectrum will mean an associative ring spectrum.
+</p><p class='noindent'>The regular module generates an important finiteness class.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1022r7'></a>
+<a class="entry-heading-link" href="../../../entry/perfect-modules/index.html" aria-label="Definition 8.1.7, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 8.1.7 </span></a>(Perfect module)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Perfect_Module'></span> Let \(R\) be an associative ring spectrum. We denote by \[ \Perf (R) \subseteq \LMod _R \] the smallest
+thick subcategory containing the regular left \(R\)-module \(R\), where a subcategory is called <span class='ntx-Italic-tlf-t1-x-x-109'>thick </span>if it is
+stable and closed under retracts. A left \(R\)-module is called <span class='ntx-Italic-tlf-t1-x-x-109'>perfect </span>if it belongs to \(\Perf (R)\).
+</p>
+</div>
+<p class='noindent'>Thus a perfect module is obtained from finitely many shifts of \(R\) by iterating finite cofiber sequences and
+retracts. The compact-generation results from <a class="source-reference" data-label="chap:Presentable_Infty_Categories" href="../../../chapter/presentable-infinity-categories/index.html#chap:Presentable_Infty_Categories">Chapter 22</a> identify this intrinsic finite construction with
+compactness.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1023r8'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 8.1.8 </span>(Perfect modules and compact objects, <span class='citation'>[Lurie (2017), Proposition 7.2.4.2]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Perfect_Iff_Compact'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an associative ring spectrum.</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The regular left</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>is compact.</span>
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(\LMod _R\) <span class='ntx-Italic-tlf-t1-x-x-109'>is compactly generated by</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>A left</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module is perfect if and only if it is compact.</span></p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-ring-spectra-and-modules-section-01-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-ring-spectra-and-modules-section-01-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The functor \(\Hom _{\LMod _R}(R,-)\) is naturally isomorphic to the composite \[ \LMod _R \xrightarrow {\fgt } \Sp \xrightarrow {\Omega ^\infty } \An , \] which preserves filtered colimits.
+Thus \(R\) is compact. Its shifts jointly detect isomorphisms, since \[ \pi _n(M) \cong \pi _0\Hom _{\LMod _R}(R[n],M). \] Hence \(R\) is a compact generator of \(\LMod _R\). The
+characterization of compact objects in a compactly generated stable \(\infty \)-category from <a class="source-reference" data-label="prop:Compact_Objects_Are_Finitely_Dominated" href="../../../entry/compact-generation-criterion/index.html#prop:Compact_Objects_Are_Finitely_Dominated">Proposition 22.3.4</a> now identifies
+the compact objects with the thick subcategory generated by \(R\), which is \(\Perf (R)\).                                          □
+</p>
+</div></div>
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../../localization-and-completion/completion-at-a-prime/index.html" aria-label="Previous section: Completion at a prime" title="Previous section: Completion at a prime"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../connective-modules/index.html" aria-label="Next section: Connective modules" title="Next section: Connective modules"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html" aria-current="page"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/animae-as-spaces/index.html"><span class="context-entry-heading">Chapter 2</span><span class="context-entry-title">Animae as spaces</span></a></li><li><a href="../../../chapter/homology-and-cohomology/index.html"><span class="context-entry-heading">Chapter 3</span><span class="context-entry-title">Homology and cohomology</span></a></li><li><a href="../../../chapter/spectra-and-stable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 4</span><span class="context-entry-title">Spectra and stable ∞-categories</span></a></li><li><a href="../../../chapter/recognition-principle/index.html"><span class="context-entry-heading">Chapter 5</span><span class="context-entry-title">The recognition principle</span></a></li><li><a href="../../../chapter/homological-algebra/index.html"><span class="context-entry-heading">Chapter 6</span><span class="context-entry-title">Homological algebra</span></a></li><li><a href="../../../chapter/localization-and-completion/index.html"><span class="context-entry-heading">Chapter 7</span><span class="context-entry-title">Localization and completion</span></a></li><li><a href="../../../chapter/ring-spectra-and-modules/index.html" aria-current="page"><span class="context-entry-heading">Chapter 8</span><span class="context-entry-title">Ring spectra and modules</span></a></li><li><a href="../../../chapter/complex-k-theory/index.html"><span class="context-entry-heading">Chapter 9</span><span class="context-entry-title">Complex K-theory</span></a></li><li><a href="../../../chapter/thom-spectra-and-bordism-theory/index.html"><span class="context-entry-heading">Chapter 10</span><span class="context-entry-title">Thom spectra and bordism theory</span></a></li><li><a href="../../../chapter/duality-phenomena/index.html"><span class="context-entry-heading">Chapter 11</span><span class="context-entry-title">Duality phenomena</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 8.1</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../connective-modules/index.html"><span class="context-entry-heading">Section 8.2</span><span class="context-entry-title">Connective modules</span></a></li><li><a href="../eilenberg-maclane-ring-spectra-and-dgas/index.html"><span class="context-entry-heading">Section 8.3</span><span class="context-entry-title">Eilenberg–MacLane ring spectra and DGAs</span></a></li><li><a href="../localizations-of-ring-spectra/index.html"><span class="context-entry-heading">Section 8.4</span><span class="context-entry-title">Localizations of ring spectra</span></a></li><li><a href="../projective-and-flat-modules-online-only/index.html"><span class="context-entry-heading">Section 8.5</span><span class="context-entry-title">Projective and flat modules (online only)</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Symmetric_Monoidal_Infty_Category"><span class="context-entry-heading">Definition 8.1.1</span><span class="context-entry-title">definition</span></a></li><li><a href="#ex:Example_Monoidal_Structures"><span class="context-entry-heading">Example 8.1.2</span><span class="context-entry-title">example</span></a></li><li><a href="#def:Commutative_Algebra"><span class="context-entry-heading">Definition 8.1.3</span><span class="context-entry-title">Commutative algebra</span></a></li><li><a href="#rmk:Commutative_Algebras_In_Cartesian_Monoidal_Categories"><span class="context-entry-heading">Remark 8.1.4</span><span class="context-entry-title">remark</span></a></li><li><a href="#prop:Coherent_Algebra_Package"><span class="context-entry-heading">Proposition 8.1.5</span><span class="context-entry-title">Coherent algebra package</span></a></li><li><a href="#def:Ring_Spectra_And_Modules"><span class="context-entry-heading">Definition 8.1.6</span><span class="context-entry-title">Ring spectra and modules</span></a></li><li><a href="#def:Perfect_Module"><span class="context-entry-heading">Definition 8.1.7</span><span class="context-entry-title">Perfect module</span></a></li><li><a href="#lem:Perfect_Iff_Compact"><span class="context-entry-heading">Lemma 8.1.8</span><span class="context-entry-title">Perfect modules and compact objects</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

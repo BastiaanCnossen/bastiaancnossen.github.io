@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 6.2: Ordinary homology and cohomology via D(Z) | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/stable-homotopy-theory/index.html">Part I</a> · <a href="../../../chapter/homological-algebra/index.html">Chapter 6</a> · Section 6.2</p>
+      <h1>Ordinary homology and cohomology via D(Z)</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Ordinary_Homology_Derived_Category'>We now construct the ordinary homology and cohomology theories that were used axiomatically in <a class="source-reference" data-label="chap:Cohomology_Theories" href="../../../chapter/homology-and-cohomology/index.html#chap:Cohomology_Theories">Chapter 3</a>. The
+construction is intrinsic to animae: instead of choosing a topological model and taking singular chains, we
+use the universal property of \(\An \) to produce chain and cochain complexes directly in the derived
+category \(\D (\Z )\). The bridge from chain complexes to spectra is provided by Eilenberg–MacLane
+spectra.
+</p>
+<h4 class='subsectionHead' id='eilenbergmaclane-spaces-and-spectra'><span class='titlemark'>6.2.1    </span> <a id='x1-20006.2.1'></a>Eilenberg-MacLane spaces and spectra</h4>
+<p class='noindent' id='subsec_Eilenberg_MacLane'>Throughout this section we fix the abelian category \(\Aa = \Ab \) of abelian groups and work in its derived
+\(\infty \)-category \(\D (\Z )\). By forming mapping spectra out of the complex \(\Z [0]\), we may associate a spectrum to every
+complex:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r1'></a>
+<a class="entry-heading-link" href="../../../entry/eilenberg-maclane-spectra-of-chain-complexes/index.html" aria-label="Definition 6.2.1, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 6.2.1 </span></a>(Eilenberg-MacLane spectrum)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Eilenberg_MacLane_Spectrum'></span>                  Given                  a                  complex
+\(A \in \D (\Z )\), we define its <span class='ntx-Italic-tlf-t1-x-x-109'>Eilenberg-MacLane spectrum </span>as the mapping spectrum \[ HA \quad := \quad \hom _{\D (\Z )}(\Z [0],A) \qin \Sp \] Similarly, for \(n \in \Z \) we define its
+\(n\)<span class='ntx-Italic-tlf-t1-x-x-109'>-th Eilenberg MacLane anima </span>as \[ K(A,n) \quad := \quad \Hom _{\D (\Z )}(\Z [-n],A) \qin \An . \] These define functors \(H \colon \D (\Z ) \to \Sp \) and \(K(-,n)\colon \D (\Z ) \to \An \).
+</p><p class='noindent'>In particular, every abelian group \(A \in \Ab \) defines an Eilenberg-MacLane spectrum \(HA\) and an \(n\)-th Eilenberg
+MacLane anima \(K(A,n)\) by regarding it as a chain complex concentrated in degree \(0\).
+</p>
+</div>
+<p class='noindent'>Eilenberg-MacLane spectra play an important role in stable homotopy theory. In the next subsection,
+we will use them to classify ordinary (co)homology theories with coefficients in an abelian
+group.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2002r2'></a>
+<a class="entry-heading-link" href="../../../entry/eilenberg-maclane-spectra-of-modules/index.html" aria-label="Exercise 6.2.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 6.2.2.</span></a>  </span><span id='exercise:Eilenberg_MacLane_Spectra_Of_Modules'></span> Show that for an associative ring \(R\) the forgetful functor \(\RMod _R(\Ab ) \to \Ab \) induces a functor \(\D (R) \to \D (\Z )\). Show
+that the composite \(\D (R) \to \D (\Z ) \xrightarrow {H} \Sp \) may be identified with \(\hom _{\D (R)}(R[0],-)\).
+</p>
+</div>
+<p class='noindent'>The main property of the Eilenberg-MacLane animae and spectra is that their homotopy groups are
+precisely the homology groups of \(A\):
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2003r3'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 6.2.3.</span>  </span><span id='prop:Homotopy_Groups_Eilenberg_MacLane'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For a complex</span> \(A \in \D (\Z )\) <span class='ntx-Italic-tlf-t1-x-x-109'>and integers</span> \(n \in \Z \)<span class='ntx-Italic-tlf-t1-x-x-109'>,</span> \(k \geq 0\)<span class='ntx-Italic-tlf-t1-x-x-109'>, there are natural isomorphisms of abelian groups</span>
+\[ \pi _k(K(A,n)) \quad \cong \quad H_{k-n}(A) \qquadtext { and } \pi _n(HA) \quad \cong \quad H_n(A). \]
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2004r4'></a>
+<a class="entry-heading-link" href="../../../entry/comparison-of-eilenberg-maclane-spectra/index.html" aria-label="Remark 6.2.4., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 6.2.4.</span></a>  </span><span id='rmk:Comparison_Eilenberg_MacLane_Spectra'></span> If \(A\) is an abelian group regarded as a complex concentrated in degree \(0\), then <a class="source-reference" data-label="prop:Homotopy_Groups_Eilenberg_MacLane" href="../../../entry/homotopy-groups-of-eilenberg-maclane-spectra/index.html#prop:Homotopy_Groups_Eilenberg_MacLane">Proposition 6.2.3</a> shows
+                                                                                   
+                                                                                   
+that \(HA\) is connective and that \(\Omega ^{\infty }HA\) is the discrete commutative group \(A\). Under the recognition equivalence
+of <a class="source-reference" data-label="thm:Recognition_Principle_Connective_Spectra" href="../../../entry/recognition-principle-for-connective-spectra/index.html#thm:Recognition_Principle_Connective_Spectra">Theorem 5.4.6</a>, it therefore corresponds to \(A\in \CGrp (\Set )\), giving a natural isomorphism \[ HA \iso \bB ^{\infty }A. \] Thus this construction agrees with
+the Eilenberg–MacLane spectrum of <a class="source-reference" data-label="def:Eilenberg_MacLane_Spectrum_Recognition" href="../../../entry/eilenberg-maclane-spectrum-from-an-abelian-group/index.html#def:Eilenberg_MacLane_Spectrum_Recognition">Definition 5.4.9</a>.
+</p>
+</div>
+<p class='noindent'>This has the following useful consequence:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2005r5'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 6.2.5.</span>  </span><span id='lem:EM_Preserves_Colimits'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(H\colon \D (\Z ) \to \Sp \) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves colimits.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-02-9" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-02-9">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  Since  it  is  exact,  it  remains  to  show  it  preserves  arbitrary  coproducts:  the  map  \(\bigoplus _{i \in I} H(A_i) \to H(\bigoplus _{i \in I} A_i)\)  is  an
+isomorphism of spectra. This may be tested at the level of homotopy groups. Combining with <a class="source-reference" data-label="prop:Homotopy_Groups_Eilenberg_MacLane" href="../../../entry/homotopy-groups-of-eilenberg-maclane-spectra/index.html#prop:Homotopy_Groups_Eilenberg_MacLane">Proposition 6.2.3</a>, this
+then follows from the fact that both \(\pi _n(-)\colon \Sp \to \Ab \) and \(H_n(-)\colon \D (\Z ) \to \Ab \) preserve coproducts.                                                         □
+</p>
+</div></div>
+<p class='noindent'>To prove the proposition, we introduce an auxiliary \(\infty \)-category in which the complexes \(\Z [n]\) corepresent
+homology directly. We will then transport this corepresentability across the further localization to
+\(\D (\Z )\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+                                                                                   
+                                                                                   
+<a id='x1-2006r6'></a>
+<a class="entry-heading-link" href="../../../entry/homotopy-infinity-category-of-chain-complexes/index.html" aria-label="Definition 6.2.6., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 6.2.6.</span></a>  </span><span id='def:Homotopy_Infinity_Category_Chain_Complexes'></span> Let \(\Aa \) be an abelian category. We define the \(\infty \)-category \(\Kk (\Aa )\) as the localization \[ \Kk (\Aa ) \quad := \quad \Ch (\Aa )[\{\text {chain homotopy equivalences}^{-1}\}]. \] There
+are localization functors \(\Ch (\Aa ) \to \Kk (\Aa ) \to \D (\Aa )\).
+</p>
+</div>
+<p class='noindent'>A chain map \(i\colon C_{\bullet } \to D_{\bullet }\) is called a <span class='ntx-Italic-tlf-t1-x-x-109'>degreewise split monomorphism </span>if each component \(i_n\colon C_n \to D_n\) is a split monomorphism in \(\Aa \).
+The chosen retractions are not required to assemble into a chain map. Degreewise split epimorphisms are
+defined dually.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2007r7'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 6.2.7.</span>  </span><span id='prop:Homotopy_Category_Chain_Complexes_Stable'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For every abelian category</span> \(\Aa \)<span class='ntx-Italic-tlf-t1-x-x-109'>, the</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(\Kk (\Aa )\) <span class='ntx-Italic-tlf-t1-x-x-109'>is stable. Under the localization
+functor</span> \(\Ch (\Aa ) \to \Kk (\Aa )\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the suspension of a chain complex</span> \(C_{\bullet }\) <span class='ntx-Italic-tlf-t1-x-x-109'>is naturally isomorphic to the shifted complex</span> \(C[1]_{\bullet }\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-02-8" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-02-8">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The proof is the split analogue of the proofs of <a class="source-reference" data-label="prop:ChA_Weak_Equivalences_Cofibrations" href="../../../entry/cofibration-structure-on-chain-complexes/index.html#prop:ChA_Weak_Equivalences_Cofibrations">Proposition 6.1.27</a>, <a class="source-reference" data-label="thm:DA_Is_Stable" href="../../../entry/derived-infinity-categories-are-stable/index.html#thm:DA_Is_Stable">Theorem 6.1.30</a>. Equip \(\Ch (\Aa )\) with chain homotopy equivalences
+as weak equivalences and degreewise split monomorphisms as cofibrations. The mapping-cylinder
+factorization shows that every map factors as a cofibration followed by a weak equivalence. The
+pushout axiom follows from the criterion that a degreewise split monomorphism is a chain homotopy
+equivalence precisely when its cokernel is contractible. The dual argument uses degreewise split
+epimorphisms, so the localization \(\Kk (\Aa )\) admits finite limits and colimits.
+                                                                                   
+                                                                                   
+</p><p class='noindent'>For a chain complex \(C_{\bullet }\), the degreewise split short exact sequence \[ 0 \to C_{\bullet } \to \Cyl (C_{\bullet }\to 0) \to C[1]_{\bullet } \to 0 \] is sent to a cofiber sequence in
+\(\Kk (\Aa )\). Its middle term is contractible, so it identifies suspension with the shift \([1]\). Thus suspension is an
+equivalence, with inverse induced by \([-1]\), and <a class="source-reference" data-label="thm:Characterization_Stable_Categories" href="../../../entry/characterizations-of-stable-infinity-categories/index.html#thm:Characterization_Stable_Categories">Theorem 4.2.2</a> implies that \(\Kk (\Aa )\) is stable.                                                    □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2008r8'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 6.2.8.</span>  </span><span id='lem:Homotopy_Category_KA'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The homotopy category of</span> \(\Kk (\Aa )\) <span class='ntx-Italic-tlf-t1-x-x-109'>is the category whose objects are chain complexes and
+whose morphisms are chain maps modulo chain homotopy.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-02-7" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-02-7">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> As in the proof of <a class="source-reference" data-label="cor:Pi_Infty_surjective_On_Objects_And_Morphisms" href="../../../entry/homotopy-category-of-animae-via-cell-complexes/index.html#cor:Pi_Infty_surjective_On_Objects_And_Morphisms">Corollary 2.3.7</a>, this follows from the observation that a functor \(\Ch (\Aa ) \to C\) into a 1-category \(C\) inverts
+chain homotopy equivalences if and only if it identifies chain homotopic chain maps.                     □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2009r9'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 6.2.9.</span>  </span><span id='cor:Shifted_Integers_Represent_Homology_In_Homotopy_Category'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For a chain complex</span> \(C_{\bullet } \in \Ch (\Ab )\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(n \in \Z \) <span class='ntx-Italic-tlf-t1-x-x-109'>there is a natural isomorphism </span>\[ \pi _0 \Hom _{\Kk (\Ab )}(\Z [n],C_{\bullet }) \cong H_n(C). \] <span class='ntx-Italic-tlf-t1-x-x-109'>In particular, the
+functor</span> \(\Hom _{\Kk (\Ab )}(\Z [n],-)\colon \Kk (\Ab ) \to \An \) <span class='ntx-Italic-tlf-t1-x-x-109'>corepresented by</span> \(\Z [n]\) <span class='ntx-Italic-tlf-t1-x-x-109'>inverts quasi-isomorphisms.</span>
+</p>
+</div>
+                                                                                   
+
+                                                                                   
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-02-6" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-02-6">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="lem:Homotopy_Category_KA" href="../../../entry/homotopy-category-of-chain-complexes/index.html#lem:Homotopy_Category_KA">Lemma 6.2.8</a>, the left-hand side is the set of chain maps \(\Z [n] \to C_{\bullet }\) up to chain homotopy. The first claim follows,
+since a chain map \(\Z [n] \to C_{\bullet }\) is nothing but an element of \(\ker (d_n\colon C_n \to C_{n-1})\) and two chain maps are chain homotopic if and only
+if their difference lies in the image of \(d_{n+1}\colon C_{n+1} \to C_n\).
+</p><p class='noindent'>The second claim now follows from the stability of \(\Kk (\Ab )\) established in <a class="source-reference" data-label="prop:Homotopy_Category_Chain_Complexes_Stable" href="../../../entry/homotopy-infinity-category-of-chain-complexes-is-stable/index.html#prop:Homotopy_Category_Chain_Complexes_Stable">Proposition 6.2.7</a>: for \(k \geq 0\) we have \[ \pi _k\Hom _{\Kk (\Ab )}(\Z [n],A) \cong \pi _0\Hom _{\Kk (\Ab )}(\Z [n+k], A) \cong H_{n+k}(A). \qedhere \]                            □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2010r10'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 6.2.10.</span>  </span><span id='lem:Hom_In_Localization'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(\gamma \colon C \to C[W^{-1}]\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  the  localization  functor  inverting  a  collection  of  morphisms</span>  \(W\)  <span class='ntx-Italic-tlf-t1-x-x-109'>in  some</span>
+\(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Let</span> \(X \in C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an object with the property that</span> \(\Hom _C(X,-)\colon C \to \An \) <span class='ntx-Italic-tlf-t1-x-x-109'>inverts all morphisms in</span> \(W\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then for every</span> \(Y \in C\) <span class='ntx-Italic-tlf-t1-x-x-109'>the
+map </span>\[ \Hom _C(X,Y) \to \Hom _{C[W^{-1}]}(\gamma X, \gamma Y) \] <span class='ntx-Italic-tlf-t1-x-x-109'>is an isomorphism of animae.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-02-5" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-02-5">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The assumption on \(X\) guarantees that \(\Hom _C(X,-)\) descends to a functor \(C[W^{-1}] \to \An \). We need to show that this functor
+is corepresented by \(\gamma X \in C[W^{-1}]\). But this follows immediately from the full faithfulness of \(\gamma ^*\colon \Fun (C[W^{-1}],\An ) \hookrightarrow \Fun (C,\An )\): for any other functor
+\(F\colon C[W^{-1}] \to \An \) we have \[ \Nat _{C[W^{-1}] \to \An }(\Hom _C(X,-),F) \iso \Nat _{C \to \An }(\Hom _C(X,-),F\circ \gamma ) \iso F(\gamma (X)). \qedhere \]                                                                                                                                              □
+</p>
+</div></div>
+                                                                                   
+                                                                                   
+<p class='noindent'>We are now ready for the proof of <a class="source-reference" data-label="prop:Homotopy_Groups_Eilenberg_MacLane" href="../../../entry/homotopy-groups-of-eilenberg-maclane-spectra/index.html#prop:Homotopy_Groups_Eilenberg_MacLane">Proposition 6.2.3</a>:
+</p>
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-02-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-02-4">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof of </span><a class="source-reference" data-label="prop:Homotopy_Groups_Eilenberg_MacLane" href="../../../entry/homotopy-groups-of-eilenberg-maclane-spectra/index.html#prop:Homotopy_Groups_Eilenberg_MacLane">Proposition 6.2.3</a><span class='ntx-Italic-tlf-t1-x-x-109'>.</span> </span>   Combining  <a class="source-reference" data-label="cor:Shifted_Integers_Represent_Homology_In_Homotopy_Category" href="../../../entry/shifted-integers-represent-homology/index.html#cor:Shifted_Integers_Represent_Homology_In_Homotopy_Category">Corollary 6.2.9</a>  and  <a class="source-reference" data-label="lem:Hom_In_Localization" href="../../../entry/maps-from-local-objects-in-a-localization/index.html#lem:Hom_In_Localization">Lemma 6.2.10</a>,  we  see  that  for  every  complex  \(A \in \Kk (\Ab )\)  and  \(n \in \Z \),  the  canonical  map  \[ \Hom _{\Kk (\Ab )}(\Z [-n],A) \to \Hom _{\D (\Z )}(\Z [-n], A) = K(A,n) \]  is  an
+isomorphism of animae. In particular, we have \[ \pi _k(K(A,n)) \cong \pi _k\Hom _{\Kk (\Ab )}(\Z [-n],A) \cong \pi _0\Hom _{\Kk (\Ab )}(\Z [k-n], A) \cong H_{k-n}(A) \] and thus \[ \pi _n(HA) \cong \pi _0 H(A[-n]) \cong \pi _0 K(A[-n],0) \cong H_{0}(A[-n]) \cong H_n(A). \qedhere \]                                                                  □
+</p>
+</div></div>
+
+<h4 class='subsectionHead' id='ordinary-homology-and-cohomology'><span class='titlemark'>6.2.2    </span> <a id='x1-30006.2.2'></a>Ordinary homology and cohomology</h4>
+<p class='noindent' id='subsec_Ordinary_Homology_Derived_Category'>Recall from <a class="source-reference" data-label="sec:Ordinary_Homology_And_Cohomology" href="../../homology-and-cohomology/ordinary-homology-and-cohomology/index.html#sec:Ordinary_Homology_And_Cohomology">Section 3.3</a> the axiomatization of ordinary (co)homology with coefficients in an abelian group \(A\). We can
+now describe these as the (co)homology theory associated to the Eilenberg-MacLane spectrum \(HA\) of \(A\). More
+generally, we obtain versions of ordinary (co)homology with coefficients in an arbitrary complex of abelian
+groups.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3001r11'></a>
+<a class="entry-heading-link" href="../../../entry/reduced-ordinary-homology-and-cohomology/index.html" aria-label="Definition 6.2.11, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 6.2.11 </span></a>(Reduced ordinary (co)homology)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Reduced_Ordinary_Homology'></span> Let \(A \in \D (\Z )\) be a complex of abelian groups and let
+\(X \in \An _*\) be a pointed anima. We define the <span class='ntx-Italic-tlf-t1-x-x-109'>reduced ordinary homology of</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>with coefficients in</span> \(A\) and the
+<span class='ntx-Italic-tlf-t1-x-x-109'>reduced ordinary cohomology of</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>with coefficients in</span> \(A\) as the (co)homology theories represented by
+the Eilenberg-MacLane spectrum \(HA\): \[ \widetilde {H}_n(X;A) \, := \, HA_n(X) \, = \, \pi _n(\Sigma ^{\infty }X \otimes HA) \] and \[ \widetilde {H}^n(X;A) \, := \, HA^n(X) \, = \, \pi _{-n}\hom (\Sigma ^{\infty }X,HA). \] We will mostly be interested in the case where \(A \in \Ab \) is an abelian
+group, regarded as a complex concentrated in degree \(0\).
+</p>
+</div>
+<p class='noindent'>The groups \(\widetilde {H}_*(X;A)\) and \(\widetilde {H}^*(X;A)\) may alternatively be computed as the homology groups of certain chain complexes
+associated to \(X\) and \(A\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3002r12'></a>
+<a class="entry-heading-link" href="../../../entry/chain-and-cochain-complexes-of-animae/index.html" aria-label="Construction 6.2.12, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 6.2.12 </span></a>(Chain and cochain complexes)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cons:Chain_Cochain_Complexes'></span> Let \(A \in \D (\Z )\) be a complex. Since \(\D (\Z )\) admits all small
+limits and colimits by <a class="source-reference" data-label="cor:DA_Limits_Colimits" href="../../../entry/limits-and-colimits-in-derived-infinity-categories/index.html#cor:DA_Limits_Colimits">Corollary 6.1.29</a>, the universal property of \(\An \) from <a class="source-reference" data-label="cor:Universal_Property_Animae" href="../../../entry/universal-property-of-animae/index.html#cor:Universal_Property_Animae">Corollary 1.8.10</a> implies that evaluation at the point induces
+equivalences  \[ \ev _{\pt }\colon \Fun ^{\colim }(\An ,\D (\Z )) \iso \D (\Z ) \qquadtext {and} \ev _{\pt }\colon \Fun ^{\lim }(\An \catop ,\D (\Z )) \iso \D (\Z ). \]  In  particular,  the  object  \(A \in \D (\Z )\)  determines  two  functors  \[ C_*(-;A)\colon \An \to \D (\Z ) \qquadtext {and} C^*(-;A) \colon \An \catop \to \D (\Z ), \]  characterized  uniquely  by  the
+properties that \(C_*(-;A)\) preserves colimits, \(C^*(-;A)\) preserves limits, and \(C_*(\pt ;A) \simeq A \simeq C^*(\pt ;A)\).
+</p><p class='noindent'>For a commutative ring \(R\), the same construction in \(\D (R)\) defines chains and cochains with coefficients in
+any \(A \in \D (R)\). Restriction of scalars along \(\Z \to R\) identifies their underlying complexes in \(\D (\Z )\) with the constructions
+above.
+</p><p class='noindent'>For a pointed anima \((X,x) \in \An _*\), we define the <span class='ntx-Italic-tlf-t1-x-x-109'>reduced chain complex </span>and <span class='ntx-Italic-tlf-t1-x-x-109'>reduced cochain complex </span>as \[ \widetilde {C}_*(X;A) := \cofib (A \simeq C_*(\pt ;A) \xrightarrow {x_*} C_*(X;A)) \] and \[ \widetilde {C}^*(X;A) := \fib (C^*(X;A) \xrightarrow {x^*} C^*(\pt ;A) \simeq A). \]
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3003r13'></a>
+<a class="entry-heading-link" href="../../../entry/ordinary-homology-and-cohomology/index.html" aria-label="Definition 6.2.13, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 6.2.13 </span></a>(Ordinary (co)homology)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Ordinary_Homology'></span> Given an anima \(X \in \An \), a chain complex \(A \in \D (\Z )\), and an integer \(n \in \Z \), we
+define the <span class='ntx-Italic-tlf-t1-x-x-109'>ordinary homology </span>and <span class='ntx-Italic-tlf-t1-x-x-109'>ordinary cohomology of</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>with coefficients in</span> \(A\) as \[ H_n(X;A) := H_n(C_{*}(X;A)) \qquadtext {and} H^n(X;A) := H_{-n}(C^{*}(X;A)). \] When \(A = \Z \) (regarded
+as a complex concentrated in degree \(0\)), we simply write \(H_n(X) := H_n(X;\Z )\) and \(H^n(X) := H^n(X;\Z )\).
+</p>
+</div>
+<p class='noindent'>The next result shows that the spectrum-theoretic and chain complex definitions of ordinary (co)homology
+agree.
+</p>
+<div class='newtheorem'>
+                                                                                   
+                                                                                   
+<p class='noindent'><span class='head'>
+<a id='x1-3004r14'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 6.2.14.</span>  </span><span id='prop:Spectrum_Chain_Complex_Comparison'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(A \in \D (\Z )\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a chain complex. There are natural equivalences of functors </span>\[ H(C_*(-;A)) \,\simeq \, \Sigma ^{\infty }_+(-) \otimes HA \colon \An \to \Sp \] <span class='ntx-Italic-tlf-t1-x-x-109'>and </span>\[ H(C^*(-;A)) \,\simeq \, \hom (\Sigma ^{\infty }_+(-), HA) \colon \An \catop \to \Sp . \] <span class='ntx-Italic-tlf-t1-x-x-109'>In
+particular, for any anima</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>there are natural isomorphisms </span>\[ H_n(X;A) \cong \pi _n(\Sigma ^{\infty }_+ X \otimes HA) \qquadtext {and} H^n(X;A) \cong \pi _{-n}\hom (\Sigma ^{\infty }_+ X, HA). \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-02-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-02-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  Since  the  Eilenberg-MacLane  functor  \(H\colon \D (\Z ) \to \Sp \)  preserves  colimits  by  <a class="source-reference" data-label="lem:EM_Preserves_Colimits" href="../../../entry/eilenberg-maclane-functor-preserves-colimits/index.html#lem:EM_Preserves_Colimits">Lemma 6.2.5</a>,  it  follows  that  \(H \circ C_*(-;A)\colon \An \to \Sp \)  preserves
+colimits. On the other hand, the functor \(\Sigma ^{\infty }_+(-) \otimes HA\) also preserves colimits, since both \(\Sigma ^{\infty }_+\) and \(- \otimes HA\) do. Since both
+evaluate to \(HA\) on the point, it follows they are naturally equivalent. The equivalence \(H(C^*(-;A)) \simeq \hom (\Sigma ^{\infty }_+(-), HA)\) follows similarly,
+as both sides preserve limits.
+</p><p class='noindent'>The final statement follows by taking homotopy groups and using <a class="source-reference" data-label="prop:Homotopy_Groups_Eilenberg_MacLane" href="../../../entry/homotopy-groups-of-eilenberg-maclane-spectra/index.html#prop:Homotopy_Groups_Eilenberg_MacLane">Proposition 6.2.3</a>.                                                  □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3005r15'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 6.2.15.</span>  </span><span id='cor:Reduced_Homology_Identification'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For a pointed anima</span> \(X \in \An _*\) <span class='ntx-Italic-tlf-t1-x-x-109'>and a chain complex</span> \(A \in \D (\Z )\)<span class='ntx-Italic-tlf-t1-x-x-109'>, there are natural isomorphisms </span>\[ \widetilde {H}_n(X;A) \cong H_n(\widetilde {C}_*(X;A)) \qquadtext {and} \widetilde {H}^n(X;A) \cong H_{-n}(\widetilde {C}^*(X;A)). \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-02-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-02-2">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We have \[ \widetilde {H}_n(X;A) = \pi _n(\Sigma ^{\infty } X \otimes HA) \cong \pi _n(\cofib (\S \otimes HA \to \Sigma ^{\infty }_+ X \otimes HA)) \] since \(\Sigma ^{\infty } X = \cofib (\S \to \Sigma ^{\infty }_+ X)\) and \(- \otimes HA\) is exact. By <a class="source-reference" data-label="prop:Spectrum_Chain_Complex_Comparison" href="../../../entry/comparison-between-chain-complexes-and-spectra/index.html#prop:Spectrum_Chain_Complex_Comparison">Proposition 6.2.14</a>, this is isomorphic to \[ \pi _n(H(\cofib (A \to C_*(X;A)))) = \pi _n(H(\widetilde {C}_*(X;A))) = H_n(\widetilde {C}_*(X;A)). \] The cohomological case is similar.    □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3006r16'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 6.2.16.</span>  </span><span id='lem:Zeroth_Homology_Is_Free_On_Pi0'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For any anima</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>there is an isomorphism</span> \(H_0(X) \cong \bigoplus _{\pi _0(X)} \Z \)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-02-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-02-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Since both \(\Sigma ^{\infty }_+X\) and \(H\Z \) are connective spectra, so is \(\Sigma ^{\infty }_+X \otimes H\Z \). The functor \(H_0(-)\colon \An \to \Ab \) may thus be written as the
+composite \[ \An \xrightarrow {\Sigma ^{\infty }_+} \Sp _{\geq 0} \xrightarrow {- \otimes H\Z } \Sp _{\geq 0} \xrightarrow {\pi _0} \Ab , \] each of which preserves colimits. Here \(\pi _0\colon \Sp _{\geq 0} \to \Ab \) preserves colimits because it is left adjoint to the
+inclusion of abelian groups as Eilenberg–MacLane spectra. On the other hand, the assignment \(X \mapsto \bigoplus _{\pi _0(X)} \Z \) may
+be written as the composite of \(\pi _0\colon \An \to \Set \) with the free abelian group functor \(\Set \to \Ab \), both of which preserve colimits
+as well. By the universal property of \(\An \), it thus suffices to check the claim for \(X = \pt \), where both sides are
+\(\Z \).                                                                                                                                                           □
+</p>
+</div></div>
+<p class='noindent'>For an abelian group \(A\), one can show that the assignments \(X \mapsto C_*^{\mathrm {sing}}(X;A)\) and \(X \mapsto C^*_{\mathrm {sing}}(X;A)\) from <a class="source-reference" data-label="rmk:Singular_Homology" href="../../../entry/singular-homology-and-cohomology/index.html#rmk:Singular_Homology">Remark 3.3.2</a> are homotopy invariant, send disjoint
+unions to (co)products, satisfy the Mayer–Vietoris property, and carry skeletal colimits of CW-complexes to
+colimits and limits, respectively; see for example <span class='citation'>Hatcher (2002)</span>. By restricting these assignments to CW-complexes, it
+follows that they descend to functors \[ C_*^{\mathrm {sing}}(-;A)\colon \An \to \D (\Z ) \qquadtext {and} C^*_{\mathrm {sing}}(-;A)\colon \An \catop \to \D (\Z ) \] that preserve colimits and limits, respectively. Since \(C_*^{\mathrm {sing}}(\pt ;A) \simeq A[0] \simeq C^*_{\mathrm {sing}}(\pt ;A)\), the universal
+property of \(\An \) implies that these functors are naturally equivalent to \(C_*(-;A)\) and \(C^*(-;A)\) from <a class="source-reference" data-label="cons:Chain_Cochain_Complexes" href="../../../entry/chain-and-cochain-complexes-of-animae/index.html#cons:Chain_Cochain_Complexes">Construction 6.2.12</a>. Thus the intrinsic ordinary
+(co)homology constructed here agrees with singular (co)homology for animae coming from topological
+spaces.
+                                                                                   
+                                                                                   
+</p><p class='noindent'>Finally, for an abelian group \(A\) and the pointed anima \(S^0\), we have \[ \widetilde H_n(S^0;A) \cong \pi _n(HA) \cong H_n(A) \qquadtext {and} \widetilde H^n(S^0;A) \cong \pi _{-n}(HA) \cong H_{-n}(A). \] Both groups are therefore \(A\) when \(n=0\) and vanish
+otherwise. This verifies the dimension axiom and completes the construction of the ordinary theories
+postulated in <a class="source-reference" data-label="thm:Existence_Ordinary_Homology" href="../../../entry/existence-of-ordinary-homology-and-cohomology/index.html#thm:Existence_Ordinary_Homology">Theorem 3.3.1</a>.
+</p>
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../derived-categories/index.html" aria-label="Previous section: Derived ∞-categories" title="Previous section: Derived ∞-categories"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../connective-objects-and-t-structures/index.html" aria-label="Next section: Connective objects and t-structures" title="Next section: Connective objects and t-structures"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html" aria-current="page"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/animae-as-spaces/index.html"><span class="context-entry-heading">Chapter 2</span><span class="context-entry-title">Animae as spaces</span></a></li><li><a href="../../../chapter/homology-and-cohomology/index.html"><span class="context-entry-heading">Chapter 3</span><span class="context-entry-title">Homology and cohomology</span></a></li><li><a href="../../../chapter/spectra-and-stable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 4</span><span class="context-entry-title">Spectra and stable ∞-categories</span></a></li><li><a href="../../../chapter/recognition-principle/index.html"><span class="context-entry-heading">Chapter 5</span><span class="context-entry-title">The recognition principle</span></a></li><li><a href="../../../chapter/homological-algebra/index.html" aria-current="page"><span class="context-entry-heading">Chapter 6</span><span class="context-entry-title">Homological algebra</span></a></li><li><a href="../../../chapter/localization-and-completion/index.html"><span class="context-entry-heading">Chapter 7</span><span class="context-entry-title">Localization and completion</span></a></li><li><a href="../../../chapter/ring-spectra-and-modules/index.html"><span class="context-entry-heading">Chapter 8</span><span class="context-entry-title">Ring spectra and modules</span></a></li><li><a href="../../../chapter/complex-k-theory/index.html"><span class="context-entry-heading">Chapter 9</span><span class="context-entry-title">Complex K-theory</span></a></li><li><a href="../../../chapter/thom-spectra-and-bordism-theory/index.html"><span class="context-entry-heading">Chapter 10</span><span class="context-entry-title">Thom spectra and bordism theory</span></a></li><li><a href="../../../chapter/duality-phenomena/index.html"><span class="context-entry-heading">Chapter 11</span><span class="context-entry-title">Duality phenomena</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../derived-categories/index.html"><span class="context-entry-heading">Section 6.1</span><span class="context-entry-title">Derived ∞-categories</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 6.2</span><span class="context-entry-title">Ordinary homology and cohomology via D(Z)</span></a></li><li><a href="../connective-objects-and-t-structures/index.html"><span class="context-entry-heading">Section 6.3</span><span class="context-entry-title">Connective objects and t-structures</span></a></li><li><a href="../projective-objects-and-ext-groups/index.html"><span class="context-entry-heading">Section 6.4</span><span class="context-entry-title">Projective objects and Ext-groups</span></a></li><li><a href="../flat-objects-and-tor-groups/index.html"><span class="context-entry-heading">Section 6.5</span><span class="context-entry-title">Flat objects and Tor-groups</span></a></li><li><a href="../derived-functors/index.html"><span class="context-entry-heading">Section 6.6</span><span class="context-entry-title">Derived functors</span></a></li><li><a href="../k-nneth-and-universal-coefficient-theorems/index.html"><span class="context-entry-heading">Section 6.7</span><span class="context-entry-title">Künneth and universal coefficient theorems</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Eilenberg_MacLane_Spectrum"><span class="context-entry-heading">Definition 6.2.1</span><span class="context-entry-title">Eilenberg-MacLane spectrum</span></a></li><li><a href="#exercise:Eilenberg_MacLane_Spectra_Of_Modules"><span class="context-entry-heading">Exercise 6.2.2</span><span class="context-entry-title">exercise</span></a></li><li><a href="#prop:Homotopy_Groups_Eilenberg_MacLane"><span class="context-entry-heading">Proposition 6.2.3</span><span class="context-entry-title">proposition</span></a></li><li><a href="#rmk:Comparison_Eilenberg_MacLane_Spectra"><span class="context-entry-heading">Remark 6.2.4</span><span class="context-entry-title">remark</span></a></li><li><a href="#lem:EM_Preserves_Colimits"><span class="context-entry-heading">Lemma 6.2.5</span><span class="context-entry-title">lemma</span></a></li><li><a href="#def:Homotopy_Infinity_Category_Chain_Complexes"><span class="context-entry-heading">Definition 6.2.6</span><span class="context-entry-title">definition</span></a></li><li><a href="#prop:Homotopy_Category_Chain_Complexes_Stable"><span class="context-entry-heading">Proposition 6.2.7</span><span class="context-entry-title">proposition</span></a></li><li><a href="#lem:Homotopy_Category_KA"><span class="context-entry-heading">Lemma 6.2.8</span><span class="context-entry-title">lemma</span></a></li><li><a href="#cor:Shifted_Integers_Represent_Homology_In_Homotopy_Category"><span class="context-entry-heading">Corollary 6.2.9</span><span class="context-entry-title">corollary</span></a></li><li><a href="#lem:Hom_In_Localization"><span class="context-entry-heading">Lemma 6.2.10</span><span class="context-entry-title">lemma</span></a></li><li><a href="#def:Reduced_Ordinary_Homology"><span class="context-entry-heading">Definition 6.2.11</span><span class="context-entry-title">Reduced ordinary (co)homology</span></a></li><li><a href="#cons:Chain_Cochain_Complexes"><span class="context-entry-heading">Construction 6.2.12</span><span class="context-entry-title">Chain and cochain complexes</span></a></li><li><a href="#def:Ordinary_Homology"><span class="context-entry-heading">Definition 6.2.13</span><span class="context-entry-title">Ordinary (co)homology</span></a></li><li><a href="#prop:Spectrum_Chain_Complex_Comparison"><span class="context-entry-heading">Proposition 6.2.14</span><span class="context-entry-title">proposition</span></a></li><li><a href="#cor:Reduced_Homology_Identification"><span class="context-entry-heading">Corollary 6.2.15</span><span class="context-entry-title">corollary</span></a></li><li><a href="#lem:Zeroth_Homology_Is_Free_On_Pi0"><span class="context-entry-heading">Lemma 6.2.16</span><span class="context-entry-title">lemma</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

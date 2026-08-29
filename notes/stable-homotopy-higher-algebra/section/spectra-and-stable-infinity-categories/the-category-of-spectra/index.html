@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 4.4: The ∞-category of spectra | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/stable-homotopy-theory/index.html">Part I</a> · <a href="../../../chapter/spectra-and-stable-infinity-categories/index.html">Chapter 4</a> · Section 4.4</p>
+      <h1>The ∞-category of spectra</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Spectra_Infty_Category'>We now specialize the preceding construction to animae. After recording the basic properties of the
+resulting \(\infty \)-category of spectra, we construct hom spectra and tensoring by spectra, and use these to describe
+colimit-preserving functors out of \(\Sp \).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<a class="entry-heading-link" href="../../../entry/infinity-category-of-spectra/index.html" aria-label="Definition 4.4.1., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 4.4.1.</span></a>  </span><span id='def:Sp'></span> The \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category of spectra</span> \(\Sp \) is defined as the stabilization of the \(\infty \)-category of animae,
+\[ \Sp \quad := \quad \Sp (\An ). \] Objects of \(\Sp \) are called <span class='ntx-Italic-tlf-t1-x-x-109'>spectra</span>. Concretely, a spectrum is a sequence of pointed animae \(X_n\) equipped
+with isomorphisms \[ \sigma _n\colon X_n \iso \Omega (X_{n+1}). \]
+</p>
+</div>
+<p class='noindent'> By <a class="source-reference" data-label="lem:Hom_Prespectra_Equalizer" href="../../../entry/mapping-animae-of-prespectra/index.html#lem:Hom_Prespectra_Equalizer">Lemma 4.3.7</a>, a morphism in \(\Sp =\Sp (\An )\) is precisely a sequence of levelwise pointed maps together with homotopies
+compatible with the structure maps. Thus these are exactly the morphisms introduced in <a class="source-reference" data-label="def:Morphism_Spectra_Anima_Sequence" href="../../../entry/morphism-of-spectra/index.html#def:Morphism_Spectra_Anima_Sequence">Definition 3.2.2</a>. The following are
+the central properties governing the behavior of \(\Sp \):
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'>The \(\infty \)-category \(\Sp \) comes equipped with a left exact functor \(\Omega ^{\infty }\colon \Sp \to \An \). Given a spectrum \(X\), we refer to \(\Omega ^{\infty }(X) = X_0\) as
+     its <span class='ntx-Italic-tlf-t1-x-x-109'>underlying anima</span>.
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'>Given a stable \(\infty \)-category \(D\), any left exact functor \(D \to \An \) uniquely lifts to an exact functor \(D \to \Sp \): composition
+     with \(\Omega ^{\infty }\) induces an equivalence: \[ \Omega ^{\infty }\circ - \colon \Fun ^{\ex }(D,\Sp ) \iso \Fun ^{\lex }(D,\An ). \]
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'>The \(\infty \)-category \(\Sp \) admits small limits (<a class="source-reference" data-label="lem:Limits_Of_Spectra" href="../../../entry/limits-of-spectrum-objects/index.html#lem:Limits_Of_Spectra">Lemma 4.3.18</a>) and colimits (<a class="source-reference" data-label="lem:Colimits_Of_Spectra" href="../../../entry/colimits-of-spectrum-objects/index.html#lem:Colimits_Of_Spectra">Lemma 4.3.20</a>).
+                                                                                   
+                                                                                   
+     </p></dd><dt class='enumerate'>
+  (4) </dt><dd class='enumerate'>
+     <p class='noindent'>The functors \(\Omega ^{\infty }\colon \Sp \to \An \) and \(\Omega ^{\infty }\colon \Sp \to \An _*\) admit left adjoints \[ \Sigma ^{\infty } \colon \An _* \to \Sp \qquad \qquadtext { and } \qquad \Sigma ^{\infty }_+ \colon \An \to \Sp \] satisfying \(\Sigma ^{\infty }_+(X) \cong \Sigma ^{\infty }(X_+)\) (<a class="source-reference" data-label="lem:Suspension_Spectra" href="../../../entry/suspension-spectra/index.html#lem:Suspension_Spectra">Lemma 4.3.22</a> and <a class="source-reference" data-label="cor:Unreduced_Suspension_Spectra" href="../../../entry/unreduced-suspension-spectra/index.html#cor:Unreduced_Suspension_Spectra">Corollary 4.3.23</a>).</p></dd></dl>
+<p class='noindent'>Given a pointed anima \(X\), we refer to the spectrum \(\Sigma ^{\infty }(X)\) as the <span class='ntx-Italic-tlf-t1-x-x-109'>reduced suspension spectrum </span>of \(X\). For unpointed \(X\),
+we call \(\Sigma ^{\infty }_+(X)\) the <span class='ntx-Italic-tlf-t1-x-x-109'>unreduced suspension spectrum </span>of \(X\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1006r2'></a>
+<a class="entry-heading-link" href="../../../entry/sphere-spectrum/index.html" aria-label="Definition 4.4.2, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 4.4.2 </span></a>(Sphere spectrum)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Sphere_Spectrum'></span> We define the <span class='ntx-Italic-tlf-t1-x-x-109'>sphere spectrum </span>as \(\S := \Sigma ^{\infty }(S^0) \simeq \Sigma ^{\infty }_+(*) \in \Sp \).
+</p><p class='noindent'>For an anima \(X\), we will frequently use the alternative notation \[ \S [X] \quad := \quad \Sigma ^{\infty }_+(X) \] for the unreduced suspension spectrum.
+We wish to think of the spectrum \(\S [X]\) as the ‘free spectrum generated by \(X\)’. This notation mimics the
+notation for the free abelian group \(\Z [S]\) generated by a set \(S\), characterized by the property that group
+homomorphisms \(\Z [S] \to A\) correspond to maps of sets \(S \to A\).
+</p>
+</div>
+<p class='noindent'><span class="source-reference" data-label="tab:Ordinary_Versus_Higher_Algebra">Table 4.1</span> collects the resulting analogies between ordinary algebra and ‘higher algebra’. <figure class="source-table" id="tab:Ordinary_Versus_Higher_Algebra"><table><thead><tr><th scope="col">Ordinary algebra</th><th scope="col">Higher algebra</th></tr></thead><tbody><tr><td>Set</td><td>Anima</td></tr><tr><td>Abelian group</td><td>Spectrum</td></tr><tr><td>Integers \(\Z\)</td><td>Sphere spectrum \(\S\)</td></tr><tr><td>Underlying set</td><td>Underlying anima \(\Omega^{\infty}(X)\)</td></tr><tr><td>Free abelian group \(\Z[S]\)</td><td>Unreduced suspension spectrum \(\S[X]\)</td></tr></tbody></table><figcaption>The dictionary between ordinary algebra and `higher algebra'.</figcaption></figure>
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1007r3'></a>
+<a class="entry-heading-link" href="../../../entry/reduced-and-unreduced-suspension-spectra/index.html" aria-label="Remark 4.4.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 4.4.3.</span></a>  </span><span id='rmk:Unreduced_Suspension_Spectrum'></span> Given a pointed anima \((X,x) \in \An _*\), note that we may write \(X\) as the cofiber of the basepoint
+inclusion \(*_+ \to X_+\). Since \(\Sigma ^{\infty }(-)\) preserves cofibers, we may write the reduced suspension spectrum of \(X\) as \[ \Sigma ^{\infty }(X,x) \quad \simeq \quad \cofib (\S \xrightarrow {x} \S [X]). \]
+</p>
+</div>
+
+<h4 class='subsectionHead' id='hom-spectra'><span class='titlemark'>4.4.1    </span> <a id='x1-20004.4.1'></a>Hom spectra</h4>
+<p class='noindent'>Given an abelian category \(\Aa \), the hom sets \(\Hom _{\Aa }(A,B)\) can be equipped with a canonical abelian group structure, where
+the sum \(f + g\) of two morphisms \(f,g\colon A \to B\) is given by the composite \[ A \xrightarrow {\Delta } A \oplus A \xrightarrow {f \oplus g} B \oplus B \xrightarrow {\nabla } B. \] In an analogous way, the hom animae \(\Hom _C(X,Y)\) in a stable
+\(\infty \)-category \(C\) can be canonically lifted to spectra:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 4.4.4.</span>  </span><span id='prop:Hom_Spectra_In_Stable_Category'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>For  a  stable</span>  \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span>  \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>,  there  exists  a  unique  functor  </span>\[ \hom _C(-,-)\colon C\catop \times C \to \Sp \]  <span class='ntx-Italic-tlf-t1-x-x-109'>that  is  exact  in  both
+variables and fits in a commutative triangle as follows: </span></p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-2ff9235b848e.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-04-21" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-04-21">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Consider the Yoneda embedding \[ C \, \hookrightarrow \, \Fun (C\catop ,\An ), \qquad Y \, \mapsto \, \Hom _C(-,Y). \] This lands in left exact functors, so by the equivalence \(\Fun ^{\ex }(C\catop ,\Sp ) \iso \Fun ^{\lex }(C\catop ,\An )\) we
+may uniquely lift it to a (fully faithful) functor \[ C \, \hookrightarrow \, \Fun ^{\ex }(C\catop , \Sp ), \qquad Y \, \mapsto \, \hom _C(-,Y). \] The resulting functor \(\hom _C\colon C\catop \times C \to \Sp \) is exact in the first variable by
+construction. It remains to show it is also exact in the second variable: for fixed \(X\), we need to show
+that the functor \(\hom _C(X,-)\colon C \to \Sp \) is exact. It suffices to check this after composing with the functors \((-)_n\colon \Sp \to \An \), which are left
+exact and jointly conservative. Since we have \(\hom _C(X,Y)_n \simeq \hom _C(X[-n],Y)_0 \simeq \Hom _C(X[-n],Y)\), this follows from the left exactness of \(\Hom _C(X[-n],-)\colon \Sp \to \An \).                   □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2002r5'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/hom-spectra/index.html" aria-label="Terminology 4.4.5., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Terminology 4.4.5.</span></a>  </span><span id='nota:Hom_Spectra'></span> We refer to the spectra \(\hom _C(X,Y)\) as the <span class='ntx-Italic-tlf-t1-x-x-109'>hom spectra </span>or <span class='ntx-Italic-tlf-t1-x-x-109'>mapping spectra </span>of \(C\).
+</p>
+</div>
+<p class='noindent'>We explicitly record the following observation made in the proof of the proposition:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2003r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 4.4.6 </span>(Stable Yoneda lemma)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cor:Stable_Yoneda_Lemma'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For a stable</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the functor </span>\[ C \,\to \,\Fun (C\catop ,\Sp ), \qquad Y \, \mapsto \, \hom _C(-,Y) \] <span class='ntx-Italic-tlf-t1-x-x-109'>is fully faithful.       □</span>
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2004r7'></a>
+<a class="entry-heading-link" href="../../../entry/levels-of-hom-spectra/index.html" aria-label="Exercise 4.4.7., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 4.4.7.</span></a>  </span><span id='exercise:Levels_Of_Hom_Spectra'></span> Show that for \(C = \Sp \), the Hom spectrum \(\hom (X,Y) := \hom _{\Sp }(X,Y)\) may be explicitly described at level \(n\) by \[ \hom (X,Y)_n \quad \simeq \quad \Hom _{\Sp }(X,Y[n]). \]
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2005r8'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 4.4.8.</span>  </span><span id='lem:Map_Out_Of_Sphere_Spectrum'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(\hom (\S ,-)\colon \Sp \to \Sp \) <span class='ntx-Italic-tlf-t1-x-x-109'>is equivalent to the identity.</span>
+                                                                                   
+
+                                                                                   
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-04-20" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-04-20">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> It suffices to show that these two functors agree after applying \(\Omega ^{\infty }\), and indeed we have \[ \Omega ^{\infty }\hom (\S ,-) \cong \Hom _{\Sp }(\S ,-) \cong \Hom _{\Sp }(\S [*],-) \cong \Hom _{\An }(*,\Omega ^{\infty }(-)) \cong \Omega ^{\infty }(-). \] Here
+we use that \(\Hom _{\An }(*,-)\colon \An \to \An \) is equivalent to the identity, since its left adjoint \(- \times *\colon \An \to \An \) is equivalent to the identity.              □
+</p>
+</div></div>
+<p class='noindent'>We will use the standard presentation from <a class="source-reference" data-label="cor:Standard_Presentation_Spectrum" href="../../../entry/standard-presentation-of-a-spectrum/index.html#cor:Standard_Presentation_Spectrum">Corollary 4.3.30</a> in the following form: if \(X\) is a spectrum with levels \(X_n=\Omega ^{\infty -n}X\), then \[ X \simeq \colim _{n \geq 0}\Sigma ^{\infty -n}X_n. \]
+Together with <a class="source-reference" data-label="rmk:Unreduced_Suspension_Spectrum" href="../../../entry/reduced-and-unreduced-suspension-spectra/index.html#rmk:Unreduced_Suspension_Spectrum">Remark 4.4.3</a>, this says that every spectrum can be built from unreduced suspension spectra using shifts,
+cofibers and colimits.
+</p>
+<h4 class='subsectionHead' id='the-universal-property-of-spectra'><span class='titlemark'>4.4.2    </span> <a id='x1-30004.4.2'></a>The universal property of spectra</h4>
+<p class='noindent'>The \(\infty \)-category of spectra is defined via a universal property for left exact functors into it. We
+will now prove another universal property in terms of functors <span class='ntx-Italic-tlf-t1-x-x-109'>out of it</span>: colimit-preserving
+functors \(\Sp \to C\) into a cocomplete stable \(\infty \)-category \(C\) are uniquely determined by their value on the sphere
+spectrum.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3001r9'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 4.4.9 </span>(Tensoring by spectra)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Tensoring_By_Spectra'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a stable</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with small colimits. Then</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is
+tensored over</span> \(\Sp \)<span class='ntx-Italic-tlf-t1-x-x-109'>: there exists a unique functor </span>\[ - \otimes - \colon \Sp \times C \to C \] <span class='ntx-Italic-tlf-t1-x-x-109'>equipped with a natural equivalence of spectra </span>\[ \hom _C(X \otimes Y, Z) \quad \cong \quad \hom _{\Sp }(X, \hom _C(Y,Z)) \] <span class='ntx-Italic-tlf-t1-x-x-109'>for</span> \(X \in \Sp \)
+<span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(Y,Z \in C\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+                                                                                   
+
+                                                                                   
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-04-19" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-04-19">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The uniqueness of \(X \otimes Y\) is clear from the stable Yoneda lemma, <a class="source-reference" data-label="cor:Stable_Yoneda_Lemma" href="../../../entry/stable-yoneda-lemma/index.html#cor:Stable_Yoneda_Lemma">Corollary 4.4.6</a>. For existence, we need to show
+that for every \(Y \in C\) the functor \[ \Phi \colon \Sp \catop \to \Fun (C,\Sp ), \qquad \Phi (X) := \hom _{\Sp }(X,\hom _C(Y,-)) \] lands in the full subcategory \(C\catop \hookrightarrow \Fun (C,\Sp )\) of corepresentable functors, i.e. functors of
+the form \(\hom _C(W,-)\) for some \(W \in C\).
+</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Step 1: </span>We first show that \(\Phi (X)\) is corepresentable whenever \(X = \S [X']\) is an unreduced suspension spectrum for
+some anima \(X' \in \An \). To this end, recall from <a class="source-reference" data-label="thm:Colimit_Preserving_Extension" href="../../../entry/colimit-preserving-extension-from-presheaves/index.html#thm:Colimit_Preserving_Extension">Theorem 1.8.9</a> that evaluation at \(*\) induces an equivalence \[ \Fun ^{\colim }(\An , C) \quad \iso \quad C. \] We let \(- \otimes Y\colon \An \to C\) denote the
+unique colimit-preserving functor satisfying \(* \otimes Y \cong Y\). We then claim that there exists a natural isomorphism
+\[ \Phi (\S [X']) \quad \cong \quad \hom _C(X' \otimes Y, -) \] of functors \(C \to \Sp \) for every \(X' \in \An \). For this, note that both sides define colimit-preserving functors \(\An \to \Fun (C,\Sp )\catop \) by varying
+\(X'\). Indeed, on either side a colimit in \(X'\) becomes a limit in \(\Fun (C,\Sp )\), because the relevant mapping-spectrum
+functor is contravariant in the variable determined by \(X'\); this is precisely a colimit after passing to \(\Fun (C,\Sp )\catop \). It
+therefore suffices to produce an isomorphism for \(X'= *\). And indeed, in that case both sides evaluate to \(\hom _C(Y,-)\)
+by <a class="source-reference" data-label="lem:Map_Out_Of_Sphere_Spectrum" href="../../../entry/maps-out-of-the-sphere-spectrum/index.html#lem:Map_Out_Of_Sphere_Spectrum">Lemma 4.4.8</a> and the given isomorphism \(* \otimes Y \cong Y\).
+</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Step 2: </span>We now show the claim for an arbitrary spectrum \(X\). Observe that the functor \(\Phi \) is exact and
+sends colimits of spectra to limits in the functor category. Also observe that the corepresentable
+functors in \(\Fun (C,\Sp )\) are closed under limits and shifts. It thus remains to show that every spectrum \(X\) can be
+built from unreduced suspension spectra using shifts, cofibers and colimits. By <a class="source-reference" data-label="cor:Standard_Presentation_Spectrum" href="../../../entry/standard-presentation-of-a-spectrum/index.html#cor:Standard_Presentation_Spectrum">Corollary 4.3.30</a>, every spectrum
+is a colimit of shifts of reduced suspension spectra. Moreover, <a class="source-reference" data-label="rmk:Unreduced_Suspension_Spectrum" href="../../../entry/reduced-and-unreduced-suspension-spectra/index.html#rmk:Unreduced_Suspension_Spectrum">Remark 4.4.3</a> writes every reduced suspension
+spectrum \(\Sigma ^{\infty }(Z,z)\) as the cofiber of a map \(\S \to \S [Z]\) between unreduced suspension spectra.                                       □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3002r10'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 4.4.10.</span>  </span><span id='cor:Tensoring_As_Left_Adjoint_To_hom'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a stable</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with small colimits. For every object</span> \(Y \in C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the functor</span> \(\hom _C(Y,-)\colon C \to \Sp \)
+<span class='ntx-Italic-tlf-t1-x-x-109'>admits a left adjoint </span>\[ - \otimes Y\colon \Sp \to C. \]
+</p>
+</div>
+                                                                                   
+
+                                                                                   
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-04-18" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-04-18">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Applying \(\Omega ^{\infty }\) to the natural isomorphism from <a class="source-reference" data-label="prop:Tensoring_By_Spectra" href="../../../entry/tensoring-stable-infinity-categories-by-spectra/index.html#prop:Tensoring_By_Spectra">Proposition 4.4.9</a> provides the adjunction equivalence \[ \Hom _C(X \otimes Y, Z) \quad \cong \quad \Hom _{\Sp }(X, \hom _C(Y,Z)) \] for \(X \in \Sp \) and
+\(Z \in C\).                                                                                                                                                           □
+</p>
+</div></div>
+<p class='noindent'>Fixing some stable \(\infty \)-category \(C\) with small colimits, let us now establish various basic properties of tensoring
+on \(C\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3003r11'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 4.4.11.</span>  </span><span id='lem:Tensoring_By_Spectra_Preserves_Colimits'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(- \otimes -\colon \Sp \times C \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves colimits in both variables.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-04-17" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-04-17">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By the Yoneda lemma, it suffices to show that \(\Hom _{C}(- \otimes -,Z)\colon \Sp \catop \times C\catop \to \An \) preserves limits in both variables, for all \(Z \in C\).
+This functor is naturally isomorphic to \(\Hom _{\Sp }(-,\hom _{C}(-,Z))\). This clearly preserves limits in the first variable. For the
+second variable, this follows from the fact that \(\Omega ^{\infty }\hom _C(-,Z) = \Hom _C(-,Z)\colon C\catop \to \An \) preserves limits.                                                      □
+</p>
+</div></div>
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3004r12'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 4.4.12.</span>  </span><span id='lem:Stable_Tensoring_Unital'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(\S \otimes -\colon C \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is equivalent to the identity.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-04-16" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-04-16">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> For objects \(Y,Z \in C\), there are natural isomorphisms \[ \hom _C(Y,Z) \overset {\HCode {&lt;span class="source-reference" data-label="lem:Map_Out_Of_Sphere_Spectrum"&gt;Lemma 4.4.8&lt;/span&gt;}}{\cong } \hom _{\Sp }(\S , \hom _C(Y,Z)) \cong \hom _C(\S \otimes Y, Z), \] hence by the stable Yoneda lemma we obtain
+a natural isomorphism \(\S \otimes Y \cong Y\).                                                                                                                       □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3005r13'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 4.4.13.</span>  </span><span id='lem:Auxiliary_Universality_Sp'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For a colimit-preserving functor</span> \(F\colon \Sp \to C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, there exists a natural isomorphism </span>\[ F(-) \, \cong \, - \otimes F(\S ). \] <span class='ntx-Italic-tlf-t1-x-x-109'>Moreover,
+this natural isomorphism can be chosen naturally in</span> \(F \in \Fun ^{\colim }(\Sp ,C)\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-04-15" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-04-15">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We first produce a natural isomorphism \(F(\S [-]) \cong \S [-] \otimes F(\S )\) of functors \(\An \to C\). In light of the equivalence \(\ev _*\colon \Fun ^{\colim }(\An ,C) \iso C\), it suffices
+to produce an isomorphism \(F(\S ) \cong \S \otimes F(\S )\), for which we take the one from <a class="source-reference" data-label="lem:Stable_Tensoring_Unital" href="../../../entry/sphere-spectrum-acts-as-the-unit/index.html#lem:Stable_Tensoring_Unital">Lemma 4.4.12</a>.
+</p><p class='noindent'>Now, for computing \(F\) on an arbitrary spectrum \(X\), we use the standard presentation from <a class="source-reference" data-label="cor:Standard_Presentation_Spectrum" href="../../../entry/standard-presentation-of-a-spectrum/index.html#cor:Standard_Presentation_Spectrum">Corollary 4.3.30</a>. Using that
+\(F\) preserves colimits and shifts, we then get \[ F(X) \simeq F(\colim _n \Sigma ^{\infty -n} X_n) \simeq \colim _n \Omega ^n F( \Sigma ^{\infty } X_n) \simeq \colim _n \Omega ^n \cofib (F(\S ) \to F(\S [X_n])), \] where the last equivalence uses \(\Sigma ^{\infty }X_n \simeq \cofib (\S \to \S [X_n])\). Applying the same
+reasoning to \(F' = - \otimes F(\S )\), we similarly obtain \[ X \otimes F(\S ) \simeq \colim _n \Omega ^n \cofib (F(\S ) \to \S [X_n] \otimes F(\S )). \] The claim now follows from the identification \(F(\S [X_n]) \cong \S [X_n] \otimes F(\S )\) established before.
+These equivalences are natural in both \(F\) and \(X\): the standard presentation is natural in \(X\), while the initial
+identification of colimit-preserving functors \(\An \to C\) is natural in \(F\). We therefore obtain the claimed natural
+isomorphism in \(\Fun ^{\colim }(\Sp ,C)\).                                                                                                                                 □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3006r14'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 4.4.14 </span>(Universality of \(\Sp \))<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Universal_Property_Spectra'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a stable</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with small colimits. Then evaluation
+at the sphere spectrum induces an equivalence </span>\[ \ev _{\S } \colon \Fun ^{\colim }(\Sp ,C) \quad \iso \quad C. \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-04-14" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-04-14">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We claim that an inverse is given by the tensor product functor \[ C \, \to \, \Fun ^{\colim }(\Sp ,C), \qquad \qquad X \, \mapsto \, - \otimes X. \] A natural isomorphism \(\S \otimes X \cong X\) is
+provided by <a class="source-reference" data-label="lem:Stable_Tensoring_Unital" href="../../../entry/sphere-spectrum-acts-as-the-unit/index.html#lem:Stable_Tensoring_Unital">Lemma 4.4.12</a>. A natural isomorphism \(F \cong - \otimes F(\S )\) is provided by <a class="source-reference" data-label="lem:Auxiliary_Universality_Sp" href="../../../entry/colimit-preserving-functors-from-spectra/index.html#lem:Auxiliary_Universality_Sp">Lemma 4.4.13</a>.                                                                       □
+</p>
+</div></div>
+<p class='noindent'>We may summarize this result by saying that \(\Sp \) is the <span class='ntx-Italic-tlf-t1-x-x-109'>free cocomplete stable</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category generated by</span>
+\(\S \).
+</p>
+<div class='newtheorem'>
+                                                                                   
+                                                                                   
+<p class='noindent'><span class='head'>
+<a id='x1-3007r15'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 4.4.15.</span>  </span><span id='cor:Colimit_Preserving_Functors_From_Spectra_Have_Right_Adjoints'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a stable</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with small colimits. Then every colimit-preserving
+functor</span> \(F\colon \Sp \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a right adjoint</span> \(F^R\colon C \to \Sp \)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-04-13" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-04-13">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="thm:Universal_Property_Spectra" href="../../../entry/universal-property-of-spectra/index.html#thm:Universal_Property_Spectra">Theorem 4.4.14</a>, \(F\) is of the form \(- \otimes X\) for some \(X \in C\), hence has right adjoint given by the mapping spectrum functor
+\(\hom _C(X,-)\colon C \to \Sp \).                                                                                                                                                           □
+</p>
+</div></div>
+
+<h4 class='subsectionHead' id='tensor-products-of-spectra'><span class='titlemark'>4.4.3    </span> <a id='x1-40004.4.3'></a>Tensor products of spectra</h4>
+<p class='noindent' id='subsec_Tensor_Products_Of_Spectra'>Given two abelian groups \(A\) and \(B\), we may form their <span class='ntx-Italic-tlf-t1-x-x-109'>tensor product</span> \(A \otimes B\), which is characterized
+by the property that group homomorphisms \(A \otimes B \to C\) correspond to bilinear maps \(A \times B \to C\), or equivalently to
+morphisms of abelian groups \(A \to \Hom _{\Ab }(B,C)\). We will now construct a tensor product of spectra with analogous
+properties.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4001r16'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 4.4.16.</span>  </span><span id='prop:Tensor_Product_Of_Spectra'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>There exists a unique tensor product functor </span>\[ - \otimes -\colon \Sp \times \Sp \to \Sp \] <span class='ntx-Italic-tlf-t1-x-x-109'>which preserves colimits in both
+variables and satisfies</span> \(\S \otimes \S \cong \S \)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-04-12" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-04-12">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Currying and two applications of <a class="source-reference" data-label="thm:Universal_Property_Spectra" href="../../../entry/universal-property-of-spectra/index.html#thm:Universal_Property_Spectra">Theorem 4.4.14</a> give equivalences \[ \Fun ^{\colim ,\colim }(\Sp \times \Sp ,\Sp ) \simeq \Fun ^{\colim }(\Sp ,\Fun ^{\colim }(\Sp ,\Sp )) \simeq \Fun ^{\colim }(\Sp ,\Sp ) \simeq \Sp , \] where the intermediate functor category
+is stable and admits small colimits computed pointwise. Under this equivalence, a functor is sent to
+its value on \((\S ,\S )\). The sphere spectrum therefore determines the required functor uniquely.                   □
+</p>
+</div></div>
+<p class='noindent'>Let us now establish various basic properties of the tensor product.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4002r17'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 4.4.17.</span>  </span><span id='lem:Closed_Symmetric_Monoidal_Identities_For_Spectra'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For spectra</span> \(X,Y,Z \in \Sp \)<span class='ntx-Italic-tlf-t1-x-x-109'>, there are natural isomorphisms of spectra </span>\[ \S \otimes X \cong X \cong X \otimes \S , \qquad X \otimes Y \cong Y \otimes X \qquad (X \otimes Y) \otimes Z \cong X \otimes (Y \otimes Z) \] <span class='ntx-Italic-tlf-t1-x-x-109'>and </span>\[ \hom (Y,\hom (X,Z)) \cong \hom (X \otimes Y, Z) \cong \hom (X,\hom (Y,Z)). \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-04-11" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-04-11">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> For the first row, each of these expressions define functors that are colimit-preserving in
+each of their arguments. By <a class="source-reference" data-label="thm:Universal_Property_Spectra" href="../../../entry/universal-property-of-spectra/index.html#thm:Universal_Property_Spectra">Theorem 4.4.14</a>, it thus suffices to produce such isomorphisms after evaluation at the
+sphere spectrum, where they are immediate consequences of the isomorphism \(\S \otimes \S \cong \S \).
+</p><p class='noindent'>For the second row, we may fix \(Z\) and regard these expressions as functors \(\Sp \catop \times \Sp \catop \to \Sp \) that preserve limits in both
+variables, or equivalently as functors \(\Sp \times \Sp \to \Sp \catop \) preserving colimits in both variables. It then again suffices to
+prove they are isomorphic after setting \(X = Y = \S \), which follows from the natural isomorphism \(\hom (\S ,Z) \cong Z\) from <a class="source-reference" data-label="lem:Map_Out_Of_Sphere_Spectrum" href="../../../entry/maps-out-of-the-sphere-spectrum/index.html#lem:Map_Out_Of_Sphere_Spectrum">Lemma 4.4.8</a>.         □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4003r18'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 4.4.18.</span>  </span><span id='lem:Tensor_Product_Of_Unreduced_Suspension_Spectra'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>There exists a natural isomorphism </span>\[ \S [X] \otimes \S [Y] \quad \cong \quad \S [X \times Y] \] <span class='ntx-Italic-tlf-t1-x-x-109'>for all</span> \(X,Y \in \An \)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-04-10" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-04-10">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Both of the functors \(\S [-] \otimes \S [-], \S [- \times -]\colon \An \times \An \to \Sp \) preserve colimits in both variables, hence they are naturally isomorphic
+if and only if they agree on \((*,*)\), see <a class="source-reference" data-label="cor:Universal_Property_Animae" href="../../../entry/universal-property-of-animae/index.html#cor:Universal_Property_Animae">Corollary 1.8.10</a>. But on \((*,*)\) both sides evaluate to \(\S \otimes \S \simeq \S \).                                                     □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4004r19'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 4.4.19.</span>  </span><span id='lem:Tensor_Product_Of_Reduced_Suspension_Spectra'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>There exists a natural isomorphism </span>\[ \Sigma ^{\infty }(X) \otimes \Sigma ^{\infty }(Y) \quad \cong \quad \Sigma ^{\infty }(X \wedge Y) \] <span class='ntx-Italic-tlf-t1-x-x-109'>for all</span> \(X,Y \in \An _*\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+                                                                                   
+
+                                                                                   
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-04-9" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-04-9">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Since \(- \otimes -\) preserves cofibers in each variable, this follows by combining the previous lemma
+with the expression \(\Sigma ^{\infty }(Z) \simeq \cofib (\S \to \S [Z])\) from <a class="source-reference" data-label="rmk:Unreduced_Suspension_Spectrum" href="../../../entry/reduced-and-unreduced-suspension-spectra/index.html#rmk:Unreduced_Suspension_Spectrum">Remark 4.4.3</a> and the isomorphism \(X_+ \wedge Y_+ \cong (X \times Y)_+\) from <a class="source-reference" data-label="lem:Smash_Product_Basics" href="../../../entry/basic-properties-of-smash-products/index.html#lem:Smash_Product_Basics">Lemma 2.4.16</a>.                                                                    □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4005r20'></a>
+<a class="entry-heading-link" href="../../../entry/tensor-products-from-standard-presentations/index.html" aria-label="Remark 4.4.20., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 4.4.20.</span></a>  </span><span id='rmk:Tensor_Product_Of_Spectra_From_Standard_Presentations'></span> Let \(X\) and \(Y\) be spectra. The standard presentations of \(X\) and \(Y\) provide the following
+description of their tensor product: \[ X \otimes Y \quad \cong \quad \colim _n \colim _m (\Sigma ^{\infty -n} X_n \otimes \Sigma ^{\infty - m} Y_m) \quad \simeq \quad \colim _n \colim _m \Sigma ^{\infty - n - m} (X_n \wedge Y_m), \] where the last equivalence holds by the previous lemma. However,
+this formula should be used with care: it makes implicit use of the additivity of the shift functors \(X[-n][-m] \cong X[-(n+m)]\)
+from <a class="source-reference" data-label="warn:Additivity_Shift_Functors" href="../../../entry/coherence-of-shift-functors/index.html#warn:Additivity_Shift_Functors">Warning 4.2.11</a>. To avoid introducing sign errors, we will not work with this formula for the tensor product.
+</p>
+</div>
+
+<h4 class='subsectionHead' id='homotopy-groups'><span class='titlemark'>4.4.4    </span> <a id='x1-50004.4.4'></a>Homotopy groups</h4>
+<p class='noindent' id='subsec_Homotopy_Groups'>Important invariants of spectra are their <span class='ntx-Italic-tlf-t1-x-x-109'>homotopy groups</span>:
+</p>
+<div class='newtheorem'>
+                                                                                   
+                                                                                   
+<p class='noindent'><span class='head'>
+<a id='x1-5001r21'></a>
+<a class="entry-heading-link" href="../../../entry/homotopy-groups-of-a-spectrum/index.html" aria-label="Definition 4.4.21., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 4.4.21.</span></a>  </span><span id='def:Homotopy_Groups_Spectrum'></span>  For  a  spectrum  \(X\)  and  an  integer  \(k\),  we  define  its  \(k\)<span class='ntx-Italic-tlf-t1-x-x-109'>-th  homotopy  group</span>  \(\pi _k(X) \in \Ab \)  as  \[ \pi _k(X) := [\S [k],X] := \pi _0\Hom _{\Sp }(\S [k],X). \]  The
+assignment \(X \mapsto \pi _k(X)\) defines a functor \(\pi _*\colon \Sp \to \Ab \).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5002r22'></a>
+<a class="entry-heading-link" href="../../../entry/homotopy-groups-of-shifted-spectra/index.html" aria-label="Exercise 4.4.22., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 4.4.22.</span></a>  </span><span id='exercise:Homotopy_Groups_Of_Shifted_Spectra'></span> Show that we have \(\pi _{k}(X[n]) \simeq \pi _{k-n}(X)\) for all \(k,n \in \Z \).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5003r23'></a>
+<a class="entry-heading-link" href="../../../entry/positive-homotopy-groups-from-levels/index.html" aria-label="Exercise 4.4.23., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 4.4.23.</span></a>  </span><span id='exercise:Positive_Homotopy_Groups_Spectrum'></span> Show that for \(n \geq 0\) and \(k + n \geq 0\) we have \(\pi _k(X) \cong \pi _{n+k}(X_n)\). In particular we have \(\pi _k(X) = \pi _k(\Omega ^{\infty }X)\) for \(k \geq 0\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5004r24'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/stable-homotopy-groups-of-suspension-spectra/index.html" aria-label="Example 4.4.24., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 4.4.24.</span></a>  </span><span id='ex:Stable_Homotopy_Groups_Of_Suspension_Spectra'></span> For a pointed anima \(X\), the negative homotopy groups of its suspension spectrum
+\(\Sigma ^{\infty }X\) vanish. For \(k \geq 0\), <a class="source-reference" data-label="rmk:Suspension_Spectrum_Spectrification" href="../../../entry/suspension-spectra-as-spectrifications/index.html#rmk:Suspension_Spectrum_Spectrification">Remark 4.3.27</a> gives \[ \pi _k(\Sigma ^{\infty }(X)) \; \cong \; \pi _k(\Omega ^{\infty } \Sigma ^{\infty }(X)) \; \cong \; \colim _{n \geq 0} \pi _k(\Omega ^n \Sigma ^nX) = \colim _n \pi _{n+ k}(\Sigma ^n X). \] These groups are known as the <span class='ntx-Italic-tlf-t1-x-x-109'>stable homotopy groups </span>of \(X\). By the classical
+Freudenthal suspension theorem <span class='citation'>[Freudenthal (1937)]</span> the maps \(\pi _{n+k}(\Sigma ^nX) \to \pi _{n+k+1}(\Sigma ^{n+1}X)\) are isomorphisms for \(n \geq k+2\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5005r25'></a>
+<a class="entry-heading-link" href="../../../entry/zeroth-homotopy-group-of-the-sphere-spectrum/index.html" aria-label="Example 4.4.25., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 4.4.25.</span></a>  </span><span id='ex:Pi_Zero_Sphere_Spectrum'></span> By <a class="source-reference" data-label="rmk:Degree_Self_Maps_Spheres" href="../../../entry/degree-of-self-maps-of-spheres/index.html#rmk:Degree_Self_Maps_Spheres">Remark 2.4.20</a>, there is an isomorphism \(\deg \colon \pi _n(S^n) \xrightarrow {\cong } \Z \) for every \(n\geq 1\), and the suspension maps correspond to
+the identity of \(\Z \). It follows that there is an isomorphism \(\pi _0(\S ) \cong \colim _n \pi _n(S^n) \cong \Z \).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5006r26'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 4.4.26.</span>  </span><span id='cor:Homotopy_Groups_Jointly_Conservative'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>The  functors</span>  \(\pi _k\colon \Sp \to \Ab \)  <span class='ntx-Italic-tlf-t1-x-x-109'>for</span>  \(k \in \Z \)  <span class='ntx-Italic-tlf-t1-x-x-109'>are  jointly  conservative:  a  morphism  of  spectra</span>  \(f\colon X \to Y\)  <span class='ntx-Italic-tlf-t1-x-x-109'>is  an
+isomorphism if and only if the induced map</span> \(\pi _k(f) \colon \pi _k(X) \to \pi _k(Y)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is an isomorphism.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-04-8" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-04-8">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="lem:Check_Equivalences_In_Limit_Categories" href="../../../entry/levelwise-detection-of-isomorphisms-in-limit-categories/index.html#lem:Check_Equivalences_In_Limit_Categories">Lemma 4.3.6</a>, \(f\) is an isomorphism if and only if each map \(f_n\colon X_n \to Y_n\) of animae is an isomorphism. By the
+Whitehead Theorem for animae, <a class="source-reference" data-label="prop:Whitehead_For_An" href="../../../entry/whitehead-theorem-for-animae/index.html#prop:Whitehead_For_An">Proposition 2.4.22</a>, this is the case if \(f_n\) induces isomorphisms on all homotopy groups.
+By  <a class="source-reference" data-label="exercise:Positive_Homotopy_Groups_Spectrum" href="../../../entry/positive-homotopy-groups-from-levels/index.html#exercise:Positive_Homotopy_Groups_Spectrum">Exercise 4.4.23</a>  this  condition  is  equivalent  to  the  condition  that  \(f\)  induces  isomorphisms  on  all  homotopy
+groups.                                                                                                                                                □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5007r27'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 4.4.27.</span>  </span><span id='lem:Homotopy_Groups_Preserve_Filtered_Colimits'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For every</span> \(k \in \Z \)<span class='ntx-Italic-tlf-t1-x-x-109'>, the functor</span> \(\pi _k\colon \Sp \to \Ab \) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves filtered colimits.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-04-7" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-04-7">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="lem:Filtered_Colimits_Of_Spectra_Levelwise" href="../../../entry/filtered-colimits-of-spectra-are-levelwise/index.html#lem:Filtered_Colimits_Of_Spectra_Levelwise">Lemma 4.3.21</a>, a filtered colimit of spectra is computed levelwise. The claim then follows from <a class="source-reference" data-label="exercise:Positive_Homotopy_Groups_Spectrum" href="../../../entry/positive-homotopy-groups-from-levels/index.html#exercise:Positive_Homotopy_Groups_Spectrum">Exercise 4.4.23</a> together
+with the fact that the homotopy groups of pointed animae preserve filtered colimits.                       □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5008r28'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 4.4.28.</span>  </span><span id='lem:Homotopy_Groups_Preserve_Coproducts'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For every</span> \(k \in \Z \)<span class='ntx-Italic-tlf-t1-x-x-109'>, the functor</span> \(\pi _k\colon \Sp \to \Ab \) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves arbitrary coproducts.</span>
+</p>
+</div>
+                                                                                   
+
+                                                                                   
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-04-6" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-04-6">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  Finite  coproducts  in  \(\Sp \)  agree  with  finite  products,  and  \(\pi _k\)  preserves  both  of  these.  Since  an
+arbitrary coproduct is the filtered colimit of its finite subcoproducts, the claim follows from <a class="source-reference" data-label="lem:Homotopy_Groups_Preserve_Filtered_Colimits" href="../../../entry/homotopy-groups-preserve-filtered-colimits/index.html#lem:Homotopy_Groups_Preserve_Filtered_Colimits">Lemma 4.4.27</a>.         □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5009r29'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 4.4.29 </span>(Long exact sequence of homotopy groups)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:LES_Homotopy_Groups_Spectra'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(X \xrightarrow {f} Y \xrightarrow {g} Z\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  an  exact  sequence  of
+spectra. Then there is a long exact sequence of homotopy groups of the form </span>\[ \dots \xrightarrow {} \pi _{1}(Y) \xrightarrow {g_*} \pi _{1}(Z) \to \pi _0(X) \xrightarrow {f_*} \pi _0(Y) \xrightarrow {g_*} \pi _0(Z) \to \pi _{-1}(X) \xrightarrow {f_*} \pi _{-1}(Y) \xrightarrow {} \dots . \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-04-5" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-04-5">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Since every exact sequence of spectra \(X \xrightarrow {f} Y \xrightarrow {g} Z\) leads to two new exact sequences \[ Z[-1] \to X \xrightarrow {f} Y \qquadtext { and } Y \xrightarrow {g} Z \to X[1], \] it inductively
+suffices to prove that the sequence \(\pi _0(X) \xrightarrow {f} \pi _0(Y) \xrightarrow {g} \pi _0(Z)\) is exact. It is clear that the composite is the zero map. Conversely,
+consider a class \([\sigma ] \in \pi _0(Y)\), represented by a morphism of spectra \(\sigma \colon \S \to Y\), and assume that the class \([g \circ \sigma ] \in \pi _0(Z)\) is zero. Then \(\sigma \colon \S \to Y\)
+factors through the fiber \(X\) of \(g\colon Y \to Z\), and hence is of the form \(f \circ \tau \) for some \(\tau \colon \S \to X\). It follows that \([\sigma ]\) is in the image of \(f\colon \pi _0(X) \to \pi _0(Y)\),
+as desired.                                                                                                                                            □
+</p>
+</div></div>
+                                                                                   
+                                                                                   
+
+<h4 class='subsectionHead' id='homology-theories-represented-by-spectra'><span class='titlemark'>4.4.5    </span> <a id='x1-60004.4.5'></a>Homology theories represented by spectra</h4>
+<p class='noindent' id='subsec_Homology_Theories_Represented_By_Spectra'>In <a class="source-reference" data-label="chap:Cohomology_Theories" href="../../../chapter/homology-and-cohomology/index.html#chap:Cohomology_Theories">Chapter 3</a>, a spectrum \(E\) directly gave a cohomology theory by mapping into its individual pointed
+animae \(E_k\). We now have the additional structure needed to associate a homology theory to \(E\) as
+well.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-6001r30'></a>
+<a class="entry-heading-link" href="../../../entry/homology-represented-by-a-spectrum/index.html" aria-label="Definition 4.4.30, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 4.4.30 </span></a>(\(E\)-homology)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Homology_Theory_Represented_By_Spectrum'></span> Let \(E\) be a spectrum and let \(X \in \An _*\) be a pointed anima. For \(k\in \Z \), we define the
+<span class='ntx-Italic-tlf-t1-x-x-109'>reduced</span> \(E\)<span class='ntx-Italic-tlf-t1-x-x-109'>-homology </span>of \(X\) by \[ \widetilde E_k(X):=\pi _k(\Sigma ^{\infty }X\otimes E). \]
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-6002r31'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 4.4.31.</span>  </span><span id='prop:Spectrum_Represents_Homology_Theory'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For every spectrum</span> \(E\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the functors</span> \(\widetilde E_*\) <span class='ntx-Italic-tlf-t1-x-x-109'>admit natural suspension isomorphisms that
+make them into a reduced homology theory in the sense of </span><a class="source-reference" data-label="def:Homology_Cohomology_Theory" href="../../../entry/reduced-homology-and-cohomology-theories/index.html#def:Homology_Cohomology_Theory">Definition 3.1.2</a><span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-04-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-04-4">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  The  natural  isomorphism  \(\Sigma ^{\infty }(\Sigma X)\cong (\Sigma ^{\infty }X)[1]\)  gives  suspension  isomorphisms  \[ \widetilde E_{k+1}(\Sigma X)=\pi _{k+1}((\Sigma ^{\infty }X\otimes E)[1])\cong \pi _k(\Sigma ^{\infty }X\otimes E)=\widetilde E_k(X). \]  Both  \(\Sigma ^{\infty }\)  and  \(-\otimes E\)  preserve  cofiber
+sequences. Exactness therefore follows from the long exact sequence of homotopy groups in <a class="source-reference" data-label="prop:LES_Homotopy_Groups_Spectra" href="../../../entry/long-exact-sequence-of-homotopy-groups-of-spectra/index.html#prop:LES_Homotopy_Groups_Spectra">Proposition 4.4.29</a>.
+</p><p class='noindent'>It  remains  to  verify  the  wedge  axiom.  The  functor  \(\Sigma ^{\infty }(-)\otimes E\)  preserves  coproducts,  and  each  \(\pi _k\colon \Sp \to \Ab \)  preserves
+coproducts by <a class="source-reference" data-label="lem:Homotopy_Groups_Preserve_Coproducts" href="../../../entry/homotopy-groups-preserve-coproducts/index.html#lem:Homotopy_Groups_Preserve_Coproducts">Lemma 4.4.28</a>. Thus \[ \bigoplus _{i\in I}\widetilde E_k(X_i)\xrightarrow {\cong }\widetilde E_k\left (\bigvee _{i\in I}X_i\right ), \] as required.                                                                                                      □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-6003r32'></a>
+<a class="entry-heading-link" href="../../../entry/cohomology-represented-by-mapping-spectra/index.html" aria-label="Remark 4.4.32, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 4.4.32 </span></a>(Comparison with the earlier definition)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='rmk:Cohomology_Represented_By_Mapping_Spectra'></span> The cohomology theory associated to \(E\)
+in <a class="source-reference" data-label="def:Homology_and_Cohomology_Spectrum" href="../../../entry/cohomology-represented-by-a-spectrum/index.html#def:Homology_and_Cohomology_Spectrum">Definition 3.2.3</a> can now be expressed in terms of the mapping spectrum. Indeed, the adjunction \(\Sigma ^{\infty }\dashv \Omega ^{\infty }\) gives
+\begin {align*}  \pi _{-k}\hom (\Sigma ^{\infty }X,E) &amp;\cong [\Sigma ^{\infty }X[-k],E] \\ &amp;\cong [\Sigma ^{\infty }X,E[k]] \\ &amp;\cong [X,\Omega ^{\infty }(E[k])]_* \\ &amp;\cong [X,E_k]_* = \widetilde E^k(X).  \end {align*}
+</p><p class='noindent'>Here the last isomorphism uses the spectrum structure maps for \(k\geq 0\) and the convention \(E_k=\Omega ^{-k}E_0\) for \(k&lt;0\). All displayed
+isomorphisms are isomorphisms of abelian groups: under \(\Omega ^{\infty }(E[k])\simeq E_k\), the canonical infinite-loop group structure
+agrees with the double-loop group structure used in <a class="source-reference" data-label="def:Homology_and_Cohomology_Spectrum" href="../../../entry/cohomology-represented-by-a-spectrum/index.html#def:Homology_and_Cohomology_Spectrum">Definition 3.2.3</a>.
+</p>
+</div>
+
+<h4 class='subsectionHead' id='mapping-telescopes-and-the-milnor-sequence'><span class='titlemark'>4.4.6    </span> <a id='x1-70004.4.6'></a>Mapping telescopes and the Milnor sequence</h4>
+<p class='noindent' id='subsec_Mapping_Telescopes_and_Milnor'>We record a general formula for sequential colimits in stable \(\infty \)-categories, an abstract form of the classical
+<span class='ntx-Italic-tlf-t1-x-x-109'>mapping telescope </span>which will let us later resolve a spectrum by direct sums of spheres. By duality this
+provides a description of an inverse limit, giving us the Milnor sequence.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-7001r33'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 4.4.33 </span>(Mapping telescope)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Telescope_Cofiber_Sequence'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a stable</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with countable coproducts, and let</span>
+\(Y_0 \xrightarrow {f_0} Y_1 \xrightarrow {f_1} Y_2 \to \dots \) <span class='ntx-Italic-tlf-t1-x-x-109'>be a sequential diagram in</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Write</span> \(\iota _k\colon Y_k \to \bigoplus _{j \geq 0} Y_j\) <span class='ntx-Italic-tlf-t1-x-x-109'>for the inclusion of the</span> \(k\)<span class='ntx-Italic-tlf-t1-x-x-109'>-th summand. Then there is an exact
+sequence </span>\[ \bigoplus _{k \geq 0} Y_k \xrightarrow {\ \id - f\ } \bigoplus _{k \geq 0} Y_k \longrightarrow \colim _k Y_k, \] <span class='ntx-Italic-tlf-t1-x-x-109'>where</span> \(\id - f\) <span class='ntx-Italic-tlf-t1-x-x-109'>restricts on the</span> \(k\)<span class='ntx-Italic-tlf-t1-x-x-109'>-th summand to the difference</span> \(\iota _k - \iota _{k+1} \circ f_k\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-04-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-04-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="lem:Sequential_Colimits_As_Pushouts" href="../../../entry/sequential-colimits-as-pushouts/index.html#lem:Sequential_Colimits_As_Pushouts">Lemma 2.4.29</a>, the colimit \(\colim _kY_k\) is the pushout of the two maps from \(\bigoplus _kY_k\) to the coproducts of the even and odd
+terms. In a stable \(\infty \)-category, the pushout of a span \(B \xleftarrow {a} A \xrightarrow {b} C\) is the cofiber of \[ (a,-b)\colon A \longrightarrow B \oplus C. \] After identifying the coproduct
+of the even and odd terms with \(\bigoplus _k Y_k\) and changing the signs on the odd source summands, this map is
+precisely \(\id -f\).                                                                                                                                            □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-7002r34'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 4.4.34 </span>(Dual mapping telescope)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cor:Dual_Telescope_Fiber_Sequence'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a stable</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with countable products.
+For every tower </span>\[ \dots \xrightarrow {f_2} Y_2 \xrightarrow {f_1} Y_1 \xrightarrow {f_0} Y_0 \] <span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, there is an exact sequence </span>\[ \lim _k Y_k \longrightarrow \prod _{k \geq 0}Y_k \xrightarrow {\ \id -f\ } \prod _{k \geq 0}Y_k, \] <span class='ntx-Italic-tlf-t1-x-x-109'>where the</span> \(k\)<span class='ntx-Italic-tlf-t1-x-x-109'>-th component of</span> \((\id -f)(y)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is</span> \(y_k-f_k(y_{k+1})\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-04-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-04-2">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Apply <a class="source-reference" data-label="lem:Telescope_Cofiber_Sequence" href="../../../entry/mapping-telescope-in-a-stable-infinity-category/index.html#lem:Telescope_Cofiber_Sequence">Lemma 4.4.33</a> in the opposite stable \(\infty \)-category \(C\catop \).                                                                               □
+</p>
+</div></div>
+<p class='noindent'>To state the resulting short exact sequence, we first introduce the one derived-limit construction that we
+need.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-7003r35'></a>
+<a class="entry-heading-link" href="../../../entry/first-derived-limit/index.html" aria-label="Definition 4.4.35, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 4.4.35 </span></a>(First derived limit)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:First_Derived_Limit'></span> Let \(\dots \xrightarrow {f_2} A_2 \xrightarrow {f_1} A_1 \xrightarrow {f_0} A_0\) be a tower of abelian groups. Define a homomorphism
+\[ d\colon \prod _{k \geq 0}A_k \longrightarrow \prod _{k \geq 0}A_k, \qquad d(a)_k := a_k-f_k(a_{k+1}). \] The <span class='ntx-Italic-tlf-t1-x-x-109'>first derived limit </span>of the tower is the abelian group \[ \lim _k^1 A_k := \coker (d). \] Notice that the ordinary inverse limit \(\lim _k A_k\) is the
+kernel of \(d\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-7004r36'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 4.4.36 </span>(Milnor sequence)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cor:Milnor_Sequence_Spectra'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For every tower</span> \(\dots \to Y_2 \to Y_1 \to Y_0\) <span class='ntx-Italic-tlf-t1-x-x-109'>of spectra and every</span> \(n \in \Z \)<span class='ntx-Italic-tlf-t1-x-x-109'>, there is a natural short
+exact sequence </span>\[ 0 \longrightarrow \lim _k^1 \pi _{n+1}(Y_k) \longrightarrow \pi _n\big (\lim _k Y_k\big ) \longrightarrow \lim _k \pi _n(Y_k) \longrightarrow 0. \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-04-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-04-1">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Homotopy groups commute with products of spectra: indeed, the mapping anima functor \(\Hom _{\Sp }(\S [n],-)\)
+preserves limits, and \(\pi _0\) preserves products of animae. Consequently, applying the long exact sequence
+of <a class="source-reference" data-label="prop:LES_Homotopy_Groups_Spectra" href="../../../entry/long-exact-sequence-of-homotopy-groups-of-spectra/index.html#prop:LES_Homotopy_Groups_Spectra">Proposition 4.4.29</a> to the fiber sequence of <a class="source-reference" data-label="cor:Dual_Telescope_Fiber_Sequence" href="../../../entry/dual-mapping-telescope/index.html#cor:Dual_Telescope_Fiber_Sequence">Corollary 4.4.34</a> gives an exact sequence \[ \prod _k \pi _{n+1}(Y_k) \xrightarrow {\ d\ } \prod _k \pi _{n+1}(Y_k) \longrightarrow \pi _n\big (\lim _kY_k\big ) \longrightarrow \prod _k \pi _n(Y_k) \xrightarrow {\ d\ } \prod _k \pi _n(Y_k). \] The claim follows by identifying the cokernel
+of the first map and the kernel of the last map using <a class="source-reference" data-label="def:First_Derived_Limit" href="../../../entry/first-derived-limit/index.html#def:First_Derived_Limit">Definition 4.4.35</a>.                                                                        □
+</p>
+</div></div>
+<p class='noindent'><a id='likesection.1'></a><a id='x1-7005x4.4.6'></a>
+</p>
+<h3 class='likesectionHead' id='exercises'><a id='x1-8000'></a>Exercises</h3>
+<p id='exercises1'><a id='Q1-1-9'></a>
+</p><div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-8001r1'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 4.1.</span>  </span>Let \(C\) and \(D\) be \(\infty \)-categories with finite limits. Show that there is an equivalence \[ \Sp (C \times D) \iso \Sp (C) \times \Sp (D). \]
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-8002r2'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 4.2.</span>  </span> Let \(C\) be a semiadditive \(\infty \)-category.
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>Show that for all objects \(X\) and \(Y\) in \(C\) the set \([X,Y] := \pi _0\Hom _C(X,Y)\) of homotopy classes of morphisms from \(X\) to \(Y\) admits a
+   canonical structure of an abelian monoid, where addition of \(f,g \in [X,Y]\) is given by the composite \[ f + g \colon \quad X \xrightarrow {\Delta } X \oplus X \xrightarrow {f \oplus g} Y \oplus Y \xrightarrow {\nabla } Y. \]
+                                                                                   
+                                                                                   
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>Show that for all morphisms \(f\colon X' \to X\) and \(g\colon Y \to Y'\) in \(C\) the composition maps \[ - \circ f\colon [X,Y] \to [X',Y] \qquadtext {and} g \circ - \colon [X,Y] \to [X,Y'] \] are homomorphisms of abelian
+   monoids.
+   </p></dd><dt class='enumerate'>
+(3) </dt><dd class='enumerate'>
+   <p class='noindent'>Let \(M\) be an abelian monoid. Show that \(M\) is an abelian group if and only if the map \[ \begin {pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \end {pmatrix}\colon M \oplus M \to M \oplus M, \qquad (x,y) \mapsto (x,x+ y) \] is a bijection
+   of sets.
+   </p></dd><dt class='enumerate'>
+(4) </dt><dd class='enumerate'>
+   <p class='noindent'>Conclude that the semiadditive \(\infty \)-category \(C\) is in fact <span class='ntx-Italic-tlf-t1-x-x-109'>additive </span>if and only if the abelian monoid \([X,Y]\)
+   is an abelian group for all \(X\) and \(Y\).</p></dd></dl>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-8007r3'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 4.3.</span>  </span> Let \(C\) be a pointed \(\infty \)-category with finite limits.
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>Show that for every object \(X\), the loop space \(\Omega X\) admits the structure of a group object in the homotopy
+   category \(\Ho (C)\): there are maps \[ e\colon * \to \Omega X, \qquad m\colon \Omega X \times \Omega X \to \Omega X, \qquadtext { and } i\colon \Omega X \to \Omega X \] that satisfy the usual group relations up to homotopy.
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>Show that for objects \(X\) and \(Y\) in \(C\), the set \([X,\Omega Y]\) is canonically a group. Show that \([X,\Omega ^2Y]\) is an abelian group.
+   </p></dd><dt class='enumerate'>
+(3) </dt><dd class='enumerate'>
+   <p class='noindent'>Deduce that when \(C\) is stable, the Hom-set \([X,Y]\) in \(\Ho (C)\) is an abelian group for all \(X\) and \(Y\), and that composition
+   in \(C\) defines group homomorphisms.
+                                                                                   
+                                                                                   
+   </p></dd><dt class='enumerate'>
+(4) </dt><dd class='enumerate'>
+   <p class='noindent'>Show that the resulting abelian group structure on \([X,Y]\) agrees with the one defined in <span class="source-reference" data-label="exercise:Addition_In_Additive_Category">Chapterexercise 4.2</span>.</p></dd></dl>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-8012r37'></a>
+<a class="entry-heading-link" href="../../../entry/suspensions-are-cogroup-objects/index.html" aria-label="Remark 4.4.37., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 4.4.37.</span></a>  </span><span id='rmk:Suspension_Is_Cogroup'></span> Applying the previous exercise to \(C\catop \), we deduce that for every \(X\) the suspension \(\Sigma X\) is a
+<span class='ntx-Italic-tlf-t1-x-x-109'>cogroup object </span>in \(\Ho (C)\), and hence that \([\Sigma X, Y]\) admits an abelian group structure for all \(Y\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-8013r38'></a>
+<a class="entry-heading-link" href="../../../entry/loop-objects-refine-to-group-objects/index.html" aria-label="Remark 4.4.38., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 4.4.38.</span></a>  </span><span id='rmk:Loop_Objects_As_Group_Objects'></span> In <a class="source-reference" data-label="chap:Recognition_Principle" href="../../../chapter/recognition-principle/index.html#chap:Recognition_Principle">Chapter 5</a>, we will upgrade the group structure of \(\Omega X\) in \(\Ho (C)\) to a group structure in \(C\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-8014r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 4.4.</span>  </span> Let \(X\) be a pointed anima. Consider the prespectrum \(\Sigma ^{\infty , \mathrm {pre}}(X) := (\Sigma ^nX, \sigma _n)\), where the structure maps are
+                                                                                   
+                                                                                   
+given by the unit maps \[ \Sigma ^nX \to \Omega \Sigma (\Sigma ^n X) = \Omega \Sigma ^{n+1}X \] of the adjunction \(\Sigma \dashv \Omega \). Show that the spectrum associated to the prespectrum \(\Sigma ^{\infty , \mathrm {pre}}(X)\) is
+\(\Sigma ^{\infty }(X)\).
+</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Hint: </span>show that all the maps \[ \Sigma ^{\infty - n}(\Sigma ^nX) \to \Sigma ^{\infty - (n+1)}(\Sigma ^{n+1}X) \] appearing in the definition of the associated spectrum are isomorphisms.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-8015r5'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 4.5.</span>  </span>Let \(X\) be a finite cell complex (<a class="source-reference" data-label="def:Cell_Complex" href="../../../entry/relative-cell-complexes/index.html#def:Cell_Complex">Definition 2.3.1</a>). Show that \(\Pi _{\infty }(X)\) is a finite anima.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-8016r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 4.6.</span>  </span>Show that for every spectrum \(X\), the functor \(\hom (-,X)\colon \Sp \catop \to \Sp \) admits a left adjoint, which is given by \(\hom (-,X)\catop \colon \Sp \to \Sp \catop \).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-8017r7'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 4.7 </span>(Shifts of hom spectra)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(C\) be a stable \(\infty \)-category and let \(X,Y\in C\). Prove that \[ \hom _C(X[k],Y)\cong \hom _C(X,Y)[-k] \qquad \text {and}\qquad \hom _C(X,Y[k])\cong \hom _C(X,Y)[k] \] Conclude that \(\hom (\S [m],\S [n])\cong \S [n-m]\)
+for all \(m,n\in \Z \).
+                                                                                   
+                                                                                   
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-8018r8'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 4.8 </span>(Represented theories of spheres and Moore spectra)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> For \(m\geq 2\), let \(\S /m\) be the cofiber of
+multiplication by \(m\) on the sphere spectrum. Let \(E\) be a spectrum.
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>Prove that \(\widetilde E_k(S^n)\cong \pi _{k-n}(E)\) for every \(n\geq 0\).
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>Deduce natural short exact sequences \[ 0\to \pi _k(E)/m\to \pi _k(E\otimes \S /m)\to \pi _{k-1}(E)[m]\to 0. \]
+   </p></dd><dt class='enumerate'>
+(3) </dt><dd class='enumerate'>
+   <p class='noindent'>Deduce natural short exact sequences \[ 0\to \pi _{k+1}(E)/m\to \pi _k\hom (\S /m,E)\to \pi _k(E)[m]\to 0. \]
+   </p></dd><dt class='enumerate'>
+(4) </dt><dd class='enumerate'>
+   <p class='noindent'>Express the reduced \(E\)-homology of the Moore anima from <span class="source-reference" data-label="exercise:Moore_Anima_Ordinary_Theory">Chapterexercise 3.3</span> in terms of the groups in part (2).</p></dd></dl>
+</div>
+
+ 
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../stabilization/index.html" aria-label="Previous section: Stabilization" title="Previous section: Stabilization"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../../recognition-principle/monoids-and-groups/index.html" aria-label="Next section: Monoids and groups" title="Next section: Monoids and groups"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html" aria-current="page"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/animae-as-spaces/index.html"><span class="context-entry-heading">Chapter 2</span><span class="context-entry-title">Animae as spaces</span></a></li><li><a href="../../../chapter/homology-and-cohomology/index.html"><span class="context-entry-heading">Chapter 3</span><span class="context-entry-title">Homology and cohomology</span></a></li><li><a href="../../../chapter/spectra-and-stable-infinity-categories/index.html" aria-current="page"><span class="context-entry-heading">Chapter 4</span><span class="context-entry-title">Spectra and stable ∞-categories</span></a></li><li><a href="../../../chapter/recognition-principle/index.html"><span class="context-entry-heading">Chapter 5</span><span class="context-entry-title">The recognition principle</span></a></li><li><a href="../../../chapter/homological-algebra/index.html"><span class="context-entry-heading">Chapter 6</span><span class="context-entry-title">Homological algebra</span></a></li><li><a href="../../../chapter/localization-and-completion/index.html"><span class="context-entry-heading">Chapter 7</span><span class="context-entry-title">Localization and completion</span></a></li><li><a href="../../../chapter/ring-spectra-and-modules/index.html"><span class="context-entry-heading">Chapter 8</span><span class="context-entry-title">Ring spectra and modules</span></a></li><li><a href="../../../chapter/complex-k-theory/index.html"><span class="context-entry-heading">Chapter 9</span><span class="context-entry-title">Complex K-theory</span></a></li><li><a href="../../../chapter/thom-spectra-and-bordism-theory/index.html"><span class="context-entry-heading">Chapter 10</span><span class="context-entry-title">Thom spectra and bordism theory</span></a></li><li><a href="../../../chapter/duality-phenomena/index.html"><span class="context-entry-heading">Chapter 11</span><span class="context-entry-title">Duality phenomena</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../pointed-categories/index.html"><span class="context-entry-heading">Section 4.1</span><span class="context-entry-title">Pointed ∞-categories</span></a></li><li><a href="../stable-categories/index.html"><span class="context-entry-heading">Section 4.2</span><span class="context-entry-title">Stable ∞-categories</span></a></li><li><a href="../stabilization/index.html"><span class="context-entry-heading">Section 4.3</span><span class="context-entry-title">Stabilization</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 4.4</span><span class="context-entry-title">The ∞-category of spectra</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Sp"><span class="context-entry-heading">Definition 4.4.1</span><span class="context-entry-title">definition</span></a></li><li><a href="#def:Sphere_Spectrum"><span class="context-entry-heading">Definition 4.4.2</span><span class="context-entry-title">Sphere spectrum</span></a></li><li><a href="#rmk:Unreduced_Suspension_Spectrum"><span class="context-entry-heading">Remark 4.4.3</span><span class="context-entry-title">remark</span></a></li><li><a href="#prop:Hom_Spectra_In_Stable_Category"><span class="context-entry-heading">Proposition 4.4.4</span><span class="context-entry-title">proposition</span></a></li><li><a href="#nota:Hom_Spectra"><span class="context-entry-heading">Terminology 4.4.5</span><span class="context-entry-title">terminology</span></a></li><li><a href="#cor:Stable_Yoneda_Lemma"><span class="context-entry-heading">Corollary 4.4.6</span><span class="context-entry-title">Stable Yoneda lemma</span></a></li><li><a href="#exercise:Levels_Of_Hom_Spectra"><span class="context-entry-heading">Exercise 4.4.7</span><span class="context-entry-title">exercise</span></a></li><li><a href="#lem:Map_Out_Of_Sphere_Spectrum"><span class="context-entry-heading">Lemma 4.4.8</span><span class="context-entry-title">lemma</span></a></li><li><a href="#prop:Tensoring_By_Spectra"><span class="context-entry-heading">Proposition 4.4.9</span><span class="context-entry-title">Tensoring by spectra</span></a></li><li><a href="#cor:Tensoring_As_Left_Adjoint_To_hom"><span class="context-entry-heading">Corollary 4.4.10</span><span class="context-entry-title">corollary</span></a></li><li><a href="#lem:Tensoring_By_Spectra_Preserves_Colimits"><span class="context-entry-heading">Lemma 4.4.11</span><span class="context-entry-title">lemma</span></a></li><li><a href="#lem:Stable_Tensoring_Unital"><span class="context-entry-heading">Lemma 4.4.12</span><span class="context-entry-title">lemma</span></a></li><li><a href="#lem:Auxiliary_Universality_Sp"><span class="context-entry-heading">Lemma 4.4.13</span><span class="context-entry-title">lemma</span></a></li><li><a href="#thm:Universal_Property_Spectra"><span class="context-entry-heading">Theorem 4.4.14</span><span class="context-entry-title">Universality of Sp</span></a></li><li><a href="#cor:Colimit_Preserving_Functors_From_Spectra_Have_Right_Adjoints"><span class="context-entry-heading">Corollary 4.4.15</span><span class="context-entry-title">corollary</span></a></li><li><a href="#prop:Tensor_Product_Of_Spectra"><span class="context-entry-heading">Proposition 4.4.16</span><span class="context-entry-title">proposition</span></a></li><li><a href="#lem:Closed_Symmetric_Monoidal_Identities_For_Spectra"><span class="context-entry-heading">Lemma 4.4.17</span><span class="context-entry-title">lemma</span></a></li><li><a href="#lem:Tensor_Product_Of_Unreduced_Suspension_Spectra"><span class="context-entry-heading">Lemma 4.4.18</span><span class="context-entry-title">lemma</span></a></li><li><a href="#lem:Tensor_Product_Of_Reduced_Suspension_Spectra"><span class="context-entry-heading">Lemma 4.4.19</span><span class="context-entry-title">lemma</span></a></li><li><a href="#rmk:Tensor_Product_Of_Spectra_From_Standard_Presentations"><span class="context-entry-heading">Remark 4.4.20</span><span class="context-entry-title">remark</span></a></li><li><a href="#def:Homotopy_Groups_Spectrum"><span class="context-entry-heading">Definition 4.4.21</span><span class="context-entry-title">definition</span></a></li><li><a href="#exercise:Homotopy_Groups_Of_Shifted_Spectra"><span class="context-entry-heading">Exercise 4.4.22</span><span class="context-entry-title">exercise</span></a></li><li><a href="#exercise:Positive_Homotopy_Groups_Spectrum"><span class="context-entry-heading">Exercise 4.4.23</span><span class="context-entry-title">exercise</span></a></li><li><a href="#ex:Stable_Homotopy_Groups_Of_Suspension_Spectra"><span class="context-entry-heading">Example 4.4.24</span><span class="context-entry-title">example</span></a></li><li><a href="#ex:Pi_Zero_Sphere_Spectrum"><span class="context-entry-heading">Example 4.4.25</span><span class="context-entry-title">example</span></a></li><li><a href="#cor:Homotopy_Groups_Jointly_Conservative"><span class="context-entry-heading">Corollary 4.4.26</span><span class="context-entry-title">corollary</span></a></li><li><a href="#lem:Homotopy_Groups_Preserve_Filtered_Colimits"><span class="context-entry-heading">Lemma 4.4.27</span><span class="context-entry-title">lemma</span></a></li><li><a href="#lem:Homotopy_Groups_Preserve_Coproducts"><span class="context-entry-heading">Lemma 4.4.28</span><span class="context-entry-title">lemma</span></a></li><li><a href="#prop:LES_Homotopy_Groups_Spectra"><span class="context-entry-heading">Proposition 4.4.29</span><span class="context-entry-title">Long exact sequence of homotopy groups</span></a></li><li><a href="#def:Homology_Theory_Represented_By_Spectrum"><span class="context-entry-heading">Definition 4.4.30</span><span class="context-entry-title">E-homology</span></a></li><li><a href="#prop:Spectrum_Represents_Homology_Theory"><span class="context-entry-heading">Proposition 4.4.31</span><span class="context-entry-title">proposition</span></a></li><li><a href="#rmk:Cohomology_Represented_By_Mapping_Spectra"><span class="context-entry-heading">Remark 4.4.32</span><span class="context-entry-title">Comparison with the earlier definition</span></a></li><li><a href="#lem:Telescope_Cofiber_Sequence"><span class="context-entry-heading">Lemma 4.4.33</span><span class="context-entry-title">Mapping telescope</span></a></li><li><a href="#cor:Dual_Telescope_Fiber_Sequence"><span class="context-entry-heading">Corollary 4.4.34</span><span class="context-entry-title">Dual mapping telescope</span></a></li><li><a href="#def:First_Derived_Limit"><span class="context-entry-heading">Definition 4.4.35</span><span class="context-entry-title">First derived limit</span></a></li><li><a href="#cor:Milnor_Sequence_Spectra"><span class="context-entry-heading">Corollary 4.4.36</span><span class="context-entry-title">Milnor sequence</span></a></li><li><a href="#rmk:Suspension_Is_Cogroup"><span class="context-entry-heading">Remark 4.4.37</span><span class="context-entry-title">remark</span></a></li><li><a href="#rmk:Loop_Objects_As_Group_Objects"><span class="context-entry-heading">Remark 4.4.38</span><span class="context-entry-title">remark</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

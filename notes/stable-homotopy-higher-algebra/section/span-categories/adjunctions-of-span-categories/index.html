@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 13.2: Adjunctions of span categories | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/operads-and-higher-algebra/index.html">Part II</a> · <a href="../../../chapter/span-categories/index.html">Chapter 13</a> · Section 13.2</p>
+      <h1>Adjunctions of span categories</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Adjunctions_Of_Span_Categories'>Before studying products and coproducts in span categories, we develop a general criterion for an
+adjunction between adequate triples to induce an adjunction between their span categories.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<a class="entry-heading-link" href="../../../entry/natural-transformations-span/index.html" aria-label="Construction 13.2.1., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 13.2.1.</span></a>  </span><span id='cons:Natural_Transformations_Span'></span> Consider adequate triples \((C,C_L,C_R)\) and \((D,D_L,D_R)\) and let \(F,G\colon C \to D\) be morphisms of adequate triples. Let \(\alpha \colon F \Rightarrow G\) be a
+natural transformation, and assume that the following two conditions are satisfied:
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>The morphism \(\alpha (X)\colon F(X) \to G(X)\) lies in \(D_R\) for every object \(X\) of \(C\);
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>For every morphism \(l\colon Z \to X\) in \(C_L\) the commutative square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-40d4c0c873f0.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>is a pullback square in \(D\).</p></dd></dl>
+<p class='noindent'>We will construct a natural transformation \[ \Span ^{\mathrm {R}}(\alpha )\colon \Span (F) \implies \Span (G) \] of functors \(\Span _{L,R}(C) \to \Span _{L,R}(D)\) which is objectwise given by the forward spans \[ F(X) \xleftarrow {=} F(X) \xrightarrow {\alpha (X)} G(X) \] for \(X \in C\).
+For this, equip \([1]\) with the adequate triple structure \(([1],[1]^{\simeq },[1])\). Then the product \(C \times [1]\) is an adequate triple with backward
+and forward classes \(C_L \times [1]^{\simeq }\) and \(C_R \times [1]\), respectively. Regarding \(\alpha \) as a functor \(C \times [1] \to D\), conditions (1) and (2) say precisely that it is
+a morphism of adequate triples. Indeed, the only additional pullback squares to check are sent to pastings of
+images under \(F\) or \(G\) of adequate pullback squares with the naturality squares from (2). We therefore obtain
+a functor \[ \Span _{L,R}(C \times [1]) \to \Span _{L,R}(D). \] Using that \(\Span (-)\) preserves products by <a class="source-reference" data-label="prop:Span_Preserves_Limits_And_Filtered_Colimits" href="../../../entry/span-preserves-limits-and-filtered-colimits/index.html#prop:Span_Preserves_Limits_And_Filtered_Colimits">Proposition 13.1.19</a> and that \(\Span _{\tiso ,\all }([1]) \simeq [1]\) by <a class="source-reference" data-label="lem:Span_With_Equivalences" href="../../../entry/span-categories-with-equivalences-on-one-leg/index.html#lem:Span_With_Equivalences">Lemma 13.1.16</a>, this functor takes the form \[ \Span _{L,R}(C) \times [1] \to \Span _{L,R}(D). \] The
+restrictions to \(0\) and \(1\) are precisely \(\Span (F)\) and \(\Span (G)\), so this produces the desired natural transformation
+\(\Span ^{\mathrm {R}}(\alpha )\).
+</p>
+</div>
+
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1004r2'></a>
+<a class="entry-heading-link" href="../../../entry/natural-transformations-span-dual/index.html" aria-label="Remark 13.2.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 13.2.2.</span></a>  </span><span id='rmk:Natural_Transformations_Span_Dual'></span> The previous construction can be dualized, if we assume instead that the morphism \(\alpha (X)\colon F(X) \to G(X)\) is in \(D_L\)
+for every \(X \in C\) and that for every morphism \(r\colon Z \to Y\) in \(C_R\) the commutative square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-901297c75ec1.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>is a pullback square in \(D\).
+By applying <a class="source-reference" data-label="lem:Opposite_Span_Category" href="../../../entry/opposite-span-category/index.html#lem:Opposite_Span_Category">Lemma 13.1.15</a> to the previous construction, we deduce that \(\alpha \) induces a natural transformation
+\begin {align*}  \Span ^{\mathrm {L}}(\alpha )\colon \Span (G) \implies \Span (F)  \end {align*}</p><p class='noindent'>of functors \(\Span _{L,R}(C) \to \Span _{L,R}(D)\) given on an object \(X \in C\) by the backwards span \[ G(X) \xleftarrow {\alpha (X)} F(X) \xrightarrow {=} F(X). \]
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1005r3'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 13.2.3.</span>  </span><span id='lem:Naturality_Transformations_Spans'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Given a third morphism of adequate triples</span> \(H\colon (C,C_L,C_R) \to (D,D_L,D_R)\)<span class='ntx-Italic-tlf-t1-x-x-109'>, let</span> \(\alpha \colon F \Rightarrow G\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(\beta \colon G \Rightarrow H\) <span class='ntx-Italic-tlf-t1-x-x-109'>be natural transformations
+satisfying the conditions (1) and (2) from </span><a class="source-reference" data-label="cons:Natural_Transformations_Span" href="../../../entry/natural-transformations-span/index.html#cons:Natural_Transformations_Span">Construction 13.2.1</a><span class='ntx-Italic-tlf-t1-x-x-109'>. Then we have natural equivalences </span>\[ \Span ^{\mathrm {R}}(\id _F) \simeq \id _{\Span (F)} \qquadtext {and} \Span ^{\mathrm {R}}(\beta \circ \alpha ) \simeq \Span ^{\mathrm {R}}(\beta ) \circ \Span ^{\mathrm {R}}(\alpha ). \] <span class='ntx-Italic-tlf-t1-x-x-109'>The construction is
+also compatible with whiskering: if</span> \(K\colon (B,B_L,B_R) \to (C,C_L,C_R)\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(J\colon (D,D_L,D_R) \to (E,E_L,E_R)\) <span class='ntx-Italic-tlf-t1-x-x-109'>are morphisms of adequate triples, then </span>\[ \Span ^{\mathrm {R}}(\alpha K) \simeq \Span ^{\mathrm {R}}(\alpha ) \circ \Span (K) \qquadtext {and} \Span ^{\mathrm {R}}(J\alpha ) \simeq \Span (J) \circ \Span ^{\mathrm {R}}(\alpha ). \] <span class='ntx-Italic-tlf-t1-x-x-109'>The dual claims
+for</span> \(\Span ^{\mathrm {L}}(-)\) <span class='ntx-Italic-tlf-t1-x-x-109'>also hold.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-span-categories-section-02-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-span-categories-section-02-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Composition and identities of natural transformations are formed using the posets \([n]\) for \(n = 0,2\).
+Whiskering is given by pre- and postcomposition with morphisms of adequate triples. The claims
+therefore follow from the naturality in both \([n] \in \simp \) and \((C,C_L,C_R) \in \AdTrip \) of the equivalence \(\Span _{L,R}(C \times [n]) \simeq \Span _{L,R}(C) \times [n]\).                                               □
+                                                                                   
+                                                                                   
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1006r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 13.2.4.</span>  </span><span id='cor:Adjunction_On_Spans'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \((C,C_L,C_R)\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \((D,D_L,D_R)\) <span class='ntx-Italic-tlf-t1-x-x-109'>be adequate triples. Let</span> \(F\colon C \rightleftarrows D \noloc G\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an adjunction of</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories and assume that</span> \(F\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(G\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>are morphisms of adequate triples.</span>
+   </p><dl class='enumerate'><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(1)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Assume that the unit map</span> \(\eta _X\colon X \to G(F(X))\) <span class='ntx-Italic-tlf-t1-x-x-109'>is in</span> \(C_R\) <span class='ntx-Italic-tlf-t1-x-x-109'>for all</span> \(X \in C\) <span class='ntx-Italic-tlf-t1-x-x-109'>and the counit map</span> \(\epsilon _Y\colon F(G(Y)) \to Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>is in</span> \(D_R\) <span class='ntx-Italic-tlf-t1-x-x-109'>for all</span> \(Y \in D\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Furthermore, assume that for
+   every morphism</span> \(l\colon Z \to X\) <span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(C_L\) <span class='ntx-Italic-tlf-t1-x-x-109'>and every morphism</span> \(l'\colon Z' \to X'\) <span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(D_L\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the commutative squares </span></p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-53fde81a7192.svg" alt="Commutative diagram generated from the LaTeX source"></figure><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-c349e81dfa43.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>are pullback squares. Then</span> \(F\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span>
+   \(G\) <span class='ntx-Italic-tlf-t1-x-x-109'>induce an adjunction </span>\begin {align*}  \Span (F)\colon \Span _{L,R}(C) \mathrel {\substack {\xrightarrow {\rule {25pt}{0cm}} \</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-53fad1f742c0.svg" alt="Commutative diagram generated from the LaTeX source"></figure><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-441e718a5798.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>are pullback squares.
+   Then</span> \(F\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(G\) <span class='ntx-Italic-tlf-t1-x-x-109'>induce an adjunction </span>\begin {align*}  \Span (G)\colon \Span _{L,R}(D) \mathrel {\substack {\xrightarrow {\rule {25pt}{0cm}} \\[-3.2pt] \xleftarrow {\rule {25pt}{0cm}}}} \Span _{L,R}(C) \noloc \Span (F).  \end {align*}</p>
+   </dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-span-categories-section-02-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-span-categories-section-02-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  We  prove  (1),  as  (2)  is  dual.  By  <a class="source-reference" data-label="cons:Natural_Transformations_Span" href="../../../entry/natural-transformations-span/index.html#cons:Natural_Transformations_Span">Construction 13.2.1</a>  and  <a class="source-reference" data-label="lem:Naturality_Transformations_Spans" href="../../../entry/naturality-transformations-spans/index.html#lem:Naturality_Transformations_Spans">Lemma 13.2.3</a>,  the  unit  \(\eta \colon \id \to GF\)  and  counit  \(\epsilon \colon FG \to \id \)  induce  transformations  \[ \Span ^{\mathrm {R}}(\eta )\colon \Span (\id ) \to \Span (G) \circ \Span (F) \qquadtext {and} \Span ^{\mathrm {R}}(\epsilon ) \colon \Span (F) \circ \Span (G) \to \id . \]
+Compatibility  with  vertical  composition  and  whiskering  from  <a class="source-reference" data-label="lem:Naturality_Transformations_Spans" href="../../../entry/naturality-transformations-spans/index.html#lem:Naturality_Transformations_Spans">Lemma 13.2.3</a>  shows  that  these  transformations
+satisfy the triangle identities. They therefore exhibit the asserted adjunction by <a class="source-reference" data-label="prop:Characterization_Adjunctions" href="../../../entry/equivalent-data-for-an-adjunction/index.html#prop:Characterization_Adjunctions">Proposition 21.1.2</a>.                             □
+                                                                                   
+                                                                                   
+</p>
+</div></div>
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../constructing-span-categories/index.html" aria-label="Previous section: Constructing span categories" title="Previous section: Constructing span categories"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../products-and-coproducts-in-span-categories/index.html" aria-label="Next section: Products and coproducts in span categories" title="Next section: Products and coproducts in span categories"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html" aria-current="page"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/operads-the-heuristics/index.html"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../../../chapter/span-categories/index.html" aria-current="page"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../../../chapter/basics-on-infinity-operads/index.html"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../../../chapter/cartesian-and-cocartesian-monoidal-structures/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../../../chapter/day-convolution-and-the-tensor-product-of-spectra/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="../../../chapter/the-envelope-of-an-infinity-operad/index.html"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../../../chapter/operadic-day-convolution-and-stabilization/index.html"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Operadic Day convolution and stabilization</span></a></li><li><a href="../../../chapter/algebras-and-modules/index.html"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../constructing-span-categories/index.html"><span class="context-entry-heading">Section 13.1</span><span class="context-entry-title">Constructing span categories</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 13.2</span><span class="context-entry-title">Adjunctions of span categories</span></a></li><li><a href="../products-and-coproducts-in-span-categories/index.html"><span class="context-entry-heading">Section 13.3</span><span class="context-entry-title">Products and coproducts in span categories</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#cons:Natural_Transformations_Span"><span class="context-entry-heading">Construction 13.2.1</span><span class="context-entry-title">construction</span></a></li><li><a href="#rmk:Natural_Transformations_Span_Dual"><span class="context-entry-heading">Remark 13.2.2</span><span class="context-entry-title">remark</span></a></li><li><a href="#lem:Naturality_Transformations_Spans"><span class="context-entry-heading">Lemma 13.2.3</span><span class="context-entry-title">lemma</span></a></li><li><a href="#cor:Adjunction_On_Spans"><span class="context-entry-heading">Corollary 13.2.4</span><span class="context-entry-title">corollary</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

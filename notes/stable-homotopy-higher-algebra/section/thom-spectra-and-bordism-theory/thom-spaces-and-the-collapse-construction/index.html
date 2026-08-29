@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 10.1: Thom spaces and the collapse construction | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/stable-homotopy-theory/index.html">Part I</a> · <a href="../../../chapter/thom-spectra-and-bordism-theory/index.html">Chapter 10</a> · Section 10.1</p>
+      <h1>Thom spaces and the collapse construction</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Thom_Space'>Let us make Pontryagin’s construction from the introduction precise, so as to see what has to be modified in
+the absence of a framing. Suppose a closed \(n\)-manifold \(M\) is embedded in \(\R ^{n+k}\) and that its normal
+bundle has been trivialized, so that \(M\) admits a tubular neighborhood identified with \(M \times \R ^k\). Collapsing
+everything outside this tubular neighborhood gives a pointed map \[ S^{n+k} \longrightarrow (M \times \R ^k)^+ \cong M_+ \wedge S^k \longrightarrow S^k, \] and hence, after passing to
+stabilizations, an element of the stable stem \(\pi _n(\S ) = \pi _0\Hom _{\Sp }(\S [n],\S )\). Without a trivialization there is no map to \(S^k\): the collapse
+map remembers the normal directions of \(M\), and these vary from point to point. Thom’s remedy
+is to replace the target \(S^k\) by a pointed space built out of the normal bundle itself, obtained by
+compactifying each fiber separately and then gluing all of the resulting points at infinity into a single
+basepoint.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<a class="entry-heading-link" href="../../../entry/fiberwise-one-point-compactification/index.html" aria-label="Construction 10.1.1, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 10.1.1 </span></a>(Fiberwise one-point compactification)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cons:Fiberwise_One_Point_Compactification'></span> Let \(p\colon E \to X\) be a real vector bundle of rank
+\(n\). We define its <span class='ntx-Italic-tlf-t1-x-x-109'>fiberwise one-point compactification</span> \(S^E\) as the topological space obtained from \(E\) by
+forming the one-point compactification fiberwise, replacing \(\R ^n\) with \(S^n = \R ^n \cup \{\infty \}\) in each fiber. More precisely, given
+a local trivialization \(\{\phi _i\colon U_i \times \R ^n \to p^{-1}(U_i)\}_{i \in I}\) of \(E\), we define \(S^E\) by gluing together the spaces \(U_i \times S^n\) along the transition functions:
+for \(x \in U_i \cap U_j\), the map \(\phi _j^{-1} \circ \phi _i\colon \{x\} \times \R ^n \to \{x\} \times \R ^n\) extends uniquely to a homeomorphism \(\{x\} \times S^n \to \{x\} \times S^n\) fixing the point at infinity. One can show \(S^E\) is
+independent of the choice of local trivializations of \(E \to X\).
+</p><p class='noindent'>The space \(S^E\) comes equipped with a map \(S^E \to X\). The ‘points at infinity’ assemble into a continuous section
+\(s_{\infty }\colon X \to S^E\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1002r2'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/thom-space/index.html" aria-label="Definition 10.1.2, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 10.1.2 </span></a>(Thom space)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Thom_Space'></span> Let \(p\colon E \to X\) be a real vector bundle. We define the <span class='ntx-Italic-tlf-t1-x-x-109'>Thom space</span> \(\Th (E)\) as the
+quotient of \(S^E\) by the points at infinity: \[ \Th (E) := S^E/s_\infty (X). \]
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1003r3'></a>
+<a class="entry-heading-link" href="../../../entry/thom-space-as-disk-bundle-quotient/index.html" aria-label="Remark 10.1.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 10.1.3.</span></a>  </span><span id='rmk:Thom_Space_As_Quotient'></span> Given a metric on \(E\), one obtains a homeomorphic description of \(\Th (E)\) as the quotient \(D(E)/S(E)\),
+where \(D(E)\) and \(S(E)\) denote the unit disk and sphere bundles with respect to the metric. The homeomorphism
+is given by sending a vector \(v\) to \(v/(1+\|v\|)\) in each fiber. This is often taken as the definition, but has the
+disadvantage of requiring an auxiliary choice of metric.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1004r4'></a>
+<a class="entry-heading-link" href="../../../entry/thom-space-as-one-point-compactification/index.html" aria-label="Remark 10.1.4., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 10.1.4.</span></a>  </span><span id='rmk:Thom_Space_As_One_Point_Compactification'></span> If \(X\) is compact Hausdorff, the inclusion of \(E\) induces a homeomorphism \(E^+\cong \Th (E)\). Indeed, a
+neighborhood of the collapsed section in \(\Th (E)\) has compact complement because \(S^E\) is compact Hausdorff,
+so the quotient topology at the basepoint is the one-point compactification topology.
+</p>
+</div>
+<p class='noindent'>The key observation is that the Thom space of a trivialized bundle is an honest \(n\)-fold suspension:
+</p>
+<div class='newtheorem'>
+                                                                                   
+                                                                                   
+<p class='noindent'><span class='head'>
+<a id='x1-1005r5'></a>
+<a class="entry-heading-link" href="../../../entry/suspension-as-thom-space/index.html" aria-label="Example 10.1.5, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 10.1.5 </span></a>(Suspension as Thom space)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='ex:Thom_Space_Of_Trivial_Vector_Bundle'></span> Let \(E = X \times \R ^n\) be the trivial rank \(n\) vector bundle over \(X\). Then \(\Th (E) \cong X_+ \wedge S^n \cong \Sigma ^n(X_+)\).
+</p>
+</div>
+<p class='noindent'>For a general rank \(n\) bundle \(E\), the Thom space \(\Th (E)\) differs from \(\Sigma ^n(X_+)\) only in the way the fiber spheres
+are glued to one another. We will therefore think of \(\Th (E)\) as a <span class='ntx-Italic-tlf-t1-x-x-109'>twisted suspension </span>of \(X_+\), twisted by
+\(E\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1006r6'></a>
+<a class="entry-heading-link" href="../../../entry/thom-space-of-an-external-direct-sum/index.html" aria-label="Example 10.1.6., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 10.1.6.</span></a>  </span><span id='ex:Thom_Space_Of_Product_Bundle'></span> Let \(E \to X\) and \(E' \to X'\) be vector bundles. Then their product \(E \times E' \to X \times X'\) is again a vector bundle (called
+their <span class='ntx-Italic-tlf-t1-x-x-109'>external direct sum</span>) and there is an isomorphism of pointed spaces \[ \Th (E \times E') \cong \Th (E) \wedge \Th (E'). \] To see this, equip \(E \times E'\) with the
+metric \(\|(v,w)\| = \max (\|v\|,\|w\|)\). Then the disk bundle \(D(E \times E')\) is homeomorphic to the product \(D(E) \times D(E')\), and under this homeomorphism the
+sphere bundle \(S(E \times E')\) corresponds to the subspace \[ D(E)\times S(E') \cup S(E) \times D(E') \] of the product. Passing to quotient spaces then proves
+the claim.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1007r7'></a>
+<a class="entry-heading-link" href="../../../entry/functoriality-of-thom-spaces/index.html" aria-label="Construction 10.1.7, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 10.1.7 </span></a>(Functoriality of Thom spaces)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cons:Functoriality_Of_Thom_Spaces'></span> Consider a fiberwise injective morphism of
+rank \(n\) vector bundles, i.e. a commutative diagram</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-420a26fc865d.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>in which \(\widetilde {f}\) induces injective \(\R \)-linear maps \(E_x \hookrightarrow E'_{f(x)}\) on fibers.
+Then the map \(\widetilde {f}\) induces a map \(S^{E} \to S^{E'}\) on fiberwise one-point compactifications, which preserves the sections
+at infinity and hence induces a continuous map \[ \Th (\widetilde {f}) \colon \Th (E) \to \Th (E'). \]</p>
+</div>
+<p class='noindent'>We can now carry out the collapse construction in the generality we will need. We isolate it as a separate
+construction, since it is used again in the proof of Atiyah duality in <a class="source-reference" data-label="sec:Spanier_Whitehead_Atiyah_Duality" href="../../duality-phenomena/spanier-whitehead-and-atiyah-duality/index.html#sec:Spanier_Whitehead_Atiyah_Duality">Section 11.3</a>.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1008r8'></a>
+<a class="entry-heading-link" href="../../../entry/pontryagin-thom-collapse-map/index.html" aria-label="Construction 10.1.8, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 10.1.8 </span></a>(Pontryagin–Thom collapse map)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cons:Pontryagin_Thom_Collapse_Map'></span> Let \(i\colon N \hookrightarrow N'\) be a smooth embedding of smooth
+manifolds, with \(N\) compact, and let \(\nu (i)\) denote its normal bundle. Choose a tubular neighborhood, given
+by an open neighborhood \(U \subseteq N'\) of \(N\) and a diffeomorphism from a neighborhood of the zero section in \(\nu (i)\)
+onto \(U\). Collapsing the complement of a smaller tubular neighborhood to the basepoint gives a pointed
+map \[ \PT (i)\colon N'_+ \longrightarrow \Th (\nu (i)), \] called the <span class='ntx-Italic-tlf-t1-x-x-109'>Pontryagin–Thom collapse map</span>. Its homotopy class is independent of the auxiliary
+choices. If \(N'\) is equipped with a basepoint away from \(N\), we may choose the tubular neighborhood of \(N\)
+to avoid this basepoint, giving a pointed map \[ \PT (i)\colon N' \longrightarrow \Th (\nu (i)). \]
+</p>
+</div>
+
+<figure class='figure' id='x1-1009r1'><span id='the-pontryaginthom-collapse-map-of-an-embedding-n-mathrel-25mu-n-which-crushes-the-complement-of-a-tubular-neighborhood-of-n-to-the-basepoint-in-the-case-drawn-n-is-a-circle-in-a-surface-with-trivial-normal-bundle-cutting-the-band-u-along-n-exhibits-i-as-two-cones-on-n-glued-along-n-that-is-as-a-sphere-with-equator-n-whose-two-cone-points-have-both-become-the-basepoint-'></span> 
+
+                                                                                   
+                                                                                   
+
+                                                                                   
+                                                                                   
+<p class='noindent'>                                    <img alt="The Pontryagin–Thom collapse map of an embedding \(N \hookrightarrow N'\), which crushes the complement of a tubular neighborhood of \(N\) to the basepoint. In the case drawn, \(N\) is a circle in a surface with trivial normal bundle. Cutting the band \(U\) along \(N\) exhibits \(\Th (\nu (i))\) as two cones on \(N\) glued along \(N\), that is, as a sphere with equator \(N\) whose two cone points have both become the basepoint \(\ast \)." src="../../../_assets/figures/chapter-thom-spectra-and-bordism-theory-section-010x.svg" />
+</p>
+<figcaption class='caption'><span class='id'>Figure 10.1: </span><span class='content'>The Pontryagin–Thom collapse map of an embedding \(N \hookrightarrow N'\), which crushes the complement
+of a tubular neighborhood of \(N\) to the basepoint. In the case drawn, \(N\) is a circle in a surface with trivial
+normal bundle. Cutting the band \(U\) along \(N\) exhibits \(\Th (\nu (i))\) as two cones on \(N\) glued along \(N\), that is, as a sphere
+with equator \(N\) whose two cone points have both become the basepoint \(\ast \).</span></figcaption><!-- tex4ht:label?: x1-1009r1  -->
+                                                                                   
+                                                                                   
+</figure>
+<p class='noindent'>For a framed embedding, the normal bundle is trivialized and \(\Th (\nu (i)) \cong \Sigma ^k(N_+)\), so that we recover Pontryagin’s construction.
+In general the target depends on \(\nu (i)\). The next step is to make it independent of the manifold by passing to the
+universal bundle.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1010r9'></a>
+<a class="entry-heading-link" href="../../../entry/universal-vector-bundle-on-the-grassmannian/index.html" aria-label="Example 10.1.9., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 10.1.9.</span></a>  </span><span id='ex:Universal_Bundle_Gr_n'></span> Let us consider the Grassmannian \(\Gr _n(\R ^\infty )\) of \(n\)-dimensional subspaces of \(\R ^\infty \). By the real
+analogue of the Grassmannian classification theorem recorded in <a class="source-reference" data-label="rmk:Real_Grassmannian_Analogues" href="../../../entry/real-grassmannian-analogues/index.html#rmk:Real_Grassmannian_Analogues">Remark 9.2.22</a>, this space is a model for the
+classifying space \(BO(n)\) and classifies rank \(n\) real vector bundles over paracompact Hausdorff spaces. It is a
+cell complex by its Schubert cell decomposition. The universal bundle \(\gamma _n\) over \(\Gr _n(\R ^\infty )\) has as total space \[E_n = \{(V,v) \in \Gr _n(\R ^\infty ) \times \R ^\infty \mid v \in V\}\] with
+the projection map sending \((V,v)\) to \(V\). The fiber over a point \(V \in \Gr _n(\R ^\infty )\) is precisely the \(n\)-dimensional vector space
+\(V\) itself. The Thom space \(\Th (\gamma _n)\) is the space of pairs \((V,v)\) where \(v \in V\) has length \(\leq 1\), modulo those pairs where \(v\) has
+length exactly \(1\).
+</p>
+</div>
+<p class='noindent'>The Thom spaces \(\Th (\gamma _n)\) are particularly important: every rank \(n\) vector bundle over a paracompact Hausdorff space
+is pulled back from \(\gamma _n\) by <a class="source-reference" data-label="rmk:Real_Grassmannian_Analogues" href="../../../entry/real-grassmannian-analogues/index.html#rmk:Real_Grassmannian_Analogues">Remark 9.2.22</a>, so its Thom space admits a map to \(\Th (\gamma _n)\) via <a class="source-reference" data-label="cons:Functoriality_Of_Thom_Spaces" href="../../../entry/functoriality-of-thom-spaces/index.html#cons:Functoriality_Of_Thom_Spaces">Construction 10.1.7</a>. Composing this with the collapse map
+from <a class="source-reference" data-label="cons:Pontryagin_Thom_Collapse_Map" href="../../../entry/pontryagin-thom-collapse-map/index.html#cons:Pontryagin_Thom_Collapse_Map">Construction 10.1.8</a> thus produces maps from manifolds into these Thom spaces. They are moreover compatible as \(n\) varies,
+in the following sense.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1011r10'></a>
+<a class="entry-heading-link" href="../../../entry/unoriented-bordism-prespectrum/index.html" aria-label="Construction 10.1.10, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 10.1.10 </span></a>(The prespectrum \(\MO ^{\pre }\))<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cons:MO_Prespectrum'></span> Consider the canonical inclusion \[ \Gr _n(\R ^{\infty }) \hookrightarrow \Gr _{n+1}(\R \times \R ^{\infty }) \cong \Gr _{n+1}(\R ^{\infty }), \quad V \mapsto \R \oplus V. \] The pullback of \(\gamma _{n+1}\) along
+this inclusion is the product bundle \(\gamma _n \times \ul {\R }\), and in particular we obtain a pointed continuous map \[ \Sigma (\Th (\gamma _n)) \cong \Th (\gamma _n \times \ul {\R }) \to \Th (\gamma _{n+1}). \] By
+adjunction, this defines a map \(\sigma _n\colon \Th (\gamma _n) \to \Omega (\Th (\gamma _{n+1}))\), turning the sequence of pointed animae \((\Pi _{\infty }\Th (\gamma _n))\) into a prespectrum, which
+we will denote by \(\MO ^{\pre }\).
+</p>
+                                                                                   
+                                                                                   
+</div>
+<p class='noindent'>Applying spectrification (<a class="source-reference" data-label="cons:Associated_Spectrum" href="../../../entry/associated-spectrum-of-a-prespectrum/index.html#cons:Associated_Spectrum">Proposition 4.3.29</a>) to \(\MO ^{\pre }\) produces a spectrum, and this is the classical construction of \(\MO \) going back to <span class='citation'>Thom (1954)</span>.
+Instead of taking this as our definition, the next section gives a construction of the Thom spectrum
+which requires no auxiliary choices and applies to virtual bundles; we shall identify the two in
+<a class="source-reference" data-label="thm:MO_As_Thom_Spectrum" href="../../../entry/unoriented-bordism-spectrum-from-the-prespectrum/index.html#thm:MO_As_Thom_Spectrum">Theorem 10.2.23</a>.
+</p>
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../../complex-k-theory/complex-k-theory-spectra/index.html" aria-label="Previous section: Complex K-theory spectra" title="Previous section: Complex K-theory spectra"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../thom-spectra/index.html" aria-label="Next section: Thom spectra" title="Next section: Thom spectra"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html" aria-current="page"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/animae-as-spaces/index.html"><span class="context-entry-heading">Chapter 2</span><span class="context-entry-title">Animae as spaces</span></a></li><li><a href="../../../chapter/homology-and-cohomology/index.html"><span class="context-entry-heading">Chapter 3</span><span class="context-entry-title">Homology and cohomology</span></a></li><li><a href="../../../chapter/spectra-and-stable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 4</span><span class="context-entry-title">Spectra and stable ∞-categories</span></a></li><li><a href="../../../chapter/recognition-principle/index.html"><span class="context-entry-heading">Chapter 5</span><span class="context-entry-title">The recognition principle</span></a></li><li><a href="../../../chapter/homological-algebra/index.html"><span class="context-entry-heading">Chapter 6</span><span class="context-entry-title">Homological algebra</span></a></li><li><a href="../../../chapter/localization-and-completion/index.html"><span class="context-entry-heading">Chapter 7</span><span class="context-entry-title">Localization and completion</span></a></li><li><a href="../../../chapter/ring-spectra-and-modules/index.html"><span class="context-entry-heading">Chapter 8</span><span class="context-entry-title">Ring spectra and modules</span></a></li><li><a href="../../../chapter/complex-k-theory/index.html"><span class="context-entry-heading">Chapter 9</span><span class="context-entry-title">Complex K-theory</span></a></li><li><a href="../../../chapter/thom-spectra-and-bordism-theory/index.html" aria-current="page"><span class="context-entry-heading">Chapter 10</span><span class="context-entry-title">Thom spectra and bordism theory</span></a></li><li><a href="../../../chapter/duality-phenomena/index.html"><span class="context-entry-heading">Chapter 11</span><span class="context-entry-title">Duality phenomena</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 10.1</span><span class="context-entry-title">Thom spaces and the collapse construction</span></a></li><li><a href="../thom-spectra/index.html"><span class="context-entry-heading">Section 10.2</span><span class="context-entry-title">Thom spectra</span></a></li><li><a href="../bordism-and-the-pontryagin-thom-theorem/index.html"><span class="context-entry-heading">Section 10.3</span><span class="context-entry-title">Bordism and the Pontryagin–Thom theorem</span></a></li><li><a href="../orientations-and-the-thom-isomorphism/index.html"><span class="context-entry-heading">Section 10.4</span><span class="context-entry-title">Orientations and the Thom isomorphism</span></a></li><li><a href="../coherence-for-one-point-compactification-online-only/index.html"><span class="context-entry-heading">Section 10.5</span><span class="context-entry-title">Coherence for one-point compactification (online only)</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#cons:Fiberwise_One_Point_Compactification"><span class="context-entry-heading">Construction 10.1.1</span><span class="context-entry-title">Fiberwise one-point compactification</span></a></li><li><a href="#def:Thom_Space"><span class="context-entry-heading">Definition 10.1.2</span><span class="context-entry-title">Thom space</span></a></li><li><a href="#rmk:Thom_Space_As_Quotient"><span class="context-entry-heading">Remark 10.1.3</span><span class="context-entry-title">remark</span></a></li><li><a href="#rmk:Thom_Space_As_One_Point_Compactification"><span class="context-entry-heading">Remark 10.1.4</span><span class="context-entry-title">remark</span></a></li><li><a href="#ex:Thom_Space_Of_Trivial_Vector_Bundle"><span class="context-entry-heading">Example 10.1.5</span><span class="context-entry-title">Suspension as Thom space</span></a></li><li><a href="#ex:Thom_Space_Of_Product_Bundle"><span class="context-entry-heading">Example 10.1.6</span><span class="context-entry-title">example</span></a></li><li><a href="#cons:Functoriality_Of_Thom_Spaces"><span class="context-entry-heading">Construction 10.1.7</span><span class="context-entry-title">Functoriality of Thom spaces</span></a></li><li><a href="#cons:Pontryagin_Thom_Collapse_Map"><span class="context-entry-heading">Construction 10.1.8</span><span class="context-entry-title">Pontryagin–Thom collapse map</span></a></li><li><a href="#ex:Universal_Bundle_Gr_n"><span class="context-entry-heading">Example 10.1.9</span><span class="context-entry-title">example</span></a></li><li><a href="#cons:MO_Prespectrum"><span class="context-entry-heading">Construction 10.1.10</span><span class="context-entry-title">The prespectrum \MO^\pre</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

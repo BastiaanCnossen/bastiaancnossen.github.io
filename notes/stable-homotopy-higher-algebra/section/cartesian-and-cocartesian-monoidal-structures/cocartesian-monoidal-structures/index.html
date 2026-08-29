@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 15.2: Cocartesian monoidal structures | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/operads-and-higher-algebra/index.html">Part II</a> · <a href="../../../chapter/cartesian-and-cocartesian-monoidal-structures/index.html">Chapter 15</a> · Section 15.2</p>
+      <h1>Cocartesian monoidal structures</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Cocartesian_Monoidal_Structure'>We now specialize the unfurling construction to construct cocartesian monoidal structures on \(\infty \)-categories
+with finite coproducts. Throughout, we will make use of the \(\infty \)-category of finite families from <a class="source-reference" data-label="cons:Fin_C" href="../../../entry/finite-families-in-an-infinity-category/index.html#cons:Fin_C">Construction 14.1.16</a>: for an
+\(\infty \)-category \(C\), we write \(q\colon \Fin (C) \to \Fin \) for the cartesian unstraightening of the finite-product-preserving functor \(C^{(-)}\colon \Fin \catop \to \Cat _{\infty }\), \(I \mapsto C^I\), so that the
+objects of \(\Fin (C)\) are the finite unordered tuples \(\{x_i\}_{i \in I}\) of objects of \(C\).
+</p><p class='noindent'>Assume now that \(C\) admits finite coproducts. For every map \(f\colon I \to J\), the restriction functor \(f^*\colon C^J \to C^I\) admits a left adjoint \(f_!\colon C^I \to C^J\),
+which forms coproducts over the fibers of \(f\). These adjunctions satisfy the Beck–Chevalley condition. Indeed,
+consider a pullback square as in <a class="source-reference" data-label="def:Adjointable_Functor" href="../../../entry/adjointable-functor/index.html#def:Adjointable_Functor">Definition 15.1.1</a> and a family \(A=(A_{y'})_{y' \in Y'}\). For every \(x \in X\), the Beck–Chevalley transformation is the natural
+isomorphism \[ (r'_!{l'}^*A)_x \simeq \coprod _{x' \in (r')^{-1}(x)} A_{l'(x')} \simeq \coprod _{y' \in r^{-1}(l(x))} A_{y'} \simeq (l^*r_!A)_x, \] where the middle isomorphism follows from the pullback property. Thus \(C^{(-)}\) is left adjointable,
+and we may apply contravariant unfurling.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 15.2.1.</span>  </span><span id='prop:Cocartesian_Monoidal_Structure'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(C\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  an</span>  \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category  with  finite  coproducts.  The  unfurling  of</span>  \(C^{(-)}\)  <span class='ntx-Italic-tlf-t1-x-x-109'>is  a
+finite-product-preserving functor </span>\[ (C,\amalg ):=\Unf ^{\mathrm {L}}(C^{(-)})\colon \Span (\Fin )\longrightarrow \Cat _{\infty } \] <span class='ntx-Italic-tlf-t1-x-x-109'>which defines a symmetric monoidal structure on</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>whose unit is
+the initial object and whose tensor product is the coproduct.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-02-12" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-02-12">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="cor:Unfurling_From_Left_Adjoints" href="../../../entry/unfurling-from-left-adjoints/index.html#cor:Unfurling_From_Left_Adjoints">Corollary 15.1.4</a>, the functor \(C^{(-)}\) extends to \(\Span (\Fin )\). To check whether it preserves finite products, recall from
+part (1)  of  <a class="source-reference" data-label="lem:Products_In_Span_Categories" href="../../../entry/products-in-span-categories/index.html#lem:Products_In_Span_Categories">Lemma 13.3.8</a>  that  the  inclusion  \(\Fin \catop \hookrightarrow \Span (\Fin )\)  preserves  finite  products.  Since  this  inclusion  is  the  identity  on
+objects, we may test whether the unfurling preserves finite products after restricting along it. By the
+                                                                                   
+                                                                                   
+last statement of <a class="source-reference" data-label="cor:Unfurling_From_Left_Adjoints" href="../../../entry/unfurling-from-left-adjoints/index.html#cor:Unfurling_From_Left_Adjoints">Corollary 15.1.4</a>, the resulting functor is the original functor \(C^{(-)}\), which preserves finite products by
+construction. This finishes the construction of the monoidal structure.
+</p><p class='noindent'>Given the description of coproducts in terms of left adjoints, we see that transport along \(\emptyset \to \lra {1}\) selects the
+initial object, while transport along the active span \(\lra {2}\xleftarrow {=}\lra {2}\xrightarrow {\nabla }\lra {1}\) is the binary coproduct.                                    □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1002r2'></a>
+<a class="entry-heading-link" href="../../../entry/definition-of-the-cocartesian-monoidal-structure/index.html" aria-label="Definition 15.2.2, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 15.2.2 </span></a>(Cocartesian monoidal structure)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Cocartesian_Monoidal_Structure'></span> The symmetric monoidal \(\infty \)-category \((C,\amalg )\) from <a class="source-reference" data-label="prop:Cocartesian_Monoidal_Structure" href="../../../entry/existence-of-the-cocartesian-monoidal-structure/index.html#prop:Cocartesian_Monoidal_Structure">Proposition 15.2.1</a> is
+called the <span class='ntx-Italic-tlf-t1-x-x-109'>cocartesian monoidal structure on</span> \(C\).
+</p>
+</div>
+
+<h4 class='subsectionHead' id='cocartesian-operads'><span class='titlemark'>15.2.1    </span> <a id='x1-200015.2.1'></a>Cocartesian operads</h4>
+<p class='noindent' id='subsec_Cocartesian_Operads'>The construction of the cartesian fibration \(q\colon \Fin (C) \to \Fin \) did not use the existence of finite coproducts in \(C\).
+Those coproducts were needed only to supply cocartesian transport along all morphisms of \(\Fin \) and
+thereby make \(q\) a Beck–Chevalley fibration. For an arbitrary \(\infty \)-category \(C\), we may still apply the
+span-category construction to \(q\). The resulting map need not be a cocartesian fibration over all of \(\Span (\Fin )\), but it
+retains the cocartesian lifts over inert morphisms required of an \(\infty \)-operad. We now make this
+precise.
+</p><p class='noindent'>Recall from <a class="source-reference" data-label="cons:Fin_C" href="../../../entry/finite-families-in-an-infinity-category/index.html#cons:Fin_C">Construction 14.1.16</a> that \(\Fin (C)\) admits finite coproducts, given by unordered concatenation of tuples, that \(q\) preserves
+them, and that a morphism \((f,(\phi _i)_{i \in I})\) of \(\Fin (C)\) is \(q\)-cartesian if and only if every \(\phi _i\) is an isomorphism in \(C\); we write \(\Fin (C)_{\ct } \subseteq \Fin (C)\) for the
+wide subcategory spanned by the \(q\)-cartesian morphisms.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+                                                                                   
+                                                                                   
+<a id='x1-2001r3'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 15.2.3.</span>  </span><span id='lem:Fin_C_Extensive'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category. Then the triple</span> \((\Fin (C), \Fin (C)_{\ct }, \Fin (C))\) <span class='ntx-Italic-tlf-t1-x-x-109'>is an adequate triple. Furthermore, it is
+extensive in the sense of </span><a class="source-reference" data-label="def:Weakly_Extensive_Adequate_Triple" href="../../../entry/weakly-extensive-adequate-triple/index.html#def:Weakly_Extensive_Adequate_Triple">Definition 13.3.3</a><span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-02-11" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-02-11">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The adequate triple is obtained by applying <a class="source-reference" data-label="prop:Adequate_Triple_From_Cartesian_Morphisms" href="../../../entry/adequate-triple-from-cartesian-morphisms/index.html#prop:Adequate_Triple_From_Cartesian_Morphisms">Proposition 15.1.9</a> to the cartesian fibration \(q\colon \Fin (C) \to \Fin \).
+</p><p class='noindent'>The cartesian straightening \(C^{(-)}\colon \Fin \catop \to \Cat _{\infty }\) of \(q\) preserves finite products by construction, while \(\Fin \) is extensive. The
+final assertion of <a class="source-reference" data-label="prop:Coproducts_In_Cartesian_Unstraightenings" href="../../../entry/coproducts-and-extensivity-in-cartesian-unstraightenings/index.html#prop:Coproducts_In_Cartesian_Unstraightenings">Proposition 23.2.10</a> therefore shows that \(\Fin (C)\) is extensive.
+</p><p class='noindent'>The \(q\)-cartesian morphisms are closed under finite coproducts, and the morphisms \(\emptyset \to X\) and \(\nabla \colon X \sqcup X \to X\) are \(q\)-cartesian,
+by the componentwise description recalled above. The class of all morphisms has the same closure
+and containment properties automatically. Hence <a class="source-reference" data-label="lem:Extensive_Category_Gives_Extensive_Triple" href="../../../entry/extensive-category-gives-extensive-triple/index.html#lem:Extensive_Category_Gives_Extensive_Triple">Lemma 13.3.4</a> shows that the adequate triple is extensive.        □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2002r4'></a>
+<a class="entry-heading-link" href="../../../entry/construction-of-the-cocartesian-operad/index.html" aria-label="Construction 15.2.4, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 15.2.4 </span></a>(Cocartesian operad)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cons:Cocartesian_Operad'></span>  Let  \(C\)  be  an  \(\infty \)-category.  We  define  the  \(\infty \)-category  \(C^{\amalg }\)  as  \[ C^{\amalg } := \Span _{\ct ,\all }(\Fin (C)). \]
+Combining  <a class="source-reference" data-label="lem:Fin_C_Extensive" href="../../../entry/fin-c-extensive/index.html#lem:Fin_C_Extensive">Lemma 15.2.3</a>  with  <a class="source-reference" data-label="lem:Products_In_Span_Categories" href="../../../entry/products-in-span-categories/index.html#lem:Products_In_Span_Categories">Lemma 13.3.8</a>,  we  see  that  this  is  a  semiadditive  \(\infty \)-category,  with  finite  products  and  finite
+coproducts both induced by the unordered concatenation of tuples in \(C\). We denote by \[ p_C^{\amalg }:= \Span (q)\colon C^{\amalg } \to \Span (\Fin ) \] the induced
+functor to \(\Span (\Fin )\), which preserves finite products.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2003r5'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 15.2.5.</span>  </span><span id='prop:Cocartesian_Operad'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category. Then the pair</span> \((C^{\amalg },p_C^{\amalg })\) <span class='ntx-Italic-tlf-t1-x-x-109'>is an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operad.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-02-10" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-02-10">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We have already argued that \(C^{\amalg } = \Span _{\ct ,\all }(\Fin (C))\) has finite products and that \(p_C^{\amalg } = \Span (q)\) preserves them, giving condition (1)
+of the definition. The objects in the fiber over a finite set \(I\) form the fiber \(\Fin (C)_I=C^I\). Moreover, by <a class="source-reference" data-label="lem:Hom_In_Spans" href="../../../entry/hom-in-spans/index.html#lem:Hom_In_Spans">Lemma 13.1.13</a>, a morphism
+over the identity span of \(I\) is represented by a span whose backwards leg is \(q\)-cartesian over \(\id _I\), hence an
+isomorphism, and therefore reduces to a morphism in \(C^I\). Thus the fiber of \(C^{\amalg }\) over \(I\) is \(C^I\), giving condition
+(2). For condition (3), consider objects \(X_i \in \Fin (C)\) and a morphism \(f\colon J \to I\) of finite sets. Then the lift \(\widetilde {f}\colon \prod _{i \in I} X_i \to \prod _{j \in J} X_{f(j)}\) in \(\Span _{\ct ,\all }(\Fin (C))\) is a backwards
+span of the form \[ \bigsqcup _{i \in I} X_i \xleftarrow {(f,(\id )_j)} \bigsqcup _{j \in J} X_{f(j)} \xrightarrow {(\id ,(\id ))} \bigsqcup _{j \in J} X_{f(j)}. \] The left-pointing morphism is \(q\)-cartesian and the right-pointing morphism is an
+identity. In particular, condition (4) of <a class="source-reference" data-label="thm:Cocartesian_Spans_Criterion" href="../../../entry/cocartesian-spans-criterion/index.html#thm:Cocartesian_Spans_Criterion">Theorem 15.1.7</a> only asks for cocartesian lifts of base changes of an identity,
+which are again isomorphisms; the remaining conditions follow directly from cartesianness and <a class="source-reference" data-label="lem:p-cartesian_vs_pullback_square" href="../../../entry/cartesian-morphism-pullback-criterion/index.html#lem:p-cartesian_vs_pullback_square">Lemma 15.1.8</a>.
+Hence this span is \(\Span (q)\)-cocartesian, as desired.                                                                                        □
+</p>
+</div></div>
+<p class='noindent'>The proof only uses cocartesian lifts over inert morphisms, for which the forward leg of the
+displayed span is an identity. Thus it does not require the covariant transport \(f_!\) used in the full
+unfurling.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2004r6'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/definition-of-the-cocartesian-operad/index.html" aria-label="Definition 15.2.6, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 15.2.6 </span></a>(Cocartesian operad)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Cocartesian_Operad'></span> For an \(\infty \)-category \(C\), we refer to the \(\infty \)-operad \(\OpCocart _C := (C^{\amalg },p_C^{\amalg })\) from <a class="source-reference" data-label="prop:Cocartesian_Operad" href="../../../entry/cocartesian-operad-is-an-infinity-operad/index.html#prop:Cocartesian_Operad">Proposition 15.2.5</a> as the
+<span class='ntx-Italic-tlf-t1-x-x-109'>cocartesian operad of</span> \(C\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2005r7'></a>
+<a class="entry-heading-link" href="../../../entry/cocartesian-operad-notation/index.html" aria-label="Warning 15.2.7., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Warning 15.2.7.</span></a>  </span><span id='warn:Cocartesian_Operad_Notation'></span> In various sources, notably in <span class='citation'>Lurie (2017)</span>, no notational distinction is made between the
+\(\infty \)-operad \(\OpCocart _C\) and its total \(\infty \)-category \(C^{\amalg }\): both are denoted by \(C^{\amalg }\). Although the notation \(\OpCocart _C\) is slightly more verbose,
+we find it useful to distinguish between the operad and its total category.
+</p>
+</div>
+<p class='noindent'>The operad \(\OpCocart _C\) does precisely what we want it to do: its multimorphisms \((x_1, \dots , x_n) \to y\) are simply the morphisms \((x_1, \dots , x_n) \to y\) in \(\Fin (C)\), which
+correspond to tuples \((\phi _i\colon x_i \to y)\) of morphisms in \(C\). If \(C\) admits finite coproducts, cocartesian transport along the active
+fold map \(\lra {n}\to \lra {1}\) sends \((x_1,\dots ,x_n)\) to \(x_1\amalg \dots \amalg x_n\). Factoring through this cocartesian lift gives the familiar isomorphism \[ \Hom _C(x_1\amalg \dots \amalg x_n,y) \simeq \prod _{i=1}^n\Hom _C(x_i,y). \] The
+construction of \(\OpCocart _C\) retains the expression on the right even when the coproduct representing it does not
+exist.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2006r8'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 15.2.8.</span>  </span><span id='prop:Cocartesian_Operad_Is_Monoidal'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category. Then the following conditions are equivalent:</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits finite coproducts;</span>
+                                                                                   
+
+                                                                                   
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The cartesian fibration</span> \(q\colon \Fin (C) \to \Fin \) <span class='ntx-Italic-tlf-t1-x-x-109'>is a cocartesian fibration;</span>
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(p_C^{\amalg }=\Span (q)\colon C^{\amalg } \to \Span (\Fin )\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a cocartesian fibration.</span></p></dd></dl>
+<p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If these conditions hold,</span> \(p_C^{\amalg }\) <span class='ntx-Italic-tlf-t1-x-x-109'>is the cocartesian unstraightening of the unfurling</span> \((C,\amalg )\) <span class='ntx-Italic-tlf-t1-x-x-109'>from </span><a class="source-reference" data-label="prop:Cocartesian_Monoidal_Structure" href="../../../entry/existence-of-the-cocartesian-monoidal-structure/index.html#prop:Cocartesian_Monoidal_Structure">Proposition 15.2.1</a><span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-02-9" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-02-9">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  If  \(C\)  admits  finite  coproducts,  we  showed  above  that  \(q\colon \Fin (C) \to \Fin \)  is  a  Beck–Chevalley  fibration.  The
+construction in <a class="source-reference" data-label="thm:Unfurling_Beck_Chevalley_Fibration" href="../../../entry/unfurling-beck-chevalley-fibration/index.html#thm:Unfurling_Beck_Chevalley_Fibration">Theorem 15.1.3</a> identifies the cocartesian unstraightening of the unfurling from <a class="source-reference" data-label="prop:Cocartesian_Monoidal_Structure" href="../../../entry/existence-of-the-cocartesian-monoidal-structure/index.html#prop:Cocartesian_Monoidal_Structure">Proposition 15.2.1</a> with \(\Span (q)\). This proves
+that (1) implies (3), as well as the final assertion.
+</p><p class='noindent'>We next show that (3) implies (2). Recall from the dual of <a class="source-reference" data-label="lem:Cocartesian_Morphism_Isomorphism" href="../../../entry/cocartesian-morphisms-over-isomorphisms/index.html#lem:Cocartesian_Morphism_Isomorphism">Lemma 23.1.15</a> that every \(q\)-cartesian morphism in \(\Fin (C)\) whose
+image in \(\Fin \) is an isomorphism is itself an isomorphism. Consequently, the square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-e9a1b209fafb.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>is a pullback square.
+Since cocartesian fibrations are closed under pullback, (3) implies (2).</p><p class='noindent'>Finally, suppose that \(q\) is a cocartesian fibration. By <a class="source-reference" data-label="lem:Cocartesian_Fibration_Is_Fibration" href="../../../entry/cocartesian-fibrations-are-fibrations/index.html#lem:Cocartesian_Fibration_Is_Fibration">Lemma 23.1.20</a>, its cocartesian transport \(f_!\colon C^I \to C^J\) along a map \(f\colon I \to J\) is left
+adjoint to the cartesian transport \(f^*\colon C^J \to C^I\). For the map \(\emptyset \to \lra {1}\) this produces an initial object of \(C\), while for the fold
+map \(\lra {2} \to \lra {1}\) it produces binary coproducts. Thus \(C\) admits finite coproducts, proving that (2) implies (1).    □
+</p>
+</div></div>
+<p class='noindent'>Thus, when \(C\) admits finite coproducts, the symmetric monoidal structure associated to \(\OpCocart _C\) is precisely the
+cocartesian monoidal structure constructed by unfurling at the beginning of the section.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2010r9'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/functoriality-cocartesian-operad/index.html" aria-label="Remark 15.2.9., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 15.2.9.</span></a>  </span><span id='rmk:Functoriality_Cocartesian_Operad'></span> Note that all the steps in the construction of \(\OpCocart _C = (C^{\amalg },p_C^{\amalg })\) are functorial in \(C\). Using <a class="source-reference" data-label="prop:Adequate_Triple_From_Cartesian_Morphisms" href="../../../entry/adequate-triple-from-cartesian-morphisms/index.html#prop:Adequate_Triple_From_Cartesian_Morphisms">Proposition 15.1.9</a>, we may
+write it as the composite \[ \Cat _{\infty } \iso \Fun ^{\times }(\Fin \catop ,\Cat _{\infty }) \xrightarrow {\Un ^{\ct }} \Cart (\Fin ) \xrightarrow {E \mapsto (E,E^{p\dcart },E)} \AdTrip _{/\Fin } \xrightarrow {\Span } (\Cat _{\infty })_{/\Span (\Fin )}. \] In particular, we obtain a functor \[ \OpCocart \colon \Cat _{\infty } \to \Op _{\infty }. \]
+</p>
+</div>
+
+<h4 class='subsectionHead' id='algebras-over-cocartesian-operads'><span class='titlemark'>15.2.2    </span> <a id='x1-300015.2.2'></a>Algebras over cocartesian operads</h4>
+<p class='noindent'>Algebras over a cocartesian operad \(\OpCocart _C\) are simple: as we will show next, they correspond to \(C\)-indexed families
+of commutative algebras.
+</p><p class='noindent'>Recall from <a class="source-reference" data-label="lem:Fin_C_Free_On_Coproducts" href="../../../entry/fin-c-free-on-coproducts/index.html#lem:Fin_C_Free_On_Coproducts">Lemma 14.1.17</a> that \(\Fin (C)\) is freely generated by \(C\) under finite coproducts; this will be the key input
+below.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3001r10'></a>
+<a class="entry-heading-link" href="../../../entry/cocartesian-monoidal-structure-map/index.html" aria-label="Construction 15.2.10., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 15.2.10.</span></a>  </span><span id='cons:Cocartesian_Monoidal_Structure_Map'></span> Let \(C\) be an \(\infty \)-category. We construct a functor \[ \iota \colon \Span (\Fin ) \times C \to C^{\amalg } = \Span _{\ct ,\all }(\Fin (C)), \] informally given by sending a pair \((I,x)\) to
+the ‘constant’ \(I\)-tuple \((x)_{i \in I}\), and by sending a pair \((I \xleftarrow {f} J \xrightarrow {g} K, \phi \colon x \to y)\) of a span in \(\Fin \) and a morphism in \(C\) to the span \[ (x)_{i \in I} \xleftarrow {(f,(\id _x)_{j \in J})} (x)_{j \in J} \xrightarrow {(g,(\phi )_{j \in J})} (y)_{k \in K}. \] (Note that the
+left-pointing morphism is indeed \(q\)-cartesian.) Formally, this map is constructed as follows:
+</p>
+     <ul class='itemize1'>
+     <li class='itemize'>Consider the natural transformation \(\Delta \colon \const _C \to C^{(-)}\) of functors \(\Fin \catop \to \Cat _{\infty }\) which on the one-point set is given by the
+     identity \(\id _C\colon C \to C\); this property determines the entire transformation since \(C^{(-)}\) is by definition right Kan
+     extended from the point. For a finite set \(I\), it is given by the diagonal functor \[ \Delta \colon C \to C^I, \quad x \mapsto (x)_{i \in I}. \]
+     </li>
+     <li class='itemize'>By cartesian unstraightening, we obtain a morphism of cartesian fibrations over \(\Fin \): <div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-aec961894f8b.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div>
+                                                                                   
+                                                                                   
+     </li>
+     <li class='itemize'>By using <a class="source-reference" data-label="prop:Adequate_Triple_From_Cartesian_Morphisms" href="../../../entry/adequate-triple-from-cartesian-morphisms/index.html#prop:Adequate_Triple_From_Cartesian_Morphisms">Proposition 15.1.9</a>, both sides become adequate triples with left class given by the cartesian morphisms.
+     The functor \(\Un ^{\ct }(\Delta )\) preserves cartesian morphisms and becomes a morphism of adequate triples.
+     Since  a  morphism  on  the  left-hand  side  is  cartesian  if  and  only  if  the  \(C\)-component  is  an
+     isomorphism, we may use the equivalence \(\Span _{\simeq ,\all }(C) \simeq C\) to get a map on spans: <div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-2e44833ab5b4.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div></li></ul>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3002r11'></a>
+<a class="entry-heading-link" href="../../../entry/functors-preserving-coproducts-first-variable/index.html" aria-label="Notation 15.2.11., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Notation 15.2.11.</span></a>  </span><span id='nota:Functors_Preserving_Coproducts_First_Variable'></span> Let \(C\), \(D\) and \(E\) be \(\infty \)-categories and assume \(D\) and \(E\) admit finite coproducts. We denote
+by \[ \Fun ^{\amalg ,-}(E \times C,D) \quad \subseteq \quad \Fun (E \times C, D) \] the full subcategory consisting of functors \(F\colon E \times C \to D\) that preserve finite coproducts in the first variable, in
+the sense that \(F(-,x)\colon E \to D\) preserves finite coproducts for all \(x \in C\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3003r12'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 15.2.12 </span>(<span class='citation'>[Bachmann and Hoyois (2021), Lemma C.4]</span>, cf. <span class='citation'>[Cnossen et al. (2025), Proof of Proposition 3.30]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Auxiliary_Cocartesian_Operad'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(C\)  <span class='ntx-Italic-tlf-t1-x-x-109'>and</span>  \(D\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be</span>  \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories  and  assume</span>  \(D\)  <span class='ntx-Italic-tlf-t1-x-x-109'>admits  finite  coproducts.  Then
+restriction along</span> \(\iota \) <span class='ntx-Italic-tlf-t1-x-x-109'>induces an equivalence </span>\[ \iota ^*\colon \Fun ^{\amalg }(\Span _{\ct ,\all }(\Fin (C)),D) \iso \Fun ^{\amalg ,-}(\Span (\Fin ) \times C,D), \] <span class='ntx-Italic-tlf-t1-x-x-109'>with inverse given by left Kan extension along</span> \(\iota \)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-02-8" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-02-8">
+                                                                                   
+
+                                                                                   
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> <span class='ntx-Italic-tlf-t1-x-x-109'>Step 1: </span>We start with some auxiliary diagrams. Consider the following commutative diagram:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-6c2a67bb301c.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>In particular, passing to restriction functors induces a commutative diagram as follows:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-34207a1db7c1.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>The functor
+\(m^*\) is an equivalence, since \(\Fin \) is the free \(\infty \)-category with finite coproducts. The functor \(i^*\) was shown to be
+an equivalence in <a class="source-reference" data-label="lem:Fin_C_Free_On_Coproducts" href="../../../entry/fin-c-free-on-coproducts/index.html#lem:Fin_C_Free_On_Coproducts">Lemma 14.1.17</a>. It follows by 2-out-of-3 that \({\iota '}^*\) is an equivalence as well. Since the inverses to \(m^*\) and
+\(i^*\) are given by left Kan extension along \(m\) and \(i\), the inverse to \({\iota '}^*\) is given by left Kan extension along \(\iota '\).</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Step 2: </span>We now prove the following auxiliary statement: for every object \(X = \{x_i\}_{i \in I}\) of \(\Fin (C)\), the relative slice
+category of \(\iota '\) over \(X\) embeds fully faithfully into the relative slice category of \(\iota \) over \(X\), and this inclusion
+admits a left adjoint. To see this, let us denote these two relative slice categories as follows: \[ P_X := \Span _{\ct ,\all }(\Fin (C))_{/X} \times _{\Span _{\ct ,\all }(\Fin (C))} (\Span (\Fin ) \times C); \] \[ Q_X := \Fin (C)_{/X} \times _{\Fin (C)} (\Fin \times C). \] The
+inclusions \(l\) and \(k\) induce a fully faithful inclusion \(Q_X \hookrightarrow P_X\). We claim that this inclusion admits a left adjoint \(P_X \to Q_X\).
+To this end, note that an object of \(P_X\) consists of a pair \((J,y)\) and a span \[ \{y\}_{j \in J} \xleftarrow {(f, (\id _{y}))} \{y\}_{k \in K} \xrightarrow {(g, (\phi _k\colon y \to x_i))} \{x_i\}_{i \in I} = X \] in \(\Fin (C)\), where the left-pointing map is
+\(q\)-cartesian. We will send this to the object of \(Q_X\) given by the morphism \[ \{y\}_{k \in K} \xrightarrow {(g, (\phi _k\colon y \to x_i))} \{x_i\}_{i \in I} = X. \] If we include this back into \(P_X\) by
+taking the left-pointing map to be the identity, the span \(J\xleftarrow {f}K\xrightarrow {=}K\) and the identity of \(y\) define a morphism from
+the original object to the resulting object. Let \(L\colon P_X\to Q_X\) denote the construction just described and let \(j\colon Q_X\hookrightarrow P_X\) denote
+the inclusion. Composition with this morphism induces natural equivalences \[ \Hom _{Q_X}(L(p),q) \simeq \Hom _{P_X}(p,j(q)). \] Indeed, a morphism
+on the right is uniquely determined by its map from the middle object of the left leg, because that
+leg is \(q\)-cartesian. Thus \(L\) is left adjoint to \(j\).
+</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Step 3: </span>We now return to the question of interest by showing that \(\iota ^*\) admits a left adjoint given by left
+Kan extension. Consider a functor \(F\colon \Span (\Fin ) \times C \to D\) which preserves finite coproducts in the first variable. We need
+to show that the left Kan extension \(\iota _! F\colon \Span _{\ct ,\all }(\Fin (C)) \to D\) exists and preserves finite coproducts. For the former, we may
+use the pointwise criterion for left Kan extensions and show that for each object \(\{x_i\}_{i \in I}\) of \(\Span _{\ct ,\all }(\Fin (C))\) the colimit \[ (\iota _!F)(\{x_i\}_{i \in I}) = \colim _{(J,y) \in P_X} F(J,y) \]
+exists in \(D\), where \(P_X\) denotes the relative slice category of \(\iota \) considered in Step 2. Since the inclusion \(Q_X \hookrightarrow P_X\) is
+a right adjoint, it is in particular final, hence the above colimit exists in \(D\) if and only if so does \(\colim _{(J,y) \in Q_X} F(J,y)\). But
+this is indeed the case, since \(Q_X\) is the relative slice category of \(\iota '\) and the pointwise left Kan extension
+of \(l^*F\colon \Fin \times C \to D\) along \(\iota '\) exists by Step 1.
+</p><p class='noindent'>We conclude that \(\iota _!F\) exists, and that the canonical map \(\iota '_!l^*F \to k^*\iota _!F\) is a natural isomorphism. It remains to show
+that \(\iota _!F\) preserves finite coproducts, but this can be checked after restricting along the inclusion \(k\colon \Fin (C) \hookrightarrow \Span _{\ct ,\all }(\Fin (C))\), and
+thus follows from the fact that \(\iota '_!l^*F\) preserves finite coproducts.
+</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Step 4: </span>Finally, we show that the resulting adjunction \[ \iota _! \colon \Fun ^{\amalg , -}(\Span (\Fin ) \times C, D) \rightleftarrows \Fun ^{\amalg }(\Span _{\ct ,\all }(\Fin (C)), D)\noloc \iota ^* \] is an adjoint equivalence. Since \(\Fin (C)\) is generated
+under coproducts by the image of \(\Fin \times C\), the functor \(\iota ^*\) is conservative, hence it suffices to show that for
+every \(F \in \Fun ^{\amalg ,-}(\Span (\Fin ) \times C, D)\) the unit \(F \to \iota ^*\iota _!F\) is an isomorphism. By essential surjectivity of \(l\), this in turn reduces to \(l^*F \iso l^*\iota ^*\iota _!F\). Under the
+isomorphisms \(l^*\iota ^*\iota _!F = {\iota '}^*k^*\iota _!F \simeq {\iota '}^*\iota '_!l^*F\), this corresponds to the unit of the adjunction \(\iota '_! \dashv {\iota '}^*\), hence is an isomorphism by Step
+1.                                                                                                                                                         □
+</p>
+                                                                                   
+                                                                                   
+</div></div>
+<p class='noindent'>We may now deduce the characterization of algebras over cocartesian operads we are after:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3004r13'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 15.2.13.</span>  </span><span id='prop:Universal_Property_Cocartesian_Operads'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category.</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(E\) <span class='ntx-Italic-tlf-t1-x-x-109'>is an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with finite products, restriction along</span> \(\iota \) <span class='ntx-Italic-tlf-t1-x-x-109'>induces an equivalence </span>\[ \Fun ^{\times }(C^{\amalg }, E) \iso \Fun (C,\CMon (E)). \]
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(\Oo \) <span class='ntx-Italic-tlf-t1-x-x-109'>is an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operad, we obtain an equivalence </span>\[ \Fun _{\Op _{\infty }}(\OpCocart _C, \Oo ) \simeq \Fun (C, \CAlg (\Oo )). \]
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category, we obtain an equivalence </span>\[ \Alg _{\OpCocart _C}(D) \simeq \Fun (C,\CAlg (D)). \]</p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-02-7" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-02-7">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Part (3) is an instance of (2) by taking \(\Oo = \Mm _D\) to be the multimorphism operad of \(D\). Part (2) follows
+by applying Part (1) to \(E = \Oo ^{\otimes }\) and \(E = \Span (\Fin )\), and passing to horizontal fibers:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-3ce809d9da78.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>It thus remains to prove part (1). For
+this, recall from <a class="source-reference" data-label="cons:Cocartesian_Operad" href="../../../entry/construction-of-the-cocartesian-operad/index.html#cons:Cocartesian_Operad">Construction 15.2.4</a> that \(C^{\amalg }\) is semiadditive. The left vertical map in the following commutative diagram
+is an equivalence by <a class="source-reference" data-label="cor:Maps_From_Semiadditive_Category_To_CMon" href="../../../entry/functors-from-semiadditive-infinity-categories-to-commutative-monoids/index.html#cor:Maps_From_Semiadditive_Category_To_CMon">Corollary 5.3.24</a>. The right vertical map is an equivalence by <a class="source-reference" data-label="prop:CMon_Of_Semiadditive_Category" href="../../../entry/commutative-monoids-in-semiadditive-infinity-categories/index.html#prop:CMon_Of_Semiadditive_Category">Proposition 5.3.17</a>, since \(\CMon (E)\) is semiadditive:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-5eb629abb998.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Showing
+that the bottom functor in this square is an equivalence thus reduces to showing that the top functor
+is an equivalence. Since a functor between semiadditive \(\infty \)-categories preserves finite products if and
+only if it preserves finite coproducts, this top functor may be rewritten as the restriction functor \[ \iota ^*\colon \Fun ^{\amalg }(C^{\amalg }, \CMon (E)) \to \Fun ^{\amalg , -}(\Span (\Fin ) \times C,\CMon (E)) \simeq \Fun (C, \Fun ^{\amalg }(\Span (\Fin ), \CMon (E))). \] This
+is an equivalence by <a class="source-reference" data-label="lem:Auxiliary_Cocartesian_Operad" href="../../../entry/auxiliary-cocartesian-operad/index.html#lem:Auxiliary_Cocartesian_Operad">Lemma 15.2.12</a>.                                                                                                                          □</p>
+</div></div>
+
+<h4 class='subsectionHead' id='classification-of-cocartesian-operads'><span class='titlemark'>15.2.3    </span> <a id='x1-400015.2.3'></a>Classification of cocartesian operads</h4>
+<p class='noindent'>As a consequence of the results from the previous subsection, we obtain an explicit classification of
+\(\infty \)-operads equivalent to \(\OpCocart _C\) for some \(\infty \)-category \(C\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4001r14'></a>
+<a class="entry-heading-link" href="../../../entry/cocartesian-infinity-operad/index.html" aria-label="Definition 15.2.14., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 15.2.14.</span></a>  </span><span id='def:Cocartesian_Infinity_Operad'></span>  An  \(\infty \)-operad  \(\Oo \)  is  called  <span class='ntx-Italic-tlf-t1-x-x-109'>cocartesian  </span>if  there  exists  an  equivalence  \(\Oo \simeq \OpCocart _C\)  for  some
+\(\infty \)-category \(C\). We denote by \(\Op ^{\cocart }_{\infty } \subseteq \Op _{\infty }\) the full subcategory spanned by the cocartesian \(\infty \)-operads.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4002r15'></a>
+<a class="entry-heading-link" href="../../../entry/commutative-operad-is-cocartesian/index.html" aria-label="Example 15.2.15., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 15.2.15.</span></a>  </span><span id='ex:Commutative_Operad_Is_Cocartesian'></span> The commutative operad \(\Comm \) is cocartesian: it is equivalent to \(\OpCocart _{\pt }\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4003r16'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 15.2.16.</span>  </span><span id='prop:Auxiliary_Classification_Cocartesian_Operads'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(\Oo \) <span class='ntx-Italic-tlf-t1-x-x-109'>be a cocartesian</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operad and let</span> \(\Pp \) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operad such that the</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(\Pp ^{\otimes }\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>is semiadditive. Then the underlying category functor induces an equivalence </span>\[ \Fun _{\Op _{\infty }}(\Oo ,\Pp ) \iso \Fun (\Oo _{\lra {1}},\Pp _{\lra {1}}) \] <span class='ntx-Italic-tlf-t1-x-x-109'>between operad maps</span>
+\(\Oo \to \Pp \) <span class='ntx-Italic-tlf-t1-x-x-109'>and functors</span> \(\Oo _{\lra {1}} \to \Pp _{\lra {1}}\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-02-6" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-02-6">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Picking an equivalence \(\Oo \simeq \OpCocart _C\) for some \(C\), we may identify \(\Oo _{\lra {1}}\) with \(C\). The inclusion \(\Oo _{\lra {1}} \hookrightarrow \Oo ^{\otimes }\) then corresponds
+to the composite inclusion \(C \hookrightarrow \Span (\Fin ) \times C \xhookrightarrow {\iota } C^{\amalg }\), where \(\iota \) is the inclusion from <a class="source-reference" data-label="cons:Cocartesian_Monoidal_Structure_Map" href="../../../entry/cocartesian-monoidal-structure-map/index.html#cons:Cocartesian_Monoidal_Structure_Map">Construction 15.2.10</a>. The functor in question then factors as \[ \Fun _{\Op _{\infty }}(\OpCocart _C,\Pp ) \iso \Fun (C,\CAlg (\Pp )) \to \Fun (C,\Pp _{\lra {1}}), \]
+where the first functor is the equivalence from <a class="source-reference" data-label="prop:Universal_Property_Cocartesian_Operads" href="../../../entry/universal-property-cocartesian-operads/index.html#prop:Universal_Property_Cocartesian_Operads">Proposition 15.2.13</a>(2) and the second functor is induced by \(\CAlg (\Pp ) \to \Pp _{\lra {1}}\) given by
+evaluation at \(\lra {1} \in \Span (\Fin )\). It thus remains to show that the latter is an equivalence. Unwinding definitions, we
+see that this map sits as the left vertical map in a diagram of fiber sequences in \(\Cat _{\infty }\) as follows:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-ae12c1964f8f.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Since \(\Pp ^{\otimes }\)
+and \(\Span (\Fin )\) are semiadditive, <a class="source-reference" data-label="prop:CMon_Of_Semiadditive_Category" href="../../../entry/commutative-monoids-in-semiadditive-infinity-categories/index.html#prop:CMon_Of_Semiadditive_Category">Proposition 5.3.17</a> shows that the middle and right vertical maps are equivalences, and the claim
+follows.                                                                                                                                                □</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4004r17'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 15.2.17.</span>  </span><span id='cor:Cocartesian_Operads_Vs_Categories'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(\OpCocart \colon \Cat _{\infty } \to \Op _{\infty }\) <span class='ntx-Italic-tlf-t1-x-x-109'>is fully faithful and induces an equivalence </span>\[ \Cat _{\infty } \iso \Op ^{\cocart }_{\infty }. \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-02-5" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-02-5">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Observe that \(\OpCocart \colon \Cat _{\infty } \to \Op _{\infty }\) admits a retraction, given by \((-)_{\lra {1}}\colon \Op _{\infty } \to \Cat _{\infty }\). It follows that for two \(\infty \)-categories \(C\) and \(D\), the
+composite \[ \Hom _{\Cat _{\infty }}(C,D) \to \Hom _{\Op _{\infty }}(\OpCocart _C,\OpCocart _D) \to \Hom _{\Cat _{\infty }}(C,D) \] is the identity. Since the second map is an equivalence by <a class="source-reference" data-label="prop:Auxiliary_Classification_Cocartesian_Operads" href="../../../entry/auxiliary-classification-cocartesian-operads/index.html#prop:Auxiliary_Classification_Cocartesian_Operads">Proposition 15.2.16</a>, the first map is an equivalence
+as well, showing full faithfulness. Since \(\Op ^{\cocart }_{\infty }\) is by definition the image of \(\OpCocart \), the second claim follows
+immediately.                                                                                                                                        □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4005r18'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 15.2.18.</span>  </span><span id='cor:Characterization_Cocartesian_Operads'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The following conditions are equivalent for an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operad</span> \(\Oo \)<span class='ntx-Italic-tlf-t1-x-x-109'>:</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operad</span> \(\Oo \) <span class='ntx-Italic-tlf-t1-x-x-109'>is cocartesian;</span>
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(\Oo ^{\otimes }\) <span class='ntx-Italic-tlf-t1-x-x-109'>is semiadditive;</span>
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The following two conditions are satisfied:</span>
+         </p><dl class='enumerate'><dt class='enumerate'>
+     <span class='ntx-Italic-tlf-t1-x-x-109'>(a)</span> </dt><dd class='enumerate'>
+         <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For every color</span> \(x \in \Oo ^{\simeq }\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the anima</span> \(\Oo (\emptyset ; x)\) <span class='ntx-Italic-tlf-t1-x-x-109'>of nullary operations is contractible;</span>
+         </p></dd><dt class='enumerate'>
+     <span class='ntx-Italic-tlf-t1-x-x-109'>(b)</span> </dt><dd class='enumerate'>
+         <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For objects</span> \(\{x_i\}_{i \in I}, \{y_j\}_{j \in J}\) <span class='ntx-Italic-tlf-t1-x-x-109'>of</span> \(\Oo ^{\otimes }\) <span class='ntx-Italic-tlf-t1-x-x-109'>and a color</span> \(z \in \Oo ^{\simeq }\)<span class='ntx-Italic-tlf-t1-x-x-109'>, composition with the morphisms</span> \(\{x_i\}_{i \in I} \to \{x_i\}_{i \in I} \sqcup \{y_j\}_{j \in J}\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(\{y_j\}_{j \in J} \to \{x_i\}_{i \in I} \sqcup \{y_j\}_{j \in J}\) <span class='ntx-Italic-tlf-t1-x-x-109'>obtained from condition
+         (a) provides an equivalence </span>\[ \Oo (\{x_i\}_{i \in I} \sqcup \{y_j\}_{j \in J}; z) \simeq \Oo (\{x_i\}_{i \in I};z) \times \Oo (\{y_j\}_{j \in J};z). \]</p></dd></dl>
+     </dd></dl>
+</div>
+                                                                                   
+
+                                                                                   
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-02-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-02-4">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The equivalence between (2) and (3) is a simple unwinding of definitions: condition (a) says
+that the terminal object of \(\Oo ^{\otimes }\) is also initial, and condition (b) says that the maps \(X \simeq X \times * \to X \times Y\) and \(Y \simeq * \times Y \to X \times Y\) in \(\Oo ^{\otimes }\) exhibit the
+product also as a coproduct.
+</p><p class='noindent'>Since \(C^{\amalg } = \Span _{\ct ,\all }(\Fin (C))\) is semiadditive, it is clear that (1) implies (2). To see that (2) implies (1), let \(\Oo \) be such an
+\(\infty \)-operad, and write \(C := \Oo ^{\otimes }_{\lra {1}}\) for its underlying \(\infty \)-category. By <a class="source-reference" data-label="prop:Auxiliary_Classification_Cocartesian_Operads" href="../../../entry/auxiliary-classification-cocartesian-operads/index.html#prop:Auxiliary_Classification_Cocartesian_Operads">Proposition 15.2.16</a>, the identity \(\id _C\colon C \to \Oo _{\lra {1}}\) extends to a morphism of \(\infty \)-operads
+\(\OpCocart _C \to \Oo \). It is clear that it induces an equivalence on colors, so it remains to show that it induces equivalences
+on all multimorphism animae: \[ \OpCocart _C(\{x_i\}_{i \in I}; y) \simeq \Oo (\{x_i\}_{i \in I}; y). \] But using condition (3), we may inductively reduce this to the case
+of the one-point set \(I = \lra {1}\), where it is simply the equality \(C = \Oo ^{\otimes }_{\lra {1}}\). The resulting fully faithful operad map is an
+equivalence by <a class="source-reference" data-label="lem:Fully_Faithful_Essentially_Surjective_Operad_Map" href="../../../entry/fully-faithful-essentially-surjective-operad-map/index.html#lem:Fully_Faithful_Essentially_Surjective_Operad_Map">Lemma 14.1.8</a>.                                                                                                                                   □
+</p>
+</div></div>
+
+<h4 class='subsectionHead' id='classification-of-cocartesian-monoidal-structures'><span class='titlemark'>15.2.4    </span> <a id='x1-500015.2.4'></a>Classification of cocartesian monoidal structures</h4>
+<p class='noindent'>We now determine the morphisms between cocartesian monoidal structures and deduce their classification
+from that of cocartesian operads.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5001r19'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 15.2.19.</span>  </span><span id='lem:Preserve_Coproducts_Iff_Symmetric_Monoidal'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>be</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories with finite coproducts and let</span> \(F\colon C \to D\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a functor. Then</span> \(F\) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves
+finite coproducts if and only if the induced map</span> \(\Span (F)\colon \Span _{\ct ,\all }(\Fin (C)) \to \Span _{\ct ,\all }(\Fin (D))\) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves cocartesian morphisms over</span> \(\Span (\Fin )\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+                                                                                   
+
+                                                                                   
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-02-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-02-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The map \(\Span (F)\) is always a morphism of \(\infty \)-operads, so it remains to check cocartesian morphisms
+over forward spans. Under the unfurling description from <a class="source-reference" data-label="prop:Cocartesian_Monoidal_Structure" href="../../../entry/existence-of-the-cocartesian-monoidal-structure/index.html#prop:Cocartesian_Monoidal_Structure">Proposition 15.2.1</a>, <a class="source-reference" data-label="prop:Cocartesian_Operad_Is_Monoidal" href="../../../entry/cocartesian-operad-is-monoidal/index.html#prop:Cocartesian_Operad_Is_Monoidal">Proposition 15.2.8</a>, their restrictions along \(\Fin \hookrightarrow \Span (\Fin )\) are the cocartesian
+morphisms in \(\Fin (C)\) and \(\Fin (D)\) which form coproducts over the fibers of a map of finite sets. The functor \(\Fin (F)\)
+preserves these morphisms if and only if \(F\) preserves finite coproducts.                                              □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5002r20'></a>
+<a class="entry-heading-link" href="../../../entry/cocartesian-symmetric-monoidal-category/index.html" aria-label="Definition 15.2.20., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 15.2.20.</span></a>  </span><span id='def:Cocartesian_Symmetric_Monoidal_Category'></span> Let \(\Cat _{\infty }^{\otimes ,\cocart } \subseteq \Cat _{\infty }^{\otimes }\) denote the full subcategory spanned by the symmetric monoidal \(\infty \)-categories
+of  the  form  \((C,\amalg )\)  for  some  \(\infty \)-category  \(C\).  We  say  that  a  symmetric  monoidal  \(\infty \)-category  \((D,\otimes )\)  is  <span class='ntx-Italic-tlf-t1-x-x-109'>cocartesian
+monoidal </span>if it is equivalent to \((C,\amalg )\) for some \(\infty \)-category \(C\) with finite coproducts.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5003r21'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 15.2.21.</span>  </span><span id='cor:Cocartesian_Monoidal_Categories'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The equivalence</span> \(\OpCocart \colon \Cat _{\infty } \iso \Op _{\infty }^{\cocart }\) <span class='ntx-Italic-tlf-t1-x-x-109'>from </span><a class="source-reference" data-label="cor:Cocartesian_Operads_Vs_Categories" href="../../../entry/cocartesian-operads-vs-categories/index.html#cor:Cocartesian_Operads_Vs_Categories">Corollary 15.2.17 </a><span class='ntx-Italic-tlf-t1-x-x-109'>restricts to an equivalence </span>\[ \Cat _{\infty }^{\mathrm {coprod}} \iso \Cat _{\infty }^{\otimes ,\cocart }. \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-02-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-02-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We need to check that the equivalence from <a class="source-reference" data-label="cor:Cocartesian_Operads_Vs_Categories" href="../../../entry/cocartesian-operads-vs-categories/index.html#cor:Cocartesian_Operads_Vs_Categories">Corollary 15.2.17</a> restricts to objects and morphisms. On objects
+this is the content of <a class="source-reference" data-label="prop:Cocartesian_Operad_Is_Monoidal" href="../../../entry/cocartesian-operad-is-monoidal/index.html#prop:Cocartesian_Operad_Is_Monoidal">Proposition 15.2.8</a>. On morphisms this is the content of <a class="source-reference" data-label="lem:Preserve_Coproducts_Iff_Symmetric_Monoidal" href="../../../entry/preserve-coproducts-iff-symmetric-monoidal/index.html#lem:Preserve_Coproducts_Iff_Symmetric_Monoidal">Lemma 15.2.19</a>.                                                              □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5004r22'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 15.2.22.</span>  </span><span id='lem:Characterization_Cocartesian_Monoidal'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>A symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \((D,\otimes )\) <span class='ntx-Italic-tlf-t1-x-x-109'>is cocartesian monoidal if and only if the following two
+conditions are satisfied:</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The monoidal unit</span> \(\unit \in D\) <span class='ntx-Italic-tlf-t1-x-x-109'>is an initial object;</span>
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For any two objects</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>of</span> \(D\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the two maps</span> \(X \simeq X \otimes \unit \to X \otimes Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(Y \simeq \unit \otimes Y \to X \otimes Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>induced by the maps</span> \(\unit \to X\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(\unit \to Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>from (1) exhibit
+     the tensor product</span> \(X \otimes Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>as a coproduct of</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(Y\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-02-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-02-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> In light of the equivalence \[ \Mm _D(\{x_i\}_{i \in I};y) \simeq \Hom _D(\bigotimes _{i \in I} x_i, y), \] this is an immediate consequence of <a class="source-reference" data-label="cor:Characterization_Cocartesian_Operads" href="../../../entry/characterization-cocartesian-operads/index.html#cor:Characterization_Cocartesian_Operads">Corollary 15.2.18</a>, together with <a class="source-reference" data-label="prop:Cocartesian_Operad_Is_Monoidal" href="../../../entry/cocartesian-operad-is-monoidal/index.html#prop:Cocartesian_Operad_Is_Monoidal">Proposition 15.2.8</a>.                □
+                                                                                   
+                                                                                   
+</p>
+</div></div>
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../unfurling/index.html" aria-label="Previous section: Unfurling" title="Previous section: Unfurling"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../cartesian-monoidal-structures/index.html" aria-label="Next section: Cartesian monoidal structures" title="Next section: Cartesian monoidal structures"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html" aria-current="page"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/operads-the-heuristics/index.html"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../../../chapter/span-categories/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../../../chapter/basics-on-infinity-operads/index.html"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../../../chapter/cartesian-and-cocartesian-monoidal-structures/index.html" aria-current="page"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../../../chapter/day-convolution-and-the-tensor-product-of-spectra/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="../../../chapter/the-envelope-of-an-infinity-operad/index.html"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../../../chapter/operadic-day-convolution-and-stabilization/index.html"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Operadic Day convolution and stabilization</span></a></li><li><a href="../../../chapter/algebras-and-modules/index.html"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../unfurling/index.html"><span class="context-entry-heading">Section 15.1</span><span class="context-entry-title">Unfurling</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 15.2</span><span class="context-entry-title">Cocartesian monoidal structures</span></a></li><li><a href="../cartesian-monoidal-structures/index.html"><span class="context-entry-heading">Section 15.3</span><span class="context-entry-title">Cartesian monoidal structures</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#prop:Cocartesian_Monoidal_Structure"><span class="context-entry-heading">Proposition 15.2.1</span><span class="context-entry-title">proposition</span></a></li><li><a href="#def:Cocartesian_Monoidal_Structure"><span class="context-entry-heading">Definition 15.2.2</span><span class="context-entry-title">Cocartesian monoidal structure</span></a></li><li><a href="#lem:Fin_C_Extensive"><span class="context-entry-heading">Lemma 15.2.3</span><span class="context-entry-title">lemma</span></a></li><li><a href="#cons:Cocartesian_Operad"><span class="context-entry-heading">Construction 15.2.4</span><span class="context-entry-title">Cocartesian operad</span></a></li><li><a href="#prop:Cocartesian_Operad"><span class="context-entry-heading">Proposition 15.2.5</span><span class="context-entry-title">proposition</span></a></li><li><a href="#def:Cocartesian_Operad"><span class="context-entry-heading">Definition 15.2.6</span><span class="context-entry-title">Cocartesian operad</span></a></li><li><a href="#warn:Cocartesian_Operad_Notation"><span class="context-entry-heading">Warning 15.2.7</span><span class="context-entry-title">warning</span></a></li><li><a href="#prop:Cocartesian_Operad_Is_Monoidal"><span class="context-entry-heading">Proposition 15.2.8</span><span class="context-entry-title">proposition</span></a></li><li><a href="#rmk:Functoriality_Cocartesian_Operad"><span class="context-entry-heading">Remark 15.2.9</span><span class="context-entry-title">remark</span></a></li><li><a href="#cons:Cocartesian_Monoidal_Structure_Map"><span class="context-entry-heading">Construction 15.2.10</span><span class="context-entry-title">construction</span></a></li><li><a href="#nota:Functors_Preserving_Coproducts_First_Variable"><span class="context-entry-heading">Notation 15.2.11</span><span class="context-entry-title">notation</span></a></li><li><a href="#lem:Auxiliary_Cocartesian_Operad"><span class="context-entry-heading">Lemma 15.2.12</span><span class="context-entry-title">lemma</span></a></li><li><a href="#prop:Universal_Property_Cocartesian_Operads"><span class="context-entry-heading">Proposition 15.2.13</span><span class="context-entry-title">proposition</span></a></li><li><a href="#def:Cocartesian_Infinity_Operad"><span class="context-entry-heading">Definition 15.2.14</span><span class="context-entry-title">definition</span></a></li><li><a href="#ex:Commutative_Operad_Is_Cocartesian"><span class="context-entry-heading">Example 15.2.15</span><span class="context-entry-title">example</span></a></li><li><a href="#prop:Auxiliary_Classification_Cocartesian_Operads"><span class="context-entry-heading">Proposition 15.2.16</span><span class="context-entry-title">proposition</span></a></li><li><a href="#cor:Cocartesian_Operads_Vs_Categories"><span class="context-entry-heading">Corollary 15.2.17</span><span class="context-entry-title">corollary</span></a></li><li><a href="#cor:Characterization_Cocartesian_Operads"><span class="context-entry-heading">Corollary 15.2.18</span><span class="context-entry-title">corollary</span></a></li><li><a href="#lem:Preserve_Coproducts_Iff_Symmetric_Monoidal"><span class="context-entry-heading">Lemma 15.2.19</span><span class="context-entry-title">lemma</span></a></li><li><a href="#def:Cocartesian_Symmetric_Monoidal_Category"><span class="context-entry-heading">Definition 15.2.20</span><span class="context-entry-title">definition</span></a></li><li><a href="#cor:Cocartesian_Monoidal_Categories"><span class="context-entry-heading">Corollary 15.2.21</span><span class="context-entry-title">corollary</span></a></li><li><a href="#lem:Characterization_Cocartesian_Monoidal"><span class="context-entry-heading">Lemma 15.2.22</span><span class="context-entry-title">lemma</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

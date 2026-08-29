@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 12.4: Writing concatenations as products | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/operads-and-higher-algebra/index.html">Part II</a> · <a href="../../../chapter/operads-the-heuristics/index.html">Chapter 12</a> · Section 12.4</p>
+      <h1>Writing concatenations as products</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Writing_Concatenations_As_Products'>The characterization of envelopes of operads obtained in the previous section is neat, and immediately
+generalizes to the \(\infty \)-categorical setting. Nevertheless, this is not the definition of \(\infty \)-operads that usually
+appears in the literature. One inconvenience about this characterization is that it requires us to equip an
+\(\infty \)-category with a symmetric monoidal structure, which is a task substantially more involved than for
+classical categories since we can no longer ‘just write it down by hand’. It would be convenient if we could
+avoid reliance on symmetric monoidal structures.
+</p><p class='noindent'>Fortunately, this is possible: there is a variation of the envelope construction in which the concatenation of
+tuples becomes the <span class='ntx-Italic-tlf-t1-x-x-109'>categorical product</span>, and hence does not need to be recorded as additional data. We have
+already seen this idea in action in our definition of commutative monoids in <a class="source-reference" data-label="chap:Recognition_Principle" href="../../../chapter/recognition-principle/index.html#chap:Recognition_Principle">Chapter 5</a>. Recall from <a class="source-reference" data-label="def:Commutative_Algebra" href="../../../entry/commutative-algebras/index.html#def:Commutative_Algebra">Definition 8.1.3</a> that a
+commutative algebra in a symmetric monoidal \(\infty \)-category \(C\) is encoded by a symmetric monoidal functor \[ \Fin \to C, \] so
+its definition uses the given tensor product on \(C\). By contrast, if \(C\) admits finite products, a commutative
+monoid in \(C\) is encoded by a product-preserving functor \[ \Span (\Fin ) \to C. \] The additional left-pointing morphisms ensure that
+disjoint union in \(\Fin \) becomes the categorical product in \(\Span (\Fin )\), so no separately specified symmetric monoidal
+structure on \(C\) is needed.
+</p><p class='noindent'>We will apply the same mechanism to the envelope \(\Env (\Oo )\): by adjoining left-pointing morphisms, we obtain a
+variant of \(\Env (\Oo )\) in which concatenation of tuples is the categorical product, and therefore need not be encoded
+separately. Let us emphasize that this maneuver is merely about encoding the operad structure; it does not
+impose a cartesian tensor product on a category in which we later consider \(\Oo \)-algebras. Just as in the case of
+the span category \(\Span (\Fin )\), the construction naturally produces a \((2,1)\)-category rather than a \((1,1)\)-category,
+since composition is defined using pullbacks and is therefore associative only up to canonical
+isomorphism.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<a class="entry-heading-link" href="../../../entry/operad-gives-infinity-operad/index.html" aria-label="Construction 12.4.1., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 12.4.1.</span></a>  </span><span id='cons:Operad_Gives_Infty_Operad'></span> Let \(\Oo \) be a colored operad. We describe a (2,1)-category \(\Oo ^{\otimes }\) as follows:
+</p>
+     <ul class='itemize1'>
+     <li class='itemize'>The objects of \(\Oo ^{\otimes }\) are unordered tuples \(\{x_i\}_{i \in I}\);
+     </li>
+     <li class='itemize'>A morphism \(\{x_i\}_{i \in I} \to \{y_j\}_{j \in J}\) in \(\Oo ^{\otimes }\) consists of a span \[ I \xleftarrow {f} K \xrightarrow {g} J \] of finite sets together with a multimorphism \(\phi _j \in \Oo (\{x_{f(k)}\}_{k \in K_j};y_j)\) for every \(j \in J\);
+     here we write \(K_j := g^{-1}(j)\) for the preimage of \(j\) under \(g\). Together with the canonical notion of isomorphisms
+     between such labeled spans, these form a groupoid \(\Hom _{\Oo ^{\otimes }}(\{x_i\}_{i \in I}, \{y_j\}_{j \in J})\).
+     </li>
+     <li class='itemize'>The identity of \(\{x_i\}_{i \in I}\) is given by taking \(f = g = \id _I \colon I \to I\), and taking \(\phi _j = \id _{x_j} \in \Oo (\{x_i\}_{i \in \{j\}};x_j)\).
+     </li>
+     <li class='itemize'>The composition of \((f,g,\phi _j)\colon \{x_i\}_{i \in I} \to \{y_j\}_{j \in J}\) and \((h,k, \psi _l)\colon \{y_j\}_{j \in J} \to \{z_l\}_{l \in L}\) is given by \((f\circ \pr _K,k \circ \pr _M, \xi _l)\) where \(\pr _K\) and \(\pr _M\) are the projection maps in the following
+     pullback diagram <div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-c1792466b969.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div> and for every \(l \in L\) the multimorphism \(\xi _l \in \Oo (\{x_{f(u)}\}_{(u,m) \in (K \times _J M)_l};z_l)\) is the image of \((\psi _l, (\phi _{h(m)})_{m \in M_l})\) under the composition
+     map \[ \circ \colon \Oo (\{y_{h(m)}\}_{m \in M_l};z_l) \times \prod _{m \in M_l} \Oo (\{x_{f(u)}\}_{u \in K_{h(m)}}; y_{h(m)}) \to \Oo (\{x_{f(u)}\}_{(u,m) \in (K \times _J M)_l};z_l). \]
+     </li>
+     <li class='itemize'>The operad axioms make composition unital and associative up to the canonical isomorphisms
+     induced by pullbacks of spans.</li></ul>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1002r2'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 12.4.2.</span>  </span><span id='lem:Classical_Operad_Total_Category_Products'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The construction</span> \(\Oo \mapsto \Oo ^{\otimes }\) <span class='ntx-Italic-tlf-t1-x-x-109'>defines a functor from colored operads to</span> \((2,1)\)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories over</span> \(\Span (\Fin )\)<span class='ntx-Italic-tlf-t1-x-x-109'>. The</span>
+\((2,1)\)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(\Oo ^{\otimes }\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits finite products, given by unordered concatenation of tuples, and the structure
+functor</span> \(\Oo ^{\otimes }\to \Span (\Fin )\) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves them.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-operads-the-heuristics-section-04-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-operads-the-heuristics-section-04-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The operad axioms and the canonical associativity isomorphisms for pullbacks make the
+composition law unital and associative. A morphism into an unordered concatenation of tuples is
+uniquely a collection of morphisms into its factors, since both the indexing span and its labeling
+operations decompose according to the corresponding partition of the target. Thus concatenation
+satisfies the product universal property. The empty tuple is terminal, and the same description for \(\Comm ^{\otimes }=\Span (\Fin )\)
+shows that the structure functor preserves these products.                                                                 □
+</p>
+</div></div>
+<p class='noindent'>This time, morphisms in \(\Oo ^{\otimes }\) may be visualized as follows:\[\input {Illustrations/Illustration_Morphism_OTimes}\] The first part of the data consists of two maps \(f\colon \{1, \dots , 5\} \to \{1,\dots ,4\}\) and \(g\colon \{1, \dots , 5\} \to \{1,2,3\}\);
+in this case \(f\) is given by \(f(1) = f(5) = 2\), \(f(2) = 1\), \(f(3) = 3\) and \(f(4) = 4\), while \(g\) is given by \(g(2) = g(3) = 1\), \(g(5) = 2\) and \(g(1) = g(4) = 3\). In particular, the preimages of 1, 2 and 3
+under \(g\) are \(\{2,3\}\), \(\{5\}\) and \(\{1,4\}\), respectively. The second part of the data consists of multimorphisms \(\phi _1\colon (x_{f(2)}, x_{f(3)}) \to y_1\), \(\phi _2\colon (x_{f(5)}) \to y_2\) and
+\(\phi _3\colon (x_{f(1)}, x_{f(4)}) \to y_3\).
+</p><p class='noindent'>For \(\Oo = \Comm \) we get \(\Comm ^{\otimes } = \Span (\Fin )\). Since the construction of \(\Oo ^{\otimes }\) is functorial in \(\Oo \), we obtain a functor \[ p\colon \Oo ^{\otimes } \to \Comm ^{\otimes } = \Span (\Fin ) \] which preserves finite products.
+As in the previous section, we may ask: can we characterize those \((2,1)\)-categories over \(\Span (\Fin )\) that are of the form \(\Oo ^{\otimes }\) for
+some operad? The fiber decomposition from (2’) remains valid, now in terms of categorical
+products. The product universal property decomposes morphisms according to the factors of their
+target, but it does not by itself isolate the corresponding factors in the source. Moreover, the
+morphisms over right-pointing spans do not determine the morphisms over a general span \(I \leftarrow K \rightarrow J\). To
+reduce the general case to the right-pointing case, we need distinguished lifts of left-pointing
+spans.
+</p><p class='noindent'>To reduce the general case to the special case, consider an object \(\{x_i\}_{i \in I}\) of \(\Oo ^{\otimes }\) and consider a morphism \(f\colon K \to I\) of
+finite sets. We may then form the morphism \(\widetilde {f}\colon \{x_i\}_{i \in I} \to \{x_{f(k)}\}_{k \in K}\) in \(\Oo ^{\otimes }\) whose underlying span of finite sets is \(I \xleftarrow {\smash {f}} K \xrightarrow {=} K\) and
+whose multimorphisms \(\phi _k \in \Oo (\{x_{f(k)}\}, x_{f(k)})\) are the identity morphisms \(\id _{x_{f(k)}}\). This morphism \(\widetilde {f}\) may be visualized as
+follows:\[\input {Illustrations/Illustration_Cocartesian_Lift_OTimes}\]
+</p><p class='noindent'>This morphism has the following special feature, which is the shadow of the general notion of a \(p\)-cocartesian
+morphism that we will meet in <a class="source-reference" data-label="def:Cocartesian_Fibration" href="../../../entry/cocartesian-fibrations/index.html#def:Cocartesian_Fibration">Definition 23.1.1</a>:
+    </p><dl class='enumerate'><dt class='enumerate'>
+(3”) </dt><dd class='enumerate'>
+                                                                                   
+                                                                                   
+    <p class='noindent'>Consider objects \(\{x_i\}_{i \in I}\) and \(\{y_j\}_{j \in J}\) in \(\Oo ^{\otimes }\), and consider a span \(I \xleftarrow {f} K \xrightarrow {g} J\). Given a morphism \(\widetilde {h} \colon \{x_i\}_{i \in I} \to \{y_j\}_{j \in J}\) in \(\Oo ^{\otimes }\) lifting<span class='footnote-mark'><a href='#chapter-operads-the-heuristics-section-04-fn1x0'><sup class='textsuperscript'>1</sup></a></span><a id='x1-1004f1'></a> 
+    the given span, there exists a unique morphism \(\widetilde {g} \colon \{x_{f(k)}\}_{k \in K} \to \{y_{j}\}_{j \in J}\) which lifts the span \(K \xleftarrow {=} K \xrightarrow {\smash {g}} J\) and satisfies \(\widetilde {h} = \widetilde {g}\circ \widetilde {f}\):</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-1c420a315ebf.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div></dd></dl>
+<p class='noindent'>Indeed, the lift \(\widetilde {h}\) is encoded by certain multimorphisms \(\phi _j \in \Oo (\{x_{f(k)}\}_{k \in K_j};y_j)\), and this is precisely the data we need for defining
+the lift \(\widetilde {g}\). The full cocartesian condition is the pullback-square condition appearing as condition (3) in
+<a class="source-reference" data-label="def:Infty_Operad_Introduction" href="../../../entry/heuristic-infinity-operad/index.html#def:Infty_Operad_Introduction">Definition 12.4.3</a>.
+</p><p class='noindent'>In a sense, we see that these morphisms \(\widetilde {f}\) in \(\Oo ^{\otimes }\) do not really contribute very much apart from encoding the
+categorical product structure. These morphisms, and more generally the cocartesian morphisms lying
+over left-pointing spans, are called <span class='ntx-Italic-tlf-t1-x-x-109'>inert morphisms</span>. In contrast, the morphisms in \(\Oo ^{\otimes }\) living over
+<span class='ntx-Italic-tlf-t1-x-x-109'>right</span>-pointing spans are the ones that encode the actual operad structure, and are called the <span class='ntx-Italic-tlf-t1-x-x-109'>active
+morphisms</span>.
+</p><p class='noindent'>Under the product description of <a class="source-reference" data-label="lem:Classical_Operad_Total_Category_Products" href="../../../entry/classical-operad-total-category-products/index.html#lem:Classical_Operad_Total_Category_Products">Lemma 12.4.2</a>, the morphism \(\widetilde {f}\) is the map whose \(k\)-th component is the projection onto
+\(x_{f(k)}\).
+</p><p class='noindent'>We have now finally achieved what we were after: the entire data of the operad \(\Oo \) is encoded by the \((2,1)\)-category \(\Oo ^{\otimes }\)
+together with its functor to \(\Span (\Fin )\), and the properties we singled out tell us which such functors are obtained via
+this procedure. These properties still make sense in the \(\infty \)-categorical setting, and we will use them in our
+definition of \(\infty \)-operads:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1006r3'></a>
+<a class="entry-heading-link" href="../../../entry/heuristic-infinity-operad/index.html" aria-label="Definition 12.4.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 12.4.3.</span></a>  </span><span id='def:Infty_Operad_Introduction'></span> An \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operad </span>is a pair \(\Oo = (\Oo ^{\otimes },p_{\Oo })\) consisting of an \(\infty \)-category \(\Oo ^{\otimes }\) equipped with a functor \(p_{\Oo }\colon \Oo ^{\otimes } \to \Span (\Fin )\) satisfying the
+following conditions:
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'>The \(\infty \)-category \(\Oo ^{\otimes }\) admits finite products, and the functor \(p_{\Oo }\) preserves finite products;
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'>For every finite set \(I\), the product in \(\Oo ^{\otimes }\) defines an equivalence \[ \prod _{i \in I} \Oo ^{\otimes }_{\{i\}} \iso \Oo ^{\otimes }_I. \] Here we write \(\Oo ^{\otimes }_I\) for the fiber of \(p_{\Oo }\)
+     over the set \(I\).
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+                                                                                   
+                                                                                   
+     <p class='noindent'>For a morphism \(f\colon J \to I\) in \(\Fin \) and objects \(X_i \in \Oo ^{\otimes }\), the map \(\widetilde {f}\colon \prod _{i\in I} X_i \to \prod _{j \in J} X_{f(j)}\) whose \(j\)-th component is the projection to \(X_{f(j)}\) is
+     \(p_{\Oo }\)<span class='ntx-Italic-tlf-t1-x-x-109'>-cocartesian</span>, in the sense that for every \(Y \in \Oo ^{\otimes }\) the following square is a pullback square:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-9aa724807ff2.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div></dd></dl>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1010r4'></a>
+<a class="entry-heading-link" href="../../../entry/lurie-model-operads/index.html" aria-label="Remark 12.4.4., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 12.4.4.</span></a>  </span><span id='warn:Lurie_Model_Operads'></span> Our definition of \(\infty \)-operad is a priori different from that of <span class='citation'>Lurie (2017)</span>, who instead works with
+functors \(p_{\Oo }\) whose target is the category \(\Fin _*\) of finite pointed sets. To relate the two approaches, recall from
+<a class="source-reference" data-label="lem:Fin_Pointed_Equiv_Span" href="../../../entry/finite-pointed-sets-as-forward-spans/index.html#lem:Fin_Pointed_Equiv_Span">Lemma 5.3.8</a> that \(\Fin _*\) is equivalent to the subcategory \(\Span (\Fin ,\inj ,\all )\) of \(\Span (\Fin )\) in which the left-pointing morphisms are required to be
+injective. We will show in <a class="source-reference" data-label="sec:Comparison_Lurie_Model_Operads" href="../../the-envelope-of-an-infinity-operad/comparison-to-lurie-s-operads/index.html#sec:Comparison_Lurie_Model_Operads">Section 17.4</a> below that pullback along the resulting inclusion \(\Fin _* \hookrightarrow \Span (\Fin )\) induces an equivalence
+between our \(\infty \)-category of \(\infty \)-operads and Lurie’s one.
+</p><p class='noindent'>One advantage of working over \(\Fin _*\) is that it is a strict 1-category. In Lurie’s model, the category \(\Oo ^{\otimes }\) from <a class="source-reference" data-label="cons:Operad_Gives_Infty_Operad" href="../../../entry/operad-gives-infinity-operad/index.html#cons:Operad_Gives_Infty_Operad">Construction 12.4.1</a>
+also becomes a strict 1-category, and can therefore be directly imported into the world of \(\infty \)-categories,
+showing that every colored operad gives rise to an \(\infty \)-operad. While the same can in principle be done
+at the level of \((2,1)\)-categories, we will not develop the theory of \((2,1)\)-categories in this book, and instead
+import classical operads via Lurie’s model; see <a class="source-reference" data-label="prop:From_Colored_To_Infinity_Operads" href="../../../entry/from-colored-to-infinity-operads/index.html#prop:From_Colored_To_Infinity_Operads">Proposition 17.4.9</a>.
+</p><p class='noindent'>On the other hand, there are a variety of reasons to work over \(\Span (\Fin )\) rather than \(\Fin _*\). First, the span approach
+makes clear the orthogonal roles played by the backwards and forwards maps; this separation is less
+visible in \(\Fin _*\). Second, allowing only injective backwards maps breaks the property that concatenation
+of unordered tuples is a categorical product, so conditions on \(\Oo ^{\otimes }\) need to be formulated in a slightly
+more complicated way. And third, the span perspective generalizes more easily to other settings,
+making it easier to connect the theory developed here to concepts like Mackey functors, normed
+\(\infty \)-categories and six-functor formalisms. For example, it allows us to treat the theory of (co)cartesian
+monoidal structures as an instance of Barwick’s more general unfurling construction in <a class="source-reference" data-label="chap:Cartesian_And_Cocartesian_Monoidal_Structures" href="../../../chapter/cartesian-and-cocartesian-monoidal-structures/index.html#chap:Cartesian_And_Cocartesian_Monoidal_Structures">Chapter 15</a>.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1011r5'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/other-models-infinity-operads/index.html" aria-label="Remark 12.4.5, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 12.4.5 </span></a>(Other models for \(\infty \)-operads)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='rmk:Other_Models_Infinity_Operads'></span>
+</p><p class='noindent'>The span-based model used in this book and Lurie’s model over \(\Fin _*\) from <a class="source-reference" data-label="sec:Comparison_Lurie_Model_Operads" href="../../the-envelope-of-an-infinity-operad/comparison-to-lurie-s-operads/index.html#sec:Comparison_Lurie_Model_Operads">Section 17.4</a> are not the only available
+descriptions of \(\infty \)-operads. In the <span class='ntx-Italic-tlf-t1-x-x-109'>dendroidal </span>approach, introduced by <span class='citation'>Moerdijk and Weiss (2007)</span>, the simplex category is replaced
+by a category of trees. The presentation of \(\infty \)-operads by complete dendroidal Segal animae is due to <span class='citation'>Cisinski and Moerdijk (2013)</span>.
+A direct comparison with Lurie’s model is given by <span class='citation'>Hinich and Moerdijk (2024)</span>; see <span class='citation'>[Heuts and Moerdijk (2022)]</span> for a comprehensive account of dendroidal
+homotopy theory.
+</p><p class='noindent'>The classical description of one-colored operads as associative algebras in symmetric sequences
+also admits a homotopy-coherent generalization due to <span class='citation'>Haugseng (2022)</span>. More generally, this construction treats
+varying animae of colors by means of a double \(\infty \)-category of symmetric collections; see <span class='citation'>[Haugseng (2023)]</span> for a general
+introduction  to  \(\infty \)-operads.  A  related  viewpoint  describes  pinned  \(\infty \)-operads  by  analytic  monads  on
+slices \(\An _{/S}\), with the anima \(S\) of colors allowed to vary <span class='citation'>[Gepner et al. (2022); Haugseng (2023)]</span>. This description is compared directly with both
+Lurie’s model and the span-based model through their Lawvere theories by <span class='citation'>Haugseng (2023)</span>. More general Segal-type
+formalisms, notably the theory of algebraic patterns developed by <span class='citation'>Chu and Haugseng (2021)</span>, provide a common framework
+for these and many similar homotopy-coherent algebraic structures. The general theory of envelopes
+for algebraic patterns developed by <span class='citation'>Barkan et al. (2022)</span> contains our construction of operadic envelopes in <a class="source-reference" data-label="sec:Operadic_Envelopes" href="../../the-envelope-of-an-infinity-operad/operadic-envelopes/index.html#sec:Operadic_Envelopes">Section 17.3</a> as a special
+case. We will not otherwise use the alternative presentations discussed in this remark.
+</p>
+</div>
+<p class='noindent'>Before studying \(\infty \)-operads in more detail, we will give a proper introduction to span \(\infty \)-categories and their
+basic properties in the next chapter. We return to \(\infty \)-operads and their algebras in <a class="source-reference" data-label="chap:Infinity_Operads" href="../../../chapter/basics-on-infinity-operads/index.html#chap:Infinity_Operads">Chapter 14</a>.
+</p><p class='noindent'><a id='likesection.1'></a><a id='x1-1012x12.4'></a>
+</p>
+<h3 class='likesectionHead' id='exercises'><a id='x1-2000'></a>Exercises</h3>
+<p id='exercises1'><a id='Q1-1-3'></a>
+</p><div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r1'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 12.1 </span>(Equivariance conditions)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span>  In  the  definition  of  an  operad,  we  have  not  specified
+how the permutation actions on \(\Oo (n)\) interact with the composition structure. In this exercise, you will
+                                                                                   
+                                                                                   
+formulate the missing conditions.
+</p><p class='noindent'>Let \(\Oo \) be a non-colored operad, and consider operations \(P \in \Oo (k)\) and \(Q_i \in \Oo (n_i)\) for \(i=1,\dots ,k\).
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>Consider a permutation \(\sigma \in \Sigma _k\). Using the motivating example of the endomorphism operad \(\Oo = \oEnd _C(A)\), write
+   down a rule for expressing the operation \[ (P\sigma )(Q_1, \dots , Q_k) \] as an operation of the form \(P(R_1, \dots , R_k)\tau \) for certain operations \(R_i\) and
+   a certain permutation \(\tau \in \Sigma _{n}\), where \(n := \sum _{i=1}^k n_i\).
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>Consider permutations \(\sigma _i \in \Sigma _{n_i}\) for all \(i = 1, \dots , k\).  Again using \(\Oo = \oEnd _C(A)\) as motivating example, write down a rule for
+   expressing the operation \[ P(Q_1\sigma _1, \dots , Q_k\sigma _k) \] as an operation of the form \(P(Q_1, \dots , Q_k)\tau \) for a certain permutation \(\tau \in \Sigma _{n}\), where \(n := \sum _{i=1}^k n_i\).
+   </p></dd><dt class='enumerate'>
+(3) </dt><dd class='enumerate'>
+   <p class='noindent'>Formulate the corresponding equivariance conditions for a colored operad. In doing so, keep
+   track of the reindexing of the input colors under each permutation.</p></dd></dl>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2005r2'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 12.2 </span>(The associative operad)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span>Write out the composition maps and the \(\Sigma _n\)-actions in the case
+of the associative operad \(\Assoc \).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2006r3'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 12.3.</span>  </span> Let \(C\) be a symmetric monoidal category. Show that: </p>
+     <ul class='itemize1'>
+     <li class='itemize'>\(\Triv \)-algebras are simply objects of \(C\);
+     </li>
+     <li class='itemize'>\(\Ee _0\)-algebras are ‘pointed objects’ of \(C\), i.e., objects \(A\) equipped with a ‘unit map’ \(\eta \colon \unit \to A\).
+     </li>
+     <li class='itemize'>\(\Comm \)-algebras are objects \(A\) equipped with maps \(\eta \colon \unit \to A\) and \(m\colon A \otimes A \to A\) which are unital, associative and commutative.
+     </li>
+     <li class='itemize'>\(\Assoc \)-algebras are similar but without commutativity.</li></ul>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2007r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 12.4 </span>(Universal property of trivial operads)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(\Oo \) be a colored operad. Show that the colors
+of \(\Oo \) together with the sets \(\Oo ((y);x)\) of unary operations form a 1-category \(\Oo _{\lra {1}}\), called the <span class='ntx-Italic-tlf-t1-x-x-109'>underlying category </span>of
+\(\Oo \), where \(\lra {1} := \{1\}\). Show furthermore that for every 1-category \(C\), restriction to the unary operations defines a
+bijection between the morphisms of colored operads \(\Triv _C \to \Oo \) and the functors \(C \to \Oo _{\lra {1}}\), where \(\Triv _C\) is the trivial operad
+of <a class="source-reference" data-label="ex:Trivial_Colored_Operad" href="../../../entry/trivial-colored-operad/index.html#ex:Trivial_Colored_Operad">Example 12.2.6</a>.
+</p>
+</div>
+
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2008r5'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 12.5.</span>  </span>Let \(\Oo \) be a colored operad, and let \(C\) be a symmetric monoidal category. Recall that
+we defined an \(\Oo \)<span class='ntx-Italic-tlf-t1-x-x-109'>-algebra </span>as a morphism of colored operads \(A\colon \Oo \to \Mm _C\). Spell out in explicit terms all the data
+contained in such an \(\Oo \)-algebra. In the special case of \(\Oo = \oLMod \), verify that this structure precisely encodes a
+pair \((A,M)\) of an associative algebra \(A\) in \(C\) together with a left module \(M\) over it.
+</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Remark: Saying ‘left’ versus ‘right’ is just a convention; the same operad also encodes right actions.</span>
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2009r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 12.6.</span>  </span> Compute the envelope \(\Env (\Assoc )\) of the associative operad, and show that it may be described as
+follows: </p>
+     <ul class='itemize1'>
+     <li class='itemize'>The objects are finite sets \(I\);
+     </li>
+     <li class='itemize'>The morphisms \(I \to J\) are tuples \((f,\preceq _j)\) consisting of a morphism \(f\colon I \to J\) of finite sets and a collection of linear
+     orders \(\preceq _j\) on each of the preimages \(f^{-1}(j)\) of \(f\);
+     </li>
+     <li class='itemize'>The symmetric monoidal structure is disjoint union.</li></ul>
+                                                                                   
+                                                                                   
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2010r7'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 12.7.</span>  </span>  Show  that  the  assignment  \(\Oo \mapsto \Env (\Oo )\)  is  functorial:  every  morphism  of  operads  \(\Oo \to \Pp \)  induces  a
+symmetric monoidal functor \(\Env (\Oo ) \to \Env (\Pp )\). Deduce from the terminal morphism \(\Oo \to \Comm \) the symmetric monoidal functor
+\(p\colon \Env (\Oo ) \to \Fin \) used above.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2011r8'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 12.8.</span>  </span> Show that the assignment \(\Oo \mapsto \Env (\Oo )\) is left adjoint to the assignment \(C \mapsto \Mm _C\): for an operad \(\Oo \) and
+a symmetric monoidal category \(C\), there is a bijection between operad morphisms \(\Oo \to \Mm _C\) and symmetric
+monoidal functors \(\Env (\Oo ) \to C\).
+</p>
+</div>
+
+ 
+<section class="footnotes" aria-label="Notes"><h2>Notes</h2>
+  <div class='footnote-text'>
+  <p class='noindent'><span class='footnote-mark'><a id='chapter-operads-the-heuristics-section-04-fn1x0'><a id='chapter-operads-the-heuristics-section-04-x2-1005x1'></a>    <sup class='textsuperscript'>1</sup></a></span><span class='ntx-Regular-tlf-t1-x-x-90'>This means that the image of</span> \(\widetilde {h}\) <span class='ntx-Regular-tlf-t1-x-x-90'>under</span> \(p\) <span class='ntx-Regular-tlf-t1-x-x-90'>is the given span</span> \(I \xleftarrow {f} K \xrightarrow {g} J\)<span class='ntx-Regular-tlf-t1-x-x-90'>.</span></p></div> 
+</section></div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../encoding-the-coherences-the-envelope-of-an-operad/index.html" aria-label="Previous section: Encoding the coherences: the envelope of an operad" title="Previous section: Encoding the coherences: the envelope of an operad"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../../span-categories/constructing-span-categories/index.html" aria-label="Next section: Constructing span categories" title="Next section: Constructing span categories"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html" aria-current="page"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/operads-the-heuristics/index.html" aria-current="page"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../../../chapter/span-categories/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../../../chapter/basics-on-infinity-operads/index.html"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../../../chapter/cartesian-and-cocartesian-monoidal-structures/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../../../chapter/day-convolution-and-the-tensor-product-of-spectra/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="../../../chapter/the-envelope-of-an-infinity-operad/index.html"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../../../chapter/operadic-day-convolution-and-stabilization/index.html"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Operadic Day convolution and stabilization</span></a></li><li><a href="../../../chapter/algebras-and-modules/index.html"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../non-colored-operads/index.html"><span class="context-entry-heading">Section 12.1</span><span class="context-entry-title">Non-colored operads</span></a></li><li><a href="../colored-operads/index.html"><span class="context-entry-heading">Section 12.2</span><span class="context-entry-title">Colored operads</span></a></li><li><a href="../encoding-the-coherences-the-envelope-of-an-operad/index.html"><span class="context-entry-heading">Section 12.3</span><span class="context-entry-title">Encoding the coherences: the envelope of an operad</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 12.4</span><span class="context-entry-title">Writing concatenations as products</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#cons:Operad_Gives_Infty_Operad"><span class="context-entry-heading">Construction 12.4.1</span><span class="context-entry-title">construction</span></a></li><li><a href="#lem:Classical_Operad_Total_Category_Products"><span class="context-entry-heading">Lemma 12.4.2</span><span class="context-entry-title">lemma</span></a></li><li><a href="#def:Infty_Operad_Introduction"><span class="context-entry-heading">Definition 12.4.3</span><span class="context-entry-title">definition</span></a></li><li><a href="#warn:Lurie_Model_Operads"><span class="context-entry-heading">Remark 12.4.4</span><span class="context-entry-title">remark</span></a></li><li><a href="#rmk:Other_Models_Infinity_Operads"><span class="context-entry-heading">Remark 12.4.5</span><span class="context-entry-title">Other models for ∞-operads</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

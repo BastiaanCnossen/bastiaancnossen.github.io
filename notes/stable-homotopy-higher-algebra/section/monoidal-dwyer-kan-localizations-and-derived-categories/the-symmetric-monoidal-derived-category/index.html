@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 20.2: The symmetric monoidal derived category | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/operads-and-higher-algebra/index.html">Part II</a> · <a href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html">Chapter 20</a> · Section 20.2</p>
+      <h1>The symmetric monoidal derived category</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Monoidal_Derived_Categories'>We finish this chapter by applying the preceding machinery to unbounded chain complexes. Recall from <a class="source-reference" data-label="thm:DA_Is_Stable" href="../../../entry/derived-infinity-categories-are-stable/index.html#thm:DA_Is_Stable">Theorem 6.1.30</a>
+that the derived \(\infty \)-category of any abelian category is stable. The construction of the monoidal structure
+requires the following standard structure on unbounded chain complexes, which we use as a black
+box.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 20.2.1 </span>(Unbounded projective cofibrations, <span class='citation'>[Lurie (2017), Propositions 7.1.2.8 and 7.1.2.11]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Unbounded_Projective_Cofibrations'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a commutative ring and let</span> \(W\) <span class='ntx-Italic-tlf-t1-x-x-109'>be the
+class of quasi-isomorphisms in</span> \(\Ch (R)\)<span class='ntx-Italic-tlf-t1-x-x-109'>. There is a class</span> \(I_{\proj }\) <span class='ntx-Italic-tlf-t1-x-x-109'>of projective cofibrations with the following
+properties:</span>
+   </p><dl class='enumerate'><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(1)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The triple</span> \((\Ch (R),W,I_{\proj })\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a homotopy cocomplete</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with weak equivalences and cofibrations.</span>
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(2)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The unit</span> \(R[0]\) <span class='ntx-Italic-tlf-t1-x-x-109'>is cofibrant, and a finite tensor product of cofibrant complexes is again cofibrant.</span>
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(3)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(P\) <span class='ntx-Italic-tlf-t1-x-x-109'>is cofibrant, then</span> \(P\otimes _R-\) <span class='ntx-Italic-tlf-t1-x-x-109'>is homotopy cocontinuous and preserves quasi-isomorphisms.</span></p></dd></dl>
+</div>
+<p class='noindent'>The bounded-below projective cofibrations of <a class="source-reference" data-label="prop:Projective_Cofibration_Structure" href="../../../entry/projective-cofibration-structure-on-bounded-below-complexes/index.html#prop:Projective_Cofibration_Structure">Proposition 6.6.15</a> admit a direct construction from ordinary projective
+resolutions. The unbounded statement is subtler, which is why we refer to <span class='citation'>Lurie (2017)</span>. Its relevance here is that
+properties (2) and (3), together with <a class="source-reference" data-label="rem:Left_Derivable_Monoidal_Criterion" href="../../../entry/left-derivable-monoidal-criterion/index.html#rem:Left_Derivable_Monoidal_Criterion">Remark 20.1.4</a>, give exactly the left derivability required in <a class="source-reference" data-label="def:Left_Derivable_Monoidal_Structure" href="../../../entry/left-derivable-monoidal-structure/index.html#def:Left_Derivable_Monoidal_Structure">Definition 20.1.3</a>.
+                                                                                   
+                                                                                   
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1005r2'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 20.2.2 </span>(The symmetric monoidal derived category)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Symmetric_Monoidal_Derived_Category'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a commutative ring. The
+derived</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category </span>\[ \D (R):=\Ch (R)[\{\textup {quasi-isomorphisms}\}^{-1}] \] <span class='ntx-Italic-tlf-t1-x-x-109'>admits a canonical symmetric monoidal structure whose tensor product is the
+derived tensor product and whose unit is</span> \(R[0]\)<span class='ntx-Italic-tlf-t1-x-x-109'>. The localization functor </span>\[ \gamma \colon \Ch (R)\longrightarrow \D (R) \] <span class='ntx-Italic-tlf-t1-x-x-109'>admits a canonical lax symmetric
+monoidal refinement. Moreover, the derived tensor product preserves small colimits separately in
+both variables.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-monoidal-dwyer-kan-localizations-and-derived-categories-section-02-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-monoidal-dwyer-kan-localizations-and-derived-categories-section-02-4">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Equip \(\Ch (R)\) with the weak equivalences and projective cofibrations of <a class="source-reference" data-label="prop:Unbounded_Projective_Cofibrations" href="../../../entry/unbounded-projective-cofibrations/index.html#prop:Unbounded_Projective_Cofibrations">Proposition 20.2.1</a>. Properties (2) and (3)
+of that proposition show that the ordinary tensor product is left derivable. The first two assertions
+therefore  follow  from  <a class="source-reference" data-label="thm:Monoidal_Localization_Derivable" href="../../../entry/monoidal-localization-of-derivable-functors/index.html#thm:Monoidal_Localization_Derivable">Theorem 20.1.6</a>.  The  description  of  cocartesian  transport  in  part (3)  of  <a class="source-reference" data-label="prop:Localization_Of_Left_Derivable_Fibration" href="../../../entry/localization-of-left-derivable-fibration/index.html#prop:Localization_Of_Left_Derivable_Fibration">Proposition 20.1.14</a>  identifies  tensor
+product in the localization with the total left derived functor of ordinary tensor product, so this is
+the derived tensor product. Applying the same description to the unique span from \(\emptyset \) to \(\lra {1}\) identifies the
+monoidal unit with the image of the ordinary unit \(R[0]\).
+</p><p class='noindent'>It remains to prove the assertion about colimits. By part (1) of <a class="source-reference" data-label="cor:Localization_Right_Exact" href="../../../entry/right-exact-localization-via-cofibrant-objects/index.html#cor:Localization_Right_Exact">Corollary 2.2.9</a>, we may represent an object \(X\in \D (R)\) by a
+cofibrant complex \(P\). For a complex \(Y\), choose a cofibrant replacement \(Q\xrightarrow {\sim }Y\). The preceding identification
+and part (3) of <a class="source-reference" data-label="prop:Unbounded_Projective_Cofibrations" href="../../../entry/unbounded-projective-cofibrations/index.html#prop:Unbounded_Projective_Cofibrations">Proposition 20.2.1</a> give \[ X\otimes _R^{\bL }\gamma (Y) \simeq \gamma (P\otimes _R Q) \simeq \gamma (P\otimes _R Y). \] Thus \(X\otimes _R^{\bL }-\) is the functor on localizations induced by \(P\otimes _R-\). The latter is homotopy
+cocontinuous by part (3) of <a class="source-reference" data-label="prop:Unbounded_Projective_Cofibrations" href="../../../entry/unbounded-projective-cofibrations/index.html#prop:Unbounded_Projective_Cofibrations">Proposition 20.2.1</a>. The dual form of <a class="source-reference" data-label="thm:Localization_Of_Homotopy_Complete_Category" href="../../../entry/limits-in-localizations-of-homotopy-complete-categories/index.html#thm:Localization_Of_Homotopy_Complete_Category">Theorem 2.2.11</a> therefore shows that \(X\otimes _R^{\bL }-\) preserves small colimits. By
+symmetry, the same holds in the other variable.                                                                                 □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+                                                                                   
+                                                                                   
+<a id='x1-1006r3'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 20.2.3 </span>(Bounded-below comparison)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Bounded_Below_Derived_Category_Monoidal_Comparison'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a commutative ring. The full subcategory</span>
+\(\D ^-(R)\subseteq \D (R)\) <span class='ntx-Italic-tlf-t1-x-x-109'>of bounded below objects is closed under the derived tensor product and contains the monoidal
+unit. It therefore inherits a symmetric monoidal structure from</span> \(\D (R)\) <span class='ntx-Italic-tlf-t1-x-x-109'>for which the inclusion </span>\[ \D ^-(R)\lhook \joinrel \longrightarrow \D (R) \] <span class='ntx-Italic-tlf-t1-x-x-109'>is symmetric
+monoidal. This structure agrees with the symmetric monoidal structure on</span> \(\D ^-(R)\) <span class='ntx-Italic-tlf-t1-x-x-109'>constructed in </span><a class="source-reference" data-label="ex:Chain_Complexes_Monoidal_Localization" href="../../../entry/chain-complexes-monoidal-localization/index.html#ex:Chain_Complexes_Monoidal_Localization">Example 20.1.7</a><span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-monoidal-dwyer-kan-localizations-and-derived-categories-section-02-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-monoidal-dwyer-kan-localizations-and-derived-categories-section-02-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The unit \(R[0]\) is bounded below. Let \(X,Y\in \D ^-(R)\), and choose bounded below projective resolutions \(P\to X\) and \(Q\to Y\). Since
+projective \(R\)-modules are flat, <a class="source-reference" data-label="lem:Tensor_With_Flat_Chain_Complex_Preserves_Quasi_Isos" href="../../../entry/tensoring-with-flat-complexes-preserves-quasi-isomorphisms/index.html#lem:Tensor_With_Flat_Chain_Complex_Preserves_Quasi_Isos">Lemma 6.6.27</a> shows that tensoring with either \(P\) or \(Q\) preserves quasi-isomorphisms.
+</p><p class='noindent'>Choose  cofibrant  replacements  \(U\xrightarrow {\sim }P\)  and  \(V\xrightarrow {\sim }Q\)  in  the  unbounded  projective  cofibration  structure  of  <a class="source-reference" data-label="prop:Unbounded_Projective_Cofibrations" href="../../../entry/unbounded-projective-cofibrations/index.html#prop:Unbounded_Projective_Cofibrations">Proposition 20.2.1</a>.  The
+composite \[ U\otimes _R V\longrightarrow U\otimes _R Q\longrightarrow P\otimes _R Q \] is a quasi-isomorphism: this follows for the first map from part (3) of <a class="source-reference" data-label="prop:Unbounded_Projective_Cofibrations" href="../../../entry/unbounded-projective-cofibrations/index.html#prop:Unbounded_Projective_Cofibrations">Proposition 20.2.1</a>, and for the second
+from the preceding observation about \(Q\). Hence the derived tensor product of \(X\) and \(Y\) in \(\D (R)\) is represented
+by the bounded below complex \(P\otimes _R Q\). Thus \(\D ^-(R)\) is closed under the ambient derived tensor product, and <a class="source-reference" data-label="lem:Subcategory_SymMon_Structure" href="../../../entry/subcategory-symmon-structure/index.html#lem:Subcategory_SymMon_Structure">Lemma 14.5.2</a> gives
+the asserted restricted symmetric monoidal structure.
+</p><p class='noindent'>It  remains  to  compare  this  restriction  with  the  bounded-below  construction.  The  inclusion  \(\Ch ^-(R)\hookrightarrow \Ch (R)\)  is
+symmetric monoidal. Composing it with the lax symmetric monoidal localization \(\Ch (R)\to \D (R)\) and applying
+part (4) of <a class="source-reference" data-label="thm:Monoidal_Localization_Derivable" href="../../../entry/monoidal-localization-of-derivable-functors/index.html#thm:Monoidal_Localization_Derivable">Theorem 20.1.6</a> to the bounded-below localization produces a lax symmetric monoidal refinement of the
+inclusion \(\D ^-(R)\hookrightarrow \D (R)\). On bounded below projective resolutions \(P\) and \(Q\), its binary structure map is represented by
+the composite quasi-isomorphism \(U\otimes _RV\to P\otimes _RQ\) displayed above, and is therefore an isomorphism. Its unit map is
+likewise the identity of \(R[0]\). The refinement is consequently symmetric monoidal, which identifies the
+bounded-below structure with the restriction of the unbounded one.                                                 □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1007r4'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 20.2.4 </span>(DGAs as derived algebras)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cor:Lax_Monoidal_Derived_Localization'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The lax symmetric monoidal localization of </span><a class="source-reference" data-label="prop:Symmetric_Monoidal_Derived_Category" href="../../../entry/symmetric-monoidal-derived-category/index.html#prop:Symmetric_Monoidal_Derived_Category">Proposition 20.2.2 </a><span class='ntx-Italic-tlf-t1-x-x-109'>induces
+functors </span>\[ \Alg (\Ch (R))\longrightarrow \Alg (\D (R)), \qquad \CAlg (\Ch (R))\longrightarrow \CAlg (\D (R)). \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-monoidal-dwyer-kan-localizations-and-derived-categories-section-02-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-monoidal-dwyer-kan-localizations-and-derived-categories-section-02-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Lax symmetric monoidal functors preserve associative and commutative algebra objects.    □
+</p>
+</div></div>
+<p class='noindent'>Thus every associative or commutative DGA determines an associative or commutative algebra object in \(\D (R)\),
+respectively.
+</p><p class='noindent'>We finally record the compact presentation of the derived category.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1008r5'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 20.2.5 </span>(Perfect complexes)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cor:Derived_Category_Ind_Perfect'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The object</span> \(R[0]\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a compact generator of</span> \(\D (R)\)<span class='ntx-Italic-tlf-t1-x-x-109'>. If </span>\[ \Perf (R):=\D (R)^{\omega } \] <span class='ntx-Italic-tlf-t1-x-x-109'>denotes the full
+subcategory of compact objects, then</span> \(\Perf (R)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is the smallest thick subcategory of</span> \(\D (R)\) <span class='ntx-Italic-tlf-t1-x-x-109'>containing</span> \(R[0]\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Its objects
+are precisely the retracts of bounded complexes of finitely generated free</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-modules, and there is an
+equivalence of symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories </span>\[ \D (R)\simeq \Ind (\Perf (R)). \] <span class='ntx-Italic-tlf-t1-x-x-109'>Here the symmetric monoidal structure on the right
+is the one supplied by </span><a class="source-reference" data-label="thm:Symmetric_Monoidal_Ind_Completion" href="../../../entry/symmetric-monoidal-ind-completion/index.html#thm:Symmetric_Monoidal_Ind_Completion">Theorem 22.5.4</a><span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-monoidal-dwyer-kan-localizations-and-derived-categories-section-02-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-monoidal-dwyer-kan-localizations-and-derived-categories-section-02-1">
+                                                                                   
+
+                                                                                   
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  Since  \(R\)  is  projective  as  an  \(R\)-module,  <a class="source-reference" data-label="cor:Projective_Objects_Corepresent_Homology" href="../../../entry/projective-objects-corepresent-homology/index.html#cor:Projective_Objects_Corepresent_Homology">Corollary 6.4.5</a>  gives  \[ \pi _n\hom _{\D (R)}(R[0],X)\cong H_n(X) \]  for  every  \(X\in \D (R)\).  The  canonical  t-structure  on  \(\D (R)\)  is
+compatible with filtered colimits by <span class='citation'>[Lurie (2017), Proposition 1.3.5.21]</span>, so each homology functor preserves filtered colimits. Since
+homotopy  groups  of  spectra  preserve  filtered  colimits  by  <a class="source-reference" data-label="lem:Homotopy_Groups_Preserve_Filtered_Colimits" href="../../../entry/homotopy-groups-preserve-filtered-colimits/index.html#lem:Homotopy_Groups_Preserve_Filtered_Colimits">Lemma 4.4.27</a>,  the  displayed  formula  shows  that  \(R[0]\)  is
+compact. Its shifts jointly detect zero objects, since a complex is zero in \(\D (R)\) precisely when all its
+homology groups vanish. It follows from <a class="source-reference" data-label="prop:Compact_Objects_Are_Finitely_Dominated" href="../../../entry/compact-generation-criterion/index.html#prop:Compact_Objects_Are_Finitely_Dominated">Proposition 22.3.4</a> that \(R[0]\) is a compact generator.
+</p><p class='noindent'>By <a class="source-reference" data-label="prop:Compact_Objects_Are_Finitely_Dominated" href="../../../entry/compact-generation-criterion/index.html#prop:Compact_Objects_Are_Finitely_Dominated">Proposition 22.3.4</a>, the compact objects form the smallest thick subcategory containing \(R[0]\); in particular, \(\Perf (R)\) is small.
+Bounded complexes of finitely generated free modules are obtained from shifts of \(R[0]\) by finite cofiber
+sequences, using their finite filtrations by degree. Conversely, their retracts form a thick subcategory.
+This gives the asserted explicit description of \(\Perf (R)\).
+</p><p class='noindent'>The underlying equivalence \(\D (R)\simeq \Ind (\Perf (R))\) now follows from <a class="source-reference" data-label="prop:Compactly_Generated_As_Ind" href="../../../entry/compactly-generated-categories-as-ind-completions/index.html#prop:Compactly_Generated_As_Ind">Proposition 22.3.7</a>. The derived tensor product restricts to \(\Perf (R)\): this follows
+from its exactness separately and the description of \(\Perf (R)\) as the thick subcategory generated by the unit.
+The uniqueness assertion in <a class="source-reference" data-label="thm:Symmetric_Monoidal_Ind_Completion" href="../../../entry/symmetric-monoidal-ind-completion/index.html#thm:Symmetric_Monoidal_Ind_Completion">Theorem 22.5.4</a> upgrades the equivalence to a symmetric monoidal equivalence.        □
+</p>
+</div></div>
+<p class='noindent'>These results provide the higher-algebra input for the comparison with Eilenberg–MacLane modules.
+Indeed, the Ind-presentation and <a class="source-reference" data-label="prop:Ind_Of_Finite_Colimit_Category_Presentable" href="../../../entry/presentability-of-ind-completions/index.html#prop:Ind_Of_Finite_Colimit_Category_Presentable">Proposition 22.3.6</a> show that \(\D (R)\) is presentable. It is therefore a presentably symmetric
+monoidal stable \(\infty \)-category with compact generator \(R[0]\). Applying the monogenic Morita theorem, <a class="source-reference" data-label="thm:Monogenic_Morita" href="../../../entry/monogenic-morita/index.html#thm:Monogenic_Morita">Theorem 19.5.6</a>, and
+computing the endomorphism ring spectrum of \(R[0]\) gives the symmetric monoidal equivalence \[ \D (R)\simeq \Mod _{HR}(\Sp ). \] The
+computation and its interpretation in terms of Eilenberg–MacLane ring spectra are carried out in
+<a class="source-reference" data-label="cor:Derived_Category_As_HR_Modules" href="../../../entry/derived-categories-as-eilenberg-maclane-module-categories/index.html#cor:Derived_Category_As_HR_Modules">Corollary 8.3.4</a>.
+</p><p class='noindent'><a id='likesection.1'></a><a id='x1-1009x20.2'></a>
+</p>
+<h3 class='likesectionHead' id='exercises'><a id='x1-2000'></a>Exercises</h3>
+<p id='exercises1'><a id='Q1-1-3'></a>
+</p><div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r1'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 20.1 </span>(A tensor-stable localization)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(k\) be a field and let \(W\) be the quasi-isomorphisms in
+\(\Ch (k)\).
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'>Show that \(X\otimes _k-\) preserves quasi-isomorphisms for every chain complex \(X\).
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'>Construct the symmetric monoidal structure on \(\D (k)\).
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'>Explain why the same argument fails for a general commutative ring \(R\), and give an explicit
+     complex whose tensor product does not preserve a quasi-isomorphism.</p></dd></dl>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2005r2'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 20.2 </span>(Deriving the tensor product)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(R\) be a commutative ring and choose projective cofibrant
+replacements \(P\xrightarrow {\sim }C\) and \(Q\xrightarrow {\sim }D\).
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'>Show that \(P\otimes _RQ\) represents \(C\otimes _R^{\bL }D\) in \(\D (R)\).
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'>Prove that it is enough to replace only \(C\) by \(P\) if \(P\otimes _R-\) preserves quasi-isomorphisms, and similarly for
+     \(D\).
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'>Check that the two constructions agree.</p></dd></dl>
+                                                                                   
+                                                                                   
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2009r3'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 20.3 </span>(A self-intersection calculation)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span>   Let   \(R\)   be   a   commutative   ring   and   let   \(x\in R\)   be   a
+non-zero-divisor. Compute \(R/(x)\otimes _R^{\bL }R/(x)\). Show that its homology is \(R/(x)\) in degrees \(0\) and \(1\) and vanishes otherwise.
+Interpret the degree-\(1\) class as the derived contribution to the self-intersection.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2010r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 20.4 </span>(Derived tensor products of cyclic groups)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(m,n\geq 1\) and put \(d:=\gcd (m,n)\). Compute \[ \Z /m\otimes _{\Z }^{\bL }\Z /n. \] Show that its
+only nonzero homology groups occur in degrees \(0\) and \(1\), and that both are isomorphic to \(\Z /d\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2011r5'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 20.5 </span>(The lax monoidal localization map)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(\gamma \colon \Ch (R)\to \D (R)\) be the localization functor. Write down
+the lax symmetric monoidal comparison \[ \gamma (C)\otimes _R^{\bL }\gamma (D)\longrightarrow \gamma (C\otimes _RD). \] Show that it is an isomorphism if either \(C\otimes _R-\) or \(-\otimes _R D\) preserves
+quasi-isomorphisms, and give an example in which it is not an isomorphism.
+                                                                                   
+                                                                                   
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2012r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 20.6 </span>(Duality for a perfect complex)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(R\) be a commutative ring and let \(P\) be a bounded
+complex of finitely generated projective \(R\)-modules. Define the dual complex by \[ P^{\vee }:=\uHom _R(P,R). \] Show that \(P^{\vee }\) is perfect
+and that for every \(M\in \D (R)\) there is a natural isomorphism \[ P^{\vee }\otimes _R^{\bL }M\simeq \bR \uHom _R(P,M). \]
+</p>
+</div>
+
+ 
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../monoidal-dwyer-kan-localizations/index.html" aria-label="Previous section: Monoidal Dwyer–Kan localizations" title="Previous section: Monoidal Dwyer–Kan localizations"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../../adjunctions/definition-and-characterizations/index.html" aria-label="Next section: Definition and characterizations" title="Next section: Definition and characterizations"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html" aria-current="page"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/operads-the-heuristics/index.html"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../../../chapter/span-categories/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../../../chapter/basics-on-infinity-operads/index.html"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../../../chapter/cartesian-and-cocartesian-monoidal-structures/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../../../chapter/day-convolution-and-the-tensor-product-of-spectra/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="../../../chapter/the-envelope-of-an-infinity-operad/index.html"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../../../chapter/operadic-day-convolution-and-stabilization/index.html"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Operadic Day convolution and stabilization</span></a></li><li><a href="../../../chapter/algebras-and-modules/index.html"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html" aria-current="page"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../monoidal-dwyer-kan-localizations/index.html"><span class="context-entry-heading">Section 20.1</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 20.2</span><span class="context-entry-title">The symmetric monoidal derived category</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#prop:Unbounded_Projective_Cofibrations"><span class="context-entry-heading">Proposition 20.2.1</span><span class="context-entry-title">Unbounded projective cofibrations</span></a></li><li><a href="#prop:Symmetric_Monoidal_Derived_Category"><span class="context-entry-heading">Proposition 20.2.2</span><span class="context-entry-title">The symmetric monoidal derived category</span></a></li><li><a href="#prop:Bounded_Below_Derived_Category_Monoidal_Comparison"><span class="context-entry-heading">Proposition 20.2.3</span><span class="context-entry-title">Bounded-below comparison</span></a></li><li><a href="#cor:Lax_Monoidal_Derived_Localization"><span class="context-entry-heading">Corollary 20.2.4</span><span class="context-entry-title">DGAs as derived algebras</span></a></li><li><a href="#cor:Derived_Category_Ind_Perfect"><span class="context-entry-heading">Corollary 20.2.5</span><span class="context-entry-title">Perfect complexes</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

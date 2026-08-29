@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 8.5: Projective and flat modules (online only) | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/stable-homotopy-theory/index.html">Part I</a> · <a href="../../../chapter/ring-spectra-and-modules/index.html">Chapter 8</a> · Section 8.5</p>
+      <h1>Projective and flat modules (online only)</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Projective_And_Flat_Modules'>In <a class="source-reference" data-label="sec:Projective_Modules" href="../../homological-algebra/projective-objects-and-ext-groups/index.html#sec:Projective_Modules">Section 6.4</a>, <a class="source-reference" data-label="sec:Flat_Objects" href="../../homological-algebra/flat-objects-and-tor-groups/index.html#sec:Flat_Objects">Section 6.5</a> we developed the general theory of t-projective and t-flat objects in stable \(\infty \)-categories equipped with
+t-structures. In this section, we specialize this theory to modules over ring spectra, obtaining analogues of
+projective and flat modules from ordinary algebra.
+</p>
+<h4 class='subsectionHead' id='projective-modules'><span class='titlemark'>8.5.1    </span> <a id='x1-20008.5.1'></a>Projective modules</h4>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r1'></a>
+<a class="entry-heading-link" href="../../../entry/ext-groups-for-modules/index.html" aria-label="Definition 8.5.1, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 8.5.1 </span></a>(Ext-groups for modules)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Ext_Groups_Modules'></span> Let \(R\) be an associative ring spectrum and let \(M, N \in \LMod _R\) be left
+\(R\)-modules. We define the \(n\)<span class='ntx-Italic-tlf-t1-x-x-109'>-th Ext-group </span>of \(M\) and \(N\) over \(R\) to be \[ \Ext ^n_R(M,N) \quad := \quad \Ext ^n_{\LMod _R}(M,N) \quad = \quad \pi _{-n}\hom _R(M,N) \quad \simeq \quad \pi _0 \Hom _{\LMod _R}(M,N[n]). \] These are the Ext-groups from <a class="source-reference" data-label="def:Ext_Groups" href="../../../entry/ext-groups-in-a-stable-infinity-category/index.html#def:Ext_Groups">Definition 6.4.6</a> specialized
+to the stable \(\infty \)-category \(\LMod _R\).
+</p>
+</div>
+<p class='noindent'>The general vanishing, degree-zero identification, and long exact sequence for Ext-groups from <a class="source-reference" data-label="obs:Ext_Negative_Vanishes" href="../../../entry/negative-ext-groups-vanish-in-the-heart/index.html#obs:Ext_Negative_Vanishes">Observation 6.4.7</a>, <a class="source-reference" data-label="obs:Ext_Zero_Is_Hom" href="../../../entry/zeroth-ext-is-hom-in-the-heart/index.html#obs:Ext_Zero_Is_Hom">Observation 6.4.8</a>, <a class="source-reference" data-label="obs:Ext_Long_Exact_Sequence" href="../../../entry/long-exact-sequence-of-ext-groups/index.html#obs:Ext_Long_Exact_Sequence">Observation 6.4.10</a> apply
+verbatim to \(R\)-modules.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2002r2'></a>
+<a class="entry-heading-link" href="../../../entry/projective-module-spectra/index.html" aria-label="Definition 8.5.2, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 8.5.2 </span></a>(Projective module)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:projective_module'></span> Let \(R\) be a connective associative ring spectrum. A left \(R\)-module
+\(P\) is <span class='ntx-Italic-tlf-t1-x-x-109'>projective </span>if it is a t-projective object of \(\LMod _R\) in the sense of <a class="source-reference" data-label="def:t-Projective" href="../../../entry/t-projective-objects/index.html#def:t-Projective">Definition 6.4.1</a>; that is, if the mapping spectrum functor
+\(\hom _R(P,-)\colon \LMod _R \to \Sp \) is t-exact.
+                                                                                   
+                                                                                   
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2003r3'></a>
+<a class="entry-heading-link" href="../../../entry/characterizations-of-projective-modules/index.html" aria-label="Observation 8.5.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Observation 8.5.3.</span></a>  </span><span id='obs:Projective_Module_Characterizations'></span> The characterizations of t-projective objects from <a class="source-reference" data-label="prop:Characterization_Projective_Objects" href="../../../entry/characterizations-of-t-projective-objects/index.html#prop:Characterization_Projective_Objects">Proposition 6.4.11</a> specialize to the following
+equivalent conditions for a connective left \(R\)-module \(P\):
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'>\(P\) is projective;
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'>For every connective left \(R\)-module \(Q\) and every \(i &gt; 0\), we have \(\Ext ^i_R(P,Q) = 0\);
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'>For every connective left \(R\)-module \(Q\), we have \(\Ext ^1_R(P,Q) = 0\);
+     </p></dd><dt class='enumerate'>
+  (4) </dt><dd class='enumerate'>
+     <p class='noindent'>Given an exact sequence \(N' \to N \to N''\) of connective left \(R\)-modules, the induced map \(\Ext ^0_R(P,N) \to \Ext ^0_R(P,N'')\) is surjective.</p></dd></dl>
+<p class='noindent'>Since the t-structure on \(\LMod _R\) is left complete (<a class="source-reference" data-label="cor:t_Structure_On_Module_Spectra" href="../../../entry/postnikov-t-structures-on-module-spectra/index.html#cor:t_Structure_On_Module_Spectra">Corollary 8.2.5</a>), these are further equivalent to:
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (5) </dt><dd class='enumerate'>
+     <p class='noindent'>For every \(Q \in \LMod _R^{\heartsuit }\) and every \(i &gt; 0\), we have \(\Ext ^i_R(P,Q) = 0\).</p></dd></dl>
+</div>
+<p class='noindent'>The projective \(R\)-modules admit a simple description as retracts of free \(R\)-modules.
+                                                                                   
+                                                                                   
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2009r4'></a>
+<a class="entry-heading-link" href="../../../entry/free-module-spectra/index.html" aria-label="Definition 8.5.4, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 8.5.4 </span></a>(Free module)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:free_module'></span> Let \(R\) be an associative ring spectrum. A left \(R\)-module \(M\) is <span class='ntx-Italic-tlf-t1-x-x-109'>free </span>if \(M\) is
+a (possibly infinite) coproduct of (unshifted) copies of \(R\), viewed as a left module over itself. A free
+left \(R\)-module is <span class='ntx-Italic-tlf-t1-x-x-109'>finitely generated </span>if it is equivalent to a finite coproduct of copies of \(R\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2010r5'></a>
+<a class="entry-heading-link" href="../../../entry/free-modules-in-the-part-i-interface/index.html" aria-label="Warning 8.5.5., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Warning 8.5.5.</span></a>  </span><span id='warn:Free_Modules_Restricted_To_Sums_Of_R'></span> This is a special case of the free-module construction from <span class="source-reference" data-label="subsec:Free_Modules">Subsection 19.1.2</span>. There one allows
+modules of the form \(R \otimes X\) for an arbitrary spectrum \(X\); here \(X = \bigoplus _{i \in I} \S \) is required to be a coproduct of unshifted
+copies of the sphere spectrum.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2011r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 8.5.6 </span>(<span class='citation'>[Lurie (2017), Proposition 7.2.2.7]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Projective_Iff_Retract_Of_Free'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a connective associative ring spectrum, and let</span> \(P\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a connective left</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module.
+The following conditions are equivalent:</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The left</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module</span> \(P\) <span class='ntx-Italic-tlf-t1-x-x-109'>is projective.</span>
+                                                                                   
+
+                                                                                   
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>There exists a free</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module</span> \(M\) <span class='ntx-Italic-tlf-t1-x-x-109'>such that</span> \(P\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a retract of</span> \(M\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-ring-spectra-and-modules-section-05-6" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-ring-spectra-and-modules-section-05-6">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Suppose first that \(P\) is projective. We can choose a map of left \(R\)-modules \(p\colon N \to P\), where \(N\) is free, such
+that the induced map \(\pi _0(p)\colon \pi _0(N) \to \pi _0(P)\) is surjective. (For instance, we can take \(N\) to be the free module generated by
+the set \(\pi _0(P)\).) Letting \(N'\) be the fiber of \(p\), it follows from the long exact sequence on homotopy groups that
+\(N'\) is connective as well. The exact sequence \(N' \to N \to P\) of connective \(R\)-modules induces by <a class="source-reference" data-label="obs:Ext_Long_Exact_Sequence" href="../../../entry/long-exact-sequence-of-ext-groups/index.html#obs:Ext_Long_Exact_Sequence">Observation 6.4.10</a> a sequence \[ \Ext ^0_R(P,N') \to \Ext ^0_R(P,N) \to \Ext ^0_R(P,P) \to \Ext ^1_R(P,N'). \] Since \(P\)
+is projective, the last term vanishes by criterion (3) of <a class="source-reference" data-label="obs:Projective_Module_Characterizations" href="../../../entry/characterizations-of-projective-modules/index.html#obs:Projective_Module_Characterizations">Observation 8.5.3</a>. In particular, there exists a map \(s\colon P \to N\) such that \(p \circ s = \id _P\),
+exhibiting \(P\) as a retract of the free \(R\)-module \(N\).
+</p><p class='noindent'>For the converse, we observe that the collection of projective left \(R\)-modules is stable under retracts. It
+will therefore suffice to show that every free left \(R\)-module is projective. We check criterion (2) from
+<a class="source-reference" data-label="obs:Projective_Module_Characterizations" href="../../../entry/characterizations-of-projective-modules/index.html#obs:Projective_Module_Characterizations">Observation 8.5.3</a>. Since \(\Ext ^i_R(\bigoplus _I R, Q) \cong \prod _{I} \Ext ^i_R(R,Q)\), we may assume \(P = R\) is free on a single generator. But then \[ \Ext ^i_R(R,Q) = \pi _{0} \Hom _{\LMod _R}(R,Q[i]) \simeq \pi _0 \Hom _{\Sp }(\S ,Q[i]) = \pi _{-i}(Q). \] Since \(Q\) is connective, this is zero for
+\(i &gt; 0\), as desired.                                                                                                                                          □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2014r7'></a>
+<a class="entry-heading-link" href="../../../entry/classical-projective-modules-and-eilenberg-maclane-modules/index.html" aria-label="Remark 8.5.7., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 8.5.7.</span></a>  </span><span id='rmk:Classical_Projective_Modules_And_Eilenberg_MacLane_Modules'></span> If \(R\) is an ordinary associative ring, it follows from the proposition that the projective
+\(HR\)-modules are precisely the Eilenberg–MacLane modules \(HP\) associated with projective \(R\)-modules in the
+classical sense.
+</p>
+</div>
+
+<h4 class='subsectionHead' id='flat-modules'><span class='titlemark'>8.5.2    </span> <a id='x1-30008.5.2'></a>Flat modules</h4>
+<p class='noindent'>We now turn to flat modules. Recall from <a class="source-reference" data-label="def:t-Flat" href="../../../entry/t-flat-objects/index.html#def:t-Flat">Definition 6.5.1</a> the general notion of t-flatness with respect to a tensor product \(C \times D \to E\) of
+stable \(\infty \)-categories with t-structures. We will specialize this to the relative tensor product of modules over a
+ring spectrum.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3001r8'></a>
+<a class="entry-heading-link" href="../../../entry/tor-groups-for-modules/index.html" aria-label="Definition 8.5.8, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 8.5.8 </span></a>(Tor-groups for modules)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Tor_Groups_Modules'></span> Let \(R\) be an associative ring spectrum. For a right \(R\)-module
+\(M\) and a left \(R\)-module \(N\), we define the \(n\)<span class='ntx-Italic-tlf-t1-x-x-109'>-th Tor-group </span>of \(M\) and \(N\) over \(R\) to be \[ \Tor ^R_n(M,N) \quad := \quad \pi _n(M \otimes _R N) \qin \Ab . \] These are the Tor-groups from <a class="source-reference" data-label="def:Tor_Groups" href="../../../entry/tor-groups-for-tensor-products/index.html#def:Tor_Groups">Definition 6.5.6</a>
+specialized to the relative tensor product \(\RMod _R \times \LMod _R \xrightarrow {\otimes _R} \Sp \).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3002r9'></a>
+<a class="entry-heading-link" href="../../../entry/basic-properties-of-tor-for-modules/index.html" aria-label="Observation 8.5.9., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Observation 8.5.9.</span></a>  </span><span id='obs:Tor_Groups_Modules_Properties'></span> Let \(R\) be a connective associative ring spectrum. By <a class="source-reference" data-label="obs:Pi_0_On_Modules" href="../../../entry/pi-zero-of-modules/index.html#obs:Pi_0_On_Modules">Observation 8.2.7</a>, the relative tensor product
+of a connective right \(R\)-module \(M\) and a connective left \(R\)-module \(N\) is connective, and \[ \Tor ^R_0(M,N) = \pi _0(M \otimes _R N) \cong \pi _0(M) \otimes ^{\heartsuit }_{\pi _0(R)} \pi _0(N). \] In particular, \(\Tor ^R_n(M,N) = 0\) for \(n &lt; 0\)
+whenever \(M\) and \(N\) are connective.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3003r10'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/tor-long-exact-sequence-for-modules/index.html" aria-label="Observation 8.5.10, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Observation 8.5.10 </span></a>(Tor long exact sequence)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='obs:Tor_Long_Exact_Sequence'></span>   Specializing   <a class="source-reference" data-label="obs:Tor_Long_Exact_Sequence_General" href="../../../entry/long-exact-sequence-of-tor-groups/index.html#obs:Tor_Long_Exact_Sequence_General">Observation 6.5.7</a>,   every   exact   sequence   of   right
+\(R\)-modules induces a long exact sequence of Tor-groups after tensoring with a fixed left \(R\)-module. The
+same holds for exact sequences in the left-module variable.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3004r11'></a>
+<a class="entry-heading-link" href="../../../entry/flat-module-spectra/index.html" aria-label="Definition 8.5.11, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 8.5.11 </span></a>(Flat module)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:flat_module'></span> Let \(R\) be a connective associative ring spectrum. A connective left
+\(R\)-module \(N\) is said to be <span class='ntx-Italic-tlf-t1-x-x-109'>flat </span>if the functor \((-) \otimes _R N \colon \RMod _R \to \Sp \) is t-exact.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3005r12'></a>
+<a class="entry-heading-link" href="../../../entry/automatic-right-t-exactness-of-tensor-products/index.html" aria-label="Remark 8.5.12., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 8.5.12.</span></a>  </span><span id='rem:Flat_Automatic_Right_t_Exactness'></span>  By  <a class="source-reference" data-label="obs:Tor_Groups_Modules_Properties" href="../../../entry/basic-properties-of-tor-for-modules/index.html#obs:Tor_Groups_Modules_Properties">Observation 8.5.9</a>,  the  functor  \((-) \otimes _R N\)  is  automatically  right  t-exact  when  \(N\)  is  connective.  Thus  a
+connective left \(R\)-module \(N\) is flat if and only if this functor is left t-exact: for every coconnective right
+\(R\)-module \(M\), the spectrum \(M \otimes _R N\) is coconnective.
+</p>
+</div>
+<p class='noindent'>We now give several complementary tests for flatness. Conditions (2) and (3) describe the homotopy
+groups of a flat module and of its tensor products, while conditions (4) and (5) reduce flatness
+to discrete modules. The final two conditions recover the classical criterion for an ordinary
+ring.
+                                                                                   
+                                                                                   
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3006r13'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 8.5.13 </span>(Characterization of flat modules, <span class='citation'>[Lurie (2017), Proposition 7.2.2.13, Theorem 7.2.2.15]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Characterization_Flat_Modules'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a connective associative ring spectrum and
+let</span> \(N\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a connective left</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module. The following conditions are equivalent:</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><a id='x1-30071'></a> <span class='ntx-Italic-tlf-t1-x-x-109'>The left</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module</span> \(N\) <span class='ntx-Italic-tlf-t1-x-x-109'>is flat.</span>
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><a id='x1-30082'></a> <span class='ntx-Italic-tlf-t1-x-x-109'>For every right</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module</span> \(M\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(n \in \Z \)<span class='ntx-Italic-tlf-t1-x-x-109'>, the following map is an isomorphism: </span>\[ \pi _n(M) \otimes ^{\heartsuit }_{\pi _0(R)} \pi _0(N) \iso \pi _n(M \otimes _R N), \qquad \quad [x] \otimes [y] \mapsto [x \otimes y]. \]
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'><a id='x1-30093'></a> <span class='ntx-Italic-tlf-t1-x-x-109'>The discrete</span> \(\pi _0(R)\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module</span> \(\pi _0(N)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is flat, and for each integer</span> \(n\) <span class='ntx-Italic-tlf-t1-x-x-109'>the map </span>\[ \pi _n(R) \otimes ^{\heartsuit }_{\pi _0(R)} \pi _0(N) \to \pi _n(N), \qquad \qquad [r] \otimes [x] \mapsto [rx] \] <span class='ntx-Italic-tlf-t1-x-x-109'>is an isomorphism of abelian
+     groups.</span>
+     </p></dd><dt class='enumerate'>
+  (4) </dt><dd class='enumerate'>
+     <p class='noindent'><a id='x1-30104'></a> <span class='ntx-Italic-tlf-t1-x-x-109'>For every discrete right</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module</span> \(M\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the spectrum</span> \(M \otimes _R N\) <span class='ntx-Italic-tlf-t1-x-x-109'>is discrete. Equivalently,</span> \(\Tor ^R_i(M,N) = 0\) <span class='ntx-Italic-tlf-t1-x-x-109'>for all discrete</span> \(M\) <span class='ntx-Italic-tlf-t1-x-x-109'>and
+     all</span> \(i &gt; 0\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p></dd><dt class='enumerate'>
+  (5) </dt><dd class='enumerate'>
+     <p class='noindent'><a id='x1-30115'></a> <span class='ntx-Italic-tlf-t1-x-x-109'>Regarding</span> \(\pi _0(R)\) <span class='ntx-Italic-tlf-t1-x-x-109'>as a discrete ring spectrum, the left</span> \(\pi _0(R)\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module</span> \(\pi _0(R) \otimes _R N\) <span class='ntx-Italic-tlf-t1-x-x-109'>is discrete and flat.</span></p></dd></dl>
+<p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(N\) <span class='ntx-Italic-tlf-t1-x-x-109'>are both discrete, these conditions are further equivalent to:</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (6) </dt><dd class='enumerate'>
+     <p class='noindent'><a id='x1-30126'></a> <span class='ntx-Italic-tlf-t1-x-x-109'>For every injection</span> \(M' \hookrightarrow M\) <span class='ntx-Italic-tlf-t1-x-x-109'>of discrete right</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-modules, the induced map</span> \(M' \otimes ^{\heartsuit }_R N \to M \otimes ^{\heartsuit }_R N\) <span class='ntx-Italic-tlf-t1-x-x-109'>is injective.</span>
+     </p></dd><dt class='enumerate'>
+  (7) </dt><dd class='enumerate'>
+     <p class='noindent'><a id='x1-30137'></a> <span class='ntx-Italic-tlf-t1-x-x-109'>For every discrete right</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module</span> \(M\)<span class='ntx-Italic-tlf-t1-x-x-109'>, we have</span> \(\Tor ^R_1(M,N) = 0\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p></dd></dl>
+                                                                                   
+
+                                                                                   
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-ring-spectra-and-modules-section-05-5" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-ring-spectra-and-modules-section-05-5">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We first compare the t-structural conditions. Apply <a class="source-reference" data-label="prop:Characterization_Flat_Objects" href="../../../entry/characterizations-of-t-flat-objects/index.html#prop:Characterization_Flat_Objects">Proposition 6.5.9</a> to the relative tensor product \(\RMod _R \times \LMod _R \to \Sp \). The
+t-structure on \(\RMod _R\) is right complete by <a class="source-reference" data-label="cor:t_Structure_On_Module_Spectra" href="../../../entry/postnikov-t-structures-on-module-spectra/index.html#cor:t_Structure_On_Module_Spectra">Corollary 8.2.5</a>, relative tensor products preserve sequential colimits, and \(\Sp _{\leq 0}\) is
+closed under sequential colimits. Moreover, \(M \otimes _R N\) is connective when \(M\) and \(N\) are connective by <a class="source-reference" data-label="obs:Tor_Groups_Modules_Properties" href="../../../entry/basic-properties-of-tor-for-modules/index.html#obs:Tor_Groups_Modules_Properties">Observation 8.5.9</a>. Thus the
+heart criterion of <a class="source-reference" data-label="prop:Characterization_Flat_Objects" href="../../../entry/characterizations-of-t-flat-objects/index.html#prop:Characterization_Flat_Objects">Proposition 6.5.9</a> says precisely that \(\HCode {&lt;span class="source-reference equation-reference" data-label="it:flat_t_exact"&gt;(1)&lt;/span&gt;} \Leftrightarrow \HCode {&lt;span class="source-reference equation-reference" data-label="it:flat_discrete_test"&gt;(4)&lt;/span&gt;}\).
+</p><p class='noindent'>\(\HCode {&lt;span class="source-reference equation-reference" data-label="it:flat_t_exact"&gt;(1)&lt;/span&gt;} \Rightarrow \HCode {&lt;span class="source-reference equation-reference" data-label="it:flat_homotopy_formula"&gt;(2)&lt;/span&gt;}\): Assume that \((-) \otimes _R N\) is t-exact. By <a class="source-reference" data-label="lem:t-Exact_Functor_Preserves_Homotopy_Groups" href="../../../entry/t-exact-functors-preserve-homotopy-group-objects/index.html#lem:t-Exact_Functor_Preserves_Homotopy_Groups">Lemma 6.3.26</a>, it commutes with taking homotopy group objects: for every right
+\(R\)-module \(M\) and \(n \in \Z \), there is a natural isomorphism \(\pi _n(M) \otimes _R N \iso \pi _n(M \otimes _R N)\) in \(\Sp ^{\heartsuit } \simeq \Ab \). Furthermore, by <a class="source-reference" data-label="cor:t-Exact_Functor_Induces_Exact_Functor" href="../../../entry/t-exact-functors-induce-exact-functors-on-hearts/index.html#cor:t-Exact_Functor_Induces_Exact_Functor">Corollary 6.3.17</a> the t-exact functor \((-) \otimes _R N\) restricts to an
+exact functor \(\RMod _R^{\heartsuit } \to \Ab \) on hearts. Under the equivalence \(\RMod _R^{\heartsuit } \simeq \RMod _{\pi _0(R)}^{\heartsuit }\) from <a class="source-reference" data-label="lem:Heart_Of_Module_Category" href="../../../entry/heart-of-a-connective-module-category/index.html#lem:Heart_Of_Module_Category">Lemma 8.2.9</a>, this functor corresponds to \((-) \otimes ^{\heartsuit }_{\pi _0(R)} \pi _0(N)\) by <a class="source-reference" data-label="obs:Tor_Groups_Modules_Properties" href="../../../entry/basic-properties-of-tor-for-modules/index.html#obs:Tor_Groups_Modules_Properties">Observation 8.5.9</a>. Combining
+these observations gives <span class="source-reference equation-reference" data-label="it:flat_homotopy_formula">(2)</span>.
+</p><p class='noindent'>\(\HCode {&lt;span class="source-reference equation-reference" data-label="it:flat_homotopy_formula"&gt;(2)&lt;/span&gt;} \Rightarrow \HCode {&lt;span class="source-reference equation-reference" data-label="it:flat_lurie_definition"&gt;(3)&lt;/span&gt;}\): Taking \(M = R\) gives the displayed isomorphisms in <span class="source-reference equation-reference" data-label="it:flat_lurie_definition">(3)</span>. To prove that \(\pi _0(N)\) is flat, consider a short exact sequence
+\(0 \to M' \to M \to M'' \to 0\) of ordinary right \(\pi _0(R)\)-modules, regarded as discrete right \(R\)-modules. Tensoring the associated exact
+sequence with \(N\) and applying <span class="source-reference equation-reference" data-label="it:flat_homotopy_formula">(2)</span> gives a short exact sequence \[ 0 \to M' \otimes ^{\heartsuit }_{\pi _0(R)} \pi _0(N) \to M \otimes ^{\heartsuit }_{\pi _0(R)} \pi _0(N) \to M'' \otimes ^{\heartsuit }_{\pi _0(R)} \pi _0(N) \to 0. \] Hence \(\pi _0(N)\) is flat over \(\pi _0(R)\).
+</p><p class='noindent'>\(\HCode {&lt;span class="source-reference equation-reference" data-label="it:flat_lurie_definition"&gt;(3)&lt;/span&gt;} \Rightarrow \HCode {&lt;span class="source-reference equation-reference" data-label="it:flat_homotopy_formula"&gt;(2)&lt;/span&gt;}\): We prove the formula for progressively more general right \(R\)-modules \(M\).
+</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Step 1: </span>The isomorphism holds by assumption when \(M = R\), and hence also when \(M = F[k]\) is the shift of a free
+right \(R\)-module \(F = \bigoplus _I R\).
+</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Step 2: </span>Suppose we have an exact sequence \(M' \to M \to M''\) of right \(R\)-modules such that condition <span class="source-reference equation-reference" data-label="it:flat_homotopy_formula">(2)</span> holds for two of
+the three modules; we claim it also holds for the third. Since \(\pi _0(N)\) is a flat \(\pi _0(R)\)-module by assumption, the
+functor \((-) \otimes ^{\heartsuit }_{\pi _0(R)} \pi _0(N)\) is exact on the category of \(\pi _0(R)\)-modules. Using the long exact sequence on homotopy groups
+for \(M' \to M \to M''\), we obtain an exact sequence \[ \dots \to \pi _n(M') \otimes ^{\heartsuit }_{\pi _0(R)} \pi _0(N) \to \pi _n(M) \otimes ^{\heartsuit }_{\pi _0(R)} \pi _0(N) \to \pi _n(M'') \otimes ^{\heartsuit }_{\pi _0(R)} \pi _0(N) \to \dots \] Comparing this with the long exact sequence for \(M' \otimes _R N \to M \otimes _R N \to M'' \otimes _R N\) via the maps
+from <span class="source-reference equation-reference" data-label="it:flat_homotopy_formula">(2)</span>, the five lemma gives the claim.
+</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Step 3: </span>Let \(M\) be connective. The right-module version of <a class="source-reference" data-label="prop:Connective_Modules_Generated_By_R" href="../../../entry/connective-modules-generated-by-the-free-module/index.html#prop:Connective_Modules_Generated_By_R">Proposition 8.2.8</a> writes \(M\) as the colimit of a sequence \(M(0) \to M(1) \to \dots \) in
+which \(M(0)\) and all the cofibers \(\cofib (M(i) \to M(i+1))\) are shifts of free modules. Steps 1 and 2 imply the formula for every \(M(i)\). It
+follows for \(M\) because homotopy groups and ordinary tensor products preserve filtered colimits.
+</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Step 4: </span>Since the t-structure on \(\RMod _R\) is right complete (<a class="source-reference" data-label="cor:t_Structure_On_Module_Spectra" href="../../../entry/postnikov-t-structures-on-module-spectra/index.html#cor:t_Structure_On_Module_Spectra">Corollary 8.2.5</a>), an arbitrary right \(R\)-module \(M\) may be written as
+a filtered colimit \(M \simeq \colim _{n \leq 0} \tau _{\geq n} M\), where each \(\tau _{\geq n} M\) is a shift of a connective module. By Step 3 and the preservation of
+filtered colimits, <span class="source-reference equation-reference" data-label="it:flat_homotopy_formula">(2)</span> holds for \(M\).
+</p><p class='noindent'>\(\HCode {&lt;span class="source-reference equation-reference" data-label="it:flat_discrete_test"&gt;(4)&lt;/span&gt;} \iff \HCode {&lt;span class="source-reference equation-reference" data-label="it:flat_after_pi0"&gt;(5)&lt;/span&gt;}\): Let \(A := \pi _0(R)\), regarded as a discrete ring spectrum, and let \(L := A \otimes _R N\). Every discrete right \(R\)-module is equivalently
+a discrete right \(A\)-module, and for such an \(M\), associativity of relative tensor products gives a natural
+isomorphism \[ M \otimes _A L \iso M \otimes _R N. \] If <span class="source-reference equation-reference" data-label="it:flat_discrete_test">(4)</span> holds, then taking \(M = A\) shows that \(L\) is discrete. Moreover, the displayed isomorphism
+                                                                                   
+                                                                                   
+shows that \(M \otimes _A L\) is discrete for every discrete right \(A\)-module \(M\). Thus \(L\) satisfies <span class="source-reference equation-reference" data-label="it:flat_discrete_test">(4)</span> as an \(A\)-module, and hence is
+flat by the equivalence between <span class="source-reference equation-reference" data-label="it:flat_t_exact">(1)</span> and <span class="source-reference equation-reference" data-label="it:flat_discrete_test">(4)</span> already proved above.
+</p><p class='noindent'>Conversely, if \(L\) is discrete and flat as an \(A\)-module, then for every discrete right \(R\)-module \(M\), regarded as
+a discrete right \(A\)-module, the spectrum \(M \otimes _A L\) is discrete. By the displayed isomorphism, so is \(M \otimes _R N\), which is <span class="source-reference equation-reference" data-label="it:flat_discrete_test">(4)</span>.
+</p><p class='noindent'>Now assume that \(R\) and \(N\) are both discrete. We show that \(\HCode {&lt;span class="source-reference equation-reference" data-label="it:flat_discrete_test"&gt;(4)&lt;/span&gt;} \Leftrightarrow \HCode {&lt;span class="source-reference equation-reference" data-label="it:flat_classical"&gt;(6)&lt;/span&gt;} \Leftrightarrow \HCode {&lt;span class="source-reference equation-reference" data-label="it:flat_tor1_vanishing"&gt;(7)&lt;/span&gt;}\).
+</p><p class='noindent'>\(\HCode {&lt;span class="source-reference equation-reference" data-label="it:flat_discrete_test"&gt;(4)&lt;/span&gt;} \Rightarrow \HCode {&lt;span class="source-reference equation-reference" data-label="it:flat_tor1_vanishing"&gt;(7)&lt;/span&gt;}\): This is immediate, since <span class="source-reference equation-reference" data-label="it:flat_discrete_test">(4)</span> asserts that \(\Tor ^R_i(M,N) = 0\) for all \(i &gt; 0\).
+</p><p class='noindent'>\(\HCode {&lt;span class="source-reference equation-reference" data-label="it:flat_tor1_vanishing"&gt;(7)&lt;/span&gt;} \Rightarrow \HCode {&lt;span class="source-reference equation-reference" data-label="it:flat_classical"&gt;(6)&lt;/span&gt;}\): Let \(M' \hookrightarrow M\) be an injection of discrete right \(R\)-modules, with cokernel \(M'' := M/M'\). By <a class="source-reference" data-label="cor:Short_Exact_Sequence_In_Heart_Induces_Exact_Sequence" href="../../../entry/short-exact-sequences-in-the-heart-are-exact/index.html#cor:Short_Exact_Sequence_In_Heart_Induces_Exact_Sequence">Corollary 6.3.16</a>, the sequence \(M' \to M \to M''\) is exact in \(\RMod _R\). The
+Tor long exact sequence (<a class="source-reference" data-label="obs:Tor_Long_Exact_Sequence" href="../../../entry/tor-long-exact-sequence-for-modules/index.html#obs:Tor_Long_Exact_Sequence">Observation 8.5.10</a>) gives \[ \Tor ^R_1(M'',N) \to M' \otimes ^{\heartsuit }_R N \to M \otimes ^{\heartsuit }_R N \to M'' \otimes ^{\heartsuit }_R N \to 0. \] By <span class="source-reference equation-reference" data-label="it:flat_tor1_vanishing">(7)</span>, we have \(\Tor ^R_1(M'',N) = 0\), so the map \(M' \otimes ^{\heartsuit }_R N \to M \otimes ^{\heartsuit }_R N\) is injective.
+</p><p class='noindent'>\(\HCode {&lt;span class="source-reference equation-reference" data-label="it:flat_classical"&gt;(6)&lt;/span&gt;} \Rightarrow \HCode {&lt;span class="source-reference equation-reference" data-label="it:flat_discrete_test"&gt;(4)&lt;/span&gt;}\): We first show that \(\Tor ^R_1(M,N) = 0\) for any discrete right \(R\)-module \(M\). Choose a free \(R\)-module \(F = \bigoplus _I R\) with a surjection \(F \twoheadrightarrow M\) (for
+example, take \(I\) to be the underlying set of \(M\)), and let \(K := \ker (F \twoheadrightarrow M)\). The Tor long exact sequence gives \[ \Tor ^R_1(F,N) \to \Tor ^R_1(M,N) \to K \otimes ^{\heartsuit }_R N \to F \otimes ^{\heartsuit }_R N. \] Since \(F \otimes _R N \cong \bigoplus _I N\) is
+discrete, we have \(\Tor ^R_1(F,N) = 0\). By <span class="source-reference equation-reference" data-label="it:flat_classical">(6)</span>, the inclusion \(K \hookrightarrow F\) induces an injection \(K \otimes ^{\heartsuit }_R N \hookrightarrow F \otimes ^{\heartsuit }_R N\). Exactness then forces \(\Tor ^R_1(M,N) = 0\).
+</p><p class='noindent'>For higher Tor-groups, we use dimension shifting. The short exact sequence \(0 \to K \hookrightarrow F \twoheadrightarrow M \to 0\) gives, for \(i \geq 1\), \[ \Tor ^R_{i+1}(F,N) \to \Tor ^R_{i+1}(M,N) \to \Tor ^R_i(K,N) \to \Tor ^R_i(F,N). \] Since \(F\) is
+free, \(\Tor ^R_j(F,N) = 0\) for \(j &gt; 0\). Thus \(\Tor ^R_{i+1}(M,N) \cong \Tor ^R_i(K,N)\) for \(i \geq 1\). By induction, \(\Tor ^R_i(M,N) = 0\) for all \(i &gt; 0\) and all discrete \(M\).                                                             □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3014r14'></a>
+<a class="entry-heading-link" href="../../../entry/closure-properties-of-flat-modules/index.html" aria-label="Observation 8.5.14., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Observation 8.5.14.</span></a>  </span><span id='obs:Flat_Modules_Closure_Properties'></span> Let \(R\) be a connective associative ring spectrum. Condition <span class="source-reference equation-reference" data-label="it:flat_lurie_definition">(3)</span> of <a class="source-reference" data-label="thm:Characterization_Flat_Modules" href="../../../entry/characterization-of-flat-modules/index.html#thm:Characterization_Flat_Modules">Theorem 8.5.13</a> immediately gives the
+following facts:
+   </p><dl class='enumerate'><dt class='enumerate'>
+(a) </dt><dd class='enumerate'>
+   <p class='noindent'>The  subcategory  of  \(\LMod _R\)  spanned  by  the  flat  \(R\)-modules  is  closed  under  coproducts,  retracts,  and
+   filtered colimits.
+   </p></dd><dt class='enumerate'>
+(b) </dt><dd class='enumerate'>
+   <p class='noindent'>Every free module is flat. Combining this with (a) and <a class="source-reference" data-label="prop:Projective_Iff_Retract_Of_Free" href="../../../entry/projective-modules-are-retracts-of-free-modules/index.html#prop:Projective_Iff_Retract_Of_Free">Proposition 8.5.6</a>, it follows that every projective module
+   is flat.
+   </p></dd><dt class='enumerate'>
+(c) </dt><dd class='enumerate'>
+                                                                                   
+                                                                                   
+   <p class='noindent'>If \(A\) is an ordinary associative ring, then a connective left \(HA\)-module \(N\) is flat if and only if \(N\) is discrete
+   and \(\pi _0 N\) is a flat \(A\)-module in the classical sense, i.e., satisfies condition <span class="source-reference equation-reference" data-label="it:flat_classical">(6)</span> of <a class="source-reference" data-label="thm:Characterization_Flat_Modules" href="../../../entry/characterization-of-flat-modules/index.html#thm:Characterization_Flat_Modules">Theorem 8.5.13</a>.</p></dd></dl>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3018r15'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 8.5.15.</span>  </span><span id='lem:Tensor_Of_Flat_Modules'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(R \in \CAlg (\Sp _{\geq 0})\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a connective commutative ring spectrum, and let</span> \(M\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(N\) <span class='ntx-Italic-tlf-t1-x-x-109'>be flat</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-modules.
+Then</span> \(M \otimes _R N\) <span class='ntx-Italic-tlf-t1-x-x-109'>is again flat.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-ring-spectra-and-modules-section-05-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-ring-spectra-and-modules-section-05-4">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="cor:t_Structure_On_Module_Spectra" href="../../../entry/postnikov-t-structures-on-module-spectra/index.html#cor:t_Structure_On_Module_Spectra">Corollary 8.2.5</a>, connectivity and coconnectivity of an \(R\)-module are detected on its underlying spectrum.
+A connective \(R\)-module \(P\) is therefore flat if and only if the functor \((-) \otimes _R P\colon \Mod _R \to \Mod _R\) is t-exact, as opposed to merely its
+composite with the forgetful functor to \(\Sp \). Now associativity of the relative tensor product provides
+a natural isomorphism \[ (-) \otimes _R (M \otimes _R N) \quad \simeq \quad \bigl ((-) \otimes _R M\bigr ) \otimes _R N \] of functors \(\Mod _R \to \Mod _R\). Since \(M\) and \(N\) are flat, the right-hand side is a composite of two
+t-exact functors, hence t-exact. Finally, \(M \otimes _R N\) is connective by <a class="source-reference" data-label="obs:Tor_Groups_Modules_Properties" href="../../../entry/basic-properties-of-tor-for-modules/index.html#obs:Tor_Groups_Modules_Properties">Observation 8.5.9</a>, so it is flat.                                              □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3019r16'></a>
+<a class="entry-heading-link" href="../../../entry/flat-modules-form-a-symmetric-monoidal-subcategory/index.html" aria-label="Observation 8.5.16., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Observation 8.5.16.</span></a>  </span><span id='obs:Flat_Modules_Form_Symmetric_Monoidal_Subcategory'></span>  Every  free  \(R\)-module  is  flat  (<a class="source-reference" data-label="obs:Flat_Modules_Closure_Properties" href="../../../entry/closure-properties-of-flat-modules/index.html#obs:Flat_Modules_Closure_Properties">Observation 8.5.14</a>),  so  in  particular  the  monoidal  unit  \(R\)  is  flat.
+                                                                                   
+                                                                                   
+Combined with <a class="source-reference" data-label="lem:Tensor_Of_Flat_Modules" href="../../../entry/tensor-products-of-flat-modules/index.html#lem:Tensor_Of_Flat_Modules">Lemma 8.5.15</a>, this shows that the full subcategory \(\Mod _R^{\flat } \subseteq \Mod _{R,\geq 0}\) spanned by the flat \(R\)-modules contains the unit
+and is closed under the tensor product. It therefore inherits a symmetric monoidal structure by the
+Part II result <a class="source-reference" data-label="lem:Subcategory_SymMon_Structure" href="../../../entry/subcategory-symmon-structure/index.html#lem:Subcategory_SymMon_Structure">Lemma 14.5.2</a>.
+</p>
+</div>
+<p class='noindent'>For connective ring spectra, flat modules admit a characterization analogous to Lazard’s theorem in
+ordinary algebra. It expresses them as filtered colimits of the simplest flat modules, the finitely generated
+free ones.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3020r17'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 8.5.17 </span>(Lazard’s theorem for spectra, <span class='citation'>[Lurie (2017), Theorem 7.2.2.15]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:lazard_for_spectra'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a connective associative ring spectrum and let</span> \(N\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>be a connective left</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module. The following conditions are equivalent:</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The left</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module</span> \(N\) <span class='ntx-Italic-tlf-t1-x-x-109'>can be obtained as a filtered colimit of finitely generated free left</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-modules.</span>
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The left</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module</span> \(N\) <span class='ntx-Italic-tlf-t1-x-x-109'>can be obtained as a filtered colimit of finitely generated projective left</span>
+     \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-modules.</span>
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The left</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module</span> \(N\) <span class='ntx-Italic-tlf-t1-x-x-109'>is flat.</span></p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-ring-spectra-and-modules-section-05-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-ring-spectra-and-modules-section-05-3">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof sketch.</span> </span>    The  implication  \((1) \Rightarrow (2)\)  is  immediate  because  every  free  module  is  projective.  The
+implication \((2) \Rightarrow (3)\) follows from <a class="source-reference" data-label="obs:Flat_Modules_Closure_Properties" href="../../../entry/closure-properties-of-flat-modules/index.html#obs:Flat_Modules_Closure_Properties">Observation 8.5.14</a>: projective modules are flat, and flat modules are closed under filtered
+colimits. The reverse implication is the substantive content of <span class='citation'>[Lurie (2017), Theorem 7.2.2.15]</span>, which we use as a black box. Its
+proof shows that the \(\infty \)-category of maps \(F \to N\), with \(F\) finitely generated and free, is filtered and that the
+canonical map from the colimit of this diagram to \(N\) is an isomorphism. The filteredness is ultimately
+reduced to the classical Lazard theorem over \(\pi _0(R)\).                                                                                   □
+</p>
+</div></div>
+
+<h4 class='subsectionHead' id='toramplitude'><span class='titlemark'>8.5.3    </span> <a id='x1-40008.5.3'></a>Tor-amplitude</h4>
+<p class='noindent' id='subsec_Tor_Amplitude'>We conclude with two boundedness properties of perfect modules. The first is immediate from their
+construction out of the unit.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4001r18'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 8.5.18.</span>  </span><span id='lem:Perfect_Module_Bounded_Below'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a connective associative ring spectrum and let</span> \(M\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a perfect</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module in the
+sense of </span><a class="source-reference" data-label="def:Perfect_Module" href="../../../entry/perfect-modules/index.html#def:Perfect_Module">Definition 8.1.7</a><span class='ntx-Italic-tlf-t1-x-x-109'>. Then</span> \(M\) <span class='ntx-Italic-tlf-t1-x-x-109'>is bounded below: there exists an integer</span> \(n\) <span class='ntx-Italic-tlf-t1-x-x-109'>such that</span> \(\pi _i(M) = 0\) <span class='ntx-Italic-tlf-t1-x-x-109'>for all</span> \(i &lt; n\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-ring-spectra-and-modules-section-05-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-ring-spectra-and-modules-section-05-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  The  ring  spectrum  \(R\)  is  bounded  below,  and  the  bounded  below  \(R\)-modules  form  a  thick
+                                                                                   
+                                                                                   
+subcategory of \(\LMod _R\): they are closed under shifts, cofibers, and retracts. The claim follows from the
+definition of a perfect module.                                                                                                            □
+</p>
+</div></div>
+<p class='noindent'>Tor-amplitude gives a uniform bound after tensoring with discrete modules. By <a class="source-reference" data-label="thm:Characterization_Flat_Modules" href="../../../entry/characterization-of-flat-modules/index.html#thm:Characterization_Flat_Modules">Theorem 8.5.13</a>, flat modules are precisely
+the connective modules of Tor-amplitude contained in \([0,0]\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4002r19'></a>
+<a class="entry-heading-link" href="../../../entry/tor-amplitude-for-module-spectra/index.html" aria-label="Definition 8.5.19, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 8.5.19 </span></a>(Tor-amplitude)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Tor_Amplitude_Module_Spectra'></span> Let \(R\) be a connective associative ring spectrum and let \(M\) be a left
+\(R\)-module. We say that \(M\) has <span class='ntx-Italic-tlf-t1-x-x-109'>Tor-amplitude contained in</span> \([a,b]\) for integers \(a \leq b\) if for every discrete right \(R\)-module
+\(N\), the homotopy groups of \(N \otimes _R M\) are concentrated in degrees \([a,b]\), that is, \(\Tor _i^R(N,M) = 0\) whenever \(i &lt; a\) or \(i &gt; b\). If such \(a\) and \(b\) exist, \(M\) is
+said to have <span class='ntx-Italic-tlf-t1-x-x-109'>finite Tor-amplitude</span>.
+</p>
+</div>
+<p class='noindent'>The last three statements below make this bound effective for perfect modules. A perfect module
+concentrated in a single Tor degree is a shifted finitely generated projective module; in general, one can
+successively remove the bottom Tor degree.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4003r20'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 8.5.20 </span>(<span class='citation'>[Antieau and Gepner (2014), Proposition 2.13]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Tor_Amplitude_Properties'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a connective associative ring spectrum and let</span> \(M\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(N\) <span class='ntx-Italic-tlf-t1-x-x-109'>be left</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module
+spectra.</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(M\) <span class='ntx-Italic-tlf-t1-x-x-109'>has Tor-amplitude contained in</span> \([a,b]\)<span class='ntx-Italic-tlf-t1-x-x-109'>, then the shift</span> \(M[k]\) <span class='ntx-Italic-tlf-t1-x-x-109'>has Tor-amplitude contained in</span> \([a + k, b + k]\) <span class='ntx-Italic-tlf-t1-x-x-109'>for all</span> \(k \in \Z \)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+                                                                                   
+
+                                                                                   
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(M\) <span class='ntx-Italic-tlf-t1-x-x-109'>is perfect, then</span> \(M\) <span class='ntx-Italic-tlf-t1-x-x-109'>has finite Tor-amplitude.</span>
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>happens to be a commutative ring spectrum,</span> \(S \in \CAlg (\Sp )_{R/}\) <span class='ntx-Italic-tlf-t1-x-x-109'>is connective, and</span> \(M\) <span class='ntx-Italic-tlf-t1-x-x-109'>has Tor-amplitude contained
+     in</span> \([a, b]\)<span class='ntx-Italic-tlf-t1-x-x-109'>, then the left</span> \(S\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module</span> \(S \otimes _R M\) <span class='ntx-Italic-tlf-t1-x-x-109'>has Tor-amplitude contained in</span> \([a, b]\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p></dd><dt class='enumerate'>
+  (4) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(M\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(N\) <span class='ntx-Italic-tlf-t1-x-x-109'>have Tor-amplitude contained in</span> \([a, b]\)<span class='ntx-Italic-tlf-t1-x-x-109'>, then the fiber and cofiber of a map</span> \(M \to N\) <span class='ntx-Italic-tlf-t1-x-x-109'>have Tor-amplitude
+     contained in</span> \([a - 1, b]\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \([a, b + 1]\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p></dd><dt class='enumerate'>
+  (5) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(M\) <span class='ntx-Italic-tlf-t1-x-x-109'>is perfect with Tor-amplitude contained in</span> \([0, b]\)<span class='ntx-Italic-tlf-t1-x-x-109'>, then</span> \(M\) <span class='ntx-Italic-tlf-t1-x-x-109'>is connective and</span> \(\pi _0 M \cong \pi _0(\pi _0(R) \otimes _R M)\)<span class='ntx-Italic-tlf-t1-x-x-109'>, where</span> \(\pi _0(R)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is regarded as
+     a discrete ring spectrum.</span>
+     </p></dd><dt class='enumerate'>
+  (6) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(M\) <span class='ntx-Italic-tlf-t1-x-x-109'>is perfect with Tor-amplitude contained in</span> \([a, a]\)<span class='ntx-Italic-tlf-t1-x-x-109'>, then</span> \(M\) <span class='ntx-Italic-tlf-t1-x-x-109'>is equivalent to</span> \(P[a]\) <span class='ntx-Italic-tlf-t1-x-x-109'>for a finitely generated
+     projective left</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module</span> \(P\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p></dd><dt class='enumerate'>
+  (7) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(M\) <span class='ntx-Italic-tlf-t1-x-x-109'>is perfect with Tor-amplitude contained in</span> \([a, b]\)<span class='ntx-Italic-tlf-t1-x-x-109'>, then there exists an exact sequence</span> \(P[a] \to M \to Q\) <span class='ntx-Italic-tlf-t1-x-x-109'>with</span> \(P\) <span class='ntx-Italic-tlf-t1-x-x-109'>finitely
+     generated projective and</span> \(Q\) <span class='ntx-Italic-tlf-t1-x-x-109'>perfect with Tor-amplitude contained in</span> \([a + 1, b]\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-ring-spectra-and-modules-section-05-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-ring-spectra-and-modules-section-05-1">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof sketch.</span> </span>  Part (1) follows directly from the definition. For (2), observe that \(R\) has Tor-amplitude
+contained in \([0,0]\) and that the left \(R\)-modules of finite Tor-amplitude form a thick subcategory of \(\LMod _R\): they are
+closed under shifts and retracts, while closure under cofibers follows from the long exact sequence
+of Tor-groups (<a class="source-reference" data-label="obs:Tor_Long_Exact_Sequence" href="../../../entry/tor-long-exact-sequence-for-modules/index.html#obs:Tor_Long_Exact_Sequence">Observation 8.5.10</a>). For (3), if \(T\) is a discrete right \(S\)-module, then \[ T \otimes _S (S \otimes _R M) \simeq T \otimes _R M. \] Part (4) follows from the same long
+exact sequence of Tor-groups. Parts (5)–(7) require the Tor spectral sequence together with the lifting
+theory of projective modules, so we take them directly from <span class='citation'>Antieau and Gepner (2014), Proposition 2.13</span>.                                                           □
+</p>
+</div></div>
+<p class='noindent'><a id='likesection.1'></a><a id='x1-4011x8.5.3'></a>
+</p>
+<h3 class='likesectionHead' id='exercises'><a id='x1-5000'></a>Exercises</h3>
+<p id='exercises1'><a id='Q1-1-6'></a>
+</p><div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5001r1'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 8.1 </span>(Perfect modules and base change)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(f\colon R\to S\) be a morphism of associative ring spectra.
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'>Show that extension of scalars \(S\otimes _R-\colon \LMod _R\to \LMod _S\) sends perfect \(R\)-modules to perfect \(S\)-modules.
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'>Assume that \(R\) and \(S\) are commutative and let \(x\in \pi _0(R)\). Write \(R/x\) for the cofiber of multiplication by \(x\) on \(R\).
+     Show that \(R/x\) is perfect and that \[ S\otimes _R(R/x)\cong S/f(x). \]</p></dd></dl>
+</div>
+
+<div class='newtheorem'>
+                                                                                   
+                                                                                   
+<p class='noindent'><span class='head'>
+<a id='x1-5004r2'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 8.2 </span>(A relative mapping-spectrum calculation)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(m,n\geq 1\) and put \(d:=\gcd (m,n)\). Compute \[ \pi _*\hom _{H\Z }\bigl (H(\Z /m),H(\Z /n)\bigr ). \] Show that the
+only nonzero groups are isomorphic to \(\Z /d\) in degrees \(0\) and \(-1\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5005r3'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 8.3 </span>(A relative tensor-product calculation)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(m,n\geq 1\) and put \(d:=\gcd (m,n)\). Compute \[ \pi _*\bigl (H(\Z /m)\otimes _{H\Z }H(\Z /n)\bigr ). \] Show that the only
+nonzero groups are isomorphic to \(\Z /d\) in degrees \(0\) and \(1\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5006r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 8.4 </span>(Projectivity and flatness of the discrete truncation)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(R\) be a connective associative ring
+spectrum, and regard \(H\pi _0(R)\) as a left \(R\)-module via the canonical morphism \(R \to H\pi _0(R)\). Show that the following conditions are
+equivalent:
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'>The ring spectrum \(R\) is discrete.
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'>The left \(R\)-module \(H\pi _0(R)\) is projective.
+                                                                                   
+                                                                                   
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'>The left \(R\)-module \(H\pi _0(R)\) is flat.</p></dd></dl>
+<p class='noindent'>Deduce that \(H\Z \) is neither projective nor flat as a module over the sphere spectrum, even though \(\pi _0(H\Z )\) is free of rank
+one over \(\pi _0(\S )\).
+</p>
+</div>
+
+ 
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../localizations-of-ring-spectra/index.html" aria-label="Previous section: Localizations of ring spectra" title="Previous section: Localizations of ring spectra"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../../complex-k-theory/vector-bundles/index.html" aria-label="Next section: Vector bundles" title="Next section: Vector bundles"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html" aria-current="page"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/animae-as-spaces/index.html"><span class="context-entry-heading">Chapter 2</span><span class="context-entry-title">Animae as spaces</span></a></li><li><a href="../../../chapter/homology-and-cohomology/index.html"><span class="context-entry-heading">Chapter 3</span><span class="context-entry-title">Homology and cohomology</span></a></li><li><a href="../../../chapter/spectra-and-stable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 4</span><span class="context-entry-title">Spectra and stable ∞-categories</span></a></li><li><a href="../../../chapter/recognition-principle/index.html"><span class="context-entry-heading">Chapter 5</span><span class="context-entry-title">The recognition principle</span></a></li><li><a href="../../../chapter/homological-algebra/index.html"><span class="context-entry-heading">Chapter 6</span><span class="context-entry-title">Homological algebra</span></a></li><li><a href="../../../chapter/localization-and-completion/index.html"><span class="context-entry-heading">Chapter 7</span><span class="context-entry-title">Localization and completion</span></a></li><li><a href="../../../chapter/ring-spectra-and-modules/index.html" aria-current="page"><span class="context-entry-heading">Chapter 8</span><span class="context-entry-title">Ring spectra and modules</span></a></li><li><a href="../../../chapter/complex-k-theory/index.html"><span class="context-entry-heading">Chapter 9</span><span class="context-entry-title">Complex K-theory</span></a></li><li><a href="../../../chapter/thom-spectra-and-bordism-theory/index.html"><span class="context-entry-heading">Chapter 10</span><span class="context-entry-title">Thom spectra and bordism theory</span></a></li><li><a href="../../../chapter/duality-phenomena/index.html"><span class="context-entry-heading">Chapter 11</span><span class="context-entry-title">Duality phenomena</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../algebras-and-modules/index.html"><span class="context-entry-heading">Section 8.1</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../connective-modules/index.html"><span class="context-entry-heading">Section 8.2</span><span class="context-entry-title">Connective modules</span></a></li><li><a href="../eilenberg-maclane-ring-spectra-and-dgas/index.html"><span class="context-entry-heading">Section 8.3</span><span class="context-entry-title">Eilenberg–MacLane ring spectra and DGAs</span></a></li><li><a href="../localizations-of-ring-spectra/index.html"><span class="context-entry-heading">Section 8.4</span><span class="context-entry-title">Localizations of ring spectra</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 8.5</span><span class="context-entry-title">Projective and flat modules (online only)</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Ext_Groups_Modules"><span class="context-entry-heading">Definition 8.5.1</span><span class="context-entry-title">Ext-groups for modules</span></a></li><li><a href="#def:projective_module"><span class="context-entry-heading">Definition 8.5.2</span><span class="context-entry-title">Projective module</span></a></li><li><a href="#obs:Projective_Module_Characterizations"><span class="context-entry-heading">Observation 8.5.3</span><span class="context-entry-title">observation</span></a></li><li><a href="#def:free_module"><span class="context-entry-heading">Definition 8.5.4</span><span class="context-entry-title">Free module</span></a></li><li><a href="#warn:Free_Modules_Restricted_To_Sums_Of_R"><span class="context-entry-heading">Warning 8.5.5</span><span class="context-entry-title">warning</span></a></li><li><a href="#prop:Projective_Iff_Retract_Of_Free"><span class="context-entry-heading">Proposition 8.5.6</span><span class="context-entry-title">proposition</span></a></li><li><a href="#rmk:Classical_Projective_Modules_And_Eilenberg_MacLane_Modules"><span class="context-entry-heading">Remark 8.5.7</span><span class="context-entry-title">remark</span></a></li><li><a href="#def:Tor_Groups_Modules"><span class="context-entry-heading">Definition 8.5.8</span><span class="context-entry-title">Tor-groups for modules</span></a></li><li><a href="#obs:Tor_Groups_Modules_Properties"><span class="context-entry-heading">Observation 8.5.9</span><span class="context-entry-title">observation</span></a></li><li><a href="#obs:Tor_Long_Exact_Sequence"><span class="context-entry-heading">Observation 8.5.10</span><span class="context-entry-title">Tor long exact sequence</span></a></li><li><a href="#def:flat_module"><span class="context-entry-heading">Definition 8.5.11</span><span class="context-entry-title">Flat module</span></a></li><li><a href="#rem:Flat_Automatic_Right_t_Exactness"><span class="context-entry-heading">Remark 8.5.12</span><span class="context-entry-title">remark</span></a></li><li><a href="#thm:Characterization_Flat_Modules"><span class="context-entry-heading">Theorem 8.5.13</span><span class="context-entry-title">Characterization of flat modules</span></a></li><li><a href="#obs:Flat_Modules_Closure_Properties"><span class="context-entry-heading">Observation 8.5.14</span><span class="context-entry-title">observation</span></a></li><li><a href="#lem:Tensor_Of_Flat_Modules"><span class="context-entry-heading">Lemma 8.5.15</span><span class="context-entry-title">lemma</span></a></li><li><a href="#obs:Flat_Modules_Form_Symmetric_Monoidal_Subcategory"><span class="context-entry-heading">Observation 8.5.16</span><span class="context-entry-title">observation</span></a></li><li><a href="#thm:lazard_for_spectra"><span class="context-entry-heading">Theorem 8.5.17</span><span class="context-entry-title">Lazard's theorem for spectra</span></a></li><li><a href="#lem:Perfect_Module_Bounded_Below"><span class="context-entry-heading">Lemma 8.5.18</span><span class="context-entry-title">lemma</span></a></li><li><a href="#def:Tor_Amplitude_Module_Spectra"><span class="context-entry-heading">Definition 8.5.19</span><span class="context-entry-title">Tor-amplitude</span></a></li><li><a href="#prop:Tor_Amplitude_Properties"><span class="context-entry-heading">Proposition 8.5.20</span><span class="context-entry-title">proposition</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 15.1: Unfurling | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/operads-and-higher-algebra/index.html">Part II</a> · <a href="../../../chapter/cartesian-and-cocartesian-monoidal-structures/index.html">Chapter 15</a> · Section 15.1</p>
+      <h1>Unfurling</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Beck_Chevalley_Unfurling'>In this section, we explain Barwick’s <span class='ntx-Italic-tlf-t1-x-x-109'>unfurling construction </span><span class='citation'>[Barwick (2017)]</span>, which extends a contravariant functor \(F\colon C\catop \to \Cat _{\infty }\) to the
+span category by coherently assembling adjoints. We begin by isolating the required adjointability
+condition.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<a class="entry-heading-link" href="../../../entry/adjointable-functor/index.html" aria-label="Definition 15.1.1., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 15.1.1.</span></a>  </span><span id='def:Adjointable_Functor'></span> Let \((C,C,C_R)\) be an adequate triple and let \(F\colon C\catop \to \Cat _{\infty }\) be a functor.
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'>The functor \(F\) is <span class='ntx-Italic-tlf-t1-x-x-109'>left</span> \(C_R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-adjointable </span>if, for every \(r\colon X\to Y\) in \(C_R\), the functor \(r^*:=F(r)\colon F(Y)\to F(X)\) admits a left adjoint \(r_!\), and for
+     every pullback square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-63641fe48479.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>with \(r,r'\in C_R\), the Beck–Chevalley transformation \[ r'_!{l'}^* \xrightarrow {r'_!{l'}^*\eta _{r}} r'_!{l'}^*r^*r_! \simeq r'_!{r'}^*l^*r_! \xrightarrow {\epsilon _{r'}l^*r_!} l^*r_! \] is a natural isomorphism.</p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'>The functor \(F\) is <span class='ntx-Italic-tlf-t1-x-x-109'>right</span> \(C_R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-adjointable </span>if every \(r^*\) admits a right adjoint \(r_*\) and, for every pullback square
+     as above, the dually defined Beck–Chevalley transformation \(l^*r_*\to r'_*{l'}^*\) is a natural isomorphism.</p></dd></dl>
+<p class='noindent'>When \(C_R=C\), we simply say that \(F\) is <span class='ntx-Italic-tlf-t1-x-x-109'>left adjointable </span>or <span class='ntx-Italic-tlf-t1-x-x-109'>right adjointable</span>.
+</p>
+</div>
+<p class='noindent'>The trick for extending \(F\) to the span category is by reformulating the problem in terms of (co)cartesian
+fibrations: starting with the unstraightening of \(F\), we wish to construct the unstraightening of its extension.
+We now provide a formulation of the adjointability conditions on \(F\) in terms of its associated fibration over
+\(C\).
+</p>
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1004r2'></a>
+<a class="entry-heading-link" href="../../../entry/bc-fibration/index.html" aria-label="Definition 15.1.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 15.1.2.</span></a>  </span><span id='def:BC_Fibration'></span> Let \((C,C_L,C_R)\) be an adequate triple. A functor \(p\colon E \to C\) is called a <span class='ntx-Italic-tlf-t1-x-x-109'>Beck–Chevalley fibration </span>with respect
+to \((C_L,C_R)\) if the following three conditions are satisfied:
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>Every morphism in \(C_L\) admits \(p\)-cartesian lifts with given target.
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>Every morphism in \(C_R\) admits \(p\)-cocartesian lifts with given source.
+   </p></dd><dt class='enumerate'>
+(3) </dt><dd class='enumerate'>
+   <p class='noindent'>In a commutative square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-3eb24f2c7445.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>whose image in \(C\) is a pullback square with \(p(\tilde l)\in C_L\) and \(p(\tilde r)\in C_R\), assume that \(\tilde r\) is
+   \(p\)-cocartesian and \(\tilde l'\) is \(p\)-cartesian. Then \(\tilde r'\) is \(p\)-cocartesian if and only if \(\tilde l\) is \(p\)-cartesian.</p></dd></dl>
+</div>
+<p class='noindent'>Conditions (1) and (2) say that the restrictions \(E \times _C C_L \to C_L\) and \(E \times _C C_R \to C_R\) are a cartesian and a cocartesian fibration,
+respectively. They provide contravariant transport \(l^*\) along \(C_L\), covariant transport \(r_!\) along \(C_R\), and Beck–Chevalley
+transformations \(r'_!{l'}^* \to l^*r_!\) for pullback squares as above. By choosing cartesian and cocartesian lifts around such a
+square, one sees that condition (3) is precisely the invertibility of these transformations.
+</p><p class='noindent'>The following result is the key technical input to the unfurling construction.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1008r3'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 15.1.3.</span>  </span><span id='thm:Unfurling_Beck_Chevalley_Fibration'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \((C,C_L,C_R)\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an adequate triple and let</span> \(p\colon E \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a Beck–Chevalley fibration with respect to</span>
+\((C_L,C_R)\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Set</span> \(E_L^{p\dcart }:=p^{-1}(C_L)\cap E^{p\dcart }\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(E_R:=p^{-1}(C_R)\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then</span> \((E,E_L^{p\dcart },E_R)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is an adequate triple, and the induced functor </span>\[ \Span (p)\colon \Span _{\ct ,R}(E)\longrightarrow \Span _{L,R}(C) \] <span class='ntx-Italic-tlf-t1-x-x-109'>is a cocartesian fibration with fiber</span>
+\(E_X\) <span class='ntx-Italic-tlf-t1-x-x-109'>over</span> \(X\in C\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Its transport along a span</span> \(X\xleftarrow {l}U\xrightarrow {r}Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>is</span> \(r_!l^*\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+                                                                                   
+
+                                                                                   
+</p>
+</div>
+<p class='noindent'>Here \(\Span _{\ct ,R}(E)\) denotes the span category of the adequate triple just defined. For expository purposes, we postpone
+the proof to <span class="source-reference" data-label="subsec:Cocartesian_Morphisms_In_Span_Categories">Subsection 15.1.1</span>.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1009r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 15.1.4 </span>(Contravariant left-adjoint unfurling)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cor:Unfurling_From_Left_Adjoints'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \((C,C,C_R)\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  an  adequate  triple.  Every  left</span>
+\(C_R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-adjointable functor</span> \(F\colon C\catop \to \Cat _{\infty }\) <span class='ntx-Italic-tlf-t1-x-x-109'>extends canonically to a functor </span>\[ \Unf ^{\mathrm {L}}(F)\colon \Span _{\all ,R}(C)\longrightarrow \Cat _{\infty } \] <span class='ntx-Italic-tlf-t1-x-x-109'>which sends a span</span> \(X\xleftarrow {l}U\xrightarrow {r}Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>to</span> \(r_!l^*\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Its restriction along</span> \(C\catop \hookrightarrow \Span _{\all ,R}(C)\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>is</span> \(F\) <span class='ntx-Italic-tlf-t1-x-x-109'>itself.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-01-7" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-01-7">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Let \(p\colon \Un ^{\ct }(F)\to C\) be the cartesian unstraightening. The dual of <a class="source-reference" data-label="lem:Cocartesian_Fibration_Is_Fibration" href="../../../entry/cocartesian-fibrations-are-fibrations/index.html#lem:Cocartesian_Fibration_Is_Fibration">Lemma 23.1.20</a>, applied over each \(r\in C_R\), identifies the existence
+of \(r_!\) with that of \(p\)-cocartesian lifts over \(r\). The Beck–Chevalley condition for \(F\) is condition (3) of <a class="source-reference" data-label="def:BC_Fibration" href="../../../entry/bc-fibration/index.html#def:BC_Fibration">Definition 15.1.2</a>, so <a class="source-reference" data-label="thm:Unfurling_Beck_Chevalley_Fibration" href="../../../entry/unfurling-beck-chevalley-fibration/index.html#thm:Unfurling_Beck_Chevalley_Fibration">Theorem 15.1.3</a>
+gives the extension and its transport formula. The descriptions of the fibers and backwards transport
+identify its restriction with \(F\).                                                                                                                □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1010r5'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 15.1.5 </span>(Contravariant right-adjoint unfurling)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cor:Unfurling_From_Right_Adjoints'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \((C,C,C_R)\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an adequate triple. Every right</span>
+                                                                                   
+
+                                                                                   
+\(C_R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-adjointable functor</span> \(F\colon C\catop \to \Cat _{\infty }\) <span class='ntx-Italic-tlf-t1-x-x-109'>extends canonically to a functor </span>\[ \Unf ^{\mathrm {R}}(F)\colon \Span _{\all ,R}(C)\longrightarrow \Cat _{\infty } \] <span class='ntx-Italic-tlf-t1-x-x-109'>which sends a span</span> \(X\xleftarrow {l}U\xrightarrow {r}Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>to</span> \(r_*l^*\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Its restriction along</span> \(C\catop \hookrightarrow \Span _{\all ,R}(C)\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>is</span> \(F\) <span class='ntx-Italic-tlf-t1-x-x-109'>itself.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-01-6" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-01-6">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The pointwise opposite \(F^{\mathrm {op}}\colon C\catop \to \Cat _{\infty }\) is left \(C_R\)-adjointable: the left adjoint to \((r^*)^{\mathrm {op}}\) is \((r_*)^{\mathrm {op}}\), and its Beck–Chevalley
+transformations are the opposites of those for \(F\). Apply <a class="source-reference" data-label="cor:Unfurling_From_Left_Adjoints" href="../../../entry/unfurling-from-left-adjoints/index.html#cor:Unfurling_From_Left_Adjoints">Corollary 15.1.4</a> to \(F^{\mathrm {op}}\) and take opposites pointwise once more;
+the transport functor becomes \(r_*l^*\).                                                                                                           □
+</p>
+</div></div>
+<p class='noindent'>For completeness, we record the covariant form which appears in Barwick’s original construction. Let \(F\colon C\to \Cat _{\infty }\) be a
+functor and let \(C_L\subseteq C\) be a wide subcategory such that \((C,C_L,C)\) is an adequate triple. Write \(l_!:=F(l)\). We call \(F\) <span class='ntx-Italic-tlf-t1-x-x-109'>covariantly right</span>
+\(C_L\)<span class='ntx-Italic-tlf-t1-x-x-109'>-adjointable </span>if every \(l_!\) admits a right adjoint \(l^*\) and, for every pullback square as in <a class="source-reference" data-label="def:Adjointable_Functor" href="../../../entry/adjointable-functor/index.html#def:Adjointable_Functor">Definition 15.1.1</a> with \(l,l'\in C_L\), the Beck–Chevalley
+transformation \(r'_!{l'}^*\to l^*r_!\) is a natural isomorphism.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1011r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 15.1.6 </span>(Covariant right-adjoint unfurling)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Beck_Chevalley_Fibration_From_Right_Adjoints'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>The  cocartesian  unstraightening</span>  \(p\colon \Un ^{\cc }(F)\to C\)  <span class='ntx-Italic-tlf-t1-x-x-109'>of  a
+functor</span> \(F\colon C\to \Cat _{\infty }\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a Beck–Chevalley fibration with respect to</span> \((C_L,C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>if and only if</span> \(F\) <span class='ntx-Italic-tlf-t1-x-x-109'>is covariantly right</span> \(C_L\)<span class='ntx-Italic-tlf-t1-x-x-109'>-adjointable.
+Consequently, such an</span> \(F\) <span class='ntx-Italic-tlf-t1-x-x-109'>extends to</span> \(\Span _{L,\all }(C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>by sending</span> \(X\xleftarrow {l}U\xrightarrow {r}Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>to</span> \(r_!l^*\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-01-5" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-01-5">
+                                                                                   
+
+                                                                                   
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Condition (2) of <a class="source-reference" data-label="def:BC_Fibration" href="../../../entry/bc-fibration/index.html#def:BC_Fibration">Definition 15.1.2</a> holds automatically, since \(p\) is a cocartesian fibration. For every \(l \in C_L\), we may
+apply <a class="source-reference" data-label="lem:Cocartesian_Fibration_Is_Fibration" href="../../../entry/cocartesian-fibrations-are-fibrations/index.html#lem:Cocartesian_Fibration_Is_Fibration">Lemma 23.1.20</a> after pulling \(p\) back along \(l\colon [1] \to C\). It follows that cartesian lifts over \(l\) exist precisely when \(l_!\) admits a
+right adjoint \(l^*\).
+</p><p class='noindent'>Now consider a pullback square as in <a class="source-reference" data-label="def:Adjointable_Functor" href="../../../entry/adjointable-functor/index.html#def:Adjointable_Functor">Definition 15.1.1</a>, with \(l,l' \in C_L\). The canonical commutativity isomorphism \(r_!l'_! \simeq l_!r'_!\), together
+with the units and counits of the adjunctions, determines the Beck–Chevalley transformation \[ r'_!{l'}^* \longrightarrow l^*r_!. \] Under
+the correspondence between right adjoints and cartesian lifts, the invertibility of this transformation
+is exactly condition (3) of <a class="source-reference" data-label="def:BC_Fibration" href="../../../entry/bc-fibration/index.html#def:BC_Fibration">Definition 15.1.2</a>. This proves the first claim. The final assertion now follows from <a class="source-reference" data-label="thm:Unfurling_Beck_Chevalley_Fibration" href="../../../entry/unfurling-beck-chevalley-fibration/index.html#thm:Unfurling_Beck_Chevalley_Fibration">Theorem 15.1.3</a>.       □
+</p>
+</div></div>
+
+<h4 class='subsectionHead' id='cocartesian-morphisms-in-span-categories'><span class='titlemark'>15.1.1    </span> <a id='x1-200015.1.1'></a>Cocartesian morphisms in span categories</h4>
+<p class='noindent' id='subsec_Cocartesian_Morphisms_In_Span_Categories'>We now provide a proof of <a class="source-reference" data-label="thm:Unfurling_Beck_Chevalley_Fibration" href="../../../entry/unfurling-beck-chevalley-fibration/index.html#thm:Unfurling_Beck_Chevalley_Fibration">Theorem 15.1.3</a>. The key input is a general criterion for morphisms in span categories to be
+cocartesian. This criterion is useful beyond the unfurling application, notably when constructing cocartesian
+operads that need not arise from symmetric monoidal structures. The results here are of a technical nature
+and may be skipped on a first reading.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r7'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 15.1.7 </span>(<span class='citation'>Barwick (2017)</span>, <span class='citation'>[Haugseng et al. (2023), Theorem 3.1]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Cocartesian_Spans_Criterion'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(p\colon (E,E_L,E_R) \to (C,C_L,C_R)\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a morphism of adequate triples, and consider a span </span>\[ X \xleftarrow {\phi } U \xrightarrow {\psi } Y, \] <span class='ntx-Italic-tlf-t1-x-x-109'>with</span> \(\phi \in E_L\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span>
+\(\psi \in E_R\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then this morphism is cocartesian with respect to</span> \(\Span (p)\colon \Span _{L,R}(E) \to \Span _{L,R}(C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>whenever the following conditions are
+satisfied:</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The morphism</span> \(\phi \) <span class='ntx-Italic-tlf-t1-x-x-109'>is</span> \(p\)<span class='ntx-Italic-tlf-t1-x-x-109'>-cartesian and the morphism</span> \(\psi \) <span class='ntx-Italic-tlf-t1-x-x-109'>is</span> \(p\)<span class='ntx-Italic-tlf-t1-x-x-109'>-cocartesian;</span>
+                                                                                   
+
+                                                                                   
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>(Left cancellation for</span> \(E_L\)<span class='ntx-Italic-tlf-t1-x-x-109'>) Given a commutative triangle </span></p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-1efd674a3cf2.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>such that</span> \(p(\xi ) \in C_L\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(\phi \xi \in E_L\)<span class='ntx-Italic-tlf-t1-x-x-109'>, we have</span> \(\xi \in E_L\)<span class='ntx-Italic-tlf-t1-x-x-109'>;</span></p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>(Right cancellation for</span> \(E_R\)<span class='ntx-Italic-tlf-t1-x-x-109'>) Given a commutative triangle </span></p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-b606bcb92741.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>such that</span> \(p(\xi ) \in C_R\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(\xi \psi \in E_R\)<span class='ntx-Italic-tlf-t1-x-x-109'>, we have</span> \(\xi \in E_R\)<span class='ntx-Italic-tlf-t1-x-x-109'>;</span></p></dd><dt class='enumerate'>
+  (4) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>(Enough</span> \(p\)<span class='ntx-Italic-tlf-t1-x-x-109'>-cocartesian lifts) For any pullback square in</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>of the form </span></p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-a26aa64453fd.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>with</span> \(l \in C_L\)<span class='ntx-Italic-tlf-t1-x-x-109'>, and for any</span> \(W \in E_{K}\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the
+     morphism</span> \(g\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a</span> \(p\)<span class='ntx-Italic-tlf-t1-x-x-109'>-cocartesian lift</span> \(\psi '\colon W \to V\) <span class='ntx-Italic-tlf-t1-x-x-109'>which lies in</span> \(E_R\) <span class='ntx-Italic-tlf-t1-x-x-109'>and also satisfies the condition from (3);</span></p></dd><dt class='enumerate'>
+  (5) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>(Beck–Chevalley) Consider a commutative square in</span> \(E\) <span class='ntx-Italic-tlf-t1-x-x-109'>of the form </span></p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-6dff18bb41ce.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>such that its image in</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is
+     a pullback square,</span> \(\xi ' \in E_L\)<span class='ntx-Italic-tlf-t1-x-x-109'>,</span> \(\psi ' \in E_R\)<span class='ntx-Italic-tlf-t1-x-x-109'>, and</span> \(p(\xi ) \in C_L\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then</span> \(\psi '\) <span class='ntx-Italic-tlf-t1-x-x-109'>is</span> \(p\)<span class='ntx-Italic-tlf-t1-x-x-109'>-cocartesian if and only if</span> \(\xi \in E_L\) <span class='ntx-Italic-tlf-t1-x-x-109'>and the square is a pullback
+     square.</span></p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-01-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-01-4">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We consider any other span \(X \leftarrow W \to Z\) in \(E\). We have to show that every prescribed filling of the image in \(C\) of the
+following dashed diagram admits a unique lift to a filling in \(E\):</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-f538a5225ecc.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Here all left-pointing maps are in \(E_L\)
+and all right-pointing maps are in \(E_R\). By the description of the hom animae of a span category
+from <a class="source-reference" data-label="lem:Hom_In_Spans" href="../../../entry/hom-in-spans/index.html#lem:Hom_In_Spans">Lemma 13.1.13</a>, the anima of such fillings is precisely the fiber of the comparison map \[ \Hom _{\Span _{L,R}(E)}(Y,Z) \longrightarrow \Hom _{\Span _{L,R}(E)}(X,Z) \times _{\Hom _{\Span _{L,R}(C)}(pX,pZ)} \Hom _{\Span _{L,R}(C)}(pY,pZ) \] over the given
+point, so that showing all these fibers to be contractible is exactly showing that our span is
+\(\Span (p)\)-cocartesian. We produce the filling in three steps, each of which is unique up to a contractible
+choice.</p><dl class='enumerate'><dt class='enumerate'>
+  (i) </dt><dd class='enumerate'>
+     <p class='noindent'>Since \(\phi \) is \(p\)-cartesian, there exists a unique lift \(W \to U\) making the left triangle commute, which lies in \(E_L\)
+     by condition (2).
+                                                                                   
+                                                                                   
+     </p></dd><dt class='enumerate'>
+ (ii) </dt><dd class='enumerate'>
+     <p class='noindent'>We claim that this lift \(W \to U\) may uniquely be written as the pullback along \(\psi \) of some morphism \(V \to Y\) in \(E_L\)
+     compatible with the given pullback square in \(C\); more precisely, we claim that the following
+     commutative square is a pullback square:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-61467708a373.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Here the superscript \((-)^{L}\) means that we take the full
+     subcategories spanned by the morphisms in \(E_L\) and \(C_L\), respectively.</p><dl class='enumerate'><dt class='enumerate'>
+     (a) </dt><dd class='enumerate'>
+        <p class='noindent'>For essential surjectivity of \((E_{/Y})^L \to (E_{/U})^L \times _{(C_{/pU})^L} (C_{/pY})^L\), we consider a morphism \(\xi '\colon W \to U\) in \(E_L\) and assume we are given a
+        pullback square in \(C\) of the form</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-46780d8f9f90.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>with \(l \in C_L\). By assumption (4) we can find a \(p\)-cocartesian lift \(\psi '\colon W \to V\)
+        of \(g\) which lies in \(E_R\) and satisfies condition (3). The composite \(\psi \circ \xi '\colon W \to Y\) then factors through a map \(\xi \colon V \to Y\),
+        giving a commutative square in \(E\) of the form considered in (5). By assumption (5), the map
+        \(\xi \) then lies in \(E_L\) and the resulting square is a pullback square. As \(\xi \) lifts \(l\), this shows that the
+        pair \((\xi ',l)\) lies in the essential image, as desired.</p></dd><dt class='enumerate'>
+     (b) </dt><dd class='enumerate'>
+        <p class='noindent'>For full faithfulness, consider two objects \(\xi _1\colon V_1 \to Y\) and \(\xi _2\colon V_2 \to Y\) of \((E_{/Y})^L\). We must show that the commutative
+        square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-4def8a50814d.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>is  a  pullback  square.  By  the  universal  property  of  pullbacks,  the  right  vertical
+        map is isomorphic to the map \[ p\colon \Hom _{E_{/Y}}(U \times _Y V_1, V_2) \to \Hom _{C_{/pY}}(pU \times _{pY} pV_1, pV_2), \] hence the claim follows from the fact that the projection
+        map \(U \times _Y V_1 \to V_1\) is \(p\)-cocartesian: this is the implication from right to left in assumption (5), applied
+        to the pullback square of \(\xi _1\) along \(\psi \), whose remaining two sides lie in \(E_L\) and \(E_R\) by adequacy.
+        This morphism remains cocartesian after passing to the slice over \(Y\), since its cocartesian
+        universal property is unchanged when the target is fixed.</p></dd></dl>
+     </dd><dt class='enumerate'>
+ (iii) </dt><dd class='enumerate'>
+     <p class='noindent'>Finally, given a \(p\)-cocartesian morphism \(W \to V\), the given map \(W \to Z\) uniquely factors through a map \(V \to Z\), which lies in \(E_R\)
+     by condition (3).                                                                                                                         □</p></dd></dl>
+</div></div>
+<p class='noindent'>In practice, we will often be interested in the situation where the subcategories \(E_L\) and \(E_R\) of \(E\) are determined by \(C_L\), \(C_R\)
+and the functor \(p\colon E \to C\). To set this up, we start with the following auxiliary lemma:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2012r8'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 15.1.8.</span>  </span><span id='lem:p-cartesian_vs_pullback_square'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(p\colon E \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a functor, and consider a commutative square </span>\begin {equation*}  <figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-267cb39ee9a4.svg" alt="Commutative diagram generated from the LaTeX source"></figure>  \end {equation*} <span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(E\) <span class='ntx-Italic-tlf-t1-x-x-109'>where</span> \(l\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a</span> \(p\)<span class='ntx-Italic-tlf-t1-x-x-109'>-cartesian morphism.
+Assume that the image of this square in</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a pullback square. Then this square is a pullback square if and
+only if the morphism</span> \(l'\) <span class='ntx-Italic-tlf-t1-x-x-109'>is</span> \(p\)<span class='ntx-Italic-tlf-t1-x-x-109'>-cartesian.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-01-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-01-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  Consider  for  any  object  \(Z \in E\)  the  following  two  diagrams:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-b937879cd2df.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-ea4b7a68ab0a.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>The  right-hand  squares  of  both
+diagrams are pullback squares: for the first one since \(l\) is \(p\)-cartesian, for the second one since the
+image of the given square in \(C\) is a pullback square. As the functor \(p\) preserves composition, the outer
+rectangles of both diagrams agree, so by the pasting law the left-hand square in the first diagram is a
+pullback square if and only if the left-hand square in the second diagram is a pullback square. Since
+the former holds for all \(Z\) if and only if the given diagram is a pullback square and the latter holds for
+all \(Z\) if and only if \(l'\) is \(p\)-cartesian, this finishes the proof.                                                                       □</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2013r9'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 15.1.9.</span>  </span><span id='prop:Adequate_Triple_From_Cartesian_Morphisms'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \((C,C_L,C_R)\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an adequate triple and let</span> \(p\colon E \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a functor such that every morphism in</span> \(C_L\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits</span>
+\(p\)<span class='ntx-Italic-tlf-t1-x-x-109'>-cartesian lifts with given target (for example:</span> \(p\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a cartesian fibration). Then:</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The  triple</span>  \((E,E_L^{p\dcart },E_R)\)  <span class='ntx-Italic-tlf-t1-x-x-109'>is  adequate,  where</span>  \(E_R := p^{-1}(C_R)\)  <span class='ntx-Italic-tlf-t1-x-x-109'>consists  of  morphisms  over</span>  \(C_R\)  <span class='ntx-Italic-tlf-t1-x-x-109'>and</span>  \(E_L^{p\dcart } := p^{-1}(C_L) \cap E^{p\dcart }\)  <span class='ntx-Italic-tlf-t1-x-x-109'>consists  of</span>  \(p\)<span class='ntx-Italic-tlf-t1-x-x-109'>-cartesian
+     morphisms over</span> \(C_L\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+                                                                                   
+                                                                                   
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(p\colon E \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a morphism of adequate triples.</span></p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-01-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-01-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  Both  classes  are  wide  subcategories  of  \(E\):  this  is  clear  for  \(E_R = p^{-1}(C_R)\),  while  \(E_L^{p\dcart }\)  contains  all  identities
+and is closed under composition since \(C_L\) is and since composites of \(p\)-cartesian morphisms are again
+\(p\)-cartesian.
+</p><p class='noindent'>We next construct the pullback in \(E\) of a morphism \(l\in E_L^{p\dcart }\) along some \(r \in E_R\). Since \(pl \in C_L\) and \(pr \in C_R\), we may form the pullback</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-1055e16af9f3.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>in \(C\).
+By assumption on \(p\), there exists a \(p\)-cartesian lift \(l'\colon X' \to Y'\) of the morphism \(pX \times _{pY} pY' \to pY'\). The composite \(rl'\colon X' \to Y\) then uniquely factorizes
+through some \(r'\colon X' \to X\) lifting the projection \(pX \times _{pY} pY' \to pX\), using that \(l\) is \(p\)-cartesian. All in all, we have lifted the pullback square in
+\(C\) to a commutative square in \(E\) of the form</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-8f12502b13d4.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'><a id='x1-2016r1'></a> Since \(l\) and \(l'\) are \(p\)-cartesian, it follows from <a class="source-reference" data-label="lem:p-cartesian_vs_pullback_square" href="../../../entry/cartesian-morphism-pullback-criterion/index.html#lem:p-cartesian_vs_pullback_square">Lemma 15.1.8</a> that this square
+is a pullback square in \(E\), showing that the required pullbacks exist. Moreover, in this square
+we have \(l' \in E_L^{p\dcart }\) and \(r' \in E_R\), so both classes are closed under the relevant base changes. This shows part
+(1).</p><p class='noindent'>For part (2), consider a pullback square in \(E\) of the form <span class="source-reference equation-reference" data-label="eq:Pullback_Square">(15.1)</span>. We need to show that applying \(p\) to this square gives
+a pullback square in \(C\). Proceeding as before, we may always form the pullback of \(pl\) and \(pr\) in \(C\) and lift this to a
+pullback square in \(E\). But by uniqueness of pullback squares of \(l\) and \(r\), this new square must then
+agree with the given one. In particular their images in \(C\) agree, hence this image is a pullback
+square.                                                                                                                                                 □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2017r10'></a>
+<a class="entry-heading-link" href="../../../entry/cocartesian-span-criterion-reductions/index.html" aria-label="Remark 15.1.10., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 15.1.10.</span></a>  </span><span id='rmk:Cocartesian_Span_Criterion_Reductions'></span> For the morphism of adequate triples in the previous result, parts (2) and (3)
+of  <a class="source-reference" data-label="thm:Cocartesian_Spans_Criterion" href="../../../entry/cocartesian-spans-criterion/index.html#thm:Cocartesian_Spans_Criterion">Theorem 15.1.7</a>  follow  from  cancellation  of  \(p\)-cartesian  morphisms  and  the  definition  of  \(E_R\),  respectively.
+For  a  \(p\)-cocartesian  morphism  \(\psi \colon U \to Y\)  satisfying  part (4),  part (5)  is  precisely  the  invertibility  of  the
+Beck–Chevalley transformations \[ g_!{l'}^* \longrightarrow l^*(p\psi )_!\colon E_{pU}\longrightarrow E_J \] for the pullback squares in part (4). Here \((p\psi )_!\) exists by taking \(J=pY\) and \(l=\id \) in
+that condition.
+                                                                                   
+                                                                                   
+</p>
+</div>
+<p class='noindent'>We are now ready for the main result of this section.
+</p>
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-01-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cartesian-and-cocartesian-monoidal-structures-section-01-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof of </span><a class="source-reference" data-label="thm:Unfurling_Beck_Chevalley_Fibration" href="../../../entry/unfurling-beck-chevalley-fibration/index.html#thm:Unfurling_Beck_Chevalley_Fibration">Theorem 15.1.3</a><span class='ntx-Italic-tlf-t1-x-x-109'>.</span> </span>   Condition (1) of <a class="source-reference" data-label="def:BC_Fibration" href="../../../entry/bc-fibration/index.html#def:BC_Fibration">Definition 15.1.2</a> and <a class="source-reference" data-label="prop:Adequate_Triple_From_Cartesian_Morphisms" href="../../../entry/adequate-triple-from-cartesian-morphisms/index.html#prop:Adequate_Triple_From_Cartesian_Morphisms">Proposition 15.1.9</a> show that \((E,E_L^{p\dcart },E_R)\) is adequate and that \[ \Span (p)\colon \Span _{\ct ,R}(E)\longrightarrow \Span _{L,R}(C) \] is defined. Given a span \(X \xleftarrow {l} U \xrightarrow {r} Y\) and
+an object over \(X\), choose a \(p\)-cartesian lift of \(l\) followed by a \(p\)-cocartesian lift of \(r\). In the criterion of <a class="source-reference" data-label="thm:Cocartesian_Spans_Criterion" href="../../../entry/cocartesian-spans-criterion/index.html#thm:Cocartesian_Spans_Criterion">Theorem 15.1.7</a>,
+parts (2) and (3) hold by the preceding remark, part (4) follows from condition (2) of <a class="source-reference" data-label="def:BC_Fibration" href="../../../entry/bc-fibration/index.html#def:BC_Fibration">Definition 15.1.2</a> because \(g\) is a
+base change of \(r\), and part (5) follows from condition (3) and <a class="source-reference" data-label="lem:p-cartesian_vs_pullback_square" href="../../../entry/cartesian-morphism-pullback-criterion/index.html#lem:p-cartesian_vs_pullback_square">Lemma 15.1.8</a>. Hence the chosen span is cocartesian,
+with transport \(r_!l^*\).
+</p><p class='noindent'>Finally, by <a class="source-reference" data-label="lem:Hom_In_Spans" href="../../../entry/hom-in-spans/index.html#lem:Hom_In_Spans">Lemma 13.1.13</a>, a morphism in the fiber over \(X\) is represented by a span whose backwards leg is \(p\)-cartesian
+over \(\id _X\), hence an isomorphism, and whose forward leg is an arbitrary morphism of \(E_X\). Thus this fiber is
+\(E_X\).                                                                                                                                                           □
+</p>
+</div></div>
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../../basics-on-infinity-operads/monoidal-subcategories-and-monoidal-bousfield-localizations/index.html" aria-label="Previous section: Monoidal subcategories and monoidal Bousfield localizations" title="Previous section: Monoidal subcategories and monoidal Bousfield localizations"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../cocartesian-monoidal-structures/index.html" aria-label="Next section: Cocartesian monoidal structures" title="Next section: Cocartesian monoidal structures"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html" aria-current="page"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/operads-the-heuristics/index.html"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../../../chapter/span-categories/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../../../chapter/basics-on-infinity-operads/index.html"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../../../chapter/cartesian-and-cocartesian-monoidal-structures/index.html" aria-current="page"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../../../chapter/day-convolution-and-the-tensor-product-of-spectra/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="../../../chapter/the-envelope-of-an-infinity-operad/index.html"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../../../chapter/operadic-day-convolution-and-stabilization/index.html"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Operadic Day convolution and stabilization</span></a></li><li><a href="../../../chapter/algebras-and-modules/index.html"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 15.1</span><span class="context-entry-title">Unfurling</span></a></li><li><a href="../cocartesian-monoidal-structures/index.html"><span class="context-entry-heading">Section 15.2</span><span class="context-entry-title">Cocartesian monoidal structures</span></a></li><li><a href="../cartesian-monoidal-structures/index.html"><span class="context-entry-heading">Section 15.3</span><span class="context-entry-title">Cartesian monoidal structures</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Adjointable_Functor"><span class="context-entry-heading">Definition 15.1.1</span><span class="context-entry-title">definition</span></a></li><li><a href="#def:BC_Fibration"><span class="context-entry-heading">Definition 15.1.2</span><span class="context-entry-title">definition</span></a></li><li><a href="#thm:Unfurling_Beck_Chevalley_Fibration"><span class="context-entry-heading">Theorem 15.1.3</span><span class="context-entry-title">theorem</span></a></li><li><a href="#cor:Unfurling_From_Left_Adjoints"><span class="context-entry-heading">Corollary 15.1.4</span><span class="context-entry-title">Contravariant left-adjoint unfurling</span></a></li><li><a href="#cor:Unfurling_From_Right_Adjoints"><span class="context-entry-heading">Corollary 15.1.5</span><span class="context-entry-title">Contravariant right-adjoint unfurling</span></a></li><li><a href="#prop:Beck_Chevalley_Fibration_From_Right_Adjoints"><span class="context-entry-heading">Proposition 15.1.6</span><span class="context-entry-title">Covariant right-adjoint unfurling</span></a></li><li><a href="#thm:Cocartesian_Spans_Criterion"><span class="context-entry-heading">Theorem 15.1.7</span><span class="context-entry-title">theorem</span></a></li><li><a href="#lem:p-cartesian_vs_pullback_square"><span class="context-entry-heading">Lemma 15.1.8</span><span class="context-entry-title">lemma</span></a></li><li><a href="#prop:Adequate_Triple_From_Cartesian_Morphisms"><span class="context-entry-heading">Proposition 15.1.9</span><span class="context-entry-title">proposition</span></a></li><li><a href="#rmk:Cocartesian_Span_Criterion_Reductions"><span class="context-entry-heading">Remark 15.1.10</span><span class="context-entry-title">remark</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

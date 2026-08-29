@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 16.2: Day convolution between symmetric monoidal categories | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/operads-and-higher-algebra/index.html">Part II</a> · <a href="../../../chapter/day-convolution-and-the-tensor-product-of-spectra/index.html">Chapter 16</a> · Section 16.2</p>
+      <h1>Day convolution between symmetric monoidal categories</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Day_Convolution_Symmetric_Monoidal_Categories'>The goal of this section is to construct, under suitable conditions on symmetric monoidal \(\infty \)-categories \(C\) and \(D\),
+the Day convolution symmetric monoidal structure on \(\Fun (C,D)\). More precisely, we will construct the Day
+convolution operad \(\oDay (\Mm _C,\Mm _D)\) and determine when it is the multimorphism operad of a symmetric monoidal
+\(\infty \)-category. If this operad exists, its universal property already determines two of its fundamental features:
+</p>
+     <ul class='itemize1'>
+     <li class='itemize'>By <a class="source-reference" data-label="lem:Underlying_Category_Day_Convolution_Operad" href="../../../entry/underlying-category-day-convolution-operad/index.html#lem:Underlying_Category_Day_Convolution_Operad">Lemma 16.1.3</a>, the underlying \(\infty \)-category of \(\oDay (\Mm _C,\Mm _D)\) is the \(\infty \)-category of functors from \(C\) to \(D\): \[ \oDay (\Mm _C,\Mm _D)_{\lra {1}} \quad \simeq \quad \Fun (C,D). \] In particular, the colors
+     of \(\oDay (\Mm _C,\Mm _D)\) may be identified with functors \(C \to D\).
+     </li>
+     <li class='itemize'>By <a class="source-reference" data-label="lem:Commutative_Algebras_In_Day" href="../../../entry/commutative-algebras-in-day/index.html#lem:Commutative_Algebras_In_Day">Lemma 16.1.4</a>, commutative algebras in \(\oDay (\Mm _C,\Mm _D)\) are lax symmetric monoidal functors from \(C\) to \(D\): \[ \CAlg (\oDay (\Mm _C,\Mm _D)) \quad \simeq \quad \Fun ^{\otimes \text {-lax}}(C,D). \]</li></ul>
+<p class='noindent'>To establish existence and determine when this operad defines a symmetric monoidal structure, we will use
+the concrete model introduced in the next subsection.
+</p><p class='noindent'>All constructions below are understood in an ambient universe containing the symmetric monoidal
+\(\infty \)-categories under discussion. If \(C\) or \(D\) is large relative to the basic universe, we enlarge once as in <a class="source-reference" data-label="rmk:Large_Infinity_Categories" href="../../../entry/large-infinity-categories/index.html#rmk:Large_Infinity_Categories">Remark 1.8.1</a> and carry
+out the construction there. Further enlargement does not change the resulting Day convolution operad, since
+its universal property is expressed entirely in terms of the same operads and their mapping
+animae.
+</p>
+<h4 class='subsectionHead' id='the-hinichwinges-model'><span class='titlemark'>16.2.1    </span> <a id='x1-200016.2.1'></a>The Hinich–Winges model</h4>
+<p class='noindent' id='subsec_Hinich_Winges_Model'>While the universal property of \(\oDay (\Mm _C,\Mm _D)\) gives us access to some of its abstract properties, it does not provide an
+explicit description of it. We will make this operad concrete by discussing a model for it given by <span class='citation'>Hinich (2020)</span>. We will
+follow the ‘synthetic’ exposition of it by <span class='citation'>Winges (2026)</span>.
+                                                                                   
+                                                                                   
+</p><p class='noindent'>The main ingredient for this is an explicit description of the unstraightening of the functor
+\[ (\Cat _{\infty }^{\otimes })\catop \times \Cat _{\infty }^{\otimes } \to \Cat _{\infty }, \qquad (C,D) \mapsto \Fun ^{\otimes \text {-lax}}(C,D). \]
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r1'></a>
+<a class="entry-heading-link" href="../../../entry/oplax-arrow-category/index.html" aria-label="Definition 16.2.1., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 16.2.1.</span></a>  </span><span id='def:Oplax_Arrow_Category'></span> We denote by \[ \Ar ^{\oplax } \subseteq (\Cat _{\infty })_{/[1]} \] the full subcategory spanned by the cartesian fibrations \(E \to [1]\).
+</p>
+</div>
+<p class='noindent'>Thus \(\Ar ^{\oplax }\) has the same objects as the ordinary arrow category \(\Ar (\Cat _{\infty })\), but more morphisms. Under cartesian
+straightening, an object of \(\Ar ^{\oplax }\) corresponds to a functor \([1]\catop \to \Cat _{\infty }\). We write such a functor as \(F\colon C \to D\), with \(C\) as the fiber over \(1\) and
+\(D\) as the fiber over \(0\). Since the morphisms in \(\Ar ^{\oplax }\) do not need to preserve the cartesian edges, they correspond
+to <span class='ntx-Italic-tlf-t1-x-x-109'>laxly </span>commutative squares of the form</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-824bb98a43d2.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Observe that \(\Ar ^{\oplax }\) is closed under finite products in \((\Cat _{\infty })_{/[1]}\),
+and that pulling back along the inclusions \(\{1\} \hookrightarrow [1]\) and \(\{0\} \hookrightarrow [1]\) provides a finite-product-preserving functor
+\[ (s,t)\colon \Ar ^{\oplax } \to \Cat _{\infty } \times \Cat _{\infty }. \]</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2002r2'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 16.2.2 </span>(<span class='citation'>Winges (2026), Theorem 2.7</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Winges'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(\Oo \) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operad, and consider the induced functor </span>\[ (s,t)\colon \Mon _{\Oo }(\Ar ^{\oplax }) \to \Mon _{\Oo }(\Cat _{\infty }) \times \Mon _{\Oo }(\Cat _{\infty }). \] <span class='ntx-Italic-tlf-t1-x-x-109'>Then:</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The fiber over a pair</span> \((C,D)\) <span class='ntx-Italic-tlf-t1-x-x-109'>of</span> \(\Oo \)<span class='ntx-Italic-tlf-t1-x-x-109'>-monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories is the</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(\Fun ^{\Oo \dlax }(C,D)\) <span class='ntx-Italic-tlf-t1-x-x-109'>of lax</span> \(\Oo \)<span class='ntx-Italic-tlf-t1-x-x-109'>-monoidal functors</span> \(C \to D\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For fixed</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the restriction of</span> \((s,t)\) <span class='ntx-Italic-tlf-t1-x-x-109'>to</span> \(\{C\} \times \Mon _{\Oo }(\Cat _{\infty })\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a cocartesian fibration classifying </span>\[ \Fun ^{\Oo \dlax }(C,-) \colon \Mon _{\Oo }(\Cat _{\infty }) \to \Cat _{\infty }. \]
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For fixed</span> \(D\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the restriction of</span> \((s,t)\) <span class='ntx-Italic-tlf-t1-x-x-109'>to</span> \(\Mon _{\Oo }(\Cat _{\infty }) \times \{D\}\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a cartesian fibration classifying </span>\[ \Fun ^{\Oo \dlax }(-,D) \colon \Mon _{\Oo }(\Cat _{\infty })\catop \to \Cat _{\infty }. \]</p></dd></dl>
+                                                                                   
+
+                                                                                   
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2006r3'></a>
+<a class="entry-heading-link" href="../../../entry/orthofibration-winges/index.html" aria-label="Remark 16.2.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 16.2.3.</span></a>  </span><span id='rmk:Orthofibration_Winges'></span> Winges in fact shows the stronger claim that this identification of the fibers is
+natural in both \(C\) and \(D\) simultaneously. Formulating this precisely requires the notion of <span class='ntx-Italic-tlf-t1-x-x-109'>orthofibrations</span>,
+which are functors of the form \(E \to C \times D\) that correspond under a generalized form of straightening to functors
+\(C\catop \times D \to \Cat _{\infty }\). What Winges shows is that the functor \((s,t)\) from <a class="source-reference" data-label="thm:Winges" href="../../../entry/winges-description-of-lax-monoidal-functors/index.html#thm:Winges">Theorem 16.2.2</a> is the orthofibration classifying the assignment \((C,D) \mapsto \Fun ^{\Oo \dlax }(C,D)\).
+</p>
+</div>
+<p class='noindent'>With this result at hand, we may now prove the explicit description of \(\oDay (\Mm _C,\Mm _D)\):
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2007r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 16.2.4 </span>(<span class='citation'>Hinich (2020), Proposition 2.8.9</span>, <span class='citation'>Winges (2026), Theorem 1.1</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Hinich_Winges_Model_Day'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(C\)  <span class='ntx-Italic-tlf-t1-x-x-109'>and</span>  \(D\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  symmetric  monoidal</span>  \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories,  which  we  identify  with
+commutative algebras in</span> \(\Cat _{\infty }\) <span class='ntx-Italic-tlf-t1-x-x-109'>with the cartesian monoidal structure. Then the Day convolution operad</span> \(\oDay (\Mm _C,\Mm _D)\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>exists, and is given by the following pullback square: </span></p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-885434661a34.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-day-convolution-and-the-tensor-product-of-spectra-section-02-8" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-day-convolution-and-the-tensor-product-of-spectra-section-02-8">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Let us write \(\Dd \) for this pullback. We will show directly that \(\Dd \) satisfies the defining universal
+property of \(\oDay (\Mm _C,\Mm _D)\). It will suffice to produce for any \(\infty \)-operad \(\Pp \) a natural equivalence \[ \Fun _{\Op _{\infty }}(\Pp ,\Dd ) \simeq \Fun _{\Op _{\infty }}(\Pp \times \Mm _C, \Mm _D). \] For the left-hand
+side, note that \(\Fun _{\Op _{\infty }}(\Pp ,-)\) commutes with pullbacks. Since \(\Comm \) is the terminal \(\infty \)-operad, we have \(\Fun _{\Op _{\infty }}(\Pp ,\Comm ) \simeq *\). Since operad
+morphisms from \(\Pp \) into a cartesian operad correspond to \(\Pp \)-monoids by <a class="source-reference" data-label="thm:Universal_Property_Cartesian_Operads" href="../../../entry/universal-property-cartesian-operads/index.html#thm:Universal_Property_Cartesian_Operads">Theorem 15.3.11</a>, we obtain equivalences \[ \hspace {-5pt} \Fun _{\Op _{\infty }}(\Pp ,\OpCart _{\Ar ^{\oplax }}) \simeq \Mon _{\Pp }(\Ar ^{\oplax }), \qquad \Fun _{\Op _{\infty }}(\Pp ,\OpCart _{\Cat _{\infty } \times \Cat _{\infty }}) \simeq \Mon _{\Pp }(\Cat _{\infty } \times \Cat _{\infty }). \] It
+follows that the \(\infty \)-category \(\Fun _{\Op _{\infty }}(\Pp ,\Dd )\) is equivalent to the fiber of the map \[ \Mon _{\Pp }(\Ar ^{\oplax }) \to \Mon _{\Pp }(\Cat _{\infty }) \times \Mon _{\Pp }(\Cat _{\infty }) \] over the pair \((C_{\Pp },D_{\Pp })\), where \(C_{\Pp }\) and \(D_{\Pp }\) are obtained
+from \(C\) and \(D\) by precomposition with the operad map \(p_{\Pp }\colon \Pp \to \Comm \). By <a class="source-reference" data-label="thm:Winges" href="../../../entry/winges-description-of-lax-monoidal-functors/index.html#thm:Winges">Theorem 16.2.2</a>, this fiber is the \(\infty \)-category \(\Fun ^{\Pp \dlax }(C_{\Pp },D_{\Pp }) = \Fun _{(\Op _{\infty })_{/\Pp }}(\Mm _{C_{\Pp }/\Pp }, \Mm _{D_{\Pp }/\Pp })\) of lax \(\Pp \)-monoidal
+functors \(C_{\Pp } \to D_{\Pp }\). By the definition of \(C_{\Pp }\) and \(D_{\Pp }\) we have \[ \Mm _{C_{\Pp }/\Pp } \simeq \Pp \times _{\Comm } \Mm _C \qquadtext { and } \Mm _{D_{\Pp }/\Pp } \simeq \Pp \times _{\Comm } \Mm _D, \] hence \[ \hspace {-6pt} \Fun _{(\Op _{\infty })_{/\Pp }}(\Mm _{C_{\Pp }/\Pp }, \Mm _{D_{\Pp }/\Pp }) \simeq \Fun _{(\Op _{\infty })_{/\Pp }}(\Pp \times _{\Comm } \Mm _C, \Pp \times _{\Comm } \Mm _D) \simeq \Fun _{\Op _{\infty }}(\Pp \times _{\Comm } \Mm _C, \Mm _D), \] where the second equivalence uses the universal
+property of pullbacks. Since \(\Comm \) is terminal, the fiber product \(\Pp \times _{\Comm }\Mm _C\) is the product \(\Pp \times \Mm _C\) in \(\Op _{\infty }\). This was precisely
+what we wanted to show.                                                                                                                    □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2008r5'></a>
+<a class="entry-heading-link" href="../../../entry/relative-day-convolution/index.html" aria-label="Remark 16.2.5., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 16.2.5.</span></a>  </span><span id='rmk:Relative_Day_Convolution'></span> The above description of \(\oDay (\Mm _C,\Mm _D)\) immediately generalizes to a description of the \(\Oo \)-monoidal
+Day convolution operad \(\oDay _{/\Oo }(\Mm _{C/\Oo }, \Mm _{D/\Oo }) \in (\Op _{\infty })_{/\Oo }\) for \(\Oo \)-monoidal \(\infty \)-categories \(C\) and \(D\). The proof is essentially identical, up to
+replacing \(\Op _{\infty }\) with \((\Op _{\infty })_{/\Oo }\) everywhere. It is this generality in which Hinich and Winges state and prove the
+result. Note that <a class="source-reference" data-label="thm:Winges" href="../../../entry/winges-description-of-lax-monoidal-functors/index.html#thm:Winges">Theorem 16.2.2</a>, the principal external input about Day convolution, is already stated for an arbitrary
+\(\infty \)-operad \(\Oo \).
+</p><p class='noindent'>Concretely, the universal property reads \[ \Fun _{(\Op _{\infty })_{/\Oo }}\bigl (\Qq , \oDay _{/\Oo }(\Mm _{C/\Oo },\Mm _{D/\Oo })\bigr ) \quad \simeq \quad \Fun _{(\Op _{\infty })_{/\Oo }}\bigl (\Qq \times _{\Oo } \Mm _{C/\Oo }, \Mm _{D/\Oo }\bigr ) \] for every \(\infty \)-operad \(\Qq \) over \(\Oo \). Moreover, since both sides are
+described by the same pullback square, base change along an operad map \(\Oo \to \Comm \) identifies \[ \Oo \times _{\Comm } \oDay (\Mm _C,\Mm _D) \quad \simeq \quad \oDay _{/\Oo }(\Mm _{C/\Oo },\Mm _{D/\Oo }). \] In other words,
+the underlying \(\Oo \)-monoidal \(\infty \)-category of the Day convolution is the \(\Oo \)-monoidal Day convolution. For
+\(\Oo =\Assoc \),  this  is  the  relative  version  underlying  the  final  assertion  of  <a class="source-reference" data-label="obs:Homotopy_Groups_Form_Graded_Ring" href="../../../entry/homotopy-groups-form-graded-ring/index.html#obs:Homotopy_Groups_Form_Graded_Ring">Observation 16.6.7</a>,  where  the  relevant  functor  is  lax
+monoidal but <span class='ntx-Italic-tlf-t1-x-x-109'>not </span>lax symmetric monoidal.
+</p>
+</div>
+<p class='noindent'>As a consequence of this result, we may explicitly compute the multimorphism animae of
+\(\oDay (\Mm _C,\Mm _D)\):
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2009r6'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 16.2.6.</span>  </span><span id='prop:Multimorphisms_Day_Operad'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>be symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories, let</span> \(I\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a finite set, and let</span> \(\{F_i\colon C \to D\}_{i \in I}\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(G\colon C \to D\) <span class='ntx-Italic-tlf-t1-x-x-109'>be
+functors. Then there is an equivalence </span>\[ \oDay (\Mm _C,\Mm _D)(\{F_i\}_{i \in I}; G) \simeq \Nat \left ( \bigotimes _D^I \circ \prod _{i \in I} F_i, G \circ \bigotimes _C^I \right ) \] <span class='ntx-Italic-tlf-t1-x-x-109'>between the anima of multimorphisms</span> \(\{F_i\}_{i \in I} \to G\) <span class='ntx-Italic-tlf-t1-x-x-109'>in the Day convolution
+operad and the anima of natural transformations</span> \(\alpha \) <span class='ntx-Italic-tlf-t1-x-x-109'>fitting in the following diagram: </span></p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-1ae5245267fe.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-day-convolution-and-the-tensor-product-of-spectra-section-02-7" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-day-convolution-and-the-tensor-product-of-spectra-section-02-7">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Let us write \(\Oo := \oDay (\Mm _C, \Mm _D)\) for simplicity. By definition, the anima of multimorphisms \(\Oo (\{F_i\}_{i \in I}; G)\) is the fiber of the
+projection map \[ p_{\Oo }\colon \Hom _{\Oo ^{\otimes }}(\{F_i\}_{i \in I}, G) \to \Hom _{\Span (\Fin )}(I, \lra {1}) \] over the active span \(I \xleftarrow {\;\id \;} I \to \lra {1}\). By <a class="source-reference" data-label="thm:Hinich_Winges_Model_Day" href="../../../entry/hinich-winges-model-day/index.html#thm:Hinich_Winges_Model_Day">Theorem 16.2.4</a>, the operad \(\Oo \) sits in the following pullback square of
+\(\infty \)-operads:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-8174f56f0247.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Since hom animae in a pullback of \(\infty \)-categories form a pullback of animae, \(\Hom _{\Oo ^{\otimes }}(\{F_i\}_{i \in I}, G)\) is itself
+the fiber in a pullback square of hom animae. Taking the fibers of these hom animae over the
+active span \(I \to \lra {1}\), we find that \(\Oo (\{F_i\}_{i \in I}; G)\) is the fiber in the following pullback square of animae: \begin {equation*}  <figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-4caf2fb9bd41.svg" alt="Commutative diagram generated from the LaTeX source"></figure>  \end {equation*} Here the
+object \(\Un (F_i) \in \Ar ^{\oplax }\) is the cartesian unstraightening of the functor \([1]\catop \to \Cat _{\infty }\) which takes the arrow \(1 \to 0\) to \(F_i\colon C \to D\), and similarly
+for \(\Un (G)\). Since \(\Cat _{\infty }\) and \(\Ar ^{\oplax }\) have finite products, we may write the three multimorphism animae in the
+source and target of the right vertical map as hom animae in \(\Ar ^{\oplax }\) and \(\Cat _{\infty }\) out of the corresponding
+products, which results in a pullback square as follows:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-beaa5bc93c0c.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'><a id='x1-2010r1'></a> By applying <a class="source-reference" data-label="thm:Winges" href="../../../entry/winges-description-of-lax-monoidal-functors/index.html#thm:Winges">Theorem 16.2.2</a> to the trivial \(\infty \)-operad, we
+get that the functor \((s,t)\colon \Ar ^{\oplax } \to \Cat _{\infty } \times \Cat _{\infty }\) is a cartesian fibration over \(\Cat _{\infty } \times \{D\}\) and a cocartesian fibration over \(\{C\} \times \Cat _{\infty }\). The fibers
+of \((s,t)\) are given by the functor categories \(\Fun (C,D)\), with functoriality in \(C\) given by precomposition and
+functoriality in \(D\) given by postcomposition. The fiber of the upper-right hom anima over a pair \((f,g)\) is
+therefore the anima of natural transformations \(g\circ \prod _iF_i\to G\circ f\). In particular, <span class="source-reference" data-label="eq:Pullback_Multimorphisms_Day">Equation 16.1</span> identifies the required fiber as \[ \Oo (\{F_i\}_{i \in I}; G) \simeq \Hom _{\Fun (C^I,D)}(\bigotimes _D^I \circ \prod _{i \in I} F_i, G \circ \bigotimes _C^I), \] as
+claimed.                                                                                                                                               □</p>
+</div></div>
+
+<h4 class='subsectionHead' id='the-day-convolution-monoidal-structure'><span class='titlemark'>16.2.2    </span> <a id='x1-300016.2.2'></a>The Day convolution monoidal structure</h4>
+<p class='noindent' id='sec_Day_Convolution_Monoidal_Structure'>With the explicit description of the multimorphism animae of \(\oDay (\Mm _C,\Mm _D)\) at hand, we may now return to the question
+of when this \(\infty \)-operad corresponds to a symmetric monoidal structure on the functor category
+\(\Fun (C,D)\):
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3001r7'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 16.2.7 </span>(<span class='citation'>Lurie (2017), Proposition 2.2.6.16</span>, <span class='citation'>Winges (2026), Proposition 4.1</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Day_Convolution_Is_Monoidal'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \((C, \otimes _C, \unit _C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \((D, \otimes _D, \unit _D)\) <span class='ntx-Italic-tlf-t1-x-x-109'>be symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories. Let</span> \(\Kk \) <span class='ntx-Italic-tlf-t1-x-x-109'>be the collection of all relative
+slice categories</span> \((\bigotimes _C^n)_{/c}\) <span class='ntx-Italic-tlf-t1-x-x-109'>defined by the pullback squares </span></p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-6e68f5563e5c.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>for every natural number</span> \(n \geq 0\) <span class='ntx-Italic-tlf-t1-x-x-109'>and every object</span> \(c \in C\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Assume that
+the following two conditions are satisfied:</span></p><dl class='enumerate'><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(1)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits all</span> \(\Kk \)<span class='ntx-Italic-tlf-t1-x-x-109'>-indexed colimits.</span>
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(2)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The tensor product functor</span> \(\otimes _D\colon D \times D \to D\) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves</span> \(\Kk \)<span class='ntx-Italic-tlf-t1-x-x-109'>-indexed colimits in each variable separately.</span></p></dd></dl>
+<p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Then the Day convolution operad</span> \(\oDay (\Mm _C,\Mm _D)\) <span class='ntx-Italic-tlf-t1-x-x-109'>defines a symmetric monoidal structure</span> \(\otimes _{\Day }\) <span class='ntx-Italic-tlf-t1-x-x-109'>on</span> \(\Fun (C,D)\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+<p class='noindent'>In practice, we will usually apply <a class="source-reference" data-label="prop:Day_Convolution_Is_Monoidal" href="../../../entry/day-convolution-is-monoidal/index.html#prop:Day_Convolution_Is_Monoidal">Proposition 16.2.7</a> through the following corollary, so we record it before proving the
+proposition.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3004r8'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 16.2.8.</span>  </span><span id='cor:Day_Convolution_Small_Source'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>be symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories. Assume that</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is small, that</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>is
+cocomplete (i.e., admits all small colimits), and that the tensor product of</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves small colimits
+in each variable. Then the Day convolution operad</span> \(\oDay (\Mm _C,\Mm _D)\) <span class='ntx-Italic-tlf-t1-x-x-109'>defines a symmetric monoidal structure</span> \(\otimes _{\Day }\) <span class='ntx-Italic-tlf-t1-x-x-109'>on</span> \(\Fun (C,D)\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+                                                                                   
+
+                                                                                   
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-day-convolution-and-the-tensor-product-of-spectra-section-02-6" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-day-convolution-and-the-tensor-product-of-spectra-section-02-6">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Every relative slice category \((\bigotimes _C^n)_{/c}\) is a pullback of the diagram \(C^n \to C \times C \leftarrow \Ar (C)\). Since \(C\) is small, so are \(C^n\) and \(\Ar (C)\), and
+hence so is \((\bigotimes _C^n)_{/c}\). The collection \(\Kk \) of <a class="source-reference" data-label="prop:Day_Convolution_Is_Monoidal" href="../../../entry/day-convolution-is-monoidal/index.html#prop:Day_Convolution_Is_Monoidal">Proposition 16.2.7</a> therefore consists of small \(\infty \)-categories, so both of its conditions are
+implied by the assumptions on \(D\).                                                                                                          □
+</p>
+</div></div>
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-day-convolution-and-the-tensor-product-of-spectra-section-02-5" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-day-convolution-and-the-tensor-product-of-spectra-section-02-5">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof of </span><a class="source-reference" data-label="prop:Day_Convolution_Is_Monoidal" href="../../../entry/day-convolution-is-monoidal/index.html#prop:Day_Convolution_Is_Monoidal">Proposition 16.2.7</a><span class='ntx-Italic-tlf-t1-x-x-109'>.</span> </span>  We wish to show that the Day convolution operad \(\Oo := \oDay (\Mm _C, \Mm _D)\) defines a symmetric monoidal \(\infty \)-category, i.e.,
+that the functor \(p_{\Oo }\colon \Oo ^{\otimes } \to \Span (\Fin )\) is a cocartesian fibration. Recall from <a class="source-reference" data-label="lem:Criterion_Operad_Symmetric_Monoidal" href="../../../entry/criterion-for-an-operad-to-be-symmetric-monoidal/index.html#lem:Criterion_Operad_Symmetric_Monoidal">Lemma 14.2.8</a> that it is enough to show that the following two
+conditions are satisfied:
+   </p><dl class='enumerate'><dt class='enumerate'>
+(a) </dt><dd class='enumerate'>
+   <p class='noindent'>For every finite collection of functors \(\{F_i\}_{i \in I}\), there exists a functor \(G = \bigotimes _{i \in I}^{\Day } F_i\) and a multimorphism \(\{F_i\}_{i \in I} \to G\) in \(\Oo \) inducing
+   for every other functor \(H\colon C \to D\) an equivalence \[ \Hom _{\Oo _{\lra {1}}}(G,H) \iso \Oo (\{F_i\};H). \]
+   </p></dd><dt class='enumerate'>
+(b) </dt><dd class='enumerate'>
+   <p class='noindent'>For a map \(f\colon I \to J\) of finite sets, if we let \(G_j := \bigotimes _{i \in f^{-1}(j)}^{\Day } F_i\) for all \(j \in J\), then the canonical map \[ \bigotimes _{i \in I}^{\Day } F_i \to \bigotimes _{j \in J}^{\Day } G_j \] is a natural isomorphism of
+   functors \(C \to D\).</p></dd></dl>
+<p class='noindent'>For part (a), we define \(G\) as the left Kan extension of the composite functor \[ \prod _{i \in I} C \xrightarrow {\prod _{i \in I} F_i} \prod _{i \in I} D \xrightarrow {\otimes _D} D \] along the tensor
+product functor \(\otimes _C\colon C^I \to C\). Explicitly, for an object \(c \in C\), its value is given by the colimit: \[ G(c) := \colim _{\{c'_i\}_{i \in I} \in (\bigotimes _C^I)_{/c}} \left ( \bigotimes _{i \in I} F_i(c'_i) \right ). \] The existence
+of this left Kan extension is guaranteed by condition (1) of our hypothesis, as the indexing
+category \((\bigotimes _C^I)_{/c}\) is in our collection \(\Kk \). The universal property of this left Kan extension provides a natural
+                                                                                   
+                                                                                   
+transformation \[ \eta \colon \bigotimes _D^I \circ \prod _{i \in I} F_i \Longrightarrow G \circ \bigotimes _C^I, \] which by <a class="source-reference" data-label="prop:Multimorphisms_Day_Operad" href="../../../entry/multimorphisms-day-operad/index.html#prop:Multimorphisms_Day_Operad">Proposition 16.2.6</a> corresponds to a multimorphism \(\eta \colon \{F_i\}_{i \in I} \to G\) in \(\Oo \). The universal property of left Kan
+extension precisely says that for any other functor \(H\colon C \to D\), composition with \(\eta \) induces an equivalence \[ \Hom _{\Oo _{\lra {1}}}(G,H) \simeq \Nat (G, H) \iso \Nat \left ( \bigotimes _D^I \circ \prod _{i \in I} F_i, H \circ \bigotimes _C^I \right ) \simeq \Oo (\{F_i\}_{i \in I};H), \] as
+desired.
+</p><p class='noindent'>We now show that also (b) holds. Let \(f\colon I \to J\) be a map in \(\Fin \), and write \(G_j := \bigotimes _{i \in f^{-1}(j)}^{\Day } F_i\) for all \(j \in J\). We need to show that the canonical
+transformation \[ \bigotimes _{i \in I}^{\Day } F_i \to \bigotimes _{j \in J}^{\Day } G_j \] is a natural isomorphism of functors \(C \to D\). To help visualize this, consider the following
+diagram:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-2094eb67a06a.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Since left Kan extensions compose, it will suffice to show that the composite \(\bigotimes _D^J \circ \prod _{j \in J} G_j\colon C^J \to D\) is the left Kan
+extension of the composite \(\bigotimes _D^I \circ \prod _{i \in I} F_i \colon C^I \to D\) along \((\bigotimes _C^f)\colon C^I \to C^J\). By the pointwise formula for Kan extensions, this amounts to
+showing that for every tuple \((c_j)_{j \in J} \in C^J\), the map \[ \colim _{(c'_i) \in (\bigotimes _C^f)_{/c}} \bigotimes _{i \in I}^D F_i(c'_i) \to \bigotimes _{j \in J} G_j(c_j) \] is a natural isomorphism. Since the functor \(\bigotimes _C^f\colon C^I \to C^J\) is a product of
+the individual functors \(\bigotimes _C^{I_j}\colon C^{I_j} \to C\), the indexing category \((\bigotimes _C^f)_{/c}\) on the left is a product over \(j \in J\) of the relative
+slice categories \((\bigotimes _C^{I_j})_{/c_j}\). But we also have \[ G_j(c_j) = \colim _{(c''_i) \in (\bigotimes _C^{I_j})_{/c_j}} \bigotimes _{i \in I_j}^D F_i(c''_i), \] and since the functor \(\bigotimes _{j \in J}^D\colon D^J \to D\) preserves the relevant colimits in
+each variable separately it follows that the map is a natural isomorphism. This finishes the
+proof.                                                                                                                                                   □</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3007r9'></a>
+<a class="entry-heading-link" href="../../../entry/description-day-convolution/index.html" aria-label="Remark 16.2.9., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 16.2.9.</span></a>  </span><span id='rmk:Description_Day_Convolution'></span> The proof of the proposition provides an explicit description of the tensor product functor \[ \bigotimes _{\Day }^I\colon \Fun (C,D)^I \to \Fun (C,D) \]
+for every finite set \(I\). For \(I = \lra {0}\) and \(I = \lra {2}\), this specializes as follows: </p>
+     <ul class='itemize1'>
+     <li class='itemize'>The monoidal unit \(\unit _{\Day }\colon C \to D\) of the Day convolution monoidal structure is the left Kan extension of \(\unit _D\colon * \to D\)
+     along \(\unit _C\colon * \to C\).
+     </li>
+     <li class='itemize'>The Day convolution \(F \otimes _{\Day } G\) of two functors \(F,G\colon C \to D\) is the left Kan extension of \(C \times C \xrightarrow {F \times G} D \times D \xrightarrow {\otimes _D} D\) along \(\otimes _C\colon C \times C \to C\).</li></ul>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3008r10'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 16.2.10 </span>(Functoriality of monoidal Day convolution)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Monoidal_Day_Convolution_Functoriality'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Assume the relevant Day convolution
+monoidal structures exist.</span>
+   </p><dl class='enumerate'><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(1)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>A lax symmetric monoidal functor</span> \(u\colon C'\to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>induces a lax symmetric monoidal precomposition functor </span>\[ u^*\colon \Fun (C,D)\longrightarrow \Fun (C',D). \]
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(2)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(\Kk \) <span class='ntx-Italic-tlf-t1-x-x-109'>be the collection of relative slice categories from </span><a class="source-reference" data-label="prop:Day_Convolution_Is_Monoidal" href="../../../entry/day-convolution-is-monoidal/index.html#prop:Day_Convolution_Is_Monoidal">Proposition 16.2.7</a><span class='ntx-Italic-tlf-t1-x-x-109'>. If</span> \(v\colon D\to D'\) <span class='ntx-Italic-tlf-t1-x-x-109'>is symmetric monoidal and preserves</span>
+   \(\Kk \)<span class='ntx-Italic-tlf-t1-x-x-109'>-indexed colimits, then postcomposition induces a symmetric monoidal functor </span>\[ v_*\colon \Fun (C,D)\longrightarrow \Fun (C,D'). \]</p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-day-convolution-and-the-tensor-product-of-spectra-section-02-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-day-convolution-and-the-tensor-product-of-spectra-section-02-4">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  Part (1)  is  induced  by  precomposition  on  Day  convolution  operads.  For  part (2),
+postcomposition first gives a lax symmetric monoidal refinement. Since \(v\) is symmetric monoidal and
+preserves the colimits in the pointwise formulas of <a class="source-reference" data-label="rmk:Description_Day_Convolution" href="../../../entry/description-day-convolution/index.html#rmk:Description_Day_Convolution">Remark 16.2.9</a>, it carries each Day convolution product and
+the Day convolution unit to the corresponding product and unit in \(\Fun (C,D')\). Its structure maps are therefore
+isomorphisms.                                                                                                                                     □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3011r11'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 16.2.11 </span>(Left Kan extensions and Day convolution)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Left_Kan_Extension_Day_Symmetric_Monoidal'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(u\colon A\to B\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a symmetric monoidal functor,
+and let</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category. Assume that the Day convolution monoidal structures
+on</span> \(\Fun (A,D)\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(\Fun (B,D)\) <span class='ntx-Italic-tlf-t1-x-x-109'>exist. Suppose that for every object</span> \(b\in B\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits colimits indexed by the relative
+                                                                                   
+
+                                                                                   
+slice category</span> \(u_{/b}\)<span class='ntx-Italic-tlf-t1-x-x-109'>, and that its tensor product preserves these colimits separately in each variable. Then
+pointwise left Kan extension along</span> \(u\) <span class='ntx-Italic-tlf-t1-x-x-109'>defines a symmetric monoidal functor </span>\[ u_!\colon \Fun (A,D)\longrightarrow \Fun (B,D). \] <span class='ntx-Italic-tlf-t1-x-x-109'>In particular, this applies
+when</span> \(A\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(B\) <span class='ntx-Italic-tlf-t1-x-x-109'>are small, while</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>is cocomplete and its tensor product preserves small colimits separately
+in each variable.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-day-convolution-and-the-tensor-product-of-spectra-section-02-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-day-convolution-and-the-tensor-product-of-spectra-section-02-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The hypotheses on the relative slice categories ensure that pointwise left Kan extension
+along \(u\) exists. Its right adjoint \(u^*\) is lax symmetric monoidal by <a class="source-reference" data-label="prop:Monoidal_Day_Convolution_Functoriality" href="../../../entry/monoidal-day-convolution-functoriality/index.html#prop:Monoidal_Day_Convolution_Functoriality">Proposition 16.2.10</a>. By <a class="source-reference" data-label="prop:Strong_Monoidal_Left_Adjoint_To_Lax_Monoidal" href="../../../entry/strong-monoidal-left-adjoint-to-lax-monoidal/index.html#prop:Strong_Monoidal_Left_Adjoint_To_Lax_Monoidal">Proposition 14.3.11</a>, it therefore suffices to show
+that for every finite collection of functors \(F_i\colon A\to D\), indexed by a finite set \(I\), the canonical comparison \[ u_!\bigl (\bigotimes _{i\in I}^{\Day }F_i\bigr ) \longrightarrow \bigotimes _{i\in I}^{\Day }u_!(F_i) \] is an
+isomorphism.
+</p><p class='noindent'>Set \[ H:=\bigotimes _D^I\circ \prod _{i\in I}F_i\colon A^I\to D. \] By the description of Day convolution in <a class="source-reference" data-label="rmk:Description_Day_Convolution" href="../../../entry/description-day-convolution/index.html#rmk:Description_Day_Convolution">Remark 16.2.9</a> and the composition law for left Kan extensions,
+the source of the comparison is the left Kan extension of \(H\) along \[ A^I\xrightarrow {\smash {\bigotimes _A^I}}A\xrightarrow {u}B. \] On the other hand, the pointwise
+formula for left Kan extensions and the assumptions on the tensor product of \(D\) show that \[ \bigotimes _D^I\circ \prod _{i\in I}u_!(F_i)\colon B^I\to D \] is the
+left Kan extension of \(H\) along \(u^I\colon A^I\to B^I\): the relative slice of \(u^I\) over a tuple \((b_i)_{i\in I}\) is the product of the relative slices
+\(u_{/b_i}\), and its colimit may be computed iteratively. Applying Day convolution and composing left Kan
+extensions therefore identifies the target of the comparison with the left Kan extension of \(H\) along \[ A^I\xrightarrow {u^I}B^I\xrightarrow {\smash {\bigotimes _B^I}}B. \]
+Since \(u\) is symmetric monoidal, these two composite functors are naturally equivalent. The canonical
+comparison is therefore an isomorphism, as desired.                                                                         □
+</p>
+</div></div>
+<p class='noindent'>As a basic instance of <a class="source-reference" data-label="cor:Day_Convolution_Small_Source" href="../../../entry/day-convolution-small-source/index.html#cor:Day_Convolution_Small_Source">Corollary 16.2.8</a>, we obtain:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3012r12'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 16.2.12.</span>  </span><span id='cor:Day_Convolution_Animae'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(C\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  a  small  symmetric  monoidal</span>  \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category.  Then  the  functor  category</span>  \(\Fun (C,\An )\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>admits a symmetric monoidal structure via Day convolution.</span>
+                                                                                   
+
+                                                                                   
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-day-convolution-and-the-tensor-product-of-spectra-section-02-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-day-convolution-and-the-tensor-product-of-spectra-section-02-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The cited corollary applies since \(\An \) admits small colimits and the functor \(- \times -\colon \An \times \An \to \An \) preserves colimits
+in both variables.                                                                                                                                 □
+</p>
+</div></div>
+<p class='noindent'>For later use, we record the following description of the internal hom for Day convolution.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3013r13'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 16.2.13.</span>  </span><span id='prop:Internal_Hom_Functor_Category'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a small symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category and let</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a complete closed
+symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category for which the Day convolution symmetric monoidal structure on</span> \(\Fun (C,D)\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>exists. Then this symmetric monoidal structure is closed. Its internal hom is pointwise given by the
+end formula </span>\[ \iHom _{\Fun (C,D)}(F,G)(X) \simeq \int _{Y \in C} \iHom _D(F(Y), G(X \otimes _C Y)). \] <span class='ntx-Italic-tlf-t1-x-x-109'>Here the integral denotes the end of </span><a class="source-reference" data-label="def:End" href="../../../entry/ends/index.html#def:End">Definition 23.6.3</a><span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-day-convolution-and-the-tensor-product-of-spectra-section-02-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-day-convolution-and-the-tensor-product-of-spectra-section-02-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> It suffices to show that for every third functor \(H\colon C \to D\) there is a natural equivalence \[ \Nat (H \otimes _{\Day } F, G) \simeq \Nat \left (H, \int _{Y \in C} \iHom _D(F(Y), G(- \otimes _C Y))\right ). \] Since the Day
+convolution is a left Kan extension, the left-hand side is equivalent to the anima \[ \Nat (H(-) \otimes _D F(-), G(- \otimes _C -)) \] of natural transformations
+                                                                                   
+                                                                                   
+of functors \(C \times C \to D\). By <a class="source-reference" data-label="prop:Hom_Animae_In_Functor_Categories" href="../../../entry/hom-animae-in-functor-categories/index.html#prop:Hom_Animae_In_Functor_Categories">Proposition 23.6.6</a>, this anima is the end \[ \int _{(X,Y) \in C \times C} \Hom _D(H(X) \otimes _D F(Y), G(X \otimes _C Y)). \] Using the Fubini rule for ends, <a class="source-reference" data-label="lem:Fubini_Ends" href="../../../entry/fubini-rule-for-ends/index.html#lem:Fubini_Ends">Lemma 23.6.5</a>, the adjunction \(- \otimes _D F(Y) \dashv \iHom _D(F(Y),-)\), and the fact that \(\Hom _D(H(X),-)\)
+preserves limits, we may rewrite this as \begin {align*}  \int _{X \in C} &amp;\int _{Y \in C} \Hom _D(H(X), \iHom _D(F(Y), G(X \otimes _C Y))) \\ &amp;\simeq \int _{X \in C} \Hom _D\left (H(X), \int _{Y \in C} \iHom _D(F(Y), G(X \otimes _C Y))\right ).  \end {align*}
+</p><p class='noindent'>Using the end description of animae of natural transformations once more gives the desired
+result.                                                                                                                                                   □
+</p>
+</div></div>
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../day-convolution-operads/index.html" aria-label="Previous section: Day convolution operads" title="Previous section: Day convolution operads"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../examples-of-day-convolution/index.html" aria-label="Next section: Examples of Day convolution" title="Next section: Examples of Day convolution"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html" aria-current="page"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/operads-the-heuristics/index.html"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../../../chapter/span-categories/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../../../chapter/basics-on-infinity-operads/index.html"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../../../chapter/cartesian-and-cocartesian-monoidal-structures/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../../../chapter/day-convolution-and-the-tensor-product-of-spectra/index.html" aria-current="page"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="../../../chapter/the-envelope-of-an-infinity-operad/index.html"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../../../chapter/operadic-day-convolution-and-stabilization/index.html"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Operadic Day convolution and stabilization</span></a></li><li><a href="../../../chapter/algebras-and-modules/index.html"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../day-convolution-operads/index.html"><span class="context-entry-heading">Section 16.1</span><span class="context-entry-title">Day convolution operads</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 16.2</span><span class="context-entry-title">Day convolution between symmetric monoidal categories</span></a></li><li><a href="../examples-of-day-convolution/index.html"><span class="context-entry-heading">Section 16.3</span><span class="context-entry-title">Examples of Day convolution</span></a></li><li><a href="../rings-and-semirings/index.html"><span class="context-entry-heading">Section 16.4</span><span class="context-entry-title">Rings and semirings</span></a></li><li><a href="../spectra-as-reduced-excisive-functors/index.html"><span class="context-entry-heading">Section 16.5</span><span class="context-entry-title">Spectra as reduced excisive functors</span></a></li><li><a href="../the-symmetric-monoidal-structure-on-sp/index.html"><span class="context-entry-heading">Section 16.6</span><span class="context-entry-title">The symmetric monoidal structure on Sp</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Oplax_Arrow_Category"><span class="context-entry-heading">Definition 16.2.1</span><span class="context-entry-title">definition</span></a></li><li><a href="#thm:Winges"><span class="context-entry-heading">Theorem 16.2.2</span><span class="context-entry-title">theorem</span></a></li><li><a href="#rmk:Orthofibration_Winges"><span class="context-entry-heading">Remark 16.2.3</span><span class="context-entry-title">remark</span></a></li><li><a href="#thm:Hinich_Winges_Model_Day"><span class="context-entry-heading">Theorem 16.2.4</span><span class="context-entry-title">theorem</span></a></li><li><a href="#rmk:Relative_Day_Convolution"><span class="context-entry-heading">Remark 16.2.5</span><span class="context-entry-title">remark</span></a></li><li><a href="#prop:Multimorphisms_Day_Operad"><span class="context-entry-heading">Proposition 16.2.6</span><span class="context-entry-title">proposition</span></a></li><li><a href="#prop:Day_Convolution_Is_Monoidal"><span class="context-entry-heading">Proposition 16.2.7</span><span class="context-entry-title">proposition</span></a></li><li><a href="#cor:Day_Convolution_Small_Source"><span class="context-entry-heading">Corollary 16.2.8</span><span class="context-entry-title">corollary</span></a></li><li><a href="#rmk:Description_Day_Convolution"><span class="context-entry-heading">Remark 16.2.9</span><span class="context-entry-title">remark</span></a></li><li><a href="#prop:Monoidal_Day_Convolution_Functoriality"><span class="context-entry-heading">Proposition 16.2.10</span><span class="context-entry-title">Functoriality of monoidal Day convolution</span></a></li><li><a href="#lem:Left_Kan_Extension_Day_Symmetric_Monoidal"><span class="context-entry-heading">Lemma 16.2.11</span><span class="context-entry-title">Left Kan extensions and Day convolution</span></a></li><li><a href="#cor:Day_Convolution_Animae"><span class="context-entry-heading">Corollary 16.2.12</span><span class="context-entry-title">corollary</span></a></li><li><a href="#prop:Internal_Hom_Functor_Category"><span class="context-entry-heading">Proposition 16.2.13</span><span class="context-entry-title">proposition</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

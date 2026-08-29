@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 4.1: Pointed ∞-categories | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/stable-homotopy-theory/index.html">Part I</a> · <a href="../../../chapter/spectra-and-stable-infinity-categories/index.html">Chapter 4</a> · Section 4.1</p>
+      <h1>Pointed ∞-categories</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Pointed_Infty_Categories'>In <a class="source-reference" data-label="sec:Pointed_Animae" href="../../animae-as-spaces/pointed-animae-suspensions-and-loops/index.html#sec:Pointed_Animae">Section 2.4</a> we introduced the basic constructions of fibers, cofibers, suspensions and loops in the \(\infty \)-category \(\An _*\) of
+pointed animae. In this section we develop the corresponding formalism for an arbitrary pointed \(\infty \)-category \(C\).
+This will provide the language needed to formulate the definition of a stable \(\infty \)-category in <a class="source-reference" data-label="sec:Stable_Infty_Categories" href="../stable-categories/index.html#sec:Stable_Infty_Categories">Section 4.2</a>, and will also be
+used repeatedly in later chapters.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<a class="entry-heading-link" href="../../../entry/pointed-infinity-category/index.html" aria-label="Definition 4.1.1, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 4.1.1 </span></a>(Pointed \(\infty \)-category)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Pointed_Infty_Category'></span> We call an \(\infty \)-category \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>pointed </span>if it has a <span class='ntx-Italic-tlf-t1-x-x-109'>zero object</span>, i.e. an
+object \(0\) that is both initial and terminal (<a class="source-reference" data-label="def:Initial_Object" href="../../../entry/initial-and-terminal-objects/index.html#def:Initial_Object">Definition 1.7.7</a>). Given objects \(X,Y \in C\), we define the <span class='ntx-Italic-tlf-t1-x-x-109'>null map</span> \(0\colon X \to Y\) as the composite
+of the unique maps \(X \to 0\) and \(0 \to Y\).
+</p><p class='noindent'>A functor \(F\colon C \to D\) between pointed \(\infty \)-categories is called <span class='ntx-Italic-tlf-t1-x-x-109'>pointed </span>if it preserves zero objects.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1002r2'></a>
+<a class="entry-heading-link" href="../../../entry/additive-categories-are-pointed/index.html" aria-label="Example 4.1.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 4.1.2.</span></a>  </span><span id='ex:Additive_Categories_Are_Pointed'></span> The category \(\Ab \) of abelian groups is pointed: the zero object is the trivial group \(0\).
+More generally, any additive category is pointed.
+</p>
+</div>
+
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1003r3'></a>
+<a class="entry-heading-link" href="../../../entry/pointed-topological-spaces-form-a-pointed-category/index.html" aria-label="Example 4.1.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 4.1.3.</span></a>  </span><span id='ex:Pointed_Topological_Spaces_Are_Pointed'></span> The category \(\Top _*\) of pointed topological spaces is pointed, with the one-point space
+functioning as zero object.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1004r4'></a>
+<a class="entry-heading-link" href="../../../entry/pointed-animae-form-a-pointed-infinity-category/index.html" aria-label="Example 4.1.4., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 4.1.4.</span></a>  </span><span id='ex:Pointed_Animae_Are_Pointed'></span> The \(\infty \)-category \(\An _*\) of pointed animae (see <a class="source-reference" data-label="sec:Pointed_Animae" href="../../animae-as-spaces/pointed-animae-suspensions-and-loops/index.html#sec:Pointed_Animae">Section 2.4</a>) is pointed, with the one-point anima as
+zero object.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1005r5'></a>
+<a class="entry-heading-link" href="../../../entry/fiber-and-cofiber-sequences/index.html" aria-label="Definition 4.1.5, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 4.1.5 </span></a>(Fiber and cofiber sequences)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Fiber_Cofiber_Sequences'></span> Let \(C\) be a pointed \(\infty \)-category. A <span class='ntx-Italic-tlf-t1-x-x-109'>nullsequence </span>in \(C\) is
+a sequence of morphisms \[ X \xrightarrow {f} Y \xrightarrow {g} Z \] equipped with a specified <span class='ntx-Italic-tlf-t1-x-x-109'>nullhomotopy</span> \(g \circ f \cong 0\). Equivalently, a nullsequence
+is a commutative square in \(C\) of the form</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-11a486c3ce29.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>If this square is a pullback square in \(C\), we say it is a <span class='ntx-Italic-tlf-t1-x-x-109'>fiber
+sequence</span>, and refer to \(X\) as the <span class='ntx-Italic-tlf-t1-x-x-109'>fiber of</span> \(g\), written \(X \simeq \fib (g)\). If the square is a pushout square, we say it is a <span class='ntx-Italic-tlf-t1-x-x-109'>cofiber
+sequence</span>, and refer to \(Z\) as the <span class='ntx-Italic-tlf-t1-x-x-109'>cofiber of</span> \(f\), written \(Z \simeq \cofib (f)\).</p><p class='noindent'>We say that \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits fibers </span>if such a fiber sequence exists for every morphism \(g\colon Y \to Z\). Dually, we say that \(C\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>admits cofibers </span>if such a cofiber sequence exists for every morphism \(f\colon X \to Y\).
+                                                                                   
+                                                                                   
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1006r6'></a>
+<a class="entry-heading-link" href="../../../entry/loops-and-suspensions-in-a-pointed-infinity-category/index.html" aria-label="Definition 4.1.6, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 4.1.6 </span></a>(Loop and suspension)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Loop_Suspension_C'></span> Let \(C\) be a pointed \(\infty \)-category. If \(C\) admits fibers, we define the
+<span class='ntx-Italic-tlf-t1-x-x-109'>loop object </span>of \(X\in C\) by \[ \Omega X:=\fib (0\to X). \] If \(C\) admits cofibers, we define its <span class='ntx-Italic-tlf-t1-x-x-109'>suspension </span>by \[ \Sigma X:=\cofib (X\to 0). \]
+</p>
+</div>
+<p class='noindent'>Just as in <a class="source-reference" data-label="ex:Loops_Suspension_Functor_An" href="../../../entry/functoriality-of-loops-and-suspensions/index.html#ex:Loops_Suspension_Functor_An">Exercise 2.4.7</a>, the loop and suspension constructions define endofunctors \(\Omega ,\Sigma \colon C \to C\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1007r7'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 4.1.7.</span>  </span><span id='lem:Sigma_Left_Adjoint_Omega'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a pointed</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category that admits fibers and cofibers. Then the functor</span> \(\Sigma \colon C \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is left
+adjoint to</span> \(\Omega \colon C \to C\)<span class='ntx-Italic-tlf-t1-x-x-109'>: for all</span> \(X,Y \in C\) <span class='ntx-Italic-tlf-t1-x-x-109'>there is a natural equivalence </span>\[ \Hom _C(\Sigma X, Y) \simeq \Hom _C(X,\Omega Y). \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-01-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-01-4">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The proof is identical to that of <a class="source-reference" data-label="lem:Sigma_Left_Adjoint_Omega_An" href="../../../entry/suspension-loop-adjunction-for-pointed-animae/index.html#lem:Sigma_Left_Adjoint_Omega_An">Lemma 2.4.8</a>.                                                                                            □
+                                                                                   
+                                                                                   
+</p>
+</div></div>
+
+<h5 class='subsubsectionHead' id='pointed-objects'><a id='x1-2000'></a>Pointed objects</h5>
+<p class='noindent'>The pointed \(\infty \)-categories \(\Top _*\) and \(\An _*\) are a special case of a general construction for turning an \(\infty \)-category \(C\) with
+terminal object into a pointed \(\infty \)-category.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r8'></a>
+<a class="entry-heading-link" href="../../../entry/pointed-objects-in-an-infinity-category/index.html" aria-label="Definition 4.1.8, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 4.1.8 </span></a>(Pointed objects)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Pointed_Object'></span> If \(C\) is an \(\infty \)-category with a terminal object \(*\), we define its \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category
+of pointed objects</span> \(C_*\) as the slice category of \(C\) over \(*\), i.e. as the following pullback square:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-b5fd17e4a986.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Objects of \(C_*\)
+are objects \(X\) of \(C\) equipped with a map \(x\colon * \to X\) from the terminal object, thought of as a chosen ‘basepoint’ of
+\(X\). We will frequently denote such objects by \((X,x)\), or sometimes abusively as \(X\).</p>
+</div>
+<p class='noindent'>A simple computation shows that the hom anima between pointed objects \((X,x)\) and \((Y,y)\) in \(C\) is computed as the
+following fiber: \[ \Hom _{C_*}((X,x),(Y,y)) \;\simeq \; \fib _y\big (\Hom _C(X,Y) \xrightarrow {- \circ x} \Hom _C(*,Y)\big ). \] (See <a class="source-reference" data-label="lem:Hom_Anima_In_Slice" href="../../../entry/hom-animae-in-slice-categories/index.html#lem:Hom_Anima_In_Slice">Lemma 21.3.2</a> for a proof of the more general computation of hom animae in slice categories.) In
+other words, a morphism in \(C_*\) from \((X,x)\) to \((Y,y)\) consists of a morphism \(f\colon X \to Y\) in \(C\) together with an isomorphism \(f(x) \cong y\) of maps
+\(* \to Y\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2002r9'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 4.1.9.</span>  </span><span id='lem:Pointed_Iff_Equivalent_To_Pointed_Objects'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with terminal object</span> \(*\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then:</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+                                                                                   
+                                                                                   
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(C_*\) <span class='ntx-Italic-tlf-t1-x-x-109'>is pointed, with zero object given by</span> \(0 := (*,\id _*\colon * \to *)\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is pointed if and only if the forgetful functor </span>\[ \fgt \colon C_* = C_{*/} \longrightarrow C \] <span class='ntx-Italic-tlf-t1-x-x-109'>is an equivalence.</span></p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-01-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-01-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  (1)  For  initiality  of  \(0\),  note  that  the  map  \(\Hom _C(*,Y) \to \Hom _C(*,Y)\)  given  by  precomposing  with  the  identity  is  an
+equivalence, hence its fiber \(\Hom _{C_*}(0,Y)\) is contractible for every \(Y \in C_*\). For terminality, we observe that \[ \Hom _{C_*}(X,0) \simeq \fib \big (\Hom _C(X,*) \to \Hom _C(*,*)\big ) \] is the fiber of
+a map between two contractible animae, which thus is itself contractible.
+</p><p class='noindent'>(2) The ‘only if’ part is clear from (1). Conversely, assume that \(C\) is pointed. Then the object \(*\) is also
+an initial object in \(C\), and hence the target functor \(C_* = C_{*/} \to C\) is an equivalence by <a class="source-reference" data-label="lem:Object_Terminal_Iff_Source_Map_Equivalence" href="../../../entry/terminal-objects-via-source-maps/index.html#lem:Object_Terminal_Iff_Source_Map_Equivalence">Lemma 21.3.4</a>.                                            □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2005r10'></a>
+<a class="entry-heading-link" href="../../../entry/limits-and-colimits-of-pointed-objects/index.html" aria-label="Exercise 4.1.10., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 4.1.10.</span></a>  </span><span id='exercise:Pointed_Objects_Limits_And_Colimits'></span> Show that \(C_*\) admits pullbacks whenever \(C\) admits pullbacks, and that the functor \(C_* \to C\)
+preserves pullbacks in this case. Similarly, show that \(C_*\) admits pushouts whenever \(C\) admits pushouts,
+and that \(C_* \to C\) preserves pushouts.
+</p>
+</div>
+<p class='noindent'>The pointed \(\infty \)-category \(C_*\) is in a precise sense the ‘universal approximation’ of \(C\) by a pointed \(\infty \)-category. We
+will end this section by recording a precise formulation of this universal property, which will be used
+later.
+                                                                                   
+                                                                                   
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2006r11'></a>
+<a class="entry-heading-link" href="../../../entry/pointed-infinity-categories-and-reduced-functors/index.html" aria-label="Notation 4.1.11., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Notation 4.1.11.</span></a>  </span><span id='nota:Pointed_Infinity_Categories_And_Reduced_Functors'></span> Let \(\Cat _{\infty }^{\term } \subseteq \Cat _{\infty }\) denote the subcategory of \(\infty \)-categories with a terminal object, and functors
+preserving  the  terminal  object.  Let  \(\Cat _{\infty }^{\pt } \subseteq \Cat _{\infty }^{\term }\)  denote  the  full  subcategory  of  pointed  \(\infty \)-categories.  Given
+\(\infty \)-categories \(C\) and \(D\) with terminal objects, we denote by \[ \Fun _*(C,D) \quad \subseteq \quad \Fun (C,D) \] the full subcategory spanned by functors
+preserving the terminal object.
+</p>
+</div>
+<p class='noindent'>The constructions of \(C_*\) and the forgetful functor \(\fgt \colon C_* \to C\) are functorial in \(C\), giving rise to a functor \[ (-)_*\colon \Cat _{\infty }^{\term } \to \Cat _{\infty }^{\pt } \] and a natural
+transformation \(\fgt \colon (-)_* \to \id \).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2007r12'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 4.1.12.</span>  </span><span id='cor:Reduced_Functors_Pointed'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a pointed</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category and let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with a terminal object. Then
+the</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(\Fun _*(D,C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is pointed.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-01-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-01-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The constant functor \(\const _*\colon D \to C\) is terminal in \(\Fun (D,C)\), hence also in the full subcategory \(\Fun _*(D,C)\). We claim that it is
+also initial. Let \(0 \in D\) denote a zero object, and let \(F\colon D \to C\) be a functor preserving terminal objects. Since \(0\) is also
+initial in \(D\), limits over \(D\) are given by evaluation at \(0\) by <a class="source-reference" data-label="lem:Limit_Evaluation_At_Initial_Object" href="../../../entry/limits-evaluated-at-initial-objects/index.html#lem:Limit_Evaluation_At_Initial_Object">Lemma 21.2.4</a>. We therefore get \[ \Hom _{\Fun _*(D,C)}(\const _*,F) \simeq \Hom _C(*,\lim _{d \in D} F(d)) \simeq \Hom _C(*,F(0)). \] Since \(F\) preserves terminal
+                                                                                   
+                                                                                   
+objects and \(0\) is terminal in \(D\), the object \(F(0)\) is terminal in \(C\). The last hom anima is therefore contractible,
+proving that \(\const _*\) is initial.                                                                                                                         □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2008r13'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 4.1.13.</span>  </span><span id='lem:Pointed_Objects_Form_Right_Adjoint'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>be pointed and let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>have a terminal object. Then the forgetful functor</span> \(\fgt \colon C_* \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>induces
+an equivalence </span>\[ \fgt _* \colon \Fun _*(D,C_*) \iso \Fun _*(D,C). \] <span class='ntx-Italic-tlf-t1-x-x-109'>In particular, the functor</span> \((-)_* \colon \Cat _{\infty }^{\term } \to \Cat _{\infty }^{\pt }\) <span class='ntx-Italic-tlf-t1-x-x-109'>is right adjoint to the inclusion</span> \(\Cat _{\infty }^{\pt } \hookrightarrow \Cat _{\infty }^{\term }\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-01-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-01-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Since \(C_* = C_{*/}\), there is an equivalence \[ \Fun _*(D,C_*) \simeq \Fun _*(D,C)_*. \] Indeed, a natural transformation \(\const _* \to F\) is necessarily an isomorphism
+at  the  zero  object  as  soon  as  \(F\)  preserves  terminal  objects.  By  <a class="source-reference" data-label="cor:Reduced_Functors_Pointed" href="../../../entry/reduced-functor-categories-are-pointed/index.html#cor:Reduced_Functors_Pointed">Corollary 4.1.12</a>,  <a class="source-reference" data-label="lem:Pointed_Iff_Equivalent_To_Pointed_Objects" href="../../../entry/pointed-objects-form-a-pointed-infinity-category/index.html#lem:Pointed_Iff_Equivalent_To_Pointed_Objects">Lemma 4.1.9</a>,  the  forgetful  functor  from  the
+right-hand side to \(\Fun _*(D,C)\) is an equivalence. Passing to underlying animae exhibits \((-)_*\) as a right adjoint to the
+inclusion.                                                                                                                                             □
+</p>
+</div></div>
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../../homology-and-cohomology/brown-representability-online-only/index.html" aria-label="Previous section: Brown representability (online only)" title="Previous section: Brown representability (online only)"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../stable-categories/index.html" aria-label="Next section: Stable ∞-categories" title="Next section: Stable ∞-categories"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html" aria-current="page"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/animae-as-spaces/index.html"><span class="context-entry-heading">Chapter 2</span><span class="context-entry-title">Animae as spaces</span></a></li><li><a href="../../../chapter/homology-and-cohomology/index.html"><span class="context-entry-heading">Chapter 3</span><span class="context-entry-title">Homology and cohomology</span></a></li><li><a href="../../../chapter/spectra-and-stable-infinity-categories/index.html" aria-current="page"><span class="context-entry-heading">Chapter 4</span><span class="context-entry-title">Spectra and stable ∞-categories</span></a></li><li><a href="../../../chapter/recognition-principle/index.html"><span class="context-entry-heading">Chapter 5</span><span class="context-entry-title">The recognition principle</span></a></li><li><a href="../../../chapter/homological-algebra/index.html"><span class="context-entry-heading">Chapter 6</span><span class="context-entry-title">Homological algebra</span></a></li><li><a href="../../../chapter/localization-and-completion/index.html"><span class="context-entry-heading">Chapter 7</span><span class="context-entry-title">Localization and completion</span></a></li><li><a href="../../../chapter/ring-spectra-and-modules/index.html"><span class="context-entry-heading">Chapter 8</span><span class="context-entry-title">Ring spectra and modules</span></a></li><li><a href="../../../chapter/complex-k-theory/index.html"><span class="context-entry-heading">Chapter 9</span><span class="context-entry-title">Complex K-theory</span></a></li><li><a href="../../../chapter/thom-spectra-and-bordism-theory/index.html"><span class="context-entry-heading">Chapter 10</span><span class="context-entry-title">Thom spectra and bordism theory</span></a></li><li><a href="../../../chapter/duality-phenomena/index.html"><span class="context-entry-heading">Chapter 11</span><span class="context-entry-title">Duality phenomena</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 4.1</span><span class="context-entry-title">Pointed ∞-categories</span></a></li><li><a href="../stable-categories/index.html"><span class="context-entry-heading">Section 4.2</span><span class="context-entry-title">Stable ∞-categories</span></a></li><li><a href="../stabilization/index.html"><span class="context-entry-heading">Section 4.3</span><span class="context-entry-title">Stabilization</span></a></li><li><a href="../the-category-of-spectra/index.html"><span class="context-entry-heading">Section 4.4</span><span class="context-entry-title">The ∞-category of spectra</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Pointed_Infty_Category"><span class="context-entry-heading">Definition 4.1.1</span><span class="context-entry-title">Pointed ∞-category</span></a></li><li><a href="#ex:Additive_Categories_Are_Pointed"><span class="context-entry-heading">Example 4.1.2</span><span class="context-entry-title">example</span></a></li><li><a href="#ex:Pointed_Topological_Spaces_Are_Pointed"><span class="context-entry-heading">Example 4.1.3</span><span class="context-entry-title">example</span></a></li><li><a href="#ex:Pointed_Animae_Are_Pointed"><span class="context-entry-heading">Example 4.1.4</span><span class="context-entry-title">example</span></a></li><li><a href="#def:Fiber_Cofiber_Sequences"><span class="context-entry-heading">Definition 4.1.5</span><span class="context-entry-title">Fiber and cofiber sequences</span></a></li><li><a href="#def:Loop_Suspension_C"><span class="context-entry-heading">Definition 4.1.6</span><span class="context-entry-title">Loop and suspension</span></a></li><li><a href="#lem:Sigma_Left_Adjoint_Omega"><span class="context-entry-heading">Lemma 4.1.7</span><span class="context-entry-title">lemma</span></a></li><li><a href="#def:Pointed_Object"><span class="context-entry-heading">Definition 4.1.8</span><span class="context-entry-title">Pointed objects</span></a></li><li><a href="#lem:Pointed_Iff_Equivalent_To_Pointed_Objects"><span class="context-entry-heading">Lemma 4.1.9</span><span class="context-entry-title">lemma</span></a></li><li><a href="#exercise:Pointed_Objects_Limits_And_Colimits"><span class="context-entry-heading">Exercise 4.1.10</span><span class="context-entry-title">exercise</span></a></li><li><a href="#nota:Pointed_Infinity_Categories_And_Reduced_Functors"><span class="context-entry-heading">Notation 4.1.11</span><span class="context-entry-title">notation</span></a></li><li><a href="#cor:Reduced_Functors_Pointed"><span class="context-entry-heading">Corollary 4.1.12</span><span class="context-entry-title">corollary</span></a></li><li><a href="#lem:Pointed_Objects_Form_Right_Adjoint"><span class="context-entry-heading">Lemma 4.1.13</span><span class="context-entry-title">lemma</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

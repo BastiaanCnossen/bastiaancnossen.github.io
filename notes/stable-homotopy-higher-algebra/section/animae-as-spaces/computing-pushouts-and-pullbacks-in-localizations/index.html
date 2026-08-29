@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 2.2: Computing pushouts and pullbacks in localizations | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/stable-homotopy-theory/index.html">Part I</a> · <a href="../../../chapter/animae-as-spaces/index.html">Chapter 2</a> · Section 2.2</p>
+      <h1>Computing pushouts and pullbacks in localizations</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Left_Exact_Localizations'>The problem of computing pushouts and pullbacks of animae in terms of pushouts and pullbacks of
+topological spaces is a special case of a problem that appears in other situations as well: given an \(\infty \)-category \(C\)
+equipped with a collection of morphisms \(W\) designated as weak equivalences, how can pushouts and
+pullbacks in the localization \(C[W^{-1}]\) be computed in terms of pushouts and pullbacks in the original
+\(\infty \)-category \(C\)? The goal of this section is to introduce a general framework for addressing this
+question, due to <span class='citation'>Cisinski (2019), Chapter 7</span> and closely related to Quillen’s framework of <span class='ntx-Italic-tlf-t1-x-x-109'>model categories </span><span class='citation'>[Quillen (1967)]</span>. In the case
+                                                                                   
+                                                                                   
+of pullbacks, the idea is to find a suitable class of morphisms in \(C\) called <span class='ntx-Italic-tlf-t1-x-x-109'>fibrations </span>with the
+property that the localization functor \(C \to C[W^{-1}]\) preserves pullbacks along fibrations. In other words: strict
+pullbacks along fibrations in \(C\) are already the ‘homotopically correct’ pullbacks. Dually, pushouts
+in \(C[W^{-1}]\) may be computed by finding a class of <span class='ntx-Italic-tlf-t1-x-x-109'>cofibrations </span>in \(C\) and forming strict pushouts along
+cofibrations.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3001r1'></a>
+<a class="entry-heading-link" href="../../../entry/model-categories-as-presentations-of-homotopy-theories/index.html" aria-label="Remark 2.2.1., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 2.2.1.</span></a>  </span><span id='rmk:Model_Categories_As_Presentations'></span> Model category theory has played an important role in the development of homotopy
+theory, being one of the main theoretical frameworks researchers used for studying homotopy theories
+before the widespread adoption of \(\infty \)-category theory. A model category is a 1-category equipped
+with  weak  equivalences,  fibrations,  and  cofibrations  satisfying  various  axioms  that  ensure  these
+classes interact appropriately. From an \(\infty \)-categorical perspective, we may think of a model category
+\(C\) as  providing  a  ‘model’  for  its  associated  \(\infty \)-categorical  localization  \(C[W^{-1}]\).  In  particular,  the  fibrations
+and cofibrations in a model category do not affect the ‘underlying homotopy theory’ presented by
+the model category, and should rather be thought of as tools for gaining control over categorical
+constructions like pushouts and pullbacks in this localization.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3002r2'></a>
+<a class="entry-heading-link" href="../../../entry/optional-localization-machinery/index.html" aria-label="Remark 2.2.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 2.2.2.</span></a>  </span><span id='rmk:Computing_Localizations_Optional'></span> This section can be skipped on a first reading. The only results we will use are the
+specific consequences for the localization functor \(\Pi _{\infty }\colon \Top \to \An \) stated in <a class="source-reference" data-label="thm:Top_Quillen_Cofibration_Structure" href="../../../entry/quillen-cofibration-structure-on-topological-spaces/index.html#thm:Top_Quillen_Cofibration_Structure">Theorem 2.3.8</a>, <a class="source-reference" data-label="thm:Top_Category_With_Weak_Equivalences_And_Fibrations" href="../../../entry/serre-fibration-structure-on-topological-spaces/index.html#thm:Top_Category_With_Weak_Equivalences_And_Fibrations">Theorem 2.3.18</a>; readers willing to accept those as
+black boxes may safely move to <a class="source-reference" data-label="sec:Homotopy_Pushouts_Of_Spaces" href="../relative-cell-complexes-and-serre-fibrations/index.html#sec:Homotopy_Pushouts_Of_Spaces">Section 2.3</a>.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3003r3'></a>
+<a class="entry-heading-link" href="../../../entry/class-of-fibrations/index.html" aria-label="Definition 2.2.3, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 2.2.3 </span></a>(Class of fibrations)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Class_Of_Fibrations'></span> Let \(C\) be an \(\infty \)-category with a terminal object \(*\). A collection of
+morphisms \(F \subseteq \Map ([1],C)\) is called a <span class='ntx-Italic-tlf-t1-x-x-109'>class of fibrations </span>if the following conditions are satisfied:
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>It contains all the isomorphisms;
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>It is closed under composition;
+   </p></dd><dt class='enumerate'>
+(3) </dt><dd class='enumerate'>
+   <p class='noindent'>It is closed under base change: for all morphisms \(f\colon X \to Y\) in \(F\) and \(v \colon Y' \to Y\) in \(C\), the pullback \(Y' \times _Y X\) exists, and the
+   projection \(Y' \times _Y X \to Y'\) is again in \(F\).</p></dd></dl>
+<p class='noindent'>A morphism in \(F\) is called a <span class='ntx-Italic-tlf-t1-x-x-109'>fibration</span>. An object \(X\) in \(C\) is called <span class='ntx-Italic-tlf-t1-x-x-109'>fibrant </span>if the unique map \(X \to *\) is a fibration. Dually,
+a collection of morphisms \(I\) is called a <span class='ntx-Italic-tlf-t1-x-x-109'>class of cofibrations </span>if the corresponding class \(I\catop \) in \(C\catop \) defines
+a class of fibrations in \(C\catop \). A morphism in \(I\) is a <span class='ntx-Italic-tlf-t1-x-x-109'>cofibration</span>, and an object \(X\) is <span class='ntx-Italic-tlf-t1-x-x-109'>cofibrant </span>if \(\emptyset \to X\) is a
+cofibration.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3007r4'></a>
+<a class="entry-heading-link" href="../../../entry/infinity-category-with-weak-equivalences-and-fibrations/index.html" aria-label="Definition 2.2.4, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 2.2.4 </span></a>(\(\infty \)-category with weak equivalences and fibrations)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Weak_Equivalences_and_Fibrations'></span> An \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with weak equivalences
+and fibrations </span>is a triple \((C,W,F)\), where \(C\) is an \(\infty \)-category with a terminal object, and \(W\) and \(F\) are collections of
+morphisms satisfying the following conditions:
+                                                                                   
+                                                                                   
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>(2-out-of-3) For composable morphisms \(f\) and \(g\), if two of \(f\), \(g\), \(gf\) are in \(W\), then so is the third.
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>(Fibrations) The class \(F\) is a class of fibrations.
+   </p></dd><dt class='enumerate'>
+(3) </dt><dd class='enumerate'>
+   <p class='noindent'>(Pullback axiom) For any pullback square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-f6dba7ce721c.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>in which \(p\) is a fibration between fibrant objects, and \(Y'\)
+   is fibrant, if \(p\) belongs to \(W\) then so does \(p'\).</p></dd><dt class='enumerate'>
+(4) </dt><dd class='enumerate'>
+   <p class='noindent'>(Factorization axiom) For any morphism \(f\colon X \to Y\) in \(C\) with fibrant codomain, there exists a morphism \(w\colon X \to X'\) in
+   \(W\) and a fibration \(p\colon X' \to Y\) such that \(f = p \circ w\).</p></dd></dl>
+<p class='noindent'>The morphisms in \(W\) are called <span class='ntx-Italic-tlf-t1-x-x-109'>weak equivalences</span>. Morphisms in \(W \cap F\) are <span class='ntx-Italic-tlf-t1-x-x-109'>trivial fibrations</span>. We similarly define
+an \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with weak equivalences and cofibrations </span>by dualizing (replacing \(F\) with a class of
+cofibrations \(I\) and appropriately modifying axioms (3) and (4) to involve pushouts and cofibrant
+objects).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3012r5'></a>
+<a class="entry-heading-link" href="../../../entry/trivial-weak-equivalences-and-all-fibrations/index.html" aria-label="Example 2.2.5., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 2.2.5.</span></a>  </span><span id='ex:Trivial_Weak_Equivalences'></span> Let \(C\) be an \(\infty \)-category that admits a terminal object and admits all pullbacks. Then
+we may turn \(C\) into an \(\infty \)-category with weak equivalences and fibrations by taking \(W\) to consist only of
+the isomorphisms and \(F\) to consist of all morphisms in \(C\).
+</p>
+</div>
+                                                                                   
+                                                                                   
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3013r6'></a>
+<a class="entry-heading-link" href="../../../entry/cofibration-and-fibration-structures-on-topological-spaces/index.html" aria-label="Example 2.2.6, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 2.2.6 </span></a>(Structures on \(\Top \))<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='ex:Structures_on_Top'></span> As will be discussed below, the category \(\Top \) can be equipped with such
+structures relevant to \(\An \simeq \Top [W^{-1}]\) where \(W\) is the class of weak homotopy equivalences: </p>
+     <ul class='itemize1'>
+     <li class='itemize'>\((\Top , W, I=\text {relative cell complexes})\) is an \(\infty \)-category with weak equivalences and cofibrations (see <a class="source-reference" data-label="thm:Top_Quillen_Cofibration_Structure" href="../../../entry/quillen-cofibration-structure-on-topological-spaces/index.html#thm:Top_Quillen_Cofibration_Structure">Theorem 2.3.8</a>). The cofibrant objects are the
+     cell complexes.
+     </li>
+     <li class='itemize'>\((\Top , W, F=\text {Serre fibrations})\) is an \(\infty \)-category with weak equivalences and fibrations (see <a class="source-reference" data-label="thm:Top_Category_With_Weak_Equivalences_And_Fibrations" href="../../../entry/serre-fibration-structure-on-topological-spaces/index.html#thm:Top_Category_With_Weak_Equivalences_And_Fibrations">Theorem 2.3.18</a>). All objects in \(\Top \) are fibrant in this
+     structure.</li></ul>
+</div>
+<p class='noindent'>The following definition captures those functors that preserve the relevant structure:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3014r7'></a>
+<a class="entry-heading-link" href="../../../entry/left-exact-functor-between-categories-with-fibrations/index.html" aria-label="Definition 2.2.7, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 2.2.7 </span></a>(Left exact functor)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Left_Exact_Chap2'></span> Let \((C, W_C, F_C)\) and \((D, W_D, F_D)\) be \(\infty \)-categories with weak equivalences and fibrations. A
+functor \(F\colon C \to D\) is called <span class='ntx-Italic-tlf-t1-x-x-109'>left exact </span>if:
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>\(F\) preserves terminal objects.
+                                                                                   
+                                                                                   
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>\(F\) sends fibrations between fibrant objects in \(C\) to fibrations in \(D\), and trivial fibrations between fibrant
+   objects in \(C\) to trivial fibrations in \(D\).
+   </p></dd><dt class='enumerate'>
+(3) </dt><dd class='enumerate'>
+   <p class='noindent'>For any pullback square in \(C\)</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-f6dba7ce721c.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>in which \(p \in F_C\) and \(Y, Y'\) are fibrant in \(C\), the induced square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-10c81e246322.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>is a pullback
+   square in \(D\).</p></dd></dl>
+<p class='noindent'>If \(C, D\) have weak equivalences and <span class='ntx-Italic-tlf-t1-x-x-109'>co</span>fibrations, we say that \(F\colon C \to D\) is <span class='ntx-Italic-tlf-t1-x-x-109'>right exact </span>if \(F\catop \colon C\catop \to D\catop \) is left exact (relative to the dual
+fibration structures). In particular, \(F\) preserves initial objects and pushouts along cofibrations between
+cofibrant objects, provided that the other object in the span is also cofibrant.
+</p>
+</div>
+<p class='noindent'>We now come to the main result of this section, which we will state as a black box:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3018r8'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 2.2.8 </span>(<span class='citation'>Cisinski (2019), Proposition 7.5.6, Theorem 7.5.18</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Localization_Left_Exact'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \((C,W,F)\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with weak equivalences and fibrations, let</span> \(C_f \subseteq C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be the full subcategory
+of fibrant objects, and write</span> \(W_f\) <span class='ntx-Italic-tlf-t1-x-x-109'>for the weak equivalences between fibrant objects.</span>
+   </p><dl class='enumerate'><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(1)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The inclusion</span> \(\iota \colon C_f \hookrightarrow C\) <span class='ntx-Italic-tlf-t1-x-x-109'>induces an equivalence </span>\[ \overline \iota \colon C_f[W_f^{-1}] \xrightarrow {\simeq } C[W^{-1}]. \]
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(2)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The localization</span> \(C[W^{-1}]\) <span class='ntx-Italic-tlf-t1-x-x-109'>has finite limits (i.e., a terminal object and pullbacks), and the localization
+   functor</span> \(\gamma \colon C \to C[W^{-1}]\) <span class='ntx-Italic-tlf-t1-x-x-109'>is left exact (when</span> \(C[W^{-1}]\) <span class='ntx-Italic-tlf-t1-x-x-109'>is given the trivial structure as in </span><a class="source-reference" data-label="ex:Trivial_Weak_Equivalences" href="../../../entry/trivial-weak-equivalences-and-all-fibrations/index.html#ex:Trivial_Weak_Equivalences">Example 2.2.5</a><span class='ntx-Italic-tlf-t1-x-x-109'>).</span>
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(3)</span> </dt><dd class='enumerate'>
+                                                                                   
+
+                                                                                   
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For any</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>with finite limits, composition with</span> \(\gamma \) <span class='ntx-Italic-tlf-t1-x-x-109'>induces an equivalence </span>\[ \Fun ^{\lex }(C[W^{-1}],D) \iso \Fun ^{\lex }_W(C,D) \] <span class='ntx-Italic-tlf-t1-x-x-109'>between left
+   exact functors</span> \(C[W^{-1}] \to D\) <span class='ntx-Italic-tlf-t1-x-x-109'>and left exact functors</span> \(C \to D\) <span class='ntx-Italic-tlf-t1-x-x-109'>that invert the morphisms in</span> \(W\)<span class='ntx-Italic-tlf-t1-x-x-109'>. In particular, every left
+   exact functor</span> \(C \to D\) <span class='ntx-Italic-tlf-t1-x-x-109'>which inverts the morphisms</span> \(W\) <span class='ntx-Italic-tlf-t1-x-x-109'>induces a left exact functor</span> \(C[W^{-1}] \to D\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p></dd></dl>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3022r9'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 2.2.9.</span>  </span><span id='cor:Localization_Right_Exact'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \((C,W,I)\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with weak equivalences and cofibrations, let</span> \(C_c \subseteq C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be the
+full subcategory of cofibrant objects, and write</span> \(W_c\) <span class='ntx-Italic-tlf-t1-x-x-109'>for the weak equivalences between cofibrant
+objects.</span>
+   </p><dl class='enumerate'><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(1)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The inclusion</span> \(\iota \colon C_c \hookrightarrow C\) <span class='ntx-Italic-tlf-t1-x-x-109'>induces an equivalence </span>\[ \overline \iota \colon C_c[W_c^{-1}] \xrightarrow {\simeq } C[W^{-1}]. \]
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(2)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The localization</span> \(C[W^{-1}]\) <span class='ntx-Italic-tlf-t1-x-x-109'>has finite colimits (i.e., an initial object and pushouts), and the localization
+   functor</span> \(\gamma \colon C \to C[W^{-1}]\) <span class='ntx-Italic-tlf-t1-x-x-109'>is right exact.</span>
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(3)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For any</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>with finite colimits, composition with</span> \(\gamma \) <span class='ntx-Italic-tlf-t1-x-x-109'>induces an equivalence </span>\[ \Fun ^{\rex }(C[W^{-1}],D) \iso \Fun ^{\rex }_W(C,D). \]</p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-26" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-26">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Apply <a class="source-reference" data-label="thm:Localization_Left_Exact" href="../../../entry/left-exact-localization-via-fibrant-objects/index.html#thm:Localization_Left_Exact">Theorem 2.2.8</a> to the opposite category \(C\catop \).                                                                                           □
+</p>
+</div></div>
+<p class='noindent'>Thus the localization of an \(\infty \)-category with weak equivalences and fibrations (respectively, cofibrations) may
+be computed using only its fibrant (respectively, cofibrant) objects, without choosing replacements
+functorially.
+</p><p class='noindent'>The exactness results above cover the interaction of localizations with pushouts and pullbacks. We will now
+extend this discussion to arbitrary limits and colimits, following <span class='citation'>Cisinski (2019), Section 7.7</span>
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3026r10'></a>
+<a class="entry-heading-link" href="../../../entry/homotopy-complete-category-with-fibrations/index.html" aria-label="Definition 2.2.10., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 2.2.10.</span></a>  </span><span id='def:Homotopy_Completeness'></span> Let \(C\) be an \(\infty \)-category with weak equivalences and fibrations. We say that \(C\) is <span class='ntx-Italic-tlf-t1-x-x-109'>homotopy
+complete </span>if the following two conditions are satisfied:
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>The product \(\prod _{i \in I} X_i\) of any small collection of fibrant objects \((X_i)_{i \in I}\) exists in \(C\) and is again fibrant;
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>Given a small collection \((f_i\colon X_i \to Y_i)\) of morphisms between fibrant objects, if each \(f_i\) is a fibration (resp. trivial
+   fibration), then also \(\prod _{i} f_i\) is a fibration (resp. trivial fibration).</p></dd></dl>
+<p class='noindent'>A functor between homotopy complete \(\infty \)-categories with weak equivalences and fibrations is called
+<span class='ntx-Italic-tlf-t1-x-x-109'>homotopy continuous </span>if it is left exact and preserves small products of fibrant objects.
+</p><p class='noindent'>Dually, we say an \(\infty \)-category with weak equivalences and cofibrations \(C\) is <span class='ntx-Italic-tlf-t1-x-x-109'>homotopy cocomplete </span>if \(C\catop \) is
+homotopy complete; we obtain the analogous notion of a <span class='ntx-Italic-tlf-t1-x-x-109'>homotopy cocontinuous </span>functor.
+</p>
+</div>
+
+<div class='newtheorem'>
+                                                                                   
+                                                                                   
+<p class='noindent'><span class='head'>
+<a id='x1-3029r11'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 2.2.11 </span>(<span class='citation'>Cisinski (2019), Proposition 7.7.4, Theorem 7.7.6</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Localization_Of_Homotopy_Complete_Category'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a homotopy complete</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with weak equivalences and fibrations, and
+write</span> \(L(C):=C[W^{-1}]\) <span class='ntx-Italic-tlf-t1-x-x-109'>for its localization.</span>
+   </p><dl class='enumerate'><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(1)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The localization</span> \(L(C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>has small limits, and the localization functor</span> \(\gamma \colon C \to L(C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is homotopy continuous;</span>
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(2)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If all objects of</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>are fibrant, then</span> \(L(C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is in fact  </span>universal <span class='ntx-Italic-tlf-t1-x-x-109'>with this property: for any</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(E\)
+   <span class='ntx-Italic-tlf-t1-x-x-109'>with small limits, the functor</span> \(\gamma \) <span class='ntx-Italic-tlf-t1-x-x-109'>induces an equivalence of</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories </span>\[ \gamma ^*\colon \Fun ^{\lim }(L(C),E) \iso \Fun ^{\mathrm {hcont}}(C,E), \] <span class='ntx-Italic-tlf-t1-x-x-109'>where the right-hand side
+   denotes the full subcategory spanned by the homotopy continuous functors.</span>
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(3)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Given a homotopy continuous functor</span> \(F\colon C \to D\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the induced functor</span> \(L(F)\colon L(C) \to L(D)\) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves small limits;</span></p></dd></dl>
+<p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The dual result holds for homotopy cocomplete</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories with weak equivalences and cofibrations.</span>
+</p>
+</div>
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../homotopy-pushouts-and-pullbacks/index.html" aria-label="Previous section: Homotopy pushouts and pullbacks" title="Previous section: Homotopy pushouts and pullbacks"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../relative-cell-complexes-and-serre-fibrations/index.html" aria-label="Next section: Relative cell complexes and Serre fibrations" title="Next section: Relative cell complexes and Serre fibrations"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html" aria-current="page"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/animae-as-spaces/index.html" aria-current="page"><span class="context-entry-heading">Chapter 2</span><span class="context-entry-title">Animae as spaces</span></a></li><li><a href="../../../chapter/homology-and-cohomology/index.html"><span class="context-entry-heading">Chapter 3</span><span class="context-entry-title">Homology and cohomology</span></a></li><li><a href="../../../chapter/spectra-and-stable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 4</span><span class="context-entry-title">Spectra and stable ∞-categories</span></a></li><li><a href="../../../chapter/recognition-principle/index.html"><span class="context-entry-heading">Chapter 5</span><span class="context-entry-title">The recognition principle</span></a></li><li><a href="../../../chapter/homological-algebra/index.html"><span class="context-entry-heading">Chapter 6</span><span class="context-entry-title">Homological algebra</span></a></li><li><a href="../../../chapter/localization-and-completion/index.html"><span class="context-entry-heading">Chapter 7</span><span class="context-entry-title">Localization and completion</span></a></li><li><a href="../../../chapter/ring-spectra-and-modules/index.html"><span class="context-entry-heading">Chapter 8</span><span class="context-entry-title">Ring spectra and modules</span></a></li><li><a href="../../../chapter/complex-k-theory/index.html"><span class="context-entry-heading">Chapter 9</span><span class="context-entry-title">Complex K-theory</span></a></li><li><a href="../../../chapter/thom-spectra-and-bordism-theory/index.html"><span class="context-entry-heading">Chapter 10</span><span class="context-entry-title">Thom spectra and bordism theory</span></a></li><li><a href="../../../chapter/duality-phenomena/index.html"><span class="context-entry-heading">Chapter 11</span><span class="context-entry-title">Duality phenomena</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../homotopy-pushouts-and-pullbacks/index.html"><span class="context-entry-heading">Section 2.1</span><span class="context-entry-title">Homotopy pushouts and pullbacks</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 2.2</span><span class="context-entry-title">Computing pushouts and pullbacks in localizations</span></a></li><li><a href="../relative-cell-complexes-and-serre-fibrations/index.html"><span class="context-entry-heading">Section 2.3</span><span class="context-entry-title">Relative cell complexes and Serre fibrations</span></a></li><li><a href="../pointed-animae-suspensions-and-loops/index.html"><span class="context-entry-heading">Section 2.4</span><span class="context-entry-title">Pointed animae, suspensions and loops</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#rmk:Model_Categories_As_Presentations"><span class="context-entry-heading">Remark 2.2.1</span><span class="context-entry-title">remark</span></a></li><li><a href="#rmk:Computing_Localizations_Optional"><span class="context-entry-heading">Remark 2.2.2</span><span class="context-entry-title">remark</span></a></li><li><a href="#def:Class_Of_Fibrations"><span class="context-entry-heading">Definition 2.2.3</span><span class="context-entry-title">Class of fibrations</span></a></li><li><a href="#def:Weak_Equivalences_and_Fibrations"><span class="context-entry-heading">Definition 2.2.4</span><span class="context-entry-title">∞-category with weak equivalences and fibrations</span></a></li><li><a href="#ex:Trivial_Weak_Equivalences"><span class="context-entry-heading">Example 2.2.5</span><span class="context-entry-title">example</span></a></li><li><a href="#ex:Structures_on_Top"><span class="context-entry-heading">Example 2.2.6</span><span class="context-entry-title">Structures on \Top</span></a></li><li><a href="#def:Left_Exact_Chap2"><span class="context-entry-heading">Definition 2.2.7</span><span class="context-entry-title">Left exact functor</span></a></li><li><a href="#thm:Localization_Left_Exact"><span class="context-entry-heading">Theorem 2.2.8</span><span class="context-entry-title">theorem</span></a></li><li><a href="#cor:Localization_Right_Exact"><span class="context-entry-heading">Corollary 2.2.9</span><span class="context-entry-title">corollary</span></a></li><li><a href="#def:Homotopy_Completeness"><span class="context-entry-heading">Definition 2.2.10</span><span class="context-entry-title">definition</span></a></li><li><a href="#thm:Localization_Of_Homotopy_Complete_Category"><span class="context-entry-heading">Theorem 2.2.11</span><span class="context-entry-title">theorem</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

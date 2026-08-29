@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 8.4: Localizations of ring spectra | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/stable-homotopy-theory/index.html">Part I</a> · <a href="../../../chapter/ring-spectra-and-modules/index.html">Chapter 8</a> · Section 8.4</p>
+      <h1>Localizations of ring spectra</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Localization_Ring_Spectra'>In classical algebra, given a commutative ring \(R\) and a multiplicative subset \(S \subseteq R\), one can form the localization \(R[S^{-1}]\), a
+new ring in which every element of \(S\) becomes invertible. We now develop the analogous construction for
+commutative ring spectra. This is the form needed in <a class="source-reference" data-label="chap:Complex_K_Theory" href="../../../chapter/complex-k-theory/index.html#chap:Complex_K_Theory">Chapter 9</a>, where periodic complex K-theory is obtained by
+inverting the Bott element in connective complex K-theory.
+</p><p class='noindent'>We have already met a special case in <a class="source-reference" data-label="sec:Localization_At_Prime" href="../../localization-and-completion/localization-at-a-prime/index.html#sec:Localization_At_Prime">Section 7.2</a>: inverting a set of primes \(P\) on the sphere spectrum gives a mapping
+telescope \(\S [P^{-1}]\), and tensoring with this telescope is the corresponding reflection. The same two features persist
+here. Localization is smashing, and localization at a single homogeneous element is computed by a
+telescope.
+</p><p class='noindent'>We first treat commutative ring spectra, which is the only case used elsewhere in the book. The online
+version then continues with the localization of associative ring spectra at multiplicative subsets satisfying
+an Ore condition.
+</p>
+<h4 class='subsectionHead' id='the-commutative-case'><span class='titlemark'>8.4.1    </span> <a id='x1-20008.4.1'></a>The commutative case</h4>
+<p class='noindent' id='subsec_Commutative_Localization'>Let \(R\) be a commutative ring spectrum. Its homotopy groups form a graded-commutative ring, and the
+homotopy groups of an \(R\)-module form a graded module over it.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r1'></a>
+<a class="entry-heading-link" href="../../../entry/multiplicative-subsets-of-graded-homotopy-rings/index.html" aria-label="Definition 8.4.1., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 8.4.1.</span></a>  </span><span id='def:Multiplicative_Subset_Graded_Homotopy_Ring'></span> Let \(S \subseteq \pi _*(R)\) be a subset of homogeneous elements. We say that \(S\) is <span class='ntx-Italic-tlf-t1-x-x-109'>multiplicative </span>if it
+contains the unit \(1 \in \pi _0(R)\) and is closed under multiplication.
+</p>
+</div>
+                                                                                   
+                                                                                   
+<p class='noindent'>For a homogeneous element \(s \in \pi _d(R)\), multiplication by \(s\) is already defined at the level of \(R\)-modules:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2002r2'></a>
+<a class="entry-heading-link" href="../../../entry/multiplication-by-homotopy-classes-is-module-linear/index.html" aria-label="Observation 8.4.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Observation 8.4.2.</span></a>  </span><span id='obs:Multiplication_By_s_Module_Map'></span>  Multiplication  by  \(s \in \pi _d(R)\)  is  the  natural  transformation  of  functors  \(\Mod _R \to \Mod _R\)  given  by  \[ s\colon M[d] \simeq R[d]\otimes _R M \xrightarrow {\ s \otimes \id \ } R \otimes _R M \simeq M. \]  On
+homotopy groups this is the map \(x \mapsto s\cdot x\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2003r3'></a>
+<a class="entry-heading-link" href="../../../entry/local-modules-for-multiplicative-subsets/index.html" aria-label="Definition 8.4.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 8.4.3.</span></a>  </span><span id='def:S_Local_Module'></span> Let \(S \subseteq \pi _*(R)\) be a multiplicative subset of homogeneous elements. An \(R\)-module \(N\) is \(S\)<span class='ntx-Italic-tlf-t1-x-x-109'>-local </span>if
+multiplication by every \(s \in S\) is an isomorphism \[ s\colon N[\abs {s}] \iso N. \] Equivalently, multiplication by every \(s \in S\) is an isomorphism
+on the graded group \(\pi _*(N)\). We write \(\Mod _R^{\Loc (S)} \subseteq \Mod _R\) for the full subcategory of \(S\)-local modules.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2004r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 8.4.4 </span>(Commutative localization is smashing)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Commutative_Localization_Smashing'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(S \subseteq \pi _*(R)\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a multiplicative subset of homogeneous
+elements.</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+                                                                                   
+                                                                                   
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The inclusion</span> \(\Mod _R^{\Loc (S)} \hookrightarrow \Mod _R\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a left adjoint </span>\[ S^{-1}(-)\colon \Mod _R \longrightarrow \Mod _R^{\Loc (S)}. \] <span class='ntx-Italic-tlf-t1-x-x-109'>The subcategory</span> \(\Mod _R^{\Loc (S)}\) <span class='ntx-Italic-tlf-t1-x-x-109'>inherits a symmetric monoidal structure
+     for which this localization functor is symmetric monoidal and the inclusion is lax symmetric
+     monoidal.</span>
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The localization is </span>smashing<span class='ntx-Italic-tlf-t1-x-x-109'>: for every</span> \(M \in \Mod _R\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the map </span>\[ M \simeq M \otimes _R R \xrightarrow {\ \id _M \otimes \,\eta _R\ } M \otimes _R S^{-1}R \] <span class='ntx-Italic-tlf-t1-x-x-109'>exhibits</span> \(M \otimes _R S^{-1}R\) <span class='ntx-Italic-tlf-t1-x-x-109'>as the</span> \(S\)<span class='ntx-Italic-tlf-t1-x-x-109'>-localization of</span> \(M\)<span class='ntx-Italic-tlf-t1-x-x-109'>. In particular,</span>
+     \[ S^{-1}M \simeq M \otimes _R S^{-1}R \] <span class='ntx-Italic-tlf-t1-x-x-109'>naturally in</span> \(M\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-ring-spectra-and-modules-section-04-9" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-ring-spectra-and-modules-section-04-9">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> For every \(s \in S\) of degree \(d\) and every \(n \in \Z \), consider the shifted multiplication map \[ s[n]\colon R[d+n] \longrightarrow R[n]. \] An \(R\)-module is
+local with respect to this small collection of morphisms precisely when it is \(S\)-local: allowing all shifts
+means that locality tests multiplication by \(s\) on every homotopy group. Since \(\Mod _R\) is presentable by <a class="source-reference" data-label="prop:Presentability_Day_Modules" href="../../../entry/presentability-of-day-convolution-module-categories/index.html#prop:Presentability_Day_Modules">Proposition 22.5.5</a>, <a class="source-reference" data-label="thm:Presentable_Category_Constructions" href="../../../entry/basic-constructions-on-presentable-categories/index.html#thm:Presentable_Category_Constructions">Theorem 22.2.2</a>(4)
+provides the asserted reflection \(S^{-1}(-)\).
+</p><p class='noindent'>The symmetric monoidal \(\infty \)-category \(\Mod _R\) is closed, as recalled after <a class="source-reference" data-label="cor:Localization_Commutative_Base_Algebra" href="../../../entry/localization-commutative-base-algebra/index.html#cor:Localization_Commutative_Base_Algebra">Corollary 19.2.17</a>. If \(N\) is \(S\)-local and \(P\) is any \(R\)-module, then
+\(\iHom _R(P,N)\) is again \(S\)-local. Indeed, under the natural isomorphism \[ \iHom _R(P,N)[d] \iso \iHom _R(P,N[d]), \] multiplication by \(s\) is obtained by applying \(\iHom _R(P,-)\)
+to the isomorphism \(s\colon N[d] \iso N\). The internal-hom criterion <a class="source-reference" data-label="lem:Local_Subcategory_Closed_Under_Internal_Hom" href="../../../entry/local-subcategory-closed-under-internal-hom/index.html#lem:Local_Subcategory_Closed_Under_Internal_Hom">Lemma 14.5.6</a> therefore gives the symmetric monoidal structure
+and the symmetric monoidality of the localization.
+</p><p class='noindent'>It remains to prove the smashing formula. The unit \(\eta _R\colon R \to S^{-1}R\) is an \(S\)-local equivalence, and the proof of the
+internal-hom criterion shows that \(S\)-local equivalences remain so after tensoring with any \(R\)-module.
+Consequently, \[ \id _M\otimes \eta _R\colon M\longrightarrow M\otimes _R S^{-1}R \] is an \(S\)-local equivalence. Its target is \(S\)-local: multiplication by \(s\) on \(M\otimes _R S^{-1}R\) is obtained by
+tensoring \(\id _M\) with the isomorphism \(s\colon (S^{-1}R)[\abs {s}]\iso S^{-1}R\). A local equivalence from \(M\) to a local object exhibits that object as
+the reflection of \(M\), which proves the claim.                                                                                          □
+</p>
+</div></div>
+<p class='noindent'>We can now localize in commutative ring spectra.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+                                                                                   
+                                                                                   
+<a id='x1-2007r5'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 8.4.5 </span>(Localization of a commutative ring spectrum)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cor:Commutative_Localization_Ring_Spectrum'>   </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>   \(R\)   <span class='ntx-Italic-tlf-t1-x-x-109'>be   a   commutative   ring
+spectrum and let</span> \(S \subseteq \pi _*(R)\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a multiplicative subset of homogeneous elements. Then the</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module</span> \(S^{-1}R\) <span class='ntx-Italic-tlf-t1-x-x-109'>carries a
+canonical structure of a commutative ring spectrum</span> \(R[S^{-1}]\)<span class='ntx-Italic-tlf-t1-x-x-109'>, and the localization map refines to a morphism</span>
+\[ \eta \colon R \longrightarrow R[S^{-1}] \] <span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(\CAlg (\Sp )\)<span class='ntx-Italic-tlf-t1-x-x-109'>. It has the following universal property: for every commutative ring spectrum</span> \(A\)<span class='ntx-Italic-tlf-t1-x-x-109'>, precomposition
+with</span> \(\eta \) <span class='ntx-Italic-tlf-t1-x-x-109'>induces a monomorphism of animae </span>\[ -\circ \eta \colon \Hom _{\CAlg (\Sp )}(R[S^{-1}],A) \hookrightarrow \Hom _{\CAlg (\Sp )}(R,A) \] <span class='ntx-Italic-tlf-t1-x-x-109'>whose image consists of those maps</span> \(f\colon R \to A\) <span class='ntx-Italic-tlf-t1-x-x-109'>for which</span> \(\pi _*(f)\) <span class='ntx-Italic-tlf-t1-x-x-109'>carries
+every element of</span> \(S\) <span class='ntx-Italic-tlf-t1-x-x-109'>to a unit of</span> \(\pi _*(A)\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-ring-spectra-and-modules-section-04-8" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-ring-spectra-and-modules-section-04-8">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  By  <a class="source-reference" data-label="prop:Commutative_Localization_Smashing" href="../../../entry/commutative-localization-is-smashing/index.html#prop:Commutative_Localization_Smashing">Proposition 8.4.4</a>,  the  reflection  \[ S^{-1}(-)\colon \Mod _R \longrightarrow \Mod _R^{\Loc (S)} \]  is  a  symmetric  monoidal  Bousfield  localization.  The  Part II  result
+<a class="source-reference" data-label="cor:Localization_Commutative_Base_Algebra" href="../../../entry/localization-commutative-base-algebra/index.html#cor:Localization_Commutative_Base_Algebra">Corollary 19.2.17</a> therefore  equips  \(S^{-1}R\)  with  a  commutative  \(R\)-algebra  structure  and  characterizes  it  as  initial  among
+commutative \(R\)-algebras whose underlying modules are \(S\)-local. Under the equivalence \[ \CAlg (\Mod _R)\simeq \CAlg (\Sp )_{R/}, \] this gives the
+asserted morphism \(\eta \colon R\to R[S^{-1}]\) of commutative ring spectra.
+</p><p class='noindent'>Let \(f\colon R\to A\) be a morphism of commutative ring spectra. Its underlying \(R\)-module is \(S\)-local if and only if \(\pi _*(f)\)
+sends every \(s\in S\) to a unit. One direction is immediate. Conversely, suppose that \(A\) is \(S\)-local and let \(s'=\pi _*(f)(s)\) have
+degree \(d\). Since multiplication by \(s'\) is bijective, there is an element \(u\in \pi _{-d}(A)\) such that \(s'u=1\). Graded commutativity
+gives \(us'=(-1)^d\), so \((-1)^du\) is a left inverse of \(s'\), while \(u\) is a right inverse. Since left and right inverses coincide, \(s'\) is a
+unit.
+</p><p class='noindent'>The initial property of \(S^{-1}R\) among commutative \(R\)-algebras with local underlying module now gives the
+claimed factorization property. Conversely, every morphism that factors through \(R[S^{-1}]\) inverts \(S\), since the
+image of \(S\) in \(\pi _*(R[S^{-1}])\) consists of units and ring morphisms preserve units.                                                    □
+</p>
+</div></div>
+<p class='noindent'>Finally, we record the computation used for Bott inversion.
+</p>
+<div class='newtheorem'>
+                                                                                   
+                                                                                   
+<p class='noindent'><span class='head'>
+<a id='x1-2008r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 8.4.6 </span>(Inverting a single element)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Localization_As_Telescope'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(R\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  a  commutative  ring  spectrum,  let</span>  \(s \in \pi _d(R)\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  a
+homogeneous element, and let</span> \(S := \{1,s,s^2,\dots \}\) <span class='ntx-Italic-tlf-t1-x-x-109'>be the multiplicative subset it generates. Then for every</span> \(M \in \Mod _R\) <span class='ntx-Italic-tlf-t1-x-x-109'>the canonical
+map  exhibits  the  telescope  </span>\[ M[s^{-1}] := \colim \bigl (M \xrightarrow {\ s\ } M[-d] \xrightarrow {\ s\ } M[-2d] \xrightarrow {\ s\ } \cdots \bigr ) \]  <span class='ntx-Italic-tlf-t1-x-x-109'>as  the</span>  \(S\)<span class='ntx-Italic-tlf-t1-x-x-109'>-localization  of</span>  \(M\)<span class='ntx-Italic-tlf-t1-x-x-109'>.  On  homotopy  groups  it  is  given  by  graded
+localization: </span>\[ \pi _*(M[s^{-1}]) \cong \pi _*(M)[s^{-1}]. \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-ring-spectra-and-modules-section-04-7" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-ring-spectra-and-modules-section-04-7">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The transition maps are shifts of the module map of <a class="source-reference" data-label="obs:Multiplication_By_s_Module_Map" href="../../../entry/multiplication-by-homotopy-classes-is-module-linear/index.html#obs:Multiplication_By_s_Module_Map">Observation 8.4.2</a>, so the telescope is a colimit in \(\Mod _R\). Since
+homotopy groups preserve filtered colimits by <a class="source-reference" data-label="lem:Homotopy_Groups_Preserve_Filtered_Colimits" href="../../../entry/homotopy-groups-preserve-filtered-colimits/index.html#lem:Homotopy_Groups_Preserve_Filtered_Colimits">Lemma 4.4.27</a>, we have \[ \pi _k(M[s^{-1}]) \cong \colim \bigl (\pi _k(M)\xrightarrow {\ s\cdot \ }\pi _{k+d}(M) \xrightarrow {\ s\cdot \ }\pi _{k+2d}(M)\longrightarrow \cdots \bigr ), \] which is the degree-\(k\) part of \(\pi _*(M)[s^{-1}]\). In particular,
+multiplication by \(s\) on \(M[s^{-1}]\) is an isomorphism, so the telescope is \(S\)-local.
+</p><p class='noindent'>Let \(N\) be any \(S\)-local \(R\)-module. Mapping out of the telescope gives \[ \Hom _{\Mod _R}(M[s^{-1}],N) \simeq \lim _j\Hom _{\Mod _R}(M[-jd],N). \] Every transition map in this limit is
+an equivalence, because under the shift adjunction it is induced by the isomorphism \(s\colon N[d]\iso N\). Evaluation at
+the zeroth term therefore gives an equivalence \[ \Hom _{\Mod _R}(M[s^{-1}],N) \iso \Hom _{\Mod _R}(M,N), \] induced by precomposition with the canonical map \(M\to M[s^{-1}]\).
+This is the universal property of the \(S\)-localization.                                                                             □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2009r7'></a>
+<a class="entry-heading-link" href="../../../entry/ring-structure-on-localization-telescopes/index.html" aria-label="Remark 8.4.7., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 8.4.7.</span></a>  </span><span id='rmk:Telescope_Ring_Structure'></span> Combining <a class="source-reference" data-label="cor:Commutative_Localization_Ring_Spectrum" href="../../../entry/localization-of-commutative-ring-spectra/index.html#cor:Commutative_Localization_Ring_Spectrum">Corollary 8.4.5</a> with <a class="source-reference" data-label="lem:Localization_As_Telescope" href="../../../entry/localization-at-one-element-as-a-telescope/index.html#lem:Localization_As_Telescope">Lemma 8.4.6</a> for \(M=R\), the telescope \[ R[s^{-1}] = \colim \bigl (R\xrightarrow {\ s\ }R[-d] \xrightarrow {\ s\ }R[-2d]\longrightarrow \cdots \bigr ) \] is a commutative ring spectrum, the map \(R\to R[s^{-1}]\) is a
+morphism of commutative ring spectra, and \[ \pi _*(R[s^{-1}])\cong \pi _*(R)[s^{-1}]. \]
+</p>
+</div>
+                                                                                   
+                                                                                   
+
+<h4 class='subsectionHead' id='ore-localization-online-only'><span class='titlemark'>8.4.2    </span> <a id='x1-30008.4.2'></a>Ore localization (online only)</h4>
+<p class='noindent' id='subsec_Ore_Localization'>The commutative theory above is the form used elsewhere in the book. We conclude by discussing the more
+general localization problem for associative ring spectra. In this setting the graded ring \(\pi _*(R)\) need not be
+commutative, and a multiplicative subset must satisfy an Ore condition for localization to have the expected
+properties.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3001r8'></a>
+<a class="entry-heading-link" href="../../../entry/localization-of-a-ring-spectrum/index.html" aria-label="Definition 8.4.8, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 8.4.8 </span></a>(Localization of a ring spectrum)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Localization_Of_Ring_Spectrum'></span>   Let   \(R\)   be   a   ring   spectrum   and   let   \(S \subseteq \pi _*(R)\)   be   a
+multiplicative subset of homogeneous elements. The <span class='ntx-Italic-tlf-t1-x-x-109'>localization of</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>at</span> \(S\), denoted \(R[S^{-1}]\), is a ring spectrum
+equipped with a map of ring spectra \(\eta \colon R \to R[S^{-1}]\) that satisfies the following property: for every ring spectrum \(A\),
+precomposition with \(\eta \) induces a monomorphism of animae \[ - \circ \eta \colon \Hom _{\Alg }(R[S^{-1}],A) \hookrightarrow \Hom _{\Alg }(R,A) \] whose image consists of those algebra
+maps \(f\colon R \to A\) for which \(\pi _*(f)\) carries every element of \(S\) to a unit of the graded ring \(\pi _*(A)\).
+</p>
+</div>
+<p class='noindent'>In other words: an algebra map \(f\colon R \to A\) factors through \(\eta \) if and only if it inverts \(S\), and in that case the factorization is
+unique. Note that \(R[S^{-1}]\) is unique, if it exists. In an analogous way, we may define localization at the level of
+modules. Let us first introduce some terminology:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3002r9'></a>
+<a class="entry-heading-link" href="../../../entry/nilpotent-and-locally-nilpotent-modules/index.html" aria-label="Definition 8.4.9., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 8.4.9.</span></a>  </span><span id='def:S_Nilpotent_And_Locally_Nilpotent_Modules'></span> Let \(R\) be an associative ring spectrum and let \(S \subseteq \pi _*(R)\) be a multiplicative subset of homogeneous
+elements.
+                                                                                   
+                                                                                   
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'>A left \(R\)-module \(M\) is called \(S\)<span class='ntx-Italic-tlf-t1-x-x-109'>-nilpotent </span>if for every element \(x \in \pi _n(M)\), there exists an element \(s \in S\) such that \(s \cdot x = 0\) in
+     \(\pi _*(M)\).
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'>A left \(R\)-module \(N\) is called \(S\)<span class='ntx-Italic-tlf-t1-x-x-109'>-local </span>if, for every element \(s \in S\) of degree \(d\) and every \(k\in \Z \), left multiplication
+     by \(s\) induces an isomorphism \[ s\cdot -\colon \pi _k(N)\iso \pi _{k+d}(N). \]</p></dd></dl>
+<p class='noindent'>We denote by \(\LMod _R^{S\dnil }\) and \(\LMod _R^{\Loc (S)}\) the full subcategories of \(\LMod _R\) spanned by the \(S\)-nilpotent and \(S\)-local modules,
+respectively.
+</p>
+</div>
+<p class='noindent'>When \(R\) is commutative, the second condition agrees with the definition given in the previous subsection. For
+a general associative ring spectrum, however, left multiplication by \(s\) on \(N\) need not be a morphism of left
+\(R\)-modules, which explains the formulation in terms of homotopy groups. Equivalently, the underlying map
+of spectra \(s\colon N[\abs {s}]\to N\) is an isomorphism for every \(s\in S\). There is also an intrinsic reformulation in \(\LMod _R\): right multiplication by \(s\in \pi _d(R)\)
+defines a morphism \(\cdot s\colon R[d]\to R\) of left \(R\)-modules, and \(N\) is \(S\)-local precisely when it is local with respect to all shifts of
+these morphisms.
+</p><p class='noindent'>Both conditions are formulated purely in terms of the graded \(\pi _*(R)\)-module \(\pi _*(M)\), and this makes them stable under all
+the operations we will need:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3005r10'></a>
+<a class="entry-heading-link" href="../../../entry/closure-properties-of-locally-nilpotent-modules/index.html" aria-label="Observation 8.4.10., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Observation 8.4.10.</span></a>  </span><span id='obs:Nilpotent_Local_Closure'></span> The subcategories \(\LMod _R^{S\dnil }\) and \(\LMod _R^{\Loc (S)}\) are stable subcategories of \(\LMod _R\), closed under all small
+colimits.
+</p>
+</div>
+
+                                                                                   
+                                                                                   
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-ring-spectra-and-modules-section-04-6" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-ring-spectra-and-modules-section-04-6">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Throughout we use that for a homogeneous element \(s \in \pi _d(R)\) the operation \(x \mapsto s \cdot x\) is a natural transformation
+\(\pi _k(-) \to \pi _{k+d}(-)\) of functors \(\LMod _R \to \Ab \), and that \(\pi _*\) carries exact sequences of left \(R\)-modules to long exact sequences of graded
+\(\pi _*(R)\)-modules.
+</p><p class='noindent'>Both subcategories evidently contain \(0\) and are closed under shifts. For closure under cofibers, consider
+an exact sequence \(M' \to M \to M''\) in \(\LMod _R\).
+</p><p class='noindent'>If \(M'\) and \(M\) are \(S\)-local, then in the long exact sequence \[ \pi _*(M') \to \pi _*(M) \to \pi _*(M'') \to \pi _{*-1}(M') \to \pi _{*-1}(M) \] multiplication by \(s\) acts as an isomorphism on four
+of the five terms, so the five lemma shows that it is an isomorphism on \(\pi _*(M'')\) as well; hence \(M''\) is \(S\)-local. The
+same argument applied to the rotated sequence shows closure under fibers, so \(\LMod _R^{\Loc (S)}\) is stable.
+</p><p class='noindent'>If \(M'\) and \(M\) are \(S\)-nilpotent, let \(x \in \pi _n(M'')\). Its image \(\partial (x) \in \pi _{n-1}(M')\) is annihilated by some \(s \in S\), so \(\partial (s\cdot x) = s \cdot \partial (x) = 0\) and therefore \(s\cdot x\) lifts to an element \(y \in \pi _{n+\abs {s}}(M)\).
+Choosing \(t \in S\) with \(t\cdot y = 0\), we obtain \((ts)\cdot x = t\cdot (s \cdot x) = 0\), and \(ts \in S\) since \(S\) is multiplicative. Hence \(M''\) is \(S\)-nilpotent.
+</p><p class='noindent'>Similarly, suppose that \(M'\) and \(M''\) are \(S\)-nilpotent and let \(x\in \pi _n(M)\). Choose \(s\in S\) which annihilates the image of \(x\) in \(\pi _n(M'')\).
+Then \(s\cdot x\) is the image of an element \(y\in \pi _{n+\abs {s}}(M')\). Choosing \(t\in S\) with \(t\cdot y=0\) gives \((ts)\cdot x=0\). Thus \(M\) is \(S\)-nilpotent as well, so \(\LMod _R^{S\dnil }\) is stable
+and closed under extensions.
+</p><p class='noindent'>Being stable, both subcategories are in particular closed under finite coproducts: a biproduct \(M_1 \oplus M_2\) sits
+in an exact sequence \(M_1 \to M_1 \oplus M_2 \to M_2\), and both subcategories are closed under extensions. Consequently both are
+closed under all finite colimits.
+</p><p class='noindent'>Next, both are closed under filtered colimits, since \(\pi _*\) preserves these by <a class="source-reference" data-label="lem:Homotopy_Groups_Preserve_Filtered_Colimits" href="../../../entry/homotopy-groups-preserve-filtered-colimits/index.html#lem:Homotopy_Groups_Preserve_Filtered_Colimits">Lemma 4.4.27</a>. Indeed, a filtered colimit
+of isomorphisms is an isomorphism, which handles the \(S\)-local case; and in the \(S\)-nilpotent case every
+element of \(\pi _n(\colim _i M_i) \cong \colim _i \pi _n(M_i)\) is the image of some \(x \in \pi _n(M_i)\), and any \(s \in S\) annihilating \(x\) also annihilates its image. Since an arbitrary
+coproduct is the filtered colimit of its finite subcoproducts, both subcategories are closed under small
+coproducts. As an \(\infty \)-category admitting pushouts and small coproducts admits all small colimits, this
+completes the proof.                                                                                                                            □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3006r11'></a>
+<a class="entry-heading-link" href="../../../entry/noncommutative-obstruction-to-finite-coproducts/index.html" aria-label="Warning 8.4.11., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Warning 8.4.11.</span></a>  </span><span id='warn:Noncommutative_Obstruction_Finite_Coproducts_Locally_Nilpotent'></span> The finite-coproduct step above is the one place where some care is needed: given
+\(x_1 \in \pi _n(M_1)\) annihilated by \(s_1\) and \(x_2 \in \pi _n(M_2)\) annihilated by \(s_2\), the product \(s_2s_1\) need <span class='ntx-Italic-tlf-t1-x-x-109'>not </span>annihilate \((x_1,x_2)\), since \(s_2s_1 \cdot x_2 = s_2\cdot (s_1 \cdot x_2)\) and \(s_1 \cdot x_2\) has no reason to
+                                                                                   
+                                                                                   
+vanish. What saves the argument is that we may instead first apply \(s_2\), killing the second coordinate,
+and then use the \(S\)-nilpotence of \(M_1\) to annihilate the element \(s_2 \cdot x_1\) (rather than \(x_1\) itself). No commutativity or
+Ore condition is needed.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3007r12'></a>
+<a class="entry-heading-link" href="../../../entry/localization-of-modules-at-multiplicative-subsets/index.html" aria-label="Definition 8.4.12., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 8.4.12.</span></a>  </span><span id='def:S_Localization_Of_Module'></span>  Let  \(R\)  be  a  ring  spectrum  and  let  \(S \subseteq \pi _*(R)\)  be  a  multiplicative  subset  of  homogeneous
+elements. Given a left \(R\)-module \(M\), its \(S\)<span class='ntx-Italic-tlf-t1-x-x-109'>-localization </span>is an \(S\)-local left \(R\)-module \(S^{-1}M\) equipped with a morphism
+of left \(R\)-modules \(\eta \colon M \to S^{-1}M\) satisfying the property that for every other \(S\)-local left \(R\)-module \(N\), precomposition
+with \(\eta \) induces an equivalence of animae \[ - \circ \eta \colon \Hom _{\LMod _R}(S^{-1}M,N) \iso \Hom _{\LMod _R}(M,N). \]
+</p>
+</div>
+<p class='noindent'>Again, \(S^{-1}M\) is unique whenever it exists. In the non-commutative setting, this abstract operation of formally
+inverting elements can be poorly behaved. To ensure a good theory, we need an additional condition on the
+set \(S\), known as the Ore condition.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3008r13'></a>
+<a class="entry-heading-link" href="../../../entry/ore-condition-for-graded-rings/index.html" aria-label="Definition 8.4.13, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 8.4.13 </span></a>(<span class='citation'>[Lurie (2017), Definition 7.2.3.1, Remark 7.2.3.7]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Ore_Condition_Graded_Ring'></span> Let \(A_*\) be a graded associative ring and let \(S \subseteq A_*\) be a set of homogeneous elements which
+contains the unit and is closed under multiplication. We say that \(S\) satisfies the <span class='ntx-Italic-tlf-t1-x-x-109'>left Ore condition </span>if the
+following hold:
+   </p><dl class='enumerate'><dt class='enumerate'>
+(a) </dt><dd class='enumerate'>
+   <p class='noindent'>For every pair of elements \(x \in A_*\) and \(s \in S\), there exist elements \(y \in A_*\) and \(t \in S\) such that \(tx = ys\).
+                                                                                   
+                                                                                   
+   </p></dd><dt class='enumerate'>
+(b) </dt><dd class='enumerate'>
+   <p class='noindent'>If \(xs = 0\) for some \(x \in A_*\) and \(s \in S\), then there exists some \(t \in S\) such that \(tx=0\).</p></dd></dl>
+<p class='noindent'>It suffices to check these conditions for homogeneous \(x\), in which case \(y\) in part (a) may also be chosen
+homogeneous. An ordinary ring is regarded as concentrated in degree zero.
+</p>
+</div>
+<p class='noindent'>This seemingly purely algebraic condition can be conveniently rephrased in terms of \(S\)-nilpotent modules.
+For an element \(s \in S\) of degree \(d\), we denote by \(R/Rs\) the cofiber of the map of left \(R\)-modules \(\cdot s\colon R[d] \to R\) given by right
+multiplication by \(s\), i.e., the cofiber of the following composite \[ \cdot s\colon R[d] \simeq R \otimes \S ^d \xrightarrow {\id \otimes s} R \otimes R \xrightarrow {m} R. \]
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3011r14'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 8.4.14 </span>(<span class='citation'>[Lurie (2017), Lemma 7.2.3.11]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Ore_Condition_S_Nilpotent'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an associative ring spectrum and let</span> \(S \subseteq \pi _*(R)\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a multiplicative subset of homogeneous
+elements. The following conditions are equivalent:</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The set</span> \(S\) <span class='ntx-Italic-tlf-t1-x-x-109'>satisfies the left Ore condition.</span>
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For every element</span> \(s \in S\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the left</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module</span> \(R/Rs\) <span class='ntx-Italic-tlf-t1-x-x-109'>is</span> \(S\)<span class='ntx-Italic-tlf-t1-x-x-109'>-nilpotent.</span></p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-ring-spectra-and-modules-section-04-5" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-ring-spectra-and-modules-section-04-5">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Assume first that (1) is satisfied. Let \(x \in \pi _n(R/Rs)\); we wish to show that it is annihilated by some element
+of \(S\). Using the exact sequence \[ \pi _n(R/Rs) \xrightarrow {\phi } \pi _{n-d-1}(R) \xrightarrow {\cdot s} \pi _{n-1}(R), \] we deduce that \(\phi (x) \in \pi _{n-d-1}(R)\) is annihilated by right multiplication by \(s\). Using
+condition (b) of the left Ore condition, we deduce that there exists an element \(t \in S\) of degree \(d'\) such that \(0 = t\phi (x) = \phi (tx) \in \pi _{n+d'-d-1}(R)\).
+Using the exactness of the sequence \[ \pi _{n+d'}(R) \xrightarrow {\psi } \pi _{n+d'}(R/Rs) \xrightarrow {\phi } \pi _{n+d'-d-1}(R), \] we conclude that \(tx = \psi (y)\) for some \(y \in \pi _{n+d'}(R)\). Using condition (a) of the left Ore
+condition, we can find an element \(u \in S\) of degree \(d''\) and an element \(z \in \pi _{n+d'+d''-d}(R)\) such that \(uy=zs\). It follows that the image of
+\(uy\) in \(\pi _{n+d'+d''}(R/Rs)\) vanishes, so that \((ut)x = u(tx) = u\psi (y) = \psi (uy)=0\). This completes the proof that (1) implies (2).
+</p><p class='noindent'>Now suppose that (2) is satisfied. We will show that \(S\) satisfies conditions (a) and (b) of the left Ore
+condition. For (a), suppose that \(x \in \pi _*(R)\) is a homogeneous element of degree \(n\) and \(s \in S\) has degree \(d\). We wish to
+show that there exist \(y \in \pi _*(R)\) and \(t \in S\) such that \(tx=ys\). By \(S\)-nilpotence, the image of \(x\) in \(\pi _n(R/Rs)\) is annihilated by multiplication
+by some homogeneous element \(t \in S\) of degree \(d'\). It follows that \(tx\) belongs to the kernel of the map \(\pi _{n+d'}(R) \to \pi _{n+d'}(R/Rs)\), and
+therefore to the image of the map \(\cdot s\colon \pi _{n+d'-d}(R) \to \pi _{n+d'}(R)\) given by right multiplication by \(s\). Thus \(tx=ys\) for some \(y\in \pi _{n+d'-d}(R)\), which proves
+(a).
+</p><p class='noindent'>We now verify (b). It suffices to show that if \(x \in \pi _n(R)\) is annihilated by right multiplication by some element \(s \in S\)
+of degree \(d\), then \(tx=0\) for some \(t \in S\). The exactness of the sequence \[ \pi _{n+d+1}(R/Rs) \xrightarrow {\phi } \pi _n(R) \xrightarrow {\cdot s} \pi _{n+d}(R) \] shows that \(x = \phi (y)\) for some \(y \in \pi _{n+d+1}(R/Rs)\). Since \(R/Rs\) is \(S\)-nilpotent,
+there exists an element \(t \in S\) such that \(ty=0\), from which it follows immediately that \(tx = t\phi (y) = \phi (ty) = 0\).                                     □
+</p>
+</div></div>
+<p class='noindent'>The previous lemma says that under the Ore condition the modules \(R/Rs\) are \(S\)-nilpotent. In fact they generate all
+\(S\)-nilpotent modules, in a strong and rather explicit sense. This is the one genuinely difficult input into the
+theory, and it is the engine behind every result in this section. We use this result as a black
+box.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3014r15'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 8.4.15 </span>(<span class='citation'>[Lurie (2017), Lemma 7.2.3.13]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:S_Nilpotent_Generators'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an associative ring spectrum and let</span> \(S \subseteq \pi _*(R)\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a multiplicative subset satisfying
+the left Ore condition. Then every</span> \(S\)<span class='ntx-Italic-tlf-t1-x-x-109'>-nilpotent left</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module</span> \(M\) <span class='ntx-Italic-tlf-t1-x-x-109'>can be written as the colimit of a sequence
+of left</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-modules </span>\[ 0 = M_0 \to M_1 \to M_2 \to \cdots \] <span class='ntx-Italic-tlf-t1-x-x-109'>in which the fiber of each map</span> \(M_i \to M_{i+1}\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a coproduct of modules of the form</span> \((R/Rs_{\alpha })[n_{\alpha }]\) <span class='ntx-Italic-tlf-t1-x-x-109'>with</span> \(s_{\alpha } \in S\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(n_{\alpha } \in \Z \)<span class='ntx-Italic-tlf-t1-x-x-109'>. In
+particular,</span> \(\LMod _R^{S\dnil }\) <span class='ntx-Italic-tlf-t1-x-x-109'>is generated under colimits by the set of objects </span>\[ \{\, (R/Rs)[n] \mid s \in S, \, n \in \Z \,\}. \]
+</p>
+</div>
+
+                                                                                   
+
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3015r16'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 8.4.16 </span>(<span class='citation'>[Lurie (2017), Proposition 7.2.3.14]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Criterion_S_Local_Modules'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an associative ring spectrum and let</span> \(S \subseteq \pi _*(R)\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a multiplicative subset satisfying the
+left Ore condition. Let</span> \(N\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a left</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module. Then the following conditions are equivalent:</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The module</span> \(N\) <span class='ntx-Italic-tlf-t1-x-x-109'>is</span> \(S\)<span class='ntx-Italic-tlf-t1-x-x-109'>-local.</span>
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For every element</span> \(s \in S\) <span class='ntx-Italic-tlf-t1-x-x-109'>and every integer</span> \(n\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the hom anima</span> \(\Hom _{\LMod _R}((R/Rs)[n], N)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is contractible.</span>
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For every</span> \(S\)<span class='ntx-Italic-tlf-t1-x-x-109'>-nilpotent module</span> \(M \in \LMod _R\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the hom anima</span> \(\Hom _{\LMod _R}(M,N)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is contractible.</span></p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-ring-spectra-and-modules-section-04-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-ring-spectra-and-modules-section-04-4">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Let \(s \in S\) be an element of degree \(d\). Applying the mapping spectrum functor \(\hom _{\LMod _R}(-,N)\) to the exact sequence
+\[ R[d] \xrightarrow {\cdot s} R \to R/Rs \] and  using  the  identifications  \(\hom _{\LMod _R}(R,N) \simeq N\)  and  \(\hom _{\LMod _R}(R[d],N)\simeq N[-d]\)  gives  an  exact  sequence  of  spectra  \[ \hom _{\LMod _R}(R/Rs,N)\longrightarrow N \xrightarrow {\ s\cdot -\ }N[-d]. \]  The  second  map  is  left
+multiplication by \(s\): precomposition with right multiplication \(\cdot s\colon R[d]\to R\) sends a map \(f\colon R \to N\) to the map determined by
+\(f(s) = s \cdot f(1)\).
+</p><p class='noindent'>Condition (1) says precisely that the second map is an isomorphism for every \(s\in S\), which by exactness
+is equivalent to the vanishing of \(\hom _{\LMod _R}(R/Rs,N)\). Since a spectrum vanishes if and only if all the animae \(\Omega ^{\infty }(-[-n])\) do, this is
+in turn equivalent to \(\Hom _{\LMod _R}((R/Rs)[n],N)\) being contractible for all \(n\). This proves \((1) \Leftrightarrow (2)\).
+</p><p class='noindent'>To prove the implication \((3) \Rightarrow (2)\), we observe that since \(S\) satisfies the left Ore condition, the module \(R/Rs\) is
+\(S\)-nilpotent  for  every  \(s \in S\),  as  established  in  <a class="source-reference" data-label="lem:Ore_Condition_S_Nilpotent" href="../../../entry/ore-condition-and-nilpotence/index.html#lem:Ore_Condition_S_Nilpotent">Lemma 8.4.14</a>.  As  \(\LMod _R^{S\dnil }\)  is  closed  under  shifts  (<a class="source-reference" data-label="obs:Nilpotent_Local_Closure" href="../../../entry/closure-properties-of-locally-nilpotent-modules/index.html#obs:Nilpotent_Local_Closure">Observation 8.4.10</a>),  condition  (3)  applied  to  \(M = (R/Rs)[n]\)
+immediately yields condition (2).
+                                                                                   
+                                                                                   
+</p><p class='noindent'>We now prove the implication \((2) \Rightarrow (3)\). Let \(M\) be an \(S\)-nilpotent left \(R\)-module, and write it as the colimit of a
+sequence \[ 0 = M_0 \to M_1 \to M_2 \to \cdots \] whose successive fibers are coproducts of modules \((R/Rs_\alpha )[n_\alpha ]\), as provided by <a class="source-reference" data-label="lem:S_Nilpotent_Generators" href="../../../entry/generators-for-nilpotent-modules/index.html#lem:S_Nilpotent_Generators">Lemma 8.4.15</a>. Since hom animae
+turn colimits in the first variable into limits, we have \[ \Hom _{\LMod _R}(M,N) \iso \lim _{i} \Hom _{\LMod _R}(M_i,N). \] It will therefore suffice to show that each hom
+anima \(\Hom _{\LMod _R}(M_i,N)\) is contractible. We proceed by induction on \(i\). The case \(i=0\) is clear, since \(M_0=0\). For the inductive step,
+assume that \(\Hom _{\LMod _R}(M_i,N)\) is contractible. Let \(K_i\) denote the fiber of the map \(M_i \to M_{i+1}\). By construction, we have an exact
+sequence of modules \(K_i \to M_i \to M_{i+1}\). Applying the functor \(\Hom _{\LMod _R}(-,N)\) yields a fiber sequence of animae \[ \Hom _{\LMod _R}(M_{i+1},N) \to \Hom _{\LMod _R}(M_i,N) \to \Hom _{\LMod _R}(K_i,N). \] By the inductive
+hypothesis, the middle term is contractible. It therefore suffices to show that the right-hand term, \(\Hom _{\LMod _R}(K_i,N)\), is
+also contractible. By construction, \(K_i\) is a coproduct of modules of the form \((R/Rs_\alpha )[n_\alpha ]\). Since hom animae send
+coproducts in the first variable to products, we have \[ \Hom _{\LMod _R}(K_i,N) \iso \prod _\alpha \Hom _{\LMod _R}((R/Rs_\alpha )[n_\alpha ],N). \] By condition (2), each factor in this product
+is contractible. It follows that the entire product is contractible, which completes the inductive step
+and the proof.                                                                                                                                      □
+</p>
+</div></div>
+<p class='noindent'>We will now show the existence of the \(S\)-localized \(R\)-modules \(S^{-1}M\) when \(S\) satisfies the left Ore condition, by
+showing that any left \(R\)-module \(M\) decomposes into an \(S\)-nilpotent part and an \(S\)-local part:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3019r17'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 8.4.17 </span>(<span class='citation'>[Lurie (2017), Proposition 7.2.3.17, Remark 7.2.3.18]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Decomposition_Nilpotent_Local'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(R\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  an  associative  ring  spectrum  and  let</span>  \(S \subseteq \pi _*(R)\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  a  multiplicative  subset
+satisfying the left Ore condition. Then for every left</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module</span> \(M\)<span class='ntx-Italic-tlf-t1-x-x-109'>, there exists an exact sequence in</span> \(\LMod _R\) \[ M' \to M \to M'', \]
+<span class='ntx-Italic-tlf-t1-x-x-109'>where</span> \(M'\) <span class='ntx-Italic-tlf-t1-x-x-109'>is</span> \(S\)<span class='ntx-Italic-tlf-t1-x-x-109'>-nilpotent and</span> \(M''\) <span class='ntx-Italic-tlf-t1-x-x-109'>is</span> \(S\)<span class='ntx-Italic-tlf-t1-x-x-109'>-local.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-ring-spectra-and-modules-section-04-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-ring-spectra-and-modules-section-04-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof sketch.</span> </span>  By <a class="source-reference" data-label="lem:S_Nilpotent_Generators" href="../../../entry/generators-for-nilpotent-modules/index.html#lem:S_Nilpotent_Generators">Lemma 8.4.15</a>, the \(\infty \)-category \(\LMod _R^{S\dnil }\) is the localizing subcategory generated by the set of objects \(\{ (R/Rs)[n] \mid s \in S, n \in \Z \}\). It is
+therefore presentable by <a class="source-reference" data-label="prop:Presentability_Structured_Objects" href="../../../entry/presentability-of-structured-objects/index.html#prop:Presentability_Structured_Objects">Proposition 22.2.7</a>(2). Its inclusion into \(\LMod _R\) preserves colimits by <a class="source-reference" data-label="obs:Nilpotent_Local_Closure" href="../../../entry/closure-properties-of-locally-nilpotent-modules/index.html#obs:Nilpotent_Local_Closure">Observation 8.4.10</a>, so <a class="source-reference" data-label="thm:Adjoint_Functor_Theorem_Presentable" href="../../../entry/adjoint-functor-theorem-for-presentable-categories/index.html#thm:Adjoint_Functor_Theorem_Presentable">Theorem 22.2.5</a> gives a right adjoint \(G\). For
+any module \(M\), the counit of this adjunction gives a map \(G(M) \to M\). We define \(M' := G(M)\) and we let \(M''\) be the cofiber of this
+                                                                                   
+                                                                                   
+map. It remains to show that \(M''\) is \(S\)-local, for which we use criterion (3) from <a class="source-reference" data-label="prop:Criterion_S_Local_Modules" href="../../../entry/criterion-for-local-modules/index.html#prop:Criterion_S_Local_Modules">Proposition 8.4.16</a>. Let \(N\) be an \(S\)-nilpotent left
+\(R\)-module. Applying \(\hom _{\LMod _R}(N,-)\) provides an exact sequence of spectra \[ \hom _{\LMod _R}(N,M') \to \hom _{\LMod _R}(N,M) \to \hom _{\LMod _R}(N,M''). \] Both functors in the adjunction are exact,
+so the adjunction is enriched in spectra. The first map is therefore an isomorphism, and it follows
+that \(\hom _{\LMod _R}(N,M'') = 0\), as desired.                                                                                                                                   □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3020r18'></a>
+<a class="entry-heading-link" href="../../../entry/semiorthogonal-nilpotent-local-decomposition/index.html" aria-label="Remark 8.4.18., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 8.4.18.</span></a>  </span><span id='rmk:Nilpotent_Local_Semiorthogonal'></span> The previous two results show that the pair \((\LMod _R^{S\dnil }, \LMod _R^{\Loc (S)})\) satisfies the axioms of a t-structure on
+\(\LMod _R\) in the sense of <a class="source-reference" data-label="def:t_Structure" href="../../../entry/t-structures/index.html#def:t_Structure">Definition 6.3.1</a>: closure under shifts is <a class="source-reference" data-label="obs:Nilpotent_Local_Closure" href="../../../entry/closure-properties-of-locally-nilpotent-modules/index.html#obs:Nilpotent_Local_Closure">Observation 8.4.10</a>, orthogonality is part (3) of <a class="source-reference" data-label="prop:Criterion_S_Local_Modules" href="../../../entry/criterion-for-local-modules/index.html#prop:Criterion_S_Local_Modules">Proposition 8.4.16</a>, and the decomposition axiom
+is <a class="source-reference" data-label="prop:Decomposition_Nilpotent_Local" href="../../../entry/nilpotent-local-decomposition/index.html#prop:Decomposition_Nilpotent_Local">Proposition 8.4.17</a>.
+</p><p class='noindent'>This  t-structure  is,  however,  of  a  completely  different  nature  from  the  ones  in  <a class="source-reference" data-label="chap:Homological_Algebra" href="../../../chapter/homological-algebra/index.html#chap:Homological_Algebra">Chapter 6</a>:  both  halves  are
+<span class='ntx-Italic-tlf-t1-x-x-109'>stable </span>subcategories, closed under <span class='ntx-Italic-tlf-t1-x-x-109'>all </span>shifts, so that \(\LMod _R^{S\dnil }[n] = \LMod _R^{S\dnil }\) for every \(n\). In particular the heart is zero, and
+there is no connectivity intuition to be had here. What the pair really encodes is a <span class='ntx-Italic-tlf-t1-x-x-109'>semiorthogonal
+decomposition </span>of \(\LMod _R\): every module is functorially glued from an \(S\)-nilpotent part and an \(S\)-local part, and
+there are no maps from the nilpotent part to the local part.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3021r19'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 8.4.19.</span>  </span><span id='cor:Existence_S_Localization'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an associative ring spectrum and let</span> \(S \subseteq \pi _*(R)\) <span class='ntx-Italic-tlf-t1-x-x-109'>satisfy the left Ore condition. For
+every left</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module</span> \(M\)<span class='ntx-Italic-tlf-t1-x-x-109'>, there exists an</span> \(S\)<span class='ntx-Italic-tlf-t1-x-x-109'>-localization</span> \(S^{-1}M\)<span class='ntx-Italic-tlf-t1-x-x-109'>. In particular, the inclusion</span> \(\LMod _R^{\Loc (S)} \hookrightarrow \LMod _R\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a left adjoint</span>
+\[ S^{-1}(-) \colon \LMod _R \to \LMod _R^{\Loc (S)}. \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-ring-spectra-and-modules-section-04-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-ring-spectra-and-modules-section-04-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="prop:Decomposition_Nilpotent_Local" href="../../../entry/nilpotent-local-decomposition/index.html#prop:Decomposition_Nilpotent_Local">Proposition 8.4.17</a> there is an exact sequence \(M' \to M \to M''\) of left \(R\)-modules such that \(M'\) is \(S\)-nilpotent and \(M''\) is \(S\)-local. We
+claim that \(M''\) is an \(S\)-localization. Indeed, for any other \(S\)-local left \(R\)-module \(N\), mapping into \(N\) provides a
+fiber sequence of animae \[ \Hom _{\LMod _R}(M'',N) \to \Hom _{\LMod _R}(M,N) \to \Hom _{\LMod _R}(M',N). \] But since \(M'\) is \(S\)-nilpotent, the anima \(\Hom _{\LMod _R}(M',N)\) is contractible by part (3) of <a class="source-reference" data-label="prop:Criterion_S_Local_Modules" href="../../../entry/criterion-for-local-modules/index.html#prop:Criterion_S_Local_Modules">Proposition 8.4.16</a>. It follows
+that the first map is an equivalence, as desired.                                                                                  □
+</p>
+</div></div>
+<p class='noindent'>The proof exhibits the fiber of the localization map \(\eta _M\colon M \to S^{-1}M\) as the \(S\)-nilpotent part \(M'\) of \(M\). This gives the following
+recognition criterion:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3022r20'></a>
+<a class="entry-heading-link" href="../../../entry/local-equivalences-of-modules/index.html" aria-label="Observation 8.4.20., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Observation 8.4.20.</span></a>  </span><span id='obs:S_Local_Equivalences'></span> Let \(R\) be an associative ring spectrum and let \(S \subseteq \pi _*(R)\) satisfy the left Ore condition.
+Then:
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'>For \(M \in \LMod _R\) we have \(S^{-1}M = 0\) if and only if \(M\) is \(S\)-nilpotent.
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'>A map \(f\colon M \to N\) of left \(R\)-modules becomes an isomorphism after \(S\)-localization if and only if \(\cofib (f)\) is \(S\)-nilpotent.
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'>If \(T\) is an \(S\)-local module and \(f\colon M \to T\) is a map with \(S\)-nilpotent cofiber, then \(f\) exhibits \(T\) as the \(S\)-localization
+     of \(M\).</p></dd></dl>
+                                                                                   
+                                                                                   
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-ring-spectra-and-modules-section-04-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-ring-spectra-and-modules-section-04-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> (1) Write \(M' \to M \to S^{-1}M\) for the decomposition of <a class="source-reference" data-label="prop:Decomposition_Nilpotent_Local" href="../../../entry/nilpotent-local-decomposition/index.html#prop:Decomposition_Nilpotent_Local">Proposition 8.4.17</a>. If \(M\) is \(S\)-nilpotent, then the counit \(M' = G(M) \to M\) of the coreflection is
+an isomorphism, so its cofiber \(S^{-1}M\) vanishes. Conversely, if \(S^{-1}M = 0\) then \(M' \to M\) is an isomorphism, so \(M\) is \(S\)-nilpotent.
+</p><p class='noindent'>(2) The functor \(S^{-1}(-)\) is a left adjoint between stable \(\infty \)-categories, hence preserves cofibers. Thus \(S^{-1}(f)\) is an
+isomorphism if and only if \(S^{-1}\cofib (f) \simeq \cofib (S^{-1}f)\) vanishes, which by (1) happens if and only if \(\cofib (f)\) is \(S\)-nilpotent.
+</p><p class='noindent'>(3) By (2) the map \(S^{-1}(f)\colon S^{-1}M \to S^{-1}T\) is an isomorphism, and the unit \(\eta _T\colon T \to S^{-1}T\) is an isomorphism because \(T\) is already \(S\)-local.
+Naturality of the unit gives \(\eta _T\circ f=S^{-1}(f)\circ \eta _M\). It follows that the isomorphism \(\eta _T^{-1}\circ S^{-1}(f)\colon S^{-1}M\to T\) identifies \(f\) with the localization map
+\(\eta _M\colon M\to S^{-1}M\).                                                                                                                                                           □
+</p>
+</div></div>
+<p class='noindent'>The existence of \(S\)-localizations of \(R\)-modules can be used to deduce the existence of localizations of ring
+spectra. Regarding \(R\) as a module over itself, applying the \(S\)-localization functor gives an \(S\)-local \(R\)-module \(S^{-1}R \in \LMod _R\). This
+object can be endowed with the structure of an associative ring spectrum, which we denote by
+\(R[S^{-1}]\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3026r21'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 8.4.21 </span>(<span class='citation'>[Lurie (2017), Remark 7.2.3.26, Proposition 7.2.3.27]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Localization_Ring_Structure'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(R\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  an  associative  ring  spectrum  and  let</span>  \(S \subseteq \pi _*(R)\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  a  multiplicative  subset
+satisfying  the  left  Ore  condition.  The</span>  \(S\)<span class='ntx-Italic-tlf-t1-x-x-109'>-localization</span>  \(S^{-1}R\)  <span class='ntx-Italic-tlf-t1-x-x-109'>admits  the  structure  of  an  associative  ring
+spectrum, which we denote by</span> \(R[S^{-1}]\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Furthermore, the canonical map</span> \(R \to S^{-1}R\) <span class='ntx-Italic-tlf-t1-x-x-109'>can be enhanced to a morphism of
+associative ring spectra </span>\[ \phi \colon R \to R[S^{-1}]. \] <span class='ntx-Italic-tlf-t1-x-x-109'>This morphism exhibits</span> \(R[S^{-1}]\) <span class='ntx-Italic-tlf-t1-x-x-109'>as an</span> \(S\)<span class='ntx-Italic-tlf-t1-x-x-109'>-localization of</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>, in the sense of </span><a class="source-reference" data-label="def:Localization_Of_Ring_Spectrum" href="../../../entry/localization-of-a-ring-spectrum/index.html#def:Localization_Of_Ring_Spectrum">Definition 8.4.8</a><span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+<p class='noindent'>We use this result as a black box, taking it directly from the cited reference. Constructing the coherently
+associative multiplication on \(S^{-1}R\) is the one step of the theory for which the module-theoretic arguments above
+do not suffice.
+</p><p class='noindent'>Finally, this abstract homotopical construction recovers the classical construction of fractions when applied
+to an ordinary associative ring and module.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3027r22'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 8.4.22 </span>(<span class='citation'>[Lurie (2017), Proposition 7.2.3.20 and the proof of Proposition 7.2.3.5]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Localization_Classical_Fractions'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(R\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  an  associative  ring  and  let</span>  \(S \subseteq R\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  a  subset  satisfying  the  left  Ore
+condition. For every left</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module</span> \(M\)<span class='ntx-Italic-tlf-t1-x-x-109'>, regard</span> \(HR\) <span class='ntx-Italic-tlf-t1-x-x-109'>as a ring spectrum and</span> \(HM\) <span class='ntx-Italic-tlf-t1-x-x-109'>as a left</span> \(HR\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module. Then</span> \(S^{-1}(HM)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is discrete,
+and its zeroth homotopy group is naturally isomorphic to the classical left module of fractions</span> \(S^{-1}M\)<span class='ntx-Italic-tlf-t1-x-x-109'>,
+constructed as the set of equivalence classes of symbols</span> \(s^{-1}x\) <span class='ntx-Italic-tlf-t1-x-x-109'>for</span> \(s \in S\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(x \in M\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+<p class='noindent'>We use this result as a black box, taking it directly from the cited reference.
+</p>
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../eilenberg-maclane-ring-spectra-and-dgas/index.html" aria-label="Previous section: Eilenberg–MacLane ring spectra and DGAs" title="Previous section: Eilenberg–MacLane ring spectra and DGAs"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../projective-and-flat-modules-online-only/index.html" aria-label="Next section: Projective and flat modules (online only)" title="Next section: Projective and flat modules (online only)"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html" aria-current="page"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/animae-as-spaces/index.html"><span class="context-entry-heading">Chapter 2</span><span class="context-entry-title">Animae as spaces</span></a></li><li><a href="../../../chapter/homology-and-cohomology/index.html"><span class="context-entry-heading">Chapter 3</span><span class="context-entry-title">Homology and cohomology</span></a></li><li><a href="../../../chapter/spectra-and-stable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 4</span><span class="context-entry-title">Spectra and stable ∞-categories</span></a></li><li><a href="../../../chapter/recognition-principle/index.html"><span class="context-entry-heading">Chapter 5</span><span class="context-entry-title">The recognition principle</span></a></li><li><a href="../../../chapter/homological-algebra/index.html"><span class="context-entry-heading">Chapter 6</span><span class="context-entry-title">Homological algebra</span></a></li><li><a href="../../../chapter/localization-and-completion/index.html"><span class="context-entry-heading">Chapter 7</span><span class="context-entry-title">Localization and completion</span></a></li><li><a href="../../../chapter/ring-spectra-and-modules/index.html" aria-current="page"><span class="context-entry-heading">Chapter 8</span><span class="context-entry-title">Ring spectra and modules</span></a></li><li><a href="../../../chapter/complex-k-theory/index.html"><span class="context-entry-heading">Chapter 9</span><span class="context-entry-title">Complex K-theory</span></a></li><li><a href="../../../chapter/thom-spectra-and-bordism-theory/index.html"><span class="context-entry-heading">Chapter 10</span><span class="context-entry-title">Thom spectra and bordism theory</span></a></li><li><a href="../../../chapter/duality-phenomena/index.html"><span class="context-entry-heading">Chapter 11</span><span class="context-entry-title">Duality phenomena</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../algebras-and-modules/index.html"><span class="context-entry-heading">Section 8.1</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../connective-modules/index.html"><span class="context-entry-heading">Section 8.2</span><span class="context-entry-title">Connective modules</span></a></li><li><a href="../eilenberg-maclane-ring-spectra-and-dgas/index.html"><span class="context-entry-heading">Section 8.3</span><span class="context-entry-title">Eilenberg–MacLane ring spectra and DGAs</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 8.4</span><span class="context-entry-title">Localizations of ring spectra</span></a></li><li><a href="../projective-and-flat-modules-online-only/index.html"><span class="context-entry-heading">Section 8.5</span><span class="context-entry-title">Projective and flat modules (online only)</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Multiplicative_Subset_Graded_Homotopy_Ring"><span class="context-entry-heading">Definition 8.4.1</span><span class="context-entry-title">definition</span></a></li><li><a href="#obs:Multiplication_By_s_Module_Map"><span class="context-entry-heading">Observation 8.4.2</span><span class="context-entry-title">observation</span></a></li><li><a href="#def:S_Local_Module"><span class="context-entry-heading">Definition 8.4.3</span><span class="context-entry-title">definition</span></a></li><li><a href="#prop:Commutative_Localization_Smashing"><span class="context-entry-heading">Proposition 8.4.4</span><span class="context-entry-title">Commutative localization is smashing</span></a></li><li><a href="#cor:Commutative_Localization_Ring_Spectrum"><span class="context-entry-heading">Corollary 8.4.5</span><span class="context-entry-title">Localization of a commutative ring spectrum</span></a></li><li><a href="#lem:Localization_As_Telescope"><span class="context-entry-heading">Lemma 8.4.6</span><span class="context-entry-title">Inverting a single element</span></a></li><li><a href="#rmk:Telescope_Ring_Structure"><span class="context-entry-heading">Remark 8.4.7</span><span class="context-entry-title">remark</span></a></li><li><a href="#def:Localization_Of_Ring_Spectrum"><span class="context-entry-heading">Definition 8.4.8</span><span class="context-entry-title">Localization of a ring spectrum</span></a></li><li><a href="#def:S_Nilpotent_And_Locally_Nilpotent_Modules"><span class="context-entry-heading">Definition 8.4.9</span><span class="context-entry-title">definition</span></a></li><li><a href="#obs:Nilpotent_Local_Closure"><span class="context-entry-heading">Observation 8.4.10</span><span class="context-entry-title">observation</span></a></li><li><a href="#warn:Noncommutative_Obstruction_Finite_Coproducts_Locally_Nilpotent"><span class="context-entry-heading">Warning 8.4.11</span><span class="context-entry-title">warning</span></a></li><li><a href="#def:S_Localization_Of_Module"><span class="context-entry-heading">Definition 8.4.12</span><span class="context-entry-title">definition</span></a></li><li><a href="#def:Ore_Condition_Graded_Ring"><span class="context-entry-heading">Definition 8.4.13</span><span class="context-entry-title">definition</span></a></li><li><a href="#lem:Ore_Condition_S_Nilpotent"><span class="context-entry-heading">Lemma 8.4.14</span><span class="context-entry-title">lemma</span></a></li><li><a href="#lem:S_Nilpotent_Generators"><span class="context-entry-heading">Lemma 8.4.15</span><span class="context-entry-title">lemma</span></a></li><li><a href="#prop:Criterion_S_Local_Modules"><span class="context-entry-heading">Proposition 8.4.16</span><span class="context-entry-title">proposition</span></a></li><li><a href="#prop:Decomposition_Nilpotent_Local"><span class="context-entry-heading">Proposition 8.4.17</span><span class="context-entry-title">proposition</span></a></li><li><a href="#rmk:Nilpotent_Local_Semiorthogonal"><span class="context-entry-heading">Remark 8.4.18</span><span class="context-entry-title">remark</span></a></li><li><a href="#cor:Existence_S_Localization"><span class="context-entry-heading">Corollary 8.4.19</span><span class="context-entry-title">corollary</span></a></li><li><a href="#obs:S_Local_Equivalences"><span class="context-entry-heading">Observation 8.4.20</span><span class="context-entry-title">observation</span></a></li><li><a href="#prop:Localization_Ring_Structure"><span class="context-entry-heading">Proposition 8.4.21</span><span class="context-entry-title">proposition</span></a></li><li><a href="#prop:Localization_Classical_Fractions"><span class="context-entry-heading">Proposition 8.4.22</span><span class="context-entry-title">proposition</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

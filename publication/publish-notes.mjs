@@ -64,7 +64,7 @@ function routeDocument(root, route) {
 }
 
 function htmlIds(html) {
-  return [...html.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]);
+  return [...html.matchAll(/\sid=(["'])(.*?)\1/g)].map((match) => match[2]);
 }
 
 function escapeHtml(value) {
@@ -131,9 +131,9 @@ function validateLocalReferences(root, publicBase) {
       throw new Error(`${path.relative(root, htmlPath)} loads a remote script or stylesheet.`);
     }
     const references = [
-      ...html.matchAll(/<(?:a|link)\b[^>]*\bhref="([^"]+)"/g),
-      ...html.matchAll(/<(?:script|img)\b[^>]*\bsrc="([^"]+)"/g),
-    ].map((match) => match[1]);
+      ...html.matchAll(/<(?:a|link)\b[^>]*\bhref=(["'])(.*?)\1/g),
+      ...html.matchAll(/<(?:script|img)\b[^>]*\bsrc=(["'])(.*?)\1/g),
+    ].map((match) => match[2]);
     for (const reference of references) {
       if (/^(?:https?:|mailto:|tel:|data:|javascript:)/i.test(reference)) continue;
       const [rawPath, rawFragment = ""] = reference.split("#", 2);

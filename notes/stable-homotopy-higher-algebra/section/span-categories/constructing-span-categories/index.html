@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 13.1: Constructing span categories | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/operads-and-higher-algebra/index.html">Part II</a> · <a href="../../../chapter/span-categories/index.html">Chapter 13</a> · Section 13.1</p>
+      <h1>Constructing span categories</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Constructing_Span_Categories'>So far, we could reduce all of the constructions of \(\infty \)-categories we encountered to a handful of
+elementary constructions, like pullbacks, subcategories and functor categories. The situation
+for span categories is different: while the heuristic description given before tells us what the
+objects and morphisms should be, it is not immediately clear how to assemble these into an
+\(\infty \)-category.
+</p><p class='noindent'>The technique we will use is that of <span class='ntx-Italic-tlf-t1-x-x-109'>complete Segal animae</span>, discussed in detail in <a class="source-reference" data-label="chap:Complete_Segal_Animae" href="../../../chapter/complete-segal-animae/index.html#chap:Complete_Segal_Animae">Chapter 24</a>. Let us briefly recall the
+main idea. Given an \(\infty \)-category \(C\), we may consider for every \(n \geq 0\) the anima \(\Map ([n],C)\) of ‘strings of \(n\) composable
+morphisms in \(C\)’. Sending \([n]\) to \(\Map ([n],C)\) for all \(n\) provides a simplicial anima \(N(C)\colon \simp \catop \to \An \), called the <span class='ntx-Italic-tlf-t1-x-x-109'>nerve of</span> \(C\). A major insight
+due to Rezk is that we may use this assignment to identify \(\infty \)-categories with suitable simplicial
+animae. More precisely, the resulting nerve functor \[ N\colon \Cat _{\infty } \hookrightarrow \sAn \] from \(\infty \)-categories to simplicial animae is
+fully faithful. The essential image of this inclusion is given by the <span class='ntx-Italic-tlf-t1-x-x-109'>complete Segal animae</span>, a
+class of simplicial animae satisfying analogues of the Segal Axiom (<a class="source-reference" data-label="prop:Segal_Axiom" href="../../../entry/segal-axiom/index.html#prop:Segal_Axiom">Proposition 1.4.5</a>) and the Rezk Axiom
+(<a class="source-reference" data-label="axiom:Rezk" href="../../../entry/rezk-axiom/index.html#axiom:Rezk">Axiom F</a>).
+</p><p class='noindent'>For the purpose of constructing span categories, we will use this process in reverse: if we manage
+to write down a simplicial anima \(\NSpan _{L,R}(C)\colon \simp \catop \to \An \) encoding strings of \(n\) composable morphisms in the span
+category for all \(n\), and if we manage to verify that it is a complete Segal anima, then we have
+managed to construct our desired \(\infty \)-category \(\Span _{L,R}(C)\). This leads to the next question: what data should be
+contained in a functor \([n] \to \Span _{L,R}(C)\)? Such a functor should first of all encode \(n\) composable spans. Furthermore,
+it should provide a compatible family of choices for their compositions. Given that we want
+composition in the span category to be given by pullback, we conclude that \(\NSpan _{L,R}(C)_n\) should be the anima of
+diagrams in \(C\) of the following form:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-2668b4409a13.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Here all the left-pointing morphisms should be in the
+given class \(C_L\), all the right-pointing morphisms should be in \(C_R\), and all squares should be pullback
+squares.</p><p class='noindent'>In the remainder of this section, we will make the construction of the simplicial anima \(\NSpan _{L,R}(C)\) more precise, and
+verify that it is indeed a complete Segal anima. We will also prove various basic properties about the
+resulting \(\infty \)-categories of spans. Our exposition closely follows that of <span class='citation'>Haugseng et al. (2023)</span>.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/wide-subcategory/index.html" aria-label="Definition 13.1.1., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 13.1.1.</span></a>  </span><span id='def:Wide_Subcategory'></span> A subcategory \(C' \subseteq C\) is called <span class='ntx-Italic-tlf-t1-x-x-109'>wide </span>if it contains all objects of \(C\).
+</p>
+</div>
+<p class='noindent'>We will usually think of a wide subcategory \(C'\) as specifying a collection of morphisms in \(C\) closed under
+composition. Since a collection of morphisms is a union of components of \(\Map ([1],C)\), every wide subcategory
+contains all isomorphisms of \(C\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1002r2'></a>
+<a class="entry-heading-link" href="../../../entry/adequate-triple/index.html" aria-label="Definition 13.1.2, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 13.1.2 </span></a>(<span class='citation'>[Barwick (2017)]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Adequate_Triple'></span> An <span class='ntx-Italic-tlf-t1-x-x-109'>adequate triple</span> \((C,C_L,C_R)\) consists of an \(\infty \)-category \(C\) equipped with two wide subcategories \(C_L,C_R \subseteq C\)
+satisfying the condition that for every morphism \(l\colon X \to Y\) in \(C_L\) and \(r\colon Y' \to Y\) in \(C_R\), there exists a pullback square of the form</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-251be91ad14f.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'><a id='x1-1003r1'></a> and
+we have \(l' \in C_L\) and \(r' \in C_R\). We refer to \(C_L\) as the <span class='ntx-Italic-tlf-t1-x-x-109'>class of backwards morphisms </span>and to \(C_R\) as the <span class='ntx-Italic-tlf-t1-x-x-109'>class of forward
+morphisms</span>.</p><p class='noindent'>Given another adequate triple \((D,D_L,D_R)\), a <span class='ntx-Italic-tlf-t1-x-x-109'>morphism of adequate triples </span>is a functor \(F\colon C \to D\) that sends \(C_L\) to \(D_L\) and \(C_R\) to \(D_R\), and sends
+every pullback square of the form <span class="source-reference equation-reference" data-label="eq:Pullback_Adequate_Triple">(13.1)</span>, with \(l \in C_L\) and \(r \in C_R\), to a pullback square in \(D\). We denote by \[ \AdTrip \quad \subseteq \quad \Fun (\pullback ,\Cat _{\infty }) \] the non-full
+subcategory spanned by those diagrams \(C_L \hookrightarrow C \hookleftarrow C_R\) in \(\Cat _{\infty }\) that correspond to adequate triples \((C,C_L,C_R)\) and those morphisms that
+correspond to morphisms of adequate triples.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1004r3'></a>
+<a class="entry-heading-link" href="../../../entry/trivial-adequate-triple/index.html" aria-label="Example 13.1.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 13.1.3.</span></a>  </span><span id='ex:Trivial_Adequate_Triple'></span> For any wide subcategory \(C'\) of an \(\infty \)-category \(C\), we have the adequate triples \((C, C', C^{\simeq })\) and \((C, C^{\simeq }, C')\). In
+particular, for any \(\infty \)-category \(C\) we always have the adequate triples \((C, C, C^{\simeq })\) and \((C, C^{\simeq }, C)\).
+</p>
+                                                                                   
+                                                                                   
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1005r4'></a>
+<a class="entry-heading-link" href="../../../entry/adequate-triple-all-morphisms/index.html" aria-label="Example 13.1.4., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 13.1.4.</span></a>  </span><span id='ex:Adequate_Triple_All_Morphisms'></span> If \(C\) admits all pullbacks, we have the adequate triple \((C, C, C)\) where we take all maps to
+be both forward and backward maps. This gives rise to a fully faithful embedding \[ \Cat _{\infty }^{\pb } \hookrightarrow \AdTrip , \] where \(\Cat _{\infty }^{\pb } \subseteq \Cat _{\infty }\) is the
+subcategory spanned by those \(\infty \)-categories which admit pullbacks, and those functors which preserve
+pullbacks.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1006r5'></a>
+<a class="entry-heading-link" href="../../../entry/adtrip-rev/index.html" aria-label="Example 13.1.5., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 13.1.5.</span></a>  </span><span id='ex:AdTrip_Rev'></span> If \((C, C_L, C_R)\) is an adequate triple, then so is \((C, C_R, C_L)\). The resulting endomorphism of \(\AdTrip \) will be
+denoted \[ (-)_{\rev }\colon \AdTrip \to \AdTrip . \]
+</p>
+</div>
+<p class='noindent'>We will now introduce the indexing diagrams that classify the functors \([n] \to \Span _{L,R}(C)\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1007r6'></a>
+<a class="entry-heading-link" href="../../../entry/twisted-arrow/index.html" aria-label="Definition 13.1.6, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 13.1.6 </span></a>(Twisted arrow category)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Twisted_Arrow'></span> For \(n \geq 0\), let \(\Tw ^r([n])\) be the partially ordered set of tuples \((i,j)\) with \(0 \leq i \leq j \leq n\),
+                                                                                   
+                                                                                   
+where the partial order is given by \[ (i,j) \leq (k,l) \qquadtext { if and only if} i \leq k \quad \text {and} \quad l \leq j. \] We will generally denote the pair \((i,j)\) by \((i \leq j)\). The poset looks as follows:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-01bee908d02e.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Given a morphism of posets \(\phi \colon [n] \to [m]\), we obtain a map \(\Tw ^r(\phi )\colon \Tw ^r([n]) \to \Tw ^r([m])\) by sending \((i \leq j)\) to \((\phi (i) \leq \phi (j))\). This assignment is clearly functorial,
+resulting in a functor \[ \Tw ^r\colon \simp \to \mathrm {Poset} \subseteq \Cat \subseteq \Cat _{\infty }. \]</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1008r7'></a>
+<a class="entry-heading-link" href="../../../entry/source-target-twisted-arrow-cartesian/index.html" aria-label="Exercise 13.1.7., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 13.1.7.</span></a>  </span><span id='exercise:Source_Target_Twisted_Arrow_Cartesian'></span> Show that the functors \(s\colon \Tw ^r([n]) \to [n], (i \leq j) \mapsto i\) and \(t\colon \Tw ^r([n]) \to [n]\catop , (i \leq j) \mapsto j\) are cartesian fibrations.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1009r8'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 13.1.8.</span>  </span><span id='lem:Pullbacks_In_Tw_n'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For integers</span> \(0 \leq i \leq k \leq l \leq j \leq n\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the commutative square </span></p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-72f35f45c273.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>is a pullback square in</span> \(\Tw ^r([n])\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-span-categories-section-01-9" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-span-categories-section-01-9">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Given \(0 \leq i' \leq j' \leq n\) we need to show that we have \((i',j') \leq (i,j)\) if and only if \((i',j') \leq (i,l)\) and \((i',j') \leq (k,j)\). This is clear: in both cases this
+amounts to asking that for both of the relations \(i' \leq i\) and \(j \leq j'\).                                                                        □
+                                                                                   
+                                                                                   
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1010r9'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 13.1.9.</span>  </span><span id='cor:Tw_n_Is_Adequate'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The poset</span> \(\Tw ^r([n])\) <span class='ntx-Italic-tlf-t1-x-x-109'>is an adequate triple, with</span> \(\Tw ^r([n])_L\) <span class='ntx-Italic-tlf-t1-x-x-109'>consisting of morphisms of the form</span> \((i \leq j) \leq (i \leq l)\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(\Tw ^r([n])_R\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>consisting of morphisms of the form</span> \((i \leq j) \leq (k \leq j)\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-span-categories-section-01-8" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-span-categories-section-01-8">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The two classes are closed under composition, and every cospan consisting of a morphism
+in \(\Tw ^r([n])_L\) and a morphism in \(\Tw ^r([n])_R\) has the form treated in <a class="source-reference" data-label="lem:Pullbacks_In_Tw_n" href="../../../entry/pullbacks-in-tw-n/index.html#lem:Pullbacks_In_Tw_n">Lemma 13.1.8</a>.                                                                                 □
+</p>
+</div></div>
+<p class='noindent'>From now on, we will equip \(\Tw ^r([n])\) with the adequate triple structure from <a class="source-reference" data-label="cor:Tw_n_Is_Adequate" href="../../../entry/tw-n-is-adequate/index.html#cor:Tw_n_Is_Adequate">Corollary 13.1.9</a>. Note that a morphism of posets \(\phi \colon [n] \to [m]\)
+induces a morphism of adequate triples \(\Tw ^r(\phi )\colon \Tw ^r([n]) \to \Tw ^r([m])\), resulting in a functor \[ \Tw ^r\colon \simp \to \AdTrip . \]
+</p><p class='noindent'>Observe that the diagrams in \(C\) we drew in our informal description of the functors \([n] \to \Span _{L,R}(C)\) given in the introduction
+to this chapter are precisely the morphisms of adequate triples \(\Tw ^r([n]) \to (C,C_L,C_R)\). This leads to the following
+definition:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1011r10'></a>
+<a class="entry-heading-link" href="../../../entry/span-nerve/index.html" aria-label="Construction 13.1.10., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 13.1.10.</span></a>  </span><span id='cons:NSpan'></span> Let \((C,C_L,C_R)\) be an adequate triple. We define the simplicial anima \(\NSpan _{L,R}(C) \in \sAn \) as the following
+composite: \[ \simp \catop \xrightarrow {\Tw ^r} \AdTrip \catop \xrightarrow {\Hom _{\AdTrip }(-,(C,C_L,C_R))} \An . \] In other words, for \(n \geq 0\) we consider the subanima \[ \NSpan _{L,R}(C)_n \subseteq \Map (\Tw ^r([n]),C) \] consisting of the morphisms of adequate
+                                                                                   
+                                                                                   
+triples. This construction is natural in the adequate triple, hence defines a functor \[ \NSpan \colon \AdTrip \to \sAn . \]
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1012r11'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 13.1.11 </span>(<span class='citation'>Barwick (2017), Proposition 5.6</span>, <span class='citation'>Haugseng et al. (2023), Theorem 2.1.3</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:NSpan_Complete_Segal'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For every adequate triple</span> \((C,C_L,C_R)\) <span class='ntx-Italic-tlf-t1-x-x-109'>the simplicial anima</span> \(\NSpan _{L,R}(C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a complete Segal anima.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-span-categories-section-01-7" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-span-categories-section-01-7">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  We start by proving the Segal condition.  Let us write \(X := \NSpan _{L,R}(C)\) for ease of notation.  For every \(n \geq 0\),
+consider the subposet \(J_n \subseteq \Tw ^r([n])\) spanned by the objects \((i \leq j)\) with \(j \leq i + 1\):</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-8a61abf39473.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Note that a functor \(\Tw ^r([n]) \to C\) preserves the pullback
+squares from <a class="source-reference" data-label="lem:Pullbacks_In_Tw_n" href="../../../entry/pullbacks-in-tw-n/index.html#lem:Pullbacks_In_Tw_n">Lemma 13.1.8</a> if and only if it is right Kan extended along the inclusion \(J_n \hookrightarrow \Tw ^r([n])\): if we compute this Kan
+extension row by row, this follows from the pointwise formula for Kan extensions (<a class="source-reference" data-label="thm:Pointwise_Formula_Kan_Extensions" href="../../../entry/pointwise-formula-for-kan-extensions/index.html#thm:Pointwise_Formula_Kan_Extensions">Theorem 21.4.3</a>). Concretely,
+right Kan extension from \(J_n\) fills the diagram by iterated pullbacks, and hence encodes the successive
+composites of the original string of spans.</p><p class='noindent'>We now use the adequacy of \((C,C_L,C_R)\). Starting with a functor \(J_n \to C\) that sends the left-pointing morphisms to \(C_L\)
+and the right-pointing morphisms to \(C_R\), construct its right Kan extension by induction on \(j-i\). At each
+step, the value at \((i \leq j)\) is obtained by pulling back the diagram formed by the previously constructed
+values at \((i \leq j-1)\), \((i+1 \leq j)\) and \((i+1 \leq j-1)\). The adequate-triple axiom guarantees that this pullback exists and that its new left-
+and right-pointing legs again lie in \(C_L\) and \(C_R\), respectively. Thus restriction to \(J_n\) induces an inclusion of
+animae \[ X_n = \NSpan _{L,R}(C)_n \hookrightarrow \Map (J_n, C) \] whose image consists precisely of those functors \(J_n \to C\) sending the left-pointing morphisms to \(C_L\)
+and the right-pointing morphisms to \(C_R\). We now observe that the Segal maps \(e_i\colon [1] \hookrightarrow [n]\) induce inclusions \(\Tw ^r([1]) \hookrightarrow J_n\) which
+assemble into an equivalence \[ \Tw ^r([1]) \sqcup _{\Tw ^r([0])} \Tw ^r([1]) \sqcup _{\Tw ^r([0])} \dots \sqcup _{\Tw ^r([0])} \Tw ^r([1]) \iso J_n, \] as may be checked directly in posets: the objects \((i \leq i)\) along which we glue
+are maximal in the adjacent copies of \(\Tw ^r([1])\), so the pushout creates no additional relations. In particular,
+                                                                                   
+                                                                                   
+we get \[ \Map (J_n,C) \iso \Map (\Tw ^r([1]),C) \times _{C^{\simeq }} \Map (\Tw ^r([1]),C) \times _{C^{\simeq }} \dots \times _{C^{\simeq }} \Map (\Tw ^r([1]),C). \] Under this equivalence, the image of the restriction map \(X_n \hookrightarrow \Map (J_n,C)\) corresponds precisely to the target
+of the Segal map \[ (e_i^*)_{i=1}^n \colon X_n \to X_1 \times _{X_0} \dots \times _{X_0} X_1, \] showing that \(X\) satisfies the Segal condition.
+</p><p class='noindent'>For completeness, first note that the functor \[ C^{\simeq } = X_0 \to X_1 \subseteq \Map (\Tw ^r([1]),C) \] is an inclusion of animae. Indeed, since \(\Tw ^r([1])\) has an initial
+object we have \(\geom {\Tw ^r([1])} \simeq *\), and thus the constant diagram functor \(C \to \Fun (\Tw ^r([1]),C)\) may be identified with the fully faithful
+inclusion \(\Fun (\geom {\Tw ^r([1])},C) \hookrightarrow \Fun (\Tw ^r([1]),C)\). It thus remains to show that a span \(X \xleftarrow {l} U \xrightarrow {r} Y\) is an isomorphism in the Segal anima \(\NSpan _{L,R}(C)\) if and only if
+both \(l\) and \(r\) are isomorphisms in \(C\).
+</p><p class='noindent'>We first show that an invertible span has invertible legs. Let \(Y \xleftarrow {l'} V \xrightarrow {r'} X\) be a left inverse, and let \(Y \xleftarrow {l''} W \xrightarrow {r''} X\) be a right
+inverse. The two diagrams below exhibit these inverses; pulling them back against each other will
+produce the isomorphisms needed for a 2-out-of-6 argument. The identities \((l,r) \circ (l',r') = \id \) and \((l'',r'') \circ (l,r) = \id \) are exhibited by
+commutative diagrams in \(C\) of the following form:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-6b74897743df.svg" alt="Commutative diagram generated from the LaTeX source"></figure><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-bdc3a29b4283.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Putting them into one single diagram and forming
+another pullback, we then obtain:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-8168de916bfd.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Since isomorphisms in \(C\) are closed under pullbacks, the maps \(P \to V\) and
+\(P \to W\) are isomorphisms, so by the 2-out-of-6 property all morphisms along the outer two edges of the
+diagram are isomorphisms. By the 2-out-of-3 property, then so are the maps \(r'\colon V \to X\) and \(l''\colon W \to Y\), hence by pullback
+also \(Y \to U\) and \(X \to U\). Finally, another instance of the 2-out-of-3 property shows that \(l\colon U \to X\) and \(r\colon U \to Y\) are isomorphisms.
+Conversely, if \(l\) and \(r\) are isomorphisms, then the span is isomorphic in \(X_1\) to the identity span on \(U\), and
+hence lies in the image of \(X_0 \to X_1\). This proves completeness.                                                                      □</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1013r12'></a>
+<a class="entry-heading-link" href="../../../entry/span-category/index.html" aria-label="Notation 13.1.12., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Notation 13.1.12.</span></a>  </span><span id='nota:Span_Category'></span> By <a class="source-reference" data-label="prop:NSpan_Complete_Segal" href="../../../entry/nspan-complete-segal/index.html#prop:NSpan_Complete_Segal">Proposition 13.1.11</a> and <a class="source-reference" data-label="thm:Categories_As_Complete_Segal_Animae" href="../../../entry/infinity-categories-as-complete-segal-animae/index.html#thm:Categories_As_Complete_Segal_Animae">Theorem 24.1.10</a>, the functor \(\NSpan \colon \AdTrip \to \sAn \) factors uniquely as</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-7ea3ec75f70f.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>We refer to the resulting \(\infty \)-category \(\Span _{L,R}(C)\) as
+the <span class='ntx-Italic-tlf-t1-x-x-109'>span category </span>of the adequate triple.</p><p class='noindent'>If \(C\) admits pullbacks, we write \[ \Span (C) := \Span _{\all ,\all }(C) \] for the span category associated with the adequate triple \((C,C,C)\). In particular,
+\(\Span (\Fin )\) is the rigorous construction of the span category of finite sets promised in <a class="source-reference" data-label="cons:Span_Category_Fin" href="../../../entry/span-category-of-finite-sets/index.html#cons:Span_Category_Fin">Construction 5.3.1</a>.
+</p>
+</div>
+<p class='noindent'>A useful special case was already identified in <a class="source-reference" data-label="lem:Fin_Pointed_Equiv_Span" href="../../../entry/finite-pointed-sets-as-forward-spans/index.html#lem:Fin_Pointed_Equiv_Span">Lemma 5.3.8</a>: a span of finite sets whose left leg is injective may be
+regarded as a partially defined map, and this gives an equivalence \[ \Span _{\inj ,\all }(\Fin )\simeq \Fin _*. \] This description will be used in the
+comparison with Lurie’s model.
+</p>
+<div class='newtheorem'>
+                                                                                   
+                                                                                   
+<p class='noindent'><span class='head'>
+<a id='x1-1014r13'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 13.1.13.</span>  </span><span id='lem:Hom_In_Spans'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \((C,C_L,C_R)\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an adequate triple and consider objects</span> \(X,Y \in C\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then there is an equivalence </span>\[ \Hom _{\Span _{L,R}(C)}(X,Y) \quad \simeq \quad ((C_L)_{/X})^{\simeq } \times _{C^{\simeq }} ((C_R)_{/Y})^{\simeq }. \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-span-categories-section-01-6" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-span-categories-section-01-6">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Observe that the twisted arrow category \(\Tw ^r([1])\) is the walking span \(\;\pushout \) from <span class="source-reference" data-label="def:Spans_And_Cospans">Definition 1.4.1</span>. We may then compute:
+\[ \Map ([1],\Span _{L,R}(C)) \simeq \NSpan _{L,R}(C)_1 \simeq \Hom _{\AdTrip }(\pushout , (C,C_L,C_R)) \simeq \Map ([1],C_L) \times _{\ev _0,C^{\simeq },\ev _0} \Map ([1],C_R). \] The hom anima \(\Hom _{\Span _{L,R}(C)}(X,Y)\) is then given as the fiber over \((X,Y)\) of the map \[ \Map ([1],C_L) \times _{\ev _0,C^{\simeq },\ev _0} \Map ([1],C_R) \xrightarrow {(\ev _1, \ev _1)} C^{\simeq } \times C^{\simeq }, \] which is indeed equivalent to \(((C_L)_{/X})^{\simeq } \times _{C^{\simeq }} ((C_R)_{/Y})^{\simeq }\).            □
+</p>
+</div></div>
+<p class='noindent'>Thus the case \(n=1\) of <a class="source-reference" data-label="cons:NSpan" href="../../../entry/span-nerve/index.html#cons:NSpan">Construction 13.1.10</a> recovers the informal description from the beginning of the chapter: the objects are those
+of \(C\), morphisms are spans with left leg in \(C_L\) and right leg in \(C_R\), and identities are the identity spans. Under the
+Segal equivalence, the face map \(d_1\colon \NSpan _{L,R}(C)_2 \to \NSpan _{L,R}(C)_1\) sends a pullback grid to its outer span. Consequently, composition in \(\Span _{L,R}(C)\) is
+given by pullback.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1015r14'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 13.1.14.</span>  </span><span id='cor:Subtriples_Span_Categories'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Suppose that</span> \(C_L' \subseteq C_L\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(C_R' \subseteq C_R\) <span class='ntx-Italic-tlf-t1-x-x-109'>are wide subcategories such that both</span> \((C,C_L',C_R')\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \((C,C_L,C_R)\) <span class='ntx-Italic-tlf-t1-x-x-109'>are adequate
+triples. Then the induced functor </span>\[ \Span _{L',R'}(C) \hookrightarrow \Span _{L,R}(C) \] <span class='ntx-Italic-tlf-t1-x-x-109'>is a wide subcategory inclusion.</span>
+</p>
+</div>
+
+                                                                                   
+
+                                                                                   
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-span-categories-section-01-5" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-span-categories-section-01-5">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Both span categories have the same objects, and <a class="source-reference" data-label="lem:Hom_In_Spans" href="../../../entry/hom-in-spans/index.html#lem:Hom_In_Spans">Lemma 13.1.13</a> identifies the induced maps on hom animae
+with inclusions of components.                                                                                                          □
+</p>
+</div></div>
+<p class='noindent'>Let us now prove various basic properties of span categories.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1016r15'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 13.1.15.</span>  </span><span id='lem:Opposite_Span_Category'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>There is a natural equivalence</span> \(\Span _{L,R}(C)\catop \simeq \Span _{R,L}(C)\)<span class='ntx-Italic-tlf-t1-x-x-109'>, in the sense that the following diagram commutes:</span></p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-20c2f092f681.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-span-categories-section-01-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-span-categories-section-01-4">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  By  definition  of  \((-)\catop \colon \Cat _{\infty } \to \Cat _{\infty }\),  there  is  a  commutative  square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-49b2c0f1e08f.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>where  the  bottom  functor  is  given
+by  precomposition  with  \((-)\catop \colon \simp \iso \simp \).  We  thus  need  to  produce  a  natural  equivalence  \(\NSpan _{L,R}(C)\catop \simeq \NSpan _{R,L}(C)\)  of  simplicial  animae.
+Unwinding definitions, this amounts to producing a natural equivalence \[ \Hom _{\AdTrip }(\Tw ^r([n]\catop ),(C,C_L,C_R)) \simeq \Hom _{\AdTrip }(\Tw ^r([n]),(C,C_R,C_L)), \] natural in \([n] \in \simp \catop \) and \((C,C_L,C_R)\). Equivalently,
+we must produce a natural equivalence \(\Tw ^r([n]\catop ) \simeq \Tw ^r([n])_{\rev }\). Such an equivalence is given by sending an object \((i \geq j)\) in \(\Tw ^r([n]\catop )\) to
+the object \((j \leq i)\) in \(\Tw ^r([n])\).                                                                                                                                      □</p>
+</div></div>
+                                                                                   
+                                                                                   
+<p class='noindent'>The span category \(\Span _{L,R}(C)\) contains \(C_R\) as a wide subcategory on the right-pointing spans \(X \xleftarrow {=} X \xrightarrow {r} Y\). Similarly it
+contains \(C_L\catop \) as a wide subcategory on the left-pointing spans \(X \xleftarrow {l} Y \xrightarrow {=} Y\). This is made precise by the following
+result:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1017r16'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 13.1.16.</span>  </span><span id='lem:Span_With_Equivalences'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C_L,C_R \subseteq C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be wide subcategories. Then the span categories of the adequate triples</span> \((C,C^{\simeq },C_R)\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span>
+\((C,C_L,C^{\simeq })\) <span class='ntx-Italic-tlf-t1-x-x-109'>from </span><a class="source-reference" data-label="ex:Trivial_Adequate_Triple" href="../../../entry/trivial-adequate-triple/index.html#ex:Trivial_Adequate_Triple">Example 13.1.3 </a><span class='ntx-Italic-tlf-t1-x-x-109'>are given by: </span>\[ \Span _{\simeq ,R}(C) \simeq C_R \qquadtext {and}\Span _{L,\simeq }(C) \simeq C_L\catop . \] <span class='ntx-Italic-tlf-t1-x-x-109'>In particular, there are canonical inclusions </span>\[ C_R \simeq \Span _{\simeq ,R}(C) \hookrightarrow \Span _{L,R}(C) \qquadtext {and} C_L\catop \simeq \Span _{L,\simeq }(C) \hookrightarrow \Span _{L,R}(C). \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-span-categories-section-01-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-span-categories-section-01-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> It suffices to prove the first equivalence; the second one follows by combining the first one
+with <a class="source-reference" data-label="lem:Opposite_Span_Category" href="../../../entry/opposite-span-category/index.html#lem:Opposite_Span_Category">Lemma 13.1.15</a>. For \([n] \in \simp \catop \), consider the source functor \(s\colon \Tw ^r([n]) \to [n], \, (i \leq j) \mapsto i\). Note that this functor admits a fully faithful left adjoint \([n] \to \Tw ^r([n])\)
+sending \(i \in [n]\) to \((i \leq n) \in \Tw ^r([n])\). Indeed, there is a morphism \((i \leq n) \to (k \leq l)\) in \(\Tw ^r([n])\) if and only if \(i \leq k\). It thus follows from <a class="source-reference" data-label="lem:Bousfield_Localization_Is_Localization" href="../../../entry/bousfield-localizations-are-localizations/index.html#lem:Bousfield_Localization_Is_Localization">Lemma 21.8.8</a> that restriction
+along \(s\) induces an inclusion of animae \[ \Hom _{\Cat _{\infty }}([n],C_R) \subseteq \Hom _{\Cat _{\infty }}([n],C) \hookrightarrow \Hom _{\Cat _{\infty }}(\Tw ^r([n]),C) \] whose essential image consists of those functors \(\Tw ^r[n] \to C\) that send
+backwards morphisms to isomorphisms and forward morphisms into \(C_R\). Since these are precisely the
+morphisms of adequate triples into \((C,C^{\simeq },C_R)\), we obtain a natural equivalence \[ N(C_R)_n = \Hom _{\Cat _{\infty }}([n],C_R) \iso \Hom _{\AdTrip }(\Tw ^r([n]),(C,C^{\simeq },C_R)) = \NSpan _{\simeq ,R}(C)_n. \] This shows that \(N(C_R) \simeq \NSpan _{\simeq ,R}(C)\), and hence
+that \(C_R \simeq \Span _{\simeq ,R}(C)\) by full faithfulness of the nerve functor.                                                                                     □
+</p>
+</div></div>
+<p class='noindent'>The construction of span categories is summarized conceptually by the following adjunction. We will not
+need the adjunction itself below, but it explains the role of the right twisted-arrow construction in the
+definition of \(\Span \).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+                                                                                   
+                                                                                   
+<a id='x1-1018r17'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 13.1.17 </span>(<span class='citation'>[Haugseng et al. (2023), Theorem 2.18]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Twisted_Arrow_Span_Adjunction'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The right twisted-arrow construction</span> \(\Tw ^r\colon \simp \to \AdTrip \) <span class='ntx-Italic-tlf-t1-x-x-109'>extends to a functor </span>\[ \Tw ^r\colon \Cat _{\infty } \to \AdTrip , \] <span class='ntx-Italic-tlf-t1-x-x-109'>and this extension
+is left adjoint to the span construction: </span>\[ \Tw ^r\colon \Cat _{\infty } \rightleftarrows \AdTrip \noloc \Span . \]
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1019r18'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 13.1.18.</span>  </span><span id='lem:AdTrip_Limits'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(\AdTrip \) <span class='ntx-Italic-tlf-t1-x-x-109'>admits limits and filtered colimits, and the inclusion</span> \(\AdTrip \hookrightarrow \Fun (\pullback ,\Cat _{\infty })\) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves
+limits and filtered colimits.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-span-categories-section-01-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-span-categories-section-01-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We start with the case for limits. Recall that limits in \(\Fun (\pullback ,\Cat _{\infty })\) are computed pointwise. Given a
+functor \(C\colon I \to \AdTrip \), we thus need to show that the triple \((C,C_L,C_R) := (\lim _i C(i), \lim _i C(i)_L, \lim _i C(i)_R)\) is again adequate. Note that subcategory inclusions are
+closed under limits in \(\Cat _{\infty }\): a functor \(D \hookrightarrow D'\) is a subcategory inclusion if and only if the commutative square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-6b2c09c048c6.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>is a pullback square, and limits commute with pullback squares. Furthermore, <span class='ntx-Italic-tlf-t1-x-x-109'>wide </span>subcategory
+inclusions are closed under limits: an inclusion \(D \hookrightarrow D'\) is a wide subcategory if and only if the induced map
+\(D^{\simeq } \to {D'}^{\simeq }\) on groupoid cores is an equivalence of animae, and \((-)^{\simeq }\) preserves limits.</p><p class='noindent'>Consider a cospan \(X \xrightarrow {l} X'' \xleftarrow {r} X'\) in \(C=\lim _i C(i)\) with \(l \in C_L\) and \(r \in C_R\). Since the transition functors preserve the pullbacks specified by
+the adequate-triple structures, the pointwise pullbacks in the \(C(i)\) assemble to an object of \(C\). The identity
+\[ \Hom _C(W,-) \simeq \lim _i \Hom _{C(i)}(W_i,-) \] shows that this object is the pullback in \(C\), and the pointwise criterion for membership in \(C_L\) and \(C_R\) shows
+that its legs lie in the required classes. Thus \((C,C_L,C_R)\) is an adequate triple. Furthermore, a functor into \(C\) is a
+morphism of adequate triples if and only if its composite with each projection \(C \to C(i)\) is, so \((C,C_L,C_R)\) is a limit in \(\AdTrip \).
+                                                                                   
+                                                                                   
+</p><p class='noindent'>For filtered colimits, note that subcategory inclusions are closed under filtered colimits in \(\Cat _{\infty }\) since
+filtered colimits commute with pullbacks by <a class="source-reference" data-label="lem:Finite_Limits_Commute_With_Filtered_Colimits_In_Cat" href="../../../entry/finite-limits-commute-with-filtered-colimits-in-infinity-categories/index.html#lem:Finite_Limits_Commute_With_Filtered_Colimits_In_Cat">Lemma 24.2.2</a>. Since every object in a filtered colimit of \(\infty \)-categories
+\(D(i)\) comes from one of the \(D(i)\), it follows that a filtered colimit of wide subcategory inclusions is again
+wide. Any cospan in \(C=\colim _i C(i)\) lifts to a cospan in some stage \(C(j)\). Its pullback exists there by adequacy, and the
+transition functors carry this pullback to the corresponding pullbacks at every later stage. Mapping
+animae in a filtered colimit of \(\infty \)-categories are filtered colimits of the mapping animae, and finite
+limits of animae commute with filtered colimits. It follows that the resulting square in \(C\) remains a
+pullback. Thus \((C,C_L,C_R)\) is an adequate triple. A functor out of \(C\) is a morphism of adequate triples if and only
+if its composite with each \(C(j) \to C\) is, so \((C,C_L,C_R)\) is a colimit in \(\AdTrip \).                                                                               □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1020r19'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 13.1.19.</span>  </span><span id='prop:Span_Preserves_Limits_And_Filtered_Colimits'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(\Span \colon \AdTrip \to \Cat _{\infty }\) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves limits and filtered colimits.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-span-categories-section-01-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-span-categories-section-01-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The inclusion \(N\colon \Cat _{\infty } \hookrightarrow \sAn \) preserves limits and filtered colimits (see <a class="source-reference" data-label="lem:Finite_Limits_Commute_With_Filtered_Colimits_In_Cat" href="../../../entry/finite-limits-commute-with-filtered-colimits-in-infinity-categories/index.html#lem:Finite_Limits_Commute_With_Filtered_Colimits_In_Cat">Lemma 24.2.2</a> for the latter claim). It will thus
+suffice  to  show  that  \(\NSpan \colon \AdTrip \to \sAn \)  preserves  these  (co)limits.  Since  these  are  computed  pointwise,  this  boils
+down to showing that the functor \[ \Hom _{\AdTrip }(\Tw ^r([n]), -)\colon \AdTrip \to \An \] preserves them. The case for limits is clear, since the functor is
+corepresented. For filtered colimits, we use again that filtered colimits commute with pullbacks, so
+that we may reduce to the cases \(n = 0\) and \(n=1\) via the Segal condition. Note that the \(\infty \)-categories \(\Tw ^r([0]) = *\) and \(\Tw ^r([1]) = \; \pushout \) are finite,
+so \(\Hom _{\Cat _{\infty }}(\Tw ^r([n]),-)\colon \Cat _{\infty } \to \An \) preserves filtered colimits by <a class="source-reference" data-label="cor:Core_Preserves_Filtered_Colimits" href="../../../entry/groupoid-cores-preserve-filtered-colimits/index.html#cor:Core_Preserves_Filtered_Colimits">Corollary 24.2.3</a>. This proves the claim for \(n = 0\). For \(n = 1\), one observes that the subanimae
+of morphisms of adequate triples are closed under filtered colimits.                                                 □
+</p>
+</div></div>
+                                                                                   
+                                                                                   
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../../operads-the-heuristics/writing-concatenations-as-products/index.html" aria-label="Previous section: Writing concatenations as products" title="Previous section: Writing concatenations as products"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../adjunctions-of-span-categories/index.html" aria-label="Next section: Adjunctions of span categories" title="Next section: Adjunctions of span categories"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html" aria-current="page"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/operads-the-heuristics/index.html"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../../../chapter/span-categories/index.html" aria-current="page"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../../../chapter/basics-on-infinity-operads/index.html"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../../../chapter/cartesian-and-cocartesian-monoidal-structures/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../../../chapter/day-convolution-and-the-tensor-product-of-spectra/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="../../../chapter/the-envelope-of-an-infinity-operad/index.html"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../../../chapter/operadic-day-convolution-and-stabilization/index.html"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Operadic Day convolution and stabilization</span></a></li><li><a href="../../../chapter/algebras-and-modules/index.html"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 13.1</span><span class="context-entry-title">Constructing span categories</span></a></li><li><a href="../adjunctions-of-span-categories/index.html"><span class="context-entry-heading">Section 13.2</span><span class="context-entry-title">Adjunctions of span categories</span></a></li><li><a href="../products-and-coproducts-in-span-categories/index.html"><span class="context-entry-heading">Section 13.3</span><span class="context-entry-title">Products and coproducts in span categories</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Wide_Subcategory"><span class="context-entry-heading">Definition 13.1.1</span><span class="context-entry-title">definition</span></a></li><li><a href="#def:Adequate_Triple"><span class="context-entry-heading">Definition 13.1.2</span><span class="context-entry-title">definition</span></a></li><li><a href="#ex:Trivial_Adequate_Triple"><span class="context-entry-heading">Example 13.1.3</span><span class="context-entry-title">example</span></a></li><li><a href="#ex:Adequate_Triple_All_Morphisms"><span class="context-entry-heading">Example 13.1.4</span><span class="context-entry-title">example</span></a></li><li><a href="#ex:AdTrip_Rev"><span class="context-entry-heading">Example 13.1.5</span><span class="context-entry-title">example</span></a></li><li><a href="#def:Twisted_Arrow"><span class="context-entry-heading">Definition 13.1.6</span><span class="context-entry-title">Twisted arrow category</span></a></li><li><a href="#exercise:Source_Target_Twisted_Arrow_Cartesian"><span class="context-entry-heading">Exercise 13.1.7</span><span class="context-entry-title">exercise</span></a></li><li><a href="#lem:Pullbacks_In_Tw_n"><span class="context-entry-heading">Lemma 13.1.8</span><span class="context-entry-title">lemma</span></a></li><li><a href="#cor:Tw_n_Is_Adequate"><span class="context-entry-heading">Corollary 13.1.9</span><span class="context-entry-title">corollary</span></a></li><li><a href="#cons:NSpan"><span class="context-entry-heading">Construction 13.1.10</span><span class="context-entry-title">construction</span></a></li><li><a href="#prop:NSpan_Complete_Segal"><span class="context-entry-heading">Proposition 13.1.11</span><span class="context-entry-title">proposition</span></a></li><li><a href="#nota:Span_Category"><span class="context-entry-heading">Notation 13.1.12</span><span class="context-entry-title">notation</span></a></li><li><a href="#lem:Hom_In_Spans"><span class="context-entry-heading">Lemma 13.1.13</span><span class="context-entry-title">lemma</span></a></li><li><a href="#cor:Subtriples_Span_Categories"><span class="context-entry-heading">Corollary 13.1.14</span><span class="context-entry-title">corollary</span></a></li><li><a href="#lem:Opposite_Span_Category"><span class="context-entry-heading">Lemma 13.1.15</span><span class="context-entry-title">lemma</span></a></li><li><a href="#lem:Span_With_Equivalences"><span class="context-entry-heading">Lemma 13.1.16</span><span class="context-entry-title">lemma</span></a></li><li><a href="#prop:Twisted_Arrow_Span_Adjunction"><span class="context-entry-heading">Proposition 13.1.17</span><span class="context-entry-title">proposition</span></a></li><li><a href="#lem:AdTrip_Limits"><span class="context-entry-heading">Lemma 13.1.18</span><span class="context-entry-title">lemma</span></a></li><li><a href="#prop:Span_Preserves_Limits_And_Filtered_Colimits"><span class="context-entry-heading">Proposition 13.1.19</span><span class="context-entry-title">proposition</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

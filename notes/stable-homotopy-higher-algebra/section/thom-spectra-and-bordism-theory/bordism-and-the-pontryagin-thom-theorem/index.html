@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 10.3: Bordism and the Pontryagin–Thom theorem | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/stable-homotopy-theory/index.html">Part I</a> · <a href="../../../chapter/thom-spectra-and-bordism-theory/index.html">Chapter 10</a> · Section 10.3</p>
+      <h1>Bordism and the Pontryagin–Thom theorem</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Bordism_As_Homology_Theory'>We now return to the geometric problem which motivated the whole construction: the classification of
+manifolds up to bordism. Given a map \(B \to \bB O\) and a topological space \(X\), we may consider bordism classes of
+manifolds equipped with a normal \(B\)-structure and a map to \(X\). The Pontryagin–Thom theorem identifies these
+groups with the homology theory represented by \(MB\). We state this theorem as a black box and only describe
+the collapse map which gives the comparison.
+</p><p class='noindent'>We fix a map \(\phi \colon B \to \bB O\) throughout.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<a class="entry-heading-link" href="../../../entry/normal-b-structure/index.html" aria-label="Definition 10.3.1, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 10.3.1 </span></a>(Normal \(B\)-structure)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Normal_B_Structure'></span>  Let  \(M\)  be  a  compact  smooth  \(n\)-manifold.  Its  <span class='ntx-Italic-tlf-t1-x-x-109'>stable  normal
+bundle</span> \(\ul {\R ^n}-T_M\) is a virtual vector bundle of rank \(0\), with classifying map \(\nu _M\colon M\to \bB O\). A <span class='ntx-Italic-tlf-t1-x-x-109'>normal</span> \(B\)<span class='ntx-Italic-tlf-t1-x-x-109'>-structure </span>on \(M\) is a
+lift  of  this  map  along  \(\phi \):</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-69838bb22266.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Concretely,  this  consists  of  a  map  \(\sigma \colon M \to B\)  together  with  a  homotopy  \(\phi \circ \sigma \simeq \nu _M\).  If  \(M\)  has
+boundary, then the stable normal bundle of \(\partial M\) is identified with the restriction of the stable normal
+bundle of \(M\) using the outward normal direction. Consequently, a normal \(B\)-structure on \(M\) restricts to one
+on \(\partial M\). A diffeomorphism of manifolds with normal \(B\)-structures is understood to be equipped with an
+identification in the anima of such lifts.</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1002r2'></a>
+<a class="entry-heading-link" href="../../../entry/examples-of-stable-normal-structures/index.html" aria-label="Example 10.3.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 10.3.2.</span></a>  </span><span id='ex:Stable_Normal_Structures'></span> For \(B = \bB O\) with \(\phi \) the identity, a normal \(B\)-structure is no data at all. For \(B = \bB SO\) it is an orientation
+of the stable normal bundle, and for \(B = \pt \) it is a trivialization of it, that is, a stable framing of \(M\).
+                                                                                   
+                                                                                   
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1003r3'></a>
+<a class="entry-heading-link" href="../../../entry/geometric-b-bordism/index.html" aria-label="Definition 10.3.3, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 10.3.3 </span></a>(\(B\)-bordism)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Geometric_Bordism'></span> Let \(X\) be a topological space and let \(n \geq 0\). A \(B\)<span class='ntx-Italic-tlf-t1-x-x-109'>-bordism cycle of degree</span> \(n\) <span class='ntx-Italic-tlf-t1-x-x-109'>over</span> \(X\)
+is a triple \((M,f,\sigma )\) consisting of a closed smooth \(n\)-manifold \(M\), a continuous map \(f\colon M \to X\), and a normal \(B\)-structure \(\sigma \) on \(M\).
+Two cycles \((M_0,f_0,\sigma _0)\) and \((M_1,f_1,\sigma _1)\) are <span class='ntx-Italic-tlf-t1-x-x-109'>bordant </span>if there exist compact smooth \((n+1)\)-manifolds \(W_0\) and \(W_1\) with normal \(B\)-structures,
+together with maps \(F_i\colon W_i \to X\), and a diffeomorphism \[ M_0 \amalg \partial W_0 \; \cong \; M_1 \amalg \partial W_1 \] of manifolds with normal \(B\)-structures over \(X\).
+</p><p class='noindent'>We write \(\Omega _n^B(X)\) for the set of bordism classes. Disjoint union defines an addition, with the empty manifold
+as zero. For \(n&lt;0\), we set \(\Omega _n^B(X)=0\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1004r4'></a>
+<a class="entry-heading-link" href="../../../entry/bordism-is-an-equivalence-relation/index.html" aria-label="Remark 10.3.4., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 10.3.4.</span></a>  </span><span id='rmk:Bordism_Is_An_Equivalence_Relation'></span> We used the formulation of <span class='citation'>Switzer (1975), Chapter 12</span>. Note it is an equivalence relation: reflexivity takes
+\(W_0 = W_1 = \varnothing \), symmetry is built into the statement, and transitivity follows by taking disjoint unions. It is also
+visibly additive, so \(\Omega _n^B(X)\) is a commutative monoid in which every class of the form \([\partial W]\) vanishes.
+</p><p class='noindent'>Inverses are obtained via the cylinder construction. Pulling back \(\sigma \) along the projection equips \(M \times [0,1]\) with
+a normal \(B\)-structure whose restriction to one end is \(\sigma \); write \(\sigma '\) for the structure induced on the second
+end. Then \[ (M,\sigma ) \amalg (M,\sigma ') \cong \partial (M \times [0,1]) \] as manifolds with normal \(B\)-structures, and hence \[ [(M,f,\sigma )] + [(M,f,\sigma ')] \; = \; 0 \] in \(\Omega _n^B(X)\). Thus \(\Omega _n^B(X)\) is an abelian group. For \(B = \bB O\) there
+is no additional structure, so \(\sigma ' = \sigma \) and every class is its own inverse; for \(B = \bB SO\) the structure \(\sigma '\) is the reversed
+orientation, and the groups are not \(2\)-torsion in general.
+</p>
+</div>
+<p class='noindent'>A map \(g\colon X \to Y\) induces a homomorphism \(g_*\colon \Omega _n^B(X) \to \Omega _n^B(Y)\) by postcomposition. The comparison with \(MB\) is given by the collapse
+construction.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1005r5'></a>
+<a class="entry-heading-link" href="../../../entry/pontryagin-thom-transformation/index.html" aria-label="Construction 10.3.5, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 10.3.5 </span></a>(Pontryagin–Thom transformation)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cons:Pontryagin_Thom_Transformation'></span> Let \((M,f,\sigma )\) be a \(B\)-bordism cycle of degree \(n\) over \(X\).
+The closed smooth manifold \(M\) has the homotopy type of a finite cell complex by <span class='citation'>[Milnor (1963), Theorem 3.5 and Corollary 6.7]</span>, so the Thom-spectrum
+constructions above apply to its vector bundles. Choose a smooth embedding \(i\colon M \hookrightarrow \R ^{n+k}\) for some \(k\), compactify
+the ambient space to \(S^{n+k}\) with basepoint at infinity, and let \(\nu \) be the rank \(k\) normal bundle. Applying \(\Sigma ^{\infty }\) to the
+pointed collapse map of <a class="source-reference" data-label="cons:Pontryagin_Thom_Collapse_Map" href="../../../entry/pontryagin-thom-collapse-map/index.html#cons:Pontryagin_Thom_Collapse_Map">Construction 10.1.8</a> and shifting gives a map of spectra \[ \S [n] \longrightarrow \th (\nu )[-k]. \] By <a class="source-reference" data-label="lem:Thom_Spectrum_Of_Virtual_Bundle" href="../../../entry/thom-spectrum-of-an-honest-vector-bundle/index.html#lem:Thom_Spectrum_Of_Virtual_Bundle">Lemma 10.2.21</a>, the target is the Thom spectrum of
+the stable normal bundle. The map \((\sigma ,f)\colon M \to B\times X\) therefore induces a map \[ \th (\nu )[-k] \longrightarrow MB \otimes \S [X]. \] The composite determines an element
+of \(\pi _n(MB \otimes \S [X])\). The standard arguments proving independence of the embedding and bordism invariance are
+included in the Pontryagin–Thom theorem quoted below. They show that the construction defines a
+natural homomorphism \[ \PT \colon \Omega _n^B(X) \longrightarrow \pi _n(MB\otimes \S [X]). \]
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1006r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 10.3.6 </span>(Pontryagin–Thom theorem)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Pontryagin_Thom_Bordism'>   </span><span class='ntx-Italic-tlf-t1-x-x-109'>For   every   cell   complex</span>   \(X\)   <span class='ntx-Italic-tlf-t1-x-x-109'>and   every</span>   \(n \in \Z \)<span class='ntx-Italic-tlf-t1-x-x-109'>,   the
+Pontryagin–Thom transformation is a natural isomorphism </span>\[ \Omega _n^B(X) \xrightarrow {\cong } \pi _n(MB\otimes \S [X]). \] <span class='ntx-Italic-tlf-t1-x-x-109'>In particular, the groups</span> \(\Omega _n^B(X)\) <span class='ntx-Italic-tlf-t1-x-x-109'>are the absolute
+groups of the generalized homology theory represented by</span> \(MB\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+<p class='noindent'> For \(n&lt;0\), both sides vanish: the left-hand side does so by definition, while \(MB\otimes \S [X]\) is connective because \(J\circ \phi \) takes values
+in connective spectra and connective spectra are closed under colimits and tensor products. This is the
+generalized Pontryagin–Thom theorem for normal \(B\)-structures. We use it as a black box; see <span class='citation'>Stong (1968), Chapter II</span> and <span class='citation'>Switzer (1975), Theorem 12.30 and Proposition 12.35</span>. These
+sources formulate the theorem using a stabilization-compatible sequence \(B_n\to BO(n)\). A map \(B\to \bB O\) determines such a
+sequence by pullback along the maps \(\bB O(n)\to \bB O\).
+                                                                                   
+                                                                                   
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1007r7'></a>
+<a class="entry-heading-link" href="../../../entry/bordism-and-cobordism/index.html" aria-label="Remark 10.3.7., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 10.3.7.</span></a>  </span><span id='rmk:Bordism_And_Cobordism'></span> The spectrum \(MB\) also represents a cohomology theory \(MB^*(X)\), traditionally called <span class='ntx-Italic-tlf-t1-x-x-109'>cobordism</span>.
+We do not develop a geometric cocycle model for it; see <span class='citation'>Atiyah (1961)</span> for the relation with bordism.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1008r8'></a>
+<a class="entry-heading-link" href="../../../entry/coefficient-rings-of-bordism-spectra/index.html" aria-label="Remark 10.3.8, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 10.3.8 </span></a>(Coefficient rings)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='rmk:Coefficient_Rings'></span> The Pontryagin–Thom theorem turns computations of bordism
+groups into computations of homotopy groups of spectra. For \(\MO \) and \(\MU \), <a class="source-reference" data-label="cons:Multiplicative_Bordism_Spectra" href="../../../entry/multiplicative-structures-on-bordism-spectra/index.html#cons:Multiplicative_Bordism_Spectra">Construction 10.2.25</a> constructs the multiplication
+on  the  Thom  spectrum  from  Whitney  sum.  Under  the  Pontryagin–Thom  isomorphism,  this
+multiplication corresponds to cartesian product of bordism classes. We will not prove this geometric
+compatibility here.
+</p><p class='noindent'>Thom  computed  the  unoriented  coefficient  ring  as  \[ \pi _*(\MO ) \cong \F _2[a_i \mid i \geq 1,\ i \neq 2^j-1], \qquad \abs {a_i}=i; \]  see  <span class='citation'>Thom (1954)</span>.  The  complex  bordism  spectrum  has
+coefficient ring \[ \pi _*(\MU ) \cong \Z [x_1,x_2,\ldots ], \qquad \abs {x_i}=2i, \] a theorem of Milnor and Novikov; see <span class='citation'>Ravenel (1986)</span>. By <a class="source-reference" data-label="thm:Pontryagin_Thom_Bordism" href="../../../entry/pontryagin-thom-theorem/index.html#thm:Pontryagin_Thom_Bordism">Theorem 10.3.6</a> this is the ring of complex bordism
+classes. The spectrum \(\MU \) is central to chromatic homotopy theory, where its additional structure and
+the algebra of its cooperations organize stable homotopy according to height. At the other extreme,
+take \(B = \pt \) with the constant map to \(\bB O\), so that \(MB = \S \). By <a class="source-reference" data-label="ex:Stable_Normal_Structures" href="../../../entry/examples-of-stable-normal-structures/index.html#ex:Stable_Normal_Structures">Example 10.3.2</a> the cycles are then stably framed manifolds, and the
+Pontryagin–Thom theorem becomes \[ \Omega _n^{\mathrm {fr}}:=\Omega _n^{\pt }(\pt ) \cong \pi _n(\S ), \] recovering Pontryagin’s construction from the beginning of <a class="source-reference" data-label="sec:Thom_Space" href="../thom-spaces-and-the-collapse-construction/index.html#sec:Thom_Space">Section 10.1</a>.
+</p>
+</div>
+
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../thom-spectra/index.html" aria-label="Previous section: Thom spectra" title="Previous section: Thom spectra"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../orientations-and-the-thom-isomorphism/index.html" aria-label="Next section: Orientations and the Thom isomorphism" title="Next section: Orientations and the Thom isomorphism"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html" aria-current="page"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/animae-as-spaces/index.html"><span class="context-entry-heading">Chapter 2</span><span class="context-entry-title">Animae as spaces</span></a></li><li><a href="../../../chapter/homology-and-cohomology/index.html"><span class="context-entry-heading">Chapter 3</span><span class="context-entry-title">Homology and cohomology</span></a></li><li><a href="../../../chapter/spectra-and-stable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 4</span><span class="context-entry-title">Spectra and stable ∞-categories</span></a></li><li><a href="../../../chapter/recognition-principle/index.html"><span class="context-entry-heading">Chapter 5</span><span class="context-entry-title">The recognition principle</span></a></li><li><a href="../../../chapter/homological-algebra/index.html"><span class="context-entry-heading">Chapter 6</span><span class="context-entry-title">Homological algebra</span></a></li><li><a href="../../../chapter/localization-and-completion/index.html"><span class="context-entry-heading">Chapter 7</span><span class="context-entry-title">Localization and completion</span></a></li><li><a href="../../../chapter/ring-spectra-and-modules/index.html"><span class="context-entry-heading">Chapter 8</span><span class="context-entry-title">Ring spectra and modules</span></a></li><li><a href="../../../chapter/complex-k-theory/index.html"><span class="context-entry-heading">Chapter 9</span><span class="context-entry-title">Complex K-theory</span></a></li><li><a href="../../../chapter/thom-spectra-and-bordism-theory/index.html" aria-current="page"><span class="context-entry-heading">Chapter 10</span><span class="context-entry-title">Thom spectra and bordism theory</span></a></li><li><a href="../../../chapter/duality-phenomena/index.html"><span class="context-entry-heading">Chapter 11</span><span class="context-entry-title">Duality phenomena</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../thom-spaces-and-the-collapse-construction/index.html"><span class="context-entry-heading">Section 10.1</span><span class="context-entry-title">Thom spaces and the collapse construction</span></a></li><li><a href="../thom-spectra/index.html"><span class="context-entry-heading">Section 10.2</span><span class="context-entry-title">Thom spectra</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 10.3</span><span class="context-entry-title">Bordism and the Pontryagin–Thom theorem</span></a></li><li><a href="../orientations-and-the-thom-isomorphism/index.html"><span class="context-entry-heading">Section 10.4</span><span class="context-entry-title">Orientations and the Thom isomorphism</span></a></li><li><a href="../coherence-for-one-point-compactification-online-only/index.html"><span class="context-entry-heading">Section 10.5</span><span class="context-entry-title">Coherence for one-point compactification (online only)</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Normal_B_Structure"><span class="context-entry-heading">Definition 10.3.1</span><span class="context-entry-title">Normal B-structure</span></a></li><li><a href="#ex:Stable_Normal_Structures"><span class="context-entry-heading">Example 10.3.2</span><span class="context-entry-title">example</span></a></li><li><a href="#def:Geometric_Bordism"><span class="context-entry-heading">Definition 10.3.3</span><span class="context-entry-title">B-bordism</span></a></li><li><a href="#rmk:Bordism_Is_An_Equivalence_Relation"><span class="context-entry-heading">Remark 10.3.4</span><span class="context-entry-title">remark</span></a></li><li><a href="#cons:Pontryagin_Thom_Transformation"><span class="context-entry-heading">Construction 10.3.5</span><span class="context-entry-title">Pontryagin–Thom transformation</span></a></li><li><a href="#thm:Pontryagin_Thom_Bordism"><span class="context-entry-heading">Theorem 10.3.6</span><span class="context-entry-title">Pontryagin–Thom theorem</span></a></li><li><a href="#rmk:Bordism_And_Cobordism"><span class="context-entry-heading">Remark 10.3.7</span><span class="context-entry-title">remark</span></a></li><li><a href="#rmk:Coefficient_Rings"><span class="context-entry-heading">Remark 10.3.8</span><span class="context-entry-title">Coefficient rings</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

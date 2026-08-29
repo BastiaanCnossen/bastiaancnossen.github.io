@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 24.3: Homotopy coherent nerves | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/background-on-infinity-category-theory/index.html">Part III</a> · <a href="../../../chapter/complete-segal-animae/index.html">Chapter 24</a> · Section 24.3</p>
+      <h1>Homotopy coherent nerves</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='chap:Homotopy_Coherent_Nerve'>In a classical category, the collection of morphisms between two objects forms a <span class='ntx-Italic-tlf-t1-x-x-109'>set</span>. In contrast, we have
+seen in <a class="source-reference" data-label="def:Hom_Groupoid" href="../../../entry/hom-animae/index.html#def:Hom_Groupoid">Definition 1.4.17</a> that for \(\infty \)-categories the morphisms between objects instead form an <span class='ntx-Italic-tlf-t1-x-x-109'>anima</span>. As a first
+approximation, we may thus think of an \(\infty \)-category as a ‘category enriched in animae’. While a formal
+implementation of enrichments in animae would already require a well-developed theory of
+\(\infty \)-categories<span class='footnote-mark'><a href='#chapter-complete-segal-animae-section-03-fn1x0'><sup class='textsuperscript'>1</sup></a></span><a id='x1-1001f1'></a> ,
+we may sidestep this problem by working instead with enrichment in the 1-category of <span class='ntx-Italic-tlf-t1-x-x-109'>spaces</span>: every
+topological space \(X\) admits an underlying anima \(\Pi _{\infty }(X)\), and the functor \(\Pi _{\infty }(-)\colon \Top \to \An \) preserves finite products. In this case,
+classical enriched category theory provides a well-defined notion of a topologically enriched
+category (see <a class="source-reference" data-label="def:Topologically_Enriched_Category" href="../../../entry/topologically-enriched-categories/index.html#def:Topologically_Enriched_Category">Definition 24.3.1</a>), of which classical topology provides plenty of examples. It was shown by <span class='citation'>Bergner (2007)</span> that
+the theory of topologically enriched categories provides a reasonable model for the theory of
+\(\infty \)-categories.
+</p><p class='noindent'>The goal of this section is to explain how to assign an \(\infty \)-category \(\Ntop (D)\) to every topologically enriched category \(D\),
+called the <span class='ntx-Italic-tlf-t1-x-x-109'>homotopy coherent nerve </span>of \(D\). The standard way to make this construction precise is via
+quasicategories, cf. <a class="source-reference" data-label="ex:Homotopy_Coherent_Nerve" href="../../../entry/homotopy-coherent-nerve-of-a-topologically-enriched-category/index.html#ex:Homotopy_Coherent_Nerve">Example 1.6.14</a>. In this section, we provide an alternative approach to homotopy coherent nerves that
+avoids explicit models by quasicategories, fitting it in the model-agnostic approach to higher category
+theory taken in this book.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1003r1'></a>
+<a class="entry-heading-link" href="../../../entry/topologically-enriched-categories/index.html" aria-label="Definition 24.3.1., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 24.3.1.</span></a>  </span><span id='def:Topologically_Enriched_Category'></span>  A  <span class='ntx-Italic-tlf-t1-x-x-109'>topologically  enriched  category  </span>is  a  classical  1-category  \(D\)  together  with  a
+chosen topology on each of the hom sets \(\Hom _D(X,Y)\) for \(X,Y \in D\), satisfying the property that the composition maps \(\Hom _D(Y,Z) \times \Hom _D(X,Y) \to \Hom _D(X,Z)\) are
+continuous with respect to these topologies. We denote by \(\Homtop _D(X,Y) \in \Top \) the hom set in \(C\) equipped with the chosen
+topology.
+</p>
+</div>
+                                                                                   
+                                                                                   
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1004r2'></a>
+<a class="entry-heading-link" href="../../../entry/homotopy-coherent-nerve/index.html" aria-label="Construction 24.3.2, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 24.3.2 </span></a>(Homotopy coherent nerve)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cons:Homotopy_Coherent_Nerve_Better'></span> Consider a topologically enriched category \(D\). We
+will define an \(\infty \)-category \(\Ntop (D)\), called the <span class='ntx-Italic-tlf-t1-x-x-109'>homotopy coherent nerve of</span> \(D\).
+</p><p class='noindent'>For every \([n] \in \simp \catop \), consider the (classical) 1-category \(D_n\) defined as follows: </p>
+     <ul class='itemize1'>
+     <li class='itemize'>The objects of \(D_n\) are the objects of \(D\);
+     </li>
+     <li class='itemize'>The morphisms \(X \to Y\) of \(D_n\) are the continuous maps \(\abs {\Delta ^n} \to \Homtop _D(X,Y)\);
+     </li>
+     <li class='itemize'>The identity in \(D_n\) is the constant map \(\abs {\Delta ^n} \to \Homtop _D(X,X)\) with value \(\id _X\);
+     </li>
+     <li class='itemize'>The composition in \(D_n\) of morphisms \(f\colon \abs {\Delta ^n} \to \Homtop _D(X,Y)\) and \(g\colon \abs {\Delta ^n} \to \Homtop _D(Y,Z)\) is the composite \[ \abs {\Delta ^n} \xrightarrow {\Delta } \abs {\Delta ^n} \times \abs {\Delta ^n} \xrightarrow {g \times f} \Homtop _D(Y,Z) \times \Homtop _D(X,Y) \xrightarrow {\circ } \Homtop _D(X,Z). \]</li></ul>
+<p class='noindent'>Since \(\abs {\Delta ^n}\) is functorial in \([n] \in \simp \) (see <a class="source-reference" data-label="ex:Singular_Complex" href="../../../entry/singular-simplicial-complex/index.html#ex:Singular_Complex">Example 1.6.8</a>) we see that the assignment \([n] \mapsto D_n\) determines a functor \[ D_{\bullet }\colon \simp \catop \to \Cat _1 \hookrightarrow \Cat _{\infty }. \] We then define the \(\infty \)-category \(\Ntop (D)\)
+as the colimit of this functor: \[ \Ntop (D) \quad := \quad \colim (D_{\bullet }\colon \simp \catop \to \Cat _{\infty }). \]
+</p>
+</div>
+<p class='noindent'>Note that \(D_0\) is the underlying category of \(D\). Since it admits a canonical functor to \(\Ntop (D)\), we see that every object of \(D\)
+gives rise to an object of \(\Ntop (D)\), and in fact all objects are of this form.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1005r3'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/comparison-of-homotopy-coherent-nerves/index.html" aria-label="Remark 24.3.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 24.3.3.</span></a>  </span><span id='rmk:Comparison_Homotopy_Coherent_Nerves'></span> The fact that we refer to \(\Ntop (D)\) as the ‘homotopy coherent nerve’ is somewhat abusive:
+this terminology is often used instead for the simplicial set \(N^{\Delta }(\bC )\) associated to a simplicially enriched
+category, cf. <a class="source-reference" data-label="ex:Homotopy_Coherent_Nerve" href="../../../entry/homotopy-coherent-nerve-of-a-topologically-enriched-category/index.html#ex:Homotopy_Coherent_Nerve">Example 1.6.14</a>. The two constructions are closely related: given a topologically enriched category
+\(D\), we may obtain a simplicially enriched category \(\bC \) by taking \(\Hom ^{\Delta }_{\bC }(X,Y) := \Sing (\Homtop _{D}(X,Y))\), i.e. we apply the singular simplicial
+complex construction from <a class="source-reference" data-label="ex:Singular_Complex" href="../../../entry/singular-simplicial-complex/index.html#ex:Singular_Complex">Example 1.6.8</a> to each of the hom spaces of \(D\). Then the underlying \(\infty \)-category of the
+quasicategory \(N^{\Delta }(\bC )\) is equivalent to \(\Ntop (D)\). The proof of this fact is quite technical: it relies on the fact that
+there is a model structure (due to <span class='citation'>Bergner (2007)</span>) on the category of (small) simplicially enriched categories whose
+localization at the weak equivalences is \(\Cat _{\infty }\). A reference for this claim in the literature may be found in
+<span class='citation'>Gepner and Meier (2023), Corollary B.4</span>.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1006r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 24.3.4.</span>  </span><span id='prop:Hom_In_Homotopy_Coherent_Nerve'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For objects</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>of</span> \(D\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the hom anima between</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(\Ntop (D)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is equivalent to the
+underlying anima of the topological space</span> \(\Homtop _D(X,Y)\)<span class='ntx-Italic-tlf-t1-x-x-109'>: </span>\[ \Hom _{\Ntop (D)}(X,Y) \simeq \Pi _{\infty }(\Homtop _D(X,Y)). \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complete-segal-animae-section-03-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complete-segal-animae-section-03-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> A proof is given in the standalone supplementary material.                                                  □
+</p>
+</div></div>
+<p class='noindent'><a id='likesection.1'></a><a id='x1-1007x24.3'></a>
+                                                                                   
+                                                                                   
+</p>
+<h3 class='likesectionHead' id='exercises'><a id='x1-2000'></a>Exercises</h3>
+<p id='exercises1'><a id='Q1-1-3'></a>
+</p><div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r1'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 24.1 </span>(Composition in a Segal anima)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(X\) be a Segal anima. Show that the degeneracy
+map \(s_0\colon X_0\to X_1\) defines identity morphisms and that the composition map \[ X_1\times _{X_0}X_1\simeq X_2\xrightarrow {d_1}X_1 \] is unital and associative.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2002r2'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 24.2 </span>(Nerves and completeness)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'>Let \(C\) be an \(\infty \)-category. Show that its \(\infty \)-categorical nerve \(N(C)_n=\Map ([n],C)\) is a complete Segal anima.
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'>Let \(C\) be a classical 1-category. Regard its nerve \(N(C)\in \sSet \) from <a class="source-reference" data-label="ex:Nerve_Of_Category" href="../../../entry/nerve-of-a-category/index.html#ex:Nerve_Of_Category">Example 1.6.11</a> as a simplicial anima. Show that it is a
+     Segal anima. Is it complete? Determine precisely when this holds.</p></dd></dl>
+</div>
+
+<div class='newtheorem'>
+                                                                                   
+                                                                                   
+<p class='noindent'><span class='head'>
+<a id='x1-2005r3'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 24.3 </span>(Discrete topological enrichment)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span>  Let  \(C\)  be  a  classical  1-category  and  regard  it  as
+a  topologically  enriched  category  \(C^{\mathrm {disc}}\)  by  giving  each  hom  set  the  discrete  topology.  Show  that  the
+canonical functor \[ C\longrightarrow \Ntop (C^{\mathrm {disc}}) \] is an equivalence of \(\infty \)-categories.
+</p>
+</div>
+
+ 
+<section class="footnotes" aria-label="Notes"><h2>Notes</h2>
+  <div class='footnote-text'>
+  <p class='noindent'><span class='footnote-mark'><a id='chapter-complete-segal-animae-section-03-fn1x0'><a id='chapter-complete-segal-animae-section-03-x2-1002x24.3'></a>    <sup class='textsuperscript'>1</sup></a></span><span class='ntx-Regular-tlf-t1-x-x-90'>See </span><span class='citation'>[Heine (2023), Lemma 6.18] </span><span class='ntx-Regular-tlf-t1-x-x-90'>for a precise statement.</span></p></div>
+       
+</section></div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../filtered-colimits-and-geometric-realizations-of-categories/index.html" aria-label="Previous section: Filtered colimits and geometric realizations of categories" title="Previous section: Filtered colimits and geometric realizations of categories"><span aria-hidden="true">←</span></a>
+    <span class="context-step-control" aria-disabled="true"><span aria-hidden="true">→</span></span>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html" aria-current="page"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/adjunctions/index.html"><span class="context-entry-heading">Chapter 21</span><span class="context-entry-title">Adjunctions</span></a></li><li><a href="../../../chapter/presentable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 22</span><span class="context-entry-title">Presentable ∞-categories</span></a></li><li><a href="../../../chapter/cocartesian-fibrations-and-unstraightening/index.html"><span class="context-entry-heading">Chapter 23</span><span class="context-entry-title">Cocartesian fibrations and (un)straightening</span></a></li><li><a href="../../../chapter/complete-segal-animae/index.html" aria-current="page"><span class="context-entry-heading">Chapter 24</span><span class="context-entry-title">Complete Segal animae</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../categories-as-complete-segal-animae/index.html"><span class="context-entry-heading">Section 24.1</span><span class="context-entry-title">∞-Categories as complete Segal animae</span></a></li><li><a href="../filtered-colimits-and-geometric-realizations-of-categories/index.html"><span class="context-entry-heading">Section 24.2</span><span class="context-entry-title">Filtered colimits and geometric realizations of categories</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 24.3</span><span class="context-entry-title">Homotopy coherent nerves</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Topologically_Enriched_Category"><span class="context-entry-heading">Definition 24.3.1</span><span class="context-entry-title">definition</span></a></li><li><a href="#cons:Homotopy_Coherent_Nerve_Better"><span class="context-entry-heading">Construction 24.3.2</span><span class="context-entry-title">Homotopy coherent nerve</span></a></li><li><a href="#rmk:Comparison_Homotopy_Coherent_Nerves"><span class="context-entry-heading">Remark 24.3.3</span><span class="context-entry-title">remark</span></a></li><li><a href="#prop:Hom_In_Homotopy_Coherent_Nerve"><span class="context-entry-heading">Proposition 24.3.4</span><span class="context-entry-title">proposition</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

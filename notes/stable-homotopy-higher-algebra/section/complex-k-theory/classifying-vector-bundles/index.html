@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 9.2: Classifying vector bundles | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/stable-homotopy-theory/index.html">Part I</a> · <a href="../../../chapter/complex-k-theory/index.html">Chapter 9</a> · Section 9.2</p>
+      <h1>Classifying vector bundles</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Classifying_Vector_Bundles'>For paracompact Hausdorff spaces, vector bundles are classified by maps into Grassmannians: there exists a
+topological space \(\Gr _k(\C ^{\infty })\) such that an isomorphism class of rank \(k\) complex vector bundle over \(X\) determines and is
+determined by a homotopy class of continuous maps from \(X\) into \(\Gr _k(\C ^{\infty })\). The goal of this section is
+to explain this result and relate the space \(\Gr _k(\C ^{\infty })\) to the classifying anima \(\bB U(k)\) of the topological group
+\(U(k)\).
+</p>
+<h4 class='subsectionHead' id='the-infinite-grassmannian'><span class='titlemark'>9.2.1    </span> <a id='x1-20009.2.1'></a>The infinite Grassmannian</h4>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r1'></a>
+<a class="entry-heading-link" href="../../../entry/infinite-grassmannians/index.html" aria-label="Definition 9.2.1, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 9.2.1 </span></a>(Infinite grassmannian)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Infinite_Grassmannian'></span> Let \(\C ^{\infty }\) denote the colimit in \(\Top \) of the complex vector spaces \(\C ^n\)
+along the standard inclusions \(\C ^n\hookrightarrow \C ^{n+1}\). For \(n\geq k\), let \(\Gr _k(\C ^n)\) be the Grassmannian of \(k\)-dimensional linear subspaces of \(\C ^n\),
+with its usual topology. We define the <span class='ntx-Italic-tlf-t1-x-x-109'>infinite Grassmannian of</span> \(k\)<span class='ntx-Italic-tlf-t1-x-x-109'>-planes </span>as \[ \Gr _k(\C ^{\infty }) := \bigcup _{n\geq k}\Gr _k(\C ^n), \] equipped with the <span class='ntx-Italic-tlf-t1-x-x-109'>colimit
+topology</span>: a subset \(U\subseteq \Gr _k(\C ^\infty )\) is open if and only if \(U\cap \Gr _k(\C ^n)\) is open for every \(n\).
+</p><p class='noindent'>Similarly,  let  \(V_k(\C ^n)\)  be  the  Stiefel  manifold  of  orthonormal  \(k\)-frames  in  \(\C ^n\).  The  <span class='ntx-Italic-tlf-t1-x-x-109'>infinite  Stiefel  manifold  </span>\[ V_k(\C ^{\infty }) := \bigcup _{n\geq k}V_k(\C ^n) \]
+is likewise given the colimit topology. Its points may equivalently be regarded as linear isometric
+embeddings \(\C ^k\hookrightarrow \C ^\infty \). Sending a frame to the subspace it spans defines a surjective map \[ \pi \colon V_k(\C ^{\infty }) \to \Gr _k(\C ^{\infty }), \qquad (\phi \colon \C ^k \hookrightarrow \C ^{\infty }) \mapsto \phi (\C ^k), \] whose restriction at
+every finite stage is the usual quotient map \(V_k(\C ^n)\to \Gr _k(\C ^n)\).
+</p>
+</div>
+<p class='noindent'>The standard Schubert cell structures on the finite Grassmannians are compatible with the inclusions above.
+Consequently \(\Gr _k(\C ^\infty )\) is a cell complex whose topology is precisely the colimit topology just defined; see
+<span class='citation'>Hatcher (2003), Proposition 1.17 and p. 34</span>.
+                                                                                   
+                                                                                   
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2002r2'></a>
+<a class="entry-heading-link" href="../../../entry/universal-vector-bundle-over-the-infinite-grassmannian/index.html" aria-label="Definition 9.2.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 9.2.2.</span></a>  </span><span id='def:Canonical_Bundle'></span> For \(n\geq k\), let \[ E_{k,n}:=\{(V,x)\in \Gr _k(\C ^n)\times \C ^n\mid x\in V\} \] be the <span class='ntx-Italic-tlf-t1-x-x-109'>canonical rank</span> \(k\) <span class='ntx-Italic-tlf-t1-x-x-109'>bundle </span>over \(\Gr _k(\C ^n)\). We define \[ E_{\univ }:=\bigcup _{n\geq k}E_{k,n} \] with the colimit topology,
+and let \(p_{\univ }\colon E_{\univ }\to \Gr _k(\C ^\infty )\) be the projection \((V,x)\mapsto V\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2003r3'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 9.2.3.</span>  </span><span id='lem:Canonical_Bundle_Is_Vector_Bundle'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The map</span> \(p_{\univ }\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a complex vector bundle of rank</span> \(k\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-02-13" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-02-13">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  Fix  a  \(k\)-plane  \(V\subseteq \C ^\infty \)  and  let  \(U_V\)  be  the  set  of  \(k\)-planes  \(W\)  for  which  the  orthogonal  projection  \(W\to V\)  is  an
+isomorphism. Its intersection with every finite Grassmannian is open, so \(U_V\) is open in the colimit
+topology. Every \(W\in U_V\) is the graph of a unique linear map \(a_W\colon V\to V^\perp \), depending continuously on \(W\). The maps \[ U_V\times V\longrightarrow p_{\univ }^{-1}(U_V), \qquad (W,v)\longmapsto (W,v+a_W(v)) \] are
+therefore local trivializations of \(p_{\univ }\).                                                                                                        □
+</p>
+</div></div>
+                                                                                   
+                                                                                   
+<p class='noindent'>Let \(X\) be a paracompact Hausdorff space. Given a continuous map \(f\colon X \to \Gr _k(\C ^{\infty })\), we may pull back the bundle \(E_{\univ }\) along \(f\),
+providing a vector bundle \[ f^*(E_{\univ }) := \{(x,\phi ) \in X \times E_{\univ } \mid f(x) = p_{\univ }(\phi )\}. \] By <a class="source-reference" data-label="thm:Vector_Bundles_Homotopy_Invariant" href="../../../entry/homotopy-invariance-of-vector-bundles/index.html#thm:Vector_Bundles_Homotopy_Invariant">Theorem 9.1.4</a>, the isomorphism class of this vector bundle only depends on the homotopy
+class of \(f\), providing a map \begin {equation}  \label {eq:Grassmannian_Classifies_Vector_Bundles} [X,\Gr _k(\C ^{\infty })] \to \pi _0\Vect _k(X), \qquad [f] \mapsto f^*(E_{\univ }).  \end {equation}<a id='x1-2004r1'></a>
+</p><p class='noindent'>The following classical theorem expresses that \(p_{\univ }\) is the <span class='ntx-Italic-tlf-t1-x-x-109'>universal </span>rank \(k\) complex vector bundle:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2005r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 9.2.4 </span>(<span class='citation'>Hatcher (2003), Theorem 1.16 and p. 31</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Grassmannian_Classifies_Vector_Bundles'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For a paracompact Hausdorff space</span> \(X\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the map </span><span class="source-reference equation-reference" data-label="eq:Grassmannian_Classifies_Vector_Bundles">(9.1) </span><span class='ntx-Italic-tlf-t1-x-x-109'>is a bijection.</span>
+</p>
+</div>
+<p class='noindent'>Because of this theorem, \(\Gr _k(\C ^{\infty })\) is known as the <span class='ntx-Italic-tlf-t1-x-x-109'>classifying space for rank</span> \(k\) <span class='ntx-Italic-tlf-t1-x-x-109'>complex vector bundles</span>.
+</p>
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-02-12" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-02-12">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof sketch of </span><a class="source-reference" data-label="thm:Grassmannian_Classifies_Vector_Bundles" href="../../../entry/grassmannians-classify-vector-bundles/index.html#thm:Grassmannian_Classifies_Vector_Bundles">Theorem 9.2.4</a><span class='ntx-Italic-tlf-t1-x-x-109'>.</span> </span>  We describe the main ingredients of Hatcher’s argument. The key observation is that, for
+a rank \(k\) vector bundle \(p\colon E \to X\), the following two types of data are equivalent:
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>A pair \((f,\phi )\) consisting of a continuous map \(f\colon X \to \Gr _k(\C ^\infty )\) and an isomorphism \(\phi \colon E \cong f^*(E_{\univ })\);
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>A continuous map \(g\colon E \to \C ^\infty \) whose restriction to each fiber is a \(\C \)-linear injection.</p></dd></dl>
+<p class='noindent'>Indeed, an isomorphism \(E \cong f^*(E_{\univ })\) gives such a map by projecting \(f^*(E_{\univ }) \subseteq X \times \C ^\infty \) to \(\C ^\infty \). Conversely, a fiberwise linear injection \(g\)
+determines \(f(x) := g(E_x) \subseteq \C ^\infty \), and the evident map \(E \to E_{\univ }\) identifies \(E\) with \(f^*(E_{\univ })\).
+</p><p class='noindent'>Surjectivity is therefore reduced to constructing a map \(g\colon E\to \C ^\infty \) which is linear and injective on each fiber. Starting
+from a trivializing cover, one uses the countable-cover lemma for paracompact spaces to obtain a countable
+                                                                                   
+                                                                                   
+trivializing cover \((U_i)_{i\geq 1}\) together with a locally finite subordinate partition of unity \((\rho _i)_{i\geq 1}\). Let \(g_i\colon E|_{U_i}\to \C ^k\) be the coordinate map of
+a trivialization. The maps \[ v\longmapsto \rho _i(p(v))g_i(v), \] extended by zero outside \(U_i\), assemble into a map \(E\to (\C ^k)^\infty \cong \C ^\infty \). Local finiteness ensures that this
+map is continuous and takes values in the algebraic direct sum, while the partition-of-unity condition makes
+it injective on every fiber. This is the only point at which paracompactness is used in an essential
+way.
+</p><p class='noindent'>For injectivity, suppose two classifying maps \(f_0,f_1\colon X \to \Gr _k(\C ^\infty )\) pull back \(E_{\univ }\) to isomorphic bundles. The corresponding
+fiberwise injections \(g_0,g_1\colon E \to \C ^\infty \) may first be homotoped so that their images land in the odd and even coordinates,
+respectively. The straight-line homotopy \((1-t)g_0+tg_1\) then remains fiberwise injective for all \(t\), and hence determines a
+homotopy from \(f_0\) to \(f_1\).
+</p><p class='noindent'>For the countable-cover lemma, see <span class='citation'>Hatcher (2003), Lemma 1.21</span>; the remaining continuity details are part of the proof of
+<span class='citation'>Hatcher (2003), Theorem 1.16</span>.                                                                                                                                                           □
+</p>
+</div></div>
+
+<h4 class='subsectionHead' id='classifying-animae-revisited'><span class='titlemark'>9.2.2    </span> <a id='x1-30009.2.2'></a>Classifying animae revisited</h4>
+<p class='noindent'>Recall that in <a class="source-reference" data-label="cons:Classifying_Space_BM" href="../../../entry/classifying-anima-of-a-monoid/index.html#cons:Classifying_Space_BM">Construction 5.1.14</a> we defined the <span class='ntx-Italic-tlf-t1-x-x-109'>classifying anima</span> \(\bB G\) of a group object \(G \in \Grp (\An )\). To identify the underlying anima of the
+infinite Grassmannian, we develop a general recognition criterion for classifying animae. The same
+criterion will be reused for real vector bundles in <a class="source-reference" data-label="chap:Thom_Spectra" href="../../../chapter/thom-spectra-and-bordism-theory/index.html#chap:Thom_Spectra">Chapter 10</a>.
+</p><p class='noindent'>Recall from <a class="source-reference" data-label="cor:Fundamental_Groupoid_Preserves_Products" href="../../../entry/pi-infinity-preserves-finite-products/index.html#cor:Fundamental_Groupoid_Preserves_Products">Corollary 2.3.20</a> that the functor \(\Pi _{\infty }\colon \Top \to \An \) preserves finite products, hence induces a functor \[ \Pi _{\infty }\colon \Grp (\Top ) \to \Grp (\An ) \] from the category of
+topological groups to the \(\infty \)-category of group objects in animae.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3001r5'></a>
+<a class="entry-heading-link" href="../../../entry/classifying-animae-of-topological-groups/index.html" aria-label="Definition 9.2.5., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 9.2.5.</span></a>  </span><span id='def:Classifying_Anima_Topological_Group'></span> For a topological group \(G\), we define its <span class='ntx-Italic-tlf-t1-x-x-109'>classifying anima</span> \(\bB G\) as \[ \bB G \quad := \quad \bB \Piinfty {G} \qin \An . \]
+</p>
+</div>
+<p class='noindent'>We will now discuss a concrete way of recognizing topological spaces whose underlying anima is
+isomorphic to \(\bB G\).
+                                                                                   
+                                                                                   
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3002r6'></a>
+<a class="entry-heading-link" href="../../../entry/principal-bundles/index.html" aria-label="Definition 9.2.6, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 9.2.6 </span></a>(Principal bundle)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Principal_Bundle'></span> Let \(G\) be a topological group and let \(B\) be a topological space. The
+<span class='ntx-Italic-tlf-t1-x-x-109'>trivial</span> \(G\)<span class='ntx-Italic-tlf-t1-x-x-109'>-principal bundle </span>is the projection map \(B \times G \to B\), where we equip \(B \times G\) with the canonical right \(G\)-action
+given by \((b,g)g' := (b,gg')\).
+</p><p class='noindent'>A \(G\)<span class='ntx-Italic-tlf-t1-x-x-109'>-principal bundle </span>is a continuous map \(\pi \colon P \to B\) such that \(P\) is equipped with a continuous right \(G\)-action such
+that:
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>The right \(G\)-action on \(P\) preserves the fibers of \(\pi \): we have \(\pi (pg) = \pi (p)\) for all \(p \in P\) and \(g \in G\);
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>The map \(\pi \) is a <span class='ntx-Italic-tlf-t1-x-x-109'>locally trivial bundle</span>: around every point \(b \in B\) there is an open neighborhood \(b \in U \subseteq B\) such that
+   the restriction \(\pi ^{-1}(U) \to U\) of \(\pi \) is a trivial \(G\)-principal bundle, i.e. there exists a \(G\)-equivariant homeomorphism
+   \(\phi \colon U \times G \xrightarrow {\cong } \pi ^{-1}(U)\) over \(U\):</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-8d994041557e.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div></dd></dl>
+<p class='noindent'>We refer to \(P\) as the <span class='ntx-Italic-tlf-t1-x-x-109'>total space</span>, to \(G\) as the <span class='ntx-Italic-tlf-t1-x-x-109'>structure group</span>, and to \(B\) as the <span class='ntx-Italic-tlf-t1-x-x-109'>base space</span>.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3005r7'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 9.2.7 </span>(Principal bundles and vector bundles)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Principal_Bundles_Versus_Complex_Vector_Bundles'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Every  principal</span>  \(\GL _n(\C )\)<span class='ntx-Italic-tlf-t1-x-x-109'>-bundle</span>  \(P \to B\)  <span class='ntx-Italic-tlf-t1-x-x-109'>defines  a
+complex vector bundle of rank</span> \(n\) <span class='ntx-Italic-tlf-t1-x-x-109'>over</span> \(B\) <span class='ntx-Italic-tlf-t1-x-x-109'>by taking </span>\[ E := P \times _{\GL _n(\C )} \C ^n = (P \times \C ^n)_{/(p,Av) \sim (pA,v)}, \] <span class='ntx-Italic-tlf-t1-x-x-109'>where the equivalence relation identifies the pair</span> \((p,Av)\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>with</span> \((pA,v)\) <span class='ntx-Italic-tlf-t1-x-x-109'>for all</span> \(p \in P\)<span class='ntx-Italic-tlf-t1-x-x-109'>,</span> \(v \in \C ^n\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(A \in \GL _n(\C )\)<span class='ntx-Italic-tlf-t1-x-x-109'>. This construction defines a bijection between the set of isomorphism classes of
+principal</span> \(\GL _n(\C )\)<span class='ntx-Italic-tlf-t1-x-x-109'>-bundles and the set of isomorphism classes of rank</span> \(n\) <span class='ntx-Italic-tlf-t1-x-x-109'>vector bundles.</span>
+                                                                                   
+
+                                                                                   
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-02-11" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-02-11">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Local trivializations of \(P\) induce local trivializations of the associated bundle. Conversely, the
+frame bundle \(\mathrm {Fr}(E)\to B\) of a rank \(n\) vector bundle is a principal \(\GL _n(\C )\)-bundle. The natural map \(\mathrm {Fr}(E)\times _{\GL _n(\C )}\C ^n\to E\) is an isomorphism,
+and the map \[ P\longrightarrow \mathrm {Fr}(P\times _{\GL _n(\C )}\C ^n), \qquad p\longmapsto \big (v\mapsto [p,v]\big ) \] is an isomorphism of principal bundles. Thus the two constructions are inverse on
+isomorphism classes.                                                                                                                          □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3006r8'></a>
+<a class="entry-heading-link" href="../../../entry/principal-bundles-are-serre-fibrations/index.html" aria-label="Remark 9.2.8., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 9.2.8.</span></a>  </span><span id='rmk:Principal_Bundles_Are_Serre_Fibrations'></span> Since \(\pi \colon P \to B\) is locally trivial, hence locally a Serre fibration, it follows from <a class="source-reference" data-label="thm:Serre_Fibration_Local_Property" href="../../../entry/locality-of-serre-fibrations/index.html#thm:Serre_Fibration_Local_Property">Theorem 2.3.13</a> that every
+principal bundle is a Serre fibration. In particular, the functor \(\Pi _{\infty }\) preserves pullbacks along principal
+bundles by <a class="source-reference" data-label="prop:Localization_Functor_To_An_Preserves_Pullbacks_Along_Serre_Fibrations" href="../../../entry/pi-infinity-preserves-pullbacks-along-serre-fibrations/index.html#prop:Localization_Functor_To_An_Preserves_Pullbacks_Along_Serre_Fibrations">Proposition 2.3.19</a>.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3007r9'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 9.2.9.</span>  </span><span id='lem:Principality_Condition'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(\pi \colon P \to B\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a principal</span> \(G\)<span class='ntx-Italic-tlf-t1-x-x-109'>-bundle. Then for every</span> \(n \geq 0\) <span class='ntx-Italic-tlf-t1-x-x-109'>the continuous map </span>\[ \Phi _n\colon P \times G^n \to P \times _B P \times _B \dots \times _B P, \qquad (p,g_1, \dots , g_n) \mapsto (p, pg_1, \dots , pg_1\dots g_n) \] <span class='ntx-Italic-tlf-t1-x-x-109'>is a homeomorphism.</span>
+</p>
+                                                                                   
+
+                                                                                   
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-02-10" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-02-10">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By induction we may immediately reduce to the case \(n = 1\), i.e. we must show that the map \(\Phi _1\colon P \times G \to P \times _B P, \, (p,g) \mapsto (p,pg)\) is a
+homeomorphism. Observe that this map fits in a commutative diagram of the form</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-54fde421ba1a.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>and so it suffices
+to find an open cover of \(P\) such that the given map restricts to a homeomorphism on the preimages.
+Since \(\pi \) is locally trivial, we may thus assume that it is of the form \(\pr \colon B \times G \to B\). But in this case, the map \(\Phi _1\) takes
+the form \(B \times G \times G \to B \times G \times G, \, (b,g,h) \mapsto (b,g,gh)\), which is indeed a homeomorphism with inverse \((b,g,h') \mapsto (b,g,g^{-1}h')\).                                                             □</p>
+</div></div>
+<p class='noindent'>Observe that both sides of <a class="source-reference" data-label="lem:Principality_Condition" href="../../../entry/criterion-for-principal-actions/index.html#lem:Principality_Condition">Lemma 9.2.9</a> define simplicial objects in \(\Top \). The simplicial structure on the right-hand side is
+that of the Čech nerve \(\check {C}(\pi )\), see the proof of <a class="source-reference" data-label="prop:Adjunction_Omega_B" href="../../../entry/classifying-anima-loop-group-adjunction/index.html#prop:Adjunction_Omega_B">Proposition 5.1.15</a>. The one on the left is the bar construction associated to the right
+action of \(G\) on \(P\), with face maps \begin {align*}  d_0(p,g_1,\dots ,g_n) &amp;= (pg_1,g_2,\dots ,g_n), \\ d_i(p,g_1,\dots ,g_n) &amp;= (p,g_1,\dots ,g_ig_{i+1},\dots ,g_n) &amp;&amp; (0&lt;i&lt;n), \\ d_n(p,g_1,\dots ,g_n) &amp;= (p,g_1,\dots ,g_{n-1}),  \end {align*}
+</p><p class='noindent'>and degeneracy maps \[ s_i(p,g_1,\dots ,g_n)=(p,g_1,\dots ,g_i,e,g_{i+1},\dots ,g_n) \qquad (0\leq i\leq n), \] where the initial string \(g_1,\dots ,g_i\) is empty when \(i=0\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3008r10'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 9.2.10.</span>  </span><span id='lem:Principality_Condition_Functorial'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The homeomorphisms</span> \(\Phi _n\) <span class='ntx-Italic-tlf-t1-x-x-109'>from </span><a class="source-reference" data-label="lem:Principality_Condition" href="../../../entry/criterion-for-principal-actions/index.html#lem:Principality_Condition">Lemma 9.2.9 </a><span class='ntx-Italic-tlf-t1-x-x-109'>define an isomorphism of simplicial objects in</span> \(\Top \)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-02-9" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-02-9">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> It suffices to check the face and degeneracy maps. For the first face map, we have \begin {align*}  \Phi _{n-1}(d_0^*(p,g_1,\dots ,g_n)) &amp;=\Phi _{n-1}(pg_1,g_2,\dots ,g_n) \\ &amp;=(pg_1,pg_1g_2,\dots ,pg_1g_2\dots g_n) =d_0^*\Phi _n(p,g_1,\dots ,g_n).  \end {align*}
+</p><p class='noindent'>For a degeneracy map, inserting the identity element among the \(g_i\) inserts a repeated partial product among \(p,pg_1,\dots ,pg_1\dots g_n\),
+as required. The remaining face maps either multiply two adjacent \(g_i\) or omit the last one, and the same direct
+calculation proves compatibility.                                                                                                        □
+</p>
+</div></div>
+<p class='noindent'>We now get to the promised result about recognizing topological spaces whose underlying anima is of the
+form \(\bB G\):
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3009r11'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 9.2.11.</span>  </span><span id='prop:Classifying_Spaces_Via_Principal_Bundles'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(\pi \colon P \to B\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a principal</span> \(G\)<span class='ntx-Italic-tlf-t1-x-x-109'>-bundle such that</span> \(P\) <span class='ntx-Italic-tlf-t1-x-x-109'>is contractible.</span>
+   </p><dl class='enumerate'><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(1)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The Čech nerve of</span> \(\Pi _{\infty }(\pi )\colon \Pi _{\infty }(P) \to \Pi _{\infty }(B)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is isomorphic to</span> \(\Pi _{\infty }(G) \in \Grp (\An )\)<span class='ntx-Italic-tlf-t1-x-x-109'>;</span>
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(2)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>In particular, passing to colimits provides an isomorphism of animae </span>\[ \Pi _{\infty }(B) \iso \bB G. \]</p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-02-8" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-02-8">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> A principal bundle is a locally trivial fiber bundle and hence a Serre fibration by <a class="source-reference" data-label="thm:Serre_Fibration_Local_Property" href="../../../entry/locality-of-serre-fibrations/index.html#thm:Serre_Fibration_Local_Property">Theorem 2.3.13</a>. Since \(\Pi _{\infty }\colon \Top \to \An \)
+preserves pullbacks along Serre fibrations by <a class="source-reference" data-label="prop:Localization_Functor_To_An_Preserves_Pullbacks_Along_Serre_Fibrations" href="../../../entry/pi-infinity-preserves-pullbacks-along-serre-fibrations/index.html#prop:Localization_Functor_To_An_Preserves_Pullbacks_Along_Serre_Fibrations">Proposition 2.3.19</a>, there are isomorphisms \[ \Piinfty {P \times _B \dots \times _B P} \iso \Piinfty {P} \times _{\Piinfty {B}} \dots \times _{\Piinfty {B}} \Piinfty {P} \] for all \(n\), which assemble into
+an isomorphism of simplicial animae \(\Piinfty {\check {C}(\pi )} \iso \check {C}(\Piinfty {\pi })\). By <a class="source-reference" data-label="lem:Principality_Condition_Functorial" href="../../../entry/functoriality-of-the-principality-criterion/index.html#lem:Principality_Condition_Functorial">Lemma 9.2.10</a>, the simplicial anima \(\Piinfty {\check {C}(\pi )}\) is isomorphic to \([n] \mapsto \Piinfty {P \times G^n}\). By contractibility
+of \(P\), the projection maps \(\Piinfty {P \times G^n} \cong \Pi _{\infty }(P) \times \Piinfty {G^n} \to \Piinfty {G^n}\) are isomorphisms, which are compatible with the simplicial structure maps
+                                                                                   
+                                                                                   
+(see <span class="source-reference" data-label="exercise:Monoids_In_Ordinary_Category">Chapterexercise 5.1</span>). This proves part (1). For part (2), observe that \(\Pi _{\infty }(\pi )\) is surjective on path components, since \(\pi \) is
+surjective. It is therefore an effective epimorphism of animae, so \(\Pi _{\infty }(B)\) is the colimit of its Čech nerve.
+On the other hand, the colimit of the simplicial anima underlying the group object \(\Pi _{\infty }(G)\) is its classifying
+anima \(\bB G\). Part (1) therefore gives the claimed isomorphism.                                                                □
+</p>
+</div></div>
+
+<h4 class='subsectionHead' id='the-infinite-grassmannian-as-a-classifying-anima'><span class='titlemark'>9.2.3    </span> <a id='x1-40009.2.3'></a>The infinite Grassmannian as a classifying anima</h4>
+<p class='noindent'>We now return to the infinite Grassmannian: we wish to apply <a class="source-reference" data-label="prop:Classifying_Spaces_Via_Principal_Bundles" href="../../../entry/classifying-animae-via-principal-bundles/index.html#prop:Classifying_Spaces_Via_Principal_Bundles">Proposition 9.2.11</a> to the map \(\pi \colon V_k(\C ^{\infty }) \to \Gr _k(\C ^{\infty })\) to conclude that \(\Gr _k(\C ^{\infty })\) is a
+geometric model for the classifying anima of the unitary group \(U(k)\), the group of complex isometries
+\(\C ^k \xrightarrow {\cong } \C ^k\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4001r12'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 9.2.12.</span>  </span><span id='lem:Stiefel_Manifold_Principal_Unitary_Bundle'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The projection map</span> \(\pi \colon V_k(\C ^{\infty }) \to \Gr _k(\C ^{\infty })\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a principal</span> \(U(k)\)<span class='ntx-Italic-tlf-t1-x-x-109'>-bundle. Here</span> \(U(k)\) <span class='ntx-Italic-tlf-t1-x-x-109'>acts on</span> \(V_k(\C ^{\infty })\) <span class='ntx-Italic-tlf-t1-x-x-109'>by precomposition: given</span>
+\(A \in U(k)\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(\phi \colon \C ^k \hookrightarrow \C ^{\infty }\)<span class='ntx-Italic-tlf-t1-x-x-109'>, we define</span> \(\phi A\) <span class='ntx-Italic-tlf-t1-x-x-109'>as the composite</span> \(\C ^k \xrightarrow {A} \C ^k \xrightarrow {\phi } \C ^{\infty }\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-02-7" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-02-7">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Let \(W \in \Gr _k(\C ^{\infty })\), and define \(U \subseteq \Gr _k(\C ^{\infty })\) to be the subspace of those \(k\)-planes \(V\) for which the orthogonal projection \(W \to V\) is
+an isomorphism. This is open: its intersection with every finite-dimensional stage \(\Gr _k(\C ^n)\) is open, and \(\Gr _k(\C ^{\infty })\) has
+the colimit topology. We claim that there exists a \(U(k)\)-equivariant homeomorphism \[ \phi \colon U \times U(k) \xrightarrow {\cong } \pi ^{-1}(U) \] over \(U\), which will
+suffice to finish the proof. To construct \(\phi \), fix a \(k\)-frame \((w_1, \dots , w_k)\) for \(W\). Given any \(k\)-plane \(V \in U\), the projection \(W \to V\) is an
+                                                                                   
+                                                                                   
+isomorphism, hence sends the \(k\)-frame \((w_1, \dots , w_k)\) to some basis for \(V\). Using Gram-Schmidt orthonormalization
+(which is a continuous operation), we may turn this into a \(k\)-frame \((v_1, \dots , v_k)\) for \(V\). All in all, we may then define
+\[ \phi (V,A) := (v_1, \dots , v_k) \circ A. \] Bijectivity of \(\phi \) holds because two orthonormal frames of a \(k\)-plane differ by a unique unitary \((k \times k)\)-matrix.
+We leave it to the reader to check that this is indeed a well-defined homeomorphism over \(U\).             □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4002r13'></a>
+<a class="entry-heading-link" href="../../../entry/associated-principal-bundle-of-the-universal-vector-bundle/index.html" aria-label="Remark 9.2.13., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 9.2.13.</span></a>  </span><span id='rmk:Stiefel_Bundle_Associated_To_Universal_Vector_Bundle'></span>  Under  the  bijection  of  <a class="source-reference" data-label="prop:Principal_Bundles_Versus_Complex_Vector_Bundles" href="../../../entry/principal-bundles-and-vector-bundles/index.html#prop:Principal_Bundles_Versus_Complex_Vector_Bundles">Proposition 9.2.7</a>,  the  principal  bundle  \(V_k(\C ^{\infty }) \to \Gr _k(\C ^{\infty })\)  is  in  fact  the  principal  bundle
+associated to the universal rank \(k\) vector bundle \(E_{\univ }\) from <a class="source-reference" data-label="def:Canonical_Bundle" href="../../../entry/universal-vector-bundle-over-the-infinite-grassmannian/index.html#def:Canonical_Bundle">Definition 9.2.2</a>.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4003r14'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 9.2.14.</span>  </span><span id='lem:Stiefel_Manifold_Contractible'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The topological space</span> \(V_k(\C ^{\infty })\) <span class='ntx-Italic-tlf-t1-x-x-109'>is contractible.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-02-6" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-02-6">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Consider the space \(\widetilde {V}_k(\C ^{\infty })\) of all linear injections \(\C ^k \hookrightarrow \C ^{\infty }\) which are not necessarily isometries. Equivalently,
+\(\widetilde {V}_k(\C ^{\infty })\) is the topological space of \(k\)-tuples \((v_1, \dots , v_k)\) of linearly independent vectors in \(\C ^{\infty }\) which are not necessarily
+                                                                                   
+                                                                                   
+orthogonal to each other. Observe that the inclusion \(V_k(\C ^{\infty }) \hookrightarrow \widetilde {V}_k(\C ^{\infty })\) is a homotopy equivalence: the Gram-Schmidt
+orthogonalization procedure provides a deformation retract \(\widetilde {V}_k(\C ^{\infty }) \to V_k(\C ^{\infty })\).
+</p><p class='noindent'>It will thus suffice to show that \(\widetilde {V}_k(\C ^{\infty })\) is contractible. To this end, consider the ‘shift map’ \(T^k\colon \C ^{\infty } \to \C ^{\infty }\) given on basis
+vectors by \(T^k(e_n) := e_{n+k}\). This induces a map \(T^k\colon \widetilde {V}_k(\C ^{\infty }) \to \widetilde {V}_k(\C ^{\infty })\). Note that this map is homotopic to the constant map on \((e_1, \dots , e_k)\) via the
+straight-line homotopy: \[ H(v,t) := (1-t)(e_1, \dots , e_k) + t T^k(v). \] This is well-defined since the first \(k\) components of the vectors \(T^k(v_i)\) are all zero.
+Similarly, the map \(T^k\) is homotopic to the identity on \(\widetilde {V}_k(\C ^{\infty })\), again via the straight-line homotopy: \[ H(v,t) := (1-t)v + t T^k(v). \] To see that
+this is well-defined, assume for contradiction that for some time \(t\) the vectors are no longer linearly
+independent. Then there are scalars \(\lambda _1, \dots , \lambda _k\), not all zero, such that \(\sum _{i=1}^k \lambda _i ((1-t)v_i + t T^k(v_i)) = 0\). But then the nonzero vector \(w := \sum _{i=1}^k\lambda _i v_i\) satisfies \((1-t) w + t T^k(w) = 0\).
+For \(t&lt;1\), this is impossible by considering the first nonzero coordinate of \(w\); for \(t=1\), it is impossible because \(T^k\)
+is injective. This contradicts linear independence of \(v\).
+</p><p class='noindent'>It follows that the identity on \(\widetilde {V}_k(\C ^{\infty })\) is homotopic to a constant map, and hence this space is contractible.    □
+</p>
+</div></div>
+<p class='noindent'>Writing \(U(k)\) also for the underlying anima of the topological group \(U(k)\), we get:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4004r15'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 9.2.15.</span>  </span><span id='cor:Grassmannian_Is_Classifying_Anima_Unitary_Group'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The underlying anima of the Grassmannian</span> \(\Gr _k(\C ^{\infty })\) <span class='ntx-Italic-tlf-t1-x-x-109'>is isomorphic to the classifying
+anima</span> \(\bB U(k)\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-02-5" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-02-5">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> In light of <a class="source-reference" data-label="lem:Stiefel_Manifold_Principal_Unitary_Bundle" href="../../../entry/stiefel-manifold-as-a-principal-unitary-bundle/index.html#lem:Stiefel_Manifold_Principal_Unitary_Bundle">Lemma 9.2.12</a> and <a class="source-reference" data-label="lem:Stiefel_Manifold_Contractible" href="../../../entry/contractibility-of-infinite-stiefel-manifolds/index.html#lem:Stiefel_Manifold_Contractible">Lemma 9.2.14</a>, this is an instance of <a class="source-reference" data-label="prop:Classifying_Spaces_Via_Principal_Bundles" href="../../../entry/classifying-animae-via-principal-bundles/index.html#prop:Classifying_Spaces_Via_Principal_Bundles">Proposition 9.2.11</a>.                                                                                  □
+</p>
+</div></div>
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4005r16'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 9.2.16.</span>  </span><span id='cor:Classifying_Vector_Bundles'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a paracompact Hausdorff space. There is a natural bijection </span>\[ \left [X,\bigsqcup _{k=0}^{\infty }\Gr _k(\C ^\infty )\right ] \xrightarrow {\cong } \pi _0 \Vect (X). \] <span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a cell
+complex, this bijection can equivalently be written as </span>\[ \pi _0\Hom _{\An }\left (\Pi _{\infty }X,\bigsqcup _{k=0}^{\infty }\bB U(k)\right ) \xrightarrow {\cong } \pi _0\Vect (X). \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-02-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-02-4">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Both sides of the first bijection decompose according to locally constant functions \(r\colon X\to \N \). For such
+a function, let \(X_k:=r^{-1}(k)\). These subspaces are clopen, and hence paracompact Hausdorff, and they form a
+topological disjoint-union decomposition \[ X=\bigsqcup _{k\geq 0}X_k. \] A continuous map \(X\to \bigsqcup _{k\geq 0}\Gr _k(\C ^\infty )\) with component function \(r\) is precisely
+a family of continuous maps \(X_k\to \Gr _k(\C ^\infty )\). Similarly, a vector bundle with rank function \(r\) is precisely a family of
+rank \(k\) vector bundles over the \(X_k\). The first bijection therefore follows on each clopen stratum from <a class="source-reference" data-label="thm:Grassmannian_Classifies_Vector_Bundles" href="../../../entry/grassmannians-classify-vector-bundles/index.html#thm:Grassmannian_Classifies_Vector_Bundles">Theorem 9.2.4</a>.
+</p><p class='noindent'>The Schubert cell structures above also make \(\bigsqcup _{k\geq 0}\Gr _k(\C ^\infty )\) a cell complex. If \(X\) is a cell complex as well, then <a class="source-reference" data-label="cor:Pi_Infty_surjective_On_Objects_And_Morphisms" href="../../../entry/homotopy-category-of-animae-via-cell-complexes/index.html#cor:Pi_Infty_surjective_On_Objects_And_Morphisms">Corollary 2.3.7</a>, <a class="source-reference" data-label="cor:Grassmannian_Is_Classifying_Anima_Unitary_Group" href="../../../entry/infinite-grassmannian-as-a-classifying-anima/index.html#cor:Grassmannian_Is_Classifying_Anima_Unitary_Group">Corollary 9.2.15</a>
+identifies the source of the first bijection with the source of the second.                                           □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4006r17'></a>
+<a class="entry-heading-link" href="../../../entry/milnor-classifying-spaces-for-topological-groups/index.html" aria-label="Remark 9.2.17., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 9.2.17.</span></a>  </span><span id='rmk:Milnor_Classifying_Spaces_Topological_Groups'></span>  More  generally,  for  every  topological  group  \(G\)  there  exists  a  topological  space  \(BG\)
+together with a principal \(G\)-bundle \(EG \to BG\) whose total space \(EG\) is contractible. In <span class='citation'>[Husemoller (1993), Section 4.12]</span>, it is shown that Milnor’s
+construction of \(BG\) classifies principal \(G\)-bundles on paracompact Hausdorff spaces. Since \(EG\) is contractible,
+<a class="source-reference" data-label="prop:Classifying_Spaces_Via_Principal_Bundles" href="../../../entry/classifying-animae-via-principal-bundles/index.html#prop:Classifying_Spaces_Via_Principal_Bundles">Proposition 9.2.11</a> implies that the underlying anima of \(BG\) is the classifying anima \(\bB G\). Thus the terminology ‘classifying
+anima’ is compatible with the classical terminology ‘classifying space’.
+                                                                                   
+                                                                                   
+</p>
+</div>
+
+<h4 class='subsectionHead' id='the-stable-grassmannian'><span class='titlemark'>9.2.4    </span> <a id='x1-50009.2.4'></a>The stable Grassmannian</h4>
+<p class='noindent' id='subsec_Stable_Grassmannian'>The passage from vector bundles to K-theory will use the stable Grassmannian rather than a strict point-set
+model for the whole commutative monoid of vector spaces.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5001r18'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 9.2.18.</span>  </span><span id='lem:Compact_Subset_Sequential_Colimit'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let </span>\[ Y_0 \xhookrightarrow {} Y_1 \xhookrightarrow {} Y_2 \xhookrightarrow {} \dots \] <span class='ntx-Italic-tlf-t1-x-x-109'>be a sequence of closed embeddings of</span> \(T_1\) <span class='ntx-Italic-tlf-t1-x-x-109'>topological spaces, and let</span> \(Y := \colim _n Y_n\) <span class='ntx-Italic-tlf-t1-x-x-109'>be the
+resulting colimit in</span> \(\Top \)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then every compact subset</span> \(K \subseteq Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>is contained in some</span> \(Y_n\)<span class='ntx-Italic-tlf-t1-x-x-109'>. In particular, every continuous
+map</span> \(f\colon X \to Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>from a compact space factors through some</span> \(Y_n\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-02-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-02-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Assume for contradiction that \(K\) is not contained in any \(Y_n\), and choose \(x_n \in K \setminus Y_n\). Set \(A:=\{x_n\mid n\geq 0\}\). This set is infinite:
+if it were finite, all its points would lie in some common stage \(Y_N\), contradicting \(x_n\notin Y_n\) for \(n\geq N\). For every \(m\), the
+intersection \(A\cap Y_m\) is contained in the finite set \(\{x_0,\dots ,x_{m-1}\}\), hence is closed in the \(T_1\)-space \(Y_m\). The same holds for every
+subset of \(A\). By the definition of the colimit topology, every subset of \(A\) is therefore closed in \(Y\). Thus \(A\) is
+an infinite closed discrete subspace of \(K\), contradicting compactness of \(K\).
+</p><p class='noindent'>The last claim follows by applying the first to the compact subset \(f(X) \subseteq Y\).                                                   □
+                                                                                   
+                                                                                   
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5002r19'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 9.2.19.</span>  </span><span id='prop:Pi_Infty_Sequential_Closed_Colimits'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>In the situation of </span><a class="source-reference" data-label="lem:Compact_Subset_Sequential_Colimit" href="../../../entry/compact-subsets-of-sequential-colimits/index.html#lem:Compact_Subset_Sequential_Colimit">Lemma 9.2.18</a><span class='ntx-Italic-tlf-t1-x-x-109'>, the canonical morphism </span>\[ \colim _n \Pi _{\infty }(Y_n) \longrightarrow \Pi _{\infty }(Y) \] <span class='ntx-Italic-tlf-t1-x-x-109'>is an isomorphism of animae.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-02-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-02-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We use the Whitehead theorem for animae. The compactness lemma, applied to the point
+and to the interval, shows that the canonical morphism induces a bijection on path components. Fix
+a basepoint represented by some \(y\in Y_N\). For every \(q\geq 1\), compactness of \(S^q\) and \(S^q\times [0,1]\) shows that maps \(S^q\to Y\) and homotopies
+between them factor through finite stages. Consequently, \[ \colim _{n\geq N}\pi _q(Y_n,y) \xrightarrow {\cong } \pi _q(Y,y). \] By <a class="source-reference" data-label="rmk:Homotopy_Groups_An_Vs_CW" href="../../../entry/homotopy-groups-of-animae-and-spaces/index.html#rmk:Homotopy_Groups_An_Vs_CW">Remark 2.4.19</a>, these are the homotopy groups of
+the corresponding underlying animae. Homotopy groups of pointed animae commute with filtered
+colimits, so the left-hand side is also the \(q\)-th homotopy group of \(\colim _n\Pi _{\infty }(Y_n)\) at \(y\). The claim now follows from
+<a class="source-reference" data-label="prop:Whitehead_For_An" href="../../../entry/whitehead-theorem-for-animae/index.html#prop:Whitehead_For_An">Proposition 2.4.22</a>.                                                                                                                                                           □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5003r20'></a>
+<a class="entry-heading-link" href="../../../entry/stable-grassmannian/index.html" aria-label="Definition 9.2.20., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 9.2.20.</span></a>  </span><span id='def:Stable_Grassmannian'></span> We define the <span class='ntx-Italic-tlf-t1-x-x-109'>stable Grassmannian </span>\[ BU := \colim \left (\Gr _0(\C ^\infty ) \xrightarrow {V \mapsto V \oplus \C } \Gr _1(\C ^\infty ) \xrightarrow {V \mapsto V \oplus \C } \Gr _2(\C ^\infty ) \to \cdots \right ), \] where the transition maps are induced by the
+standard isometric identification \(\C ^\infty \oplus \C \cong \C ^\infty \). The Schubert cell structures make these transition maps inclusions
+of subcomplexes, so their colimit \(BU\) is again a cell complex; see <span class='citation'>Hatcher (2003), p. 34</span>. In particular, the transition maps are
+closed embeddings, and we equip \(BU\) with the colimit topology.
+                                                                                   
+                                                                                   
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5004r21'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 9.2.21.</span>  </span><span id='prop:BU_Is_Stable_Classifying_Anima'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(U := \colim _n U(n)\) <span class='ntx-Italic-tlf-t1-x-x-109'>be the stable unitary group, where the transition maps are block-sum with
+the identity on</span> \(\C \)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then there is an isomorphism of animae </span>\[ \Pi _{\infty }(BU) \simeq \bB U. \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-02-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-02-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The principal bundles \(V_n(\C ^\infty ) \to \Gr _n(\C ^\infty )\) identify \(\Pi _{\infty }\Gr _n(\C ^\infty )\) with \(\bB U(n)\) by <a class="source-reference" data-label="cor:Grassmannian_Is_Classifying_Anima_Unitary_Group" href="../../../entry/infinite-grassmannian-as-a-classifying-anima/index.html#cor:Grassmannian_Is_Classifying_Anima_Unitary_Group">Corollary 9.2.15</a>. These identifications are compatible with the
+stabilization maps \(\Gr _n(\C ^\infty ) \to \Gr _{n+1}(\C ^\infty )\) and the block-sum inclusions \(U(n) \to U(n+1)\). Since the Grassmannian stabilization maps are
+closed embeddings between Hausdorff spaces, <a class="source-reference" data-label="prop:Pi_Infty_Sequential_Closed_Colimits" href="../../../entry/fundamental-anima-of-sequential-colimits/index.html#prop:Pi_Infty_Sequential_Closed_Colimits">Proposition 9.2.19</a> gives \[ \Pi _{\infty }(BU) \simeq \colim _n \bB U(n). \] The classifying-anima equivalence \(\bB \colon \Grp (\An )\iso \An _{*,\geq 1}\) preserves
+colimits. Since connected pointed animae are closed under filtered colimits, the filtered colimit of
+the \(\bB U(n)\) agrees whether computed in \(\An \), \(\An _*\), or \(\An _{*,\geq 1}\). Moreover, filtered colimits in \(\Grp (\An )\) are computed on underlying
+animae, since finite limits commute with filtered colimits in \(\An \). Applying <a class="source-reference" data-label="prop:Pi_Infty_Sequential_Closed_Colimits" href="../../../entry/fundamental-anima-of-sequential-colimits/index.html#prop:Pi_Infty_Sequential_Closed_Colimits">Proposition 9.2.19</a> also to the closed embeddings
+\(U(n)\hookrightarrow U(n+1)\) therefore gives \[ \colim _n\bB U(n) \simeq \bB \!\left (\colim _n\Pi _{\infty }U(n)\right ) \simeq \bB \Pi _{\infty }(U), \] which is the asserted classifying anima \(\bB U\).                                                                 □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5005r22'></a>
+<a class="entry-heading-link" href="../../../entry/real-grassmannian-analogues/index.html" aria-label="Remark 9.2.22., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 9.2.22.</span></a>  </span><span id='rmk:Real_Grassmannian_Analogues'></span> The Grassmannian and Stiefel-manifold results above have real analogues with \(\C \)
+                                                                                   
+                                                                                   
+replaced by \(\R \) and \(U(k)\) by \(O(k)\), with the same proofs. In particular, \(\Gr _k(\R ^\infty )\) classifies rank \(k\) real vector bundles over
+paracompact Hausdorff spaces, \(V_k(\R ^\infty )\) is contractible, and \(\Pi _\infty \Gr _k(\R ^\infty )\simeq \bB O(k)\). We will use these facts in <a class="source-reference" data-label="chap:Thom_Spectra" href="../../../chapter/thom-spectra-and-bordism-theory/index.html#chap:Thom_Spectra">Chapter 10</a>.
+</p>
+</div>
+
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../vector-bundles/index.html" aria-label="Previous section: Vector bundles" title="Previous section: Vector bundles"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../complex-k-theory-groups/index.html" aria-label="Next section: Complex K-theory groups" title="Next section: Complex K-theory groups"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html" aria-current="page"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/animae-as-spaces/index.html"><span class="context-entry-heading">Chapter 2</span><span class="context-entry-title">Animae as spaces</span></a></li><li><a href="../../../chapter/homology-and-cohomology/index.html"><span class="context-entry-heading">Chapter 3</span><span class="context-entry-title">Homology and cohomology</span></a></li><li><a href="../../../chapter/spectra-and-stable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 4</span><span class="context-entry-title">Spectra and stable ∞-categories</span></a></li><li><a href="../../../chapter/recognition-principle/index.html"><span class="context-entry-heading">Chapter 5</span><span class="context-entry-title">The recognition principle</span></a></li><li><a href="../../../chapter/homological-algebra/index.html"><span class="context-entry-heading">Chapter 6</span><span class="context-entry-title">Homological algebra</span></a></li><li><a href="../../../chapter/localization-and-completion/index.html"><span class="context-entry-heading">Chapter 7</span><span class="context-entry-title">Localization and completion</span></a></li><li><a href="../../../chapter/ring-spectra-and-modules/index.html"><span class="context-entry-heading">Chapter 8</span><span class="context-entry-title">Ring spectra and modules</span></a></li><li><a href="../../../chapter/complex-k-theory/index.html" aria-current="page"><span class="context-entry-heading">Chapter 9</span><span class="context-entry-title">Complex K-theory</span></a></li><li><a href="../../../chapter/thom-spectra-and-bordism-theory/index.html"><span class="context-entry-heading">Chapter 10</span><span class="context-entry-title">Thom spectra and bordism theory</span></a></li><li><a href="../../../chapter/duality-phenomena/index.html"><span class="context-entry-heading">Chapter 11</span><span class="context-entry-title">Duality phenomena</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../vector-bundles/index.html"><span class="context-entry-heading">Section 9.1</span><span class="context-entry-title">Vector bundles</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 9.2</span><span class="context-entry-title">Classifying vector bundles</span></a></li><li><a href="../complex-k-theory-groups/index.html"><span class="context-entry-heading">Section 9.3</span><span class="context-entry-title">Complex K-theory groups</span></a></li><li><a href="../complex-k-theory-spectra/index.html"><span class="context-entry-heading">Section 9.4</span><span class="context-entry-title">Complex K-theory spectra</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Infinite_Grassmannian"><span class="context-entry-heading">Definition 9.2.1</span><span class="context-entry-title">Infinite grassmannian</span></a></li><li><a href="#def:Canonical_Bundle"><span class="context-entry-heading">Definition 9.2.2</span><span class="context-entry-title">definition</span></a></li><li><a href="#lem:Canonical_Bundle_Is_Vector_Bundle"><span class="context-entry-heading">Lemma 9.2.3</span><span class="context-entry-title">lemma</span></a></li><li><a href="#thm:Grassmannian_Classifies_Vector_Bundles"><span class="context-entry-heading">Theorem 9.2.4</span><span class="context-entry-title">theorem</span></a></li><li><a href="#def:Classifying_Anima_Topological_Group"><span class="context-entry-heading">Definition 9.2.5</span><span class="context-entry-title">definition</span></a></li><li><a href="#def:Principal_Bundle"><span class="context-entry-heading">Definition 9.2.6</span><span class="context-entry-title">Principal bundle</span></a></li><li><a href="#prop:Principal_Bundles_Versus_Complex_Vector_Bundles"><span class="context-entry-heading">Proposition 9.2.7</span><span class="context-entry-title">Principal bundles and vector bundles</span></a></li><li><a href="#rmk:Principal_Bundles_Are_Serre_Fibrations"><span class="context-entry-heading">Remark 9.2.8</span><span class="context-entry-title">remark</span></a></li><li><a href="#lem:Principality_Condition"><span class="context-entry-heading">Lemma 9.2.9</span><span class="context-entry-title">lemma</span></a></li><li><a href="#lem:Principality_Condition_Functorial"><span class="context-entry-heading">Lemma 9.2.10</span><span class="context-entry-title">lemma</span></a></li><li><a href="#prop:Classifying_Spaces_Via_Principal_Bundles"><span class="context-entry-heading">Proposition 9.2.11</span><span class="context-entry-title">proposition</span></a></li><li><a href="#lem:Stiefel_Manifold_Principal_Unitary_Bundle"><span class="context-entry-heading">Lemma 9.2.12</span><span class="context-entry-title">lemma</span></a></li><li><a href="#rmk:Stiefel_Bundle_Associated_To_Universal_Vector_Bundle"><span class="context-entry-heading">Remark 9.2.13</span><span class="context-entry-title">remark</span></a></li><li><a href="#lem:Stiefel_Manifold_Contractible"><span class="context-entry-heading">Lemma 9.2.14</span><span class="context-entry-title">lemma</span></a></li><li><a href="#cor:Grassmannian_Is_Classifying_Anima_Unitary_Group"><span class="context-entry-heading">Corollary 9.2.15</span><span class="context-entry-title">corollary</span></a></li><li><a href="#cor:Classifying_Vector_Bundles"><span class="context-entry-heading">Corollary 9.2.16</span><span class="context-entry-title">corollary</span></a></li><li><a href="#rmk:Milnor_Classifying_Spaces_Topological_Groups"><span class="context-entry-heading">Remark 9.2.17</span><span class="context-entry-title">remark</span></a></li><li><a href="#lem:Compact_Subset_Sequential_Colimit"><span class="context-entry-heading">Lemma 9.2.18</span><span class="context-entry-title">lemma</span></a></li><li><a href="#prop:Pi_Infty_Sequential_Closed_Colimits"><span class="context-entry-heading">Proposition 9.2.19</span><span class="context-entry-title">proposition</span></a></li><li><a href="#def:Stable_Grassmannian"><span class="context-entry-heading">Definition 9.2.20</span><span class="context-entry-title">definition</span></a></li><li><a href="#prop:BU_Is_Stable_Classifying_Anima"><span class="context-entry-heading">Proposition 9.2.21</span><span class="context-entry-title">proposition</span></a></li><li><a href="#rmk:Real_Grassmannian_Analogues"><span class="context-entry-heading">Remark 9.2.22</span><span class="context-entry-title">remark</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

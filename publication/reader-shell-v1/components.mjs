@@ -32,13 +32,24 @@ export function renderReaderHeader({
   homeHref = "",
   workTitle,
   location = "",
+  breadcrumbs = [],
   title,
   className = "site-header work-header"
 }) {
   const work = homeHref
     ? `<a href="${escapeHtml(homeHref)}">${escapeHtml(workTitle)}</a>`
     : escapeHtml(workTitle);
-  const locationText = location ? ` · ${escapeHtml(location)}` : "";
+  const trail = breadcrumbs.length > 0
+    ? breadcrumbs
+    : location
+      ? [{ label: location }]
+      : [];
+  const locationText = trail.map(({ label, href = "" }) => {
+    const item = href
+      ? `<a href="${escapeHtml(href)}">${escapeHtml(label)}</a>`
+      : escapeHtml(label);
+    return ` · ${item}`;
+  }).join("");
   return `<header class="${escapeHtml(className)}">
     <div>
       ${renderCollectionReturn({ href: collectionHref, label: collectionLabel })}

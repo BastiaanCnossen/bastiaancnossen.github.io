@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 5.1: Monoids and groups | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/stable-homotopy-theory/index.html">Part I</a> · <a href="../../../chapter/recognition-principle/index.html">Chapter 5</a> · Section 5.1</p>
+      <h1>Monoids and groups</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Monoids_and_Groups'>Recall that a monoid is a set \(M\) equipped with a unit element \(1 \in M\) and a product \(x \cdot y \in M\) for all \(x, y \in M\), satisfying associativity
+and unitality. Given such a monoid, we obtain for every \(n \geq 0\) an \(n\)-fold multiplication map \(M^n \to M\) sending \((x_1, \ldots , x_n)\) to \(x_1 \cdots x_n\). In
+the \(\infty \)-categorical setting, we make all these \(n\)-fold multiplication maps part of the data, together
+with all the coherences between them. These coherences are encoded by the simplex category
+\(\simp \).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<a class="entry-heading-link" href="../../../entry/monoid-objects/index.html" aria-label="Definition 5.1.1, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 5.1.1 </span></a>(Monoid)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Monoid_Object'></span> Let \(C\) be an \(\infty \)-category that admits finite products. We define a <span class='ntx-Italic-tlf-t1-x-x-109'>monoid
+object in</span> \(C\) (or \(E_1\)<span class='ntx-Italic-tlf-t1-x-x-109'>-monoid</span>) to be a simplicial object \[ M\colon \simp \catop \to C, \qquad [n] \mapsto M_n := M([n]), \] satisfying the <span class='ntx-Italic-tlf-t1-x-x-109'>Segal condition</span>: for every \([n] \in \simp \) the <span class='ntx-Italic-tlf-t1-x-x-109'>Segal
+map </span>\[ (e_i^*)_{i=1}^n \colon M_n \to \prod _{i=1}^n M_1 \] induced by the \(n\) inclusion maps \(e_i \colon [1] \cong \{i-1 \leq i \} \hookrightarrow [n]\) is an isomorphism. In particular, the condition for \(n = 0\) requires \(M_0\)
+to be a terminal object of \(C\). We write \[ \Mon (C) \subseteq \Fun (\simp \catop ,C) \] for the full subcategory spanned by the monoids in \(C\). We refer
+to \(M_1\) as the <span class='ntx-Italic-tlf-t1-x-x-109'>underlying object </span>of \(M\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1002r2'></a>
+<a class="entry-heading-link" href="../../../entry/underlying-object-of-a-monoid/index.html" aria-label="Convention 5.1.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Convention 5.1.2.</span></a>  </span><span id='conv:Underlying_Object_Of_A_Monoid'></span> Given a monoid \(M\), we will often denote its underlying object in \(C\) again by \(M\). We
+will also often identify \(M_n\) with the \(n\)-fold product \(M^n := \prod _{i=1}^n M\) via the Segal map.
+</p>
+</div>
+                                                                                   
+                                                                                   
+<p class='noindent'>The unique map \(s^0\colon [1] \to [0]\) and the inclusion \(d^1\colon [1] \cong \{0 \leq 2\} \hookrightarrow [2]\) in \(\simp \) induce maps \(M_0 \to M_1\) and \(M_2 \to M_1\), which under our convention take the form \[ e\colon * \to M \quad \qquadtext { and } \quad m\colon M \times M \to M. \] We
+refer to \(e\) as the <span class='ntx-Italic-tlf-t1-x-x-109'>unit </span>or <span class='ntx-Italic-tlf-t1-x-x-109'>neutral element </span>of \(M\), and refer to \(m\) as the <span class='ntx-Italic-tlf-t1-x-x-109'>multiplication </span>of \(M\). The unitality and
+associativity of multiplication are encoded by the following commutative diagrams in \(\simp \), where we denote an
+order-preserving map \([m] \to [n]\) by listing the images \((a_0, \ldots , a_m)\) of the elements \(0, \ldots , m\):</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-3f1dc41fd0e7.svg" alt="Commutative diagram generated from the LaTeX source"></figure><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-abb452146478.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Similarly, all the expected ‘higher
+coherences’ relating the various ways of multiplying four, five, or more elements in \(M\) follow from suitable
+higher dimensional diagrams in \(\simp \). More explicitly, for a map \(\phi \colon [m] \to [n]\) in \(\simp \) we should think of the resulting map \(\phi ^*\colon M^n \to M^m\) as
+follows: \[ \phi ^*(x_1, \dots , x_n) := (y_1, \dots , y_m), \qquad \qquad y_i := \prod _{\phi (i-1) &lt; j \leq \phi (i)} x_j. \] This formula becomes transparent once we think of the elements \(x_1, \dots , x_n\) as labels on the \(n\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>inequalities </span>of \([n]\), and likewise of \(y_1, \dots , y_m\) as labels on the \(m\) inequalities of \([m]\). Drawing the map \(\phi \) then cuts the
+strip between \([m]\) and \([n]\) into \(m\) blocks, one for each inequality of \([m]\), and the label of an inequality of \([m]\)
+is the product of the labels it sees in its block. For \(\phi \colon [4] \to [5]\) with \(\phi (0) = 0\), \(\phi (1) = \phi (2) = 2\), \(\phi (3) = 4\) and \(\phi (4) = 5\) this looks as follows: \begin {equation}  \label {eq:Inequality_Blocks} \begin {tikzpicture}[xscale=0.75, baseline=(current bounding box.center)] \node [anchor=east, inner xsep=1.5pt] (r4) at (-0.6,2.2) {$= \{$}; \node [anchor=east, inner xsep=1.5pt] (p4) at (r4.west) {$[4]$}; \node (t0) at (0,2.2) {$0$}; \node (t1) at (2.5,2.2) {$1$}; \node (t2) at (5,2.2) {$2$}; \node (t3) at (7.5,2.2) {$3$}; \node (t4) at (10,2.2) {$4$}; \node at (1.25,2.2) {$\leq $}; \node at (3.75,2.2) {$\leq $}; \node at (6.25,2.2) {$\leq $}; \node at (8.75,2.2) {$\leq $}; \node [anchor=west] at (10.5,2.2) {$\}$}; \node [anchor=east, inner xsep=1.5pt] (r5) at (-0.6,0) {$= \{$}; \node [anchor=east, inner xsep=1.5pt] (p5) at (r5.west) {$[5]$}; \node (b0) at (0,0) {$0$}; \node (b1) at (2,0) {$1$}; \node (b2) at (4,0) {$2$}; \node (b3) at (6,0) {$3$}; \node (b4) at (8,0) {$4$}; \node (b5) at (10,0) {$5$}; \node at (1,0) {$\leq $}; \node at (3,0) {$\leq $}; \node at (5,0) {$\leq $}; \node at (7,0) {$\leq $}; \node at (9,0) {$\leq $}; \node [anchor=west] at (10.5,0) {$\}$}; \draw [-&gt;] (p4) -- node[left] {$\phi $} (p5); \draw [|-&gt;] (t0) -- (b0); \draw [|-&gt;] (t1) -- (b2); \draw [|-&gt;] (t2) -- (b2); \draw [|-&gt;] (t3) -- (b4); \draw [|-&gt;] (t4) -- (b5); \node at (1.403,1.75) {$y_1 = x_1x_2$}; \node at (3.801,1.75) {$y_2 = e$}; \node at (6.199,1.75) {$y_3 = x_3x_4$}; \node at (8.801,1.75) {$y_4 = x_5$}; \node at (1,0.44) {$x_1$}; \node at (3,0.44) {$x_2$}; \node at (5,0.44) {$x_3$}; \node at (7,0.44) {$x_4$}; \node at (9,0.44) {$x_5$}; \end {tikzpicture}  \end {equation}<a id='x1-1003r1'></a> The
+\(i\)-th block is bounded by the arrows starting at \(i-1\) and at \(i\), so the inequalities of \([5]\) it contains are
+exactly those indexed by \(\phi (i-1) &lt; j \leq \phi (i)\); multiplying their labels gives \(y_i\). Note that the strip is read against the
+direction of \(\phi \): the labels travel from \([5]\) up to \([4]\), which is precisely the contravariance of \(M\). Since \(\phi (1) = \phi (2)\), the
+two arrows bounding the second block meet at \(2\), so this block contains no inequality of \([5]\) at
+all; its label is therefore the empty product, that is, the unit \(e\). In this example we thus obtain
+\[ \phi ^*(x_1, \dots , x_5) = (x_1x_2, \; e, \; x_3x_4, \; x_5). \]</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1004r3'></a>
+<a class="entry-heading-link" href="../../../entry/product-preserving-functors-act-on-monoids/index.html" aria-label="Exercise 5.1.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 5.1.3.</span></a>  </span><span id='exercise:Product_Preserving_Functors_Induce_Functors_On_Monoids'></span> Let \(F\colon C \to D\) be a functor preserving finite products. Show that \(F\) induces a functor \(\Mon (C) \to \Mon (D)\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1005r4'></a>
+<a class="entry-heading-link" href="../../../entry/topological-monoids-give-monoids-in-animae/index.html" aria-label="Example 5.1.4., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 5.1.4.</span></a>  </span><span id='ex:Topological_Monoids_Give_Monoids_In_Animae'></span> By <span class="source-reference" data-label="exercise:Monoids_In_Ordinary_Category">Chapterexercise 5.1</span>, a topological monoid is a monoid object in \(\Top \). Combining the preceding exercise
+with the fact that \(\Pi _{\infty }\colon \Top \to \An \) preserves finite products (see <a class="source-reference" data-label="cor:Fundamental_Groupoid_Preserves_Products" href="../../../entry/pi-infinity-preserves-finite-products/index.html#cor:Fundamental_Groupoid_Preserves_Products">Corollary 2.3.20</a>), we see that every topological monoid \(M\) defines a
+monoid object \(\Pi _{\infty }(M)\) in \(\An \).
+                                                                                   
+                                                                                   
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1006r5'></a>
+<a class="entry-heading-link" href="../../../entry/group-objects/index.html" aria-label="Definition 5.1.5., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 5.1.5.</span></a>  </span><span id='def:Group'></span> We say that a monoid \(M \in \Mon (C)\) is <span class='ntx-Italic-tlf-t1-x-x-109'>grouplike</span>, or a <span class='ntx-Italic-tlf-t1-x-x-109'>group in</span> \(C\), if the so-called <span class='ntx-Italic-tlf-t1-x-x-109'>shear map </span>\[ (\pr _1,m)\colon M \times M \to M \times M, \qquad (x,y) \mapsto (x,xy) \] is
+an isomorphism in \(C\). We denote by \(\Grp (C) \subseteq \Mon (C)\) the full subcategory spanned by the groups in \(C\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1007r6'></a>
+<a class="entry-heading-link" href="../../../entry/group-objects-in-sets/index.html" aria-label="Exercise 5.1.6., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 5.1.6.</span></a>  </span><span id='exercise:Group_Objects_In_Sets'></span> Show that a monoid \(M \in \Mon (\Set )\) is a group in the sense of <a class="source-reference" data-label="def:Group" href="../../../entry/group-objects/index.html#def:Group">Definition 5.1.5</a> if and only if every element \(x\) admits
+an inverse \(x^{-1}\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1008r7'></a>
+<a class="entry-heading-link" href="../../../entry/inverse-map-of-a-group-object/index.html" aria-label="Exercise 5.1.7., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 5.1.7.</span></a>  </span><span id='exercise:Inverse_Map_Of_A_Group_Object'></span> For a group object \(G \in \Grp (C)\), construct an <span class='ntx-Italic-tlf-t1-x-x-109'>inverse map</span> \((-)^{-1}\colon G \to G\) in \(C\).
+</p>
+</div>
+                                                                                   
+                                                                                   
+
+<h4 class='subsectionHead' id='group-structures-on-loop-spaces'><span class='titlemark'>5.1.1    </span> <a id='x1-20005.1.1'></a>Group structures on loop spaces</h4>
+<p class='noindent'>We will now introduce a general class of examples of group objects in \(\infty \)-categories: the loop objects \(\Omega X\) on
+pointed objects \(X\). If \(C\) is an \(\infty \)-category with finite limits, then we may apply <span class="source-reference" data-label="exercise:Addition_In_Stable_Category">Chapterexercise 4.3</span> in the pointed \(\infty \)-category \(C_*\) to obtain
+a group structure on \(\Omega X\) in \(\Ho (C_*)\), and hence in \(\Ho (C)\). We will now explain how to lift this structure to a group structure in
+\(C\).
+</p><p class='noindent'>Let us first explain informally where the multiplication on \(\Omega X\) comes from. The loop object is defined as the
+pullback \(\Omega X = * \times _X *\); for \(C = \An \), its points are the loops in \(X\) at the basepoint \(x\). Multiplication should be given by composing
+loops, and it is the universal property of pullbacks that produces this map for us: consider the iterated
+pullback \(* \times _X * \times _X *\), which comes with three natural projections to \(* \times _X *\). Projecting away the third or the first factor yields
+two maps which exhibit the iterated pullback as the product \(\Omega X \times \Omega X\), as verified in <a class="source-reference" data-label="lem:Loop_Group_Is_Group" href="../../../entry/loop-groups-are-group-objects/index.html#lem:Loop_Group_Is_Group">Lemma 5.1.13</a>. Projecting away the <span class='ntx-Italic-tlf-t1-x-x-109'>middle</span>
+factor instead yields a map \[ m\colon \Omega X \times \Omega X \to \Omega X, \] and this is composition of loops. Similarly, the universal property
+of the pullback \(\Omega X = * \times _X *\) turns the constant homotopy at the basepoint into a unit map \(e\colon * \to \Omega X\), the constant
+loop.
+</p><p class='noindent'>The higher coherences arise from the same principle. The \((n+1)\)-fold iterated pullback \(* \times _X \dots \times _X *\) is the object of \(n\)-tuples of
+composable loops, and projecting away some of the inner factors realizes all the ways of composing
+consecutive loops in such a tuple. For example, associativity compares the two ways of composing three
+loops, and both are obtained from projections \(* \times _X * \times _X * \times _X * \to * \times _X *\) which forget the two inner factors one at a time; the
+universal property identifies both composites with the projection onto the two outer factors. Rather
+than listing such coherences one at a time, we should remember the entire family of iterated
+pullbacks together with all projections between them, as well as the maps which repeat a factor and
+correspond to inserting a constant loop. This is precisely the structure of a simplicial object
+satisfying the Segal condition: face maps compose loops, and degeneracy maps insert constant
+loops.
+</p><p class='noindent'>It remains to construct this simplicial object, with all its coherences, functorially from the basepoint map \(x\colon * \to X\).
+This will be achieved by a right Kan extension, indexed by the following enlargement of the simplex
+category.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r8'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/augmented-simplex-category/index.html" aria-label="Definition 5.1.8., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 5.1.8.</span></a>  </span><span id='def:Augmented_Simplex_Category'></span> We define the <span class='ntx-Italic-tlf-t1-x-x-109'>augmented simplex category </span>as \(\simp _+ := \simp ^{\triangleleft }\), the cone of the simplex category.
+We denote the cone point by \([-1]\). A functor \(\simp _+\catop \to C\) is called an <span class='ntx-Italic-tlf-t1-x-x-109'>augmented simplicial object</span>. It corresponds to
+a simplicial object \(X_{\bullet }\colon \simp \catop \to C\) equipped with a cocone \(X_{\bullet } \Rightarrow \const _{X_{-1}}\).
+</p>
+</div>
+<p class='noindent'>Note that we may identify \(\simp _+\) with the full subcategory of the category \(\Poset \) of posets spanned by the linearly
+ordered sets \([n] = \{0 \leq \dots \leq n\}\), where we set \([-1] = \emptyset \). There are fully faithful inclusions \[ i\colon \simp \hookrightarrow \simp _+ \quad \qquadtext { and } \quad j\colon [1] \hookrightarrow \simp _+, \quad j(0) = [-1], \quad j(1) = [0]. \]
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2002r9'></a>
+<a class="entry-heading-link" href="../../../entry/cech-nerve/index.html" aria-label="Definition 5.1.9., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 5.1.9.</span></a>  </span><span id='def:Cech_Nerve'></span> Let \(C\) be an \(\infty \)-category with pullbacks. We define the <span class='ntx-Italic-tlf-t1-x-x-109'>Čech nerve functor</span> \(\check {C}\colon \Ar (C) \to \Fun (\simp \catop ,C)\) as the
+composite \[ \check {C}_{\bullet }\colon \Ar (C) \simeq \Fun ([1]\catop ,C) \xrightarrow {j_*} \Fun (\simp _+\catop ,C) \xrightarrow {i^*} \Fun (\simp \catop ,C), \] where \(j_*\) is the right Kan extension functor along the inclusion \(j\catop \colon [1]\catop \hookrightarrow \simp _+\catop \), and where \(i^*\) is restriction
+along the inclusion \(i\catop \). Given a morphism \(f\colon X \to Y\) in \(C\), we refer to the simplicial object \(\check {C}_{\bullet }(f)\) as the <span class='ntx-Italic-tlf-t1-x-x-109'>Čech nerve of</span> \(f\).
+</p>
+</div>
+<p class='noindent'> Here the equivalence \(\Ar (C) \simeq \Fun ([1]\catop ,C)\) uses the order-reversing isomorphism \([1] \cong [1]\catop \): a morphism \(f\colon X \to Y\) corresponds to the functor with
+value \(X\) at \(1\) and \(Y\) at \(0\). In the pointwise calculation below, we use the same order reversal to write it in the usual
+form \(f\colon [1] \to C\), with \(f(0)=X\) and \(f(1)=Y\).
+</p><p class='noindent'>For a discussion of the theory of Kan extensions, we refer the reader to <a class="source-reference" data-label="subsec:Kan_Extensions" href="../../adjunctions/kan-extensions/index.html#subsec:Kan_Extensions">Section 21.4</a>.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2003r10'></a>
+<a class="entry-heading-link" href="../../../entry/cech-nerve-as-a-right-kan-extension/index.html" aria-label="Discussion 5.1.10., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Discussion 5.1.10.</span></a>  </span><span id='rmk:Cech_Nerve_As_Right_Kan_Extension'></span> The existence of the right adjoint \(j_*\) to \(j^*\) follows from the pointwise formula for
+Kan extensions from <a class="source-reference" data-label="thm:Pointwise_Formula_Kan_Extensions" href="../../../entry/pointwise-formula-for-kan-extensions/index.html#thm:Pointwise_Formula_Kan_Extensions">Theorem 21.4.3</a>. Given a morphism in \(C\) of the form \(f\colon [1] \to C\), the pointwise formula says that the value
+of \(j_*(f)\colon \simp \catop _+ \to C\) at \([n] \in \simp _+\) is given by the limit \(\lim _{I_n} f_n\), where \(I_n\) is the full subcategory of the slice \(((\simp _+)_{/[n]})\catop \) spanned by all objects of
+the form \([-1] \to [n]\) and \([0] \to [n]\), and where \(f_n\) is the composite \(I_n \to [1] \xrightarrow {\smash {f}} C\). Since there is a unique map \(\infty \colon [-1] \to [n]\) and there is one map \(i\colon [0] \to [n]\) for
+every \(0 \leq i \leq n\), the category \(I_n\) may be identified with the following poset:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-69cd03ad2edf.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>The forgetful functor \(I_n \to [1]\) sends \(\infty \) to \(1\)
+                                                                                   
+                                                                                   
+and sends each \(0 \leq i \leq n\) to \(0\). In particular, the functor \(f_n\colon I_n \to C\) takes the form</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-60ef48d06ffb.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Since \(C\) admits pullbacks, the limit of
+this diagram exists in \(C\) and is given by the \((n+1)\)-fold fiber product of \(X\) with itself over \(Y\). All in all, we see
+that the Čech nerve of a morphism \(f\colon X \to Y\) in \(C\) is well-defined and is given in degree \(n\) by \[ \check {C}_n(f) \quad \simeq \quad X^{\times ^{n+1}_Y} \quad = \quad X \times _{Y} X \times _{Y} \dots \times _Y X. \]</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2004r11'></a>
+<a class="entry-heading-link" href="../../../entry/loop-group/index.html" aria-label="Definition 5.1.11, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 5.1.11 </span></a>(Loop group)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Loop_Group'></span> Let \(C\) be an \(\infty \)-category with finite limits. We define the <span class='ntx-Italic-tlf-t1-x-x-109'>loop group</span> \(\bOmega (X,x) \in \Fun (\simp \catop ,C)\)
+of a pointed object \((X,x)\) in \(C\) as the Čech nerve of the morphism \(x\colon * \to X\). This results in a functor \(\bOmega \colon C_* \to \Fun (\simp \catop ,C)\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2005r12'></a>
+<a class="entry-heading-link" href="../../../entry/loop-group-at-level-one/index.html" aria-label="Remark 5.1.12., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 5.1.12.</span></a>  </span><span id='rmk:Loop_Group_At_Level_One'></span> Since the loop object \(\Omega (X,x)\) is defined as the pullback \(* \times _X *\) in \(C\), there is a natural isomorphism
+\[ \bOmega (X,x)_1 \cong \Omega (X,x), \] justifying the notation.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2006r13'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 5.1.13.</span>  </span><span id='lem:Loop_Group_Is_Group'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For every pointed object</span> \(X\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the loop group</span> \(\bOmega X\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a group object in</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+                                                                                   
+
+                                                                                   
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-recognition-principle-section-01-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-recognition-principle-section-01-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  To  show  that  \(\bOmega X\)  is  a  monoid,  we  will  show  by  induction  that  for  every  \(n\)  the  map  \[ (e_i^*)_{i=1}^n\colon (\bOmega X)_n \to \prod _{i=1}^n \Omega X \]  is  an
+isomorphism in \(C\). For \(n = 0\), observe that \(I_0\) is isomorphic to the walking morphism \([1]\), consisting of objects \(0\)
+and \(\infty \), and the functor \(f_0\colon I_0 \to C\) is the diagram \(* \to X\). Since \([1]\) has \(0\) as an initial object, this limit is simply \(*\); see <a class="source-reference" data-label="lem:Limit_Evaluation_At_Initial_Object" href="../../../entry/limits-evaluated-at-initial-objects/index.html#lem:Limit_Evaluation_At_Initial_Object">Lemma 21.2.4</a>. The
+case \(n=1\) is the identification from the preceding remark. For \(n \geq 1\), note that we may write \(I_{n+1}\) as a pushout of \(I_n\)
+and \(I_1\) along \(I_0\):</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-9659e53e55de.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>By applying <a class="source-reference" data-label="thm:Iterated_Colimits" href="../../../entry/iterated-colimits/index.html#thm:Iterated_Colimits">Theorem 21.2.11</a>(2) with \(J = \,\,\pushout \), we thus obtain a pullback square of the form</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-b8d1526c0d59.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>where we take \(f\) to
+be the basepoint map \(x\colon * \to X\). By induction, this pullback square is isomorphic to the commutative square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-b0cbed5ca170.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>and so this being a pullback square means that the map \((\bOmega X)_{n+1} \xrightarrow {(e_i^*)_{i=1}^{n+1}} \prod _{i=1}^{n+1} \Omega X\) is an isomorphism, finishing the induction
+step. This shows that \(\bOmega X \) is a monoid in \(C\).</p><p class='noindent'>To  see  that  \(\bOmega X\)  is  grouplike,  write  \(p_{ij}\colon * \times _X * \times _X * \to * \times _X *\)  for  the  projection  retaining  the  \(i\)-th  and  \(j\)-th  factors.  Under  the
+Segal isomorphism \[ (p_{01},p_{12})\colon * \times _X * \times _X * \iso \Omega X \times \Omega X, \] the shear map is identified with \((p_{01},p_{02})\). But associativity of pullbacks gives another
+isomorphism \[ (p_{01},p_{02})\colon * \times _X * \times _X * \iso (* \times _X *) \times _* (* \times _X *) \cong \Omega X \times \Omega X. \] Thus the shear map is an isomorphism.                                                                       □
+</p>
+</div></div>
+
+<h4 class='subsectionHead' id='classifying-animae'><span class='titlemark'>5.1.2    </span> <a id='x1-30005.1.2'></a>Classifying animae</h4>
+<p class='noindent'>The loop group functor admits a left adjoint:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3001r14'></a>
+<a class="entry-heading-link" href="../../../entry/classifying-anima-of-a-monoid/index.html" aria-label="Construction 5.1.14, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 5.1.14 </span></a>(Classifying anima of a monoid)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cons:Classifying_Space_BM'></span>   Let  \(C\)  be  an  \(\infty \)-category  admitting  finite
+                                                                                   
+                                                                                   
+products and geometric realizations. Given a monoid \(M\), we define its <span class='ntx-Italic-tlf-t1-x-x-109'>classifying anima</span> \(\bB M\) as \[ \bB M \quad := \quad \abs {M} \quad = \quad \colim _{[n] \in \simp \catop } M_n \qin C. \] We may
+turn this into a pointed object in \(C\) via the map \(* = M_0 \to \colim _{[n] \in \simp \catop } M_n\). This construction is functorial in \(M\), resulting in a
+functor \(\bB \colon \Mon (C) \to C_*\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3002r15'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 5.1.15.</span>  </span><span id='prop:Adjunction_Omega_B'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Assume that</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits both finite limits and geometric realizations. Then the
+functors</span> \(\bB \) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(\bOmega \) <span class='ntx-Italic-tlf-t1-x-x-109'>define adjunctions </span>\[ \bB \colon \Mon (C) \rightleftarrows C_* \noloc \bOmega \qquadtext { and } \bB \colon \Grp (C) \rightleftarrows C_* \noloc \bOmega . \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-recognition-principle-section-01-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-recognition-principle-section-01-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Consider the following two adjunctions:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-98c628ccec7a.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>The bottom composite \(i^*j_*\) is precisely the Čech nerve
+functor \(\check {C}_{\bullet }\). The functor \(i_!\) is given by left Kan extension along \(i\). From the pointwise formula for left Kan
+extensions, we see that the top composite \(j^*i_!\) sends a simplicial object \(X\) in \(C\) to the map \(X_0 \to \abs {X} = \colim _n X_n\).</p><p class='noindent'>Now, note that the top composite \(j^*i_!\) sends the full subcategory \(\Mon (C) \subseteq \Fun (\simp \catop ,C)\) into the full subcategory \(C_* \subseteq \Ar (C)\), and that
+the resulting functor \(\Mon (C) \to C_*\) is precisely \(\bB \). Similarly, the bottom composite \(i^*j_*\) restricts to \(\bOmega \colon C_* \to \Mon (C)\). It follows that the
+adjunction \(j^*i_! \dashv i^*j_*\) restricts to an adjunction \(\bB \dashv \bOmega \) between \(\Mon (C)\) and \(C_*\). Since \(\bOmega \) takes values in \(\Grp (C) \subseteq \Mon (C)\), this adjunction further
+restricts to an adjunction between \(\Grp (C)\) and \(C_*\).                                                                                             □
+</p>
+</div></div>
+<p class='noindent'>For later use, we record the following observation:
+</p>
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3003r16'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 5.1.16.</span>  </span><span id='lem:Classifying_Space_Functor_Preserves_Finite_Products'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The classifying anima functor</span> \(\bB \colon \Mon (\An ) \to \An \) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves finite products.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-recognition-principle-section-01-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-recognition-principle-section-01-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> This functor factors as \[ \Mon (\An ) \hookrightarrow \sAn \xrightarrow {\abs {-}} \An . \] The geometric realization functor \(\abs {-}\) preserves finite products by <a class="source-reference" data-label="lem:Geometric_Realization_Preserves_Finite_Products" href="../../../entry/geometric-realization-preserves-finite-products/index.html#lem:Geometric_Realization_Preserves_Finite_Products">Lemma 21.6.12</a>, and
+the inclusion preserves finite products since monoids are closed under products in \(\sAn \).                        □
+</p>
+</div></div>
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../../spectra-and-stable-infinity-categories/the-category-of-spectra/index.html" aria-label="Previous section: The ∞-category of spectra" title="Previous section: The ∞-category of spectra"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../the-recognition-principle-for-loop-spaces/index.html" aria-label="Next section: The recognition principle for loop spaces" title="Next section: The recognition principle for loop spaces"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html" aria-current="page"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/animae-as-spaces/index.html"><span class="context-entry-heading">Chapter 2</span><span class="context-entry-title">Animae as spaces</span></a></li><li><a href="../../../chapter/homology-and-cohomology/index.html"><span class="context-entry-heading">Chapter 3</span><span class="context-entry-title">Homology and cohomology</span></a></li><li><a href="../../../chapter/spectra-and-stable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 4</span><span class="context-entry-title">Spectra and stable ∞-categories</span></a></li><li><a href="../../../chapter/recognition-principle/index.html" aria-current="page"><span class="context-entry-heading">Chapter 5</span><span class="context-entry-title">The recognition principle</span></a></li><li><a href="../../../chapter/homological-algebra/index.html"><span class="context-entry-heading">Chapter 6</span><span class="context-entry-title">Homological algebra</span></a></li><li><a href="../../../chapter/localization-and-completion/index.html"><span class="context-entry-heading">Chapter 7</span><span class="context-entry-title">Localization and completion</span></a></li><li><a href="../../../chapter/ring-spectra-and-modules/index.html"><span class="context-entry-heading">Chapter 8</span><span class="context-entry-title">Ring spectra and modules</span></a></li><li><a href="../../../chapter/complex-k-theory/index.html"><span class="context-entry-heading">Chapter 9</span><span class="context-entry-title">Complex K-theory</span></a></li><li><a href="../../../chapter/thom-spectra-and-bordism-theory/index.html"><span class="context-entry-heading">Chapter 10</span><span class="context-entry-title">Thom spectra and bordism theory</span></a></li><li><a href="../../../chapter/duality-phenomena/index.html"><span class="context-entry-heading">Chapter 11</span><span class="context-entry-title">Duality phenomena</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 5.1</span><span class="context-entry-title">Monoids and groups</span></a></li><li><a href="../the-recognition-principle-for-loop-spaces/index.html"><span class="context-entry-heading">Section 5.2</span><span class="context-entry-title">The recognition principle for loop spaces</span></a></li><li><a href="../commutative-monoids-and-commutative-groups/index.html"><span class="context-entry-heading">Section 5.3</span><span class="context-entry-title">Commutative monoids and commutative groups</span></a></li><li><a href="../the-recognition-principle-for-connective-spectra/index.html"><span class="context-entry-heading">Section 5.4</span><span class="context-entry-title">The recognition principle for connective spectra</span></a></li><li><a href="../group-completions-as-telescopes/index.html"><span class="context-entry-heading">Section 5.5</span><span class="context-entry-title">Group completions as telescopes</span></a></li><li><a href="../finite-deloopings-online-only/index.html"><span class="context-entry-heading">Section 5.6</span><span class="context-entry-title">Finite deloopings (online only)</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Monoid_Object"><span class="context-entry-heading">Definition 5.1.1</span><span class="context-entry-title">Monoid</span></a></li><li><a href="#conv:Underlying_Object_Of_A_Monoid"><span class="context-entry-heading">Convention 5.1.2</span><span class="context-entry-title">convention</span></a></li><li><a href="#exercise:Product_Preserving_Functors_Induce_Functors_On_Monoids"><span class="context-entry-heading">Exercise 5.1.3</span><span class="context-entry-title">exercise</span></a></li><li><a href="#ex:Topological_Monoids_Give_Monoids_In_Animae"><span class="context-entry-heading">Example 5.1.4</span><span class="context-entry-title">example</span></a></li><li><a href="#def:Group"><span class="context-entry-heading">Definition 5.1.5</span><span class="context-entry-title">definition</span></a></li><li><a href="#exercise:Group_Objects_In_Sets"><span class="context-entry-heading">Exercise 5.1.6</span><span class="context-entry-title">exercise</span></a></li><li><a href="#exercise:Inverse_Map_Of_A_Group_Object"><span class="context-entry-heading">Exercise 5.1.7</span><span class="context-entry-title">exercise</span></a></li><li><a href="#def:Augmented_Simplex_Category"><span class="context-entry-heading">Definition 5.1.8</span><span class="context-entry-title">definition</span></a></li><li><a href="#def:Cech_Nerve"><span class="context-entry-heading">Definition 5.1.9</span><span class="context-entry-title">definition</span></a></li><li><a href="#rmk:Cech_Nerve_As_Right_Kan_Extension"><span class="context-entry-heading">Discussion 5.1.10</span><span class="context-entry-title">discussion</span></a></li><li><a href="#def:Loop_Group"><span class="context-entry-heading">Definition 5.1.11</span><span class="context-entry-title">Loop group</span></a></li><li><a href="#rmk:Loop_Group_At_Level_One"><span class="context-entry-heading">Remark 5.1.12</span><span class="context-entry-title">remark</span></a></li><li><a href="#lem:Loop_Group_Is_Group"><span class="context-entry-heading">Lemma 5.1.13</span><span class="context-entry-title">lemma</span></a></li><li><a href="#cons:Classifying_Space_BM"><span class="context-entry-heading">Construction 5.1.14</span><span class="context-entry-title">Classifying anima of a monoid</span></a></li><li><a href="#prop:Adjunction_Omega_B"><span class="context-entry-heading">Proposition 5.1.15</span><span class="context-entry-title">proposition</span></a></li><li><a href="#lem:Classifying_Space_Functor_Preserves_Finite_Products"><span class="context-entry-heading">Lemma 5.1.16</span><span class="context-entry-title">lemma</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 1.5: Further constructions of ∞-categories | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../chapter/introduction-to-infinity-categories/index.html">Chapter 1</a> · Section 1.5</p>
+      <h1>Further constructions of ∞-categories</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Further_Constructions'>Opposite categories, subcategories, and localizations modify an \(\infty \)-category by reversing its morphisms,
+restricting its objects or morphisms, or formally inverting a chosen class of morphisms. This section
+develops these three constructions.
+</p>
+<h4 class='subsectionHead' id='opposite-categories'><span class='titlemark'>1.5.1    </span> <a id='x1-20001.5.1'></a>Opposite categories</h4>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r7'></a>
+<a class="entry-heading-link" href="../../../entry/opposite-infinity-categories/index.html" aria-label="Axiom G., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Axiom G.</span></a>  </span><span id='axiom:Opposite_Infinity_Categories'></span> For every \(\infty \)-category \(C\) there is an <span class='ntx-Italic-tlf-t1-x-x-109'>opposite category</span> \(C\catop \). Similarly every functor \(F\colon C \to D\) induces an
+opposite functor \(F\catop \colon C\catop \to D\catop \), and this process respects composition of functors. We have equivalences \((C\catop )\catop \simeq C\) and \((F\catop )\catop \simeq F\).
+</p><p class='noindent'>If \(C\) and \(D\) come from classical 1-categories then \(C\catop \) and \(F\catop \) agree with the usual constructions of opposite
+categories.
+</p><p class='noindent'>If \(X\) is an anima then we have an equivalence \(X\catop \simeq X\).
+</p>
+</div>
+<p class='noindent'>Note that functors \([1] \to C\catop \) correspond to functors \([1] \simeq [1]\catop \to (C\catop )\catop \simeq C\), so that morphisms in \(C\catop \) are just morphisms in \(C\) but with source
+and target flipped. Also since \([2] \simeq [2]\catop \), this correspondence between morphisms in \(C\) and morphisms in \(C\catop \) preserves
+composition. In particular \(C\) is an anima if and only if \(C\catop \) is an anima.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2002r1'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 1.5.1.</span>  </span><span id='prop:Opposite_Category_Compatibility'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The construction</span> \(C \mapsto C\catop \) <span class='ntx-Italic-tlf-t1-x-x-109'>is compatible with all constructions of</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories:</span>
+   </p><dl class='enumerate'><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(1)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>There are equivalences</span> \(*\catop \simeq *\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(\emptyset \catop \simeq \emptyset \)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(2)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>there are equivalences </span>\begin {align*}  (C \times D)\catop &amp;\simeq C\catop \times D\catop , \\ C\catop \sqcup D\catop &amp;\simeq (C \sqcup D)\catop , \\ \Fun (C\catop ,D\catop ) &amp;\simeq \Fun (C,D)\catop .  \end {align*}
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(3)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For functors</span> \(F\colon C \to E\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(G\colon D \to E\) <span class='ntx-Italic-tlf-t1-x-x-109'>there is an equivalence </span>\[ (C \times _E D)\catop \simeq C\catop \times _{E\catop } D\catop . \]
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(4)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>there is an equivalence</span> \((C\catop )^{\simeq } \simeq (C^\simeq )\catop \)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-introduction-to-infinity-categories-section-05-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-introduction-to-infinity-categories-section-05-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> All of these properties follow readily from the universal properties of these constructions.
+For illustration, let us merely sketch the proof that \((-)\catop \) preserves products: functors \(T \to (C\times D)\catop \) correspond to
+functors \(T\catop \to C \times D\), which in turn are pairs of functors \((T\catop \to C, T\catop \to D)\), which in turn translate back into pairs of functors \((T \to C\catop , T \to D\catop )\),
+i.e. functors \(T \to C\catop \times D\catop \).                                                                                                                                      □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2007r2'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/hom-animae-in-opposite-categories/index.html" aria-label="Exercise 1.5.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.5.2.</span></a>  </span><span id='exercise:Hom_In_Opposite_Category'></span> Let \(x\) and \(y\) be objects of an \(\infty \)-category \(C\). Show that there is an equivalence \[ \Hom _{C\catop }(x,y) \simeq \Hom _C(y,x). \] Hint: apply
+\((-)\catop \) to the pullback square defining \(\Hom _C(y,x)\) and use that \(\Hom _C(y,x)\) is an anima.
+</p>
+</div>
+
+<h4 class='subsectionHead' id='subcategories'><span class='titlemark'>1.5.2    </span> <a id='x1-30001.5.2'></a>Subcategories</h4>
+<p class='noindent' id='subsec_Subcategories'>Next, we would like to define the notion of <span class='ntx-Italic-tlf-t1-x-x-109'>subcategories</span>. Just like in classical category theory, a
+subcategory of an \(\infty \)-category \(C\) is determined by choosing some objects of \(C\) and some morphisms between
+them, subject to closure under identities and composition. However, while the subcategory can be
+constructed ‘by hand’ in the classical situation, we must now make sure that all the higher coherence data
+from \(C\) is inherited by the subcategory. In order to formulate this, we start by isolating the homotopical
+analogue of a subcategory inclusion.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3001r3'></a>
+<a class="entry-heading-link" href="../../../entry/monomorphisms-of-infinity-categories/index.html" aria-label="Definition 1.5.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.5.3.</span></a>  </span><span id='def:Monomorphism'></span> A functor \(F\colon C \to D\) is called a <span class='ntx-Italic-tlf-t1-x-x-109'>monomorphism </span>if the commutative square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-d1face5389a5.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>is a pullback
+square, i.e. the functor \(\Delta _F := (\id _C,\id _C)\colon C \to C \times _D C\) is an equivalence of \(\infty \)-categories.</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3002r4'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/interpretation-of-monomorphisms-of-infinity-categories/index.html" aria-label="Remark 1.5.4., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 1.5.4.</span></a>  </span><span id='rmk:Monomorphisms_Of_Infinity_Categories'></span>  Note  that  this  means  that  two  functors  \(G,H\colon T \to C\)  are  naturally  isomorphic  whenever  the
+functors \(F\circ G\) and \(F \circ H\) are naturally isomorphic, reflecting the usual categorical notion of monomorphism.
+</p><p class='noindent'>We may sometimes write \(F\colon C \hookrightarrow D\) if \(F\) is a monomorphism. If \(y\) is an object of \(D\), we say that \(y\) <span class='ntx-Italic-tlf-t1-x-x-109'>is contained in</span> \(C\),
+sometimes written as \(y \in C\), if there exists some object \(x\) of \(C\) satisfying \(F(x) \cong y\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3003r5'></a>
+<a class="entry-heading-link" href="../../../entry/fibers-of-monomorphisms-are-contractible/index.html" aria-label="Exercise 1.5.5., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.5.5.</span></a>  </span><span id='exercise:Fibers_Of_Monomorphisms_Are_Contractible'></span> Let \(F\colon C \hookrightarrow D\) be a monomorphism, and let \(y\) be an object of \(D\) which is contained in \(C\). Show that
+the fiber \(C_y\) of \(F\) at \(y\) is contractible.
+</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Hint: </span>Show that any functor \(x\colon * \to C_y\) is an equivalence by exhibiting it as a pullback of the equivalence \(\Delta _F\colon C \to C \times _D C\).
+</p>
+</div>
+<p class='noindent'>The projection from the \(\infty \)-category of isomorphisms introduced in <a class="source-reference" data-label="def:Iso_C" href="../../../entry/category-of-isomorphisms/index.html#def:Iso_C">Definition 1.4.21</a> is the principal example needed
+below.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3004r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 1.5.6 </span>(Isomorphisms form a subcategory of arrows)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='exercise:Pi_Iso_Monomorphism'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For every</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the functor</span>
+\[ \pi _{\Iso }\colon \Iso (C) \to \Ar (C) \] <span class='ntx-Italic-tlf-t1-x-x-109'>is a monomorphism.</span>
+</p>
+</div>
+<p class='noindent'>A proof is given in the online supplementary material.
+</p><p class='noindent'>We postpone the remaining routine properties of monomorphisms to the exercise section at the end of the
+chapter.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3005r1'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Axiom H.1 </span>(Monomorphisms define subcategories)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(i\colon A \to C\) be a monomorphism of \(\infty \)-categories. Then
+for every \(\infty \)-category \(T\), the commutative square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-88f241d9873e.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>is a pullback square. The vertical functors record the
+action of a functor on morphisms.</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3006r7'></a>
+<a class="entry-heading-link" href="../../../entry/action-on-morphisms/index.html" aria-label="Exercise 1.5.7., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.5.7.</span></a>  </span><span id='exercise:Action_On_Morphisms'></span> Construct the two vertical functors and the natural isomorphism that makes the
+square in <span class="source-reference" data-label="axiom:Monomorphisms_Define_Subcategories">Axiom H.1</span> commute. <span class='ntx-Italic-tlf-t1-x-x-109'>Hint: </span>For \(D=A,C\), restrict the composition functor \(\Fun (T,D)\times \Fun ([1],T)\to \Fun ([1],D)\) to the relevant cores, factor through
+the appropriate groupoid cores, and curry.
+</p>
+</div>
+<p class='noindent'>Informally, the axiom says that in order for a functor \(F\colon T \to C\) to factor through \(A\), it suffices to check that \(F\) maps
+morphisms of \(T\) to morphisms of \(C\) that lie in \(A\). Accordingly, we will use the terms <span class='ntx-Italic-tlf-t1-x-x-109'>monomorphism </span>and
+<span class='ntx-Italic-tlf-t1-x-x-109'>subcategory inclusion </span>interchangeably.
+</p><p class='noindent'>We will now introduce a method for constructing subcategories of \(C\) by specifying a collection of morphisms
+closed under composition.
+</p>
+<div class='newtheorem'>
+                                                                                   
+                                                                                   
+<p class='noindent'><span class='head'>
+<a id='x1-3007r8'></a>
+<a class="entry-heading-link" href="../../../entry/collections-of-morphisms/index.html" aria-label="Definition 1.5.8., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.5.8.</span></a>  </span><span id='def:Collection_Of_Morphisms'></span> Let \(C\) be an \(\infty \)-category. A <span class='ntx-Italic-tlf-t1-x-x-109'>collection of morphisms in</span> \(C\) is a monomorphism \(M \hookrightarrow \Map ([1],C)\). We say it is
+<span class='ntx-Italic-tlf-t1-x-x-109'>closed under composition </span>if the following two conditions are satisfied: </p>
+     <ul class='itemize1'>
+     <li class='itemize'>For a morphism \(f\colon x \to y\) in \(C\), if \(f \in M\), then also \(\id _x \in M\) and \(\id _y \in M\);
+     </li>
+     <li class='itemize'>For morphisms \(f\colon x \to y\) and \(g\colon y \to z\) in \(C\), if \(g,f \in M\), then also \(g \circ f \in M\).</li></ul>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3008r2'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Axiom H.2 </span>(Subcategory axiom)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Consider an \(\infty \)-category \(C\) equipped with a collection of morphisms
+\(m\colon M \hookrightarrow \Map ([1],C)\) of \(C\) which is closed under composition. Then there exists a monomorphism \(i_M\colon \lra {M}_C \to C\) such that the induced
+map on morphisms factors through an equivalence \(\Map ([1],\lra {M}_C) \iso M\).
+</p>
+</div>
+<p class='noindent'>By <span class="source-reference" data-label="axiom:Monomorphisms_Define_Subcategories">Axiom H.1</span>, the monomorphism \(i_M\) has the expected universal property of a subcategory. We refer to the \(\infty \)-category \(\lra {M}_{C}\) as
+the <span class='ntx-Italic-tlf-t1-x-x-109'>(non-full) subcategory spanned by the morphisms in</span> \(M\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3009r9'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/full-subcategory-inclusions/index.html" aria-label="Definition 1.5.9, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.5.9 </span></a>(Full subcategory)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Full_Subcategory'></span>  A  functor  \(i\colon A \to C\)  is  called  a  <span class='ntx-Italic-tlf-t1-x-x-109'>full  subcategory  inclusion  </span>if  \(i^{\simeq } \colon A^{\simeq } \to C^{\simeq }\)  is  a
+monomorphism, and for every \(\infty \)-category \(T\) the commutative square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-51e01f5510e4.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>is a pullback square. The vertical
+functors  are  constructed  by  restricting  evaluation  to  \(\Map (T,A)\times T^{\simeq }\)  and  \(\Map (T,C)\times T^{\simeq }\),  factoring  through  the  corresponding
+groupoid cores, and currying.</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3010r10'></a>
+<a class="entry-heading-link" href="../../../entry/collections-of-objects/index.html" aria-label="Definition 1.5.10., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.5.10.</span></a>  </span><span id='def:Collection_Of_Objects'></span>  A  <span class='ntx-Italic-tlf-t1-x-x-109'>collection  of  objects  </span>of  an  \(\infty \)-category  \(C\)  is  a  monomorphism  \(\Gamma \hookrightarrow C^{\simeq }\).  The  endpoint
+functors on \(\Ar (C)\) restrict along the groupoid cores to functors \(s,t\colon \Map ([1],C)\to C^{\simeq }\), for which we use the same notation.
+Given a collection of objects \(\Gamma \), we define \(M_{\Gamma }\) as the following pullback:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-8f74def6fd08.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>The collection \(M_{\Gamma }\) is closed under
+composition, since identities and composites have endpoints in \(\Gamma \) whenever the original morphisms
+do. Hence <span class="source-reference" data-label="axiom:Subcategory_Axiom">Axiom H.2</span> determines a monomorphism \(\lra {M_{\Gamma }}_C \hookrightarrow C\). We refer to the subcategory \(\lra {M_{\Gamma }}_C\) of \(C\) as the <span class='ntx-Italic-tlf-t1-x-x-109'>full subcategory
+spanned by the objects in</span> \(\Gamma \).</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3011r11'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 1.5.11 </span>(Full subcategories from collections of objects)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Full_Subcategory_Spanned_By_Objects'>   </span><span class='ntx-Italic-tlf-t1-x-x-109'>The   functor</span>   \(\lra {M_{\Gamma }}_C \hookrightarrow C\)   <span class='ntx-Italic-tlf-t1-x-x-109'>is   a   full
+subcategory inclusion, and there is an equivalence </span>\[ \lra {M_{\Gamma }}_C^{\simeq }\simeq \Gamma \] <span class='ntx-Italic-tlf-t1-x-x-109'>over</span> \(C^{\simeq }\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proof guide.</span>  </span>Combine the pullback in <span class="source-reference" data-label="axiom:Monomorphisms_Define_Subcategories">Axiom H.1</span>, first for \(T=*\) and then for general \(T\), with the pullback defining \(M_{\Gamma }\). For
+\(T=*\), pullback pasting identifies the core of \(\lra {M_{\Gamma }}_C\) with \(\Gamma \times _{C^{\simeq }}\Gamma \), which is equivalent to \(\Gamma \) because \(\Gamma \to C^{\simeq }\) is a monomorphism.
+For general \(T\), the same comparison says that a functor \(T\to C\) factors through \(\lra {M_{\Gamma }}_C\) precisely when its restriction
+to \(T^{\simeq }\) factors through \(\Gamma \). Details are given in the online supplementary material.
+</p>
+</div>
+
+<h5 class='subsubsectionHead' id='recognizing-equivalences'><a id='x1-4000'></a>Recognizing equivalences</h5>
+<p class='noindent'>Recall that a functor between classical 1-categories is an equivalence if and only if it is both fully faithful
+and essentially surjective. The same statement is true for \(\infty \)-categories. Since this is such a fundamental
+result, we will take it as one of our axioms.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4001r12'></a>
+<a class="entry-heading-link" href="../../../entry/fully-faithful-functors/index.html" aria-label="Definition 1.5.12., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.5.12.</span></a>  </span><span id='def:Fully_Faithful_Functor'></span> A functor \(F\colon C \to D\) is called <span class='ntx-Italic-tlf-t1-x-x-109'>fully faithful </span>if for every pair of objects \(x\) and \(y\) of \(C\), the induced
+map of animae \[ F\colon \Hom _C(x,y) \to \Hom _D(Fx,Fy) \] is an equivalence.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4002r13'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/essentially-surjective-functors/index.html" aria-label="Definition 1.5.13., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.5.13.</span></a>  </span><span id='def:Essentially_Surjective_Functor'></span> A functor \(F\colon C \to D\) is called <span class='ntx-Italic-tlf-t1-x-x-109'>essentially surjective </span>if for every object \(y\) of \(D\) there exists an
+object \(x\) of \(C\) together with an isomorphism \(Fx \cong y\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4003r9'></a>
+<a class="entry-heading-link" href="../../../entry/fully-faithful-and-essentially-surjective-criterion/index.html" aria-label="Axiom I, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Axiom I </span></a>(Joyal)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Fundamental_Theorem'></span>  A  functor  \(F\colon C \to D\)  is  an  equivalence  if  and  only  if  it  is  fully  faithful  and  essentially
+surjective.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4004r14'></a>
+<a class="entry-heading-link" href="../../../entry/equivalences-on-arrow-categories/index.html" aria-label="Exercise 1.5.14., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.5.14.</span></a>  </span><span id='exercise:Equivalence_On_Arrow_Categories'></span> Show that a functor \(F\colon C \to D\) is an equivalence if and only if the induced functor \[ F_*\colon \Map ([1],C) \to \Map ([1],D) \] is an
+equivalence.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4005r15'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 1.5.15 </span>(Fully faithful functors and full subcategories)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Fully_Faithful_Iff_Full_Subcategory'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>A functor</span> \(F\colon C \to D\) <span class='ntx-Italic-tlf-t1-x-x-109'>is fully faithful if and
+only if it is a full subcategory inclusion in the sense of </span><a class="source-reference" data-label="def:Full_Subcategory" href="../../../entry/full-subcategory-inclusions/index.html#def:Full_Subcategory">Definition 1.5.9</a><span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+<p class='noindent'>A proof is given in the online supplementary material.
+</p><p class='noindent'>Another statement familiar from classical category theory is that natural isomorphisms can be checked
+pointwise. We will also assume this result as a black-box.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4006r10'></a>
+<a class="entry-heading-link" href="../../../entry/pointwise-criterion-for-natural-isomorphisms/index.html" aria-label="Axiom J, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Axiom J </span></a>(Joyal)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Pointwise_Natural_Isomorphisms'></span>  Let  \(F,G\colon C \to D\)  be  two  functors  and  let  \(\alpha \colon F \Rightarrow G\)  be  a  natural  transformation.  Then  \(\alpha \)  is  a  natural
+isomorphism if and only if for every object \(x\) of \(C\) the morphism \(\alpha (x)\colon F(x) \to G(x)\) is an isomorphism in \(D\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4007r16'></a>
+<a class="entry-heading-link" href="../../../entry/axiomatizing-fundamental-equivalence-criteria/index.html" aria-label="Remark 1.5.16., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 1.5.16.</span></a>  </span><span id='rmk:Fundamental_Theorem_And_Pointwise_Isomorphisms_As_Axioms'></span> It is possible to formulate axioms for \(\infty \)-categories that would allow one to deduce <a class="source-reference" data-label="thm:Fundamental_Theorem" href="../../../entry/fully-faithful-and-essentially-surjective-criterion/index.html#thm:Fundamental_Theorem">Axiom I</a>,
+<a class="source-reference" data-label="thm:Pointwise_Natural_Isomorphisms" href="../../../entry/pointwise-criterion-for-natural-isomorphisms/index.html#thm:Pointwise_Natural_Isomorphisms">Axiom J</a>.
+</p>
+</div>
+
+<h4 class='subsectionHead' id='localizations'><span class='titlemark'>1.5.3    </span> <a id='x1-50001.5.3'></a>Localizations</h4>
+<p class='noindent' id='subsec_Localizations'>Another important \(\infty \)-categorical construction is that of <span class='ntx-Italic-tlf-t1-x-x-109'>localizations</span>, where we formally invert a collection of
+morphisms in an \(\infty \)-category.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5001r17'></a>
+<a class="entry-heading-link" href="../../../entry/functors-inverting-morphisms/index.html" aria-label="Definition 1.5.17., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.5.17.</span></a>  </span><span id='def:Functor_Inverting_Morphisms'></span> Let \(C\) be an \(\infty \)-category, and let \(W \hookrightarrow \Map ([1],C)\) be a collection of morphisms in \(C\). We say that a
+functor \(F\colon C \to D\) <span class='ntx-Italic-tlf-t1-x-x-109'>inverts the morphisms in</span> \(W\) if for every morphism \(f\colon x \to y\) in \(C\) contained in \(W \subseteq \Map ([1],C)\), the image \(F(f)\colon F(x) \to F(y)\) is invertible
+in \(D\). We let \(\Fun ^{W}(C,D)\) be the full subcategory of \(\Fun (C,D)\) spanned by those functors that invert the morphisms in \(W\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5002r18'></a>
+<a class="entry-heading-link" href="../../../entry/category-of-functors-inverting-morphisms/index.html" aria-label="Exercise 1.5.18., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.5.18.</span></a>  </span><span id='exercise:Construction_FunW'></span> Make the definition of \(\Fun ^W(C,D)\) precise by constructing the corresponding collection of
+objects of \(\Fun (C,D)\). <span class='ntx-Italic-tlf-t1-x-x-109'>Hint: </span>Pull back the collection of isomorphisms in \(D\) along the functor which records the
+action of a functor \(C\to D\) on the morphisms in \(W\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5003r19'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/localizations-of-infinity-categories/index.html" aria-label="Definition 1.5.19, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.5.19 </span></a>(Localization)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Localization'></span> Let \(C\) be an \(\infty \)-category, and let \(W \hookrightarrow \Map ([1],C)\) be a collection of morphisms in \(C\).
+We say that a functor \(l\colon C \to L\) is a <span class='ntx-Italic-tlf-t1-x-x-109'>localization of</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>at</span> \(W\) if \(l\) inverts the morphisms in \(W\), and if for every \(\infty \)-category
+\(D\), the functor \[ l^*\colon \Fun (L,D) \to \Fun (C,D) \] is a full subcategory inclusion which identifies \(\Fun (L,D)\) with the full subcategory \(\Fun ^W(C,D)\).
+</p>
+</div>
+<p class='noindent'>Note that the universal property of localizations uniquely determines the localization. We will generally
+denote such a localization by \(C[W^{-1}]\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5004r11'></a>
+<a class="entry-heading-link" href="../../../entry/existence-of-localizations/index.html" aria-label="Axiom K, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Axiom K </span></a>(Existence of localizations)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='axiom:Localization_Axiom'></span> Let \(C\) be an \(\infty \)-category, and let \(W \hookrightarrow \Map ([1],C)\) be a collection of morphisms
+in \(C\). Then there exists a localization \(l\colon C \to C[W^{-1}]\) of \(C\) at \(W\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5005r20'></a>
+<a class="entry-heading-link" href="../../../entry/walking-morphism-localization/index.html" aria-label="Remark 1.5.20, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 1.5.20 </span></a>(See <span class="source-reference" data-label="exercise:Walking_Morphism_Is_Localization">Chapterexercise 1.10</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='rmk:Walking_Morphism_Localization'></span>  One  can  show  that  the  functor  \(p_{[1]}\colon [1] \to *\)  exhibits  \(*\)  as  the  localization  of  \([1]\)  at  the
+collection \(W = \Map ([1],[1])\) of all its morphisms.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+                                                                                   
+                                                                                   
+<a id='x1-5006r21'></a>
+<a class="entry-heading-link" href="../../../entry/localization-as-a-pushout/index.html" aria-label="Exercise 1.5.21., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.5.21.</span></a>  </span><span id='exercise:Localization_As_Pushout'></span> Let \(l\colon C \to C[W^{-1}]\) be a localization of \(C\) at a collection of morphisms \(W \hookrightarrow \Map ([1],C)\). Show that \(l\) can be computed
+by the following pushout square of \(\infty \)-categories:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-ef8e17a7fa38.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Hint: </span>Show that if \(i\) is a full subcategory inclusion,
+then so is \(\Fun (W,i)\), and then use <span class="source-reference" data-label="exercise:Walking_Morphism_Is_Localization">Chapterexercise 1.10</span>, <span class="source-reference" data-label="exercise:Subcategories_Closed_Under_Base_Change">Chapterexercise 1.8</span>.</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5007r22'></a>
+<a class="entry-heading-link" href="../../../entry/geometric-realization-of-an-infinity-category/index.html" aria-label="Definition 1.5.22., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.5.22.</span></a>  </span><span id='def:Geometric_Realization_Of_Infinity_Category'></span> We define the <span class='ntx-Italic-tlf-t1-x-x-109'>geometric realization</span> \(\geom {C}\) of an \(\infty \)-category \(C\) as the localization \(C[W^{-1}]\), where
+\(W := \Map ([1],C)\) is the collection of <span class='ntx-Italic-tlf-t1-x-x-109'>all </span>morphisms in \(C\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5008r23'></a>
+<a class="entry-heading-link" href="../../../entry/geometric-realization-of-infinity-category-terminology/index.html" aria-label="Remark 1.5.23., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 1.5.23.</span></a>  </span><span id='rmk:Geometric_Realization_Of_Infinity_Category_Terminology'></span> The terminology ‘geometric realization’ will be justified in <a class="source-reference" data-label="lem:Realization_Of_Category_As_Realization_Of_Nerve" href="../../../entry/realization-of-an-infinity-category-via-its-nerve/index.html#lem:Realization_Of_Category_As_Realization_Of_Nerve">Lemma 24.2.5</a>, where we will show
+that \(\geom {C}\) is equivalent to the geometric realization (i.e. colimit) of the nerve \(N(C)\colon \simp \catop \to \An \) of \(C\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5009r24'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/products-of-localizations/index.html" aria-label="Exercise 1.5.24., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.5.24.</span></a>  </span><span id='obs:Products_Of_Localizations'></span> Let \(C\) and \(D\) be \(\infty \)-categories with collections of morphisms \(W\) and \(W'\), respectively, and
+assume that both collections contain all identity morphisms. Use the universal property to show that
+\[ (C \times D)[(W \times W')^{-1}] \iso C[W^{-1}] \times D[{W'}^{-1}]. \] Deduce that \(\geom {C \times D} \iso \geom {C} \times \geom {D}\).
+</p>
+</div>
+
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../commutative-diagrams-composition-and-animae/index.html" aria-label="Previous section: Commutative diagrams, composition, and animae" title="Previous section: Commutative diagrams, composition, and animae"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../simplicial-objects-and-quasicategories/index.html" aria-label="Next section: Simplicial objects and quasicategories" title="Next section: Simplicial objects and quasicategories"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html" aria-current="page"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/introduction-to-infinity-categories/index.html" aria-current="page"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../the-heuristics-behind-categories/index.html"><span class="context-entry-heading">Section 1.1</span><span class="context-entry-title">The heuristics behind ∞-categories</span></a></li><li><a href="../the-language-of-category-theory/index.html"><span class="context-entry-heading">Section 1.2</span><span class="context-entry-title">The language of ∞-category theory</span></a></li><li><a href="../basic-constructions-of-categories/index.html"><span class="context-entry-heading">Section 1.3</span><span class="context-entry-title">Basic constructions of ∞-categories</span></a></li><li><a href="../commutative-diagrams-composition-and-animae/index.html"><span class="context-entry-heading">Section 1.4</span><span class="context-entry-title">Commutative diagrams, composition, and animae</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 1.5</span><span class="context-entry-title">Further constructions of ∞-categories</span></a></li><li><a href="../simplicial-objects-and-quasicategories/index.html"><span class="context-entry-heading">Section 1.6</span><span class="context-entry-title">Simplicial objects and quasicategories</span></a></li><li><a href="../limits-and-colimits/index.html"><span class="context-entry-heading">Section 1.7</span><span class="context-entry-title">Limits and colimits</span></a></li><li><a href="../foundational-results-in-category-theory/index.html"><span class="context-entry-heading">Section 1.8</span><span class="context-entry-title">Foundational results in ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#axiom:Opposite_Infinity_Categories"><span class="context-entry-heading">Axiom G</span><span class="context-entry-title">axiom</span></a></li><li><a href="#prop:Opposite_Category_Compatibility"><span class="context-entry-heading">Proposition 1.5.1</span><span class="context-entry-title">proposition</span></a></li><li><a href="#exercise:Hom_In_Opposite_Category"><span class="context-entry-heading">Exercise 1.5.2</span><span class="context-entry-title">exercise</span></a></li><li><a href="#def:Monomorphism"><span class="context-entry-heading">Definition 1.5.3</span><span class="context-entry-title">definition</span></a></li><li><a href="#rmk:Monomorphisms_Of_Infinity_Categories"><span class="context-entry-heading">Remark 1.5.4</span><span class="context-entry-title">remark</span></a></li><li><a href="#exercise:Fibers_Of_Monomorphisms_Are_Contractible"><span class="context-entry-heading">Exercise 1.5.5</span><span class="context-entry-title">exercise</span></a></li><li><a href="#exercise:Pi_Iso_Monomorphism"><span class="context-entry-heading">Proposition 1.5.6</span><span class="context-entry-title">Isomorphisms form a subcategory of arrows</span></a></li><li><a href="#exercise:Action_On_Morphisms"><span class="context-entry-heading">Exercise 1.5.7</span><span class="context-entry-title">exercise</span></a></li><li><a href="#def:Collection_Of_Morphisms"><span class="context-entry-heading">Definition 1.5.8</span><span class="context-entry-title">definition</span></a></li><li><a href="#def:Full_Subcategory"><span class="context-entry-heading">Definition 1.5.9</span><span class="context-entry-title">Full subcategory</span></a></li><li><a href="#def:Collection_Of_Objects"><span class="context-entry-heading">Definition 1.5.10</span><span class="context-entry-title">definition</span></a></li><li><a href="#prop:Full_Subcategory_Spanned_By_Objects"><span class="context-entry-heading">Proposition 1.5.11</span><span class="context-entry-title">Full subcategories from collections of objects</span></a></li><li><a href="#def:Fully_Faithful_Functor"><span class="context-entry-heading">Definition 1.5.12</span><span class="context-entry-title">definition</span></a></li><li><a href="#def:Essentially_Surjective_Functor"><span class="context-entry-heading">Definition 1.5.13</span><span class="context-entry-title">definition</span></a></li><li><a href="#thm:Fundamental_Theorem"><span class="context-entry-heading">Axiom I</span><span class="context-entry-title">Joyal</span></a></li><li><a href="#exercise:Equivalence_On_Arrow_Categories"><span class="context-entry-heading">Exercise 1.5.14</span><span class="context-entry-title">exercise</span></a></li><li><a href="#prop:Fully_Faithful_Iff_Full_Subcategory"><span class="context-entry-heading">Proposition 1.5.15</span><span class="context-entry-title">Fully faithful functors and full subcategories</span></a></li><li><a href="#thm:Pointwise_Natural_Isomorphisms"><span class="context-entry-heading">Axiom J</span><span class="context-entry-title">Joyal</span></a></li><li><a href="#rmk:Fundamental_Theorem_And_Pointwise_Isomorphisms_As_Axioms"><span class="context-entry-heading">Remark 1.5.16</span><span class="context-entry-title">remark</span></a></li><li><a href="#def:Functor_Inverting_Morphisms"><span class="context-entry-heading">Definition 1.5.17</span><span class="context-entry-title">definition</span></a></li><li><a href="#exercise:Construction_FunW"><span class="context-entry-heading">Exercise 1.5.18</span><span class="context-entry-title">exercise</span></a></li><li><a href="#def:Localization"><span class="context-entry-heading">Definition 1.5.19</span><span class="context-entry-title">Localization</span></a></li><li><a href="#axiom:Localization_Axiom"><span class="context-entry-heading">Axiom K</span><span class="context-entry-title">Existence of localizations</span></a></li><li><a href="#rmk:Walking_Morphism_Localization"><span class="context-entry-heading">Remark 1.5.20</span><span class="context-entry-title">See \Crefexercise:Walking_Morphism_Is_Localization</span></a></li><li><a href="#exercise:Localization_As_Pushout"><span class="context-entry-heading">Exercise 1.5.21</span><span class="context-entry-title">exercise</span></a></li><li><a href="#def:Geometric_Realization_Of_Infinity_Category"><span class="context-entry-heading">Definition 1.5.22</span><span class="context-entry-title">definition</span></a></li><li><a href="#rmk:Geometric_Realization_Of_Infinity_Category_Terminology"><span class="context-entry-heading">Remark 1.5.23</span><span class="context-entry-title">remark</span></a></li><li><a href="#obs:Products_Of_Localizations"><span class="context-entry-heading">Exercise 1.5.24</span><span class="context-entry-title">exercise</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

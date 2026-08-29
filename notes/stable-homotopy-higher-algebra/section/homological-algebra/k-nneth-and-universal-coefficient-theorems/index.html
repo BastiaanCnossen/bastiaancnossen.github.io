@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 6.7: Künneth and universal coefficient theorems | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/stable-homotopy-theory/index.html">Part I</a> · <a href="../../../chapter/homological-algebra/index.html">Chapter 6</a> · Section 6.7</p>
+      <h1>Künneth and universal coefficient theorems</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Kunneth_Universal_Coefficient_Theorems'>The derived tensor product and derived internal hom now give concrete computational consequences for
+ordinary homology and cohomology. We first record the algebraic input over principal ideal domains, then
+apply it to the chain complexes of animae constructed in <a class="source-reference" data-label="sec:Ordinary_Homology_Derived_Category" href="../ordinary-homology-and-cohomology-via-d-z/index.html#sec:Ordinary_Homology_Derived_Category">Section 6.2</a>.
+</p>
+<h4 class='subsectionHead' id='tor-and-ext-over-principal-ideal-domains'><span class='titlemark'>6.7.1    </span> <a id='x1-20006.7.1'></a>Tor and Ext over principal ideal domains</h4>
+<p class='noindent' id='subsec_Kunneth_UCT'>For complexes of modules over a principal ideal domain, the homology groups of the derived tensor product
+and derived hom admit particularly explicit descriptions in terms of Tor and Ext groups of the homology of
+the individual complexes. The key simplification is that projective resolutions over a PID have length at
+most one, which allows for elementary proofs of the Künneth formula and universal coefficient
+theorem.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r1'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 6.7.1.</span>  </span><span id='prop:PID_Resolutions_Length_1'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(R\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  a  principal  ideal  domain.  Then  every</span>  \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module</span>  \(M\)  <span class='ntx-Italic-tlf-t1-x-x-109'>admits  a  projective
+resolution of length at most one: </span>\[ 0 \to P_1 \to P_0 \to M \to 0. \] <span class='ntx-Italic-tlf-t1-x-x-109'>In particular,</span> \(\Tor _n^R(M,N) = 0\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(\Ext ^n_R(M,N) = 0\) <span class='ntx-Italic-tlf-t1-x-x-109'>for all</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-modules</span> \(M, N\) <span class='ntx-Italic-tlf-t1-x-x-109'>and all</span> \(n \geq 2\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-07-9" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-07-9">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  Every  \(R\)-module  \(M\)  admits  a  surjection  from  a  free  module:  take  \(P_0 := R^{(M)}\),  the  free  module  on  the
+underlying set of \(M\), with the canonical surjection \(\varepsilon \colon P_0 \twoheadrightarrow M\). The kernel \(P_1 := \ker (\varepsilon )\) is a submodule of the free module \(P_0\).
+Over a PID, every submodule of a free module is itself free, hence projective. This gives the desired
+resolution.
+</p><p class='noindent'>The vanishing of higher Tor and Ext groups follows from the formulas \(\Tor _n^R(M,N) \cong H_n(P_{\bullet } \otimes _R N)\) and \(\Ext ^n_R(M,N) \cong H^n(\Hom _R(P_{\bullet }, N))\) of <a class="source-reference" data-label="cor:Tor_Via_One_Sided_Resolution" href="../../../entry/derived-tensor-products-via-one-sided-resolutions/index.html#cor:Tor_Via_One_Sided_Resolution">Corollary 6.6.28</a> and <a class="source-reference" data-label="prop:Compute_Ext_Via_Projective_Resolution" href="../../../entry/ext-groups-via-projective-resolutions/index.html#prop:Compute_Ext_Via_Projective_Resolution">Proposition 6.4.14</a>, which are both
+zero for \(n \geq 2\) since \(P_k = 0\) for \(k \geq 2\).                                                                                                                             □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2002r2'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 6.7.2 </span>(Algebraic Künneth formula)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Algebraic_Kunneth_Formula'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a principal ideal domain and let</span> \(A, B \in \D ^-(R)\) <span class='ntx-Italic-tlf-t1-x-x-109'>be bounded
+below complexes of</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-modules. Then for each</span> \(n \in \Z \)<span class='ntx-Italic-tlf-t1-x-x-109'>, there is a natural short exact sequence </span>\[ 0 \to \bigoplus _{i+j=n} H_i(A) \otimes _R H_j(B) \to H_n(A \otimes ^{\bL }_R B) \to \bigoplus _{i+j=n-1} \Tor _1^R(H_i(A), H_j(B)) \to 0, \] <span class='ntx-Italic-tlf-t1-x-x-109'>and this
+sequence splits (non-naturally).</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-07-8" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-07-8">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We may represent the complexes \(A\) and \(B\) up to quasi-isomorphism by bounded below chain
+complexes \(C\) and \(C'\), respectively, such that the \(R\)-modules \(C_i\) and \(C'_i\) are free for all \(i \in \Z \). Then the derived tensor
+product \(A \otimes ^{\bL }_R B\) is represented by the algebraic tensor product \(C \otimes _R C'\).
+</p><p class='noindent'>We first treat the special case where all the differentials in \(C\) are zero, so that \(H_i(C) = C_i\) for all \(i\). In this case,
+the differential on \(C \otimes _R C'\) is given by \(d(c \otimes c') = (-1)^i c \otimes dc'\) for \(c \in C_i\), and the chain complex \(C \otimes _R C'\) decomposes as the direct sum of the
+complexes \(C_i[i] \otimes _R C'\). Since each \(C_i\) is free, the complex \(C_i \otimes _R C'\) is a direct sum of copies of \(C'\), and hence \[ H_n(C_i[i] \otimes _R C') \;\cong \; C_i \otimes _R H_{n-i}(C') \;=\; H_i(C) \otimes _R H_{n-i}(C'). \] Summing over
+\(i\) yields an isomorphism \(H_n(C \otimes _R C') \cong \bigoplus _{i+j=n} H_i(C) \otimes _R H_j(C')\), which is the statement of the theorem since the Tor terms vanish (\(H_i(C) = C_i\) being
+free, hence flat).
+</p><p class='noindent'>For the general case, let \(Z_i \subseteq C_i\) and \(B_i \subseteq C_i\) denote the cycles and boundaries in degree \(i\), respectively. These give
+                                                                                   
+                                                                                   
+subchain complexes \(Z\) and \(B\) of \(C\) with trivial differentials. We have a short exact sequence of chain
+complexes \[ 0 \to Z \to C \to B[1] \to 0 \] arising from the short exact sequences \(0 \to Z_i \to C_i \to B_{i-1} \to 0\) in each degree. Each of these splits since \(B_{i-1}\) is free,
+being a submodule of the free module \(C_{i-1}\). Because of this splitting, tensoring with \(C'\) preserves exactness,
+and we obtain a long exact sequence in homology: \[ \cdots \to H_n(Z \otimes _R C') \to H_n(C \otimes _R C') \to H_{n-1}(B \otimes _R C') \xrightarrow {i_{n-1}} H_{n-1}(Z \otimes _R C') \to \cdots \] where \(i_k\colon H_k(B\otimes _R C')\to H_k(Z\otimes _R C')\) is induced by the inclusion \(B \hookrightarrow Z\).
+</p><p class='noindent'>Since \(Z\) and \(B\) are chain complexes with trivial differentials (and have free terms, being submodules of
+the free modules \(C_i\)), the special case treated before converts this to: \[ \cdots \xrightarrow {i_n} \bigoplus _{i + j = n} Z_i \otimes _R H_{j}(C') \to H_n(C \otimes _R C') \to \bigoplus _{i+j = n-1} B_i \otimes _R H_{j}(C') \xrightarrow {i_{n-1}} \bigoplus _{i+j = n-1} Z_i \otimes _R H_{j}(C') \to \cdots \] The long exact sequence thus
+provides short exact sequences \[ 0 \to \coker (i_{n}) \to H_n(C \otimes _R C') \to \ker (i_{n-1}) \to 0. \] To identify \(\coker (i_n)\) and \(\ker (i_{n-1})\), observe that the short exact sequence \(0 \to B_i \to Z_i \to H_i(C) \to 0\) functions
+as a free resolution of \(H_i(C)\). The long exact sequence on Tor-groups between \(H_i(C)\) and \(H_j(C')\) takes the form \[ 0 \to \Tor _1^R(H_i(C), H_{j}(C')) \to B_i \otimes _R H_{j}(C') \to Z_i \otimes _R H_{j}(C') \to H_i(C) \otimes _R H_{j}(C') \to 0. \] By
+taking the direct sum over all \(j\), this results in isomorphisms \[ \coker (i_{n}) \;\cong \; \bigoplus _{i+j = n} H_i(C) \otimes _R H_j(C') \qquadtext { and } \ker (i_{n-1}) \;\cong \; \bigoplus _{i + j = n-1} \Tor _1^R(H_i(C), H_j(C')). \] All maps used to construct this short
+exact sequence are functorial in chain maps. Through the projective-complex model of \(\D ^-(R)\) from <a class="source-reference" data-label="prop:Projective_Complexes_Equivalence" href="../../../entry/projective-complexes-present-the-bounded-below-derived-category/index.html#prop:Projective_Complexes_Equivalence">Proposition 6.6.16</a>, the
+sequence is therefore natural in \(A\) and \(B\).
+</p><p class='noindent'>Finally, we show that the short exact sequence splits. Since each \(C_i\) is free, the short exact sequence
+\(0 \to Z_i \to C_i \to B_{i-1} \to 0\) splits, and the quotient maps \(Z_i \to H_i(C)\) extend to homomorphisms \(C_i \to H_i(C)\). We similarly obtain homomorphisms \(C'_j \to H_j(C')\).
+Viewing the sequences of homology groups \(H_i(C)\) and \(H_j(C')\) as chain complexes with trivial differentials, we
+obtain chain maps \(C \to H(C)\) and \(C' \to H(C')\). Their tensor product is a chain map \(C \otimes _R C' \to H(C) \otimes _R H(C')\). Since the differentials on the target
+are trivial, the induced map on homology \[ H_n(C \otimes _R C') \to H_n(H(C) \otimes _R H(C')) \;=\; \bigoplus _{i+j=n} H_i(C) \otimes _R H_j(C') \] provides the desired splitting.                                         □
+</p>
+</div></div>
+<p class='noindent'>An analogous argument yields the universal coefficient theorem for the derived hom:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2003r3'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 6.7.3 </span>(Algebraic universal coefficient theorem)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Algebraic_UCT'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a principal ideal domain, let</span> \(A \in \D ^-(R)\)<span class='ntx-Italic-tlf-t1-x-x-109'>,
+and let</span> \(M\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module, regarded as a complex concentrated in degree zero. For each</span> \(n \in \Z \)<span class='ntx-Italic-tlf-t1-x-x-109'>, there is a
+natural short exact sequence </span>\[ 0 \to \Ext ^1_R(H_{n-1}(A),M) \to H_{-n}(\bR \uHom _R(A,M[0])) \to \Hom _R(H_n(A),M) \to 0, \] <span class='ntx-Italic-tlf-t1-x-x-109'>and this sequence splits non-naturally.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-07-7" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-07-7">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We refer to <span class='citation'>[Weibel (1994), Theorem 3.6.5]</span>, applied to \(\uHom _R(C,M)\), which represents \(\bR \uHom _R(A,M[0])\).                                                                           □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2004r4'></a>
+<a class="entry-heading-link" href="../../../entry/algebraic-kunneth-formula-over-the-integers/index.html" aria-label="Example 6.7.4., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 6.7.4.</span></a>  </span><span id='ex:Algebraic_Kunneth_Formula_Over_Integers'></span> For \(R = \Z \), the Künneth formula specializes to the classical result for abelian groups.
+Given chain complexes \(A\) and \(B\) of abelian groups, the homology of the derived tensor product fits into
+the short exact sequence \[ 0 \to \bigoplus _{i+j=n} H_i(A) \otimes _{\Z } H_j(B) \to H_n(A \otimes ^{\bL }_{\Z } B) \to \bigoplus _{i+j=n-1} \Tor _1^{\Z }(H_i(A), H_j(B)) \to 0. \] Since \(\Tor _1^{\Z }(M,N)\) consists of the common torsion of \(M\) and \(N\) (see <a class="source-reference" data-label="ex:Tor_1_Cyclic" href="../../../entry/first-tor-with-a-cyclic-group/index.html#ex:Tor_1_Cyclic">Exercise 6.5.8</a>), this shows that the
+homology of the derived tensor product is determined by the homology groups of \(A\) and \(B\), up to an
+extension involving their torsion.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2005r5'></a>
+<a class="entry-heading-link" href="../../../entry/kunneth-formula-with-flat-homology/index.html" aria-label="Example 6.7.5., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 6.7.5.</span></a>  </span><span id='ex:Kunneth_Formula_With_Flat_Homology'></span> Let \(R\) be a PID and let \(A, B \in \D ^-(R)\). If all homology groups \(H_i(A)\) are flat (equivalently, torsion-free),
+then \[ H_n(A \otimes ^{\bL }_R B) \;\cong \; \bigoplus _{i+j=n} H_i(A) \otimes _R H_j(B). \]
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2006r6'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/universal-coefficient-formula-with-projective-homology/index.html" aria-label="Example 6.7.6., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 6.7.6.</span></a>  </span><span id='ex:UCT_With_Projective_Homology'></span> Let \(R\) be a PID, let \(A \in \D ^-(R)\), and let \(M\) be an \(R\)-module. If all homology groups \(H_i(A)\) are projective
+(equivalently, free), then \[ H_{-n}(\bR \uHom _R(A,M[0])) \;\cong \; \Hom _R(H_n(A),M). \]
+</p>
+</div>
+
+<h4 class='subsectionHead' id='kunneth-theorem'><span class='titlemark'>6.7.2    </span> <a id='x1-30006.7.2'></a>Künneth theorem</h4>
+<p class='noindent' id='subsec_Kunneth'>The Künneth theorem describes the homology of a product of spaces in terms of the homology of the
+factors. The key observation is that the chain complex of a product is the derived tensor product of the chain
+complexes of the factors.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3001r7'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 6.7.7.</span>  </span><span id='prop:Chains_Product'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a commutative ring. For animae</span> \(X, Y \in \An \)<span class='ntx-Italic-tlf-t1-x-x-109'>, there is a natural equivalence </span>\[ C_*(X \times Y; R) \; \simeq \; C_*(X;R) \otimes ^{\bL }_R C_*(Y;R) \] <span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(\D (R)\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-07-6" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-07-6">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Chain complexes of animae are connective, so both sides are functors \(\An \times \An \to \D (R)_{\geq 0}\), and the derived
+tensor product of <a class="source-reference" data-label="def:Derived_Tensor_Product" href="../../../entry/derived-tensor-product/index.html#def:Derived_Tensor_Product">Definition 6.6.25</a> is defined on them. It preserves colimits in each variable: it is exact and preserves
+coproducts of uniformly bounded below families, and every colimit of connective objects is of this
+                                                                                   
+                                                                                   
+form. Similarly, the functor \(- \times -\colon \An \times \An \to \An \) preserves colimits in both variables, and \(C_*(-;R)\) preserves colimits. It follows
+that both sides define functors \(\An \times \An \to \D (R)_{\geq 0}\) preserving colimits in each variable. Both send \((\pt , \pt )\) to \(R[0]\), hence they are
+naturally equivalent by the universal property of \(\An \).                                                                             □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3002r8'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 6.7.8 </span>(Künneth theorem)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Kunneth'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a principal ideal domain and let</span> \(X, Y \in \An \) <span class='ntx-Italic-tlf-t1-x-x-109'>be animae. For each</span>
+\(n \in \Z \)<span class='ntx-Italic-tlf-t1-x-x-109'>, there is a natural short exact sequence </span>\[ 0 \to \bigoplus _{i+j=n} H_i(X;R) \otimes _R H_j(Y;R) \to H_n(X \times Y;R) \to \bigoplus _{i+j=n-1} \Tor _1^R(H_i(X;R), H_j(Y;R)) \to 0, \] <span class='ntx-Italic-tlf-t1-x-x-109'>and this sequence splits, though not naturally.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-07-5" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-07-5">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="prop:Chains_Product" href="../../../entry/chains-on-products/index.html#prop:Chains_Product">Proposition 6.7.7</a>, we have \(H_n(X \times Y;R) \cong H_n(C_*(X;R) \otimes ^{\bL }_R C_*(Y;R))\). The result now follows immediately from the algebraic Künneth formula
+(<a class="source-reference" data-label="thm:Algebraic_Kunneth_Formula" href="../../../entry/algebraic-kunneth-formula/index.html#thm:Algebraic_Kunneth_Formula">Theorem 6.7.2</a>).                                                                                                                                                         □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3003r9'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 6.7.9.</span>  </span><span id='cor:Kunneth_Free'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a principal ideal domain and</span> \(H_i(X;R)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a free</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module for all</span> \(i\)<span class='ntx-Italic-tlf-t1-x-x-109'>, then </span>\[ H_n(X \times Y;R) \,\cong \, \bigoplus _{i+j=n} H_i(X;R) \otimes _R H_j(Y;R) \] <span class='ntx-Italic-tlf-t1-x-x-109'>for all</span> \(n \in \Z \) <span class='ntx-Italic-tlf-t1-x-x-109'>and all
+animae</span> \(Y\)<span class='ntx-Italic-tlf-t1-x-x-109'>.                                                                                                                                               □</span>
+</p>
+</div>
+                                                                                   
+
+                                                                                   
+
+<h4 class='subsectionHead' id='universal-coefficient-theorems'><span class='titlemark'>6.7.3    </span> <a id='x1-40006.7.3'></a>Universal coefficient theorems</h4>
+<p class='noindent' id='subsec_UCT'>The universal coefficient theorems express the (co)homology with coefficients in a module in terms of the
+integral (co)homology. We begin with the homological version.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4001r10'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 6.7.10.</span>  </span><span id='prop:Chains_Coefficients'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>For  an  anima</span>  \(X \in \An \)  <span class='ntx-Italic-tlf-t1-x-x-109'>and  a  bounded  below  chain  complex</span>  \(A \in \D ^-(\Z )\)<span class='ntx-Italic-tlf-t1-x-x-109'>,  there  is  a  natural
+equivalence </span>\[ C_*(X;A) \,\simeq \, C_*(X;\Z ) \otimes ^{\bL }_{\Z } A \] <span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(\D ^-(\Z )\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-07-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-07-4">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Say \(A\) is concentrated in degrees \(\geq m\). Both \(C_*(-;A)\) and \(C_*(-;\Z ) \otimes ^{\bL }_{\Z } A\) then take values in \(\D (\Z )_{\geq m}\), which is closed under
+colimits in \(\D (\Z )\). Both preserve colimits: for the first this is the defining property from <a class="source-reference" data-label="cons:Chain_Cochain_Complexes" href="../../../entry/chain-and-cochain-complexes-of-animae/index.html#cons:Chain_Cochain_Complexes">Construction 6.2.12</a>, and for the second
+it follows as in <a class="source-reference" data-label="prop:Chains_Product" href="../../../entry/chains-on-products/index.html#prop:Chains_Product">Proposition 6.7.7</a>, since \(C_*(-;\Z )\) is colimit-preserving with connective values and \(-\otimes ^{\bL }_{\Z }A\) is exact and preserves
+coproducts of uniformly bounded below families. Finally, both send \(\pt \) to \(A\). By the universal property
+of \(\An \), they are naturally equivalent.                                                                                                        □
+</p>
+</div></div>
+<div class='newtheorem'>
+                                                                                   
+                                                                                   
+<p class='noindent'><span class='head'>
+<a id='x1-4002r11'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 6.7.11 </span>(Universal coefficient theorem for homology)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:UCT_Homology'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(X \in \An \)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  an  anima  and  let</span>  \(A\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  an
+abelian group. For each</span> \(n \in \Z \)<span class='ntx-Italic-tlf-t1-x-x-109'>, there is a natural short exact sequence </span>\[ 0 \to H_n(X) \otimes _{\Z } A \to H_n(X;A) \to \Tor _1^{\Z }(H_{n-1}(X), A) \to 0, \] <span class='ntx-Italic-tlf-t1-x-x-109'>and this sequence splits, though
+not naturally.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-07-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-07-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="prop:Chains_Coefficients" href="../../../entry/chains-with-coefficients/index.html#prop:Chains_Coefficients">Proposition 6.7.10</a>, we have \(H_n(X;A) \cong H_n(C_*(X;\Z ) \otimes ^{\bL } A)\). Viewing \(A\) as a chain complex concentrated in degree \(0\), the statement is thus an
+instance of the algebraic Künneth formula (<a class="source-reference" data-label="thm:Algebraic_Kunneth_Formula" href="../../../entry/algebraic-kunneth-formula/index.html#thm:Algebraic_Kunneth_Formula">Theorem 6.7.2</a>), using that \(H_j(A) = 0\) for \(j \neq 0\) and \(H_0(A) = A\).                                                    □
+</p>
+</div></div>
+<p class='noindent'>For cohomology, we use the internal hom in \(\D (\Z )\) instead of the derived tensor product.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4003r12'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 6.7.12.</span>  </span><span id='prop:Cochains_Coefficients'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For an anima</span> \(X \in \An \) <span class='ntx-Italic-tlf-t1-x-x-109'>and a chain complex</span> \(A \in \D (\Z )\)<span class='ntx-Italic-tlf-t1-x-x-109'>, there is a natural equivalence </span>\[ C^*(X;A) \,\simeq \, \bR \uHom _{\Z }(C_*(X;\Z ), A) \] <span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(\D (\Z )\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-07-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-07-2">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>   The   chain   complexes   \(C_*(X;\Z )\)   are   connective.   Thus   every   diagram   in   the   image   of   the
+colimit-preserving functor \(C_*(-;\Z )\colon \An \to \D (\Z )_{\geq 0}\) is uniformly bounded below, and <a class="source-reference" data-label="cor:Internal_Hom_Preserves_Limits" href="../../../entry/derived-internal-hom-preserves-limits/index.html#cor:Internal_Hom_Preserves_Limits">Corollary 6.6.36</a> shows that \(\bR \uHom _{\Z }(C_*(-;\Z ),A)\) preserves limits as a functor
+on \(\An \catop \). It sends \(\pt \) to \(\bR \uHom _{\Z }(\Z ,A) \simeq A\), so the universal property of \(\An \) identifies it with \(C^*(-;A)\).                                                       □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4004r13'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 6.7.13 </span>(Universal coefficient theorem for cohomology)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:UCT_Cohomology'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(X \in \An \) <span class='ntx-Italic-tlf-t1-x-x-109'>be an anima and let</span> \(A\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an
+abelian group. For each</span> \(n \in \Z \)<span class='ntx-Italic-tlf-t1-x-x-109'>, there is a natural short exact sequence </span>\[ 0 \to \Ext ^1_{\Z }(H_{n-1}(X), A) \to H^n(X;A) \to \Hom _{\Z }(H_n(X), A) \to 0, \] <span class='ntx-Italic-tlf-t1-x-x-109'>and this sequence splits, though
+not naturally.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-07-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-07-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="prop:Cochains_Coefficients" href="../../../entry/cochains-with-coefficients/index.html#prop:Cochains_Coefficients">Proposition 6.7.12</a>, we have \(H^n(X;A)\cong H_{-n}(\bR \uHom _{\Z }(C_*(X;\Z ),A))\). The result is therefore the case \(R=\Z \), \(M=A\) of <a class="source-reference" data-label="thm:Algebraic_UCT" href="../../../entry/algebraic-universal-coefficient-theorem/index.html#thm:Algebraic_UCT">Theorem 6.7.3</a>.                                                              □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4005r14'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 6.7.14.</span>  </span><span id='cor:UCT_Free'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(H_{n-1}(X)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a free abelian group, then </span>\[ H^n(X;A) \,\cong \, \Hom _{\Z }(H_n(X), A) \] <span class='ntx-Italic-tlf-t1-x-x-109'>for all abelian groups</span> \(A\)<span class='ntx-Italic-tlf-t1-x-x-109'>.                                     □</span>
+                                                                                   
+
+                                                                                   
+</p>
+</div>
+<p class='noindent'><a id='likesection.1'></a><a id='x1-4006x6.7.3'></a>
+</p>
+<h3 class='likesectionHead' id='exercises'><a id='x1-5000'></a>Exercises</h3>
+<p id='exercises1'><a id='Q1-1-6'></a>
+</p><div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5001r1'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 6.1 </span>(Two-term resolutions, Tor, and Ext)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span>For an integer \(n \geq 1\), let \(C(n)_{\bullet }\) be the chain complex of abelian
+groups with \(\Z \) in degrees \(1\) and \(0\), differential \[ d_1\colon C(n)_1 = \Z \xrightarrow {\cdot n} C(n)_0 = \Z , \] and zero in all other degrees.
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>Compute the homology groups \(H_k(C(n))\).
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>Show that the evident map \(C(n)_{\bullet } \to \Z /n\Z [0]\) is a quasi-isomorphism.
+   </p></dd><dt class='enumerate'>
+(3) </dt><dd class='enumerate'>
+   <p class='noindent'>Regard \(C(n)_{\bullet }\) as a projective resolution of \(\Z /n\Z \) and compute \(\Tor ^{\Z }_i(\Z /n\Z ,A)\) and \(\Ext ^i_{\Z }(\Z /n\Z ,A)\) for every abelian group \(A\) and every \(i\geq 0\).
+   </p></dd><dt class='enumerate'>
+(4) </dt><dd class='enumerate'>
+   <p class='noindent'>Specialize to \(A=\Z /m\Z \) and express the answer in terms of \(\gcd (m,n)\).</p></dd></dl>
+</div>
+
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5006r2'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 6.2.</span>  </span>Let \(C\) and \(D\) be stable \(\infty \)-categories with t-structures, let \(F\colon C \to D\) be an exact functor, and let \[ 0 \to A \hookrightarrow B \twoheadrightarrow C' \to 0 \] be a
+short exact sequence in the heart \(C^{\heartsuit }\). Construct a long exact sequence in \(D^{\heartsuit }\) of the form \[ \dots \to \pi _{n+1}F(C') \to \pi _nF(A) \to \pi _nF(B) \to \pi _nF(C') \to \pi _{n-1}F(A) \to \dots . \] Show that if \(F\) is
+t-exact, this long exact sequence collapses to the original short exact sequence in the heart.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5007r3'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 6.3 </span>(Truncating a two-term complex)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span>Let \(\Aa \) be an abelian category and let \(C_{\bullet }\) be the complex
+\[ \cdots \longrightarrow 0\longrightarrow A_1\xrightarrow {d}A_0\longrightarrow 0\longrightarrow \cdots \] concentrated in degrees \(1\) and \(0\). Describe \(\tau _{\geq 1}C_{\bullet }\) and \(\tau _{\leq 0}C_{\bullet }\) explicitly, and identify the canonical exact sequence \[ \tau _{\geq 1}C_{\bullet }\longrightarrow C_{\bullet }\longrightarrow \tau _{\leq 0}C_{\bullet } \]
+in terms of \(\ker (d)\) and \(\coker (d)\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5008r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 6.4 </span>(Chains on spheres)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span>Use the construction of ordinary chains from <a class="source-reference" data-label="cons:Chain_Cochain_Complexes" href="../../../entry/chain-and-cochain-complexes-of-animae/index.html#cons:Chain_Cochain_Complexes">Construction 6.2.12</a>.
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>Show  that  the  reduced  chain  functor  \(\widetilde {C}_*(-;\Z )\colon \An _* \to \D (\Z )\)  sends  cofiber  sequences  of  pointed  animae  to  exact
+   sequences in \(\D (\Z )\).
+                                                                                   
+                                                                                   
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>Deduce that \(\widetilde {C}_*(\Sigma X;\Z ) \cong \widetilde {C}_*(X;\Z )[1]\).
+   </p></dd><dt class='enumerate'>
+(3) </dt><dd class='enumerate'>
+   <p class='noindent'>Compute \(\widetilde {C}_*(S^n;\Z )\) and \(C_*(S^n;\Z )\) in \(\D (\Z )\).</p></dd></dl>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5012r5'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 6.5 </span>(Extensions and addition in \(\Ext ^1\))<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(C\) be a stable \(\infty \)-category with a t-structure, and let
+\(M,N \in C^{\heartsuit }\).
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>Starting from a morphism \(\phi \colon M \to N[1]\), form its fiber and show that this gives an extension \[ 0 \to N \to E_{\phi } \to M \to 0 \] in \(C^{\heartsuit }\).
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>Starting from an extension of \(M\) by \(N\), construct the corresponding morphism \(M \to N[1]\).
+   </p></dd><dt class='enumerate'>
+(3) </dt><dd class='enumerate'>
+   <p class='noindent'>Check that these two constructions are inverse to each other on isomorphism classes.
+   </p></dd><dt class='enumerate'>
+(4) </dt><dd class='enumerate'>
+   <p class='noindent'>Describe the addition law on extensions which corresponds to the abelian group structure on \(\Ext ^1_C(M,N)\).</p></dd></dl>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5017r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 6.6 </span>(A derived functor from a homotopy invariant functor)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(F\colon \Top \to D\) be a functor to an \(\infty \)-category \(D\)
+which sends homotopy equivalences of topological spaces to isomorphisms.
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>Using CW-complexes as cofibrant objects, explain how <a class="source-reference" data-label="prop:Constructing_Left_Derived_Functors" href="../../../entry/constructing-left-derived-functors-from-cofibrant-objects/index.html#prop:Constructing_Left_Derived_Functors">Proposition 6.6.3</a> produces a total left derived functor \[ \bL F\colon \An \to D. \]
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>Show that if \(X\) is a CW-complex, then \(\bL F(\Pi _{\infty }X) \cong F(X)\).
+   </p></dd><dt class='enumerate'>
+(3) </dt><dd class='enumerate'>
+   <p class='noindent'>Explain why, if \(F\) already sends weak homotopy equivalences to isomorphisms, then \(\bL F\) is just the
+   functor induced by the universal property of the localization \(\Top \to \An \).</p></dd></dl>
+</div>
+<p class='noindent'>For the next two exercises, you may use that \(H_k(\CP ^m)\cong \Z \) for \(k=0,2,\ldots ,2m\) and vanishes otherwise, while \(H_0(\RP ^2)\cong \Z \), \(H_1(\RP ^2)\cong \Z /2\Z \), and all other homology
+groups of \(\RP ^2\) vanish.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5021r7'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 6.7 </span>(Künneth computations)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span>Use <a class="source-reference" data-label="thm:Kunneth" href="../../../entry/kunneth-theorem/index.html#thm:Kunneth">Theorem 6.7.8</a> to compute the integral homology groups of the following
+products:
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>\(S^m \times S^n\).
+                                                                                   
+                                                                                   
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>\(\CP ^m \times S^n\).
+   </p></dd><dt class='enumerate'>
+(3) </dt><dd class='enumerate'>
+   <p class='noindent'>\(\RP ^2 \times \RP ^2\).</p></dd></dl>
+<p class='noindent'>In each case, indicate whether the \(\Tor _1^{\Z }\) term vanishes and why.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5025r8'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 6.8 </span>(Universal coefficient computations)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span>Use <a class="source-reference" data-label="thm:UCT_Homology" href="../../../entry/universal-coefficient-theorem-for-homology/index.html#thm:UCT_Homology">Theorem 6.7.11</a> and <a class="source-reference" data-label="thm:UCT_Cohomology" href="../../../entry/universal-coefficient-theorem-for-cohomology/index.html#thm:UCT_Cohomology">Theorem 6.7.13</a>.
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>Compute \(H_*(\RP ^2;\Z /2\Z )\) from the integral homology of \(\RP ^2\).
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>Compute \(H^*(\RP ^2;\Z )\).
+   </p></dd><dt class='enumerate'>
+(3) </dt><dd class='enumerate'>
+   <p class='noindent'>Compute \(H^*(\RP ^2;\Z /2\Z )\) and identify the contribution of the \(\Ext ^1_{\Z }\) term.</p></dd></dl>
+</div>
+
+ 
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../derived-functors/index.html" aria-label="Previous section: Derived functors" title="Previous section: Derived functors"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../../localization-and-completion/bousfield-localizations/index.html" aria-label="Next section: Bousfield localizations" title="Next section: Bousfield localizations"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html" aria-current="page"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/animae-as-spaces/index.html"><span class="context-entry-heading">Chapter 2</span><span class="context-entry-title">Animae as spaces</span></a></li><li><a href="../../../chapter/homology-and-cohomology/index.html"><span class="context-entry-heading">Chapter 3</span><span class="context-entry-title">Homology and cohomology</span></a></li><li><a href="../../../chapter/spectra-and-stable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 4</span><span class="context-entry-title">Spectra and stable ∞-categories</span></a></li><li><a href="../../../chapter/recognition-principle/index.html"><span class="context-entry-heading">Chapter 5</span><span class="context-entry-title">The recognition principle</span></a></li><li><a href="../../../chapter/homological-algebra/index.html" aria-current="page"><span class="context-entry-heading">Chapter 6</span><span class="context-entry-title">Homological algebra</span></a></li><li><a href="../../../chapter/localization-and-completion/index.html"><span class="context-entry-heading">Chapter 7</span><span class="context-entry-title">Localization and completion</span></a></li><li><a href="../../../chapter/ring-spectra-and-modules/index.html"><span class="context-entry-heading">Chapter 8</span><span class="context-entry-title">Ring spectra and modules</span></a></li><li><a href="../../../chapter/complex-k-theory/index.html"><span class="context-entry-heading">Chapter 9</span><span class="context-entry-title">Complex K-theory</span></a></li><li><a href="../../../chapter/thom-spectra-and-bordism-theory/index.html"><span class="context-entry-heading">Chapter 10</span><span class="context-entry-title">Thom spectra and bordism theory</span></a></li><li><a href="../../../chapter/duality-phenomena/index.html"><span class="context-entry-heading">Chapter 11</span><span class="context-entry-title">Duality phenomena</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../derived-categories/index.html"><span class="context-entry-heading">Section 6.1</span><span class="context-entry-title">Derived ∞-categories</span></a></li><li><a href="../ordinary-homology-and-cohomology-via-d-z/index.html"><span class="context-entry-heading">Section 6.2</span><span class="context-entry-title">Ordinary homology and cohomology via D(Z)</span></a></li><li><a href="../connective-objects-and-t-structures/index.html"><span class="context-entry-heading">Section 6.3</span><span class="context-entry-title">Connective objects and t-structures</span></a></li><li><a href="../projective-objects-and-ext-groups/index.html"><span class="context-entry-heading">Section 6.4</span><span class="context-entry-title">Projective objects and Ext-groups</span></a></li><li><a href="../flat-objects-and-tor-groups/index.html"><span class="context-entry-heading">Section 6.5</span><span class="context-entry-title">Flat objects and Tor-groups</span></a></li><li><a href="../derived-functors/index.html"><span class="context-entry-heading">Section 6.6</span><span class="context-entry-title">Derived functors</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 6.7</span><span class="context-entry-title">Künneth and universal coefficient theorems</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#prop:PID_Resolutions_Length_1"><span class="context-entry-heading">Proposition 6.7.1</span><span class="context-entry-title">proposition</span></a></li><li><a href="#thm:Algebraic_Kunneth_Formula"><span class="context-entry-heading">Theorem 6.7.2</span><span class="context-entry-title">Algebraic Künneth formula</span></a></li><li><a href="#thm:Algebraic_UCT"><span class="context-entry-heading">Theorem 6.7.3</span><span class="context-entry-title">Algebraic universal coefficient theorem</span></a></li><li><a href="#ex:Algebraic_Kunneth_Formula_Over_Integers"><span class="context-entry-heading">Example 6.7.4</span><span class="context-entry-title">example</span></a></li><li><a href="#ex:Kunneth_Formula_With_Flat_Homology"><span class="context-entry-heading">Example 6.7.5</span><span class="context-entry-title">example</span></a></li><li><a href="#ex:UCT_With_Projective_Homology"><span class="context-entry-heading">Example 6.7.6</span><span class="context-entry-title">example</span></a></li><li><a href="#prop:Chains_Product"><span class="context-entry-heading">Proposition 6.7.7</span><span class="context-entry-title">proposition</span></a></li><li><a href="#thm:Kunneth"><span class="context-entry-heading">Theorem 6.7.8</span><span class="context-entry-title">Künneth theorem</span></a></li><li><a href="#cor:Kunneth_Free"><span class="context-entry-heading">Corollary 6.7.9</span><span class="context-entry-title">corollary</span></a></li><li><a href="#prop:Chains_Coefficients"><span class="context-entry-heading">Proposition 6.7.10</span><span class="context-entry-title">proposition</span></a></li><li><a href="#thm:UCT_Homology"><span class="context-entry-heading">Theorem 6.7.11</span><span class="context-entry-title">Universal coefficient theorem for homology</span></a></li><li><a href="#prop:Cochains_Coefficients"><span class="context-entry-heading">Proposition 6.7.12</span><span class="context-entry-title">proposition</span></a></li><li><a href="#thm:UCT_Cohomology"><span class="context-entry-heading">Theorem 6.7.13</span><span class="context-entry-title">Universal coefficient theorem for cohomology</span></a></li><li><a href="#cor:UCT_Free"><span class="context-entry-heading">Corollary 6.7.14</span><span class="context-entry-title">corollary</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

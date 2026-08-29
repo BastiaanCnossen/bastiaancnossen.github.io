@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 1.8: Foundational results in ∞-category theory | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../chapter/introduction-to-infinity-categories/index.html">Chapter 1</a> · Section 1.8</p>
+      <h1>Foundational results in ∞-category theory</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:More_Aspects_Of_Infinity_Categories'>Having established the basic language and constructions of \(\infty \)-categories, we now collect a small amount of
+foundational infrastructure that will be used repeatedly later without further proof. Since our
+ultimate interest in this book is stable homotopy theory and higher algebra, we treat the results
+below as black boxes. <span class="source-reference" data-label="tab:Background_Material">Table 1.1</span> records additional background material developed later in the book.
+<figure class="source-table" id="tab:Background_Material"><table><thead><tr><th scope="col">Background material</th><th scope="col">Discussed in</th></tr></thead><tbody><tr><td>Adjunctions and Kan extensions</td><td><a class="source-reference" data-label="chap:Adjunctions" href="../../../chapter/adjunctions/index.html#chap:Adjunctions">Chapter 21</a></td></tr><tr><td>Presheaves and free cocompletions</td><td><a class="source-reference" data-label="chap:Presentable_Infty_Categories" href="../../../chapter/presentable-infinity-categories/index.html#chap:Presentable_Infty_Categories">Chapter 22</a></td></tr><tr><td>The Hom functor</td><td><a class="source-reference" data-label="sec:Hom_Functor" href="../../cocartesian-fibrations-and-unstraightening/the-hom-functor/index.html#sec:Hom_Functor">Section 23.4</a></td></tr></tbody></table><figcaption>Background material on \(\infty\)-category theory that is used as a black box here and developed later in the book.</figcaption></figure>
+</p>
+<h5 class='subsubsectionHead' id='the-categories-cat-and-an'><a id='x1-2000'></a>The \(\infty \)-categories \(\Cat _\infty \) and \(\An \)</h5>
+<p class='noindent'>To formulate Yoneda-style constructions and presheaf categories, we need ambient \(\infty \)-categories of small
+animae and small \(\infty \)-categories. The following axiom isolates their key features that are used throughout this
+book.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r12'></a>
+<a class="entry-heading-link" href="../../../entry/infinity-categories-of-animae-and-infinity-categories/index.html" aria-label="Axiom L., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Axiom L.</span></a>  </span><span id='axiom:Cat_infty'></span> There exist \(\infty \)-categories \(\An \) and \(\Cat _{\infty }\), together with a fully faithful functor \(\An \hookrightarrow \Cat _{\infty }\). They satisfy the following
+properties: </p>
+     <ul class='itemize1'>
+     <li class='itemize'>There is a functor \(\pi _{\univ }\colon (\Cat _{\infty })_{\bullet } \to \Cat _{\infty }\) called the <span class='ntx-Italic-tlf-t1-x-x-109'>universal cocartesian fibration</span>.<span class='footnote-mark'><a href='#chapter-introduction-to-infinity-categories-section-08-fn1x0'><sup class='textsuperscript'>1</sup></a></span><a id='x1-2002f1'></a> 
+     Every object \(c \in \Cat _{\infty }\) defines an \(\infty \)-category \(C\) via the following pullback square: <div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-e7027b98d637.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div> An \(\infty \)-category \(C\) arising
+     this way is called a <span class='ntx-Italic-tlf-t1-x-x-109'>small</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span>. If \(c\) is contained in the full subcategory \(\An \), then \(C\) is an anima;
+     animae arising this way are called <span class='ntx-Italic-tlf-t1-x-x-109'>small animae</span>.
+                                                                                   
+                                                                                   
+     </li>
+     <li class='itemize'>For objects \(c,d \in \Cat _{\infty }\) corresponding to \(\infty \)-categories \(C\) and \(D\), there is an equivalence of animae \[ \Hom _{\Cat _{\infty }}(c,d) \iso \Map (C,D), \] and in
+     particular morphisms in \(\Cat _{\infty }\) correspond to functors of \(\infty \)-categories. Composition in \(\Cat _{\infty }\) corresponds
+     to composition of functors.
+     </li>
+     <li class='itemize'>The \(\infty \)-categories \(\An \) and \(\Cat _{\infty }\) admit all small limits and colimits; here the adjective ‘small’ means
+     that the indexing \(\infty \)-category is required to be small. The inclusion \(\An \hookrightarrow \Cat _{\infty }\) preserves small limits and
+     colimits.
+     </li>
+     <li class='itemize'>The initial and terminal \(\infty \)-categories are small. Small \(\infty \)-categories are closed under products,
+     coproducts, pullbacks, pushouts, functor categories, subcategories, and localizations.
+     </li>
+     <li class='itemize'>There is a fully faithful functor \[ \simp \hookrightarrow \Cat _{\infty } \] given on objects by sending a linearly ordered set \(P\) to its
+     associated \(\infty \)-category. In particular, the \(\infty \)-categories \([n]\) are small for all \(n \geq 0\).
+     </li>
+     <li class='itemize'>There is a fully faithful functor \[ \Set \hookrightarrow \An \] given on objects by sending a set to its associated anima.</li></ul>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2004r1'></a>
+<a class="entry-heading-link" href="../../../entry/large-infinity-categories/index.html" aria-label="Remark 1.8.1, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 1.8.1 </span></a>(Large \(\infty \)-categories)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='rmk:Large_Infinity_Categories'></span> The \(\infty \)-categories \(\An \) and \(\Cat _{\infty }\) are sometimes referred to as the <span class='ntx-Italic-tlf-t1-x-x-109'>universe of
+animae </span>and the <span class='ntx-Italic-tlf-t1-x-x-109'>universe of</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories</span>. It will sometimes be convenient to assume there are two more such
+universes \(\widehat {\An }\) and \(\widehat {\Cat }_{\infty }\) that satisfy all the same conditions as \(\An \) and \(\Cat _{\infty }\), with the following two further conditions:
+</p>
+                                                                                   
+                                                                                   
+     <ul class='itemize1'>
+     <li class='itemize'>There is a fully faithful inclusion \(\Cat _{\infty } \hookrightarrow \widehat {\Cat }_{\infty }\) which on small animae restricts to a functor \(\An \hookrightarrow \widehat {\An }\);
+     </li>
+     <li class='itemize'>The \(\infty \)-categories \(\An \) and \(\Cat _{\infty }\) are small with respect to \(\widehat {\Cat }_{\infty }\).</li></ul>
+<p class='noindent'>We will refer to \(\infty \)-categories that are small with respect to \(\widehat {\Cat }_{\infty }\) as <span class='ntx-Italic-tlf-t1-x-x-109'>large</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories</span>. The two points may thus be
+summarized by saying that every small \(\infty \)-category is also large, and that the \(\infty \)-categories \(\An \) and \(\Cat _{\infty }\) are
+large.
+</p><p class='noindent'>All categorical constructions are understood relative to fixed ambient universes, which we silently enlarge
+when necessary.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2005r2'></a>
+<a class="entry-heading-link" href="../../../entry/internal-and-external-pullback-squares/index.html" aria-label="Remark 1.8.2, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 1.8.2 </span></a>(Two meanings of ‘pullback square’)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='rmk:Comparison_External_Internal_Squares'></span> The ambient category \(\Cat _{\infty }\) lets us reconcile two pieces of
+terminology that we have so far used in parallel. In <a class="source-reference" data-label="sec:Basic_Constructions" href="../basic-constructions-of-categories/index.html#sec:Basic_Constructions">Section 1.3</a> we defined products, coproducts, pullbacks
+and pushouts <span class='ntx-Italic-tlf-t1-x-x-109'>of</span>  \(\infty \)-categories, together with the corresponding notions of pullback and pushout
+square, purely in terms of functors and natural isomorphisms. In <a class="source-reference" data-label="subsec:Limits_and_Colimits" href="../limits-and-colimits/index.html#subsec:Limits_and_Colimits">Section 1.7</a> we defined limits and colimits
+<span class='ntx-Italic-tlf-t1-x-x-109'>inside </span>an \(\infty \)-category, and hence in particular inside \(\Cat _{\infty }\). For small \(\infty \)-categories the two notions agree:
+</p>
+     <ul class='itemize1'>
+     <li class='itemize'>A commutative square of functors in the sense of <a class="source-reference" data-label="def:Commutative_Square_Of_Functors" href="../../../entry/commutative-squares-and-triangles-of-functors/index.html#def:Commutative_Square_Of_Functors">Definition 1.2.2</a> between small \(\infty \)-categories is the same thing
+     as a commutative square in \(\Cat _{\infty }\) in the sense of <a class="source-reference" data-label="def:Commutative_Square" href="../../../entry/commutative-diagram-shapes/index.html#def:Commutative_Square">Definition 1.4.1</a>. Indeed, by <a class="source-reference" data-label="axiom:Cat_infty" href="../../../entry/infinity-categories-of-animae-and-infinity-categories/index.html#axiom:Cat_infty">Axiom L</a> the hom animae of \(\Cat _{\infty }\) are the mapping
+     animae \(\Map (C,D)\), so filling a square of functors amounts to giving a natural isomorphism between the
+     two composites.
+     </li>
+     <li class='itemize'>Such  a  square  is  a  pullback  square  of  \(\infty \)-categories  in  the  sense  of  <a class="source-reference" data-label="sec:Basic_Constructions" href="../basic-constructions-of-categories/index.html#sec:Basic_Constructions">Section 1.3</a>  if  and  only  if  it  is  a
+     pullback square in \(\Cat _{\infty }\) in the sense of <a class="source-reference" data-label="subsec:Limits_and_Colimits" href="../limits-and-colimits/index.html#subsec:Limits_and_Colimits">Section 1.7</a>, and similarly for pushouts, products and coproducts. For
+     pullbacks and products, the first condition can be detected by bijectivity on \(\pi _0\) of the mapping
+     animae out of every \(\infty \)-category \(T\), whereas the second is characterized by equivalences of these
+     mapping animae. The former nevertheless suffices to conclude that the comparison functor is
+     an equivalence. The statements for pushouts and coproducts are dual.</li></ul>
+<p class='noindent'>The one point to keep in mind is a matter of universes: the definitions in <a class="source-reference" data-label="sec:Basic_Constructions" href="../basic-constructions-of-categories/index.html#sec:Basic_Constructions">Section 1.3</a> quantify over <span class='ntx-Italic-tlf-t1-x-x-109'>all</span> \(\infty \)-categories \(T\),
+whereas a (co)limit in \(\Cat _{\infty }\) only tests against small ones. By <a class="source-reference" data-label="rmk:Large_Infinity_Categories" href="../../../entry/large-infinity-categories/index.html#rmk:Large_Infinity_Categories">Remark 1.8.1</a> this is harmless, since the constructions of <a class="source-reference" data-label="sec:Basic_Constructions" href="../basic-constructions-of-categories/index.html#sec:Basic_Constructions">Section 1.3</a>
+are compatible with enlarging the ambient universe. From now on we use the two readings
+interchangeably.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2006r3'></a>
+<a class="entry-heading-link" href="../../../entry/quasicategorical-construction-of-cat-infinity/index.html" aria-label="Remark 1.8.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 1.8.3.</span></a>  </span><span id='rmk:Quasicategorical_Construction_Of_Cat_Infinity'></span>  In  the  quasicategorical  model  for  \(\infty \)-categories,  the  statements  in  <a class="source-reference" data-label="axiom:Cat_infty" href="../../../entry/infinity-categories-of-animae-and-infinity-categories/index.html#axiom:Cat_infty">Axiom L</a>  are  proved  by
+<span class='citation'>[Lurie (2009)]</span>. The quasicategory modeling \(\Cat _{\infty }\) is taken to be the homotopy coherent nerve of the Kan-enriched
+category of quasicategories, while the quasicategory modeling \(\An \) is the homotopy coherent nerve of
+the Kan-enriched category of Kan complexes.
+</p>
+</div>
+
+<h5 class='subsubsectionHead' id='presheaves-and-free-cocompletions'><a id='x1-3000'></a>Presheaves and free cocompletions</h5>
+<p class='noindent'>With these ambient categories in place, we can record the presheaf formalism that will be used repeatedly
+later.
+</p><p class='noindent'>Let \(C\) be an \(\infty \)-category. Then the hom animae \(\Hom _C(x,y)\) for \(x,y \in C\) assemble into a functor \[ \Hom _C\colon C\catop \times C \to \An \] called the <span class='ntx-Italic-tlf-t1-x-x-109'>Hom functor</span>.
+                                                                                   
+                                                                                   
+Formally constructing this functor turns out to be surprisingly involved: it relies on the advanced
+concept of straightening/unstraightening from <a class="source-reference" data-label="chap:Straightening" href="../../../chapter/cocartesian-fibrations-and-unstraightening/index.html#chap:Straightening">Chapter 23</a>. We refer to <a class="source-reference" data-label="sec:Hom_Functor" href="../../cocartesian-fibrations-and-unstraightening/the-hom-functor/index.html#sec:Hom_Functor">Section 23.4</a> for a construction of the Hom
+functor.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3001r4'></a>
+<a class="entry-heading-link" href="../../../entry/presheaf-categories-and-yoneda-embeddings/index.html" aria-label="Definition 1.8.4., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.8.4.</span></a>  </span><span id='def:Presheaf_Category_And_Yoneda_Embedding'></span> A <span class='ntx-Italic-tlf-t1-x-x-109'>presheaf  </span>on an \(\infty \)-category \(C\) is a functor \(F\colon C\catop \to \An \). We define the <span class='ntx-Italic-tlf-t1-x-x-109'>presheaf category of</span> \(C\) as
+\[ \PSh (C) \quad := \quad \Fun (C\catop ,\An ). \] By currying, the Hom functor defines a functor \(Y\colon C \to \PSh (C)\) called the <span class='ntx-Italic-tlf-t1-x-x-109'>Yoneda embedding</span>; for \(x \in C\) we refer to the
+presheaf \(Y(x) := \Hom _{C}(-,x)\) as the <span class='ntx-Italic-tlf-t1-x-x-109'>presheaf represented by</span> \(x\). A presheaf is called <span class='ntx-Italic-tlf-t1-x-x-109'>representable </span>if it is isomorphic to \(Y(x)\)
+for some \(x\).
+</p>
+</div>
+<p class='noindent'>The \(\infty \)-categorical analogue of the Yoneda lemma is even more important than its classical analogue:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3002r5'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 1.8.5 </span>(Yoneda lemma, <span class='citation'>[Land (2021), Propositions 4.2.10 and 4.2.11]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Yoneda_Lemma'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For a presheaf</span> \(F\) <span class='ntx-Italic-tlf-t1-x-x-109'>on</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>and an object</span> \(x \in C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, evaluation at</span> \(\id _x \in \Hom _C(x,x) = Y(x)(x)\) <span class='ntx-Italic-tlf-t1-x-x-109'>induces an
+equivalence </span>\[ \Nat (Y(x),F) \iso F(x), \qquad (\phi \colon Y(x) \to F) \mapsto \phi (\id _x). \] <span class='ntx-Italic-tlf-t1-x-x-109'>In particular the Yoneda embedding</span> \(Y\colon C \hookrightarrow \Fun (C\catop ,\An )\) <span class='ntx-Italic-tlf-t1-x-x-109'>is fully faithful.</span>
+</p>
+</div>
+<p class='noindent'>The following two results will be proved in <a class="source-reference" data-label="cor:Hom_Functor_Preserves_Limits" href="../../../entry/hom-functors-preserve-limits/index.html#cor:Hom_Functor_Preserves_Limits">Corollary 23.6.8</a> and <a class="source-reference" data-label="cor:Colimits_In_Presheaf_Category" href="../../../entry/colimits-in-presheaf-categories/index.html#cor:Colimits_In_Presheaf_Category">Corollary 21.2.9</a>, respectively.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3003r6'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 1.8.6.</span>  </span><span id='prop:Hom_Functor_Preserves_Limits'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(\Hom _C(-,-)\colon C\catop \times C \to \An \) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves limits in both variables separately.</span>
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3004r7'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 1.8.7.</span>  </span><span id='prop:Presheaf_Categories_Have_Limits_And_Colimits'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>The  presheaf  category</span>  \(\PSh (C)\)  <span class='ntx-Italic-tlf-t1-x-x-109'>admits  all  small  limits  and  colimits.  The  evaluation
+functors</span> \(\ev _x\colon \PSh (C) \to \An \) <span class='ntx-Italic-tlf-t1-x-x-109'>preserve all small limits and colimits.</span>
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3005r8'></a>
+<a class="entry-heading-link" href="../../../entry/yoneda-embeddings-preserve-limits/index.html" aria-label="Exercise 1.8.8., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.8.8.</span></a>  </span><span id='exercise:Yoneda_Preserves_Limits'></span> Let \(C\) be an \(\infty \)-category. Deduce that the Yoneda embedding \(Y\colon C \hookrightarrow \PSh (C)\) preserves all limits that
+exist in \(C\).
+</p>
+</div>
+<p class='noindent'>While the inclusion of \(C\) into \(\PSh (C)\) preserves all limits, it does not in general preserve colimits. Instead, it <span class='ntx-Italic-tlf-t1-x-x-109'>freely
+adds colimits </span>to \(C\), in the following sense:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3006r9'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 1.8.9 </span>(<span class='citation'>Lurie (2009), Theorem 5.1.5.6</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Colimit_Preserving_Extension'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(C\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  a  small</span>  \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category  and  let</span>  \(D\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  a  large</span>  \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category  admitting  all  small
+colimits. Then restriction along the Yoneda embedding</span> \(Y\colon C \hookrightarrow \PSh (C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>induces an equivalence </span>\[ Y^*\colon \Fun ^{\colim }(\PSh (C),D) \quad \iso \quad \Fun (C,D), \] <span class='ntx-Italic-tlf-t1-x-x-109'>where the left-hand
+side denotes the full subcategory of colimit-preserving functors</span> \(\PSh (C) \to D\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+<p class='noindent'>More informally, this says that every functor \(u\colon C \to D\) admits a unique colimit-preserving extension \(Y_!(u)\colon \PSh (C) \to D\). This functor
+can be described directly in terms of the concept of <span class='ntx-Italic-tlf-t1-x-x-109'>left Kan extension</span>, developed systematically in <a class="source-reference" data-label="subsec:Kan_Extensions" href="../../adjunctions/kan-extensions/index.html#subsec:Kan_Extensions">Section 21.4</a>.
+Informally, a left Kan extension \(i_!(u)\colon E \to D\) of a functor \(u\colon C \to D\) along a functor \(i\colon C \to E\) is the best approximation to an extension of \(u\)
+to \(E\): its value at an object \(e\) of \(E\) is assembled as a colimit of the values \(u(c)\) over all maps \(i(c) \to e\). In the situation \(i = Y\) of the
+theorem, the full faithfulness of the Yoneda embedding guarantees that for \(e = Y(c)\), this Kan extension recovers
+\(u(c)\).
+</p><p class='noindent'>The special case \(C = *\) is the form that we will use most often in Part I. Since \(\PSh (*) \simeq \An \), it gives the following universal
+property.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3007r10'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 1.8.10 </span>(Universal property of animae)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cor:Universal_Property_Animae'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(D\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  a  large</span>  \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category  admitting  all  small
+colimits. Evaluation at</span> \(* \in \An \) <span class='ntx-Italic-tlf-t1-x-x-109'>induces an equivalence </span>\[ \ev _*\colon \Fun ^{\colim }(\An ,D) \quad \iso \quad D. \]
+</p>
+</div>
+<p class='noindent'>Given an object \(d \in D\), the inverse equivalence sends \(d\) to a functor of the form \[ \An \to D, \qquad X \mapsto \colim _X d, \] where the right-hand side denotes
+the colimit of the constant diagram with value \(d\), indexed by the anima \(X\).
+</p><p class='noindent'>Returning now to the simplicial language from <a class="source-reference" data-label="sec:QuasiCategories" href="../simplicial-objects-and-quasicategories/index.html#sec:QuasiCategories">Section 1.6</a>, we may use this theorem to assign an \(\infty \)-category to every
+simplicial anima:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3008r11'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/associated-infinity-category-of-a-simplicial-anima/index.html" aria-label="Construction 1.8.11, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 1.8.11 </span></a>(Associated \(\infty \)-category)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cons:Associated_Infinity_Category'></span> Every simplicial anima \(X\colon \simp \catop \to \An \) has an associated \(\infty \)-category
+\(\ac (X) \in \Cat _{\infty }\). To construct it, consider the inclusion \(\simp \hookrightarrow \Cat _{\infty }\) from <a class="source-reference" data-label="axiom:Cat_infty" href="../../../entry/infinity-categories-of-animae-and-infinity-categories/index.html#axiom:Cat_infty">Axiom L</a>. By <a class="source-reference" data-label="thm:Colimit_Preserving_Extension" href="../../../entry/colimit-preserving-extension-from-presheaves/index.html#thm:Colimit_Preserving_Extension">Theorem 1.8.9</a>, this uniquely extends to a colimit-preserving
+functor \[ \ac \colon \sAn = \PSh (\simp ) \to \Cat _{\infty }. \] In particular, every simplicial set \(X\) (hence every quasicategory) defines an \(\infty \)-category \(\ac (X)\) by
+regarding it as a simplicial anima via the inclusion \(\sSet \hookrightarrow \sAn \).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3009r12'></a>
+<a class="entry-heading-link" href="../../../entry/classical-categories-as-infinity-categories-via-nerves/index.html" aria-label="Remark 1.8.12., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 1.8.12.</span></a>  </span><span id='rmk:From_Category_To_Infinity_Category'></span> Note that the composite \[ \Cat _1^{(1)} \xhookrightarrow {N} \sSet \hookrightarrow \sAn \xrightarrow {\ac } \Cat _{\infty } \] provides a way of associating an \(\infty \)-category to a classical
+1-category. From this point forward, we stop working with <a class="source-reference" data-label="axiom:B_Ordinary_Categories" href="../../../entry/ordinary-categories-as-infinity-categories/index.html#axiom:B_Ordinary_Categories">Axiom B</a> and use this refined assignment. The two
+assignments agree on the indexing categories used so far in this chapter: on the linear orders \([n]\) this is
+the fully faithful functor \(\simp \hookrightarrow \Cat _{\infty }\) from <a class="source-reference" data-label="axiom:Cat_infty" href="../../../entry/infinity-categories-of-animae-and-infinity-categories/index.html#axiom:Cat_infty">Axiom L</a>, and the categories \([1] \times [1]\), \(\pushout \), \(\pullback \) and \([\omega ]\) are obtained from the \([n]\) by the coproducts
+and pushouts of <a class="source-reference" data-label="axiom:Commutative_Diagram_Axiom" href="../../../entry/commutative-diagram-axiom/index.html#axiom:Commutative_Diagram_Axiom">Axiom D</a>, which both assignments preserve.
+</p>
+</div>
+
+<h5 class='subsubsectionHead' id='adjunctions'><a id='x1-4000'></a>Adjunctions</h5>
+<p class='noindent'>The last piece of black-box infrastructure we record here is the notion of an <span class='ntx-Italic-tlf-t1-x-x-109'>adjunction</span>, which interacts
+closely with the limit and colimit constructions introduced above:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4001r13'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/adjunctions/index.html" aria-label="Definition 1.8.13., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.8.13.</span></a>  </span><span id='def:Adjunction'></span> Let \(F\colon C \to D\) and \(G \colon D \to C\) be two functors. An <span class='ntx-Italic-tlf-t1-x-x-109'>adjunction </span>between \(C\) and \(D\) consists of a natural
+isomorphism \[ \Hom _D(F(-),-) \cong \Hom _C(-,G(-)) \] of functors \(C\catop \times D \to \An \). We often write \(F \dashv G\) to indicate that such an isomorphism has been given.
+</p>
+</div>
+<p class='noindent'>As in classical category theory, adjunctions may equivalently be characterized in terms of a unit \(\eta \colon \id _C \to GF\) and
+a counit \(\epsilon \colon FG \to \id _D\) satisfying the triangle identities \((\epsilon F)(F\eta ) \cong \id _F\) and \((G\epsilon )(\eta G) \cong \id _G\). An important feature of adjunctions is that
+they can be characterized <span class='ntx-Italic-tlf-t1-x-x-109'>pointwise</span>: given a functor \(F\colon C \to D\), if one can provide for every object \(Y\) of \(D\) a
+suitable object \(G(Y)\) of \(C\) equipped with a map \(\epsilon _Y\colon FG(Y) \to Y\) satisfying a suitable adjointness condition, then these
+objects automatically assemble into a right adjoint \(G\colon D \to C\), and the maps \(\epsilon _Y\) assemble into a counit \(\epsilon \) for the
+adjunction.
+</p><p class='noindent'>The theory of adjunctions is very rich and there is a lot to say about it. Details on the pointwise
+characterization of adjunctions, along with related concepts such as Kan extensions, (co)final functors, and
+Bousfield localizations, can be found in <a class="source-reference" data-label="chap:Adjunctions" href="../../../chapter/adjunctions/index.html#chap:Adjunctions">Chapter 21</a>.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4002r14'></a>
+<a class="entry-heading-link" href="../../../entry/fundamental-adjunctions-for-animae-and-infinity-categories/index.html" aria-label="Example 1.8.14., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 1.8.14.</span></a>  </span><span id='ex:Fundamental_Adjunctions'></span> Let us state as black boxes two fundamental examples of adjunctions we will
+use:
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><a id='x1-40031'></a> (Path components) The fully faithful inclusion \(\Set \hookrightarrow \An \) admits a left adjoint \(\pi _0\colon \An \to \Set \). This functor preserves
+     arbitrary products.
+     </p><p class='noindent'>We call \(\pi _0(X)\) the <span class='ntx-Italic-tlf-t1-x-x-109'>set of path components </span>of the anima \(X\). We often abuse terminology and refer to an
+     anima as a <span class='ntx-Italic-tlf-t1-x-x-109'>set </span>if it is in the essential image of the inclusion \(\Set \hookrightarrow \An \) (cf. <a class="source-reference" data-label="ex:Set_As_Anima" href="../../../entry/sets-as-animae/index.html#ex:Set_As_Anima">Example 1.1.4</a>).
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><a id='x1-40042'></a> (Homotopy category) We say that an \(\infty \)-category \(C\) is a <span class='ntx-Italic-tlf-t1-x-x-109'>1-category </span>if the hom anima \(\Hom _C(X,Y)\) is a set
+     for all \(X,Y \in C\). We denote by \[ \Cat _1 \hookrightarrow \Cat _{\infty } \] the full subcategory spanned by the 1-categories. Then this inclusion
+     admits a left adjoint \[ \Ho \colon \Cat _{\infty } \to \Cat _1. \] Given an \(\infty \)-category \(C\), we refer to the 1-category \(\Ho (C)\) as its <span class='ntx-Italic-tlf-t1-x-x-109'>homotopy category</span>;
+                                                                                   
+                                                                                   
+     it has the same set of isomorphism classes of objects as \(C\), but has hom sets given by the set of
+     path components of the hom anima of \(C\): \[ \Hom _{\Ho (C)}(X,Y) \cong \pi _0(\Hom _C(X,Y)). \]</p></dd></dl>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4005r15'></a>
+<a class="entry-heading-link" href="../../../entry/classical-categories-and-one-categories/index.html" aria-label="Remark 1.8.15., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 1.8.15.</span></a>  </span><span id='rmk:Classical_Categories_And_One_Categories'></span> The functor \(\Cat _1^{(1)} \to \Cat _{\infty }\) from <a class="source-reference" data-label="rmk:From_Category_To_Infinity_Category" href="../../../entry/classical-categories-as-infinity-categories-via-nerves/index.html#rmk:From_Category_To_Infinity_Category">Remark 1.8.12</a> lands in the full subcategory \(\Cat _1\) of \(1\)-categories. In particular, every
+classical 1-category defines a 1-category in the above sense. Conversely, every 1-category arises this
+way. We will use the phrase ‘classical 1-category’ if we wish to refer to the classical definition of
+categories in terms of sets of objects and morphisms.
+</p>
+</div>
+<p class='noindent'><a id='likesection.1'></a><a id='x1-4006x'></a>
+</p>
+<h3 class='likesectionHead' id='exercises'><a id='x1-5000'></a>Exercises</h3>
+<p id='exercises1'><a id='Q1-1-6'></a>
+</p><p class='noindent'>The opening exercises develop fluency with coproducts, pullbacks, hom animae, monomorphisms, and full
+subcategories.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5001r1'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.1.</span>  </span>  Show  that  coproducts  of  \(\infty \)-categories  are  <span class='ntx-Italic-tlf-t1-x-x-109'>disjoint</span>:  given  \(\infty \)-categories  \(C\)  and  \(D\),  the
+commutative  square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-f783a826fbe3.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>is  a  pullback  square.  In  a  similar  spirit,  show  that  for  every  functor  \(f\colon C \to D\)  the
+commutative square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-11dd9c0e1c4d.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>is a pullback square. In both cases, explain also which commutative square is
+meant, that is, which natural isomorphism fills it. <span class='ntx-Italic-tlf-t1-x-x-109'>Hint: </span>use <span class="source-reference" data-label="axiom:Universality_Of_Coproducts">Axiom C.3</span>.</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5002r2'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.2.</span>  </span> Consider two functors \(f\colon C \to E\) and \(g\colon D \to E\). Show that the commutative square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-7772196ce2c6.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>is a pullback square.
+In other words, construct an equivalence \[ C \times _E D \simeq (C \times D) \times _{E \times E} E. \] <span class='ntx-Italic-tlf-t1-x-x-109'>Hint: </span>Consider the commutative diagram</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-c3a7349412ff.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>The vertical
+composite of the two left-hand squares is the square defining \(C \times _E D\). Use <a class="source-reference" data-label="exercise:Compatibility_Products_And_Pullbacks" href="../../../entry/products-as-pullbacks-over-the-terminal-category/index.html#exercise:Compatibility_Products_And_Pullbacks">Exercise 1.3.10</a>, <a class="source-reference" data-label="exercise:Pullback_Of_Equivalence" href="../../../entry/pullbacks-along-equivalences/index.html#exercise:Pullback_Of_Equivalence">Exercise 1.3.16</a>, <a class="source-reference" data-label="lem:Pasting_Lemma_Pullbacks" href="../../../entry/pasting-lemma-for-pullback-squares-of-categories/index.html#lem:Pasting_Lemma_Pullbacks">Lemma 1.3.15</a> to show that the bottom-left
+and top-right squares are pullback squares, and then apply pullback pasting twice.</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5003r3'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.3.</span>  </span>Let \(C\) and \(D\) be \(\infty \)-categories and let \(x,x' \in C\) and \(y,y' \in D\) be objects. Produce an equivalence \[ \Hom _{C \times D}((x,y), (x',y')) \simeq \Hom _C(x,x') \times \Hom _D(y,y'). \] Show that
+composition in \(C \times D\) corresponds to composition in \(C\) and \(D\) under these equivalences.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5004r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.4.</span>  </span> Let \(f\colon C \to E\) and \(g\colon D \to E\) be functors, and let \(x,x' \in C \times _E D\) be objects. Show that there is a pullback square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-512fc781b7fa.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Here
+the lower horizontal functor is induced by \(g\), followed by transport along the structural isomorphisms
+\(g\pr _D(x)\cong f\pr _C(x)\) and \(g\pr _D(x')\cong f\pr _C(x')\) carried by the two objects of the pullback.</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5005r5'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.5.</span>  </span>Show that a functor \(F\colon C \to D\) is a monomorphism if and only if the projection \(\pr _1\colon C \times _D C \to C\) is an equivalence.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5006r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.6.</span>  </span>Let \(F\colon C\to D\) and \(G\colon C'\to D'\) be functors, and suppose there is a diagram</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-6464eea196ff.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>in which both squares commute
+and whose outer rectangle is isomorphic, as a commutative square, to the identity square on \(F\). In this
+situation, we say that \(F\) is a <span class='ntx-Italic-tlf-t1-x-x-109'>retract </span>of \(G\).</p><p class='noindent'>Show that if \(G\) is a monomorphism, then so is \(F\). Conclude that if \(i\colon A \to C\) induces a monomorphism \(\Map ([1],A) \hookrightarrow \Map ([1],C)\), then it
+also induces a monomorphism \(A^{\simeq } \hookrightarrow C^{\simeq }\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5007r7'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.7.</span>  </span>Let  \(i\colon A \to C\)  be  a  monomorphism.  Show  that  \(i^{\simeq }\colon A^{\simeq } \to C^{\simeq }\)  is  a  monomorphism.  Show  that  for  every
+\(\infty \)-category \(T\), the functor \(i_*\colon \Fun (T,A) \to \Fun (T,C)\) is a monomorphism.
+                                                                                   
+                                                                                   
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5008r8'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.8.</span>  </span> Consider a pullback square of \(\infty \)-categories</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-2de41ec9ecfb.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Show that if \(i\) is a monomorphism, then so
+is \(i'\). Show moreover that if \(i\) is a full subcategory inclusion, then so is \(i'\).</p>
+</div>
+<p class='noindent'>The next exercise gives the concrete calculation needed for the subsequent localization arguments.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5009r9'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.9.</span>  </span> The goal of this exercise is to show that the anima \(\Map ([1],[1])\) is equivalent to a disjoint union of three
+points.
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'>Construct a retraction \(r\) of the evaluation functor \[ e := (\ev _0,\ev _1)\colon \Map ([1],[1]) \to [1]^{\simeq } \times [1]^{\simeq }, \] that is, a map \(r\colon [1]^{\simeq } \times [1]^{\simeq } \to \Map ([1],[1])\) together with an equivalence
+     \(r \circ e \simeq \id \).
+     </p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Hint: </span>consider the functor obtained from the ordinary minimum and maximum maps on \([1]\): \[ m\colon [1] \times [1] \times [1] \to [1], \qquad (x,y,z) \mapsto \min \bigl ( \max (x,y), \min (\max (x,z) , \max (y,z))\bigr ). \]
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'>Deduce from (1) that \(\Map ([1],[1])\) is a set. Under the equivalence \([1]^{\simeq } \times [1]^{\simeq } \simeq \{(0,0), (0,1), (1,0), (1,1)\}\), show that the fiber of \(e\) over \((1,0)\) is empty,
+     while each of the other three fibers is inhabited.
+                                                                                   
+                                                                                   
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'>Conclude that the canonical map \[ * \sqcup * \sqcup * \to \Map ([1],[1]) \] selecting the three functors \(\const _0\), \(\id _{[1]}\), and \(\const _1\) is an equivalence.</p></dd></dl>
+</div>
+<p class='noindent'>The remaining exercises connect the walking morphism, localization, groupoid cores, and
+geometric realization. The final exercise uses the adjunction theory of Part III and may be
+postponed.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5013r10'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.10.</span>  </span> Show that the functor \(p_{[1]}\colon [1] \to *\) exhibits \(*\) as the localization of \([1]\) at the collection \(W = \Map ([1],[1])\) of all
+morphisms.
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'>Show that \(p_{[1]}\) inverts all morphisms in \(\Map ([1],[1])\).
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'>Let \(D\) be an \(\infty \)-category. Use <span class="source-reference" data-label="exercise:Walking_Morphism_Has_Three_Endomorphisms">Chapterexercise 1.9</span> to rewrite the pullback square defining \(\Map ^{W}([1],D)\), and deduce that \(\Map ^{W}([1],D)\) is equivalent
+     to \(\Iso (D)^{\simeq }\). Use the Rezk axiom to conclude that the functor \[ p_{[1]}^*\colon D^{\simeq } \to \Map ^{W}([1],D) \] is an equivalence.
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'>By <a class="source-reference" data-label="axiom:Localization_Axiom" href="../../../entry/existence-of-localizations/index.html#axiom:Localization_Axiom">Axiom K</a>, let \(l\colon [1] \to L\) be a localization of \([1]\) at \(W\). Use the universal property of \(l\) together with (2) to show that
+     for every \(\infty \)-category \(D\), the unique functor \(L \to *\) induces an equivalence \[ \Map (*,D) \to \Map (L,D), \] and thus is an equivalence.</p></dd></dl>
+</div>
+
+<div class='newtheorem'>
+                                                                                   
+                                                                                   
+<p class='noindent'><span class='head'>
+<a id='x1-5017r11'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.11.</span>  </span>Let \(l\colon C \to L\) be a functor, and let \(W \hookrightarrow \Map ([1],C)\) be the collection defined by the pullback square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-67fa35d5a3ca.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Show that
+\(l\) is a localization of \(C\) at <span class='ntx-Italic-tlf-t1-x-x-109'>some </span>collection of morphisms if and only if it is a localization of \(C\) at this class
+\(W\).</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5018r12'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.12.</span>  </span> Show that any localization \(l\colon C \to L\) is essentially surjective: for any object \(x \in L\), there exists
+some \(y \in C\) with \(x \cong l(y)\). You may use without proof that every map of animae admits an image factorization.
+<span class='ntx-Italic-tlf-t1-x-x-109'>Hint: </span>Apply this fact to \(C^{\simeq }\to L^{\simeq }\), let \(L' \subseteq L\) be the full subcategory on the resulting image collection, and apply the
+universal property of \(l\) to the map \(C \to L'\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5019r13'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.13.</span>  </span> Show that localizations are closed under pushouts: for a pushout square of \(\infty \)-categories</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-046c10358e04.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>if \(l\) is a localization, then so is \(l'\).</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5020r14'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.14 </span>(cf. <a class="source-reference" data-label="exercise:Encodings_Commutative_Triangles" href="../../../entry/triangles-as-squares-with-an-identity-edge/index.html#exercise:Encodings_Commutative_Triangles">Proposition 1.4.4</a>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Use the previous exercise to show that the two functors \[ p_0 \colon [1] \times [1] \to [2] \qquad \text { and }\qquad p_2 \colon [1] \times [1] \to [2] \] are localizations of \([1] \times [1]\)
+at the morphism \((0,0) \to (1,0)\) and \((0,1) \to (1,1)\), respectively; that is, at the left and the right column of the square. Here \(p_0\) and \(p_2\)
+are the functors constructed in <a class="source-reference" data-label="exercise:Projections_Square_Onto_Triangle" href="../../../entry/projections-from-squares-to-triangles/index.html#exercise:Projections_Square_Onto_Triangle">Construction 1.4.3</a>, pictorially represented by the following two diagrams:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-5cd7fc9d45b1.svg" alt="Commutative diagram generated from the LaTeX source"></figure><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-f04391f38307.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5021r15'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.15.</span>  </span> Let \(C\) be an \(\infty \)-category. Show that the following statements are equivalent:
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>The \(\infty \)-category \(C\) is an anima;
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>The functor \(p_{[1]}^*\colon C \to \Ar (C)\) is an equivalence;
+   </p></dd><dt class='enumerate'>
+(3) </dt><dd class='enumerate'>
+   <p class='noindent'>The functor \(p_{[1]}^*\colon C^{\simeq } \to \Map ([1],C)\) is an equivalence;
+   </p></dd><dt class='enumerate'>
+(4) </dt><dd class='enumerate'>
+   <p class='noindent'>The functor \(\pi _{\mathrm {Iso}}\colon \mathrm {Iso}(C) \to \Ar (C)\) is an equivalence.</p></dd></dl>
+<p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Hint: </span>Use <span class="source-reference" data-label="exercise:Walking_Morphism_Is_Localization">Chapterexercise 1.10</span> and the Rezk axiom to show that \(p_{[1]}^*\colon C \to \Ar (C)\) identifies \(C\) with \(\Iso (C)\).
+                                                                                   
+                                                                                   
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5026r16'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.16.</span>  </span> Let \(C\) be an \(\infty \)-category. The goal of this exercise is to identify the groupoid core \(C^{\simeq }\) of \(C\) with the
+subcategory \(\lra {M}_C\) of \(C\) spanned by the isomorphisms \(M := \Iso (C)^{\simeq } \hookrightarrow \Map ([1],C)\).
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'>Show that \(M\) is closed under composition, so that the subcategory \(\lra {M}_C\) is defined.
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'>Show that the map \(p_{[1]}^*\colon \lra {M}_C^{\simeq } \hookrightarrow \Map ([1],\lra {M}_C)\) is an equivalence, and deduce from <span class="source-reference" data-label="exercise:Characterizations_Anima">Chapterexercise 1.15</span> that \(\lra {M}_C\) is an anima.
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'>Show that the core functor \(\gamma _C\colon C^{\simeq } \to C\) sends all morphisms to isomorphisms, hence induces a functor \(C^{\simeq } \to \lra {M}_C\).
+     </p></dd><dt class='enumerate'>
+  (4) </dt><dd class='enumerate'>
+     <p class='noindent'>Show that this functor induces an equivalence on groupoid cores. Use (2) to conclude that it
+     is an equivalence.</p></dd></dl>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5031r17'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.17.</span>  </span> Let \(C\) be an \(\infty \)-category. The goal of this exercise is to show that its geometric realization \(\geom {C}\) is an
+anima.
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'>Use <span class="source-reference" data-label="exercise:Groupoid_Core_Is_Subcategory_On_Isomorphisms">Chapterexercise 1.16</span> to show that the localization functor \(C \to \geom {C}\) factors through a functor \(C \to \geom {C}^{\simeq }\).
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'>Argue that this functor inverts all morphisms, hence induces a functor \(\geom {C} \to \geom {C}^{\simeq }\).
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'>Show that this provides an inverse to the inclusion \(\geom {C}^{\simeq } \to \geom {C}\) and conclude that \(\geom {C}\) is an anima.</p></dd></dl>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5035r18'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.18.</span>  </span>This  exercise  uses  the  theory  developed  in  <a class="source-reference" data-label="chap:Adjunctions" href="../../../chapter/adjunctions/index.html#chap:Adjunctions">Chapter 21</a>.  Use  the  pointwise  criterion  for
+adjunctions (<a class="source-reference" data-label="lem:Pointwise_Criterion_Adjunctions" href="../../../entry/assembly-of-pointwise-adjoint-objects/index.html#lem:Pointwise_Criterion_Adjunctions">Lemma 21.1.4</a>) to show that the inclusion \(\An \hookrightarrow \Cat _{\infty }\) admits both a left adjoint \(\geom {-}\colon \Cat _{\infty } \to \An \) as well as a right adjoint \((-)^{\simeq }\colon \Cat _{\infty } \to \An \).
+</p>
+</div>
+
+ 
+<section class="footnotes" aria-label="Notes"><h2>Notes</h2>
+  <div class='footnote-text'>
+  <p class='noindent'><span class='footnote-mark'><a id='chapter-introduction-to-infinity-categories-section-08-fn1x0'><a id='chapter-introduction-to-infinity-categories-section-08-x2-2003x1'></a>    <sup class='textsuperscript'>1</sup></a></span><span class='ntx-Regular-tlf-t1-x-x-90'>This terminology will be explained in </span><a class="source-reference" data-label="chap:Straightening" href="../../../chapter/cocartesian-fibrations-and-unstraightening/index.html#chap:Straightening">Chapter 23</a><span class='ntx-Regular-tlf-t1-x-x-90'>.</span></p></div> 
+</section></div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../limits-and-colimits/index.html" aria-label="Previous section: Limits and colimits" title="Previous section: Limits and colimits"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../../animae-as-spaces/homotopy-pushouts-and-pullbacks/index.html" aria-label="Next section: Homotopy pushouts and pullbacks" title="Next section: Homotopy pushouts and pullbacks"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html" aria-current="page"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/introduction-to-infinity-categories/index.html" aria-current="page"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../the-heuristics-behind-categories/index.html"><span class="context-entry-heading">Section 1.1</span><span class="context-entry-title">The heuristics behind ∞-categories</span></a></li><li><a href="../the-language-of-category-theory/index.html"><span class="context-entry-heading">Section 1.2</span><span class="context-entry-title">The language of ∞-category theory</span></a></li><li><a href="../basic-constructions-of-categories/index.html"><span class="context-entry-heading">Section 1.3</span><span class="context-entry-title">Basic constructions of ∞-categories</span></a></li><li><a href="../commutative-diagrams-composition-and-animae/index.html"><span class="context-entry-heading">Section 1.4</span><span class="context-entry-title">Commutative diagrams, composition, and animae</span></a></li><li><a href="../further-constructions-of-categories/index.html"><span class="context-entry-heading">Section 1.5</span><span class="context-entry-title">Further constructions of ∞-categories</span></a></li><li><a href="../simplicial-objects-and-quasicategories/index.html"><span class="context-entry-heading">Section 1.6</span><span class="context-entry-title">Simplicial objects and quasicategories</span></a></li><li><a href="../limits-and-colimits/index.html"><span class="context-entry-heading">Section 1.7</span><span class="context-entry-title">Limits and colimits</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 1.8</span><span class="context-entry-title">Foundational results in ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#axiom:Cat_infty"><span class="context-entry-heading">Axiom L</span><span class="context-entry-title">axiom</span></a></li><li><a href="#rmk:Large_Infinity_Categories"><span class="context-entry-heading">Remark 1.8.1</span><span class="context-entry-title">Large ∞-categories</span></a></li><li><a href="#rmk:Comparison_External_Internal_Squares"><span class="context-entry-heading">Remark 1.8.2</span><span class="context-entry-title">Two meanings of `pullback square'</span></a></li><li><a href="#rmk:Quasicategorical_Construction_Of_Cat_Infinity"><span class="context-entry-heading">Remark 1.8.3</span><span class="context-entry-title">remark</span></a></li><li><a href="#def:Presheaf_Category_And_Yoneda_Embedding"><span class="context-entry-heading">Definition 1.8.4</span><span class="context-entry-title">definition</span></a></li><li><a href="#thm:Yoneda_Lemma"><span class="context-entry-heading">Theorem 1.8.5</span><span class="context-entry-title">Yoneda lemma</span></a></li><li><a href="#prop:Hom_Functor_Preserves_Limits"><span class="context-entry-heading">Proposition 1.8.6</span><span class="context-entry-title">proposition</span></a></li><li><a href="#prop:Presheaf_Categories_Have_Limits_And_Colimits"><span class="context-entry-heading">Proposition 1.8.7</span><span class="context-entry-title">proposition</span></a></li><li><a href="#exercise:Yoneda_Preserves_Limits"><span class="context-entry-heading">Exercise 1.8.8</span><span class="context-entry-title">exercise</span></a></li><li><a href="#thm:Colimit_Preserving_Extension"><span class="context-entry-heading">Theorem 1.8.9</span><span class="context-entry-title">theorem</span></a></li><li><a href="#cor:Universal_Property_Animae"><span class="context-entry-heading">Corollary 1.8.10</span><span class="context-entry-title">Universal property of animae</span></a></li><li><a href="#cons:Associated_Infinity_Category"><span class="context-entry-heading">Construction 1.8.11</span><span class="context-entry-title">Associated ∞-category</span></a></li><li><a href="#rmk:From_Category_To_Infinity_Category"><span class="context-entry-heading">Remark 1.8.12</span><span class="context-entry-title">remark</span></a></li><li><a href="#def:Adjunction"><span class="context-entry-heading">Definition 1.8.13</span><span class="context-entry-title">definition</span></a></li><li><a href="#ex:Fundamental_Adjunctions"><span class="context-entry-heading">Example 1.8.14</span><span class="context-entry-title">example</span></a></li><li><a href="#rmk:Classical_Categories_And_One_Categories"><span class="context-entry-heading">Remark 1.8.15</span><span class="context-entry-title">remark</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

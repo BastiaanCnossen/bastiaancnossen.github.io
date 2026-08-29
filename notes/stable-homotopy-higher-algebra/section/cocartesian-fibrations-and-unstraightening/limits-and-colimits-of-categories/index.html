@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 23.5: Limits and colimits of ∞-categories | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/background-on-infinity-category-theory/index.html">Part III</a> · <a href="../../../chapter/cocartesian-fibrations-and-unstraightening/index.html">Chapter 23</a> · Section 23.5</p>
+      <h1>Limits and colimits of ∞-categories</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Limits_and_Colimits_in_Cat'>As a consequence of straightening/unstraightening, we obtain explicit formulas for limits and colimits in
+\(\Cat _{\infty }\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<a class="entry-heading-link" href="../../../entry/fiberwise-construction-of-limits-and-colimits-of-categories/index.html" aria-label="Construction 23.5.1., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 23.5.1.</span></a>  </span><span id='cons:Limits_And_Colimits_Of_Categories'></span> Let \(p\colon E \to I\) be a cocartesian fibration. </p>
+     <ul class='itemize1'>
+     <li class='itemize'>We write \(E[\cc ^{-1}]\) for the localization of \(E\) at the collection of \(p\)-cocartesian morphisms.
+     </li>
+     <li class='itemize'>We write \(\Gamma _I(E)\) for the \(\infty \)-category of <span class='ntx-Italic-tlf-t1-x-x-109'>sections of</span> \(p\), defined via the following pullback square: <div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-04c651dc0b93.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div>
+     </li>
+     <li class='itemize'>We write \(\Gamma _I^{\cc }(E)\) for the full subcategory of \(\Gamma _I(E)\) spanned by the <span class='ntx-Italic-tlf-t1-x-x-109'>cocartesian sections</span>: those sections <div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-b46f7332a4c4.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div> that
+     are cocartesian functors over \(I\) (i.e., that send arbitary morphisms in \(I\) to \(p\)-cocartesian morphisms
+     in \(E\)).</li></ul>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1002r2'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 23.5.2.</span>  </span><span id='prop:Limits_And_Colimits_Of_Categories'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(I\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a small</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category and let</span> \(F\colon I \to \Cat _{\infty }\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a functor.</span>
+   </p><dl class='enumerate'><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(1)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(F\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a colimit in</span> \(\Cat _{\infty }\)<span class='ntx-Italic-tlf-t1-x-x-109'>, which can be computed by the formula </span>\[ \colim _I F(i) \simeq \Un ^{\cc }(F)[\cc ^{-1}]. \]
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(2)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(F\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a limit in</span> \(\Cat _{\infty }\)<span class='ntx-Italic-tlf-t1-x-x-109'>, which can be computed by the formula </span>\[ \lim _I F(i) \simeq \Gamma _I^{\cc }(\Un ^{\cc }(F)). \]</p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cocartesian-fibrations-and-unstraightening-section-05-5" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cocartesian-fibrations-and-unstraightening-section-05-5">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> See <span class="source-reference" data-label="sct-thm:Cat_Is_Cocomplete">Reference ?</span>, <span class="source-reference" data-label="sct-thm:Small_Limits_Of_Categories">Reference ?</span> of <span class='citation'>[Cisinski et al. (2026)]</span>.                                                                                                                                □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1005r3'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 23.5.3 </span>(Fiberwise colimits over cocartesian fibrations)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Fiberwise_Colimits_Cocartesian_Fibration'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(p\colon E\to J\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a cocartesian fibration
+between small</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories and let</span> \(G\colon E\to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a functor. Assume that the restriction</span> \(G\vert _{E_j}\colon E_j\to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a colimit for
+every</span> \(j\in J\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then the left Kan extension</span> \(p_!G\colon J\to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>exists and is given pointwise by </span>\[ (p_!G)(j)\simeq \colim _{E_j}G\vert _{E_j}. \] <span class='ntx-Italic-tlf-t1-x-x-109'>Moreover,</span> \(G\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a colimit if
+and only if</span> \(p_!G\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a colimit, and in this case there is an isomorphism </span>\[ \colim _EG\cong \colim _Jp_!G. \] <span class='ntx-Italic-tlf-t1-x-x-109'>Dually, fiberwise limits over
+a cartesian fibration assemble into a right Kan extension and may be computed by first taking the
+fiberwise limits and then the limit over the base.</span>
+</p>
+</div>
+                                                                                   
+
+                                                                                   
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cocartesian-fibrations-and-unstraightening-section-05-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cocartesian-fibrations-and-unstraightening-section-05-4">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> See <span class="source-reference" data-label="sct-proposition:limits-in-pullbacks">Reference ?</span> of <span class='citation'>[Cisinski et al. (2026)]</span>.                                                                                                                                  □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1006r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 23.5.4.</span>  </span><span id='cor:Limits_And_Colimits_In_An'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(I\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a small</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category and let</span> \(F\colon I \to \An \) <span class='ntx-Italic-tlf-t1-x-x-109'>be functor.</span>
+   </p><dl class='enumerate'><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(1)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(F\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a colimit in</span> \(\An \)<span class='ntx-Italic-tlf-t1-x-x-109'>, which can be computed by the formula </span>\[ \colim _I F(i) \simeq \geom {\Un ^{\cc }(F)}. \]
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(2)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(F\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a limit in</span> \(\An \)<span class='ntx-Italic-tlf-t1-x-x-109'>, which can be computed by the formula </span>\[ \lim _I F(i) \simeq \Gamma _I(\Un ^{\cc }(F)). \]</p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cocartesian-fibrations-and-unstraightening-section-05-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cocartesian-fibrations-and-unstraightening-section-05-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We compute the limit and colimit in \(\Cat _{\infty }\) and observe that it is still in \(\An \). For (1) this is clear: all
+morphisms in \(\Un ^{\cc }(F)\) are cocartesian, see <a class="source-reference" data-label="prop:Characterization_Left_Fibrations" href="../../../entry/characterizations-of-left-fibrations/index.html#prop:Characterization_Left_Fibrations">Proposition 23.1.16</a>, hence inverting all cocartesian morphisms gives an anima. For
+(2), any section \(s\colon I \to \Un ^{\cc }(F)\) of \(p_F\) is cocartesian, again since all morphisms are cocartesian, so \(\Gamma ^{\cc }_I(\Un ^{\cc }(F)) = \Gamma _I(\Un ^{\cc }(F))\). Note that this is
+already an anima: any morphism of sections is invertible since all fibers of \(p_F\colon \Un ^{\cc }(F) \to I\) are animae.                 □
+                                                                                   
+                                                                                   
+</p>
+</div></div>
+<p class='noindent'>We will now investigate the behavior of limits of \(\infty \)-categories in more detail.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1009r5'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 23.5.5 </span>(Limits of adjunctions)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Limits_Of_Adjunctions'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(K\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a small</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category and consider functors</span> \(C_{\bullet },D_{\bullet }\colon K \to \Cat _{\infty }\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Let</span> \(F_{\bullet } \colon C_{\bullet } \to D_{\bullet }\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a
+natural transformation satisfying the following two conditions:</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>(Pointwise adjoints) The functor</span> \(F_k\colon C_k \to D_k\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a right adjoint</span> \(G_k\colon D_k \to C_k\) <span class='ntx-Italic-tlf-t1-x-x-109'>for every</span> \(k \in K\)<span class='ntx-Italic-tlf-t1-x-x-109'>;</span>
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>(Beck-Chevalley  condition)  For  every  morphism</span>  \(f\colon k \to k'\)  <span class='ntx-Italic-tlf-t1-x-x-109'>in</span>  \(K\)<span class='ntx-Italic-tlf-t1-x-x-109'>,  the  Beck-Chevalley  transformation</span>  \(\BC \colon f_* G_k \to G_{k'} f_*\)<span class='ntx-Italic-tlf-t1-x-x-109'>,
+     defined as the composite </span>\[ f_* G_k \xrightarrow {\mathrm {unit}} G_{k'} F_{k'} f_* G_k \cong G_{k'} f_* F_{k} G_k \xrightarrow {\mathrm {counit}} G_{k'} f_*, \] <span class='ntx-Italic-tlf-t1-x-x-109'>is a natural isomorphism.</span></p></dd></dl>
+<p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Then the functors</span> \(G_k\) <span class='ntx-Italic-tlf-t1-x-x-109'>assemble into a natural transformation</span> \(G_{\bullet }\colon D_{\bullet } \to C_{\bullet }\)<span class='ntx-Italic-tlf-t1-x-x-109'>, and the units and counits assemble into natural
+transformations</span> \(\varepsilon _{\bullet }\colon F_{\bullet } \circ G_{\bullet } \to \id _{\bullet }\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(\eta _{\bullet }\colon \id _{\bullet } \to G_{\bullet } \circ F_{\bullet }\) <span class='ntx-Italic-tlf-t1-x-x-109'>that satisfy the triangle identities.</span>
+</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>As a result, the induced functors </span>\[ F:= \lim _k F_{k}\colon \lim _k C_k \to \lim _k D_k \qquadtext { and } G := \lim _k G_k \colon \lim _k D_k \to \lim _k C_k \] <span class='ntx-Italic-tlf-t1-x-x-109'>are adjoint to each other.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cocartesian-fibrations-and-unstraightening-section-05-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cocartesian-fibrations-and-unstraightening-section-05-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> This is the functorial mate theorem of <span class="source-reference" data-label="sct-thm:Limits_Of_Adjunctions">Reference ?</span> of <span class='citation'>[Cisinski et al. (2026)]</span>. The Beck–Chevalley condition ensures that the
+pointwise right adjoints and all their coherence data form a right adjoint in the functor category.
+Applying the limit functor then preserves the unit, counit, and triangle identities.                            □
+                                                                                   
+                                                                                   
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1012r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 23.5.6.</span>  </span><span id='cor:Limits_Of_Categories_With_Limits'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(I\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(K\) <span class='ntx-Italic-tlf-t1-x-x-109'>be small</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories and let</span> \(C_{\bullet }\colon K \to \Cat _{\infty }\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a</span> \(K\)<span class='ntx-Italic-tlf-t1-x-x-109'>-indexed diagram of small</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories.
+Assume that</span> \(C_k\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits</span> \(I\)<span class='ntx-Italic-tlf-t1-x-x-109'>-indexed limits (resp. colimits) for all</span> \(k \in K\)<span class='ntx-Italic-tlf-t1-x-x-109'>, and that the functor</span> \(C_k \to C_{k'}\) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves</span> \(I\)<span class='ntx-Italic-tlf-t1-x-x-109'>-indexed
+limits  (resp. colimits)  for  every  morphism</span>  \(k \to k'\)  <span class='ntx-Italic-tlf-t1-x-x-109'>in</span>  \(K\)<span class='ntx-Italic-tlf-t1-x-x-109'>.  Then  the  limit</span>  \(C:= \lim _{k \in K} C_k\)  <span class='ntx-Italic-tlf-t1-x-x-109'>in</span>  \(\Cat _{\infty }\)  <span class='ntx-Italic-tlf-t1-x-x-109'>also  admits</span>  \(I\)<span class='ntx-Italic-tlf-t1-x-x-109'>-indexed  limits
+(resp. colimits) and each functor</span> \(C \to C_k\) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves them.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cocartesian-fibrations-and-unstraightening-section-05-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cocartesian-fibrations-and-unstraightening-section-05-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> See <span class="source-reference" data-label="sct-cor:Limits_Of_Categories_With_Limits">Reference ?</span> of <span class='citation'>[Cisinski et al. (2026)]</span>.                                                                                                                                  □
+</p>
+</div></div>
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../the-hom-functor/index.html" aria-label="Previous section: The Hom-functor" title="Previous section: The Hom-functor"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../hom-animae-in-functor-categories/index.html" aria-label="Next section: Hom animae in functor categories" title="Next section: Hom animae in functor categories"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html" aria-current="page"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/adjunctions/index.html"><span class="context-entry-heading">Chapter 21</span><span class="context-entry-title">Adjunctions</span></a></li><li><a href="../../../chapter/presentable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 22</span><span class="context-entry-title">Presentable ∞-categories</span></a></li><li><a href="../../../chapter/cocartesian-fibrations-and-unstraightening/index.html" aria-current="page"><span class="context-entry-heading">Chapter 23</span><span class="context-entry-title">Cocartesian fibrations and (un)straightening</span></a></li><li><a href="../../../chapter/complete-segal-animae/index.html"><span class="context-entry-heading">Chapter 24</span><span class="context-entry-title">Complete Segal animae</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../cartesian-and-cocartesian-fibrations/index.html"><span class="context-entry-heading">Section 23.1</span><span class="context-entry-title">Cartesian and cocartesian fibrations</span></a></li><li><a href="../straightening-unstraightening/index.html"><span class="context-entry-heading">Section 23.2</span><span class="context-entry-title">Straightening/unstraightening</span></a></li><li><a href="../fiberwise-criteria/index.html"><span class="context-entry-heading">Section 23.3</span><span class="context-entry-title">Fiberwise criteria</span></a></li><li><a href="../the-hom-functor/index.html"><span class="context-entry-heading">Section 23.4</span><span class="context-entry-title">The Hom-functor</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 23.5</span><span class="context-entry-title">Limits and colimits of ∞-categories</span></a></li><li><a href="../hom-animae-in-functor-categories/index.html"><span class="context-entry-heading">Section 23.6</span><span class="context-entry-title">Hom animae in functor categories</span></a></li><li><a href="../descent-and-topoi/index.html"><span class="context-entry-heading">Section 23.7</span><span class="context-entry-title">Descent and ∞-topoi</span></a></li><li><a href="../exponentiability-of-cartesian-fibrations/index.html"><span class="context-entry-heading">Section 23.8</span><span class="context-entry-title">Exponentiability of cartesian fibrations</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#cons:Limits_And_Colimits_Of_Categories"><span class="context-entry-heading">Construction 23.5.1</span><span class="context-entry-title">construction</span></a></li><li><a href="#prop:Limits_And_Colimits_Of_Categories"><span class="context-entry-heading">Proposition 23.5.2</span><span class="context-entry-title">proposition</span></a></li><li><a href="#prop:Fiberwise_Colimits_Cocartesian_Fibration"><span class="context-entry-heading">Proposition 23.5.3</span><span class="context-entry-title">Fiberwise colimits over cocartesian fibrations</span></a></li><li><a href="#cor:Limits_And_Colimits_In_An"><span class="context-entry-heading">Corollary 23.5.4</span><span class="context-entry-title">corollary</span></a></li><li><a href="#prop:Limits_Of_Adjunctions"><span class="context-entry-heading">Proposition 23.5.5</span><span class="context-entry-title">Limits of adjunctions</span></a></li><li><a href="#cor:Limits_Of_Categories_With_Limits"><span class="context-entry-heading">Corollary 23.5.6</span><span class="context-entry-title">corollary</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

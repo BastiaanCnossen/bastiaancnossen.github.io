@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 2.3: Relative cell complexes and Serre fibrations | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/stable-homotopy-theory/index.html">Part I</a> · <a href="../../../chapter/animae-as-spaces/index.html">Chapter 2</a> · Section 2.3</p>
+      <h1>Relative cell complexes and Serre fibrations</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Homotopy_Pushouts_Of_Spaces'>Having established a general toolkit for understanding limits and colimits in localizations, we return our
+attention to the localization functor \(\Pi _{\infty }\colon \Top \to \An \). In order to apply the theorems from the previous section, we need to
+equip \(\Top \) with suitable notions of fibrations and cofibrations. The standard choice, originating from Quillen’s
+work <span class='citation'>[Quillen (1967)]</span>, uses Serre fibrations and relative cell complexes. We will recall the relevant definitions and
+statements.
+                                                                                   
+                                                                                   
+</p>
+<h4 class='subsectionHead' id='relative-cell-complexes'><span class='titlemark'>2.3.1    </span> <a id='x1-50002.3.1'></a>Relative cell complexes</h4>
+<p class='noindent' id='subsec_Relative_Cell_Complexes'>We start with the cofibrations.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5001r1'></a>
+<a class="entry-heading-link" href="../../../entry/relative-cell-complexes/index.html" aria-label="Definition 2.3.1., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 2.3.1.</span></a>  </span><span id='def:Relative_Cell_Complex'></span> A continuous map \(i\colon A \to X\) is called a <span class='ntx-Italic-tlf-t1-x-x-109'>relative cell complex </span>if it is isomorphic under \(A\) to a map
+obtained by iteratively attaching cells: there exists an ordinal \(\lambda \), a sequence \((X_{\alpha })_{\alpha \leq \lambda }\) and a homeomorphism \(X_{\lambda } \cong X\) under \(A\)
+such that </p>
+     <ul class='itemize1'>
+     <li class='itemize'>\(X_0 = A\);
+     </li>
+     <li class='itemize'>For \(\alpha &lt; \lambda \), \(X_{\alpha +1}\) is formed from \(X_{\alpha }\) via a pushout square <div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-3ef2116bc15f.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div> for some index set \(I_\alpha \) and dimensions \(n_j \geq 0\).
+     </li>
+     <li class='itemize'>For limit ordinals \(\beta \leq \lambda \), \(X_{\beta } = \colim _{\alpha &lt; \beta } X_{\alpha }\).</li></ul>
+<p class='noindent'>A topological space \(X\) is a <span class='ntx-Italic-tlf-t1-x-x-109'>cell complex </span>if the map \(\emptyset \to X\) is a relative cell complex. We denote by \(\mathrm {Cell} \subseteq \Top \) the full
+subcategory spanned by the cell complexes.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5002r2'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/cw-complexes-and-relative-cell-complexes/index.html" aria-label="Remark 2.3.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 2.3.2.</span></a>  </span><span id='rmk:CW_Complexes_And_Relative_Cell_Complexes'></span> While the definition involves ordinals to handle potentially transfinite constructions,
+for many common examples the process involves only a finite or countable number of steps. For
+example, every cell complex is homotopy equivalent to a <span class='ntx-Italic-tlf-t1-x-x-109'>CW-complex</span>, which is a cell complex
+where \(\lambda = \omega \) is the set of natural numbers, and where the dimensions of the cells attached at step \(n \in \omega \) is \(n\).
+</p>
+</div>
+<p class='noindent'>Cell complexes play an important role in homotopy theory, due to the following two important
+theorems:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5003r3'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 2.3.3 </span>(Whitehead’s theorem, <span class='citation'>[Hatcher (2002), Theorem 4.5]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Whitehead_Theorem'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(f\colon X \to Y\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  a  weak  homotopy  equivalence  between  spaces
+having the homotopy type of cell complexes. Then</span> \(f\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a homotopy equivalence.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-25" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-25">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Choose homotopy equivalences \(u\colon X' \to X\) and \(v\colon Y' \to Y\) with \(X'\) and \(Y'\) cell complexes, and let \(w\colon Y \to Y'\) be a homotopy
+inverse to \(v\). The composite \(wfu\colon X' \to Y'\) is a weak homotopy equivalence, hence a homotopy equivalence by the
+usual Whitehead theorem. Since \(u\) and \(w\) are homotopy equivalences, so is \(f\).                                        □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5004r4'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 2.3.4 </span>(CW-approximation, <span class='citation'>[Hirschhorn (2015), Theorem 2.1]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Functorial_CW_Approximation'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For every topological space</span> \(X\)<span class='ntx-Italic-tlf-t1-x-x-109'>, there exists a cell complex</span> \(Z\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>equipped with a weak homotopy equivalence</span> \(q\colon Z \iso X\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Moreover,</span> \(Z\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(q\) <span class='ntx-Italic-tlf-t1-x-x-109'>can be taken to be functorial in</span> \(X\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5005r5'></a>
+<a class="entry-heading-link" href="../../../entry/functorial-cw-approximation-via-the-singular-complex/index.html" aria-label="Remark 2.3.5., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 2.3.5.</span></a>  </span><span id='rmk:Functorial_CW_Approximation_Via_Singular_Complex'></span> An explicit construction of such a functorial CW-approximation may be given as
+follows. Recall from <a class="source-reference" data-label="def:Geometric_Realization" href="../../../entry/geometric-realization-of-simplicial-sets/index.html#def:Geometric_Realization">Definition 1.6.9</a> that the singular complex functor \(\Sing \colon \Top \to \sSet \) admits the geometric realization functor \(\abs {-}\colon \sSet \to \Top \) as
+a left adjoint. One can prove that the geometric realization \(\abs {K}\) is a CW-complex for every simplicial
+set  \(K\).  Furthermore,  for  any  topological  space  \(X\)  the  counit  \(\abs {\Sing (X)} \to X\)  of  the  adjunction  is  a  weak  homotopy
+equivalence.
+</p>
+</div>
+<p class='noindent'>As a consequence of these two theorems, animae are cell complexes up to homotopy equivalence:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5006r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 2.3.6.</span>  </span><span id='prop:Animae_Localization_Of_Cell_Complexes'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(\Pi _{\infty }\colon \Cell \to \An \) <span class='ntx-Italic-tlf-t1-x-x-109'>induces an equivalence </span>\[ \Cell [\{\textup {homotopy equivalences}\}^{-1}] \; \iso \; \An . \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-24" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-24">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  In  light  of  the  homotopy  hypothesis,  <a class="source-reference" data-label="axiom:K_Homotopy_Hypothesis" href="../../../entry/grothendieck-homotopy-hypothesis/index.html#axiom:K_Homotopy_Hypothesis">Axiom M</a>,  it  suffices  to  show  that  the  functor  \[ \Cell [\{\text {homotopy equivalences}\}^{-1}] \to \Top [\{\text {weak homotopy equivalences}\}^{-1}] \]  induced  by
+the inclusion is an equivalence of \(\infty \)-categories. By <a class="source-reference" data-label="thm:Functorial_CW_Approximation" href="../../../entry/functorial-cw-approximation/index.html#thm:Functorial_CW_Approximation">Theorem 2.3.4</a> there exists a functor \(Z\colon \Top \to \Cell \) equipped with a natural
+transformation \(q\colon Z \Rightarrow \id _{\Top }\) such that the map \(q_X\colon Z(X) \to X\) is a weak homotopy equivalence for all \(X\). Given a weak homotopy
+equivalence \(f\colon X \to Y\), the 2-out-of-3 property applied to the diagram</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-e981d75f14c3.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>shows that the map \(Z(f)\) is again a weak
+homotopy equivalence, and by Whitehead’s theorem it is in fact a homotopy equivalence. It follows
+that \(Z\) induces a functor \(\Top [\{\text {weak homotopy equivalences}\}^{-1}] \to \Cell [\{\text {homotopy equivalences}\}^{-1}]\), and the natural transformation \(q\colon Z \to \id \) exhibits this as the requisite inverse functor.    □</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5007r7'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 2.3.7.</span>  </span><span id='cor:Pi_Infty_surjective_On_Objects_And_Morphisms'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The homotopy category</span> \(\Ho (\An )\) <span class='ntx-Italic-tlf-t1-x-x-109'>is equivalent to the category</span> \(\h \Cell \) <span class='ntx-Italic-tlf-t1-x-x-109'>whose objects are the cell
+complexes and whose morphism set between</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>is the set</span> \([X,Y]\) <span class='ntx-Italic-tlf-t1-x-x-109'>of homotopy classes of continuous maps</span>
+\(X \to Y\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-23" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-23">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> It suffices to observe that a functor \(F\colon \Cell \to C\) into a 1-category inverts homotopy equivalences if and
+only if it identifies homotopic maps. One implication follows by applying \(F\) to homotopy inverses.
+Conversely, if \(H\colon f \sim g\) is a homotopy, then \[ F(f)=F(H)F(i_0)=F(H)F(\pr )^{-1}=F(H)F(i_1)=F(g), \] where \(i_0,i_1\colon X \to X\times [0,1]\) are the endpoint inclusions and \(\pr \colon X\times [0,1]\to X\) is the projection. Thus \(\h \Cell \)
+has the same universal property as the homotopy category of the localization in <a class="source-reference" data-label="prop:Animae_Localization_Of_Cell_Complexes" href="../../../entry/animae-as-the-localization-of-cell-complexes/index.html#prop:Animae_Localization_Of_Cell_Complexes">Proposition 2.3.6</a>.                            □
+</p>
+</div></div>
+<p class='noindent'>We are now ready to establish the claimed structure on \(\Top \):
+                                                                                   
+                                                                                   
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5008r8'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 2.3.8 </span>(cf. <span class='citation'>Hovey (1999), Theorem 2.4.19</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Top_Quillen_Cofibration_Structure'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(W_{\text {whe}}\) <span class='ntx-Italic-tlf-t1-x-x-109'>be the collection of weak homotopy equivalences in</span> \(\Top \)<span class='ntx-Italic-tlf-t1-x-x-109'>, and let</span> \(I_{\text {cell}}\) <span class='ntx-Italic-tlf-t1-x-x-109'>be the
+collection of relative cell complexes. Then</span> \((\Top , W_{\text {whe}}, I_{\text {cell}})\) <span class='ntx-Italic-tlf-t1-x-x-109'>is an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with weak equivalences and cofibrations.
+Furthermore, it admits functorial factorizations and is homotopy cocomplete.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-22" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-22">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof sketch.</span> </span>  We need to verify the axioms from <a class="source-reference" data-label="def:Weak_Equivalences_and_Fibrations" href="../../../entry/infinity-category-with-weak-equivalences-and-fibrations/index.html#def:Weak_Equivalences_and_Fibrations">Definition 2.2.4</a> (dualized for cofibrations):
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>(2-out-of-3): </span>It is clear from the definition that the class \(W_{\text {whe}}\) satisfies the 2-out-of-3 property.
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>(Class of cofibrations): </span>The class \(I_{\text {cell}}\) contains all isomorphisms (by attaching no cells) and is closed
+   under composition (attaching cells iteratively). It is also closed under pushouts: if \(i\colon A \to X\) is a relative
+   cell complex and \(f\colon A \to A'\) is any map, consider the pushout square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-db28d6a36eab.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Then \(i'\) is also a relative cell complex,
+   where the filtration is inductively defined by \(X'_{\lambda +1} := X_{\lambda +1} \sqcup _{X_{\lambda }} X'_{\lambda }\).</p></dd><dt class='enumerate'>
+(3) </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>(Pushout axiom): </span>We need to show that if \(i\colon A \to X\) is a trivial cofibration (i.e., a relative cell complex
+   and a weak homotopy equivalence) between cofibrant objects (cell complexes), then the pushout
+   \(i'\colon A' \to X'\) is also a weak homotopy equivalence. This is a non-trivial fact in model category theory. One
+   first shows that every trivial cofibration has the left lifting property with respect to the Serre
+                                                                                   
+                                                                                   
+   fibrations (see <a class="source-reference" data-label="def:Serre_Fibration" href="../../../entry/serre-fibration/index.html#def:Serre_Fibration">Definition 2.3.12</a> below), then observes that this property is preserved by pushouts, and finally
+   deduces that every map with this lifting property is a weak homotopy equivalence. See <span class='citation'>Hovey (1999), Section 2.4</span>.
+   </p></dd><dt class='enumerate'>
+(4) </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>(Factorization axiom): </span>The small object argument functorially factors every map \(f\colon X \to Y\) as \(X \xrightarrow {i} Z \xrightarrow {p} Y\), where \(i\)
+   is a relative cell complex and \(p\) is a trivial Serre fibration, hence in particular a weak homotopy
+   equivalence. See <span class='citation'>Hovey (1999), Sections 2.1 and 2.4</span>.</p></dd></dl>
+<p class='noindent'>Since all axioms are satisfied, \((\Top , W_{\text {whe}}, I_{\text {cell}})\) is an \(\infty \)-category with weak equivalences and cofibrations (with functorial
+factorizations). It is straightforward to see that a small coproduct of (trivial) cofibrations is again a (trivial)
+cofibration, so that \(\Top \) is in fact homotopy cocomplete.                                                                         □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5013r9'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 2.3.9.</span>  </span><span id='prop:Localization_Functor_To_An_Preserves_Pushouts_Along_Relative_Cell_Complexes'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(\Pi _{\infty }\colon \Top \to \An \) <span class='ntx-Italic-tlf-t1-x-x-109'>sends every pushout square in</span> \(\Top \) <span class='ntx-Italic-tlf-t1-x-x-109'>whose vertices are cell complexes
+and one of whose maps is a relative cell complex to a pushout square in</span> \(\An \)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-21" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-21">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> This follows directly from <a class="source-reference" data-label="thm:Top_Quillen_Cofibration_Structure" href="../../../entry/quillen-cofibration-structure-on-topological-spaces/index.html#thm:Top_Quillen_Cofibration_Structure">Theorem 2.3.8</a> and the right exactness of localization functors stated in <a class="source-reference" data-label="cor:Localization_Right_Exact" href="../../../entry/right-exact-localization-via-cofibrant-objects/index.html#cor:Localization_Right_Exact">Corollary 2.2.9</a>.         □
+</p>
+</div></div>
+<p class='noindent'>We now arrive at the main result of this section.
+</p>
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5014r10'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 2.3.10.</span>  </span><span id='prop:Homotopy_Pushouts_Are_Pushouts_Of_Animae'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(f\colon Z \to X\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(g\colon Z \to Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>be continuous maps, where all three spaces have the homotopy type
+of a cell complex. The canonical homotopy</span> \(H_{\can }\) <span class='ntx-Italic-tlf-t1-x-x-109'>from </span><a class="source-reference" data-label="def:Homotopy_Pushout_Construction" href="../../../entry/homotopy-pushout-of-spaces/index.html#def:Homotopy_Pushout_Construction">Definition 2.1.3 </a><span class='ntx-Italic-tlf-t1-x-x-109'>determines a commutative square of animae </span></p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-bb3639adc17e.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>and
+this square is a pushout.</span></p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-20" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-20">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Consider the <span class='ntx-Italic-tlf-t1-x-x-109'>mapping cylinder </span>of the map \(f\): \[ M(f) \quad := \quad (X \sqcup (Z \times [0,1])) / (z,0) \sim f(z). \] The map \(f\) factors as \(Z \xrightarrow {i} M(f) \xrightarrow {p} X\), where \(i(z) := [(z,1)]\), where \(p\vert _X = \id _X\) and where \(p\vert _{Z \times [0,1]}(z,t) := f(z)\).
+Observe that the map \(p\colon M(f) \to X\) is a homotopy equivalence, with homotopy inverse sending \(x\) to \([x]\). In particular, it
+induces an equivalence \(\Pi _{\infty }(M(f)) \iso \Pi _{\infty }(X)\) of animae. Further observe that the homotopy pushout \(X \sqcup _Z^h Y\) can be identified with the
+strict pushout \(M(f) \sqcup _Z Y\) via the maps \(g\) and the projection \(M(f) \to X\):</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-e8dd5e70156f.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'><a id='x1-5015r1'></a> We will show that the functor \(\Pi _{\infty }\colon \Top \to \An \) preserves this pushout
+square.</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Case 1: </span>Assume first that the spaces \(X\), \(Y\) and \(Z\) are cell complexes and that the map \(f\) is a relative cell complex. In
+this case, the map \(i\colon Z \to M(f)\) is also a relative cell complex: it may be written as the composite of \(Z \times \{1\} \hookrightarrow Z \times [0,1]\), which is a relative
+cell complex by the product cell filtration, and the map \(Z \times [0,1] \to M(f)\), which is a pushout of the map \(Z \to X\) and hence also a
+relative cell complex. The fact that \(\Pi _{\infty }(-)\) preserves the pushout square in <span class="source-reference" data-label="eq:Auxiliary_Homotopy_Pushouts_Are_Pushouts_Of_Animae">Equation 2.1</span> is now an instance of
+<a class="source-reference" data-label="prop:Localization_Functor_To_An_Preserves_Pushouts_Along_Relative_Cell_Complexes" href="../../../entry/pi-infinity-preserves-pushouts-along-relative-cell-complexes/index.html#prop:Localization_Functor_To_An_Preserves_Pushouts_Along_Relative_Cell_Complexes">Proposition 2.3.9</a>.
+</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Case 2: </span>We will now prove the general case. By <a class="source-reference" data-label="thm:Functorial_CW_Approximation" href="../../../entry/functorial-cw-approximation/index.html#thm:Functorial_CW_Approximation">Theorem 2.3.4</a>, there exists a cell complex \(Z'\) and a weak homotopy
+equivalence \(Z' \iso Z\). By factorizing the composite maps \(Z' \to X\) and \(Z' \to Y\) into a relative cell complex followed by a weak
+equivalence, we obtain a commutative diagram</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-7e90210a1651.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>where \(X'\), \(Y'\) and \(Z'\) are cell complexes, the vertical maps are
+weak homotopy equivalences, and \(f'\) and \(g'\) are relative cell complexes. Since all six spaces have
+the homotopy type of a cell complex, it follows from Whitehead’s theorem that the vertical
+maps are even homotopy equivalences. By homotopy invariance of homotopy pushouts, <a class="source-reference" data-label="prop:Homotopy_Invariance_Hty_Pushout" href="../../../entry/homotopy-invariance-of-homotopy-pushouts/index.html#prop:Homotopy_Invariance_Hty_Pushout">Exercise 2.1.4</a>, the
+induced map \(X' \sqcup _{Z'}^h Y' \to X \sqcup _Z^h Y\) is again a homotopy equivalence, and in particular it becomes an equivalence
+after applying \(\Pi _{\infty }(-)\). This means that we have reduced the problem to Case 1, thus finishing the
+proof.                                                                                                                                                   □</p>
+</div></div>
+<p class='noindent'>We next record when an actual quotient computes a homotopy cofiber. Recall that a pair \((Y,A)\) consisting of a
+closed subspace \(A \subseteq Y\) is called a <span class='ntx-Italic-tlf-t1-x-x-109'>neighborhood deformation retract pair</span>, or <span class='ntx-Italic-tlf-t1-x-x-109'>NDR-pair</span>, if there are a continuous
+map \(u\colon Y \to [0,1]\) and a homotopy \(h\colon Y \times [0,1] \to Y\) such that \[ u^{-1}(0)=A,\qquad h(y,0)=y,\qquad h(a,t)=a, \] and \(h(y,1)\in A\) whenever \(u(y)&lt;1\). An inclusion \(A\hookrightarrow Y\) is called <span class='ntx-Italic-tlf-t1-x-x-109'>collared </span>if there is an open
+neighborhood \(U\) of \(A\) in \(Y\) and a homeomorphism \[ A\times [0,1) \xrightarrow {\cong } U \] whose restriction to \(A\times \{0\}\) is the given inclusion. Every collared
+inclusion is an NDR-pair. More generally, the NDR condition is equivalent to the homotopy extension
+property; see <span class='citation'>May (1999), Chapter 6, Section 4</span>.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5016r11'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 2.3.11.</span>  </span><span id='cor:Quotient_Of_NDR_Pair_Is_Cofiber'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \((Y,A)\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an NDR-pair with</span> \(A\) <span class='ntx-Italic-tlf-t1-x-x-109'>nonempty, and assume that</span> \(A\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>have the homotopy
+type of cell complexes. Then the quotient map</span> \(Y \to Y/A\) <span class='ntx-Italic-tlf-t1-x-x-109'>induces an isomorphism </span>\[ \Pi _{\infty }(Y) \sqcup _{\Pi _{\infty }(A)} * \cong \Pi _{\infty }(Y/A) \] <span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(\An _*\)<span class='ntx-Italic-tlf-t1-x-x-109'>. In particular, this applies
+whenever the inclusion</span> \(A\hookrightarrow Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>is collared.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-19" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-19">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The NDR condition implies that the canonical map from the homotopy cofiber of \(A\hookrightarrow Y\) to the
+actual quotient \(Y/A\) is a homotopy equivalence; see <span class='citation'>May (1999), Chapter 8, Section 4</span>. The claim now follows by applying <a class="source-reference" data-label="prop:Homotopy_Pushouts_Are_Pushouts_Of_Animae" href="../../../entry/homotopy-pushouts-of-spaces-become-pushouts-of-animae/index.html#prop:Homotopy_Pushouts_Are_Pushouts_Of_Animae">Proposition 2.3.10</a> to the diagram
+\(Y \leftarrow A \to *\).                                                                                                                                                           □
+</p>
+</div></div>
+
+                                                                                   
+                                                                                   
+<h4 class='subsectionHead' id='serre-fibrations'><span class='titlemark'>2.3.2    </span> <a id='x1-60002.3.2'></a>Serre fibrations</h4>
+<p class='noindent' id='sec_Homotopy_Pullbacks_Of_Spaces'>We now turn to the fibration structure on \(\Top \).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-6001r12'></a>
+<a class="entry-heading-link" href="../../../entry/serre-fibration/index.html" aria-label="Definition 2.3.12., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 2.3.12.</span></a>  </span><span id='def:Serre_Fibration'></span> Let \(p\colon E \to B\) be a continuous map of topological spaces. We say that \(p\) is a <span class='ntx-Italic-tlf-t1-x-x-109'>Serre fibration</span>
+if  it  satisfies  the  homotopy  lifting  property  with  respect  to  all  disks:  for  every  \(n \geq 0\)  and  every  solid
+commutative diagram of the form</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-c8e826023c0c.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>there exists a dashed morphism making the diagram commute.</p>
+</div>
+<p class='noindent'>We state without proof some standard facts about Serre fibrations:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-6002r13'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 2.3.13 </span>(Locality for Serre fibrations, <span class='citation'>tom Dieck (2008), Theorem 6.3.3</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Serre_Fibration_Local_Property'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(p\colon E \to B\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a continuous map, and assume that there
+exists an open cover</span> \(\{U_i\}_{i \in I}\) <span class='ntx-Italic-tlf-t1-x-x-109'>such that the restriction</span> \(p\vert _{U_i} \colon p^{-1}(U_i) \to U_i\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a Serre fibration for each</span> \(i\in I\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then</span> \(p\) <span class='ntx-Italic-tlf-t1-x-x-109'>is itself a Serre
+fibration.</span>
+</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>In particular, locally trivial fiber bundles are Serre fibrations.</span>
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-6003r14'></a>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 2.3.14 </span>(Long exact sequence of homotopy groups, <span class='citation'>Switzer (1975), Theorem 2.59</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Long_Exact_Sequence_Of_Serre_Fibration'>   </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>   \(p\colon E \to B\)   <span class='ntx-Italic-tlf-t1-x-x-109'>be   a   Serre   fibration   and
+consider a point</span> \(e \in E\) <span class='ntx-Italic-tlf-t1-x-x-109'>with image</span> \(b := p(e)\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Define the fiber</span> \(F_b\) <span class='ntx-Italic-tlf-t1-x-x-109'>as the following (strict) pullback of topological
+spaces: </span></p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-bdbeb42f3988.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Then there is a long exact sequence of homotopy groups of the form </span>\[ \dots \to \pi _{n+1}(B,b) \to \pi _n(F_b,e) \xrightarrow {i_*} \pi _n(E,e) \xrightarrow {p_*} \pi _n(B,b) \to \pi _{n-1}(F_b,e) \to \dots \]</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-6004r15'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 2.3.15.</span>  </span><span id='cor:Serre_Fibration_Test_Weak_Homotopy_Equivalence_On_Fibers'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>A Serre fibration</span> \(p\colon E \to B\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a weak homotopy equivalence if and only if the fiber</span> \(F_b\) <span class='ntx-Italic-tlf-t1-x-x-109'>is
+weakly contractible for every</span> \(b \in B\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-18" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-18">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By working separately over each path component of \(B\), we may assume that \(B\) is path-connected.
+Picking a preferred basepoint \(b_0\) of \(B\), it then suffices to show that \(p\) is a weak homotopy equivalence if
+and only if the fiber \(F := F_{b_0}\) is weakly contractible. This follows immediately from the long exact sequence
+from <a class="source-reference" data-label="thm:Long_Exact_Sequence_Of_Serre_Fibration" href="../../../entry/long-exact-sequence-of-a-serre-fibration/index.html#thm:Long_Exact_Sequence_Of_Serre_Fibration">Theorem 2.3.14</a>.                                                                                                                                                   □
+</p>
+</div></div>
+<p class='noindent'>A general source of Serre fibrations is the path space construction.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-6005r16'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/mapping-path-space/index.html" aria-label="Construction 2.3.16., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 2.3.16.</span></a>  </span><span id='con:Mapping_Path_Space'></span> We define the <span class='ntx-Italic-tlf-t1-x-x-109'>mapping path space</span> \(P(f)\) of a continuous map \(f\colon E \to B\) as \[ P(f) := \{(e, \gamma ) \in E \times B^{[0,1]} \mid f(e) = \gamma (0)\}. \]
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-6006r17'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 2.3.17.</span>  </span><span id='lem:Path_Fibration_Is_Serre_Fibration'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The projection</span> \(p\colon P(f) \to B\) <span class='ntx-Italic-tlf-t1-x-x-109'>given by</span> \((e,\gamma ) \mapsto \gamma (1)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a Serre fibration.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-17" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-17">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Consider a solid commutative diagram of the form</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-4988ee06646e.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>We may define the dashed map \(\overline {H}\) as \(\overline {H}(x,s) := (e(x),K(x,s,-))\), where</p>
+     <ul class='itemize1'>
+     <li class='itemize'>The map \(e\colon D^n \to E\) is the first component of \(g\);
+     </li>
+     <li class='itemize'>
+     <p class='noindent'>The map \(K \colon D^n \times [0,1] \times [0,1] \to B\) is a continuous map satisfying the following three constraints: </p>
+          <ul class='itemize2'>
+          <li class='itemize'>To guarantee that \(\overline {H}(x,s) \in P(f)\) we need \(K(x,s,0) = f(e(x))\);
+                                                                                   
+                                                                                   
+          </li>
+          <li class='itemize'>To guarantee commutativity of the top triangle, we need \(K(x,0,t) = \gamma (x)(t)\), where \(\gamma (x)\) is the second component
+          of \(g(x)\);
+          </li>
+          <li class='itemize'>To guarantee commutativity of the bottom triangle, we need \(K(x,s,1) = H(x,s)\).</li></ul>
+     <p class='noindent'>Such a continuous map exists, since the inclusion \(\big ([0,1] \times \{0,1\}\big ) \cup \big (\{0\} \times [0,1]\big ) \hookrightarrow [0,1] \times [0,1]\) has a continuous retraction.                      □</p></li></ul>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-6007r18'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 2.3.18 </span>(cf. <span class='citation'>Hovey (1999), Theorem 2.4.19</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Top_Category_With_Weak_Equivalences_And_Fibrations'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Consider the category</span> \(\Top \) <span class='ntx-Italic-tlf-t1-x-x-109'>of topological spaces, let</span> \(F_{\text {Serre}}\) <span class='ntx-Italic-tlf-t1-x-x-109'>denote the collection of
+Serre fibrations and let</span> \(W_{\text {whe}}\) <span class='ntx-Italic-tlf-t1-x-x-109'>denote the collection of weak homotopy equivalences. Then the triple</span> \((\Top , W_{\text {whe}}, F_{\text {Serre}})\) <span class='ntx-Italic-tlf-t1-x-x-109'>is an</span>
+\(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with weak equivalences and fibrations. It has functorial factorizations, and is homotopy
+complete.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-16" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-16">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  It  is  clear  that  the  weak  homotopy  equivalences  satisfy  2-out-of-3,  and  it  is  also
+straightforward to check that Serre fibrations are closed under pullbacks and composition and contain
+all homeomorphisms. This gives conditions (1) and (2) from <a class="source-reference" data-label="def:Weak_Equivalences_and_Fibrations" href="../../../entry/infinity-category-with-weak-equivalences-and-fibrations/index.html#def:Weak_Equivalences_and_Fibrations">Definition 2.2.4</a>.
+</p><p class='noindent'>To see condition (3), consider a pullback square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-1cc607734f2b.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>of topological spaces, where \(p\) is both a Serre fibration
+and a weak homotopy equivalence. We need to show that also \(p'\) is a weak homotopy equivalence. By
+<a class="source-reference" data-label="cor:Serre_Fibration_Test_Weak_Homotopy_Equivalence_On_Fibers" href="../../../entry/fiberwise-criterion-for-weak-homotopy-equivalences-of-serre-fibrations/index.html#cor:Serre_Fibration_Test_Weak_Homotopy_Equivalence_On_Fibers">Corollary 2.3.15</a>, it suffices to show that for every point \(b' \in B'\) the fiber \(F'_{b'} := {p'}^{-1}(b')\) is weakly contractible. But since \(p'\) is a pullback of \(p\),
+this fiber is homeomorphic to the fiber \(F_b = p^{-1}(b)\), which in turn is weakly contractible by <a class="source-reference" data-label="cor:Serre_Fibration_Test_Weak_Homotopy_Equivalence_On_Fibers" href="../../../entry/fiberwise-criterion-for-weak-homotopy-equivalences-of-serre-fibrations/index.html#cor:Serre_Fibration_Test_Weak_Homotopy_Equivalence_On_Fibers">Corollary 2.3.15</a>.</p><p class='noindent'>Finally, for condition (4), note that a continuous map \(f\colon E \to B\) may be factored as \[ E \xrightarrow {i} P(f) \xrightarrow {p} B, \] where \(p\) is the path space
+fibration from <a class="source-reference" data-label="lem:Path_Fibration_Is_Serre_Fibration" href="../../../entry/mapping-path-projection-is-a-serre-fibration/index.html#lem:Path_Fibration_Is_Serre_Fibration">Lemma 2.3.17</a>, and where \(i\) maps \(e\) to \((e,\const _{f(e)})\). The first map is a homotopy equivalence, hence in particular a
+weak homotopy equivalence, and the second map is a Serre fibration by <a class="source-reference" data-label="lem:Path_Fibration_Is_Serre_Fibration" href="../../../entry/mapping-path-projection-is-a-serre-fibration/index.html#lem:Path_Fibration_Is_Serre_Fibration">Lemma 2.3.17</a>. Since the definition of \(P(f)\) is
+functorial in \(f\), this finishes the proof that \((\Top , W_{\text {whe}}, F_{\text {Serre}})\) is a category with weak equivalences and fibrations, with
+functorial factorizations. It is also clear that a product of Serre fibrations is again a Serre fibration,
+finishing the proof.                                                                                                                              □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-6008r19'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 2.3.19.</span>  </span><span id='prop:Localization_Functor_To_An_Preserves_Pullbacks_Along_Serre_Fibrations'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The localization functor</span> \(\Pi _{\infty }(-)\colon \Top \to \An \) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves all pullbacks along Serre fibrations.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-15" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-15">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> In light of <a class="source-reference" data-label="thm:Top_Category_With_Weak_Equivalences_And_Fibrations" href="../../../entry/serre-fibration-structure-on-topological-spaces/index.html#thm:Top_Category_With_Weak_Equivalences_And_Fibrations">Theorem 2.3.18</a> this is an instance of <a class="source-reference" data-label="thm:Localization_Left_Exact" href="../../../entry/left-exact-localization-via-fibrant-objects/index.html#thm:Localization_Left_Exact">Theorem 2.2.8</a>.                                                                                           □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-6009r20'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 2.3.20.</span>  </span><span id='cor:Fundamental_Groupoid_Preserves_Products'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(\Pi _{\infty }\colon \Top \to \An \) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves finite products: </span>\[ \Piinfty {X \times Y} \iso \Piinfty {X} \times \Piinfty {Y}. \qednow \]
+</p>
+</div>
+                                                                                   
+
+                                                                                   
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-6010r21'></a>
+<a class="entry-heading-link" href="../../../entry/direct-proof-that-pi-infinity-preserves-products/index.html" aria-label="Exercise 2.3.21., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 2.3.21.</span></a>  </span><span id='exercise:Pi_Infty_Preserves_Products_Direct'></span> Prove the statement of <a class="source-reference" data-label="cor:Fundamental_Groupoid_Preserves_Products" href="../../../entry/pi-infinity-preserves-finite-products/index.html#cor:Fundamental_Groupoid_Preserves_Products">Corollary 2.3.20</a> directly from the definition of \(\Pi _{\infty }\). <span class='ntx-Italic-tlf-t1-x-x-109'>Hint: </span>Use <a class="source-reference" data-label="lem:Geometric_Realization_Preserves_Finite_Products" href="../../../entry/geometric-realization-preserves-finite-products/index.html#lem:Geometric_Realization_Preserves_Finite_Products">Lemma 21.6.12</a>.
+</p>
+</div>
+<p class='noindent'>We are now ready to prove our main application concerning homotopy pullbacks of topological
+spaces:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-6011r22'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 2.3.22.</span>  </span><span id='prop:Homotopy_Pullbacks_Are_Pullbacks_Of_Animae'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The localization functor</span> \(\Pi _{\infty }(-)\colon \Top \to \An \) <span class='ntx-Italic-tlf-t1-x-x-109'>sends homotopy pullbacks of topological spaces to
+pullbacks of animae.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-14" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-14">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Consider continuous maps \(f\colon X \to Z\) and \(g\colon Y \to Z\), and consider the pullback square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-445857c04373.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>defining \(X \times _Z^{h} Y\). The path
+fibration \(p\) is a Serre fibration by <a class="source-reference" data-label="lem:Path_Fibration_Is_Serre_Fibration" href="../../../entry/mapping-path-projection-is-a-serre-fibration/index.html#lem:Path_Fibration_Is_Serre_Fibration">Lemma 2.3.17</a>, hence this square is sent to a pullback square in \(\An \) by <a class="source-reference" data-label="prop:Localization_Functor_To_An_Preserves_Pullbacks_Along_Serre_Fibrations" href="../../../entry/pi-infinity-preserves-pullbacks-along-serre-fibrations/index.html#prop:Localization_Functor_To_An_Preserves_Pullbacks_Along_Serre_Fibrations">Proposition 2.3.19</a>. The canonical
+inclusion \(i\colon X \hookrightarrow P(f)\) is a homotopy equivalence, giving an equivalence \(\Pi _{\infty }(P(f)) \simeq \Pi _{\infty }(X)\). This finishes the proof.                    □</p>
+                                                                                   
+                                                                                   
+</div></div>
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../computing-pushouts-and-pullbacks-in-localizations/index.html" aria-label="Previous section: Computing pushouts and pullbacks in localizations" title="Previous section: Computing pushouts and pullbacks in localizations"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../pointed-animae-suspensions-and-loops/index.html" aria-label="Next section: Pointed animae, suspensions and loops" title="Next section: Pointed animae, suspensions and loops"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html" aria-current="page"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/animae-as-spaces/index.html" aria-current="page"><span class="context-entry-heading">Chapter 2</span><span class="context-entry-title">Animae as spaces</span></a></li><li><a href="../../../chapter/homology-and-cohomology/index.html"><span class="context-entry-heading">Chapter 3</span><span class="context-entry-title">Homology and cohomology</span></a></li><li><a href="../../../chapter/spectra-and-stable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 4</span><span class="context-entry-title">Spectra and stable ∞-categories</span></a></li><li><a href="../../../chapter/recognition-principle/index.html"><span class="context-entry-heading">Chapter 5</span><span class="context-entry-title">The recognition principle</span></a></li><li><a href="../../../chapter/homological-algebra/index.html"><span class="context-entry-heading">Chapter 6</span><span class="context-entry-title">Homological algebra</span></a></li><li><a href="../../../chapter/localization-and-completion/index.html"><span class="context-entry-heading">Chapter 7</span><span class="context-entry-title">Localization and completion</span></a></li><li><a href="../../../chapter/ring-spectra-and-modules/index.html"><span class="context-entry-heading">Chapter 8</span><span class="context-entry-title">Ring spectra and modules</span></a></li><li><a href="../../../chapter/complex-k-theory/index.html"><span class="context-entry-heading">Chapter 9</span><span class="context-entry-title">Complex K-theory</span></a></li><li><a href="../../../chapter/thom-spectra-and-bordism-theory/index.html"><span class="context-entry-heading">Chapter 10</span><span class="context-entry-title">Thom spectra and bordism theory</span></a></li><li><a href="../../../chapter/duality-phenomena/index.html"><span class="context-entry-heading">Chapter 11</span><span class="context-entry-title">Duality phenomena</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../homotopy-pushouts-and-pullbacks/index.html"><span class="context-entry-heading">Section 2.1</span><span class="context-entry-title">Homotopy pushouts and pullbacks</span></a></li><li><a href="../computing-pushouts-and-pullbacks-in-localizations/index.html"><span class="context-entry-heading">Section 2.2</span><span class="context-entry-title">Computing pushouts and pullbacks in localizations</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 2.3</span><span class="context-entry-title">Relative cell complexes and Serre fibrations</span></a></li><li><a href="../pointed-animae-suspensions-and-loops/index.html"><span class="context-entry-heading">Section 2.4</span><span class="context-entry-title">Pointed animae, suspensions and loops</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Relative_Cell_Complex"><span class="context-entry-heading">Definition 2.3.1</span><span class="context-entry-title">definition</span></a></li><li><a href="#rmk:CW_Complexes_And_Relative_Cell_Complexes"><span class="context-entry-heading">Remark 2.3.2</span><span class="context-entry-title">remark</span></a></li><li><a href="#thm:Whitehead_Theorem"><span class="context-entry-heading">Theorem 2.3.3</span><span class="context-entry-title">Whitehead's theorem</span></a></li><li><a href="#thm:Functorial_CW_Approximation"><span class="context-entry-heading">Theorem 2.3.4</span><span class="context-entry-title">CW-approximation</span></a></li><li><a href="#rmk:Functorial_CW_Approximation_Via_Singular_Complex"><span class="context-entry-heading">Remark 2.3.5</span><span class="context-entry-title">remark</span></a></li><li><a href="#prop:Animae_Localization_Of_Cell_Complexes"><span class="context-entry-heading">Proposition 2.3.6</span><span class="context-entry-title">proposition</span></a></li><li><a href="#cor:Pi_Infty_surjective_On_Objects_And_Morphisms"><span class="context-entry-heading">Corollary 2.3.7</span><span class="context-entry-title">corollary</span></a></li><li><a href="#thm:Top_Quillen_Cofibration_Structure"><span class="context-entry-heading">Theorem 2.3.8</span><span class="context-entry-title">theorem</span></a></li><li><a href="#prop:Localization_Functor_To_An_Preserves_Pushouts_Along_Relative_Cell_Complexes"><span class="context-entry-heading">Proposition 2.3.9</span><span class="context-entry-title">proposition</span></a></li><li><a href="#prop:Homotopy_Pushouts_Are_Pushouts_Of_Animae"><span class="context-entry-heading">Proposition 2.3.10</span><span class="context-entry-title">proposition</span></a></li><li><a href="#cor:Quotient_Of_NDR_Pair_Is_Cofiber"><span class="context-entry-heading">Corollary 2.3.11</span><span class="context-entry-title">corollary</span></a></li><li><a href="#def:Serre_Fibration"><span class="context-entry-heading">Definition 2.3.12</span><span class="context-entry-title">definition</span></a></li><li><a href="#thm:Serre_Fibration_Local_Property"><span class="context-entry-heading">Theorem 2.3.13</span><span class="context-entry-title">Locality for Serre fibrations</span></a></li><li><a href="#thm:Long_Exact_Sequence_Of_Serre_Fibration"><span class="context-entry-heading">Theorem 2.3.14</span><span class="context-entry-title">Long exact sequence of homotopy groups</span></a></li><li><a href="#cor:Serre_Fibration_Test_Weak_Homotopy_Equivalence_On_Fibers"><span class="context-entry-heading">Corollary 2.3.15</span><span class="context-entry-title">corollary</span></a></li><li><a href="#con:Mapping_Path_Space"><span class="context-entry-heading">Construction 2.3.16</span><span class="context-entry-title">construction</span></a></li><li><a href="#lem:Path_Fibration_Is_Serre_Fibration"><span class="context-entry-heading">Lemma 2.3.17</span><span class="context-entry-title">lemma</span></a></li><li><a href="#thm:Top_Category_With_Weak_Equivalences_And_Fibrations"><span class="context-entry-heading">Theorem 2.3.18</span><span class="context-entry-title">theorem</span></a></li><li><a href="#prop:Localization_Functor_To_An_Preserves_Pullbacks_Along_Serre_Fibrations"><span class="context-entry-heading">Proposition 2.3.19</span><span class="context-entry-title">proposition</span></a></li><li><a href="#cor:Fundamental_Groupoid_Preserves_Products"><span class="context-entry-heading">Corollary 2.3.20</span><span class="context-entry-title">corollary</span></a></li><li><a href="#exercise:Pi_Infty_Preserves_Products_Direct"><span class="context-entry-heading">Exercise 2.3.21</span><span class="context-entry-title">exercise</span></a></li><li><a href="#prop:Homotopy_Pullbacks_Are_Pullbacks_Of_Animae"><span class="context-entry-heading">Proposition 2.3.22</span><span class="context-entry-title">proposition</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

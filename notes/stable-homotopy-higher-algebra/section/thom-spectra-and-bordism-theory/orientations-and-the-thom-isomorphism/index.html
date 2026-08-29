@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 10.4: Orientations and the Thom isomorphism | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/stable-homotopy-theory/index.html">Part I</a> · <a href="../../../chapter/thom-spectra-and-bordism-theory/index.html">Chapter 10</a> · Section 10.4</p>
+      <h1>Orientations and the Thom isomorphism</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Orientations_And_Thom_Isomorphisms'>This section interprets orientations of virtual vector bundles as trivializations of local systems of lines, and
+derives the resulting Thom isomorphism. Throughout, we fix a commutative ring spectrum
+\(R \in \CAlg (\Sp )\).
+</p><p class='noindent'>A virtual vector bundle \(V\) of rank \(d\) on an anima \(A\) determines a stable spherical fibration \(\xi _V\colon A \to \Pic (\S )\). After shifting by \(-d\) and
+tensoring with \(R\), its fibers are \(R\)-modules isomorphic to \(R\). An orientation is a coherent choice of such
+isomorphisms. This formulation applies directly to virtual bundles and specializes to the classical notion of
+a Thom class for an honest bundle. It follows the orientation theory of <span class='citation'>Ando et al. (2014)</span>; for the classical account, see
+<span class='citation'>May (1999), Chapter 23, Section 5</span>.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<a class="entry-heading-link" href="../../../entry/r-lines/index.html" aria-label="Definition 10.4.1, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 10.4.1 </span></a>(\(R\)-lines)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:R_Lines'></span> We denote by \[ \Line _R \subseteq \Mod _R^{\simeq } \] the full subanima spanned by those \(R\)-modules that are
+isomorphic to \(R\). Its objects are called \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-lines</span>.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1002r2'></a>
+<a class="entry-heading-link" href="../../../entry/r-lines-as-a-classifying-anima/index.html" aria-label="Remark 10.4.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 10.4.2.</span></a>  </span><span id='rmk:R_Lines_As_Classifying_Anima'></span> The pointed connected anima \(\Line _R\) is the classifying anima of the group of \(R\)-linear
+automorphisms of \(R\): \[ \Line _R \simeq \bB \Aut _R(R). \]
+</p>
+</div>
+                                                                                   
+                                                                                   
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1003r3'></a>
+<a class="entry-heading-link" href="../../../entry/r-lines-for-ordinary-rings/index.html" aria-label="Example 10.4.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 10.4.3.</span></a>  </span><span id='ex:R_Lines_Ordinary_Rings'></span> For an ordinary commutative ring \(k\), the group \(\Aut _{Hk}(Hk)\) is the discrete group \(k^\times \). In particular,
+\[ \Line _{H\F _2} \simeq * \qquadtext {and} \Line _{H\Z } \simeq \bB C_2. \]
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1004r4'></a>
+<a class="entry-heading-link" href="../../../entry/local-systems-of-r-lines/index.html" aria-label="Definition 10.4.4, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 10.4.4 </span></a>(Local systems and trivializations)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Local_System_Of_R_Lines'></span> A <span class='ntx-Italic-tlf-t1-x-x-109'>local system of</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-lines </span>on an anima \(A\) is a
+functor \(\xi \colon A \to \Line _R\). A <span class='ntx-Italic-tlf-t1-x-x-109'>trivialization </span>of \(\xi \) is an isomorphism \(\xi \cong R_A\), where \(R_A\) is the constant functor with value \(R\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1005r5'></a>
+<a class="entry-heading-link" href="../../../entry/orientation-of-a-virtual-vector-bundle/index.html" aria-label="Definition 10.4.5, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 10.4.5 </span></a>(Orientation)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:R_Orientation'></span> Let \(V\) be a virtual vector bundle of rank \(d\) on an anima \(A\). Its associated
+local system of \(R\)-lines is \[ \xi _{V,R}\colon A \xrightarrow {\;\xi _V[-d]\;} \Line _{\S } \xrightarrow {-\otimes R} \Line _R. \] Here \(\xi _V[-d]\) lands in the virtual-rank-zero component \(\Line _{\S }\subseteq \Pic (\S )\). An \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-orientation </span>of \(V\) is a
+trivialization \(\xi _{V,R} \cong R_A\).
+</p>
+</div>
+                                                                                   
+                                                                                   
+<p class='noindent'>An \(R\)-orientation of \(V\) induces a morphism of \(R\)-modules \[ \th (V)[-d]\otimes R \cong \colim _A\xi _{V,R} \cong R[A] \longrightarrow R, \] where the last map is the augmentation. By
+adjunction, this corresponds to a class \[ u_V\colon \th (V)\longrightarrow R[d], \] which we call the <span class='ntx-Italic-tlf-t1-x-x-109'>Thom class </span>of the oriented virtual bundle
+\(V\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1006r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 10.4.6 </span>(Orientations of inverse virtual bundles)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Orientation_Of_Inverse_Virtual_Bundle'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(V\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a virtual vector bundle on</span> \(A\)<span class='ntx-Italic-tlf-t1-x-x-109'>. An</span>
+\(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-orientation of</span> \(V\) <span class='ntx-Italic-tlf-t1-x-x-109'>canonically induces an</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-orientation of</span> \(-V\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-thom-spectra-and-bordism-theory-section-04-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-thom-spectra-and-bordism-theory-section-04-4">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  By  <a class="source-reference" data-label="rmk:Thom_Spectrum_Virtual_Additivity" href="../../../entry/additivity-of-thom-spectra/index.html#rmk:Thom_Spectrum_Virtual_Additivity">Remark 10.2.17</a>,  including  the  normalization  by  virtual  rank,  there  is  an  isomorphism  \(\xi _{-V,R} \cong \xi _{V,R}^{-1}\).  Inverting  a
+trivialization of \(\xi _{V,R}\) gives the required trivialization.                                                                               □
+</p>
+</div></div>
+<p class='noindent'>For an honest vector bundle, this recovers the familiar definition in terms of a Thom class.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1007r7'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 10.4.7.</span>  </span><span id='prop:Orientation_As_Trivialization'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(E \to X\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  a  rank</span>  \(n\)  <span class='ntx-Italic-tlf-t1-x-x-109'>vector  bundle  over  a  paracompact  Hausdorff  space  of  the
+homotopy type of a cell complex. Under the identification</span> \(\th ([E])\cong \Sigma ^\infty \Th (E)\) <span class='ntx-Italic-tlf-t1-x-x-109'>of </span><a class="source-reference" data-label="lem:Thom_Spectrum_Of_Virtual_Bundle" href="../../../entry/thom-spectrum-of-an-honest-vector-bundle/index.html#lem:Thom_Spectrum_Of_Virtual_Bundle">Lemma 10.2.21</a><span class='ntx-Italic-tlf-t1-x-x-109'>, an</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-orientation of</span> \([E]\) <span class='ntx-Italic-tlf-t1-x-x-109'>is the same as a
+class</span> \(\theta \in \widetilde R^n(\Th (E))\) <span class='ntx-Italic-tlf-t1-x-x-109'>whose restriction to every fiber is a unit in</span> \(\pi _0(R)\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+                                                                                   
+
+                                                                                   
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-thom-spectra-and-bordism-theory-section-04-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-thom-spectra-and-bordism-theory-section-04-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> A class \(\theta \in \widetilde R^n(\Th (E))\) is a morphism \(\th ([E])[-n]\otimes R\to R\) of \(R\)-modules. Since the source is the colimit of \(\xi _{[E],R}\), adjunction identifies
+this with a morphism \(\xi _{[E],R}\to R_{\Pi _\infty (X)}\) of local systems. It is an isomorphism precisely when each restriction \(\theta _x\in \pi _0(R)\) is a
+unit.                                                                                                                                                     □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1008r8'></a>
+<a class="entry-heading-link" href="../../../entry/ordinary-cohomology-orientations/index.html" aria-label="Example 10.4.8., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 10.4.8.</span></a>  </span><span id='ex:Ordinary_Cohomology_Orientations'></span>  Since  \(\Line _{H\F _2}\)  is  contractible,  every  virtual  vector  bundle  of  fixed  rank  has  a  unique
+\(H\F _2\)-orientation.  For  \(R=H\Z \)  and  an  honest  real  vector  bundle  \(E\to X\),  the  local  system  \(\xi _{[E],H\Z }\)  is  classified  by  \[ X \longrightarrow \bB O(n) \xrightarrow {\det } \bB C_2. \]  Thus  an
+\(H\Z \)-orientation is a classical orientation, equivalently a nullhomotopy of \(w_1(E)\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1009r9'></a>
+<a class="entry-heading-link" href="../../../entry/universal-mo-orientation/index.html" aria-label="Example 10.4.9, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 10.4.9 </span></a>(The universal \(\MO \)-orientation)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='ex:Universal_MO_Orientation'></span>   The   universal   rank-zero   virtual   bundle   on   \(\bB O\)   is
+canonically \(\MO \)-oriented. Indeed, for every \(W\in \bB O\), symmetric monoidality of \(J\) and the definition \(\MO =\colim _{V\in \bB O}J(V)\) give \[ J(W)\otimes \MO \cong \colim _{V\in \bB O}J(W+V) \cong \MO . \] The
+second isomorphism is induced by the equivalence \(W+(-)\colon \bB O\to \bB O\), and these isomorphisms vary coherently with \(W\).
+They therefore trivialize the associated local system of \(\MO \)-lines. Pulling this orientation back along the
+                                                                                   
+                                                                                   
+classifying map of an honest real vector bundle shows that every real vector bundle is canonically
+\(\MO \)-orientable.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1010r10'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 10.4.10 </span>(Thom isomorphism)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Thom_Isomorphism'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(V\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-oriented virtual vector bundle of rank</span> \(d\) <span class='ntx-Italic-tlf-t1-x-x-109'>on an
+anima</span> \(A\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then there is an isomorphism of</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-modules </span>\[ \th (V)\otimes R \cong (\S [A]\otimes R)[d], \] <span class='ntx-Italic-tlf-t1-x-x-109'>and an isomorphism of spectra </span>\[ \hom (\th (V),R)\cong \hom (\S [A][d],R). \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-thom-spectra-and-bordism-theory-section-04-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-thom-spectra-and-bordism-theory-section-04-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Passing to colimits in the chosen trivialization \(\xi _{V,R}\cong R_A\) gives \[ \th (V)[-d]\otimes R \cong \colim _A\xi _{V,R} \cong \colim _A R_A \cong R[A], \] which proves the first isomorphism. The
+second follows by applying \(\hom _R(-,R)\) and using the free-forgetful adjunction between spectra and \(R\)-modules.    □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1011r11'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 10.4.11 </span>(Classical Thom isomorphism)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cor:Classical_Thom_Isomorphism'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(E\to X\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a rank</span> \(n\) <span class='ntx-Italic-tlf-t1-x-x-109'>vector bundle over a paracompact
+Hausdorff space of the homotopy type of a cell complex, equipped with an</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-Thom class</span> \(\theta \)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then </span>\[ \widetilde R_m(\Th (E))\cong R_{m-n}(X) \qquadtext {and} \widetilde R^m(\Th (E))\cong R^{m-n}(X). \] <span class='ntx-Italic-tlf-t1-x-x-109'>The
+inverse of the cohomological isomorphism is the Thom homomorphism</span> \(x\mapsto x\smile \theta \)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+                                                                                   
+
+                                                                                   
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-thom-spectra-and-bordism-theory-section-04-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-thom-spectra-and-bordism-theory-section-04-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Apply <a class="source-reference" data-label="thm:Thom_Isomorphism" href="../../../entry/thom-isomorphism/index.html#thm:Thom_Isomorphism">Theorem 10.4.10</a> to \(V=[E]\) and use <a class="source-reference" data-label="prop:Orientation_As_Trivialization" href="../../../entry/orientation-as-a-thom-class/index.html#prop:Orientation_As_Trivialization">Proposition 10.4.7</a>, <a class="source-reference" data-label="lem:Thom_Spectrum_Of_Virtual_Bundle" href="../../../entry/thom-spectrum-of-an-honest-vector-bundle/index.html#lem:Thom_Spectrum_Of_Virtual_Bundle">Lemma 10.2.21</a>. The description of the cohomological map follows from the Thom
+diagonal \[ \Delta _E\colon \Th (E)\longrightarrow X_+\wedge \Th (E), \qquad [v]\longmapsto \big (p(v),[v]\big ). \]                                                                                                                                              □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1012r12'></a>
+<a class="entry-heading-link" href="../../../entry/mod-2-homology-of-mo/index.html" aria-label="Remark 10.4.12, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 10.4.12 </span></a>(The mod \(2\) homology of \(\MO \))<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='rmk:Mod_2_Homology_Of_MO'></span> The universal rank-zero virtual bundle on \(\bB O\) has a unique
+\(H\F _2\)-orientation. The Thom isomorphism gives \[ H\F _2 \otimes \MO \; \cong \; H\F _2[\bB O] \] of \(H\F _2\)-modules. This computes the mod \(2\) homology of \(\MO \)
+in terms of that of \(\bB O\), whose mod \(2\) cohomology is the polynomial algebra \(\F _2[w_1,w_2,\ldots ]\) on the Stiefel–Whitney
+classes. It is the first step of Thom’s calculation of \(\pi _*(\MO )\) recorded in <a class="source-reference" data-label="rmk:Coefficient_Rings" href="../../../entry/coefficient-rings-of-bordism-spectra/index.html#rmk:Coefficient_Rings">Remark 10.3.8</a>, but not the whole of it: splitting \(\MO \)
+into a wedge of shifts of \(H\F _2\), and identifying the multiplicative structure of the coefficient ring, requires
+further input.
+</p>
+</div>
+
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../bordism-and-the-pontryagin-thom-theorem/index.html" aria-label="Previous section: Bordism and the Pontryagin–Thom theorem" title="Previous section: Bordism and the Pontryagin–Thom theorem"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../coherence-for-one-point-compactification-online-only/index.html" aria-label="Next section: Coherence for one-point compactification (online only)" title="Next section: Coherence for one-point compactification (online only)"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html" aria-current="page"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/animae-as-spaces/index.html"><span class="context-entry-heading">Chapter 2</span><span class="context-entry-title">Animae as spaces</span></a></li><li><a href="../../../chapter/homology-and-cohomology/index.html"><span class="context-entry-heading">Chapter 3</span><span class="context-entry-title">Homology and cohomology</span></a></li><li><a href="../../../chapter/spectra-and-stable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 4</span><span class="context-entry-title">Spectra and stable ∞-categories</span></a></li><li><a href="../../../chapter/recognition-principle/index.html"><span class="context-entry-heading">Chapter 5</span><span class="context-entry-title">The recognition principle</span></a></li><li><a href="../../../chapter/homological-algebra/index.html"><span class="context-entry-heading">Chapter 6</span><span class="context-entry-title">Homological algebra</span></a></li><li><a href="../../../chapter/localization-and-completion/index.html"><span class="context-entry-heading">Chapter 7</span><span class="context-entry-title">Localization and completion</span></a></li><li><a href="../../../chapter/ring-spectra-and-modules/index.html"><span class="context-entry-heading">Chapter 8</span><span class="context-entry-title">Ring spectra and modules</span></a></li><li><a href="../../../chapter/complex-k-theory/index.html"><span class="context-entry-heading">Chapter 9</span><span class="context-entry-title">Complex K-theory</span></a></li><li><a href="../../../chapter/thom-spectra-and-bordism-theory/index.html" aria-current="page"><span class="context-entry-heading">Chapter 10</span><span class="context-entry-title">Thom spectra and bordism theory</span></a></li><li><a href="../../../chapter/duality-phenomena/index.html"><span class="context-entry-heading">Chapter 11</span><span class="context-entry-title">Duality phenomena</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../thom-spaces-and-the-collapse-construction/index.html"><span class="context-entry-heading">Section 10.1</span><span class="context-entry-title">Thom spaces and the collapse construction</span></a></li><li><a href="../thom-spectra/index.html"><span class="context-entry-heading">Section 10.2</span><span class="context-entry-title">Thom spectra</span></a></li><li><a href="../bordism-and-the-pontryagin-thom-theorem/index.html"><span class="context-entry-heading">Section 10.3</span><span class="context-entry-title">Bordism and the Pontryagin–Thom theorem</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 10.4</span><span class="context-entry-title">Orientations and the Thom isomorphism</span></a></li><li><a href="../coherence-for-one-point-compactification-online-only/index.html"><span class="context-entry-heading">Section 10.5</span><span class="context-entry-title">Coherence for one-point compactification (online only)</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:R_Lines"><span class="context-entry-heading">Definition 10.4.1</span><span class="context-entry-title">R-lines</span></a></li><li><a href="#rmk:R_Lines_As_Classifying_Anima"><span class="context-entry-heading">Remark 10.4.2</span><span class="context-entry-title">remark</span></a></li><li><a href="#ex:R_Lines_Ordinary_Rings"><span class="context-entry-heading">Example 10.4.3</span><span class="context-entry-title">example</span></a></li><li><a href="#def:Local_System_Of_R_Lines"><span class="context-entry-heading">Definition 10.4.4</span><span class="context-entry-title">Local systems and trivializations</span></a></li><li><a href="#def:R_Orientation"><span class="context-entry-heading">Definition 10.4.5</span><span class="context-entry-title">Orientation</span></a></li><li><a href="#lem:Orientation_Of_Inverse_Virtual_Bundle"><span class="context-entry-heading">Lemma 10.4.6</span><span class="context-entry-title">Orientations of inverse virtual bundles</span></a></li><li><a href="#prop:Orientation_As_Trivialization"><span class="context-entry-heading">Proposition 10.4.7</span><span class="context-entry-title">proposition</span></a></li><li><a href="#ex:Ordinary_Cohomology_Orientations"><span class="context-entry-heading">Example 10.4.8</span><span class="context-entry-title">example</span></a></li><li><a href="#ex:Universal_MO_Orientation"><span class="context-entry-heading">Example 10.4.9</span><span class="context-entry-title">The universal \MO-orientation</span></a></li><li><a href="#thm:Thom_Isomorphism"><span class="context-entry-heading">Theorem 10.4.10</span><span class="context-entry-title">Thom isomorphism</span></a></li><li><a href="#cor:Classical_Thom_Isomorphism"><span class="context-entry-heading">Corollary 10.4.11</span><span class="context-entry-title">Classical Thom isomorphism</span></a></li><li><a href="#rmk:Mod_2_Homology_Of_MO"><span class="context-entry-heading">Remark 10.4.12</span><span class="context-entry-title">The mod 2 homology of \MO</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

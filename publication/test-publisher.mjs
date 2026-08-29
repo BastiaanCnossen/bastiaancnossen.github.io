@@ -16,16 +16,16 @@ function writeJson(filePath, value) {
   fs.writeFileSync(filePath, `${JSON.stringify(value, null, 2)}\n`, "utf8");
 }
 
-function writePage(route, ids) {
+function writePage(route, ids, links = []) {
   const filePath = path.join(candidateRoot, ...route.split("/").filter(Boolean), "index.html");
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
-  fs.writeFileSync(filePath, `<!doctype html><html><head><meta charset="utf-8"></head><body><main>${ids.map((id) => `<section id="${id}">${id}</section>`).join("")}</main></body></html>`, "utf8");
+  fs.writeFileSync(filePath, `<!doctype html><html><head><meta charset="utf-8"></head><body><main>${ids.map((id) => `<section id='${id}'>${id}</section>`).join("")}${links.map((link) => `<a href='${link}'>Linked page</a>`).join("")}</main></body></html>`, "utf8");
 }
 
 function writeCandidate({ includeRetiredRoute = true, includeOldFragment = true, pdfContents = "PDF version 1" }) {
   fs.rmSync(candidateRoot, { recursive: true, force: true });
   fs.writeFileSync(candidatePdf, pdfContents, "utf8");
-  writePage("/", []);
+  writePage("/", [], ["entry/current/"]);
   const routes = [{ Path: "/", Kind: "work", Fragments: [] }];
   if (includeRetiredRoute) {
     writePage("/entry/retired/", ["result:Retired"]);

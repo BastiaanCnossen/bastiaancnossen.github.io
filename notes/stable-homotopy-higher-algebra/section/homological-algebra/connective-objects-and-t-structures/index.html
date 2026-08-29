@@ -1,0 +1,674 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 6.3: Connective objects and t-structures | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/stable-homotopy-theory/index.html">Part I</a> · <a href="../../../chapter/homological-algebra/index.html">Chapter 6</a> · Section 6.3</p>
+      <h1>Connective objects and t-structures</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:t_Structures'>In <a class="source-reference" data-label="sec:Derived_Infinity_Categories" href="../derived-categories/index.html#sec:Derived_Infinity_Categories">Section 6.1</a>, we saw that the derived \(\infty \)-category \(\D (\Aa )\) of an abelian category \(\Aa \) admits a natural decomposition into
+‘connective’ and ‘coconnective’ parts. Specifically, a complex \(A \in \D (\Aa )\) is called connective if its homology vanishes
+in negative degrees, and coconnective if its homology vanishes in positive degrees. These two classes of
+objects interact in a structured way:
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'>(Closure   under   shifts)   Connective   complexes   are   closed   under   positive   shifts,   while
+     coconnective complexes are closed under negative shifts.
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'>(Orthogonality) There are no nonzero maps from a connective complex to a \((-1)\)-coconnective
+     complex.
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'>(Decomposition) Every complex \(A\) sits in an exact sequence \(\tau _{\geq 0} A \to A \to \tau _{\leq -1} A\) decomposing it into a connective
+     and a \((-1)\)-coconnective part.</p></dd></dl>
+<p class='noindent'>The \(\infty \)-category \(\Sp \) of spectra exhibits the same pattern: a spectrum \(X\) is called connective if \(\pi _k(X) = 0\) for \(k &lt; 0\), and
+coconnective if \(\pi _k(X) = 0\) for \(k &gt; 0\). These subcategories again satisfy properties (1)–(3).
+</p><p class='noindent'>Structures like these are omnipresent in stable homotopy theory and homological algebra. The axiomatic
+framework capturing this phenomenon is that of a <span class='ntx-Italic-tlf-t1-x-x-109'>t-structure </span>on a stable \(\infty \)-category, introduced by
+Beĭlinson, Bernstein, and Deligne <span class='citation'>[Beilinson et al. (1982)]</span>. One of the key features of a t-structure is its <span class='ntx-Italic-tlf-t1-x-x-109'>heart</span>: the full
+subcategory of objects that are both connective and coconnective. The heart turns out to be an abelian
+1-category, providing a bridge between the stable and abelian worlds. This allows many arguments
+from classical homological algebra to be carried out in any stable \(\infty \)-category equipped with
+a t-structure, even when that category does not arise as the derived category of an abelian
+category.
+</p><p class='noindent'>In <span class="source-reference" data-label="subsec:t_Structure_Basics">Subsection 6.3.1</span> we give the definition of a t-structure and establish its basic properties, including the existence
+of truncation functors. In <span class="source-reference" data-label="subsec:Heart">Subsection 6.3.2</span> we prove that the heart of a t-structure is an abelian category, and
+                                                                                   
+                                                                                   
+relate exact sequences in \(C\) to short exact sequences in the heart. In <span class="source-reference" data-label="subsec:Homotopy_Group_Objects">Subsection 6.3.3</span> we introduce homotopy
+group objects and establish the long exact sequence of homotopy groups. Finally, in <span class="source-reference" data-label="subsec:Complete_Bounded">Subsection 6.3.4</span> we discuss
+completeness and boundedness conditions that control how well objects are determined by their
+truncations.
+</p>
+<h4 class='subsectionHead' id='definition-and-basic-properties'><span class='titlemark'>6.3.1    </span> <a id='x1-20006.3.1'></a>Definition and basic properties</h4>
+<span class="source-anchor" id='subsec_t_Structure_Basics'></span>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r1'></a>
+<a class="entry-heading-link" href="../../../entry/t-structures/index.html" aria-label="Definition 6.3.1, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 6.3.1 </span></a>(<span class='citation'>[Beilinson et al. (1982)]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:t_Structure'></span> A <span class='ntx-Italic-tlf-t1-x-x-109'>t-structure </span>on a stable \(\infty \)-category \(C\) consists of a pair \((C_{\geq 0}, C_{\leq 0})\) of full subcategories of \(C\)
+satisfying the following conditions:
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>(Closure under shifts) We have \(C_{\geq 0}[1] \subseteq C_{\geq 0}\) and \(C_{\leq 0}[-1] \subseteq C_{\leq 0}\).
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>(Orthogonality) If \(X \in C_{\geq 0}\) and \(Y \in C_{\leq 0}\), then \(\Hom _{C}(X,Y[-1]) = 0\).
+   </p></dd><dt class='enumerate'>
+(3) </dt><dd class='enumerate'>
+   <p class='noindent'>(Decomposition) Every \(X \in C\) sits in an exact sequence of the form \begin {align*}  \tau _{\geq 0} X \to X \to \tau _{\leq -1} X,  \end {align*}
+   </p><p class='noindent'>with \(\tau _{\geq 0} X \in C_{\geq 0}\) and \(\tau _{\leq -1} X \in C_{\leq 0}[-1]\).</p></dd></dl>
+<p class='noindent'>Objects in \(C_{\geq 0}\) are called <span class='ntx-Italic-tlf-t1-x-x-109'>connective </span>(with respect to the t-structure), while objects in \(C_{\leq 0}\) are called <span class='ntx-Italic-tlf-t1-x-x-109'>coconnective</span>.
+For \(n \in \Z \) we set \(C_{\geq n} := C_{\geq 0}[n]\) and \(C_{\leq n} := C_{\leq 0}[n]\).
+</p><p class='noindent'>If \(D\) is another stable \(\infty \)-category equipped with a t-structure, then an exact functor \(F\colon C \to D\) is called <span class='ntx-Italic-tlf-t1-x-x-109'>left t-exact</span>
+if it sends \(C_{\leq 0}\) to \(D_{\leq 0}\), and hence by exactness sends \(C_{\leq n}\) to \(D_{\leq n}\) for all \(n \in \Z \). Similarly, \(F\) is called <span class='ntx-Italic-tlf-t1-x-x-109'>right t-exact </span>if
+it sends \(C_{\geq 0}\) to \(D_{\geq 0}\), or equivalently sends \(C_{\geq n}\) to \(D_{\geq n}\) for all \(n\). We say \(F\) is <span class='ntx-Italic-tlf-t1-x-x-109'>t-exact </span>if it is both left and right
+t-exact.
+                                                                                   
+                                                                                   
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2005r2'></a>
+<a class="entry-heading-link" href="../../../entry/homological-and-cohomological-indexing-of-t-structures/index.html" aria-label="Remark 6.3.2, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 6.3.2 </span></a>(Cohomological grading)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='rem:Cohomological_Grading_t_Structure'></span>   We   index   t-structures   <span class='ntx-Italic-tlf-t1-x-x-109'>homologically</span>,   matching   our
+convention for chain complexes (<a class="source-reference" data-label="rem:Cohomological_Grading" href="../../../entry/homological-and-cohomological-grading/index.html#rem:Cohomological_Grading">Remark 6.1.8</a>). A reader preferring <span class='ntx-Italic-tlf-t1-x-x-109'>cohomological </span>grading should negate the
+index throughout, writing \(C^{\geq n} := C_{\leq -n}\) and \(C^{\leq n} := C_{\geq -n}\), and likewise \(\tau ^{\geq n} := \tau _{\leq -n}\) and \(\tau ^{\leq n} := \tau _{\geq -n}\) for the truncation functors introduced below.
+</p>
+</div>
+<p class='noindent'>The two main examples of t-structures are the standard t-structure on derived categories and the Postnikov
+t-structure on spectra.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2006r3'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 6.3.3 </span>(Standard t-structure on derived categories)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:t_Structure_On_DA'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(\Aa \)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  an  abelian  category.  The
+pair</span> \((\D (\Aa )_{\geq 0}, \D (\Aa )_{\leq 0})\) <span class='ntx-Italic-tlf-t1-x-x-109'>defines a t-structure on</span> \(\D (\Aa )\)<span class='ntx-Italic-tlf-t1-x-x-109'>, called the </span>standard t-structure<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-03-14" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-03-14">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Property (1) is immediate from the definition of \(\D (\Aa )_{\geq n}\) and \(\D (\Aa )_{\leq n}\): a complex with homology concentrated
+in degrees \(\geq 0\) has, after a positive shift, homology concentrated in degrees \(\geq 1\), so in particular \(\geq 0\).
+</p><p class='noindent'>Property (2) was established in <a class="source-reference" data-label="cor:Connective_Coconnective_Orthogonality" href="../../../entry/orthogonality-of-connective-and-coconnective-complexes/index.html#cor:Connective_Coconnective_Orthogonality">Corollary 6.1.25</a>: if \(A\) is connective and \(B\) is \((- 1)\)-coconnective, then \(\Hom _{\D (\Aa )}(A,B) = 0\).
+</p><p class='noindent'>Property (3) is <a class="source-reference" data-label="cor:Fiber_Sequence_Truncations" href="../../../entry/exact-sequence-of-derived-truncations/index.html#cor:Fiber_Sequence_Truncations">Corollary 6.1.32</a>: for every complex \(A\), there is an exact sequence \(\tau _{\geq 0} A \to A \to \tau _{\leq -1} A\) in \(\D (\Aa )\).                                                  □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2007r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 6.3.4 </span>(Postnikov t-structure on spectra)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Postnikov_t_Structure_On_Sp'>   </span><span class='ntx-Italic-tlf-t1-x-x-109'>Define</span>   \(\Sp _{\geq 0} \subseteq \Sp \)   <span class='ntx-Italic-tlf-t1-x-x-109'>to   be   the   full   subcategory   of</span>
+connective spectra<span class='ntx-Italic-tlf-t1-x-x-109'>, i.e. those</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>with</span> \(\pi _k(X) = 0\) <span class='ntx-Italic-tlf-t1-x-x-109'>for</span> \(k &lt; 0\)<span class='ntx-Italic-tlf-t1-x-x-109'>, and</span> \(\Sp _{\leq 0} \subseteq \Sp \) <span class='ntx-Italic-tlf-t1-x-x-109'>the full subcategory of </span>coconnective spectra<span class='ntx-Italic-tlf-t1-x-x-109'>, i.e. those
+with</span> \(\pi _k(X) = 0\) <span class='ntx-Italic-tlf-t1-x-x-109'>for</span> \(k &gt; 0\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then the pair</span> \((\Sp _{\geq 0}, \Sp _{\leq 0})\) <span class='ntx-Italic-tlf-t1-x-x-109'>defines a t-structure on</span> \(\Sp \)<span class='ntx-Italic-tlf-t1-x-x-109'>, called the </span>Postnikov t-structure<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-03-13" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-03-13">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Property (1) is immediate from the behavior of homotopy groups under shifts: \(\pi _k(X[1]) \cong \pi _{k-1}(X)\).
+</p><p class='noindent'>For property (2), let \(X \in \Sp _{\geq 0}\) and \(Y \in \Sp _{\leq 0}\). By the recognition principle for connective spectra (<a class="source-reference" data-label="thm:Recognition_Principle_Connective_Spectra" href="../../../entry/recognition-principle-for-connective-spectra/index.html#thm:Recognition_Principle_Connective_Spectra">Theorem 5.4.6</a>), we may write \(X \simeq \bB ^{\infty }(A)\) for
+some \(A \in \CGrp (\An )\). By adjunction, \[ \Hom _{\Sp }(X, Y[-1]) \quad \cong \quad \Hom _{\CGrp (\An )}(A, \Omega ^{\infty }(Y[-1])). \] But \(\Omega ^{\infty }(Y[-1])\) is contractible: its homotopy groups \(\pi _k(\Omega ^{\infty }(Y[-1])) \cong \pi _k(Y[-1]) \cong \pi _{k+1}(Y)\) vanish for all \(k \geq 0\) since \(Y \in \Sp _{\leq 0}\).
+</p><p class='noindent'>For property (3), given a spectrum \(X\), we define \(\tau _{\geq 0} X := \bB ^{\infty }\Omega ^{\infty }X\). The counit of the adjunction \(\bB ^{\infty } \dashv \Omega ^{\infty }\) provides a map \(\tau _{\geq 0} X \to X\). Define
+\(\tau _{\leq -1} X\) as its cofiber. From the long exact sequence on homotopy groups (<a class="source-reference" data-label="prop:LES_Homotopy_Groups_Spectra" href="../../../entry/long-exact-sequence-of-homotopy-groups-of-spectra/index.html#prop:LES_Homotopy_Groups_Spectra">Proposition 4.4.29</a>), one verifies that \(\tau _{\geq 0} X\) is connective
+and \(\tau _{\leq -1} X\) has homotopy groups concentrated in degrees \(\leq -1\).                                                                         □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2008r5'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/opposite-t-structures/index.html" aria-label="Example 6.3.5., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 6.3.5.</span></a>  </span><span id='ex:Opposite_t_Structure'></span> If \(C\) admits a t-structure \((C_{\geq 0}, C_{\leq 0})\), then \(C\catop \) can be given the <span class='ntx-Italic-tlf-t1-x-x-109'>opposite t-structure</span>, in which \((C\catop )_{\geq 0} := (C_{\leq 0})\catop \) and
+\((C\catop )_{\leq 0} := (C_{\geq 0})\catop \).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2009r6'></a>
+<a class="entry-heading-link" href="../../../entry/product-t-structures/index.html" aria-label="Example 6.3.6., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 6.3.6.</span></a>  </span><span id='ex:Product_t_Structure'></span> If \(C\) and \(D\) both admit t-structures, then so does their product \(C \times D\) by setting \((C \times D)_{\geq 0} := C_{\geq 0} \times D_{\geq 0}\) and \((C \times D)_{\leq 0} := C_{\leq 0} \times D_{\leq 0}\).
+</p>
+</div>
+<p class='noindent'>We now show that the objects \(\tau _{\geq 0} X\) and \(\tau _{\leq -1} X\) appearing in axiom (3) are in fact functorial in \(X\), arising from
+adjunctions.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2010r7'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 6.3.7.</span>  </span><span id='lem:Truncation_Adjunctions'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \((C_{\geq 0}, C_{\leq 0})\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a t-structure on</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, and let</span> \(n \in \Z \)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The inclusion</span> \(C_{\geq n} \hookrightarrow C\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a right adjoint</span> \(\tau _{\geq n}\colon C \to C_{\geq n}\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The inclusion</span> \(C_{\leq n} \hookrightarrow C\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a left adjoint</span> \(\tau _{\leq n}\colon C \to C_{\leq n}\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p></dd></dl>
+                                                                                   
+
+                                                                                   
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-03-12" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-03-12">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We prove (1); the proof of (2) is dual. By shifting, we may assume that \(n = 0\); in general we may
+then set \(\tau _{\geq n}(X) := \tau _{\geq 0}(X[-n])[n]\). Using the pointwise formula for adjunctions, it suffices to show that for every object \(X \in C\) there
+exists some \(\tau _{\geq 0}X\) equipped with a morphism \(\tau _{\geq 0}X \to X\) inducing equivalences \(\Hom _{C}(Y, \tau _{\geq 0}X) \iso \Hom _{C}(Y,X)\) for every \(Y \in C_{\geq 0}\). For this, we consider
+the exact sequence \(\tau _{\geq 0}X \to X \to \tau _{\leq -1}X\) provided by axiom (3). This gives rise to a long exact sequence \[ \dots \to \pi _{n+1}\Hom _C(Y,\tau _{\leq -1} X) \to \pi _n\Hom _C(Y,\tau _{\geq 0}X) \to \pi _n \Hom _C(Y,X) \to \pi _n\Hom _C(Y,\tau _{\leq -1} X) \to \dots \] Since \(\Hom _C(Y,\tau _{\leq -1} X) = 0\) by
+axiom (2), this implies that the map \(\Hom _{C}(Y, \tau _{\geq 0}X) \to \Hom _{C}(Y,X)\) induces isomorphisms on all homotopy groups, hence is an
+equivalence.                                                                                                                                        □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2013r8'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 6.3.8.</span>  </span><span id='cor:Truncation_Subcategories_Closed'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The subcategory</span> \(C_{\leq n}\) <span class='ntx-Italic-tlf-t1-x-x-109'>of</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is closed under all limits that exist in</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>. The subcategory</span> \(C_{\geq n}\) <span class='ntx-Italic-tlf-t1-x-x-109'>of</span> \(C\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>is closed under all colimits that exist in</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>.                                                                                            □</span>
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2014r9'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 6.3.9.</span>  </span><span id='cor:Limits_Colimits_In_Truncations'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Assume</span>  \(C\)  <span class='ntx-Italic-tlf-t1-x-x-109'>admits</span>  \(I\)<span class='ntx-Italic-tlf-t1-x-x-109'>-indexed  colimits.  Then  so  does  the  subcategory</span>  \(C_{\leq n}\)<span class='ntx-Italic-tlf-t1-x-x-109'>:  they  are
+computed as</span> \(\tau _{\leq n}(\colim _{i \in I} X_i)\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Dually, if</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits</span> \(I\)<span class='ntx-Italic-tlf-t1-x-x-109'>-indexed limits, then so does</span> \(C_{\geq n}\) <span class='ntx-Italic-tlf-t1-x-x-109'>via the formula</span> \(\tau _{\geq n}(\lim _{i \in I} X_i)\)<span class='ntx-Italic-tlf-t1-x-x-109'>.                               □</span>
+                                                                                   
+
+                                                                                   
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2015r10'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 6.3.10.</span>  </span><span id='lem:Truncations_Preserve_Bounds'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a stable</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category equipped with a t-structure, and let</span> \(n,m \in \Z \)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(X \in C_{\leq m}\)<span class='ntx-Italic-tlf-t1-x-x-109'>, then</span> \(\tau _{\geq n}X \in C_{\leq m}\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(X \in C_{\geq n}\)<span class='ntx-Italic-tlf-t1-x-x-109'>, then</span> \(\tau _{\leq m}X \in C_{\geq n}\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-03-11" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-03-11">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We prove (1) first. Let \(X \in C_{\leq m}\). If \(n&gt;m\), then \(\Hom _C(Z,X)=0\) for every \(Z \in C_{\geq n}\) by orthogonality. By adjunction, this gives \(\Hom _C(Z,\tau _{\geq n}X)=0\) for
+every \(Z \in C_{\geq n}\). Taking \(Z=\tau _{\geq n}X\), we see that the identity of \(\tau _{\geq n}X\) is null, so \(\tau _{\geq n}X\) is zero.
+</p><p class='noindent'>Assume instead that \(n \leq m\). The truncation sequence \[ \tau _{\geq n}X \to X \to \tau _{\leq n-1}X \] exhibits \(\tau _{\geq n}X\) as the fiber of a morphism between objects
+of \(C_{\leq m}\), since \(C_{\leq n-1} \subseteq C_{\leq m}\). By <a class="source-reference" data-label="cor:Truncation_Subcategories_Closed" href="../../../entry/closure-properties-of-truncation-subcategories/index.html#cor:Truncation_Subcategories_Closed">Corollary 6.3.8</a>, it follows that \(\tau _{\geq n}X \in C_{\leq m}\).
+</p><p class='noindent'>The proof of (2) is dual.                                                                                                                      □
+</p>
+</div></div>
+<div class='newtheorem'>
+                                                                                   
+                                                                                   
+<p class='noindent'><span class='head'>
+<a id='x1-2018r11'></a>
+<a class="entry-heading-link" href="../../../entry/truncation-notation-for-t-structures/index.html" aria-label="Warning 6.3.11., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Warning 6.3.11.</span></a>  </span><span id='warn:Truncation_Notation_For_T_Structures'></span> The notation \(\tau _{\leq n}\) is sometimes also used for the notion of \(n\)-truncation in an \(\infty \)-category.
+This notation is <span class='ntx-Italic-tlf-t1-x-x-109'>not </span>compatible with the left adjoint \(\tau _{\leq n}\) from the lemma. In fact, the only \(n\)-truncated
+object in a stable \(\infty \)-category is the zero object. (Compare <a class="source-reference" data-label="lem:Heart_As_Zero_Truncated_Objects" href="../../../entry/heart-objects-are-zero-truncated-connective-objects/index.html#lem:Heart_As_Zero_Truncated_Objects">Lemma 6.3.18</a>.)
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2019r12'></a>
+<a class="entry-heading-link" href="../../../entry/adjoints-and-t-exactness/index.html" aria-label="Exercise 6.3.12., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 6.3.12.</span></a>  </span><span id='ex:Adjoint_t_Exactness'></span> Let \(C\) and \(D\) have t-structures and let \(F \colon C \rightleftarrows D \noloc G\) be an adjunction. Show that \(F\) is right t-exact if
+and only if \(G\) is left t-exact.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2020r13'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 6.3.13.</span>  </span><span id='lem:t-Exact_Functor_Preserves_Truncations'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(F\colon C \to D\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a t-exact functor between two stable</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories equipped with t-structures.
+Then for all</span> \(X \in C\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(n \in \Z \)<span class='ntx-Italic-tlf-t1-x-x-109'>, there are natural equivalences </span>\[ \tau _{\leq n} F(X) \iso F(\tau _{\leq n} X) \qquadtext { and } F(\tau _{\geq n} X) \iso \tau _{\geq n} F(X). \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-03-10" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-03-10">
+                                                                                   
+
+                                                                                   
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We prove the first equivalence; the second is dual. Since \(F\) is t-exact, applying \(F\) to the exact
+sequence \(\tau _{\geq n+1} X \to X \to \tau _{\leq n} X\) gives another exact sequence \[ F(\tau _{\geq n+1} X) \to F(X) \to F(\tau _{\leq n} X) \] where the first object lies in \(D_{\geq n+1}\) and the last one in \(D_{\leq n}\). It follows
+that the second map induces an isomorphism \(\tau _{\leq n} F(X) \iso F(\tau _{\leq n} X)\).                                                                                   □
+</p>
+</div></div>
+
+<h4 class='subsectionHead' id='the-heart-of-a-tstructure'><span class='titlemark'>6.3.2    </span> <a id='x1-30006.3.2'></a>The heart of a t-structure</h4>
+<p class='noindent' id='subsec_Heart'>Given a t-structure on \(C\), a special role is played by the objects that are both connective and
+coconnective.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3001r14'></a>
+<a class="entry-heading-link" href="../../../entry/hearts-of-t-structures/index.html" aria-label="Definition 6.3.14., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 6.3.14.</span></a>  </span><span id='def:Heart'></span> Let \((C_{\geq 0}, C_{\leq 0})\) be a t-structure on \(C\). We define the <span class='ntx-Italic-tlf-t1-x-x-109'>heart </span>of the t-structure to be the intersection
+\[ C^{\heartsuit } := C_{\geq 0} \cap C_{\leq 0}. \]
+</p>
+</div>
+<p class='noindent'>The key feature of t-structures is that the heart is always an abelian 1-category, and that there is a close
+relation between exact sequences in \(C^{\heartsuit }\) (in the sense of homological algebra) and exact sequences in \(C\) (in the
+sense of stable homotopy theory).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3002r15'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 6.3.15.</span>  </span><span id='prop:Heart_Of_T_Structure_Abelian'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a stable</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category equipped with a t-structure.</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The heart</span> \(C^{\heartsuit }\) <span class='ntx-Italic-tlf-t1-x-x-109'>is an abelian 1-category.</span>
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>A morphism</span> \(g\colon Y \to Z\) <span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(C^{\heartsuit }\) <span class='ntx-Italic-tlf-t1-x-x-109'>is an epimorphism in</span> \(C^{\heartsuit }\) <span class='ntx-Italic-tlf-t1-x-x-109'>if and only if its fiber in</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>lies in</span> \(C^{\heartsuit }\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>A morphism</span> \(f\colon X \to Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(C^{\heartsuit }\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a monomorphism in</span> \(C^{\heartsuit }\) <span class='ntx-Italic-tlf-t1-x-x-109'>if and only if its cofiber in</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>lies in</span> \(C^{\heartsuit }\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p></dd><dt class='enumerate'>
+  (4) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Consider a commutative square in</span> \(C^{\heartsuit }\) <span class='ntx-Italic-tlf-t1-x-x-109'>of the form </span></p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-39958ede5c72.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><dl class='enumerate'><dt class='enumerate'>
+     <span class='ntx-Italic-tlf-t1-x-x-109'>(a)</span> </dt><dd class='enumerate'>
+         <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(g\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(h\) <span class='ntx-Italic-tlf-t1-x-x-109'>are epimorphisms in</span> \(C^{\heartsuit }\)<span class='ntx-Italic-tlf-t1-x-x-109'>, then the square is a pullback square in</span> \(C^{\heartsuit }\) <span class='ntx-Italic-tlf-t1-x-x-109'>if and only if it is a
+         pullback square in</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+         </p></dd><dt class='enumerate'>
+     <span class='ntx-Italic-tlf-t1-x-x-109'>(b)</span> </dt><dd class='enumerate'>
+         <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(f\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(k\) <span class='ntx-Italic-tlf-t1-x-x-109'>are monomorphisms in</span> \(C^{\heartsuit }\)<span class='ntx-Italic-tlf-t1-x-x-109'>, then the square is a pushout square in</span> \(C^{\heartsuit }\) <span class='ntx-Italic-tlf-t1-x-x-109'>if and only if it is
+         a pushout square in</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p></dd></dl>
+     </dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-03-9" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-03-9">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> For (1), first observe that \(C^{\heartsuit }\) is a 1-category, in the sense that the hom animae \(\Hom _{C^{\heartsuit }}(X,Y)\) are sets. Indeed,
+for \(k \geq 1\), we have \[ \pi _k\Hom _{C^{\heartsuit }}(X,Y) \cong \pi _0 \Hom _{C}(X,Y[-k]) = 0 \] since \(X \in C_{\geq 0}\) and \(Y[-k] \in C_{\leq -k} \subseteq C_{\leq -1}\). Further, since both \(C_{\leq 0}\) and \(C_{\geq 0}\) are closed under direct sums in \(C\), it is clear
+\(C^{\heartsuit }\) is additive. We also observe that \(C^{\heartsuit }\) admits kernels and cokernels, which are computed as \[ \ker (Y \to Z) = \tau _{\geq 0}(\fib (Y \to Z)) \qquadtext { and } \coker (X \to Y) = \tau _{\leq 0}(\cofib (X \to Y)). \] Before
+finishing the proof of (1), let us first address the ‘only if’-directions in (2) and (3). Since replacing \(C\)
+by \(C\catop \) translates (2) into (3) and vice versa, it suffices to prove the ‘only if’-direction in (2). To this end,
+let \(g\colon Y \twoheadrightarrow Z\) be an epimorphism in \(C^{\heartsuit }\). We need to show that \(\fib (g) \in C_{\geq 0}\). (Since \(C_{\leq 0}\) is closed under limits, the condition \(\fib (g) \in C_{\leq 0}\) is
+automatic.) The assumption on \(g\) implies that the commutative square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-9476f9dbeacc.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>is a pushout square in \(C^{\heartsuit }\). Since
+pushouts in \(C^{\heartsuit }\) are computed by first forming the pushout in \(C_{\geq 0}\) and then applying \(\tau _{\leq 0} \colon C_{\geq 0} \to C^{\heartsuit }\), it follows that the map
+\(Z \to Z \sqcup _Y Z\) obtained by forming the pushout in \(C\) induces an isomorphism \(Z = \tau _{\leq 0} Z \iso \tau _{\leq 0}(Z \sqcup _Y Z)\). Passing to cofibers then gives \(\tau _{\leq 0}(\cofib (g)) = 0\), or
+equivalently \(\cofib (g) \in C_{\geq 1}\). But then the relation \(\fib (g) \simeq \cofib (g)[-1]\) implies \(\fib (g) \in C_{\geq 0}\), which is what we needed to show.</p><p class='noindent'>We now prove (4). Again, (a) translates to (b) under replacing \(C\) by \(C\catop \), so it suffices to prove (a). By full
+faithfulness of the inclusion \(C^{\heartsuit } \hookrightarrow C\), it is clear that if the square is a pullback in \(C\) then it is also a pullback in
+\(C^{\heartsuit }\). Conversely, if the square is a pullback in \(C^{\heartsuit }\), then it in particular induces an isomorphism \(\ker (h) \iso \ker (g)\) on kernels
+in \(C^{\heartsuit }\). But by the direction of (2) that we just proved, these kernels agree with the fibers in \(C\). We deduce
+that the induced map \(\fib (h) \to \fib (g)\) is an isomorphism in \(C\), which implies that the square is also a pullback square
+in \(C\). This finishes the proof of (4).
+</p><p class='noindent'>We now return to (1), finishing the proof that \(C^{\heartsuit }\) is abelian. Consider a commutative square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-f477ea12face.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>in \(C^{\heartsuit }\), and
+assume that \(f\) is a monomorphism in \(C^{\heartsuit }\) and that \(g\) is an epimorphism in \(C^{\heartsuit }\). We need to show that this
+square is a pullback square in \(C^{\heartsuit }\) if and only if it is a pushout square in \(C^{\heartsuit }\). But by (4) this is immediate
+from stability of \(C\).</p><p class='noindent'>Finally, we prove the ‘if’-directions in (2) and (3). As before, it suffices to do this for (2). Given a
+morphism \(g\colon Y \to Z\) in \(C^{\heartsuit }\) whose fiber lies in \(C^{\heartsuit }\), we must show \(g\) is an epimorphism. Since \(C^{\heartsuit }\) is abelian, it suffices to
+show that its cokernel \(\coker (g) = \tau _{\leq 0}(\cofib (g))\) is zero, i.e., that \(\cofib (g) \in C_{\geq 1}\). But this follows from the relation \(\cofib (g) \simeq \fib (g)[1]\) and the assumption \(\fib (g) \in C_{\geq 0}\).    □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3009r16'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 6.3.16.</span>  </span><span id='cor:Short_Exact_Sequence_In_Heart_Induces_Exact_Sequence'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a stable</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category equipped with a t-structure. For every short exact
+sequence </span>\[ 0 \to X \hookrightarrow Y \twoheadrightarrow Z \to 0 \] <span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(C^{\heartsuit }\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the sequence</span> \(X \to Y \to Z\) <span class='ntx-Italic-tlf-t1-x-x-109'>is an exact sequence in</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-03-8" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-03-8">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> This is an immediate consequence of part (4) of <a class="source-reference" data-label="prop:Heart_Of_T_Structure_Abelian" href="../../../entry/hearts-of-t-structures-are-abelian/index.html#prop:Heart_Of_T_Structure_Abelian">Proposition 6.3.15</a>.                                                                 □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3010r17'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 6.3.17.</span>  </span><span id='cor:t-Exact_Functor_Induces_Exact_Functor'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(F\colon C \to D\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an exact functor between stable</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories with t-structures. Assume</span> \(F\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>restricts to a functor</span> \(F\colon C^{\heartsuit } \to D^{\heartsuit }\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then this restriction is an exact functor of abelian categories.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-03-7" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-03-7">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Let \(0 \to X \hookrightarrow Y \twoheadrightarrow Z \to 0\) be a short exact sequence in \(C^{\heartsuit }\). By the previous corollary, the sequence \(X \to Y \to Z\) is exact in \(C\), hence
+induces an exact sequence \(F(X) \to F(Y) \to F(Z)\) in \(D\). Using the various parts of <a class="source-reference" data-label="prop:Heart_Of_T_Structure_Abelian" href="../../../entry/hearts-of-t-structures-are-abelian/index.html#prop:Heart_Of_T_Structure_Abelian">Proposition 6.3.15</a>, we see:
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (i) </dt><dd class='enumerate'>
+     <p class='noindent'>By (2), the morphism \(F(Y) \to F(Z)\) is an epimorphism in \(D^{\heartsuit }\), since its fiber \(F(X)\) lies in \(D^{\heartsuit }\);
+     </p></dd><dt class='enumerate'>
+ (ii) </dt><dd class='enumerate'>
+     <p class='noindent'>By (3), the morphism \(F(X) \to F(Y)\) is a monomorphism in \(D^{\heartsuit }\), since its cofiber \(F(Z)\) lies in \(D^{\heartsuit }\);
+                                                                                   
+                                                                                   
+     </p></dd><dt class='enumerate'>
+ (iii) </dt><dd class='enumerate'>
+     <p class='noindent'>By (4), the exact sequence \(F(X) \to F(Y) \to F(Z)\) in \(D\) is also exact in \(D^{\heartsuit }\).</p></dd></dl>
+<p class='noindent'>We conclude that the sequence \(0 \to F(X) \hookrightarrow F(Y) \twoheadrightarrow F(Z) \to 0\) is exact in \(D^{\heartsuit }\), as desired.                                                                     □
+</p>
+</div></div>
+<p class='noindent'>To identify the heart of a t-structure, the following observation is sometimes useful:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3014r18'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 6.3.18.</span>  </span><span id='lem:Heart_As_Zero_Truncated_Objects'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a stable</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category equipped with a t-structure, and let</span> \(X \in C_{\geq 0}\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a connective
+object. Then</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>lies in the heart of</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>if and only if it is a 0-truncated object of</span> \(C_{\geq 0}\)<span class='ntx-Italic-tlf-t1-x-x-109'>, in the sense that</span> \(\pi _k\Hom _{C_{\geq 0}}(Y,X) = 0\) <span class='ntx-Italic-tlf-t1-x-x-109'>for all</span> \(Y \in C_{\geq 0}\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(k &gt; 0\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-03-6" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-03-6">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> First assume that \(X \in C^{\heartsuit }\). Then for \(Y \in C_{\geq 0}\) and \(k &gt; 0\) we have \(\pi _k\Hom _C(Y,X) \simeq \pi _0\Hom _C(Y,X[-k]) = 0\) as \(X[-k] \in C_{\leq -k} \subseteq C_{\leq -1}\). Conversely, if \(X\) is 0-truncated in \(C_{\geq 0}\), then we
+have \(\pi _k\Hom _C(Y,X[-1]) \cong \pi _{k+1}\Hom _C(Y,X) \cong 0\) for all \(Y \in C_{\geq 0}\) and \(k \geq 0\). It follows that \(X[-1] \in C_{\leq -1}\), and thus \(X \in C^{\heartsuit }\).                                                                                      □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3015r19'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 6.3.19.</span>  </span><span id='cor:Heart_As_Zero_Truncated_Objects'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>For  a  stable</span>  \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category  equipped  with  a  t-structure,  the  heart</span>  \(C^{\heartsuit }\)  <span class='ntx-Italic-tlf-t1-x-x-109'>is  the  full
+subcategory of 0-truncated objects in</span> \(C_{\geq 0}\)<span class='ntx-Italic-tlf-t1-x-x-109'>.                                                                                               □</span>
+</p>
+</div>
+<p class='noindent'>We now identify the hearts of our two main examples of t-structures.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3016r20'></a>
+<a class="entry-heading-link" href="../../../entry/heart-of-standard-t-structure/index.html" aria-label="Example 6.3.20, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 6.3.20 </span></a>(Heart of the standard t-structure)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='ex:Heart_Of_DA'></span> Let \(\Aa \) be an abelian category. The heart of the
+standard  t-structure  on  \(\D (\Aa )\)  is  equivalent  to  \(\Aa \).  Indeed,  the  heart  consists  of  those  complexes  whose
+homology is concentrated in degree zero, which by <a class="source-reference" data-label="prop:Inclusion_Abelian_Category_Into_Derived_Category" href="../../../entry/abelian-category-inside-its-derived-infinity-category/index.html#prop:Inclusion_Abelian_Category_Into_Derived_Category">Proposition 6.1.26</a> is precisely the essential image of the fully
+faithful functor \(\Aa \hookrightarrow \D (\Aa )\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3017r21'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 6.3.21 </span>(Heart of the Postnikov t-structure)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Heart_Of_Sp'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(\bB ^{\infty }\colon \Ab \hookrightarrow \Sp \) <span class='ntx-Italic-tlf-t1-x-x-109'>induces an equivalence </span>\[ \bB ^{\infty }\colon \Ab \iso \Sp ^{\heartsuit }. \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-03-5" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-03-5">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By the recognition principle for connective spectra (<a class="source-reference" data-label="thm:Recognition_Principle_Connective_Spectra" href="../../../entry/recognition-principle-for-connective-spectra/index.html#thm:Recognition_Principle_Connective_Spectra">Theorem 5.4.6</a>), the functor \(\bB ^{\infty }\) induces an equivalence \(\bB ^{\infty }\colon \CGrp (\An ) \iso \Sp _{\geq 0}\).
+By <a class="source-reference" data-label="cor:Heart_As_Zero_Truncated_Objects" href="../../../entry/heart-as-zero-truncated-connective-objects/index.html#cor:Heart_As_Zero_Truncated_Objects">Corollary 6.3.19</a>, we may identify \(\Sp ^{\heartsuit }\) with the subcategory of \(\CGrp (\An )\) spanned by the 0-truncated objects. Note that object
+in \(\CGrp (\An )\) is \(0\)-truncated if and only if its underlying anima is 0-truncated, which in turn happens if and only
+if it is contained in the full subcategory \(\Set \subseteq \An \). All in all, we get \(\Ab = \CGrp (\Set ) \iso \CGrp (\An )_{\leq 0} \iso \Sp ^{\heartsuit }\).                                                              □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3018r22'></a>
+<a class="entry-heading-link" href="../../../entry/eilenberg-maclane-functor-on-hearts/index.html" aria-label="Remark 6.3.22., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 6.3.22.</span></a>  </span><span id='rmk:Eilenberg_MacLane_Functor_On_Hearts'></span> Combining <a class="source-reference" data-label="ex:Heart_Of_DA" href="../../../entry/heart-of-standard-t-structure/index.html#ex:Heart_Of_DA">Example 6.3.20</a> and <a class="source-reference" data-label="prop:Heart_Of_Sp" href="../../../entry/heart-of-postnikov-t-structure/index.html#prop:Heart_Of_Sp">Proposition 6.3.21</a>, we see that the Eilenberg–MacLane functor \(H\colon \D (\Z ) \to \Sp \) from <a class="source-reference" data-label="def:Eilenberg_MacLane_Spectrum" href="../../../entry/eilenberg-maclane-spectra-of-chain-complexes/index.html#def:Eilenberg_MacLane_Spectrum">Definition 6.2.1</a> restricts to
+an equivalence \(\Ab \iso \Sp ^{\heartsuit }\) on hearts. In particular, \(H\) is t-exact.
+</p>
+</div>
+<p class='noindent'>More generally, for a connective ring spectrum \(R\), the heart of the module category \(\LMod _R\) can be identified with the
+category of discrete modules over \(\pi _0(R)\). We will establish this in <a class="source-reference" data-label="sec:Connective_Modules" href="../../ring-spectra-and-modules/connective-modules/index.html#sec:Connective_Modules">Section 8.2</a>, after developing the necessary theory of ring
+spectra and their modules.
+</p>
+<h4 class='subsectionHead' id='homotopy-group-objects'><span class='titlemark'>6.3.3    </span> <a id='x1-40006.3.3'></a>Homotopy group objects</h4>
+<p class='noindent' id='subsec_Homotopy_Group_Objects'>We will now define the <span class='ntx-Italic-tlf-t1-x-x-109'>homotopy group objects </span>of an object \(X \in C\): the objects of the heart obtained by truncating
+\(X\) both from above and below. First observe that this operation is independent of the order of
+truncation:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4001r23'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 6.3.23.</span>  </span><span id='lem:Truncation_Order_Independence'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a stable</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category equipped with a t-structure. For</span> \(n,m \in \Z \)<span class='ntx-Italic-tlf-t1-x-x-109'>, the canonical natural
+transformation </span>\[ \tau _{\leq m} \tau _{\geq n} \to \tau _{\geq n} \tau _{\leq m} \] <span class='ntx-Italic-tlf-t1-x-x-109'>is a natural isomorphism of functors</span> \(C \to C_{\leq m} \cap C_{\geq n}\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-03-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-03-4">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="lem:Truncations_Preserve_Bounds" href="../../../entry/truncations-preserve-bounds/index.html#lem:Truncations_Preserve_Bounds">Lemma 6.3.10</a>, both composites take values in \(C_{\leq m} \cap C_{\geq n}\). If \(n&gt;m\), this intersection is zero by orthogonality, so both
+composites are zero. We may therefore assume that \(n \leq m\).
+</p><p class='noindent'>Fixing \(Y \in C\), the map \(\tau _{\geq n} Y \to Y\) induces \(\tau _{\leq m} \tau _{\geq n} Y \to \tau _{\leq m} Y\). Since the source is \(n\)-connective, this factors uniquely through a map \[ \tau _{\leq m} \tau _{\geq n} Y \to \tau _{\geq n} \tau _{\leq m} Y, \]
+which is the ‘canonical map’ from the statement. To show it is an isomorphism, we may equivalently
+show that the cofiber of \(\tau _{\leq m} \tau _{\geq n} Y \to \tau _{\leq m} Y\) is \((n-1)\)-coconnective. To this end, we may compare the truncation sequences
+for \(\tau _{\geq n} Y\) and \(Y\) to obtain a commutative diagram</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-0a2ff277d677.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Since \(m \geq n\), the left vertical map is an isomorphism. By the
+pasting law for exact squares, it follows that the cofiber of the right vertical map is the cofiber of the
+middle vertical map. This cofiber is \(\tau _{\leq n-1}Y\), which is \((n-1)\)-coconnective, finishing the proof.                           □</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4002r24'></a>
+<a class="entry-heading-link" href="../../../entry/homotopy-group-objects-for-a-t-structure/index.html" aria-label="Definition 6.3.24., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 6.3.24.</span></a>  </span><span id='def:Homotopy_Group_Objects'></span> Let \(C\) be a stable \(\infty \)-category equipped with a t-structure and let \(X\) be an object of \(C\). For every
+\(n \in \Z \), we define the \(n\)<span class='ntx-Italic-tlf-t1-x-x-109'>-th homotopy group object</span> \(\pi _n(X) \in C^{\heartsuit }\) by \begin {align*}  \pi _n(X) := \tau _{\geq 0} \tau _{\leq 0} (X[-n]) \qin C^{\heartsuit }.  \end {align*}
+</p>
+</div>
+
+<div class='newtheorem'>
+                                                                                   
+                                                                                   
+<p class='noindent'><span class='head'>
+<a id='x1-4003r25'></a>
+<a class="entry-heading-link" href="../../../entry/homology-notation-for-homotopy-group-objects/index.html" aria-label="Remark 6.3.25., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 6.3.25.</span></a>  </span><span id='rem:Homology_Notation'></span> In the context of homological algebra, for example when \(C\) is the derived \(\infty \)-category
+of an abelian category, the objects \(\pi _n(X)\) are often denoted by \(H_n(X)\) instead, emphasizing the analogy with the
+homology groups of a chain complex rather than the analogy with homotopy groups of a spectrum.
+Under the equivalence \(\D (\Aa )^{\heartsuit } \simeq \Aa \) from <a class="source-reference" data-label="ex:Heart_Of_DA" href="../../../entry/heart-of-standard-t-structure/index.html#ex:Heart_Of_DA">Example 6.3.20</a>, the object \(\pi _n(A) \in \Aa \) agrees with the \(n\)-th homology \(H_n(A)\) of \(A\) viewed as a chain
+complex.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4004r26'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 6.3.26.</span>  </span><span id='lem:t-Exact_Functor_Preserves_Homotopy_Groups'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(F\colon C \to D\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a t-exact functor between two stable</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories equipped with t-structures.
+Then for all</span> \(X \in C\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(n \in \Z \)<span class='ntx-Italic-tlf-t1-x-x-109'>, there is a natural isomorphism</span> \(F(\pi _n X) \iso \pi _n F(X)\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-03-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-03-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="lem:t-Exact_Functor_Preserves_Truncations" href="../../../entry/t-exact-functors-preserve-truncations/index.html#lem:t-Exact_Functor_Preserves_Truncations">Lemma 6.3.13</a> we have natural isomorphisms \[ F(\pi _n X) = F(\tau _{\geq 0} \tau _{\leq 0}(X[-n])) \iso \tau _{\geq 0} \tau _{\leq 0} (F(X)[-n]) = \pi _n(F(X)). \qedhere \]                                                                                       □
+</p>
+</div></div>
+<p class='noindent'>Just like for spectra, exact sequences in \(C\) induce long exact sequences on homotopy groups:
+</p>
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4005r27'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 6.3.27 </span>(Long exact sequence of homotopy groups)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:T_Structure_Long_Exact_Sequence_Homotopy_Groups'>   </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>   \(C\)   <span class='ntx-Italic-tlf-t1-x-x-109'>be   a   stable</span>   \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category
+equipped  with  a  t-structure.  For  every  exact  sequence</span>  \(X \xrightarrow {f} Y \xrightarrow {g} Z\)  <span class='ntx-Italic-tlf-t1-x-x-109'>in</span>  \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>,  we  obtain  a  long  exact  sequence  of
+homotopy groups in</span> \(C^{\heartsuit }\)<span class='ntx-Italic-tlf-t1-x-x-109'>: </span>\[ \dots \to \pi _{n+1}(Z) \xrightarrow {\partial } \pi _n(X) \xrightarrow {\pi _n(f)} \pi _n(Y) \xrightarrow {\pi _n(g)} \pi _n(Z) \xrightarrow {\partial } \pi _{n-1}(X) \to \dots \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-03-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-03-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Since every such exact sequence in \(C\) induces exact sequences \(Z[-1] \to X \to Y\) and \(Y \to Z \to X[1]\) and we have \(\pi _n(Z[-1]) = \pi _{n+1}(Z)\) and \(\pi _n(X[1]) = \pi _{n-1}(X)\), it
+suffices by induction to show that the sequence \[ \pi _0(X) \xrightarrow {\pi _0(f)} \pi _0(Y) \xrightarrow {\pi _0(g)} \pi _0(Z) \] is exact in \(C^{\heartsuit }\). We will prove this in progressively more
+general cases.
+</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Case 1: </span>Assume that \(X,Y,Z \in C_{\geq 0}\). We claim that in this case, the sequence \[ \pi _0(X) \to \pi _0(Y) \to \pi _0(Z) \to 0 \] is exact. To see this, it suffices
+to show that for every \(W \in C^{\heartsuit }\), the induced sequence of abelian groups \[ 0 \to \Hom _{C^{\heartsuit }}(\pi _0(Z),W) \to \Hom _{C^{\heartsuit }}(\pi _0(Y),W) \to \Hom _{C^{\heartsuit }}(\pi _0(X),W) \] is exact. Since \(Z \in C_{\geq 0}\), we have \(\pi _0(Z) = \tau _{\leq 0}Z\), so by
+adjunction we obtain isomorphisms \[ \Hom _{C^{\heartsuit }}(\pi _0(Z),W) \cong \pi _0\Hom _C(Z,W) \cong \pi _0 \hom _C(Z,W), \] and similarly for \(X\) and \(Y\). Furthermore, we have \(\pi _1\hom _C(X,W) \cong \pi _0\hom _C(X[1],W)\cong 0\) as \(\tau _{\leq 0}(X[1]) \cong 0\). The claim
+now follows from the long exact sequence on homotopy groups associated to the exact sequence of
+mapping spectra \[ \hom _C(Z,W) \to \hom _C(Y,W) \to \hom _C(X,W). \]
+</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Case 2: </span>Assume that \(X \in C_{\geq 0}\), but \(Y\) and \(Z\) are arbitrary. For every \(W\in C_{\leq -1}\), orthogonality and the exact sequence \(X\to Y\to Z\) identify
+\(\Hom _C(Z,W)\) with \(\Hom _C(Y,W)\). By adjunction and the Yoneda lemma in \(C_{\leq -1}\), the induced map \(\tau _{\leq -1}Y\to \tau _{\leq -1}Z\) is therefore an isomorphism,
+so we get a cofiber sequence \[ 0 \cong \tau _{\leq -1}X \to \tau _{\leq -1}Y \to \tau _{\leq -1}Z, \] showing that \(\tau _{\leq -1}Y \cong \tau _{\leq -1}Z\). Consider now the following diagram:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-b309f1a08650.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Since all three
+columns are exact and the bottom two rows are exact, it follows that the top row is also exact. Since
+\(\pi _0(X) \cong \pi _0(\tau _{\geq 0}X)\), and similarly for \(Y\) and \(Z\), the exactness of \(\pi _0(X) \to \pi _0(Y) \to \pi _0(Z) \to 0\) has thus been reduced to Case 1.</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Case 3: </span>Assume that \(Z \in C_{\leq 0}\), but \(X\) and \(Y\) are arbitrary. Using an argument dual to that of Cases 1 and 2, we
+obtain an exact sequence \[ 0 \to \pi _0(X) \to \pi _0(Y) \to \pi _0(Z). \]
+</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Case 4: </span>Finally, we consider the case for general \(X,Y,Z\). Let \(Q\) denote the cofiber of the composite \(\tau _{\geq 0}X \to X \to Y\). We then
+have the following commutative diagram:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-c72224c09cb5.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>The three rows are exact, as are the left two columns, and
+hence so is the third column. Applying Cases 2 and 3, we get exact sequences \[ \pi _0(X) \to \pi _0(Y) \twoheadrightarrow \pi _0(Q) \to 0 \qquadtext { and } 0 \to \pi _0(Q) \hookrightarrow \pi _0(Z) \to \pi _{-1}(X). \] Gluing them together
+then gives the desired exact sequence \(\pi _0(X) \to \pi _0(Y) \to \pi _0(Z)\).                                                                                               □</p>
+</div></div>
+
+<h4 class='subsectionHead' id='complete-and-bounded-tstructures'><span class='titlemark'>6.3.4    </span> <a id='x1-50006.3.4'></a>Complete and bounded t-structures</h4>
+<p class='noindent' id='subsec_Complete_Bounded'>One of the primary advantages of having a t-structure on a given stable \(\infty \)-category \(C\) is that it often allows us
+to reduce questions about arbitrary objects of \(C\) to questions about objects of the heart \(C^{\heartsuit }\), which may be easier
+to address. In order for this strategy to work, we need to ensure that the truncation functors \(\tau _{\leq n}\) and \(\tau _{\geq n}\) retain
+enough information about the objects of \(C\). For this purpose, we now introduce completeness and
+boundedness conditions on \(C\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5001r28'></a>
+<a class="entry-heading-link" href="../../../entry/completeness-and-separatedness-of-t-structures/index.html" aria-label="Definition 6.3.28., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 6.3.28.</span></a>  </span><span id='def:Completeness'></span> A t-structure on \(C\) is <span class='ntx-Italic-tlf-t1-x-x-109'>left complete </span>if for every \(X \in C\) the canonical map \[ X \longrightarrow \lim _n \tau _{\leq n}X \] is an isomorphism.
+It is <span class='ntx-Italic-tlf-t1-x-x-109'>right complete </span>if the canonical map \[ \colim _n \tau _{\geq -n}X \longrightarrow X \] is an isomorphism for every \(X \in C\).
+</p><p class='noindent'>We say that the t-structure is <span class='ntx-Italic-tlf-t1-x-x-109'>left separated </span>if every infinitely connective object \(X \in C_{\geq \infty } := \bigcap _{n \in \Z }C_{\geq n}\) is zero. Dually, it is
+<span class='ntx-Italic-tlf-t1-x-x-109'>right separated </span>if every infinitely coconnective object \(X \in C_{\leq -\infty } := \bigcap _{n \in \Z } C_{\leq n}\) is zero.
+</p>
+</div>
+<p class='noindent'>Separatedness says that no nonzero object is invisible to all truncations, while completeness says that every
+object can be reconstructed from its truncations. Under the hypotheses of the criterion below, these two
+conditions agree.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5002r29'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/completeness-of-standard-t-structures/index.html" aria-label="Example 6.3.29., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 6.3.29.</span></a>  </span><span id='ex:DA_Complete'></span> Let \(\Aa \) be an abelian category. The standard t-structure on \(\D (\Aa )\) is left and right separated:
+an infinitely connective or infinitely coconnective complex has trivial homology and is therefore
+zero. If \(\Aa \) has exact countable products, then the t-structure is left complete; if it has exact countable
+coproducts, then it is right complete. Indeed, the countable version of the construction underlying <a class="source-reference" data-label="cor:DA_Limits_Colimits" href="../../../entry/limits-and-colimits-in-derived-infinity-categories/index.html#cor:DA_Limits_Colimits">Corollary 6.1.29</a>
+supplies the required (co)products in \(\D (\Aa )\), and the criterion below applies.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5003r30'></a>
+<a class="entry-heading-link" href="../../../entry/completeness-of-postnikov-t-structure/index.html" aria-label="Example 6.3.30., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 6.3.30.</span></a>  </span><span id='ex:Sp_Complete'></span> The Postnikov t-structure on \(\Sp \) is left and right separated, since a spectrum with
+vanishing homotopy groups is zero. Homotopy groups commute with products and coproducts, so
+the criterion below shows that this t-structure is also left and right complete.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5004r31'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 6.3.31.</span>  </span><span id='lem:Postnikov_Tower_Formula'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a stable</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with a t-structure. Assume that</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits countable products
+and that</span> \(C_{\geq 0}\) <span class='ntx-Italic-tlf-t1-x-x-109'>is closed under countable products. Then the t-structure is left complete if and only if it is
+left separated. Dually, if</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits countable coproducts and</span> \(C_{\leq 0}\) <span class='ntx-Italic-tlf-t1-x-x-109'>is closed under countable coproducts,
+then the t-structure is right complete if and only if it is right separated.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-03-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-03-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> This is <span class='citation'>[Lurie (2017), Proposition 1.2.1.19]</span>.                                                                                                                                   □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5005r32'></a>
+<a class="entry-heading-link" href="../../../entry/bounded-t-structures/index.html" aria-label="Definition 6.3.32., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 6.3.32.</span></a>  </span><span id='def:Boundedness'></span> A t-structure on \(C\) is <span class='ntx-Italic-tlf-t1-x-x-109'>right bounded </span>if every object \(X \in C\) is contained in \(C_{\geq n}\) for some \(n \in \Z \). It is
+<span class='ntx-Italic-tlf-t1-x-x-109'>left bounded </span>if every \(X \in C\) is contained in \(C_{\leq n}\) for some \(n \in \Z \). It is <span class='ntx-Italic-tlf-t1-x-x-109'>bounded </span>if it is both left and right bounded.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5006r33'></a>
+<a class="entry-heading-link" href="../../../entry/bounded-objects-in-a-t-structure/index.html" aria-label="Definition 6.3.33., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 6.3.33.</span></a>  </span><span id='def:Bounded_Objects'></span>  Let  \(C\)  be  a  stable  \(\infty \)-category  with  a  t-structure.  We  define  the  subcategory  of
+<span class='ntx-Italic-tlf-t1-x-x-109'>bounded objects </span>by \[ C^{\flat } := \bigcup _{n \in \N } (C_{\geq -n} \cap C_{\leq n}) \subseteq C. \] Observe that \(C^{\flat }\) inherits a t-structure from \(C\) which by construction is bounded.
+Moreover, \(C\) is bounded if and only if \(C = C^{\flat }\). One may similarly define subcategories \[ C^{-} := \bigcup _{n \in \N } C_{\geq -n} \subseteq C \qquadtext { and } C^+ := \bigcup _{n \in \N } C_{\leq n} \subseteq C \] of <span class='ntx-Italic-tlf-t1-x-x-109'>bounded below</span>
+and <span class='ntx-Italic-tlf-t1-x-x-109'>bounded above </span>objects, respectively.
+</p>
+</div>
+
+<div class='newtheorem'>
+                                                                                   
+                                                                                   
+<p class='noindent'><span class='head'>
+<a id='x1-5007r34'></a>
+<a class="entry-heading-link" href="../../../entry/bounded-derived-infinity-categories/index.html" aria-label="Example 6.3.34., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 6.3.34.</span></a>  </span><span id='ex:Bounded_Derived_Infinity_Categories'></span> For the derived category \(\D (\Aa )\) of an abelian category, the subcategory \(\D (\Aa )^{\flat }\) is often denoted
+\(\D ^b(\Aa )\) and called the <span class='ntx-Italic-tlf-t1-x-x-109'>bounded derived category</span>. Similarly, \(\D (\Aa )^-\) is denoted \(\D ^-(\Aa )\) and \(\D (\Aa )^+\) is denoted \(\D ^+(\Aa )\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5008r35'></a>
+<a class="entry-heading-link" href="../../../entry/right-t-exact-functors-from-left-bounded-categories/index.html" aria-label="Exercise 6.3.35., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 6.3.35.</span></a>  </span><span id='exercise:Right_t_Exact_Functors_From_Left_Bounded_Categories'></span> Let \(C\) and \(D\) be stable \(\infty \)-categories with t-structure, and assume that \(C\) is left bounded.
+Show that the restriction functor \[ \Fun ^{t-\rex }(C,D) \iso \Fun ^{\rex }(C_{\geq 0}, D_{\geq 0}) \] provides an equivalence between right t-exact functors \(F\colon C \to D\) and right
+exact functors \(C_{\geq 0} \to D_{\geq 0}\).
+</p>
+</div>
+
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../ordinary-homology-and-cohomology-via-d-z/index.html" aria-label="Previous section: Ordinary homology and cohomology via D(Z)" title="Previous section: Ordinary homology and cohomology via D(Z)"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../projective-objects-and-ext-groups/index.html" aria-label="Next section: Projective objects and Ext-groups" title="Next section: Projective objects and Ext-groups"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html" aria-current="page"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/animae-as-spaces/index.html"><span class="context-entry-heading">Chapter 2</span><span class="context-entry-title">Animae as spaces</span></a></li><li><a href="../../../chapter/homology-and-cohomology/index.html"><span class="context-entry-heading">Chapter 3</span><span class="context-entry-title">Homology and cohomology</span></a></li><li><a href="../../../chapter/spectra-and-stable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 4</span><span class="context-entry-title">Spectra and stable ∞-categories</span></a></li><li><a href="../../../chapter/recognition-principle/index.html"><span class="context-entry-heading">Chapter 5</span><span class="context-entry-title">The recognition principle</span></a></li><li><a href="../../../chapter/homological-algebra/index.html" aria-current="page"><span class="context-entry-heading">Chapter 6</span><span class="context-entry-title">Homological algebra</span></a></li><li><a href="../../../chapter/localization-and-completion/index.html"><span class="context-entry-heading">Chapter 7</span><span class="context-entry-title">Localization and completion</span></a></li><li><a href="../../../chapter/ring-spectra-and-modules/index.html"><span class="context-entry-heading">Chapter 8</span><span class="context-entry-title">Ring spectra and modules</span></a></li><li><a href="../../../chapter/complex-k-theory/index.html"><span class="context-entry-heading">Chapter 9</span><span class="context-entry-title">Complex K-theory</span></a></li><li><a href="../../../chapter/thom-spectra-and-bordism-theory/index.html"><span class="context-entry-heading">Chapter 10</span><span class="context-entry-title">Thom spectra and bordism theory</span></a></li><li><a href="../../../chapter/duality-phenomena/index.html"><span class="context-entry-heading">Chapter 11</span><span class="context-entry-title">Duality phenomena</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../derived-categories/index.html"><span class="context-entry-heading">Section 6.1</span><span class="context-entry-title">Derived ∞-categories</span></a></li><li><a href="../ordinary-homology-and-cohomology-via-d-z/index.html"><span class="context-entry-heading">Section 6.2</span><span class="context-entry-title">Ordinary homology and cohomology via D(Z)</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 6.3</span><span class="context-entry-title">Connective objects and t-structures</span></a></li><li><a href="../projective-objects-and-ext-groups/index.html"><span class="context-entry-heading">Section 6.4</span><span class="context-entry-title">Projective objects and Ext-groups</span></a></li><li><a href="../flat-objects-and-tor-groups/index.html"><span class="context-entry-heading">Section 6.5</span><span class="context-entry-title">Flat objects and Tor-groups</span></a></li><li><a href="../derived-functors/index.html"><span class="context-entry-heading">Section 6.6</span><span class="context-entry-title">Derived functors</span></a></li><li><a href="../k-nneth-and-universal-coefficient-theorems/index.html"><span class="context-entry-heading">Section 6.7</span><span class="context-entry-title">Künneth and universal coefficient theorems</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:t_Structure"><span class="context-entry-heading">Definition 6.3.1</span><span class="context-entry-title">definition</span></a></li><li><a href="#rem:Cohomological_Grading_t_Structure"><span class="context-entry-heading">Remark 6.3.2</span><span class="context-entry-title">Cohomological grading</span></a></li><li><a href="#prop:t_Structure_On_DA"><span class="context-entry-heading">Proposition 6.3.3</span><span class="context-entry-title">Standard t-structure on derived categories</span></a></li><li><a href="#prop:Postnikov_t_Structure_On_Sp"><span class="context-entry-heading">Proposition 6.3.4</span><span class="context-entry-title">Postnikov t-structure on spectra</span></a></li><li><a href="#ex:Opposite_t_Structure"><span class="context-entry-heading">Example 6.3.5</span><span class="context-entry-title">example</span></a></li><li><a href="#ex:Product_t_Structure"><span class="context-entry-heading">Example 6.3.6</span><span class="context-entry-title">example</span></a></li><li><a href="#lem:Truncation_Adjunctions"><span class="context-entry-heading">Lemma 6.3.7</span><span class="context-entry-title">lemma</span></a></li><li><a href="#cor:Truncation_Subcategories_Closed"><span class="context-entry-heading">Corollary 6.3.8</span><span class="context-entry-title">corollary</span></a></li><li><a href="#cor:Limits_Colimits_In_Truncations"><span class="context-entry-heading">Corollary 6.3.9</span><span class="context-entry-title">corollary</span></a></li><li><a href="#lem:Truncations_Preserve_Bounds"><span class="context-entry-heading">Lemma 6.3.10</span><span class="context-entry-title">lemma</span></a></li><li><a href="#warn:Truncation_Notation_For_T_Structures"><span class="context-entry-heading">Warning 6.3.11</span><span class="context-entry-title">warning</span></a></li><li><a href="#ex:Adjoint_t_Exactness"><span class="context-entry-heading">Exercise 6.3.12</span><span class="context-entry-title">exercise</span></a></li><li><a href="#lem:t-Exact_Functor_Preserves_Truncations"><span class="context-entry-heading">Lemma 6.3.13</span><span class="context-entry-title">lemma</span></a></li><li><a href="#def:Heart"><span class="context-entry-heading">Definition 6.3.14</span><span class="context-entry-title">definition</span></a></li><li><a href="#prop:Heart_Of_T_Structure_Abelian"><span class="context-entry-heading">Proposition 6.3.15</span><span class="context-entry-title">proposition</span></a></li><li><a href="#cor:Short_Exact_Sequence_In_Heart_Induces_Exact_Sequence"><span class="context-entry-heading">Corollary 6.3.16</span><span class="context-entry-title">corollary</span></a></li><li><a href="#cor:t-Exact_Functor_Induces_Exact_Functor"><span class="context-entry-heading">Corollary 6.3.17</span><span class="context-entry-title">corollary</span></a></li><li><a href="#lem:Heart_As_Zero_Truncated_Objects"><span class="context-entry-heading">Lemma 6.3.18</span><span class="context-entry-title">lemma</span></a></li><li><a href="#cor:Heart_As_Zero_Truncated_Objects"><span class="context-entry-heading">Corollary 6.3.19</span><span class="context-entry-title">corollary</span></a></li><li><a href="#ex:Heart_Of_DA"><span class="context-entry-heading">Example 6.3.20</span><span class="context-entry-title">Heart of the standard t-structure</span></a></li><li><a href="#prop:Heart_Of_Sp"><span class="context-entry-heading">Proposition 6.3.21</span><span class="context-entry-title">Heart of the Postnikov t-structure</span></a></li><li><a href="#rmk:Eilenberg_MacLane_Functor_On_Hearts"><span class="context-entry-heading">Remark 6.3.22</span><span class="context-entry-title">remark</span></a></li><li><a href="#lem:Truncation_Order_Independence"><span class="context-entry-heading">Lemma 6.3.23</span><span class="context-entry-title">lemma</span></a></li><li><a href="#def:Homotopy_Group_Objects"><span class="context-entry-heading">Definition 6.3.24</span><span class="context-entry-title">definition</span></a></li><li><a href="#rem:Homology_Notation"><span class="context-entry-heading">Remark 6.3.25</span><span class="context-entry-title">remark</span></a></li><li><a href="#lem:t-Exact_Functor_Preserves_Homotopy_Groups"><span class="context-entry-heading">Lemma 6.3.26</span><span class="context-entry-title">lemma</span></a></li><li><a href="#prop:T_Structure_Long_Exact_Sequence_Homotopy_Groups"><span class="context-entry-heading">Proposition 6.3.27</span><span class="context-entry-title">Long exact sequence of homotopy groups</span></a></li><li><a href="#def:Completeness"><span class="context-entry-heading">Definition 6.3.28</span><span class="context-entry-title">definition</span></a></li><li><a href="#ex:DA_Complete"><span class="context-entry-heading">Example 6.3.29</span><span class="context-entry-title">example</span></a></li><li><a href="#ex:Sp_Complete"><span class="context-entry-heading">Example 6.3.30</span><span class="context-entry-title">example</span></a></li><li><a href="#lem:Postnikov_Tower_Formula"><span class="context-entry-heading">Lemma 6.3.31</span><span class="context-entry-title">lemma</span></a></li><li><a href="#def:Boundedness"><span class="context-entry-heading">Definition 6.3.32</span><span class="context-entry-title">definition</span></a></li><li><a href="#def:Bounded_Objects"><span class="context-entry-heading">Definition 6.3.33</span><span class="context-entry-title">definition</span></a></li><li><a href="#ex:Bounded_Derived_Infinity_Categories"><span class="context-entry-heading">Example 6.3.34</span><span class="context-entry-title">example</span></a></li><li><a href="#exercise:Right_t_Exact_Functors_From_Left_Bounded_Categories"><span class="context-entry-heading">Exercise 6.3.35</span><span class="context-entry-title">exercise</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

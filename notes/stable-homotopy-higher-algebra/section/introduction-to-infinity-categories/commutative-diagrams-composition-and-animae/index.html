@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 1.4: Commutative diagrams, composition, and animae | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../chapter/introduction-to-infinity-categories/index.html">Chapter 1</a> · Section 1.4</p>
+      <h1>Commutative diagrams, composition, and animae</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Commutative_Diagrams_Composition_Animae'>After studying constructions that build new \(\infty \)-categories out of old ones, we now return to the internal
+geometry of a single \(\infty \)-category. The first step is to enlarge the class of diagrams we can speak about and to
+formalize the common practice of displaying only the visible edges of such diagrams. This leads to the
+Segal axiom, which makes composition of morphisms precise. Once composition is in place, we can define
+isomorphisms and recover, in a formal way, the notion of anima introduced heuristically in
+<a class="source-reference" data-label="sec:Fundamental_Principle_Homotopy_Theory" href="../the-heuristics-behind-categories/index.html#sec:Fundamental_Principle_Homotopy_Theory">Section 1.1</a>.
+</p>
+<h4 class='subsectionHead' id='commutative-diagrams'><span class='titlemark'>1.4.1    </span> <a id='x1-20001.4.1'></a>Commutative diagrams</h4>
+<p class='noindent'>Besides commutative triangles, several other simple diagram shapes occur constantly in practice:
+commutative squares, spans, cospans, and infinite strings of composable morphisms. The next axiom
+formalizes the idea that for these diagram shapes, the higher data is determined by the lower-dimensional
+data we choose to display.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r1'></a>
+<a class="entry-heading-link" href="../../../entry/commutative-diagram-shapes/index.html" aria-label="Definition 1.4.1, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.4.1 </span></a>(Diagram shapes)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Commutative_Square'></span> A <span class='ntx-Italic-tlf-t1-x-x-109'>commutative square </span>in an \(\infty \)-category \(C\) is a functor \([1] \times [1] \to C\). We will
+often display such a square as</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-f1f77fcfe27c.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Throughout, we read the first coordinate of \([1] \times [1]\) as the row and the second
+as the column, so that the four objects \((0,0)\), \((0,1)\), \((1,0)\) and \((1,1)\) are displayed as \(x\), \(y\), \(z\) and \(w\), respectively. In particular \(\{0\} \times [1]\)
+and \(\{1\} \times [1]\) are the top and bottom rows, while \([1] \times \{0\}\) and \([1] \times \{1\}\) are the left and right columns.</p><p class='noindent'>Let \(\pushout \subseteq [1] \times [1]\) be the subposet spanned by the three objects \((0,0)\), \((0,1)\) and \((1,0)\), and let \(\pullback \subseteq [1] \times [1]\) be the subposet spanned by the
+three objects \((1,0)\), \((0,1)\) and \((1,1)\). A <span class='ntx-Italic-tlf-t1-x-x-109'>span </span>in \(C\) is a functor \(\pushoutto C\), and a <span class='ntx-Italic-tlf-t1-x-x-109'>cospan </span>in \(C\) is a functor \(\pullbackto C\). We display them as</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-e247232783ac.svg" alt="Commutative diagram generated from the LaTeX source"></figure><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-2a0802e98b5f.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Every
+commutative square gives rise to both a span and a cospan via restriction along the two inclusions \(\pushout \hookrightarrow [1] \times [1]\)
+and \(\pullback \hookrightarrow [1] \times [1]\).</p><p class='noindent'>Finally, let \([\omega ] := \{0 \leq 1 \leq 2 \leq 3 \leq \cdots \}\) be the poset of natural numbers. An <span class='ntx-Italic-tlf-t1-x-x-109'>infinite sequence of morphisms in</span> \(C\) is a functor \(x_{\bullet }\colon [\omega ] \to C\),
+                                                                                   
+                                                                                   
+which we display as \[ x_0 \xrightarrow {f_0} x_1 \xrightarrow {f_1} x_2 \xrightarrow {f_2} \dots , \] where \(x_n\) is the evaluation of \(x_{\bullet }\) at \(n \in [\omega ]\) and \(f_n\) is obtained from the inclusion \([1] \cong \{n \leq n+1\} \hookrightarrow [\omega ]\).
+</p>
+</div>
+<p class='noindent'>These pictures record only part of the underlying functorial data: they display the visible edges, while
+suppressing composites and higher cells. We axiomatize that this omitted data is recoverable.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2002r4'></a>
+<a class="entry-heading-link" href="../../../entry/commutative-diagram-axiom/index.html" aria-label="Axiom D, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Axiom D </span></a>(Commutative diagram axiom)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='axiom:Commutative_Diagram_Axiom'></span>  The  following  commutative  squares  are  pushouts  of
+\(\infty \)-categories:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-e5c96fe34da2.svg" alt="Commutative diagram generated from the LaTeX source"></figure><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-75e725f8bd9d.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-a82f5cdebad1.svg" alt="Commutative diagram generated from the LaTeX source"></figure><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-ddf54ced0387.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-2365cc033075.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Here the first square is required to be a pushout for every \(n \geq 1\). In the last square, the right
+and bottom maps are the inclusions, while the top and left maps send the vertex \(\{l+1\}\) to the corresponding
+vertex with the same label.</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2003r2'></a>
+<a class="entry-heading-link" href="../../../entry/consequences-of-the-commutative-diagram-axiom/index.html" aria-label="Exercise 1.4.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.4.2.</span></a>  </span><span id='exercise:Consequences_Commutative_Diagram_Axiom'></span> Unwind the definitions, and show that these five pushout conditions express that
+finite and infinite strings of composable morphisms, commutative squares, spans, and cospans are
+determined by the lower-dimensional data displayed above.
+</p>
+</div>
+<p class='noindent'>We will use two maps that turn commutative triangles into commutative squares with an identity
+edge.
+</p>
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2004r3'></a>
+<a class="entry-heading-link" href="../../../entry/projections-from-squares-to-triangles/index.html" aria-label="Construction 1.4.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 1.4.3.</span></a>  </span><span id='exercise:Projections_Square_Onto_Triangle'></span> There are monotone maps \(p_0,p_2\colon [1] \times [1] \to [2]\), pictorially represented by</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-8623575097e5.svg" alt="Commutative diagram generated from the LaTeX source"></figure><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-614e5bded3b6.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Writing \(j_0 := (s_0,s_1)\) and \(j_2 := (s_1,s_0)\) for the
+two functors \([2] \to [1] \times [1]\) appearing in <a class="source-reference" data-label="axiom:Commutative_Diagram_Axiom" href="../../../entry/commutative-diagram-axiom/index.html#axiom:Commutative_Diagram_Axiom">Axiom D</a>, there are natural isomorphisms \(p_0 \circ j_0 \cong \id _{[2]}\) and \(p_2 \circ j_2 \cong \id _{[2]}\).</p>
+</div>
+<p class='noindent'>Precomposition with \(p_0\) or \(p_2\) displays a commutative triangle as a commutative square whose left or right
+column, respectively, is an identity. The following proposition makes this precise.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2005r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 1.4.4 </span>(Triangles as squares with an identity edge)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='exercise:Encodings_Commutative_Triangles'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For every</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the following
+two  commutative  squares  are  pullback  squares:  </span></p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-38761f8f77ce.svg" alt="Commutative diagram generated from the LaTeX source"></figure><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-15cff6a7f2cb.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Here  the  functors  labeled  ‘res’  are  given  by
+precomposition with the inclusions of the left and right columns into</span> \([1] \times [1]\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proof guide.</span>  </span>Factor each displayed square into two squares. The commutative-square case and the
+case \(n=2\) of <a class="source-reference" data-label="axiom:Commutative_Diagram_Axiom" href="../../../entry/commutative-diagram-axiom/index.html#axiom:Commutative_Diagram_Axiom">Axiom D</a> identify the resulting squares as pullbacks, and <a class="source-reference" data-label="lem:Pasting_Lemma_Pullbacks" href="../../../entry/pasting-lemma-for-pullback-squares-of-categories/index.html#lem:Pasting_Lemma_Pullbacks">Lemma 1.3.15</a> finishes the argument. Details are given in
+the online supplementary material.
+</p>
+</div>
+                                                                                   
+                                                                                   
+
+<h4 class='subsectionHead' id='composition-of-morphisms'><span class='titlemark'>1.4.2    </span> <a id='x1-30001.4.2'></a>Composition of morphisms</h4>
+<p class='noindent' id='sec_Composition'>Given a commutative triangle \(\sigma \colon [2] \to C\) in an \(\infty \)-category \(C\), we may extract two morphisms \(f := \sigma \circ d_2\) and \(g := \sigma \circ d_0\):</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-662d3e07ac90.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>By the case \(n=2\) of <a class="source-reference" data-label="axiom:Commutative_Diagram_Axiom" href="../../../entry/commutative-diagram-axiom/index.html#axiom:Commutative_Diagram_Axiom">Axiom D</a>, the pair \((f,g)\) completely determines the commutative triangle. We refer to this special case as
+the <span class='ntx-Italic-tlf-t1-x-x-109'>Segal Axiom</span>:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3001r5'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 1.4.5 </span>(Segal Axiom)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Segal_Axiom'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the restriction functor </span>\[ (d_0^*,d_2^*)\colon \Fun ([2],C) \to \Fun ([1],C) \times _{\ev _0,C,\ev _1} \Fun ([1],C), \qquad \sigma \mapsto (g,f) \] <span class='ntx-Italic-tlf-t1-x-x-109'>is an equivalence.    □</span>
+</p>
+</div>
+<p class='noindent'>In particular, for morphisms \(f\colon x \to y\) and \(g\colon y \to z\) we obtain a unique commutative triangle \(\sigma \colon [2]\to C\) satisfying \(d_2^*(\sigma ) \cong f\) and \(d_0^*(\sigma ) \cong g\). The resulting
+morphism \(g \circ f := d_1^*(\sigma )\colon [1] \to C\) is called the <span class='ntx-Italic-tlf-t1-x-x-109'>composite of</span> \(f\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(g\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3002r6'></a>
+<a class="entry-heading-link" href="../../../entry/arrow-category/index.html" aria-label="Definition 1.4.6, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.4.6 </span></a>(Arrow category)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Arrow_Category'></span> Let \(C\) be an \(\infty \)-category. We write \[ \Ar (C) \quad := \quad \Fun ([1],C) \] and refer to it as the <span class='ntx-Italic-tlf-t1-x-x-109'>arrow
+category </span>of \(C\). Its objects are precisely the morphisms of \(C\). Restriction along the two maps \([0] \to [1]\) defines the
+<span class='ntx-Italic-tlf-t1-x-x-109'>source </span>and <span class='ntx-Italic-tlf-t1-x-x-109'>target </span>functors \[ s := d_1^* = \ev _0\colon \Ar (C) \to C, \qquad t := d_0^* = \ev _1\colon \Ar (C) \to C. \]
+</p>
+</div>
+<p class='noindent'>The assignment \((g,f) \mapsto g \circ f\) is functorial:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3003r7'></a>
+<a class="entry-heading-link" href="../../../entry/composition-functor/index.html" aria-label="Construction 1.4.7, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 1.4.7 </span></a>(Composition functor)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cons:Composition_Functor'></span> Consider the zig-zag \[ \Ar (C) \times _{s,C,t} \Ar (C) \xleftarrow [\sim ]{(d_0^*,d_2^*)} \Fun ([2],C) \xrightarrow {d^*_1} \Ar (C). \] The first map is an equivalence,
+and hence it admits an inverse, providing a composite functor \[ - \circ - \colon \Ar (C) \times _{s,C,t} \Ar (C) \xrightarrow {\sim } \Fun ([2],C) \xrightarrow {d^*_1} \Ar (C). \] We refer to this as the <span class='ntx-Italic-tlf-t1-x-x-109'>composition
+functor</span>.
+</p>
+</div>
+<p class='noindent'>We will now show that composition in an \(\infty \)-category is unital and associative.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3004r8'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 1.4.8 </span>(Unitality)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Composition_Is_Unital'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For every morphism</span> \(f\colon x \to y\) <span class='ntx-Italic-tlf-t1-x-x-109'>in an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, there are natural isomorphisms </span>\[ \id _y \circ f \cong f \cong f \circ \id _x \]
+<span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(\Ar (C)\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Moreover, these isomorphisms are natural in</span> \(f\)<span class='ntx-Italic-tlf-t1-x-x-109'>, in the sense that they form natural isomorphisms
+of functors</span> \(\Ar (C) \to \Ar (C)\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-introduction-to-infinity-categories-section-04-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-introduction-to-infinity-categories-section-04-4">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  For  a  fixed  morphism  \(f\),  the  isomorphisms  are  an  immediate  consequence  of  <a class="source-reference" data-label="exercise:Unitality_Composition" href="../../../entry/unit-triangles/index.html#exercise:Unitality_Composition">Exercise 1.2.15</a>,  using  the
+degenerate commutative triangles \(s_1^*(f) := f \circ s_1\) and \(s_0^*(f) := f \circ s_0\). For the naturality of the relation \(f \circ \id _x \cong f\) we have to show that
+the composite \[ \Ar (C) \iso \Ar (C) \times _{s,C,\id } C \xrightarrow {1 \times p_{[1]}^*} \Ar (C) \times _{s,C,t} \Ar (C) \xrightarrow {- \circ -} \Ar (C) \] is isomorphic to the identity functor. This follows from the following commutative
+diagram:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-a8b2e48eea1a.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>A similar discussion applies to the relation \(f \cong \id _y \circ f\).                                                                      □</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3005r9'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 1.4.9 </span>(Associativity)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Composition_Is_Associative'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For composable morphisms</span> \(f\colon x \to y\)<span class='ntx-Italic-tlf-t1-x-x-109'>,</span> \(g\colon y \to z\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(h\colon z \to w\) <span class='ntx-Italic-tlf-t1-x-x-109'>in an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, there is a
+natural isomorphism </span>\[ h \circ (g \circ f) \cong (h \circ g) \circ f \] <span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(\Ar (C)\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-introduction-to-infinity-categories-section-04-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-introduction-to-infinity-categories-section-04-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  Throughout  this  proof  we  display  a  morphism  in  \(\Ar (C)\)  as  a  commutative  square  whose  two
+<span class='ntx-Italic-tlf-t1-x-x-109'>vertical </span>arrows are its source and its target, so that the horizontal direction records the morphism in \(\Ar (C)\);
+the identification \(\Fun ([1],\Ar (C)) \simeq \Fun ([1] \times [1],C)\) we use is the one that swaps the two factors of \([1] \times [1]\) relative to the convention of <a class="source-reference" data-label="def:Commutative_Square" href="../../../entry/commutative-diagram-shapes/index.html#def:Commutative_Square">Definition 1.4.1</a>. With
+this reading, consider the following two morphisms in \(\Ar (C)\):</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-01da19beeeef.svg" alt="Commutative diagram generated from the LaTeX source"></figure><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-079fe4ba0e5a.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>These morphisms are natural in \(f\), \(g\) and \(h\): we
+have functors \[ \Ar (C) \times _{s,C,t} \Ar (C) \quad \xrightarrow {\simeq } \quad \Fun ([2], C) \quad \xrightarrow {p_0^*} \quad \Fun ([1] \times [1],C), \]</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-b4cddc41ea91.svg" alt="Commutative diagram generated from the LaTeX source"></figure><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-6119037cd600.svg" alt="Commutative diagram generated from the LaTeX source"></figure><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-aa3676896e18.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>and similarly for the other diagram. Forming the composite of these two morphisms
+in \(\Ar (C)\), we thus obtain a commutative square in \(C\) of the form</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-0bf925215d15.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>natural in \(f\), \(g\) and \(h\). Using <a class="source-reference" data-label="lem:Composition_Is_Unital" href="../../../entry/unitality-of-composition/index.html#lem:Composition_Is_Unital">Lemma 1.4.8</a>, the diagonal of
+this square is then naturally isomorphic to both \((h \circ g) \circ f\) and \(h \circ (g \circ f)\), finishing the proof.                                        □</p>
+</div></div>
+
+<h4 class='subsectionHead' id='isomorphisms-animae-and-groupoid-cores'><span class='titlemark'>1.4.3    </span> <a id='x1-40001.4.3'></a>Isomorphisms, animae and groupoid cores</h4>
+<p class='noindent'>With composition available, we can now speak about invertibility of morphisms.
+</p>
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4001r10'></a>
+<a class="entry-heading-link" href="../../../entry/isomorphisms-in-infinity-categories/index.html" aria-label="Definition 1.4.10, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.4.10 </span></a>(Isomorphisms)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Isomorphism'></span> Consider a morphism \(f\colon x \to y\) in an \(\infty \)-category \(C\). We say that \(f\) is <span class='ntx-Italic-tlf-t1-x-x-109'>invertible</span>,
+or that it is an <span class='ntx-Italic-tlf-t1-x-x-109'>isomorphism</span>, if there exists a morphism \(f^{-1}\colon y \to x\) together with commutative triangles in \(C\) of
+the form</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-d070fad84e1f.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div>
+</div>
+<p class='noindent'>We may now introduce the formal version of the notion of anima from <a class="source-reference" data-label="sec:Fundamental_Principle_Homotopy_Theory" href="../the-heuristics-behind-categories/index.html#sec:Fundamental_Principle_Homotopy_Theory">Section 1.1</a>.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4002r11'></a>
+<a class="entry-heading-link" href="../../../entry/animae/index.html" aria-label="Definition 1.4.11, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.4.11 </span></a>(Anima)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Anima'></span> An \(\infty \)-category \(C\) is called an <span class='ntx-Italic-tlf-t1-x-x-109'>anima</span>, or an \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-groupoid</span>, if every morphism
+in \(C\) is invertible.
+</p>
+</div>
+<p class='noindent'>Recall from <a class="source-reference" data-label="ex:Groupoid_Core_As_Anima" href="../../../entry/groupoid-cores-as-animae/index.html#ex:Groupoid_Core_As_Anima">Example 1.1.5</a> that every 1-category \(C\) has an anima of objects \(C^{\simeq }\), called its <span class='ntx-Italic-tlf-t1-x-x-109'>groupoid core</span>: the subgroupoid of \(C\)
+which contains all objects but only the invertible morphisms. The groupoid \(C^{\simeq }\) is uniquely characterized by the
+property that the inclusion \(C^{\simeq } \hookrightarrow C\) is terminal among functors from a groupoid into \(C\). We use this universal property
+to axiomatize the \(\infty \)-categorical version of the core:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4003r5'></a>
+<a class="entry-heading-link" href="../../../entry/groupoid-core-axiom/index.html" aria-label="Axiom E, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Axiom E </span></a>(Groupoid core axiom)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='axiom:Groupoid_Core'></span> For every \(\infty \)-category \(C\), there is an anima \(C^{\simeq }\) called the <span class='ntx-Italic-tlf-t1-x-x-109'>(groupoid)
+                                                                                   
+
+                                                                                   
+core of</span> \(C\), which comes equipped with a functor \(\gamma _C \colon C^{\simeq } \to C\). Every functor \(F\colon X \to C\) from an anima \(X\) factors through \(\gamma _C\), and
+for functors \(G,H\colon X \to C^{\simeq }\) every natural isomorphism \(\gamma _C \circ G \cong \gamma _C \circ H\) may be lifted to a natural isomorphism \(G \cong H\).
+</p><p class='noindent'>Furthermore, the map \(\lra {0,1}\colon * \sqcup * \to [1]\) factors through an equivalence \(* \sqcup * \iso [1]^{\simeq }\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4004r12'></a>
+<a class="entry-heading-link" href="../../../entry/mapping-animae/index.html" aria-label="Definition 1.4.12., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.4.12.</span></a>  </span><span id='def:Mapping_Anima'></span> For \(\infty \)-categories \(C\) and \(D\), we write \(\Map (C,D)\) for the anima \(\Fun (C,D)^{\simeq }\), and refer to it as the <span class='ntx-Italic-tlf-t1-x-x-109'>mapping
+anima </span>between \(C\) and \(D\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4005r13'></a>
+<a class="entry-heading-link" href="../../../entry/mapping-out-of-animae-into-groupoid-cores/index.html" aria-label="Exercise 1.4.13., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.4.13.</span></a>  </span><span id='exercise:Core_Mapping_Property'></span> Show that for an anima \(X\) and an \(\infty \)-category \(C\) the core functor \(\gamma _C\colon C^{\simeq } \to C\) induces an equivalence
+\[ \Map (X,C^{\simeq }) \iso \Map (X,C). \] <span class='ntx-Italic-tlf-t1-x-x-109'>Hint: </span>Apply the groupoid core axiom to the evaluation functor \(\Map (X,C)\times X\to C\), and then curry and pass to the core
+once more.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4006r14'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/groupoid-cores-preserve-pullbacks/index.html" aria-label="Exercise 1.4.14., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.4.14.</span></a>  </span><span id='exercise:Core_Preserves_Pullbacks'></span>  Show  that  the  groupoid-core  construction  preserves  pullbacks:  for  functors  \(C\to E\leftarrow D\),
+construct  a  preferred  equivalence  \[ (C\times _E D)^{\simeq }\simeq C^{\simeq }\times _{E^{\simeq }}D^{\simeq }. \]  <span class='ntx-Italic-tlf-t1-x-x-109'>Hint:  </span>Construct  both  directions  from  the  groupoid-core  and
+pullback universal properties, and compare the composites after projecting to the factors.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4007r15'></a>
+<a class="entry-heading-link" href="../../../entry/detecting-equivalences-on-mapping-animae/index.html" aria-label="Exercise 1.4.15., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.4.15.</span></a>  </span><span id='exercise:Test_Equivalence_On_Mapping_Animae'></span> Let \(F\colon C \to D\) be a functor. Show that the following conditions are equivalent:
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>The functor \(F\) is an equivalence;
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>For every \(\infty \)-category \(E\) the functor \(F \circ -\colon \Map (E,C) \to \Map (E,D)\) is an equivalence;
+   </p></dd><dt class='enumerate'>
+(3) </dt><dd class='enumerate'>
+   <p class='noindent'>For every \(\infty \)-category \(E\) the functor \(- \circ F\colon \Map (D,E) \to \Map (C,E)\) is an equivalence.</p></dd></dl>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4011r16'></a>
+<a class="entry-heading-link" href="../../../entry/yoneda-criterion-for-equivalences-of-animae/index.html" aria-label="Exercise 1.4.16., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.4.16.</span></a>  </span><span id='exercise:Yoneda'></span> Show that a morphism \(f\colon X \to Y\) of animae is an equivalence if and only if the induced map
+\(f^*\colon \Map (Y,Z) \to \Map (X,Z)\) is an equivalence for every anima \(Z\).
+                                                                                   
+                                                                                   
+</p>
+</div>
+
+<h4 class='subsectionHead' id='hom-animae'><span class='titlemark'>1.4.4    </span> <a id='x1-50001.4.4'></a>Hom animae</h4>
+<p class='noindent'>In <a class="source-reference" data-label="sec:Fundamental_Principle_Homotopy_Theory" href="../the-heuristics-behind-categories/index.html#sec:Fundamental_Principle_Homotopy_Theory">Section 1.1</a>, we heuristically described the morphisms between two objects of an \(\infty \)-category as forming an anima. We
+encode this object within our axiomatic setup by the following pullback.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5001r17'></a>
+<a class="entry-heading-link" href="../../../entry/hom-animae/index.html" aria-label="Definition 1.4.17, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.4.17 </span></a>(Hom anima)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Hom_Groupoid'></span> Let \(C\) be any \(\infty \)-category. Given objects \(x\) and \(y\) of \(C\), we define the <span class='ntx-Italic-tlf-t1-x-x-109'>hom
+anima</span> \(\Hom _C(x,y)\) via the following pullback square:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-7f453958b461.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Observe that the objects of \(\Hom _C(x,y)\) are triples \((f,\alpha ,\beta )\), where \(f\colon x' \to y'\) is a
+morphism in \(C\) and \(\alpha \colon x \cong x'\) and \(\beta \colon y \cong y'\) are isomorphisms in \(C\). We will often abuse notation and pretend that \(x = x'\) and \(y = y'\).</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5002r18'></a>
+<a class="entry-heading-link" href="../../../entry/why-hom-animae-are-called-animae/index.html" aria-label="Remark 1.4.18., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 1.4.18.</span></a>  </span><span id='rmk:Hom_Anima_Terminology'></span> At this point, the pullback only defines \(\Hom _C(x,y)\) as an \(\infty \)-category. The terminology <span class='ntx-Italic-tlf-t1-x-x-109'>hom
+anima </span>will be justified after the Rezk axiom: by <a class="source-reference" data-label="exercise:Hom_Anima_Is_Anima2" href="../../../entry/hom-animae-are-animae/index.html#exercise:Hom_Anima_Is_Anima2">Proposition 1.4.25</a>, \(\Hom _C(x,y)\) is indeed an anima.
+</p>
+</div>
+
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5003r19'></a>
+<a class="entry-heading-link" href="../../../entry/composition-on-hom-animae/index.html" aria-label="Exercise 1.4.19., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.4.19.</span></a>  </span><span id='exercise:Composition_On_Hom_Animae'></span> Let \(x\), \(y\) and \(z\) be objects of an \(\infty \)-category \(C\). Construct a composition functor \[ - \circ - \colon \Hom _C(y,z) \times \Hom _C(x,y) \to \Hom _C(x,z), \qquad (g,f) \mapsto g \circ f. \] <span class='ntx-Italic-tlf-t1-x-x-109'>Hint:</span>
+Restrict the composition functor \(\Ar (C)\times _{s,C,t}\Ar (C)\to \Ar (C)\) along the pullbacks defining the three hom animae.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5004r20'></a>
+<a class="entry-heading-link" href="../../../entry/natural-transformations/index.html" aria-label="Definition 1.4.20, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.4.20 </span></a>(Natural transformations)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Natural_Transformation'></span>   If   \(C\)   and   \(D\)   are   \(\infty \)-categories,   we   define   a   <span class='ntx-Italic-tlf-t1-x-x-109'>natural
+transformation </span>of functors \(C \to D\) to be a morphism in \(\Fun (C,D)\). By (un)currying, this may equivalently be encoded
+as a functor \([1] \times C \to D\). We denote the hom anima in \(\Fun (C,D)\) by \(\Nat (f,g)\): \[ \Nat (f,g) := \Hom _{\Fun (C,D)}(f,g). \]
+</p>
+</div>
+
+<h4 class='subsectionHead' id='the-rezk-axiom'><span class='titlemark'>1.4.5    </span> <a id='x1-60001.4.5'></a>The Rezk axiom</h4>
+<p class='noindent'><span id='subsec_Rezk_Axiom'></span> In a 1-category, every invertible morphism is isomorphic in the arrow category to an identity morphism.
+Thus, if \(\Iso (C) \subseteq \Ar (C)\) denotes the full subcategory spanned by the invertible morphisms, then the functor \[ C \to \Iso (C), \qquad x \mapsto \id _x, \] is an
+equivalence. The Rezk axiom is the \(\infty \)-categorical analogue of this statement. Since we do not yet have
+subcategories at our disposal, we first construct \(\Iso (C)\) indirectly:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-6001r21'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/category-of-isomorphisms/index.html" aria-label="Definition 1.4.21., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.4.21.</span></a>  </span><span id='def:Iso_C'></span> Given an \(\infty \)-category \(C\), we define the \(\infty \)-category \(\Iso (C)\) via the following pullback diagram:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-ab5811c4f61e.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>We define \(\pi _{\Iso }\colon \Iso (C) \to \Ar (C)\) to be the composite functor \[ \Iso (C) \to \Ar (C) \times _{t,C,s} \Ar (C) \times _{t,C,s} \Ar (C) \xrightarrow {\pr _2} \Ar (C). \] An object of \(\Iso (C)\) is a triple of morphisms \((g\colon y' \to x, f\colon x \to y, h\colon y \to x')\) together with
+isomorphisms \(f \circ g \cong \id _y\) and \(h \circ f \cong \id _x\). Its image under \(\pi _{\Iso }\) is the morphism \(f\).</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-6002r22'></a>
+<a class="entry-heading-link" href="../../../entry/structure-map-for-the-category-of-isomorphisms/index.html" aria-label="Exercise 1.4.22., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.4.22.</span></a>  </span><span id='exercise:Right_Vertical_Functor_Isomorphism_Category'></span> Give a precise construction of the right vertical functor in the pullback defining
+\(\Iso (C)\). <span class='ntx-Italic-tlf-t1-x-x-109'>Hint: </span>Project to the composable pairs \((f,g)\) and \((h,f)\), apply the composition functor to each pair, and then
+take their product.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-6003r23'></a>
+<a class="entry-heading-link" href="../../../entry/separate-left-and-right-inverses/index.html" aria-label="Remark 1.4.23., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 1.4.23.</span></a>  </span><span id='rmk:Separate_Left_Right_Inverses'></span> Note that \(\Iso (C)\) encodes separate left and right inverses \(g\) and \(h\) of \(f\), rather than a single
+two-sided inverse \(f^{-1}\). The reason for this is to guarantee that the fibers of \(\pi _{\Iso }\colon \Iso (C) \to \Ar (C)\) are either empty or contractible,
+so that being an isomorphism is really a <span class='ntx-Italic-tlf-t1-x-x-109'>property </span>of a morphism rather than additional structure.
+This is made precise by <a class="source-reference" data-label="exercise:Pi_Iso_Monomorphism" href="../../../entry/isomorphisms-form-a-subcategory-of-arrows/index.html#exercise:Pi_Iso_Monomorphism">Proposition 1.5.6</a>.
+</p>
+</div>
+<p class='noindent'>As one expects, the identity map \(\id _x\colon x \to x\) is invertible in \(C\) for every object \(x\) of \(C\):
+</p>
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-6004r24'></a>
+<a class="entry-heading-link" href="../../../entry/identity-to-isomorphism-category/index.html" aria-label="Construction 1.4.24., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 1.4.24.</span></a>  </span><span id='cons:Identity_To_Isomorphism_Category'></span> The identity morphisms define a canonical functor \[ i\colon C \to \Iso (C). \] Indeed, restriction along
+\(p_{[1]}\colon [1] \to [0]\) gives a functor \[ p_{[1]}^*\colon C \to \Ar (C), \qquad x \mapsto \id _x, \] whose composites with the source and target functors \(s,t\colon \Ar (C) \to C\) are both isomorphic to \(\id _C\).
+The triple \((p_{[1]}^*,p_{[1]}^*,p_{[1]}^*)\) therefore lifts to a functor \[ C \to \Ar (C) \times _{t,C,s} \Ar (C) \times _{t,C,s} \Ar (C), \qquad x \mapsto (\id _x,\id _x,\id _x). \] By <a class="source-reference" data-label="lem:Composition_Is_Unital" href="../../../entry/unitality-of-composition/index.html#lem:Composition_Is_Unital">Lemma 1.4.8</a> there is a natural isomorphism \(\id _x \circ \id _x \cong \id _x\), so the composite of this
+functor with \((g,f,h) \mapsto (f \circ g, h \circ f)\) is naturally isomorphic to the composite of the diagonal \(\Delta \colon C \to C \times C\) with \((x,y) \mapsto (\id _y, \id _x)\). The universal property
+of the pullback defining \(\Iso (C)\) thus provides the desired functor \(i\), and it satisfies \(\pi _{\Iso } \circ i \cong p_{[1]}^*\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-6005r6'></a>
+<a class="entry-heading-link" href="../../../entry/rezk-axiom/index.html" aria-label="Axiom F, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Axiom F </span></a>(Rezk axiom)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='axiom:Rezk'></span> For every \(\infty \)-category \(C\) the functor \(i\colon C \to \Iso (C)\) is an equivalence.
+</p>
+</div>
+<p class='noindent'>The Rezk axiom now implies that the hom animae constructed above really are animae.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-6006r25'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 1.4.25 </span>(Hom animae are animae)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='exercise:Hom_Anima_Is_Anima2'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category and let</span> \(x\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(y\) <span class='ntx-Italic-tlf-t1-x-x-109'>be objects in</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>.
+Then the hom anima</span> \(\Hom _C(x,y)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is indeed an anima.</span>
+</p>
+</div>
+                                                                                   
+
+                                                                                   
+<p class='noindent'>A proof is given in the online supplementary material.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-6007r26'></a>
+<a class="entry-heading-link" href="../../../entry/rezk-completeness-condition/index.html" aria-label="Remark 1.4.26., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 1.4.26.</span></a>  </span><span id='rmk:Rezk_Completeness_Condition'></span> The condition that the functor \(i\colon C \to \Iso (C)\) is an equivalence is known as the <span class='ntx-Italic-tlf-t1-x-x-109'>completeness
+condition</span>. It was used by Rezk <span class='citation'>[Rezk (2001)]</span> to provide a model of \(\infty \)-categories, called <span class='ntx-Italic-tlf-t1-x-x-109'>complete Segal spaces</span>. A
+detailed discussion of the equivalence between \(\infty \)-categories and complete Segal animae will be given
+in <a class="source-reference" data-label="chap:Complete_Segal_Animae" href="../../../chapter/complete-segal-animae/index.html#chap:Complete_Segal_Animae">Chapter 24</a>.
+</p>
+</div>
+<p class='noindent'>The Rezk axiom implies that two objects \(x\) and \(y\) in \(C\) may be identified with each other as soon as we find an
+invertible morphism \(f\colon x \to y\) between them:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-6008r27'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 1.4.27.</span>  </span><span id='cor:Isomorphic_Objects_Are_Naturally_Isomorphic'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(x\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(y\) <span class='ntx-Italic-tlf-t1-x-x-109'>be objects of</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>and assume there exists an invertible morphism</span> \(f\colon x \to y\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then
+there exists a natural isomorphism</span> \(x \cong y\) <span class='ntx-Italic-tlf-t1-x-x-109'>as functors</span> \(* \to C\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-introduction-to-infinity-categories-section-04-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-introduction-to-infinity-categories-section-04-2">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The inverse and the two triangles for \(f\) determine an object \(\widetilde f\) of \(\Iso (C)\) whose image under \(\pi _{\Iso }\) is \(f\). Since
+the functor \(i\colon C \to \Iso (C)\) is an equivalence, there exists an object \(z\) of \(C\) together with an isomorphism \(i(z) \cong \widetilde f\) in \(\Iso (C)\). Applying
+the source and target functors \(s,t\colon \Ar (C) \to C\) to the image of this isomorphism under \(\pi _{\Iso }\) produces isomorphisms \(z \cong x\) and
+\(z \cong y\) in \(C\). By inversion we obtain \(x \cong z\) and by composition we obtain \(x \cong y\), as desired.                                           □
+</p>
+</div></div>
+<p class='noindent'>The previous corollary is the object-level shadow of a more general fact. For functors \(f,g\colon C \to D\), we now have two a
+priori different ways to say that \(f\) and \(g\) are the same: on the one hand, we have the primitive notion of a
+natural isomorphism \(\alpha \colon f \cong g\) from <span class="source-reference" data-label="axiom:Synthetic_Categories">Axiom A.1</span>; on the other hand, we may consider an invertible natural transformation \(\alpha \colon f \iso g\), that
+is, an invertible morphism in the functor category \(\Fun (C,D)\). The Rezk axiom shows that these are equivalent
+notions.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-6009r28'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 1.4.28.</span>  </span><span id='cor:Alternative_Approach_Isomorphism_Categories'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(f,g\colon C \to D\) <span class='ntx-Italic-tlf-t1-x-x-109'>be functors. Then the</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \((f \cong g)\) <span class='ntx-Italic-tlf-t1-x-x-109'>encoding primitive natural isomorphisms
+is  equivalent  to  the  fiber  over</span>  \((f,g)\)  <span class='ntx-Italic-tlf-t1-x-x-109'>of  </span>\[ (s,t)\colon \Iso (\Fun (C,D)) \to \Fun (C,D)\times \Fun (C,D). \]  <span class='ntx-Italic-tlf-t1-x-x-109'>In  particular,  primitive  natural  isomorphisms</span>  \(f\cong g\)  <span class='ntx-Italic-tlf-t1-x-x-109'>correspond  to
+invertible natural transformations</span> \(f\iso g\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-introduction-to-infinity-categories-section-04-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-introduction-to-infinity-categories-section-04-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Recall from <a class="source-reference" data-label="exercise:Natural_Isomorphisms_Via_Pullback" href="../../../entry/natural-isomorphisms-via-pullbacks/index.html#exercise:Natural_Isomorphisms_Via_Pullback">Exercise 1.3.23</a> that there is an \(\infty \)-category \((f \cong g)\) encoding the primitive natural isomorphisms between
+\(f\) and \(g\), defined as the fiber over \((f,g)\) of the diagonal functor \[ \Fun (C,D) \to \Fun (C,D) \times \Fun (C,D). \] Now note that this diagonal functor factors as
+\[ \Fun (C,D) \xrightarrow {i} \Iso (\Fun (C,D)) \xrightarrow {(s,t)} \Fun (C,D) \times \Fun (C,D). \] Since the first functor is an equivalence by the Rezk axiom, the fiber \((f \cong g)\) may equivalently be computed
+as  the  fiber  of  the  functor  \((s,t)\)  over  \((f,g)\):  there  is  a  pullback  square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-0d0613657e71.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>An  object  of  this  fiber  consists  of
+a natural transformation \(f\to g\) together with left and right inverse data. Hence it encodes an invertible
+natural transformation \(f\iso g\), as claimed.                                                                                                    □</p>
+</div></div>
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../basic-constructions-of-categories/index.html" aria-label="Previous section: Basic constructions of ∞-categories" title="Previous section: Basic constructions of ∞-categories"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../further-constructions-of-categories/index.html" aria-label="Next section: Further constructions of ∞-categories" title="Next section: Further constructions of ∞-categories"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html" aria-current="page"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/introduction-to-infinity-categories/index.html" aria-current="page"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../the-heuristics-behind-categories/index.html"><span class="context-entry-heading">Section 1.1</span><span class="context-entry-title">The heuristics behind ∞-categories</span></a></li><li><a href="../the-language-of-category-theory/index.html"><span class="context-entry-heading">Section 1.2</span><span class="context-entry-title">The language of ∞-category theory</span></a></li><li><a href="../basic-constructions-of-categories/index.html"><span class="context-entry-heading">Section 1.3</span><span class="context-entry-title">Basic constructions of ∞-categories</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 1.4</span><span class="context-entry-title">Commutative diagrams, composition, and animae</span></a></li><li><a href="../further-constructions-of-categories/index.html"><span class="context-entry-heading">Section 1.5</span><span class="context-entry-title">Further constructions of ∞-categories</span></a></li><li><a href="../simplicial-objects-and-quasicategories/index.html"><span class="context-entry-heading">Section 1.6</span><span class="context-entry-title">Simplicial objects and quasicategories</span></a></li><li><a href="../limits-and-colimits/index.html"><span class="context-entry-heading">Section 1.7</span><span class="context-entry-title">Limits and colimits</span></a></li><li><a href="../foundational-results-in-category-theory/index.html"><span class="context-entry-heading">Section 1.8</span><span class="context-entry-title">Foundational results in ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Commutative_Square"><span class="context-entry-heading">Definition 1.4.1</span><span class="context-entry-title">Diagram shapes</span></a></li><li><a href="#axiom:Commutative_Diagram_Axiom"><span class="context-entry-heading">Axiom D</span><span class="context-entry-title">Commutative diagram axiom</span></a></li><li><a href="#exercise:Consequences_Commutative_Diagram_Axiom"><span class="context-entry-heading">Exercise 1.4.2</span><span class="context-entry-title">exercise</span></a></li><li><a href="#exercise:Projections_Square_Onto_Triangle"><span class="context-entry-heading">Construction 1.4.3</span><span class="context-entry-title">construction</span></a></li><li><a href="#exercise:Encodings_Commutative_Triangles"><span class="context-entry-heading">Proposition 1.4.4</span><span class="context-entry-title">Triangles as squares with an identity edge</span></a></li><li><a href="#prop:Segal_Axiom"><span class="context-entry-heading">Proposition 1.4.5</span><span class="context-entry-title">Segal Axiom</span></a></li><li><a href="#def:Arrow_Category"><span class="context-entry-heading">Definition 1.4.6</span><span class="context-entry-title">Arrow category</span></a></li><li><a href="#cons:Composition_Functor"><span class="context-entry-heading">Construction 1.4.7</span><span class="context-entry-title">Composition functor</span></a></li><li><a href="#lem:Composition_Is_Unital"><span class="context-entry-heading">Lemma 1.4.8</span><span class="context-entry-title">Unitality</span></a></li><li><a href="#prop:Composition_Is_Associative"><span class="context-entry-heading">Proposition 1.4.9</span><span class="context-entry-title">Associativity</span></a></li><li><a href="#def:Isomorphism"><span class="context-entry-heading">Definition 1.4.10</span><span class="context-entry-title">Isomorphisms</span></a></li><li><a href="#def:Anima"><span class="context-entry-heading">Definition 1.4.11</span><span class="context-entry-title">Anima</span></a></li><li><a href="#axiom:Groupoid_Core"><span class="context-entry-heading">Axiom E</span><span class="context-entry-title">Groupoid core axiom</span></a></li><li><a href="#def:Mapping_Anima"><span class="context-entry-heading">Definition 1.4.12</span><span class="context-entry-title">definition</span></a></li><li><a href="#exercise:Core_Mapping_Property"><span class="context-entry-heading">Exercise 1.4.13</span><span class="context-entry-title">exercise</span></a></li><li><a href="#exercise:Core_Preserves_Pullbacks"><span class="context-entry-heading">Exercise 1.4.14</span><span class="context-entry-title">exercise</span></a></li><li><a href="#exercise:Test_Equivalence_On_Mapping_Animae"><span class="context-entry-heading">Exercise 1.4.15</span><span class="context-entry-title">exercise</span></a></li><li><a href="#exercise:Yoneda"><span class="context-entry-heading">Exercise 1.4.16</span><span class="context-entry-title">exercise</span></a></li><li><a href="#def:Hom_Groupoid"><span class="context-entry-heading">Definition 1.4.17</span><span class="context-entry-title">Hom anima</span></a></li><li><a href="#rmk:Hom_Anima_Terminology"><span class="context-entry-heading">Remark 1.4.18</span><span class="context-entry-title">remark</span></a></li><li><a href="#exercise:Composition_On_Hom_Animae"><span class="context-entry-heading">Exercise 1.4.19</span><span class="context-entry-title">exercise</span></a></li><li><a href="#def:Natural_Transformation"><span class="context-entry-heading">Definition 1.4.20</span><span class="context-entry-title">Natural transformations</span></a></li><li><a href="#def:Iso_C"><span class="context-entry-heading">Definition 1.4.21</span><span class="context-entry-title">definition</span></a></li><li><a href="#exercise:Right_Vertical_Functor_Isomorphism_Category"><span class="context-entry-heading">Exercise 1.4.22</span><span class="context-entry-title">exercise</span></a></li><li><a href="#rmk:Separate_Left_Right_Inverses"><span class="context-entry-heading">Remark 1.4.23</span><span class="context-entry-title">remark</span></a></li><li><a href="#cons:Identity_To_Isomorphism_Category"><span class="context-entry-heading">Construction 1.4.24</span><span class="context-entry-title">construction</span></a></li><li><a href="#axiom:Rezk"><span class="context-entry-heading">Axiom F</span><span class="context-entry-title">Rezk axiom</span></a></li><li><a href="#exercise:Hom_Anima_Is_Anima2"><span class="context-entry-heading">Proposition 1.4.25</span><span class="context-entry-title">Hom animae are animae</span></a></li><li><a href="#rmk:Rezk_Completeness_Condition"><span class="context-entry-heading">Remark 1.4.26</span><span class="context-entry-title">remark</span></a></li><li><a href="#cor:Isomorphic_Objects_Are_Naturally_Isomorphic"><span class="context-entry-heading">Corollary 1.4.27</span><span class="context-entry-title">corollary</span></a></li><li><a href="#cor:Alternative_Approach_Isomorphism_Categories"><span class="context-entry-heading">Corollary 1.4.28</span><span class="context-entry-title">corollary</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

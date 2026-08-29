@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 23.6: Hom animae in functor categories | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/background-on-infinity-category-theory/index.html">Part III</a> · <a href="../../../chapter/cocartesian-fibrations-and-unstraightening/index.html">Chapter 23</a> · Section 23.6</p>
+      <h1>Hom animae in functor categories</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent'>We may use the results from the previous section to compute the hom animae in a functor category \(\Fun (C,D)\). For
+this, we introduce the notion of an <span class='ntx-Italic-tlf-t1-x-x-109'>end </span>in the \(\infty \)-categorical setting.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<a class="entry-heading-link" href="../../../entry/twisted-arrow-categories/index.html" aria-label="Definition 23.6.1, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 23.6.1 </span></a>(Twisted arrow category)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Twisted_Arrow_Category'></span>  Let  \(C\)  be  an  \(\infty \)-category.  We  define  its  <span class='ntx-Italic-tlf-t1-x-x-109'>twisted  arrow
+category</span> \(\Tw (C)\) as the source of the left fibration whose cocartesian straightening is the Hom-functor \(\Hom _C\colon C\catop \times C \to \An \): \[ \Tw (C) := \Un ^{\cc }(\Hom _C\colon C\catop \times C \to \An ). \] In
+particular, it comes equipped with a left fibration \((s,t)\colon \Tw (C) \to C\catop \times C\) whose fibers are the hom animae of \(C\):</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-ee6df594ae13.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1002r2'></a>
+<a class="entry-heading-link" href="../../../entry/edgewise-subdivision-model-of-twisted-arrow-categories/index.html" aria-label="Remark 23.6.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 23.6.2.</span></a>  </span><span id='rmk:Twisted_Arrow_Edgewise_Subdivision'></span> Under the complete Segal presentation of \(\infty \)-categories from <a class="source-reference" data-label="chap:Complete_Segal_Animae" href="../../../chapter/complete-segal-animae/index.html#chap:Complete_Segal_Animae">Chapter 24</a>, the twisted arrow
+category has the edgewise-subdivision model \[ [n]\longmapsto \Hom _{\Cat _{\infty }}([n]\catop \star [n],C). \] The inclusions of the two copies of \([n]\) induce the source
+and target functors, and the fiber over \((x,y)\) is \(\Hom _C(x,y)\). This gives a model-specific description of the left fibration
+in the preceding definition.
+</p>
+</div>
+<p class='noindent'>Unwinding the description of the unstraightening construction, we see that \(\Tw (C)\) may be described as follows:
+</p>
+                                                                                   
+                                                                                   
+     <ul class='itemize1'>
+     <li class='itemize'>The objects of \(\Tw (C)\) are morphisms in \(C\), which we will display as \(\smash {\puto {X}{Y}{\phi }}\). We have \(\smash {s\puto {X}{Y}{\phi }} = X\) and \(\rbox {1.3}{1.5}{\smash {t\puto {X}{Y}{\phi }}} = Y\).
+     </li>
+     <li class='itemize'>A morphism \(\smash {\pwto {f}{g}}\colon \smash {\puto {X}{Y}{\phi }} \to \smash {\puto {X'}{Y'}{\phi '}}\) in \(\Tw (C)\) is a triple \((f,g,\alpha )\) consisting of a morphism \(\rbox {1.3}{1.5}{f\colon X \to X'}\) in \(C\catop \) (i.e., \(f\colon X' \to X\) in \(C\)), a morphism \(g\colon Y \to Y'\) in \(C\), and a
+     morphism \(\alpha \colon (f,g)_!\smash {\puto {X}{Y}{\phi }} = \rbox {1.3}{1.5}{\smash {\puto {X'}{Y'}{g\phi f}}}\to \smash {\puto {X'}{Y'}{\phi '}}\) in the fiber \(\Tw (C)_{(X',Y')} = \Hom _C(X',Y')\). We will display this data by means of diagrams of the form <div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-3aad9770488b.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div> Note that
+     this is <span class='ntx-Italic-tlf-t1-x-x-109'>not </span>a morphism in the usual arrow category \(\Ar (C)\), since \(f\) points in the opposite direction.</li></ul>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1003r3'></a>
+<a class="entry-heading-link" href="../../../entry/ends/index.html" aria-label="Definition 23.6.3, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 23.6.3 </span></a>(End)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:End'></span> Let \(C\) be an \(\infty \)-category and consider a functor \(F\colon C\catop \times C \to D\). The <span class='ntx-Italic-tlf-t1-x-x-109'>end of</span> \(F\), denoted by \(\int _{c \in C} F(c,c)\) if it
+exists, is the limit of the composite functor \[ \Tw (C) \xrightarrow {(s,t)} C\catop \times C \xrightarrow {F} D. \]
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1004r4'></a>
+<a class="entry-heading-link" href="../../../entry/existence-and-preservation-of-ends/index.html" aria-label="Remark 23.6.4., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 23.6.4.</span></a>  </span><span id='rmk:Existence_And_Preservation_Of_Ends'></span> If \(C\) is small and \(D\) admits small limits, the end of \(F\) always exists. Furthermore, if \(D \to D'\) is a
+functor preserving small limits, then it also preserves ends.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1005r5'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 23.6.5 </span>(Fubini rule for ends)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Fubini_Ends'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(C'\) <span class='ntx-Italic-tlf-t1-x-x-109'>be</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories and let</span> \(F\colon C\catop \times C \times {C'}\catop \times C' \to D\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a functor. Then there is
+an equivalence </span>\[ \int _{c \in C} \int _{c' \in C'} F(c,c,c',c') \simeq \int _{(c,c') \in C \times C'} F(c,c,c',c'). \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cocartesian-fibrations-and-unstraightening-section-06-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cocartesian-fibrations-and-unstraightening-section-06-4">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Since a limit over a product category may be computed as an iterated limit, it will suffice to
+produce an equivalence \[ \Tw (C \times C') \simeq \Tw (C) \times \Tw (C') \] of left fibrations over \(C\catop \times C \times {C'}\catop \times C'\). By straightening-unstraightening, it will suffice to
+produce a natural isomorphism between their unstraightenings: \[ (x,y,x',y') \quad \mapsto \quad \Hom _{C \times C'}((x,x'), (y,y')) \simeq \Hom _C(x,y) \times \Hom _{C'}(x',y'). \] Unwinding the definition of the hom
+functors, this boils down to the canonical equivalence \[ \Ar (C \times C') \iso \Ar (C) \times \Ar (C') \] over \(C \times C \times C' \times C'\), coming from the fact that \(\Ar (-) = \Fun ([1],-)\) preserves
+products.                                                                                                                                              □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1006r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 23.6.6 </span>(Hom animae in functor categories)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Hom_Animae_In_Functor_Categories'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(F,G \colon C \to D\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  functors.  Then  we  have  the
+following end-formula for the anima of natural transformations from</span> \(F\) <span class='ntx-Italic-tlf-t1-x-x-109'>to</span> \(G\)<span class='ntx-Italic-tlf-t1-x-x-109'>: </span>\[ \Nat (F,G) \quad \simeq \quad \int _{x \in C} \Hom _D(F(x), G(x)). \] <span class='ntx-Italic-tlf-t1-x-x-109'>Here the right-hand side
+is the end of the composite functor</span> \(C\catop \times C \xrightarrow {F\catop \times G} D\catop \times D \xrightarrow {\Hom _D} \An \)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cocartesian-fibrations-and-unstraightening-section-06-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cocartesian-fibrations-and-unstraightening-section-06-3">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The end imposes precisely the naturality conditions on a pointwise family of morphisms \(F(x)\to G(x)\).
+The rigorous identification, including all higher coherence data, is proved in <span class="source-reference" data-label="sct-mapping-spaces-of-functor-categories">Reference ?</span> of <span class='citation'>[Cisinski et al. (2026)]</span>.                            □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1007r7'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 23.6.7.</span>  </span><span id='prop:Characterization_Limits_Via_Homs'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(F\colon I \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a functor of</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories. A natural transformation</span> \(\eta \colon F \to \const _x\) <span class='ntx-Italic-tlf-t1-x-x-109'>exhibits</span> \(x \in C\) <span class='ntx-Italic-tlf-t1-x-x-109'>as the
+colimit of</span> \(F\) <span class='ntx-Italic-tlf-t1-x-x-109'>if and only if the natural map </span>\[ \eta ^*\colon \Hom _C(x,y) \iso \lim _{i \in I\catop } \Hom _C(F(i),y) \] <span class='ntx-Italic-tlf-t1-x-x-109'>obtained by applying</span> \(\Hom _C(-,y)\) <span class='ntx-Italic-tlf-t1-x-x-109'>to</span> \(\eta \) <span class='ntx-Italic-tlf-t1-x-x-109'>is an equivalence for all</span> \(y \in C\)<span class='ntx-Italic-tlf-t1-x-x-109'>. A
+similar assertion holds for limits.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cocartesian-fibrations-and-unstraightening-section-06-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cocartesian-fibrations-and-unstraightening-section-06-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Consider the following commutative diagram:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-a00273364182.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>here the right vertical map is induced by the
+evaluation functors \(\ev _i\colon \Fun (I,C) \to C\). By definition, \(x\) is a colimit of \(F\) if and only if the top map is an equivalence
+for all \(y\), hence it will suffice to show that the right vertical map is an equivalence. By <a class="source-reference" data-label="prop:Hom_Animae_In_Functor_Categories" href="../../../entry/hom-animae-in-functor-categories/index.html#prop:Hom_Animae_In_Functor_Categories">Proposition 23.6.6</a>, the top
+right is equivalent to \(\lim _{(i \to i') \in \Tw (I)} \Hom _C(F(i), y)\). It thus remains to show that the forgetful functor \(s\colon \Tw (I) \to I\catop \) is final. By <a class="source-reference" data-label="thm:Quillens_Theorem_A" href="../../../entry/joyals-quillen-theorem-a/index.html#thm:Quillens_Theorem_A">Theorem 21.5.1</a>, it suffices to
+show that the relative slices are weakly contractible. But these relative slices are weakly equivalent
+<span class='ntx-Bold-tlf-t1-x-x-109'>[</span>explain]<span class='footnote-mark'><a href='#chapter-cocartesian-fibrations-and-unstraightening-section-06-fn1x0'><sup class='textsuperscript'>1</sup></a></span><a id='x1-1008f1'></a> 
+to the actual slices \(I_{i/}\), which have initial objects, so the claim follows from <a class="source-reference" data-label="lem:Category_With_Initial_Object_Is_Weakly_Contractible" href="../../../entry/categories-with-initial-objects-are-weakly-contractible/index.html#lem:Category_With_Initial_Object_Is_Weakly_Contractible">Lemma 21.5.6</a>.                                       □</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1010r8'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 23.6.8.</span>  </span><span id='cor:Hom_Functor_Preserves_Limits'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The functors</span> \(Y_C\colon C \hookrightarrow \Fun (C\catop ,\An )\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(Y_{C\catop }\colon C\catop \hookrightarrow \Fun (C,\An )\) <span class='ntx-Italic-tlf-t1-x-x-109'>preserve limits.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cocartesian-fibrations-and-unstraightening-section-06-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cocartesian-fibrations-and-unstraightening-section-06-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The satement for \(Y_{C\catop }\) is immediate from <a class="source-reference" data-label="prop:Characterization_Limits_Via_Homs" href="../../../entry/characterization-of-limits-via-hom-animae/index.html#prop:Characterization_Limits_Via_Homs">Proposition 23.6.7</a>. The other one is proved dually, or may be recovered
+by replacing \(C\) by \(C\catop \).                                                                                                                                 □
+</p>
+</div></div>
+ 
+<section class="footnotes" aria-label="Notes"><h2>Notes</h2>
+  <div class='footnote-text'>
+  <p class='noindent'><span class='footnote-mark'><a id='chapter-cocartesian-fibrations-and-unstraightening-section-06-fn1x0'><a id='chapter-cocartesian-fibrations-and-unstraightening-section-06-x2-1009x23.6'></a>    <sup class='textsuperscript'>1</sup></a></span><span class='ntx-Regular-tlf-t1-x-x-90'>There is an adjunction</span> \(\Tw (I)_{i/} \rightleftarrows I_{i/}\)<span class='ntx-Regular-tlf-t1-x-x-90'>, and we have </span><a class="source-reference" data-label="lem:Adjunction_Induces_Equivalence_On_Geometric_Realizations" href="../../../entry/adjunctions-and-geometric-realizations/index.html#lem:Adjunction_Induces_Equivalence_On_Geometric_Realizations">Lemma 21.1.7</a></p></div> 
+</section>
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../limits-and-colimits-of-categories/index.html" aria-label="Previous section: Limits and colimits of ∞-categories" title="Previous section: Limits and colimits of ∞-categories"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../descent-and-topoi/index.html" aria-label="Next section: Descent and ∞-topoi" title="Next section: Descent and ∞-topoi"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html" aria-current="page"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/adjunctions/index.html"><span class="context-entry-heading">Chapter 21</span><span class="context-entry-title">Adjunctions</span></a></li><li><a href="../../../chapter/presentable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 22</span><span class="context-entry-title">Presentable ∞-categories</span></a></li><li><a href="../../../chapter/cocartesian-fibrations-and-unstraightening/index.html" aria-current="page"><span class="context-entry-heading">Chapter 23</span><span class="context-entry-title">Cocartesian fibrations and (un)straightening</span></a></li><li><a href="../../../chapter/complete-segal-animae/index.html"><span class="context-entry-heading">Chapter 24</span><span class="context-entry-title">Complete Segal animae</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../cartesian-and-cocartesian-fibrations/index.html"><span class="context-entry-heading">Section 23.1</span><span class="context-entry-title">Cartesian and cocartesian fibrations</span></a></li><li><a href="../straightening-unstraightening/index.html"><span class="context-entry-heading">Section 23.2</span><span class="context-entry-title">Straightening/unstraightening</span></a></li><li><a href="../fiberwise-criteria/index.html"><span class="context-entry-heading">Section 23.3</span><span class="context-entry-title">Fiberwise criteria</span></a></li><li><a href="../the-hom-functor/index.html"><span class="context-entry-heading">Section 23.4</span><span class="context-entry-title">The Hom-functor</span></a></li><li><a href="../limits-and-colimits-of-categories/index.html"><span class="context-entry-heading">Section 23.5</span><span class="context-entry-title">Limits and colimits of ∞-categories</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 23.6</span><span class="context-entry-title">Hom animae in functor categories</span></a></li><li><a href="../descent-and-topoi/index.html"><span class="context-entry-heading">Section 23.7</span><span class="context-entry-title">Descent and ∞-topoi</span></a></li><li><a href="../exponentiability-of-cartesian-fibrations/index.html"><span class="context-entry-heading">Section 23.8</span><span class="context-entry-title">Exponentiability of cartesian fibrations</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Twisted_Arrow_Category"><span class="context-entry-heading">Definition 23.6.1</span><span class="context-entry-title">Twisted arrow category</span></a></li><li><a href="#rmk:Twisted_Arrow_Edgewise_Subdivision"><span class="context-entry-heading">Remark 23.6.2</span><span class="context-entry-title">remark</span></a></li><li><a href="#def:End"><span class="context-entry-heading">Definition 23.6.3</span><span class="context-entry-title">End</span></a></li><li><a href="#rmk:Existence_And_Preservation_Of_Ends"><span class="context-entry-heading">Remark 23.6.4</span><span class="context-entry-title">remark</span></a></li><li><a href="#lem:Fubini_Ends"><span class="context-entry-heading">Lemma 23.6.5</span><span class="context-entry-title">Fubini rule for ends</span></a></li><li><a href="#prop:Hom_Animae_In_Functor_Categories"><span class="context-entry-heading">Proposition 23.6.6</span><span class="context-entry-title">Hom animae in functor categories</span></a></li><li><a href="#prop:Characterization_Limits_Via_Homs"><span class="context-entry-heading">Proposition 23.6.7</span><span class="context-entry-title">proposition</span></a></li><li><a href="#cor:Hom_Functor_Preserves_Limits"><span class="context-entry-heading">Corollary 23.6.8</span><span class="context-entry-title">corollary</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

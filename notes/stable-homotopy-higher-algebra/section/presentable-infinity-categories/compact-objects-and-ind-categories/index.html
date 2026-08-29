@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 22.3: Compact objects and Ind-categories | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/background-on-infinity-category-theory/index.html">Part III</a> · <a href="../../../chapter/presentable-infinity-categories/index.html">Chapter 22</a> · Section 22.3</p>
+      <h1>Compact objects and Ind-categories</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent'>We now specialize to finiteness controlled by ordinary filtered colimits. This is sufficient for all applications
+in the book, so we will not need the more general notion of \(\kappa \)-compactness.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<a class="entry-heading-link" href="../../../entry/compact-objects/index.html" aria-label="Definition 22.3.1, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 22.3.1 </span></a>(Compact object)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Compact_Object'></span> Let \(C\) be an \(\infty \)-category with filtered colimits. An object \(X\in C\) is called
+<span class='ntx-Italic-tlf-t1-x-x-109'>compact </span>if the functor \(\Hom _C(X,-)\colon C\to \An \) preserves filtered colimits. We write \(C^\omega \subseteq C\) for the full subcategory of compact
+objects.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1002r2'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 22.3.2.</span>  </span><span id='cor:Compact_Objects_Form_Stable_Subcategory'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a stable</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with filtered colimits, then</span> \(C^\omega \) <span class='ntx-Italic-tlf-t1-x-x-109'>is a thick subcategory of</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1003r3'></a>
+                                                                                   
+
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/compactly-generated-infinity-categories/index.html" aria-label="Definition 22.3.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 22.3.3.</span></a>  </span><span id='def:Compactly_Generated'></span>  An  \(\infty \)-category  \(C\)  is  called  <span class='ntx-Italic-tlf-t1-x-x-109'>compactly  generated  </span>if  it  admits  small  colimits,  the
+subcategory \(C^\omega \) is small, and every object of \(C\) is a filtered colimit of compact objects.
+</p><p class='noindent'>If \(C\) is stable, a small collection \(\Gg \) of compact objects is called a <span class='ntx-Italic-tlf-t1-x-x-109'>collection of compact generators </span>if
+the smallest localizing subcategory of \(C\) containing \(\Gg \) is \(C\) itself. Here a localizing subcategory is a full
+stable subcategory closed under small colimits.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1004r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 22.3.4 </span>(Compact generation criterion, cf. <span class='citation'>Hovey et al. (1997), Corollary 2.3.12</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Compact_Objects_Are_Finitely_Dominated'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a stable</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with small colimits and
+let</span> \(\Gg \) <span class='ntx-Italic-tlf-t1-x-x-109'>be a small collection of compact objects. The following conditions are equivalent:</span>
+   </p><dl class='enumerate'><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(1)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The collection</span> \(\Gg \) <span class='ntx-Italic-tlf-t1-x-x-109'>generates</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(2)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The functors </span>\[ \Hom _C(G[n],-)\colon C\to \An , \qquad G\in \Gg ,\ n\in \Z , \] <span class='ntx-Italic-tlf-t1-x-x-109'>are jointly conservative.</span>
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(3)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Every object of</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a filtered colimit of objects in the smallest thick subcategory of</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>containing</span> \(\Gg \)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p></dd></dl>
+<p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If these conditions hold, then</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is compactly generated and its compact objects form the smallest thick
+subcategory of</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>containing</span> \(\Gg \)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+                                                                                   
+
+                                                                                   
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-presentable-infinity-categories-section-03-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-presentable-infinity-categories-section-03-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> See <span class="source-reference" data-label="sct-prop:Compact_Generation_Criterion_Stable">Reference ?</span> of <span class='citation'>[Cisinski et al. (2026)]</span>.                                                                                                                                  □
+</p>
+</div></div>
+<p class='noindent'>The preceding statement is often the most convenient way to prove compact generation. Notice the
+distinction between the two closure operations: the generators produce all objects under small colimits, but
+the compact objects are obtained from the generators using only finite colimits, shifts, and
+retracts.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1008r5'></a>
+<a class="entry-heading-link" href="../../../entry/ind-completion/index.html" aria-label="Definition 22.3.5, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 22.3.5 </span></a>(Ind-completion)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Ind_Completion'></span>  Let  \(C\)  be  a  small  \(\infty \)-category.  Its  <span class='ntx-Italic-tlf-t1-x-x-109'>Ind-completion  </span>is  the  full
+subcategory \[ \Ind (C)\subseteq \PSh (C) \] spanned by the filtered colimits of representable presheaves. The Yoneda embedding
+factors through a fully faithful functor \(C\hookrightarrow \Ind (C)\).
+</p>
+</div>
+<p class='noindent'>Thus \(\Ind (C)\) is the partial free cocompletion from <a class="source-reference" data-label="prop:Partial_Free_Cocompletion" href="../../../entry/partial-free-cocompletion/index.html#prop:Partial_Free_Cocompletion">Proposition 22.1.2</a> obtained by freely adjoining filtered colimits. In particular, if \(D\)
+admits filtered colimits, restriction along the Yoneda embedding induces an equivalence \[ \Fun _\omega (\Ind (C),D)\iso \Fun (C,D), \] where the
+left-hand side denotes the full subcategory of functors preserving filtered colimits.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1009r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 22.3.6 </span>(<span class='citation'>[Lurie (2009), Corollary 4.2.3.11, Propositions 5.3.2.9, 5.3.5.10 and 5.3.5.14, and Theorem 5.5.1.1]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Ind_Of_Finite_Colimit_Category_Presentable'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a small</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with finite colimits, then</span> \(\Ind (C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits small colimits and
+is presentable. Moreover, the inclusion</span> \(C\hookrightarrow \Ind (C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves finite colimits, and the inclusion </span>\[ \Ind (C)\hookrightarrow \PSh (C) \] <span class='ntx-Italic-tlf-t1-x-x-109'>identifies</span> \(\Ind (C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>with
+the full subcategory spanned by the presheaves</span> \(C\catop \to \An \) <span class='ntx-Italic-tlf-t1-x-x-109'>which send finite colimits in</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>to limits in</span> \(\An \)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+                                                                                   
+
+                                                                                   
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1010r7'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 22.3.7 </span>(Compactly generated categories as Ind-completions, <span class='citation'>[Lurie (2009), Propositions 5.5.7.8 and 5.5.7.10]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Compactly_Generated_As_Ind'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with
+small colimits and assume that</span> \(D^\omega \) <span class='ntx-Italic-tlf-t1-x-x-109'>is small. The following are equivalent:</span>
+   </p><dl class='enumerate'><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(1)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Every object of</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a filtered colimit of compact objects.</span>
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(2)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The restricted Yoneda functor induces an equivalence </span>\[ D\iso \Ind (D^\omega ). \]</p></dd></dl>
+<p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Under these conditions, a colimit-preserving functor out of</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>is uniquely determined by its restriction to</span>
+\(D^\omega \)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1013r8'></a>
+<a class="entry-heading-link" href="../../../entry/compact-presentations/index.html" aria-label="Remark 22.3.8, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 22.3.8 </span></a>(Compact presentations)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='rmk:Compact_Presentations'></span> A presentable \(\infty \)-category \(D\) is compactly generated if and
+only if it admits a presentation \[ D\simeq \PSh (C)^{S\text {-}\mathrm {loc}} \] in which \(C\) is small and \(S\) is a small collection of morphisms between
+compact objects of \(\PSh (C)\). We will not use this characterization; see <span class='citation'>[Lurie (2009), Corollary 5.5.7.3 and Proposition 5.5.7.8]</span>.
+</p>
+                                                                                   
+                                                                                   
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1014r9'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 22.3.9 </span>(Animae as Ind-completions)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Pointed_Animae_As_Ind_Finite_Pointed_Animae'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The restricted Yoneda functors induce equivalences</span>
+\[ \An \iso \Ind (\An ^{\fin }) \qquad \text {and}\qquad \An _*\iso \Ind (\An _*^{\fin }). \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-presentable-infinity-categories-section-03-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-presentable-infinity-categories-section-03-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The first equivalence follows immediately from <a class="source-reference" data-label="prop:Free_K_Cocompletion" href="../../../entry/universal-property-of-finite-animae/index.html#prop:Free_K_Cocompletion">Proposition 4.3.11</a>, <a class="source-reference" data-label="prop:Ind_Of_Finite_Colimit_Category_Presentable" href="../../../entry/presentability-of-ind-completions/index.html#prop:Ind_Of_Finite_Colimit_Category_Presentable">Proposition 22.3.6</a>. For the second, <a class="source-reference" data-label="lem:Pointed_Objects_Form_Right_Adjoint" href="../../../entry/reduced-functors-lift-uniquely-to-pointed-objects/index.html#lem:Pointed_Objects_Form_Right_Adjoint">Lemma 4.1.13</a> gives \[ \Fun ^{\lex }((\An _*^{\fin })\catop ,\An ) \iso \Fun ^{\lex }((\An _*^{\fin })\catop ,\An _*), \] and the right-hand
+side is equivalent to \(\An _*\) by <a class="source-reference" data-label="lem:Universal_Property_Finite_Pointed_Animae" href="../../../entry/universal-property-of-finite-pointed-animae/index.html#lem:Universal_Property_Finite_Pointed_Animae">Lemma 4.3.12</a>. In both cases the inverse to evaluation is the restricted Yoneda functor, so
+the result follows from <a class="source-reference" data-label="prop:Ind_Of_Finite_Colimit_Category_Presentable" href="../../../entry/presentability-of-ind-completions/index.html#prop:Ind_Of_Finite_Colimit_Category_Presentable">Proposition 22.3.6</a>.                                                                                                                      □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1015r10'></a>
+<a class="entry-heading-link" href="../../../entry/basic-compact-generators/index.html" aria-label="Example 22.3.10., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 22.3.10.</span></a>  </span><span id='ex:Basic_Compact_Generators'></span> The categories \(\An \), \(\An _*\), and \(\Sp \) are compactly generated. For animae and pointed animae
+this follows from <a class="source-reference" data-label="lem:Pointed_Animae_As_Ind_Finite_Pointed_Animae" href="../../../entry/animae-as-ind-completions/index.html#lem:Pointed_Animae_As_Ind_Finite_Pointed_Animae">Lemma 22.3.9</a>. The sphere spectrum is a compact generator of \(\Sp \): compactness follows because \(\Hom _{\Sp }(\S ,-)\simeq \Omega ^\infty \)
+preserves filtered colimits by <a class="source-reference" data-label="lem:Filtered_Colimits_Of_Spectra_Levelwise" href="../../../entry/filtered-colimits-of-spectra-are-levelwise/index.html#lem:Filtered_Colimits_Of_Spectra_Levelwise">Lemma 4.3.21</a>, while its shifts jointly detect isomorphisms by <a class="source-reference" data-label="cor:Homotopy_Groups_Jointly_Conservative" href="../../../entry/homotopy-groups-detect-isomorphisms-of-spectra/index.html#cor:Homotopy_Groups_Jointly_Conservative">Corollary 4.4.26</a>; now apply <a class="source-reference" data-label="prop:Compact_Objects_Are_Finitely_Dominated" href="../../../entry/compact-generation-criterion/index.html#prop:Compact_Objects_Are_Finitely_Dominated">Proposition 22.3.4</a>.
+</p><p class='noindent'>For  every  associative  ring  spectrum  \(A\),  the  free  module  \(A\)  is  a  compact  generator  of  \(\LMod _A\)  by  <a class="source-reference" data-label="lem:Perfect_Iff_Compact" href="../../../entry/perfect-modules-are-compact-modules/index.html#lem:Perfect_Iff_Compact">Lemma 8.1.8</a>;
+for  every  commutative  ring  \(R\),  the  complex  \(R[0]\)  is  a  compact  generator  of  \(\D (R)\)  by  <a class="source-reference" data-label="cor:Derived_Category_Ind_Perfect" href="../../../entry/derived-category-ind-perfect/index.html#cor:Derived_Category_Ind_Perfect">Corollary 20.2.5</a>.  Consequently,  \[ \Sp \simeq \Ind (\Sp ^\omega ), \qquad \LMod _A\simeq \Ind (\Perf (A)), \qquad \D (R)\simeq \Ind (\Perf (R)). \]
+The  Eilenberg–MacLane  comparison  of  <a class="source-reference" data-label="cor:Derived_Category_As_HR_Modules" href="../../../entry/derived-categories-as-eilenberg-maclane-module-categories/index.html#cor:Derived_Category_As_HR_Modules">Corollary 8.3.4</a>  identifies  the  last  presentation  with  the  corresponding
+presentation of \(\Mod _{HR}\).
+                                                                                   
+                                                                                   
+</p>
+</div>
+
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../presentable-categories-and-adjoint-functors/index.html" aria-label="Previous section: Presentable categories and adjoint functors" title="Previous section: Presentable categories and adjoint functors"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../tensor-products-of-presentable-categories/index.html" aria-label="Next section: Tensor products of presentable ∞-categories" title="Next section: Tensor products of presentable ∞-categories"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html" aria-current="page"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/adjunctions/index.html"><span class="context-entry-heading">Chapter 21</span><span class="context-entry-title">Adjunctions</span></a></li><li><a href="../../../chapter/presentable-infinity-categories/index.html" aria-current="page"><span class="context-entry-heading">Chapter 22</span><span class="context-entry-title">Presentable ∞-categories</span></a></li><li><a href="../../../chapter/cocartesian-fibrations-and-unstraightening/index.html"><span class="context-entry-heading">Chapter 23</span><span class="context-entry-title">Cocartesian fibrations and (un)straightening</span></a></li><li><a href="../../../chapter/complete-segal-animae/index.html"><span class="context-entry-heading">Chapter 24</span><span class="context-entry-title">Complete Segal animae</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../presheaves-and-free-cocompletions/index.html"><span class="context-entry-heading">Section 22.1</span><span class="context-entry-title">Presheaves and free cocompletions</span></a></li><li><a href="../presentable-categories-and-adjoint-functors/index.html"><span class="context-entry-heading">Section 22.2</span><span class="context-entry-title">Presentable categories and adjoint functors</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 22.3</span><span class="context-entry-title">Compact objects and Ind-categories</span></a></li><li><a href="../tensor-products-of-presentable-categories/index.html"><span class="context-entry-heading">Section 22.4</span><span class="context-entry-title">Tensor products of presentable ∞-categories</span></a></li><li><a href="../presentably-symmetric-monoidal-categories/index.html"><span class="context-entry-heading">Section 22.5</span><span class="context-entry-title">Presentably symmetric monoidal categories</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Compact_Object"><span class="context-entry-heading">Definition 22.3.1</span><span class="context-entry-title">Compact object</span></a></li><li><a href="#cor:Compact_Objects_Form_Stable_Subcategory"><span class="context-entry-heading">Corollary 22.3.2</span><span class="context-entry-title">corollary</span></a></li><li><a href="#def:Compactly_Generated"><span class="context-entry-heading">Definition 22.3.3</span><span class="context-entry-title">definition</span></a></li><li><a href="#prop:Compact_Objects_Are_Finitely_Dominated"><span class="context-entry-heading">Proposition 22.3.4</span><span class="context-entry-title">Compact generation criterion</span></a></li><li><a href="#def:Ind_Completion"><span class="context-entry-heading">Definition 22.3.5</span><span class="context-entry-title">Ind-completion</span></a></li><li><a href="#prop:Ind_Of_Finite_Colimit_Category_Presentable"><span class="context-entry-heading">Proposition 22.3.6</span><span class="context-entry-title">proposition</span></a></li><li><a href="#prop:Compactly_Generated_As_Ind"><span class="context-entry-heading">Proposition 22.3.7</span><span class="context-entry-title">Compactly generated categories as Ind-completions</span></a></li><li><a href="#rmk:Compact_Presentations"><span class="context-entry-heading">Remark 22.3.8</span><span class="context-entry-title">Compact presentations</span></a></li><li><a href="#lem:Pointed_Animae_As_Ind_Finite_Pointed_Animae"><span class="context-entry-heading">Lemma 22.3.9</span><span class="context-entry-title">Animae as Ind-completions</span></a></li><li><a href="#ex:Basic_Compact_Generators"><span class="context-entry-heading">Example 22.3.10</span><span class="context-entry-title">example</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

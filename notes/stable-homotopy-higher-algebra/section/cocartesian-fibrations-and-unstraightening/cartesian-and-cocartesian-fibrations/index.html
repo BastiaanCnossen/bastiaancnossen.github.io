@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 23.1: Cartesian and cocartesian fibrations | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/background-on-infinity-category-theory/index.html">Part III</a> · <a href="../../../chapter/cocartesian-fibrations-and-unstraightening/index.html">Chapter 23</a> · Section 23.1</p>
+      <h1>Cartesian and cocartesian fibrations</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent'>This section introduces cartesian and cocartesian morphisms and the fibrations they define, together with
+the basic closure properties needed for straightening and unstraightening.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<a class="entry-heading-link" href="../../../entry/cocartesian-fibrations/index.html" aria-label="Definition 23.1.1., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 23.1.1.</span></a>  </span><span id='def:Cocartesian_Fibration'></span> Consider a functor \(p\colon E \to C\).
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>A morphism \(\phi \colon e \to e'\) in \(E\) is called \(p\)<span class='ntx-Italic-tlf-t1-x-x-109'>-cocartesian </span>if, for every other object \(e''\) in \(E\), the commutative square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-9e26a42681a6.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>is a
+   pullback square. Informally, this means that for every solid diagram of the form</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-4c50dc525436.svg" alt="Commutative diagram generated from the LaTeX source"></figure><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-095c8ef6ef45.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>in \(E\) for which its
+   image in \(C\) has been completed to a triangle, there exists a unique map \(e' \to e''\) that forms a commutative
+   triangle in \(E\) and projects to the given one in \(C\).</p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>We say that \(p\) is a <span class='ntx-Italic-tlf-t1-x-x-109'>cocartesian fibration </span>if for every morphism \(f\colon x \to y\) in \(C\) and every object \(e \in E_x\) there exists a
+   \(p\)-cocartesian morphism \(\phi \colon e \to e'\) satisfying \(p(\phi ) = f\). We refer to such a morphism \(\phi \) as a \(p\)<span class='ntx-Italic-tlf-t1-x-x-109'>-cocartesian lift of</span> \(f\).
+   </p></dd><dt class='enumerate'>
+(3) </dt><dd class='enumerate'>
+   <p class='noindent'>Let \(p\colon E \to C\) and \(p'\colon E' \to C\) be two cocartesian fibrations. A functor \(F\colon E \to E'\) over \(C\), i.e., a commutative triangle</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-3a929243dd09.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>is called
+   <span class='ntx-Italic-tlf-t1-x-x-109'>cocartesian over</span> \(C\) if it sends \(p\)-cocartesian morphisms in \(E\) to \(p'\)-cocartesian morphisms in \(E'\).</p></dd><dt class='enumerate'>
+(4) </dt><dd class='enumerate'>
+   <p class='noindent'>If \(C\) is a small \(\infty \)-category, we denote by \[ \Cocart (C) \subseteq (\Cat _{\infty })_{/C} \] the non-full subcategory spanned by the cocartesian
+   fibrations \(p\colon E \to C\) and the cocartesian functors between them.</p></dd></dl>
+                                                                                   
+                                                                                   
+</div>
+<p class='noindent'>The cocartesian lift \(\phi \colon e \to e'\) is functorial in the pair \((f,e)\). To show this, the following reformulation of \(p\)-cocartesian
+morphisms is useful:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1006r2'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 23.1.2.</span>  </span><span id='lem:Cocartesian_Lifts_As_Left_Adjoint_Objects'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(p\colon E \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a functor. Consider the functor </span>\[ Q\colon \Ar (E) \longrightarrow \Ar (C) \times _{s,C,p} E, \qquad (\phi \colon e \to e') \longmapsto (p\phi ,e). \] <span class='ntx-Italic-tlf-t1-x-x-109'>An arrow</span> \(\phi \colon e\to e'\) <span class='ntx-Italic-tlf-t1-x-x-109'>satisfying</span> \(Q(\phi )=(f,e)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is</span> \(p\)<span class='ntx-Italic-tlf-t1-x-x-109'>-cocartesian if and
+only if, equipped with the identity map of</span> \((f,e)\)<span class='ntx-Italic-tlf-t1-x-x-109'>, it is a left adjoint object to</span> \((f,e)\) <span class='ntx-Italic-tlf-t1-x-x-109'>under</span> \(Q\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cocartesian-fibrations-and-unstraightening-section-01-13" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cocartesian-fibrations-and-unstraightening-section-01-13">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Set \(B:=\Ar (C)\times _{s,C,p}E\). Since \(Q(\phi )=(f,e)\), the identity of \((f,e)\) exhibits \(\phi \) as a left adjoint object under \(Q\) if and only if, for every arrow \(\psi \colon a\to b\) in \(E\),
+the induced map \[ Q_*\colon \Hom _{\Ar (E)}(\phi ,\psi )\longrightarrow \Hom _B((f,e),Q(\psi )) \] is an equivalence. By <a class="source-reference" data-label="axiom:Commutative_Diagram_Axiom" href="../../../entry/commutative-diagram-axiom/index.html#axiom:Commutative_Diagram_Axiom">Axiom D</a>, <span class="source-reference" data-label="exercise:Hom_Animae_Of_Pullback">Chapterexercise 1.4</span>, its source and target admit canonical descriptions
+\begin {align*}  \Hom _{\Ar (E)}(\phi ,\psi ) &amp;\iso \Hom _E(e,a)\times _{\Hom _E(e,b)}\Hom _E(e',b), \\ \Hom _B((f,e),Q(\psi )) &amp;\iso \Hom _E(e,a)\times _{\Hom _C(pe,pb)}\Hom _C(pe',pb).  \end {align*}
+</p><p class='noindent'>Here the maps out of \(\Hom _E(e,a)\) are given by postcomposition with \(\psi \) in the first line and by postcomposition with \(p(\psi )\)
+after applying \(p\) in the second line. Under these identifications, \(Q_*\) is induced by \(p\colon \Hom _E(e',b)\to \Hom _C(pe',pb)\) on the second
+factor.
+</p><p class='noindent'>If \(\phi \) is \(p\)-cocartesian, then for every \(b\) the defining pullback square identifies \[ \Hom _E(e',b) \longrightarrow \Hom _E(e,b)\times _{\Hom _C(pe,pb)}\Hom _C(pe',pb) \] as an equivalence. Pulling this
+equivalence back along the postcomposition map \(\psi \circ -\colon \Hom _E(e,a)\to \Hom _E(e,b)\) shows that \(Q_*\) is an equivalence for every \(\psi \). Thus \(\phi \) is a left
+adjoint object under \(Q\).
+</p><p class='noindent'>Conversely, suppose that \(\phi \) is a left adjoint object under \(Q\). Taking \(\psi =\id _b\) identifies \(Q_*\) with the preceding comparison
+map. It is therefore an equivalence for every object \(b\) of \(E\), which says precisely that the squares defining
+\(p\)-cocartesianness of \(\phi \) are pullback squares.                                                                                          □
+</p>
+</div></div>
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1007r3'></a>
+<a class="entry-heading-link" href="../../../entry/cocartesian-transport/index.html" aria-label="Notation 23.1.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Notation 23.1.3.</span></a>  </span><span id='nota:Cocartesian_Transport'></span> Given an object \(e \in E_x\), we may sometimes denote a cocartesian lift of \(f\colon x \to y\) by \(\phi \colon e \to f_!e\), and refer
+to \(f_!e\) as the <span class='ntx-Italic-tlf-t1-x-x-109'>cocartesian transport of</span> \(e\) <span class='ntx-Italic-tlf-t1-x-x-109'>along</span> \(f\). This is well-defined, since left adjoint objects are unique
+whenever they exist.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1008r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 23.1.4 </span>(Functoriality of partial cocartesian lifts)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Partial_Cocartesian_Lifts_Functorial'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(p\colon E\to C\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  a  functor,  and  let</span>  \(W\subseteq \Ar (C)\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  a
+subcategory. Suppose that for every</span> \((f,e)\in W\times _{s,C,p}E\) <span class='ntx-Italic-tlf-t1-x-x-109'>there exists a</span> \(p\)<span class='ntx-Italic-tlf-t1-x-x-109'>-cocartesian lift of</span> \(f\) <span class='ntx-Italic-tlf-t1-x-x-109'>starting in</span> \(e\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then these lifts
+assemble into a functor </span>\[ \lift _W\colon W\times _{s,C,p}E\longrightarrow \Ar (E) \] <span class='ntx-Italic-tlf-t1-x-x-109'>More precisely, this functor factors through </span>\[ \Ar (E)\times _{\Ar (C)\times _{s,C,p}E} \bigl (W\times _{s,C,p}E\bigr ), \] <span class='ntx-Italic-tlf-t1-x-x-109'>and the resulting functor is left
+adjoint to the projection from this pullback to</span> \(W\times _{s,C,p}E\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cocartesian-fibrations-and-unstraightening-section-01-12" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cocartesian-fibrations-and-unstraightening-section-01-12">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="lem:Cocartesian_Lifts_As_Left_Adjoint_Objects" href="../../../entry/cocartesian-lifts-as-left-adjoint-objects/index.html#lem:Cocartesian_Lifts_As_Left_Adjoint_Objects">Lemma 23.1.2</a>, the required cocartesian lifts are precisely the left adjoint objects under the restricted
+functor \[ \Ar (E)\times _{\Ar (C)\times _{s,C,p}E} \bigl (W\times _{s,C,p}E\bigr ) \longrightarrow W\times _{s,C,p}E. \] The claim is therefore an immediate consequence of the pointwise criterion for adjunctions
+from <a class="source-reference" data-label="lem:Pointwise_Criterion_Adjunctions" href="../../../entry/assembly-of-pointwise-adjoint-objects/index.html#lem:Pointwise_Criterion_Adjunctions">Lemma 21.1.4</a>.                                                                                                                                                   □
+</p>
+</div></div>
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1009r5'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 23.1.5.</span>  </span><span id='cor:Cocartesian_Lift_Functorial'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(p\colon E \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a cocartesian fibration. Then the cocartesian lifts assemble into a left
+adjoint </span>\[ \lift \colon \Ar (C) \times _{s, C, p} E \xrightarrow {\,\,\,} \Ar (E), \qquad (f,e) \mapsto (\phi \colon e \to f_!e) \] <span class='ntx-Italic-tlf-t1-x-x-109'>to the functor from </span><a class="source-reference" data-label="lem:Cocartesian_Lifts_As_Left_Adjoint_Objects" href="../../../entry/cocartesian-lifts-as-left-adjoint-objects/index.html#lem:Cocartesian_Lifts_As_Left_Adjoint_Objects">Lemma 23.1.2</a><span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cocartesian-fibrations-and-unstraightening-section-01-11" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cocartesian-fibrations-and-unstraightening-section-01-11">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Apply <a class="source-reference" data-label="prop:Partial_Cocartesian_Lifts_Functorial" href="../../../entry/functoriality-of-partial-cocartesian-lifts/index.html#prop:Partial_Cocartesian_Lifts_Functorial">Proposition 23.1.4</a> with \(W=\Ar (C)\).                                                                                                                          □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1010r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 23.1.6.</span>  </span><span id='cor:Cocartesian_Transport_Functor'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(p\colon E \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a cocartesian fibration, and let</span> \(f\colon x \to y\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a morphism in</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then cocartesian
+transport assembles into a functor</span> \(f_!\colon E_x \to E_y\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cocartesian-fibrations-and-unstraightening-section-01-10" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cocartesian-fibrations-and-unstraightening-section-01-10">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We may obtain \(f_!\) by restricting the functor \(\lift \) from the previous corollary.                               □
+</p>
+</div></div>
+<p class='noindent'>We may also deduce the uniqueness of cocartesian lifts:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1011r7'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 23.1.7 </span>(Uniqueness of cocartesian lifts)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Strong_Unicity_Cocartesian_Lifts'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>For  a  functor</span>  \(p\colon E \to C\)<span class='ntx-Italic-tlf-t1-x-x-109'>,  consider  the  full  subcategory  </span>\[ \Ar ^{\textup {cocart}}(E) \subseteq \Ar (E) \]
+<span class='ntx-Italic-tlf-t1-x-x-109'>spanned by the</span> \(p\)<span class='ntx-Italic-tlf-t1-x-x-109'>-cocartesian morphisms. The functor </span>\[ \Ar ^{\textup {cocart}}(E) \to \Ar (C) \times _{s,C,p} E , \quad (\phi \colon e \to e') \mapsto (p\phi , e) \] <span class='ntx-Italic-tlf-t1-x-x-109'>is fully faithful. It is an equivalence if and only
+if</span> \(p\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a cocartesian fibration.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cocartesian-fibrations-and-unstraightening-section-01-9" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cocartesian-fibrations-and-unstraightening-section-01-9">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Set \(B:=\Ar (C)\times _{s,C,p}E\), and let \(B^{\mathrm {lift}}\subseteq B\) be the full subcategory spanned by the pairs \((f,e)\) that admit a cocartesian lift. By
+<a class="source-reference" data-label="lem:Cocartesian_Lifts_As_Left_Adjoint_Objects" href="../../../entry/cocartesian-lifts-as-left-adjoint-objects/index.html#lem:Cocartesian_Lifts_As_Left_Adjoint_Objects">Lemma 23.1.2</a>, <a class="source-reference" data-label="lem:Pointwise_Criterion_Adjunctions" href="../../../entry/assembly-of-pointwise-adjoint-objects/index.html#lem:Pointwise_Criterion_Adjunctions">Lemma 21.1.4</a>, these lifts assemble into a left adjoint \[ L\colon B^{\mathrm {lift}}\longrightarrow \Ar (E)\times _B B^{\mathrm {lift}} \] to the projection. Its unit is an equivalence, so \(L\) is fully
+faithful. Its essential image is precisely \(\Ar ^{\textup {cocart}}(E)\), since the cocartesian arrows are exactly the left adjoint
+objects described in <a class="source-reference" data-label="lem:Cocartesian_Lifts_As_Left_Adjoint_Objects" href="../../../entry/cocartesian-lifts-as-left-adjoint-objects/index.html#lem:Cocartesian_Lifts_As_Left_Adjoint_Objects">Lemma 23.1.2</a>. Thus the displayed functor identifies with the inclusion \(B^{\mathrm {lift}}\hookrightarrow B\). It is therefore fully
+faithful, and it is an equivalence precisely when every pair \((f,e)\) admits a cocartesian lift.                      □
+</p>
+</div></div>
+<p class='noindent'>The definition of cocartesian fibrations may be dualized:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1012r8'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/cartesian-morphisms-and-fibrations/index.html" aria-label="Definition 23.1.8., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 23.1.8.</span></a>  </span><span id='def:Cartesian_Morphism_And_Fibration'></span> For a functor \(p\colon E \to C\), we say that a morphism \(\phi \colon e \to e'\) in \(E\) is \(p\)<span class='ntx-Italic-tlf-t1-x-x-109'>-cartesian </span>if for every third object \(e''\) in
+\(E\) the commutative square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-7bfe9e4485cb.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>is a pullback square. We say \(p\) is a <span class='ntx-Italic-tlf-t1-x-x-109'>cartesian fibration </span>if for every morphism
+\(f\colon x \to y\) and every \(e' \in E_y\) there exists a \(p\)-cartesian lift \(\phi \colon e \to e'\) of \(f\). We similarly obtain a notion of a <span class='ntx-Italic-tlf-t1-x-x-109'>cartesian functor over</span>
+\(C\), and this leads to a (non-full) subcategory \[ \Cart (C) \subseteq (\Cat _{\infty })_{/C}. \]</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1013r9'></a>
+<a class="entry-heading-link" href="../../../entry/cartesian-fibrations-via-opposites/index.html" aria-label="Remark 23.1.9., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 23.1.9.</span></a>  </span><span id='rmk:Cartesian_Fibrations_Via_Opposites'></span> Note that a functor \(p\colon E \to C\) is a cartesian fibration if and only if its opposite \(p\catop \colon E\catop \to C\catop \) is a cocartesian
+fibration. All properties about cocartesian fibrations have dual analogues for cartesian fibrations; we
+will generally not spell these out explicitly.
+</p>
+</div>
+<p class='noindent'>Let us go through a basic example of a (co)cartesian fibration to see these definitions in action:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1014r10'></a>
+<a class="entry-heading-link" href="../../../entry/source-and-target-fibrations-of-arrow-categories/index.html" aria-label="Example 23.1.10., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 23.1.10.</span></a>  </span><span id='ex:Target_Functor_Cocartesian'></span> Let \(C\) be an \(\infty \)-category, let \(E := \Ar (C)\) be its arrow category, and consider the target functor \(p := t\colon \Ar (C) \to C\). An
+object of \(E\) is given by a morphism in \(C\), which for emphasis we will write vertically: \(\smash {\pvto {X}{Y}}\). A morphism \(\phi \colon \smash {\pvto {X}{Y}} \to \smash {\pvto {X'}{Y'}}\) in \(E\) is given
+by a commutative square in \(C\) of the form</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-37ad15e1b6f2.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>We claim:</p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'>The morphism \(\phi \) in \(E\) is \(p\)-cocartesian if and only if \(g\) is an isomorphism. In particular, \(t\) is <span class='ntx-Italic-tlf-t1-x-x-109'>always </span>a
+     cocartesian fibration: given \(e = \pvto {X}{Y}\) and \(f \colon p(\pvto {X}{Y}) = Y \to Y'\) we may always form the square with \(X' := X\) and \(g = \id _X\).
+                                                                                   
+                                                                                   
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'>The morphism \(\phi \) in \(E\) is \(p\)-cartesian if and only if the square is a pullback square (a.k.a. a <span class='ntx-Italic-tlf-t1-x-x-109'>cartesian</span>
+     square). In particular, \(t\) is a cartesian fibration if and only if \(C\) admits pullbacks.</p></dd></dl>
+<p class='noindent'>Indeed, claim (1) translates the defining universal property of a cocartesian morphism into the following
+lifting property: for every third object \(\smash {\pvto {X''}{Y''}}\) of \(E\) and every solid diagram below, there exists a unique dashed arrow
+making the diagram commute:
+</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-f16e20442625.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>If \(g\) is an isomorphism, we may invert it and the dashed filler is unique. Conversely, if \(\phi \) is \(p\)-cocartesian,
+then by taking \(X'' = X\) we obtain a morphism \(g' \colon X' \to X\) satisfying \(g' g \cong \id _X\), and by taking \(X'' = X'\) we use uniqueness to obtain
+\(gg' \cong \id _{X'}\).</p><p class='noindent'>Similarly, claim (2) translates the defining universal property of a cartesian morphism into the existence of
+a unique dashed arrow in every solid diagram of the following form:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-52b7d2164e61.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>This is precisely the universal
+property of the original square being a pullback square. Passing to opposite categories shows dually that the
+source functor \(s\colon \Ar (C)\to C\) is always a cartesian fibration, and that it is also a cocartesian fibration if and only if \(C\) admits
+pushouts.</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1017r11'></a>
+<a class="entry-heading-link" href="../../../entry/vector-bundles-form-a-cartesian-fibration/index.html" aria-label="Example 23.1.11., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 23.1.11.</span></a>  </span><span id='ex:Vector_Bundles_Cartesian_Fibration'></span> The forgetful functor \(\mathrm {VectBund} \to \Top , (X,E) \mapsto X\) is a cartesian fibration. See <span class="source-reference" data-label="exercise:Vector_Bundle_Cartesian_Fibration">Chapterexercise 23.1</span> for details.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1018r12'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 23.1.12.</span>  </span><span id='lem:Cocartesian_Fibrations_Closed_Under_Pullback'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The following closure properties hold for cocartesian fibrations.</span>
+                                                                                   
+
+                                                                                   
+   </p><dl class='enumerate'><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(1)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(q\colon E\to D\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(p\colon D\to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>are cocartesian fibrations, then</span> \(pq\colon E\to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a cocartesian fibration, and</span> \(q\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a cocartesian functor
+   over</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(2)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Consider a pullback square </span></p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-4be45aab82bd.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(p\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a cocartesian fibration, then so is</span> \(p'\)<span class='ntx-Italic-tlf-t1-x-x-109'>, and a morphism in</span> \(E'\) <span class='ntx-Italic-tlf-t1-x-x-109'>is</span>
+   \(p'\)<span class='ntx-Italic-tlf-t1-x-x-109'>-cocartesian if and only if its image under</span> \(F\) <span class='ntx-Italic-tlf-t1-x-x-109'>is</span> \(p\)<span class='ntx-Italic-tlf-t1-x-x-109'>-cocartesian.</span></p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cocartesian-fibrations-and-unstraightening-section-01-8" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cocartesian-fibrations-and-unstraightening-section-01-8">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> For part (1), pick a cocartesian lift along \(p\) of a morphism in \(C\), and then a further cocartesian
+lift  along  \(q\).  The  two  defining  pullback  squares  paste  to  show  that  the  resulting  morphism  in  \(E\)  is
+\(pq\)-cocartesian. This proves that \(pq\) is a cocartesian fibration. By <a class="source-reference" data-label="lem:Strong_Unicity_Cocartesian_Lifts" href="../../../entry/uniqueness-of-cocartesian-lifts/index.html#lem:Strong_Unicity_Cocartesian_Lifts">Lemma 23.1.7</a>, every \(pq\)-cocartesian lift is isomorphic to
+one constructed in this way, so \(q\) carries it to a \(p\)-cocartesian morphism.
+</p><p class='noindent'>For part (2), a \(p\)-cocartesian lift of the image in \(C\) of a morphism in \(C'\) determines a morphism in the
+pullback \(E'\). The universal property of the pullback identifies its defining cocartesian square with the
+base change of the corresponding square for \(p\), so this morphism is \(p'\)-cocartesian. Hence \(p'\) is a cocartesian
+fibration. The same argument proves that every morphism whose image under \(F\) is \(p\)-cocartesian is
+\(p'\)-cocartesian; the converse follows from uniqueness of cocartesian lifts.                                           □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1021r13'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 23.1.13.</span>  </span><span id='lem:Projection_Map_Cocartesian'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(C \to *\) <span class='ntx-Italic-tlf-t1-x-x-109'>is both a cartesian and cocartesian fibration. Consequently, every
+projection functor</span> \(\pr _D\colon C \times D \to D\) <span class='ntx-Italic-tlf-t1-x-x-109'>is both a cartesian and cocartesian fibration, and a morphism</span> \((f\colon c \to c', g\colon d \to d')\) <span class='ntx-Italic-tlf-t1-x-x-109'>is</span> \(\pr _D\)<span class='ntx-Italic-tlf-t1-x-x-109'>-cocartesian or</span>
+\(\pr _D\)<span class='ntx-Italic-tlf-t1-x-x-109'>-cartesian if and only if</span> \(f\) <span class='ntx-Italic-tlf-t1-x-x-109'>is an isomorphism.</span>
+                                                                                   
+
+                                                                                   
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cocartesian-fibrations-and-unstraightening-section-01-7" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cocartesian-fibrations-and-unstraightening-section-01-7">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  The  unique  morphism  in  \(*\)  has  identity  lifts.  The  assertion  for  \(\pr _D\)  follows  by  pulling  this
+fibration back along \(D\to *\). Using the product formula for hom animae in the defining pullback square,
+the cocartesian or cartesian condition reduces to requiring that precomposition or postcomposition
+with \(f\) induce equivalences on all hom animae of \(C\). By the Yoneda lemma, this holds if and only if \(f\) is
+invertible.                                                                                                                                            □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1022r14'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 23.1.14 </span>(Right cancellation of cocartesian morphisms)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Cancellation_Cocartesian_Morphisms'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(p\colon E \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a functor and let</span> \(f\colon x \to y\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(g\colon y \to z\) <span class='ntx-Italic-tlf-t1-x-x-109'>be
+morphisms in</span> \(E\) <span class='ntx-Italic-tlf-t1-x-x-109'>such that</span> \(f\) <span class='ntx-Italic-tlf-t1-x-x-109'>is</span> \(p\)<span class='ntx-Italic-tlf-t1-x-x-109'>-cocartesian. Then</span> \(g\) <span class='ntx-Italic-tlf-t1-x-x-109'>is</span> \(p\)<span class='ntx-Italic-tlf-t1-x-x-109'>-cocartesian if and only if</span> \(gf\) <span class='ntx-Italic-tlf-t1-x-x-109'>is</span> \(p\)<span class='ntx-Italic-tlf-t1-x-x-109'>-cocartesian.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cocartesian-fibrations-and-unstraightening-section-01-6" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cocartesian-fibrations-and-unstraightening-section-01-6">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  For  every  other  object  \(w \in E\),  we  consider  the  following  commutative  diagram:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-320607a92bc4.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Since  \(f\)  is
+\(p\)-cocartesian,  the  right  square  is  a  pullback  square.  It  follows  from  the  pasting  law  for  pullback
+squares that the left square is a pullback if and only if the outer square is a pullback. This proves the
+                                                                                   
+                                                                                   
+claim.                                                                                                                                                   □</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1023r15'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 23.1.15.</span>  </span><span id='lem:Cocartesian_Morphism_Isomorphism'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(p\colon E \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a functor and let</span> \(\phi \colon e \to e'\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a</span> \(p\)<span class='ntx-Italic-tlf-t1-x-x-109'>-cocartesian morphism. Then</span> \(\phi \) <span class='ntx-Italic-tlf-t1-x-x-109'>is an isomorphism
+if and only if</span> \(p(\phi )\) <span class='ntx-Italic-tlf-t1-x-x-109'>is an isomorphism.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cocartesian-fibrations-and-unstraightening-section-01-5" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cocartesian-fibrations-and-unstraightening-section-01-5">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  Only  the  converse  requires  proof.  Suppose  that  \(p(\phi )\)  is  invertible.  Cocartesianness  provides
+a  morphism  \(\psi \colon e'\to e\)  over  \(p(\phi )^{-1}\)  satisfying  \(\psi \phi \cong \id _e\).  The  morphisms  \(\phi \psi \)  and  \(\id _{e'}\)  have  the  same  image  in  \(C\)  and  agree  after
+precomposition with \(\phi \). The defining universal property of \(\phi \) therefore gives \(\phi \psi \cong \id _{e'}\), so \(\phi \) is invertible.            □
+</p>
+</div></div>
+
+<h4 class='subsectionHead' id='left-and-right-fibrations'><span class='titlemark'>23.1.1    </span> <a id='x1-200023.1.1'></a>Left and right fibrations</h4>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r16'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 23.1.16.</span>  </span><span id='prop:Characterization_Left_Fibrations'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(p\colon E \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a cocartesian fibration. Then the following three conditions are
+equivalent:</span>
+   </p><dl class='enumerate'><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(1)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(p\) <span class='ntx-Italic-tlf-t1-x-x-109'>is conservative, i.e., a morphism</span> \(f\) <span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(E\) <span class='ntx-Italic-tlf-t1-x-x-109'>is an isomorphism as soon as</span> \(p(f)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is an isomorphism
+   in</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>;</span>
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(2)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For each</span> \(x \in C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the fiber</span> \(E_x := \{x\} \times _C E\) <span class='ntx-Italic-tlf-t1-x-x-109'>is an anima;</span>
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(3)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Every morphism in</span> \(E\) <span class='ntx-Italic-tlf-t1-x-x-109'>is</span> \(p\)<span class='ntx-Italic-tlf-t1-x-x-109'>-cocartesian.</span></p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cocartesian-fibrations-and-unstraightening-section-01-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cocartesian-fibrations-and-unstraightening-section-01-4">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> It is clear that (1) implies (2): every morphism in the fiber \(E_x\) is sent to the identity morphism
+\(\id _x\), hence is an isomorphism by conservativity of \(p\).
+</p><p class='noindent'>Assuming (2), consider a morphism \(\psi \colon e \to e''\) in \(E\). We need to show that \(\psi \) is \(p\)-cocartesian. Since \(p\) is a cocartesian
+fibration, there exists a \(p\)-cocartesian morphism \(\phi \colon e \to e'\) lifting \(p(\psi )\). Since \(\phi \) is \(p\)-cocartesian, there then exists a
+unique morphism \(\xi \colon e' \to e''\) fitting in the following commutative diagram lifting the degenerate one in \(C\):</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-0688253e238e.svg" alt="Commutative diagram generated from the LaTeX source"></figure><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-63ed9af3bdf4.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>But
+then the morphism \(\xi \) lies in the fiber \(E_{pe''}\), which is an anima, so \(\xi \) is an isomorphism. In particular \(\xi \) is
+\(p\)-cocartesian, and hence so is \(\psi = \xi \circ \phi \).</p><p class='noindent'>Finally, assume that (3) holds, and consider a morphism \(\phi \colon e \to e'\) in \(E\) such that \(p\phi \) is invertible. We need to
+show that \(\phi \) is invertible. By assumption, there is an inverse \(g\colon pe' \to pe\) of \(p \phi \). We may then find a \(p\)-cocartesian
+lift \(\psi \colon e' \to e''\) of \(g\). But then \(\phi \circ \psi \) and \(\psi \circ \phi \) are cocartesian lifts of the respective identity maps on \(pe\) and \(pe'\). By uniqueness
+of cocartesian lifts (<a class="source-reference" data-label="lem:Strong_Unicity_Cocartesian_Lifts" href="../../../entry/uniqueness-of-cocartesian-lifts/index.html#lem:Strong_Unicity_Cocartesian_Lifts">Lemma 23.1.7</a>) these composites are isomorphisms. It follows that \(\phi \) is an isomorphism with
+inverse \(\psi \).                                                                                                                                               □
+                                                                                   
+                                                                                   
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2005r17'></a>
+<a class="entry-heading-link" href="../../../entry/left-fibrations/index.html" aria-label="Definition 23.1.17., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 23.1.17.</span></a>  </span><span id='def:Left_Fibration'></span> A functor \(p\colon E \to C\) is called a <span class='ntx-Italic-tlf-t1-x-x-109'>left fibration </span>if it is a cocartesian fibration satisfying the
+equivalent conditions (1), (2) and (3) from the proposition. This gives rise to a full subcategory \[ \LFib (C) \subseteq \Cocart (C). \]
+Note that \(\LFib (C)\) is also a full subcategory of \((\Cat _{\infty })_{/C}\) (in contrast to \(\Cocart (C)\)).
+</p><p class='noindent'>Dually, \(p\) is called a <span class='ntx-Italic-tlf-t1-x-x-109'>right fibration </span>if it is a cartesian fibration which satisfies the equivalent conditions
+(1), (2) and (3’): Every morphism in \(E\) is cartesian. We write \(\RFib (C) \subseteq (\Cat _{\infty })_{/C}\) for the resulting full subcategory.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2006r18'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 23.1.18.</span>  </span><span id='lem:Left_Fibrations_Closed_Under_Pullback'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Left fibrations are closed under composition and pullback.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cocartesian-fibrations-and-unstraightening-section-01-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cocartesian-fibrations-and-unstraightening-section-01-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Follows from <a class="source-reference" data-label="lem:Cocartesian_Fibrations_Closed_Under_Pullback" href="../../../entry/pullbacks-of-cocartesian-fibrations/index.html#lem:Cocartesian_Fibrations_Closed_Under_Pullback">Lemma 23.1.12</a>.                                                                                                                        □
+</p>
+</div></div>
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2007r19'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 23.1.19.</span>  </span><span id='prop:Slice_Categories_Left_Fibration'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category. For every object</span> \(x \in C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the functor</span> \(t\colon C_{x/} \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>sending a morphism</span> \(x \to y\) <span class='ntx-Italic-tlf-t1-x-x-109'>to
+its target</span> \(y\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a left fibration. Dually, the source functor</span> \(s\colon C_{/x} \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a right fibration.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cocartesian-fibrations-and-unstraightening-section-01-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cocartesian-fibrations-and-unstraightening-section-01-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We prove the case for \(t\colon C_{x/} \to C\); the other case is dual. Consider a morphism in \(C_{x/}\), which takes the
+form of a commutative triangle</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-b073e254bdd7.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>To show that this morphism is cocartesian with respect to the target
+functor \(t\colon C_{x/} \to C\), we have to show that for every third object \(x \to w\), the top square in the following commutative
+diagram is a pullback square:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-ffd1e7cf845f.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>But this follows from the pasting law for pullback squares, since the
+bottom square and left/right faces are pullback squares.                                                                    □</p>
+</div></div>
+
+<h4 class='subsectionHead' id='adjunctions'><span class='titlemark'>23.1.2    </span> <a id='x1-300023.1.2'></a>Adjunctions</h4>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3001r20'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 23.1.20.</span>  </span><span id='lem:Cocartesian_Fibration_Is_Fibration'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(p\colon E \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a cocartesian fibration. Then the following conditions are equivalent:</span>
+                                                                                   
+
+                                                                                   
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(p\) <span class='ntx-Italic-tlf-t1-x-x-109'>is also a cartesian fibration.</span>
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For every morphism</span> \(f\colon X \to Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the cocartesian transport functor</span> \(f_!\colon E_X \to E_Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a right adjoint</span> \(f^*\colon E_Y \to E_X\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cocartesian-fibrations-and-unstraightening-section-01-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cocartesian-fibrations-and-unstraightening-section-01-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The cartesian lift of \(f\colon X\to Y\) ending at \(\widetilde {Y}\in E_Y\) is obtained by composing the cocartesian lift \(f^*\widetilde {Y}\to f_!f^*\widetilde {Y}\) with the counit
+\(f_!f^*\widetilde {Y}\to \widetilde {Y}\). The universal property, as well as the converse construction of the adjunction from cartesian lifts,
+is proved in <span class="source-reference" data-label="sct-prop:Cocartesian_Fibration_Also_Cartesian_Fibration">Reference ?</span> of <span class='citation'>[Cisinski et al. (2026)]</span>.                                                                                                                                  □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3004r21'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 23.1.21.</span>  </span><span id='cor:Adjoint_Iff_Unstraightening_Is_Cartesian'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(F\colon C \to D\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a functor between small</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories, encoded by a morphism</span> \([1] \to \Cat _{\infty }\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Let</span> \(E \to [1]\) <span class='ntx-Italic-tlf-t1-x-x-109'>be the
+cocartesian unstraightening of this functor. Then</span> \(F\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a right adjoint if and only if the cocartesian
+fibration</span> \(E \to [1]\) <span class='ntx-Italic-tlf-t1-x-x-109'>is also a cartesian fibration.                                                                                                □</span>
+</p>
+</div>
+
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../../presentable-infinity-categories/presentably-symmetric-monoidal-categories/index.html" aria-label="Previous section: Presentably symmetric monoidal categories" title="Previous section: Presentably symmetric monoidal categories"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../straightening-unstraightening/index.html" aria-label="Next section: Straightening/unstraightening" title="Next section: Straightening/unstraightening"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html" aria-current="page"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/adjunctions/index.html"><span class="context-entry-heading">Chapter 21</span><span class="context-entry-title">Adjunctions</span></a></li><li><a href="../../../chapter/presentable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 22</span><span class="context-entry-title">Presentable ∞-categories</span></a></li><li><a href="../../../chapter/cocartesian-fibrations-and-unstraightening/index.html" aria-current="page"><span class="context-entry-heading">Chapter 23</span><span class="context-entry-title">Cocartesian fibrations and (un)straightening</span></a></li><li><a href="../../../chapter/complete-segal-animae/index.html"><span class="context-entry-heading">Chapter 24</span><span class="context-entry-title">Complete Segal animae</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 23.1</span><span class="context-entry-title">Cartesian and cocartesian fibrations</span></a></li><li><a href="../straightening-unstraightening/index.html"><span class="context-entry-heading">Section 23.2</span><span class="context-entry-title">Straightening/unstraightening</span></a></li><li><a href="../fiberwise-criteria/index.html"><span class="context-entry-heading">Section 23.3</span><span class="context-entry-title">Fiberwise criteria</span></a></li><li><a href="../the-hom-functor/index.html"><span class="context-entry-heading">Section 23.4</span><span class="context-entry-title">The Hom-functor</span></a></li><li><a href="../limits-and-colimits-of-categories/index.html"><span class="context-entry-heading">Section 23.5</span><span class="context-entry-title">Limits and colimits of ∞-categories</span></a></li><li><a href="../hom-animae-in-functor-categories/index.html"><span class="context-entry-heading">Section 23.6</span><span class="context-entry-title">Hom animae in functor categories</span></a></li><li><a href="../descent-and-topoi/index.html"><span class="context-entry-heading">Section 23.7</span><span class="context-entry-title">Descent and ∞-topoi</span></a></li><li><a href="../exponentiability-of-cartesian-fibrations/index.html"><span class="context-entry-heading">Section 23.8</span><span class="context-entry-title">Exponentiability of cartesian fibrations</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Cocartesian_Fibration"><span class="context-entry-heading">Definition 23.1.1</span><span class="context-entry-title">definition</span></a></li><li><a href="#lem:Cocartesian_Lifts_As_Left_Adjoint_Objects"><span class="context-entry-heading">Lemma 23.1.2</span><span class="context-entry-title">lemma</span></a></li><li><a href="#nota:Cocartesian_Transport"><span class="context-entry-heading">Notation 23.1.3</span><span class="context-entry-title">notation</span></a></li><li><a href="#prop:Partial_Cocartesian_Lifts_Functorial"><span class="context-entry-heading">Proposition 23.1.4</span><span class="context-entry-title">Functoriality of partial cocartesian lifts</span></a></li><li><a href="#cor:Cocartesian_Lift_Functorial"><span class="context-entry-heading">Corollary 23.1.5</span><span class="context-entry-title">corollary</span></a></li><li><a href="#cor:Cocartesian_Transport_Functor"><span class="context-entry-heading">Corollary 23.1.6</span><span class="context-entry-title">corollary</span></a></li><li><a href="#lem:Strong_Unicity_Cocartesian_Lifts"><span class="context-entry-heading">Lemma 23.1.7</span><span class="context-entry-title">Uniqueness of cocartesian lifts</span></a></li><li><a href="#def:Cartesian_Morphism_And_Fibration"><span class="context-entry-heading">Definition 23.1.8</span><span class="context-entry-title">definition</span></a></li><li><a href="#rmk:Cartesian_Fibrations_Via_Opposites"><span class="context-entry-heading">Remark 23.1.9</span><span class="context-entry-title">remark</span></a></li><li><a href="#ex:Target_Functor_Cocartesian"><span class="context-entry-heading">Example 23.1.10</span><span class="context-entry-title">example</span></a></li><li><a href="#ex:Vector_Bundles_Cartesian_Fibration"><span class="context-entry-heading">Example 23.1.11</span><span class="context-entry-title">example</span></a></li><li><a href="#lem:Cocartesian_Fibrations_Closed_Under_Pullback"><span class="context-entry-heading">Lemma 23.1.12</span><span class="context-entry-title">lemma</span></a></li><li><a href="#lem:Projection_Map_Cocartesian"><span class="context-entry-heading">Lemma 23.1.13</span><span class="context-entry-title">lemma</span></a></li><li><a href="#lem:Cancellation_Cocartesian_Morphisms"><span class="context-entry-heading">Lemma 23.1.14</span><span class="context-entry-title">Right cancellation of cocartesian morphisms</span></a></li><li><a href="#lem:Cocartesian_Morphism_Isomorphism"><span class="context-entry-heading">Lemma 23.1.15</span><span class="context-entry-title">lemma</span></a></li><li><a href="#prop:Characterization_Left_Fibrations"><span class="context-entry-heading">Proposition 23.1.16</span><span class="context-entry-title">proposition</span></a></li><li><a href="#def:Left_Fibration"><span class="context-entry-heading">Definition 23.1.17</span><span class="context-entry-title">definition</span></a></li><li><a href="#lem:Left_Fibrations_Closed_Under_Pullback"><span class="context-entry-heading">Lemma 23.1.18</span><span class="context-entry-title">lemma</span></a></li><li><a href="#prop:Slice_Categories_Left_Fibration"><span class="context-entry-heading">Proposition 23.1.19</span><span class="context-entry-title">proposition</span></a></li><li><a href="#lem:Cocartesian_Fibration_Is_Fibration"><span class="context-entry-heading">Lemma 23.1.20</span><span class="context-entry-title">lemma</span></a></li><li><a href="#cor:Adjoint_Iff_Unstraightening_Is_Cartesian"><span class="context-entry-heading">Corollary 23.1.21</span><span class="context-entry-title">corollary</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

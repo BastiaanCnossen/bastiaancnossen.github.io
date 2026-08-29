@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 8.3: Eilenberg–MacLane ring spectra and DGAs | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/stable-homotopy-theory/index.html">Part I</a> · <a href="../../../chapter/ring-spectra-and-modules/index.html">Chapter 8</a> · Section 8.3</p>
+      <h1>Eilenberg–MacLane ring spectra and DGAs</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Eilenberg_MacLane_Ring_Spectra_DGAs'>This section explains how ordinary rings and differential graded algebras give rise to ring spectra. We begin
+with the Eilenberg–MacLane functor, using the symmetric monoidality of \(\pi _0\) to obtain the required
+multiplicative structure.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 8.3.1.</span>  </span><span id='cor:Eilenberg_MacLane_Ring_Spectra_Direct'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The Eilenberg–MacLane functor</span> \(H\colon \Ab \longrightarrow \Sp _{\geq 0}\) <span class='ntx-Italic-tlf-t1-x-x-109'>is canonically lax symmetric monoidal, hence
+induces functors </span>\[ H\colon \Alg (\Ab )\longrightarrow \Alg (\Sp ) \qquadtext {and} H\colon \CAlg (\Ab )\longrightarrow \CAlg (\Sp ). \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-ring-spectra-and-modules-section-03-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-ring-spectra-and-modules-section-03-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  Since  \(H\)  is  right  adjoint  to  the  symmetric  monoidal  functor  \(\pi _0\colon \Sp _{\geq 0} \to \Ab \),  it  follows  from  <a class="source-reference" data-label="prop:Adjoint_To_SymMon_Functor" href="../../../entry/adjoint-to-symmon-functor/index.html#prop:Adjoint_To_SymMon_Functor">Proposition 14.3.6</a>  that  \(H\)  is
+canonically lax symmetric monoidal. Every lax symmetric monoidal functor preserves associative
+and commutative algebra objects, as does the symmetric monoidal inclusion \(\Sp _{\geq 0}\hookrightarrow \Sp \).                                 □
+</p>
+</div></div>
+<p class='noindent'>Thus every ordinary associative ring \(A\) determines an associative ring spectrum \(HA\), and every ordinary
+commutative ring \(A\) determines a commutative ring spectrum \(HA\). In either case, the underlying spectrum is the
+Eilenberg–MacLane spectrum from <a class="source-reference" data-label="def:Eilenberg_MacLane_Spectrum" href="../../../entry/eilenberg-maclane-spectra-of-chain-complexes/index.html#def:Eilenberg_MacLane_Spectrum">Definition 6.2.1</a>.
+                                                                                   
+                                                                                   
+</p><p class='noindent'>To incorporate differential graded algebras, we pass through the derived \(\infty \)-category. Let \(R\) be a commutative
+ring. The derived tensor product equips \(\D (R)\) with a symmetric monoidal structure \[ -\otimes _R^{\bL }-\colon \D (R)\times \D (R)\longrightarrow \D (R) \] whose monoidal unit is \(R[0]\). The
+\(\infty \)-category \(\D (R)\) is stable and cocomplete, and the derived tensor product preserves colimits separately in both
+variables. In <a class="source-reference" data-label="prop:Symmetric_Monoidal_Derived_Category" href="../../../entry/symmetric-monoidal-derived-category/index.html#prop:Symmetric_Monoidal_Derived_Category">Proposition 20.2.2</a> we construct this symmetric monoidal structure as a monoidal Dwyer–Kan localization of \(\Ch (R)\). Its
+compact objects are the perfect complexes, and <a class="source-reference" data-label="cor:Derived_Category_Ind_Perfect" href="../../../entry/derived-category-ind-perfect/index.html#cor:Derived_Category_Ind_Perfect">Corollary 20.2.5</a> gives an equivalence \[ \D (R)\simeq \Ind (\Perf (R)). \] In particular, \(\D (R)\) is presentable by
+<a class="source-reference" data-label="prop:Ind_Of_Finite_Colimit_Category_Presentable" href="../../../entry/presentability-of-ind-completions/index.html#prop:Ind_Of_Finite_Colimit_Category_Presentable">Proposition 22.3.6</a>.
+</p><p class='noindent'>We can therefore form the \(\infty \)-categories \[ \Alg (\D (R)) \qquad \text {and}\qquad \CAlg (\D (R)) \] of associative and commutative algebra objects in \(\D (R)\). These objects
+should be thought of as derived associative and commutative \(R\)-algebras. One source of such objects is
+provided by differential graded algebras.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1002r2'></a>
+<a class="entry-heading-link" href="../../../entry/differential-graded-algebras/index.html" aria-label="Definition 8.3.2, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 8.3.2 </span></a>(Differential graded algebra)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Differential_Graded_Algebra'></span>   Let   \(R\)   be   a   commutative   ring.   An   <span class='ntx-Italic-tlf-t1-x-x-109'>associative
+differential  graded</span>  \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-algebra</span>,  or  <span class='ntx-Italic-tlf-t1-x-x-109'>associative  DGA  over</span>  \(R\),  is  an  associative  algebra  object  in  the
+symmetric monoidal category \(\Ch (R)\) of chain complexes of \(R\)-modules. Concretely, it consists of a chain
+complex \(A_\bullet \), a unit \(R[0]\to A_\bullet \), and an associative multiplication \[ A_p\otimes _R A_q\longrightarrow A_{p+q},\qquad x\otimes y\longmapsto xy, \] which satisfies the Leibniz rule \[ d(xy)=d(x)y+(-1)^p x d(y) \] for homogeneous
+\(x\in A_p\) and \(y\in A_q\).
+</p><p class='noindent'>A <span class='ntx-Italic-tlf-t1-x-x-109'>commutative DGA over</span> \(R\) is a commutative algebra object in \(\Ch (R)\). Equivalently, it is an associative DGA
+whose multiplication is graded commutative: \[ xy=(-1)^{pq}yx \] for homogeneous \(x\in A_p\) and \(y\in A_q\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1003r3'></a>
+<a class="entry-heading-link" href="../../../entry/examples-of-differential-graded-algebras/index.html" aria-label="Example 8.3.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 8.3.3.</span></a>  </span><span id='ex:Examples_Differential_Graded_Algebras'></span> Every associative \(R\)-algebra \(A\) defines an associative DGA \(A[0]\) concentrated in degree
+\(0\). If \(A\) is commutative, then \(A[0]\) is a commutative DGA. As an example with non-zero differential, let
+\(a\in R\) and consider the Koszul DGA \[ K_R(a):=(\Lambda _R(e),d),\qquad |e|=1,\quad d(e)=a. \] Here \(\Lambda _R(e)\) denotes the exterior algebra on one generator, so this is a
+commutative DGA in homological degrees \(1\) and \(0\).
+</p>
+                                                                                   
+                                                                                   
+</div>
+<p class='noindent'>In Part II we show that the localization functor \(\gamma \colon \Ch (R)\to \D (R)\) admits a lax symmetric monoidal refinement (<a class="source-reference" data-label="cor:Lax_Monoidal_Derived_Localization" href="../../../entry/lax-monoidal-derived-localization/index.html#cor:Lax_Monoidal_Derived_Localization">Corollary 20.2.4</a>). Since lax
+symmetric monoidal functors preserve algebra objects, it induces functors \[ \Alg (\Ch (R))\longrightarrow \Alg (\D (R)) \qquad \text {and}\qquad \CAlg (\Ch (R))\longrightarrow \CAlg (\D (R)). \] Thus every associative or
+commutative DGA determines a corresponding derived algebra. It is a somewhat surprising fact that the
+first functor is essentially surjective <span class='citation'>[Lurie (2017), Proposition 7.1.4.6]</span>, while the second one is so when \(R\) contains the field \(\Q \) of rational
+numbers <span class='citation'>[Lurie (2017), Proposition 7.1.4.11]</span>.
+</p><p class='noindent'>The universal property of the symmetric monoidal structure on spectra recalled in <a class="source-reference" data-label="ex:Example_Monoidal_Structures" href="../../../entry/examples-of-symmetric-monoidal-structures/index.html#ex:Example_Monoidal_Structures">Example 8.1.2</a> now produces a unique
+colimit-preserving symmetric monoidal functor \[ L_R\colon \Sp \longrightarrow \D (R). \] It sends the sphere spectrum to the monoidal unit \(R[0]\). Since \(\D (R)\)
+and \(\Sp \) are presentable, <a class="source-reference" data-label="thm:Adjoint_Functor_Theorem_Presentable" href="../../../entry/adjoint-functor-theorem-for-presentable-categories/index.html#thm:Adjoint_Functor_Theorem_Presentable">Theorem 22.2.5</a> gives a right adjoint to \(L_R\). The universal enrichment of stable \(\infty \)-categories in spectra
+identifies this right adjoint as \[ H_R\colon \D (R)\longrightarrow \Sp , \qquad H_R(A)=\hom _{\D (R)}(R[0],A). \] By <a class="source-reference" data-label="prop:Adjoint_To_SymMon_Functor" href="../../../entry/adjoint-to-symmon-functor/index.html#prop:Adjoint_To_SymMon_Functor">Proposition 14.3.6</a>, the right adjoint \(H_R\) has a canonical lax symmetric monoidal structure. It
+consequently induces functors \[ \Alg (\D (R))\longrightarrow \Alg (\Sp ) \qquad \text {and}\qquad \CAlg (\D (R))\longrightarrow \CAlg (\Sp ). \] For \(R=\Z \), the underlying functor of \(H_R\) is the Eilenberg–MacLane functor from <a class="source-reference" data-label="def:Eilenberg_MacLane_Spectrum" href="../../../entry/eilenberg-maclane-spectra-of-chain-complexes/index.html#def:Eilenberg_MacLane_Spectrum">Definition 6.2.1</a>,
+since both are defined by the formula \(A\mapsto \hom _{\D (\Z )}(\Z [0],A)\).
+</p><p class='noindent'>The following comparison is an application of the monogenic Morita theorem from Part II. This theorem
+identifies a stable category generated by its monoidal unit with modules over the endomorphism ring
+spectrum of that unit.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1004r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 8.3.4 </span>(Eilenberg–MacLane modules)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cor:Derived_Category_As_HR_Modules'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For every commutative ring</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>, there is a symmetric
+monoidal equivalence </span>\[ \D (R)\xrightarrow {\ \simeq \ }\Mod _{HR}(\Sp ). \] <span class='ntx-Italic-tlf-t1-x-x-109'>Under this equivalence, the functor</span> \(H_R=\hom _{\D (R)}(R[0],-)\) <span class='ntx-Italic-tlf-t1-x-x-109'>agrees with the forgetful functor</span> \(\Mod _{HR}\to \Sp \)<span class='ntx-Italic-tlf-t1-x-x-109'>, and
+the lax symmetric monoidal structure on</span> \(H_R\) <span class='ntx-Italic-tlf-t1-x-x-109'>sends the unit</span> \(R[0]\) <span class='ntx-Italic-tlf-t1-x-x-109'>to the Eilenberg–MacLane ring spectrum</span> \(HR\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>from </span><a class="source-reference" data-label="cor:Eilenberg_MacLane_Ring_Spectra_Direct" href="../../../entry/direct-eilenberg-maclane-ring-spectra/index.html#cor:Eilenberg_MacLane_Ring_Spectra_Direct">Corollary 8.3.1</a><span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-ring-spectra-and-modules-section-03-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-ring-spectra-and-modules-section-03-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Equip \(\D (R)\) with the symmetric monoidal structure of <a class="source-reference" data-label="prop:Symmetric_Monoidal_Derived_Category" href="../../../entry/symmetric-monoidal-derived-category/index.html#prop:Symmetric_Monoidal_Derived_Category">Proposition 20.2.2</a>. Its unit \(R[0]\) is a compact generator by <a class="source-reference" data-label="cor:Derived_Category_Ind_Perfect" href="../../../entry/derived-category-ind-perfect/index.html#cor:Derived_Category_Ind_Perfect">Corollary 20.2.5</a>.
+                                                                                   
+                                                                                   
+Moreover, \[ \pi _n\hom _{\D (R)}(R[0],R[0])\cong H_n(R[0]) \] by <a class="source-reference" data-label="cor:Projective_Objects_Corepresent_Homology" href="../../../entry/projective-objects-corepresent-homology/index.html#cor:Projective_Objects_Corepresent_Homology">Corollary 6.4.5</a>. This is \(R\) for \(n=0\) and zero otherwise. Thus the resulting commutative endomorphism
+ring spectrum is concentrated in degree \(0\). The adjunction \(\pi _0\colon \Sp _{\geq 0}\rightleftarrows \Ab \noloc H\) is symmetric monoidal by <a class="source-reference" data-label="prop:Pi_0_Strong_Symmetric_Monoidal" href="../../../entry/pi-zero-is-strong-symmetric-monoidal/index.html#prop:Pi_0_Strong_Symmetric_Monoidal">Proposition 8.2.6</a>, <a class="source-reference" data-label="cor:Eilenberg_MacLane_Ring_Spectra_Direct" href="../../../entry/direct-eilenberg-maclane-ring-spectra/index.html#cor:Eilenberg_MacLane_Ring_Spectra_Direct">Corollary 8.3.1</a>. The induced
+localization  of  commutative  algebras  from  Part II  (<a class="source-reference" data-label="ex:Monoidal_Localization_CAlg" href="../../../entry/monoidal-localization-calg/index.html#ex:Monoidal_Localization_CAlg">Example 14.5.5</a>),  together  with  the  fully  faithful  symmetric
+monoidal  inclusion  \(\Sp _{\geq 0}\hookrightarrow \Sp \),  identifies  commutative  ring  spectra  concentrated  in  degree  \(0\)  with  ordinary
+commutative rings. The multiplication on \(\pi _0\) of the endomorphism ring spectrum is composition of
+endomorphisms of \(R[0]\), hence the ordinary multiplication of \(R\). It is therefore the Eilenberg–MacLane
+ring spectrum \(HR\). The result now follows from <a class="source-reference" data-label="thm:Monogenic_Morita" href="../../../entry/monogenic-morita/index.html#thm:Monogenic_Morita">Theorem 19.5.6</a>. The description of \(H_R\) is built into the comparison functor
+in that theorem.                                                                                                                                   □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1005r5'></a>
+<a class="entry-heading-link" href="../../../entry/eilenberg-maclane-ring-spectra-of-dgas/index.html" aria-label="Definition 8.3.5, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 8.3.5 </span></a>(Eilenberg–MacLane ring spectrum)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Eilenberg_MacLane_Ring_Spectrum_Of_DGA'></span>   Let   \(A\)   be   an   associative   DGA   over   a
+commutative ring \(R\). Its <span class='ntx-Italic-tlf-t1-x-x-109'>Eilenberg–MacLane ring spectrum </span>is the associative ring spectrum \[ HA:=H_R(\gamma A)\in \Alg (\Sp ). \] If \(A\) is
+a  commutative  DGA,  the  lax  symmetric  monoidal  structure  on  \(H_R\circ \gamma \)  refines  \(HA\)  to  a  commutative  ring
+spectrum.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1006r6'></a>
+<a class="entry-heading-link" href="../../../entry/agreement-of-the-eilenberg-maclane-constructions/index.html" aria-label="Remark 8.3.6, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 8.3.6 </span></a>(Agreement of the Eilenberg–MacLane constructions)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='rmk:Agreement_Eilenberg_MacLane_Constructions'></span> For an ordinary associative
+\(R\)-algebra \(A\), the ring spectrum \(H_R(A[0])\) is canonically equivalent to the direct Eilenberg–MacLane ring spectrum
+\(HA\) from  <a class="source-reference" data-label="cor:Eilenberg_MacLane_Ring_Spectra_Direct" href="../../../entry/direct-eilenberg-maclane-ring-spectra/index.html#cor:Eilenberg_MacLane_Ring_Spectra_Direct">Corollary 8.3.1</a>.  Indeed,  both  are  concentrated  in  degree  \(0\),  and  their  multiplications  induce  the  ordinary
+multiplication of \(A\) on \(\pi _0\). The classification of associative ring spectra concentrated in degree \(0\) from <a class="source-reference" data-label="cor:Monoidal_Localization_On_Algebras" href="../../../entry/monoidal-localization-on-algebras/index.html#cor:Monoidal_Localization_On_Algebras">Corollary 14.5.4</a>
+therefore identifies them. If \(A\) is commutative, the same argument gives an equivalence of commutative
+ring spectra.
+</p>
+                                                                                   
+                                                                                   
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1007r7'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 8.3.7.</span>  </span><span id='cor:Tor_Ext_Eilenberg_MacLane'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a commutative ring and let</span> \(M\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(N\) <span class='ntx-Italic-tlf-t1-x-x-109'>be</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-modules, regarded as complexes
+concentrated in degree</span> \(0\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Write</span> \(\Tor _n^R(M,N)\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(\Ext _R^n(M,N)\) <span class='ntx-Italic-tlf-t1-x-x-109'>for their classical Tor- and Ext-groups. Equip</span> \(HM\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(HN\) <span class='ntx-Italic-tlf-t1-x-x-109'>with their
+natural</span> \(HR\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module structures. Under the equivalence of </span><a class="source-reference" data-label="cor:Derived_Category_As_HR_Modules" href="../../../entry/derived-categories-as-eilenberg-maclane-module-categories/index.html#cor:Derived_Category_As_HR_Modules">Corollary 8.3.4</a><span class='ntx-Italic-tlf-t1-x-x-109'>, there are natural isomorphisms </span>\[ \Tor ^R_n(M,N)\cong \pi _n(HM\otimes _{HR}HN) \qquadtext {and}\qquad \Ext _R^n(M,N)\cong \pi _{-n}\hom _{HR}(HM,HN), \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-ring-spectra-and-modules-section-03-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-ring-spectra-and-modules-section-03-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The symmetric monoidal equivalence \(\D (R)\simeq \Mod _{HR}\) identifies \(M[0]\otimes _R^{\bL }N[0]\) with \(HM\otimes _{HR}HN\) and the derived hom with \(\hom _{HR}(HM,HN)\). Their
+homotopy groups compute the classical derived functors by the resolution formulas of <a class="source-reference" data-label="cor:Tor_Via_One_Sided_Resolution" href="../../../entry/derived-tensor-products-via-one-sided-resolutions/index.html#cor:Tor_Via_One_Sided_Resolution">Corollary 6.6.28</a>, <a class="source-reference" data-label="prop:Compute_Ext_Via_Projective_Resolution" href="../../../entry/ext-groups-via-projective-resolutions/index.html#prop:Compute_Ext_Via_Projective_Resolution">Proposition 6.4.14</a>.               □
+</p>
+</div></div>
+<p class='noindent'>Important examples include \(H\Z \), \(H\Q \), and \(H\F _2\). Their multiplicative structures underlie the products in ordinary
+cohomology and will be used later in the discussion of orientations, Thom isomorphisms, Poincaré duality,
+and the Chern character.
+</p>
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../connective-modules/index.html" aria-label="Previous section: Connective modules" title="Previous section: Connective modules"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../localizations-of-ring-spectra/index.html" aria-label="Next section: Localizations of ring spectra" title="Next section: Localizations of ring spectra"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html" aria-current="page"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/animae-as-spaces/index.html"><span class="context-entry-heading">Chapter 2</span><span class="context-entry-title">Animae as spaces</span></a></li><li><a href="../../../chapter/homology-and-cohomology/index.html"><span class="context-entry-heading">Chapter 3</span><span class="context-entry-title">Homology and cohomology</span></a></li><li><a href="../../../chapter/spectra-and-stable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 4</span><span class="context-entry-title">Spectra and stable ∞-categories</span></a></li><li><a href="../../../chapter/recognition-principle/index.html"><span class="context-entry-heading">Chapter 5</span><span class="context-entry-title">The recognition principle</span></a></li><li><a href="../../../chapter/homological-algebra/index.html"><span class="context-entry-heading">Chapter 6</span><span class="context-entry-title">Homological algebra</span></a></li><li><a href="../../../chapter/localization-and-completion/index.html"><span class="context-entry-heading">Chapter 7</span><span class="context-entry-title">Localization and completion</span></a></li><li><a href="../../../chapter/ring-spectra-and-modules/index.html" aria-current="page"><span class="context-entry-heading">Chapter 8</span><span class="context-entry-title">Ring spectra and modules</span></a></li><li><a href="../../../chapter/complex-k-theory/index.html"><span class="context-entry-heading">Chapter 9</span><span class="context-entry-title">Complex K-theory</span></a></li><li><a href="../../../chapter/thom-spectra-and-bordism-theory/index.html"><span class="context-entry-heading">Chapter 10</span><span class="context-entry-title">Thom spectra and bordism theory</span></a></li><li><a href="../../../chapter/duality-phenomena/index.html"><span class="context-entry-heading">Chapter 11</span><span class="context-entry-title">Duality phenomena</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../algebras-and-modules/index.html"><span class="context-entry-heading">Section 8.1</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../connective-modules/index.html"><span class="context-entry-heading">Section 8.2</span><span class="context-entry-title">Connective modules</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 8.3</span><span class="context-entry-title">Eilenberg–MacLane ring spectra and DGAs</span></a></li><li><a href="../localizations-of-ring-spectra/index.html"><span class="context-entry-heading">Section 8.4</span><span class="context-entry-title">Localizations of ring spectra</span></a></li><li><a href="../projective-and-flat-modules-online-only/index.html"><span class="context-entry-heading">Section 8.5</span><span class="context-entry-title">Projective and flat modules (online only)</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#cor:Eilenberg_MacLane_Ring_Spectra_Direct"><span class="context-entry-heading">Corollary 8.3.1</span><span class="context-entry-title">corollary</span></a></li><li><a href="#def:Differential_Graded_Algebra"><span class="context-entry-heading">Definition 8.3.2</span><span class="context-entry-title">Differential graded algebra</span></a></li><li><a href="#ex:Examples_Differential_Graded_Algebras"><span class="context-entry-heading">Example 8.3.3</span><span class="context-entry-title">example</span></a></li><li><a href="#cor:Derived_Category_As_HR_Modules"><span class="context-entry-heading">Corollary 8.3.4</span><span class="context-entry-title">Eilenberg–MacLane modules</span></a></li><li><a href="#def:Eilenberg_MacLane_Ring_Spectrum_Of_DGA"><span class="context-entry-heading">Definition 8.3.5</span><span class="context-entry-title">Eilenberg–MacLane ring spectrum</span></a></li><li><a href="#rmk:Agreement_Eilenberg_MacLane_Constructions"><span class="context-entry-heading">Remark 8.3.6</span><span class="context-entry-title">Agreement of the Eilenberg–MacLane constructions</span></a></li><li><a href="#cor:Tor_Ext_Eilenberg_MacLane"><span class="context-entry-heading">Corollary 8.3.7</span><span class="context-entry-title">corollary</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

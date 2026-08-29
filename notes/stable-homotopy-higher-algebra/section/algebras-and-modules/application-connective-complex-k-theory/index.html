@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 19.7: Application: connective complex K-theory | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/operads-and-higher-algebra/index.html">Part II</a> · <a href="../../../chapter/algebras-and-modules/index.html">Chapter 19</a> · Section 19.7</p>
+      <h1>Application: connective complex K-theory</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Application_Connective_Complex_K_Theory'>We conclude by applying the coherent algebra developed in this part to connective complex K-theory.
+Direct sum and tensor product should make the moduli anima of complex vector bundles into a
+commutative semiring object. We first explain the general mechanism by which distributivity produces such
+semiring objects. We then construct the tensor-product structure on vector bundles explicitly in Lurie’s
+\(\Fin _*\)-model, where the multilinear maps of bundles are naturally indexed by the fibers of pointed maps, and
+use the comparison of <a class="source-reference" data-label="prop:Comparison_Lurie_Operads" href="../../../entry/comparison-lurie-operads/index.html#prop:Comparison_Lurie_Operads">Proposition 17.4.8</a>. Finally, we combine the resulting semiring structure with symmetric
+monoidal group completion to obtain the commutative ring spectrum structure on \(\ku \) used in
+<a class="source-reference" data-label="chap:Complex_K_Theory" href="../../../chapter/complex-k-theory/index.html#chap:Complex_K_Theory">Chapter 9</a>.
+</p>
+<h4 class='subsectionHead' id='semirings-from-distributivity'><span class='titlemark'>19.7.1    </span> <a id='x1-200019.7.1'></a>Semirings from distributivity</h4>
+<p class='noindent' id='subsec_Semirings_Distributivity'>The tensor product \(\otimes _{\mathrm {coprod}}\) of <a class="source-reference" data-label="sec:Tensor_Products_Presentable_Categories" href="../../presentable-infinity-categories/tensor-products-of-presentable-categories/index.html#sec:Tensor_Products_Presentable_Categories">Section 22.4</a> is characterized by functors which preserve finite coproducts separately in each
+variable. The following proposition relates this universal property directly to the Day convolution tensor
+product on commutative monoids.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r1'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 19.7.1.</span>  </span><span id='lem:Categories_With_Coproducts_Semiadditive'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Interpreted one universe higher, the</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(\Cat _{\infty }^{\mathrm {coprod}}\) <span class='ntx-Italic-tlf-t1-x-x-109'>is presentable and semiadditive.
+Its zero object is the terminal category, and the cartesian product</span> \(C\times D\) <span class='ntx-Italic-tlf-t1-x-x-109'>is also the coproduct of</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(D\)<span class='ntx-Italic-tlf-t1-x-x-109'>.
+Moreover, the tensor product</span> \(\otimes _{\mathrm {coprod}}\) <span class='ntx-Italic-tlf-t1-x-x-109'>makes</span> \(\Cat _{\infty }^{\mathrm {coprod}}\) <span class='ntx-Italic-tlf-t1-x-x-109'>presentably symmetric monoidal.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-algebras-and-modules-section-07-9" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-algebras-and-modules-section-07-9">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  Presentability  is  the  finite-coproduct  case  of  <span class='citation'>[Lurie (2017), Lemma 4.8.4.2]</span>.  Finite  products  are  computed  in  \(\Cat _{\infty }\)  and
+therefore given by cartesian products of \(\infty \)-categories. The terminal category is also initial in \(\Cat _{\infty }^{\mathrm {coprod}}\), since a
+finite-coproduct-preserving functor from it to \(C\) must select an initial object of \(C\).
+</p><p class='noindent'>Let \(0_C\) and \(0_D\) denote initial objects. For every \(E\in \Cat _{\infty }^{\mathrm {coprod}}\), restriction along the functors \[ C\longrightarrow C\times D,\quad c\longmapsto (c,0_D), \qquad \text {and}\qquad D\longrightarrow C\times D,\quad d\longmapsto (0_C,d), \] induces an equivalence
+\[ \Fun ^{\amalg }(C\times D,E) \iso \Fun ^{\amalg }(C,E)\times \Fun ^{\amalg }(D,E). \] Indeed, the coproduct functor \(\amalg \colon E\times E\to E\), which is left adjoint to the diagonal and therefore preserves finite
+coproducts,  supplies  an  inverse  which  sends  a  pair  \((F,G)\)  to  the  composite  \[ C\times D\xrightarrow {F\times G}E\times E\xrightarrow {\amalg }E. \]  The  two  composites  are
+naturally isomorphic to the identity because every \((c,d)\) is the coproduct of \((c,0_D)\) and \((0_C,d)\) in \(C\times D\). Thus \(C\times D\) is also a
+coproduct in \(\Cat _{\infty }^{\mathrm {coprod}}\), proving semiadditivity.
+</p><p class='noindent'>Finally, the defining universal property of \(\otimes _{\mathrm {coprod}}\) exhibits tensoring with a fixed object as a left adjoint. It
+therefore preserves colimits, which proves the final assertion.                                                           □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2002r2'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 19.7.2 </span>(Cocartesian semiring construction)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Cocartesian_Semiring_Comparison'>   </span><span class='ntx-Italic-tlf-t1-x-x-109'>The   functor   </span>\[ \Cat _{\infty }^{\mathrm {coprod}}\longrightarrow \CMon (\Cat _{\infty }), \qquad C\longmapsto (C,\amalg ), \]   <span class='ntx-Italic-tlf-t1-x-x-109'>has   a   canonical   lax
+symmetric  monoidal  refinement,  where  the  source  carries</span>  \(\otimes _{\mathrm {coprod}}\)  <span class='ntx-Italic-tlf-t1-x-x-109'>and  the  target  carries  the  symmetric
+monoidal structure of </span><a class="source-reference" data-label="prop:CMon_CGrp_Day_Localizations" href="../../../entry/cmon-cgrp-day-localizations/index.html#prop:CMon_CGrp_Day_Localizations">Proposition 16.4.1</a><span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-algebras-and-modules-section-07-8" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-algebras-and-modules-section-07-8">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Write \[ U\colon \Cat _{\infty }^{\mathrm {coprod}}\longrightarrow \Cat _{\infty } \] for the forgetful functor. The multimorphism operad defining \(\otimes _{\mathrm {coprod}}\) is, by construction
+in <a class="source-reference" data-label="sec:Tensor_Products_Presentable_Categories" href="../../presentable-infinity-categories/tensor-products-of-presentable-categories/index.html#sec:Tensor_Products_Presentable_Categories">Section 22.4</a>, a suboperad of the cartesian multimorphism operad of \(\Cat _{\infty }\). This inclusion gives \(U\) a canonical lax
+symmetric monoidal structure.
+</p><p class='noindent'>By <a class="source-reference" data-label="lem:Categories_With_Coproducts_Semiadditive" href="../../../entry/categories-with-coproducts-semiadditive/index.html#lem:Categories_With_Coproducts_Semiadditive">Lemma 19.7.1</a>, the multimorphism operad of \(\Cat _{\infty }^{\mathrm {coprod}}\) is semiadditive. Moreover, \(U\) preserves finite products, since they
+are computed by cartesian products of \(\infty \)-categories on both sides. The adjunction of <a class="source-reference" data-label="thm:Additivization_Operads" href="../../../entry/additivization-operads/index.html#thm:Additivization_Operads">Theorem 18.4.12</a> therefore gives
+a unique lift</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-001ea932b967.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>By the definition of \(\oCMon \) and the Day convolution structure of <a class="source-reference" data-label="prop:CMon_CGrp_Day_Localizations" href="../../../entry/cmon-cgrp-day-localizations/index.html#prop:CMon_CGrp_Day_Localizations">Proposition 16.4.1</a>, the upper-right operad
+is naturally equivalent to the multimorphism operad of \(\CMon (\Cat _{\infty })\): \[ \oCMon \bigl (\Mm _{(\Cat _{\infty },\times )}\bigr ) \simeq \Mm _{\CMon (\Cat _{\infty })}. \] The lift consequently determines a lax
+symmetric monoidal functor from \(\Cat _{\infty }^{\mathrm {coprod}}\) to \(\CMon (\Cat _{\infty })\). On an object \(C\), it gives the commutative monoid structure
+induced by the biproducts in \(\Cat _{\infty }^{\mathrm {coprod}}\). Its unit selects the initial object \(0_C\), while its addition is the codiagonal
+\[ C\times C\simeq C\oplus C\longrightarrow C. \] Under the description of the coproduct in <a class="source-reference" data-label="lem:Categories_With_Coproducts_Semiadditive" href="../../../entry/categories-with-coproducts-semiadditive/index.html#lem:Categories_With_Coproducts_Semiadditive">Lemma 19.7.1</a>, this codiagonal is the coproduct functor \(\amalg \colon C\times C\to C\). Thus the
+underlying functor sends \(C\) to \((C,\amalg )\), as claimed.                                                                                           □</p>
+</div></div>
+<p class='noindent'>There is consequently a general mechanism that turns distributivity over finite coproducts into a
+commutative semiring object.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2003r3'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 19.7.3.</span>  </span><span id='prop:Coproduct_Monoidal_Categories_Give_Rig_Categories'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a small symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category which admits finite coproducts.
+Assume that for every object</span> \(X\in C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the functor </span>\[ X\otimes -\colon C\longrightarrow C \] <span class='ntx-Italic-tlf-t1-x-x-109'>preserves finite coproducts. Then the cocartesian monoidal
+structure on</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>canonically refines</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>to an object of </span>\[ \CRig (\Cat _{\infty })=\CAlg (\CMon (\Cat _{\infty })). \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-algebras-and-modules-section-07-7" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-algebras-and-modules-section-07-7">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The finite-coproduct specialization in <a class="source-reference" data-label="sec:Tensor_Products_Presentable_Categories" href="../../presentable-infinity-categories/tensor-products-of-presentable-categories/index.html#sec:Tensor_Products_Presentable_Categories">Section 22.4</a> exhibits the given symmetric monoidal structure on
+\(C\) as a commutative algebra object of \((\Cat _{\infty }^{\mathrm {coprod}},\otimes _{\mathrm {coprod}})\). Applying the lax symmetric monoidal functor of <a class="source-reference" data-label="prop:Cocartesian_Semiring_Comparison" href="../../../entry/cocartesian-semiring-comparison/index.html#prop:Cocartesian_Semiring_Comparison">Proposition 19.7.2</a> produces
+                                                                                   
+                                                                                   
+a  commutative  algebra  in  \(\CMon (\Cat _{\infty })\),  whose  underlying  commutative  monoid  is  the  cocartesian  monoidal
+structure \((C,\amalg )\).                                                                                                                                            □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2004r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 19.7.4.</span>  </span><span id='cor:Coproduct_Monoidal_Categories_Give_Rig_Animae'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Under the hypotheses of </span><a class="source-reference" data-label="prop:Coproduct_Monoidal_Categories_Give_Rig_Categories" href="../../../entry/coproduct-monoidal-categories-give-rig-categories/index.html#prop:Coproduct_Monoidal_Categories_Give_Rig_Categories">Proposition 19.7.3</a><span class='ntx-Italic-tlf-t1-x-x-109'>, the maximal subgroupoid</span> \(C^{\simeq }\) <span class='ntx-Italic-tlf-t1-x-x-109'>is canonically an object of</span>
+\(\CRig (\An )\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-algebras-and-modules-section-07-6" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-algebras-and-modules-section-07-6">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Apply the lax symmetric monoidal maximal-subgroupoid functor of <a class="source-reference" data-label="prop:Maximal_Subgroupoid_CMon_Lax_Monoidal" href="../../../entry/maximal-subgroupoid-cmon-lax-monoidal/index.html#prop:Maximal_Subgroupoid_CMon_Lax_Monoidal">Proposition 16.4.6</a> to the commutative
+algebra supplied by <a class="source-reference" data-label="prop:Coproduct_Monoidal_Categories_Give_Rig_Categories" href="../../../entry/coproduct-monoidal-categories-give-rig-categories/index.html#prop:Coproduct_Monoidal_Categories_Give_Rig_Categories">Proposition 19.7.3</a>.                                                                                                                           □
+</p>
+</div></div>
+
+<h4 class='subsectionHead' id='the-vectorbundle-semiring'><span class='titlemark'>19.7.2    </span> <a id='x1-300019.7.2'></a>The vector-bundle semiring</h4>
+<p class='noindent' id='subsec_Vector_Bundle_Semiring'>Let \(X\) be a topological space. We write \(\Vect ^{\disc }(X)\) for the 1-category whose objects are the finite-rank complex vector
+bundles over \(X\) and whose morphisms are the morphisms of vector bundles over \(X\). The superscript \(\disc \) indicates
+that we are not yet recording the topology on spaces of bundle maps. Since vector bundles are stable under
+base change along continuous maps, this gives a contravariant functor \[ \Vect ^{\disc }\colon \Top \catop \to \Cat . \] We show that \(\Vect ^{\disc }(X)\) can be equipped with
+                                                                                   
+                                                                                   
+a symmetric monoidal structure via tensor product of complex vector bundles. We construct this
+structure explicitly using Lurie’s equivalent model of symmetric monoidal categories over
+\(\Fin _*\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3001r5'></a>
+<a class="entry-heading-link" href="../../../entry/symmetric-monoidal-category-vector-bundles/index.html" aria-label="Construction 19.7.5., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 19.7.5.</span></a>  </span><span id='cons:Symmetric_Monoidal_Category_Vector_Bundles'></span> For a finite pointed set \(S_+\), we write \(S\) for the complement of the basepoint. Define
+a 1-category \[ \Vect ^{\otimes ,\disc }(X) \] equipped with a functor \(p_X\colon \Vect ^{\otimes ,\disc }(X) \to \Fin _*\) as follows. An object over \(S_+\) is an \(S\)-indexed family \((V_s)_{s \in S}\) of vector
+bundles over \(X\). A morphism over a pointed map \(\alpha \colon S_+ \to T_+\) from \((V_s)_{s \in S}\) to \((W_t)_{t \in T}\) consists of, for every \(t \in T\), a map over \(X\) \[ \phi _t\colon \prod _{s \in \alpha ^{-1}(t)} V_s \longrightarrow W_t \] which
+is continuous and complex multilinear on each fiber. Here the product is the fiber product over \(X\), and
+if \(\alpha ^{-1}(t)=\emptyset \) we interpret the source as \(X\), so that \(\phi _t\) is the same as a section of \(W_t\).
+</p><p class='noindent'>Composition  is  substitution  of  multilinear  maps.  Thus,  if  \(\beta \colon T_+ \to U_+\)  is  another  pointed  map  and  \(\psi _u\colon \prod _{t \in \beta ^{-1}(u)}W_t \to Z_u\)  is  the
+corresponding family of multilinear maps, the composite over \(\beta \alpha \) is given by \[ (v_s)_{s \in (\beta \alpha )^{-1}(u)} \longmapsto \psi _u\left ( \left (\phi _t((v_s)_{s \in \alpha ^{-1}(t)})\right )_{t \in \beta ^{-1}(u)} \right ). \] This is again multilinear
+in all variables. The identity morphism over \(\id _{S_+}\) is given by the identity maps \(V_s \to V_s\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3002r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 19.7.6.</span>  </span><span id='prop:Tensor_Product_Vector_Bundles_Symmetric_Monoidal'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The functor </span>\[ p_X\colon \Vect ^{\otimes ,\disc }(X) \to \Fin _* \] <span class='ntx-Italic-tlf-t1-x-x-109'>is a cocartesian fibration of 1-categories. It therefore defines a
+symmetric  monoidal  1-category  whose  underlying  category  is</span>  \(\Vect ^{\disc }(X)\)  <span class='ntx-Italic-tlf-t1-x-x-109'>and  whose  tensor  product  is  the
+tensor product of vector bundles.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-algebras-and-modules-section-07-5" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-algebras-and-modules-section-07-5">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Let \(\alpha \colon S_+ \to T_+\) be a pointed map and let \((V_s)_{s \in S}\) be an object over \(S_+\). For each \(t \in T\), choose the tensor product \[ W_t := \bigotimes _{s \in \alpha ^{-1}(t)} V_s, \]
+with the convention that the tensor product over the empty set is the trivial line bundle \(\ul {\C }\). Let \[ \mu _t\colon \prod _{s \in \alpha ^{-1}(t)} V_s \to W_t \] be
+the universal multilinear map. Local trivializations show that \(W_t\) is again a vector bundle and that \(\mu _t\) is
+continuous. These maps define a morphism \[ (V_s)_{s \in S} \longrightarrow (W_t)_{t \in T} \] over \(\alpha \).
+</p><p class='noindent'>We claim that this morphism is \(p_X\)-cocartesian. Let \(\beta \colon T_+ \to U_+\) be another pointed map, and let \((Z_u)_{u \in U}\) be an object over
+\(U_+\). By definition, a morphism from \((W_t)_{t \in T}\) to \((Z_u)_{u \in U}\) over \(\beta \) is a family of multilinear maps \[ \prod _{t \in \beta ^{-1}(u)} W_t \to Z_u. \] Precomposition with the
+maps \(\mu _t\) identifies this set with the set of multilinear maps \[ \prod _{s \in (\beta \alpha )^{-1}(u)} V_s \to Z_u, \] for all \(u \in U\), by the universal property of the
+tensor products \(W_t\). This is precisely the required universal property of a cocartesian morphism.
+</p><p class='noindent'>The fiber over \(S_+\) is visibly \(\Vect ^{\disc }(X)^S\), so the Segal maps are isomorphisms. Thus \(p_X\) is a symmetric monoidal
+category in Lurie’s model. Taking nerves gives the corresponding cocartesian fibration of \(\infty \)-categories,
+and the equivalence of operad models from <a class="source-reference" data-label="prop:Comparison_Lurie_Operads" href="../../../entry/comparison-lurie-operads/index.html#prop:Comparison_Lurie_Operads">Proposition 17.4.8</a> carries it to the desired symmetric monoidal \(\infty \)-category
+over \(\Span (\Fin )\). Its tensor product is obtained by pushing forward along the active map \(\{1,2\}_+ \to \{1\}_+\), hence is the usual
+tensor product of vector bundles.                                                                                                        □
+</p>
+</div></div>
+<p class='noindent'>The symmetric monoidal structure above interacts with the direct-sum operation in the expected way. The
+general semiring formalism of <a class="source-reference" data-label="sec:Commutative_Semiring_Objects" href="../../day-convolution-and-the-tensor-product-of-spectra/rings-and-semirings/index.html#sec:Commutative_Semiring_Objects">Section 16.4</a> packages all the resulting coherence.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3003r7'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 19.7.7.</span>  </span><span id='cor:Discrete_Vector_Bundles_Semiring_Anima'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For every topological space</span> \(X\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the groupoid </span>\[ \Vect ^{\disc }(X)^{\simeq } \] <span class='ntx-Italic-tlf-t1-x-x-109'>of finite-rank complex vector bundles
+and bundle isomorphisms is naturally an object of</span> \(\CRig (\An )\)<span class='ntx-Italic-tlf-t1-x-x-109'>. This structure is contravariantly functorial in</span> \(X\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>by pullback.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-algebras-and-modules-section-07-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-algebras-and-modules-section-07-4">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Direct sum gives finite coproducts in the small 1-category \(\Vect ^{\disc }(X)\), with initial object the rank-zero
+bundle \(\ul {0}\). Tensor product distributes over direct sums in each variable, so <a class="source-reference" data-label="cor:Coproduct_Monoidal_Categories_Give_Rig_Animae" href="../../../entry/coproduct-monoidal-categories-give-rig-animae/index.html#cor:Coproduct_Monoidal_Categories_Give_Rig_Animae">Corollary 19.7.4</a> applies to the symmetric
+monoidal structure of <a class="source-reference" data-label="prop:Tensor_Product_Vector_Bundles_Symmetric_Monoidal" href="../../../entry/tensor-product-vector-bundles-symmetric-monoidal/index.html#prop:Tensor_Product_Vector_Bundles_Symmetric_Monoidal">Proposition 19.7.6</a>. This construction is natural in symmetric monoidal functors which preserve
+finite coproducts. Since pullback preserves direct sums, tensor products, and trivial bundles, it gives
+the asserted functoriality in \(X\).                                                                                                               □
+</p>
+</div></div>
+<p class='noindent'>The 1-category \(\Vect ^{\disc }(X)\) discards the natural compact-open topologies on its hom sets. Let us first explain
+how the familiar topological enrichment motivates the construction below. Suppose that \(X\) is
+compact Hausdorff. The spaces \(\Iso _X(E,E')\) of bundle isomorphisms, with their compact-open topologies,
+form the hom spaces of a topologically enriched groupoid. Its homotopy coherent nerve, in
+the sense of <a class="source-reference" data-label="cons:Homotopy_Coherent_Nerve_Better" href="../../../entry/homotopy-coherent-nerve/index.html#cons:Homotopy_Coherent_Nerve_Better">Construction 24.3.2</a>, remembers the underlying anima of each of these spaces of isomorphisms by
+<a class="source-reference" data-label="prop:Hom_In_Homotopy_Coherent_Nerve" href="../../../entry/hom-animae-in-the-homotopy-coherent-nerve/index.html#prop:Hom_In_Homotopy_Coherent_Nerve">Proposition 24.3.4</a>.
+</p><p class='noindent'>The simplicial resolution used to construct this nerve has the same vector bundles as objects in every
+degree, while its morphisms in degree \(n\) are the continuous maps \[ \Hom _{\Top }(\abs {\Delta ^n},\Iso _X(E,E')). \] The total spaces of vector
+bundles over a compact Hausdorff space are locally compact Hausdorff, so the compact-open
+exponential law identifies this set with \[ \Iso _{X\times \abs {\Delta ^n}} \bigl (\pr _X^*E,\pr _X^*E'\bigr ). \] Thus the groupoid in simplicial degree \(n\) is equivalent to the
+full subgroupoid of \(\Vect ^{\disc }(X\times \abs {\Delta ^n})^{\simeq }\) spanned by the bundles pulled back from \(X\). Every vector bundle over \(X\times \abs {\Delta ^n}\) is
+isomorphic to one of this form by <a class="source-reference" data-label="thm:Vector_Bundles_Homotopy_Invariant" href="../../../entry/homotopy-invariance-of-vector-bundles/index.html#thm:Vector_Bundles_Homotopy_Invariant">Theorem 9.1.4</a>. Consequently the inclusion of this full subgroupoid is an
+equivalence. For compact Hausdorff \(X\), the colimit below is therefore the standard simplicial model for
+the homotopy coherent nerve of the topologically enriched groupoid of vector bundles and
+bundle isomorphisms. We use the same formula as our definition for an arbitrary topological
+space.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3004r8'></a>
+<a class="entry-heading-link" href="../../../entry/vect-as-infinity-category/index.html" aria-label="Definition 19.7.8., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 19.7.8.</span></a>  </span><span id='def:Vect_As_Infty_Category'></span> The cosimplicial topological space \([n]\mapsto \abs {\Delta ^n}\) and pullback of vector bundles determine a
+simplicial object \[ [n]\longmapsto \Vect ^{\disc }(X\times \abs {\Delta ^n})^{\simeq } \] in \(\CRig (\An )\). We define the <span class='ntx-Italic-tlf-t1-x-x-109'>moduli anima of complex vector bundles over</span> \(X\) by \[ \Vect (X)^{\simeq } := \colim _{[n]\in \simp \catop } \Vect ^{\disc }(X\times \abs {\Delta ^n})^{\simeq } \qin \CRig (\An ). \]
+</p>
+</div>
+                                                                                   
+                                                                                   
+<p class='noindent'>Thus points of \(\Vect (X)^{\simeq }\) are represented by vector bundles over \(X\), paths are represented by concordances over \(X\times [0,1]\), and
+the higher simplices encode higher concordances. For compact Hausdorff \(X\), this models how the topology on
+the spaces of bundle isomorphisms enters the homotopy coherent nerve. The simplicial description also
+makes direct sums and tensor products available degreewise.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3005r9'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 19.7.9.</span>  </span><span id='prop:Vect_As_Colimit'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The construction of </span><a class="source-reference" data-label="def:Vect_As_Infty_Category" href="../../../entry/vect-as-infinity-category/index.html#def:Vect_As_Infty_Category">Definition 19.7.8 </a><span class='ntx-Italic-tlf-t1-x-x-109'>defines a functor </span>\[ \Vect (-)^{\simeq }\colon \Top \catop \longrightarrow \CRig (\An ). \] <span class='ntx-Italic-tlf-t1-x-x-109'>Its underlying anima is computed by the
+same colimit in</span> \(\An \)<span class='ntx-Italic-tlf-t1-x-x-109'>. If</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>is paracompact Hausdorff, the inclusion of the zeroth simplicial degree induces
+a natural bijection </span>\[ \pi _0\Vect ^{\disc }(X)^{\simeq } \xrightarrow {\cong } \pi _0\Vect (X)^{\simeq }. \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-algebras-and-modules-section-07-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-algebras-and-modules-section-07-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Functoriality follows from pullback. The \(\infty \)-category \(\simp \catop \) is sifted by <a class="source-reference" data-label="prop:Simplex_Category_Sifted" href="../../../entry/simplex-category-is-sifted/index.html#prop:Simplex_Category_Sifted">Proposition 21.6.9</a>, and the forgetful functors \[ \CRig (\An )\longrightarrow \CMon (\An )\longrightarrow \An \]
+create sifted colimits. For the second functor, this follows by regarding \(\CMon (\An )\) as the full subcategory of \(\Fun (\Span (\Fin ),\An )\)
+spanned by the finite-product-preserving functors: pointwise sifted colimits preserve this condition
+by <a class="source-reference" data-label="lem:Sifted_Colimits_Commute_With_Finite_Products" href="../../../entry/sifted-colimits-commute-with-finite-products/index.html#lem:Sifted_Colimits_Commute_With_Finite_Products">Lemma 21.6.11</a>. For the first functor, use \(\CRig (\An )=\CAlg (\CMon (\An ))\), the fact that \(\CMon (\An )\) is presentably symmetric monoidal by <a class="source-reference" data-label="thm:Basic_Modes" href="../../../entry/basic-modes/index.html#thm:Basic_Modes">Theorem 18.5.3</a>, and <span class='citation'>[Lurie (2017), Corollary 3.2.3.2]</span>. This proves
+the assertion about the underlying anima.
+</p><p class='noindent'>It remains to identify its path components. Applying \(\pi _0\) to the geometric realization gives the coequalizer
+of the two maps from simplicial degree \(1\) to degree \(0\). Every vector bundle over \(X\times \abs {\Delta ^n}\) is isomorphic to the
+pullback of its restriction to a vertex: the product \(X\times \abs {\Delta ^n}\) is again paracompact Hausdorff, and the identity
+is homotopic to the composite of the projection with the inclusion of a vertex, so this follows from <a class="source-reference" data-label="thm:Vector_Bundles_Homotopy_Invariant" href="../../../entry/homotopy-invariance-of-vector-bundles/index.html#thm:Vector_Bundles_Homotopy_Invariant">Theorem 9.1.4</a>.
+In particular, degree \(0\) surjects onto the coequalizer. The two endpoint restrictions of a vector bundle
+over \(X\times [0,1]\) are isomorphic by the same theorem, so the two maps in the coequalizer agree. The coequalizer
+is therefore \(\pi _0\Vect ^{\disc }(X)^{\simeq }\).                                                                                                                                        □
+</p>
+                                                                                   
+                                                                                   
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3006r10'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 19.7.10.</span>  </span><span id='cor:Real_Vector_Bundles_Moduli_Anima'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The construction of </span><a class="source-reference" data-label="def:Vect_As_Infty_Category" href="../../../entry/vect-as-infinity-category/index.html#def:Vect_As_Infty_Category">Definition 19.7.8</a><span class='ntx-Italic-tlf-t1-x-x-109'>, applied to finite-rank real vector bundles, defines a functor</span>
+\[ \Vect _{\R }(-)^{\simeq }\colon \Top \catop \longrightarrow \CRig (\An ) \] <span class='ntx-Italic-tlf-t1-x-x-109'>whose underlying anima is computed by the corresponding colimit in</span> \(\An \)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-algebras-and-modules-section-07-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-algebras-and-modules-section-07-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The constructions and proofs of <a class="source-reference" data-label="prop:Tensor_Product_Vector_Bundles_Symmetric_Monoidal" href="../../../entry/tensor-product-vector-bundles-symmetric-monoidal/index.html#prop:Tensor_Product_Vector_Bundles_Symmetric_Monoidal">Proposition 19.7.6</a>, <a class="source-reference" data-label="cor:Discrete_Vector_Bundles_Semiring_Anima" href="../../../entry/discrete-vector-bundles-semiring-anima/index.html#cor:Discrete_Vector_Bundles_Semiring_Anima">Corollary 19.7.7</a>, <a class="source-reference" data-label="prop:Vect_As_Colimit" href="../../../entry/vect-as-colimit/index.html#prop:Vect_As_Colimit">Proposition 19.7.9</a> apply verbatim with \(\C \) replaced by \(\R \).                                □
+</p>
+</div></div>
+<p class='noindent'>We now specialize to \(X=\pt \). Recall from <span class="source-reference" data-label="subsec:Connective_Complex_K_Theory">Subsection 9.4.2</span> that the group completion of \(\Vect (\pt )^{\simeq }\) is the infinite loop anima underlying
+connective complex K-theory. The semiring structure above supplies its multiplication and all its
+coherences.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3007r11'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 19.7.11.</span>  </span><span id='prop:ku_Comm_Ring_Spectrum'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The connective complex K-theory spectrum</span> \(\ku \) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a canonical structure of
+commutative ring spectrum.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-algebras-and-modules-section-07-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-algebras-and-modules-section-07-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="def:Vect_As_Infty_Category" href="../../../entry/vect-as-infinity-category/index.html#def:Vect_As_Infty_Category">Definition 19.7.8</a>, we have \[ \Vect (\pt )^{\simeq } \in \CAlg (\CMon (\An )). \] By <a class="source-reference" data-label="prop:Group_Completion_Symmetric_Monoidal" href="../../../entry/group-completion-symmetric-monoidal/index.html#prop:Group_Completion_Symmetric_Monoidal">Proposition 16.6.4</a>, the composite \[ \CMon (\An ) \xrightarrow {(-)^{\grp }} \CGrp (\An ) \xhookrightarrow {\bB ^{\infty }} \Sp \] is symmetric monoidal. Applying it to the commutative
+algebra object \(\Vect (\pt )^{\simeq }\) gives a commutative algebra object of \(\Sp \), i.e. a commutative ring spectrum. Under <a class="source-reference" data-label="thm:Recognition_Principle_Connective_Spectra" href="../../../entry/recognition-principle-for-connective-spectra/index.html#thm:Recognition_Principle_Connective_Spectra">Theorem 5.4.6</a>,
+the functor \(\bB ^{\infty }\colon \CGrp (\An )\to \Sp _{\geq 0}\) is the inverse of the recognition equivalence, and \((-)^{\grp }\) is the same group-completion left
+adjoint used in <span class="source-reference" data-label="subsec:Connective_Complex_K_Theory">Subsection 9.4.2</span>. Its underlying spectrum is therefore precisely \(\ku \).                                                        □
+</p>
+</div></div>
+<p class='noindent'><a id='likesection.1'></a><a id='x1-3008x19.7.2'></a>
+</p>
+<h3 class='likesectionHead' id='exercises'><a id='x1-4000'></a>Exercises</h3>
+<p id='exercises1'><a id='Q1-1-5'></a>
+</p><div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4001r1'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 19.1 </span>(Free modules)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(C\) be a presentably monoidal \(\infty \)-category and let \(A\in \Alg (C)\).
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'>Use <a class="source-reference" data-label="prop:Free_Module_Functor" href="../../../entry/free-module-functor/index.html#prop:Free_Module_Functor">Proposition 19.1.13</a> to show that the free-module functor preserves coproducts, and compute the free \(A\)-module
+     on a finite coproduct.
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'>Specialize to \(C=\Sp \) and identify the free \(R\)-module on \(\S [n]\) for an associative ring spectrum \(R\).</p></dd></dl>
+</div>
+                                                                                   
+                                                                                   
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4004r2'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 19.2 </span>(Transitivity of extension of scalars)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(A\to B\to C\) be morphisms of associative algebras in a
+presentably monoidal \(\infty \)-category. For a left \(A\)-module \(M\), construct a natural isomorphism \[ C\otimes _B(B\otimes _AM)\simeq C\otimes _AM. \] Check that it
+identifies the composite of the two extension-of-scalars adjunctions with extension of scalars along
+\(A\to C\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4005r3'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 19.3 </span>(Consequences of spectral Eilenberg–Watts)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(R\) be an associative ring spectrum, and for
+an \(R\)-\(R\)-bimodule \(B\) write \(F_B:=-\otimes _RB\).
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'>Show that natural transformations \(F_B\to F_{B'}\) correspond to morphisms of \(R\)-\(R\)-bimodules \(B\to B'\).
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'>Identify the bimodule corresponding to the composite \(F_{B'}\circ F_B\).
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'>Identify the bimodule corresponding to the identity functor of \(\RMod _R\).</p></dd></dl>
+                                                                                   
+                                                                                   
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4009r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 19.4 </span>(Advanced: Matrix Morita equivalence)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(R\) be an associative ring spectrum, put \(P:=R^{\oplus n}\in \RMod _R\), and let
+\[ A:=\hom _R(P,P). \]
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'>Show that \(P\) is a compact generator of \(\RMod _R\), and identify \(A\) with the matrix ring spectrum \(M_n(R)\).
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'>The construction of <a class="source-reference" data-label="prop:Endomorphism_Spectra" href="../../../entry/endomorphism-spectra/index.html#prop:Endomorphism_Spectra">Proposition 19.5.5</a> gives an adjunction \[ -\otimes _AP\colon \RMod _A\rightleftarrows \RMod _R\noloc \hom _R(P,-). \] Adapt the generator argument in the proof of <a class="source-reference" data-label="thm:Monogenic_Morita" href="../../../entry/monogenic-morita/index.html#thm:Monogenic_Morita">Theorem 19.5.6</a> to
+     show that this adjunction is an equivalence.</p></dd></dl>
+</div>
+
+ 
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../monads-and-monadicity/index.html" aria-label="Previous section: Monads and monadicity" title="Previous section: Monads and monadicity"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../../monoidal-dwyer-kan-localizations-and-derived-categories/monoidal-dwyer-kan-localizations/index.html" aria-label="Next section: Monoidal Dwyer–Kan localizations" title="Next section: Monoidal Dwyer–Kan localizations"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html" aria-current="page"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/operads-the-heuristics/index.html"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../../../chapter/span-categories/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../../../chapter/basics-on-infinity-operads/index.html"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../../../chapter/cartesian-and-cocartesian-monoidal-structures/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../../../chapter/day-convolution-and-the-tensor-product-of-spectra/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="../../../chapter/the-envelope-of-an-infinity-operad/index.html"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../../../chapter/operadic-day-convolution-and-stabilization/index.html"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Operadic Day convolution and stabilization</span></a></li><li><a href="../../../chapter/algebras-and-modules/index.html" aria-current="page"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../foundations/index.html"><span class="context-entry-heading">Section 19.1</span><span class="context-entry-title">Foundations</span></a></li><li><a href="../relative-tensor-products-and-change-of-algebras/index.html"><span class="context-entry-heading">Section 19.2</span><span class="context-entry-title">Relative tensor products and change of algebras</span></a></li><li><a href="../simplicial-models-for-algebras-and-modules/index.html"><span class="context-entry-heading">Section 19.3</span><span class="context-entry-title">Simplicial models for algebras and modules</span></a></li><li><a href="../endomorphism-algebras/index.html"><span class="context-entry-heading">Section 19.4</span><span class="context-entry-title">Endomorphism algebras</span></a></li><li><a href="../stable-and-spectral-consequences/index.html"><span class="context-entry-heading">Section 19.5</span><span class="context-entry-title">Stable and spectral consequences</span></a></li><li><a href="../monads-and-monadicity/index.html"><span class="context-entry-heading">Section 19.6</span><span class="context-entry-title">Monads and monadicity</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 19.7</span><span class="context-entry-title">Application: connective complex K-theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#lem:Categories_With_Coproducts_Semiadditive"><span class="context-entry-heading">Lemma 19.7.1</span><span class="context-entry-title">lemma</span></a></li><li><a href="#prop:Cocartesian_Semiring_Comparison"><span class="context-entry-heading">Proposition 19.7.2</span><span class="context-entry-title">Cocartesian semiring construction</span></a></li><li><a href="#prop:Coproduct_Monoidal_Categories_Give_Rig_Categories"><span class="context-entry-heading">Proposition 19.7.3</span><span class="context-entry-title">proposition</span></a></li><li><a href="#cor:Coproduct_Monoidal_Categories_Give_Rig_Animae"><span class="context-entry-heading">Corollary 19.7.4</span><span class="context-entry-title">corollary</span></a></li><li><a href="#cons:Symmetric_Monoidal_Category_Vector_Bundles"><span class="context-entry-heading">Construction 19.7.5</span><span class="context-entry-title">construction</span></a></li><li><a href="#prop:Tensor_Product_Vector_Bundles_Symmetric_Monoidal"><span class="context-entry-heading">Proposition 19.7.6</span><span class="context-entry-title">proposition</span></a></li><li><a href="#cor:Discrete_Vector_Bundles_Semiring_Anima"><span class="context-entry-heading">Corollary 19.7.7</span><span class="context-entry-title">corollary</span></a></li><li><a href="#def:Vect_As_Infty_Category"><span class="context-entry-heading">Definition 19.7.8</span><span class="context-entry-title">definition</span></a></li><li><a href="#prop:Vect_As_Colimit"><span class="context-entry-heading">Proposition 19.7.9</span><span class="context-entry-title">proposition</span></a></li><li><a href="#cor:Real_Vector_Bundles_Moduli_Anima"><span class="context-entry-heading">Corollary 19.7.10</span><span class="context-entry-title">corollary</span></a></li><li><a href="#prop:ku_Comm_Ring_Spectrum"><span class="context-entry-heading">Proposition 19.7.11</span><span class="context-entry-title">proposition</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

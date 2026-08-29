@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 9.4: Complex K-theory spectra | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/stable-homotopy-theory/index.html">Part I</a> · <a href="../../../chapter/complex-k-theory/index.html">Chapter 9</a> · Section 9.4</p>
+      <h1>Complex K-theory spectra</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Complex_K_Theory_Spectra'>The classical construction above uses only isomorphism classes of vector bundles. To construct a
+representing spectrum, we now retain the automorphisms of vector bundles and all their homotopies, and
+then apply the homotopical group completion theorem. This produces connective complex K-theory.
+Inverting the Bott class then produces its periodic counterpart.
+</p>
+<h4 class='subsectionHead' id='the-anima-of-vector-bundles'><span class='titlemark'>9.4.1    </span> <a id='x1-20009.4.1'></a>The anima of vector bundles</h4>
+<p class='noindent' id='subsec_Anima_Of_Vector_Bundles'>Let \(X\) be a topological space. Write \(\Vect ^{\disc }(X)\) for the 1-category of complex vector bundles over \(X\) and
+bundle maps, with discrete hom sets. Its groupoid core remembers the isomorphisms between
+bundles, but regards them as discrete and therefore misses their topology. To retain this topology,
+we instead regard vector bundles and their isomorphisms as forming a topologically enriched
+groupoid.
+</p><p class='noindent'>For a compact Hausdorff space \(X\), the bundle isomorphisms \(E\to E'\) form a topological space \(\Iso _X(E,E')\) with the compact-open
+topology, and these spaces are the hom objects of the enriched groupoid just described. A continuous
+\(n\)-simplex in \(\Iso _X(E,E')\) is equivalently an isomorphism between the pullbacks of \(E\) and \(E'\) over \(X\times \abs {\Delta ^n}\). This leads to the formula \[ \Vect (X)^{\simeq } := \colim _{[n]\in \simp \catop } \Vect ^{\disc }(X\times \abs {\Delta ^n})^{\simeq }. \]
+The simplicial formula is a model for the homotopy coherent nerve of the topologically enriched
+groupoid, while still making sense for arbitrary \(X\). Direct sum and tensor product are available
+degreewise. In Part II we prove that they assemble, with all the required distributivity and
+higher coherences, into a functor \[ \Vect (-)^{\simeq }\colon \Top \catop \longrightarrow \CRig (\An ), \] whose addition is direct sum and whose multiplication is
+tensor product; see <a class="source-reference" data-label="def:Vect_As_Infty_Category" href="../../../entry/vect-as-infinity-category/index.html#def:Vect_As_Infty_Category">Definition 19.7.8</a>, <a class="source-reference" data-label="prop:Vect_As_Colimit" href="../../../entry/vect-as-colimit/index.html#prop:Vect_As_Colimit">Proposition 19.7.9</a>. Here \(\CRig (\An ):=\CAlg (\CMon (\An ))\) denotes the \(\infty \)-category of commutative semiring animae; forgetting
+multiplication recovers the already familiar functor to \(\CMon (\An )\). For compact Hausdorff \(X\), the resulting
+anima \(\Vect (X)^{\simeq }\) is a model for the homotopy coherent nerve of the topologically enriched groupoid of
+vector bundles and bundle isomorphisms. If \(X\) is paracompact Hausdorff, then there is a bijection
+\[ \pi _0\Vect (X)^{\simeq } \quad \cong \quad \pi _0\Vect (X). \]
+</p><p class='noindent'>For a point, the components and the semiring operations admit the following explicit description.
+</p>
+<div class='newtheorem'>
+                                                                                   
+                                                                                   
+<p class='noindent'><span class='head'>
+<a id='x1-2001r1'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 9.4.1.</span>  </span><span id='prop:Vector_Bundles_At_Point_Disjoint_Union_BU'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>The  underlying  anima  of</span>  \(\Vect (\pt )^{\simeq }\)  <span class='ntx-Italic-tlf-t1-x-x-109'>is  the  disjoint  union</span>  \(\bigsqcup _{n \geq 0} \bB U(n)\)<span class='ntx-Italic-tlf-t1-x-x-109'>.  Under  this  isomorphism,
+the  addition  map  </span>\[ \left (\bigsqcup _{k=0}^{\infty } \bB U(k)\right ) \times \left (\bigsqcup _{l=0}^{\infty } \bB U(l)\right ) \to \left (\bigsqcup _{m=0}^{\infty } \bB U(m)\right ) \]  <span class='ntx-Italic-tlf-t1-x-x-109'>is  given  on  the</span>  \((k,l)\)<span class='ntx-Italic-tlf-t1-x-x-109'>-component  by  the  map</span>  \(\bB U(k) \times \bB U(l) \to \bB U(k + l)\)  <span class='ntx-Italic-tlf-t1-x-x-109'>induced  by  the  block-sum  inclusion</span>
+\[ U(k) \times U(l) \hookrightarrow U(k + l), \qquad (A,B) \mapsto \begin {pmatrix} A &amp; 0 \\ 0 &amp; B \end {pmatrix}. \] <span class='ntx-Italic-tlf-t1-x-x-109'>The multiplication map is given on the</span> \((k,l)\)<span class='ntx-Italic-tlf-t1-x-x-109'>-component by the map</span> \(\bB U(k)\times \bB U(l)\to \bB U(kl)\) <span class='ntx-Italic-tlf-t1-x-x-109'>induced by the tensor-product
+representation </span>\[ U(k)\times U(l)\longrightarrow U(kl), \qquad (A,B)\longmapsto A\otimes B. \] <span class='ntx-Italic-tlf-t1-x-x-109'>In particular, the induced semiring structure on</span> \(\pi _0 \Vect (\pt ) \cong \N \) <span class='ntx-Italic-tlf-t1-x-x-109'>is the usual one.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-04-12" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-04-12">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="def:Vect_As_Infty_Category" href="../../../entry/vect-as-infinity-category/index.html#def:Vect_As_Infty_Category">Definition 19.7.8</a>, <a class="source-reference" data-label="prop:Vect_As_Colimit" href="../../../entry/vect-as-colimit/index.html#prop:Vect_As_Colimit">Proposition 19.7.9</a>, the rank \(n\) component of \(\Vect (\pt )^{\simeq }\) is the geometric realization of the simplicial groupoid whose
+value at \([q]\) is the full subgroupoid \[ \left (\Vect ^{\disc }(\abs {\Delta ^q})^{\simeq }\right )_{\rk =n} \] spanned by the rank \(n\) bundles. Every rank \(n\) vector bundle over \(\abs {\Delta ^q}\) is
+trivial. Consequently, the full subgroupoid on the standard trivial bundle \(\abs {\Delta ^q}\times \C ^n\) is an equivalent one-object
+groupoid. Its automorphism group is \[ \Hom _{\Top }(\abs {\Delta ^q},\GL _n(\C )), \] and these groups assemble into the singular simplicial group of
+\(\GL _n(\C )\). Geometric realization preserves finite products by <a class="source-reference" data-label="lem:Geometric_Realization_Preserves_Finite_Products" href="../../../entry/geometric-realization-preserves-finite-products/index.html#lem:Geometric_Realization_Preserves_Finite_Products">Lemma 21.6.12</a>, so it commutes with the formation of classifying
+animae of simplicial groups. Since the realization of the singular simplicial group is the underlying
+group anima of \(\GL _n(\C )\), the realization of these one-object groupoids is \(\bB \GL _n(\C )\). Taking the disjoint union over
+all ranks therefore gives \[ \Vect (\pt )^{\simeq } \simeq \bigsqcup _{n \geq 0} \bB \GL _n(\C ). \] The inclusions \(U(n) \hookrightarrow \GL _n(\C )\) are homotopy equivalences by polar decomposition and
+commute with block sums and tensor products. They therefore identify \(\bB \GL _n(\C )\) with \(\bB U(n)\) compatibly with both
+operations.
+</p><p class='noindent'>Indeed, direct sum sends \((\C ^k,\C ^l)\) to \(\C ^{k+l}\) and induces the block-sum inclusion on automorphism groups. Similarly,
+tensor product sends \((\C ^k,\C ^l)\) to \(\C ^k\otimes \C ^l\cong \C ^{kl}\) and induces the tensor-product representation on automorphism groups.
+Passing to classifying animae gives the stated formulas.                                                                    □
+</p>
+</div></div>
+
+                                                                                   
+                                                                                   
+<h4 class='subsectionHead' id='connective-complex-ktheory'><span class='titlemark'>9.4.2    </span> <a id='x1-30009.4.2'></a>Connective complex K-theory</h4>
+<p class='noindent' id='subsec_Connective_Complex_K_Theory'>The definition of the complex K-theory groups via group completion admits the following homotopical
+refinement.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3001r2'></a>
+<a class="entry-heading-link" href="../../../entry/connective-complex-k-theory-spectrum/index.html" aria-label="Definition 9.4.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 9.4.2.</span></a>  </span><span id='def:Connective_Complex_K_Theory'></span> We denote by \[ \BUP := (\Vect (\pt )^{\simeq })^{\grp } \qin \CGrp (\An ) \] the group completion of \(\Vect (\pt )^{\simeq }\) with respect to direct sum, using the left
+adjoint \((-)^{\grp }\) from <a class="source-reference" data-label="cor:Group_Completion_Of_Commutative_Monoids" href="../../../entry/group-completion-of-commutative-monoids/index.html#cor:Group_Completion_Of_Commutative_Monoids">Corollary 5.4.5</a>. We define the <span class='ntx-Italic-tlf-t1-x-x-109'>connective complex K-theory spectrum</span> \(\ku \in \Sp _{\geq 0}\) to be the connective spectrum
+corresponding to \(\BUP \) under the equivalence \(\Sp _{\geq 0} \simeq \CGrp (\An )\) of <a class="source-reference" data-label="thm:Recognition_Principle_Connective_Spectra" href="../../../entry/recognition-principle-for-connective-spectra/index.html#thm:Recognition_Principle_Connective_Spectra">Theorem 5.4.6</a>.
+</p>
+</div>
+<p class='noindent'>While group completion is abstract in general, the telescope form of <a class="source-reference" data-label="thm:Group_Completion_Theorem" href="../../../entry/telescope-group-completion-theorem/index.html#thm:Group_Completion_Theorem">Theorem 5.5.2</a> gives an explicit description
+here.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3002r3'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 9.4.3.</span>  </span><span id='cor:Group_Completion_Of_Vect'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The underlying anima of</span> \(\BUP \) <span class='ntx-Italic-tlf-t1-x-x-109'>is</span> \(\Z \times \bB U\)<span class='ntx-Italic-tlf-t1-x-x-109'>: </span>\[ \BUP \simeq (\Vect (\pt )^{\simeq })^{\grp } \simeq \Z \times \bB U. \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-04-11" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-04-11">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="prop:Vector_Bundles_At_Point_Disjoint_Union_BU" href="../../../entry/moduli-anima-of-vector-bundles-at-a-point/index.html#prop:Vector_Bundles_At_Point_Disjoint_Union_BU">Proposition 9.4.1</a>, the commutative monoid \(M=\Vect (\pt )^{\simeq }\) has underlying anima \(\bigsqcup _{k\geq 0}\bB U(k)\), with addition induced by block sum.
+Let \(x\in M\) be the point corresponding to the one-dimensional vector space \(\C \). The telescope \(T(M,x)\) is obtained by
+repeatedly adding this line. Its component of virtual rank \(m\in \Z \) is the colimit \[ \colim _{n\geq \max (0,-m)} \bB U(m+n), \] which is canonically \(\bB U\). Thus
+\(T(M,x)\simeq \Z \times \bB U\).
+</p><p class='noindent'>The two hypotheses of <a class="source-reference" data-label="thm:Group_Completion_Theorem" href="../../../entry/telescope-group-completion-theorem/index.html#thm:Group_Completion_Theorem">Theorem 5.5.2</a> are immediate. The class of \(x\) is the generator \(1\in \pi _0(M)\cong \N \). The fundamental group of \(\bB U\) is
+\(\pi _0(U)\), which is trivial because the stable unitary group is connected. Hence \(T(M,x)\to M^{\grp }\) is an isomorphism.            □
+</p>
+</div></div>
+<p class='noindent'>The connective spectrum \(\ku \) can be turned into a commutative ring spectrum; equivalently, the commutative
+group \(\BUP \) admits the structure of a commutative ring object in \(\An \). This structure ultimately comes from the fact
+that the anima \(\Vect (\pt )^{\simeq }\) not only admits an addition via direct sum of vector spaces, but also a multiplication via
+tensor product of vector spaces. The required distributivity and higher coherences are constructed in
+Part II, see <a class="source-reference" data-label="sec:Application_Connective_Complex_K_Theory" href="../../algebras-and-modules/application-connective-complex-k-theory/index.html#sec:Application_Connective_Complex_K_Theory">Section 19.7</a>. The commutative ring spectrum structure on \(\ku \) is then obtained by passing to group
+completions; see <a class="source-reference" data-label="prop:ku_Comm_Ring_Spectrum" href="../../../entry/ku-comm-ring-spectrum/index.html#prop:ku_Comm_Ring_Spectrum">Proposition 19.7.11</a>.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3003r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 9.4.4.</span>  </span><span id='cor:Complex_K_Theory_Group_Via_ku'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a compact Hausdorff space which has the homotopy type of a CW-complex.
+There is a natural isomorphism of commutative rings </span>\[ K^0(X) \cong \ku ^0(\Pi _{\infty }(X)). \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-04-10" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-04-10">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The space \(\Z \times BU\) is a cell complex by the Schubert cell description above. Choose a homotopy
+equivalence \(X'\to X\) with \(X'\) a cell complex. Then \[ [X,\Z \times BU]\cong [X',\Z \times BU] \cong \pi _0\Hom _{\An }(\Pi _\infty X',\Pi _\infty (\Z \times BU)) \cong \pi _0\Hom _{\An }(\Pi _\infty X,\Pi _\infty (\Z \times BU)), \] where the middle isomorphism is <a class="source-reference" data-label="cor:Pi_Infty_surjective_On_Objects_And_Morphisms" href="../../../entry/homotopy-category-of-animae-via-cell-complexes/index.html#cor:Pi_Infty_surjective_On_Objects_And_Morphisms">Corollary 2.3.7</a>. Combining this with <a class="source-reference" data-label="prop:Complex_K_Theory_Representability" href="../../../entry/representability-of-complex-k-theory/index.html#prop:Complex_K_Theory_Representability">Proposition 9.3.8</a>, <a class="source-reference" data-label="prop:BU_Is_Stable_Classifying_Anima" href="../../../entry/stable-grassmannian-as-a-stable-classifying-anima/index.html#prop:BU_Is_Stable_Classifying_Anima">Proposition 9.2.21</a>, <a class="source-reference" data-label="cor:Group_Completion_Of_Vect" href="../../../entry/group-completion-of-the-vector-bundle-monoid/index.html#cor:Group_Completion_Of_Vect">Corollary 9.4.3</a> and the
+adjunction \(\S [-]\dashv \Omega ^{\infty }\) gives \begin {align*}  K^0(X) &amp;\cong [X,\Z \times BU] \\ &amp;\cong \pi _0\Hom _{\An }(\Pi _{\infty }(X),\Pi _{\infty }(\Z \times BU)) \\ &amp;\cong \pi _0\Hom _{\An }(\Pi _{\infty }(X),\Z \times \bB U) \\ &amp;\cong \pi _0\Hom _{\An }(\Pi _{\infty }(X),\BUP ) \\ &amp;\cong \pi _0\Hom _{\Sp }(\S [\Pi _{\infty }(X)],\ku ) \\ &amp;= \ku ^0(\Pi _{\infty }(X)).  \end {align*}
+</p><p class='noindent'>It remains to check multiplication. Set \(M:=\Vect (\pt )^{\simeq }\). The unit map \(M\to M^{\grp }=\BUP \) is a morphism of commutative semiring objects,
+                                                                                   
+                                                                                   
+since group completion is symmetric monoidal by <a class="source-reference" data-label="prop:Group_Completion_Symmetric_Monoidal" href="../../../entry/group-completion-symmetric-monoidal/index.html#prop:Group_Completion_Symmetric_Monoidal">Proposition 16.6.4</a>. For a vector bundle \(E\) over \(X\), its classifying map to \(M\)
+therefore determines a class in \(\ku ^0(\Pi _\infty X)\), and <a class="source-reference" data-label="prop:Vector_Bundles_At_Point_Disjoint_Union_BU" href="../../../entry/moduli-anima-of-vector-bundles-at-a-point/index.html#prop:Vector_Bundles_At_Point_Disjoint_Union_BU">Proposition 9.4.1</a> shows that direct sum and tensor product of bundles map
+to the sum and product of the corresponding classes. This semiring map \[ \pi _0\Vect (X)\longrightarrow \ku ^0(\Pi _\infty X) \] extends uniquely
+to a ring map from \(K^0(X)\). Under the description \(M^{\grp }\simeq \Z \times \bB U\) of <a class="source-reference" data-label="cor:Group_Completion_Of_Vect" href="../../../entry/group-completion-of-the-vector-bundle-monoid/index.html#cor:Group_Completion_Of_Vect">Corollary 9.4.3</a>, this extension is the isomorphism displayed
+above: an honest vector bundle is sent to its stable classifying map. Hence that isomorphism is
+multiplicative.                                                                                                                                     □
+</p>
+</div></div>
+<p class='noindent'>For a pointed compact Hausdorff space \(X\) of the homotopy type of a CW-complex, naturality with respect
+to the basepoint shows that the preceding comparison identifies the kernels of the restriction
+maps to the point. It therefore restricts to a natural isomorphism \[ \widetilde K^0(X)\cong \widetilde \ku ^0(\Pi _\infty X). \] In particular, for \(n\geq 0\) we obtain
+\(\widetilde K^0(S^n)\cong \pi _n\ku \).
+</p><p class='noindent'>For pointed spaces \(X\) and \(Y\) satisfying the same hypotheses, the reduced comparisons are compatible with
+external products. Indeed, if \(E\to X\) and \(F\to Y\) are vector bundles, then multiplication of their classifying maps classifies \[ E\boxtimes F:=\pr _X^*E\otimes \pr _Y^*F \longrightarrow X\times Y. \]
+Thus the unreduced comparison preserves external products. Reduced classes correspond to based
+classifying maps, and their smash product followed by the multiplication on \(\BUP \) pulls back along \(X\times Y\to X\wedge Y\) to the
+ordinary external product. This is also the defining property of the classical reduced external product, so the
+reduced comparison preserves it.
+</p><p class='noindent'>Under the preceding reduced comparison and the homeomorphism \(\CP ^1\cong S^2\), the Bott class of <a class="source-reference" data-label="def:Bott_Class" href="../../../entry/bott-class/index.html#def:Bott_Class">Definition 9.3.9</a> determines a class
+\[ \beta \in \pi _2\ku . \]
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3004r5'></a>
+<a class="entry-heading-link" href="../../../entry/bott-self-map/index.html" aria-label="Construction 9.4.5, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 9.4.5 </span></a>(The Bott self-map)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cons:Multiplication_By_Beta'></span>  The  Bott  class  is  represented  by  a  morphism  \(\beta \colon \S [2]\to \ku \),  or
+equivalently by a morphism \(\beta \colon \S \to \ku [-2]\). Multiplication by this class defines a morphism of spectra \[ b\colon \ku \simeq \S \otimes \ku \xrightarrow {\beta \otimes \id } \ku [-2]\otimes \ku \xrightarrow {\mu [-2]}\ku [-2], \] where \(\mu \)
+denotes the multiplication on \(\ku \). We call \(b\) the <span class='ntx-Italic-tlf-t1-x-x-109'>Bott map</span>.
+</p><p class='noindent'>By the compatibility of the preceding comparison with reduced external products, the map \[ b_*\colon \pi _n\ku \longrightarrow \pi _{n+2}\ku \] for \(n\geq 0\)
+is reduced external multiplication with the classical Bott class. More explicitly, if \(q\colon S^n\times \CP ^1\to S^n\wedge \CP ^1\) is the quotient
+map, then the corresponding reduced class is characterized by the fact that its pullback along \(q\) is the
+ordinary external product.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3005r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 9.4.6 </span>(Bott periodicity for \(\ku \))<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cor:Multiplicative_Bott'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The Bott map induces an isomorphism </span>\[ b_*\colon \pi _n\ku \xrightarrow {\cong } \pi _{n+2}\ku \] <span class='ntx-Italic-tlf-t1-x-x-109'>for every</span> \(n \geq 0\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-04-9" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-04-9">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Apply <a class="source-reference" data-label="thm:Bott_Periodicity" href="../../../entry/bott-periodicity-for-reduced-complex-k-theory/index.html#thm:Bott_Periodicity">Theorem 9.3.10</a> to \(X=S^n\). Under the comparison above, \[ \pi _n\ku \cong \widetilde \ku ^0(S^n) \cong \widetilde K^0(S^n), \] the map \(b_*\) is external multiplication by the Bott
+class. The claim therefore follows from classical Bott periodicity.                                                    □
+</p>
+</div></div>
+
+<h4 class='subsectionHead' id='periodic-complex-ktheory'><span class='titlemark'>9.4.3    </span> <a id='x1-40009.4.3'></a>Periodic complex K-theory</h4>
+<p class='noindent'><span id='subsec_Periodic_Complex_K_Theory'></span> The connective spectrum \(\ku \) admits a \(2\)-periodic variant \(\KU \), obtained by inverting the Bott class.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4001r7'></a>
+<a class="entry-heading-link" href="../../../entry/periodic-complex-k-theory-spectrum/index.html" aria-label="Definition 9.4.7., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 9.4.7.</span></a>  </span><span id='def:KU'></span> The <span class='ntx-Italic-tlf-t1-x-x-109'>periodic complex K-theory spectrum </span>is the colimit \[ \KU := \ku [\beta ^{-1}] := \colim \big (\ku \xrightarrow {b} \ku [-2] \xrightarrow {b[-2]} \ku [-4] \to \cdots \big ) \qin \Sp . \] We write \(\iota \colon \ku \to \KU \) for the canonical
+map into the colimit.
+                                                                                   
+                                                                                   
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4002r8'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 9.4.8.</span>  </span><span id='cor:KU_Comm_Ring_Spectrum'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>The  periodic  complex  K-theory  spectrum</span>  \(\KU \)  <span class='ntx-Italic-tlf-t1-x-x-109'>admits  a  canonical  structure  of
+commutative ring spectrum, and the map</span> \(\ku \to \KU \) <span class='ntx-Italic-tlf-t1-x-x-109'>is a morphism of commutative ring spectra.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-04-8" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-04-8">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="prop:ku_Comm_Ring_Spectrum" href="../../../entry/ku-comm-ring-spectrum/index.html#prop:ku_Comm_Ring_Spectrum">Proposition 19.7.11</a>, the spectrum \(\ku \) is a commutative ring spectrum, so \(\beta \in \pi _2\ku \) is a homogeneous element of the
+graded-commutative ring \(\pi _*\ku \). Let \(S := \{1,\beta ,\beta ^2,\dots \}\) be the multiplicative subset it generates.
+</p><p class='noindent'>By <a class="source-reference" data-label="cor:Commutative_Localization_Ring_Spectrum" href="../../../entry/localization-of-commutative-ring-spectra/index.html#cor:Commutative_Localization_Ring_Spectrum">Corollary 8.4.5</a>, the localization \(\ku [\beta ^{-1}] := \ku [S^{-1}]\) exists in \(\CAlg (\Sp )\), and the localization map \(\eta \colon \ku \to \ku [\beta ^{-1}]\) is a morphism of commutative ring spectra.
+By <a class="source-reference" data-label="lem:Localization_As_Telescope" href="../../../entry/localization-at-one-element-as-a-telescope/index.html#lem:Localization_As_Telescope">Lemma 8.4.6</a>, its underlying spectrum is the telescope \[ \colim \big ( \ku \xrightarrow {\ b\ } \ku [-2] \xrightarrow {\ b[-2]\ } \ku [-4] \to \cdots \big ), \] where \(b\) is multiplication by \(\beta \), i.e. the Bott map of <a class="source-reference" data-label="cons:Multiplication_By_Beta" href="../../../entry/bott-self-map/index.html#cons:Multiplication_By_Beta">Construction 9.4.5</a>. This
+colimit is precisely the spectrum \(\KU \) of <a class="source-reference" data-label="def:KU" href="../../../entry/periodic-complex-k-theory-spectrum/index.html#def:KU">Definition 9.4.7</a>, and under this identification \(\eta \) is the canonical map \(\iota \colon \ku \to \KU \).               □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4003r9'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 9.4.9.</span>  </span><span id='lem:Homotopy_Of_KU'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For every</span> \(k \in \Z \) <span class='ntx-Italic-tlf-t1-x-x-109'>there is a natural isomorphism </span>\[ \pi _k\KU \cong \colim \big (\pi _k\ku \xrightarrow {b_*} \pi _{k+2}\ku \xrightarrow {b_*} \pi _{k+4}\ku \to \cdots \big ). \]
+</p>
+                                                                                   
+
+                                                                                   
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-04-7" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-04-7">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="lem:Homotopy_Groups_Preserve_Filtered_Colimits" href="../../../entry/homotopy-groups-preserve-filtered-colimits/index.html#lem:Homotopy_Groups_Preserve_Filtered_Colimits">Lemma 4.4.27</a>, the functor \(\pi _k\) preserves the filtered colimit defining \(\KU \). Moreover \(\pi _k(\ku [-2j])=\pi _{k+2j}\ku \), and the transition maps
+are induced by the Bott map.                                                                                                              □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4004r10'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 9.4.10.</span>  </span><span id='thm:ku_Is_Connective_Cover_Of_KU'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The map</span> \(\iota \colon \ku \to \KU \) <span class='ntx-Italic-tlf-t1-x-x-109'>exhibits</span> \(\ku \) <span class='ntx-Italic-tlf-t1-x-x-109'>as the connective cover of</span> \(\KU \)<span class='ntx-Italic-tlf-t1-x-x-109'>: it induces an isomorphism on</span> \(\pi _k\) <span class='ntx-Italic-tlf-t1-x-x-109'>for</span>
+\(k \geq 0\)<span class='ntx-Italic-tlf-t1-x-x-109'>, and hence an equivalence </span>\[ \ku \xrightarrow {\simeq } \tau _{\geq 0}\KU . \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-04-6" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-04-6">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> For \(k \geq 0\), <a class="source-reference" data-label="lem:Homotopy_Of_KU" href="../../../entry/homotopy-groups-of-periodic-complex-k-theory/index.html#lem:Homotopy_Of_KU">Lemma 9.4.9</a> writes \(\pi _k\KU \) as a filtered colimit whose transition maps \[ b_*\colon \pi _{k+2j}\ku \to \pi _{k+2j+2}\ku \] are all isomorphisms by <a class="source-reference" data-label="cor:Multiplicative_Bott" href="../../../entry/bott-periodicity-for-connective-complex-k-theory/index.html#cor:Multiplicative_Bott">Corollary 9.4.6</a>. Hence \(\pi _k(\iota )\)
+is an isomorphism for \(k\geq 0\). Since \(\ku \) is connective, the map \(\iota \) factors through the connective cover as \[ \ku \xrightarrow {\bar \iota } \tau _{\geq 0}\KU \to \KU \] by <a class="source-reference" data-label="cor:Connective_Cover" href="../../../entry/connective-cover-of-a-spectrum/index.html#cor:Connective_Cover">Corollary 5.4.7</a>.
+The map \(\bar \iota \) is an isomorphism on all homotopy groups, because both source and target are connective
+and we have already checked the non-negative homotopy groups. It is therefore an equivalence by
+<a class="source-reference" data-label="cor:Homotopy_Groups_Jointly_Conservative" href="../../../entry/homotopy-groups-detect-isomorphisms-of-spectra/index.html#cor:Homotopy_Groups_Jointly_Conservative">Corollary 4.4.26</a>.                                                                                                                                                           □
+</p>
+</div></div>
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4005r11'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 9.4.11.</span>  </span><span id='cor:ku_KU_Nonpositive_Cohomology'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For every anima</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>and every integer</span> \(k\leq 0\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the map</span> \(\ku \to \KU \) <span class='ntx-Italic-tlf-t1-x-x-109'>induces an isomorphism </span>\[ \ku ^k(X) \xrightarrow {\cong } \KU ^k(X). \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-04-5" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-04-5">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> For every connective spectrum \(Y\), the equivalence \(\ku \simeq \tau _{\geq 0}\KU \) induces an equivalence \[ \Hom _{\Sp }(Y,\ku ) \iso \Hom _{\Sp }(Y,\KU ). \] Apply this to \(Y=\Sigma ^{-k}\S [X]\),
+which is connective for \(k\leq 0\).                                                                                                                     □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4006r12'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 9.4.12 </span>(Periodicity)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:KU_Periodic'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>There is an equivalence</span> \(\Sigma ^2\KU \simeq \KU \)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-04-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-04-4">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  The  spectrum  \(\KU [-2]\)  is  the  colimit  of  the  diagram  defining  \(\KU \)  with  its  first  term  omitted:  \[ \ku [-2] \xrightarrow {b[-2]} \ku [-4] \to \cdots . \]
+This  subdiagram  is  cofinal  in  the  original  sequential  diagram,  so  \(\KU [-2]\simeq \KU \).  Applying  \(\Sigma ^2\)  gives  the  desired
+equivalence.                                                                                                                                        □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4007r13'></a>
+<a class="entry-heading-link" href="../../../entry/bott-element-in-periodic-complex-k-theory/index.html" aria-label="Remark 9.4.13., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 9.4.13.</span></a>  </span><span id='rmk:Bott_Element_In_Periodic_Complex_K_Theory'></span> The periodicity isomorphism of <a class="source-reference" data-label="prop:KU_Periodic" href="../../../entry/bott-periodicity-for-periodic-complex-k-theory/index.html#prop:KU_Periodic">Proposition 9.4.12</a> is multiplication by the image of \(\beta \) in \(\pi _2\KU \). Thus that
+image is invertible in the graded ring \(\pi _*(\KU )\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4008r14'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 9.4.14.</span>  </span><span id='cor:Homotopy_Groups_KU'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>There are isomorphisms of graded rings </span>\[ \pi _*\ku \cong \Z [\beta ] \qquadtext { and } \qquad \pi _*\KU \cong \Z [\beta ^{\pm 1}], \] <span class='ntx-Italic-tlf-t1-x-x-109'>with</span> \(\abs {\beta }=2\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Equivalently, </span>\[ \pi _k(\KU ) \cong \begin {cases} \Z &amp; k \text { even},\\ 0 &amp; k \text { odd}. \end {cases} \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-04-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-04-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The description \(\BUP \simeq \Z \times \bB U\) of <a class="source-reference" data-label="cor:Group_Completion_Of_Vect" href="../../../entry/group-completion-of-the-vector-bundle-monoid/index.html#cor:Group_Completion_Of_Vect">Corollary 9.4.3</a> gives \(\pi _0\ku \cong \Z \) and \(\pi _1\ku =0\). Multiplication by \(\beta \) induces isomorphisms \(\pi _n\ku \to \pi _{n+2}\ku \) for \(n\geq 0\) by <a class="source-reference" data-label="cor:Multiplicative_Bott" href="../../../entry/bott-periodicity-for-connective-complex-k-theory/index.html#cor:Multiplicative_Bott">Corollary 9.4.6</a>. Since \(\ku \) is
+connective, this proves \(\pi _*\ku \cong \Z [\beta ]\). The calculation for \(\KU =\ku [\beta ^{-1}]\) now follows from <a class="source-reference" data-label="lem:Homotopy_Groups_Of_Inversion_Is_Inversion_Of_Homotopy_Groups" href="../../../entry/homotopy-groups-of-prime-inverted-spectra/index.html#lem:Homotopy_Groups_Of_Inversion_Is_Inversion_Of_Homotopy_Groups">Lemma 7.2.4</a>.                                                       □
+                                                                                   
+                                                                                   
+</p>
+</div></div>
+<p class='noindent'>The homotopy-group calculation and <a class="source-reference" data-label="prop:Rational_Spectra_Split" href="../../../entry/rational-spectra-split-into-eilenberg-maclane-spectra/index.html#prop:Rational_Spectra_Split">Proposition 7.2.16</a> give an abstract noncanonical isomorphism of spectra \[ \KU _{\Q }\simeq \bigoplus _{n\in \Z }H\Q [2n]. \] The
+chosen Bott class allows us to refine this to an isomorphism of commutative ring spectra. Let \(\Q [\beta ^{\pm 1}]\)
+denote the commutative DGA with zero differential on an invertible generator \(\beta \) in degree \(2\),
+and let \(H\Q [\beta ^{\pm 1}]\) be its Eilenberg–MacLane ring spectrum in the sense of <a class="source-reference" data-label="sec:Eilenberg_MacLane_Ring_Spectra_DGAs" href="../../ring-spectra-and-modules/eilenberg-maclane-ring-spectra-and-dgas/index.html#sec:Eilenberg_MacLane_Ring_Spectra_DGAs">Section 8.3</a>. Its underlying spectrum is \(\bigoplus _{n\in \Z }H\Q [2n]\).
+The canonical map \[ \bigoplus _{n\in \Z }H\Q [2n]\longrightarrow \prod _{n\in \Z }H\Q [2n] \] is an isomorphism, since it induces an isomorphism on every homotopy
+group.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4009r15'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 9.4.15 </span>(Rational periodic complex K-theory)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Rational_KU'>    </span><span class='ntx-Italic-tlf-t1-x-x-109'>The    Bott    class    determines    an
+isomorphism of commutative ring spectra </span>\[ H\Q [\beta ^{\pm 1}]\xrightarrow {\ \simeq \ }\KU _{\Q } \] <span class='ntx-Italic-tlf-t1-x-x-109'>which sends the Laurent polynomial generator</span> \(\beta \) <span class='ntx-Italic-tlf-t1-x-x-109'>to the
+rationalized Bott class.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-04-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-04-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By the smashing description of rationalization and <a class="source-reference" data-label="thm:Serre_Finiteness" href="../../../entry/rational-sphere-is-eilenberg-maclane-spectrum/index.html#thm:Serre_Finiteness">Theorem 7.2.14</a>, we have \(\KU _{\Q }\simeq \KU \otimes H\Q \), so \(\KU _{\Q }\) is canonically a commutative
+\(H\Q \)-algebra.  Under  the  symmetric  monoidal  equivalence  \(\D (\Q )\simeq \Mod _{H\Q }\)  of  <a class="source-reference" data-label="cor:Derived_Category_As_HR_Modules" href="../../../entry/derived-categories-as-eilenberg-maclane-module-categories/index.html#cor:Derived_Category_As_HR_Modules">Corollary 8.3.4</a>,  the  polynomial  algebra  \(\Q [\beta ]\)  is  the  free
+commutative \(\Q \)-algebra on a generator in degree \(2\). The rationalized Bott class therefore determines a
+morphism of commutative \(H\Q \)-algebras \[ H\Q [\beta ]\longrightarrow \KU _{\Q }. \] The canonical map \(H\Q [\beta ]\to H\Q [\beta ^{\pm 1}]\) exhibits its target as \((H\Q [\beta ])[\beta ^{-1}]\): indeed, the induced
+map  from  this  localization  is  an  isomorphism  on  homotopy  groups  by  <a class="source-reference" data-label="lem:Localization_As_Telescope" href="../../../entry/localization-at-one-element-as-a-telescope/index.html#lem:Localization_As_Telescope">Lemma 8.4.6</a>.  Since  the  Bott  class  is
+invertible in \(\pi _*(\KU _{\Q })\), the preceding morphism therefore extends uniquely to \(H\Q [\beta ^{\pm 1}]\). It induces the isomorphism \[ \Q [\beta ^{\pm 1}]\xrightarrow {\ \cong \ }\pi _*(\KU _{\Q }) \]
+from <a class="source-reference" data-label="cor:Homotopy_Groups_KU" href="../../../entry/coefficient-ring-of-periodic-complex-k-theory/index.html#cor:Homotopy_Groups_KU">Corollary 9.4.14</a> and <a class="source-reference" data-label="lem:Homotopy_Groups_Of_Inversion_Is_Inversion_Of_Homotopy_Groups" href="../../../entry/homotopy-groups-of-prime-inverted-spectra/index.html#lem:Homotopy_Groups_Of_Inversion_Is_Inversion_Of_Homotopy_Groups">Lemma 7.2.4</a>, and hence is an isomorphism of commutative ring spectra.                                            □
+</p>
+</div></div>
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4010r16'></a>
+<a class="entry-heading-link" href="../../../entry/chern-character/index.html" aria-label="Definition 9.4.16, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 9.4.16 </span></a>(Chern character)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Chern_Character'></span> The <span class='ntx-Italic-tlf-t1-x-x-109'>Chern character </span>is the stable multiplicative cohomology
+operation induced by the composite \[ \KU \longrightarrow \KU _{\Q }\xrightarrow {\ \simeq \ }H\Q [\beta ^{\pm 1}], \] where the second map is the inverse of the isomorphism in <a class="source-reference" data-label="prop:Rational_KU" href="../../../entry/rational-periodic-complex-k-theory/index.html#prop:Rational_KU">Proposition 9.4.15</a>.
+Thus, for every anima \(X\) and every \(k\in \Z \), it gives a natural morphism \[ \mathrm {ch}\colon \KU ^k(X)\longrightarrow \prod _{n\in \Z }H^{k+2n}(X;\Q ). \]
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4011r17'></a>
+<a class="entry-heading-link" href="../../../entry/normalization-of-the-chern-character/index.html" aria-label="Remark 9.4.17., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 9.4.17.</span></a>  </span><span id='rmk:Normalization_Of_Chern_Character'></span> Normalize the generator of \(H^2(\CP ^\infty ;\Q )\) by requiring that its restriction to \(\CP ^1\) is \(c_1(H)\), where \(H\) is the
+tautological line bundle of <a class="source-reference" data-label="def:Bott_Class" href="../../../entry/bott-class/index.html#def:Bott_Class">Definition 9.3.9</a>.  With this convention, the operation above agrees with the classical
+Chern character characterized on line bundles by \[ \mathrm {ch}(L)=e^{c_1(L)}. \] We do not develop the theory of Chern classes
+here; see <span class='citation'>Milnor and Stasheff (1974)</span> and <span class='citation'>Hatcher (2003), Section 4.1</span>.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4012r18'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 9.4.18.</span>  </span><span id='cor:Chern_Character_Rational_Isomorphism'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a finite anima and let</span> \(k\in \Z \)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then the Chern character induces an isomorphism</span>
+\[ \KU ^k(X)_{\Q } \iso \bigoplus _{n\in \Z } H^{k+2n}(X;\Q ). \]
+</p>
+</div>
+                                                                                   
+
+                                                                                   
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-04-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-04-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Since \(X\) is finite, the functor \(\hom (\S [X],-)\colon \Sp \to \Sp \) commutes with rationalization and with direct sums. Applying
+it to <a class="source-reference" data-label="prop:Rational_KU" href="../../../entry/rational-periodic-complex-k-theory/index.html#prop:Rational_KU">Proposition 9.4.15</a> gives \[ \hom (\S [X],\KU )_{\Q } \simeq \hom (\S [X],\KU _{\Q }) \simeq \bigoplus _{n\in \Z }\hom (\S [X],H\Q [2n]). \] The resulting map is induced by the Chern character of <a class="source-reference" data-label="def:Chern_Character" href="../../../entry/chern-character/index.html#def:Chern_Character">Definition 9.4.16</a>. Since \(X\) is finite, only finitely
+many of the groups \(H^{k+2n}(X;\Q )\) are nonzero, so the product in its definition agrees with the direct sum above.
+Passing to \(\pi _{-k}\) gives the claim.                                                                                                                 □
+</p>
+</div></div>
+<p class='noindent'><a id='likesection.1'></a><a id='x1-4013x9.4.3'></a>
+</p>
+<h3 class='likesectionHead' id='exercises'><a id='x1-5000'></a>Exercises</h3>
+<p id='exercises1'><a id='Q1-1-6'></a>
+</p><div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5001r1'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 9.1 </span>(Stable equivalence and reduced K-theory)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(X\) be a compact Hausdorff space and consider
+the composite \[ \pi _0\Vect (X) \to K^0(X) \to \widetilde {K}^0(X), \] which is a morphism of abelian monoids.
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>Show that two vector bundles \(E\) and \(E'\) have the same image in \(\widetilde K^0(X)\) if and only if there are \(n,m\geq 0\) and an
+   isomorphism \[ E\oplus \ul {\C }^n\cong E'\oplus \ul {\C }^m. \]
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>Suppose that \(X\) is connected. Extend the rank of a vector bundle to a homomorphism \(\rk \colon K^0(X)\to \Z \) and show
+   that it induces an isomorphism \[ \widetilde K^0(X)\cong \ker \big (\rk \colon K^0(X)\to \Z \big ). \]</p></dd></dl>
+                                                                                   
+                                                                                   
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5004r2'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 9.2.</span>  </span>Let \(X\) be a cell complex. Using the commutative monoid structure on \[ \Vect (\pt )^{\simeq }\simeq \bigsqcup _{k=0}^{\infty }\bB U(k), \] show that \(\Hom _{\An }(\Pi _\infty X,\Vect (\pt )^{\simeq })\) admits
+a canonical commutative monoid structure. Under the classification of <a class="source-reference" data-label="cor:Classifying_Vector_Bundles" href="../../../entry/classification-of-vector-bundles/index.html#cor:Classifying_Vector_Bundles">Corollary 9.2.16</a>, identify the induced abelian
+monoid structure on its set of components with direct sum of vector bundles.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5005r3'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 9.3 </span>(Direct sums, tensor products, and K-theory)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(E_1\) and \(E_2\) be complex vector bundles over a
+topological space \(X\).
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>Show that the fiber product \(E_1\times _XE_2\), with its fiberwise direct-sum structure, is again a vector bundle.
+   Verify that direct sum makes \(\pi _0\Vect (X)\) into an abelian monoid.
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>Construct the tensor-product bundle \(E_1\otimes E_2\), whose fiber over \(x\in X\) is \((E_1)_x\otimes _{\C }(E_2)_x\). Show that tensor product is unital,
+   commutative, associative, and distributive over direct sum on isomorphism classes, making \(\pi _0\Vect (X)\) into
+   a <span class='ntx-Italic-tlf-t1-x-x-109'>commutative semiring</span>.
+   </p></dd><dt class='enumerate'>
+(3) </dt><dd class='enumerate'>
+                                                                                   
+                                                                                   
+   <p class='noindent'>Deduce that the multiplication extends uniquely across group completion to a commutative ring
+   structure on \(K^0(X)\).</p></dd></dl>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5009r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 9.4 </span>(Bott periodicity on spheres)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Compute \(\widetilde {\KU }^k(S^n)\) for every \(k\in \Z \) and \(n\geq 0\). Show that it is isomorphic to
+\(\Z \) when \(k-n\) is even and is zero when \(k-n\) is odd.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5010r5'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 9.5 </span>(The rational Chern character of projective space)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span>   Let   \(H\to \CP ^m\)   be   the   tautological   line
+bundle, normalize \(x=c_1(H)\), and put \(u=[H]-[\ul {\C }]\in \KU ^0(\CP ^m)\). Show that \[ \mathrm {ch}(u)=e^x-1\in H^*(\CP ^m;\Q )\cong \Q [x]/(x^{m+1}). \] Deduce that the Chern character identifies \[ \KU ^0(\CP ^m)\otimes \Q \cong \Q [u]/(u^{m+1}) \] as commutative
+\(\Q \)-algebras. Compute \(\KU ^k(\CP ^m)\otimes \Q \) for every \(k\in \Z \).
+</p>
+</div>
+
+ 
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../complex-k-theory-groups/index.html" aria-label="Previous section: Complex K-theory groups" title="Previous section: Complex K-theory groups"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../../thom-spectra-and-bordism-theory/thom-spaces-and-the-collapse-construction/index.html" aria-label="Next section: Thom spaces and the collapse construction" title="Next section: Thom spaces and the collapse construction"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html" aria-current="page"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/animae-as-spaces/index.html"><span class="context-entry-heading">Chapter 2</span><span class="context-entry-title">Animae as spaces</span></a></li><li><a href="../../../chapter/homology-and-cohomology/index.html"><span class="context-entry-heading">Chapter 3</span><span class="context-entry-title">Homology and cohomology</span></a></li><li><a href="../../../chapter/spectra-and-stable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 4</span><span class="context-entry-title">Spectra and stable ∞-categories</span></a></li><li><a href="../../../chapter/recognition-principle/index.html"><span class="context-entry-heading">Chapter 5</span><span class="context-entry-title">The recognition principle</span></a></li><li><a href="../../../chapter/homological-algebra/index.html"><span class="context-entry-heading">Chapter 6</span><span class="context-entry-title">Homological algebra</span></a></li><li><a href="../../../chapter/localization-and-completion/index.html"><span class="context-entry-heading">Chapter 7</span><span class="context-entry-title">Localization and completion</span></a></li><li><a href="../../../chapter/ring-spectra-and-modules/index.html"><span class="context-entry-heading">Chapter 8</span><span class="context-entry-title">Ring spectra and modules</span></a></li><li><a href="../../../chapter/complex-k-theory/index.html" aria-current="page"><span class="context-entry-heading">Chapter 9</span><span class="context-entry-title">Complex K-theory</span></a></li><li><a href="../../../chapter/thom-spectra-and-bordism-theory/index.html"><span class="context-entry-heading">Chapter 10</span><span class="context-entry-title">Thom spectra and bordism theory</span></a></li><li><a href="../../../chapter/duality-phenomena/index.html"><span class="context-entry-heading">Chapter 11</span><span class="context-entry-title">Duality phenomena</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../vector-bundles/index.html"><span class="context-entry-heading">Section 9.1</span><span class="context-entry-title">Vector bundles</span></a></li><li><a href="../classifying-vector-bundles/index.html"><span class="context-entry-heading">Section 9.2</span><span class="context-entry-title">Classifying vector bundles</span></a></li><li><a href="../complex-k-theory-groups/index.html"><span class="context-entry-heading">Section 9.3</span><span class="context-entry-title">Complex K-theory groups</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 9.4</span><span class="context-entry-title">Complex K-theory spectra</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#prop:Vector_Bundles_At_Point_Disjoint_Union_BU"><span class="context-entry-heading">Proposition 9.4.1</span><span class="context-entry-title">proposition</span></a></li><li><a href="#def:Connective_Complex_K_Theory"><span class="context-entry-heading">Definition 9.4.2</span><span class="context-entry-title">definition</span></a></li><li><a href="#cor:Group_Completion_Of_Vect"><span class="context-entry-heading">Corollary 9.4.3</span><span class="context-entry-title">corollary</span></a></li><li><a href="#cor:Complex_K_Theory_Group_Via_ku"><span class="context-entry-heading">Corollary 9.4.4</span><span class="context-entry-title">corollary</span></a></li><li><a href="#cons:Multiplication_By_Beta"><span class="context-entry-heading">Construction 9.4.5</span><span class="context-entry-title">The Bott self-map</span></a></li><li><a href="#cor:Multiplicative_Bott"><span class="context-entry-heading">Corollary 9.4.6</span><span class="context-entry-title">Bott periodicity for \ku</span></a></li><li><a href="#def:KU"><span class="context-entry-heading">Definition 9.4.7</span><span class="context-entry-title">definition</span></a></li><li><a href="#cor:KU_Comm_Ring_Spectrum"><span class="context-entry-heading">Corollary 9.4.8</span><span class="context-entry-title">corollary</span></a></li><li><a href="#lem:Homotopy_Of_KU"><span class="context-entry-heading">Lemma 9.4.9</span><span class="context-entry-title">lemma</span></a></li><li><a href="#thm:ku_Is_Connective_Cover_Of_KU"><span class="context-entry-heading">Theorem 9.4.10</span><span class="context-entry-title">theorem</span></a></li><li><a href="#cor:ku_KU_Nonpositive_Cohomology"><span class="context-entry-heading">Corollary 9.4.11</span><span class="context-entry-title">corollary</span></a></li><li><a href="#prop:KU_Periodic"><span class="context-entry-heading">Proposition 9.4.12</span><span class="context-entry-title">Periodicity</span></a></li><li><a href="#rmk:Bott_Element_In_Periodic_Complex_K_Theory"><span class="context-entry-heading">Remark 9.4.13</span><span class="context-entry-title">remark</span></a></li><li><a href="#cor:Homotopy_Groups_KU"><span class="context-entry-heading">Corollary 9.4.14</span><span class="context-entry-title">corollary</span></a></li><li><a href="#prop:Rational_KU"><span class="context-entry-heading">Proposition 9.4.15</span><span class="context-entry-title">Rational periodic complex K-theory</span></a></li><li><a href="#def:Chern_Character"><span class="context-entry-heading">Definition 9.4.16</span><span class="context-entry-title">Chern character</span></a></li><li><a href="#rmk:Normalization_Of_Chern_Character"><span class="context-entry-heading">Remark 9.4.17</span><span class="context-entry-title">remark</span></a></li><li><a href="#cor:Chern_Character_Rational_Isomorphism"><span class="context-entry-heading">Corollary 9.4.18</span><span class="context-entry-title">corollary</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

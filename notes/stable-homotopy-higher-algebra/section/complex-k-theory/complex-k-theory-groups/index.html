@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 9.3: Complex K-theory groups | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/stable-homotopy-theory/index.html">Part I</a> · <a href="../../../chapter/complex-k-theory/index.html">Chapter 9</a> · Section 9.3</p>
+      <h1>Complex K-theory groups</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Complex_K_Theory_Groups'>We now pass from vector bundles to the classical complex K-theory groups. For a compact Hausdorff space,
+these are obtained by formally adjoining additive inverses to vector bundles. We will prove
+that \(K^0\) is represented by the space \(\Z \times BU\), define the Bott class, and state the classical Bott periodicity
+theorem.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<a class="entry-heading-link" href="../../../entry/complex-k-theory-groups/index.html" aria-label="Definition 9.3.1, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 9.3.1 </span></a>(Complex K-theory)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Complex_K_Theory_Group'></span> Let \(X\) be a compact Hausdorff space. We define the <span class='ntx-Italic-tlf-t1-x-x-109'>complex
+K-theory group</span> \(K^0(X)\) as the Grothendieck group of the abelian monoid \(\pi _0\Vect (X)\): \[ K^0(X) := (\pi _0\Vect (X))^{\grp }. \] In other words, \(K^0(X)\) consists of
+equivalence  classes  of  formal  differences  \(E- E'\)  of  complex  vector  bundles  over  \(X\),  where  we  say  that  \(E_1 - E_1' = E_2 - E_2'\)
+whenever there is an isomorphism \(E_1 \oplus E_2' \oplus E_3 \cong E_1' \oplus E_2\oplus E_3\) of vector bundles over \(X\) for some \(E_3 \in \pi _0\Vect (X)\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1002r2'></a>
+<a class="entry-heading-link" href="../../../entry/complex-k-theory-of-a-point/index.html" aria-label="Example 9.3.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 9.3.2.</span></a>  </span><span id='ex:Complex_K_Theory_Of_Point'></span> For \(X = \pt \), a vector bundle is simply a complex vector space, which up to isomorphism
+is determined by its dimension. We thus see that the abelian monoid \(\pi _0\Vect (\pt )\) is isomorphic to \(\N \), and hence \(K^0(\pt ) \cong \Z \).
+</p>
+</div>
+<p class='noindent'>The abelian group \(K^0(X)\) is contravariantly functorial in \(X\): given a continuous map \(f\colon X \to Y\), pullback along \(f\) determines a
+map \[ f^*\colon \pi _0\Vect (Y) \to \pi _0\Vect (X), \] which induces a map \(f^*\colon K^0(Y) \to K^0(X)\) on Grothendieck groups.
+</p><p class='noindent'>Tensor product distributes over direct sum, so it makes \(\pi _0\Vect (X)\) into a commutative semiring. Its multiplication
+extends uniquely to a commutative ring structure on \(K^0(X)\), with unit the class of the trivial line bundle. Pullback
+maps are morphisms of rings. The details are left to <span class="source-reference" data-label="exercise:Tensor_Product_On_K_Theory">Chapterexercise 9.3</span>.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1003r3'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 9.3.3.</span>  </span><span id='cor:Complex_K_Theory_Homotopy_Invariant'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Every  homotopy  equivalence</span>  \(f\colon X \to Y\)  <span class='ntx-Italic-tlf-t1-x-x-109'>between  compact  Hausdorff  spaces  induces  an
+isomorphism </span>\[ f^*\colon K^0(Y) \xrightarrow {\cong } K^0(X) \] <span class='ntx-Italic-tlf-t1-x-x-109'>of abelian groups.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-03-5" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-03-5">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> This follows from <a class="source-reference" data-label="thm:Vector_Bundles_Homotopy_Invariant" href="../../../entry/homotopy-invariance-of-vector-bundles/index.html#thm:Vector_Bundles_Homotopy_Invariant">Theorem 9.1.4</a> by applying group completion.                                                                □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1004r4'></a>
+<a class="entry-heading-link" href="../../../entry/reduced-complex-k-theory/index.html" aria-label="Definition 9.3.4, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 9.3.4 </span></a>(Reduced K-theory)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Reduced_K-Theory'></span> Let \(X\) be a compact Hausdorff space. We define the abelian
+group \(\widetilde {K}^0(X)\) as the cokernel of the map \(\Z \cong K^0(\pt ) \to K^0(X)\). This is called the <span class='ntx-Italic-tlf-t1-x-x-109'>reduced K-theory group </span>of \(X\).
+</p><p class='noindent'>When \(X\) has a basepoint \(x\), this is also equivalent to the kernel of \(K^0(X) \to K^0(\{x\}) \cong \Z \).
+</p>
+                                                                                   
+                                                                                   
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1005r5'></a>
+<a class="entry-heading-link" href="../../../entry/complex-k-theory-of-the-circle-and-two-sphere/index.html" aria-label="Example 9.3.5, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 9.3.5 </span></a>(Complex K-theory of the circle and the two-sphere)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='ex:K_Theory_Spheres_Low_Degrees'></span> There are isomorphisms \[ K^0(S^1)\cong \Z , \qquad K^0(S^2)\cong \Z \times \Z , \] and
+hence \(\widetilde K^0(S^1)=0\) and \(\widetilde K^0(S^2)\cong \Z \). Identifying \(S^2\) with \(\CP ^1\), the class \([H]-[\ul {\C }]\) of the tautological line bundle generates \(\widetilde K^0(S^2)\).
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-03-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-03-4">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  The  calculation  for  \(S^1\)  follows  from  <a class="source-reference" data-label="exercise:Vector_Bundles_On_Circle" href="../../../entry/vector-bundles-over-the-circle/index.html#exercise:Vector_Bundles_On_Circle">Exercise 9.1.6</a>.  For  \(S^2\),  the  clutching  classification  of  <a class="source-reference" data-label="exercise:Vector_Bundles_On_Two_Sphere" href="../../../entry/vector-bundles-over-the-two-sphere/index.html#exercise:Vector_Bundles_On_Two_Sphere">Exercise 9.1.7</a>  identifies  a
+positive-rank vector bundle with its rank and the winding number of the determinant of its clutching
+function. These invariants are additive under direct sum, so group completion gives \(K^0(S^2)\cong \Z \times \Z \). The second
+factor is the reduced group, and the clutching function of \(H\) has winding number \(1\) up to sign.            □
+</p>
+</div></div>
+<p class='noindent'>We will use one more standard fact about vector bundles. It is the geometric reason that virtual bundles can
+be represented by honest bundles after adding enough trivial summands.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1006r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 9.3.6 </span>(Stable complements, <span class='citation'>Hatcher (2003), Proposition 1.4</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Stable_Iso_Classes_Form_Group'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a compact Hausdorff space. For every complex
+vector bundle</span> \(E \to X\) <span class='ntx-Italic-tlf-t1-x-x-109'>there exists another vector bundle</span> \(E' \to X\) <span class='ntx-Italic-tlf-t1-x-x-109'>such that the direct sum</span> \(E \oplus E'\) <span class='ntx-Italic-tlf-t1-x-x-109'>is isomorphic to a trivial
+vector bundle</span> \(\ul {\C }^N := X \times \C ^{N}\) <span class='ntx-Italic-tlf-t1-x-x-109'>for some</span> \(N \in \N \)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+                                                                                   
+
+                                                                                   
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-03-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-03-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof sketch.</span> </span>    Choose  finitely  many  local  trivializations  and  a  subordinate  partition  of  unity.
+Multiplying the local coordinate functions by the partition-of-unity functions embeds \(E\) into a trivial
+bundle \(X \times \C ^N\). After choosing a Hermitian inner product on this trivial bundle, the orthogonal complements
+of the fibers of \(E\) assemble to a vector bundle \(E'\) with \(E \oplus E' \cong \ul {\C }^N\).  The details are the usual compactness and
+partition-of-unity argument; see Hatcher for the full proof.                                                               □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1007r7'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 9.3.7.</span>  </span><span id='cor:Vector_Bundles_Surject_Onto_Reduced_K_Theory'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>There is a surjective morphism of monoids</span> \(\pi _0\Vect (X) \to \widetilde {K}^0(X)\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-03-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-03-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Represent a class in \(\widetilde K^0(X)\) by a difference \([E]-[F]\). Choose a vector bundle \(F'\) such that \(F\oplus F'\cong \ul {\C }^N\) by <a class="source-reference" data-label="thm:Stable_Iso_Classes_Form_Group" href="../../../entry/stable-complements-for-vector-bundles/index.html#thm:Stable_Iso_Classes_Form_Group">Theorem 9.3.6</a>. Modulo classes
+of trivial bundles, the given class is then represented by the honest vector bundle \(E\oplus F'\).                          □
+</p>
+                                                                                   
+                                                                                   
+</div></div>
+
+<h4 class='subsectionHead' id='representability-of-k0'><span class='titlemark'>9.3.1    </span> <a id='x1-20009.3.1'></a>Representability of \(K^0\)</h4>
+<p class='noindent'>We now prove the classical representability theorem for \(K^0\) using the Grassmannian classification theorem and
+stable complements.
+</p><p class='noindent'>Choose a linear isometric isomorphism \(\C ^\infty \oplus \C ^\infty \cong \C ^\infty \). Direct sum induces, up to homotopy, a multiplication on \(\Z \times BU\): the
+\(\Z \)-coordinates are added, while on the \(BU\)-coordinate we use the block-sum maps \[ \Gr _n(\C ^\infty )\times \Gr _m(\C ^\infty ) \longrightarrow \Gr _{n+m}(\C ^\infty \oplus \C ^\infty ) \cong \Gr _{n+m}(\C ^\infty ), \] passing to the
+colimit. The proposition below identifies the resulting operation on \([X,\Z \times BU]\) with direct sum in \(K^0(X)\), and
+hence shows in particular that it is independent of the choices and defines an abelian group
+structure.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r8'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 9.3.8.</span>  </span><span id='prop:Complex_K_Theory_Representability'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a compact Hausdorff space. There is a natural isomorphism of abelian
+groups </span>\[ [X,\Z \times BU] \xrightarrow {\cong } K^0(X). \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-03-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-03-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  We  first  construct  the  map.  Let  \(f\colon X\to \Z \times BU\)  be  continuous.  Since  \(X\)  is  compact  and  \(\Z \)  is  discrete,  the
+composite \(X\to \Z \) has finite image. Write \(X_m\subseteq X\) for the clopen subset on which this composite has value \(m\). By <a class="source-reference" data-label="lem:Compact_Subset_Sequential_Colimit" href="../../../entry/compact-subsets-of-sequential-colimits/index.html#lem:Compact_Subset_Sequential_Colimit">Lemma 9.2.18</a>,
+the restriction \(f_m\colon X_m\to BU\) factors through some stage \(\Gr _n(\C ^\infty )\). Let \(E_m\to X_m\) be the pullback of the universal rank \(n\) bundle along
+this factorization. We assign to \(f_m\) the class \[ [E_m]-n[\ul {\C }]+m[\ul {\C }] \in K^0(X_m). \] These classes glue over the finite clopen decomposition \(X=\bigsqcup _m X_m\)
+to a class in \(K^0(X)\).
+                                                                                   
+                                                                                   
+</p><p class='noindent'>This construction is independent of all choices. Passing from \(\Gr _n(\C ^\infty )\) to \(\Gr _{n+1}(\C ^\infty )\) replaces \(E_m\) by \(E_m\oplus \ul {\C }\), and hence leaves \([E_m]-n[\ul {\C }]+m[\ul {\C }]\)
+unchanged. If two maps are homotopic, the homotopy has constant \(\Z \)-coordinate on each \(X_m\times [0,1]\) and, again
+by compactness, factors through a common Grassmannian stage after stabilization. Pulling back the
+universal bundle along the two ends gives isomorphic bundles by <a class="source-reference" data-label="thm:Vector_Bundles_Homotopy_Invariant" href="../../../entry/homotopy-invariance-of-vector-bundles/index.html#thm:Vector_Bundles_Homotopy_Invariant">Theorem 9.1.4</a>. Thus we get a well-defined natural
+map \[ \Phi _X\colon [X,\Z \times BU] \to K^0(X). \]
+</p><p class='noindent'>We prove that \(\Phi _X\) is surjective. Let \(\alpha \in K^0(X)\), and let \(X=\bigsqcup _m X_m\) be the finite clopen decomposition according to the virtual
+rank of \(\alpha \). It suffices to work on one \(X_m\), so assume \(\alpha \) has constant rank \(m\). Choose a presentation \(\alpha =[E]-[F]\). By <a class="source-reference" data-label="thm:Stable_Iso_Classes_Form_Group" href="../../../entry/stable-complements-for-vector-bundles/index.html#thm:Stable_Iso_Classes_Form_Group">Theorem 9.3.6</a>,
+choose \(F'\) and \(N\) such that \(F\oplus F'\cong \ul {\C }^N\). Then \[ \alpha =[E\oplus F']-N[\ul {\C }]. \] The bundle \(E\oplus F'\) has rank \(N+m\), so <a class="source-reference" data-label="thm:Grassmannian_Classifies_Vector_Bundles" href="../../../entry/grassmannians-classify-vector-bundles/index.html#thm:Grassmannian_Classifies_Vector_Bundles">Theorem 9.2.4</a> classifies it by a map \(g\colon X_m\to \Gr _{N+m}(\C ^\infty )\subseteq BU\). Viewed as a map \(X_m\to \{m\}\times BU\),
+this maps under \(\Phi _{X_m}\) to \[ [E\oplus F']-(N+m)[\ul {\C }]+m[\ul {\C }]=[E]-[F]=\alpha . \] Gluing over the finitely many \(m\) proves surjectivity.
+</p><p class='noindent'>For injectivity, suppose \(f_0,f_1\colon X\to \Z \times BU\) have the same image under \(\Phi _X\). Their images in \(K^0(X)\) have the same rank function,
+so the \(\Z \)-coordinates of \(f_0\) and \(f_1\) agree. We again restrict to a clopen piece \(X_m\) and choose factorizations
+\(f_i\colon X_m\to \Gr _{n_i}(\C ^\infty )\) classifying bundles \(E_i\). The equality \(\Phi _X(f_0)=\Phi _X(f_1)\) gives \[ [E_0]-n_0[\ul {\C }] = [E_1]-n_1[\ul {\C }] \] in \(K^0(X_m)\). By the definition of the Grothendieck group, there
+exists a vector bundle \(F\) and an isomorphism \[ E_0\oplus \ul {\C }^{n_1}\oplus F \cong E_1\oplus \ul {\C }^{n_0}\oplus F. \] Choose \(F'\) with \(F\oplus F'\cong \ul {\C }^q\) by <a class="source-reference" data-label="thm:Stable_Iso_Classes_Form_Group" href="../../../entry/stable-complements-for-vector-bundles/index.html#thm:Stable_Iso_Classes_Form_Group">Theorem 9.3.6</a>. After stabilizing \(f_0\) by \(n_1+q\) steps and \(f_1\)
+by \(n_0+q\) steps, the two maps land in the same Grassmannian \(\Gr _{n_0+n_1+q}(\C ^\infty )\) and classify isomorphic vector bundles.
+By <a class="source-reference" data-label="thm:Grassmannian_Classifies_Vector_Bundles" href="../../../entry/grassmannians-classify-vector-bundles/index.html#thm:Grassmannian_Classifies_Vector_Bundles">Theorem 9.2.4</a>, they are homotopic. These homotopies glue over the finite clopen decomposition of \(X\), proving
+injectivity.
+</p><p class='noindent'>The construction is compatible with addition. If maps through \(\{m\}\times \Gr _n(\C ^\infty )\) and \(\{m'\}\times \Gr _{n'}(\C ^\infty )\) classify bundles \(E\) and \(E'\), then
+their sum classifies \(E\oplus E'\) at stage \(n+n'\) and has \(\Z \)-coordinate \(m+m'\). Therefore \[ [E\oplus E']-(n+n')[\ul {\C }]+(m+m')[\ul {\C }] \] equals the sum of the two associated
+\(K^0\)-classes. Thus \(\Phi _X\) is an isomorphism of abelian groups.                                                                         □
+</p>
+</div></div>
+
+<h4 class='subsectionHead' id='the-bott-class-and-bott-periodicity'><span class='titlemark'>9.3.2    </span> <a id='x1-30009.3.2'></a>The Bott class and Bott periodicity</h4>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3001r9'></a>
+<a class="entry-heading-link" href="../../../entry/bott-class/index.html" aria-label="Definition 9.3.9, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 9.3.9 </span></a>(Bott class)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Bott_Class'></span> Let \(H \to \CP ^1\) be the tautological line bundle. The <span class='ntx-Italic-tlf-t1-x-x-109'>Bott class </span>is \[ \beta := [H]-[\ul {\C }] \in \widetilde K^0(\CP ^1). \] By <a class="source-reference" data-label="ex:K_Theory_Spheres_Low_Degrees" href="../../../entry/complex-k-theory-of-the-circle-and-two-sphere/index.html#ex:K_Theory_Spheres_Low_Degrees">Example 9.3.5</a>, this class
+generates \(\widetilde K^0(\CP ^1)\cong \Z \).
+</p>
+</div>
+                                                                                   
+                                                                                   
+<p class='noindent'>The reduced external tensor product of vector bundles induces a pairing \[ \widetilde K^0(X)\otimes \widetilde K^0(Y) \longrightarrow \widetilde K^0(X\wedge Y) \] for pointed compact Hausdorff
+spaces; see <span class='citation'>Hatcher (2003), p. 54</span>. The following classical theorem is the geometric input behind the periodicity of complex
+K-theory.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3002r10'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 9.3.10 </span>(Bott periodicity for \(\widetilde {K}^0\), <span class='citation'>Hatcher (2003), Theorem 2.11</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Bott_Periodicity'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>For  every  pointed  compact  Hausdorff  space</span>  \(X\)<span class='ntx-Italic-tlf-t1-x-x-109'>,  external
+multiplication by the Bott class induces an isomorphism </span>\[ \widetilde K^0(X) \xrightarrow {\cong } \widetilde K^0(X\wedge \CP ^1) \cong \widetilde K^0(\Sigma ^2X). \]
+</p>
+</div>
+
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../classifying-vector-bundles/index.html" aria-label="Previous section: Classifying vector bundles" title="Previous section: Classifying vector bundles"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../complex-k-theory-spectra/index.html" aria-label="Next section: Complex K-theory spectra" title="Next section: Complex K-theory spectra"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html" aria-current="page"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/animae-as-spaces/index.html"><span class="context-entry-heading">Chapter 2</span><span class="context-entry-title">Animae as spaces</span></a></li><li><a href="../../../chapter/homology-and-cohomology/index.html"><span class="context-entry-heading">Chapter 3</span><span class="context-entry-title">Homology and cohomology</span></a></li><li><a href="../../../chapter/spectra-and-stable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 4</span><span class="context-entry-title">Spectra and stable ∞-categories</span></a></li><li><a href="../../../chapter/recognition-principle/index.html"><span class="context-entry-heading">Chapter 5</span><span class="context-entry-title">The recognition principle</span></a></li><li><a href="../../../chapter/homological-algebra/index.html"><span class="context-entry-heading">Chapter 6</span><span class="context-entry-title">Homological algebra</span></a></li><li><a href="../../../chapter/localization-and-completion/index.html"><span class="context-entry-heading">Chapter 7</span><span class="context-entry-title">Localization and completion</span></a></li><li><a href="../../../chapter/ring-spectra-and-modules/index.html"><span class="context-entry-heading">Chapter 8</span><span class="context-entry-title">Ring spectra and modules</span></a></li><li><a href="../../../chapter/complex-k-theory/index.html" aria-current="page"><span class="context-entry-heading">Chapter 9</span><span class="context-entry-title">Complex K-theory</span></a></li><li><a href="../../../chapter/thom-spectra-and-bordism-theory/index.html"><span class="context-entry-heading">Chapter 10</span><span class="context-entry-title">Thom spectra and bordism theory</span></a></li><li><a href="../../../chapter/duality-phenomena/index.html"><span class="context-entry-heading">Chapter 11</span><span class="context-entry-title">Duality phenomena</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../vector-bundles/index.html"><span class="context-entry-heading">Section 9.1</span><span class="context-entry-title">Vector bundles</span></a></li><li><a href="../classifying-vector-bundles/index.html"><span class="context-entry-heading">Section 9.2</span><span class="context-entry-title">Classifying vector bundles</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 9.3</span><span class="context-entry-title">Complex K-theory groups</span></a></li><li><a href="../complex-k-theory-spectra/index.html"><span class="context-entry-heading">Section 9.4</span><span class="context-entry-title">Complex K-theory spectra</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Complex_K_Theory_Group"><span class="context-entry-heading">Definition 9.3.1</span><span class="context-entry-title">Complex K-theory</span></a></li><li><a href="#ex:Complex_K_Theory_Of_Point"><span class="context-entry-heading">Example 9.3.2</span><span class="context-entry-title">example</span></a></li><li><a href="#cor:Complex_K_Theory_Homotopy_Invariant"><span class="context-entry-heading">Corollary 9.3.3</span><span class="context-entry-title">corollary</span></a></li><li><a href="#def:Reduced_K-Theory"><span class="context-entry-heading">Definition 9.3.4</span><span class="context-entry-title">Reduced K-theory</span></a></li><li><a href="#ex:K_Theory_Spheres_Low_Degrees"><span class="context-entry-heading">Example 9.3.5</span><span class="context-entry-title">Complex K-theory of the circle and the two-sphere</span></a></li><li><a href="#thm:Stable_Iso_Classes_Form_Group"><span class="context-entry-heading">Theorem 9.3.6</span><span class="context-entry-title">Stable complements</span></a></li><li><a href="#cor:Vector_Bundles_Surject_Onto_Reduced_K_Theory"><span class="context-entry-heading">Corollary 9.3.7</span><span class="context-entry-title">corollary</span></a></li><li><a href="#prop:Complex_K_Theory_Representability"><span class="context-entry-heading">Proposition 9.3.8</span><span class="context-entry-title">proposition</span></a></li><li><a href="#def:Bott_Class"><span class="context-entry-heading">Definition 9.3.9</span><span class="context-entry-title">Bott class</span></a></li><li><a href="#thm:Bott_Periodicity"><span class="context-entry-heading">Theorem 9.3.10</span><span class="context-entry-title">Bott periodicity for \widetildeK^0</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

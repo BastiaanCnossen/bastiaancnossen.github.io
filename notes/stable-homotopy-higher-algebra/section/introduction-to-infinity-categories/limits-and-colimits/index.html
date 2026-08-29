@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 1.7: Limits and colimits | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../chapter/introduction-to-infinity-categories/index.html">Chapter 1</a> · Section 1.7</p>
+      <h1>Limits and colimits</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='subsec:Limits_and_Colimits'>Limits and colimits are among the most important universal constructions in category theory. In the
+\(\infty \)-categorical setting, their definitions look formally almost identical to the classical ones, provided one
+replaces sets of morphisms by hom animae.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<a class="entry-heading-link" href="../../../entry/limits-and-colimits/index.html" aria-label="Definition 1.7.1, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.7.1 </span></a>(Limit/colimit)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Limit'></span> Let \(I\) and \(C\) be \(\infty \)-categories and let \(F\colon I \to C\) be a functor.
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>A <span class='ntx-Italic-tlf-t1-x-x-109'>cone on</span> \(F\) is an object \(X\) in \(C\) together with a natural transformation \(\epsilon \colon \const _X \to F\) of functors \(I \to C\).
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>A cone \((X,\epsilon )\) is called a <span class='ntx-Italic-tlf-t1-x-x-109'>limit cone </span>if for every other object \(Y\) of \(C\) the composite \[ \Hom _C(Y,X) \xrightarrow {\const } \Nat (\const _Y, \const _X) \xrightarrow {\epsilon \circ -} \Nat (\const _Y,F) \] is an equivalence.</p></dd></dl>
+<p class='noindent'>In this case, the object \(X\) is called the <span class='ntx-Italic-tlf-t1-x-x-109'>limit </span>of \(F\). It is unique, and will be denoted either by \(\lim _I F\) or
+\(\lim _{i \in I} F(i)\).
+</p><p class='noindent'>Dually, one defines a <span class='ntx-Italic-tlf-t1-x-x-109'>cocone </span>to be a natural transformation \(\eta \colon F \to \const _X\). It is a <span class='ntx-Italic-tlf-t1-x-x-109'>colimit cocone </span>if for every \(Y\) the composite
+\[ \Hom _C(X,Y) \xrightarrow {\const } \Nat (\const _X, \const _Y) \xrightarrow {- \circ \eta } \Nat (F,\const _Y) \] is an equivalence. The object \(X\) is then called the <span class='ntx-Italic-tlf-t1-x-x-109'>colimit </span>of \(F\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1004r2'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/duality-between-limits-and-colimits/index.html" aria-label="Observation 1.7.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Observation 1.7.2.</span></a>  </span><span id='obs:Duality_Limits_Colimits'></span> Note that a functor \(F\colon I \to C\) admits a limit in \(C\) if and only if the opposite functor \(F\catop \colon I\catop \to C\catop \) admits
+a colimit in \(C\catop \).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1005r3'></a>
+<a class="entry-heading-link" href="../../../entry/limits-in-one-categories/index.html" aria-label="Remark 1.7.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 1.7.3.</span></a>  </span><span id='rmk:Limits_In_1_Categories'></span> If \(I\) and \(C\) are 1-categories, then so is \(\Fun (I,C)\), and hence all animae occurring in <a class="source-reference" data-label="def:Limit" href="../../../entry/limits-and-colimits/index.html#def:Limit">Definition 1.7.1</a> are sets.
+The condition on a cone \((X,\epsilon )\) then says precisely that for every object \(Y\) the map of sets \[ \Hom _C(Y,X) \to \Nat (\const _Y,F), \qquad u \mapsto \epsilon \circ \const _u, \] is a bijection, that
+is, that every cone on \(F\) with tip \(Y\) factors uniquely through \((X,\epsilon )\). So <a class="source-reference" data-label="def:Limit" href="../../../entry/limits-and-colimits/index.html#def:Limit">Definition 1.7.1</a> recovers the classical notion of a limit,
+and dually of a colimit, in a 1-category.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1006r4'></a>
+<a class="entry-heading-link" href="../../../entry/indexed-limits-and-colimits/index.html" aria-label="Definition 1.7.4., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.7.4.</span></a>  </span><span id='def:Admitting_And_Preserving_Indexed_Limits'></span> We say an \(\infty \)-category \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits all</span> \(I\)<span class='ntx-Italic-tlf-t1-x-x-109'>-indexed (co)limits </span>if for every functor \(F\colon I \to C\) there
+exists a (co)limit (co)cone for \(F\). If \(G\colon C \to D\) is a functor between \(\infty \)-categories that admit \(I\)-indexed (co)limits,
+then we say that \(G\) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves</span> \(I\)<span class='ntx-Italic-tlf-t1-x-x-109'>-indexed (co)limits </span>if for every functor \(F\colon I \to C\), the functor \(G\) sends (co)limit
+(co)cones of \(F\) in \(C\) to (co)limit (co)cones of \(GF\) in \(D\).
+</p>
+</div>
+<p class='noindent'>For later diagrammatic arguments, it is convenient to encode cones and cocones as functors out of auxiliary
+indexing categories:
+                                                                                   
+                                                                                   
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1007r5'></a>
+<a class="entry-heading-link" href="../../../entry/cocone-infinity-categories/index.html" aria-label="Definition 1.7.5, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.7.5 </span></a>(Cocone \(\infty \)-categories)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Cocone_Category'></span> For an \(\infty \)-category \(I\), we define the \(\infty \)-category \(I^{\triangleright }\), called the <span class='ntx-Italic-tlf-t1-x-x-109'>cocone
+of</span> \(I\), via the following pushout square of \(\infty \)-categories:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-5f726e5c7542.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>We will often denote the object classified by
+the bottom morphism as \(\infty \). Note that a functor \(\overline {F}\colon I^{\triangleright } \to C\) consists of a functor \(I \times [1] \to C\) whose restriction to \(I \times \{1\}\) is constant.
+Equivalently, it consists of a functor \(F := \overline {F}\vert _{I \times \{0\}}\colon I \to C\) and an object \(W := \overline {F}(\infty )\) in \(C\) together with a cocone \(F \to \const _W\).</p><p class='noindent'>We say that a functor \(\overline {F}\colon I^{\triangleright } \to C\) is a <span class='ntx-Italic-tlf-t1-x-x-109'>colimit diagram </span>if the associated cocone \(F \to \const _W\) is a colimit cocone.
+</p><p class='noindent'>We dually define \(I^{\triangleleft }\), called the <span class='ntx-Italic-tlf-t1-x-x-109'>cone of</span> \(I\), as the following pushout of \(\infty \)-categories:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-c2fbc812969f.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>A functor \(\overline {F} \colon I^{\triangleleft } \to C\) consists
+of a functor \(F\colon I \to C\) together with a cone \(\const _W \to F\). We say that \(\overline {F}\) is a <span class='ntx-Italic-tlf-t1-x-x-109'>limit diagram </span>if this cone is a limit cone.</p>
+</div>
+<p class='noindent'>The notions of limits and colimits are closely related to that of <span class='ntx-Italic-tlf-t1-x-x-109'>adjunctions</span>, introduced in <a class="source-reference" data-label="chap:Adjunctions" href="../../../chapter/adjunctions/index.html#chap:Adjunctions">Chapter 21</a>. We discuss the
+relations between (co)limits and adjunctions in <a class="source-reference" data-label="subsec:Colimits_and_Adjunctions" href="../../adjunctions/co-limits-and-adjunctions/index.html#subsec:Colimits_and_Adjunctions">Section 21.2</a>.
+</p><p class='noindent'>Let us discuss some special cases of limits/colimits that will be relevant.
+</p>
+<h5 class='subsubsectionHead' id='products-and-coproducts'><a id='x1-2000'></a>Products and coproducts</h5>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r6'></a>
+<a class="entry-heading-link" href="../../../entry/products-and-coproducts-of-objects/index.html" aria-label="Definition 1.7.6., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.7.6.</span></a>  </span><span id='def:Products_And_Coproducts_Of_Objects'></span> Let \(I\) be a set, regarded as a discrete \(\infty \)-category. Given a collection of objects \(x_i\) of \(C\),
+we refer to a colimit of the corresponding functor \(I \to C\) as a <span class='ntx-Italic-tlf-t1-x-x-109'>coproduct</span>, and denote it by \(\coprod _{i \in I} x_i\) if it exists. We
+refer to a limit of \(I \to C\) as a <span class='ntx-Italic-tlf-t1-x-x-109'>product </span>and denote it by \(\prod _{i \in I} x_i\).
+</p>
+</div>
+                                                                                   
+                                                                                   
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2002r7'></a>
+<a class="entry-heading-link" href="../../../entry/initial-and-terminal-objects/index.html" aria-label="Definition 1.7.7, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.7.7 </span></a>(Initial/terminal objects)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Initial_Object'></span> An object \(x\) of an \(\infty \)-category \(C\) is called <span class='ntx-Italic-tlf-t1-x-x-109'>terminal </span>if for every
+other object \(y\) the hom anima \(\Hom _C(y,x)\) is contractible. We say that \(x\) is <span class='ntx-Italic-tlf-t1-x-x-109'>initial </span>if for every other \(y\) the hom anima \(\Hom _C(x,y)\)
+is contractible.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2003r8'></a>
+<a class="entry-heading-link" href="../../../entry/universal-properties-of-products-and-coproducts/index.html" aria-label="Exercise 1.7.8., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.7.8.</span></a>  </span><span id='exercise:Universal_Property_Products_And_Coproducts'></span> Let \(I\) be a set, and let \(\{x_i\}\) be a collection of objects of an \(\infty \)-category \(C\).
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>Show  that  an  object  \(x\)  in  \(C\)  is  a  product  of  the  objects  \(x_i\)  if  and  only  if  it  comes  equipped  with
+   morphisms \(\pr _i\colon x \to x_i\) such that for any other object \(y\) of \(C\) the map \[ (\pr _i \circ -)_i \colon \Hom _C(y,x) \to \prod _{i \in I} \Hom _C(y,x_i) \] is an equivalence of animae.
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>Formulate and prove the dual statement for coproducts.</p></dd></dl>
+<p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Hint: </span>show that there is an equivalence \(\Fun (I,C) \simeq \prod _{i \in I} C\).
+</p>
+</div>
+
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2006r9'></a>
+<a class="entry-heading-link" href="../../../entry/initial-and-terminal-objects-as-empty-colimits-and-limits/index.html" aria-label="Exercise 1.7.9., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.7.9.</span></a>  </span><span id='exercise:Initial_Terminal_Objects_As_Empty_Colimits_Limits'></span> Show that the terminal objects of \(C\) are precisely the limits of the unique functor \(F\colon \emptyset \to C\),
+and that the initial objects are the colimits of \(\emptyset \to C\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2007r10'></a>
+<a class="entry-heading-link" href="../../../entry/initial-and-terminal-animae/index.html" aria-label="Example 1.7.10., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 1.7.10.</span></a>  </span><span id='ex:Initial_And_Terminal_Anima'></span> The empty anima \(\emptyset \) is initial in \(\An \) and the one-point anima \(*\) is terminal in \(\An \). Indeed, by
+<a class="source-reference" data-label="axiom:Cat_infty" href="../../../entry/infinity-categories-of-animae-and-infinity-categories/index.html#axiom:Cat_infty">Axiom L</a> below the hom anima \(\Hom _{\An }(X,Y)\) may be identified with the mapping anima \(\Map (X,Y) = \Fun (X,Y)^{\simeq }\), and both \(\Fun (\emptyset ,Y)\) and \(\Fun (X,*)\) are contractible.
+</p>
+</div>
+
+<h5 class='subsubsectionHead' id='pullbacks-and-pushouts'><a id='x1-3000'></a>Pullbacks and pushouts</h5>
+<p class='noindent'>Recall from <span class="source-reference" data-label="def:Spans_And_Cospans">Definition 1.4.1</span> the posets \(\pushout \) and \(\pullback \):</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-e024a6893f79.svg" alt="Commutative diagram generated from the LaTeX source"></figure><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-8f65f7b7fb3b.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>By <a class="source-reference" data-label="axiom:Commutative_Diagram_Axiom" href="../../../entry/commutative-diagram-axiom/index.html#axiom:Commutative_Diagram_Axiom">Axiom D</a>, restricting along the two edges induces equivalences \begin {align*}  \Fun (\pushout ,C) &amp;\iso \Fun ([1],C) \times _{d_1^*,C,d_1^*} \Fun ([1],C), \\ \Fun (\pullback ,C) &amp;\iso \Fun ([1],C) \times _{d_0^*,C,d_0^*} \Fun ([1],C)  \end {align*}</p><p class='noindent'>for every \(\infty \)-category \(C\). In particular, a span \(\;\pushout \; \to C\) is equivalently encoded by a pair of morphisms \((f\colon x \to y, g\colon x \to z)\) with the
+same source, while a cospan \(\;\pullback \to C\) is equivalently encoded by a pair of morphisms \((h\colon y \to w,k\colon z \to w)\) with the same
+target.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3001r11'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/pushouts-and-pullbacks-of-objects/index.html" aria-label="Definition 1.7.11., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.7.11.</span></a>  </span><span id='def:Pushouts_And_Pullbacks_Of_Objects'></span> Let \(C\) be an \(\infty \)-category, and let \(f\colon x \to y\) and \(g\colon x \to z\) be two morphisms in \(C\), corresponding to a
+functor \(\pushoutto C\). We refer to a colimit of this functor as a <span class='ntx-Italic-tlf-t1-x-x-109'>pushout of</span> \(y\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(z\) <span class='ntx-Italic-tlf-t1-x-x-109'>along</span> \(x\). We will denote a pushout
+by \(y \sqcup _x z\), if it exists.
+</p><p class='noindent'>Dually, given morphisms \(h\colon y \to w\) and \(k\colon z \to w\), we refer to a limit of the corresponding functor \(\pullbackto C\) as a <span class='ntx-Italic-tlf-t1-x-x-109'>pullback of</span> \(y\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(z\) <span class='ntx-Italic-tlf-t1-x-x-109'>over</span> \(w\), and denote it by \(y \times _w z\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3002r12'></a>
+<a class="entry-heading-link" href="../../../entry/pushouts-in-animae-are-homotopy-pushouts/index.html" aria-label="Remark 1.7.12., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 1.7.12.</span></a>  </span><span id='rmk:Pushouts_In_An_Are_Homotopy_Pushouts'></span>  For  \(C = \An \),  these  notions  recover  the  classical  homotopy  pushouts  and  homotopy
+pullbacks of algebraic topology. We will show in <a class="source-reference" data-label="sec:Homotopy_Pushouts_Of_Spaces" href="../../animae-as-spaces/relative-cell-complexes-and-serre-fibrations/index.html#sec:Homotopy_Pushouts_Of_Spaces">Section 2.3</a> that the functor \(\Pi _{\infty }\colon \Top \to \An \) sends homotopy pullbacks of
+spaces to pullbacks of animae, and homotopy pushouts along relative cell complexes to pushouts of
+animae, see <a class="source-reference" data-label="prop:Homotopy_Pushouts_Are_Pushouts_Of_Animae" href="../../../entry/homotopy-pushouts-of-spaces-become-pushouts-of-animae/index.html#prop:Homotopy_Pushouts_Are_Pushouts_Of_Animae">Proposition 2.3.10</a>, <a class="source-reference" data-label="prop:Homotopy_Pullbacks_Are_Pullbacks_Of_Animae" href="../../../entry/homotopy-pullbacks-of-spaces-become-pullbacks-of-animae/index.html#prop:Homotopy_Pullbacks_Are_Pullbacks_Of_Animae">Proposition 2.3.22</a>. This is one of the main ways in which the abstract theory of this chapter connects to
+classical homotopy theory.
+</p>
+</div>
+<p class='noindent'>Recall that cocones on \(\pushout \)-indexed diagrams are encoded by the cocone category \(\pushout ^{\triangleright }\) from <a class="source-reference" data-label="def:Cocone_Category" href="../../../entry/cocone-infinity-categories/index.html#def:Cocone_Category">Definition 1.7.5</a>. We will now see that
+this category is equivalent to the indexing diagram encoding commutative squares.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3003r13'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 1.7.13.</span>  </span><span id='lem:Pullback_Cones_As_Commutative_Squares'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(\pushout \times [1] \to [1] \times [1]\) <span class='ntx-Italic-tlf-t1-x-x-109'>described informally by the diagram </span></p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-71e8707c1270.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>induces an equivalence</span> \(\pushout ^{\triangleright } \iso [1] \times [1]\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p>
+</div>
+                                                                                   
+
+                                                                                   
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-introduction-to-infinity-categories-section-07-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-introduction-to-infinity-categories-section-07-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Since \(\pushout \! \times [1]\) is a pushout of two copies of \([1] \times [1]\) and \([1] \times [1]\) is a pushout of two copies of \([2]\), we may construct
+such a functor by gluing two copies of the functor \(p_2\colon [1] \times [1] \to [2]\) from <a class="source-reference" data-label="exercise:Projections_Square_Onto_Triangle" href="../../../entry/projections-from-squares-to-triangles/index.html#exercise:Projections_Square_Onto_Triangle">Construction 1.4.3</a>. By construction, the restriction of this
+functor to \(\pushout \! \times \{1\}\) is the identity on \((1,1)\), hence it factors through a map \(\pushout ^{\triangleright } \to [1] \times [1]\). To show that it is an equivalence, we
+must show that for any \(\infty \)-category \(C\) the induced commutative square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-49fdc1a674fb.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>is a pullback square. Again using
+the pushout descriptions of \(\pushout \! \times [1]\), \([1] \times [1]\) and \(\pushout \! \times \{1\}\), this square may be identified with</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-102df5995311.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>The claim now follows from
+the right pullback square in <a class="source-reference" data-label="exercise:Encodings_Commutative_Triangles" href="../../../entry/triangles-as-squares-with-an-identity-edge/index.html#exercise:Encodings_Commutative_Triangles">Proposition 1.4.4</a>.                                                                                                               □</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3004r14'></a>
+<a class="entry-heading-link" href="../../../entry/pushout-cones-as-commutative-squares/index.html" aria-label="Exercise 1.7.14., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.7.14.</span></a>  </span><span id='exercise:Pushout_Cones_As_Commutative_Squares'></span> Construct an analogous equivalence \(\pullback ^{\triangleleft } \iso [1] \times [1]\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3005r15'></a>
+<a class="entry-heading-link" href="../../../entry/commutative-squares-as-cocones/index.html" aria-label="Convention 1.7.15., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Convention 1.7.15.</span></a>  </span><span id='con:Commutative_Squares_As_Cocones'></span> From now on, given a diagram \(\pushoutto C\) encoded by two morphisms \(f\colon x \to y\) and \(g\colon x \to z\), we will always use
+the lemma to identify cocones over this diagram with commutative squares in \(C\) of the form</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-28c76899f8ec.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'><a id='x1-3006r1'></a> Similarly, given
+morphisms \(h\colon y \to w\) and \(k\colon z \to w\), we will identify cones over the corresponding diagram \(\pullbackto C\) with commutative squares of the
+above form.</p>
+                                                                                   
+                                                                                   
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3007r16'></a>
+<a class="entry-heading-link" href="../../../entry/pushout-and-pullback-squares/index.html" aria-label="Definition 1.7.16., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.7.16.</span></a>  </span><span id='def:Pushout_And_Pullback_Squares'></span>  We  say  a  commutative  square  in  \(C\)  of  the  form  <span class="source-reference equation-reference" data-label="eq:Commutative_Square2">(1.1)</span>  is  a  <span class='ntx-Italic-tlf-t1-x-x-109'>pushout  square  </span>if  the
+corresponding cocone in \(C\) is a colimit cocone, in which case we have \(w \simeq y \sqcup _x z\). Dually, we say the square is a
+<span class='ntx-Italic-tlf-t1-x-x-109'>pullback square </span>if the corresponding cone in \(C\) is a limit cone, in which case we have \(x \simeq y \times _w z\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3008r17'></a>
+<a class="entry-heading-link" href="../../../entry/pasting-lemma-for-pullback-squares/index.html" aria-label="Exercise 1.7.17, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.7.17 </span></a>(Pasting lemma for pullback squares)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='exercise:Pasting_Lemma_Pullbacks'></span>  Consider  a  commutative  diagram</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-3223c690261d.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>If  the
+right-hand square is a pullback square, then the left-hand square is a pullback square if and only if
+the outer rectangle is a pullback square. <span class='ntx-Italic-tlf-t1-x-x-109'>Hint: compare with </span><a class="source-reference" data-label="lem:Pasting_Lemma_Pullbacks" href="../../../entry/pasting-lemma-for-pullback-squares-of-categories/index.html#lem:Pasting_Lemma_Pullbacks">Lemma 1.3.15</a><span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3009r18'></a>
+<a class="entry-heading-link" href="../../../entry/pasting-lemma-for-pushout-squares/index.html" aria-label="Exercise 1.7.18., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.7.18.</span></a>  </span><span id='exercise:Pasting_Lemma_Pushouts'></span> Formulate and prove the dual pasting lemma for pushout squares.
+</p>
+                                                                                   
+                                                                                   
+</div>
+
+<h5 class='subsubsectionHead' id='geometric-realizations-and-totalizations'><a id='x1-4000'></a>Geometric realizations and totalizations</h5>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4001r19'></a>
+<a class="entry-heading-link" href="../../../entry/geometric-realization-of-simplicial-objects/index.html" aria-label="Definition 1.7.19., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.7.19.</span></a>  </span><span id='def:Geometric_Realization_Of_Simplicial_Object'></span> Let \(C\) be an \(\infty \)-category, and let \(X\colon \simp \catop \to C\) be a simplicial object. The colimit of \(X\), if it exists,
+is called the <span class='ntx-Italic-tlf-t1-x-x-109'>geometric realization of</span> \(X\), and is denoted by \[ \abs {X} \quad := \quad \colim _{[n] \in \simp \catop } X_n. \] If \(C\) admits all \(\simp \catop \)-indexed colimits, we denote
+the resulting colimit functor by \(\abs {-}\colon \s C \to C\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4002r20'></a>
+<a class="entry-heading-link" href="../../../entry/geometric-realization-of-simplicial-objects-terminology/index.html" aria-label="Remark 1.7.20., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 1.7.20.</span></a>  </span><span id='rmk:Geometric_Realization_Of_Simplicial_Object_Terminology'></span> The terminology is inspired by the classical geometric realization functor from <a class="source-reference" data-label="def:Geometric_Realization" href="../../../entry/geometric-realization-of-simplicial-sets/index.html#def:Geometric_Realization">Definition 1.6.9</a>,
+which glues topological simplices according to the structure maps of a simplicial set.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4003r21'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/totalization-of-cosimplicial-objects/index.html" aria-label="Definition 1.7.21., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.7.21.</span></a>  </span><span id='def:Totalization_Of_Cosimplicial_Object'></span> Let \(C\) be an \(\infty \)-category and let \(X\colon \simp \to C\) be a cosimplicial object. The limit of \(X\), if it exists,
+is called the <span class='ntx-Italic-tlf-t1-x-x-109'>totalization of</span> \(X\).
+</p>
+</div>
+
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../simplicial-objects-and-quasicategories/index.html" aria-label="Previous section: Simplicial objects and quasicategories" title="Previous section: Simplicial objects and quasicategories"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../foundational-results-in-category-theory/index.html" aria-label="Next section: Foundational results in ∞-category theory" title="Next section: Foundational results in ∞-category theory"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html" aria-current="page"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/introduction-to-infinity-categories/index.html" aria-current="page"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../the-heuristics-behind-categories/index.html"><span class="context-entry-heading">Section 1.1</span><span class="context-entry-title">The heuristics behind ∞-categories</span></a></li><li><a href="../the-language-of-category-theory/index.html"><span class="context-entry-heading">Section 1.2</span><span class="context-entry-title">The language of ∞-category theory</span></a></li><li><a href="../basic-constructions-of-categories/index.html"><span class="context-entry-heading">Section 1.3</span><span class="context-entry-title">Basic constructions of ∞-categories</span></a></li><li><a href="../commutative-diagrams-composition-and-animae/index.html"><span class="context-entry-heading">Section 1.4</span><span class="context-entry-title">Commutative diagrams, composition, and animae</span></a></li><li><a href="../further-constructions-of-categories/index.html"><span class="context-entry-heading">Section 1.5</span><span class="context-entry-title">Further constructions of ∞-categories</span></a></li><li><a href="../simplicial-objects-and-quasicategories/index.html"><span class="context-entry-heading">Section 1.6</span><span class="context-entry-title">Simplicial objects and quasicategories</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 1.7</span><span class="context-entry-title">Limits and colimits</span></a></li><li><a href="../foundational-results-in-category-theory/index.html"><span class="context-entry-heading">Section 1.8</span><span class="context-entry-title">Foundational results in ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Limit"><span class="context-entry-heading">Definition 1.7.1</span><span class="context-entry-title">Limit/colimit</span></a></li><li><a href="#obs:Duality_Limits_Colimits"><span class="context-entry-heading">Observation 1.7.2</span><span class="context-entry-title">observation</span></a></li><li><a href="#rmk:Limits_In_1_Categories"><span class="context-entry-heading">Remark 1.7.3</span><span class="context-entry-title">remark</span></a></li><li><a href="#def:Admitting_And_Preserving_Indexed_Limits"><span class="context-entry-heading">Definition 1.7.4</span><span class="context-entry-title">definition</span></a></li><li><a href="#def:Cocone_Category"><span class="context-entry-heading">Definition 1.7.5</span><span class="context-entry-title">Cocone ∞-categories</span></a></li><li><a href="#def:Products_And_Coproducts_Of_Objects"><span class="context-entry-heading">Definition 1.7.6</span><span class="context-entry-title">definition</span></a></li><li><a href="#def:Initial_Object"><span class="context-entry-heading">Definition 1.7.7</span><span class="context-entry-title">Initial/terminal objects</span></a></li><li><a href="#exercise:Universal_Property_Products_And_Coproducts"><span class="context-entry-heading">Exercise 1.7.8</span><span class="context-entry-title">exercise</span></a></li><li><a href="#exercise:Initial_Terminal_Objects_As_Empty_Colimits_Limits"><span class="context-entry-heading">Exercise 1.7.9</span><span class="context-entry-title">exercise</span></a></li><li><a href="#ex:Initial_And_Terminal_Anima"><span class="context-entry-heading">Example 1.7.10</span><span class="context-entry-title">example</span></a></li><li><a href="#def:Pushouts_And_Pullbacks_Of_Objects"><span class="context-entry-heading">Definition 1.7.11</span><span class="context-entry-title">definition</span></a></li><li><a href="#rmk:Pushouts_In_An_Are_Homotopy_Pushouts"><span class="context-entry-heading">Remark 1.7.12</span><span class="context-entry-title">remark</span></a></li><li><a href="#lem:Pullback_Cones_As_Commutative_Squares"><span class="context-entry-heading">Lemma 1.7.13</span><span class="context-entry-title">lemma</span></a></li><li><a href="#exercise:Pushout_Cones_As_Commutative_Squares"><span class="context-entry-heading">Exercise 1.7.14</span><span class="context-entry-title">exercise</span></a></li><li><a href="#con:Commutative_Squares_As_Cocones"><span class="context-entry-heading">Convention 1.7.15</span><span class="context-entry-title">convention</span></a></li><li><a href="#def:Pushout_And_Pullback_Squares"><span class="context-entry-heading">Definition 1.7.16</span><span class="context-entry-title">definition</span></a></li><li><a href="#exercise:Pasting_Lemma_Pullbacks"><span class="context-entry-heading">Exercise 1.7.17</span><span class="context-entry-title">Pasting lemma for pullback squares</span></a></li><li><a href="#exercise:Pasting_Lemma_Pushouts"><span class="context-entry-heading">Exercise 1.7.18</span><span class="context-entry-title">exercise</span></a></li><li><a href="#def:Geometric_Realization_Of_Simplicial_Object"><span class="context-entry-heading">Definition 1.7.19</span><span class="context-entry-title">definition</span></a></li><li><a href="#rmk:Geometric_Realization_Of_Simplicial_Object_Terminology"><span class="context-entry-heading">Remark 1.7.20</span><span class="context-entry-title">remark</span></a></li><li><a href="#def:Totalization_Of_Cosimplicial_Object"><span class="context-entry-heading">Definition 1.7.21</span><span class="context-entry-title">definition</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

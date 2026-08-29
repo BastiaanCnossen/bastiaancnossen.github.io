@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 21.8: Bousfield localizations | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/background-on-infinity-category-theory/index.html">Part III</a> · <a href="../../../chapter/adjunctions/index.html">Chapter 21</a> · Section 21.8</p>
+      <h1>Bousfield localizations</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='subsec:Bousfield_Localizations'>Bousfield localizations provide the categorical language for reflective subcategories. This section introduces
+them, gives basic examples, and proves the recognition criterion of <a class="source-reference" data-label="prop:Characterization_Bousfield_Localizations" href="../../../entry/characterizations-of-categorical-bousfield-localizations/index.html#prop:Characterization_Bousfield_Localizations">Proposition 21.8.9</a>.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<a class="entry-heading-link" href="../../../entry/categorical-bousfield-localizations/index.html" aria-label="Definition 21.8.1., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 21.8.1.</span></a>  </span><span id='def:CT_Bousfield_Localization'></span> A functor \(L\colon C \to D\) is called a <span class='ntx-Italic-tlf-t1-x-x-109'>Bousfield localization </span>if it admits a fully faithful right
+adjoint \(R\colon D \hookrightarrow C\). In this case, we also call \(D\) a <span class='ntx-Italic-tlf-t1-x-x-109'>reflective subcategory of</span> \(C\).
+</p><p class='noindent'>A <span class='ntx-Italic-tlf-t1-x-x-109'>Bousfield colocalization </span>is instead a functor \(C \to D\) that admits a fully faithful <span class='ntx-Italic-tlf-t1-x-x-109'>left </span>adjoint.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1002r2'></a>
+<a class="entry-heading-link" href="../../../entry/rationalization-as-a-bousfield-localization/index.html" aria-label="Example 21.8.2, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 21.8.2 </span></a>(Rationalization)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='ex:Rationalization_As_Bousfield_Localization'></span>  The  inclusion  \(\Vect _{\Q } \hookrightarrow \Ab \)  of  rational  vector  spaces  into  abelian  groups
+admits a left adjoint \[ \Q \otimes _{\Z } -\colon \Ab \to \Vect _{\Q }, \] called the <span class='ntx-Italic-tlf-t1-x-x-109'>rationalization functor</span>. It is a Bousfield localization.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1003r3'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/abelianization-as-a-bousfield-localization/index.html" aria-label="Example 21.8.3, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 21.8.3 </span></a>(Abelianization)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='ex:Abelianization_As_Bousfield_Localization'></span> The inclusion \(\Ab \hookrightarrow \Grp \) of abelian groups into all groups admits a left
+adjoint \[ (-)^{\mathrm {ab}}\colon \Grp \to \Ab , \] given by the <span class='ntx-Italic-tlf-t1-x-x-109'>abelianization functor</span>.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1004r4'></a>
+<a class="entry-heading-link" href="../../../entry/group-completion-as-a-bousfield-localization/index.html" aria-label="Example 21.8.4, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 21.8.4 </span></a>(Group completion)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='ex:Group_Completion_As_Bousfield_Localization'></span> The inclusion \(\Grp \hookrightarrow \Mon \) of groups into monoids admits a left adjoint \[ (-)^{\grp }\colon \Mon \to \Grp \]
+called the (discrete) <span class='ntx-Italic-tlf-t1-x-x-109'>group completion functor</span>.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1005r5'></a>
+<a class="entry-heading-link" href="../../../entry/path-components-as-a-bousfield-localization/index.html" aria-label="Example 21.8.5, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 21.8.5 </span></a>(Path components)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='ex:Path_Components_As_Bousfield_Localization'></span> The inclusion \(\Set \hookrightarrow \An \) admits a left adjoint \[ \pi _0\colon \An \to \Set \] given by the set of path
+components.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1006r6'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/geometric-realization-as-a-bousfield-localization/index.html" aria-label="Example 21.8.6, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 21.8.6 </span></a>(Geometric realization)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='ex:Geometric_Realization_As_Bousfield_Localization'></span> The inclusion \(\An \hookrightarrow \Cat _{\infty }\) has a left adjoint \[ \geom {-}\colon \Cat _{\infty } \to \An \] given by the geometric
+realization functor. It also admits a right adjoint \[ (-)^{\simeq }\colon \Cat _{\infty } \to \An \] given by the groupoid core functor.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1007r7'></a>
+<a class="entry-heading-link" href="../../../entry/homotopy-category-as-a-bousfield-localization/index.html" aria-label="Example 21.8.7, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 21.8.7 </span></a>(Homotopy category)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='ex:Homotopy_Category_As_Bousfield_Localization'></span> The inclusion \(\Cat \hookrightarrow \Cat _{\infty }\) has a left adjoint \[ \Ho (-)\colon \Cat _{\infty } \to \Cat _1 \] given by the homotopy
+category functor.
+</p>
+</div>
+<p class='noindent'>The terminology is justified by the fact that every Bousfield (co)localization is a localization in the sense of
+<a class="source-reference" data-label="def:Localization" href="../../../entry/localizations-of-infinity-categories/index.html#def:Localization">Definition 1.5.19</a>:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1008r8'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 21.8.8.</span>  </span><span id='lem:Bousfield_Localization_Is_Localization'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(L\colon E \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a Bousfield localization, and let</span> \(W := L^{-1}(C^{\simeq })\) <span class='ntx-Italic-tlf-t1-x-x-109'>be the class of morphisms in</span> \(E\) <span class='ntx-Italic-tlf-t1-x-x-109'>inverted by</span> \(L\)<span class='ntx-Italic-tlf-t1-x-x-109'>.
+Then</span> \(L\) <span class='ntx-Italic-tlf-t1-x-x-109'>exhibits</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>as a localization of</span> \(E\) <span class='ntx-Italic-tlf-t1-x-x-109'>at</span> \(W\)<span class='ntx-Italic-tlf-t1-x-x-109'>. The same conclusion holds if</span> \(L\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a Bousfield colocalization.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-adjunctions-section-08-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-adjunctions-section-08-2">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> See <span class="source-reference" data-label="sct-lem:Bousfield_Localization_Is_Localization">Reference ?</span> of <span class='citation'>[Cisinski et al. (2026)]</span>.                                                                                                                                  □
+</p>
+</div></div>
+<p class='noindent'>Here is a useful criterion for checking that a full subcategory is a reflective subcategory:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1009r9'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 21.8.9 </span>(cf. <span class='citation'>[Lurie (2009), Proposition 5.2.7.4]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Characterization_Bousfield_Localizations'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(L\colon C \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a functor equipped with a natural transformation</span> \(\eta \colon \id _C \Rightarrow L\) <span class='ntx-Italic-tlf-t1-x-x-109'>such that both
+maps </span>\[ \eta _{Lx} \colon Lx \to LLx \qquadtext { and } L\eta _x\colon Lx \to LLx \] <span class='ntx-Italic-tlf-t1-x-x-109'>are isomorphisms for all</span> \(x \in C\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then the functor</span> \(L\colon C \to \im (L)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is left adjoint to the inclusion</span> \(\im (L) \hookrightarrow C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, with unit</span> \(\eta \)<span class='ntx-Italic-tlf-t1-x-x-109'>. In
+particular,</span> \(L\colon C \to \im (L)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a Bousfield localization.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-adjunctions-section-08-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-adjunctions-section-08-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> See <span class="source-reference" data-label="sct-prop:Idempotent_Functor_Bousfield_Localization">Reference ?</span> of <span class='citation'>[Cisinski et al. (2026)]</span>.                                                                                                                                  □
+</p>
+</div></div>
+<p class='noindent'><a id='likesection.1'></a><a id='x1-1010x21.8'></a>
+</p>
+<h3 class='likesectionHead' id='exercises'><a id='x1-2000'></a>Exercises</h3>
+<p id='exercises1'><a id='Q1-1-3'></a>
+</p><div class='newtheorem'>
+                                                                                   
+                                                                                   
+<p class='noindent'><span class='head'>
+<a id='x1-2001r1'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 21.1 </span>(Composition of adjunctions)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Suppose that \(F\colon C\rightleftarrows D\noloc G\) and \(F'\colon D\rightleftarrows E\noloc G'\) are adjunctions. Construct the unit
+and counit of the composite adjunction \[ F'F\colon C\rightleftarrows E\noloc GG' \] from the units and counits of the given adjunctions, and
+verify the triangle identities.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2002r2'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 21.2 </span>(Kan extension along an endpoint)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(i\colon \{0\}\hookrightarrow [1]\) and let \(x\in C\), where \(C\) has an initial and a terminal
+object. Compute both \(i_!(x)\) and \(i_*(x)\) as arrows in \(C\). Identify the unit and counit maps, and repeat the calculation
+for the inclusion \(\{1\}\hookrightarrow [1]\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2003r3'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 21.3 </span>(Cofinal subsequences)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(u\colon \N \to \N \) be an increasing and unbounded function, regarded as
+a  functor  between  posets.  Show  that  \(u\)  is  final.  Deduce  that  for  every  sequence  \[ X_0\longrightarrow X_1\longrightarrow X_2\longrightarrow \dots \]  in  an  \(\infty \)-category,
+passing to a cofinal subsequence does not change its colimit. In particular, compare the colimit of
+this sequence with the colimit of the subsequence \((X_{2n})_{n\geq 0}\).
+</p>
+</div>
+                                                                                   
+                                                                                   
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2004r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 21.4 </span>(A Bousfield localization of abelian groups)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Fix a prime \(p\) and consider \[ L\colon \Ab \longrightarrow \Ab , \qquad A\longmapsto A\otimes _{\Z }\Z [1/p]. \] Show that
+the unit \(A\to L(A)\) exhibits \(L\) as a Bousfield localization. Identify the local abelian groups and the \(L\)-equivalences.
+</p>
+</div>
+
+ 
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../a-comparison-theorem/index.html" aria-label="Previous section: A comparison theorem" title="Previous section: A comparison theorem"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../../presentable-infinity-categories/presheaves-and-free-cocompletions/index.html" aria-label="Next section: Presheaves and free cocompletions" title="Next section: Presheaves and free cocompletions"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html" aria-current="page"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/adjunctions/index.html" aria-current="page"><span class="context-entry-heading">Chapter 21</span><span class="context-entry-title">Adjunctions</span></a></li><li><a href="../../../chapter/presentable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 22</span><span class="context-entry-title">Presentable ∞-categories</span></a></li><li><a href="../../../chapter/cocartesian-fibrations-and-unstraightening/index.html"><span class="context-entry-heading">Chapter 23</span><span class="context-entry-title">Cocartesian fibrations and (un)straightening</span></a></li><li><a href="../../../chapter/complete-segal-animae/index.html"><span class="context-entry-heading">Chapter 24</span><span class="context-entry-title">Complete Segal animae</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../definition-and-characterizations/index.html"><span class="context-entry-heading">Section 21.1</span><span class="context-entry-title">Definition and characterizations</span></a></li><li><a href="../co-limits-and-adjunctions/index.html"><span class="context-entry-heading">Section 21.2</span><span class="context-entry-title">(Co)limits and adjunctions</span></a></li><li><a href="../slice-categories/index.html"><span class="context-entry-heading">Section 21.3</span><span class="context-entry-title">Slice categories</span></a></li><li><a href="../kan-extensions/index.html"><span class="context-entry-heading">Section 21.4</span><span class="context-entry-title">Kan extensions</span></a></li><li><a href="../cofinal-functors/index.html"><span class="context-entry-heading">Section 21.5</span><span class="context-entry-title">Cofinal functors</span></a></li><li><a href="../filtered-and-sifted-categories/index.html"><span class="context-entry-heading">Section 21.6</span><span class="context-entry-title">Filtered and sifted ∞-categories</span></a></li><li><a href="../a-comparison-theorem/index.html"><span class="context-entry-heading">Section 21.7</span><span class="context-entry-title">A comparison theorem</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 21.8</span><span class="context-entry-title">Bousfield localizations</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:CT_Bousfield_Localization"><span class="context-entry-heading">Definition 21.8.1</span><span class="context-entry-title">definition</span></a></li><li><a href="#ex:Rationalization_As_Bousfield_Localization"><span class="context-entry-heading">Example 21.8.2</span><span class="context-entry-title">Rationalization</span></a></li><li><a href="#ex:Abelianization_As_Bousfield_Localization"><span class="context-entry-heading">Example 21.8.3</span><span class="context-entry-title">Abelianization</span></a></li><li><a href="#ex:Group_Completion_As_Bousfield_Localization"><span class="context-entry-heading">Example 21.8.4</span><span class="context-entry-title">Group completion</span></a></li><li><a href="#ex:Path_Components_As_Bousfield_Localization"><span class="context-entry-heading">Example 21.8.5</span><span class="context-entry-title">Path components</span></a></li><li><a href="#ex:Geometric_Realization_As_Bousfield_Localization"><span class="context-entry-heading">Example 21.8.6</span><span class="context-entry-title">Geometric realization</span></a></li><li><a href="#ex:Homotopy_Category_As_Bousfield_Localization"><span class="context-entry-heading">Example 21.8.7</span><span class="context-entry-title">Homotopy category</span></a></li><li><a href="#lem:Bousfield_Localization_Is_Localization"><span class="context-entry-heading">Lemma 21.8.8</span><span class="context-entry-title">lemma</span></a></li><li><a href="#prop:Characterization_Bousfield_Localizations"><span class="context-entry-heading">Proposition 21.8.9</span><span class="context-entry-title">proposition</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

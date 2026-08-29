@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 24.1: ∞-Categories as complete Segal animae | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/background-on-infinity-category-theory/index.html">Part III</a> · <a href="../../../chapter/complete-segal-animae/index.html">Chapter 24</a> · Section 24.1</p>
+      <h1>∞-Categories as complete Segal animae</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent'><span id='subsec:Cats_As_Complete_Segal_Animae'></span> This section characterizes the nerves of \(\infty \)-categories among simplicial animae by the Segal and Rezk
+conditions. We begin with the motivating example:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<a class="entry-heading-link" href="../../../entry/nerve-of-an-infinity-category/index.html" aria-label="Definition 24.1.1, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 24.1.1 </span></a>(Nerve)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Nerve_Of_Infinity_Category'></span> The <span class='ntx-Italic-tlf-t1-x-x-109'>nerve </span>of an \(\infty \)-category \(C\) is the simplicial anima \(N(C) \colon \simp \catop \to \An \) defined by \(N(C)_n := \Map ([n],C)\), i.e. as
+the composite \[ \simp \catop \hookrightarrow \Cat \catop \hookrightarrow \Cat _{\infty }\catop \xrightarrow {\Hom _{\Cat _{\infty }}(-,C)} \An . \] This construction is functorial in \(C\) and thus defines a functor \(N\colon \Cat _{\infty } \to \sAn \).
+</p>
+</div>
+<p class='noindent'>We may think of points of \(\Map ([n],C)\) as ‘strings of \(n\) composable morphisms in \(C\)’: </p>
+     <ul class='itemize1'>
+     <li class='itemize'>For \(n = 0\), \(\Map ([0],C) = \Fun (*,C)^{\simeq } \simeq C^{\simeq }\) is just the groupoid core of \(C\);
+     </li>
+     <li class='itemize'>For \(n = 1\), \(\Map ([1],C)\) is the anima of morphisms in \(C\);
+     </li>
+     <li class='itemize'>For \(n = 2\), \(\Map ([2],C)\) is the anima of commutative triangles in \(C\), which by the Segal axiom, <a class="source-reference" data-label="prop:Segal_Axiom" href="../../../entry/segal-axiom/index.html#prop:Segal_Axiom">Proposition 1.4.5</a>, is equivalent to
+     \(\Map ([1],C) \times _{C^{\simeq }} \Map ([1],C)\);
+     </li>
+     <li class='itemize'>More generally, the ‘higher version’ of the Segal condition inductively implies that for every \(n \geq 0\)
+     we have \[ \Map ([n],C) \iso \Map ([1],C) \times _{C^{\simeq }} \Map ([1],C) \times _{C^{\simeq }} \dots \times _{C^{\simeq }} \Map ([1],C) \] for all \(n\).</li></ul>
+                                                                                   
+                                                                                   
+<p class='noindent'>Note that all the relevant information of \(C\) is captured by its nerve: the objects are captured by the anima \(N(C)_0 = C^{\simeq }\), the
+hom animae \(\Hom _C(x,y)\) may be recovered as the fiber over \((x,y)\) of the map \((d_1,d_0)\colon N(C)_1 \to N(C)_0 \times N(C)_0\), and composition in \(C\) is captured by \(N(C)_2\). It thus
+seems plausible that \(C\) may be recovered from \(N(C)\). We will prove below that this is indeed the case, after
+introducing the relevant terminology.
+</p><p class='noindent'>Most of the basic aspects of an \(\infty \)-category \(C\), like its composition of morphisms and its definition of
+isomorphisms, can more generally be phrased in terms of simplicial animae. We will now spell out the
+details.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1002r2'></a>
+<a class="entry-heading-link" href="../../../entry/segal-animae/index.html" aria-label="Definition 24.1.2, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 24.1.2 </span></a>(Segal anima)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Segal_Anima'></span> A simplicial anima \(X\colon \simp \catop \to \An \) is called a <span class='ntx-Italic-tlf-t1-x-x-109'>Segal anima </span>if the Segal condition
+is satisfied: For every \(n \geq 1\), the inclusion maps \(e_i\colon [1] \cong \{i- 1\leq i \} \hookrightarrow [n]\) induce an isomorphism of animae \[ (e_1^*, \dots , e_n^*)\colon X_n \iso X_1 \times _{X_0} X_1 \times _{X_0} \dots \times _{X_0} X_1. \] We write \(\Seg (\An ) \subseteq \sAn = \Fun (\simp \catop ,\An )\) for the full
+subcategory of Segal animae.
+</p>
+</div>
+<p class='noindent'>The nerve \(N(C)\) of an \(\infty \)-category \(C\) is always a Segal anima. A direct verification from the axioms is requested in
+<span class="source-reference" data-label="exercise:Nerve_Complete_Segal">Chapterexercise 24.2</span>.
+</p><p class='noindent'>One may show, just like we did for \(\infty \)-categories in <span class="source-reference" data-label="sec:Composition">Section 1.4.2</span>, that a Segal anima \(X\) comes equipped with a composition
+map \[ - \circ -\colon X_1 \times _{X_0} X_1 \simeq X_2 \xrightarrow {d_1} X_1 \] and that composition is unital and associative.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1003r3'></a>
+<a class="entry-heading-link" href="../../../entry/objects-and-morphisms-in-segal-animae/index.html" aria-label="Convention 24.1.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Convention 24.1.3.</span></a>  </span><span id='conv:Objects_And_Morphisms_In_Segal_Animae'></span> Given a Segal anima \(X\), we refer to \(0\)-simplices \(x \in X_0\) as <span class='ntx-Italic-tlf-t1-x-x-109'>objects </span>of \(X\), and to 1-simplices
+\(f\in X_1\) as <span class='ntx-Italic-tlf-t1-x-x-109'>morphisms </span>of \(X\). We use the notation \(f\colon x \to y\) when \(d_1(f) \simeq x\) and \(d_0(f) \simeq y\). Given objects \(x,y \in X_0\), we define the <span class='ntx-Italic-tlf-t1-x-x-109'>hom anima </span>in \(X\) as
+the following pullback:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-f10c0f42937f.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>We will sometimes refer to 2-simplices as <span class='ntx-Italic-tlf-t1-x-x-109'>homotopies</span>.</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1004r4'></a>
+<a class="entry-heading-link" href="../../../entry/dwyer-kan-equivalences-of-segal-animae/index.html" aria-label="Definition 24.1.4, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 24.1.4 </span></a>(Dwyer-Kan equivalences)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Dwyer_Kan_Equivalence_Of_Segal_Animae'></span> A morphism \(f\colon X \to Y\) of Segal animae is called a <span class='ntx-Italic-tlf-t1-x-x-109'>Dwyer-Kan
+equivalence </span>if the following two conditions are satisfied:
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>(Essential surjectivity): For every object \(y \in Y_0\) there exists an object \(x \in X_0\) satisfying \(f(x) \cong y\) in \(Y_0\).
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>(Fully faithfulness): For objects \(x,x' \in X_0\), the induced map \(f\colon \Hom _X(x,x') \to \Hom _Y(fx, fx')\) is an equivalence of animae.</p></dd></dl>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1007r5'></a>
+<a class="entry-heading-link" href="../../../entry/essential-surjectivity-and-full-faithfulness-for-segal-animae/index.html" aria-label="Remark 24.1.5., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 24.1.5.</span></a>  </span><span id='rmk:Dwyer_Kan_Equivalences'></span>  Note  that  a  functor  \(F\colon C \to D\)  between  \(\infty \)-categories  is  essentially  surjective  (resp. fully
+faithful) precisely if the induced map on nerves \(N(F)\colon N(C) \to N(D)\) is essentially surjective (resp. fully faithful). In
+particular, \(F\) is an equivalence if and only if \(N(F)\) is a Dwyer-Kan equivalence.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1008r6'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/equivalences-in-segal-animae/index.html" aria-label="Definition 24.1.6., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 24.1.6.</span></a>  </span><span id='def:Equivalence_in_Segal_Anima'></span>  Let  \(X \in \Seg (\An )\)  be  a  Segal  anima.  A  morphism  \(f\colon x \to y\)  in  \(X\)  is  called  an  <span class='ntx-Italic-tlf-t1-x-x-109'>isomorphism  </span>if  there
+exist \(2\)-simplices \(\sigma , \tau \in X_2\) satisfying the relations \(d_0(\sigma ) \simeq f\), \(d_1(\sigma ) \simeq \id _x\), \(d_2(\tau ) \simeq f\) and \(d_1(\tau ) \simeq \id _y\). In other words: \(f\) is an isomorphism if there exist
+morphisms \(g,h\colon y \to x\) together with homotopies \(gf \simeq \id _x\) and \(fg \simeq \id _y\).
+</p><p class='noindent'>We write \(X_1^{\sim } \subseteq X_1\) for the full subanima spanned by the isomorphisms.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1009r7'></a>
+<a class="entry-heading-link" href="../../../entry/complete-segal-animae/index.html" aria-label="Definition 24.1.7, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 24.1.7 </span></a>(Complete Segal anima, <span class='citation'>Rezk (2001)</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Complete_Segal_Anima'></span> A Segal anima \(X\colon \simp \catop \to \An \) is called <span class='ntx-Italic-tlf-t1-x-x-109'>complete</span>, or is said to satisfy
+the <span class='ntx-Italic-tlf-t1-x-x-109'>Rezk condition</span>, if the map \[ X_0 \to X_1^{\sim }, \quad x \mapsto \id _x \] is an equivalence of animae. We denote the full subcategory of
+complete Segal animae by \(\CSeg (\An ) \subseteq \Seg (\An )\).
+</p>
+</div>
+<p class='noindent'>The nerve \(N(C)\) of an \(\infty \)-category is complete. In particular, the nerve functor \(N\colon \Cat _{\infty } \to \sAn \) factors through \(\CSeg (\An ) \subseteq \sAn \). This assertion is
+also included in <span class="source-reference" data-label="exercise:Nerve_Complete_Segal">Chapterexercise 24.2</span>.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1010r8'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 24.1.8 </span>(<span class='citation'>[Hebestreit and Steinebrunner (2023), Lemma 2.3]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Dwyer_Kan_Equivalence_Between_Complete_Segal_Animae'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(\phi \colon X \to Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a morphism of complete Segal animae. Then</span> \(\phi \) <span class='ntx-Italic-tlf-t1-x-x-109'>is an equivalence if and
+only if it is a Dwyer-Kan equivalence.</span>
+</p>
+</div>
+
+                                                                                   
+
+                                                                                   
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complete-segal-animae-section-01-5" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complete-segal-animae-section-01-5">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> See <span class="source-reference" data-label="sct-cor:DK-equivalences-complete-Segal-anima">Reference ?</span> of <span class='citation'>[Cisinski et al. (2026)]</span>.                                                                                                                                  □
+</p>
+</div></div>
+<p class='noindent'>Recall from <a class="source-reference" data-label="cons:Associated_Infinity_Category" href="../../../entry/associated-infinity-category-of-a-simplicial-anima/index.html#cons:Associated_Infinity_Category">Construction 1.8.11</a> the associated \(\infty \)-category functor \[ \ac \colon \sAn \to \Cat _{\infty }, \] which is the colimit-preserving extension of the inclusion \(\simp \hookrightarrow \Cat _{\infty }\).
+By <span class="source-reference" data-label="sct-thm:Colimit_Extension_Admits_Right_Adjoint">Reference ?</span> of <span class='citation'>[Cisinski et al. (2026)]</span>, this functor is left adjoint to the nerve functor: \[ \ac \colon \sAn \rightleftarrows \Cat _{\infty }\noloc N. \]
+</p><p class='noindent'>Since the functor \(\ac \) is defined in terms of left Kan extensions, the pointwise formula from <a class="source-reference" data-label="thm:Pointwise_Formula_Kan_Extensions" href="../../../entry/pointwise-formula-for-kan-extensions/index.html#thm:Pointwise_Formula_Kan_Extensions">Theorem 21.4.3</a> allows us to
+compute it in terms of colimits in \(\Cat _{\infty }\), which in turn admit an explicit description by <a class="source-reference" data-label="prop:Limits_And_Colimits_Of_Categories" href="../../../entry/limits-and-colimits-of-infinity-categories/index.html#prop:Limits_And_Colimits_Of_Categories">Proposition 23.5.2</a>. The resulting expression
+can then be simplified somewhat further to obtain a concrete expression for \(\ac (X)\) as a certain localization,
+as explained in <span class='citation'>[Hebestreit and Steinebrunner (2023), Corollary 3.8]</span>. This explicit expression can then be used to prove the following important
+result:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1011r9'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 24.1.9 </span>(<span class='citation'>Hebestreit and Steinebrunner (2023), Corollary 3.15, Lemma 4.1</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Completion_Map_Dwyer_Kan_Equivalence'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For every Segal anima</span> \(X\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the unit map</span> \(\eta \colon X \to N(\ac (X))\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a Dwyer-Kan equivalence.</span>
+</p>
+</div>
+<p class='noindent'>We refer to <span class='citation'>[Hebestreit and Steinebrunner (2023)]</span> for the details of the argument. Together with the results above, this supplies the main theorem
+of the section.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1012r10'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 24.1.10 </span>(<span class='citation'>[Joyal and Tierney (2007), Section 4]</span>, <span class='citation'>[Lurie (2009), Corollary 4.3.16]</span>, <span class='citation'>[Hebestreit and Steinebrunner (2023)]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Categories_As_Complete_Segal_Animae'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The nerve functor </span>\[ N\colon \Cat _{\infty } \hookrightarrow \sAn \] <span class='ntx-Italic-tlf-t1-x-x-109'>is fully faithful. Its image consists of the complete Segal
+animae.  In  particular,  the  nerve  functor  induces  an  equivalence  </span>\[ N\colon \Cat _{\infty } \iso \CSeg (\An ) \]  <span class='ntx-Italic-tlf-t1-x-x-109'>between</span>  \(\Cat _{\infty }\)  <span class='ntx-Italic-tlf-t1-x-x-109'>and  the</span>  \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category  of
+complete Segal animae.</span>
+                                                                                   
+
+                                                                                   
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complete-segal-animae-section-01-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complete-segal-animae-section-01-4">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Since the nerve functor lands in \(\CSeg (\An )\), the adjunction \(\ac \dashv N\) induces an adjunction</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-472cfc4c9a84.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>We have to show
+that both the unit and the counit are equivalences. For the unit, let \(X\) be a complete Segal anima. The
+unit map \(\eta \colon X \to N(\ac (X))\) is a Dwyer-Kan equivalence by <a class="source-reference" data-label="prop:Completion_Map_Dwyer_Kan_Equivalence" href="../../../entry/completion-maps-are-dwyer-kan-equivalences/index.html#prop:Completion_Map_Dwyer_Kan_Equivalence">Proposition 24.1.9</a> and thus an equivalence by <a class="source-reference" data-label="lem:Dwyer_Kan_Equivalence_Between_Complete_Segal_Animae" href="../../../entry/dwyer-kan-equivalences-between-complete-segal-animae/index.html#lem:Dwyer_Kan_Equivalence_Between_Complete_Segal_Animae">Lemma 24.1.8</a>, since both sides are complete
+Segal animae. For the counit, let \(C\) be an \(\infty \)-category. To show that \(\varepsilon \colon \ac (N(C)) \to C\) is an equivalence, it suffices by <a class="source-reference" data-label="rmk:Dwyer_Kan_Equivalences" href="../../../entry/essential-surjectivity-and-full-faithfulness-for-segal-animae/index.html#rmk:Dwyer_Kan_Equivalences">Remark 24.1.5</a> to
+show that \(N(\varepsilon ) \colon N(\ac (N(C))) \to N(C)\) is an equivalence. But this is a consequence of the triangle identity and the fact that \(\eta _{N(C)}\colon N(C) \to N(\ac (N(C)))\) is an
+equivalence.                                                                                                                                        □</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1013r11'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 24.1.11.</span>  </span><span id='cor:Associated_Category_Bousfield_Localization'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The associated category functor</span> \(\ac \colon \Seg (\An ) \to \Cat _{\infty }\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a Bousfield localization. A morphism</span> \(\phi \colon X \to Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>of
+Segal animae is inverted by</span> \(\ac (-)\) <span class='ntx-Italic-tlf-t1-x-x-109'>if and only if it is a Dwyer-Kan equivalence.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complete-segal-animae-section-01-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complete-segal-animae-section-01-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The first statement is a consequence of the full faithfulness of the nerve functor \(N\colon \Cat _{\infty } \hookrightarrow \Seg (\An )\) from <a class="source-reference" data-label="thm:Categories_As_Complete_Segal_Animae" href="../../../entry/infinity-categories-as-complete-segal-animae/index.html#thm:Categories_As_Complete_Segal_Animae">Theorem 24.1.10</a>.
+For the second statement, consider the following commutative square:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-6b712622e569.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>The vertical morphisms are
+                                                                                   
+                                                                                   
+Dwyer-Kan equivalences by <a class="source-reference" data-label="prop:Completion_Map_Dwyer_Kan_Equivalence" href="../../../entry/completion-maps-are-dwyer-kan-equivalences/index.html#prop:Completion_Map_Dwyer_Kan_Equivalence">Proposition 24.1.9</a>. Since Dwyer-Kan equivalences satisfy the two-out-of-three property
+by <span class="source-reference" data-label="sct-lemma:2-out-of-3-DKequiv">Reference ?</span>, it follows that \(\phi \) is a Dwyer-Kan equivalence if and only if \(N(\ac (\phi ))\) is. By <a class="source-reference" data-label="rmk:Dwyer_Kan_Equivalences" href="../../../entry/essential-surjectivity-and-full-faithfulness-for-segal-animae/index.html#rmk:Dwyer_Kan_Equivalences">Remark 24.1.5</a>, the latter holds if and only if \(\ac (\phi )\colon \ac (X) \to \ac (Y)\)
+is an equivalence.                                                                                                                                □</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1014r12'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 24.1.12.</span>  </span><span id='cor:Left_Adjoint_Inclusion_Complete_Segal_Animae'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The inclusions</span> \(\CSeg (\An ) \hookrightarrow \sAn \) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(\CSeg (\An ) \hookrightarrow \Seg (\An )\) <span class='ntx-Italic-tlf-t1-x-x-109'>admit left adjoints given by</span> \(X \mapsto N(\ac (X))\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complete-segal-animae-section-01-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complete-segal-animae-section-01-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Given a complete Segal anima \(Y\), we have \begin {align*}  \Hom _{\CSeg (\An )}(N(\ac (X)),Y) &amp;\simeq \Hom _{\Cat _{\infty }}(\ac (X),\ac (Y)) \\ &amp;\simeq \Hom _{\sAn }(X,N(\ac (Y))) \\ &amp;\simeq \Hom _{\sAn }(X,Y),  \end {align*}
+</p><p class='noindent'>where the first isomorphism holds by the equivalence \(\Cat _{\infty } \simeq \CSeg (\An )\), the second comes from the adjunction \(\ac \dashv N\), and the third
+is induced by \(Y \iso N(\ac (Y))\). This proves the assertion for the inclusion into \(\sAn \); restricting to the full subcategory \(\Seg (\An ) \subseteq \sAn \) proves it
+for the second inclusion as well.                                                                                                         □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1015r13'></a>
+<a class="entry-heading-link" href="../../../entry/rezk-completion/index.html" aria-label="Notation 24.1.13., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Notation 24.1.13.</span></a>  </span><span id='nota:Rezk_Completion'></span> The left adjoint to \(\CSeg (\An ) \hookrightarrow \Seg (\An )\) is often called the <span class='ntx-Italic-tlf-t1-x-x-109'>completion functor </span>or <span class='ntx-Italic-tlf-t1-x-x-109'>Rezk completion </span>and
+is denoted by \[ \widehat {(-)}\colon \Seg (\An ) \to \CSeg (\An ). \]
+                                                                                   
+                                                                                   
+</p>
+</div>
+<p class='noindent'>The following is a useful consequence of the identification of \(\Cat _{\infty }\) with the \(\infty \)-category of complete Segal
+animae:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1016r14'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 24.1.14.</span>  </span><span id='prop:Cat_Generated_By_Point_And_Arrow'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(\Cat _{\infty }\) <span class='ntx-Italic-tlf-t1-x-x-109'>is generated under colimits by</span> \([0]\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \([1]\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complete-segal-animae-section-01-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complete-segal-animae-section-01-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The presheaf category \(\sAn = \Fun (\simp \catop ,\An )\) is generated by the representable presheaves under colimits by <a class="source-reference" data-label="thm:Colimit_Preserving_Extension" href="../../../entry/colimit-preserving-extension-from-presheaves/index.html#thm:Colimit_Preserving_Extension">Theorem 1.8.9</a>. It
+follows that \(\Cat _{\infty }\) is generated under colimits by their images under the localization functor \(\ac \colon \sAn \to \Cat _{\infty }\), which are
+the posets \([n]\). The claim now follows, since the Segal condition shows that each \([n]\) is an iterated pushout
+of copies of \([1]\) along \([0]\).                                                                                                                             □
+</p>
+</div></div>
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../../cocartesian-fibrations-and-unstraightening/exponentiability-of-cartesian-fibrations/index.html" aria-label="Previous section: Exponentiability of cartesian fibrations" title="Previous section: Exponentiability of cartesian fibrations"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../filtered-colimits-and-geometric-realizations-of-categories/index.html" aria-label="Next section: Filtered colimits and geometric realizations of categories" title="Next section: Filtered colimits and geometric realizations of categories"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html" aria-current="page"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/adjunctions/index.html"><span class="context-entry-heading">Chapter 21</span><span class="context-entry-title">Adjunctions</span></a></li><li><a href="../../../chapter/presentable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 22</span><span class="context-entry-title">Presentable ∞-categories</span></a></li><li><a href="../../../chapter/cocartesian-fibrations-and-unstraightening/index.html"><span class="context-entry-heading">Chapter 23</span><span class="context-entry-title">Cocartesian fibrations and (un)straightening</span></a></li><li><a href="../../../chapter/complete-segal-animae/index.html" aria-current="page"><span class="context-entry-heading">Chapter 24</span><span class="context-entry-title">Complete Segal animae</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 24.1</span><span class="context-entry-title">∞-Categories as complete Segal animae</span></a></li><li><a href="../filtered-colimits-and-geometric-realizations-of-categories/index.html"><span class="context-entry-heading">Section 24.2</span><span class="context-entry-title">Filtered colimits and geometric realizations of categories</span></a></li><li><a href="../homotopy-coherent-nerves/index.html"><span class="context-entry-heading">Section 24.3</span><span class="context-entry-title">Homotopy coherent nerves</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Nerve_Of_Infinity_Category"><span class="context-entry-heading">Definition 24.1.1</span><span class="context-entry-title">Nerve</span></a></li><li><a href="#def:Segal_Anima"><span class="context-entry-heading">Definition 24.1.2</span><span class="context-entry-title">Segal anima</span></a></li><li><a href="#conv:Objects_And_Morphisms_In_Segal_Animae"><span class="context-entry-heading">Convention 24.1.3</span><span class="context-entry-title">convention</span></a></li><li><a href="#def:Dwyer_Kan_Equivalence_Of_Segal_Animae"><span class="context-entry-heading">Definition 24.1.4</span><span class="context-entry-title">Dwyer-Kan equivalences</span></a></li><li><a href="#rmk:Dwyer_Kan_Equivalences"><span class="context-entry-heading">Remark 24.1.5</span><span class="context-entry-title">remark</span></a></li><li><a href="#def:Equivalence_in_Segal_Anima"><span class="context-entry-heading">Definition 24.1.6</span><span class="context-entry-title">definition</span></a></li><li><a href="#def:Complete_Segal_Anima"><span class="context-entry-heading">Definition 24.1.7</span><span class="context-entry-title">Complete Segal anima</span></a></li><li><a href="#lem:Dwyer_Kan_Equivalence_Between_Complete_Segal_Animae"><span class="context-entry-heading">Lemma 24.1.8</span><span class="context-entry-title">lemma</span></a></li><li><a href="#prop:Completion_Map_Dwyer_Kan_Equivalence"><span class="context-entry-heading">Proposition 24.1.9</span><span class="context-entry-title">proposition</span></a></li><li><a href="#thm:Categories_As_Complete_Segal_Animae"><span class="context-entry-heading">Theorem 24.1.10</span><span class="context-entry-title">theorem</span></a></li><li><a href="#cor:Associated_Category_Bousfield_Localization"><span class="context-entry-heading">Corollary 24.1.11</span><span class="context-entry-title">corollary</span></a></li><li><a href="#cor:Left_Adjoint_Inclusion_Complete_Segal_Animae"><span class="context-entry-heading">Corollary 24.1.12</span><span class="context-entry-title">corollary</span></a></li><li><a href="#nota:Rezk_Completion"><span class="context-entry-heading">Notation 24.1.13</span><span class="context-entry-title">notation</span></a></li><li><a href="#prop:Cat_Generated_By_Point_And_Arrow"><span class="context-entry-heading">Proposition 24.1.14</span><span class="context-entry-title">proposition</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

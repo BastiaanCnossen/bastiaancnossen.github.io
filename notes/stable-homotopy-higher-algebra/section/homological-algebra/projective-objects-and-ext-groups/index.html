@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 6.4: Projective objects and Ext-groups | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/stable-homotopy-theory/index.html">Part I</a> · <a href="../../../chapter/homological-algebra/index.html">Chapter 6</a> · Section 6.4</p>
+      <h1>Projective objects and Ext-groups</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Projective_Modules'>In classical algebra, projective modules are the ‘well-behaved’ building blocks essential for homological
+algebra. Their definition makes sense in an arbitrary abelian category \(\Aa \): an object \(P\) is called <span class='ntx-Italic-tlf-t1-x-x-109'>projective </span>if the
+Hom functor \(\Hom _{\Aa }(P,-) \colon \Aa \to \Ab \) is an exact functor of abelian categories. This definition has an immediate analogue in an
+arbitrary t-structure:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<a class="entry-heading-link" href="../../../entry/t-projective-objects/index.html" aria-label="Definition 6.4.1., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 6.4.1.</span></a>  </span><span id='def:t-Projective'></span>  Let  \(C\)  be  a  stable  \(\infty \)-category  equipped  with  a  t-structure.  An  object  \(P \in C\)  is  called
+<span class='ntx-Italic-tlf-t1-x-x-109'>t-projective </span>if the mapping spectrum functor \(\hom _C(P,-)\colon C \to \Sp \) is t-exact.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1002r2'></a>
+<a class="entry-heading-link" href="../../../entry/t-projective-objects-are-connective/index.html" aria-label="Observation 6.4.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Observation 6.4.2.</span></a>  </span><span id='obs:t-Projective_Connective'></span> Every t-projective object \(P\) is connective. To see this, consider the truncation \(\tau _{\leq -1}P\).
+By t-exactness, the mapping spectrum \(\hom _C(P,\tau _{\leq -1} P)\) lies in \(\Sp _{\leq -1}\), and it follows that \[ 0 = \pi _0 \hom _C(P,\tau _{\leq -1} P) \cong \pi _0 \Hom _C(\tau _{\leq -1}P, \tau _{\leq -1}P), \] where the last identification holds
+by adjunction. In particular, the identity on \(\tau _{\leq -1}P\) is homotopic to the zero map, forcing \(\tau _{\leq -1}P = 0\), hence \(P \in C_{\geq 0}\).
+</p>
+</div>
+
+<div class='newtheorem'>
+                                                                                   
+                                                                                   
+<p class='noindent'><span class='head'>
+<a id='x1-1003r3'></a>
+<a class="entry-heading-link" href="../../../entry/t-projectivity-detected-by-right-t-exactness/index.html" aria-label="Observation 6.4.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Observation 6.4.3.</span></a>  </span><span id='obs:t-Projective_Iff_Map_Right_Exact'></span> Conversely, if \(P \in C_{\geq 0}\) is a connective object, then \(\hom _C(P,-)\colon C \to \Sp \) is always left t-exact: if \(X \in C_{\leq 0}\), then for \(n &gt; 0\)
+we have \[ \pi _n(\hom _C(P,X)) \cong \pi _0 \Hom _C(P,X[-n]) = 0, \] since \(P \in C_{\geq 0}\) while \(X[-n] \in C_{\leq -1}\). So \(P\) is t-projective if and only if \(\hom _C(P,-)\) is also <span class='ntx-Italic-tlf-t1-x-x-109'>right </span>t-exact.
+</p>
+</div>
+<p class='noindent'>In the case \(C = \D (\Aa )\), this definition does indeed recover the usual notion of projectivity in \(\Aa \):
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1004r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 6.4.4.</span>  </span><span id='lem:t-Projective_In_DA_Classical'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(\Aa \) <span class='ntx-Italic-tlf-t1-x-x-109'>be an abelian category and let</span> \(M \in \Aa \)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then</span> \(M\) <span class='ntx-Italic-tlf-t1-x-x-109'>is projective in</span> \(\Aa \) <span class='ntx-Italic-tlf-t1-x-x-109'>if and only if the complex</span>
+\(M[0] \in \D (\Aa )\) <span class='ntx-Italic-tlf-t1-x-x-109'>is t-projective.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-04-7" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-04-7">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Suppose first that \(M[0]\) is t-projective, so that \(\hom _{\D (\Aa )}(M[0],-)\colon \D (\Aa ) \to \Sp \) is t-exact. By <a class="source-reference" data-label="cor:t-Exact_Functor_Induces_Exact_Functor" href="../../../entry/t-exact-functors-induce-exact-functors-on-hearts/index.html#cor:t-Exact_Functor_Induces_Exact_Functor">Corollary 6.3.17</a>, this functor restricts to an exact
+functor on hearts \(\D (\Aa )^{\heartsuit } \to \Sp ^{\heartsuit }\), i.e., \(\Aa \to \Ab \). This restricted functor is \(\Hom _{\Aa }(M,-)\), showing that \(M\) is projective in \(\Aa \).
+</p><p class='noindent'>Conversely, assume that \(\Hom _{\Aa }(M,-)\colon \Aa \to \Ab \) is exact. Just as in <a class="source-reference" data-label="cor:Shifted_Integers_Represent_Homology_In_Homotopy_Category" href="../../../entry/shifted-integers-represent-homology/index.html#cor:Shifted_Integers_Represent_Homology_In_Homotopy_Category">Corollary 6.2.9</a>, this implies that for any chain complex \(C_{\bullet }\) in \(\Aa \) we have
+an isomorphism \[ \pi _n \hom _{\Kk (\Aa )}(M[0], C_{\bullet }) \cong \Hom _{\Aa }(M,H_n(C)). \] In particular, the functor \(\hom _{\Kk (\Aa )}(M[0],-)\colon \Kk (\Aa ) \to \Sp \) inverts quasi-isomorphisms. The same argument as in <a class="source-reference" data-label="lem:Hom_In_Localization" href="../../../entry/maps-from-local-objects-in-a-localization/index.html#lem:Hom_In_Localization">Lemma 6.2.10</a>
+shows that it is corepresented by \(M[0] \in \D (\Aa )\), giving a natural isomorphism \(\hom _{\D (\Aa )}(M[0],-) \cong \hom _{\Kk (\Aa )}(M[0],-)\). It follows that \(\pi _n\hom _{\D (\Aa )}(M[0],X) \cong \Hom _{\Aa }(M,H_n(X))\) for all complexes \(X \in \D (\Aa )\),
+showing that \(\hom _{\D (\Aa )}(M[0],X)\) is connective whenever \(X\) is.                                                                                           □
+</p>
+                                                                                   
+                                                                                   
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1005r5'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 6.4.5.</span>  </span><span id='cor:Projective_Objects_Corepresent_Homology'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(\Aa \) <span class='ntx-Italic-tlf-t1-x-x-109'>be an abelian category and let</span> \(M\in \Aa \) <span class='ntx-Italic-tlf-t1-x-x-109'>be projective. Then for every</span> \(X\in \D (\Aa )\) <span class='ntx-Italic-tlf-t1-x-x-109'>and every</span> \(n\in \Z \)<span class='ntx-Italic-tlf-t1-x-x-109'>,
+there is a natural isomorphism </span>\[ \pi _n\hom _{\D (\Aa )}(M[0],X)\cong \Hom _{\Aa }(M,H_n(X)). \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-04-6" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-04-6">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> This is the computation in the second half of the proof of <a class="source-reference" data-label="lem:t-Projective_In_DA_Classical" href="../../../entry/classical-and-t-projective-objects/index.html#lem:t-Projective_In_DA_Classical">Lemma 6.4.4</a>.                                                  □
+</p>
+</div></div>
+
+<h4 class='subsectionHead' id='extgroups'><span class='titlemark'>6.4.1    </span> <a id='x1-20006.4.1'></a>Ext-groups</h4>
+<p class='noindent' id='subsec_Ext_Groups'>We will next give a formulation of t-projectivity in terms of the Ext-groups in \(C\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r6'></a>
+<a class="entry-heading-link" href="../../../entry/ext-groups-in-a-stable-infinity-category/index.html" aria-label="Definition 6.4.6, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 6.4.6 </span></a>(Ext-groups)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Ext_Groups'></span>  Let  \(C\)  be  a  stable  \(\infty \)-category.  For  objects  \(X,Y \in C\)  and  \(n \in \Z \),  we  define  the  \(n\)<span class='ntx-Italic-tlf-t1-x-x-109'>-th
+Ext-group </span>to be \[ \Ext ^n_C(X,Y) := \pi _{-n}\hom _C(X,Y) \simeq \pi _0 \Hom _C(X,Y[n]). \]
+                                                                                   
+                                                                                   
+</p>
+</div>
+<p class='noindent'>For objects \(M,N\in \Aa \), regarded as complexes concentrated in degree zero, we abbreviate \(\Ext ^n_{\D (\Aa )}(M,N)\) to \(\Ext ^n_{\Aa }(M,N)\).
+</p><p class='noindent'>Assume now that \(C\) comes equipped with a t-structure. For objects \(M,N \in C^{\heartsuit }\), the Ext-groups \(\Ext ^n_C(M,N)\) admit a direct
+interpretation in small degrees:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2002r7'></a>
+<a class="entry-heading-link" href="../../../entry/negative-ext-groups-vanish-in-the-heart/index.html" aria-label="Observation 6.4.7., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Observation 6.4.7.</span></a>  </span><span id='obs:Ext_Negative_Vanishes'></span> For \(n &lt; 0\), we have \(\Ext ^n_C(M,N) = 0\), since \(M \in C_{\geq 0}\) while \(N[n] \in C_{\leq n} \subseteq C_{\leq -1}\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2003r8'></a>
+<a class="entry-heading-link" href="../../../entry/zeroth-ext-is-hom-in-the-heart/index.html" aria-label="Observation 6.4.8., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Observation 6.4.8.</span></a>  </span><span id='obs:Ext_Zero_Is_Hom'></span> For \(n = 0\), we have \(\Ext ^0_C(M,N) = \pi _0\Hom _C(M,N) = \Hom _{C^{\heartsuit }}(M,N)\), the set of morphisms in the heart.
+</p>
+</div>
+<p class='noindent'>The interpretation of \(\Ext ^1_C(M,N)\) in terms of extensions is developed in <span class="source-reference" data-label="exercise:Ext1_Classifies_Extensions">Chapterexercise 6.5</span>.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2004r9'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/yoneda-extensions-compute-ext-groups/index.html" aria-label="Exercise 6.4.9., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 6.4.9.</span></a>  </span><span id='exercise:Yoneda_Extensions_Compute_Ext_Groups'></span> Assume that \(C^{\heartsuit }\) has enough projectives, meaning that for every object \(M\) there exists an
+epimorphism \(P \twoheadrightarrow M\) from a projective object \(P\). Show that \(\Ext ^n_C(M,N)\) for \(n \geq 2\) can be described in terms of <span class='ntx-Italic-tlf-t1-x-x-109'>degree</span> \(n\) <span class='ntx-Italic-tlf-t1-x-x-109'>Yoneda
+extensions</span>: exact sequences in \(C^{\heartsuit }\) of the form \[ 0 \to N \to E_n \to E_{n-1} \to \dots \to E_2 \to E_1 \to M \to 0. \] Hint: use <a class="source-reference" data-label="prop:Compute_Ext_Via_Projective_Resolution" href="../../../entry/ext-groups-via-projective-resolutions/index.html#prop:Compute_Ext_Via_Projective_Resolution">Proposition 6.4.14</a> below.
+</p>
+</div>
+<p class='noindent'>We now record the fundamental long exact sequences for Ext-groups.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2005r10'></a>
+<a class="entry-heading-link" href="../../../entry/long-exact-sequence-of-ext-groups/index.html" aria-label="Observation 6.4.10, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Observation 6.4.10 </span></a>(Ext long exact sequence)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='obs:Ext_Long_Exact_Sequence'></span> Every exact sequence \(Y' \to Y \to Y''\) in \(C\) induces an exact sequence
+of mapping spectra \(\hom _C(X,Y') \to \hom _C(X,Y) \to \hom _C(X,Y'')\), thus giving rise to a long exact sequence of homotopy groups of the form \[ \begin {tikzpicture}[descr/.style={fill=white,inner sep=1.5pt}] \matrix (m) [ matrix of math nodes, row sep=1em, column sep=2.5em, text height=1.5ex, text depth=0.25ex ] { &amp;&amp; \dots \phantom {Y)}&amp; \Ext ^{n-2}_C(X,Y'') \\ &amp; \Ext ^{n-1}_C(X,Y') &amp; \Ext ^{n-1}_C(X,Y) &amp; \Ext ^{n-1}_C(X,Y'') \\ &amp; \Ext ^{n}_C(X,Y') &amp; \Ext ^{n}_C(X,Y) &amp; \Ext ^{n}_C(X,Y'') \\ &amp; \Ext ^{n+1}_C(X,Y') &amp; \phantom {Ex} \dots &amp; \\ }; 
+
+ \path [overlay,-&gt;, font=\scriptsize ,&gt;=latex] (m-1-3) edge (m-1-4) (m-1-4) edge[out=355,in=175] (m-2-2) (m-2-2) edge (m-2-3) (m-2-3) edge (m-2-4) (m-2-4) edge[out=355,in=175] (m-3-2) (m-3-2) edge (m-3-3) (m-3-3) edge (m-3-4) (m-3-4) edge[out=355,in=175] (m-4-2) (m-4-2) edge (m-4-3); \end {tikzpicture} \]
+Similarly, every exact sequence \(X' \to X \to X''\) in \(C\) induces a long exact sequence of the form \[ \begin {aligned} \dots \to \Ext ^{n-1}_C(X',Y) \to \Ext ^n_C(X'',Y) \to \Ext ^n_C(X,Y) \to \Ext ^n_C(X',Y) \to \Ext ^{n+1}_C(X'',Y) \to \dots . \end {aligned} \] As a special case,
+given an object \(N \in C^{\heartsuit }\) and a short exact sequence \(M' \hookrightarrow P \twoheadrightarrow M\) in \(C^{\heartsuit }\), the negative Ext-groups vanish, giving a one-sided
+long exact sequence of the form \[ \begin {aligned} 0 \to \Hom _{C^{\heartsuit }}(&amp;M,N) \to \Hom _{C^{\heartsuit }}(P,N) \to \Hom _{C^{\heartsuit }}(M',N) \\ &amp;\to \Ext ^1_C(M,N) \to \Ext ^1_C(P,N) \to \Ext ^1_C(M',N) \\ &amp;\to \Ext ^2_C(M,N) \to \dots . \end {aligned} \]
+</p>
+</div>
+<p class='noindent'>Using Ext-groups, we can give several equivalent characterizations of t-projectivity.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2006r11'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 6.4.11 </span>(<span class='citation'>[Lurie (2017), Proposition 7.2.2.6]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Characterization_Projective_Objects'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a stable</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category equipped with a t-structure, and let</span> \(P \in C_{\geq 0}\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a connective
+object. Then the following conditions are equivalent:</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><a id='x1-20071'></a> <span class='ntx-Italic-tlf-t1-x-x-109'>The object</span> \(P\) <span class='ntx-Italic-tlf-t1-x-x-109'>is t-projective;</span>
+                                                                                   
+
+                                                                                   
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><a id='x1-20082'></a> <span class='ntx-Italic-tlf-t1-x-x-109'>For every</span> \(Q \in C_{\geq 0}\) <span class='ntx-Italic-tlf-t1-x-x-109'>and every</span> \(i &gt; 0\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the abelian group</span> \(\Ext ^i_C(P,Q)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is zero;</span>
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'><a id='x1-20093'></a> <span class='ntx-Italic-tlf-t1-x-x-109'>For every</span> \(Q \in C_{\geq 0}\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the abelian group</span> \(\Ext ^1_C(P,Q)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is zero;</span>
+     </p></dd><dt class='enumerate'>
+  (4) </dt><dd class='enumerate'>
+     <p class='noindent'><a id='x1-20104'></a> <span class='ntx-Italic-tlf-t1-x-x-109'>Given an exact sequence </span>\[ N' \to N \to N'' \] <span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>with</span> \(N',N,N'' \in C_{\geq 0}\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the map</span> \(\Ext ^0_C(P,N) \to \Ext ^0_C(P,N'')\) <span class='ntx-Italic-tlf-t1-x-x-109'>is surjective.</span></p></dd></dl>
+<p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is left complete, this is further equivalent to:</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (5) </dt><dd class='enumerate'>
+     <p class='noindent'><a id='x1-20115'></a> <span class='ntx-Italic-tlf-t1-x-x-109'>For every</span> \(Q \in C^{\heartsuit }\) <span class='ntx-Italic-tlf-t1-x-x-109'>and every</span> \(i &gt; 0\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the abelian group</span> \(\Ext ^i_C(P,Q)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is zero.</span></p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-04-5" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-04-5">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  Recall  from  <a class="source-reference" data-label="obs:t-Projective_Iff_Map_Right_Exact" href="../../../entry/t-projectivity-detected-by-right-t-exactness/index.html#obs:t-Projective_Iff_Map_Right_Exact">Observation 6.4.3</a>  that  \(P\)  is  t-projective  if  and  only  if  the  mapping  spectrum  functor  \(\hom _C(P,-)\colon C \to \Sp \)  is  right
+t-exact. By definition, this means that for any object \(Q \in C_{\geq 0}\), the mapping spectrum \(\hom _C(P,Q)\) has vanishing negative
+homotopy groups \(\pi _{-i}\hom _C(P,Q) = \Ext ^i_C(P,Q)\) for \(i &gt; 0\). This shows the equivalence \(\HCode {&lt;span class="source-reference equation-reference" data-label="it:t-projective"&gt;(1)&lt;/span&gt;} \Leftrightarrow \HCode {&lt;span class="source-reference equation-reference" data-label="it:Extn=0"&gt;(2)&lt;/span&gt;}\).
+</p><p class='noindent'>It is clear that <span class="source-reference equation-reference" data-label="it:Extn=0">(2)</span> implies <span class="source-reference equation-reference" data-label="it:Ext1=0">(3)</span>, and the implication \(\HCode {&lt;span class="source-reference equation-reference" data-label="it:Ext1=0"&gt;(3)&lt;/span&gt;} \Rightarrow \HCode {&lt;span class="source-reference equation-reference" data-label="it:Extn=0"&gt;(2)&lt;/span&gt;}\) follows by replacing \(Q\) by \(Q[i-1]\) for all \(i \geq 1\).
+</p><p class='noindent'>We next show that \(\HCode {&lt;span class="source-reference equation-reference" data-label="it:Ext1=0"&gt;(3)&lt;/span&gt;} \Leftrightarrow \HCode {&lt;span class="source-reference equation-reference" data-label="it:Ext0-surj"&gt;(4)&lt;/span&gt;}\). It is clear that <span class="source-reference equation-reference" data-label="it:Ext1=0">(3)</span> implies <span class="source-reference equation-reference" data-label="it:Ext0-surj">(4)</span>: the exact sequence \(N' \to N \to N''\) induces a long exact sequence of
+the form \[ \dots \to \Ext ^0_C(P,N) \to \Ext ^0_C(P,N'') \to \Ext ^1_C(P,N') \to \dots , \] so the vanishing of \(\Ext ^1_C(P,N')\) implies that the first map must be surjective. Assume now that <span class="source-reference equation-reference" data-label="it:Ext0-surj">(4)</span> holds.
+Given a class \(\eta \in \Ext ^1(P,Q) = \pi _0\Hom _C(P,Q[1])\), we obtain an exact sequence \[ P' \to P \xrightarrow {\eta } Q[1] \] and thus a long exact sequence \[ \dots \to \Ext ^0_C(P,P') \to \Ext ^0_C(P,P) \xrightarrow {\eta \circ -} \Ext ^1_C(P,Q) \to \dots \] As \(P,P',Q \in C_{\geq 0}\), the first map is
+surjective, hence the second map is the zero map. Since it sends \(\id _P\) to \(\eta \), we conclude that \(\eta = 0\). This shows
+that \(\HCode {&lt;span class="source-reference equation-reference" data-label="it:Ext1=0"&gt;(3)&lt;/span&gt;} \Leftrightarrow \HCode {&lt;span class="source-reference equation-reference" data-label="it:Ext0-surj"&gt;(4)&lt;/span&gt;}\).
+</p><p class='noindent'>Finally, suppose that \(C\) is left complete. It is clear that <span class="source-reference equation-reference" data-label="it:Extn=0">(2)</span> implies <span class="source-reference equation-reference" data-label="it:Extn=0heart">(5)</span>. Conversely, assume <span class="source-reference equation-reference" data-label="it:Extn=0heart">(5)</span>. The exact
+sequences \[ (\pi _{n+1}Q)[n+1] \to \tau _{\leq n+1}Q \to \tau _{\leq n}Q \] show that the towers of Ext-groups in each positive degree are eventually constant. Since
+                                                                                   
+                                                                                   
+left completeness gives \(Q \simeq \lim _n \tau _{\leq n}Q\), the corresponding tower of mapping spectra computes \(\hom _C(P,Q)\). Eventual constancy
+in adjacent degrees eliminates the derived-limit term and gives \[ \Ext ^i_C(P,Q) \cong \Ext ^i_C(P,\tau _{\leq 0}Q)=0 \] for \(i&gt;0\). This is the Postnikov-tower
+argument of <span class='citation'>[Lurie (2017), Proposition 7.2.2.6]</span>.                                                                                                                                       □
+</p>
+</div></div>
+
+<h4 class='subsectionHead' id='extgroups-via-projective-resolutions'><span class='titlemark'>6.4.2    </span> <a id='x1-30006.4.2'></a>Ext-groups via projective resolutions</h4>
+<p class='noindent' id='subsec_Ext_Via_Resolutions'>As a consequence of <a class="source-reference" data-label="prop:Characterization_Projective_Objects" href="../../../entry/characterizations-of-t-projective-objects/index.html#prop:Characterization_Projective_Objects">Proposition 6.4.11</a>, we may compute Ext-groups in terms of projective resolutions.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3001r12'></a>
+<a class="entry-heading-link" href="../../../entry/projective-resolutions-in-the-heart/index.html" aria-label="Definition 6.4.12., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 6.4.12.</span></a>  </span><span id='def:Projective_Resolution'></span> Let \(C\) be a stable \(\infty \)-category equipped with a t-structure, and let \(M \in C^{\heartsuit }\) be an object in the
+heart of \(C\). A <span class='ntx-Italic-tlf-t1-x-x-109'>projective resolution </span>of \(M\) is a long exact sequence \[ \dots \to P_2 \to P_1 \to P_0 \twoheadrightarrow M \to 0 \] in \(C^{\heartsuit }\) such that each object \(P_n\) is t-projective.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3002r13'></a>
+<a class="entry-heading-link" href="../../../entry/projective-resolutions-in-derived-infinity-categories/index.html" aria-label="Remark 6.4.13., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 6.4.13.</span></a>  </span><span id='rmk:Projective_Resolutions_In_Derived_Infinity_Categories'></span> When \(C = \D (\Aa )\) is the derived \(\infty \)-category of some abelian category \(\Aa \), this recovers the usual
+notion of projective resolutions in \(\Aa \) from homological algebra by <a class="source-reference" data-label="lem:t-Projective_In_DA_Classical" href="../../../entry/classical-and-t-projective-objects/index.html#lem:t-Projective_In_DA_Classical">Lemma 6.4.4</a>.
+</p>
+</div>
+                                                                                   
+                                                                                   
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3003r14'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 6.4.14 </span>(Ext-groups via projective resolutions)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Compute_Ext_Via_Projective_Resolution'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(C\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  a  stable</span>  \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category  equipped
+with a t-structure, and let</span> \(P_{\bullet }\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a projective resolution of</span> \(M \in C^{\heartsuit }\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then for every other object</span> \(N \in C^{\heartsuit }\) <span class='ntx-Italic-tlf-t1-x-x-109'>and every</span> \(n \in \Z \) <span class='ntx-Italic-tlf-t1-x-x-109'>there
+is an isomorphism of abelian groups </span>\[ \Ext ^n_C(M,N) \quad \cong \quad H^n(\Hom _{C^{\heartsuit }}(P_{\bullet },N)) \] <span class='ntx-Italic-tlf-t1-x-x-109'>between the</span> \(n\)<span class='ntx-Italic-tlf-t1-x-x-109'>-th Ext-group and the</span> \(n\)<span class='ntx-Italic-tlf-t1-x-x-109'>-th cohomology group of
+the cochain complex</span> \(\Hom _{C^{\heartsuit }}(P_{\bullet },N)\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-04-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-04-4">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The claim is clear for \(n &lt; 0\) as both sides are zero: \(\Ext ^n_C(M,N) = \pi _0 \Hom _{C}(M,N[n]) = 0\) since \(M \in C_{\geq 0}\) and \(N[n] \in C_{\leq n} \subseteq C_{\leq -1}\).
+</p><p class='noindent'>For the remaining cases, we break the resolution into short exact sequences and use the vanishing of
+the higher Ext-groups of the \(P_k\) to splice the resulting long exact sequences together. Define auxiliary
+objects \(M_{-1} := M\) and \(M_k := \ker (P_k \twoheadrightarrow M_{k-1})\) for \(k \geq 0\). The projective resolution then admits the following factorization in \(C^{\heartsuit }\), where each
+of the diagonal sequences are exact:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-340e498948b9.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>For each of these short exact sequences, we obtain a long exact sequence on Ext-groups from <a class="source-reference" data-label="obs:Ext_Long_Exact_Sequence" href="../../../entry/long-exact-sequence-of-ext-groups/index.html#obs:Ext_Long_Exact_Sequence">Observation 6.4.10</a>. Since
+the higher Ext-groups of the t-projective objects \(P_k\) vanish by <a class="source-reference" data-label="prop:Characterization_Projective_Objects" href="../../../entry/characterizations-of-t-projective-objects/index.html#prop:Characterization_Projective_Objects">Proposition 6.4.11</a>, its initial part is \[ \begin {aligned} 0 \to \Hom _{C^{\heartsuit }}(M_{k-1},N) &amp;\to \Hom _{C^{\heartsuit }}(P_k,N) \to \Hom _{C^{\heartsuit }}(M_k,N) \\ &amp;\to \Ext ^1_C(M_{k-1},N) \to 0, \end {aligned} \] and its remaining terms
+give isomorphisms \[ \Ext ^{i+1}_C(M_{k-1},N) \cong \Ext ^i_C(M_k,N) \qquad (i\geq 1). \]
+</p><p class='noindent'>Since the map \(P_{k+1} \twoheadrightarrow M_k\) is an epimorphism, the induced map \(\Hom _{C^{\heartsuit }}(M_k,N) \hookrightarrow \Hom _{C^{\heartsuit }}(P_{k+1},N)\) is injective, and so the initial part of this
+sequence provides for each \(k \geq 0\) an isomorphism \[ \Hom _{C^{\heartsuit }}(M_{k-1},N) \quad \cong \quad \ker (\Hom _{C^{\heartsuit }}(P_k,N) \to \Hom _{C^{\heartsuit }}(P_{k+1},N)). \] The next part of the sequence then shows that \(\Ext ^1_C(M_{k-1},N)\) is the
+cokernel of the map \(\Hom _{C^{\heartsuit }}(P_k,N) \to \Hom _{C^{\heartsuit }}(M_k,N)\). Combining this with the previous identification of \(\Hom _{C^{\heartsuit }}(M_k,N)\) as a kernel, this shows that
+\[ \Ext ^1_C(M_{k-1},N) \quad \cong \quad \frac {\ker (\Hom _{C^{\heartsuit }}(P_{k+1}, N) \to \Hom _{C^{\heartsuit }}(P_{k+2}, N))}{\im (\Hom _{C^{\heartsuit }}(P_{k}, N) \to \Hom _{C^{\heartsuit }}(P_{k+1}, N))} \quad = \quad H^{k+1}(\Hom _{C^{\heartsuit }}(P_{\bullet }, N)). \] Observe that setting \(k = 0\) in these two isomorphisms proves the statement of the proposition for \(n = 0\) and
+\(n = 1\). Iterating the displayed dimension-shifting isomorphisms gives \(\Ext ^n_C(M,N) \cong \Ext ^1_C(M_{n-2},N)\) for all \(n \geq 1\). Setting \(k = n-1\) in the previous
+isomorphism thus gives \[ \Ext ^n_C(M,N) \quad \cong \quad H^{n}(\Hom _{C^{\heartsuit }}(P_{\bullet }, N)) \] for all \(n \geq 1\), finishing the proof.                                                                         □
+</p>
+                                                                                   
+                                                                                   
+</div></div>
+
+<h4 class='subsectionHead' id='projective-objects-and-geometric-realizations'><span class='titlemark'>6.4.3    </span> <a id='x1-40006.4.3'></a>Projective objects and geometric realizations</h4>
+<p class='noindent' id='subsec_Projective_Geometric_Realizations'>There is a second natural way to generalize the notion of projectivity beyond the abelian setting. An object \(P\)
+in an abelian category \(\Aa \) is projective if and only if \(\Hom _{\Aa }(P,-)\) preserves epimorphisms. Since epimorphisms in \(\Aa \) are
+precisely the reflexive coequalizers, this is equivalent to asking that \(\Hom _{\Aa }(P,-)\) preserves reflexive coequalizers. Since
+the \(\infty \)-categorical analogues of reflexive coequalizers are geometric realizations, this leads to the following
+definition:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4001r15'></a>
+<a class="entry-heading-link" href="../../../entry/projective-objects-in-infinity-categories/index.html" aria-label="Definition 6.4.15., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 6.4.15.</span></a>  </span><span id='def:Projective_Object'></span> Let \(D\) be an \(\infty \)-category with geometric realizations. An object \(P \in D\) is called <span class='ntx-Italic-tlf-t1-x-x-109'>projective</span>
+if the functor \(\Hom _D(P,-)\colon D \to \An \) preserves geometric realizations.
+</p>
+</div>
+<p class='noindent'>If \(C\) is a stable \(\infty \)-category with a left complete t-structure, it turns out that an object of \(C\) is t-projective if and
+only if it is a projective object in the connective part \(C_{\geq 0}\). We start with the following auxiliary
+result:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4002r16'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 6.4.16.</span>  </span><span id='lem:Connectives_Have_Geometric_Realizations'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Assume that the t-structure on</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is left complete. Then</span> \(C_{\geq 0}\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits geometric realizations.
+If</span> \(C'\) <span class='ntx-Italic-tlf-t1-x-x-109'>is another stable</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with a left complete t-structure, then any exact right t-exact functor</span> \(F\colon C \to C'\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>restricts to a functor</span> \(F\colon C_{\geq 0} \to C'_{\geq 0}\) <span class='ntx-Italic-tlf-t1-x-x-109'>that preserves geometric realizations.</span>
+                                                                                   
+
+                                                                                   
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-04-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-04-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <span class='citation'>[Lurie (2017), Lemma 1.3.3.11(2)]</span>, the connective part of a left-complete t-structure admits geometric realizations, and a
+right exact functor between connective parts preserves them. The restriction of an exact right t-exact
+functor is right exact, which gives the second claim.                                                                         □
+</p>
+</div></div>
+<p class='noindent'>As a second auxiliary result, we record the following general description of pushouts. Besides its
+application below, it illustrates why geometric realizations play the role of reflexive coequalizers in the
+preceding discussion.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4003r17'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 6.4.17 </span>(Pushouts as geometric realizations)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Pushout_As_Geometric_Realization'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with finite coproducts
+and  geometric  realizations.  Given  a  span</span>  \(X \xleftarrow {f} A \xrightarrow {g} Y\)<span class='ntx-Italic-tlf-t1-x-x-109'>,  there  exists  a  simplicial  object</span>  \(B_{\bullet }(X,A,Y)\)  <span class='ntx-Italic-tlf-t1-x-x-109'>with  </span>\[ B_n(X,A,Y) := X \sqcup A^{\sqcup n} \sqcup Y. \]  <span class='ntx-Italic-tlf-t1-x-x-109'>Its  geometric
+realization is the pushout: </span>\[ \abs {B_{\bullet }(X,A,Y)} \cong X \sqcup _A Y. \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-04-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-04-2">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> <span class='ntx-Bold-tlf-t1-x-x-109'>T</span>O DO. This is an instance of the Bousfield–Kan formula for colimits.                              □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4004r18'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 6.4.18.</span>  </span><span id='prop:t-Projective_Iff_Projective_In_Connectives'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a stable</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category equipped with a left-complete t-structure, and let</span> \(P \in C_{\geq 0}\) <span class='ntx-Italic-tlf-t1-x-x-109'>be
+a connective object of</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then</span> \(P\) <span class='ntx-Italic-tlf-t1-x-x-109'>is t-projective if and only if it is a projective object in</span> \(C_{\geq 0}\) <span class='ntx-Italic-tlf-t1-x-x-109'>in the sense of
+</span><a class="source-reference" data-label="def:Projective_Object" href="../../../entry/projective-objects-in-infinity-categories/index.html#def:Projective_Object">Definition 6.4.15</a><span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-04-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-04-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> First assume that \(P\) is projective in \(C_{\geq 0}\). We will verify condition <span class="source-reference equation-reference" data-label="it:Ext1=0">(3)</span> from <a class="source-reference" data-label="prop:Characterization_Projective_Objects" href="../../../entry/characterizations-of-t-projective-objects/index.html#prop:Characterization_Projective_Objects">Proposition 6.4.11</a>. Given an object \(Q \in C_{\geq 0}\), apply <a class="source-reference" data-label="lem:Pushout_As_Geometric_Realization" href="../../../entry/pushouts-as-geometric-realizations/index.html#lem:Pushout_As_Geometric_Realization">Lemma 6.4.17</a>
+to the span \(0 \leftarrow Q \to 0\). The resulting simplicial object has \(Q^{\oplus n}\) in degree \(n\): its face maps add adjacent summands or
+omit the first or last summand, and its degeneracy maps insert a zero summand. Thus it begins</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-831109c7037e.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Its
+geometric realization is the pushout \(0 \sqcup _Q 0\). By <a class="source-reference" data-label="lem:Truncation_Adjunctions" href="../../../entry/truncation-adjunctions-for-t-structures/index.html#lem:Truncation_Adjunctions">Lemma 6.3.7</a>, the inclusion \(C_{\geq 0} \hookrightarrow C\) has a right adjoint and therefore preserves
+this pushout, which in the stable category \(C\) is the suspension \(Q[1]\). Since \(P\) is projective, \(\Hom _C(P,Q[1])\) is therefore the
+geometric realization of the simplicial anima obtained by mapping out of \(P\). The set of components of
+a geometric realization is a quotient of the set of components in simplicial degree zero, which here
+is the singleton \(\pi _0\Hom _C(P,0)=*\). Thus \(\Hom _C(P,Q[1])\) is connected, so \(\Ext ^1_C(P,Q)=0\). This shows that \(P\) is t-projective.</p><p class='noindent'>For the converse, assume now that \(P\) is t-projective, giving a t-exact functor \(\hom _C(P,-)\colon C \to \Sp \). We get from <a class="source-reference" data-label="lem:Connectives_Have_Geometric_Realizations" href="../../../entry/geometric-realizations-of-connective-objects/index.html#lem:Connectives_Have_Geometric_Realizations">Lemma 6.4.16</a> that the
+restricted functor \(\hom _C(P,-)\colon C_{\geq 0} \to \Sp _{\geq 0}\) preserves geometric realizations. Since \(\Omega ^{\infty }\colon \Sp _{\geq 0} \iso \CGrp (\An ) \to \An \) preserves geometric realizations as well,
+it follows that so does \(\Hom _C(P,-)\colon C_{\geq 0} \to \An \), showing that \(P\) is projective in \(C_{\geq 0}\).                                                                       □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+                                                                                   
+                                                                                   
+<a id='x1-4005r19'></a>
+<a class="entry-heading-link" href="../../../entry/stable-infinity-categories-have-no-nonzero-projective-objects/index.html" aria-label="Warning 6.4.19., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Warning 6.4.19.</span></a>  </span><span id='warn:No_Nonzero_Projectives_In_Stable_Infinity_Categories'></span> It is not reasonable to ask for \(P\) to be projective in the stable \(\infty \)-category \(C\) itself, since
+the only projective objects in \(C\) are the zero objects. To see this, assume that \(P\) is a projective object of
+\(C\). By <a class="source-reference" data-label="lem:Pushout_As_Geometric_Realization" href="../../../entry/pushouts-as-geometric-realizations/index.html#lem:Pushout_As_Geometric_Realization">Lemma 6.4.17</a>, the shift \(N[1] \cong 0 \sqcup _N 0\) of any object \(N \in C\) is the geometric realization of the simplicial object with \(N^{\oplus n}\) in degree \(n\).
+We then obtain equivalences \[ \Hom _{C}(P[-1],N) \simeq \Hom _{C}(P,N[1]) \simeq \abs { [n] \mapsto \Hom _{C}(P,N^{\oplus n}) }. \] Since the right-hand side is connected, we see that \(\pi _0\Hom _{C}(P[-1],N) = 0\). Replacing \(N\) by \(N[-k]\) for
+all \(k \in \N \) then gives that \(\pi _k\Hom _{C}(P[-1],N) = 0\) for all \(k\), hence \(\Hom _{C}(P[-1],N) = 0\), showing that \(P\) is the zero object.
+</p>
+</div>
+
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../connective-objects-and-t-structures/index.html" aria-label="Previous section: Connective objects and t-structures" title="Previous section: Connective objects and t-structures"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../flat-objects-and-tor-groups/index.html" aria-label="Next section: Flat objects and Tor-groups" title="Next section: Flat objects and Tor-groups"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html" aria-current="page"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/animae-as-spaces/index.html"><span class="context-entry-heading">Chapter 2</span><span class="context-entry-title">Animae as spaces</span></a></li><li><a href="../../../chapter/homology-and-cohomology/index.html"><span class="context-entry-heading">Chapter 3</span><span class="context-entry-title">Homology and cohomology</span></a></li><li><a href="../../../chapter/spectra-and-stable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 4</span><span class="context-entry-title">Spectra and stable ∞-categories</span></a></li><li><a href="../../../chapter/recognition-principle/index.html"><span class="context-entry-heading">Chapter 5</span><span class="context-entry-title">The recognition principle</span></a></li><li><a href="../../../chapter/homological-algebra/index.html" aria-current="page"><span class="context-entry-heading">Chapter 6</span><span class="context-entry-title">Homological algebra</span></a></li><li><a href="../../../chapter/localization-and-completion/index.html"><span class="context-entry-heading">Chapter 7</span><span class="context-entry-title">Localization and completion</span></a></li><li><a href="../../../chapter/ring-spectra-and-modules/index.html"><span class="context-entry-heading">Chapter 8</span><span class="context-entry-title">Ring spectra and modules</span></a></li><li><a href="../../../chapter/complex-k-theory/index.html"><span class="context-entry-heading">Chapter 9</span><span class="context-entry-title">Complex K-theory</span></a></li><li><a href="../../../chapter/thom-spectra-and-bordism-theory/index.html"><span class="context-entry-heading">Chapter 10</span><span class="context-entry-title">Thom spectra and bordism theory</span></a></li><li><a href="../../../chapter/duality-phenomena/index.html"><span class="context-entry-heading">Chapter 11</span><span class="context-entry-title">Duality phenomena</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../derived-categories/index.html"><span class="context-entry-heading">Section 6.1</span><span class="context-entry-title">Derived ∞-categories</span></a></li><li><a href="../ordinary-homology-and-cohomology-via-d-z/index.html"><span class="context-entry-heading">Section 6.2</span><span class="context-entry-title">Ordinary homology and cohomology via D(Z)</span></a></li><li><a href="../connective-objects-and-t-structures/index.html"><span class="context-entry-heading">Section 6.3</span><span class="context-entry-title">Connective objects and t-structures</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 6.4</span><span class="context-entry-title">Projective objects and Ext-groups</span></a></li><li><a href="../flat-objects-and-tor-groups/index.html"><span class="context-entry-heading">Section 6.5</span><span class="context-entry-title">Flat objects and Tor-groups</span></a></li><li><a href="../derived-functors/index.html"><span class="context-entry-heading">Section 6.6</span><span class="context-entry-title">Derived functors</span></a></li><li><a href="../k-nneth-and-universal-coefficient-theorems/index.html"><span class="context-entry-heading">Section 6.7</span><span class="context-entry-title">Künneth and universal coefficient theorems</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:t-Projective"><span class="context-entry-heading">Definition 6.4.1</span><span class="context-entry-title">definition</span></a></li><li><a href="#obs:t-Projective_Connective"><span class="context-entry-heading">Observation 6.4.2</span><span class="context-entry-title">observation</span></a></li><li><a href="#obs:t-Projective_Iff_Map_Right_Exact"><span class="context-entry-heading">Observation 6.4.3</span><span class="context-entry-title">observation</span></a></li><li><a href="#lem:t-Projective_In_DA_Classical"><span class="context-entry-heading">Lemma 6.4.4</span><span class="context-entry-title">lemma</span></a></li><li><a href="#cor:Projective_Objects_Corepresent_Homology"><span class="context-entry-heading">Corollary 6.4.5</span><span class="context-entry-title">corollary</span></a></li><li><a href="#def:Ext_Groups"><span class="context-entry-heading">Definition 6.4.6</span><span class="context-entry-title">Ext-groups</span></a></li><li><a href="#obs:Ext_Negative_Vanishes"><span class="context-entry-heading">Observation 6.4.7</span><span class="context-entry-title">observation</span></a></li><li><a href="#obs:Ext_Zero_Is_Hom"><span class="context-entry-heading">Observation 6.4.8</span><span class="context-entry-title">observation</span></a></li><li><a href="#exercise:Yoneda_Extensions_Compute_Ext_Groups"><span class="context-entry-heading">Exercise 6.4.9</span><span class="context-entry-title">exercise</span></a></li><li><a href="#obs:Ext_Long_Exact_Sequence"><span class="context-entry-heading">Observation 6.4.10</span><span class="context-entry-title">Ext long exact sequence</span></a></li><li><a href="#prop:Characterization_Projective_Objects"><span class="context-entry-heading">Proposition 6.4.11</span><span class="context-entry-title">proposition</span></a></li><li><a href="#def:Projective_Resolution"><span class="context-entry-heading">Definition 6.4.12</span><span class="context-entry-title">definition</span></a></li><li><a href="#rmk:Projective_Resolutions_In_Derived_Infinity_Categories"><span class="context-entry-heading">Remark 6.4.13</span><span class="context-entry-title">remark</span></a></li><li><a href="#prop:Compute_Ext_Via_Projective_Resolution"><span class="context-entry-heading">Proposition 6.4.14</span><span class="context-entry-title">Ext-groups via projective resolutions</span></a></li><li><a href="#def:Projective_Object"><span class="context-entry-heading">Definition 6.4.15</span><span class="context-entry-title">definition</span></a></li><li><a href="#lem:Connectives_Have_Geometric_Realizations"><span class="context-entry-heading">Lemma 6.4.16</span><span class="context-entry-title">lemma</span></a></li><li><a href="#lem:Pushout_As_Geometric_Realization"><span class="context-entry-heading">Lemma 6.4.17</span><span class="context-entry-title">Pushouts as geometric realizations</span></a></li><li><a href="#prop:t-Projective_Iff_Projective_In_Connectives"><span class="context-entry-heading">Proposition 6.4.18</span><span class="context-entry-title">proposition</span></a></li><li><a href="#warn:No_Nonzero_Projectives_In_Stable_Infinity_Categories"><span class="context-entry-heading">Warning 6.4.19</span><span class="context-entry-title">warning</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

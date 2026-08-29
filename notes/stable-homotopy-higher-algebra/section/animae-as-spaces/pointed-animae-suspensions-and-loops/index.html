@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 2.4: Pointed animae, suspensions and loops | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/stable-homotopy-theory/index.html">Part I</a> · <a href="../../../chapter/animae-as-spaces/index.html">Chapter 2</a> · Section 2.4</p>
+      <h1>Pointed animae, suspensions and loops</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Pointed_Animae'>The previous sections show that homotopy pushouts and pullbacks of spaces are carried by \(\Pi _{\infty }\) to pushouts and
+pullbacks in \(\An \). We can therefore define suspensions, cofibers, loop spaces, and fibers directly in the \(\infty \)-category
+\(\An _*\) by their universal properties, and compare them with the classical constructions from algebraic topology.
+We write \(\Top _*:=\Top _{*/}\) for the category of pointed topological spaces and basepoint-preserving continuous
+maps.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-7001r1'></a>
+<a class="entry-heading-link" href="../../../entry/pointed-anima/index.html" aria-label="Definition 2.4.1, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 2.4.1 </span></a>(Pointed animae)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Pointed_Anima'></span>  A  <span class='ntx-Italic-tlf-t1-x-x-109'>pointed  anima  </span>is  a  pair  \((X,x)\)  consisting  of  an  anima  \(X\)  and  a
+distinguished  point  \(x \in X\).  A  morphism  of  pointed  animae  \(f\colon (X,x) \to (Y,y)\)  consists  of  a  map  \(f\colon X \to Y\)  in  \(\An \)  together  with  an
+isomorphism \(f(x) \cong y\).
+</p><p class='noindent'>We denote by \(\An _*\) the \(\infty \)-category of pointed animae and basepoint-preserving maps, defined as the slice
+category \(\An _{*/}\) from <a class="source-reference" data-label="def:Slice_Category" href="../../../entry/slice-categories/index.html#def:Slice_Category">Definition 21.3.1</a>.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-7002r2'></a>
+<a class="entry-heading-link" href="../../../entry/forgetful-functor-from-pointed-animae-preserves-pullbacks-and-pushouts/index.html" aria-label="Remark 2.4.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 2.4.2.</span></a>  </span><span id='rmk:Forgetful_Pointed_Animae_Preserves_Pullbacks_And_Pushouts'></span> The forgetful functor \(\An _* \to \An \) preserves pullbacks and pushouts.
+</p>
+                                                                                   
+                                                                                   
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-7003r3'></a>
+<a class="entry-heading-link" href="../../../entry/zero-object-and-null-maps-in-pointed-animae/index.html" aria-label="Notation 2.4.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Notation 2.4.3.</span></a>  </span><span id='not:Zero_Object_And_Null_Map_Pointed_Animae'></span> The one-point anima \(*\) is canonically pointed; we denote the corresponding pointed
+anima by \(0 \in \An _*\) and call it the <span class='ntx-Italic-tlf-t1-x-x-109'>zero object</span>. One can show it is both initial and terminal in \(\An _*\): given pointed
+animae \(X,Y \in \An _*\), there are unique morphisms \(X \to 0\) and \(0 \to Y\). (See <a class="source-reference" data-label="lem:Pointed_Iff_Equivalent_To_Pointed_Objects" href="../../../entry/pointed-objects-form-a-pointed-infinity-category/index.html#lem:Pointed_Iff_Equivalent_To_Pointed_Objects">Lemma 4.1.9</a> for more details.) We denote their composite by \[ 0\colon X \to Y \]
+and call it the <span class='ntx-Italic-tlf-t1-x-x-109'>null map</span>.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-7004r4'></a>
+<a class="entry-heading-link" href="../../../entry/fiber-and-cofiber-sequences-of-pointed-animae/index.html" aria-label="Definition 2.4.4, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 2.4.4 </span></a>(Fiber and cofiber sequences in \(\An _*\))<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Fiber_Cofiber_Sequences_An'></span> A <span class='ntx-Italic-tlf-t1-x-x-109'>nullsequence </span>in \(\An _*\) is a sequence of morphisms \[ X \xrightarrow {f} Y \xrightarrow {g} Z \]
+equipped with a specified <span class='ntx-Italic-tlf-t1-x-x-109'>nullhomotopy</span> \(g \circ f \cong 0\). Equivalently, it is a commutative square in \(\An _*\) of the form</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-11a486c3ce29.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Such a nullsequence is called: </p>
+     <ul class='itemize1'>
+     <li class='itemize'>a <span class='ntx-Italic-tlf-t1-x-x-109'>fiber sequence </span>if this square is a pullback square in \(\An _*\) (or, equivalently, in \(\An \)). In this case we
+     call \(X\) the <span class='ntx-Italic-tlf-t1-x-x-109'>fiber of</span> \(g\) and write \(X \simeq \fib (g)\);
+     </li>
+     <li class='itemize'>a <span class='ntx-Italic-tlf-t1-x-x-109'>cofiber sequence </span>if the same square is a pushout square in \(\An _*\) (or, equivalently, in \(\An \)). In this case
+     we call \(Z\) the <span class='ntx-Italic-tlf-t1-x-x-109'>cofiber of</span> \(f\) and write \(Z \simeq \cofib (f)\).</li></ul>
+                                                                                   
+                                                                                   
+</div>
+<p class='noindent'>For pointed animae \(U,V\in \An _*\), we write \[ [U,V]_*:=\pi _0\Hom _{\An _*}(U,V) \] for the pointed set of homotopy classes of pointed maps \(U\to V\), whose basepoint is
+the null map. Recall that a sequence \(A\to B\to C\) of pointed sets is <span class='ntx-Italic-tlf-t1-x-x-109'>exact at</span> \(B\) if the image of \(A\to B\) is the preimage of the
+basepoint under \(B\to C\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-7005r5'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 2.4.5.</span>  </span><span id='lem:Mapping_Exactness_Fiber_Cofiber_An'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(W\in \An _*\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a pointed anima.</span>
+   </p><dl class='enumerate'><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(1)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Every cofiber sequence</span> \(X\to Y\to Z\) <span class='ntx-Italic-tlf-t1-x-x-109'>induces a fiber sequence of pointed mapping animae </span>\[ \Hom _{\An _*}(Z,W)\longrightarrow \Hom _{\An _*}(Y,W)\longrightarrow \Hom _{\An _*}(X,W), \] <span class='ntx-Italic-tlf-t1-x-x-109'>and hence an
+   exact sequence of pointed sets </span>\[ [Z,W]_*\longrightarrow [Y,W]_*\longrightarrow [X,W]_*. \]
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(2)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Every fiber sequence</span> \(X\to Y\to Z\) <span class='ntx-Italic-tlf-t1-x-x-109'>induces a fiber sequence of pointed mapping animae </span>\[ \Hom _{\An _*}(W,X)\longrightarrow \Hom _{\An _*}(W,Y)\longrightarrow \Hom _{\An _*}(W,Z), \] <span class='ntx-Italic-tlf-t1-x-x-109'>and hence an exact
+   sequence of pointed sets </span>\[ [W,X]_*\longrightarrow [W,Y]_*\longrightarrow [W,Z]_*. \]</p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-13" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-13">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The functor \(\Hom _{\An _*}(-,W)\colon \An _*\catop \to \An \) sends pushout squares to pullback squares. Since \(\Hom _{\An _*}(0,W)\) is terminal, applying this
+functor to the pushout square defining a cofiber sequence shows that the first sequence of mapping
+animae is a fiber sequence. Dually, the functor \(\Hom _{\An _*}(W,-)\colon \An _*\to \An \) preserves pullbacks and sends \(0\) to a terminal anima,
+which proves the corresponding claim for fiber sequences.
+                                                                                   
+                                                                                   
+</p><p class='noindent'>It  remains  to  pass  to  pointed  homotopy  classes.  For  any  fiber  sequence  \(F\to E\to B\)  of  pointed  animae,  a
+component of \(E\) lies in the image of \(\pi _0(F)\to \pi _0(E)\) precisely when its image in \(B\) lies in the component of the basepoint.
+Thus \(\pi _0(F)\to \pi _0(E)\to \pi _0(B)\) is exact as a sequence of pointed sets, proving both claims.                                                     □
+</p>
+</div></div>
+<p class='noindent'>Using fiber and cofiber sequences, we can define suspension and loop functors on \(\An _*\) in a purely \(\infty \)-categorical
+way.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-7008r6'></a>
+<a class="entry-heading-link" href="../../../entry/loops-and-suspensions-of-pointed-animae/index.html" aria-label="Definition 2.4.6, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 2.4.6 </span></a>(Loop and suspension in \(\An _* \))<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Loop_Suspension_An'></span> Consider a pointed anima \(X \in \An _*\). Its <span class='ntx-Italic-tlf-t1-x-x-109'>loop anima</span> \(\Omega X\) is defined
+as the fiber of the unique map \(0 \to X\):</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-0731f9bac0fb.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Its <span class='ntx-Italic-tlf-t1-x-x-109'>suspension</span> \(\Sigma X\) is defined as the cofiber of the unique map \(X \to 0\):</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-b1448b5d65df.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-7009r7'></a>
+<a class="entry-heading-link" href="../../../entry/functoriality-of-loops-and-suspensions/index.html" aria-label="Exercise 2.4.7., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 2.4.7.</span></a>  </span><span id='ex:Loops_Suspension_Functor_An'></span>  Show  that  the  assignments  \(X \mapsto \Omega X\)  and  \(X \mapsto \Sigma X\)  define  endofunctors  \[ \Omega , \Sigma \colon \An _* \to \An _*. \]  <span class='ntx-Italic-tlf-t1-x-x-109'>Hint:  </span>Use  the  pushout
+description of the diagram \(\pullback \) from <a class="source-reference" data-label="axiom:Commutative_Diagram_Axiom" href="../../../entry/commutative-diagram-axiom/index.html#axiom:Commutative_Diagram_Axiom">Axiom D</a> to construct a functor \(C \to \Fun (\pullback ,C)\) given on objects by \(X \mapsto (0 \to X \leftarrow 0)\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-7010r8'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 2.4.8.</span>  </span><span id='lem:Sigma_Left_Adjoint_Omega_An'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(\Sigma \colon \An _* \to \An _*\) <span class='ntx-Italic-tlf-t1-x-x-109'>is left adjoint to</span> \(\Omega \colon \An _* \to \An _*\)<span class='ntx-Italic-tlf-t1-x-x-109'>: for all</span> \(X,Y \in \An _*\) <span class='ntx-Italic-tlf-t1-x-x-109'>there is a natural equivalence </span>\[ \Hom _{\An _*}(\Sigma X,Y) \simeq \Hom _{\An _*}(X,\Omega Y). \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-12" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-12">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By the definition of \(\Omega Y\) as a pullback, the right-hand side is equivalent to the anima \[ \Hom _{\Fun (\pullback ,\An _*)}(\const _X, 0 \rightarrow Y \leftarrow 0). \] As a
+consequence of <a class="source-reference" data-label="lem:Pullback_Cones_As_Commutative_Squares" href="../../../entry/pullback-cones-as-commutative-squares/index.html#lem:Pullback_Cones_As_Commutative_Squares">Lemma 1.7.13</a>, we see that this is naturally isomorphic to the anima of commutative squares of
+the form</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-f624f1188f33.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>i.e. the fiber of the evaluation map \(\Fun ([1] \times [1],\An _*) \to (\An _*^{\simeq })^{\times 4}\) at \((X,0,0,Y)\). By dualizing this argument, we see that also the
+left-hand side is naturally isomorphic to this anima, finishing the proof.                                          □</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-7011r9'></a>
+<a class="entry-heading-link" href="../../../entry/wedges-of-pointed-animae/index.html" aria-label="Definition 2.4.9., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 2.4.9.</span></a>  </span><span id='def:Wedge_Of_Animae'></span> Let \((X_i)_{i \in I}\) be a collection of pointed animae. Their coproduct in \(\An _*\) is called the <span class='ntx-Italic-tlf-t1-x-x-109'>wedge</span>
+and is denoted by \(\bigvee _{i \in I} X_i\). It may be computed by the following pushout square in \(\An \):</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-cd902caae2ba.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-7012r10'></a>
+<a class="entry-heading-link" href="../../../entry/smash-product-of-pointed-animae/index.html" aria-label="Definition 2.4.10, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 2.4.10 </span></a>(Smash product)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Smash_Product_Animae'></span> Let \(X\) and \(Y\) be pointed animae. Their <span class='ntx-Italic-tlf-t1-x-x-109'>smash product </span>is the pointed
+                                                                                   
+                                                                                   
+anima \[ X \wedge Y := \cofib (X \vee Y \longrightarrow X \times Y), \] where the map is induced by \((\id _X,0)\colon X\to X\times Y\) and \((0,\id _Y)\colon Y\to X\times Y\). Interchanging the two factors induces a natural <span class='ntx-Italic-tlf-t1-x-x-109'>swap map</span>
+\[ \sigma _{X,Y}\colon X\wedge Y \xrightarrow {\cong } Y\wedge X. \]
+</p>
+</div>
+<p class='noindent'>We now relate these \(\infty \)-categorical constructions in \(\An _*\) to the classical constructions for pointed topological
+spaces. Applying \(\Pi _{\infty }\) to the basepoint defines a functor \(\Pi _{\infty }\colon \Top _* \to \An _*\). It follows from <a class="source-reference" data-label="prop:Homotopy_Pushouts_Are_Pushouts_Of_Animae" href="../../../entry/homotopy-pushouts-of-spaces-become-pushouts-of-animae/index.html#prop:Homotopy_Pushouts_Are_Pushouts_Of_Animae">Proposition 2.3.10</a>, <a class="source-reference" data-label="prop:Homotopy_Pullbacks_Are_Pullbacks_Of_Animae" href="../../../entry/homotopy-pullbacks-of-spaces-become-pullbacks-of-animae/index.html#prop:Homotopy_Pullbacks_Are_Pullbacks_Of_Animae">Proposition 2.3.22</a> that this functor sends homotopy
+pullbacks to pullbacks and suitable homotopy pushouts to pushouts.
+</p><p class='noindent'>We will also use the following direct consequence of the construction of \(\Pi _{\infty }\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-7013r11'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 2.4.11.</span>  </span><span id='lem:Pi_Infty_Preserves_Coproducts'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(\Pi _{\infty }\colon \Top \to \An \) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves small coproducts.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-11" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-11">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Every continuous map from a topological simplex into a coproduct of spaces lands in a
+unique summand, since the simplex is connected. Hence the singular complex functor preserves
+coproducts. The claim follows because \(\Pi _{\infty }(X)\) is the colimit in \(\An \) of the simplicial set \(\Sing (X)\) and colimits commute
+with colimits.                                                                                                                                      □
+</p>
+</div></div>
+<p class='noindent'>In particular:
+</p>
+<div class='newtheorem'>
+                                                                                   
+                                                                                   
+<p class='noindent'><span class='head'>
+<a id='x1-7014r12'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 2.4.12.</span>  </span><span id='prop:Pi_Infty_Preserves_Pointed_Homotopical_Data'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(\Pi _{\infty }\colon \Top _* \to \An _*\) <span class='ntx-Italic-tlf-t1-x-x-109'>has the following properties:</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Given  a  pointed  map</span>  \(f\colon X\to Y\)  <span class='ntx-Italic-tlf-t1-x-x-109'>between  spaces  having  the  homotopy  type  of  cell  complexes,  the
+     unreduced homotopy cofiber</span> \(C(f)\)<span class='ntx-Italic-tlf-t1-x-x-109'>, pointed by its cone point, satisfies</span> \(\Pi _{\infty }(C(f))\cong \cofib (\Pi _{\infty }(f))\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>has the homotopy type of a cell complex, the unreduced suspension</span> \(SX\)<span class='ntx-Italic-tlf-t1-x-x-109'>, pointed by either cone
+     point, satisfies</span> \(\Pi _{\infty }(SX)\cong \Sigma \Pi _{\infty }(X)\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For a collection</span> \((X_i)_{i\in I}\) <span class='ntx-Italic-tlf-t1-x-x-109'>of pointed spaces having the homotopy type of cell complexes, there is an
+     isomorphism</span> \(\Pi _{\infty }(\bigvee ^h_{i\in I}X_i)\cong \bigvee _{i\in I}\Pi _{\infty }(X_i)\)<span class='ntx-Italic-tlf-t1-x-x-109'>, where the homotopy wedge</span> \(\bigvee ^h_iX_i\) <span class='ntx-Italic-tlf-t1-x-x-109'>is the homotopy pushout of the span</span> \(\bigsqcup _iX_i\leftarrow \bigsqcup _i*\to *\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p></dd><dt class='enumerate'>
+  (4) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Given a pointed map</span> \(f\colon X\to Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>with homotopy fiber</span> \(F_f\) <span class='ntx-Italic-tlf-t1-x-x-109'>over the basepoint, there is an isomorphism</span> \(\Pi _{\infty }(F_f)\cong \fib (\Pi _{\infty }(f))\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p></dd><dt class='enumerate'>
+  (5) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The loop space of a pointed space</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>satisfies</span> \(\Pi _{\infty }(\Omega X)\cong \Omega \Pi _{\infty }(X)\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-10" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-10">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Parts (1) and (2) are direct consequences of <a class="source-reference" data-label="prop:Homotopy_Pushouts_Are_Pushouts_Of_Animae" href="../../../entry/homotopy-pushouts-of-spaces-become-pushouts-of-animae/index.html#prop:Homotopy_Pushouts_Are_Pushouts_Of_Animae">Proposition 2.3.10</a>, while parts (4) and (5) follow from <a class="source-reference" data-label="prop:Homotopy_Pullbacks_Are_Pullbacks_Of_Animae" href="../../../entry/homotopy-pullbacks-of-spaces-become-pullbacks-of-animae/index.html#prop:Homotopy_Pullbacks_Are_Pullbacks_Of_Animae">Proposition 2.3.22</a>. For part
+(3), combine <a class="source-reference" data-label="prop:Homotopy_Pushouts_Are_Pushouts_Of_Animae" href="../../../entry/homotopy-pushouts-of-spaces-become-pushouts-of-animae/index.html#prop:Homotopy_Pushouts_Are_Pushouts_Of_Animae">Proposition 2.3.10</a> with <a class="source-reference" data-label="lem:Pi_Infty_Preserves_Coproducts" href="../../../entry/pi-infinity-preserves-coproducts/index.html#lem:Pi_Infty_Preserves_Coproducts">Lemma 2.4.11</a> and the pushout description of wedges in <a class="source-reference" data-label="def:Wedge_Of_Animae" href="../../../entry/wedges-of-pointed-animae/index.html#def:Wedge_Of_Animae">Definition 2.4.9</a>.                                                         □
+                                                                                   
+                                                                                   
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-7020r13'></a>
+<a class="entry-heading-link" href="../../../entry/well-pointed-models-for-pointed-homotopical-constructions/index.html" aria-label="Remark 2.4.13., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 2.4.13.</span></a>  </span><span id='rmk:Well_Pointed_Topological_Constructions'></span> A pointed topological space \((X,x_0)\) is called <span class='ntx-Italic-tlf-t1-x-x-109'>well-pointed </span>if \((X,\{x_0\})\) is an NDR-pair. Under this
+hypothesis, the familiar reduced models compute the constructions in the preceding proposition.
+More precisely, for every pointed map \(f\colon X\to Y\), the collapse maps \(C(f)\to \widetilde C(f)\) and \(SX\to \Sigma X\) are homotopy equivalences. Likewise,
+if every \(X_i\) is well-pointed, then the strict wedge \(\bigvee _iX_i\) computes the homotopy wedge \(\bigvee _i^hX_i\). Thus the conclusions
+of the proposition apply in particular to reduced cofibers, reduced suspensions and strict wedges of
+pointed cell complexes whose basepoints are \(0\)-cells.
+</p>
+</div>
+<p class='noindent'>This result motivates the following homotopical definition of spheres in \(\An _*\):
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-7021r14'></a>
+<a class="entry-heading-link" href="../../../entry/homotopical-spheres/index.html" aria-label="Definition 2.4.14., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 2.4.14.</span></a>  </span><span id='def:Homotopical_Spheres'></span> We define the <span class='ntx-Italic-tlf-t1-x-x-109'>homotopical</span> \(n\)<span class='ntx-Italic-tlf-t1-x-x-109'>-sphere</span> \(S^n \in \An _*\) inductively by setting \(S^0 := * \sqcup *\) (with the first point
+as basepoint, say), and taking \(S^{n+1} := \Sigma (S^{n})\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-7022r15'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 2.4.15.</span>  </span><span id='cor:Localization_Functor_To_An_Preserves_Spheres'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(\Pi _{\infty }(-)\colon \Top _* \to \An _*\) <span class='ntx-Italic-tlf-t1-x-x-109'>sends the topological</span> \(n\)<span class='ntx-Italic-tlf-t1-x-x-109'>-sphere</span> \(S^n \subseteq \R ^{n+1}\) <span class='ntx-Italic-tlf-t1-x-x-109'>to the homotopical</span> \(n\)<span class='ntx-Italic-tlf-t1-x-x-109'>-sphere</span> \(S^n\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+                                                                                   
+
+                                                                                   
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-9" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-9">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Since \(\Pi _{\infty }\) preserves coproducts, we have \(\Pi _{\infty }(S^0) \simeq S^0\). The claim now follows inductively from part (2) of
+<a class="source-reference" data-label="prop:Pi_Infty_Preserves_Pointed_Homotopical_Data" href="../../../entry/pi-infinity-preserves-pointed-homotopical-constructions/index.html#prop:Pi_Infty_Preserves_Pointed_Homotopical_Data">Proposition 2.4.12</a>.                                                                                                                                                           □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-7023r16'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 2.4.16 </span>(Basic properties of smash products)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Smash_Product_Basics'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For a pointed anima</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>and animae</span> \(Y,Z\)<span class='ntx-Italic-tlf-t1-x-x-109'>, write</span> \(Y_+:=Y\sqcup *\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span>
+\(Z_+:=Z\sqcup *\) <span class='ntx-Italic-tlf-t1-x-x-109'>for the result of adjoining a disjoint basepoint. There are natural isomorphisms </span>\[ S^0 \wedge X \cong X, \qquad Y_+ \wedge Z_+ \cong (Y \times Z)_+, \qquad S^1 \wedge X \cong \Sigma X. \] <span class='ntx-Italic-tlf-t1-x-x-109'>Moreover, the
+functor</span> \((-) \wedge X\colon \An _*\to \An _*\) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves pushouts, and there are natural isomorphisms</span> \(S^m\wedge S^n\cong S^{m+n}\) <span class='ntx-Italic-tlf-t1-x-x-109'>for all</span> \(m,n\geq 0\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-8" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-8">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The required calculations from the pushout descriptions of wedges and cofibers are left to
+<span class="source-reference" data-label="exercise:Smash_Product_Basics">Chapterexercise 2.9</span>.                                                                                                                                                           □
+</p>
+</div></div>
+                                                                                   
+                                                                                   
+
+<h5 class='subsubsectionHead' id='homotopy-groups-of-animae'><a id='x1-8000'></a>Homotopy groups of animae</h5>
+<p class='noindent'>We now introduce homotopy groups of animae and prove some basic facts about them, like a version of the
+Whitehead theorem for animae and the long exact sequence of homotopy groups for a fiber
+sequence.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-8001r17'></a>
+<a class="entry-heading-link" href="../../../entry/path-components-of-an-anima/index.html" aria-label="Definition 2.4.17, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 2.4.17 </span></a>(Path components of an anima)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Path_Components_Anima'></span>  Recall  from  <a class="source-reference" data-label="ex:Fundamental_Adjunctions" href="../../../entry/fundamental-adjunctions-for-animae-and-infinity-categories/index.html#ex:Fundamental_Adjunctions">Example 1.8.14</a><span class="source-reference equation-reference" data-label="it:Set_Of_Path_Components">(1)</span>  that  the  inclusion  \(\Set \hookrightarrow \An \)  admits  a  left
+adjoint \(\pi _0\colon \An \to \Set \), sending an anima \(X\) to its <span class='ntx-Italic-tlf-t1-x-x-109'>set of path components</span> \(\pi _0(X)\). The unit of the adjunction gives a map
+of animae \(X \to \pi _0(X)\), and for an element \([x] \in \pi _0(X)\) we define the corresponding path component of \(X\) as the fiber of this
+map over \([x]\). We say that \(X\) is <span class='ntx-Italic-tlf-t1-x-x-109'>connected </span>if \(\pi _0(X)\) is a singleton.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-8002r18'></a>
+<a class="entry-heading-link" href="../../../entry/homotopy-groups-of-an-anima/index.html" aria-label="Definition 2.4.18, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 2.4.18 </span></a>(Homotopy groups of an anima)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Homotopy_Groups_An'></span> Let \(X \in \An _*\) be a pointed anima and \(n \geq 0\). The \(n\)<span class='ntx-Italic-tlf-t1-x-x-109'>-th homotopy
+group </span>of \(X\) is defined as \[ \pi _n(X) := [S^n,X]_*. \] We also write \(\pi _n(X,x)\) if we wish to make explicit the basepoint \(x\) of \(X\).
+</p><p class='noindent'>Since \(S^n = \Sigma ^n(S^0)\), the adjunction <a class="source-reference" data-label="lem:Sigma_Left_Adjoint_Omega_An" href="../../../entry/suspension-loop-adjunction-for-pointed-animae/index.html#lem:Sigma_Left_Adjoint_Omega_An">Lemma 2.4.8</a> implies that \[ \pi _n(X) \cong \pi _0(\Omega ^n X), \] where the functor \(\Omega ^n\) is defined inductively as the \(n\)-fold iteration of
+\(\Omega \).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-8003r19'></a>
+<a class="entry-heading-link" href="../../../entry/homotopy-groups-of-animae-and-spaces/index.html" aria-label="Remark 2.4.19., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 2.4.19.</span></a>  </span><span id='rmk:Homotopy_Groups_An_Vs_CW'></span> Let \((Y,y_0)\) be any pointed topological space, and let \(X := \Pi _{\infty }(Y,y_0) \in \An _*\). Then for every \(n \geq 0\) there is a natural
+isomorphism  \[ \pi _n(X) \;=\; [S^n,X]_* \;\cong \; [S^n,Y]_* \]  with  the  classical  \(n\)-th  homotopy  group  of  \((Y,y_0)\).  Indeed,  <a class="source-reference" data-label="prop:Pi_Infty_Preserves_Pointed_Homotopical_Data" href="../../../entry/pi-infinity-preserves-pointed-homotopical-constructions/index.html#prop:Pi_Infty_Preserves_Pointed_Homotopical_Data">Proposition 2.4.12</a>  gives  natural  isomorphisms  \[ \Omega ^n X \cong \Pi _{\infty }(\Omega ^nY). \]
+The  path  components  of  the  underlying  anima  of  a  topological  space  agree  with  its  usual  path
+components: after choosing a cell-complex approximation, this follows from <a class="source-reference" data-label="cor:Pi_Infty_surjective_On_Objects_And_Morphisms" href="../../../entry/homotopy-category-of-animae-via-cell-complexes/index.html#cor:Pi_Infty_surjective_On_Objects_And_Morphisms">Corollary 2.3.7</a> by mapping out of a
+point. It follows that \[ \pi _n(X)\cong \pi _0\Pi _{\infty }(\Omega ^nY)\cong \pi _0(\Omega ^nY)=[S^n,Y]_*. \]
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-8004r20'></a>
+<a class="entry-heading-link" href="../../../entry/degree-of-self-maps-of-spheres/index.html" aria-label="Remark 2.4.20, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 2.4.20 </span></a>(Degree)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='rmk:Degree_Self_Maps_Spheres'></span> For every \(n\geq 1\), the degree of a self-map of the \(n\)-sphere induces an isomorphism
+\[ \deg \colon \pi _n(S^n) \xrightarrow {\cong } \Z . \] Under these isomorphisms, suspension preserves degree. In particular, a pointed self-map of \(S^n\) is
+pointed homotopic to the identity if and only if it has degree \(1\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-8005r21'></a>
+<a class="entry-heading-link" href="../../../entry/suspension-as-a-cogroup/index.html" aria-label="Remark 2.4.21, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 2.4.21 </span></a>(The suspension as a cogroup)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='rmk:Suspension_Is_Cogroup_An'></span>  For  every  pointed  anima  \(X\),  the  suspension  \(\Sigma X\)  is
+a  <span class='ntx-Italic-tlf-t1-x-x-109'>cogroup  object  </span>in  the  homotopy  category  \(\Ho (\An _*)\):  there  are  pointed  maps  \[ \Sigma X \to *, \qquad \mathrm {pinch}\colon \Sigma X \to \Sigma X \vee \Sigma X, \qquad i\colon \Sigma X \to \Sigma X, \]  satisfying  counitality,
+coassociativity, and the coinverse axiom in \(\Ho (\An _*)\). To see this, use the homotopy hypothesis to choose a
+                                                                                   
+                                                                                   
+topological space \(Y\) whose underlying anima is isomorphic to the underlying anima of \(X\), and choose a
+point of \(Y\) in the component corresponding to the basepoint of \(X\). Applying the factorization from <a class="source-reference" data-label="thm:Top_Quillen_Cofibration_Structure" href="../../../entry/quillen-cofibration-structure-on-topological-spaces/index.html#thm:Top_Quillen_Cofibration_Structure">Theorem 2.3.8</a> to this
+basepoint map, we may further assume that \(Y\) is a cell complex whose basepoint is a \(0\)-cell. Then \(\Sigma X \simeq \Pi _{\infty }(\Sigma Y)\) by <a class="source-reference" data-label="prop:Pi_Infty_Preserves_Pointed_Homotopical_Data" href="../../../entry/pi-infinity-preserves-pointed-homotopical-constructions/index.html#prop:Pi_Infty_Preserves_Pointed_Homotopical_Data">Proposition 2.4.12</a>, <a class="source-reference" data-label="rmk:Well_Pointed_Topological_Constructions" href="../../../entry/well-pointed-models-for-pointed-homotopical-constructions/index.html#rmk:Well_Pointed_Topological_Constructions">Remark 2.4.13</a>,
+and the maps above are the images under \(\Pi _{\infty }\) of the classical pinch comultiplication on the topological
+suspension \(\Sigma Y\). The classical pointed homotopies expressing the cogroup axioms are carried by \(\Pi _{\infty }\) to
+homotopies in \(\An _*\). The double suspension \(\Sigma ^2 X\) carries comultiplications in two a priori distinct ways, but
+by the Eckmann–Hilton argument they agree and the resulting comultiplication is cocommutative.
+</p><p class='noindent'>Consequently, for every pointed anima \(Y\) the representable functor \([-,Y]_*\) sends wedges to products, so
+the cogroup structure on \(\Sigma X\) makes \([\Sigma X, Y]_*\) into a group; this group is abelian when the source is a double
+suspension, as for \([\Sigma ^2 X,Y]_*\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-8006r22'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 2.4.22 </span>(Whitehead theorem for animae)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Whitehead_For_An'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>A morphism</span> \(f\colon X \to Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>of animae is an isomorphism if
+and only if it induces a bijection</span> \(\pi _0(X) \xrightarrow {\cong } \pi _0(Y)\) <span class='ntx-Italic-tlf-t1-x-x-109'>on path components and for every</span> \(x \in X\) <span class='ntx-Italic-tlf-t1-x-x-109'>it induces an isomorphism</span> \(\pi _n(X,x) \xrightarrow {\cong } \pi _n(Y,f(x))\) <span class='ntx-Italic-tlf-t1-x-x-109'>on
+higher homotopy groups for all</span> \(n \geq 1\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-7" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-7">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="cor:Pi_Infty_surjective_On_Objects_And_Morphisms" href="../../../entry/homotopy-category-of-animae-via-cell-complexes/index.html#cor:Pi_Infty_surjective_On_Objects_And_Morphisms">Corollary 2.3.7</a>, the map \(f\) is the image under \(\Pi _{\infty }\colon \Cell \to \An \) of a continuous map between cell complexes. In light of <a class="source-reference" data-label="rmk:Homotopy_Groups_An_Vs_CW" href="../../../entry/homotopy-groups-of-animae-and-spaces/index.html#rmk:Homotopy_Groups_An_Vs_CW">Remark 2.4.19</a>,
+the claim is thus an instance of the usual Whitehead theorem for cell complexes, recorded in <a class="source-reference" data-label="thm:Whitehead_Theorem" href="../../../entry/whitehead-theorem-for-spaces-of-cell-complex-type/index.html#thm:Whitehead_Theorem">Theorem 2.3.3</a>.       □
+</p>
+</div></div>
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-8007r23'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 2.4.23.</span>  </span><span id='cor:Morphism_Of_Connected_Animae_Iso_Iff_Loop_Spaces'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(f\colon X \to Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a map of pointed animae with</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>connected. Then</span> \(f\) <span class='ntx-Italic-tlf-t1-x-x-109'>is an isomorphism
+if and only if the induced map </span>\[ \Omega f\colon \Omega X \to \Omega Y \] <span class='ntx-Italic-tlf-t1-x-x-109'>is an isomorphism in</span> \(\An \)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-6" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-6">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  If  \(f\)  is  an  isomorphism,  then  clearly  so  is  \(\Omega f\).  Conversely,  if  \(\Omega f\)  is  an  isomorphism,  then  it  in
+particular induces isomorphisms on all homotopy groups, and using the identification \(\pi _n(X) \cong \pi _{n-1}(\Omega X)\) for \(n \geq 1\) it follows
+that the map \(\pi _n(f)\colon \pi _n(X) \to \pi _n(Y)\) is an isomorphism for all \(n \geq 1\). Since \(X\) and \(Y\) are connected, \(\pi _0(X) \to \pi _0(Y)\) is automatically a bijection, so \(f\)
+is an isomorphism by <a class="source-reference" data-label="prop:Whitehead_For_An" href="../../../entry/whitehead-theorem-for-animae/index.html#prop:Whitehead_For_An">Proposition 2.4.22</a>.                                                                                                                        □
+</p>
+</div></div>
+<p class='noindent'>We now briefly recall that the homotopy groups carry natural group structures.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-8008r24'></a>
+<a class="entry-heading-link" href="../../../entry/loop-anima-as-a-group-object/index.html" aria-label="Construction 2.4.24, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 2.4.24 </span></a>(Loop anima as a group object)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cons:Loop_Group_Object'></span> Given a pointed anima \(X \in \An _*\), we may consider the maps
+\begin {align*}  e\colon * &amp;\xrightarrow {(\id ,\id )} * \times _X * = \Omega X, \\ M \colon \Omega X \times \Omega X \cong * \times _X * \times _X * &amp;\xrightarrow {(\pr _1,\pr _3)} * \times _X * = \Omega X, \hspace {20pt}\\ i\colon \Omega X = * \times _X * &amp;\xrightarrow {(\pr _2,\pr _1)} * \times _X * = \Omega X.  \end {align*}
+</p><p class='noindent'>These maps satisfy the usual group relations up to homotopy, so that \(\Omega X\) acquires the structure of a group
+object in \(\Ho (\An _*)\). We leave the details to the reader.
+</p>
+                                                                                   
+                                                                                   
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-8009r25'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 2.4.25.</span>  </span><span id='cor:Group_Structure_On_Homotopy_Groups'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For every pointed anima</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(n \geq 1\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the set</span> \(\pi _n(X)\) <span class='ntx-Italic-tlf-t1-x-x-109'>carries a natural group structure, and for</span>
+\(n \geq 2\) <span class='ntx-Italic-tlf-t1-x-x-109'>this group is abelian.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-5" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-5">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The group structure on \(\pi _1(X) \cong \pi _0(\Omega X)\) comes from the group object structure of \(\Omega X\) in <a class="source-reference" data-label="cons:Loop_Group_Object" href="../../../entry/loop-anima-as-a-group-object/index.html#cons:Loop_Group_Object">Construction 2.4.24</a>. For \(n \geq 2\), \(\pi _n(X) \cong \pi _{n-2}(\Omega ^2X)\) acquires two
+group structures which commute with each other, and it follows from the Eckmann–Hilton argument
+that they agree and are abelian.                                                                                                           □
+</p>
+</div></div>
+<p class='noindent'>By <a class="source-reference" data-label="lem:Mapping_Exactness_Fiber_Cofiber_An" href="../../../entry/mapping-exactness-of-fiber-and-cofiber-sequences/index.html#lem:Mapping_Exactness_Fiber_Cofiber_An">Lemma 2.4.5</a>, applying pointed homotopy classes to a fiber sequence produces an exact sequence. We now extend
+such a sequence indefinitely by repeatedly passing to fibers.
+</p><p class='noindent'>Recall that the loop object \(\Omega X = 0 \times _X 0\) admits a canonical <span class='ntx-Italic-tlf-t1-x-x-109'>inversion map </span>\[ \iota _X\colon \Omega X \to \Omega X, \] induced by interchanging the two copies of \(0\) in
+the pullback. Given a pointed map \(f\colon Y \to \Omega X\), we write \[ -f := \iota _X \circ f\colon Y \to \Omega X. \]
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-8010r26'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 2.4.26 </span>(Puppe sequence)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Puppe_Sequence'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Given a fiber sequence</span> \(F \xrightarrow {i} E \xrightarrow {p} B\) <span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(\An _*\)<span class='ntx-Italic-tlf-t1-x-x-109'>, there is a sequence </span>\[ \dots \xrightarrow {\Omega ^2 p} \Omega ^2 B \xrightarrow {-\Omega \delta } \Omega F \xrightarrow {-\Omega i} \Omega E \xrightarrow {-\Omega p} \Omega B \xrightarrow {\delta } F \xrightarrow {i} E \xrightarrow {p} B, \] <span class='ntx-Italic-tlf-t1-x-x-109'>where each
+                                                                                   
+
+                                                                                   
+consecutive triple forms a fiber sequence.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-4">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> To see that \(\Omega B\) is indeed the fiber of \(i\), consider the following commutative diagram:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-9e77efb47357.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Here the
+outer square is the one defining \(\Omega B\), and the right square is obtained by flipping the given fiber sequence.
+The map \(\delta \) is induced by the universal property of the pullback \(F\), and it follows from the pasting law
+of pullback squares that also the left square is a pullback square, thus exhibiting \(\Omega B\) as the fiber of \(i\).</p><p class='noindent'>The rest of the Puppe sequence is obtained by iterating this argument indefinitely. The signs show
+up because in the iteration procedure we flip the homotopies in the squares; under the pullback
+description of loop objects, this amounts to composing with the inversion map defined above. For
+example, to determine the fiber of \(\delta \), we consider the following commutative diagram:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-eaafa1519b20.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>□</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-8011r27'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 2.4.27 </span>(Long exact sequence on homotopy groups)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cor:LES_Homotopy_Groups'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>A fiber sequence</span> \(F \xrightarrow {i} E \xrightarrow {p} B\) <span class='ntx-Italic-tlf-t1-x-x-109'>of pointed animae
+induces a long exact sequence </span>\[ \dots \to \pi _{2}(B) \xrightarrow {\delta _*} \pi _1(F) \xrightarrow {i_*} \pi _1(E) \xrightarrow {p_*} \pi _1(B) \xrightarrow {\delta _*} \pi _0(F) \to \pi _0(E) \to \pi _0(B). \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-3">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Since each consecutive triple in the Puppe sequence is a fiber sequence, <a class="source-reference" data-label="lem:Mapping_Exactness_Fiber_Cofiber_An" href="../../../entry/mapping-exactness-of-fiber-and-cofiber-sequences/index.html#lem:Mapping_Exactness_Fiber_Cofiber_An">Lemma 2.4.5</a>, applied with \(W=S^0\),
+shows  that  applying  \(\pi _0(-)=[S^0,-]_*\)  produces  an  exact  sequence  \[ \dots \to \pi _{0}(\Omega ^2 B) \xrightarrow {} \pi _0(\Omega F) \xrightarrow {} \pi _0(\Omega E) \xrightarrow {} \pi _0(\Omega B) \xrightarrow {} \pi _0(F) \to \pi _0(E) \to \pi _0(B). \]  In  light  of  the  natural  isomorphisms  \(\pi _0(\Omega ^n X) \cong \pi _{n}(X)\)  we  are
+done.                                                                                                                                                    □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-8012r28'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 2.4.28 </span>(coPuppe sequence)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:coPuppe_Sequence'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Given a cofiber sequence</span> \(X \xrightarrow {f} Y \xrightarrow {g} Z\) <span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(\An _*\)<span class='ntx-Italic-tlf-t1-x-x-109'>, there is a sequence </span>\[ X \xrightarrow {f} Y \xrightarrow {g} Z \xrightarrow {\delta } \Sigma X \xrightarrow {-\Sigma f} \Sigma Y \xrightarrow {-\Sigma g} \Sigma Z \xrightarrow {-\Sigma \delta } \Sigma ^2X \to \dots \] <span class='ntx-Italic-tlf-t1-x-x-109'>in which
+every consecutive triple forms a cofiber sequence.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> This is dual to the construction and proof of the Puppe sequence in <a class="source-reference" data-label="prop:Puppe_Sequence" href="../../../entry/puppe-sequence-for-a-fiber-sequence/index.html#prop:Puppe_Sequence">Proposition 2.4.26</a>.                                   □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-8013r29'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 2.4.29 </span>(Sequential colimits as pushouts)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Sequential_Colimits_As_Pushouts'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with countable coproducts
+and pushouts, and let</span> \(Z_0 \xrightarrow {f_0} Z_1 \xrightarrow {f_1} Z_2 \xrightarrow {f_2} \cdots \) <span class='ntx-Italic-tlf-t1-x-x-109'>be a sequence in</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Its colimit exists and may be computed as the pushout </span></p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-97713941e493.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>where on the summand</span> \(Z_n\) <span class='ntx-Italic-tlf-t1-x-x-109'>the maps</span> \(a\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(b\) <span class='ntx-Italic-tlf-t1-x-x-109'>are defined as follows. If</span> \(n = 2k\) <span class='ntx-Italic-tlf-t1-x-x-109'>is even, then</span> \(a\) <span class='ntx-Italic-tlf-t1-x-x-109'>is the inclusion</span> \(\id \colon Z_{2k} \to Z_{2k}\) <span class='ntx-Italic-tlf-t1-x-x-109'>of a
+coproduct summand and</span> \(b\) <span class='ntx-Italic-tlf-t1-x-x-109'>is the map</span> \(f_{2k}\colon Z_{2k} \to Z_{2k+1}\)<span class='ntx-Italic-tlf-t1-x-x-109'>; if</span> \(n = 2k+1\) <span class='ntx-Italic-tlf-t1-x-x-109'>is odd, then</span> \(a\) <span class='ntx-Italic-tlf-t1-x-x-109'>is the map</span> \(f_{2k+1}\colon Z_{2k+1} \to Z_{2k+2}\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(b\) <span class='ntx-Italic-tlf-t1-x-x-109'>is the inclusion</span> \(\id \colon Z_{2k+1} \to Z_{2k+1}\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Let \(P\) denote the displayed pushout. For every object \(T\in C\), mapping from \(P\) to \(T\) gives the pullback of
+the animae of maps from the coproducts of the even and odd terms over the anima of maps from all
+terms. By the pushout description of \([\omega ]\) in <a class="source-reference" data-label="axiom:Commutative_Diagram_Axiom" href="../../../entry/commutative-diagram-axiom/index.html#axiom:Commutative_Diagram_Axiom">Axiom D</a>, this is precisely the anima of cocones from the sequence \((Z_n)_n\)
+to \(T\). Thus \(P\) has the universal property of \(\colim _n Z_n\).                                                                                             □
+</p>
+</div></div>
+<p class='noindent'><a id='likesection.1'></a><a id='x1-8014x'></a>
+</p>
+<h3 class='likesectionHead' id='exercises'><a id='x1-9000'></a>Exercises</h3>
+<p id='exercises1'><a id='Q1-1-12'></a>
+</p><div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-9001r1'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 2.1 </span>(Basic underlying animae)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span>Compute the underlying anima \(\Piinfty {X}\) when \(X\) is a discrete set and
+when \(X=[0,1]\). Deduce the answers for \[ X=\emptyset ,\qquad X=*,\qquad X=S^0,\qquad X=\bigsqcup _{i=1}^n*. \] Check directly how \(\Pi _{\infty }\) behaves with respect to finite products and finite
+coproducts of discrete spaces.
+</p>
+</div>
+
+<div class='newtheorem'>
+                                                                                   
+                                                                                   
+<p class='noindent'><span class='head'>
+<a id='x1-9002r2'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 2.2 </span>(The pushout counterexample, repaired)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span>For  \(n \geq 1\),  recall  the  two  strict  pushout  squares
+from <a class="source-reference" data-label="ex:Counterexample_Preservation_Pushouts" href="../../../entry/pushouts-of-spaces-are-not-homotopy-invariant/index.html#ex:Counterexample_Preservation_Pushouts">Example 2.1.1</a>:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-87ee25ed0194.svg" alt="Commutative diagram generated from the LaTeX source"></figure><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-80de3f1e9216.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Show that the corresponding homotopy pushouts are homotopy equivalent. Identify both of
+them with \(S^n\), and translate the calculation into \(\An _*\) using <a class="source-reference" data-label="prop:Pi_Infty_Preserves_Pointed_Homotopical_Data" href="../../../entry/pi-infinity-preserves-pointed-homotopical-constructions/index.html#prop:Pi_Infty_Preserves_Pointed_Homotopical_Data">Proposition 2.4.12</a>.</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-9003r3'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 2.3 </span>(Maps out of a homotopy pushout)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span>Let \(f\colon Z \to X\) and \(g\colon Z \to Y\) be continuous maps, and let \(T\) be another
+topological  space.  Show  that  continuous  maps  \[ X \sqcup _Z^h Y \to T \]  are  naturally  the  same  as  triples  \((t_X,t_Y,H)\),  where  \(t_X\colon X \to T\)  and  \(t_Y\colon Y \to T\)
+are continuous maps and \(H\colon Z \times [0,1] \to T\) is a homotopy \[ H\colon t_X \circ f \sim t_Y \circ g. \] In other words, maps out of the homotopy pushout are
+homotopy coherent cocones under the span \(X \leftarrow Z \to Y\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-9004r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 2.4 </span>(Maps into a homotopy pullback)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span>Let \(f\colon X \to Z\) and \(g\colon Y \to Z\) be continuous maps, and let \(T\) be another
+topological space. Show that continuous maps \[ T \to X \times _Z^h Y \] are naturally the same as triples \((t_X,t_Y,H)\), where \(t_X\colon T \to X\) and \(t_Y\colon T \to Y\) are
+continuous maps and \(H\colon T \times [0,1] \to Z\) is a homotopy \[ H\colon f \circ t_X \sim g \circ t_Y. \]
+</p>
+</div>
+                                                                                   
+                                                                                   
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-9005r5'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 2.5 </span>(Homotopy fibers in examples)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span>Compute the homotopy fiber over the basepoint in each of the
+following cases:
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>the inclusion of the basepoint \(* \to S^1\);
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>the covering map \(\R \to S^1\), \(t \mapsto e^{2\pi i t}\);
+   </p></dd><dt class='enumerate'>
+(3) </dt><dd class='enumerate'>
+   <p class='noindent'>for \(n \geq 1\), the degree-\(n\) map \(S^1 \to S^1\), \(z \mapsto z^n\).</p></dd></dl>
+<p class='noindent'>For the first example, show that the homotopy fiber is homotopy equivalent to a discrete copy of \(\Z \). For the
+last two examples, compare the homotopy fiber with the ordinary fiber.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-9009r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 2.6 </span>(Loop spaces as homotopy fibers)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span>Let  \((X,x)\)  be  a  pointed  topological  space.  Use  the
+definition of homotopy pullback to show that the homotopy pullback of \[ * \xrightarrow {x} X \xleftarrow {x} * \] is the usual based loop
+space of \(X\) at \(x\).
+                                                                                   
+                                                                                   
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-9010r7'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 2.7 </span>(Mapping path factorization)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span>Let \(f\colon E \to B\) be a continuous map, and let \[ P(f) := \{(e,\gamma ) \in E \times B^{[0,1]} \mid f(e) = \gamma (0)\} \] be its mapping path space.
+Let \(i\colon E \to P(f)\) be the map \(e \mapsto (e,\const _{f(e)})\), and let \(p\colon P(f) \to B\) be the map \((e,\gamma ) \mapsto \gamma (1)\).
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>Write down an explicit homotopy inverse to \(i\) and show that \(i\) is a homotopy equivalence.
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>Identify \(P(f)\) in the special cases \(f = \id _B\) and \(f\colon E \to *\).
+   </p></dd><dt class='enumerate'>
+(3) </dt><dd class='enumerate'>
+   <p class='noindent'>For \(b\in B\), identify the ordinary fiber \(p^{-1}(b)\) with the homotopy fiber of \(f\) at \(b\).</p></dd></dl>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-9014r8'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 2.8 </span>(Suspension examples)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span>Use the intrinsic definition of suspension in \(\An _*\).
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>Show that \(\bigvee _{i=1}^rS^0\) is the pointed discrete anima with \(r\) non-basepoint elements.
+                                                                                   
+                                                                                   
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>Show that \(\Sigma S^n \cong S^{n+1}\) for all \(n \geq 0\), and compute \(\Sigma (*)\).
+   </p></dd><dt class='enumerate'>
+(3) </dt><dd class='enumerate'>
+   <p class='noindent'>Show that \(\Sigma (X \vee Y) \cong \Sigma X \vee \Sigma Y\) for pointed animae \(X\) and \(Y\), and compute \(\Sigma (\bigvee _{i=1}^rS^0)\).</p></dd></dl>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-9018r9'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 2.9 </span>(Smash products)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span>  Prove  <a class="source-reference" data-label="lem:Smash_Product_Basics" href="../../../entry/basic-properties-of-smash-products/index.html#lem:Smash_Product_Basics">Lemma 2.4.16</a>  directly  from  the  pushout  descriptions  of  wedges  and
+cofibers. In particular, establish the natural isomorphisms \(S^0\wedge X\cong X\) and \(X_+\wedge Y_+\cong (X\times Y)_+\), show that \((-)\wedge X\) preserves pushouts, and
+deduce that \[ S^1\wedge X\cong \Sigma X \qquad \text {and}\qquad S^m\wedge S^n\cong S^{m+n} \] for all \(m,n\geq 0\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-9019r10'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 2.10.</span>  </span>Show  by  counterexample  that  the  conclusion  of  <a class="source-reference" data-label="cor:Morphism_Of_Connected_Animae_Iso_Iff_Loop_Spaces" href="../../../entry/isomorphisms-of-connected-animae-detected-by-loops/index.html#cor:Morphism_Of_Connected_Animae_Iso_Iff_Loop_Spaces">Corollary 2.4.23</a>  fails  if  \(X\)  and  \(Y\)  are  not  assumed
+connected.
+</p>
+</div>
+
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-9020r11'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 2.11 </span>(The coPuppe sequence for a cell attachment)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span>Apply the coPuppe sequence of <a class="source-reference" data-label="lem:coPuppe_Sequence" href="../../../entry/dual-puppe-sequence-for-a-cofiber-sequence/index.html#lem:coPuppe_Sequence">Lemma 2.4.28</a> to the cofiber
+sequence \[ S^{n-1} \to D^n \to S^n \] in pointed animae.
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>Write out the first six terms of the resulting sequence.
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>Use the contractibility of \(D^n\) to simplify the sequence.
+   </p></dd><dt class='enumerate'>
+(3) </dt><dd class='enumerate'>
+   <p class='noindent'>Identify the connecting map \(S^n \to \Sigma S^{n-1}\) up to isomorphism.</p></dd></dl>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-9024r12'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 2.12 </span>(Whitehead’s theorem through the homotopy hypothesis)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span>  Let  \(f\colon X\to Y\)  be  a  map  between
+spaces having the homotopy type of cell complexes. Show that \(\Pi _{\infty }(f)\) is an isomorphism if and only if \(f\) is
+a homotopy equivalence. Explain why the hypothesis on \(X\) and \(Y\) cannot simply be omitted from the
+conclusion about homotopy equivalences.
+</p>
+</div>
+
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-9025r13'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 2.13 </span>(When a strict pushout is homotopically correct)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(i\colon A\to X\) be a relative cell complex between
+cell complexes, and let \(f\colon A\to Y\) be a map to a cell complex. Compare the strict pushout \(X\sqcup _A Y\) with the homotopy pushout
+\(X\sqcup _A^hY\).
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>Show that applying \(\Pi _{\infty }\) to either construction gives a pushout of the span \(\Pi _{\infty }(X)\leftarrow \Pi _{\infty }(A)\to \Pi _{\infty }(Y)\).
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>Deduce that the canonical map \(X\sqcup _A^hY\to X\sqcup _A Y\) is a weak homotopy equivalence.
+   </p></dd><dt class='enumerate'>
+(3) </dt><dd class='enumerate'>
+   <p class='noindent'>Show that both spaces have the homotopy type of cell complexes, and conclude that the canonical
+   map is a homotopy equivalence.</p></dd></dl>
+</div>
+
+ 
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../relative-cell-complexes-and-serre-fibrations/index.html" aria-label="Previous section: Relative cell complexes and Serre fibrations" title="Previous section: Relative cell complexes and Serre fibrations"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../../homology-and-cohomology/homology-and-cohomology-theories/index.html" aria-label="Next section: Homology and cohomology theories" title="Next section: Homology and cohomology theories"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html" aria-current="page"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/animae-as-spaces/index.html" aria-current="page"><span class="context-entry-heading">Chapter 2</span><span class="context-entry-title">Animae as spaces</span></a></li><li><a href="../../../chapter/homology-and-cohomology/index.html"><span class="context-entry-heading">Chapter 3</span><span class="context-entry-title">Homology and cohomology</span></a></li><li><a href="../../../chapter/spectra-and-stable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 4</span><span class="context-entry-title">Spectra and stable ∞-categories</span></a></li><li><a href="../../../chapter/recognition-principle/index.html"><span class="context-entry-heading">Chapter 5</span><span class="context-entry-title">The recognition principle</span></a></li><li><a href="../../../chapter/homological-algebra/index.html"><span class="context-entry-heading">Chapter 6</span><span class="context-entry-title">Homological algebra</span></a></li><li><a href="../../../chapter/localization-and-completion/index.html"><span class="context-entry-heading">Chapter 7</span><span class="context-entry-title">Localization and completion</span></a></li><li><a href="../../../chapter/ring-spectra-and-modules/index.html"><span class="context-entry-heading">Chapter 8</span><span class="context-entry-title">Ring spectra and modules</span></a></li><li><a href="../../../chapter/complex-k-theory/index.html"><span class="context-entry-heading">Chapter 9</span><span class="context-entry-title">Complex K-theory</span></a></li><li><a href="../../../chapter/thom-spectra-and-bordism-theory/index.html"><span class="context-entry-heading">Chapter 10</span><span class="context-entry-title">Thom spectra and bordism theory</span></a></li><li><a href="../../../chapter/duality-phenomena/index.html"><span class="context-entry-heading">Chapter 11</span><span class="context-entry-title">Duality phenomena</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../homotopy-pushouts-and-pullbacks/index.html"><span class="context-entry-heading">Section 2.1</span><span class="context-entry-title">Homotopy pushouts and pullbacks</span></a></li><li><a href="../computing-pushouts-and-pullbacks-in-localizations/index.html"><span class="context-entry-heading">Section 2.2</span><span class="context-entry-title">Computing pushouts and pullbacks in localizations</span></a></li><li><a href="../relative-cell-complexes-and-serre-fibrations/index.html"><span class="context-entry-heading">Section 2.3</span><span class="context-entry-title">Relative cell complexes and Serre fibrations</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 2.4</span><span class="context-entry-title">Pointed animae, suspensions and loops</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Pointed_Anima"><span class="context-entry-heading">Definition 2.4.1</span><span class="context-entry-title">Pointed animae</span></a></li><li><a href="#rmk:Forgetful_Pointed_Animae_Preserves_Pullbacks_And_Pushouts"><span class="context-entry-heading">Remark 2.4.2</span><span class="context-entry-title">remark</span></a></li><li><a href="#not:Zero_Object_And_Null_Map_Pointed_Animae"><span class="context-entry-heading">Notation 2.4.3</span><span class="context-entry-title">notation</span></a></li><li><a href="#def:Fiber_Cofiber_Sequences_An"><span class="context-entry-heading">Definition 2.4.4</span><span class="context-entry-title">Fiber and cofiber sequences in \An_*</span></a></li><li><a href="#lem:Mapping_Exactness_Fiber_Cofiber_An"><span class="context-entry-heading">Lemma 2.4.5</span><span class="context-entry-title">lemma</span></a></li><li><a href="#def:Loop_Suspension_An"><span class="context-entry-heading">Definition 2.4.6</span><span class="context-entry-title">Loop and suspension in \An_*</span></a></li><li><a href="#ex:Loops_Suspension_Functor_An"><span class="context-entry-heading">Exercise 2.4.7</span><span class="context-entry-title">exercise</span></a></li><li><a href="#lem:Sigma_Left_Adjoint_Omega_An"><span class="context-entry-heading">Lemma 2.4.8</span><span class="context-entry-title">lemma</span></a></li><li><a href="#def:Wedge_Of_Animae"><span class="context-entry-heading">Definition 2.4.9</span><span class="context-entry-title">definition</span></a></li><li><a href="#def:Smash_Product_Animae"><span class="context-entry-heading">Definition 2.4.10</span><span class="context-entry-title">Smash product</span></a></li><li><a href="#lem:Pi_Infty_Preserves_Coproducts"><span class="context-entry-heading">Lemma 2.4.11</span><span class="context-entry-title">lemma</span></a></li><li><a href="#prop:Pi_Infty_Preserves_Pointed_Homotopical_Data"><span class="context-entry-heading">Proposition 2.4.12</span><span class="context-entry-title">proposition</span></a></li><li><a href="#rmk:Well_Pointed_Topological_Constructions"><span class="context-entry-heading">Remark 2.4.13</span><span class="context-entry-title">remark</span></a></li><li><a href="#def:Homotopical_Spheres"><span class="context-entry-heading">Definition 2.4.14</span><span class="context-entry-title">definition</span></a></li><li><a href="#cor:Localization_Functor_To_An_Preserves_Spheres"><span class="context-entry-heading">Corollary 2.4.15</span><span class="context-entry-title">corollary</span></a></li><li><a href="#lem:Smash_Product_Basics"><span class="context-entry-heading">Lemma 2.4.16</span><span class="context-entry-title">Basic properties of smash products</span></a></li><li><a href="#def:Path_Components_Anima"><span class="context-entry-heading">Definition 2.4.17</span><span class="context-entry-title">Path components of an anima</span></a></li><li><a href="#def:Homotopy_Groups_An"><span class="context-entry-heading">Definition 2.4.18</span><span class="context-entry-title">Homotopy groups of an anima</span></a></li><li><a href="#rmk:Homotopy_Groups_An_Vs_CW"><span class="context-entry-heading">Remark 2.4.19</span><span class="context-entry-title">remark</span></a></li><li><a href="#rmk:Degree_Self_Maps_Spheres"><span class="context-entry-heading">Remark 2.4.20</span><span class="context-entry-title">Degree</span></a></li><li><a href="#rmk:Suspension_Is_Cogroup_An"><span class="context-entry-heading">Remark 2.4.21</span><span class="context-entry-title">The suspension as a cogroup</span></a></li><li><a href="#prop:Whitehead_For_An"><span class="context-entry-heading">Proposition 2.4.22</span><span class="context-entry-title">Whitehead theorem for animae</span></a></li><li><a href="#cor:Morphism_Of_Connected_Animae_Iso_Iff_Loop_Spaces"><span class="context-entry-heading">Corollary 2.4.23</span><span class="context-entry-title">corollary</span></a></li><li><a href="#cons:Loop_Group_Object"><span class="context-entry-heading">Construction 2.4.24</span><span class="context-entry-title">Loop anima as a group object</span></a></li><li><a href="#cor:Group_Structure_On_Homotopy_Groups"><span class="context-entry-heading">Corollary 2.4.25</span><span class="context-entry-title">corollary</span></a></li><li><a href="#prop:Puppe_Sequence"><span class="context-entry-heading">Proposition 2.4.26</span><span class="context-entry-title">Puppe sequence</span></a></li><li><a href="#cor:LES_Homotopy_Groups"><span class="context-entry-heading">Corollary 2.4.27</span><span class="context-entry-title">Long exact sequence on homotopy groups</span></a></li><li><a href="#lem:coPuppe_Sequence"><span class="context-entry-heading">Lemma 2.4.28</span><span class="context-entry-title">coPuppe sequence</span></a></li><li><a href="#lem:Sequential_Colimits_As_Pushouts"><span class="context-entry-heading">Lemma 2.4.29</span><span class="context-entry-title">Sequential colimits as pushouts</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 1.3: Basic constructions of ∞-categories | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../chapter/introduction-to-infinity-categories/index.html">Chapter 1</a> · Section 1.3</p>
+      <h1>Basic constructions of ∞-categories</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Basic_Constructions'>We now record the ambient constructions on \(\infty \)-categories that we will use throughout the book: terminal and
+initial categories, products and coproducts, pullbacks, functor categories, and pushouts. Each is introduced
+through its universal property, expressed only to the level of coherence that we will actually need later
+on.
+</p>
+<h4 class='subsectionHead' id='products-and-coproducts'><span class='titlemark'>1.3.1    </span> <a id='x1-20001.3.1'></a>Products and coproducts</h4>
+<p class='noindent'>We start with products and coproducts of \(\infty \)-categories.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r1'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Axiom C.1 </span>(Products and coproducts of \(\infty \)-categories)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span>Let \(I\) be a set and let \(C_i\) be an \(\infty \)-category for every
+\(i \in I\).
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>There is a <span class='ntx-Italic-tlf-t1-x-x-109'>product</span> \(\prod _{i \in I} C_i\), equipped with <span class='ntx-Italic-tlf-t1-x-x-109'>projection functors</span> \(\pr _i\colon \prod _{i \in I} C_i \to C_i\) for every \(i\). Given another \(\infty \)-category \(T\)
+   and functors \(f_i\colon T \to C_i\) for every \(i\), we obtain a functor \((f_i)\colon T \to \prod _{i \in I} C_i\) together with natural isomorphisms \(\pr _i \circ (f_i) \cong f_i\). Given two
+   functors \(g,h\colon T \to \prod _{i \in I} C_i\) and natural isomorphisms \(\pr _i \circ g \cong \pr _i \circ h\), there is a natural isomorphism \(g \cong h\).
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>There is a <span class='ntx-Italic-tlf-t1-x-x-109'>coproduct </span>or <span class='ntx-Italic-tlf-t1-x-x-109'>disjoint union</span> \(\bigsqcup _{i \in I} C_i\), equipped with <span class='ntx-Italic-tlf-t1-x-x-109'>inclusion functors</span> \(\incl _i\colon C_i \hookrightarrow \bigsqcup _{i \in I} C_i\) for every \(i\). Given another
+   \(\infty \)-category \(T\) and functors \(f_i\colon C_i \to T\) for every \(i\), we obtain a functor \(\lra {f_i}\colon \bigsqcup _{i \in I} C_i \to T\) together with natural isomorphisms \(\lra {f_i} \circ \incl _i \cong f_i\).
+   Given two functors \(g,h\colon \bigsqcup _{i \in I} C_i \to T\) and natural isomorphisms \(g \circ \incl _i \cong h \circ \incl _i\), there is a natural isomorphism \(g \cong h\).</p></dd></dl>
+                                                                                   
+                                                                                   
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2004r1'></a>
+<a class="entry-heading-link" href="../../../entry/empty-products-and-coproducts-of-categories/index.html" aria-label="Notation 1.3.1., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Notation 1.3.1.</span></a>  </span><span id='not:Empty_Products_And_Coproducts_Of_Categories'></span> For the empty-index cases, we write the resulting product and coproduct as \(*\) and \(\emptyset \),
+respectively. Thus every \(\infty \)-category \(C\) comes equipped with canonical functors \[ C \to *, \qquad \qquad \emptyset \to C. \]
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2005r2'></a>
+<a class="entry-heading-link" href="../../../entry/objects-as-functors-from-the-terminal-category/index.html" aria-label="Remark 1.3.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 1.3.2.</span></a>  </span><span id='rmk:Objects_As_Functors_From_Terminal_Category'></span>  We  further  assume  that  the  canonical  functor  \([0] \to *\)  is  an  equivalence.  In  particular,
+objects of an \(\infty \)-category \(C\) may equally well be regarded as functors \([0] \to C\) or as functors \(* \to C\).
+</p><p class='noindent'>In these empty-index cases we also silently assume one extra layer of coherence: any two natural
+isomorphisms between two functors \(T \to *\) are connected by a 3-isomorphism, and similarly for functors \(\emptyset \to T\).
+This mild strengthening is only used when comparing products with pullbacks over \(*\) and coproducts
+with pushouts under \(\emptyset \), for instance in <a class="source-reference" data-label="exercise:Compatibility_Products_And_Pullbacks" href="../../../entry/products-as-pullbacks-over-the-terminal-category/index.html#exercise:Compatibility_Products_And_Pullbacks">Exercise 1.3.10</a>.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2006r3'></a>
+<a class="entry-heading-link" href="../../../entry/binary-products-and-coproducts-of-categories/index.html" aria-label="Notation 1.3.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Notation 1.3.3.</span></a>  </span><span id='not:Binary_Products_And_Coproducts_Of_Categories'></span> When \(I = \{1,2\}\), we write \(C_1 \times C_2\) and \(C_1 \sqcup C_2\) for the resulting product and coproduct. Given functors \(f_1\colon T \to C_1\) and
+\(f_2\colon T \to C_2\), we write \((f_1,f_2)\colon T \to C_1 \times C_2\) for the induced functor. Given functors \(g_1\colon C_1 \to T\) and \(g_2\colon C_2 \to T\), we write \(\lra {g_1,g_2}\colon C_1 \sqcup C_2 \to T\) for the induced functor.
+                                                                                   
+                                                                                   
+</p>
+</div>
+<p class='noindent'>Taking \(T = *\), we see that objects of \(C_1 \times C_2\) have the form \((x,y)\), where \(x\) is an object of \(C_1\) and \(y\) is an object of
+\(C_2\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2007r4'></a>
+<a class="entry-heading-link" href="../../../entry/constant-functors/index.html" aria-label="Definition 1.3.4., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.3.4.</span></a>  </span><span id='def:Constant_Functor'></span> Let \(C\) and \(D\) be \(\infty \)-categories and let \(x\) be an object of \(D\), regarded as a functor \(x\colon * \to D\). We define
+the <span class='ntx-Italic-tlf-t1-x-x-109'>constant functor</span> \(\const _x\colon C \to D\) as the following composite: \[ \const _x\colon C \xrightarrow {p_C} * \xrightarrow {x} D. \]
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2008r5'></a>
+<a class="entry-heading-link" href="../../../entry/contractible-infinity-categories/index.html" aria-label="Definition 1.3.5, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.3.5 </span></a>(Contractible category)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Contractible_Infinity_Category'></span> An \(\infty \)-category \(C\) is called <span class='ntx-Italic-tlf-t1-x-x-109'>contractible </span>if the functor \(p_{C}\colon C \to *\) is an
+equivalence.
+</p><p class='noindent'>Observe that an \(\infty \)-category \(C\) is contractible if and only if there exists an object \(x\colon * \to C\) such that the composite
+\(\const _x\colon C \to C\) is naturally isomorphic to the identity \(\id _C\colon C \to C\). A natural isomorphism \(H\colon \const _x \cong \id _C\) is called a <span class='ntx-Italic-tlf-t1-x-x-109'>contraction of</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>onto</span> \(x\).
+</p>
+</div>
+<p class='noindent'>The familiar symmetries of products and coproducts follow from these universal properties just as in
+ordinary category theory, and we will use them freely.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+                                                                                   
+                                                                                   
+<a id='x1-2009r6'></a>
+<a class="entry-heading-link" href="../../../entry/algebra-of-products-and-coproducts-of-categories/index.html" aria-label="Exercise 1.3.6., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.3.6.</span></a>  </span><span id='exercise:Products_Coproducts_Associative_Commutative_Unital'></span> Show that (co)products of \(\infty \)-categories are associative, commutative and unital: \[ C \times D \iso D \times C, \qquad (C \times D) \times E \iso C \times (D \times E), \qquad C \times * \iso C \iso * \times C, \] and
+\[ C \sqcup D \iso D \sqcup C, \qquad (C \sqcup D) \sqcup E \iso C \sqcup (D \sqcup E), \qquad \emptyset \sqcup C \iso C \iso C \sqcup \emptyset . \]
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2010r7'></a>
+<a class="entry-heading-link" href="../../../entry/functoriality-of-products-and-coproducts-of-categories/index.html" aria-label="Construction 1.3.7., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 1.3.7.</span></a>  </span><span id='cons:Functoriality_Products_Coproducts_Categories'></span> The formation of products and coproducts of \(\infty \)-categories is functorial: given two
+functors \(f\colon C \to C'\) and \(g\colon D \to D'\), we obtain new functors \begin {align*}  f \times g \; &amp;:= \; (f \circ \pr _{C}, g \circ \pr _{D}) \colon \; C \times D \to C' \times D' \\ f \sqcup g \; &amp;:= \; \lra {\incl _{C'} \circ f, \incl _{D'} \circ g} \; \colon C \sqcup D \to C' \sqcup D'.  \end {align*}
+</p><p class='noindent'>We leave it to the reader to verify that there are natural isomorphisms \begin {align*}  \id _{C} \times \id _{D} \cong \id _{C \times D} &amp;\quadtext { and } (f' \times g') \circ (f \times g) \cong (f' \circ f) \times (g' \circ g), \\ \id _{C} \sqcup \id _{D} \cong \id _{C \sqcup D} &amp;\quadtext { and } (f' \sqcup g') \circ (f \sqcup g) \cong (f' \circ f) \sqcup (g' \circ g)  \end {align*}
+</p><p class='noindent'>for functors \(f\colon C \to C'\), \(f'\colon C' \to C''\), \(g\colon D \to D'\) and \(g'\colon D' \to D''\).
+</p>
+</div>
+
+<h4 class='subsectionHead' id='pullbacks-of-categories'><span class='titlemark'>1.3.2    </span> <a id='x1-30001.3.2'></a>Pullbacks of \(\infty \)-categories</h4>
+<p class='noindent'><span id='subsec_Pullbacks_Of_Infty_Cats'></span> We will now axiomatize the <span class='ntx-Italic-tlf-t1-x-x-109'>pullback </span>of two functors \(f\colon C \to E\) and \(g\colon D \to E\) of \(\infty \)-categories. This will be similar to the axiom
+for the product \(C \times D\), but it is more involved due to the fact that we need to record compatibilities with the
+structure maps to \(E\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3001r2'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Axiom C.2 </span>(Pullbacks of \(\infty \)-categories)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Consider two functors \(f\colon C \to E\) and \(g\colon D \to E\). Their <span class='ntx-Italic-tlf-t1-x-x-109'>pullback</span>, or <span class='ntx-Italic-tlf-t1-x-x-109'>fiber product
+over</span> \(E\), is an \(\infty \)-category \(C \times _{E} D\) equipped with functors \(\pr _{C} \colon C \times _{E} D \to C\) and \(\pr _{D}\colon C \times _{E} D \to D\) and a natural isomorphism \(f \circ \pr _{C} \cong g \circ \pr _{D}\), or equivalently a
+commutative square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-edba90f60f46.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Given functors \(t_C\colon T \to C\) and \(t_D\colon T \to D\) equipped with a natural isomorphism \(\alpha \colon f \circ t_C \cong g \circ t_D\), we obtain a functor
+\(t = (t_C,t_D)\colon T \to C \times _{E} D\). This functor comes equipped with natural isomorphisms \(\pr _{C} \circ t \cong t_C\) and \(\pr _{D} \circ t \cong t_D\), and the composite isomorphism \[ f \circ t_C \cong f \circ \pr _{C} \circ t \cong g \circ \pr _{D} \circ t \cong g \circ t_D \] is
+isomorphic to \(\alpha \). We summarize this by the following dashed-arrow diagram:<span class='footnote-mark'><a href='#chapter-introduction-to-infinity-categories-section-03-fn1x0'><sup class='textsuperscript'>1</sup></a></span><a id='x1-3002f1'></a></p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-c1179f63aedf.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Similarly, if \(t,t'\colon T \to C \times _{E} D\) are two functors and \(\alpha \colon \pr _{C} \circ t \cong \pr _{C} \circ t'\) and \(\beta \colon \pr _{D} \circ t \cong \pr _{D} \circ t'\) are natural isomorphisms compatible over \(E\), in the sense
+that the following square commutes,</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-6ca7a72f81d6.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Then we obtain a natural isomorphism \((\alpha ,\beta )\colon t \cong t'\) satisfying \(\pr _{C} \circ (\alpha ,\beta ) \cong \alpha \) and \(\pr _{D} \circ (\alpha ,\beta ) \cong \beta \), and
+inducing an isomorphic isomorphism of natural isomorphisms in the previous square.</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3004r8'></a>
+<a class="entry-heading-link" href="../../../entry/formal-shape-of-the-pullback-axiom/index.html" aria-label="Remark 1.3.8., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 1.3.8.</span></a>  </span><span id='rmk:Pullback_Axiom_Formal_Shape'></span> Despite the heavier notation, <span class="source-reference" data-label="axiom:Pullback_Of_Categories">Axiom C.2</span> has exactly the same formal shape as the product part
+of the previous axiom: it introduces an \(\infty \)-category with structure, explains how compatible data on \(T\)
+determines a functor \(T \to X\), and says that such functors are determined up to natural isomorphism by that
+data. For a fully precise formulation of the final compatibility condition, we refer to <span class="source-reference" data-label="sct-post:Evaluation_And_Currying_For_Mapping_Animae">Reference ?</span> of <span class='citation'>[Cisinski et al. (2026)]</span>.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3005r9'></a>
+<a class="entry-heading-link" href="../../../entry/algebra-of-pullbacks-of-categories/index.html" aria-label="Exercise 1.3.9., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.3.9.</span></a>  </span><span id='exercise:Associativity_Fiber_Products'></span> Show that the fiber product is commutative, associative and unital: for functors \(C\to E\), \(D \to E\)
+and \(B \to E\), there are equivalences \[ C \times _{E} D \iso D \times _{E} C, \qquad B \times _{E} (C \times _{E} D) \iso (B \times _{E} C) \times _{E} D, \qquad C \times _{E} E \iso C. \]
+                                                                                   
+                                                                                   
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3006r10'></a>
+<a class="entry-heading-link" href="../../../entry/products-as-pullbacks-over-the-terminal-category/index.html" aria-label="Exercise 1.3.10., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.3.10.</span></a>  </span><span id='exercise:Compatibility_Products_And_Pullbacks'></span> Given \(\infty \)-categories \(C\) and \(D\), produce an equivalence \(C \times D \iso C \times _* D\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3007r11'></a>
+<a class="entry-heading-link" href="../../../entry/base-change-of-equivalences/index.html" aria-label="Exercise 1.3.11., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.3.11.</span></a>  </span><span id='exercise:Fiber_Product_Of_Equivalences_Is_Equivalence'></span> The construction of pullbacks of \(\infty \)-categories is functorial: given a commutative
+diagram</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-be9e8df2890c.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>there is an induced functor \[ \phi \times _{\chi } \psi := (\phi \circ \pr _{C}, \psi \circ \pr _{D})\colon C \times _{E} D \to C' \times _{E'} D'. \] Show that if each of the functors \(\phi \), \(\psi \) and \(\chi \) is an equivalence, then
+so is \(\phi \times _{\chi } \psi \). Deduce that equivalences are stable under pullback: if \(g\colon D \to E\) is an equivalence and \(f\colon C \to E\) is an arbitrary
+functor, then the projection \(C \times _{E} D \to C\) is an equivalence.</p>
+</div>
+<p class='noindent'>Pullbacks of categories lead to the notion of a <span class='ntx-Italic-tlf-t1-x-x-109'>fiber </span>of a functor:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3008r12'></a>
+<a class="entry-heading-link" href="../../../entry/fibers-of-functors/index.html" aria-label="Definition 1.3.12., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.3.12.</span></a>  </span><span id='def:Fiber_Over_Term'></span> Let \(f\colon C \to D\) be a functor. For every object \(x\) of \(D\), we define the <span class='ntx-Italic-tlf-t1-x-x-109'>fiber </span>of \(f\) over \(x\) as the pullback</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-3948ae521289.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div>
+</div>
+<p class='noindent'>The definition of pullbacks of \(\infty \)-categories naturally leads to the notion of a pullback square.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3009r13'></a>
+<a class="entry-heading-link" href="../../../entry/pullback-squares-of-infinity-categories/index.html" aria-label="Definition 1.3.13, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.3.13 </span></a>(Pullback square)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Pullback_Square_Of_Infinity_Categories'></span>  A  commutative  square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-cac8c84a3ff8.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>is  called  a  <span class='ntx-Italic-tlf-t1-x-x-109'>pullback  square  </span>if  the
+induced functor \((s,t)\colon T \to C \times _{E} D\) is an equivalence.</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3010r14'></a>
+<a class="entry-heading-link" href="../../../entry/iterated-pullbacks-of-infinity-categories/index.html" aria-label="Exercise 1.3.14, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.3.14 </span></a>(Iterated pullbacks)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='exercise:Iterated_Pullbacks_Of_Infinity_Categories'></span> Consider a commutative diagram</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-7c5324b7cc26.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Construct an equivalence \[ D_1 \times _{D_3} C_3 \iso D_1 \times _{D_2} (D_2 \times _{D_3} C_3). \]
+<span class='ntx-Italic-tlf-t1-x-x-109'>Hint: </span>define one direction by \((\pr _{D_1}, (h_1 \circ \pr _{D_1}, \pr _{C_3}))\) and construct an inverse by projecting to \(D_1\) and \(C_3\).</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3011r15'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 1.3.15 </span>(Pasting lemma for pullback squares)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Pasting_Lemma_Pullbacks'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Consider  a  commutative  diagram  </span></p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-7c5324b7cc26.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If  the
+right-hand square is a pullback square, then the left-hand square is a pullback square if and only if
+the outer rectangle is a pullback square.</span></p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-introduction-to-infinity-categories-section-03-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-introduction-to-infinity-categories-section-03-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  By  the  previous  exercise  there  is  a  preferred  equivalence  \[ D_1 \times _{D_3} C_3 \iso D_1 \times _{D_2} (D_2 \times _{D_3} C_3). \]  If  the  right-hand  square  is  a
+pullback square, the functor \(C_2 \to D_2 \times _{D_3} C_3\) is an equivalence. Hence, by <a class="source-reference" data-label="exercise:Fiber_Product_Of_Equivalences_Is_Equivalence" href="../../../entry/base-change-of-equivalences/index.html#exercise:Fiber_Product_Of_Equivalences_Is_Equivalence">Exercise 1.3.11</a>, the induced functor \(D_1 \times _{D_2} C_2 \to D_1 \times _{D_2} (D_2 \times _{D_3} C_3)\) is an equivalence.
+The claim now follows from 2-out-of-3 applied to the square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-dce684daba99.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>□</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3012r16'></a>
+<a class="entry-heading-link" href="../../../entry/pullbacks-along-equivalences/index.html" aria-label="Exercise 1.3.16., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.3.16.</span></a>  </span><span id='exercise:Pullback_Of_Equivalence'></span> Consider a commutative square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-06212d9e7f0d.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>and assume that \(h\) is an equivalence. Show that \(g\) is
+an equivalence if and only if the square is a pullback square.</p>
+</div>
+<p class='noindent'>We record one further property of coproducts.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3013r3'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Axiom C.3 </span>(Universality of coproducts)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(I\) be a set, and let \(D_i\) be an \(\infty \)-category for every \(i \in I\).
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+                                                                                   
+                                                                                   
+   <p class='noindent'>Given functors \(f_i\colon C_i \to D_i\) for all \(i \in I\), the commutative square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-6c71c00071d2.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>is a pullback square.</p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>For a functor \(h\colon E \to \bigsqcup _{i \in I} D_i\), the functor \[ \lra {\pr _E}_i \colon \bigsqcup _{i \in I}(E \times _{\bigsqcup _{i \in I} D_i} D_i) \to E \] is an equivalence.
+   </p></dd><dt class='enumerate'>
+(3) </dt><dd class='enumerate'>
+   <p class='noindent'>The inclusions \(\{i\} \hookrightarrow I\) for \(i \in I\) induce an equivalence \(\bigsqcup _{i \in I} \{i\} \iso I\).</p></dd></dl>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3017r17'></a>
+<a class="entry-heading-link" href="../../../entry/consequences-of-disjoint-coproducts-of-categories/index.html" aria-label="Remark 1.3.17., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 1.3.17.</span></a>  </span><span id='rmk:Extensivity_Of_Category_Coproducts'></span> This is the categorical analogue of three basic facts about disjoint unions of sets:
+base change along an inclusion picks out the corresponding summand, every map into a disjoint
+union decomposes the source into the corresponding fibers, and every set is the disjoint union of its
+elements.
+</p>
+</div>
+
+<h4 class='subsectionHead' id='functor-categories'><span class='titlemark'>1.3.3    </span> <a id='x1-40001.3.3'></a>Functor categories</h4>
+<p class='noindent'>Functor categories let us package families of functors internally, and they will also allow us to define
+pushouts by duality in the next subsection.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4001r4'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Axiom C.4 </span>(Functor category)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> The <span class='ntx-Italic-tlf-t1-x-x-109'>functor category </span>between two \(\infty \)-categories \(C\) and \(D\) is an \(\infty \)-category
+denoted by \(\Fun (C, D)\). It comes equipped with a functor \(\ev \colon \Fun (C,D) \times C \to D\), called the <span class='ntx-Italic-tlf-t1-x-x-109'>evaluation functor</span>. If \(E\) is another \(\infty \)-category,
+then every functor \(f\colon E \times C \to D\) gives rise to a functor \(f_c \colon E \to \Fun (C,D)\) called the <span class='ntx-Italic-tlf-t1-x-x-109'>currying </span>of \(f\). It comes equipped with a natural
+isomorphism between \(f\) and the composite \[ E \times C \xrightarrow {f_c \times \id _C} \Fun (C,D) \times C \xrightarrow {\ev } D. \] Given two functors \(g,h\colon E \to \Fun (C,D)\) and a natural isomorphism \(\alpha \colon \ev \circ (g \times \id _C) \cong \ev \circ (h \times \id _C)\), we obtain
+a natural isomorphism \(\beta \colon g \cong h\) such that \(\alpha \cong \ev \star (\beta \times \id _C)\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4002r18'></a>
+<a class="entry-heading-link" href="../../../entry/currying-and-uncurrying-functors/index.html" aria-label="Remark 1.3.18., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 1.3.18.</span></a>  </span><span id='rmk:Currying_And_Uncurrying'></span> Given a functor \(g\colon E \to \Fun (C,D)\), we define its <span class='ntx-Italic-tlf-t1-x-x-109'>uncurrying</span> \(g^u\colon E \times C \to D\) as the composite \[ E \times C \xrightarrow {g \times \id _C} \Fun (C,D) \times C \xrightarrow {\ev } D. \] Thus currying and
+uncurrying pass between functors \(E \times C \to D\) and functors \(E \to \Fun (C,D)\), and going back and forth both ways is naturally
+isomorphic to the identity. In the case \(E = *\), we observe that objects \(* \to \Fun (C, D)\) of the functor category correspond
+to functors \(C \simeq C \times * \to D\) from \(C\) to \(D\), justifying the terminology for \(\Fun (C,D)\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4003r19'></a>
+<a class="entry-heading-link" href="../../../entry/functoriality-of-currying/index.html" aria-label="Exercise 1.3.19., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.3.19.</span></a>  </span><span id='exercise:Functoriality_Of_Currying'></span> Show that currying and uncurrying are functorial in the parameter category \(E\) and
+compatible with natural isomorphisms.
+</p>
+</div>
+<p class='noindent'>The functoriality of the product naturally provides functoriality for the functor categories:
+                                                                                   
+                                                                                   
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4004r20'></a>
+<a class="entry-heading-link" href="../../../entry/functoriality-of-functor-categories/index.html" aria-label="Construction 1.3.20, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 1.3.20 </span></a>(Functoriality of functor categories in \(C\) and \(D\))<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cons:Functoriality_Functor_Categories'></span> Given a functor \(g\colon D \to E\), we define the
+functor \(g \circ -\colon \Fun (C,D) \to \Fun (C,E)\) as the currying of the composite \[ \Fun (C, D) \times C \xrightarrow {\ev } D \xrightarrow {g} E. \] Similarly, given a functor \(f\colon C \to D\), we define the functor \(- \circ f\colon \Fun (D,E) \to \Fun (C,E)\) as the
+currying of the composite \[ \Fun (D, E) \times C \xrightarrow {\id \times f} \Fun (D,E) \times D \xrightarrow {\ev } E. \] In a completely analogous way, every natural isomorphism \(\beta \colon g \cong g'\) of functors \(D \to E\)
+induces a natural isomorphism \((\beta \circ -) \colon (g \circ -) \cong (g' \circ -)\) of functors \(\Fun (C,D) \to \Fun (C, E)\), and similarly for the construction \(- \circ f\).
+</p><p class='noindent'>Alternative notations for these functors that we will frequently use are \(g_*\) and \(f^*\): \[ g_* := g \circ -\colon \Fun (C,D) \to \Fun (C,E), \qquad f^*:= - \circ f\colon \Fun (D,E) \to \Fun (C,D). \]
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4005r21'></a>
+<a class="entry-heading-link" href="../../../entry/functoriality-of-precomposition-and-postcomposition/index.html" aria-label="Exercise 1.3.21., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.3.21.</span></a>  </span><span id='exercise:Functoriality_Pre_Postcomposition'></span> Formulate and prove that the assignments \(g \mapsto (g \circ -)\) and \(f \mapsto (- \circ f)\) are functorial, in the sense that
+they respect identity functors and composition of functors.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4006r22'></a>
+<a class="entry-heading-link" href="../../../entry/composition-in-functor-categories/index.html" aria-label="Exercise 1.3.22., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.3.22.</span></a>  </span><span id='exercise:Functoriality_Functor_Categories'></span> Given \(\infty \)-categories \(C\), \(D\) and \(E\), construct a composition functor \[ - \circ -\colon \Fun (D,E) \times \Fun (C,D) \to \Fun (C,E). \] Show that it reduces to
+the functors \(g \circ -\) and \(- \circ f\) when fixing one of the two variables.
+</p>
+                                                                                   
+                                                                                   
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4007r23'></a>
+<a class="entry-heading-link" href="../../../entry/natural-isomorphisms-via-pullbacks/index.html" aria-label="Exercise 1.3.23., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.3.23.</span></a>  </span><span id='exercise:Natural_Isomorphisms_Via_Pullback'></span> Let \(f,g\colon C \to D\) be two functors of \(\infty \)-categories, regarded as objects of \(\Fun (C,D)\). We may define a new
+\(\infty \)-category \((f \cong g)\) via the following pullback square:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-810ac6012acc.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Show that every natural isomorphism \(\alpha \colon f \cong g\) defines an object
+of \((f \cong g)\). Conversely, show that every object of \((f \cong g)\) defines a natural isomorphism \(\alpha \colon f \cong g\).</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4008r24'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 1.3.24 </span>(Internal universal properties)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Internal_Universal_Properties'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(T\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category and let</span> \(\{C_i\}_{i \in I}\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a set-indexed collection
+of</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories. The canonical functors below are equivalences: </span>\begin {align*}  \Fun (T,*) &amp;\iso *, &amp; \Fun (\emptyset ,T) &amp;\iso *, &amp; \Fun (*,T) &amp;\iso T, \\ \Fun \left (T,\prod _{i \in I}C_i\right ) &amp;\iso \prod _{i \in I}\Fun (T,C_i), &amp; \Fun \left (\bigsqcup _{i \in I}C_i,T\right ) &amp;\iso \prod _{i \in I}\Fun (C_i,T).  \end {align*}
+</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Moreover, for functors</span> \(f\colon C \to E\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(g\colon D \to E\) <span class='ntx-Italic-tlf-t1-x-x-109'>there is an equivalence </span>\[ \Fun (T,C \times _E D) \iso \Fun (T,C) \times _{\Fun (T,E)} \Fun (T,D), \] <span class='ntx-Italic-tlf-t1-x-x-109'>and for</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>there is an equivalence</span>
+\[ \Fun (T,\Fun (C,D)) \iso \Fun (T \times C,D). \]
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proof guide.</span>  </span>Construct the comparison functors from the projections, inclusions, evaluation, and
+currying maps. To construct their inverses as actual functors, first uncurry: the product and pullback
+                                                                                   
+                                                                                   
+axioms  assemble  the  resulting  evaluation  maps,  after  which  one  curries  again.  In  the  coproduct
+case, first use universality of coproducts to distribute the product with the parameter category over \(\bigsqcup _iC_i\).
+The uniqueness clauses then give the two inverse relations. A complete proof is given in the online
+supplementary material. See also <span class="source-reference" data-label="sct-sec:Mapping_Animae">Reference ?</span> of <span class='citation'>[Cisinski et al. (2026)]</span>.
+</p>
+</div>
+
+<h4 class='subsectionHead' id='pushouts-of-categories'><span class='titlemark'>1.3.4    </span> <a id='x1-50001.3.4'></a>Pushouts of \(\infty \)-categories</h4>
+<p class='noindent'>Using functor categories, we may now dualize the notion of pullback square and define pushouts:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5001r25'></a>
+<a class="entry-heading-link" href="../../../entry/pushout-squares-of-infinity-categories/index.html" aria-label="Definition 1.3.25, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.3.25 </span></a>(Pushout square)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Pushout_Square_Of_Infinity_Categories'></span> A commutative square of \(\infty \)-categories</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-af1bbe140136.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>is called a <span class='ntx-Italic-tlf-t1-x-x-109'>pushout square</span>
+(or <span class='ntx-Italic-tlf-t1-x-x-109'>cocartesian</span>) if, for every \(\infty \)-category \(E\), the induced square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-6fd32e3c4706.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>is a pullback square.</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5002r5'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Axiom C.5 </span>(Pushout of \(\infty \)-categories)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span>For functors \(f\colon E \to C\) and \(g\colon E \to D\), there exists a pushout square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-fc5be67e030d.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>We refer to
+the \(\infty \)-category \(C \sqcup _E D\) as the <span class='ntx-Italic-tlf-t1-x-x-109'>pushout </span>of \(C\) and \(D\) along \(E\).</p>
+</div>
+                                                                                   
+                                                                                   
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5003r26'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 1.3.26 </span>(Pasting lemma for pushout squares)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Pasting_Lemma_Pushouts'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Consider  a  commutative  diagram  </span></p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-7c5324b7cc26.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If  the
+left-hand square is a pushout square, then the right-hand square is a pushout square if and only if
+the outer rectangle is a pushout square.</span></p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-introduction-to-infinity-categories-section-03-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-introduction-to-infinity-categories-section-03-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> This follows immediately from <a class="source-reference" data-label="lem:Pasting_Lemma_Pullbacks" href="../../../entry/pasting-lemma-for-pullback-squares-of-categories/index.html#lem:Pasting_Lemma_Pullbacks">Lemma 1.3.15</a>.                                                                                            □
+</p>
+</div></div>
+ 
+<section class="footnotes" aria-label="Notes"><h2>Notes</h2>
+  <div class='footnote-text'>
+  <p class='noindent'><span class='footnote-mark'><a id='chapter-introduction-to-infinity-categories-section-03-fn1x0'><a id='chapter-introduction-to-infinity-categories-section-03-x2-3003x1'></a>    <sup class='textsuperscript'>1</sup></a></span><span class='ntx-Regular-tlf-t1-x-x-90'>Here, and throughout the book, dashed arrows indicate morphisms that are being constructed or are otherwise under
+  discussion. Such diagrams are understood to commute up to the evident natural isomorphisms and compatibilities.</span></p></div> 
+</section>
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../the-language-of-category-theory/index.html" aria-label="Previous section: The language of ∞-category theory" title="Previous section: The language of ∞-category theory"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../commutative-diagrams-composition-and-animae/index.html" aria-label="Next section: Commutative diagrams, composition, and animae" title="Next section: Commutative diagrams, composition, and animae"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html" aria-current="page"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/introduction-to-infinity-categories/index.html" aria-current="page"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../the-heuristics-behind-categories/index.html"><span class="context-entry-heading">Section 1.1</span><span class="context-entry-title">The heuristics behind ∞-categories</span></a></li><li><a href="../the-language-of-category-theory/index.html"><span class="context-entry-heading">Section 1.2</span><span class="context-entry-title">The language of ∞-category theory</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 1.3</span><span class="context-entry-title">Basic constructions of ∞-categories</span></a></li><li><a href="../commutative-diagrams-composition-and-animae/index.html"><span class="context-entry-heading">Section 1.4</span><span class="context-entry-title">Commutative diagrams, composition, and animae</span></a></li><li><a href="../further-constructions-of-categories/index.html"><span class="context-entry-heading">Section 1.5</span><span class="context-entry-title">Further constructions of ∞-categories</span></a></li><li><a href="../simplicial-objects-and-quasicategories/index.html"><span class="context-entry-heading">Section 1.6</span><span class="context-entry-title">Simplicial objects and quasicategories</span></a></li><li><a href="../limits-and-colimits/index.html"><span class="context-entry-heading">Section 1.7</span><span class="context-entry-title">Limits and colimits</span></a></li><li><a href="../foundational-results-in-category-theory/index.html"><span class="context-entry-heading">Section 1.8</span><span class="context-entry-title">Foundational results in ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#not:Empty_Products_And_Coproducts_Of_Categories"><span class="context-entry-heading">Notation 1.3.1</span><span class="context-entry-title">notation</span></a></li><li><a href="#rmk:Objects_As_Functors_From_Terminal_Category"><span class="context-entry-heading">Remark 1.3.2</span><span class="context-entry-title">remark</span></a></li><li><a href="#not:Binary_Products_And_Coproducts_Of_Categories"><span class="context-entry-heading">Notation 1.3.3</span><span class="context-entry-title">notation</span></a></li><li><a href="#def:Constant_Functor"><span class="context-entry-heading">Definition 1.3.4</span><span class="context-entry-title">definition</span></a></li><li><a href="#def:Contractible_Infinity_Category"><span class="context-entry-heading">Definition 1.3.5</span><span class="context-entry-title">Contractible category</span></a></li><li><a href="#exercise:Products_Coproducts_Associative_Commutative_Unital"><span class="context-entry-heading">Exercise 1.3.6</span><span class="context-entry-title">exercise</span></a></li><li><a href="#cons:Functoriality_Products_Coproducts_Categories"><span class="context-entry-heading">Construction 1.3.7</span><span class="context-entry-title">construction</span></a></li><li><a href="#rmk:Pullback_Axiom_Formal_Shape"><span class="context-entry-heading">Remark 1.3.8</span><span class="context-entry-title">remark</span></a></li><li><a href="#exercise:Associativity_Fiber_Products"><span class="context-entry-heading">Exercise 1.3.9</span><span class="context-entry-title">exercise</span></a></li><li><a href="#exercise:Compatibility_Products_And_Pullbacks"><span class="context-entry-heading">Exercise 1.3.10</span><span class="context-entry-title">exercise</span></a></li><li><a href="#exercise:Fiber_Product_Of_Equivalences_Is_Equivalence"><span class="context-entry-heading">Exercise 1.3.11</span><span class="context-entry-title">exercise</span></a></li><li><a href="#def:Fiber_Over_Term"><span class="context-entry-heading">Definition 1.3.12</span><span class="context-entry-title">definition</span></a></li><li><a href="#def:Pullback_Square_Of_Infinity_Categories"><span class="context-entry-heading">Definition 1.3.13</span><span class="context-entry-title">Pullback square</span></a></li><li><a href="#exercise:Iterated_Pullbacks_Of_Infinity_Categories"><span class="context-entry-heading">Exercise 1.3.14</span><span class="context-entry-title">Iterated pullbacks</span></a></li><li><a href="#lem:Pasting_Lemma_Pullbacks"><span class="context-entry-heading">Lemma 1.3.15</span><span class="context-entry-title">Pasting lemma for pullback squares</span></a></li><li><a href="#exercise:Pullback_Of_Equivalence"><span class="context-entry-heading">Exercise 1.3.16</span><span class="context-entry-title">exercise</span></a></li><li><a href="#rmk:Extensivity_Of_Category_Coproducts"><span class="context-entry-heading">Remark 1.3.17</span><span class="context-entry-title">remark</span></a></li><li><a href="#rmk:Currying_And_Uncurrying"><span class="context-entry-heading">Remark 1.3.18</span><span class="context-entry-title">remark</span></a></li><li><a href="#exercise:Functoriality_Of_Currying"><span class="context-entry-heading">Exercise 1.3.19</span><span class="context-entry-title">exercise</span></a></li><li><a href="#cons:Functoriality_Functor_Categories"><span class="context-entry-heading">Construction 1.3.20</span><span class="context-entry-title">Functoriality of functor categories in C and D</span></a></li><li><a href="#exercise:Functoriality_Pre_Postcomposition"><span class="context-entry-heading">Exercise 1.3.21</span><span class="context-entry-title">exercise</span></a></li><li><a href="#exercise:Functoriality_Functor_Categories"><span class="context-entry-heading">Exercise 1.3.22</span><span class="context-entry-title">exercise</span></a></li><li><a href="#exercise:Natural_Isomorphisms_Via_Pullback"><span class="context-entry-heading">Exercise 1.3.23</span><span class="context-entry-title">exercise</span></a></li><li><a href="#prop:Internal_Universal_Properties"><span class="context-entry-heading">Proposition 1.3.24</span><span class="context-entry-title">Internal universal properties</span></a></li><li><a href="#def:Pushout_Square_Of_Infinity_Categories"><span class="context-entry-heading">Definition 1.3.25</span><span class="context-entry-title">Pushout square</span></a></li><li><a href="#lem:Pasting_Lemma_Pushouts"><span class="context-entry-heading">Lemma 1.3.26</span><span class="context-entry-title">Pasting lemma for pushout squares</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

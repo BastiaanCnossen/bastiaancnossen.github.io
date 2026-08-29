@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 11.1: Symmetric monoidal duality | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/stable-homotopy-theory/index.html">Part I</a> · <a href="../../../chapter/duality-phenomena/index.html">Chapter 11</a> · Section 11.1</p>
+      <h1>Symmetric monoidal duality</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Symmetric_Monoidal_Duality'>The modern way to interpret duality phenomena is in terms of the notion of dualizable objects in a
+symmetric monoidal \(\infty \)-category. Throughout this section, we fix a symmetric monoidal \(\infty \)-category
+\((C,\otimes ,\unit )\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<a class="entry-heading-link" href="../../../entry/dualizable-object/index.html" aria-label="Definition 11.1.1, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 11.1.1 </span></a>(Dualizable object)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Dualizable_Object'></span> Consider objects \(X\) and \(Y\) of \(C\). We say that a morphism \(\ev \colon Y \otimes X \to \unit \) <span class='ntx-Italic-tlf-t1-x-x-109'>exhibits</span> \(Y\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>as a dual to</span> \(X\) if there exists another morphism \(\coev \colon \unit \to X \otimes Y\) such that the triangle identities are satisfied: there exist
+commutative diagrams</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-665c5fc0296f.svg" alt="Commutative diagram generated from the LaTeX source"></figure><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-69968410f408.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>In this case we refer to \(\ev \) as the <span class='ntx-Italic-tlf-t1-x-x-109'>evaluation map </span>and to \(\coev \) as the <span class='ntx-Italic-tlf-t1-x-x-109'>coevaluation
+map</span>, and call \((Y,\ev )\) a <span class='ntx-Italic-tlf-t1-x-x-109'>duality datum </span>for \(X\). We say that an object \(X\) is <span class='ntx-Italic-tlf-t1-x-x-109'>dualizable </span>if it admits such a duality
+datum.</p>
+</div>
+<p class='noindent'>The following result guarantees that the duality datum \((Y,\ev )\) is unique if it exists:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1002r2'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 11.1.2.</span>  </span><span id='prop:Characterization_Dualizable_Objects'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Consider objects</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>of</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>and consider a morphism</span> \(\ev \colon Y \otimes X \to \unit \) <span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>. The following conditions are
+equivalent:</span>
+   </p><dl class='enumerate'><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(1)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The morphism</span> \(\ev \colon Y \otimes X \to \unit \) <span class='ntx-Italic-tlf-t1-x-x-109'>exhibits</span> \(Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>as a dual to</span> \(X\)<span class='ntx-Italic-tlf-t1-x-x-109'>;</span>
+                                                                                   
+
+                                                                                   
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(2)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For all objects</span> \(Z\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(W\) <span class='ntx-Italic-tlf-t1-x-x-109'>of</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the composite </span>\[ \Hom _{C}(W,Z \otimes Y) \xrightarrow {- \otimes X} \Hom _{C}(W \otimes X, Z \otimes Y \otimes X) \xrightarrow {\ev \circ -} \Hom _{C}(W \otimes X, Z) \] <span class='ntx-Italic-tlf-t1-x-x-109'>is an equivalence.</span>
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(3)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The map in (2) is an equivalence for</span> \((W,Z) = (\unit ,X)\) <span class='ntx-Italic-tlf-t1-x-x-109'>and for</span> \((W,Z) = (Y,\unit )\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-duality-phenomena-section-01-7" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-duality-phenomena-section-01-7">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We first show that (1) implies (2). Let \(\coev \colon \unit \to X \otimes Y\) be the corresponding coevaluation map. It then follows
+directly from the triangle identities that an inverse to the map in (2) is given by the composite \[ \Hom _{C}(W \otimes X, Z) \xrightarrow {- \otimes Y} \Hom _{C}(W \otimes X \otimes Y, Z \otimes Y) \xrightarrow {- \circ \coev } \Hom _{C}(W,Z \otimes Y). \] It is
+clear that (2) implies (3). Finally, assume that (3) is satisfied. Taking \(W = \unit \) and \(Z = X\), we get that the composite \[ \Hom _C(\unit ,X \otimes Y) \xrightarrow {- \otimes X} \Hom _C(X, X \otimes Y \otimes X) \xrightarrow {\ev \circ -} \Hom _C(X, X) \]
+is an equivalence. In particular, there exists a morphism \(\coev \colon \unit \to X \otimes Y\) that is mapped to \(\id _X\) under this equivalence. In
+particular, the composite \[ X \xrightarrow {\coev \otimes \id } X \otimes Y \otimes X \xrightarrow {\id \otimes \ev } X \] is homotopic to \(\id _X\), showing one of the two triangle identities. To show that
+the other triangle identity is also satisfied, consider \(W = Y\) and \(Z = \unit \), so that the composite \[ \Hom _C(Y,Y) \xrightarrow {- \otimes X} \Hom _C(Y \otimes X, Y \otimes X) \xrightarrow {\ev \circ -} \Hom _C(Y \otimes X, \unit ) \] is an equivalence.
+We claim that both the map \(\id _Y\colon Y \to Y\) as well as the composite \(Y \xrightarrow {\id \otimes \coev } Y \otimes X \otimes Y \xrightarrow {\ev \otimes \id } Y\) are sent to \(\ev \colon Y \otimes X \to \unit \) under this equivalence. This is clear
+for \(\id _Y\). For \((\ev \otimes \id ) \circ (\id \otimes \coev )\) this follows from the following commutative diagram:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-f9c4e2413eb5.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>This shows that also the second
+triangle identity is satisfied, finishing the proof.                                                                                 □</p>
+</div></div>
+<p class='noindent'>Thus being a duality datum is a property of the evaluation map \(\ev \): once condition (2) holds, the required
+coevaluation and triangle identities follow. We will use this criterion below to establish duality by
+constructing and analyzing an evaluation map.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1006r3'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/notation-for-duals/index.html" aria-label="Convention 11.1.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Convention 11.1.3.</span></a>  </span><span id='conv:Dual_Notation'></span> Let \(X\) be a dualizable object of \(C\). By condition (2) of <a class="source-reference" data-label="prop:Characterization_Dualizable_Objects" href="../../../entry/characterizations-of-dualizable-objects/index.html#prop:Characterization_Dualizable_Objects">Proposition 11.1.2</a>, its dual represents the
+functor \(\Hom _C(-\otimes X,\unit )\colon C\catop \to \An \). In particular, the dual is unique, and we denote it by \(X^{\vee }\). An object representing this functor
+need not be a dual when \(X\) is not known to be dualizable; see the discussion of weak duals in <span class="source-reference" data-label="subsec:Internal_Homs">Subsection 11.1.1</span>.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1007r4'></a>
+<a class="entry-heading-link" href="../../../entry/invertible-object/index.html" aria-label="Definition 11.1.4, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 11.1.4 </span></a>(Invertible object)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Invertible_Object'></span> An object \(X\) of \(C\) is called <span class='ntx-Italic-tlf-t1-x-x-109'>invertible </span>if there exists another object
+\(X^{-1}\) and an isomorphism \(X \otimes X^{-1} \cong \unit \). Equivalently, \(X\) is invertible if the functor \(X \otimes -\colon C \to C\) is an equivalence.
+</p><p class='noindent'>The full subanima \(\Pic (C) \subseteq C^{\simeq }\) spanned by the invertible objects is called the <span class='ntx-Italic-tlf-t1-x-x-109'>Picard anima </span>of \(C\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1008r5'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 11.1.5.</span>  </span><span id='lem:Invertible_Object_Is_Dualizable'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Every invertible object is dualizable.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-duality-phenomena-section-01-6" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-duality-phenomena-section-01-6">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Let \(X\) be an invertible object and let \(X^{-1}\) be an inverse with isomorphism \(\ev \colon X^{-1} \otimes X \iso \unit \). We claim that \(\ev \) exhibits
+\(X^{-1}\) as a dual to \(X\). Using <a class="source-reference" data-label="prop:Characterization_Dualizable_Objects" href="../../../entry/characterizations-of-dualizable-objects/index.html#prop:Characterization_Dualizable_Objects">Proposition 11.1.2</a> we must show that for all objects \(Z\) and \(W\) of \(C\) the composite \[ \Hom _{C}(W,Z \otimes X^{-1}) \xrightarrow {- \otimes X} \Hom _{C}(W \otimes X, Z \otimes X^{-1} \otimes X) \xrightarrow {\ev \circ -} \Hom _{C}(W \otimes X, Z) \] is an equivalence. But
+both maps are equivalences: the first because the functor \(- \otimes X\colon C \to C\) is an equivalence, and the second because
+\(\ev \) is an isomorphism.                                                                                                                             □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1009r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 11.1.6.</span>  </span><span id='cor:Unit_Is_Dualizable'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The unit object</span> \(\unit \in C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is dualizable.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-duality-phenomena-section-01-5" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-duality-phenomena-section-01-5">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> It is invertible, using \(\unit \otimes \unit \cong \unit \).                                                                                                            □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1010r7'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 11.1.7.</span>  </span><span id='lem:Symmetric_Monoidal_Functors_Preserve_Duals'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Symmetric  monoidal  functors  preserve  dualizable  objects  and  their  duals.
+Moreover, if</span> \(X,Y\in C\) <span class='ntx-Italic-tlf-t1-x-x-109'>are dualizable, then</span> \(X\otimes Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>is dualizable with dual</span> \(X^{\vee }\otimes Y^{\vee }\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+                                                                                   
+
+                                                                                   
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-duality-phenomena-section-01-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-duality-phenomena-section-01-4">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> A symmetric monoidal functor preserves evaluation and coevaluation maps and the triangle
+identities.  For  the  second  claim,  apply  this  observation  to  the  tensor-product  functor  \(C\times C\to C\),  which  is
+symmetric monoidal for the componentwise tensor product on \(C\times C\), and to the dualizable object \((X,Y)\).        □
+</p>
+</div></div>
+
+<h4 class='subsectionHead' id='internal-homs'><span class='titlemark'>11.1.1    </span> <a id='x1-200011.1.1'></a>Internal homs</h4>
+<p class='noindent' id='subsec_Internal_Homs'>The notion of duality is closely related to that of <span class='ntx-Italic-tlf-t1-x-x-109'>internal homs</span>. Internal homs provide a candidate \(D(X)\) for the
+dual of every object; dualizability is the additional condition that tensoring with this weak dual actually
+represents mapping out of \(X\). This perspective will allow us to prove that dualizable objects form a thick
+subcategory.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r8'></a>
+<a class="entry-heading-link" href="../../../entry/internal-hom-object/index.html" aria-label="Definition 11.1.8., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 11.1.8.</span></a>  </span><span id='def:Internal_Hom_Object'></span> Given two objects \(X,Z \in C\), an object \(\iHom (X,Z) \in C\) equipped with a map \(\ev \colon \iHom (X,Z) \otimes X \to Z\) is said to <span class='ntx-Italic-tlf-t1-x-x-109'>exhibit</span> \(\iHom (X,Z)\) <span class='ntx-Italic-tlf-t1-x-x-109'>as an
+internal hom from</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>to</span> \(Z\) if for every third object \(W\) the composite \[ \Hom _{C}(W,\iHom (X,Z)) \xrightarrow {- \otimes X} \Hom _{C}(W \otimes X, \iHom (X,Z) \otimes X) \xrightarrow {\ev \circ -} \Hom _{C}(W \otimes X, Z) \] is an equivalence.
+</p>
+</div>
+
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2002r9'></a>
+<a class="entry-heading-link" href="../../../entry/uniqueness-of-internal-homs/index.html" aria-label="Remark 11.1.9., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 11.1.9.</span></a>  </span><span id='rmk:Internal_Homs_Are_Unique'></span> Internal homs are unique if they exist. When they exist for every \(Z\), the assignment \(Z\mapsto \iHom (X,Z)\)
+defines a right adjoint to \(-\otimes X\colon C\to C\). A symmetric monoidal \(\infty \)-category admitting all internal homs is also called
+<span class='ntx-Italic-tlf-t1-x-x-109'>closed</span>.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2003r10'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 11.1.10.</span>  </span><span id='lem:Currying_Internal_Hom'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Assume that</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits internal homs. Then for every object</span> \(X \in C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the adjunction between</span> \(- \otimes X\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(\iHom (X,-)\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>gives a currying isomorphism: for</span> \(Y,Z \in C\) <span class='ntx-Italic-tlf-t1-x-x-109'>there is a natural equivalence </span>\begin {align*}  \iHom (X\otimes Y, Z) \simeq \iHom (X, \iHom (Y,Z)).  \end {align*}
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-duality-phenomena-section-01-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-duality-phenomena-section-01-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> This follows from the Yoneda lemma, and the observation that for every fourth object \(W \in C\) there are
+natural equivalences \begin {align*}  \Hom _{C}(W,\iHom (X\otimes Y, Z)) &amp;\simeq \Hom _{C}(W \otimes X \otimes Y, Z) \\ &amp;\simeq \Hom _{C}(W \otimes X, \iHom (Y,Z)) \\ &amp;\simeq \Hom _{C}(W,\iHom (X, \iHom (Y,Z))). \qedhere  \end {align*}
+                                                                                  □
+</p>
+</div></div>
+<p class='noindent'>We now provide a formulation of duality in terms of internal homs.
+                                                                                   
+                                                                                   
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2004r11'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 11.1.11.</span>  </span><span id='lem:Duality_Via_Internal_Hom'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>be objects and let</span> \(\ev \colon Y \otimes X \to \unit \) <span class='ntx-Italic-tlf-t1-x-x-109'>be a morphism in</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then the following conditions are
+equivalent:</span>
+   </p><dl class='enumerate'><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(1)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The morphism</span> \(\ev \) <span class='ntx-Italic-tlf-t1-x-x-109'>exhibits</span> \(Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>as a dual to</span> \(X\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(2)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For every object</span> \(Z\) <span class='ntx-Italic-tlf-t1-x-x-109'>of</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the morphism</span> \(\id _Z \otimes \ev \colon Z \otimes Y \otimes X \to Z\) <span class='ntx-Italic-tlf-t1-x-x-109'>exhibits</span> \(Z \otimes Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>as an internal hom</span> \(\iHom (X,Z)\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(3)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(X \otimes -\colon C \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a right adjoint</span> \(\iHom (X,-)\colon C \to C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, and for every object</span> \(Z\) <span class='ntx-Italic-tlf-t1-x-x-109'>of</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>the map </span>\[ Z \otimes Y \to \iHom (X,Z) \] <span class='ntx-Italic-tlf-t1-x-x-109'>induced by the morphism</span>
+   \(\id \otimes \ev \colon Z \otimes Y \otimes X \to Z\) <span class='ntx-Italic-tlf-t1-x-x-109'>is an isomorphism in</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-duality-phenomena-section-01-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-duality-phenomena-section-01-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The equivalence between (1) and (2) is a reformulation of <a class="source-reference" data-label="prop:Characterization_Dualizable_Objects" href="../../../entry/characterizations-of-dualizable-objects/index.html#prop:Characterization_Dualizable_Objects">Proposition 11.1.2</a>. The equivalence between (2)
+and (3) is clear.                                                                                                                                    □
+</p>
+</div></div>
+<p class='noindent'>There is often an a priori candidate for the dual of \(X\), sometimes called the <span class='ntx-Italic-tlf-t1-x-x-109'>weak dual</span>:
+</p>
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2008r12'></a>
+<a class="entry-heading-link" href="../../../entry/internal-duality-functor/index.html" aria-label="Definition 11.1.12., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 11.1.12.</span></a>  </span><span id='def:Internal_Duality_Functor'></span> Assume that \(C\) admits internal homs. We define the <span class='ntx-Italic-tlf-t1-x-x-109'>internal duality functor</span> \(D\colon C\catop \to C\) as
+\begin {align*}  D(-) := \iHom (-,\unit )\colon C\catop \to C.  \end {align*}
+</p>
+</div>
+<p class='noindent'>If \(X\) is dualizable, the evaluation map \(\ev \colon X^{\vee } \otimes X \to \unit \) induces an isomorphism \(X^{\vee } \iso \iHom (X,\unit ) = D(X)\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2009r13'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 11.1.13.</span>  </span><span id='cor:Characterization_Dualizable_Objects'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an object of</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>for which the internal hom functor</span> \(\iHom (X,-)\colon C \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>exists. Then</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>is dualizable
+if and only if for every</span> \(Z \in C\) <span class='ntx-Italic-tlf-t1-x-x-109'>the natural map</span> \(Z \otimes D(X) \to \iHom (X,Z)\) <span class='ntx-Italic-tlf-t1-x-x-109'>adjoint to the composite</span> \(Z \otimes D(X) \otimes X \xrightarrow {Z \otimes \ev } Z \otimes \unit \simeq Z\) <span class='ntx-Italic-tlf-t1-x-x-109'>is an equivalence.</span>
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2010r14'></a>
+<a class="entry-heading-link" href="../../../entry/strongly-dualizable-terminology/index.html" aria-label="Remark 11.1.14., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 11.1.14.</span></a>  </span><span id='rmk:Strongly_Dualizable_Terminology'></span> The objects called dualizable here are called <span class='ntx-Italic-tlf-t1-x-x-109'>strongly dualizable </span>in <span class='citation'>Lewis et al. (1986), Chapter III, Definition 1.1</span>. That reference
+also gives the following useful criterion: if \(C\) is closed, then \(X\) is dualizable precisely when the morphism
+\(\unit \to \iHom (X,X)\) adjoint to \(\id _X\) factors through the natural map \(X\otimes D(X)\to \iHom (X,X)\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2011r15'></a>
+<a class="entry-heading-link" href="../../../entry/stably-symmetric-monoidal-infinity-category/index.html" aria-label="Definition 11.1.15., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 11.1.15.</span></a>  </span><span id='def:Stably_Symmetric_Monoidal'></span> A <span class='ntx-Italic-tlf-t1-x-x-109'>stably symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category </span>is a symmetric monoidal \(\infty \)-category \(C\)
+which is stable and whose tensor product \(- \otimes - \colon C \times C \to C\) is exact in both variables.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2012r16'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 11.1.16.</span>  </span><span id='lem:Dualizable_Objects_Form_Thick_Subcategory'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a stably symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category which admits internal homs. Then
+the collection of dualizable objects forms a thick subcategory of</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, i.e. it is a stable subcategory
+closed under retracts.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-duality-phenomena-section-01-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-duality-phenomena-section-01-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="cor:Characterization_Dualizable_Objects" href="../../../entry/dualizability-via-internal-duality/index.html#cor:Characterization_Dualizable_Objects">Corollary 11.1.13</a>, an object \(X\) is dualizable if and only if the natural map \[ Z \otimes D(X) \to \iHom (X,Z) \] is an equivalence for every \(Z \in C\).
+Since both sides are exact functors in \(X\), it follows that the collection of objects \(X\) for which it is an
+equivalence forms a stable subcategory of \(C\). It is also closed under retracts since equivalences in \(C\) are
+closed under retracts.                                                                                                                          □
+</p>
+                                                                                   
+                                                                                   
+</div></div>
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../../thom-spectra-and-bordism-theory/coherence-for-one-point-compactification-online-only/index.html" aria-label="Previous section: Coherence for one-point compactification (online only)" title="Previous section: Coherence for one-point compactification (online only)"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../dualizability-and-compactness/index.html" aria-label="Next section: Dualizability and compactness" title="Next section: Dualizability and compactness"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html" aria-current="page"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/animae-as-spaces/index.html"><span class="context-entry-heading">Chapter 2</span><span class="context-entry-title">Animae as spaces</span></a></li><li><a href="../../../chapter/homology-and-cohomology/index.html"><span class="context-entry-heading">Chapter 3</span><span class="context-entry-title">Homology and cohomology</span></a></li><li><a href="../../../chapter/spectra-and-stable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 4</span><span class="context-entry-title">Spectra and stable ∞-categories</span></a></li><li><a href="../../../chapter/recognition-principle/index.html"><span class="context-entry-heading">Chapter 5</span><span class="context-entry-title">The recognition principle</span></a></li><li><a href="../../../chapter/homological-algebra/index.html"><span class="context-entry-heading">Chapter 6</span><span class="context-entry-title">Homological algebra</span></a></li><li><a href="../../../chapter/localization-and-completion/index.html"><span class="context-entry-heading">Chapter 7</span><span class="context-entry-title">Localization and completion</span></a></li><li><a href="../../../chapter/ring-spectra-and-modules/index.html"><span class="context-entry-heading">Chapter 8</span><span class="context-entry-title">Ring spectra and modules</span></a></li><li><a href="../../../chapter/complex-k-theory/index.html"><span class="context-entry-heading">Chapter 9</span><span class="context-entry-title">Complex K-theory</span></a></li><li><a href="../../../chapter/thom-spectra-and-bordism-theory/index.html"><span class="context-entry-heading">Chapter 10</span><span class="context-entry-title">Thom spectra and bordism theory</span></a></li><li><a href="../../../chapter/duality-phenomena/index.html" aria-current="page"><span class="context-entry-heading">Chapter 11</span><span class="context-entry-title">Duality phenomena</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 11.1</span><span class="context-entry-title">Symmetric monoidal duality</span></a></li><li><a href="../dualizability-and-compactness/index.html"><span class="context-entry-heading">Section 11.2</span><span class="context-entry-title">Dualizability and compactness</span></a></li><li><a href="../spanier-whitehead-and-atiyah-duality/index.html"><span class="context-entry-heading">Section 11.3</span><span class="context-entry-title">Spanier–Whitehead and Atiyah duality</span></a></li><li><a href="../poincar-duality/index.html"><span class="context-entry-heading">Section 11.4</span><span class="context-entry-title">Poincaré duality</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Dualizable_Object"><span class="context-entry-heading">Definition 11.1.1</span><span class="context-entry-title">Dualizable object</span></a></li><li><a href="#prop:Characterization_Dualizable_Objects"><span class="context-entry-heading">Proposition 11.1.2</span><span class="context-entry-title">proposition</span></a></li><li><a href="#conv:Dual_Notation"><span class="context-entry-heading">Convention 11.1.3</span><span class="context-entry-title">convention</span></a></li><li><a href="#def:Invertible_Object"><span class="context-entry-heading">Definition 11.1.4</span><span class="context-entry-title">Invertible object</span></a></li><li><a href="#lem:Invertible_Object_Is_Dualizable"><span class="context-entry-heading">Lemma 11.1.5</span><span class="context-entry-title">lemma</span></a></li><li><a href="#cor:Unit_Is_Dualizable"><span class="context-entry-heading">Corollary 11.1.6</span><span class="context-entry-title">corollary</span></a></li><li><a href="#lem:Symmetric_Monoidal_Functors_Preserve_Duals"><span class="context-entry-heading">Lemma 11.1.7</span><span class="context-entry-title">lemma</span></a></li><li><a href="#def:Internal_Hom_Object"><span class="context-entry-heading">Definition 11.1.8</span><span class="context-entry-title">definition</span></a></li><li><a href="#rmk:Internal_Homs_Are_Unique"><span class="context-entry-heading">Remark 11.1.9</span><span class="context-entry-title">remark</span></a></li><li><a href="#lem:Currying_Internal_Hom"><span class="context-entry-heading">Lemma 11.1.10</span><span class="context-entry-title">lemma</span></a></li><li><a href="#lem:Duality_Via_Internal_Hom"><span class="context-entry-heading">Lemma 11.1.11</span><span class="context-entry-title">lemma</span></a></li><li><a href="#def:Internal_Duality_Functor"><span class="context-entry-heading">Definition 11.1.12</span><span class="context-entry-title">definition</span></a></li><li><a href="#cor:Characterization_Dualizable_Objects"><span class="context-entry-heading">Corollary 11.1.13</span><span class="context-entry-title">corollary</span></a></li><li><a href="#rmk:Strongly_Dualizable_Terminology"><span class="context-entry-heading">Remark 11.1.14</span><span class="context-entry-title">remark</span></a></li><li><a href="#def:Stably_Symmetric_Monoidal"><span class="context-entry-heading">Definition 11.1.15</span><span class="context-entry-title">definition</span></a></li><li><a href="#lem:Dualizable_Objects_Form_Thick_Subcategory"><span class="context-entry-heading">Lemma 11.1.16</span><span class="context-entry-title">lemma</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

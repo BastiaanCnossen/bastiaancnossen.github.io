@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 10.2: Thom spectra | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/stable-homotopy-theory/index.html">Part I</a> · <a href="../../../chapter/thom-spectra-and-bordism-theory/index.html">Chapter 10</a> · Section 10.2</p>
+      <h1>Thom spectra</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Thom_Spectra'>The construction of the previous section is tied to point-set models, does not exhibit the coherence of
+one-point compactification with respect to direct sums, and treats each bordism spectrum separately. More
+importantly, it applies only to honest vector bundles. The normal bundle \(\nu \) of an embedding \(M \hookrightarrow \R ^{n+k}\) of a closed
+\(n\)-manifold is not an invariant of \(M\): enlarging the ambient space changes it by trivial summands. What is
+intrinsic is the <span class='ntx-Italic-tlf-t1-x-x-109'>stable normal bundle</span>, the virtual vector bundle \[ \nu - \ul {\R ^k} \quad = \quad \ul {\R ^n} - T_M \] of virtual rank \(0\), which is the class classified
+by a map \(M \to \bB O\). Closely related is the virtual bundle \(-T_M = \nu - \ul {\R ^{n+k}}\) of virtual rank \(-n\), which is the one occurring in Atiyah
+duality in <a class="source-reference" data-label="sec:Spanier_Whitehead_Atiyah_Duality" href="../../duality-phenomena/spanier-whitehead-and-atiyah-duality/index.html#sec:Spanier_Whitehead_Atiyah_Duality">Section 11.3</a>. Neither is an honest vector bundle, and neither has a Thom space in the sense of
+<a class="source-reference" data-label="def:Thom_Space" href="../../../entry/thom-space/index.html#def:Thom_Space">Definition 10.1.2</a>.
+</p><p class='noindent'>The remedy is to describe the Thom construction in a way which never refers to the total space of the
+bundle. Recall the picture from the introduction: a rank \(n\) vector bundle over \(X\) determines a family of \(n\)-spheres
+parametrized by \(X\), and the Thom space should be the colimit of that family. Formulated this way, the input is
+a functor into pointed animae, and once we stabilize it becomes a functor into invertible spectra, where
+inverses exist and allow for an extension to virtual bundles.
+</p>
+<h4 class='subsectionHead' id='thom-animae'><span class='titlemark'>10.2.1    </span> <a id='x1-200010.2.1'></a>Thom animae</h4>
+<p class='noindent'>We start by making precise the claim that Thom spaces are colimits of parametrized families of
+spheres.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r1'></a>
+<a class="entry-heading-link" href="../../../entry/spherical-fibration/index.html" aria-label="Definition 10.2.1, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 10.2.1 </span></a>(Spherical fibration)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Spherical_Fibration'></span> Let \(B\) be an anima and let \(n \geq 0\). A <span class='ntx-Italic-tlf-t1-x-x-109'>rank</span> \(n\) <span class='ntx-Italic-tlf-t1-x-x-109'>spherical fibration over</span> \(B\)
+is a functor \(\xi \colon B \to \An _*\) which lands in the full subcategory spanned by the \(n\)-sphere \(S^n\). A <span class='ntx-Italic-tlf-t1-x-x-109'>spherical fibration </span>is a
+rank \(n\) spherical fibration for some \(n\).
+</p>
+                                                                                   
+                                                                                   
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2002r2'></a>
+<a class="entry-heading-link" href="../../../entry/thom-anima/index.html" aria-label="Definition 10.2.2, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 10.2.2 </span></a>(Thom anima)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Thom_Anima'></span> We define the <span class='ntx-Italic-tlf-t1-x-x-109'>Thom anima </span>of a spherical fibration \(\xi \colon B \to \An _*\) as its colimit:
+\[ \Th (\xi ) \quad := \quad \colim (\xi \colon B \to \An _*). \]
+</p>
+</div>
+<p class='noindent'>Recall from <a class="source-reference" data-label="cor:Straightening_Unstraightening_Animae" href="../../../entry/straightening-unstraightening-for-animae/index.html#cor:Straightening_Unstraightening_Animae">Corollary 23.2.8</a> the straightening-unstraightening equivalence \(\An _{/B} \simeq \Fun (B,\An )\). Passing to pointed objects, this
+provides an equivalence \[ \Fun (B,\An _*) \simeq \Fun (B,\An )_* \simeq (\An _{/B})_*, \] so that a rank \(n\) spherical fibration over \(B\) is the same as a pair \((p,s)\) of a
+morphism \(p\colon A \to B\) of animae and a section \(s\colon B \to A\) of \(p\) such that each fiber \(A_b\) of \(p\) is isomorphic to the \(n\)-sphere
+\(S^n\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2003r3'></a>
+<a class="entry-heading-link" href="../../../entry/sphere-bundles-as-spherical-fibrations/index.html" aria-label="Example 10.2.3, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 10.2.3 </span></a>(Sphere bundle)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='ex:Sphere_Bundle_As_Spherical_Fibration'></span> Let \(X\) be a topological space and consider an \(n\)-dimensional sphere
+bundle \(Y \to X\) over \(X\), i.e. a fiber bundle whose generic fiber is \(S^n\) and whose structure group is \(\mathrm {Homeo}_*(S^n)\). Then the
+underlying map of animae \(\Pi _{\infty }(Y) \to \Pi _{\infty }(X)\) is a spherical fibration: by <a class="source-reference" data-label="prop:Localization_Functor_To_An_Preserves_Pullbacks_Along_Serre_Fibrations" href="../../../entry/pi-infinity-preserves-pullbacks-along-serre-fibrations/index.html#prop:Localization_Functor_To_An_Preserves_Pullbacks_Along_Serre_Fibrations">Proposition 2.3.19</a> and <a class="source-reference" data-label="cor:Localization_Functor_To_An_Preserves_Spheres" href="../../../entry/topological-spheres-become-homotopical-spheres/index.html#cor:Localization_Functor_To_An_Preserves_Spheres">Corollary 2.4.15</a> the fibers of this map are the spheres \(S^n\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2004r4'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/spherical-fibration-of-a-vector-bundle/index.html" aria-label="Example 10.2.4, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 10.2.4 </span></a>(Spherical fibration of vector bundle)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='ex:From_Thom_Space_To_Thom_Anima_Auxiliary'></span> Given a rank \(n\) vector bundle \(p\colon E \to X\), we may apply
+the previous example to the fiberwise one-point compactification \(S^E \to X\) from <a class="source-reference" data-label="cons:Fiberwise_One_Point_Compactification" href="../../../entry/fiberwise-one-point-compactification/index.html#cons:Fiberwise_One_Point_Compactification">Construction 10.1.1</a>. We denote the resulting
+spherical fibration by \[ \xi _E\colon \Pi _{\infty }(X) \to \An _*. \] Informally, \(\xi _E\) is the functor which sends a point \(x \in X\) to \(\Pi _{\infty }(S^{E_x})\), where \(S^{E_x}\) is the one-point
+compactification of the fiber \(E_x\) of \(p\) over \(x\).
+</p>
+</div>
+<p class='noindent'>We now compare the geometric Thom space with the homotopical Thom anima:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2005r5'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 10.2.5.</span>  </span><span id='prop:Thom_Space_As_Thom_Anima'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(p\colon E\to X\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a vector bundle over a paracompact Hausdorff space of the homotopy
+type of a cell complex. Then the underlying pointed anima of its Thom space is isomorphic to the
+Thom anima of</span> \(\xi _E\)<span class='ntx-Italic-tlf-t1-x-x-109'>: </span>\[ \Pi _{\infty }(\Th (E)) \cong \Th (\xi _E). \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-thom-spectra-and-bordism-theory-section-02-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-thom-spectra-and-bordism-theory-section-02-4">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We first identify the colimit of any pointed family with the cofiber of its section. We then
+compare this homotopy cofiber with the point-set quotient defining the classical Thom space.
+</p><p class='noindent'>Set \(B:=\Pi _{\infty }(X)\). Under the straightening-unstraightening equivalence \(\Fun (B,\An _*) \iso (\An _{/B})_*\), the spherical fibration \(\xi _E\) corresponds to
+the pointed object of \(\An _{/B}\) given by \[ \Pi _{\infty }(X) \xrightarrow {\Pi _{\infty }(s_{\infty })} \Pi _{\infty }(S^E) \longrightarrow \Pi _{\infty }(X). \] More generally, suppose that a functor \(\xi \colon B\to \An _*\) corresponds to a pointed
+object \(B\xrightarrow {s}A\to B\) of \(\An _{/B}\). By <a class="source-reference" data-label="prop:Limits_And_Colimits_Of_Categories" href="../../../entry/limits-and-colimits-of-infinity-categories/index.html#prop:Limits_And_Colimits_Of_Categories">Proposition 23.5.2</a>, the colimit of the underlying functor \(B\to \An \) is \(A\), while the colimit of the constant basepoint
+diagram is \(B\). Since colimits in pointed objects are obtained by forming a pushout over the basepoint,
+it follows that \[ \colim _B\xi \cong \cofib (s\colon B\to A). \] Applied to \(\xi _E\), this gives an isomorphism \[ \Th (\xi _E) \cong \cofib \big ( \Pi _{\infty }(X) \xrightarrow {\Pi _{\infty }(s_{\infty })} \Pi _{\infty }(S^E) \big ). \]
+</p><p class='noindent'>It remains to identify this cofiber with the classical Thom space. Choose a fiberwise metric on \(E\),
+                                                                                   
+                                                                                   
+which exists by paracompactness. It identifies the fiberwise one-point compactification \(S^E\) with the unit
+sphere bundle of \(E\oplus \ul {\R }\). Under this identification, the section \(s_{\infty }\) is the section given by the north pole in each
+fiber. The pair \((S^n,\infty )\) admits an NDR structure (cf. <a class="source-reference" data-label="cor:Quotient_Of_NDR_Pair_Is_Cofiber" href="../../../entry/quotients-of-ndr-pairs-as-cofibers/index.html#cor:Quotient_Of_NDR_Pair_Is_Cofiber">Corollary 2.3.11</a>), which may be chosen \(O(n)\)-equivariantly and therefore
+induces an NDR structure on \((S^E,s_{\infty }(X))\). Moreover, \(S^E\) has the homotopy type of a cell complex, since it is the
+total space of a fibration over a space of the homotopy type of a cell complex with fiber \(S^n\); see <span class='citation'>Milnor (1959), Theorem 3</span>. Thus \(X\)
+and \(S^E\) satisfy the hypotheses of <a class="source-reference" data-label="cor:Quotient_Of_NDR_Pair_Is_Cofiber" href="../../../entry/quotients-of-ndr-pairs-as-cofibers/index.html#cor:Quotient_Of_NDR_Pair_Is_Cofiber">Corollary 2.3.11</a>, giving the isomorphism \[ \cofib \big ( \Pi _{\infty }(X) \xrightarrow {\Pi _{\infty }(s_{\infty })} \Pi _{\infty }(S^E) \big ) \simeq \Pi _{\infty }\big (S^E/s_{\infty }(X)\big ) = \Pi _{\infty }(\Th (E)), \] as desired.                                                 □
+</p>
+</div></div>
+
+<h4 class='subsectionHead' id='thom-spectra1'><span class='titlemark'>10.2.2    </span> <a id='x1-300010.2.2'></a>Thom spectra</h4>
+<p class='noindent' id='subsec_Thom_Spectra'>The homotopical perspective of Thom spaces directly generalizes to the stable setting.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3001r6'></a>
+<a class="entry-heading-link" href="../../../entry/stable-spherical-fibration/index.html" aria-label="Definition 10.2.6, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 10.2.6 </span></a>(Stable spherical fibration)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Stable_Spherical_Fibration'></span> Let \(\Pic (\S ) \subseteq \Sp ^{\simeq }\) denote the full subcategory spanned by shifts \(\S [n]\) of
+the sphere spectrum. For an anima \(A\), we define a <span class='ntx-Italic-tlf-t1-x-x-109'>stable spherical fibration on</span> \(A\) to be a functor \(\xi \colon A \to \Sp \) which
+lands in \(\Pic (\S )\). For an integer \(n \in \Z \) we say that \(\xi \) has <span class='ntx-Italic-tlf-t1-x-x-109'>rank</span> \(n\) if it in fact lands in the full subanima of \(\Pic (\S )\) spanned by
+\(\S [n]\).
+</p>
+</div>
+<p class='noindent'>One can show that objects of \(\Pic (\S )\) are precisely the <span class='ntx-Italic-tlf-t1-x-x-109'>invertible spectra</span>: those spectra \(X\) for which there is a
+spectrum \(X^{-1}\) and an isomorphism \(X \otimes X^{-1} \cong \S \); see for example <span class='citation'>[Hovey et al. (1997)]</span>. In particular, \(\Pic (\S )\) is precisely the Picard anima of \(\Sp \) in the
+sense of <a class="source-reference" data-label="def:Invertible_Object" href="../../../entry/invertible-object/index.html#def:Invertible_Object">Definition 11.1.4</a> below.
+</p><p class='noindent'>If \(\xi \colon A \to \An _*\) is a rank \(n\) spherical fibration, then \(\Sigma ^{\infty }\xi \) is a rank \(n\) stable spherical fibration. In particular, a rank \(n\) vector bundle \(E\to X\)
+determines the stable spherical fibration \(\Sigma ^{\infty }\xi _E\) on \(\Pi _{\infty }(X)\).
+</p>
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3002r7'></a>
+<a class="entry-heading-link" href="../../../entry/thom-spectrum/index.html" aria-label="Definition 10.2.7, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 10.2.7 </span></a>(Thom spectrum)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Thom_Spectrum'></span> Given a stable spherical fibration \(\xi \colon A \to \Sp \), we define its <span class='ntx-Italic-tlf-t1-x-x-109'>Thom spectrum</span>
+as its colimit: \[ \th (\xi ) \quad := \quad \colim (\xi \colon A \to \Sp ). \]
+</p>
+</div>
+<p class='noindent'>For a vector bundle \(E \to X\), we write \[ \th (E) := \Sigma ^\infty \Th (\xi _E) \] for its Thom spectrum. Since the suspension spectrum functor \(\Sigma ^{\infty }(-)\colon \An _* \to \Sp \) preserves
+colimits, this agrees with \(\th (\Sigma ^{\infty }\xi _E)\), and by <a class="source-reference" data-label="prop:Thom_Space_As_Thom_Anima" href="../../../entry/thom-space-as-thom-anima/index.html#prop:Thom_Space_As_Thom_Anima">Proposition 10.2.5</a> it is the suspension spectrum of the underlying pointed anima of
+the classical Thom space. Throughout, \(\Th \) denotes a Thom space or Thom anima and \(\th \) a Thom
+spectrum.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3003r8'></a>
+<a class="entry-heading-link" href="../../../entry/multiplicative-structures-on-thom-spectra/index.html" aria-label="Construction 10.2.8, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 10.2.8 </span></a>(Multiplicative structures on Thom spectra)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cons:Multiplicative_Structures_Thom_Spectra'></span>  Let  \(A\)  be  a  small  commutative
+monoid in animae, regarded as a symmetric monoidal \(\infty \)-category, and let \[ \xi \colon A\longrightarrow \Pic (\S )\subseteq \Sp \] be a symmetric monoidal
+functor.  We  equip  the  Thom  spectrum  \(\th (\xi )\)  with  a  canonical  commutative  ring  spectrum  structure,
+following <span class='citation'>Antolín-Camarena and Barthel (2019)</span>.
+</p><p class='noindent'>By <a class="source-reference" data-label="cor:Day_Convolution_Small_Source" href="../../../entry/day-convolution-small-source/index.html#cor:Day_Convolution_Small_Source">Corollary 16.2.8</a>, the functor category \(\Fun (A,\Sp )\) admits the Day convolution symmetric monoidal structure. The universal
+property of Day convolution from <a class="source-reference" data-label="lem:Commutative_Algebras_In_Day" href="../../../entry/commutative-algebras-in-day/index.html#lem:Commutative_Algebras_In_Day">Lemma 16.1.4</a> identifies the underlying lax symmetric monoidal functor of \(\xi \) with
+a commutative algebra in \(\Fun (A,\Sp )\). The colimit functor \[ \colim _A\colon \Fun (A,\Sp )\longrightarrow \Sp \] is pointwise left Kan extension along the unique
+symmetric monoidal functor \(A\to *\), so it is symmetric monoidal by <a class="source-reference" data-label="lem:Left_Kan_Extension_Day_Symmetric_Monoidal" href="../../../entry/left-kan-extension-day-symmetric-monoidal/index.html#lem:Left_Kan_Extension_Day_Symmetric_Monoidal">Lemma 16.2.11</a>. Here \(\Fun (*,\Sp )\) is identified with \(\Sp \) equipped with
+its usual tensor product. It therefore carries \(\xi \) to a commutative algebra in spectra whose underlying
+spectrum is \[ \colim _A\xi =\th (\xi ). \]
+</p>
+</div>
+
+<div class='newtheorem'>
+                                                                                   
+                                                                                   
+<p class='noindent'><span class='head'>
+<a id='x1-3004r9'></a>
+<a class="entry-heading-link" href="../../../entry/operadic-multiplicative-thom-spectra/index.html" aria-label="Remark 10.2.9., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 10.2.9.</span></a>  </span><span id='rmk:En_Multiplicative_Thom_Spectra'></span> There is an analogous multiplicative Thom-spectrum construction with \(\Comm \) replaced
+by another \(\infty \)-operad, once the corresponding operadic Day convolution has been developed. We do
+not need this generalization here. For the case of the little-cubes operads \(\Ee _n\), see <span class='citation'>Antolín-Camarena and Barthel (2019)</span>.
+</p>
+</div>
+<p class='noindent'>The symmetric monoidal stable spherical fibrations used below arise from the stable J-homomorphism. We
+apply the construction to bordism spectra in <a class="source-reference" data-label="cons:Multiplicative_Bordism_Spectra" href="../../../entry/multiplicative-structures-on-bordism-spectra/index.html#cons:Multiplicative_Bordism_Spectra">Construction 10.2.25</a>.
+</p>
+<h4 class='subsectionHead' id='the-jhomomorphism'><span class='titlemark'>10.2.3    </span> <a id='x1-400010.2.3'></a>The J-homomorphism</h4>
+<p class='noindent' id='subsec_J_Homomorphism'>As previously indicated, passing to spectra allows us to extend the definition of Thom spectra to virtual
+vector bundles. The idea is simple: the assignment \(E\mapsto \Sigma ^{\infty }\xi _E\) is symmetric monoidal and lands in invertible
+spectra, so it should extend over group completion. The subtlety is coherence: the familiar
+homeomorphisms \(S^{V\oplus W}\cong S^V\wedge S^W\) must assemble into a symmetric monoidal functor from vector spaces to pointed
+animae.
+</p><p class='noindent'>For a topological space \(X\), let \(\Vect _{\R }^{\disc }(X)\) denote the 1-category of finite-rank real vector bundles over \(X\) and morphisms of
+vector bundles. By <a class="source-reference" data-label="cor:Real_Vector_Bundles_Moduli_Anima" href="../../../entry/real-vector-bundles-moduli-anima/index.html#cor:Real_Vector_Bundles_Moduli_Anima">Corollary 19.7.10</a>, direct sum and pullback give a simplicial diagram \[ [q]\longmapsto \Vect _{\R }^{\disc }(X\times \abs {\Delta ^q})^{\simeq } \qin \CMon (\An ). \]
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4001r10'></a>
+<a class="entry-heading-link" href="../../../entry/moduli-anima-of-real-vector-bundles/index.html" aria-label="Definition 10.2.10., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 10.2.10.</span></a>  </span><span id='def:Real_Vector_Bundles_Moduli_Anima'></span> We define the <span class='ntx-Italic-tlf-t1-x-x-109'>moduli anima of real vector bundles over</span> \(X\) by \[ \Vect _{\R }(X)^{\simeq } := \colim _{[q]\in \simp \catop } \Vect _{\R }^{\disc }(X\times \abs {\Delta ^q})^{\simeq } \qin \CMon (\An ). \] This colimit is
+computed on underlying animae and is functorial in \(X\), giving a functor \(\Vect _{\R }(-)^{\simeq }\colon \Top \catop \to \CMon (\An )\). When \(X=\pt \), we refer to \(\Vect _{\R }(\pt )^{\simeq }\) as the
+<span class='ntx-Italic-tlf-t1-x-x-109'>moduli anima of finite-dimensional real vector spaces</span>.
+</p>
+                                                                                   
+                                                                                   
+</div>
+<p class='noindent'>The following proposition supplies all the coherence needed below. Its proof occupies <a class="source-reference" data-label="sec:Coherence_One_Point_Compactification" href="../coherence-for-one-point-compactification-online-only/index.html#sec:Coherence_One_Point_Compactification">Section 10.5</a>.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4002r11'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 10.2.11 </span>(One-point compactification)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:One_Point_Compactification_Symmetric_Monoidal'>   </span><span class='ntx-Italic-tlf-t1-x-x-109'>For   every   topological   space</span>   \(X\)<span class='ntx-Italic-tlf-t1-x-x-109'>,   fiberwise
+one-point compactification defines a symmetric monoidal functor </span>\[ S_X^{(-)}\colon \Vect _{\R }(X)^{\simeq } \longrightarrow (\An _{/\Pi _{\infty }(X)})_* \simeq \Fun (\Pi _{\infty }(X),\An _*). \] <span class='ntx-Italic-tlf-t1-x-x-109'>These functors are the components
+of a natural transformation </span>\[ S^{(-)}\colon \Vect _{\R }(-)^{\simeq } \Longrightarrow (\An _{/\Pi _{\infty }(-)})_* \] <span class='ntx-Italic-tlf-t1-x-x-109'>between functors</span> \(\Top \catop \to \CMon (\Cat _{\infty })\)<span class='ntx-Italic-tlf-t1-x-x-109'>, where the source is regarded as taking values in
+symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-groupoids. For</span> \(X=\pt \)<span class='ntx-Italic-tlf-t1-x-x-109'>, there is an isomorphism </span>\[ \Vect _{\R }(\pt )^{\simeq }\cong \bigsqcup _{n\geq 0}\bB O(n) \] <span class='ntx-Italic-tlf-t1-x-x-109'>of commutative monoids, where
+addition is induced by the block-sum homomorphisms</span> \(O(k)\times O(l)\to O(k+l)\)<span class='ntx-Italic-tlf-t1-x-x-109'>. The restriction of</span> \(S_{\pt }^{(-)}\) <span class='ntx-Italic-tlf-t1-x-x-109'>to the rank</span> \(n\) <span class='ntx-Italic-tlf-t1-x-x-109'>component is
+classified by the standard pointed action of</span> \(O(n)\) <span class='ntx-Italic-tlf-t1-x-x-109'>on</span> \(S^{\R ^n}\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+<p class='noindent'> We also write \(S^{(-)}\) for the component \(S_{\pt }^{(-)}\) when the base is a point.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4003r12'></a>
+<a class="entry-heading-link" href="../../../entry/stable-classifying-anima-for-real-vector-bundles/index.html" aria-label="Definition 10.2.12., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 10.2.12.</span></a>  </span><span id='def:BOP'></span> Write \(O:=\colim _n O(n)\) for the stable orthogonal group and \(\bB O\) for its classifying anima. We define \[ \BOP := \big (\Vect _{\R }(\pt )^{\simeq }\big )^{\grp } \qin \CGrp (\An ) \]
+to be the group completion of the commutative monoid of finite-dimensional real vector spaces. The
+telescope calculation of <a class="source-reference" data-label="cor:Group_Completion_Of_Vect" href="../../../entry/group-completion-of-the-vector-bundle-monoid/index.html#cor:Group_Completion_Of_Vect">Corollary 9.4.3</a>, with real vector spaces in place of complex ones, identifies its underlying
+anima as \[ \BOP \simeq \Z \times \bB O. \] The only additional point in applying <a class="source-reference" data-label="thm:Group_Completion_Theorem" href="../../../entry/telescope-group-completion-theorem/index.html#thm:Group_Completion_Theorem">Theorem 5.5.2</a> is that \(\pi _1(\bB O) \cong \pi _0(O) \cong C_2\) is abelian. The virtual-rank-zero component
+has the presentation \[ \bB O\cong \colim _n\bB O(n), \] where the transition maps add a trivial line. Under this presentation, the map
+from the \(n\)-th stage to the virtual-rank-zero component sends \(V\) to \(V-\R ^n\).
+</p>
+</div>
+
+<div class='newtheorem'>
+                                                                                   
+                                                                                   
+<p class='noindent'><span class='head'>
+<a id='x1-4004r13'></a>
+<a class="entry-heading-link" href="../../../entry/stable-j-homomorphism/index.html" aria-label="Construction 10.2.13, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 10.2.13 </span></a>(Stable J-homomorphism)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cons:J_Homomorphism'></span> Applying reduced suspension spectra to <a class="source-reference" data-label="prop:One_Point_Compactification_Symmetric_Monoidal" href="../../../entry/symmetric-monoidality-of-one-point-compactification/index.html#prop:One_Point_Compactification_Symmetric_Monoidal">Proposition 10.2.11</a> gives a
+symmetric monoidal functor \[ \Vect _{\R }(\pt )^{\simeq } \xrightarrow {\,S^{(-)}\,} \An _* \xrightarrow {\Sigma ^\infty } \Sp . \] Its image lies in \(\Pic (\S )\), since \(\Sigma ^\infty S^V\cong \S [\dim (V)]\) is invertible. Since tensor product of spectra
+turns \(\Pic (\S )\) into a commutative group in animae, the resulting functor to \(\Pic (\S )\) extends uniquely over group
+completion, giving a symmetric monoidal functor \[ J\colon \BOP \longrightarrow \Pic (\S ). \] We call \(J\) the <span class='ntx-Italic-tlf-t1-x-x-109'>stable J-homomorphism</span>. We use the
+same notation for its restriction to any component of \(\BOP \), in particular for \[ J\colon \bB O \simeq \{0\}\times \bB O \longrightarrow \Pic (\S ). \]
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4005r14'></a>
+<a class="entry-heading-link" href="../../../entry/relation-to-the-classical-j-homomorphism/index.html" aria-label="Remark 10.2.14, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 10.2.14 </span></a>(Relation to the classical J-homomorphism)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='rmk:Classical_J_Homomorphism'></span>  The  connected  component  of  \(\S \)  in  \(\Pic (\S )\)
+is  equivalent  to  \(\bB \GL _1(\S )\),  where  \(\GL _1(\S ) := \Aut _{\Sp }(\S )\)  is  the  automorphism  group  of  the  sphere  spectrum.  The  restriction  of
+\(J\) to  the  virtual-rank-zero  component  lands  in  this  connected  component.  Passing  to  loops  gives
+a  group  homomorphism  \(O\to \GL _1(\S )\)  in  \(\An \),  whose  effect  on  positive  homotopy  groups  is  the  classical  stable
+J-homomorphism \(\pi _n(O)\to \pi _n(\S )\). We refer to <span class='citation'>Ravenel (1986), Chapter 1</span> for a classical discussion of this map.
+</p>
+</div>
+<p class='noindent'>The complex analogue is the composite \(\BUP \to \BOP \xrightarrow {J}\Pic (\S )\) induced by forgetting the complex structure.
+</p><p class='noindent'>The point of constructing \(J\) on the full group completion is that it assigns stable spherical fibrations, and
+hence Thom spectra, to virtual vector bundles of arbitrary rank.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4006r15'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/virtual-vector-bundle/index.html" aria-label="Definition 10.2.15, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 10.2.15 </span></a>(Virtual vector bundle)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Virtual_Vector_Bundle'></span> Let \(A\) be an anima. A <span class='ntx-Italic-tlf-t1-x-x-109'>virtual vector bundle </span>on \(A\) is a map
+of animae \[ V\colon A \longrightarrow \BOP . \] Its <span class='ntx-Italic-tlf-t1-x-x-109'>rank  </span>is the composite \(\rk (V)\colon A \to \Z \) with the projection to \(\Z \), and we say that \(V\) has rank \(d \in \Z \) if this
+composite is constant with value \(d\). A virtual vector bundle on a topological space \(X\) means one on \(\Pi _{\infty }(X)\).
+</p>
+</div>
+<p class='noindent'>Since \(\BOP \) is a commutative group in animae, so is the anima \(\Hom _{\An }(A,\BOP )\) of virtual vector bundles on \(A\). We write \(V + W\) for the
+sum and \(-V\) for the inverse; ranks add, and \(\rk (-V) = -\rk (V)\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4007r16'></a>
+<a class="entry-heading-link" href="../../../entry/thom-spectrum-of-a-virtual-vector-bundle/index.html" aria-label="Construction 10.2.16, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 10.2.16 </span></a>(Thom spectrum of a virtual vector bundle)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cons:Thom_Spectrum_Virtual_Bundle'></span> Let \(V\) be a virtual vector bundle
+on an anima \(A\). Composing with the J-homomorphism gives a stable spherical fibration \[ \xi _V \quad := \quad J \circ V\colon A \longrightarrow \Pic (\S ). \] If \(V\) has rank \(d\),
+then so does \(\xi _V\), since \(J\) carries the class of \(\R \) to \(\S [1]\). We define the <span class='ntx-Italic-tlf-t1-x-x-109'>Thom spectrum </span>of \(V\) as \[ \th (V) \quad := \quad \th (\xi _V) \quad = \quad \colim \big (J \circ V\colon A \to \Sp \big ). \]
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4008r17'></a>
+<a class="entry-heading-link" href="../../../entry/additivity-of-thom-spectra/index.html" aria-label="Remark 10.2.17., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 10.2.17.</span></a>  </span><span id='rmk:Thom_Spectrum_Virtual_Additivity'></span> As \(J\) is a homomorphism of commutative groups in animae, the assignment \(V \mapsto \xi _V\) carries
+sums to pointwise tensor products and inverses to pointwise inverses: \[ \xi _{V+W} \cong \xi _V \otimes \xi _W \qquad \text {and}\qquad \xi _{-V} \cong \xi _V^{-1}. \] The Thom spectrum itself is
+of course not additive: \(\th (V+W)\) is a colimit over \(A\), not a tensor product of colimits.
+</p>
+</div>
+<p class='noindent'>We next relate this construction to honest vector bundles. A pointed action of a topological group \(G\) on a
+topological space \(Y\), together with a principal \(G\)-bundle \(P\to X\), gives an associated pointed bundle \(P\times _GY\to X\). Passing to
+fundamental animae and applying pointed straightening produces a functor \(\Pi _{\infty }(X)\to \An _*\). For a universal principal
+bundle, we refer to the resulting functor \(\bB G\to \An _*\) as the functor classified by the pointed \(G\)-action on
+\(Y\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4009r18'></a>
+<a class="entry-heading-link" href="../../../entry/unstable-one-point-compactification-map/index.html" aria-label="Construction 10.2.18, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 10.2.18 </span></a>(One-point compactification of vector spaces)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cons:One_Point_Compactification_Vector_Spaces'></span> By <a class="source-reference" data-label="prop:One_Point_Compactification_Symmetric_Monoidal" href="../../../entry/symmetric-monoidality-of-one-point-compactification/index.html#prop:One_Point_Compactification_Symmetric_Monoidal">Proposition 10.2.11</a>, the rank \(n\) component of
+\(\Vect _{\R }(\pt )^{\simeq }\) is isomorphic to \(\bB O(n)\). We denote the restriction of one-point compactification to this component by \[ J_n^{\mathrm {un}}\colon \bB O(n) \longrightarrow \An _*. \] It
+is the functor classified by the standard pointed action of \(O(n)\) on \(S^{\R ^n}\). Consequently, the restriction of \(J\) along
+the rank \(n\) component \(\bB O(n)\to \BOP \) is \(\Sigma ^\infty J_n^{\mathrm {un}}\). Its restriction along the stable map \[ \bB O(n)\longrightarrow \{0\}\times \bB O\subseteq \BOP , \qquad V\longmapsto V-\R ^n, \] is \(\Sigma ^\infty J_n^{\mathrm {un}}[-n]\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4010r19'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 10.2.19.</span>  </span><span id='lem:Spherical_Fibration_Of_Classified_Bundle'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a paracompact Hausdorff space and let</span> \(f\colon X \to \Gr _n(\R ^{\infty })\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a continuous map. Let</span> \(p\colon E \to X\) <span class='ntx-Italic-tlf-t1-x-x-109'>be
+the rank</span> \(n\) <span class='ntx-Italic-tlf-t1-x-x-109'>vector bundle classified by</span> \(f\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then the map</span> \(\xi _E\colon \Pi _{\infty }(X) \to \An _*\) <span class='ntx-Italic-tlf-t1-x-x-109'>is given by the composite </span>\[ \Pi _{\infty }(X) \xrightarrow {\Pi _{\infty }(f)} \Pi _{\infty }(\Gr _n(\R ^{\infty })) \iso \bB O(n) \xrightarrow {J_n^{\mathrm {un}}} \An _*, \] <span class='ntx-Italic-tlf-t1-x-x-109'>where the middle
+isomorphism is the one from </span><a class="source-reference" data-label="prop:Classifying_Spaces_Via_Principal_Bundles" href="../../../entry/classifying-animae-via-principal-bundles/index.html#prop:Classifying_Spaces_Via_Principal_Bundles">Proposition 9.2.11</a><span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-thom-spectra-and-bordism-theory-section-02-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-thom-spectra-and-bordism-theory-section-02-3">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By definition, \(p\colon E \to X\) is the pullback of the universal bundle \(p_{\univ }\colon E_{\univ } \to \Gr _n(\R ^{\infty })\). The induced square of sphere bundles
+is carried to a pullback of animae by <a class="source-reference" data-label="prop:Localization_Functor_To_An_Preserves_Pullbacks_Along_Serre_Fibrations" href="../../../entry/pi-infinity-preserves-pullbacks-along-serre-fibrations/index.html#prop:Localization_Functor_To_An_Preserves_Pullbacks_Along_Serre_Fibrations">Proposition 2.3.19</a>. Under straightening-unstraightening, pullback corresponds to
+precomposition, so it suffices to prove the claim for \(p_{\univ }\). The Stiefel manifold \(V_n(\R ^\infty )\) of orthonormal \(n\)-frames
+is contractible, and its projection to \(\Gr _n(\R ^\infty )\) is a principal \(O(n)\)-bundle. It therefore identifies \(\Pi _{\infty }(\Gr _n(\R ^\infty ))\) with \(\bB O(n)\) by <a class="source-reference" data-label="prop:Classifying_Spaces_Via_Principal_Bundles" href="../../../entry/classifying-animae-via-principal-bundles/index.html#prop:Classifying_Spaces_Via_Principal_Bundles">Proposition 9.2.11</a>. Under
+this identification, the fiberwise one-point compactification of the universal bundle is the associated
+pointed sphere bundle \[ V_n(\R ^\infty ) \times _{O(n)} S^n \longrightarrow \Gr _n(\R ^\infty ). \] Its straightening is precisely \(J_n^{\mathrm {un}}\).                                                                        □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4011r20'></a>
+<a class="entry-heading-link" href="../../../entry/class-of-a-vector-bundle/index.html" aria-label="Example 10.2.20, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 10.2.20 </span></a>(The class of a vector bundle)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='ex:Class_Of_A_Vector_Bundle'></span> Let \(X\) be a paracompact Hausdorff space and let \(E \to X\)
+be a rank \(n\) vector bundle, classified by a map \(f\colon X \to \Gr _n(\R ^{\infty })\). Combining the identification \(\Pi _{\infty }(\Gr _n(\R ^{\infty })) \iso \bB O(n)\) of <a class="source-reference" data-label="prop:Classifying_Spaces_Via_Principal_Bundles" href="../../../entry/classifying-animae-via-principal-bundles/index.html#prop:Classifying_Spaces_Via_Principal_Bundles">Proposition 9.2.11</a> with the preceding
+construction, we obtain a virtual vector bundle \[ [E]\colon \Pi _{\infty }(X) \xrightarrow {\Pi _{\infty }(f)} \bB O(n) \subseteq \Vect _{\R }(\pt )^{\simeq } \longrightarrow \BOP \] of rank \(n\). For the trivial bundle \(\ul {\R ^N}\) this is the constant
+map with value \(\R ^N\).
+</p><p class='noindent'>This construction is compatible with direct sums. Indeed, under the identifications \(\Pi _{\infty }(\Gr _n(\R ^{\infty }))\cong \bB O(n)\), the Whitney-sum
+map corresponds to the map induced by the block-sum homomorphism \(O(n)\times O(m)\to O(n+m)\). To see this, observe that the
+orthonormal frame bundle of \(E\oplus E'\) is obtained from the product over \(X\) of the orthonormal frame bundles
+of \(E\) and \(E'\) by extension of structure group along this homomorphism. Since the addition on \(\Vect _{\R }(\pt )^{\simeq }\) is induced
+by block sum, it follows that \[ [E\oplus E']\cong [E]+[E']. \]
+</p>
+</div>
+<p class='noindent'>Finally, we record the compatibility with the construction for honest vector bundles, and the interaction
+between adding trivial summands and shifts; we will use these properties in our proof of Atiyah duality in
+<a class="source-reference" data-label="sec:Spanier_Whitehead_Atiyah_Duality" href="../../duality-phenomena/spanier-whitehead-and-atiyah-duality/index.html#sec:Spanier_Whitehead_Atiyah_Duality">Section 11.3</a>.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4012r21'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 10.2.21.</span>  </span><span id='lem:Thom_Spectrum_Of_Virtual_Bundle'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a paracompact Hausdorff space of the homotopy type of a cell complex
+and let</span> \(E \to X\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a rank</span> \(n\) <span class='ntx-Italic-tlf-t1-x-x-109'>vector bundle. Then there is an isomorphism</span> \(\xi _{[E]} \cong \Sigma ^{\infty }(\xi _E)\) <span class='ntx-Italic-tlf-t1-x-x-109'>of stable spherical fibrations, and
+hence an isomorphism</span> \(\th ([E]) \cong \th (E)\)<span class='ntx-Italic-tlf-t1-x-x-109'>. More generally, for every</span> \(N \geq 0\) <span class='ntx-Italic-tlf-t1-x-x-109'>we have</span> \(\xi _{[E]-[\ul {\R ^N}]} \cong \Sigma ^{\infty }(\xi _E)[-N]\) <span class='ntx-Italic-tlf-t1-x-x-109'>and therefore </span>\[ \th \big ([E]-[\ul {\R ^N}]\big ) \quad \cong \quad \th (E)[-N] \quad \cong \quad \Sigma ^{\infty -N}\Th (E). \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-thom-spectra-and-bordism-theory-section-02-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-thom-spectra-and-bordism-theory-section-02-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="cons:One_Point_Compactification_Vector_Spaces" href="../../../entry/unstable-one-point-compactification-map/index.html#cons:One_Point_Compactification_Vector_Spaces">Construction 10.2.18</a>, the restriction of \(J\) to the rank \(n\) component is \(\Sigma ^{\infty }J_n^{\mathrm {un}}\). The first isomorphism is therefore precisely
+<a class="source-reference" data-label="lem:Spherical_Fibration_Of_Classified_Bundle" href="../../../entry/spherical-fibration-of-a-classified-bundle/index.html#lem:Spherical_Fibration_Of_Classified_Bundle">Lemma 10.2.19</a>, and passing to colimits gives \(\th ([E]) \cong \Sigma ^{\infty }\Th (\xi _E) = \th (E)\), since \(\Sigma ^{\infty }\) preserves colimits.
+</p><p class='noindent'>The virtual vector bundle \([\ul {\R ^N}]\) is constant with value \(\R ^N\), so \(\xi _{[\ul {\R ^N}]}\) is constant with value \(\Sigma ^{\infty }S^{\R ^N} \cong \S [N]\). By <a class="source-reference" data-label="rmk:Thom_Spectrum_Virtual_Additivity" href="../../../entry/additivity-of-thom-spectra/index.html#rmk:Thom_Spectrum_Virtual_Additivity">Remark 10.2.17</a> we thus obtain \[ \xi _{[E]-[\ul {\R ^N}]} \cong \Sigma ^{\infty }(\xi _E) \otimes \S [-N] \cong \Sigma ^{\infty }(\xi _E)[-N], \]
+and the remaining claims follow because shifts commute with colimits.                                           □
+</p>
+</div></div>
+
+<h4 class='subsectionHead' id='bordism-spectra'><span class='titlemark'>10.2.4    </span> <a id='x1-500010.2.4'></a>Bordism spectra</h4>
+<p class='noindent' id='subsec_Bordism_Spectra'>We now apply the Thom-spectrum construction to bordism spectra. We start with \(\MO \), which comes from the
+virtual-rank-zero component of \(\BOP \), and relate it to the prespectrum \(\MO ^{\pre }\) constructed in <a class="source-reference" data-label="sec:Thom_Space" href="../thom-spaces-and-the-collapse-construction/index.html#sec:Thom_Space">Section 10.1</a>.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5001r22'></a>
+<a class="entry-heading-link" href="../../../entry/unoriented-bordism-spectrum/index.html" aria-label="Definition 10.2.22, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 10.2.22 </span></a>(Unoriented bordism spectrum)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Unoriented_Bordism_Spectrum'></span> We define the <span class='ntx-Italic-tlf-t1-x-x-109'>unoriented bordism spectrum</span> \(\MO \)
+as the Thom spectrum of the restriction of \(J\) to the virtual-rank-zero component: \[ \MO \quad := \quad \th (J\vert _{\bB O}) \quad = \quad \colim \big (J\colon \bB O\to \Sp \big ). \]
+                                                                                   
+                                                                                   
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5002r23'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 10.2.23.</span>  </span><span id='thm:MO_As_Thom_Spectrum'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The spectrum associated to the prespectrum</span> \(\MO ^{\pre }\) <span class='ntx-Italic-tlf-t1-x-x-109'>of </span><a class="source-reference" data-label="cons:MO_Prespectrum" href="../../../entry/unoriented-bordism-prespectrum/index.html#cons:MO_Prespectrum">Construction 10.1.10 </a><span class='ntx-Italic-tlf-t1-x-x-109'>via </span><a class="source-reference" data-label="cons:Associated_Spectrum" href="../../../entry/associated-spectrum-of-a-prespectrum/index.html#cons:Associated_Spectrum">Proposition 4.3.29 </a><span class='ntx-Italic-tlf-t1-x-x-109'>is</span> \(\MO \)<span class='ntx-Italic-tlf-t1-x-x-109'>: </span>\[ (\MO ^{\pre })^{\mathrm {sp}} \cong \MO . \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-thom-spectra-and-bordism-theory-section-02-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-thom-spectra-and-bordism-theory-section-02-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We first identify the levels and structure maps of the classical prespectrum with the unstable
+Thom construction. We then pass to the colimit presentation of the virtual-rank-zero component of
+\(\BOP \).
+</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Step 1</span>: Consider the functor \(\xi _{E_n} \colon \Pi _{\infty }(\Gr _n(\R ^{\infty })) \to \An _*\) associated to \(\gamma _n\). Applying <a class="source-reference" data-label="lem:Spherical_Fibration_Of_Classified_Bundle" href="../../../entry/spherical-fibration-of-a-classified-bundle/index.html#lem:Spherical_Fibration_Of_Classified_Bundle">Lemma 10.2.19</a> to the identity of \(\Gr _n(\R ^\infty )\) identifies \(\xi _{E_n}\) with \(J_n^{\mathrm {un}}\). In particular,
+<a class="source-reference" data-label="prop:Thom_Space_As_Thom_Anima" href="../../../entry/thom-space-as-thom-anima/index.html#prop:Thom_Space_As_Thom_Anima">Proposition 10.2.5</a> provides an isomorphism \[ \MO ^{\pre }_n = \Pi _{\infty }(\Th (\gamma _n)) \cong \Th (J_n^{\mathrm {un}}) \] of animae. The identification \(E_{n+1}\vert _{\Gr _n(\R ^{\infty })} \cong E_n \times \R \) corresponds to the monoidal identification
+\[ J_{n+1}^{\mathrm {un}}\vert _{\bB O(n)} \cong \Sigma J_n^{\mathrm {un}}. \] Thus the structure maps of \(\MO ^{\pre }\) correspond to the canonical comparison maps \[ \Sigma \Th (J_n^{\mathrm {un}}) \cong \Th \big (J_{n+1}^{\mathrm {un}}\vert _{\bB O(n)}\big ) \longrightarrow \Th (J_{n+1}^{\mathrm {un}}). \]
+</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Step 2</span>: Applying <a class="source-reference" data-label="thm:Iterated_Colimits" href="../../../entry/iterated-colimits/index.html#thm:Iterated_Colimits">Theorem 21.2.11</a> to the presentation \(\bB O \simeq \colim _{n \in \N } \bB O(n)\) of <a class="source-reference" data-label="def:BOP" href="../../../entry/stable-classifying-anima-for-real-vector-bundles/index.html#def:BOP">Definition 10.2.12</a> gives \[ \MO \cong \colim _n \Sigma ^{\infty }\Th (J_n^{\mathrm {un}})[-n]. \] The structure maps in this colimit diagram are
+precisely those of \(\MO ^{\pre }\), so the right-hand side is \((\MO ^{\pre })^{\mathrm {sp}}\).                                                                                     □
+</p>
+</div></div>
+<p class='noindent'>The abstract definition also makes the variants of \(\MO \) formal.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5003r24'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/thom-spectrum-of-a-map-to-bop/index.html" aria-label="Definition 10.2.24, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 10.2.24 </span></a>(The Thom spectrum \(MB\))<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Thom_Spectrum_MG'></span> Let \(\phi \colon B \to \BOP \) be a map of animae. We define its associated Thom
+spectrum \(MB\) by \[ MB := \colim \big (B\xrightarrow {\phi }\BOP \xrightarrow {J}\Sp \big ). \] Equivalently, \(\phi \) is a virtual vector bundle on \(B\), and \(MB=\th (\phi )\) in the notation of <a class="source-reference" data-label="cons:Thom_Spectrum_Virtual_Bundle" href="../../../entry/thom-spectrum-of-a-virtual-vector-bundle/index.html#cons:Thom_Spectrum_Virtual_Bundle">Construction 10.2.16</a>. The notation
+suppresses \(\phi \), which will always be clear from the context. We allow \(B\) to be an arbitrary anima. For
+the Pontryagin–Thom theorem of <a class="source-reference" data-label="sec:Bordism_As_Homology_Theory" href="../bordism-and-the-pontryagin-thom-theorem/index.html#sec:Bordism_As_Homology_Theory">Section 10.3</a>, we will specialize to maps which land in the virtual-rank-zero
+component \(\bB O\subseteq \BOP \).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5004r25'></a>
+<a class="entry-heading-link" href="../../../entry/multiplicative-structures-on-bordism-spectra/index.html" aria-label="Construction 10.2.25, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 10.2.25 </span></a>(Multiplicative structures on bordism spectra)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cons:Multiplicative_Bordism_Spectra'></span>   Let   \(B\)   be   a   commutative
+monoid in animae and let \[ \phi \colon B\longrightarrow \BOP \] be a morphism of commutative monoids. Since the J-homomorphism is
+symmetric monoidal, so is the composite \[ B\xrightarrow {\phi }\BOP \xrightarrow {J}\Pic (\S )\subseteq \Sp . \] Consequently, <a class="source-reference" data-label="cons:Multiplicative_Structures_Thom_Spectra" href="../../../entry/multiplicative-structures-on-thom-spectra/index.html#cons:Multiplicative_Structures_Thom_Spectra">Construction 10.2.8</a> equips \(MB\) with a canonical commutative ring
+spectrum structure.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5005r26'></a>
+<a class="entry-heading-link" href="../../../entry/classical-bordism-spectra/index.html" aria-label="Example 10.2.26., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 10.2.26.</span></a>  </span><span id='ex:Thom_Spectra_MG'></span> A continuous group homomorphism \(G \to O\) induces a map \(\bB G \to \bB O\), and we write \(MG\) for the
+resulting  Thom  spectrum.  Taking  \(B = \bB O\)  with  \(\phi \)  the  identity  recovers  \(\MO \).  Further  examples  are  \[ \MSO , \quad \MU , \quad \mathrm {MSU}, \quad \mathrm {MSp}, \quad \text {and}\quad \mathrm {MSpin}. \]  Here  \(\MU \)  is
+the <span class='ntx-Italic-tlf-t1-x-x-109'>complex bordism spectrum</span>. For \(\MO \) and \(\MU \), the defining maps to \(\BOP \) are restrictions of morphisms of
+commutative groups constructed above. Hence <a class="source-reference" data-label="cons:Multiplicative_Bordism_Spectra" href="../../../entry/multiplicative-structures-on-bordism-spectra/index.html#cons:Multiplicative_Bordism_Spectra">Construction 10.2.25</a> equips these Thom spectra with commutative ring
+structures. The other classical Thom spectra in the display also admit commutative ring structures,
+but their construction requires compatible infinite-loop refinements of the maps \(\bB G\to \bB O\), which we do not
+develop here.
+                                                                                   
+                                                                                   
+</p><p class='noindent'>The full group completions give the <span class='ntx-Italic-tlf-t1-x-x-109'>periodic unoriented and complex bordism spectra </span>\[ \MOP :=\th \big (J\colon \BOP \to \Sp \big ) \qquadtext {and}\qquad \MUP :=\th \big (\BUP \longrightarrow \BOP \xrightarrow {J}\Sp \big ), \] respectively.
+Thus \(\MOP \) is obtained from the identity of \(\BOP \), while \(\MUP \) is obtained from the forgetful map \(\BUP \to \BOP \). Restricting these
+defining diagrams to their virtual-rank-zero components recovers \(\MO \) and \(\MU \). Translation by the classes of
+\(\R \) and \(\C \) permutes the components of \(\BOP \) and \(\BUP \) while shifting the associated stable spherical fibrations by \(1\)
+and \(2\), respectively. It follows that there are isomorphisms of spectra \[ \MOP \cong \MOP [1] \qquadtext {and}\qquad \MUP \cong \MUP [2], \] which explains the terminology.
+</p>
+</div>
+
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../thom-spaces-and-the-collapse-construction/index.html" aria-label="Previous section: Thom spaces and the collapse construction" title="Previous section: Thom spaces and the collapse construction"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../bordism-and-the-pontryagin-thom-theorem/index.html" aria-label="Next section: Bordism and the Pontryagin–Thom theorem" title="Next section: Bordism and the Pontryagin–Thom theorem"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html" aria-current="page"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/animae-as-spaces/index.html"><span class="context-entry-heading">Chapter 2</span><span class="context-entry-title">Animae as spaces</span></a></li><li><a href="../../../chapter/homology-and-cohomology/index.html"><span class="context-entry-heading">Chapter 3</span><span class="context-entry-title">Homology and cohomology</span></a></li><li><a href="../../../chapter/spectra-and-stable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 4</span><span class="context-entry-title">Spectra and stable ∞-categories</span></a></li><li><a href="../../../chapter/recognition-principle/index.html"><span class="context-entry-heading">Chapter 5</span><span class="context-entry-title">The recognition principle</span></a></li><li><a href="../../../chapter/homological-algebra/index.html"><span class="context-entry-heading">Chapter 6</span><span class="context-entry-title">Homological algebra</span></a></li><li><a href="../../../chapter/localization-and-completion/index.html"><span class="context-entry-heading">Chapter 7</span><span class="context-entry-title">Localization and completion</span></a></li><li><a href="../../../chapter/ring-spectra-and-modules/index.html"><span class="context-entry-heading">Chapter 8</span><span class="context-entry-title">Ring spectra and modules</span></a></li><li><a href="../../../chapter/complex-k-theory/index.html"><span class="context-entry-heading">Chapter 9</span><span class="context-entry-title">Complex K-theory</span></a></li><li><a href="../../../chapter/thom-spectra-and-bordism-theory/index.html" aria-current="page"><span class="context-entry-heading">Chapter 10</span><span class="context-entry-title">Thom spectra and bordism theory</span></a></li><li><a href="../../../chapter/duality-phenomena/index.html"><span class="context-entry-heading">Chapter 11</span><span class="context-entry-title">Duality phenomena</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../thom-spaces-and-the-collapse-construction/index.html"><span class="context-entry-heading">Section 10.1</span><span class="context-entry-title">Thom spaces and the collapse construction</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 10.2</span><span class="context-entry-title">Thom spectra</span></a></li><li><a href="../bordism-and-the-pontryagin-thom-theorem/index.html"><span class="context-entry-heading">Section 10.3</span><span class="context-entry-title">Bordism and the Pontryagin–Thom theorem</span></a></li><li><a href="../orientations-and-the-thom-isomorphism/index.html"><span class="context-entry-heading">Section 10.4</span><span class="context-entry-title">Orientations and the Thom isomorphism</span></a></li><li><a href="../coherence-for-one-point-compactification-online-only/index.html"><span class="context-entry-heading">Section 10.5</span><span class="context-entry-title">Coherence for one-point compactification (online only)</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Spherical_Fibration"><span class="context-entry-heading">Definition 10.2.1</span><span class="context-entry-title">Spherical fibration</span></a></li><li><a href="#def:Thom_Anima"><span class="context-entry-heading">Definition 10.2.2</span><span class="context-entry-title">Thom anima</span></a></li><li><a href="#ex:Sphere_Bundle_As_Spherical_Fibration"><span class="context-entry-heading">Example 10.2.3</span><span class="context-entry-title">Sphere bundle</span></a></li><li><a href="#ex:From_Thom_Space_To_Thom_Anima_Auxiliary"><span class="context-entry-heading">Example 10.2.4</span><span class="context-entry-title">Spherical fibration of vector bundle</span></a></li><li><a href="#prop:Thom_Space_As_Thom_Anima"><span class="context-entry-heading">Proposition 10.2.5</span><span class="context-entry-title">proposition</span></a></li><li><a href="#def:Stable_Spherical_Fibration"><span class="context-entry-heading">Definition 10.2.6</span><span class="context-entry-title">Stable spherical fibration</span></a></li><li><a href="#def:Thom_Spectrum"><span class="context-entry-heading">Definition 10.2.7</span><span class="context-entry-title">Thom spectrum</span></a></li><li><a href="#cons:Multiplicative_Structures_Thom_Spectra"><span class="context-entry-heading">Construction 10.2.8</span><span class="context-entry-title">Multiplicative structures on Thom spectra</span></a></li><li><a href="#rmk:En_Multiplicative_Thom_Spectra"><span class="context-entry-heading">Remark 10.2.9</span><span class="context-entry-title">remark</span></a></li><li><a href="#def:Real_Vector_Bundles_Moduli_Anima"><span class="context-entry-heading">Definition 10.2.10</span><span class="context-entry-title">definition</span></a></li><li><a href="#prop:One_Point_Compactification_Symmetric_Monoidal"><span class="context-entry-heading">Proposition 10.2.11</span><span class="context-entry-title">One-point compactification</span></a></li><li><a href="#def:BOP"><span class="context-entry-heading">Definition 10.2.12</span><span class="context-entry-title">definition</span></a></li><li><a href="#cons:J_Homomorphism"><span class="context-entry-heading">Construction 10.2.13</span><span class="context-entry-title">Stable J-homomorphism</span></a></li><li><a href="#rmk:Classical_J_Homomorphism"><span class="context-entry-heading">Remark 10.2.14</span><span class="context-entry-title">Relation to the classical J-homomorphism</span></a></li><li><a href="#def:Virtual_Vector_Bundle"><span class="context-entry-heading">Definition 10.2.15</span><span class="context-entry-title">Virtual vector bundle</span></a></li><li><a href="#cons:Thom_Spectrum_Virtual_Bundle"><span class="context-entry-heading">Construction 10.2.16</span><span class="context-entry-title">Thom spectrum of a virtual vector bundle</span></a></li><li><a href="#rmk:Thom_Spectrum_Virtual_Additivity"><span class="context-entry-heading">Remark 10.2.17</span><span class="context-entry-title">remark</span></a></li><li><a href="#cons:One_Point_Compactification_Vector_Spaces"><span class="context-entry-heading">Construction 10.2.18</span><span class="context-entry-title">One-point compactification of vector spaces</span></a></li><li><a href="#lem:Spherical_Fibration_Of_Classified_Bundle"><span class="context-entry-heading">Lemma 10.2.19</span><span class="context-entry-title">lemma</span></a></li><li><a href="#ex:Class_Of_A_Vector_Bundle"><span class="context-entry-heading">Example 10.2.20</span><span class="context-entry-title">The class of a vector bundle</span></a></li><li><a href="#lem:Thom_Spectrum_Of_Virtual_Bundle"><span class="context-entry-heading">Lemma 10.2.21</span><span class="context-entry-title">lemma</span></a></li><li><a href="#def:Unoriented_Bordism_Spectrum"><span class="context-entry-heading">Definition 10.2.22</span><span class="context-entry-title">Unoriented bordism spectrum</span></a></li><li><a href="#thm:MO_As_Thom_Spectrum"><span class="context-entry-heading">Theorem 10.2.23</span><span class="context-entry-title">theorem</span></a></li><li><a href="#def:Thom_Spectrum_MG"><span class="context-entry-heading">Definition 10.2.24</span><span class="context-entry-title">The Thom spectrum MB</span></a></li><li><a href="#cons:Multiplicative_Bordism_Spectra"><span class="context-entry-heading">Construction 10.2.25</span><span class="context-entry-title">Multiplicative structures on bordism spectra</span></a></li><li><a href="#ex:Thom_Spectra_MG"><span class="context-entry-heading">Example 10.2.26</span><span class="context-entry-title">example</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

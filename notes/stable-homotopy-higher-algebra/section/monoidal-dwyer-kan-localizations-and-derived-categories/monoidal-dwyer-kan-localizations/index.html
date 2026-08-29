@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 20.1: Monoidal Dwyer–Kan localizations | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/operads-and-higher-algebra/index.html">Part II</a> · <a href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html">Chapter 20</a> · Section 20.1</p>
+      <h1>Monoidal Dwyer–Kan localizations</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent'><span id='sec:Monoidal_Localizations'></span> Let \(C\) be a symmetric monoidal \(\infty \)-category and let \(W\) be a class of morphisms in \(C\). The question addressed
+in this section is when the localization \(C[W^{-1}]\) of \(C\) at \(W\) inherits a symmetric monoidal structure from
+\(C\).
+</p><p class='noindent'>The situation is relatively straightforward if tensoring with any object preserves \(W\):
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 20.1.1 </span>(Tensor-stable monoidal localization)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Monoidal_Localization_Strict'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category, and let</span>
+\(W\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a class of morphisms in</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>such that, for every object</span> \(X\in C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the functor</span> \(X\otimes -\) <span class='ntx-Italic-tlf-t1-x-x-109'>sends morphisms in</span> \(W\) <span class='ntx-Italic-tlf-t1-x-x-109'>to morphisms in</span>
+\(W\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The  localization</span>  \(C[W^{-1}]\)  <span class='ntx-Italic-tlf-t1-x-x-109'>inherits  a  unique  symmetric  monoidal  structure  turning  the  localization
+     functor</span> \(\gamma \colon C \to C[W^{-1}]\) <span class='ntx-Italic-tlf-t1-x-x-109'>into a symmetric monoidal functor.</span>
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For  any  other  symmetric  monoidal</span>  \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span>  \(D\)<span class='ntx-Italic-tlf-t1-x-x-109'>,  restriction  along</span>  \(\gamma \)  <span class='ntx-Italic-tlf-t1-x-x-109'>induces  a  fully  faithful
+     functor </span>\[ \Fun ^{\otimes }(C[W^{-1}],D) \hookrightarrow \Fun ^{\otimes }(C,D) \] <span class='ntx-Italic-tlf-t1-x-x-109'>whose essential image consists of those symmetric monoidal functors</span> \(C \to D\) <span class='ntx-Italic-tlf-t1-x-x-109'>which invert
+     the morphisms in</span> \(W\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-monoidal-dwyer-kan-localizations-and-derived-categories-section-01-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-monoidal-dwyer-kan-localizations-and-derived-categories-section-01-4">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We may first replace \(W\) by the smallest class of morphisms in \(C\) that contains \(W\) and is closed
+under isomorphisms, composition, and homotopy. This does not change the localization, since a
+functor out of \(C\) inverts the original class \(W\) if and only if it inverts this larger class. The enlarged class
+is still preserved by tensoring with an arbitrary object, since tensor products preserve isomorphisms,
+composition, and homotopies. Thus we may assume that \(W\) is a wide subcategory of \(C\).
+</p><p class='noindent'>For (1), consider the full subcategory \(\RelCat _{\infty } \subseteq \Ar (\Cat _{\infty })\) spanned by the <span class='ntx-Italic-tlf-t1-x-x-109'>relative</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories</span>: those functors \(W \hookrightarrow C\) which are
+simultaneously monomorphisms in \(\Cat _{\infty }\) and essentially surjective. (Such a choice of \(W\) corresponds to a
+<span class='ntx-Italic-tlf-t1-x-x-109'>wide subcategory </span>of \(C\).) We will generally denote objects of \(\RelCat _{\infty }\) as pairs \((C,W)\).
+</p><p class='noindent'>Observe that there is a fully faithful inclusion functor \[ i_{\mathrm {rel}}\colon \Cat _{\infty } \hookrightarrow \RelCat _{\infty }, \qquad D \mapsto (D, D^{\simeq }). \] Observe that for a relative \(\infty \)-category \((C,W)\), the
+localization functor \(\gamma \colon C \to C[W^{-1}]\) refines to a morphism of relative \(\infty \)-categories \((C,W) \to i_{\mathrm {rel}}(C[W^{-1}])\). We claim that this map exhibits
+\(C[W^{-1}]\) as a left adjoint object to \((C,W)\) under \(i_{\mathrm {rel}}\). For every other \(\infty \)-category \(D\), precomposition with \(\gamma \) by definition
+induces a fully faithful inclusion of animae \[ \Hom _{\Cat _{\infty }}(C[W^{-1}],D) \to \Hom _{\Cat _{\infty }}(C,D) \] whose image consists of the functors \(C \to D\) that send \(W\) to
+isomorphisms. This image is precisely the image of \(\Hom _{\RelCat _{\infty }}((C,W), i_{\mathrm {rel}}(D))\), proving the adjointness.
+</p><p class='noindent'>By the pointwise criterion for left adjoints (<a class="source-reference" data-label="lem:Pointwise_Criterion_Adjunctions" href="../../../entry/assembly-of-pointwise-adjoint-objects/index.html#lem:Pointwise_Criterion_Adjunctions">Lemma 21.1.4</a>), the assignment \((C,W) \mapsto C[W^{-1}]\) assembles into a functor \(\Ll \colon \RelCat _{\infty } \to \Cat _{\infty }\). Moreover,
+by <a class="source-reference" data-label="obs:Products_Of_Localizations" href="../../../entry/products-of-localizations/index.html#obs:Products_Of_Localizations">Exercise 1.5.24</a>, this functor preserves finite products, hence induces a functor on commutative monoids: \[ \Ll \colon \CMon (\RelCat _{\infty }) \to \CMon (\Cat _{\infty }). \] Since
+also the right adjoint \(i_{\mathrm {rel}}\) preserves finite products, the entire adjunction lifts to commutative monoids.
+Unwinding  definitions,  the  condition  on  the  pair  \((C,W)\)  in  the  statement  of  the  proposition  precisely
+guarantees that the symmetric monoidal structure on \(C\) refines to an object \((C,W) \in \CMon (\RelCat _{\infty })\). The unit of the adjunction
+now takes the form of a symmetric monoidal functor \(\gamma \colon C \to C[W^{-1}]\) refining the localization functor.
+</p><p class='noindent'>The adjunction on commutative monoids gives the claimed universal property on mapping animae.
+Applying  the  same  argument  with  the  pointwise  symmetric  monoidal  categories  \(\Fun ([n],D)\)  for  every  \(n\geq 0\),  as
+in <a class="source-reference" data-label="def:Symmetric_Monoidal_Functor_Category" href="../../../entry/symmetric-monoidal-functor-category/index.html#def:Symmetric_Monoidal_Functor_Category">Definition 14.2.3</a>, gives the asserted fully faithful functor between symmetric monoidal functor \(\infty \)-categories. The
+uniqueness statement follows immediately.                                                                                        □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1004r2'></a>
+<a class="entry-heading-link" href="../../../entry/monoidal-localization-at-l-equivalences/index.html" aria-label="Remark 20.1.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 20.1.2.</span></a>  </span><span id='rmk:Monoidal_Localization_At_L_Equivalences'></span> In the situation of <a class="source-reference" data-label="prop:Left_Adjoint_To_Inclusion_Gives_SymMon" href="../../../entry/left-adjoint-to-inclusion-gives-symmon/index.html#prop:Left_Adjoint_To_Inclusion_Gives_SymMon">Proposition 14.5.3</a>, we may consider the class \(W\) of \(L\)-equivalences in \(C\). The assumption
+on \(L\) guarantees that also the condition of <a class="source-reference" data-label="prop:Monoidal_Localization_Strict" href="../../../entry/monoidal-localization-strict/index.html#prop:Monoidal_Localization_Strict">Proposition 20.1.1</a> is satisfied. In particular, <a class="source-reference" data-label="prop:Monoidal_Localization_Strict" href="../../../entry/monoidal-localization-strict/index.html#prop:Monoidal_Localization_Strict">Proposition 20.1.1</a> provides an alternative way of
+equipping the subcategory \(D \subseteq C\) with a symmetric monoidal structure.
+</p>
+</div>
+                                                                                   
+                                                                                   
+<p class='noindent'>The criterion of <a class="source-reference" data-label="prop:Monoidal_Localization_Strict" href="../../../entry/monoidal-localization-strict/index.html#prop:Monoidal_Localization_Strict">Proposition 20.1.1</a> is often too strict in practice. For example, for chain complexes with quasi-isomorphisms,
+tensoring with a fixed complex preserves quasi-isomorphisms only under flatness hypotheses. We already
+encountered this phenomenon in <a class="source-reference" data-label="sec:Derived_Functors" href="../../homological-algebra/derived-functors/index.html#sec:Derived_Functors">Section 6.6</a>, where we introduced the notion of a <span class='ntx-Italic-tlf-t1-x-x-109'>derived functor</span>, and explained how
+to form the derived tensor product of chain complexes. The goal of the remainder of this section is to
+enhance the derived tensor product to a fully coherent symmetric monoidal structure. Our discussion
+closely follows that of <span class='citation'>[Nikolaus and Scholze (2018), Appendix A]</span>.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1005r3'></a>
+<a class="entry-heading-link" href="../../../entry/left-derivable-monoidal-structure/index.html" aria-label="Definition 20.1.3, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 20.1.3 </span></a>(Left derivable monoidal structure)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Left_Derivable_Monoidal_Structure'></span> Let \((C,W,I)\) be an \(\infty \)-category with weak equivalences
+and cofibrations, and assume that \(C\) is given a symmetric monoidal structure. We call an object of \(C\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>tensor-cofibrant </span>if it belongs to the smallest full subcategory of \(C\) that contains all cofibrant objects
+and the monoidal unit and is closed under binary tensor products. We say that the monoidal structure
+is <span class='ntx-Italic-tlf-t1-x-x-109'>left derivable </span>if for every finite set \(J\), every \(J\)-indexed collection of cofibrant objects \(\{X_j\}_{j \in J}\), every \(J\)-indexed
+collection of tensor-cofibrant objects \(\{Y_j\}_{j \in J}\), and every collection of weak equivalences \(f_j\colon X_j \to Y_j\), the induced map
+\[ \bigotimes _{j \in J} f_j \colon \bigotimes _{j \in J} X_j \to \bigotimes _{j \in J} Y_j \] is again a weak equivalence.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1006r4'></a>
+<a class="entry-heading-link" href="../../../entry/left-derivable-monoidal-criterion/index.html" aria-label="Remark 20.1.4., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 20.1.4.</span></a>  </span><span id='rem:Left_Derivable_Monoidal_Criterion'></span> In the model category literature, there exists a notion of <span class='ntx-Italic-tlf-t1-x-x-109'>symmetric monoidal model
+category</span>. The underlying category with weak equivalences and cofibrations of such a symmetric
+monoidal model category is always left derivable. However, the condition of being left derivable
+is much weaker: we require only that tensoring preserve the relevant weak equivalences, with no
+general compatibility between tensor products and cofibrations.
+</p><p class='noindent'>A convenient sufficient criterion is the following. Assume that the monoidal unit is cofibrant, that
+the tensor product of two cofibrant objects is again cofibrant, and that for every cofibrant object \(Z\)
+                                                                                   
+                                                                                   
+the functor \(-\otimes Z\) sends weak equivalences between cofibrant objects to weak equivalences. Then every
+tensor-cofibrant object is again cofibrant, and an induction on the cardinality of \(J\) shows that the
+monoidal structure is left derivable in the sense of the definition.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1007r5'></a>
+<a class="entry-heading-link" href="../../../entry/derived-monoidal-structure-coherent/index.html" aria-label="Construction 20.1.5., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 20.1.5.</span></a>  </span><span id='cons:Derived_Monoidal_Structure_Coherent'></span> Let \((C,W,I)\) be an \(\infty \)-category with weak equivalences and cofibrations which comes
+equipped with a left derivable symmetric monoidal structure. For a finite set \(J\), let \(W^J\) denote the collection
+of morphisms in \(C^J \simeq C^{\otimes }_J\) given by \(J\)-tuples of weak equivalences, and let \(W^{\otimes }\) be the collection of morphisms in \(C^{\otimes }\)
+given by the union of the \(W^J\). By construction, the cocartesian fibration \(p_C\colon C^{\otimes } \to \Span (\Fin )\) inverts all morphisms in \(W^{\otimes }\), so
+the universal property of localizations produces a functor \[ p_{C[W^{-1}]}\colon C^{\otimes }[(W^{\otimes })^{-1}] \to \Span (\Fin ). \] The localization functor \(\gamma ^{\otimes }\colon C^{\otimes } \to C^{\otimes }[(W^{\otimes })^{-1}]\) then becomes a
+functor over \(\Span (\Fin )\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1008r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 20.1.6 </span>(cf. <span class='citation'>[Nikolaus and Scholze (2018), Theorem A.7]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Monoidal_Localization_Derivable'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \((C,W,I)\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with weak equivalences and cofibrations, and assume that</span> \(C\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>comes equipped with a left derivable symmetric monoidal structure. Then the following statements
+hold:</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(p_{C[W^{-1}]}\colon C^{\otimes }[(W^{\otimes })^{-1}] \to \Span (\Fin )\) <span class='ntx-Italic-tlf-t1-x-x-109'>defines a symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category.</span>
+                                                                                   
+
+                                                                                   
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The localization functor</span> \(\gamma ^{\otimes }\colon C^{\otimes } \to C^{\otimes }[(W^{\otimes })^{-1}]\) <span class='ntx-Italic-tlf-t1-x-x-109'>encodes a lax symmetric monoidal functor.</span>
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The underlying functor of</span> \(\gamma ^{\otimes }\) <span class='ntx-Italic-tlf-t1-x-x-109'>exhibits its target as the localization of</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>at</span> \(W\)<span class='ntx-Italic-tlf-t1-x-x-109'>, thus equipping</span> \(C[W^{-1}]\) <span class='ntx-Italic-tlf-t1-x-x-109'>with
+     the structure of a symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category.</span>
+     </p></dd><dt class='enumerate'>
+  (4) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For every symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(D\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the functor</span> \(\gamma ^{\otimes }\) <span class='ntx-Italic-tlf-t1-x-x-109'>induces a fully faithful functor </span>\[ \Fun ^{\otimes \textup {-lax}}(C[W^{-1}],D) \hookrightarrow \Fun ^{\otimes \textup {-lax}}(C,D) \] <span class='ntx-Italic-tlf-t1-x-x-109'>whose
+     essential image consists of those lax symmetric monoidal functors</span> \(C \to D\) <span class='ntx-Italic-tlf-t1-x-x-109'>that invert the morphisms
+     in</span> \(W\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p></dd></dl>
+</div>
+<p class='noindent'>More informally, parts (1)-(3) of the theorem state that the localization \(C[W^{-1}]\) is canonically symmetric monoidal,
+and that the localization functor \(\gamma \colon C \to C[W^{-1}]\) canonically refines to a lax symmetric monoidal functor. Part (4) states
+that \(\gamma \) is in fact <span class='ntx-Italic-tlf-t1-x-x-109'>initial </span>among lax symmetric monoidal functors \(C \to D\) which invert the morphisms in
+\(W\).
+</p><p class='noindent'>Before moving to the proof of this theorem, we record the bounded below case needed in <a class="source-reference" data-label="chap:Homological_Algebra" href="../../../chapter/homological-algebra/index.html#chap:Homological_Algebra">Chapter 6</a>.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1013r7'></a>
+<a class="entry-heading-link" href="../../../entry/chain-complexes-monoidal-localization/index.html" aria-label="Example 20.1.7, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 20.1.7 </span></a>(Chain complexes)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='ex:Chain_Complexes_Monoidal_Localization'></span> Let \(\Aa \) be a symmetric monoidal abelian category with enough
+projectives. Assume that its monoidal unit is projective and that the tensor product of two projective
+objects is again projective. Equip the category \(\Ch ^{-}(\Aa )\) of bounded below chain complexes with the projective
+cofibration structure from <a class="source-reference" data-label="prop:Projective_Cofibration_Structure" href="../../../entry/projective-cofibration-structure-on-bounded-below-complexes/index.html#prop:Projective_Cofibration_Structure">Proposition 6.6.15</a> and the symmetric monoidal structure from <a class="source-reference" data-label="def:Tensor_Product_Chain_Complexes" href="../../../entry/tensor-product-of-chain-complexes/index.html#def:Tensor_Product_Chain_Complexes">Definition 6.6.23</a>. We claim that this monoidal
+structure  is  left  derivable.  To  see  this,  consider  finitely  many  bounded  below  projective  chain
+complexes \(C^1_{\bullet }, \dots , C^n_{\bullet }\), finitely many tensor-cofibrant bounded below chain complexes \(D^1_{\bullet }, \dots , D^n_{\bullet }\), and quasi-isomorphisms
+\(f_i\colon C^i_{\bullet } \to D^i_{\bullet }\). By assumption on \(\Aa \), each \(D^i_{\bullet }\) is again a bounded below projective chain complex. Hence by <a class="source-reference" data-label="prop:Quasi_Iso_Projective_Is_Homotopy_Equivalence" href="../../../entry/quasi-isomorphisms-between-projective-complexes-are-homotopy-equivalences/index.html#prop:Quasi_Iso_Projective_Is_Homotopy_Equivalence">Proposition 6.6.11</a>, each \(f_i\)
+is actually a chain homotopy equivalence. Since the tensor product of chain maps preserves chain
+homotopies in each variable, it follows by induction on \(n\) that the tensor product \[ \bigotimes _{i=1}^n f_i\colon \bigotimes _{i=1}^n C^i_{\bullet } \to \bigotimes _{i=1}^n D^i_{\bullet } \] is again a chain
+homotopy equivalence, and hence a quasi-isomorphism.
+                                                                                   
+                                                                                   
+</p><p class='noindent'>Thus  <a class="source-reference" data-label="thm:Monoidal_Localization_Derivable" href="../../../entry/monoidal-localization-of-derivable-functors/index.html#thm:Monoidal_Localization_Derivable">Theorem 20.1.6</a>  equips  \(\D ^-(\Aa )\)  with  a  symmetric  monoidal  structure  and  the  localization  \(\Ch ^-(\Aa )\to \D ^-(\Aa )\)  with  a  lax  symmetric
+monoidal refinement. For comparison with the construction in <a class="source-reference" data-label="chap:Homological_Algebra" href="../../../chapter/homological-algebra/index.html#chap:Homological_Algebra">Chapter 6</a>, <a class="source-reference" data-label="prop:Projective_Complexes_Equivalence" href="../../../entry/projective-complexes-present-the-bounded-below-derived-category/index.html#prop:Projective_Complexes_Equivalence">Proposition 6.6.16</a> identifies \(\D ^-(\Aa )\) with the localization
+of the symmetric monoidal category \(\Ch ^-_{\proj }(\Aa )\) at the quasi-isomorphisms. Since tensor product preserves
+quasi-isomorphisms between projective complexes in each variable, <a class="source-reference" data-label="prop:Monoidal_Localization_Strict" href="../../../entry/monoidal-localization-strict/index.html#prop:Monoidal_Localization_Strict">Proposition 20.1.1</a> gives a second description of
+the induced tensor product, namely the derived tensor product constructed in <a class="source-reference" data-label="def:Derived_Tensor_Product" href="../../../entry/derived-tensor-product/index.html#def:Derived_Tensor_Product">Definition 6.6.25</a>.
+</p>
+</div>
+<p class='noindent'>In the remainder of this section, we explain the main ingredients for the proof of <a class="source-reference" data-label="thm:Monoidal_Localization_Derivable" href="../../../entry/monoidal-localization-of-derivable-functors/index.html#thm:Monoidal_Localization_Derivable">Theorem 20.1.6</a>.
+</p><p class='noindent'>Recall from <a class="source-reference" data-label="def:Total_Left_Derived_Functor" href="../../../entry/total-left-derived-functors/index.html#def:Total_Left_Derived_Functor">Definition 6.6.1</a> that a total left derived functor of \(F\colon C\to D\) is a right Kan extension of \(F\) along the localization \(\gamma \colon C\to C[W^{-1}]\). Such a
+derived functor \(\bL F\) is called <span class='ntx-Italic-tlf-t1-x-x-109'>absolute </span>if for every functor \(H\colon D\to E\), the composite \(H\circ \bL F\) is again a total left derived functor of
+\(H\circ F\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1014r8'></a>
+<a class="entry-heading-link" href="../../../entry/trivial-absolute-left-derived-functor/index.html" aria-label="Example 20.1.8., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 20.1.8.</span></a>  </span><span id='exercise:Trivial_Absolute_Left_Derived_Functor'></span> Assume that \(F\colon C \to D\) inverts morphisms in \(W\), so that it induces a functor \(\bL F\colon C[W^{-1}] \to D\) by the universal
+property of localization. Then the natural isomorphism \(\bL F \circ \gamma \cong F\) exhibits \(\bL F\) as an absolute left derived functor
+of \(F\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1015r9'></a>
+<a class="entry-heading-link" href="../../../entry/relative-functors-from-categories-with-cofibrations/index.html" aria-label="Example 20.1.9., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 20.1.9.</span></a>  </span><span id='ex:Relative_Functors_From_Categories_With_Cofibrations'></span> More generally, let \((C,W,I)\) be an \(\infty \)-category with weak equivalences and cofibrations, in
+the sense of <a class="source-reference" data-label="def:Weak_Equivalences_and_Fibrations" href="../../../entry/infinity-category-with-weak-equivalences-and-fibrations/index.html#def:Weak_Equivalences_and_Fibrations">Definition 2.2.4</a>, and consider a functor \(F\colon C \to D\) for which the restriction \(F\vert _{C_c}\colon C_c \to D\) to the cofibrant objects inverts weak
+equivalences. It follows from <a class="source-reference" data-label="prop:Constructing_Left_Derived_Functors" href="../../../entry/constructing-left-derived-functors-from-cofibrant-objects/index.html#prop:Constructing_Left_Derived_Functors">Proposition 6.6.3</a> that \(F\) admits an absolute left derived functor \(\bL F\colon C[W^{-1}] \to D\), uniquely characterized
+by the existence of an isomorphism \(\bL F\circ \gamma \circ i\simeq F\circ i\) on the cofibrant objects.
+                                                                                   
+                                                                                   
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1016r10'></a>
+<a class="entry-heading-link" href="../../../entry/left-derivable-cocartesian-fibration/index.html" aria-label="Definition 20.1.10., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 20.1.10.</span></a>  </span><span id='def:Left_Derivable_Cocartesian_Fibration'></span> Let \(p\colon C \to S\) be a cocartesian fibration. Assume that for every object \(s \in S\) we are given a class \(W_s\) of
+morphisms in the fiber \(C_s := p^{-1}(s)\), and let \(\gamma _s\colon C_s \to C_s[W_s^{-1}]\) denote the localization functor. We say that \(p\) is <span class='ntx-Italic-tlf-t1-x-x-109'>left derivable with respect to</span> \(\{W_s\}_{s \in S}\)
+if the following two conditions are satisfied:
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'>For every morphism \(f\colon s \to t\) in \(S\), consider the cocartesian transport functor \(f_!\colon C_s \to C_t\). Then \(\gamma _t \circ f_!\colon C_s \to C_t[W_t^{-1}]\) admits an absolute
+     left derived functor \[ \bL f_!\colon C_s[W_s^{-1}] \to C_t[W_t^{-1}]. \]
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'>For two composable morphisms \(s \xrightarrow {f} t \xrightarrow {g} u\) in \(S\), the canonical comparison map constructed below \[ \bL g_! \circ \bL f_! \to \bL (g \circ f)_! \] is a
+     natural isomorphism.</p></dd></dl>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1019r11'></a>
+<a class="entry-heading-link" href="../../../entry/comparison-composites-derived-transport/index.html" aria-label="Observation 20.1.11., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Observation 20.1.11.</span></a>  </span><span id='obs:Comparison_Composites_Derived_Transport'></span> The comparison map in part (2) of <a class="source-reference" data-label="def:Left_Derivable_Cocartesian_Fibration" href="../../../entry/left-derivable-cocartesian-fibration/index.html#def:Left_Derivable_Cocartesian_Fibration">Definition 20.1.10</a> is obtained from absoluteness. Write
+\[ \epsilon _f\colon \bL f_!\circ \gamma _s\Rightarrow \gamma _t\circ f_!, \qquad \epsilon _g\colon \bL g_!\circ \gamma _t\Rightarrow \gamma _u\circ g_! \] for the structure transformations. Since \(\bL f_!\) is absolute, the composite \(\bL g_!\circ \bL f_!\) is a right Kan extension of \(\bL g_!\circ \gamma _t\circ f_!\)
+along \(\gamma _s\). The composite transformation \[ \bL g_!\circ \bL f_!\circ \gamma _s \Rightarrow \bL g_!\circ \gamma _t\circ f_! \Rightarrow \gamma _u\circ g_!\circ f_! \] therefore induces, by the universal property of \(\bL (g\circ f)_!\), the canonical
+comparison \[ \bL g_!\circ \bL f_!\longrightarrow \bL (g\circ f)_!. \]
+                                                                                   
+                                                                                   
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1020r12'></a>
+<a class="entry-heading-link" href="../../../entry/left-derivable-criterion-preservew/index.html" aria-label="Example 20.1.12., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 20.1.12.</span></a>  </span><span id='ex:Left_Derivable_Criterion_PreserveW'></span> In the situation of <a class="source-reference" data-label="def:Left_Derivable_Cocartesian_Fibration" href="../../../entry/left-derivable-cocartesian-fibration/index.html#def:Left_Derivable_Cocartesian_Fibration">Definition 20.1.10</a>, assume that every cocartesian transport functor \(f_!\colon C_s \to C_t\) satisfies \(f_!(W_s) \subseteq W_t\).
+Then \(p\) is left derivable with respect to \(\{W_s\}_{s \in S}\). Indeed, the condition on \(f_!\) shows that \(\gamma _t \circ f_!\) uniquely factors through
+a functor \(\bL f_!\colon C_s[W_s^{-1}] \to C_t[W_t^{-1}]\), which by <a class="source-reference" data-label="exercise:Trivial_Absolute_Left_Derived_Functor" href="../../../entry/trivial-absolute-left-derived-functor/index.html#exercise:Trivial_Absolute_Left_Derived_Functor">Example 20.1.8</a> is an absolute left derived functor. The second condition is then an immediate
+consequence of the universal property.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1021r13'></a>
+<a class="entry-heading-link" href="../../../entry/left-derivable-stable-under-pullback/index.html" aria-label="Example 20.1.13., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 20.1.13.</span></a>  </span><span id='ex:Left_Derivable_Stable_Under_Pullback'></span> If \(p\colon C \to S\) is left derivable with respect to \(\{W_s\}\), then for any functor \(f\colon T \to S\) the pullback functor \(C \times _S T \to T\) is
+left derivable with respect to \(\{W_{f(t)}\}_{t \in T}\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1022r14'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 20.1.14 </span>(<span class='citation'>[Nikolaus and Scholze (2018), Proposition A.14]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Localization_Of_Left_Derivable_Fibration'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(p\colon C \to S\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a cocartesian fibration which is left derivable with respect to classes of
+                                                                                   
+
+                                                                                   
+morphisms</span> \(\{W_s\}_{s \in S}\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Let</span> \(W\) <span class='ntx-Italic-tlf-t1-x-x-109'>denote the collection of morphisms in</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>given by the union of all</span> \(W_s\)<span class='ntx-Italic-tlf-t1-x-x-109'>, and let</span> \(q\colon C[W^{-1}] \to S\) <span class='ntx-Italic-tlf-t1-x-x-109'>denote the
+unique factorization of</span> \(p\) <span class='ntx-Italic-tlf-t1-x-x-109'>through the localization functor</span> \(\gamma \colon C \to C[W^{-1}]\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then the following statements hold
+true:</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(q\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a cocartesian fibration;</span>
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For every object</span> \(s \in S\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the map on fibers </span>\[ \gamma _s\colon C_s \to C[W^{-1}]_s \] <span class='ntx-Italic-tlf-t1-x-x-109'>induces an equivalence</span> \(C_s[W_s^{-1}] \iso C[W^{-1}]_s\)<span class='ntx-Italic-tlf-t1-x-x-109'>;</span>
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Consider  a  morphism</span>  \(f\colon s \to t\)  <span class='ntx-Italic-tlf-t1-x-x-109'>in</span>  \(S\)<span class='ntx-Italic-tlf-t1-x-x-109'>.  Under  the  equivalences  from  part (2),  the  transport  functor  </span>\[ C[W^{-1}]_s \to C[W^{-1}]_t \]
+     <span class='ntx-Italic-tlf-t1-x-x-109'>identifies with the total derived functor</span> \(\bL f_!\) <span class='ntx-Italic-tlf-t1-x-x-109'>of</span> \(f_!\colon C_s \to C_t\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-monoidal-dwyer-kan-localizations-and-derived-categories-section-01-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-monoidal-dwyer-kan-localizations-and-derived-categories-section-01-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof sketch.</span> </span>  We refer to <span class='citation'>[Nikolaus and Scholze (2018), Proposition A.14]</span> for the proof and only indicate its structure. By <a class="source-reference" data-label="ex:Left_Derivable_Stable_Under_Pullback" href="../../../entry/left-derivable-stable-under-pullback/index.html#ex:Left_Derivable_Stable_Under_Pullback">Example 20.1.13</a>, one may first restrict to
+the bases \([0]\) and \([1]\). The result is immediate over \([0]\). Over \([1]\), the cocartesian fibration is classified by a functor
+\(F\colon C_0\to C_1\). Its absolute left derived functor unstraightens to a cocartesian fibration with the desired fibers. The
+substantive point is that absoluteness identifies the mapping simplex of this derived functor with the
+localization of the mapping simplex of \(F\), by the universal property of right Kan extension and the
+description in <a class="source-reference" data-label="ex:Straightening_Over_Walking_Morphism" href="../../../entry/straightening-over-the-walking-morphism/index.html#ex:Straightening_Over_Walking_Morphism">Example 23.2.6</a>.
+</p><p class='noindent'>Finally,  the  total  category  of  a  cocartesian  fibration  commutes  with  colimits  in  the  base,  and
+localization commutes with colimits because it is a left adjoint on relative \(\infty \)-categories. The class of
+bases for which the proposition holds is therefore closed under colimits. Since \(\Cat _{\infty }\) is generated under
+colimits by \([0]\) and \([1]\) by <a class="source-reference" data-label="prop:Cat_Generated_By_Point_And_Arrow" href="../../../entry/infinity-categories-generated-by-point-and-arrow/index.html#prop:Cat_Generated_By_Point_And_Arrow">Proposition 24.1.14</a>, this proves the result for arbitrary \(S\).                                                                   □
+</p>
+</div></div>
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1026r15'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 20.1.15.</span>  </span><span id='prop:Monoidal_Fibration_Is_Left_Derivable'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>In the situation of </span><a class="source-reference" data-label="thm:Monoidal_Localization_Derivable" href="../../../entry/monoidal-localization-of-derivable-functors/index.html#thm:Monoidal_Localization_Derivable">Theorem 20.1.6</a><span class='ntx-Italic-tlf-t1-x-x-109'>, the cocartesian fibration</span> \(p_C\colon C^{\otimes } \to \Span (\Fin )\) <span class='ntx-Italic-tlf-t1-x-x-109'>is left derivable with respect to
+the classes</span> \(\{W^I\}_{I \in \Fin }\) <span class='ntx-Italic-tlf-t1-x-x-109'>on its fibers</span> \(C_I^{\otimes } \simeq C^I\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-monoidal-dwyer-kan-localizations-and-derived-categories-section-01-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-monoidal-dwyer-kan-localizations-and-derived-categories-section-01-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Fix a span \(\alpha \colon I \xleftarrow {f} K \xrightarrow {g} J\) in \(\Span (\Fin )\). Under the identification \(C_I^{\otimes } \simeq C^I\), the cocartesian transport functor along \(\alpha \) is given
+by \[ \alpha _!\colon C^I \xrightarrow {f^*} C^K \xrightarrow {g_{\otimes }} C^J, \qquad (x_i)_{i \in I} \mapsto \left (\bigotimes _{k \in g^{-1}(j)} x_{f(k)}\right )_{j \in J}. \] The product category \(C^I\) again carries weak equivalences and cofibrations componentwise, by
+<a class="source-reference" data-label="lem:Product_Cofibration_Structure" href="../../../entry/products-of-cofibration-structures/index.html#lem:Product_Cofibration_Structure">Lemma 6.6.7</a>.  It  therefore  suffices,  by  <a class="source-reference" data-label="prop:Constructing_Left_Derived_Functors" href="../../../entry/constructing-left-derived-functors-from-cofibrant-objects/index.html#prop:Constructing_Left_Derived_Functors">Proposition 6.6.3</a>,  to  show  that  \(\alpha _!\)  preserves  componentwise  weak  equivalences  between
+componentwise cofibrant objects.
+</p><p class='noindent'>This is clear for the restriction functor \(f^*\). For the functor \(g_{\otimes }\), let \(\{u_k\colon x_k \to y_k\}_{k \in K}\) be a componentwise weak equivalence
+between componentwise cofibrant tuples. Then every object \(y_k\) is in particular tensor-cofibrant, and
+the \(j\)-th component of \(g_{\otimes }(u)\) is the map \[ \bigotimes _{k \in g^{-1}(j)} x_k \xrightarrow {\bigotimes _{k \in g^{-1}(j)} u_k} \bigotimes _{k \in g^{-1}(j)} y_k, \] which is a weak equivalence by the left derivability assumption.
+Thus \(\alpha _!\) admits an absolute left derived functor \[ \bL \alpha _!\colon C^I[(W^I)^{-1}] \to C^J[(W^J)^{-1}]. \]
+</p><p class='noindent'>It remains to verify compatibility with composition. Consider composable spans \[ \alpha \colon I \xleftarrow {f} K \xrightarrow {g} J \qquadtext {and} \qquad \beta \colon J \xleftarrow {h} L \xrightarrow {k} M. \] We show that
+the  canonical  comparison  map  \[ \bL \beta _! \circ \bL \alpha _! \to \bL (\beta \circ \alpha )_! \]  is  an  isomorphism.  Let  \(X=(X_i)_{i\in I}\)  be  componentwise  cofibrant.  Every
+component of \(\alpha _!(X)\) is a finite tensor product of cofibrant objects, and hence is tensor-cofibrant. Choose
+any componentwise weak equivalence \[ q\colon P\xrightarrow {\sim }\alpha _!(X) \] with \(P\) componentwise cofibrant. Such a map is obtained by
+factoring the morphism from the initial object to \(\alpha _!(X)\) in \(C^J\), and no functorial choice is required. By the
+defining property of total left derived functors, we have \[ (\bL \beta _!\circ \bL \alpha _!)(\gamma _I X) \simeq \bL \beta _!(\gamma _J\alpha _!(X)) \simeq \gamma _M\beta _!(P). \] The structure transformation for \(\bL \beta _!\) at \(\alpha _!(X)\) is
+represented under this identification by the map \[ \gamma _M\beta _!(q)\colon \gamma _M\beta _!(P)\longrightarrow \gamma _M\beta _!\alpha _!(X). \] This map is an isomorphism. Indeed, restriction
+along  \(h\)  preserves  weak  equivalences,  and  each  component  after  applying  \(k_{\otimes }\)  is  a  tensor  product  of
+weak equivalences whose sources are cofibrant and whose targets are tensor-cofibrant; this is a weak
+equivalence by <a class="source-reference" data-label="def:Left_Derivable_Monoidal_Structure" href="../../../entry/left-derivable-monoidal-structure/index.html#def:Left_Derivable_Monoidal_Structure">Definition 20.1.3</a>. The composite structure transformation used to construct the comparison in <a class="source-reference" data-label="obs:Comparison_Composites_Derived_Transport" href="../../../entry/comparison-composites-derived-transport/index.html#obs:Comparison_Composites_Derived_Transport">Observation 20.1.11</a> is
+therefore an isomorphism at \(\gamma _I X\). The structure transformation for \(\bL (\beta \circ \alpha )_!\) is also an isomorphism there, since
+\(X\) is componentwise cofibrant. Hence the comparison map is an isomorphism on the image of every
+componentwise cofibrant object of \(C^I\). By part (1) of <a class="source-reference" data-label="cor:Localization_Right_Exact" href="../../../entry/right-exact-localization-via-cofibrant-objects/index.html#cor:Localization_Right_Exact">Corollary 2.2.9</a>, every object of \(C^I[(W^I)^{-1}]\) is isomorphic to the image
+                                                                                   
+                                                                                   
+of such an object, so the comparison map is an isomorphism everywhere. We conclude that \(p_C\) is left
+derivable with respect to \(\{W^I\}_{I \in \Fin }\).                                                                                                                   □
+</p>
+</div></div>
+<p class='noindent'>We may now finally give a proof of the main result of this section.
+</p>
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-monoidal-dwyer-kan-localizations-and-derived-categories-section-01-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-monoidal-dwyer-kan-localizations-and-derived-categories-section-01-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof of </span><a class="source-reference" data-label="thm:Monoidal_Localization_Derivable" href="../../../entry/monoidal-localization-of-derivable-functors/index.html#thm:Monoidal_Localization_Derivable">Theorem 20.1.6</a><span class='ntx-Italic-tlf-t1-x-x-109'>.</span> </span>  Let us write \[ q\colon C^{\otimes }[(W^{\otimes })^{-1}] \to \Span (\Fin ) \] for the functor from <a class="source-reference" data-label="cons:Derived_Monoidal_Structure_Coherent" href="../../../entry/derived-monoidal-structure-coherent/index.html#cons:Derived_Monoidal_Structure_Coherent">Construction 20.1.5</a>. By <a class="source-reference" data-label="prop:Monoidal_Fibration_Is_Left_Derivable" href="../../../entry/monoidal-fibration-is-left-derivable/index.html#prop:Monoidal_Fibration_Is_Left_Derivable">Proposition 20.1.15</a>, the cocartesian fibration \(p_C\colon C^{\otimes } \to \Span (\Fin )\) is left derivable with
+respect to the classes \(\{W^I\}_{I \in \Fin }\) on its fibers. In particular, it follows from <a class="source-reference" data-label="prop:Localization_Of_Left_Derivable_Fibration" href="../../../entry/localization-of-left-derivable-fibration/index.html#prop:Localization_Of_Left_Derivable_Fibration">Proposition 20.1.14</a> that \(q\) is a cocartesian fibration.
+Moreover, for every finite set \(I\), the induced map on fibers \[ C_I^{\otimes } = C^I \to C^{\otimes }[(W^{\otimes })^{-1}]_I \] exhibits the target as the localization
+\(C^I[(W^I)^{-1}]\). Using <a class="source-reference" data-label="obs:Products_Of_Localizations" href="../../../entry/products-of-localizations/index.html#obs:Products_Of_Localizations">Exercise 1.5.24</a>, we obtain natural equivalences \[ C^{\otimes }[(W^{\otimes })^{-1}]_I \simeq C^I[(W^I)^{-1}] \simeq (C[W^{-1}])^I. \] For \(i\in I\), let \[ \rho _i\colon I\hookleftarrow \{i\}\xrightarrow {=}\{i\} \] be the corresponding inert span. Cocartesian
+transport along \(\rho _i\) in \(C^\otimes \) is the projection \(\pr _i\colon C^I\to C\), which preserves componentwise weak equivalences. Its total
+left derived functor is therefore the induced projection \[ C^I[(W^I)^{-1}]\longrightarrow C[W^{-1}]. \] Part (3) of <a class="source-reference" data-label="prop:Localization_Of_Left_Derivable_Fibration" href="../../../entry/localization-of-left-derivable-fibration/index.html#prop:Localization_Of_Left_Derivable_Fibration">Proposition 20.1.14</a> identifies this with cocartesian
+transport along \(\rho _i\) for \(q\). Consequently, under the equivalences above, the Segal map for the straightening
+of \(q\) is the equivalence \[ C^I[(W^I)^{-1}]\iso (C[W^{-1}])^I. \] The same statement for \(I=\emptyset \) identifies the fiber with the terminal category. Thus
+the cocartesian straightening of \(q\) preserves finite products, and <a class="source-reference" data-label="lem:Sym_Cat_As_Operad" href="../../../entry/sym-cat-as-operad/index.html#lem:Sym_Cat_As_Operad">Lemma 14.2.4</a> shows that \(q\) defines a symmetric
+monoidal \(\infty \)-category. This proves (1).
+</p><p class='noindent'>For (2), the structure transformation for each projection is invertible because the projection itself
+preserves weak equivalences. Thus \(\gamma ^\otimes \) carries cocartesian lifts of the spans \(\rho _i\) to cocartesian lifts. By
+part (iii) of <a class="source-reference" data-label="prop:Equivalent_Characterization_Operads" href="../../../entry/equivalent-characterization-operads/index.html#prop:Equivalent_Characterization_Operads">Proposition 14.1.9</a>, these lifts exhibit the product decompositions in the source and target total categories.
+It follows that \(\gamma ^\otimes \) preserves finite products. Thus it is a morphism of \(\infty \)-operads, in the sense of <a class="source-reference" data-label="def:Infty_Operad" href="../../../entry/infinity-operad/index.html#def:Infty_Operad">Definition 14.1.1</a>, and
+hence encodes a lax symmetric monoidal functor. This proves (2).
+</p><p class='noindent'>For (3), we evaluate part (2) of <a class="source-reference" data-label="prop:Localization_Of_Left_Derivable_Fibration" href="../../../entry/localization-of-left-derivable-fibration/index.html#prop:Localization_Of_Left_Derivable_Fibration">Proposition 20.1.14</a> on the one-point set \(\lra {1}\). This identifies the underlying \(\infty \)-category of
+the symmetric monoidal \(\infty \)-category from (1) with the localization \(C[W^{-1}]\), and under this equivalence the
+restriction of \(\gamma ^{\otimes }\) to the fiber over \(\lra {1}\) is precisely the localization functor \(\gamma \colon C \to C[W^{-1}]\). Thus the symmetric monoidal
+structure from (1) may be regarded as a symmetric monoidal structure on \(C[W^{-1}]\) itself.
+</p><p class='noindent'>Finally, let \(D\) be a symmetric monoidal \(\infty \)-category. Since \(\gamma ^{\otimes }\colon C^{\otimes } \to C^{\otimes }[(W^{\otimes })^{-1}]\) is the localization of the total category at \(W^{\otimes }\),
+precomposition with \(\gamma ^{\otimes }\) induces a fully faithful functor \[ \Fun _{/\Span (\Fin )}(C^{\otimes }[(W^{\otimes })^{-1}], D^{\otimes }) \hookrightarrow \Fun _{/\Span (\Fin )}(C^{\otimes }, D^{\otimes }) \] whose essential image consists of those functors
+over \(\Span (\Fin )\) that invert the morphisms in \(W^{\otimes }\). In the sense of <a class="source-reference" data-label="def:Infty_Operad" href="../../../entry/infinity-operad/index.html#def:Infty_Operad">Definition 14.1.1</a>, the lax symmetric monoidal functors are precisely
+the morphisms of \(\infty \)-operads, i.e. the functors over \(\Span (\Fin )\) that preserve finite products. Since \(\gamma ^{\otimes }\) preserves finite
+products, precomposition with \(\gamma ^{\otimes }\) certainly sends lax symmetric monoidal functors to lax symmetric
+monoidal functors. Conversely, let \(F\colon C^{\otimes }[(W^{\otimes })^{-1}] \to D^{\otimes }\) be a functor over \(\Span (\Fin )\) such that \(F \circ \gamma ^{\otimes }\) preserves finite products. By part
+                                                                                   
+                                                                                   
+(2) of <a class="source-reference" data-label="prop:Localization_Of_Left_Derivable_Fibration" href="../../../entry/localization-of-left-derivable-fibration/index.html#prop:Localization_Of_Left_Derivable_Fibration">Proposition 20.1.14</a>, the functor \(\gamma ^{\otimes }\) is essentially surjective on each fiber, hence essentially surjective on the total
+category. Since it also preserves finite products, it follows that \(F\) preserves finite products as well. We
+conclude that the displayed fully faithful functor restricts to a fully faithful functor \[ \Fun ^{\otimes \textup {-lax}}(C[W^{-1}],D) \hookrightarrow \Fun ^{\otimes \textup {-lax}}(C,D) \] whose essential
+image consists of those lax symmetric monoidal functors that invert the morphisms in \(W\). Indeed, for
+a lax symmetric monoidal functor, inverting \(W\) on the fiber over \(\lra {1}\) is equivalent to inverting \(W^{\otimes }\) on every
+fiber, since the induced functor on the fiber over \(I\) is the product of the underlying functor on the fiber
+over \(\lra {1}\). This proves (4).                                                                                                                         □
+</p>
+</div></div>
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../../algebras-and-modules/application-connective-complex-k-theory/index.html" aria-label="Previous section: Application: connective complex K-theory" title="Previous section: Application: connective complex K-theory"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../the-symmetric-monoidal-derived-category/index.html" aria-label="Next section: The symmetric monoidal derived category" title="Next section: The symmetric monoidal derived category"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html" aria-current="page"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/operads-the-heuristics/index.html"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../../../chapter/span-categories/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../../../chapter/basics-on-infinity-operads/index.html"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../../../chapter/cartesian-and-cocartesian-monoidal-structures/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../../../chapter/day-convolution-and-the-tensor-product-of-spectra/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="../../../chapter/the-envelope-of-an-infinity-operad/index.html"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../../../chapter/operadic-day-convolution-and-stabilization/index.html"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Operadic Day convolution and stabilization</span></a></li><li><a href="../../../chapter/algebras-and-modules/index.html"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html" aria-current="page"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 20.1</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations</span></a></li><li><a href="../the-symmetric-monoidal-derived-category/index.html"><span class="context-entry-heading">Section 20.2</span><span class="context-entry-title">The symmetric monoidal derived category</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#prop:Monoidal_Localization_Strict"><span class="context-entry-heading">Proposition 20.1.1</span><span class="context-entry-title">Tensor-stable monoidal localization</span></a></li><li><a href="#rmk:Monoidal_Localization_At_L_Equivalences"><span class="context-entry-heading">Remark 20.1.2</span><span class="context-entry-title">remark</span></a></li><li><a href="#def:Left_Derivable_Monoidal_Structure"><span class="context-entry-heading">Definition 20.1.3</span><span class="context-entry-title">Left derivable monoidal structure</span></a></li><li><a href="#rem:Left_Derivable_Monoidal_Criterion"><span class="context-entry-heading">Remark 20.1.4</span><span class="context-entry-title">remark</span></a></li><li><a href="#cons:Derived_Monoidal_Structure_Coherent"><span class="context-entry-heading">Construction 20.1.5</span><span class="context-entry-title">construction</span></a></li><li><a href="#thm:Monoidal_Localization_Derivable"><span class="context-entry-heading">Theorem 20.1.6</span><span class="context-entry-title">theorem</span></a></li><li><a href="#ex:Chain_Complexes_Monoidal_Localization"><span class="context-entry-heading">Example 20.1.7</span><span class="context-entry-title">Chain complexes</span></a></li><li><a href="#exercise:Trivial_Absolute_Left_Derived_Functor"><span class="context-entry-heading">Example 20.1.8</span><span class="context-entry-title">example</span></a></li><li><a href="#ex:Relative_Functors_From_Categories_With_Cofibrations"><span class="context-entry-heading">Example 20.1.9</span><span class="context-entry-title">example</span></a></li><li><a href="#def:Left_Derivable_Cocartesian_Fibration"><span class="context-entry-heading">Definition 20.1.10</span><span class="context-entry-title">definition</span></a></li><li><a href="#obs:Comparison_Composites_Derived_Transport"><span class="context-entry-heading">Observation 20.1.11</span><span class="context-entry-title">observation</span></a></li><li><a href="#ex:Left_Derivable_Criterion_PreserveW"><span class="context-entry-heading">Example 20.1.12</span><span class="context-entry-title">example</span></a></li><li><a href="#ex:Left_Derivable_Stable_Under_Pullback"><span class="context-entry-heading">Example 20.1.13</span><span class="context-entry-title">example</span></a></li><li><a href="#prop:Localization_Of_Left_Derivable_Fibration"><span class="context-entry-heading">Proposition 20.1.14</span><span class="context-entry-title">proposition</span></a></li><li><a href="#prop:Monoidal_Fibration_Is_Left_Derivable"><span class="context-entry-heading">Proposition 20.1.15</span><span class="context-entry-title">proposition</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

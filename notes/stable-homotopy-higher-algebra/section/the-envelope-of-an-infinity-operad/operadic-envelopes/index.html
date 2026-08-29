@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 17.3: Operadic envelopes | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/operads-and-higher-algebra/index.html">Part II</a> · <a href="../../../chapter/the-envelope-of-an-infinity-operad/index.html">Chapter 17</a> · Section 17.3</p>
+      <h1>Operadic envelopes</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Operadic_Envelopes'>We now construct the envelope of an \(\infty \)-operad. As mentioned in the introduction to this chapter, it will be
+convenient to work in greater generality. Our approach is heavily inspired by <span class='citation'>[Barkan et al. (2022)]</span>, in which the authors
+construct a very general envelope construction using a notion of <span class='ntx-Italic-tlf-t1-x-x-109'>algebraic pattern</span>. To simplify
+the exposition, we will forgo some of the generality and only consider a special case of their
+setup.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<a class="entry-heading-link" href="../../../entry/span-pattern/index.html" aria-label="Convention 17.3.1., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Convention 17.3.1.</span></a>  </span><span id='conv:Span_Pattern'></span> Throughout this section, we fix an adequate triple \(\Ff = (F,F_L,F_R)\) which satisfies the following three
+conditions:
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'>The \(\infty \)-category \(F\) is extensive in the sense of <a class="source-reference" data-label="def:Extensive" href="../../../entry/extensive/index.html#def:Extensive">Definition 13.3.1</a>, and the triple \((F,F_L,F_R)\) is <span class='ntx-Italic-tlf-t1-x-x-109'>weakly coextensive </span>in the sense
+     of <a class="source-reference" data-label="def:Weakly_Extensive_Adequate_Triple" href="../../../entry/weakly-extensive-adequate-triple/index.html#def:Weakly_Extensive_Adequate_Triple">Definition 13.3.3</a>;
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'>Morphisms in \(F_L\) satisfy left cancellation: given \(l\colon I \to J\) and \(l'\colon J \to K\), if \(l' \in F_L\) and \(l'l \in F_L\) then also \(l \in F_L\);
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'>For every \(I\in F\), the morphism \(\emptyset \to I\) is contained in \(F_L\).</p></dd></dl>
+<p class='noindent'>Note that this in particular implies that \(F_L\) contains all inclusions \(I_i \hookrightarrow \bigsqcup _{j=1}^n I_j\) for \(I_1, \dots , I_n \in F\): by weak coextensivity, \(F_L\) is
+closed under finite coproducts, so the inclusion is the coproduct of \(\id _{I_i}\) with the morphisms \(\emptyset \to I_j\) for
+\(j \neq i\).
+</p>
+                                                                                   
+                                                                                   
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1005r2'></a>
+<a class="entry-heading-link" href="../../../entry/span-pattern-finite-sets/index.html" aria-label="Example 17.3.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 17.3.2.</span></a>  </span><span id='ex:Span_Pattern_Finite_Sets'></span>  The  main  two  examples  are  the  adequate  triples  \((\Fin ,\Fin ,\Fin )\)  and  \((\Fin ,\Fin _{\inj },\Fin )\),  where  \(\Fin _{\inj } \subseteq \Fin \)  is  the  wide
+subcategory of injections.
+</p>
+</div>
+<p class='noindent'>These are the only two cases needed later in this book. The extra generality is nevertheless useful: it exhibits
+the envelope construction as a reusable feature of span patterns rather than a peculiarity of ordinary
+symmetric operads. The examples below indicate how the same method extends to settings arising in
+equivariant and global homotopy theory.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1006r3'></a>
+<a class="entry-heading-link" href="../../../entry/span-pattern-finite-g-sets/index.html" aria-label="Example 17.3.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 17.3.3.</span></a>  </span><span id='ex:Span_Pattern_Finite_G_Sets'></span> More generally, let \(G\) be a finite group and let \(\Fin _G\) be the category of finite \(G\)-sets. Then
+the adequate triples \((\Fin _G,\Fin _G,\Fin _G)\) and \((\Fin _G,(\Fin _G)_{\inj }, \Fin _G)\) are examples.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1007r4'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/span-pattern-finite-groupoids/index.html" aria-label="Example 17.3.4., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 17.3.4.</span></a>  </span><span id='ex:Span_Pattern_Finite_Groupoids'></span> Let \(\FinGrpd \subseteq \Grpd \subseteq \Cat \) denote the full (2,1)-category of finite groupoids. Under the fully faithful
+inclusion \(\Grpd \hookrightarrow \An \), we may identify this with the full subcategory of animae spanned by objects of the form
+\(\bigsqcup _{i=1}^n BG_i\), the finite disjoint unions of classifying animae of finite groups \(G_i\). Then \((\FinGrpd ,\FinGrpd ,\FinGrpd )\) satisfies the conditions of <a class="source-reference" data-label="conv:Span_Pattern" href="../../../entry/span-pattern/index.html#conv:Span_Pattern">Convention 17.3.1</a>.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1008r5'></a>
+<a class="entry-heading-link" href="../../../entry/f-monoid/index.html" aria-label="Definition 17.3.5, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 17.3.5 </span></a>(\(\Ff \)-monoid)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:F_Monoid'></span> Let \(\Ff = (F,F_L,F_R)\) be an adequate triple satisfying the conditions of <a class="source-reference" data-label="conv:Span_Pattern" href="../../../entry/span-pattern/index.html#conv:Span_Pattern">Convention 17.3.1</a>.
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'>Given an \(\infty \)-category \(C\) with finite products, we say that a functor \(M\colon F_L\catop \to C\) satisfies the <span class='ntx-Italic-tlf-t1-x-x-109'>Segal condition </span>if
+     for objects \(I_1, \dots , I_n \in F\), the maps \(e_i\colon I_i \hookrightarrow \bigsqcup _{j=1}^n I_j\) induce an isomorphism \[ (e_i^*)_{i=1}^n \colon M(\bigsqcup _{j=1}^n I_j) \iso \prod _{i=1}^n M(I_i). \]
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'>For \(C\) with finite products, we define an \(\Ff \)<span class='ntx-Italic-tlf-t1-x-x-109'>-monoid in</span> \(C\) to be a functor \[ M\colon \Span _{L,R}(F) \to C \] such that \(M\vert _{F_L\catop }\) satisfies the Segal
+     condition. We denote by \[ \Mon _{\Ff }(C) \quad \subseteq \quad \Fun (\Span _{L,R}(F), C) \] the full subcategory spanned by the \(\Ff \)-monoids.</p></dd></dl>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1011r6'></a>
+<a class="entry-heading-link" href="../../../entry/span-patterns-are-weakly-extensive/index.html" aria-label="Remark 17.3.6., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 17.3.6.</span></a>  </span><span id='rmk:Span_Patterns_Are_Weakly_Extensive'></span> If \(F_L\) contains the fold maps \(I \sqcup I \to I\), then the conditions of <a class="source-reference" data-label="conv:Span_Pattern" href="../../../entry/span-pattern/index.html#conv:Span_Pattern">Convention 17.3.1</a> imply that \((F,F_L,F_R)\) is weakly extensive.
+Indeed, weak coextensivity implies that \(F_L\) and \(F_R\) are closed under finite coproducts, while part (3) of
+<a class="source-reference" data-label="conv:Span_Pattern" href="../../../entry/span-pattern/index.html#conv:Span_Pattern">Convention 17.3.1</a> supplies the morphisms \(\emptyset \to I\) in \(F_L\). The claim therefore follows from part (1) of <a class="source-reference" data-label="lem:Extensive_Category_Gives_Extensive_Triple" href="../../../entry/extensive-category-gives-extensive-triple/index.html#lem:Extensive_Category_Gives_Extensive_Triple">Lemma 13.3.4</a>. It follows that \(F_L\) admits
+finite coproducts, and a functor \(F_L\catop \to C\) satisfies the Segal condition if and only if it preserves finite products.
+Similarly, part (1) of <a class="source-reference" data-label="lem:Products_In_Span_Categories" href="../../../entry/products-in-span-categories/index.html#lem:Products_In_Span_Categories">Lemma 13.3.8</a> shows that \(\Span _{L,R}(F)\) admits finite products, and a functor \(M\colon \Span _{L,R}(F) \to C\) is an \(\Ff \)-monoid if and only if
+it preserves finite products.
+                                                                                   
+                                                                                   
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1012r7'></a>
+<a class="entry-heading-link" href="../../../entry/f-monoids-commutative-monoids/index.html" aria-label="Example 17.3.7., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 17.3.7.</span></a>  </span><span id='ex:F_Monoids_Commutative_Monoids'></span> For \(\Ff = (\Fin ,\Fin ,\Fin )\), the \(\Ff \)-monoids are precisely the commutative monoids from <a class="source-reference" data-label="def:Commutative_Monoid" href="../../../entry/commutative-monoid-objects/index.html#def:Commutative_Monoid">Definition 5.3.4</a>.
+</p><p class='noindent'>For \(\Ff = (\Fin ,\Fin _{\inj },\Fin )\), the \(\infty \)-category \(\Span _{\inj ,\all }(\Fin )\) is equivalent to the (classical) category \(\Fin _*\) of finite pointed sets, and the resulting
+\(\Ff \)-monoids are precisely the commutative monoids as defined by <span class='citation'>Lurie (2017)</span>. By <a class="source-reference" data-label="prop:CMon_Equiv_Segal" href="../../../entry/commutative-monoids-via-the-segal-condition/index.html#prop:CMon_Equiv_Segal">Proposition 5.3.9</a>, restriction along the inclusion
+induces an equivalence between these two definitions.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1013r8'></a>
+<a class="entry-heading-link" href="../../../entry/f-monoidal-infinity-category/index.html" aria-label="Definition 17.3.8., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 17.3.8.</span></a>  </span><span id='def:F_Monoidal_Infinity_Category'></span> We define an \(\Ff \)<span class='ntx-Italic-tlf-t1-x-x-109'>-monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category </span>to be an \(\Ff \)-monoid in \(\Cat _{\infty }\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1014r9'></a>
+<a class="entry-heading-link" href="../../../entry/f-monoidal-cats-straightening/index.html" aria-label="Remark 17.3.9., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 17.3.9.</span></a>  </span><span id='rmk:F-Monoidal_Cats_Straightening'></span> Using the straightening-unstraightening equivalence \(\Un ^{\cc }\colon \Fun (\Span _{L,R}(F), \Cat _{\infty }) \iso \Cocart (\Span _{L,R}(F))\), we may identify the category
+of \(\Ff \)-monoidal \(\infty \)-categories with a full subcategory of \(\Cocart (\Span _{L,R}(F))\). We denote the unstraightening of an \(\Ff \)-monoidal
+\(\infty \)-category \(C\) by \(p_{C}\colon C^{\otimes } \to \Span _{L,R}(F)\).
+                                                                                   
+                                                                                   
+</p>
+</div>
+<p class='noindent'>In the following, we recall from <a class="source-reference" data-label="prop:FS_On_Spans" href="../../../entry/fs-on-spans/index.html#prop:FS_On_Spans">Proposition 17.1.10</a> that the span category \(\Span _{L,R}(F)\) comes equipped with a canonical
+factorization system \((\Ll ,\Rr )\), where \(\Ll = F_L\catop \) consists of the backwards spans and \(\Rr = F_R\) consists of the forwards
+spans.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1015r10'></a>
+<a class="entry-heading-link" href="../../../entry/f-operad/index.html" aria-label="Definition 17.3.10, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 17.3.10 </span></a>(\(\Ff \)-operad)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:F_Operad'></span> Let \(\Ff = (F,F_L,F_R)\) be an adequate triple satisfying the conditions of <a class="source-reference" data-label="conv:Span_Pattern" href="../../../entry/span-pattern/index.html#conv:Span_Pattern">Convention 17.3.1</a>. An \(\Ff \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operad </span>is a pair \(\Oo = (\Oo ^{\otimes },p_{\Oo })\)
+consisting of an \(\infty \)-category \(\Oo ^{\otimes }\) and a functor \(p_{\Oo }\colon \Oo ^{\otimes } \to \Span _{L,R}(F)\) satisfying the following three conditions:
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'>The functor \(p_{\Oo }\) is an \(\Ll \)-cocartesian fibration;
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><a id='x1-10172'></a> The straightening \(F_L\catop \to \Cat _{\infty }\) of the resulting cocartesian fibration \(\Oo ^{\otimes }\vert _{F_L\catop } \to F_L\catop \) satisfies the Segal condition: for all \(J_1, \dots , J_n \in F\)
+     we have \[ \Oo ^{\otimes }_{\bigsqcup _{i=1}^n J_i} \iso \prod _{i=1}^n \Oo ^{\otimes }_{J_i}. \]
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'><a id='x1-10183'></a> Consider objects \(I, J_1, \dots , J_n \in F\), \(X \in \Oo ^{\otimes }_I\) and \(Y \in \Oo ^{\otimes }_J\) with \(J := \bigsqcup _{i=1}^n J_i\). Let \(Y \to Y_i\) be cocartesian lifts of the backwards maps \(J \hookleftarrow J_i \xrightarrow {=} J_i\). Then the
+     induced commutative square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-9e93addbea46.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>is a pullback square.</p></dd></dl>
+<p class='noindent'>Given another \(\Ff \)-operad \(\Pp = (\Pp ^{\otimes },p_{\Pp })\), a <span class='ntx-Italic-tlf-t1-x-x-109'>morphism of</span> \(\Ff \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operads </span>is a \(\Ll \)-cocartesian functor \(f\colon \Oo ^{\otimes } \to \Pp ^{\otimes }\) over \(\Span _{L,R}(F)\). We denote by \[ \Op _{\Ff } \subseteq (\Cat _\infty )^{\Ll \mathrm {-cocart}}_{/\Span _{L,R}(F)} \] the full
+subcategory spanned by the \(\Ff \)-operads.
+</p>
+</div>
+
+<div class='newtheorem'>
+                                                                                   
+                                                                                   
+<p class='noindent'><span class='head'>
+<a id='x1-1019r11'></a>
+<a class="entry-heading-link" href="../../../entry/f-multimorphism-operad/index.html" aria-label="Construction 17.3.11., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 17.3.11.</span></a>  </span><span id='cons:F_Multimorphism_Operad'></span> We construct a functor \[ \Mm \colon \Mon _{\Ff }(\Cat _{\infty }) \to \Op _{\Ff }. \] Given an \(\Ff \)-monoidal \(\infty \)-category \(C\), its unstraightening
+\(p_{C}\colon C^{\otimes } \to \Span _{L,R}(F)\) is an \(\Ff \)-operad: conditions (1) and (2) are obvious, and (3) is proved just like in <a class="source-reference" data-label="lem:Sym_Cat_As_Operad" href="../../../entry/sym-cat-as-operad/index.html#lem:Sym_Cat_As_Operad">Lemma 14.2.4</a>. Similarly, for an
+\(\Ff \)-monoidal functor \(C \to D\) (i.e. a morphism in \(\Mon _{\Ff }(\Cat _{\infty })\)) the map on unstraightenings \(C^{\otimes } \to D^{\otimes }\) is a cocartesian functor, hence
+in particular \(\Ll \)-cocartesian. This shows that unstraightening defines the desired functor \(\Mm \).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1020r12'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 17.3.12.</span>  </span><span id='prop:Envelope_Definition'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(\Mm \colon \Mon _{\Ff }(\Cat _{\infty }) \to \Op _{\Ff }\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a left adjoint </span>\[ \Env _{\Ff }\colon \Op _{\Ff } \to \Mon _{\Ff }(\Cat _{\infty }), \] <span class='ntx-Italic-tlf-t1-x-x-109'>called the</span> \(\Ff \)-operadic envelope construction<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-the-envelope-of-an-infinity-operad-section-03-7" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-the-envelope-of-an-infinity-operad-section-03-7">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By definition, \(\Op _{\Ff }\) is a full subcategory of \((\Cat _\infty )^{\Ll \mathrm {-cocart}}_{/\Span _{L,R}(F)}\). We will similarly identify \(\Mon _{\Ff }(\Cat _{\infty })\) with a full subcategory of \(\Cocart (\Span _{L,R}(F))\), see <a class="source-reference" data-label="rmk:F-Monoidal_Cats_Straightening" href="../../../entry/f-monoidal-cats-straightening/index.html#rmk:F-Monoidal_Cats_Straightening">Remark 17.3.9</a>.
+Recall from <a class="source-reference" data-label="cor:From_L_Cocart_To_Cocart" href="../../../entry/from-l-cocart-to-cocart/index.html#cor:From_L_Cocart_To_Cocart">Corollary 17.2.10</a> that the forgetful functor \(\Cocart (\Span _{L,R}(F)) \hookrightarrow (\Cat _\infty )^{\Ll \mathrm {-cocart}}_{/\Span _{L,R}(F)}\) admits a left adjoint \[ E_{\Rr }\colon (\Cat _\infty )^{\Ll \mathrm {-cocart}}_{/\Span _{L,R}(F)} \to \Cocart (\Span _{L,R}(F)). \] Since \(\Mm \) is defined as the restriction
+of this forgetful functor, it remains to show that \(E_{\Rr }\) restricts to a functor \[ \Env _{\Ff }\colon \Op _{\Ff } \to \Mon _{\Ff }(\Cat _{\infty }). \] To this end, let \(\Oo \) be an
+\(\Ff \)-operad, and consider the cocartesian fibration \(E_{\Rr }(p_{\Oo }) \to \Span _{L,R}(F)\) from <a class="source-reference" data-label="prop:L-to-all" href="../../../entry/from-partially-cocartesian-to-cocartesian-fibrations/index.html#prop:L-to-all">Proposition 17.2.8</a>. We must show that its straightening
+\(\Span _{L,R}(F) \to \Cat _{\infty }\) satisfies the Segal condition. The description of cocartesian morphisms in <a class="source-reference" data-label="prop:L-to-all" href="../../../entry/from-partially-cocartesian-to-cocartesian-fibrations/index.html#prop:L-to-all">Proposition 17.2.8</a>, applied to the
+factorization of a composite of spans, gives the following explicit description of this straightening:
+</p>
+                                                                                   
+                                                                                   
+     <ul class='itemize1'>
+     <li class='itemize'>On objects, it sends \(I \in F\) to the pullback \(\infty \)-category \((F_R)_{/I} \times _{\Span _{L,R}(F)} \Oo ^{\otimes }\).
+     </li>
+     <li class='itemize'>Given a backwards morphism \(g\colon J \leftarrow I\), the functor \((F_R)_{/J} \times _{\Span _{L,R}(F)} \Oo ^{\otimes } \to (F_R)_{/I} \times _{\Span _{L,R}(F)} \Oo ^{\otimes }\) sends a pair \((X,r\colon J' \to J)\) with \(r \in F_R\) and \(X \in \Oo ^{\otimes }_{J'}\) to the pair \((Y,r'\colon I' \to I)\), where \(r'\) is
+     defined via the pullback square <div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-bb7b3301d645.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div> and where \(Y\) is the target of a \(p_{\Oo }\)-cocartesian lift \(\hat {f}_X\colon X \to Y\) of \(f\).
+     </li>
+     <li class='itemize'>Given a forward morphism \(g\colon I \to J\), the transport functor sends \((X,r\colon K \to I)\) to \((X,gr\colon K \to J)\).</li></ul>
+<p class='noindent'>Indeed, in the backwards case the displayed pullback is precisely the factorization of the composite span
+used in <a class="source-reference" data-label="prop:L-to-all" href="../../../entry/from-partially-cocartesian-to-cocartesian-fibrations/index.html#prop:L-to-all">Proposition 17.2.8</a>. In the forward case, the composite \(gr\) already belongs to \(F_R\), so its factorization has left factor \(\id _K\) and the
+cocartesian lift leaves \(X\) unchanged. Consider now a collection of objects \(J_1, \dots , J_n\) and let \(J := \bigsqcup _{i=1}^n J_i\). We must show that the
+map \[ (F_R)_{/J} \times _{\Span _{L,R}(F)} \Oo ^{\otimes } \to \prod _{i=1}^n (F_R)_{/J_i} \times _{\Span _{L,R}(F)} \Oo ^{\otimes } \] is an equivalence.
+</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Essential surjectivity</span>: Consider an object \((X_i,r_i\colon I_i \to J_i)_{i=1}^n\) of the target. We define \(I := \bigsqcup _{i=1}^n I_i\), let \(r\colon I \to J\) be the map whose \(i\)-th component is \(r_i\),
+and we let \(X \in \Oo ^{\otimes }_I\) correspond to the tuple \((X_i)_{i=1}^n\) under the equivalence \(\Oo ^{\otimes }_I \iso \prod _{i=1}^n \Oo ^{\otimes }_{I_i}\) from condition <span class="source-reference equation-reference" data-label="it:F_Operad_Fibers">(2)</span> of <a class="source-reference" data-label="def:F_Operad" href="../../../entry/f-operad/index.html#def:F_Operad">Definition 17.3.10</a>. Then \((X,r\colon I \to J)\) is the desired
+preimage.
+</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Full faithfulness</span>: Consider two objects \((X,r\colon I \to J)\) and \((X',r'\colon I' \to J)\) of \((F_R)_{/J} \times _{\Span _{L,R}(F)} \Oo ^{\otimes }\). We must show that the map \[ \Hom _{(F_R)_{/J}}(I,I') \times _{\Hom _{\Span _{L,R}(F)}(I,I')} \Hom _{\Oo ^{\otimes }}(X,X') \to \prod _{i=1}^n \Hom _{(F_R)_{/J_i}}(I_i,I'_i) \times _{\Hom _{\Span _{L,R}(F)}(I_i,I'_i)} \Hom _{\Oo ^{\otimes }}(X_i,X'_i) \] is an equivalence. Extensivity
+of \(F\) gives an equivalence \(F_{/J} \simeq \prod _i F_{/J_i}\). It restricts to the displayed slices of \(F_R\): membership in \(F_R\) is preserved by base change
+along the inclusions \(J_i \hookrightarrow J\) by adequacy, and is detected on the resulting components because \(F_R\) is closed under
+finite coproducts by weak coextensivity. Consequently \((F_R)_{/J} \to \prod _{i=1}^n (F_R)_{/J_i}\) is an equivalence, and hence there is a
+natural equivalence \[ \Hom _{(F_R)_{/J}}(I,I') \simeq \prod _{i=1}^n \Hom _{(F_R)_{/J_i}}(I_i,I'_i). \] It thus remains to show that this map induces equivalences on fibers for
+every map \(f \in \Hom _{(F_R)_{/J}}(I,I')\). Condition <span class="source-reference equation-reference" data-label="it:F_Operad_Homs">(3)</span> of <a class="source-reference" data-label="def:F_Operad" href="../../../entry/f-operad/index.html#def:F_Operad">Definition 17.3.10</a> identifies the relevant fiber with the product of the fibers of \(\Hom _{\Oo ^\otimes }(X,X'_i)\) over the
+spans \(I \leftarrow I_i \to I'_i\). Cocartesian transport along the backwards spans \(I \leftarrow I_i \xrightarrow {=} I_i\) then identifies these fibers with those
+of \(\Hom _{\Oo ^\otimes }(X_i,X'_i)\) over the forward spans \(I_i \to I'_i\). This is precisely the map on fibers displayed above, so it is an
+equivalence.                                                                                                                                        □
+</p>
+</div></div>
+<p class='noindent'>Let us explicitly record the main example of the \(\Ff \)-operadic envelope construction:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1021r13'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 17.3.13.</span>  </span><span id='prop:Operadic_Envelope_Adjunction'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The multimorphism operad functor</span> \(\Mm \colon \Cat _{\infty }^{\otimes } \to \Op _{\infty }\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a left adjoint </span>\[ \Env \colon \Op _{\infty } \to \Cat _{\infty }^{\otimes }. \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-the-envelope-of-an-infinity-operad-section-03-6" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-the-envelope-of-an-infinity-operad-section-03-6">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> This is a special case of the previous proposition. For \(\Ff = (\Fin ,\Fin ,\Fin )\), <a class="source-reference" data-label="prop:Equivalent_Characterization_Operads" href="../../../entry/equivalent-characterization-operads/index.html#prop:Equivalent_Characterization_Operads">Proposition 14.1.9</a> identifies the objects of \(\Op _{\Ff }\) with the
+\(\infty \)-operads from <a class="source-reference" data-label="def:Infty_Operad" href="../../../entry/infinity-operad/index.html#def:Infty_Operad">Definition 14.1.1</a>, while <a class="source-reference" data-label="cor:Preserve_Inert_Equivalent_Operad_Map" href="../../../entry/preserve-inert-equivalent-operad-map/index.html#cor:Preserve_Inert_Equivalent_Operad_Map">Corollary 14.1.11</a> identifies the two notions of morphism.                                                         □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1022r14'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 17.3.14.</span>  </span><span id='cor:Algebras_As_Functors_From_Envelope'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(\Oo \) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operad and let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category. There is a
+natural equivalence </span>\[ \Alg _{\Oo }(C) \simeq \Fun ^{\otimes }(\Env (\Oo ),C). \] <span class='ntx-Italic-tlf-t1-x-x-109'>In other words, an</span> \(\Oo \)<span class='ntx-Italic-tlf-t1-x-x-109'>-algebra in</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is equivalently a symmetric monoidal functor
+from the envelope of</span> \(\Oo \) <span class='ntx-Italic-tlf-t1-x-x-109'>to</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-the-envelope-of-an-infinity-operad-section-03-5" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-the-envelope-of-an-infinity-operad-section-03-5">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Let \(E\) be an \(\infty \)-category. Using <a class="source-reference" data-label="lem:Algebras_In_Pointwise_Monoidal_Structure" href="../../../entry/algebras-in-pointwise-monoidal-structure/index.html#lem:Algebras_In_Pointwise_Monoidal_Structure">Lemma 14.2.12</a>, the adjunction of <a class="source-reference" data-label="prop:Operadic_Envelope_Adjunction" href="../../../entry/operadic-envelope-adjunction/index.html#prop:Operadic_Envelope_Adjunction">Proposition 17.3.13</a>, and currying, we obtain natural equivalences
+\begin {align*}  \Hom _{\Cat _{\infty }}(E,\Alg _{\Oo }(C)) &amp;\simeq \Hom _{\Op _\infty }(\Oo ,\Mm _{\Fun (E,C)}) \\ &amp;\simeq \Map ^\otimes (\Env (\Oo ),\Fun (E,C)) \\ &amp;\simeq \Hom _{\Cat _{\infty }}(E,\Fun ^\otimes (\Env (\Oo ),C)).  \end {align*}
+                                                                                   
+                                                                                   
+</p><p class='noindent'>Here \(\Fun (E,C)\) carries the pointwise symmetric monoidal structure. Since these equivalences are natural in \(E\), the
+Yoneda lemma gives the claimed equivalence of \(\infty \)-categories.                                                            □
+</p>
+</div></div>
+<p class='noindent'>We refer to the symmetric monoidal \(\infty \)-category \(\Env (\Oo )\) as the <span class='ntx-Italic-tlf-t1-x-x-109'>envelope </span>of the \(\infty \)-operad \(\Oo \). Note that its underlying
+\(\infty \)-category sits in the following pullback square:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-d2e911b1c815.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>In particular, the objects of \(\Env (\Oo )\) are unordered tuples \(\{x_i\}_{i \in I}\) of colors
+of \(\Oo \).</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1023r15'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 17.3.15.</span>  </span><span id='lem:Envelope_Tensor_Concatenation'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>The  monoidal  unit  of</span>  \(\Env (\Oo )\)  <span class='ntx-Italic-tlf-t1-x-x-109'>is  the  empty  tuple,  and  its  tensor  product  is  given  by
+concatenation of unordered tuples: </span>\[ \{x_i\}_{i \in I} \otimes \{y_j\}_{j \in J} \simeq \{x_i\}_{i \in I} \sqcup \{y_j\}_{j \in J}. \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-the-envelope-of-an-infinity-operad-section-03-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-the-envelope-of-an-infinity-operad-section-03-4">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Under the Segal equivalence, the two tuples on the left determine the object of the fiber over
+\(\lra {2}\) indexed by their disjoint union \(I \sqcup J\). The tensor product is cocartesian transport of this object along
+the forward fold span \(\lra {2} \xleftarrow {=} \lra {2} \to \lra {1}\). By the forward-transport calculation in the proof of <a class="source-reference" data-label="prop:Envelope_Definition" href="../../../entry/envelope-definition/index.html#prop:Envelope_Definition">Proposition 17.3.12</a>, this transport leaves
+the object of \(\Oo ^\otimes \) unchanged and postcomposes its indexing map with the fold map. The result is the
+concatenated tuple. The same calculation for the unique forward map \(\emptyset \to \lra {1}\) gives the empty tuple as the
+unit.                                                                                                                                                     □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1024r16'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 17.3.16.</span>  </span><span id='lem:Envelope_Comm'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>The  envelope</span>  \(\Env (\Comm )\)  <span class='ntx-Italic-tlf-t1-x-x-109'>of  the  commutative  operad  is  the  category  of  finite  sets,  with
+monoidal structure given by disjoint union.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-the-envelope-of-an-infinity-operad-section-03-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-the-envelope-of-an-infinity-operad-section-03-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The total category of the terminal operad \(\Comm \) is \(\Span (\Fin )\) itself. The pullback description of the underlying
+category of the envelope therefore gives \(\Env (\Comm ) \simeq \Fin \), and <a class="source-reference" data-label="lem:Envelope_Tensor_Concatenation" href="../../../entry/envelope-tensor-concatenation/index.html#lem:Envelope_Tensor_Concatenation">Lemma 17.3.15</a> identifies the tensor product with disjoint union.     □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1025r17'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 17.3.17.</span>  </span><span id='lem:Mapping_Animae_Envelope'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(\Oo \) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operad, and let</span> \(\{x_i\}_{i \in I}\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(\{y_j\}_{j \in J}\) <span class='ntx-Italic-tlf-t1-x-x-109'>be objects of</span> \(\Env (\Oo )\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then there is a natural equivalence</span>
+\[ \Hom _{\Env (\Oo )}(\{x_i\}_{i \in I}, \{y_j\}_{j \in J}) \simeq \coprod _{f\colon I \to J} \; \prod _{j \in J} \Oo (\{x_i\}_{i \in f^{-1}(j)}; y_j), \] <span class='ntx-Italic-tlf-t1-x-x-109'>where the coproduct ranges over all maps of finite sets</span> \(f\colon I \to J\)<span class='ntx-Italic-tlf-t1-x-x-109'>. In particular, for a single output color</span> \(y \in \Oo ^{\simeq }\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>there is a natural equivalence </span>\[ \Hom _{\Env (\Oo )}(\{x_i\}_{i \in I}, y) \simeq \Oo (\{x_i\}_{i \in I}; y). \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-the-envelope-of-an-infinity-operad-section-03-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-the-envelope-of-an-infinity-operad-section-03-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> As noted above, the underlying \(\infty \)-category of \(\Env (\Oo )\) is the pullback \(\Fin \times _{\Span (\Fin )} \Oo ^{\otimes }\) along the inclusion \(\Fin \hookrightarrow \Span (\Fin )\) of the
+                                                                                   
+                                                                                   
+forward spans. Consequently, \(\Hom _{\Env (\Oo )}(\{x_i\}_{i \in I}, \{y_j\}_{j \in J})\) is the pullback of \[ \Hom _{\Oo ^{\otimes }}(\{x_i\}_{i \in I}, \{y_j\}_{j \in J}) \longrightarrow \Hom _{\Span (\Fin )}(I,J) \] and the subanima \(\Hom _{\Fin }(I,J)\) of forward spans, which produces
+the coproduct over the maps \(f\colon I \to J\). Fixing such an \(f\), condition <span class="source-reference equation-reference" data-label="it:F_Operad_Homs">(3)</span> of <a class="source-reference" data-label="def:F_Operad" href="../../../entry/f-operad/index.html#def:F_Operad">Definition 17.3.10</a> identifies the fiber over \(f\) with the product
+over \(j \in J\) of the fibers of \(\Hom _{\Oo ^{\otimes }}(\{x_i\}_{i \in I}, y_j)\) over the span \(I \hookleftarrow f^{-1}(j) \to \lra {1}\). Cocartesian transport along the inert morphism \(\{x_i\}_{i \in I} \to \{x_i\}_{i \in f^{-1}(j)}\) identifies the
+latter fiber with the multimorphism anima \(\Oo (\{x_i\}_{i \in f^{-1}(j)}; y_j)\). The final statement is the case \(J = \lra {1}\).                                    □
+</p>
+</div></div>
+<p class='noindent'>By functoriality, any morphism of \(\infty \)-operads induces a symmetric monoidal functor on envelopes. In
+particular, the terminal morphism \(\Oo \to \Comm \) from any \(\infty \)-operad \(\Oo \) induces a symmetric monoidal functor
+\(\Env (\Oo ) \to \Env (\Comm ) \simeq (\Fin ,\amalg )\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1026r18'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 17.3.18.</span>  </span><span id='prop:Embedding_Operads_Into_Sym_Mon_Cats'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The induced functor </span>\[ \Env \colon \Op _{\infty } \to (\Cat _{\infty }^{\otimes })_{/(\Fin ,\amalg )} \] <span class='ntx-Italic-tlf-t1-x-x-109'>is fully faithful. A symmetric monoidal functor</span> \(p\colon C \to (\Fin ,\amalg )\) <span class='ntx-Italic-tlf-t1-x-x-109'>lies in the
+essential image if and only if it satisfies the following two conditions:</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For every finite set</span> \(I\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the tensor product in</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>defines an equivalence </span>\[ \prod _{i \in I} C_{\{i\}} \iso C_I, \] <span class='ntx-Italic-tlf-t1-x-x-109'>where</span> \(C_I\) <span class='ntx-Italic-tlf-t1-x-x-109'>is the fiber of</span> \(p\) <span class='ntx-Italic-tlf-t1-x-x-109'>over</span>
+     \(I \in \Fin \)<span class='ntx-Italic-tlf-t1-x-x-109'>;</span>
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For every finite collection</span> \((I_j)_{j \in J}\) <span class='ntx-Italic-tlf-t1-x-x-109'>of finite sets and every collection of objects</span> \(X_j \in p^{-1}(I_j)\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(y_j \in p^{-1}(\{j\})\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the commutative
+     square </span></p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-83a9354435e3.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>is a pullback square, where the bottom map hits the map</span> \(\bigsqcup _{j \in J} I_j \to \bigsqcup _{j \in J} * = J\) <span class='ntx-Italic-tlf-t1-x-x-109'>induced by the maps</span> \(I_j \to *\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-the-envelope-of-an-infinity-operad-section-03-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-the-envelope-of-an-infinity-operad-section-03-1">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The full faithfulness is an instance of <a class="source-reference" data-label="lem:Envelope_Fully_Faithful" href="../../../entry/envelope-fully-faithful/index.html#lem:Envelope_Fully_Faithful">Lemma 17.2.11</a>. To identify the essential image, we first show that
+the two conditions are always satisfied for \(C = \Env (\Oo )\). Condition (1) follows from the Segal condition on \(\Oo \) and <a class="source-reference" data-label="lem:Envelope_Tensor_Concatenation" href="../../../entry/envelope-tensor-concatenation/index.html#lem:Envelope_Tensor_Concatenation">Lemma 17.3.15</a>:
+the underlying map \(\Env (\Oo ) \to \Fin \) is simply the pullback of the map \(\Oo ^{\otimes } \to \Span (\Fin )\). For condition (2), let us write \(X := \bigotimes _{j\in J} X_j\) and \(Y := \bigotimes _{j \in J} y_j\), where
+these two tensor products in \(C = \Env (\Oo )\) are computed as unordered concatenations in \(\Oo ^{\otimes }\). Then we have a pullback
+square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-90fe7c4e7642.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>The claim now follows from condition <span class="source-reference equation-reference" data-label="it:F_Operad_Homs">(3)</span> of <a class="source-reference" data-label="def:F_Operad" href="../../../entry/f-operad/index.html#def:F_Operad">Definition 17.3.10</a>.</p><p class='noindent'>It remains to show that any \(C\) satisfying (1) and (2) is of the form \(\Env (\Oo )\) for some \(\infty \)-operad \(\Oo \). We define \(\Oo \) as the
+following pullback:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-881ccfcf5619.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>The pullback is formed in \((\Cat _\infty )_{/\Span (\Fin )}\). It is again an \(\infty \)-operad: cocartesian lifts of backwards
+spans are formed componentwise, the Segal equivalences on fibers are preserved by pullback, and
+condition <span class="source-reference equation-reference" data-label="it:F_Operad_Homs">(3)</span> is inherited by taking pullbacks of the corresponding squares. Here the bottom map is
+the unit of the adjunction \(\Env \dashv \Mm \). The projection \(\Oo \to \Mm _C\) induces a composite of symmetric monoidal functors \[ \Env (\Oo ) \longrightarrow \Env (\Mm _C) \longrightarrow C, \]
+where the second map is the counit of the adjunction. Equivalently, this is the symmetric monoidal
+functor corresponding under <a class="source-reference" data-label="cor:Algebras_As_Functors_From_Envelope" href="../../../entry/algebras-as-functors-from-envelope/index.html#cor:Algebras_As_Functors_From_Envelope">Corollary 17.3.14</a> to the projection \(\Oo \to \Mm _C\). Naturality of the counit with respect to \(p\) shows that
+this composite is a functor over \((\Fin ,\amalg )\). We show that it is an equivalence.</p><p class='noindent'>The colors of \(\Oo \) are precisely the objects of \(C_{\lra {1}}\). Since every object of \(\Env (\Oo )\) is a tensor product of colors,
+essential  surjectivity  follows  from  condition  (1)  on  \(C\).  For  full  faithfulness,  first  consider  a  target
+color \(y\in C_{\lra {1}}\). We have equivalences: \[ \Hom _{\Env (\Oo )}(\{x_i\},y) \simeq \Oo (\{x_i\};y) \simeq \Hom _C(\bigotimes _{i \in I} x_i, y) \] The first is <a class="source-reference" data-label="lem:Mapping_Animae_Envelope" href="../../../entry/mapping-animae-envelope/index.html#lem:Mapping_Animae_Envelope">Lemma 17.3.17</a>. For the second, the pullback defining \(\Oo \) identifies its
+multimorphism anima with the fiber of \[ \Hom _C(\bigotimes _{i \in I}x_i,y) \longrightarrow \Hom _{\Fin }(I,\lra {1}) \] over the unique map \(I\to \lra {1}\); this fiber is the entire source because
+the target is contractible.
+</p><p class='noindent'>For a general target \(\{y_j\}_{j\in J}\), <a class="source-reference" data-label="lem:Mapping_Animae_Envelope" href="../../../entry/mapping-animae-envelope/index.html#lem:Mapping_Animae_Envelope">Lemma 17.3.17</a> decomposes the hom anima in \(\Env (\Oo )\) as a coproduct indexed by maps \(f\colon I\to J\), with the fiber
+over \(f\) equal to \[ \prod _{j\in J} \Hom _C\left (\bigotimes _{i\in f^{-1}(j)}x_i,y_j\right ). \] Condition (2) identifies this product with the fiber over \(f\) of \[ \Hom _C\left (\bigotimes _{i\in I}x_i,\bigotimes _{j\in J}y_j\right ) \longrightarrow \Hom _{\Fin }(I,J). \] Taking the coproduct over
+all \(f\) proves full faithfulness.                                                                                                                 □
+</p>
+</div></div>
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../freely-adjoining-cocartesian-lifts/index.html" aria-label="Previous section: Freely adjoining cocartesian lifts" title="Previous section: Freely adjoining cocartesian lifts"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../comparison-to-lurie-s-operads/index.html" aria-label="Next section: Comparison to Lurie's operads" title="Next section: Comparison to Lurie's operads"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html" aria-current="page"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/operads-the-heuristics/index.html"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../../../chapter/span-categories/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../../../chapter/basics-on-infinity-operads/index.html"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../../../chapter/cartesian-and-cocartesian-monoidal-structures/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../../../chapter/day-convolution-and-the-tensor-product-of-spectra/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="../../../chapter/the-envelope-of-an-infinity-operad/index.html" aria-current="page"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../../../chapter/operadic-day-convolution-and-stabilization/index.html"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Operadic Day convolution and stabilization</span></a></li><li><a href="../../../chapter/algebras-and-modules/index.html"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../factorization-systems/index.html"><span class="context-entry-heading">Section 17.1</span><span class="context-entry-title">Factorization systems</span></a></li><li><a href="../freely-adjoining-cocartesian-lifts/index.html"><span class="context-entry-heading">Section 17.2</span><span class="context-entry-title">Freely adjoining cocartesian lifts</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 17.3</span><span class="context-entry-title">Operadic envelopes</span></a></li><li><a href="../comparison-to-lurie-s-operads/index.html"><span class="context-entry-heading">Section 17.4</span><span class="context-entry-title">Comparison to Lurie's operads</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#conv:Span_Pattern"><span class="context-entry-heading">Convention 17.3.1</span><span class="context-entry-title">convention</span></a></li><li><a href="#ex:Span_Pattern_Finite_Sets"><span class="context-entry-heading">Example 17.3.2</span><span class="context-entry-title">example</span></a></li><li><a href="#ex:Span_Pattern_Finite_G_Sets"><span class="context-entry-heading">Example 17.3.3</span><span class="context-entry-title">example</span></a></li><li><a href="#ex:Span_Pattern_Finite_Groupoids"><span class="context-entry-heading">Example 17.3.4</span><span class="context-entry-title">example</span></a></li><li><a href="#def:F_Monoid"><span class="context-entry-heading">Definition 17.3.5</span><span class="context-entry-title">\Ff-monoid</span></a></li><li><a href="#rmk:Span_Patterns_Are_Weakly_Extensive"><span class="context-entry-heading">Remark 17.3.6</span><span class="context-entry-title">remark</span></a></li><li><a href="#ex:F_Monoids_Commutative_Monoids"><span class="context-entry-heading">Example 17.3.7</span><span class="context-entry-title">example</span></a></li><li><a href="#def:F_Monoidal_Infinity_Category"><span class="context-entry-heading">Definition 17.3.8</span><span class="context-entry-title">definition</span></a></li><li><a href="#rmk:F-Monoidal_Cats_Straightening"><span class="context-entry-heading">Remark 17.3.9</span><span class="context-entry-title">remark</span></a></li><li><a href="#def:F_Operad"><span class="context-entry-heading">Definition 17.3.10</span><span class="context-entry-title">\Ff-operad</span></a></li><li><a href="#cons:F_Multimorphism_Operad"><span class="context-entry-heading">Construction 17.3.11</span><span class="context-entry-title">construction</span></a></li><li><a href="#prop:Envelope_Definition"><span class="context-entry-heading">Proposition 17.3.12</span><span class="context-entry-title">proposition</span></a></li><li><a href="#prop:Operadic_Envelope_Adjunction"><span class="context-entry-heading">Proposition 17.3.13</span><span class="context-entry-title">proposition</span></a></li><li><a href="#cor:Algebras_As_Functors_From_Envelope"><span class="context-entry-heading">Corollary 17.3.14</span><span class="context-entry-title">corollary</span></a></li><li><a href="#lem:Envelope_Tensor_Concatenation"><span class="context-entry-heading">Lemma 17.3.15</span><span class="context-entry-title">lemma</span></a></li><li><a href="#lem:Envelope_Comm"><span class="context-entry-heading">Lemma 17.3.16</span><span class="context-entry-title">lemma</span></a></li><li><a href="#lem:Mapping_Animae_Envelope"><span class="context-entry-heading">Lemma 17.3.17</span><span class="context-entry-title">lemma</span></a></li><li><a href="#prop:Embedding_Operads_Into_Sym_Mon_Cats"><span class="context-entry-heading">Proposition 17.3.18</span><span class="context-entry-title">proposition</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

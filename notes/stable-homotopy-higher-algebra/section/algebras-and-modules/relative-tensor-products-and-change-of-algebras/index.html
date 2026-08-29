@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 19.2: Relative tensor products and change of algebras | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/operads-and-higher-algebra/index.html">Part II</a> · <a href="../../../chapter/algebras-and-modules/index.html">Chapter 19</a> · Section 19.2</p>
+      <h1>Relative tensor products and change of algebras</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Relative_Tensor_Products'>If \(R\) is a classical commutative ring, then the category \(\Mod _R(\Ab )\) of \(R\)-modules comes equipped with a symmetric
+monoidal structure given by the <span class='ntx-Italic-tlf-t1-x-x-109'>relative tensor product</span> \(M \otimes _R N\) of two \(R\)-modules \(M\) and \(N\). Moreover, if \(f\colon R \to S\) is a morphism
+of commutative rings, then the relative tensor product \(S \otimes _R M\) admits the structure of an \(S\)-module for every
+\(R\)-module \(M\), resulting in a symmetric monoidal functor \(f^*\colon \Mod _R(\Ab ) \to \Mod _S(\Ab )\) which is left adjoint to the forgetful functor
+\(\Mod _S(\Ab ) \to \Mod _R(\Ab )\).
+</p><p class='noindent'>The goal of this section is to introduce this structure in an arbitrary symmetric monoidal \(\infty \)-category that
+admits operadic geometric realizations. The organizing idea is that associative algebras are objects,
+bimodules are morphisms, and relative tensor products compose these morphisms. Associativity and
+unitality of the relative tensor product then express the coherence of this composition, while
+extension of scalars is composition with the regular bimodule associated to a morphism of
+algebras. We will make this perspective precise without constructing the ambient \((\infty ,2)\)-category
+explicitly.
+</p>
+<h4 class='subsectionHead' id='bimodules'><span class='titlemark'>19.2.1    </span> <a id='x1-200019.2.1'></a>Bimodules</h4>
+<p class='noindent'>Let \(A\) and \(B\) be ordinary associative algebras. Then we may speak of \((A,B)\)<span class='ntx-Italic-tlf-t1-x-x-109'>-bimodules</span>: objects \(M\) that are
+simultaneously a left \(A\)-module and a right \(B\)-module in a compatible way. This notion extends to the
+\(\infty \)-categorical setting.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r1'></a>
+<a class="entry-heading-link" href="../../../entry/bimodule-operad/index.html" aria-label="Definition 19.2.1., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 19.2.1.</span></a>  </span><span id='def:Bimodule_Operad'></span> We define a colored operad \(\oBMod \). It has three colors: \(\fa _-\), \(\fa _+\) and \(\fm \). The multimorphism sets \(\oBMod (\{X_i\}_{i \in I}; Y)\) are
+then given as follows: </p>
+     <ul class='itemize1'>
+     <li class='itemize'>If \(Y = \fa _-\), then this set is empty unless \(X_i = \fa _-\) for all \(i \in I\), in which case it is the set of linear orders on \(I\);
+     </li>
+     <li class='itemize'>If \(Y = \fa _+\), then this set is empty unless \(X_i = \fa _+\) for all \(i \in I\), in which case it is the set of linear orders on \(I\);
+     </li>
+     <li class='itemize'>If \(Y = \fm \), then this set is the set of linear orders \(\{i_1 &lt; i_2 &lt; \dots &lt; i_n\}\) on \(I\) with the following property: there exists precisely
+     one index \(i_k \in I\) such that \(X_{i_k} = \fm \), \(X_{i_j} = \fa _-\) for \(j &lt; k\) and \(X_{i_j} = \fa _+\) for \(j &gt; k\).</li></ul>
+<p class='noindent'>Composition in \(\oBMod \) is given by composition of linear orders.
+</p>
+</div>
+<p class='noindent'> By <a class="source-reference" data-label="prop:From_Colored_To_Infinity_Operads" href="../../../entry/from-colored-to-infinity-operads/index.html#prop:From_Colored_To_Infinity_Operads">Proposition 17.4.9</a>, this colored operad canonically determines the \(\infty \)-operad \(\oBMod \) used below.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2002r2'></a>
+<a class="entry-heading-link" href="../../../entry/left-and-right-module-suboperads/index.html" aria-label="Observation 19.2.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Observation 19.2.2.</span></a>  </span><span id='obs:Left_And_Right_Module_Suboperads'></span> We identify \(\oLMod \) with the full suboperad of \(\oBMod \) spanned by the colors \(\fa _-\) and \(\fm \), and let
+\(\oRMod \subseteq \oBMod \) denote the full suboperad spanned by \(\fm \) and \(\fa _+\). Thus \(\oBMod \) contains two copies of \(\Assoc \), on \(\fa _-\) and \(\fa _+\), a copy of \(\Triv \) on
+\(\fm \), and the full suboperads \(\oLMod \) and \(\oRMod \). There is also an operad map \[ \oBMod \longrightarrow \Assoc \] which sends all three colors to \(\fa \) and
+forgets the restrictions on the linear orders. Its restrictions to \(\oLMod \) and \(\oRMod \) are the usual collapse maps to \(\Assoc \).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2003r3'></a>
+<a class="entry-heading-link" href="../../../entry/right-and-bimodule-categories/index.html" aria-label="Notation 19.2.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Notation 19.2.3.</span></a>  </span><span id='nota:Right_And_Bimodule_Categories'></span> For a monoidal \(\infty \)-category \(C\) we write \[ \RMod (C) := \Alg _{\oRMod }(C) \qquadtext { and } \BMod (C) := \Alg _{\oBMod }(C). \] Similarly, if \(A\) and \(B\) are associative algebras in
+\(C\), we write \[ \RMod _B(C) \qquad \qquadtext { and } \qquad {}_A\BMod _B(C) \] for the fibers over \(B\) and \((A,B)\) of the two forgetful functors \(\fa _+^*\colon \RMod (C) \to \Alg (C)\) and \((\fa _-^*, \fa _+^*)\colon \BMod (C) \to \Alg (C) \times \Alg (C)\), respectively.
+                                                                                   
+                                                                                   
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2004r4'></a>
+<a class="entry-heading-link" href="../../../entry/from-module-to-bimodule/index.html" aria-label="Observation 19.2.4., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Observation 19.2.4.</span></a>  </span><span id='obs:From_Module_To_Bimodule'></span> There is an operad map \(\oBMod \to \oMod \) which sends \(\fm \) to \(\fm \) and sends both \(\fa _-\) and \(\fa _+\) to \(\fa \). Composing
+it with the inclusion \(\oLMod \hookrightarrow \oBMod \) gives the canonical map \(\oLMod \to \oMod \), and similarly for \(\oRMod \). It follows that for a commutative
+algebra \(A\) in a symmetric monoidal \(\infty \)-category \(C\), restriction along these operad maps defines forgetful
+functors</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-3985fec6a8d4.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Here the left diagonal equivalence is the one from <a class="source-reference" data-label="prop:Modules_As_Left_Modules" href="../../../entry/modules-as-left-modules/index.html#prop:Modules_As_Left_Modules">Proposition 19.1.7</a>. The right one follows by applying <a class="source-reference" data-label="obs:Modules_Reverse_Algebra" href="../../../entry/modules-reverse-algebra/index.html#obs:Modules_Reverse_Algebra">Observation 19.2.5</a>,
+since a commutative algebra is canonically isomorphic to its opposite algebra.</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2005r5'></a>
+<a class="entry-heading-link" href="../../../entry/modules-reverse-algebra/index.html" aria-label="Observation 19.2.5., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Observation 19.2.5.</span></a>  </span><span id='obs:Modules_Reverse_Algebra'></span> There are equivalences of \(\infty \)-operads \[ \rev \colon \Assoc \iso \Assoc , \qquad \rev \colon \oLMod \iso \oRMod \qquadtext { and } \rev \colon \oBMod \iso \oBMod \] given on objects by \(\fa \mapsto \fa \), \(\fa _- \mapsto \fa _+\), \(\fa _+ \mapsto \fa _-\) and \(\fm \mapsto \fm \), and on
+multimorphisms by reversing the order on the finite set. The map \(\Assoc \to \Comm \) coequalizes \(\rev \) and the identity, so
+the symmetric monoidal structure on \(C\) canonically identifies the two induced monoidal structures.
+Consequently,  restriction  along  \(\rev \)  defines  an  endofunctor  \(\rev ^*\colon \Alg (C) \to \Alg (C)\).  It  sends  an  associative  algebra  \(A\)  to  its
+<span class='ntx-Italic-tlf-t1-x-x-109'>opposite algebra</span>, denoted \(A^{\rev }\), which has the same underlying object but whose multiplication is given
+by \[ A \otimes A \iso A \otimes A \xrightarrow {m_A} A, \] where the first map is the swap map. For associative algebras \(A\) and \(B\) we thus get equivalences \[ \LMod _A(C) \iso \RMod _{A^{\rev }}(C) \qquadtext { and } {}_A\BMod _B(C) \iso {}_{B^{\rev }}\BMod _{A^{\rev }}(C). \]
+</p>
+</div>
+<p class='noindent'>Informally speaking, an \((A,B)\)-bimodule \(M\) comes equipped with structure maps \[ A^{\otimes n} \otimes M \otimes B^{\otimes m} \to M \] for all \(n,m \geq 0\) that are compatible with
+the multiplication maps of \(A\) and \(B\). By setting \(m = 0\) or \(n = 0\) we obtain a left \(A\)-module structure and a right \(B\)-module
+structure on \(M\), respectively. These structures are compatible with each other in a very strong sense: the
+                                                                                   
+                                                                                   
+\(A\)-module structure on \(M\) can be upgraded to an \(A\)-module structure internal to the \(\infty \)-category \(\RMod _B(C)\) and vice
+versa:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2006r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 19.2.6 </span>(<span class='citation'>[Lurie (2017), Theorem 4.3.2.7]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Iterated_Modules_As_Bimodules'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(A\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(B\) <span class='ntx-Italic-tlf-t1-x-x-109'>be associative algebras in a monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(\RMod _B(C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is left tensored over</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, and there is an equivalence </span>\[ {}_A\BMod _B(C) \simeq \LMod _A(\RMod _B(C)); \]
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(\LMod _A(C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is right tensored over</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, and there is an equivalence </span>\[ {}_A\BMod _B(C) \simeq \RMod _B(\LMod _A(C)). \]</p></dd></dl>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2009r7'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 19.2.7.</span>  </span><span id='cor:One_Sided_Modules_As_Bimodules'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For associative algebras</span> \(A\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(B\) <span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, there are equivalences </span>\[ {}_A\BMod _{\unit }(C) \iso \LMod _A(C) \qquadtext { and } {}_{\unit }\BMod _B(C) \iso \RMod _B(C). \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-algebras-and-modules-section-02-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-algebras-and-modules-section-02-4">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> In light of the equivalences \(\RMod _{\unit }(C) \iso C\) and \(\LMod _{\unit }(C) \iso C\) from <a class="source-reference" data-label="cor:Modules_Over_Trivial_Algebras" href="../../../entry/modules-over-trivial-algebras/index.html#cor:Modules_Over_Trivial_Algebras">Corollary 19.1.14</a>, this follows directly from the previous theorem.    □
+</p>
+</div></div>
+
+<h4 class='subsectionHead' id='the-relative-tensor-product'><span class='titlemark'>19.2.2    </span> <a id='x1-300019.2.2'></a>The relative tensor product</h4>
+<p class='noindent'>Let \(B\) be a discrete associative ring. A central construction in the theory of modules is the <span class='ntx-Italic-tlf-t1-x-x-109'>relative tensor
+product</span>: Given a right \(B\)-module \(M\) and a left \(B\)-module \(N\), their relative tensor product \(M \otimes _B N\) is obtained as the quotient
+of \(M \otimes N\) by identifying \(mb \otimes n\) with \(m \otimes bn\) for all \(m \in M\), \(n \in N\) and \(b \in B\). In other words, \(M \otimes _B N\) is the coequalizer of the following diagram: \[ M \otimes B \otimes N \rightrightarrows M \otimes N. \] In the
+\(\infty \)-categorical setting, this coequalizer needs to be replaced by the geometric realization of a simplicial
+diagram, called the <span class='ntx-Italic-tlf-t1-x-x-109'>two-sided bar construction</span>. The construction is somewhat subtle, and is handled by
+Lurie in <span class='citation'>[Lurie (2017), Construction 4.4.2.7]</span>. We will first give the non-coherent description, and then indicate its coherent version in <a class="source-reference" data-label="rmk:Construction_Two_Sided_Bar_Construction" href="../../../entry/construction-two-sided-bar-construction/index.html#rmk:Construction_Two_Sided_Bar_Construction">Remark 19.2.10</a>
+below.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3001r8'></a>
+<a class="entry-heading-link" href="../../../entry/two-sided-bar-construction/index.html" aria-label="Construction 19.2.8, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 19.2.8 </span></a>(Bar construction)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cons:Two_Sided_Bar_Construction'></span> Let \(B\) be an associative algebra in a monoidal \(\infty \)-category \(C\), let \(M\) be a
+right \(B\)-module, and let \(N\) be a left \(B\)-module. The <span class='ntx-Italic-tlf-t1-x-x-109'>two-sided bar construction </span>for \(M\) and \(N\) over \(B\), denoted \(\Bar _B(M,N)_{\bullet }\), is a
+simplicial object in \(C\) described as follows: </p>
+     <ul class='itemize1'>
+     <li class='itemize'>In degree \([n] \in \simp \catop \), it is given by \(\Bar _B(M,N)_n := M \otimes B^{\otimes n} \otimes N\);
+     </li>
+     <li class='itemize'>
+     <p class='noindent'>The face maps \(d_i \colon \Bar _B(M,N)_n \to \Bar _B(M,N)_{n-1}\) are given by: </p>
+          <ul class='itemize2'>
+          <li class='itemize'>\(d_0 = \act _M \otimes \id _{B^{\otimes (n-1)}} \otimes \id _N \colon M \otimes B \otimes B^{\otimes (n-1)} \otimes N \to M \otimes B^{\otimes (n-1)} \otimes N\).
+                                                                                   
+                                                                                   
+          </li>
+          <li class='itemize'>For \(0 &lt; i &lt; n\), \(d_i\) is induced by the multiplication map \(m\colon B \otimes B \to B\) on the \(i\)-th and \((i+1)\)-th factors of \(B^{\otimes n}\).
+          </li>
+          <li class='itemize'>\(d_n = \id _M \otimes \id _{B^{\otimes (n-1)}} \otimes \act _N \colon M \otimes B^{\otimes (n-1)} \otimes B \otimes N \to M \otimes B^{\otimes (n-1)} \otimes N\).</li></ul>
+     </li>
+     <li class='itemize'>The degeneracy maps \(s_i \colon \Bar _B(M,N)_n \to \Bar _B(M,N)_{n+1}\) are induced by inserting the unit \(e\colon \unit \to B\) at the \((i+1)\)-th position.</li></ul>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3002r9'></a>
+<a class="entry-heading-link" href="../../../entry/relative-tensor-product/index.html" aria-label="Definition 19.2.9, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 19.2.9 </span></a>(Relative tensor product)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Relative_Tensor_Product'></span>  Let  \(C\)  be  a  monoidal  \(\infty \)-category.  Assume  that  \(C\)  admits
+geometric realizations and that the tensor product \(- \otimes -\colon C \times C \to C\) preserves geometric realizations in both variables.
+For an associative algebra \(B\), a right \(B\)-module \(M\) and a left \(B\)-module \(N\), their <span class='ntx-Italic-tlf-t1-x-x-109'>relative tensor product </span>is the
+object of \(C\) given by the geometric realization of the bar construction: \[ M \otimes _B N := \abs {\Bar _B(M,N)_{\bullet }} = \colim _{[n] \in \simp \catop } \Bar _B(M,N)_n. \] More generally, let \(A,B,D\in \Alg (C)\). If \(M\in {}_A\BMod _B(C)\) and
+\(N\in {}_B\BMod _D(C)\), then the bar construction lifts to a simplicial object of \({}_A\BMod _D(C)\). Geometric realizations of bimodules are
+created on underlying objects by <span class='citation'>[Lurie (2017), Proposition 4.3.3.9]</span>, so its realization defines an \((A,D)\)-bimodule \[ M\otimes _BN\in {}_A\BMod _D(C). \]
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3003r10'></a>
+<a class="entry-heading-link" href="../../../entry/construction-two-sided-bar-construction/index.html" aria-label="Remark 19.2.10., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 19.2.10.</span></a>  </span><span id='rmk:Construction_Two_Sided_Bar_Construction'></span> To formally construct \(\Bar _B(M,N)_{\bullet }\), Lurie defines in <span class='citation'>[Lurie (2017), Definition 4.4.1.1]</span> an \(\infty \)-operad \(\oTens _2\) and shows in <span class='citation'>[Lurie (2017), Proposition 4.4.1.11]</span> that it sits in a
+                                                                                   
+                                                                                   
+pushout square of \(\infty \)-operads as follows:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-7449cefef763.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>In particular, for a monoidal \(\infty \)-category \(C\), the operad \(\oTens _2\) encodes
+the data of algebras \(A,B,D\in \Alg (C)\), an \((A,B)\)-bimodule \(M\), and a \((B,D)\)-bimodule \(N\): there is a pullback square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-18d378c40ddc.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>For this reason, we
+denote the five colors of \(\oTens _2\) by \(\fa \), \(\fm \), \(\fb \), \(\fn \) and \(\fc \).</p><p class='noindent'>Lurie’s construction supplies a functor \[ \BCut \colon \simp \catop \longrightarrow \oTens _2^{\otimes } \] which sends \([n]\) to the tuple \((\fm ,\fb ,\fb ,\dots ,\fb ,\fn )\) encoding \(M\otimes B^{\otimes n}\otimes N\). It can be described as
+the pullback, in \(\oTens _2^{\otimes }\), of the following cospan:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-3ae33e0a4b95.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Both maps are inert, and their pullback is the indicated
+tuple. The compatibility of these pullbacks with the simplicial operators is part of <span class='citation'>[Lurie (2017), Construction 4.4.2.7]</span>; it may also be
+expressed using the cut functors discussed later in <a class="source-reference" data-label="sec:simplicial_model" href="../simplicial-models-for-algebras-and-modules/index.html#sec:simplicial_model">Section 19.3</a>.</p><p class='noindent'>Now, given an \((A,B)\)-bimodule \(M\) and a \((B,D)\)-bimodule \(N\), we may think of this data as defining a \(\oTens _2\)-algebra in \(C\),
+which in particular defines a functor \(\oTens _2^{\otimes } \to C^{\otimes }\). Precomposing this with \(\BCut \) gives a functor \(\simp \catop \to C^{\otimes }\). One can check that
+this actually factors through the active morphisms. Using cocartesian transport, we can then turn
+this into the desired functor \(\Bar _B(M,N)_{\bullet }\colon \simp \catop \to C\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3004r11'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 19.2.11.</span>  </span><span id='prop:Monoidal_Functors_Preserve_Relative_Tensor_Products'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>be monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories which admit geometric realizations and
+whose tensor products preserve geometric realizations separately in both variables. If</span> \(F\colon C\to D\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a monoidal
+functor which preserves geometric realizations, then for every associative algebra</span> \(B\in \Alg (C)\)<span class='ntx-Italic-tlf-t1-x-x-109'>, right</span> \(B\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module</span> \(M\)<span class='ntx-Italic-tlf-t1-x-x-109'>,
+and left</span> \(B\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module</span> \(N\)<span class='ntx-Italic-tlf-t1-x-x-109'>, there is a natural isomorphism </span>\[ F(M)\otimes _{F(B)}F(N)\iso F(M\otimes _BN). \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-algebras-and-modules-section-02-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-algebras-and-modules-section-02-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The monoidal structure on \(F\), together with the functorial construction of the coherent bar
+diagram from <a class="source-reference" data-label="rmk:Construction_Two_Sided_Bar_Construction" href="../../../entry/construction-two-sided-bar-construction/index.html#rmk:Construction_Two_Sided_Bar_Construction">Remark 19.2.10</a>, gives an isomorphism of simplicial objects \[ \Bar _{F(B)}(F(M),F(N))_{\bullet }\iso F(\Bar _B(M,N)_{\bullet }). \] Taking geometric realizations and using
+that \(F\) preserves them gives the asserted isomorphism.                                                                        □
+                                                                                   
+                                                                                   
+</p>
+</div></div>
+<p class='noindent'>The relative tensor product is therefore a composition law for bimodules. More precisely, it assembles into a
+functor \[ \BMod (C) \times _{\Alg (C)} \BMod (C) \longrightarrow \BMod (C), \] where the fiber product matches the right algebra of the first bimodule with the left algebra of the
+second. This composition is coherently associative and unital. In particular, for bimodules
+\({}_AM_B\), \({}_BN_C\) and \({}_CP_D\) there is a natural isomorphism \[ (M \otimes _B N) \otimes _C P \simeq M \otimes _B (N \otimes _C P) \qin {}_A\BMod _D(C). \] For a bimodule \({}_AM_B\), the regular bimodules \(A\) and \(B\) act as
+units: \[ A \otimes _A M \simeq M \qquadtext { and } M \otimes _B B \simeq M \qin {}_A\BMod _B(C). \] These statements, including their coherent compatibility, are proved in <span class='citation'>[Lurie (2017), Propositions 4.4.3.14 and 4.4.3.16]</span>. They are the
+higher-categorical reason that the usual change-of-algebras formalism works exactly as in ordinary
+algebra.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3005r12'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 19.2.12 </span>(Change of algebras)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Change_Of_Algebras_Modules'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category which admits geometric
+realizations and whose tensor product preserves geometric realizations separately in both variables.
+For every morphism</span> \(f\colon A\to B\) <span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(\Alg (C)\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the restriction functor from </span><a class="source-reference" data-label="prop:Module_Categories_Cartesian_Fibration" href="../../../entry/module-categories-cartesian-fibration/index.html#prop:Module_Categories_Cartesian_Fibration">Proposition 19.1.16</a> \[ f_*\colon \LMod _B(C)\longrightarrow \LMod _A(C) \] <span class='ntx-Italic-tlf-t1-x-x-109'>admits a left adjoint given by extension of
+scalars: </span>\[ f^*:=B\otimes _A-\colon \LMod _A(C)\longrightarrow \LMod _B(C). \] <span class='ntx-Italic-tlf-t1-x-x-109'>Analogously, restriction from right</span> \(B\)<span class='ntx-Italic-tlf-t1-x-x-109'>-modules to right</span> \(A\)<span class='ntx-Italic-tlf-t1-x-x-109'>-modules admits the left adjoint</span> \(-\otimes _A B\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-algebras-and-modules-section-02-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-algebras-and-modules-section-02-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The morphism \(f\) makes every left \(B\)-module into a left \(A\)-module and makes \(B\) into a \((B,A)\)-bimodule. For
+a left \(A\)-module \(M\) and a left \(B\)-module \(N\), an \(A\)-linear morphism \(g\colon M\to f_*N\) induces the \(B\)-linear composite \[ B\otimes _A M\xrightarrow {\id _B\otimes _A g}B\otimes _A f_*N\longrightarrow N, \] where the final
+map is induced by the \(B\)-action on \(N\). Conversely, precomposition with \[ M\iso A\otimes _A M\xrightarrow {f\otimes _A\id _M}B\otimes _A M \] turns every \(B\)-linear morphism \(B\otimes _A M\to N\)
+into an \(A\)-linear morphism \(M\to f_*N\). These assignments arise from the displayed natural transformations, so
+they define maps between the corresponding mapping animae. Unitality and associativity of relative
+tensor products show that these maps are inverse. The argument for right modules is analogous.    □
+</p>
+</div></div>
+                                                                                   
+                                                                                   
+<p class='noindent'>If all the algebras involved are a fixed algebra \(A\), the relative tensor product takes the form of a functor \[ - \otimes _A - \colon {}_A\BMod _A(C) \times {}_A\BMod _A(C) \to {}_A\BMod _A(C) \] which
+satisfies associativity and unitality. Lurie shows that this assembles into a monoidal structure on
+\({}_A\BMod _A(C)\):
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3006r13'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 19.2.13 </span>(<span class='citation'>[Lurie (2017), Proposition 4.4.3.12]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Relative_Tensor_Product_Bimodules'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category. Assume that</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits geometric realizations
+and that the tensor product</span> \(- \otimes -\colon C \times C \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves geometric realizations in both variables. For an associative
+algebra</span> \(A\)<span class='ntx-Italic-tlf-t1-x-x-109'>, there exists a monoidal structure on</span> \({}_A\BMod _A(C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>given by the relative tensor product over</span> \(A\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<h4 class='subsectionHead' id='modules-over-commutative-algebras'><span class='titlemark'>19.2.3    </span> <a id='x1-400019.2.3'></a>Modules over commutative algebras</h4>
+<p class='noindent'>Let \(R\) be a discrete commutative ring. Given \(R\)-modules \(M\) and \(N\), the relative tensor product \(M \otimes _R N\) is again an \(R\)-module,
+with the scalar multiplication given by \(r(m \otimes n) = rm \otimes n = m \otimes rn\). In fact, the construction \((M,N) \mapsto M \otimes _R N\) equips the category \(\Mod _R(\Ab )\) of \(R\)-modules
+with a symmetric monoidal structure. The analogous statement also holds in the \(\infty \)-categorical
+setting:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4001r14'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 19.2.14 </span>(<span class='citation'>[Lurie (2017), Theorem 4.5.2.1]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Mod_R_Symmetric_Monoidal'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category. Assume that</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits geometric realizations
+and that the tensor product of</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves geometric realizations in both variables. Let</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a commutative
+algebra in</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then:</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+                                                                                   
+                                                                                   
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(\Mod _R(C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a symmetric monoidal structure.</span>
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(\Mod _R(C) \to {}_R\BMod _R(C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>from </span><a class="source-reference" data-label="obs:From_Module_To_Bimodule" href="../../../entry/from-module-to-bimodule/index.html#obs:From_Module_To_Bimodule">Observation 19.2.4 </a><span class='ntx-Italic-tlf-t1-x-x-109'>refines to a monoidal functor, where the target has the monoidal structure
+     from </span><a class="source-reference" data-label="prop:Relative_Tensor_Product_Bimodules" href="../../../entry/relative-tensor-product-bimodules/index.html#prop:Relative_Tensor_Product_Bimodules">Proposition 19.2.13</a><span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p></dd></dl>
+<p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>In particular, the tensor product on</span> \(\Mod _R(C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is given as the following composite: </span>\[ \begin {aligned} \Mod _R(C) \times \Mod _R(C) &amp;\longrightarrow {}_R\BMod _R(C) \times {}_R\BMod _R(C) \\ &amp;\xrightarrow {- \otimes _R -} {}_R\BMod _R(C) \longrightarrow \LMod _R(C) \iso \Mod _R(C). \end {aligned} \]
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4004r15'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 19.2.15 </span>(<span class='citation'>[Lurie (2017), Theorem 5.1.4.10 and Corollary 3.4.1.7]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Algebras_In_Modules'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category. Assume that</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits geometric
+realizations and that the tensor product of</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves geometric realizations in both variables. Let</span> \(R\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>be a commutative algebra in</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>. The forgetful functor</span> \(\CAlg (\Mod _R(C))\to \CAlg (C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>lifts to an equivalence of</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories </span>\[ \CAlg (\Mod _R(C))\iso \CAlg (C)_{R/}. \]
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4005r16'></a>
+<a class="entry-heading-link" href="../../../entry/associative-algebras-in-modules-not-underobjects/index.html" aria-label="Warning 19.2.16., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Warning 19.2.16.</span></a>  </span><span id='warn:Associative_Algebras_In_Modules_Not_Underobjects'></span> There is no analogous equivalence \(\Alg (\Mod _R(C))\simeq \Alg (C)_{R/}\). Already for ordinary rings, the structure map
+from \(R\) to an associative algebra in \(\Mod _R(C)\) is central, whereas an arbitrary morphism from \(R\) to an associative
+algebra need not have central image; see also <span class='citation'>[Lurie (2017), Warning 7.1.3.9]</span>.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4006r17'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 19.2.17 </span>(Localization of a commutative base algebra)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cor:Localization_Commutative_Base_Algebra'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(R\in \CAlg (C)\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  as  in  </span><a class="source-reference" data-label="thm:Mod_R_Symmetric_Monoidal" href="../../../entry/symmetric-monoidal-structure-on-module-categories/index.html#thm:Mod_R_Symmetric_Monoidal">Theorem 19.2.14</a><span class='ntx-Italic-tlf-t1-x-x-109'>,  and  let  </span>\[ L\colon \Mod _R(C)\rightleftarrows D\colon i \]  <span class='ntx-Italic-tlf-t1-x-x-109'>be  a
+symmetric monoidal Bousfield localization as in </span><a class="source-reference" data-label="prop:Left_Adjoint_To_Inclusion_Gives_SymMon" href="../../../entry/left-adjoint-to-inclusion-gives-symmon/index.html#prop:Left_Adjoint_To_Inclusion_Gives_SymMon">Proposition 14.5.3</a><span class='ntx-Italic-tlf-t1-x-x-109'>. Then the local</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-module</span> \(L(R)\) <span class='ntx-Italic-tlf-t1-x-x-109'>canonically underlies a
+commutative algebra in</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>equipped with a morphism</span> \(R\to L(R)\)<span class='ntx-Italic-tlf-t1-x-x-109'>. It is initial among commutative algebras under</span>
+\(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>whose underlying</span> \(R\)<span class='ntx-Italic-tlf-t1-x-x-109'>-modules are local.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-algebras-and-modules-section-02-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-algebras-and-modules-section-02-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The object \(R\) is the monoidal unit of \(\Mod _R(C)\) and hence the initial object of \(\CAlg (\Mod _R(C))\). By <a class="source-reference" data-label="cor:Monoidal_Localization_On_Algebras" href="../../../entry/monoidal-localization-on-algebras/index.html#cor:Monoidal_Localization_On_Algebras">Corollary 14.5.4</a>, its reflection \(L(R)\) is
+the initial object of \(\CAlg (D)\), and the essential image of \[ \CAlg (D)\hookrightarrow \CAlg (\Mod _R(C)) \] consists of the commutative \(R\)-algebras with local
+underlying module. The equivalence \(\CAlg (\Mod _R(C))\simeq \CAlg (C)_{R/}\) from <a class="source-reference" data-label="prop:Algebras_In_Modules" href="../../../entry/algebras-in-modules/index.html#prop:Algebras_In_Modules">Proposition 19.2.15</a> gives the result.                                                             □
+</p>
+</div></div>
+<p class='noindent'>When \(C\) is presentably symmetric monoidal, the symmetric monoidal \(\infty \)-category \(\Mod _R(C)\) is again presentably
+symmetric monoidal: its underlying category is presentable by <a class="source-reference" data-label="prop:Modules_As_Left_Modules" href="../../../entry/modules-as-left-modules/index.html#prop:Modules_As_Left_Modules">Proposition 19.1.7</a>, <a class="source-reference" data-label="prop:Presentability_Day_Modules" href="../../../entry/presentability-of-day-convolution-module-categories/index.html#prop:Presentability_Day_Modules">Proposition 22.5.5</a>, and its relative tensor product preserves
+colimits separately by <span class='citation'>[Lurie (2017), Corollary 4.4.2.15]</span>. It is therefore closed by <a class="source-reference" data-label="prop:Presentably_Symmetric_Monoidal_Closed" href="../../../entry/presentably-symmetric-monoidal-categories-are-closed/index.html#prop:Presentably_Symmetric_Monoidal_Closed">Proposition 22.5.3</a>; in particular, each functor \(-\otimes _RN\) admits an internal right adjoint
+\(\iHom _R(N,-)\).
+</p>
+<h4 class='subsectionHead' id='restriction-and-extension-of-scalars'><span class='titlemark'>19.2.4    </span> <a id='x1-500019.2.4'></a>Restriction and extension of scalars</h4>
+<p class='noindent'>Let \(f\colon A \to B\) be a morphism of classical commutative rings. Every \(B\)-module \(M\) may be regarded as
+an \(A\)-module via the scalar multiplication \(am := f(a)m\), resulting in a functor \[ f_*\colon \Mod _B(\Ab ) \to \Mod _A(\Ab ) \] called <span class='ntx-Italic-tlf-t1-x-x-109'>restriction of
+                                                                                   
+
+                                                                                   
+scalars</span><span class='footnote-mark'><a href='#chapter-algebras-and-modules-section-02-fn1x0'><sup class='textsuperscript'>1</sup></a></span><a id='x1-5001f1'></a> .
+Furthermore, this functor admits a left adjoint \[ f^*\colon \Mod _A(\Ab ) \to \Mod _B(\Ab ) \] sending an \(A\)-module to the relative tensor product \(B \otimes _A M\) of \(B\) and \(M\)
+over \(A\), where we regard \(B\) as a \((B,A)\)-bimodule. Furthermore, this left adjoint is symmetric monoidal: there are
+natural isomorphisms of \(B\)-modules \[ B \otimes _A (M \otimes _A N) \iso (B \otimes _A M) \otimes _B (B \otimes _A N) \] for all \(A\)-modules \(M\) and \(N\).
+</p><p class='noindent'>It turns out that this structure exists for commutative algebras in an arbitrary symmetric monoidal \(\infty \)-category
+\(C\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5003r18'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 19.2.18 </span>(<span class='citation'>[Lurie (2017), Theorem 4.5.3.1]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Pullback_Functoriality_Module_Categories'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(C\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  a  symmetric  monoidal</span>  \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category.  Assume  that</span>  \(C\)  <span class='ntx-Italic-tlf-t1-x-x-109'>admits  geometric
+realizations and that the tensor product</span> \(\otimes \colon C \times C \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves geometric realizations in both variables separately.
+Then there exists a cocartesian fibration </span>\[ p\colon \Mod (C)^{\otimes } \to \CAlg (C) \times \Span (\Fin ) \] <span class='ntx-Italic-tlf-t1-x-x-109'>such that for every commutative algebra</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>the pullback
+along</span> \(\{R\} \times \Span (\Fin ) \hookrightarrow \CAlg (C) \times \Span (\Fin )\) <span class='ntx-Italic-tlf-t1-x-x-109'>is the cocartesian fibration </span>\[ p_R\colon \Mod _R(C)^{\otimes } \to \Span (\Fin ) \] <span class='ntx-Italic-tlf-t1-x-x-109'>encoding the symmetric monoidal structure on</span> \(\Mod _R(C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>from </span><a class="source-reference" data-label="thm:Mod_R_Symmetric_Monoidal" href="../../../entry/symmetric-monoidal-structure-on-module-categories/index.html#thm:Mod_R_Symmetric_Monoidal">Theorem 19.2.14</a><span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+<p class='noindent'>By straightening-unstraightening, the cocartesian fibration \(p\) corresponds to a functor \[ \Str ^{\cc }\colon \CAlg (C) \times \Span (\Fin ) \to \Cat _{\infty } \] which preserves finite
+products in the second variable. By currying, this may equivalently be encoded as a functor \[ \CAlg (C) \to \Fun ^{\times }(\Span (\Fin ),\Cat _\infty ) = \Cat _{\infty }^{\otimes } \] from
+commutative algebras in \(C\) to symmetric monoidal \(\infty \)-categories. In particular, every morphism \(f\colon R \to S\) in \(\CAlg (C)\) induces a
+symmetric monoidal functor \[ f^*\colon \Mod _R(C) \to \Mod _S(C). \] When \(R = \unit \) is the monoidal unit, the resulting symmetric monoidal functor \[ C \simeq \Mod _{\unit }(C) \to \Mod _S(C) \] is the
+free module functor \(F_S\colon C \to \Mod _S(C)\) from <a class="source-reference" data-label="prop:Free_Module_Functor" href="../../../entry/free-module-functor/index.html#prop:Free_Module_Functor">Proposition 19.1.13</a>.
+</p>
+ 
+<section class="footnotes" aria-label="Notes"><h2>Notes</h2>
+  <div class='footnote-text'>
+  <p class='noindent'><span class='footnote-mark'><a id='chapter-algebras-and-modules-section-02-fn1x0'><a id='chapter-algebras-and-modules-section-02-x2-5002x19.2.4'></a>    <sup class='textsuperscript'>1</sup></a></span><span class='ntx-Regular-tlf-t1-x-x-90'>While this assignment is </span><span class='ntx-Italic-tlf-t1-x-x-90'>contravariant </span><span class='ntx-Regular-tlf-t1-x-x-90'>in the ring homomorphism, the covariant notation</span> \(f_*\) <span class='ntx-Regular-tlf-t1-x-x-90'>comes from the
+  algebro-geometric perspective:</span> \(f_*\) <span class='ntx-Regular-tlf-t1-x-x-90'>is geometrically thought of as the pushforward on quasi-coherent sheaves along the map</span>
+  \(f\colon \Spec (B) \to \Spec (A)\)<span class='ntx-Regular-tlf-t1-x-x-90'>.</span></p></div>
+       
+</section>
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../foundations/index.html" aria-label="Previous section: Foundations" title="Previous section: Foundations"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../simplicial-models-for-algebras-and-modules/index.html" aria-label="Next section: Simplicial models for algebras and modules" title="Next section: Simplicial models for algebras and modules"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html" aria-current="page"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/operads-the-heuristics/index.html"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../../../chapter/span-categories/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../../../chapter/basics-on-infinity-operads/index.html"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../../../chapter/cartesian-and-cocartesian-monoidal-structures/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../../../chapter/day-convolution-and-the-tensor-product-of-spectra/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="../../../chapter/the-envelope-of-an-infinity-operad/index.html"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../../../chapter/operadic-day-convolution-and-stabilization/index.html"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Operadic Day convolution and stabilization</span></a></li><li><a href="../../../chapter/algebras-and-modules/index.html" aria-current="page"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../foundations/index.html"><span class="context-entry-heading">Section 19.1</span><span class="context-entry-title">Foundations</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 19.2</span><span class="context-entry-title">Relative tensor products and change of algebras</span></a></li><li><a href="../simplicial-models-for-algebras-and-modules/index.html"><span class="context-entry-heading">Section 19.3</span><span class="context-entry-title">Simplicial models for algebras and modules</span></a></li><li><a href="../endomorphism-algebras/index.html"><span class="context-entry-heading">Section 19.4</span><span class="context-entry-title">Endomorphism algebras</span></a></li><li><a href="../stable-and-spectral-consequences/index.html"><span class="context-entry-heading">Section 19.5</span><span class="context-entry-title">Stable and spectral consequences</span></a></li><li><a href="../monads-and-monadicity/index.html"><span class="context-entry-heading">Section 19.6</span><span class="context-entry-title">Monads and monadicity</span></a></li><li><a href="../application-connective-complex-k-theory/index.html"><span class="context-entry-heading">Section 19.7</span><span class="context-entry-title">Application: connective complex K-theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Bimodule_Operad"><span class="context-entry-heading">Definition 19.2.1</span><span class="context-entry-title">definition</span></a></li><li><a href="#obs:Left_And_Right_Module_Suboperads"><span class="context-entry-heading">Observation 19.2.2</span><span class="context-entry-title">observation</span></a></li><li><a href="#nota:Right_And_Bimodule_Categories"><span class="context-entry-heading">Notation 19.2.3</span><span class="context-entry-title">notation</span></a></li><li><a href="#obs:From_Module_To_Bimodule"><span class="context-entry-heading">Observation 19.2.4</span><span class="context-entry-title">observation</span></a></li><li><a href="#obs:Modules_Reverse_Algebra"><span class="context-entry-heading">Observation 19.2.5</span><span class="context-entry-title">observation</span></a></li><li><a href="#thm:Iterated_Modules_As_Bimodules"><span class="context-entry-heading">Theorem 19.2.6</span><span class="context-entry-title">theorem</span></a></li><li><a href="#cor:One_Sided_Modules_As_Bimodules"><span class="context-entry-heading">Corollary 19.2.7</span><span class="context-entry-title">corollary</span></a></li><li><a href="#cons:Two_Sided_Bar_Construction"><span class="context-entry-heading">Construction 19.2.8</span><span class="context-entry-title">Bar construction</span></a></li><li><a href="#def:Relative_Tensor_Product"><span class="context-entry-heading">Definition 19.2.9</span><span class="context-entry-title">Relative tensor product</span></a></li><li><a href="#rmk:Construction_Two_Sided_Bar_Construction"><span class="context-entry-heading">Remark 19.2.10</span><span class="context-entry-title">remark</span></a></li><li><a href="#prop:Monoidal_Functors_Preserve_Relative_Tensor_Products"><span class="context-entry-heading">Proposition 19.2.11</span><span class="context-entry-title">proposition</span></a></li><li><a href="#prop:Change_Of_Algebras_Modules"><span class="context-entry-heading">Proposition 19.2.12</span><span class="context-entry-title">Change of algebras</span></a></li><li><a href="#prop:Relative_Tensor_Product_Bimodules"><span class="context-entry-heading">Proposition 19.2.13</span><span class="context-entry-title">proposition</span></a></li><li><a href="#thm:Mod_R_Symmetric_Monoidal"><span class="context-entry-heading">Theorem 19.2.14</span><span class="context-entry-title">theorem</span></a></li><li><a href="#prop:Algebras_In_Modules"><span class="context-entry-heading">Proposition 19.2.15</span><span class="context-entry-title">proposition</span></a></li><li><a href="#warn:Associative_Algebras_In_Modules_Not_Underobjects"><span class="context-entry-heading">Warning 19.2.16</span><span class="context-entry-title">warning</span></a></li><li><a href="#cor:Localization_Commutative_Base_Algebra"><span class="context-entry-heading">Corollary 19.2.17</span><span class="context-entry-title">Localization of a commutative base algebra</span></a></li><li><a href="#thm:Pullback_Functoriality_Module_Categories"><span class="context-entry-heading">Theorem 19.2.18</span><span class="context-entry-title">theorem</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

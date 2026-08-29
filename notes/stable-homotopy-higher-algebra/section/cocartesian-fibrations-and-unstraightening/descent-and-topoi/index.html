@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 23.7: Descent and ∞-topoi | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/background-on-infinity-category-theory/index.html">Part III</a> · <a href="../../../chapter/cocartesian-fibrations-and-unstraightening/index.html">Chapter 23</a> · Section 23.7</p>
+      <h1>Descent and ∞-topoi</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Topoi_And_Descent'>An important property that distinguishes the \(\infty \)-category \(\An \) from other \(\infty \)-categories is a property called <span class='ntx-Italic-tlf-t1-x-x-109'>descent</span>.
+We have already encountered this property in the proof of the Recognition Principle (<a class="source-reference" data-label="thm:Descent_For_Colimits" href="../../../entry/descent-for-colimits-of-animae/index.html#thm:Descent_For_Colimits">Theorem 5.2.5</a>). In this section, we
+give a self-contained treatment.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<a class="entry-heading-link" href="../../../entry/descent/index.html" aria-label="Definition 23.7.1, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 23.7.1 </span></a>(Descent)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Descent'></span> Let \(I\) be a small \(\infty \)-category, and let \(T\) be an \(\infty \)-category with pullbacks
+and \(I\)-indexed colimits. We say that \(T\) <span class='ntx-Italic-tlf-t1-x-x-109'>satisfies descent for</span> \(I\)<span class='ntx-Italic-tlf-t1-x-x-109'>-indexed colimits </span>if the functor \[ T\catop \to \Cat , \qquad X \mapsto T_{/X} \] preserves
+\(I\)-indexed limits.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1002r2'></a>
+<a class="entry-heading-link" href="../../../entry/infinity-topoi/index.html" aria-label="Definition 23.7.2, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 23.7.2 </span></a>(\(\infty \)-Topos)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Infty_Topos'></span> An \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-topos </span>is a presentable \(\infty \)-category satisfying descent for all small
+colimits.
+</p>
+</div>
+<p class='noindent'>Let us unwind <a class="source-reference" data-label="def:Descent" href="../../../entry/descent/index.html#def:Descent">Definition 23.7.1</a>. Given a small \(\infty \)-category \(I\) and an \(I\)-indexed diagram \(X_{\bullet } \colon I \to T\), set \(X := \colim _i X_i\). The descent condition
+demands that the canonical functor \(T_{/X} \to \lim _i T_{/X_i}\), obtained from the base change functors along the maps \(X_i \to X\), is an
+equivalence.
+                                                                                   
+                                                                                   
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1003r3'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 23.7.3.</span>  </span><span id='thm:An_Is_Topos'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(\An \) <span class='ntx-Italic-tlf-t1-x-x-109'>is an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-topos.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cocartesian-fibrations-and-unstraightening-section-07-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cocartesian-fibrations-and-unstraightening-section-07-4">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We need to show that for any functor \(X_{\bullet }\colon I \to \An \), with colimit \(X_{\infty } := \colim _i X_i\), the functor \(\An _{/X_{\infty }} \to \lim _i \An _{/X_i}\) is an equivalence. By <a class="source-reference" data-label="cor:Straightening_Unstraightening_Animae" href="../../../entry/straightening-unstraightening-for-animae/index.html#cor:Straightening_Unstraightening_Animae">Corollary 23.2.8</a>, we
+have an equivalence \(\An _{/Y} \iso \Fun (Y,\An )\) which is natural in \(Y\). So, the claim is equivalent to showing that the map \[ \Fun (X_{\infty },\An ) \to \lim _i \Fun (X_i,\An ) \] is an
+equivalence. But this follows from the fact that \(\Fun (-,\An )\colon \An \catop \to \Cat \) sends colimits in \(\An \) to limits in \(\Cat \).                               □
+</p>
+</div></div>
+<p class='noindent'>To understand the descent condition better, we provide an alternative description of the limit \(\lim _i T_{/X_i}\) in terms of
+cartesian natural transformations.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1004r4'></a>
+<a class="entry-heading-link" href="../../../entry/cartesian-natural-transformations/index.html" aria-label="Definition 23.7.4, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 23.7.4 </span></a>(Cartesian natural transformation)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Cartesian_Natural_Transformation'></span> Given two functors \(F,G\colon I \to T\), a natural transformation \(\alpha \colon F \to G\) is
+called <span class='ntx-Italic-tlf-t1-x-x-109'>cartesian </span>if for every morphism \(i \to j\) in \(I\) the naturality square \begin {equation*}  <figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-83d75793d6cd.svg" alt="Commutative diagram generated from the LaTeX source"></figure>  \end {equation*} is a pullback square. We denote by \(\Fun ^{\cart }(I,T) \subseteq \Fun (I,T)\) the
+wide subcategory spanned by the cartesian natural transformations.
+</p>
+</div>
+                                                                                   
+                                                                                   
+<p class='noindent'>Given a diagram \(X_{\bullet }\colon I \to T\), evaluation at \(i \in I\) determines a functor \(\ev _i\colon \Fun ^{\cart }(I,T)_{/X_{\bullet }} \to T_{/X_i}\). Furthermore, by definition of cartesianness
+these evaluation functors are compatible with base change, resulting in a comparison functor
+\(\Fun ^{\cart }(I,T)_{/X_{\bullet }} \to \lim _{i \in I\catop } T_{/X_i}\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1005r5'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 23.7.5.</span>  </span><span id='lem:Limit_Of_Slices_Vs_Cartesian_Transformations'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with pullbacks and let</span> \(X_{\bullet }\colon I \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a functor. Then the functor</span> \(\Fun ^{\cart }(I,C)_{/X_{\bullet }} \to \lim _{i \in I\catop } C_{/X_i}\) <span class='ntx-Italic-tlf-t1-x-x-109'>is an
+equivalence.</span>
+</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>More informally, objects of the limit are given by</span> \(I\)<span class='ntx-Italic-tlf-t1-x-x-109'>-indexed diagrams</span> \(Y_{\bullet }\) <span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>equipped with a cartesian
+natural transformation</span> \(Y_{\bullet } \to X_{\bullet }\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cocartesian-fibrations-and-unstraightening-section-07-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cocartesian-fibrations-and-unstraightening-section-07-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Recall that a limit of a diagram \(I\catop \to \Cat \) of \(\infty \)-categories may be computed as the \(\infty \)-category of
+cartesian sections of the cartesian unstraightening of the diagram. By definition, the functor \(C_{/-}\colon C\catop \to \Cat \) is
+the cartesian straightening of the target map \(t\colon \Ar (C) \to C\), so the unstraightening of \(C_{/-}\) is \(t\). It follows that the
+unstraightening of the functor \(i \mapsto C_{/X_i}\) is the base change of \(t\) along \(X_{\bullet }\): \begin {equation*}  <figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-68e3e2c6e74f.svg" alt="Commutative diagram generated from the LaTeX source"></figure>  \end {equation*} The \(\infty \)-category of sections \(I \to C/X_{\bullet }\) of
+this map is equivalent to the \(\infty \)-category of maps \(I \to \Ar (C)\) whose target projection is \(X_{\bullet }\colon I \to C\), which in turn is
+equivalent to the slice-\(\infty \)-category \(\Fun (I,C)_{/X_{\bullet }}\). It thus remains to show that a section \(s\colon I \to C/X_{\bullet }\) is cartesian precisely if the
+corresponding natural transformation \(Y_{\bullet } \to X_{\bullet }\) is a cartesian natural transformation. But this is an immediate
+consequence of the fact that the \(t\)-cartesian morphisms in \(\Ar (C)\) are precisely the pullback squares in
+\(C\).                                                                                                                                                           □
+</p>
+</div></div>
+<p class='noindent'>With this alternative description of \(\lim _i T_{/X_i}\) at hand, we can show that the functor \(T_{/X} \to \lim _i T_{/X_i}\) admits a left adjoint:
+                                                                                   
+                                                                                   
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1006r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 23.7.6.</span>  </span><span id='lem:Map_To_Limit_Of_Slices_Admits_Left_Adjoint'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(T\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with pullbacks and</span> \(I\)<span class='ntx-Italic-tlf-t1-x-x-109'>-indexed colimits, and let</span> \(X = \colim _i X_i\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a colimit in</span> \(T\)<span class='ntx-Italic-tlf-t1-x-x-109'>.
+Then the functor</span> \(T_{/X} \to \lim _i T_{/X_i}\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a left adjoint </span>\[ \colim \colon \lim _i T_{/X_i} \to T_{/X} \] <span class='ntx-Italic-tlf-t1-x-x-109'>sending a cartesian transformation</span> \(Y_{\bullet } \to X_{\bullet }\) <span class='ntx-Italic-tlf-t1-x-x-109'>to its colimit</span> \(\colim _i Y_i \to \colim _i X_i\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cocartesian-fibrations-and-unstraightening-section-07-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cocartesian-fibrations-and-unstraightening-section-07-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The colimit functor \(\colim \colon \Fun (I,T) \to T\) admits a right adjoint \(\const \colon T \to \Fun (I,T)\) sending an object \(Y\) to the constant functor on \(Y\). By slicing
+this adjunction over an arbitrary diagram \(X_{\bullet } \in \Fun (I,T)\), with colimit denoted \(X\), we obtain another adjunction
+\[ \colim \colon \Fun (I,T)_{/X_{\bullet }} \rightleftarrows T_{/X}, \] see <span class='citation'>[Lurie (2009), Proposition 5.2.5.1]</span>. The right adjoint in this adjunction is given by the composite \(T_{/X} \xrightarrow {\const } \Fun (I,T)_{/\const X} \to \Fun (I,T)_{/X_{\bullet }}\), with the second map
+given by base change along the colimit cocone \(X_{\bullet } \to \const _X\). We now make the following two observations:
+</p>
+     <ul class='itemize1'>
+     <li class='itemize'>The \(\infty \)-category \(\Fun (I,T)_{/X_{\bullet }}\) contains the limit \(\lim _{i \in I\catop } C_{/X_i} \simeq \Fun ^{\cart }(I,T)_{/X_{\bullet }}\) as a full subcategory: given transformations \(Y_{\bullet } \to Z_{\bullet } \to X_{\bullet }\), if both \(Z_{\bullet } \to X_{\bullet }\) and \(Y_{\bullet } \to X_{\bullet }\)
+     are cartesian transformations, then so is \(Y_{\bullet } \to Z_{\bullet }\) by the pasting law for pullback squares.
+     </li>
+     <li class='itemize'>Since   any   transformation   \(\const Y \to \const X\)   between   constant   diagrams   is   cartesian,   and   cartesian
+     transformations are closed under base change, the right adjoint \(T_{/X} \to \Fun (I,T)_{/X_{\bullet }}\) lands in this full subcategory.</li></ul>
+<p class='noindent'>It follows that the adjunction restricts to an adjunction \(\lim _i T_{/X_i} \rightleftarrows T_{/X}\), as desired.                                                  □
+</p>
+</div></div>
+                                                                                   
+                                                                                   
+<p class='noindent'>We can now characterize when the functor \(T_{/X} \to \lim _i T_{/X_i}\) is an equivalence. By <a class="source-reference" data-label="lem:Map_To_Limit_Of_Slices_Admits_Left_Adjoint" href="../../../entry/left-adjoint-to-the-map-into-a-limit-of-slices/index.html#lem:Map_To_Limit_Of_Slices_Admits_Left_Adjoint">Lemma 23.7.6</a>, this happens precisely when the unit and
+counit of the adjunction are natural isomorphisms.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1007r7'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 23.7.7.</span>  </span><span id='lem:Descent_Characterization'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(T\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with pullbacks and</span> \(I\)<span class='ntx-Italic-tlf-t1-x-x-109'>-indexed colimits, and let</span> \(X_{\bullet } \colon I \to T\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a diagram with
+colimit</span> \(X := \colim _i X_i\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then</span> \(T\) <span class='ntx-Italic-tlf-t1-x-x-109'>satisfies descent for</span> \(I\)<span class='ntx-Italic-tlf-t1-x-x-109'>-indexed colimits if and only if the following two conditions
+hold:</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For any map</span> \(Y \to X\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the canonical map</span> \(\colim _i (X_i \times _X Y) \to Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>is an isomorphism.</span>
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Given a cartesian transformation</span> \(Y_{\bullet } \to X_{\bullet }\)<span class='ntx-Italic-tlf-t1-x-x-109'>, each map</span> \(Y_i \to (\colim _j Y_j) \times _X X_i\) <span class='ntx-Italic-tlf-t1-x-x-109'>is an isomorphism.</span></p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-cocartesian-fibrations-and-unstraightening-section-07-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-cocartesian-fibrations-and-unstraightening-section-07-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By definition, \(T\) satisfies descent for \(I\)-indexed colimits if and only if the canonical functor \(T_{/X} \to \lim _i T_{/X_i}\) is
+an equivalence. By <a class="source-reference" data-label="lem:Map_To_Limit_Of_Slices_Admits_Left_Adjoint" href="../../../entry/left-adjoint-to-the-map-into-a-limit-of-slices/index.html#lem:Map_To_Limit_Of_Slices_Admits_Left_Adjoint">Lemma 23.7.6</a>, this functor admits a left adjoint given by sending a cartesian transformation \(Y_{\bullet } \to X_{\bullet }\) to
+its colimit. The functor is an equivalence if and only if both the unit and counit of this adjunction are
+isomorphisms. The counit at \(Y \to X\) is precisely the map in (1), while the unit at a cartesian transformation
+\(Y_{\bullet } \to X_{\bullet }\) consists of the maps in (2).                                                                                                                □
+</p>
+</div></div>
+                                                                                   
+                                                                                   
+
+<h4 class='subsectionHead' id='examples-of-descent'><span class='titlemark'>23.7.1    </span> <a id='x1-200023.7.1'></a>Examples of descent</h4>
+<p class='noindent'>Let us illustrate the descent condition by giving some examples.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r8'></a>
+<a class="entry-heading-link" href="../../../entry/strictly-initial-objects-and-descent/index.html" aria-label="Example 23.7.8, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 23.7.8 </span></a>(Strictly initial object)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='ex:Strictly_Initial_Object'></span> Let \(T\) be an \(\infty \)-category with an initial object. Then the initial
+object  \(\emptyset \)  satisfies  descent  if  and  only  if  it  is  <span class='ntx-Italic-tlf-t1-x-x-109'>strictly  initial</span>,  meaning  that  any  morphism  \(X \to \emptyset \)  is  an
+isomorphism.
+</p><p class='noindent'>Indeed, by definition \(\emptyset \) satisfies descent if and only if the functor \(T_{/\emptyset } \to *\) is an equivalence. This functor
+admits a fully faithful left adjoint \(* \to T_{/\emptyset }\) hitting the identity \(\id _{\emptyset }\). For the functor to be an equivalence, the
+counit \(\emptyset \to X\) must be an isomorphism for every \(X \in T_{/\emptyset }\), which is precisely the strict initiality condition.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2002r9'></a>
+<a class="entry-heading-link" href="../../../entry/disjoint-coproducts-and-descent/index.html" aria-label="Example 23.7.9, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 23.7.9 </span></a>(Disjoint coproducts)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='ex:Disjoint_Coproducts'></span> For an \(\infty \)-category \(T\) with arbitrary coproducts, we say that
+<span class='ntx-Italic-tlf-t1-x-x-109'>coproducts are disjoint </span>if for all \(X, Y \in T\) the diagram</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-0a9921a091d2.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>is a pullback square. We claim that arbitrary coproducts
+in \(T\) satisfy descent if and only if they are universal and \(T\) has disjoint coproducts.</p><p class='noindent'>By <a class="source-reference" data-label="lem:Descent_Characterization" href="../../../entry/characterization-of-descent/index.html#lem:Descent_Characterization">Lemma 23.7.7</a>, coproducts satisfy descent if and only if for every collection of maps \(\{Y_i \to X_i\}_{i \in I}\) the commutative square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-ccb09212a159.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>is a pullback square for every \(j \in I\). To see that this reduces to disjointness, consider \(X' := \coprod _{i \in I \setminus \{j\}} X_i\) and \(Y' := \coprod _{i \in I \setminus \{j\}} Y_i\). We may write \(X = X_j \sqcup X'\)
+and \(Y = Y_j \sqcup Y'\). Invoking universality of coproducts once more shows that the condition reduces to disjointness
+of binary coproducts.</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2003r10'></a>
+<a class="entry-heading-link" href="../../../entry/grothendieck-construction-and-descent/index.html" aria-label="Example 23.7.10, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 23.7.10 </span></a>(Grothendieck construction)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='ex:Grothendieck_Construction'></span> Let \(T\) be an \(\infty \)-topos. Given an anima \(A \in \An \), we obtain an
+equivalence \[ \Fun (A,T) \quad =\quad \lim _A T_{/*} \quad \simeq \quad T_{/\,\colim _A *}. \] We refer to this equivalence as the <span class='ntx-Italic-tlf-t1-x-x-109'>Grothendieck construction</span>.
+</p>
+</div>
+
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../hom-animae-in-functor-categories/index.html" aria-label="Previous section: Hom animae in functor categories" title="Previous section: Hom animae in functor categories"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../exponentiability-of-cartesian-fibrations/index.html" aria-label="Next section: Exponentiability of cartesian fibrations" title="Next section: Exponentiability of cartesian fibrations"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html" aria-current="page"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/adjunctions/index.html"><span class="context-entry-heading">Chapter 21</span><span class="context-entry-title">Adjunctions</span></a></li><li><a href="../../../chapter/presentable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 22</span><span class="context-entry-title">Presentable ∞-categories</span></a></li><li><a href="../../../chapter/cocartesian-fibrations-and-unstraightening/index.html" aria-current="page"><span class="context-entry-heading">Chapter 23</span><span class="context-entry-title">Cocartesian fibrations and (un)straightening</span></a></li><li><a href="../../../chapter/complete-segal-animae/index.html"><span class="context-entry-heading">Chapter 24</span><span class="context-entry-title">Complete Segal animae</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../cartesian-and-cocartesian-fibrations/index.html"><span class="context-entry-heading">Section 23.1</span><span class="context-entry-title">Cartesian and cocartesian fibrations</span></a></li><li><a href="../straightening-unstraightening/index.html"><span class="context-entry-heading">Section 23.2</span><span class="context-entry-title">Straightening/unstraightening</span></a></li><li><a href="../fiberwise-criteria/index.html"><span class="context-entry-heading">Section 23.3</span><span class="context-entry-title">Fiberwise criteria</span></a></li><li><a href="../the-hom-functor/index.html"><span class="context-entry-heading">Section 23.4</span><span class="context-entry-title">The Hom-functor</span></a></li><li><a href="../limits-and-colimits-of-categories/index.html"><span class="context-entry-heading">Section 23.5</span><span class="context-entry-title">Limits and colimits of ∞-categories</span></a></li><li><a href="../hom-animae-in-functor-categories/index.html"><span class="context-entry-heading">Section 23.6</span><span class="context-entry-title">Hom animae in functor categories</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 23.7</span><span class="context-entry-title">Descent and ∞-topoi</span></a></li><li><a href="../exponentiability-of-cartesian-fibrations/index.html"><span class="context-entry-heading">Section 23.8</span><span class="context-entry-title">Exponentiability of cartesian fibrations</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Descent"><span class="context-entry-heading">Definition 23.7.1</span><span class="context-entry-title">Descent</span></a></li><li><a href="#def:Infty_Topos"><span class="context-entry-heading">Definition 23.7.2</span><span class="context-entry-title">∞-Topos</span></a></li><li><a href="#thm:An_Is_Topos"><span class="context-entry-heading">Theorem 23.7.3</span><span class="context-entry-title">theorem</span></a></li><li><a href="#def:Cartesian_Natural_Transformation"><span class="context-entry-heading">Definition 23.7.4</span><span class="context-entry-title">Cartesian natural transformation</span></a></li><li><a href="#lem:Limit_Of_Slices_Vs_Cartesian_Transformations"><span class="context-entry-heading">Lemma 23.7.5</span><span class="context-entry-title">lemma</span></a></li><li><a href="#lem:Map_To_Limit_Of_Slices_Admits_Left_Adjoint"><span class="context-entry-heading">Lemma 23.7.6</span><span class="context-entry-title">lemma</span></a></li><li><a href="#lem:Descent_Characterization"><span class="context-entry-heading">Lemma 23.7.7</span><span class="context-entry-title">lemma</span></a></li><li><a href="#ex:Strictly_Initial_Object"><span class="context-entry-heading">Example 23.7.8</span><span class="context-entry-title">Strictly initial object</span></a></li><li><a href="#ex:Disjoint_Coproducts"><span class="context-entry-heading">Example 23.7.9</span><span class="context-entry-title">Disjoint coproducts</span></a></li><li><a href="#ex:Grothendieck_Construction"><span class="context-entry-heading">Example 23.7.10</span><span class="context-entry-title">Grothendieck construction</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

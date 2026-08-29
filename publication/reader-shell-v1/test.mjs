@@ -22,6 +22,16 @@ assert(renderCollectionReturn({ href: "/books.html" }).includes('data-site-retur
 assert(renderManuscriptControl("book.pdf").includes("📖"));
 assert(renderUtilityDock("control").includes('aria-label="Page tools"'));
 assert(renderReaderHeader({ workTitle: "Work", location: "Chapter 1", title: "Title" }).includes("Work · Chapter 1"));
+const breadcrumbHeader = renderReaderHeader({
+  workTitle: "Work",
+  breadcrumbs: [
+    { label: "Part I", href: "../part/stable-homotopy-theory/" },
+    { label: "Chapter 2", href: "../chapter/animae-as-spaces/" },
+    { label: "Section 2.1" }
+  ],
+  title: "Title"
+});
+assert(breadcrumbHeader.includes('<a href="../part/stable-homotopy-theory/">Part I</a> · <a href="../chapter/animae-as-spaces/">Chapter 2</a> · Section 2.1'));
 assert(renderContextNavigationToggle().includes("Manuscript contents"));
 const collapsedLedger = renderContentsLedger({ key: "chapters", title: "Chapters", content: "items", collapsed: true });
 assert(collapsedLedger.includes('data-default-collapsed="true"'));

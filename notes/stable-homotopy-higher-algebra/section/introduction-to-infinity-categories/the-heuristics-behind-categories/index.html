@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 1.1: The heuristics behind ∞-categories | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../chapter/introduction-to-infinity-categories/index.html">Chapter 1</a> · Section 1.1</p>
+      <h1>The heuristics behind ∞-categories</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Fundamental_Principle_Homotopy_Theory'>Before setting up the axiomatics of \(\infty \)-categories used in this book, we take a moment to explain the heuristics
+behind the theory, which will help motivate our choice of setup.
+</p>
+<h5 class='subsubsectionHead' id='the-fundamental-principle-of-homotopy-theory'><a id='x1-2000'></a>The fundamental principle of homotopy theory</h5>
+<p class='noindent'>The first concept we need to discuss is the notion of <span class='ntx-Italic-tlf-t1-x-x-109'>equality</span>. In traditional mathematics, equality is
+typically viewed as a mere property: two mathematical objects are either equal or they are not. In homotopy
+theory and related fields, however, we encounter a more sophisticated notion of ‘sameness’ where it is not
+just important <span class='ntx-Italic-tlf-t1-x-x-109'>that </span>two objects are ‘the same’, but precisely <span class='ntx-Italic-tlf-t1-x-x-109'>how </span>they are ‘the same’. In particular, the
+sameness relationship between objects becomes a mathematical object in its own right: think of a
+homotopy between two continuous maps, or of an isomorphism between two abelian groups. This
+perspective is so central to understanding \(\infty \)-categories that it deserves to be elevated to a guiding
+principle:
+</p>
+<div class='framedenv' id='framed-1'>
+<blockquote class='quote'>
+     <p class='noindent'><span class='ntx-Bold-tlf-t1-x-x-109'>Fundamental Principle of Homotopy Theory: </span>When expressing that two entities are
+     equal, we must always specify <span class='ntx-Italic-tlf-t1-x-x-109'>how </span>they are equal by providing a homotopy/isomorphism
+     between them.</p></blockquote>
+</div>
+<p class='noindent'>To get a feeling for this principle, let us look at three familiar settings in which it already appears:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+                                                                                   
+                                                                                   
+<a id='x1-2001r1'></a>
+<a class="entry-heading-link" href="../../../entry/algebraic-topology-and-homotopical-equality/index.html" aria-label="Example 1.1.1, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 1.1.1 </span></a>(Algebraic topology)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='ex:Algebraic_Topology'></span> Algebraic topology provides the most natural example of the
+Fundamental Principle: </p>
+     <ul class='itemize1'>
+     <li class='itemize'>Two continuous maps \(f,g\colon X \to Y\) are considered ‘equal up to homotopy’ if we provide a homotopy \(H\colon X \times [0,1] \to Y\)
+     between \(f\) and \(g\);
+     </li>
+     <li class='itemize'>Two spaces \(X\) and \(Y\) are then considered ‘homotopically the same’ when equipped with a <span class='ntx-Italic-tlf-t1-x-x-109'>homotopy
+     equivalence</span>: continuous maps \(f\colon X \to Y\) and \(g\colon Y \to X\) together with chosen homotopies \(gf \sim \id _X\) and \(fg \sim \id _Y\).
+     </li>
+     <li class='itemize'>When studying diagrams of spaces, we similarly replace strict commutativity by homotopy
+     commutativity. For instance, given a square <div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-c56116206e0e.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div> we do not ask for a strict equality \(h \circ f = k \circ g\), but instead
+     require  a  specified  homotopy  \(H\colon h \circ f \sim k \circ g\)  witnessing  how  the  two  compositions  are  ‘the  same’.  This
+     perspective  naturally  leads  to  <span class='ntx-Italic-tlf-t1-x-x-109'>homotopy  coherent  diagrams</span>,  where  we  must  also  specify
+     compatibilities between different choices of homotopies.</li></ul>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2002r2'></a>
+<a class="entry-heading-link" href="../../../entry/homological-algebra-and-homotopical-equality/index.html" aria-label="Example 1.1.2, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 1.1.2 </span></a>(Homological algebra)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='ex:Homological_Algebra'></span> The phenomenon of ‘equality as structure’ also naturally appears
+in homological algebra, where it leads us to think about chain complexes not as rigid algebraic objects but
+as representatives of more flexible homotopical entities: </p>
+     <ul class='itemize1'>
+     <li class='itemize'>Instead of asking whether two chain maps \(f,g\colon C_{\bullet } \to D_{\bullet }\) between chain complexes are <span class='ntx-Italic-tlf-t1-x-x-109'>equal</span>, we ask whether
+     they are <span class='ntx-Italic-tlf-t1-x-x-109'>chain homotopic</span>, meaning that there exists a family of maps \(\phi _n\colon C_n \to D_{n+1}\) satisfying \(f_n - g_n = \partial ^D \circ \phi _n + \phi _{n-1} \circ \partial ^C\). Likewise, a
+     chain map \(C_{\bullet } \to D_{\bullet }\) is regarded as an equivalence if it admits an inverse up to chain homotopy.
+     </li>
+     <li class='itemize'>In practice, one often wants to go further and even identify two chain complexes whenever
+     they are connected by a <span class='ntx-Italic-tlf-t1-x-x-109'>quasi-isomorphism</span>, that is, a chain map inducing isomorphisms on
+     all homology groups. Forcing the quasi-isomorphisms to become actual isomorphisms results
+     in the <span class='ntx-Italic-tlf-t1-x-x-109'>derived category </span>of chain complexes.</li></ul>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2003r3'></a>
+<a class="entry-heading-link" href="../../../entry/category-theory-and-structural-equality/index.html" aria-label="Example 1.1.3, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 1.1.3 </span></a>(Category theory)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='ex:Category_Theory_Equality_As_Structure'></span> A third example comes from category theory: </p>
+     <ul class='itemize1'>
+     <li class='itemize'>For two objects \(X\) and \(Y\) in a 1-category \(C\), the natural notion of equality between them is often not
+     the strict set-theoretic equality, but rather the existence of an isomorphism \(f\colon X \iso Y\). Likewise, universal
+     constructions in category theory are typically unique only ‘up to unique isomorphism’ rather
+     than strictly equal.
+     </li>
+     <li class='itemize'>This pattern extends to functors: we wish to think of two functors \(F,G\colon C \to D\) as ‘the same’ whenever we are
+     given a natural isomorphism \(\eta \colon F \iso G\). If we think of the individual isomorphisms \(\eta _X \colon F(X) \iso G(X)\) as ‘equalities’, then
+     the naturality condition becomes a statement about structural properties of these equalities.
+     </li>
+     <li class='itemize'>In monoidal categories, the associativity and unitality conditions are expressed not as strict
+     equalities  but  as  natural  isomorphisms:  for  objects  \(X\),  \(Y\),  and  \(Z\),  we  have  an  associator  \(\alpha _{X,Y,Z}\colon (X \otimes Y) \otimes Z \iso X \otimes (Y \otimes Z)\)  and
+                                                                                   
+                                                                                   
+     unitors \(\lambda _X\colon 1 \otimes X \iso X\) and \(\rho _X\colon X \otimes 1 \iso X\). The coherence conditions (like the Mac Lane pentagon) then govern how these
+     isomorphisms relate to each other.</li></ul>
+</div>
+<p class='noindent'>The common pattern in all these examples is that it is not enough to know that two things are the same: one
+must also remember the witness, and often also the compatibilities between different such
+witnesses.
+</p>
+<h5 class='subsubsectionHead' id='animae'><a id='x1-3000'></a>Animae</h5>
+<p class='noindent'>Once equality is no longer a mere property, the usual notion of a collection also has to change. In traditional
+set-based mathematics, the primitive notion of a collection is that of a <span class='ntx-Italic-tlf-t1-x-x-109'>set</span>. The behavior of sets is governed
+by axioms which strongly reflect the traditional perspective on equality: given a set \(X\), two of its
+elements \(x\) and \(y\) are either equal or not equal. The question of <span class='ntx-Italic-tlf-t1-x-x-109'>how</span> \(x\) and \(y\) are equal is a meaningless
+one.
+</p><p class='noindent'>If we take the Fundamental Principle fully seriously, we are thus led to a different notion of collection, one
+in which equality between elements is a structure rather than a property. In recent years, the
+homotopy theory community has started to adopt the term <span class='ntx-Italic-tlf-t1-x-x-109'>anima </span>for this concept. In terms of
+traditional mathematics, one may think of animae as homotopy types of topological spaces; we will
+discuss this viewpoint at length in <a class="source-reference" data-label="chap:Animae_As_Spaces" href="../../../chapter/animae-as-spaces/index.html#chap:Animae_As_Spaces">Chapter 2</a>. But the philosophy we adopt in this book is that animae are
+best thought of as primitive objects in their own right, whose role is similar to that of sets in
+traditional mathematics. In particular, the familiar constructions on sets still have analogues for
+animae:
+</p>
+     <ul class='itemize1'>
+     <li class='itemize'>Given animae \(X\) and \(Y\), there is a <span class='ntx-Italic-tlf-t1-x-x-109'>product</span> \(X \times Y\), whose elements are pairs \((x,y)\) consisting of an element \(x\)
+     of \(X\) and an element \(y\) of \(Y\);
+     </li>
+     <li class='itemize'>Given animae \(X\) and \(Y\), there is a <span class='ntx-Italic-tlf-t1-x-x-109'>disjoint union</span> \(X \sqcup Y\), an element of which is either an element of \(X\) or
+     an element of \(Y\);
+     </li>
+     <li class='itemize'>There is an <span class='ntx-Italic-tlf-t1-x-x-109'>empty anima</span> \(\emptyset \), which does not have any elements;
+     </li>
+     <li class='itemize'>There is a <span class='ntx-Italic-tlf-t1-x-x-109'>one-point anima</span> \(*\), which is non-empty, and in which all elements are equal.</li></ul>
+<p class='noindent'>The main difference between animae and sets lies in what it means for two elements \(x\) and \(y\) of an anima \(X\) to be
+<span class='ntx-Italic-tlf-t1-x-x-109'>equal</span>. Rather than equality being a yes/no question, an equality between \(x\) and \(y\) should be an actual
+mathematical object. The collection of all such equalities should then itself form an anima, which we will
+denote by \(X(x,y)\). In turn, if \(\alpha \) and \(\beta \) are two such equalities, we may form the anima \(X(x,y)(\alpha ,\beta )\) of equalities between \(\alpha \) and \(\beta \). This
+process may be repeated ad infinitum, resulting in equalities between equalities between (...) between
+equalities.
+</p><p class='noindent'>The following are some examples of animae:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3001r4'></a>
+<a class="entry-heading-link" href="../../../entry/sets-as-animae/index.html" aria-label="Example 1.1.4., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 1.1.4.</span></a>  </span><span id='ex:Set_As_Anima'></span>  Every  set  \(X\)  gives  rise  to  an  anima,  which  we  will  again  denote  by  \(X\).  Given  two
+elements \(x,y \in X\), the anima \(X(x,y)\) of equalities between \(x\) and \(y\) is either the one-point anima (if \(x = y\)) or the empty
+anima (if \(x \neq y\)).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3002r5'></a>
+<a class="entry-heading-link" href="../../../entry/groupoid-cores-as-animae/index.html" aria-label="Example 1.1.5., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 1.1.5.</span></a>  </span><span id='ex:Groupoid_Core_As_Anima'></span> Every 1-category \(C\) gives rise to an anima \(C^{\simeq }\), called its <span class='ntx-Italic-tlf-t1-x-x-109'>groupoid core</span>. The elements
+                                                                                   
+                                                                                   
+of \(C^{\simeq }\) are the objects of \(C\). The anima \(C^{\simeq }(X,Y)\) between two objects \(X\) and \(Y\) is the set of isomorphisms between \(X\)
+and \(Y\) (regarded as an anima via the previous example).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3003r6'></a>
+<a class="entry-heading-link" href="../../../entry/underlying-anima-of-a-topological-space/index.html" aria-label="Example 1.1.6., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 1.1.6.</span></a>  </span><span id='ex:Underlying_Anima_Topological_Space'></span> Every topological space \(X\) gives rise to an anima \(\Pi _{\infty }(X)\), called its <span class='ntx-Italic-tlf-t1-x-x-109'>underlying anima </span>(or
+<span class='ntx-Italic-tlf-t1-x-x-109'>fundamental</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-groupoid</span>). Every point in \(X\) defines an element of \(\Pi _{\infty }(X)\). Given points \(x,y \in X\), every path \(p\colon [0,1] \to X\) from \(x\) to
+\(y\) defines an equality in \(\Pi _{\infty }(X)\) between \(x\) and \(y\). Given two such paths \(p\) and \(q\), every homotopy between \(p\) and \(q\)
+defines an equality between them in \(\Pi _{\infty }(X)(x,y)\). Every homotopy between homotopies defines an equality of
+equalities. This pattern repeats ad infinitum. We will study the assignment \(X \mapsto \Pi _{\infty }(X)\) in more detail in <a class="source-reference" data-label="chap:Animae_As_Spaces" href="../../../chapter/animae-as-spaces/index.html#chap:Animae_As_Spaces">Chapter 2</a>.
+</p>
+</div>
+<p class='noindent'>Just as sets come with maps between them, animae come with maps between them. A map of animae \(f\colon X \to Y\)
+assigns to every element \(x\) of \(X\) an element \(f(x)\) of \(Y\), to every equality between \(x\) and \(x'\) an equality between \(f(x)\) and \(f(x')\),
+to every equality between two such equalities an equality between their images, and so on.
+The role played by bijections of sets is now played by <span class='ntx-Italic-tlf-t1-x-x-109'>equivalences of animae</span>: those maps
+which admit an inverse, together with the equalities witnessing that both composites are the
+identity.
+</p>
+<h5 class='subsubsectionHead' id='uniqueness'><a id='x1-4000'></a>Uniqueness</h5>
+<p class='noindent'>The homotopical perspective on equality also forces us to reconsider uniqueness. Classically, saying that a
+set \(X\) contains a unique element with some given property means that the subset of all valid choices has
+exactly one element, or equivalently that the map from this subset to the one-point set \(*\) is a bijection.
+Replacing sets by animae and bijections by equivalences, the homotopical analogue reads: the <span class='ntx-Italic-tlf-t1-x-x-109'>anima </span>of all
+valid choices is <span class='ntx-Italic-tlf-t1-x-x-109'>contractible</span>, meaning that the map from it to the one-point anima \(*\) is an equivalence. In this
+                                                                                   
+                                                                                   
+sense, contractibility is the homotopical incarnation of ‘there is exactly one’: it says that a choice exists, that
+any two choices are equal, that any two equalities between choices are themselves equal, and so
+on.
+</p><p class='noindent'>The homotopical interpretation of uniqueness appears under various names in the classical literature. In
+category theory, the phrase ‘up to unique isomorphism’ is often used for objects satisfying a universal
+property. It expresses precisely that the anima (i.e., groupoid) of such objects, together with the
+isomorphisms compatible with their universal structures, is contractible. In homotopy theory, a common
+phrase is ‘up to contractible choice’. For example, to concatenate a finite sequence of loops in
+a pointed space, one may first choose a subdivision of the interval. Although no particular
+subdivision is preferred, the anima (i.e., space) of such choices is contractible. In this book,
+all uniqueness statements should be interpreted in the homotopical sense, and we simply say
+<span class='ntx-Italic-tlf-t1-x-x-109'>unique</span>.
+</p>
+<h5 class='subsubsectionHead' id='categories'><a id='x1-5000'></a>Categories</h5>
+<p class='noindent'>Having replaced sets by animae, we can now make the same replacement in the notion of a category. Instead
+of a set of objects and sets of morphisms between them, we now allow the objects to form an <span class='ntx-Italic-tlf-t1-x-x-109'>anima</span>, and for
+each pair of objects the morphisms between them to form an <span class='ntx-Italic-tlf-t1-x-x-109'>anima </span>as well. The resulting composition law
+is then no longer expected to be strictly associative and unital, but only associative and unital up to coherent
+higher isomorphism. This is the heuristic origin of the notion of an \((\infty ,1)\)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span>, or just an \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category </span>for
+short.<span class='footnote-mark'><a href='#chapter-introduction-to-infinity-categories-section-01-fn1x0'><sup class='textsuperscript'>1</sup></a></span><a id='x1-5001f1'></a> 
+</p><p class='noindent'>One should not take this heuristic too literally as a definition: replacing sets by animae suggests the right
+shape of the theory, but turning this into a workable notion of \(\infty \)-category requires encoding highly non-trivial
+coherence data for composition. This is one of the reasons why, later in this chapter, we will take \(\infty \)-categories
+as primitive and describe their behavior axiomatically rather than trying to define them directly from this
+heuristic.
+</p><p class='noindent'>Let us now go through some basic families of examples of \(\infty \)-categories:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+                                                                                   
+                                                                                   
+<a id='x1-5003r7'></a>
+<a class="entry-heading-link" href="../../../entry/classical-categories-as-infinity-categories/index.html" aria-label="Example 1.1.7., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 1.1.7.</span></a>  </span><span id='ex:Classical_Categories_As_Infinity_Categories'></span>  Every  classical  category  \(C\)  defines  an  \(\infty \)-category,  whose  anima  of  objects  is  the
+groupoid core \(C^{\simeq }\) from <a class="source-reference" data-label="ex:Groupoid_Core_As_Anima" href="../../../entry/groupoid-cores-as-animae/index.html#ex:Groupoid_Core_As_Anima">Example 1.1.5</a>, and whose hom animae are the hom sets of \(C\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5004r8'></a>
+<a class="entry-heading-link" href="../../../entry/topologically-enriched-categories-as-infinity-categories/index.html" aria-label="Example 1.1.8., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 1.1.8.</span></a>  </span><span id='ex:Topologically_Enriched_Categories_As_Infinity_Categories'></span> Combining the previous example with <a class="source-reference" data-label="ex:Underlying_Anima_Topological_Space" href="../../../entry/underlying-anima-of-a-topological-space/index.html#ex:Underlying_Anima_Topological_Space">Example 1.1.6</a>, also every topologically enriched category
+defines an \(\infty \)-category, by applying \(\Pi _{\infty }\) to the hom spaces.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5005r9'></a>
+<a class="entry-heading-link" href="../../../entry/animae-as-infinity-categories/index.html" aria-label="Example 1.1.9., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 1.1.9.</span></a>  </span><span id='ex:Animae_As_Infinity_Categories'></span> Every anima \(X\) defines an \(\infty \)-category, again denoted \(X\), whose objects are the elements of
+\(X\) and whose animae of morphisms from \(x\) to \(y\) are the animae \(X(x,y)\) of equalities. The categorical composition
+corresponds to the fact that equality is reflexive and transitive. Symmetry of equality is encoded by
+the condition that every morphism in \(X\) admits an inverse.
+</p><p class='noindent'>In fact, in our axiomatic setup, this is how animae will be defined: as those \(\infty \)-categories in which
+every morphism is invertible. The animae \(X(x,y)\) from before are then nothing but the hom animae \(\Hom _X(x,y)\) of this
+\(\infty \)-category.
+</p>
+</div>
+                                                                                   
+                                                                                   
+<p class='noindent'>While the conceptual shifts involved in \(\infty \)-category theory may feel daunting at first, the theory broadly
+behaves just like classical category theory once one gets used to it. Standard constructions from category
+theory still make sense for \(\infty \)-categories, such as products, coproducts, pullbacks, pushouts, functor
+categories, groupoid cores, subcategories, and localizations.
+</p>
+ 
+<section class="footnotes" aria-label="Notes"><h2>Notes</h2>
+  <div class='footnote-text'>
+  <p class='noindent'><span class='footnote-mark'><a id='chapter-introduction-to-infinity-categories-section-01-fn1x0'><a id='chapter-introduction-to-infinity-categories-section-01-x2-5002x'></a>    <sup class='textsuperscript'>1</sup></a></span><span class='ntx-Regular-tlf-t1-x-x-90'>The terminology ‘</span>\(\infty \)<span class='ntx-Regular-tlf-t1-x-x-90'>-category’ is standard but in some ways unfortunate: there are no higher non-invertible morphisms, like one
+  would have in a 2-category or a 3-category.</span></p></div>
+       
+</section>
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <span class="context-step-control" aria-disabled="true"><span aria-hidden="true">←</span></span>
+    <a class="context-step-control" rel="next" href="../the-language-of-category-theory/index.html" aria-label="Next section: The language of ∞-category theory" title="Next section: The language of ∞-category theory"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html" aria-current="page"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/introduction-to-infinity-categories/index.html" aria-current="page"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 1.1</span><span class="context-entry-title">The heuristics behind ∞-categories</span></a></li><li><a href="../the-language-of-category-theory/index.html"><span class="context-entry-heading">Section 1.2</span><span class="context-entry-title">The language of ∞-category theory</span></a></li><li><a href="../basic-constructions-of-categories/index.html"><span class="context-entry-heading">Section 1.3</span><span class="context-entry-title">Basic constructions of ∞-categories</span></a></li><li><a href="../commutative-diagrams-composition-and-animae/index.html"><span class="context-entry-heading">Section 1.4</span><span class="context-entry-title">Commutative diagrams, composition, and animae</span></a></li><li><a href="../further-constructions-of-categories/index.html"><span class="context-entry-heading">Section 1.5</span><span class="context-entry-title">Further constructions of ∞-categories</span></a></li><li><a href="../simplicial-objects-and-quasicategories/index.html"><span class="context-entry-heading">Section 1.6</span><span class="context-entry-title">Simplicial objects and quasicategories</span></a></li><li><a href="../limits-and-colimits/index.html"><span class="context-entry-heading">Section 1.7</span><span class="context-entry-title">Limits and colimits</span></a></li><li><a href="../foundational-results-in-category-theory/index.html"><span class="context-entry-heading">Section 1.8</span><span class="context-entry-title">Foundational results in ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#ex:Algebraic_Topology"><span class="context-entry-heading">Example 1.1.1</span><span class="context-entry-title">Algebraic topology</span></a></li><li><a href="#ex:Homological_Algebra"><span class="context-entry-heading">Example 1.1.2</span><span class="context-entry-title">Homological algebra</span></a></li><li><a href="#ex:Category_Theory_Equality_As_Structure"><span class="context-entry-heading">Example 1.1.3</span><span class="context-entry-title">Category theory</span></a></li><li><a href="#ex:Set_As_Anima"><span class="context-entry-heading">Example 1.1.4</span><span class="context-entry-title">example</span></a></li><li><a href="#ex:Groupoid_Core_As_Anima"><span class="context-entry-heading">Example 1.1.5</span><span class="context-entry-title">example</span></a></li><li><a href="#ex:Underlying_Anima_Topological_Space"><span class="context-entry-heading">Example 1.1.6</span><span class="context-entry-title">example</span></a></li><li><a href="#ex:Classical_Categories_As_Infinity_Categories"><span class="context-entry-heading">Example 1.1.7</span><span class="context-entry-title">example</span></a></li><li><a href="#ex:Topologically_Enriched_Categories_As_Infinity_Categories"><span class="context-entry-heading">Example 1.1.8</span><span class="context-entry-title">example</span></a></li><li><a href="#ex:Animae_As_Infinity_Categories"><span class="context-entry-heading">Example 1.1.9</span><span class="context-entry-title">example</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 19.1: Foundations | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/operads-and-higher-algebra/index.html">Part II</a> · <a href="../../../chapter/algebras-and-modules/index.html">Chapter 19</a> · Section 19.1</p>
+      <h1>Foundations</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Algebras_and_Modules'>This section establishes the basic theory of associative algebras and left modules in a monoidal \(\infty \)-category,
+including limits and free modules. Its organizing input is the ‘left module operad’ \(\oLMod \) from <a class="source-reference" data-label="ex:Left_Module_Operad" href="../../../entry/left-module-operad/index.html#ex:Left_Module_Operad">Example 12.2.9</a>, <a class="source-reference" data-label="cor:Classical_Operads_As_Infinity_Operads" href="../../../entry/classical-operads-as-infinity-operads/index.html#cor:Classical_Operads_As_Infinity_Operads">Corollary 17.4.10</a>, which comes
+equipped with the following morphisms of \(\infty \)-operads:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-41cc42ea2d1f.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>We may describe their total \(\infty \)-categories \(\Assoc ^{\otimes }\) and \(\oLMod ^{\otimes }\) as follows: </p>
+     <ul class='itemize1'>
+     <li class='itemize'>The objects of \(\Assoc ^{\otimes }\) are finite sets \(I\). A morphism from \(I\) to \(J\) consists of a span \[ I \xleftarrow {f} K \xrightarrow {g} J \] of finite sets together
+     with a collection of linear orders \((\preceq _j)_{j \in J}\) on the fibers \(g^{-1}(j)\). Composition is given by composition of spans
+     and the canonical ordering.
+     </li>
+     <li class='itemize'>The objects of \(\oLMod ^{\otimes }\) are pairs \((I_A,I_M)\) of finite sets. A morphism from \((I_A,I_M)\) to \((J_A,J_M)\) is a span \[ I_A \sqcup I_M \xleftarrow {f} K \xrightarrow {g} J_A \sqcup J_M \] together with a
+     collection of linear orders \((\preceq _j)_{j \in J_A\sqcup J_M}\) on the fibers \(g^{-1}(j)\), such that \(g\) induces a bijection between \(f^{-1}(I_M)\) and \(J_M\) and, for
+     each \(j\in J_M\), the unique element of \(g^{-1}(j)\cap f^{-1}(I_M)\) is maximal in the order \(\preceq _j\).</li></ul>
+<p class='noindent'>The inclusion \(\fa \colon \Assoc ^{\otimes } \hookrightarrow \oLMod ^{\otimes }\) sends \(I\) to \((I,\emptyset )\), while the inclusion \(\fm \colon \Triv ^{\otimes } \hookrightarrow \oLMod ^{\otimes }\) sends \(I\) to \((\emptyset ,I)\). The map \(\oLMod ^{\otimes } \to \Assoc ^{\otimes }\) sends \((I_A,I_M)\) to \(I_A \sqcup I_M\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<a class="entry-heading-link" href="../../../entry/left-modules/index.html" aria-label="Definition 19.1.1., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 19.1.1.</span></a>  </span><span id='def:Left_Modules'></span>  Let  \(C\)  be  a  monoidal  \(\infty \)-category,  regarded  as  \(\oLMod \)-monoidal  by  pullback  along  the
+collapse map \(\oLMod \to \Assoc \). We denote by \[ \LMod (C) := \Alg _{\oLMod }(C) \] the \(\infty \)-category of \(\oLMod \)-algebras in \(C\). Restriction along \(\fa \) defines a functor \(\fa ^*\colon \LMod (C) \to \Alg (C) := \Alg _{\Assoc }(C)\). For
+an associative algebra \(A \in \Alg (C)\) we define the \(\infty \)-category \(\LMod _A(C)\) of <span class='ntx-Italic-tlf-t1-x-x-109'>left modules over</span> \(A\) as the fiber</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-363a0332ebbd.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1002r2'></a>
+<a class="entry-heading-link" href="../../../entry/associative-algebras-via-envelope/index.html" aria-label="Remark 19.1.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 19.1.2.</span></a>  </span><span id='rmk:Associative_Algebras_Via_Envelope'></span> Because of the adjunction \(\Env \colon \Op _{\infty } \rightleftarrows \Cat _{\infty }^{\otimes }\noloc \Mm \), an associative algebra contains the same data as a
+symmetric monoidal functor \(\Env (\Assoc ) \to C\). The concrete description \(\Env (\Assoc )\simeq \Fin ^{\Alg }\) was given in <a class="source-reference" data-label="ex:Envelopes_Algebras_Modules" href="../../../entry/envelopes-algebras-modules/index.html#ex:Envelopes_Algebras_Modules">Example 17.4.12</a>. In particular, the maps \(\lra {0} \to \lra {1}\) and
+\(\lra {2} \to \lra {1}\) corresponding to the canonical ordering \(\{1 \leq 2\}\) provide structure maps \[ e\colon \unit \to A \qquadtext { and } m\colon A \otimes A \to A. \] Furthermore, the following two
+diagrams commute:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-2319e7a51613.svg" alt="Commutative diagram generated from the LaTeX source"></figure><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-2003b0727924.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Similarly, a module over \(A\) is given by a symmetric monoidal functor \(\Env (\oLMod )\to C\) which on \(\Env (\Assoc )\)
+restricts to \(A\). The map \((\lra {1},\lra {1}) \to (\emptyset ,\lra {1})\) in \(\Env (\oLMod )\) coming from the fold map \(\lra {1} \sqcup \lra {1} \to \lra {1}\) gives rise to a map \[ \act \colon A \otimes M \to M, \] and the relations in \(\Env (\oLMod )\) ensure
+that the following two diagrams commute:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-184341919c41.svg" alt="Commutative diagram generated from the LaTeX source"></figure><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-a0ec9c3605b3.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div>
+</div>
+<p class='noindent'>For future purposes, it will be convenient to introduce left modules in the more general setting of
+\(\infty \)-categories that are ‘left-tensored’ over \(C\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1003r3'></a>
+<a class="entry-heading-link" href="../../../entry/left-tensoring/index.html" aria-label="Definition 19.1.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 19.1.3.</span></a>  </span><span id='def:Left_Tensoring'></span> Let \(C\) be a monoidal \(\infty \)-category. A <span class='ntx-Italic-tlf-t1-x-x-109'>left tensoring of an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>over</span> \(C\) consists of an
+\(\oLMod \)-monoidal \(\infty \)-category, given by a cocartesian fibration of \(\infty \)-operads \(p_D\colon D^{\otimes } \to \oLMod ^{\otimes }\), together with the following
+identifications: </p>
+     <ul class='itemize1'>
+     <li class='itemize'>The underlying monoidal \(\infty \)-category \(\fa ^*(p_D)\colon \fa ^*(D^{\otimes }) \to \Assoc ^{\otimes }\) is equivalent to \(C\);
+     </li>
+     <li class='itemize'>The underlying \(\Triv \)-monoidal \(\infty \)-category \(\fm ^*(p_D)\colon \fm ^*(D^{\otimes }) \to \Triv ^{\otimes }\) corresponds to \(D\) under the equivalence \(\Alg _{\Triv }(\Cat _{\infty }) \simeq \Cat _{\infty }\).</li></ul>
+<p class='noindent'>We say that \(D\) is <span class='ntx-Italic-tlf-t1-x-x-109'>left-tensored over</span> \(C\) if it is equipped with such a left tensoring.
+                                                                                   
+                                                                                   
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1004r4'></a>
+<a class="entry-heading-link" href="../../../entry/left-modules-in-left-tensored-category/index.html" aria-label="Definition 19.1.4., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 19.1.4.</span></a>  </span><span id='def:Left_Modules_In_Left_Tensored_Category'></span> Let \(D\) be left-tensored over \(C\). Pullback along \(\fa \) defines a forgetful functor \(\fa ^*\colon \Alg _{\oLMod }(D) \to \Alg (C)\). Given an
+associative algebra \(A \in \Alg (C)\), we define the \(\infty \)-category \(\LMod _A(D)\) of \(A\)-modules in \(D\) as the fiber of this functor over \(A\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1005r5'></a>
+<a class="entry-heading-link" href="../../../entry/monoidal-category-left-tensored-over-itself/index.html" aria-label="Remark 19.1.5., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 19.1.5.</span></a>  </span><span id='rmk:Monoidal_Category_Left_Tensored_Over_Itself'></span>  By  pulling  back  along  the  operad  map  \(\oLMod \to \Assoc \),  every  monoidal  \(\infty \)-category  \(C\)  may  be
+canonically regarded as left-tensored over itself. In this case, <a class="source-reference" data-label="def:Left_Modules_In_Left_Tensored_Category" href="../../../entry/left-modules-in-left-tensored-category/index.html#def:Left_Modules_In_Left_Tensored_Category">Definition 19.1.4</a> reduces to <a class="source-reference" data-label="def:Left_Modules" href="../../../entry/left-modules/index.html#def:Left_Modules">Definition 19.1.1</a>.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1006r6'></a>
+<a class="entry-heading-link" href="../../../entry/modules-over-commutative-algebras/index.html" aria-label="Remark 19.1.6., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 19.1.6.</span></a>  </span><span id='rmk:Modules_Over_Commutative_Algebras'></span> All the definitions we just made also make sense for modules over <span class='ntx-Italic-tlf-t1-x-x-109'>commutative</span>
+algebras,  where  we  would  replace  the  \(\infty \)-operad  \(\oLMod \)  by  its  commutative  version  \(\oMod \)  from  <a class="source-reference" data-label="ex:Module_Operad" href="../../../entry/module-operad/index.html#ex:Module_Operad">Example 12.2.8</a>.  It  sits  in  a
+commutative diagram of \(\infty \)-operads as follows:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-ac909ce88f1d.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>In particular, restriction along the inclusion \(\Comm \hookrightarrow \oMod \) defines
+a forgetful functor \(\Mod (C) := \Alg _{\oMod }(C) \to \CAlg (C)\), allowing us to define an \(\infty \)-category \(\Mod _A(C)\) for every commutative algebra \(A\) in \(C\). It turns
+out this \(\infty \)-category only depends on the underlying associative algebra of \(A\):</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1007r7'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 19.1.7.</span>  </span><span id='prop:Modules_As_Left_Modules'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(C\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  a  symmetric  monoidal</span>  \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category.  Then  the  following  commutative
+square is a pullback square: </span></p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-22872377a264.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>In particular, passing to vertical fibers over</span> \(R \in \CAlg (C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>induces an equivalence </span>\[ \Mod _R(C) \iso \LMod _{R'}(C), \]
+<span class='ntx-Italic-tlf-t1-x-x-109'>where we denote the underlying associative algebra of</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>by</span> \(R'\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-algebras-and-modules-section-01-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-algebras-and-modules-section-01-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  This  follows  by  combining  <span class='citation'>Glasman (2014), Proposition 7</span>  with  <span class='citation'>[Lurie (2017), Proposition 4.5.1.4]</span>.  More  explicitly,  the  vertical  functors  are  cartesian
+fibrations, the top comparison preserves cartesian morphisms because it does not change underlying
+objects, and the cited results identify it as an equivalence on every vertical fiber. Hence the square
+is a pullback.                                                                                                                                       □
+</p>
+</div></div>
+
+<h4 class='subsectionHead' id='unit-algebras-and-their-modules'><span class='titlemark'>19.1.1    </span> <a id='x1-200019.1.1'></a>Unit algebras and their modules</h4>
+<p class='noindent'>We will now show that the monoidal unit \(\unit \in C\) is always a commutative algebra, and modules over it are simply
+objects of \(C\). In fact, we may do this more generally for <span class='ntx-Italic-tlf-t1-x-x-109'>unital</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operads</span>:
+                                                                                   
+                                                                                   
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r8'></a>
+<a class="entry-heading-link" href="../../../entry/unital-infinity-operad/index.html" aria-label="Definition 19.1.8., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 19.1.8.</span></a>  </span><span id='def:Unital_Infinity_Operad'></span> An \(\infty \)-operad \(\Oo \) is called <span class='ntx-Italic-tlf-t1-x-x-109'>unital </span>if its total \(\infty \)-category \(\Oo ^{\otimes }\) is pointed, i.e., if the terminal
+object (given by the empty tuple \(\emptyset _{\Oo } := \{\}\)) is also an initial object. Equivalently, \(\Oo \) is unital if we have \[ \Oo (\{\};x) \simeq * \] for
+every color \(x \in \Oo ^{\simeq }\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2002r9'></a>
+<a class="entry-heading-link" href="../../../entry/examples-unital-infinity-operads/index.html" aria-label="Example 19.1.9., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 19.1.9.</span></a>  </span><span id='ex:Examples_Unital_Infinity_Operads'></span> The \(\infty \)-operads \(\Comm \), \(\Assoc \) and \(\Ee _k\) are unital. The \(\infty \)-operads \(\Triv \), \(\oMod \) and \(\oLMod \) are not unital.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2003r10'></a>
+<a class="entry-heading-link" href="../../../entry/units-in-o-monoidal-categories/index.html" aria-label="Definition 19.1.10., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 19.1.10.</span></a>  </span><span id='def:Units_In_O_Monoidal_Categories'></span> Let \(\Oo \) be a unital \(\infty \)-operad and let \(C\colon \Oo ^{\otimes } \to \Cat _{\infty }\) be an \(\Oo \)-monoidal \(\infty \)-category. For every color \(x \in \Oo ^{\simeq }\),
+the unique multimorphism \(e_x \in \Oo (\{\};x)\) defines a functor \[ \unit _x\colon * \simeq C(\{\}) \to C(\{x\}) = C_x. \] We refer to the corresponding object \(\unit _x \in C_x\) as the <span class='ntx-Italic-tlf-t1-x-x-109'>monoidal
+unit of</span> \(C_x\).
+</p>
+</div>
+<p class='noindent'>Note that every \(\Oo \)-algebra \(A\) comes equipped with ‘unit maps’ \(e_x\colon \unit _x \to A_x\) in \(C_x\) for every color \(x \in \Oo ^{\simeq }\): this map is the unique
+lift of the map \(\{\} \to \{A_x\}\) along the cocartesian morphism \(\{\} \to \{\unit _x\}\). The following result by Lurie shows that,
+conversely, the monoidal units \(\unit _x \in C_x\) can always be assembled into an \(\Oo \)-algebra \(\unit _C\) for which the maps \(\unit _x \to (\unit _C)_x\) are
+isomorphisms:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2004r11'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 19.1.11 </span>(<span class='citation'>[Lurie (2017), Proposition 3.2.1.8]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Existence_Unit_Algebra'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(\Oo \)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  a  unital</span>  \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operad  and  let</span>  \(C\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  an</span>  \(\Oo \)<span class='ntx-Italic-tlf-t1-x-x-109'>-monoidal</span>  \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category.  Then  the</span>
+\(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(\Alg _{\Oo /\Oo }(C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>of</span> \(\Oo \)<span class='ntx-Italic-tlf-t1-x-x-109'>-algebras in</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits an initial object</span> \(\unit _C \in \Alg _{\Oo /\Oo }(C)\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Furthermore, an</span> \(\Oo \)<span class='ntx-Italic-tlf-t1-x-x-109'>-algebra is initial if and only if
+the unit maps</span> \(e_x\colon \unit _x \to A_x\) <span class='ntx-Italic-tlf-t1-x-x-109'>are isomorphisms for all</span> \(x \in \Oo ^{\simeq }\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+<p class='noindent'>The proof uses the theory of operadic left Kan extensions, which we do not develop here. We nevertheless
+record the short construction of \(\unit _C\) as an \(\Oo \)-algebra of \(C\) from <span class='citation'>[Hebestreit and Wagner (2021), Lemma II.45a]</span>. It suffices to define a cocartesian functor</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-da11ad314591.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>of
+cocartesian fibrations over \(\Oo ^{\otimes }\). By straightening-unstraightening, we may equivalently define a natural
+transformation of functors \(\const _* \to \Str ^{\cc }(p_C)\) of functors \(\Oo ^{\otimes } \to \Cat _{\infty }\). Since \(\Oo ^{\otimes }\) admits an initial object \(\emptyset _{\Oo }\), there is a natural transformation \(\const _{\emptyset _{\Oo }} \to \id _{\Oo ^{\otimes }}\) of
+functors \(\Oo ^{\otimes } \to \Oo ^{\otimes }\). As the fiber of \(p_C\) over \(\emptyset _{\Oo }\) is the terminal \(\infty \)-category, composing this transformation with \(\Str ^{\cc }(p_C)\) gives
+the desired map \(\const _* \to \Str ^{\cc }(p_C)\). It is clear from the construction that the maps \(\unit _x \to (\unit _C)_x\) of the resulting \(\Oo \)-algebra are
+isomorphisms.</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2005r12'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 19.1.12 </span>(<span class='citation'>[Lurie (2017), Corollary 3.2.1.9]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cor:Unit_Initial_Commutative_Algebra'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category. Then a commutative algebra</span> \(R\) <span class='ntx-Italic-tlf-t1-x-x-109'>is
+initial in</span> \(\CAlg (C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>if and only if the unit map</span> \(e\colon \unit \to R\) <span class='ntx-Italic-tlf-t1-x-x-109'>is an isomorphism in</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>. In particular, the underlying object of
+the commutative algebra</span> \(\unit _C \in \CAlg (C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>from </span><a class="source-reference" data-label="prop:Existence_Unit_Algebra" href="../../../entry/existence-unit-algebra/index.html#prop:Existence_Unit_Algebra">Proposition 19.1.11 </a><span class='ntx-Italic-tlf-t1-x-x-109'>is the monoidal unit of</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>.                                                                    □</span>
+</p>
+</div>
+
+<h4 class='subsectionHead' id='free-modules'><span class='titlemark'>19.1.2    </span> <a id='x1-300019.1.2'></a>Free modules</h4>
+<p class='noindent' id='subsec_Free_Modules'>Let \(A\) be an associative ring and let \(M_0\) be an abelian group. The tensor product \(M := A \otimes M_0\) admits the structure of a left
+\(A\)-module, given by \[ A \otimes M = A \otimes (A \otimes M_0) \simeq (A \otimes A) \otimes M_0 \xrightarrow {m \otimes M_0} A \otimes M_0 = M. \] Moreover, \(M\) comes equipped with a morphism \(\phi \colon M_0 \simeq \unit \otimes M_0 \xrightarrow {e \otimes M_0} A \otimes M_0 = M\) that exhibits \(M\) as the <span class='ntx-Italic-tlf-t1-x-x-109'>free</span> \(A\)-module on \(M_0\): for
+every other left \(A\)-module \(N\), composition with \(\phi \) induces a bijection \(\Hom _A(M,N) \iso \Hom _{\Ab }(M_0,N)\), where \(\Hom _A(M,N)\) is the set of \(A\)-module
+homomorphisms from \(M\) to \(N\).
+</p><p class='noindent'>This admits the following \(\infty \)-categorical refinement:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3001r13'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 19.1.13 </span>(<span class='citation'>[Lurie (2017), Proposition 4.2.4.2, Corollary 4.2.4.4]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Free_Module_Functor'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category and let</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category left tensored over</span>
+\(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The forgetful functor</span> \(\LMod (D) \xrightarrow {(\fa ^*,\fm ^*)} \Alg (C) \times D\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a left adjoint </span>\[ F\colon \Alg (C) \times D \to \LMod (D), \qquad (A,M_0) \mapsto F_A(M_0) \] <span class='ntx-Italic-tlf-t1-x-x-109'>satisfying</span> \(\fa ^*F_A(M_0) \simeq A\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(\fm ^*F_A(M_0) \simeq A \otimes M_0\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For an associative algebra</span> \(A \in \Alg (C)\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the forgetful functor</span> \(\fm ^*\colon \LMod _A(D) \to D\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a left adjoint </span>\[ F_A\colon D \to \LMod _A(D), \] <span class='ntx-Italic-tlf-t1-x-x-109'>where the underlying
+     object of</span> \(F_A(M_0)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is</span> \(A \otimes M_0\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p></dd></dl>
+</div>
+<p class='noindent'>As a consequence, we may deduce that modules over a trivial algebra are simply objects of
+\(D\):
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3004r14'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 19.1.14 </span>(<span class='citation'>[Lurie (2017), Proposition 4.2.4.9]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cor:Modules_Over_Trivial_Algebras'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category and let</span> \(A \in \Alg (C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an algebra object such that the unit
+map</span> \(e\colon \unit \to A\) <span class='ntx-Italic-tlf-t1-x-x-109'>is an isomorphism in</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then for every left</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>-tensored</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>the forgetful functor</span> \(\LMod _A(D) \to D\) <span class='ntx-Italic-tlf-t1-x-x-109'>is an
+equivalence of</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-algebras-and-modules-section-01-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-algebras-and-modules-section-01-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="prop:Free_Module_Functor" href="../../../entry/free-module-functor/index.html#prop:Free_Module_Functor">Proposition 19.1.13</a>, the forgetful functor admits a left adjoint \(F_A\colon D \to \LMod _A(D)\). Since the forgetful functor is conservative, it
+suffices to show that the unit map \(M_0 \to A \otimes M_0\) is an isomorphism. Since this map is given by tensoring the map \(e \colon \unit \to A\)
+by \(M_0\), this follows from the assumption on \(A\). Indeed, the triangle identity then identifies the underlying
+counit with the inverse of the unit at the underlying object, and conservativity implies that the counit
+is also an isomorphism.                                                                                                                       □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3005r15'></a>
+<a class="entry-heading-link" href="../../../entry/modules-over-unit-conceptual/index.html" aria-label="Remark 19.1.15., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 19.1.15.</span></a>  </span><span id='rmk:Modules_Over_Unit_Conceptual'></span> There is also a conceptual proof of <a class="source-reference" data-label="cor:Modules_Over_Trivial_Algebras" href="../../../entry/modules-over-trivial-algebras/index.html#cor:Modules_Over_Trivial_Algebras">Corollary 19.1.14</a>. If \(e\colon \unit \to A\) is an isomorphism, then the monad \(A \otimes -\) is
+isomorphic to the identity monad. Its category of modules is therefore equivalent to \(D\). We have kept
+the direct proof above because it is shorter and does not require the monadicity package.
+</p>
+</div>
+
+<h4 class='subsectionHead' id='limits-and-colimits-of-modules'><span class='titlemark'>19.1.3    </span> <a id='x1-400019.1.3'></a>Limits and colimits of modules</h4>
+<p class='noindent'>Restriction of scalars can be organized into a cartesian fibration:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4001r16'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 19.1.16 </span>(<span class='citation'>[Lurie (2017), Corollary 4.2.3.2]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Module_Categories_Cartesian_Fibration'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>be left-tensored over a monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>. The restriction functor </span>\[ \fa ^*\colon \LMod (D)\longrightarrow \Alg (C) \]
+<span class='ntx-Italic-tlf-t1-x-x-109'>is a cartesian fibration. A morphism in</span> \(\LMod (D)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is</span> \(\fa ^*\)<span class='ntx-Italic-tlf-t1-x-x-109'>-cartesian if and only if its underlying morphism in</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>is
+an isomorphism. Consequently, a morphism</span> \(f\colon A\to B\) <span class='ntx-Italic-tlf-t1-x-x-109'>of associative algebras induces a restriction-of-scalars
+functor </span>\[ f_*\colon \LMod _B(D)\longrightarrow \LMod _A(D) \] <span class='ntx-Italic-tlf-t1-x-x-109'>which does not change the underlying object of</span> \(D\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+<p class='noindent'>We can now deduce the limit statement for modules from the corresponding result for operadic
+algebras.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4002r17'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 19.1.17 </span>(<span class='citation'>[Lurie (2017), Corollaries 4.2.3.3 and 4.2.3.5]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cor:limits_colimits_modules'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category, let</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>be left-tensored over</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, and let</span> \(A\in \Alg (C)\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Let</span> \(\fm ^*\colon \LMod _A(D)\to D\) <span class='ntx-Italic-tlf-t1-x-x-109'>be the forgetful
+functor, and let</span> \(I\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a small</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category.</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits</span> \(I\)<span class='ntx-Italic-tlf-t1-x-x-109'>-indexed limits, then</span> \(\fm ^*\) <span class='ntx-Italic-tlf-t1-x-x-109'>creates and preserves</span> \(I\)<span class='ntx-Italic-tlf-t1-x-x-109'>-indexed limits.</span>
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits</span> \(I\)<span class='ntx-Italic-tlf-t1-x-x-109'>-indexed colimits and the functor</span> \(X\otimes -\colon D\to D\) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves</span> \(I\)<span class='ntx-Italic-tlf-t1-x-x-109'>-indexed colimits for every</span> \(X\in C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, then</span> \(\fm ^*\)
+     <span class='ntx-Italic-tlf-t1-x-x-109'>creates and preserves</span> \(I\)<span class='ntx-Italic-tlf-t1-x-x-109'>-indexed colimits.</span></p></dd></dl>
+                                                                                   
+
+                                                                                   
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-algebras-and-modules-section-01-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-algebras-and-modules-section-01-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We prove (1). Equip \(\Fun (I,D)\) with the pointwise left tensoring over \(C\). The identity functor of \(C\) and
+the  constant-diagram  functor  \(\const \colon D\to \Fun (I,D)\)  assemble  to  an  \(\oLMod \)-monoidal  functor  between  the  corresponding  left
+tensorings. Since \(\const \) has right adjoint \(\lim _I\), <a class="source-reference" data-label="prop:Right_Adjoint_O_Monoidal_Functor" href="../../../entry/right-adjoint-o-monoidal-functor/index.html#prop:Right_Adjoint_O_Monoidal_Functor">Proposition 14.4.7</a> equips the pair \[ (\id _C,\lim _I) \] with the right-adjoint lax \(\oLMod \)-monoidal structure.
+Passing to \(\oLMod \)-algebras and taking the fiber over \(A\) therefore gives an adjunction \[ \const \colon \LMod _A(D) \rightleftarrows \LMod _A(\Fun (I,D)) \simeq \Fun (I,\LMod _A(D)) \noloc \lim _I. \] The underlying object
+of the right adjoint is the limit in \(D\). Thus \(\fm ^*\) preserves these limits. Since it detects isomorphisms,
+comparison with the constructed limit also shows that it creates them.
+</p><p class='noindent'>Part (2) is <span class='citation'>[Lurie (2017), Corollary 4.2.3.5]</span>. Its proof uses the simplicial model for modules to lift an operadic colimit of the underlying
+diagram; we briefly recall this model in <a class="source-reference" data-label="sec:simplicial_model" href="../simplicial-models-for-algebras-and-modules/index.html#sec:simplicial_model">Section 19.3</a>.                                                                                           □
+</p>
+</div></div>
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../../operadic-day-convolution-and-stabilization/modes-and-universal-properties/index.html" aria-label="Previous section: Modes and universal properties" title="Previous section: Modes and universal properties"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../relative-tensor-products-and-change-of-algebras/index.html" aria-label="Next section: Relative tensor products and change of algebras" title="Next section: Relative tensor products and change of algebras"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html" aria-current="page"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/operads-the-heuristics/index.html"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../../../chapter/span-categories/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../../../chapter/basics-on-infinity-operads/index.html"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../../../chapter/cartesian-and-cocartesian-monoidal-structures/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../../../chapter/day-convolution-and-the-tensor-product-of-spectra/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="../../../chapter/the-envelope-of-an-infinity-operad/index.html"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../../../chapter/operadic-day-convolution-and-stabilization/index.html"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Operadic Day convolution and stabilization</span></a></li><li><a href="../../../chapter/algebras-and-modules/index.html" aria-current="page"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 19.1</span><span class="context-entry-title">Foundations</span></a></li><li><a href="../relative-tensor-products-and-change-of-algebras/index.html"><span class="context-entry-heading">Section 19.2</span><span class="context-entry-title">Relative tensor products and change of algebras</span></a></li><li><a href="../simplicial-models-for-algebras-and-modules/index.html"><span class="context-entry-heading">Section 19.3</span><span class="context-entry-title">Simplicial models for algebras and modules</span></a></li><li><a href="../endomorphism-algebras/index.html"><span class="context-entry-heading">Section 19.4</span><span class="context-entry-title">Endomorphism algebras</span></a></li><li><a href="../stable-and-spectral-consequences/index.html"><span class="context-entry-heading">Section 19.5</span><span class="context-entry-title">Stable and spectral consequences</span></a></li><li><a href="../monads-and-monadicity/index.html"><span class="context-entry-heading">Section 19.6</span><span class="context-entry-title">Monads and monadicity</span></a></li><li><a href="../application-connective-complex-k-theory/index.html"><span class="context-entry-heading">Section 19.7</span><span class="context-entry-title">Application: connective complex K-theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Left_Modules"><span class="context-entry-heading">Definition 19.1.1</span><span class="context-entry-title">definition</span></a></li><li><a href="#rmk:Associative_Algebras_Via_Envelope"><span class="context-entry-heading">Remark 19.1.2</span><span class="context-entry-title">remark</span></a></li><li><a href="#def:Left_Tensoring"><span class="context-entry-heading">Definition 19.1.3</span><span class="context-entry-title">definition</span></a></li><li><a href="#def:Left_Modules_In_Left_Tensored_Category"><span class="context-entry-heading">Definition 19.1.4</span><span class="context-entry-title">definition</span></a></li><li><a href="#rmk:Monoidal_Category_Left_Tensored_Over_Itself"><span class="context-entry-heading">Remark 19.1.5</span><span class="context-entry-title">remark</span></a></li><li><a href="#rmk:Modules_Over_Commutative_Algebras"><span class="context-entry-heading">Remark 19.1.6</span><span class="context-entry-title">remark</span></a></li><li><a href="#prop:Modules_As_Left_Modules"><span class="context-entry-heading">Proposition 19.1.7</span><span class="context-entry-title">proposition</span></a></li><li><a href="#def:Unital_Infinity_Operad"><span class="context-entry-heading">Definition 19.1.8</span><span class="context-entry-title">definition</span></a></li><li><a href="#ex:Examples_Unital_Infinity_Operads"><span class="context-entry-heading">Example 19.1.9</span><span class="context-entry-title">example</span></a></li><li><a href="#def:Units_In_O_Monoidal_Categories"><span class="context-entry-heading">Definition 19.1.10</span><span class="context-entry-title">definition</span></a></li><li><a href="#prop:Existence_Unit_Algebra"><span class="context-entry-heading">Proposition 19.1.11</span><span class="context-entry-title">proposition</span></a></li><li><a href="#cor:Unit_Initial_Commutative_Algebra"><span class="context-entry-heading">Corollary 19.1.12</span><span class="context-entry-title">corollary</span></a></li><li><a href="#prop:Free_Module_Functor"><span class="context-entry-heading">Proposition 19.1.13</span><span class="context-entry-title">proposition</span></a></li><li><a href="#cor:Modules_Over_Trivial_Algebras"><span class="context-entry-heading">Corollary 19.1.14</span><span class="context-entry-title">corollary</span></a></li><li><a href="#rmk:Modules_Over_Unit_Conceptual"><span class="context-entry-heading">Remark 19.1.15</span><span class="context-entry-title">remark</span></a></li><li><a href="#prop:Module_Categories_Cartesian_Fibration"><span class="context-entry-heading">Proposition 19.1.16</span><span class="context-entry-title">proposition</span></a></li><li><a href="#cor:limits_colimits_modules"><span class="context-entry-heading">Corollary 19.1.17</span><span class="context-entry-title">corollary</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 5.3: Commutative monoids and commutative groups | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/stable-homotopy-theory/index.html">Part I</a> · <a href="../../../chapter/recognition-principle/index.html">Chapter 5</a> · Section 5.3</p>
+      <h1>Commutative monoids and commutative groups</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Commutative_Monoids'>We now move to <span class='ntx-Italic-tlf-t1-x-x-109'>commutative </span>monoids in an \(\infty \)-category. Just as for monoids, these will be defined as
+functors out of a suitable indexing category that encodes all the operations we have in a commutative
+monoid.
+</p><p class='noindent'>For a commutative monoid \(M\), given a tuple of elements \((x_s)_{s \in S}\) indexed by a finite set \(S\), we can form the sum \(\sum _{s \in S} x_s\).
+Commutativity says precisely that this sum is independent of any chosen ordering of \(S\). Writing \(M^S := \prod _{s \in S} M\) for the \(S\)-fold
+product, we thus have addition maps \(M^S \to M\) for every finite set \(S\).
+</p><p class='noindent'>How do these addition maps behave with respect to maps of finite sets? Let \(\Fin \) denote the category of finite
+sets and all maps between them. For a map \(g\colon S \to T\) of finite sets, there is an induced map \(g_{\oplus }\colon M^S \to M^T\) given by
+summing over fibers: the \(t\)-th component of \(g_{\oplus }((x_s)_{s \in S})\) is \(\sum _{s \in g^{-1}(\{t\})} x_s\). This makes the assignment \(S \mapsto M^S\) into a functor
+\(\Fin \to \Set \).
+</p><p class='noindent'>Just as for monoids, we should not look at arbitrary functors \(\Fin \to C\), but only at those satisfying a Segal-type
+condition of the form \(M(S) \cong M(*)^S\). To phrase this condition precisely, we need to specify projections \(M(S) \to M(*)\) for each \(s \in S\), that is,
+we need an <span class='ntx-Italic-tlf-t1-x-x-109'>a priori </span>way to compare \(M(S)\) with the product \(\prod _{s \in S} M(*)\). Observe that the \(S\)-fold product \(M^S\) is not only
+covariantly functorial in \(S\) via addition, but also <span class='ntx-Italic-tlf-t1-x-x-109'>contravariantly </span>functorial via restriction: a map \(f\colon S \to T\) induces a
+restriction map \(f^*\colon M^T \to M^S\) given by \(f^*(x_t)_{t \in T} := (x_{f(s)})_{s \in S}\).
+</p><p class='noindent'>To encode commutative monoids, we need both functorialities, addition and restriction, packaged into a
+single category. The objects of this category are finite sets. What should the morphisms from
+\(S\) to \(T\) be? These should encode the operation of ‘first restricting along \(f\), then adding along \(g\)’:
+given maps \(f\colon U \to S\) and \(g\colon U \to T\), we obtain a composite \[ M^S \xrightarrow {f^*} M^U \xrightarrow {g_{\oplus }} M^T, \] where the component of the output at \(t \in T\) is given by
+summing \(x_{f(u)}\) over all \(u \in g^{-1}(\{t\})\). Thus, a morphism from \(S\) to \(T\) should be a pair of maps \(S \leftarrow U \to T\), that is, a <span class='ntx-Italic-tlf-t1-x-x-109'>span </span>from \(S\) to
+\(T\).
+</p><p class='noindent'>What about composition? Suppose we first apply \(S \xleftarrow {f} U \xrightarrow {g} T\) and then \(T \xleftarrow {h} V \xrightarrow {k} R\). The first operation sends \((x_s)_{s \in S}\) to \((y_t)_{t \in T}\) where \(y_t = \sum _{u \in g^{-1}(\{t\})} x_{f(u)}\). Applying
+the second operation, the component at \(r \in R\) is \[ \sum _{v \in k^{-1}(\{r\})} y_{h(v)} \quad = \quad \sum _{v \in k^{-1}(\{r\})} \sum _{u \in g^{-1}(\{h(v)\})} x_{f(u)}. \] This double sum ranges over pairs \((u,v)\) with \(g(u) = h(v)\) and \(k(v) = r\). Setting \(P := \{(u,v) \in U \times V \mid g(u) = h(v)\} = U \times _T V\), with its
+projections \(h'\colon P \to U\) and \(g'\colon P \to V\), we see that: </p>
+     <ul class='itemize1'>
+     <li class='itemize'>the fiber \(g^{-1}(\{h(v)\})\) is in bijection with the fiber \((g')^{-1}(\{v\})\), and
+     </li>
+     <li class='itemize'>the element \(f(u)\) can be written as \((f \circ h')(u,v)\).</li></ul>
+<p class='noindent'>Hence the double sum equals \(\sum _{p \in (k \circ g')^{-1}(\{r\})} x_{(f \circ h')(p)}\), which is exactly the result of applying the span \(S \xleftarrow {f \circ h'} P \xrightarrow {k \circ g'} R\). In other words,
+composing ‘first add along \(g\), then restrict along \(h\)’ gives the same result as ‘first restrict along \(h'\), then
+add along \(g'\)’. Spans thus compose by taking pullbacks, leading to the <span class='ntx-Italic-tlf-t1-x-x-109'>span category of finite
+sets</span>.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<a class="entry-heading-link" href="../../../entry/span-category-of-finite-sets/index.html" aria-label="Construction 5.3.1, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 5.3.1 </span></a>(Span category)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cons:Span_Category_Fin'></span> There is an \(\infty \)-category \(\Span (\Fin )\), called the <span class='ntx-Italic-tlf-t1-x-x-109'>span category of finite sets</span>.
+Its objects are finite sets, and for finite sets \(S\) and \(T\) its hom animae are given by the groupoids</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-3c4e60ecb2a8.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>of <span class='ntx-Italic-tlf-t1-x-x-109'>spans
+from</span> \(S\) <span class='ntx-Italic-tlf-t1-x-x-109'>to</span> \(T\); so the objects of this groupoid are spans \(S \leftarrow U \to T\) and the morphisms are isomorphisms of spans.
+The identity span is given by \(S \xleftarrow {\id _S} S \xrightarrow {\id _S} S\), and composition of spans is defined by taking pullbacks:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-16e6ec27083b.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1002r2'></a>
+<a class="entry-heading-link" href="../../../entry/span-category-of-finite-sets-is-a-2-1-category/index.html" aria-label="Remark 5.3.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 5.3.2.</span></a>  </span><span id='rmk:Span_Category_Of_Finite_Sets_Is_A_2_1_Category'></span> Since the hom animae of \(\Span (\Fin )\) are groupoids rather than sets, \(\Span (\Fin )\) is a \((2,1)\)-category rather than
+a \(1\)-category. The rigorous construction of this \(\infty \)-category is deferred to <a class="source-reference" data-label="chap:Span_Categories" href="../../../chapter/span-categories/index.html#chap:Span_Categories">Chapter 13</a>; for now, it suffices to know
+that \(\Span (\Fin )\) exists and behaves as described above.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1003r3'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 5.3.3.</span>  </span><span id='lem:Span_Fin_Semiadditive'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(\Span (\Fin )\) <span class='ntx-Italic-tlf-t1-x-x-109'>is semiadditive, with biproducts given by disjoint unions of finite sets.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-recognition-principle-section-03-12" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-recognition-principle-section-03-12">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Consider finite sets \(S_i\) for \(i=1, \dots , n\). We have spans of the form \[ \bigsqcup _{i=1}^n S_i \hookleftarrow S_i \xrightarrow {\id _{S_i}} S_i \] We claim that these morphisms exhibit
+\(\bigsqcup _{i=1}^n S_i\) as a product of the sets \(S_i\) in \(\Span (\Fin )\). Indeed, note that for every map \(U \to \bigsqcup _{i=1}^n S_i\) of finite sets we may write \(U = \bigsqcup _{i=1}^n U_i\), where \(U_i\) is
+the preimage of \(S_i\). This gives the desired equivalence of groupoids</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-76bcbd8cf26c.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>By the dual argument (reversing
+a span gives a bijection between spans from \(S\) to \(T\) and spans from \(T\) to \(S\)) we see that similarly the spans \[ S_i \xleftarrow {\id _{S_i}} S_i \hookrightarrow \bigsqcup _{i=1}^n S_i. \]
+exhibit \(\bigsqcup _{i=1}^n S_i\) also as the <span class='ntx-Italic-tlf-t1-x-x-109'>coproduct </span>of the \(S_i\) in \(\Span (\Fin )\). The composite from \(S_i\) into this coproduct and then to the
+\(j\)-th product factor is represented by the pullback \(S_i \times _{\bigsqcup _k S_k} S_j\). It is the identity span when \(i=j\) and the zero span
+otherwise. Hence the canonical comparison from the coproduct to the product is an isomorphism.
+For \(n=0\), the same argument says that the empty set is a zero object. Thus \(\Span (\Fin )\) is semiadditive.                   □</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1004r4'></a>
+<a class="entry-heading-link" href="../../../entry/commutative-monoid-objects/index.html" aria-label="Definition 5.3.4, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 5.3.4 </span></a>(Commutative monoid)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Commutative_Monoid'></span> Let \(C\) be an \(\infty \)-category with finite products. We define a
+<span class='ntx-Italic-tlf-t1-x-x-109'>commutative monoid  </span>in \(C\) to be a product-preserving functor \[ M\colon \Span (\Fin ) \to C. \] We denote by \[ \CMon (C) \subseteq \Fun (\Span (\Fin ),C) \] the full subcategory
+spanned by the commutative monoids. We refer to the evaluation \(M(*)\) at the one-point set as the <span class='ntx-Italic-tlf-t1-x-x-109'>underlying
+object </span>of \(M\). We will sometimes abuse notation and simply refer to \(M(*)\) as \(M\).
+</p>
+</div>
+
+<div class='newtheorem'>
+                                                                                   
+                                                                                   
+<p class='noindent'><span class='head'>
+<a id='x1-1005r5'></a>
+<a class="entry-heading-link" href="../../../entry/restriction-and-addition-maps/index.html" aria-label="Remark 5.3.5, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 5.3.5 </span></a>(Restriction and addition maps)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='rmk:Restriction_And_Addition_Maps'></span>  Let  \(M\colon \Span (\Fin ) \to C\)  be  a  commutative  monoid.  Every  map  \(f\colon S \to T\)  of
+finite  sets  determines  two  ‘half-degenerate’  spans  \[ f^* \quad = \quad (T \xleftarrow {f} S \xrightarrow {\id _S} S) \qquadtext { and } f_{\oplus } \quad = \quad (S \xleftarrow {\id _S} S \xrightarrow {f} T), \]  called  the  <span class='ntx-Italic-tlf-t1-x-x-109'>restriction  </span>and  the  <span class='ntx-Italic-tlf-t1-x-x-109'>addition  </span>spans,
+respectively. Since products in \(\Span (\Fin )\) are computed as disjoint unions by <a class="source-reference" data-label="lem:Span_Fin_Semiadditive" href="../../../entry/span-category-of-finite-sets-is-semiadditive/index.html#lem:Span_Fin_Semiadditive">Lemma 5.3.3</a>, the condition that \(M\) preserves
+finite products means that for every finite set \(S\) the map \[ (e_s^*)_{s \in S} \colon M(S) \to M^S := \prod _{s \in S} M(*) \] is an isomorphism, where \(e_s\colon \{s\} \hookrightarrow S\) is the inclusion.
+We will henceforth identify \(M(S)\) with \(M^S\). It follows that every map \(f\colon S \to T\) defines both a restriction map \(f^*\colon M^T \to M^S\) as well
+as an addition map \(f_{\oplus }\colon M^S \to M^T\), functorially in \(f\). As a special case, the maps \(\emptyset \to *\) and \(* \sqcup * \to *\) in \(\Fin \) then yield the <span class='ntx-Italic-tlf-t1-x-x-109'>unit </span>and
+<span class='ntx-Italic-tlf-t1-x-x-109'>addition</span>: \[ 0\colon * \to M \qquadtext { and } +\colon M \times M \to M. \]
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1006r6'></a>
+<a class="entry-heading-link" href="../../../entry/commutative-group-objects/index.html" aria-label="Definition 5.3.6, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 5.3.6 </span></a>(Commutative group)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Commutative_Group'></span> A commutative monoid \(M\) is called a <span class='ntx-Italic-tlf-t1-x-x-109'>commutative group </span>if
+the <span class='ntx-Italic-tlf-t1-x-x-109'>shear map</span> \((\pr _1,+)\colon M \times M \to M \times M\) is an isomorphism. We denote by \[ \CGrp (C) \quad \subseteq \quad \CMon (C) \] the full subcategory spanned by the commutative
+groups in \(C\).
+</p>
+</div>
+
+<h4 class='subsectionHead' id='alternative-definition'><span class='titlemark'>5.3.1    </span> <a id='x1-20005.3.1'></a>Alternative definition</h4>
+<p class='noindent'>We now give an alternative characterization of commutative monoids that is commonly used in the
+literature and goes back to <span class='citation'>Segal (1968)</span>. This characterization uses the category of finite pointed sets rather than the full
+span category.
+</p>
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r7'></a>
+<a class="entry-heading-link" href="../../../entry/segal-condition-for-finite-pointed-sets/index.html" aria-label="Definition 5.3.7, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 5.3.7 </span></a>(Segal condition)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Segal_Condition_Pointed'></span> Let \(C\) be an \(\infty \)-category with finite products. Denote by \(\Fin _*\) the category
+of <span class='ntx-Italic-tlf-t1-x-x-109'>finite pointed sets</span>, whose objects are pairs \((S,*)\) consisting of a finite set \(S\) and a distinguished basepoint
+\(* \in S\), and whose morphisms are basepoint-preserving maps. For a finite set \(S\), we write \(S_+ := S \sqcup \{*\}\) for \(S\) with an added
+disjoint basepoint.
+</p><p class='noindent'>A functor \(M\colon \Fin _* \to C\) is said to satisfy the <span class='ntx-Italic-tlf-t1-x-x-109'>Segal condition </span>if for every finite set \(S\) the canonical map \[ M(S_+) \to \prod _{s \in S} M(\{s\}_+) \] induced by
+the pointed maps \(S_+ \to \{s\}_+\) is an isomorphism, where the pointed map sends everything except for \(s \in S\) to the base
+point of \(\{s\}_+\). We denote by \[ \Fun ^{\Segal }(\Fin _*,C) \subseteq \Fun (\Fin _*,C) \] the full subcategory spanned by functors satisfying the Segal condition.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2002r8'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 5.3.8.</span>  </span><span id='lem:Fin_Pointed_Equiv_Span'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Consider the wide subcategory</span> \(\Span (\Fin ,\inj ,\all )\) <span class='ntx-Italic-tlf-t1-x-x-109'>of</span> \(\Span (\Fin )\) <span class='ntx-Italic-tlf-t1-x-x-109'>whose morphisms are those spans</span> \(S \hookleftarrow U \to T\) <span class='ntx-Italic-tlf-t1-x-x-109'>for which the
+left-pointing map is an injection. This is a 1-category, and there is an equivalence of 1-categories</span> \(\Fin _* \simeq \Span (\Fin ,\inj ,\all )\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-recognition-principle-section-03-11" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-recognition-principle-section-03-11">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> It is clear that \(\Span (\Fin ,\inj ,\all )\) is a 1-category: given two injections \(U \hookrightarrow S\) and \(U' \hookrightarrow S\), if there exists a bijection \(U \iso U'\) over \(S\),
+then it is unique.
+                                                                                   
+                                                                                   
+</p><p class='noindent'>We now construct mutually inverse functors to \(\Fin _*\). Define a functor \[ \Phi \colon \Span (\Fin ,\inj ,\all ) \to \Fin _* \] as follows: on objects, \(\Phi \) sends a
+finite set \(S\) to \(S_+ = S \sqcup \{*\}\). On morphisms, \(\Phi \) sends a span \(S \hookleftarrow U \to T\) (where the left-pointing map is an injection) to the
+pointed map \(S_+ \to T_+\) that agrees with \(U \to T\) on \(U\) and sends the complement \(S \setminus U\) (together with the basepoint of \(S_+\)) to
+the basepoint of \(T_+\).
+</p><p class='noindent'>Conversely, define a functor \[ \Psi \colon \Fin _* \to \Span (\Fin ,\inj ,\all ) \] as follows: on objects, \(\Psi \) sends a finite pointed set \((S,*)\) to \(S \setminus \{*\}\). On morphisms, \(\Psi \)
+sends a pointed map \(f\colon (S,*) \to (T,*)\) to the span \[ S \setminus \{*\} \hookleftarrow f^{-1}(T \setminus \{*\}) \xrightarrow {f} T \setminus \{*\}, \] where the left-pointing map is the inclusion. One readily verifies
+that \(\Phi \) and \(\Psi \) are inverse equivalences.                                                                                                     □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2003r9'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 5.3.9.</span>  </span><span id='prop:CMon_Equiv_Segal'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with finite products. Restriction along the inclusion</span> \(i\colon \Fin _* \simeq \Span (\Fin ,\inj ,\all ) \hookrightarrow \Span (\Fin )\) <span class='ntx-Italic-tlf-t1-x-x-109'>induces
+an equivalence of</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories </span>\[ i^*\colon \CMon (C) \iso \Fun ^{\Segal }(\Fin _*,C). \] <span class='ntx-Italic-tlf-t1-x-x-109'>The inverse is given by right Kan extension along</span> \(i\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-recognition-principle-section-03-10" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-recognition-principle-section-03-10">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> It is clear from the definitions that restriction along \(i\) sends product-preserving functors to
+functors satisfying the Segal condition.
+</p><p class='noindent'>The functor \(i^*\) is conservative: if \(\alpha \colon M \to N\) is a natural transformation between commutative monoids such that
+\(i^*\alpha \) is an isomorphism, then in particular \(\alpha _*\colon M(*) \to N(*)\) is an isomorphism, and since both \(M\) and \(N\) preserve products we
+have that the map \(\alpha _S\colon M(S) \cong M(*)^S \to N(*)^S \cong N(S)\) is an isomorphism for all finite sets \(S\).
+</p><p class='noindent'>It thus suffices to show that for every functor \(M\colon \Fin _* \to C\) satisfying the Segal condition, the right Kan extension
+\(i_*(M)\) exists and the counit map \(i^* i_*(M) \to M\) is an isomorphism. By the pointwise formula for right Kan extensions,
+we must show that for every finite set \(X\) the canonical map \[ \lim _{(X \to S) \in i_{X/}} M(S) \longrightarrow M(X) \] is an isomorphism, where the limit is taken
+over the relative slice category \(i_{X/} = \Span (\Fin ,\inj ,\all ) \times _{\Span (\Fin )} \Span (\Fin )_{X/}\). Consider the embedding \[ \phi \colon (\Fin \catop )_{X/} \times _{\Fin \catop } \Fin _{\inj }\catop \hookrightarrow \Span (\Fin ,\inj ,\all ) \times _{\Span (\Fin )} \Span (\Fin )_{X/} \] that sends a map \(f\colon S \to X\) to the span \(X \xleftarrow {f} S \xrightarrow {\id } S\). This functor
+\(\phi \) has a right adjoint, given by sending a span \(X \leftarrow U \to S\) to the left-pointing map \(U \to X\). By <a class="source-reference" data-label="cor:Right_Adjoint_Is_Final" href="../../../entry/right-adjoints-are-final/index.html#cor:Right_Adjoint_Is_Final">Corollary 21.5.7</a>, the functor \(\phi \) is therefore
+                                                                                   
+                                                                                   
+initial, so the limit may be computed over the left-hand category.
+</p><p class='noindent'>On this category, the restriction of \(M\) sends a map \(f\colon S \to X\) to \(M(S) \cong M(*)^S = \lim _{s \in S} M(*)\) (using the Segal condition). By the formula
+for iterated limits from <a class="source-reference" data-label="thm:Iterated_Colimits" href="../../../entry/iterated-colimits/index.html#thm:Iterated_Colimits">Theorem 21.2.11</a>, we may thus write the left-hand side as the limit of \(M(*)\) over the set \(\colim _{(X \to S)} S\). It thus
+suffices to show that \(X\) is the colimit of the forgetful functor \[ \Fin _{/X} \times _{\Fin } \Fin _{\inj } \longrightarrow \Fin . \] This functor is left Kan extended from
+the full subcategory spanned by the inclusions \(\{x\} \hookrightarrow X\) for \(x \in X\), and the colimit over this subcategory is precisely
+\(X\). Moreover, the product projections in \(\Span (\Fin )\) have injective left legs and therefore belong to the wide
+subcategory on which \(i\) is defined. The product comparison maps for \(i_*M\) consequently agree, under the
+counit, with the Segal maps of \(M\) and are isomorphisms. Thus \(i_*M\) preserves finite products.                   □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2004r10'></a>
+<a class="entry-heading-link" href="../../../entry/span-and-segal-models-of-commutative-monoids/index.html" aria-label="Remark 5.3.10., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 5.3.10.</span></a>  </span><span id='rmk:Span_Inj'></span> The \(\infty \)-category \(\CMon (C)\) is usually defined as \(\Fun ^{\Segal }(\Fin _*,C)\) in the literature; this was also the original
+approach taken by <span class='citation'>Segal (1968)</span> after which the Segal condition is named. <a class="source-reference" data-label="prop:CMon_Equiv_Segal" href="../../../entry/commutative-monoids-via-the-segal-condition/index.html#prop:CMon_Equiv_Segal">Proposition 5.3.9</a> shows that our definition agrees with
+this classical one.
+</p>
+</div>
+
+<h4 class='subsectionHead' id='the-underlying-monoid-of-a-commutative-monoid'><span class='titlemark'>5.3.2    </span> <a id='x1-30005.3.2'></a>The underlying monoid of a commutative monoid</h4>
+<p class='noindent'>As the name suggests, every commutative monoid has an underlying monoid.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3001r11'></a>
+<a class="entry-heading-link" href="../../../entry/cut-functor/index.html" aria-label="Construction 5.3.11., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 5.3.11.</span></a>  </span><span id='cons:Cut'></span> We will construct a functor \(\Cut \colon \simp \catop \to \Span (\Fin , \inj ,\all ) \subseteq \Span (\Fin )\): </p>
+                                                                                   
+                                                                                   
+     <ul class='itemize1'>
+     <li class='itemize'>On objects, it sends \([n]\) to the set \(\lra {n} := \{1, \dots , n\}\).
+     </li>
+     <li class='itemize'>On morphisms, it sends \(\phi \colon [m] \to [n]\) to the span <div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-7d8ec0a8f897.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div> where the left-pointing map is the inclusion and the
+     right-pointing map sends \(i\) to the unique \(1 \leq j \leq m\) such that \(\phi (j-1) &lt; i \leq \phi (j)\).</li></ul>
+<p class='noindent'>More conceptually, we may think of the set \(\Cut (P)\) for a poset \(P\) as the set of ‘Dedekind cuts’ of \(P\), defined as pairs \((P_0, P_1)\) of
+non-empty subposets \(P_0,P_1 \subseteq P\) satisfying \(P = P_0 \cup P_1\) and \(p_0 &lt; p_1\) for all \(p_0 \in P_0\) and \(p_1 \in P_1\). We want to think of the element \(k \in \{1, \dots , n\} = \Cut ([n])\) as the following
+partition of \([n]\): \[ k \quad \leftrightsquigarrow \quad (\{0, \dots , k-1\}, \{k, \dots , n\}). \] On morphisms, \(\Cut (\phi )\) is then simply given by taking preimages of the two subsets \(P_0\) and \(P_1\), which is
+only defined if both of these preimages are non-empty.
+</p><p class='noindent'>Alternatively, we may think of the set \(\Cut ([n])\) as labeling the \(n\) inequalities in the partially ordered set \([n]\) that we can
+use to cut \([n]\) into two pieces: \[ [n] \quad = \quad \{ 0 \,\, \overset {1}{\leq } \,\, 1 \,\, \overset {2}{\leq } \,\, 2 \,\, \overset {3}{\leq } \,\, \dots \,\, \overset {n}{\leq } \,\, n\}. \] This is the bookkeeping already used in <span class="source-reference" data-label="eq:Inequality_Blocks">Equation 5.1</span>: the middle term of the span \(\Cut (\phi )\) consists
+of those inequalities of \([n]\) which lie in one of the blocks cut out by \(\phi \), the right-pointing map records for each of
+them the inequality of \([m]\) whose block contains it, and the left-pointing inclusion discards the inequalities of \([n]\)
+lying in no block at all.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3002r12'></a>
+<a class="entry-heading-link" href="../../../entry/underlying-monoid-of-a-commutative-monoid/index.html" aria-label="Exercise 5.3.12., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 5.3.12.</span></a>  </span><span id='exercise:Underlying_Monoid_Commutative_Monoid'></span>  Let  \(M\colon \Span (\Fin ) \to C\)  be  a  commutative  monoid.  Show  that  \(M \circ \Cut \colon \simp \catop \to C\)  defines  a  monoid  in  \(C\),  whose
+multiplication agrees with the addition map of \(M\). Deduce that \(M \circ \Cut \) is a group if and only if \(M\) is a commutative
+group, and that there is a pullback square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-b19c33e24d6e.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>In particular, we obtain forgetful functors \[ U := \Cut ^*\colon \CMon (C) \to \Mon (C) \qquadtext { and } U := \Cut ^*\colon \CGrp (C) \to \Grp (C). \]
+</p>
+</div>
+
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3003r13'></a>
+<a class="entry-heading-link" href="../../../entry/commutativity-is-structure/index.html" aria-label="Warning 5.3.13., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Warning 5.3.13.</span></a>  </span><span id='warn:Commutativity_Is_Structure'></span> For a classical 1-category \(C\), the forgetful functor \(\CMon (C) \to \Mon (C)\) is fully faithful by <span class="source-reference" data-label="exercise:Commutative_Monoids_In_Ordinary_Category">Chapterexercise 5.6</span>. For a general
+\(\infty \)-category, this is <span class='ntx-Italic-tlf-t1-x-x-109'>not </span>true: commutativity is no longer a <span class='ntx-Italic-tlf-t1-x-x-109'>property </span>of a monoid, but additional <span class='ntx-Italic-tlf-t1-x-x-109'>structure</span>
+one needs to provide.
+</p>
+</div>
+
+<h4 class='subsectionHead' id='monoids-and-commutative-monoids-in-semiadditive-categories'><span class='titlemark'>5.3.3    </span> <a id='x1-40005.3.3'></a>Monoids and commutative monoids in semiadditive \(\infty \)-categories</h4>
+<p class='noindent'>For a semiadditive \(\infty \)-category \(C\), it turns out that every object admits a unique structure of a (commutative)
+monoid. The idea is simple: in a semiadditive category, every object \(M\) comes equipped with a canonical
+addition map \[ +\colon M \times M \iso M \oplus M \xrightarrow {\nabla } M, \] given by the fold map of the biproduct, and a zero map \(0\colon * \to M\), the unique map from the initial
+object. It readily follows from the universal property of coproducts that this operation is unital,
+associative and commutative, resulting in a commutative monoid object in the homotopy category \(\Ho (C)\).
+To promote \(M\) to a genuine commutative monoid object in \(C\), we need these identities to hold
+coherently. While this is again a consequence of the universal property of coproducts, the required
+bookkeeping is more difficult as we need to handle all coherences simultaneously. The goal of this
+subsection is to carry out this bookkeeping. Only the statements of the results below will be used
+later, and the proofs all follow the same pattern of restriction and Kan extension along suitable
+subcategories, so they may be skimmed on a first reading. Let us start with the non-commutative
+case.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4001r14'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 5.3.14.</span>  </span><span id='prop:Mon_Of_Semiadditive_Category'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a semiadditive</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category. Then the forgetful functor</span> \(\Mon (C) \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is an equivalence.
+If</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is additive, then also the forgetful functor</span> \(\Grp (C) \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is an equivalence.</span>
+                                                                                   
+
+                                                                                   
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-recognition-principle-section-03-9" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-recognition-principle-section-03-9">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Let \(\simp ^{\leq 1}_{\mathrm {int}} \subseteq \simp \) be the subcategory with objects \([0]\) and \([1]\) and whose only non-identity morphisms are the
+two face maps \(d^0, d^1\colon [0] \to [1]\). We will show that restriction along the inclusions \[ j\colon \{[1]\} \hookrightarrow (\simp ^{\leq 1}_{\mathrm {int}})\catop \qquadtext {and} i\colon (\simp ^{\leq 1}_{\mathrm {int}})\catop \hookrightarrow \simp \catop \] define equivalences \[ \Mon (C) \iso \Fun ^{*}\big ((\simp ^{\leq 1}_{\mathrm {int}})\catop , C\big ) \iso C, \] where \(\Fun ^{*}\)
+denotes the full subcategory of those functors whose value at \([0]\) is terminal.
+</p><p class='noindent'>For  the  first  equivalence,  we  use  left  Kan  extension  along  \(i\).  We  apply  the  pointwise  formula  (<a class="source-reference" data-label="thm:Pointwise_Formula_Kan_Extensions" href="../../../entry/pointwise-formula-for-kan-extensions/index.html#thm:Pointwise_Formula_Kan_Extensions">Theorem 21.4.3</a>)
+to compute the left Kan extension. For this, we need to understand the relative slice \(i_{/[n]}\) for each \([n] \in \simp \).
+Objects of this category are pairs \((x, \phi )\) where \(x \in \{[0], [1]\}\) and \(\phi \colon x \to [n]\) is a morphism in \(\simp \catop \), i.e. a morphism \([n] \to x\) in \(\simp \). There are \(n+2\)
+order-preserving maps \([n] \to [1]\), which we may label by the sequence of values they take: there are the two
+<span class='ntx-Italic-tlf-t1-x-x-109'>constant </span>maps \(\underline {0}, \underline {1}\colon [n] \to [1]\), and for each \(1 \leq k \leq n\) a map \(\phi _k\) sending \(0, 1, \ldots , k-1\) to \(0\) and \(k, \ldots , n\) to \(1\). There is also a unique map \(\star \colon [n] \to [0]\). For morphisms
+in \(i_{/[n]}\), we observe that the only non-identity morphisms in \((\simp ^{\leq 1}_{\mathrm {int}})\catop \) are the maps \([1] \to [0]\) induced by the face maps \(d^0, d^1\colon [0] \to [1]\). By
+checking the commutative triangles, one sees that the only non-identity morphisms in \(i_{/[n]}\) are the maps \(\underline {0} \to \star \)
+and \(\underline {1} \to \star \). It follows that the category \(i_{/[n]}\) has precisely \(n+1\) connected components: there is a ‘span’ component
+\(\underline {0} \to \star \leftarrow \underline {1}\), and there are \(n\) isolated objects \(\phi _1, \ldots , \phi _n\).
+</p><p class='noindent'>Now let \(F\colon (\simp ^{\leq 1}_{\mathrm {int}})\catop \to C\) be a functor with \(F([0]) = *\), and write \(X := F([1])\). The left Kan extension \(i_!F\) evaluated at \([n]\) is the colimit over \(i_{/[n]}\) of
+the composite \(i_{/[n]} \to (\simp ^{\leq 1}_{\mathrm {int}})\catop \xrightarrow {F} C\). This colimit decomposes as a coproduct over the connected components. The span
+component contributes the colimit \(\colim (X \to * \leftarrow X) = *\), the terminal object, which is also initial in the pointed category \(C\).
+Each isolated object \(\phi _k\) contributes a copy of \(X\). Hence \((i_! F)([n]) \simeq X^{\sqcup n}\), the \(n\)-fold coproduct. Under these identifications,
+the Segal map \((i_!F)([n]) \to (i_!F)([1])^n\) is the canonical comparison from the \(n\)-fold coproduct of \(X\) to its \(n\)-fold product, hence
+is an isomorphism by semiadditivity. Thus \(i_!F\) is a monoid.
+</p><p class='noindent'>Conversely, let \(M\colon \simp \catop \to C\) be a monoid. There is a canonical comparison map from the left Kan extension of
+the restriction, \(i_! i^* M \to M\). To show this is an isomorphism, it suffices to check this at the underlying object \([1]\).
+There it is clear: as we just computed, the value at \([1]\) of both sides is simply \(M([1])\).
+</p><p class='noindent'>For the second equivalence, we use right Kan extension along \(j\). Since \(j\) is fully faithful, right Kan
+extension \(j_*\) is fully faithful whenever it exists. The relative slice \(j_{x/}\) over \(x \in \{[0], [1]\}\) is as follows: for \(x = [1]\), the identity \(\id _{[1]}\)
+is an initial object, so the limit evaluates to the original value. For \(x = [0]\), the relative slice is empty, so the
+limit is the terminal object. This shows that right Kan extension along \(j\) always exists and produces a
+functor in \(\Fun ^{*}((\simp ^{\leq 1}_{\mathrm {int}})\catop , C)\). Conversely, any functor with value \(*\) at \([0]\) is right Kan extended from \(\{[1]\}\).
+</p><p class='noindent'>For the claim about groups, note that if \(C\) is additive and \(M\) is a monoid in \(C\) with underlying object \(X\), then
+                                                                                   
+                                                                                   
+the shear map is given by \(\begin {psmallmatrix} \id _X &amp; \id _X \\ 0 &amp; \id _X \end {psmallmatrix}\colon X^2 \to X^2\). Its inverse is \(\begin {psmallmatrix} \id _X &amp; -\id _X \\ 0 &amp; \id _X \end {psmallmatrix}\), so every monoid is automatically a group.                       □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4002r15'></a>
+<a class="entry-heading-link" href="../../../entry/iterated-monoid-and-group-structures-on-commutative-monoids/index.html" aria-label="Remark 5.3.15., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 5.3.15.</span></a>  </span><span id='rmk:CMon_Grp_CGrp'></span> Once we know that \(\CMon (C)\) is semiadditive (which will be proved in general in <a class="source-reference" data-label="prop:CMon_Semiadditive" href="../../../entry/commutative-monoids-are-semiadditive/index.html#prop:CMon_Semiadditive">Proposition 5.3.20</a>), the
+present proposition applied to \(\CMon (C)\) gives an equivalence \(\Mon (\CMon (C)) \simeq \CMon (C)\), under which the canonical monoid structure
+on an object \(M \in \CMon (C)\) has multiplication given by the fold map \(M \oplus M \to M\), which agrees with the algebraic addition \(+\colon M \times M \to M\) of
+the commutative monoid structure. As a consequence, the monoid shear map \((\pr _1,m)\) from <a class="source-reference" data-label="def:Group" href="../../../entry/group-objects/index.html#def:Group">Definition 5.1.5</a> coincides with
+the algebraic shear map \((\pr _1,+)\) from <a class="source-reference" data-label="def:Commutative_Group" href="../../../entry/commutative-group-objects/index.html#def:Commutative_Group">Definition 5.3.6</a>, and there are canonical identifications \[ \CMon (\Grp (C)) \quad \simeq \quad \Grp (\CMon (C)) \quad \simeq \quad \CGrp (C). \] The first equivalence is an
+instance of currying functors \(\Span (\Fin ) \times \simp \catop \to C\): being a commutative monoid in the first coordinate commutes with
+being a group in the second. The second equivalence uses that both sides are the full subcategory of
+\(\Mon (\CMon (C)) \simeq \CMon (C)\) spanned by those objects whose shear map is invertible.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4003r16'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 5.3.16 </span>(A slice adjunction for spans)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Forward_Span_Slice_Adjunction'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For every finite set</span> \(S\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the inclusion of forward maps
+induces a functor </span>\[ \Fin _{/S}\longrightarrow \Span (\Fin )_{/S} \] <span class='ntx-Italic-tlf-t1-x-x-109'>which admits a left adjoint. On objects, this left adjoint sends a span </span>\[ T\xleftarrow {f}U\xrightarrow {g}S \] <span class='ntx-Italic-tlf-t1-x-x-109'>to the map</span>
+\(g\colon U\to S\)<span class='ntx-Italic-tlf-t1-x-x-109'>. The same construction restricts to the relative slices used below: </span>\[ \Fin ^{\leq 1}_{/S}\longrightarrow \Span (\Fin ^{\leq 1})_{/S}. \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-recognition-principle-section-03-8" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-recognition-principle-section-03-8">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> There is a morphism in \(\Span (\Fin )_{/S}\) from the displayed span to the forward map \(g\colon U\to S\), represented by the
+span \(T\xleftarrow {f}U\xrightarrow {\id _U}U\). Composition with this morphism identifies maps from \(g\colon U\to S\) to a forward map \(V\to S\) with maps from the
+original span to \(V\to S\) in \(\Span (\Fin )_{/S}\). This is the required adjunction.                                                                         □
+</p>
+</div></div>
+<p class='noindent'>Having established the case of monoids and groups, we now turn to commutative monoids and commutative
+groups.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4004r17'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 5.3.17.</span>  </span><span id='prop:CMon_Of_Semiadditive_Category'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a semiadditive</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category. Then the forgetful functors </span>\[ \CMon (C) \to \Mon (C) \to C \] <span class='ntx-Italic-tlf-t1-x-x-109'>are equivalences.
+If</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is additive, then also the forgetful functors </span>\[ \CGrp (C) \to \Grp (C) \to C \] <span class='ntx-Italic-tlf-t1-x-x-109'>are equivalences.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-recognition-principle-section-03-7" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-recognition-principle-section-03-7">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The equivalences \(\Mon (C) \iso C\) and \(\Grp (C) \iso C\) are <a class="source-reference" data-label="prop:Mon_Of_Semiadditive_Category" href="../../../entry/monoids-in-semiadditive-infinity-categories/index.html#prop:Mon_Of_Semiadditive_Category">Proposition 5.3.14</a>. By <a class="source-reference" data-label="exercise:Underlying_Monoid_Commutative_Monoid" href="../../../entry/underlying-monoid-of-a-commutative-monoid/index.html#exercise:Underlying_Monoid_Commutative_Monoid">Exercise 5.3.12</a>, we have \(\CGrp (C) \simeq \CMon (C) \times _{\Mon (C)} \Grp (C)\). The case for commutative groups therefore
+follows from that of commutative monoids, so it remains to show that the forgetful functor \(\CMon (C) \to C\) is an
+equivalence.
+</p><p class='noindent'>The proof strategy is similar to, but more involved than, that of <a class="source-reference" data-label="prop:Mon_Of_Semiadditive_Category" href="../../../entry/monoids-in-semiadditive-infinity-categories/index.html#prop:Mon_Of_Semiadditive_Category">Proposition 5.3.14</a>. Consider the following subcategories of \(\Span (\Fin )\): \[ * \hookrightarrow \Fin ^{\leq 1} \hookrightarrow \Span (\Fin ^{\leq 1}) \hookrightarrow \Span (\Fin ,\inj ,\all ) \hookrightarrow \Span (\Fin ). \]
+Here \(\Fin ^{\leq 1} \subseteq \Fin \) is the full subcategory on sets of cardinality at most \(1\), i.e. it has objects \(\emptyset \) and \(*\) and a single
+non-identity morphism \(\emptyset \to *\). We claim that restriction along each of these inclusions defines equivalences
+\begin {align*}  \CMon (C) &amp;= \Fun ^{\times }(\Span (\Fin ),C) \iso \Fun ^{\Segal }(\Span (\Fin ,\inj ,\all ),C) \\ &amp;\iso \Fun ^{*}(\Span (\Fin ^{\leq 1}),C) \iso \Fun ^{*}(\Fin ^{\leq 1}, C) \iso C,  \end {align*}
+</p><p class='noindent'>with inverses given by right, left, right and left Kan extension, respectively. Here \(\Fun ^{*}(-,-)\) denotes those
+functors that send the empty set to the terminal object of \(C\). For the first equivalence, this was
+proved in <a class="source-reference" data-label="prop:CMon_Equiv_Segal" href="../../../entry/commutative-monoids-via-the-segal-condition/index.html#prop:CMon_Equiv_Segal">Proposition 5.3.9</a>. The proof strategy for the other three equivalences is similar. We will spell out the
+                                                                                   
+                                                                                   
+details for the second equivalence, and leave the easier third and fourth equivalences to the
+reader.
+</p><p class='noindent'>Denoting the relevant inclusion by \(i\colon \Span (\Fin ^{\leq 1}) \hookrightarrow \Span (\Fin ,\inj ,\all )\), we need to show that the restriction functor \[ i^*\colon \Fun ^{\Segal }(\Span (\Fin ,\inj ,\all ),C) \to \Fun ^{*}(\Span (\Fin ^{\leq 1}),C) \] is an equivalence. Note that
+by semiadditivity of \(C\), a functor \(F\colon \Span (\Fin ,\inj ,\all ) \to C\) satisfies the Segal condition if and only if its restriction \(F\vert _{\Fin }\colon \Fin \to C\) is left Kan
+extended from the point. Similarly, a functor \(G\colon \Span (\Fin ^{\leq 1}) \to C\) satisfies \(G(\emptyset ) = *\) if and only if its restriction \(G\vert _{\Fin ^{\leq 1}}\colon \Fin ^{\leq 1} \to C\) is left Kan extended from
+the point. We now claim that left Kan extension along \(i\) restricts to a functor \[ i_!\colon \Fun ^{*}(\Span (\Fin ^{\leq 1}),C) \to \Fun ^{\Segal }(\Span (\Fin ,\inj ,\all ),C). \] To see this, let \(G\colon \Span (\Fin ^{\leq 1}) \to C\) be a functor
+satisfying \(G(\emptyset ) = *\). It will suffice to show that the restriction \(i_!(G)\vert _{\Fin }\) of the left Kan extension of \(G\) is itself the left Kan
+extension of \(G\vert _{\Fin ^{\leq 1}}\), since then it must be Kan extended from the point. If we let \(i'\colon \Fin ^{\leq 1} \to \Fin \) denote the inclusion,
+there is a canonical map \[ i'_!(G\vert _{\Fin ^{\leq 1}}) \to i_!(G)\vert _{\Fin }. \] Using the pointwise formula for Kan extensions, <a class="source-reference" data-label="thm:Pointwise_Formula_Kan_Extensions" href="../../../entry/pointwise-formula-for-kan-extensions/index.html#thm:Pointwise_Formula_Kan_Extensions">Theorem 21.4.3</a>, we may compute
+both sides as colimits of \(G\) over the relative slices of \(i'\) and \(i\), and the previous comparison map is
+induced by the inclusion map \(\Fin ^{\leq 1}_{/S} \to \Span (\Fin ^{\leq 1})_{/S}\) of relative slices, for \(S \in \Fin \). Since this inclusion admits a left adjoint
+by <a class="source-reference" data-label="lem:Forward_Span_Slice_Adjunction" href="../../../entry/slice-adjunction-for-spans/index.html#lem:Forward_Span_Slice_Adjunction">Lemma 5.3.16</a>, this functor is final by <a class="source-reference" data-label="cor:Right_Adjoint_Is_Final" href="../../../entry/right-adjoints-are-final/index.html#cor:Right_Adjoint_Is_Final">Corollary 21.5.7</a>, and hence restriction along it does not change the value of the
+colimit.
+</p><p class='noindent'>Finally we observe that the Kan extension \(i_!G\) has the same value on the point as \(G\) itself. From this one
+concludes that the unit \(G \to i^*i_!G\) and counit \(i_!i^*F \to F\) of the adjunction are both natural isomorphisms, and hence these two
+functors are inverse equivalences.                                                                                                       □
+</p>
+</div></div>
+
+<h4 class='subsectionHead' id='semiadditivity'><span class='titlemark'>5.3.4    </span> <a id='x1-50005.3.4'></a>Semiadditivity</h4>
+<p class='noindent'>One of the archetypical examples of a semiadditive category is the 1-category of commutative monoids: the
+product \(A \times B\) of two commutative monoids is also the <span class='ntx-Italic-tlf-t1-x-x-109'>co</span>product. In this section, we will generalize this
+observation: given an arbitrary \(\infty \)-category \(C\) with finite products, the \(\infty \)-category \(\CMon (C)\) is semiadditive. Combining
+this fact with the results from the previous section, we may conclude that the forgetful functor \(\CMon (C) \to C\) is in fact
+<span class='ntx-Italic-tlf-t1-x-x-109'>universal </span>among semiadditive \(\infty \)-categories equipped with a finite-product-preserving functor to \(C\). Similarly,
+the forgetful functor \(\CGrp (C) \to C\) is universal among finite-product-preserving functors \(D \to C\) from an <span class='ntx-Italic-tlf-t1-x-x-109'>additive</span>
+\(\infty \)-category.
+</p><p class='noindent'>We start with two preliminary lemmas:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5001r18'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 5.3.18.</span>  </span><span id='lem:Finite_Products_Of_Commutative_Monoids'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with finite products. Then the</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(\CMon (C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>has finite products
+and the evaluation map</span> \(\ev _T\colon \CMon (C) \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves finite products for each</span> \(T \in \Fin \)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-recognition-principle-section-03-6" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-recognition-principle-section-03-6">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  The  functor  category  \(\Fun (\Span (\Fin ),C)\)  admits  finite  products  (<a class="source-reference" data-label="lem:Colimits_In_Functor_Categories" href="../../../entry/colimits-in-functor-categories/index.html#lem:Colimits_In_Functor_Categories">Lemma 21.2.8</a>)  which  are  computed  pointwise,  and  the
+subcategory \(\CMon (C)\) is closed under finite products.                                                                                      □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5002r19'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 5.3.19.</span>  </span><span id='lem:Cotensoring_On_CMon'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with finite products. Then there exists a </span>cotensoring functor \[ (-)^{(-)}\colon \Span (\Fin ) \times \CMon (C) \to \CMon (C), \qquad (S,X) \mapsto X^S, \]
+<span class='ntx-Italic-tlf-t1-x-x-109'>defined by</span> \(X^S(T) := X(S \times T)\)<span class='ntx-Italic-tlf-t1-x-x-109'>, which preserves finite products in both variables and whose restriction to</span> \(\{*\} \times \CMon (C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is the identity
+functor.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-recognition-principle-section-03-5" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-recognition-principle-section-03-5">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> For a finite set \(S\) and a commutative monoid \(X\) we define the cotensoring by \(X^S(T) := X(S \times T)\) for \(T \in \Fin \). The
+                                                                                   
+                                                                                   
+functoriality in \(S\) and \(T\) comes from the observation that the product functor \(- \times -\colon \Fin \times \Fin \to \Fin \) induces a functor on
+span categories by taking products of spans: \[ - \times - \colon \Span (\Fin ) \times \Span (\Fin ) \to \Span (\Fin ), \qquad (S, T) \mapsto S \times T. \] (This is no longer the categorical product in \(\Span (\Fin )\)!)
+</p>
+     <ul class='itemize1'>
+     <li class='itemize'>Since we have a natural bijection \(* \times T \cong T\), it is clear that the cotensoring is the identity on \(\{*\} \times \CMon (C)\).
+     </li>
+     <li class='itemize'>Fixing \(S \in \Fin \), the functor \((-)^S\colon \CMon (C) \to \CMon (C)\) preserves finite products: we may check this pointwise for every \(T \in \Fin \), where
+     it is by definition given by the evaluation \(X \mapsto X(S \times T)\), which preserves finite products.
+     </li>
+     <li class='itemize'>Fixing \(X \in \CMon (C)\), the functor \(X^{(-)}\colon \Span (\Fin ) \to \CMon (C)\) preserves finite products: again we may check this pointwise for every \(T \in \Fin \),
+     where we may write it as the composite \[ \Span (\Fin ) \xrightarrow {- \times T} \Span (\Fin ) \xrightarrow {X} C. \] But \(X\) preserves finite products by assumption and \(- \times T\)
+     preserves finite products since the functor \(- \times T\colon \Fin \to \Fin \) preserves finite <span class='ntx-Italic-tlf-t1-x-x-109'>co</span>products: \(\bigsqcup _{i=1}^n (S_i \times T) \iso (\bigsqcup _{i=1}^n S_i) \times T\).</li></ul>
+<p class='noindent'>In particular we see that \(X^S\) is the \(S\)-fold product of \(X\) in \(\CMon (C)\), explaining the notation.                                   □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5003r20'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 5.3.20.</span>  </span><span id='prop:CMon_Semiadditive'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with finite products. Then the</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(\CMon (C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is semiadditive.
+The subcategory</span> \(\CGrp (C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is even additive.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-recognition-principle-section-03-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-recognition-principle-section-03-4">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We first show that \(\CMon (C)\) is semiadditive. This amounts to two claims: first, \(\CMon (C)\) has a zero object, and
+second, finite products are also coproducts.
+</p><p class='noindent'>For the first claim, note that \(\Span (\Fin )\) is pointed, with zero object given by the empty set. By <a class="source-reference" data-label="cor:Reduced_Functors_Pointed" href="../../../entry/reduced-functor-categories-are-pointed/index.html#cor:Reduced_Functors_Pointed">Corollary 4.1.12</a>, the \(\infty \)-category \(\Fun _*(\Span (\Fin ),C)\)
+is pointed, with zero object given by the constant functor \(\const _*\colon \Span (\Fin ) \to C\). Since \(\CMon (C) \subseteq \Fun _*(\Span (\Fin ),C)\) is the full subcategory spanned by
+the finite-product-preserving functors and contains \(\const _*\), this same object is also a zero object of \(\CMon (C)\).
+</p><p class='noindent'>For the second claim, we show that for commutative monoids \(X\) and \(Y\), the product \(X \times Y\) equipped with
+the maps \((\id _X,0)\colon X \to X \times Y\) and \((0,\id _Y)\colon Y \to X \times Y\) is also a coproduct. In other words, we need to show that the corresponding natural
+transformation \[ ((\id _X,0), (0,\id _Y))\colon (X,Y) \to (X \times Y, X \times Y) = \Delta (X \times Y) \] is the unit of an adjunction between the product functor and the diagonal functor
+\(\Delta \colon \CMon (C) \to \CMon (C) \times \CMon (C)\) (with  the  product  being  the  <span class='ntx-Italic-tlf-t1-x-x-109'>left  </span>adjoint!).  By  <a class="source-reference" data-label="prop:Characterization_Adjunctions" href="../../../entry/equivalent-data-for-an-adjunction/index.html#prop:Characterization_Adjunctions">Proposition 21.1.2</a>,  it  suffices  to  supplement  this  unit  by  a  counit
+satisfying the triangle identities. We therefore have to produce for every third commutative monoid
+\(Z\) a compatible counit map \[ m_Z\colon Z \times Z \to Z \] satisfying the triangle identities; this is the map that will a posteriori
+correspond to the fold map \(Z \oplus Z \to Z\). Using the cotensoring from <a class="source-reference" data-label="lem:Cotensoring_On_CMon" href="../../../entry/cotensoring-commutative-monoids-by-finite-sets/index.html#lem:Cotensoring_On_CMon">Lemma 5.3.19</a>, we define \(m_Z\) as the composite \[ m_Z\colon Z \times Z \cong Z^{* \sqcup *} \xrightarrow {Z^{\nabla }} Z^* \cong Z, \] where \(\nabla \colon * \sqcup * \to *\)
+is the fold map in \(\Fin \), viewed as a span \((* \sqcup * \xleftarrow {\id } * \sqcup * \xrightarrow {\nabla } *)\). The triangle identities take the following form:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-f4e8e1675862.svg" alt="Commutative diagram generated from the LaTeX source"></figure><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-d4718f502b94.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>For the
+right-hand triangle, we use that the cotensoring preserves products, so that the map \(m_{X \times Y}\) may be rewritten
+as the product map \[ m_X \times m_Y \colon (X \times X) \times (Y \times Y) \to X \times Y. \] We then see that to produce both triangles, it suffices to produce for every \(X \in \CMon (C)\) two
+natural homotopies between the composites \[ X \xrightarrow {(\id _X,0)} X \times X \xrightarrow {m_X} X, \qquad X \xrightarrow {(0,\id _X)} X \times X \xrightarrow {m_X} X \] and the identity on \(X\). For this, observe that we may write
+the zero map \(0\colon \const _* \to X\) as the map \(X^{\emptyset } \to X^*\) induced on cotensorings by the inclusion \(\emptyset \hookrightarrow *\) in \(\Fin \). Consequently, under the
+isomorphism \(X^* \times X^* \cong X^{*\sqcup *}\), the maps \((\id _X,0)\) and \((0,\id _X)\) are induced by the two inclusions \(\iota _1,\iota _2\colon * \hookrightarrow *\sqcup *\). The triangle identities then reduce
+to the observation that the two composites in \(\Fin \)</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-150377c4c801.svg" alt="Commutative diagram generated from the LaTeX source"></figure><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-6213d16b8264.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>are both the identity, which is immediate. This proves
+that \(\CMon (C)\) is semiadditive.</p><p class='noindent'>Finally, \(\CGrp (C) \subseteq \CMon (C)\) is closed under finite products and contains the zero object, so the biproducts constructed
+above restrict to \(\CGrp (C)\). Their fold map is the algebraic addition \(m_M\) constructed above. Hence the additive shear
+map agrees with the algebraic shear map of <a class="source-reference" data-label="def:Commutative_Group" href="../../../entry/commutative-group-objects/index.html#def:Commutative_Group">Definition 5.3.6</a>, which is invertible by definition. Thus \(\CGrp (C)\) is additive.    □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5004r21'></a>
+<a class="entry-heading-link" href="../../../entry/pointed-commutative-monoids/index.html" aria-label="Remark 5.3.21., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 5.3.21.</span></a>  </span><span id='rmk:Commutative_Monoids_In_Pointed_Objects'></span> Observe that there are equivalences \(\CMon (C_*) \simeq \CMon (C)_*\) and \(\CGrp (C_*) \simeq \CGrp (C)_*\). Since \(\CMon (C)\) and \(\CGrp (C)\) are pointed, it follows from <a class="source-reference" data-label="lem:Pointed_Iff_Equivalent_To_Pointed_Objects" href="../../../entry/pointed-objects-form-a-pointed-infinity-category/index.html#lem:Pointed_Iff_Equivalent_To_Pointed_Objects">Lemma 4.1.9</a>
+that the forgetful functor \(C_* \to C\) induces equivalences \[ \CMon (C_*) \iso \CMon (C) \qquadtext { and } \CGrp (C_*) \iso \CGrp (C). \] Using a similar argument we find equivalences \[ \Mon (C_*) \iso \Mon (C) \qquadtext { and } \Grp (C_*) \iso \Grp (C). \]
+</p>
+</div>
+<p class='noindent'>With this at hand, we can now prove universal properties for the assignments \(C \mapsto \CMon (C)\) and \(C \mapsto \CGrp (C)\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5005r22'></a>
+<a class="entry-heading-link" href="../../../entry/product-semiadditive-and-additive-infinity-categories/index.html" aria-label="Notation 5.3.22., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Notation 5.3.22.</span></a>  </span><span id='nota:Product_Semiadditive_And_Additive_Infinity_Categories'></span> Let \(\Cat ^{\mathrm {prod}}_{\infty }\) be the subcategory of \(\Cat _{\infty }\) spanned by those \(\infty \)-categories that have finite products
+and the finite-product-preserving functors. We further denote by \[ \Cat ^{\sadd }_{\infty } \subseteq \Cat ^{\mathrm {prod}}_{\infty } \qquadtext { and } \Cat ^{\add }_{\infty } \subseteq \Cat ^{\mathrm {prod}}_{\infty } \] the full subcategories spanned by
+the semiadditive and additive \(\infty \)-categories, respectively.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5006r23'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 5.3.23.</span>  </span><span id='prop:CMon_Right_Adjoint_To_Inclusion'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The two functors </span>\[ \CMon (-)\colon \Cat ^{\mathrm {prod}}_{\infty } \to \Cat ^{\sadd }_{\infty } \qquadtext { and } \CGrp (-)\colon \Cat ^{\mathrm {prod}}_{\infty } \to \Cat ^{\add }_{\infty } \] <span class='ntx-Italic-tlf-t1-x-x-109'>are right adjoint to the respective inclusion functors.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-recognition-principle-section-03-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-recognition-principle-section-03-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We will check the (dual version of the) criterion from <a class="source-reference" data-label="prop:Characterization_Bousfield_Localizations" href="../../../entry/characterizations-of-categorical-bousfield-localizations/index.html#prop:Characterization_Bousfield_Localizations">Proposition 21.8.9</a>. We will treat the case for \(\CMon (-)\); the case for
+\(\CGrp (-)\) is identical. The forgetful functor defines a natural transformation \(\epsilon \colon \CMon (-) \to \id _{\Cat ^{\mathrm {prod}}}\), and we must check that for every
+\(\infty \)-category \(C\) with finite products the two forgetful functors \[ \hspace {-10pt} \epsilon _{\CMon (C)} \colon \CMon (\CMon (C)) \to \CMon (C) \qquadtext { and } \CMon (\epsilon _C)\colon \CMon (\CMon (C)) \to \CMon (C) \] are equivalences. Since \(\CMon (C)\) is semiadditive by <a class="source-reference" data-label="prop:CMon_Semiadditive" href="../../../entry/commutative-monoids-are-semiadditive/index.html#prop:CMon_Semiadditive">Proposition 5.3.20</a>,
+the claim for \(\epsilon _{\CMon (C)}\) is an instance of <a class="source-reference" data-label="prop:CMon_Of_Semiadditive_Category" href="../../../entry/commutative-monoids-in-semiadditive-infinity-categories/index.html#prop:CMon_Of_Semiadditive_Category">Proposition 5.3.17</a>. But now the case for \(\CMon (\epsilon _C)\) follows immediately: the swap map \(\Span (\Fin ) \times \Span (\Fin ) \iso \Span (\Fin ) \times \Span (\Fin )\) determines
+an equivalence \[ \CMon (\CMon (C)) \iso \CMon (\CMon (C)), \qquad (M_n)_m \mapsto (M_m)_n, \] and under this equivalence the forgetful functor \(\epsilon _{\CMon (C)}((M_n)_m) = (M_n)_1\) corresponds to the forgetful functor
+\(\CMon (\epsilon _C)((M_m)_n) = (M_1)_n\).                                                                                                                                                           □
+                                                                                   
+                                                                                   
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5007r24'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 5.3.24.</span>  </span><span id='cor:Maps_From_Semiadditive_Category_To_CMon'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(A\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a semiadditive</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category and let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with finite products.
+The forgetful functor</span> \(\CMon (C)\to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>induces an equivalence </span>\[ \Fun ^{\times }(A,\CMon (C))\iso \Fun ^{\times }(A,C). \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-recognition-principle-section-03-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-recognition-principle-section-03-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By Yoneda, it suffices to show that this induces an equivalence on mapping animae out of every
+\(\infty \)-category \(E\). This follows from the natural equivalences \begin {align*}  \Hom _{\Cat _{\infty }}\bigl (E,\Fun ^{\times }(A,\CMon (C))\bigr ) &amp;\simeq \Hom _{\Cat ^{\mathrm {prod}}_{\infty }}\bigl (A,\Fun (E,\CMon (C))\bigr ) \\ &amp;\simeq \Hom _{\Cat ^{\mathrm {prod}}_{\infty }}\bigl (A,\CMon (\Fun (E,C))\bigr ) \\ &amp;\simeq \Hom _{\Cat ^{\mathrm {prod}}_{\infty }}\bigl (A,\Fun (E,C)\bigr ) \\ &amp;\simeq \Hom _{\Cat _{\infty }}\bigl (E,\Fun ^{\times }(A,C)\bigr ),  \end {align*}
+</p><p class='noindent'>where the second equivalence uses pointwise finite products and the third is the adjunction from
+<a class="source-reference" data-label="prop:CMon_Right_Adjoint_To_Inclusion" href="../../../entry/commutative-monoids-as-a-right-adjoint/index.html#prop:CMon_Right_Adjoint_To_Inclusion">Proposition 5.3.23</a>.                                                                                                                                                           □
+</p>
+</div></div>
+<p class='noindent'>As a useful consequence, we see that the hom animae of any semiadditive \(\infty \)-category admit canonical
+refinements to commutative monoids.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-5008r25'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 5.3.25.</span>  </span><span id='prop:CMon_Enrichment_Semiadditive_Category'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For a semiadditive</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the hom functor</span> \(\Hom _C\colon C\catop \times C \to \An \) <span class='ntx-Italic-tlf-t1-x-x-109'>lifts uniquely to a functor </span>\[ \Hom _C\colon C\catop \times C \to \CMon (\An ) \]
+<span class='ntx-Italic-tlf-t1-x-x-109'>which preserves direct sums in both variables. If</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is additive, this lands in</span> \(\CGrp (\An )\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+                                                                                   
+
+                                                                                   
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-recognition-principle-section-03-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-recognition-principle-section-03-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> This follows directly from the universal property of \(\CMon (\An )\) established in <a class="source-reference" data-label="prop:CMon_Right_Adjoint_To_Inclusion" href="../../../entry/commutative-monoids-as-a-right-adjoint/index.html#prop:CMon_Right_Adjoint_To_Inclusion">Proposition 5.3.23</a>; the proof is completely
+analogous to that of <a class="source-reference" data-label="prop:Hom_Spectra_In_Stable_Category" href="../../../entry/hom-spectra-in-stable-infinity-categories/index.html#prop:Hom_Spectra_In_Stable_Category">Proposition 4.4.4</a> and is omitted.                                                                                                   □
+</p>
+</div></div>
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../the-recognition-principle-for-loop-spaces/index.html" aria-label="Previous section: The recognition principle for loop spaces" title="Previous section: The recognition principle for loop spaces"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../the-recognition-principle-for-connective-spectra/index.html" aria-label="Next section: The recognition principle for connective spectra" title="Next section: The recognition principle for connective spectra"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html" aria-current="page"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/animae-as-spaces/index.html"><span class="context-entry-heading">Chapter 2</span><span class="context-entry-title">Animae as spaces</span></a></li><li><a href="../../../chapter/homology-and-cohomology/index.html"><span class="context-entry-heading">Chapter 3</span><span class="context-entry-title">Homology and cohomology</span></a></li><li><a href="../../../chapter/spectra-and-stable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 4</span><span class="context-entry-title">Spectra and stable ∞-categories</span></a></li><li><a href="../../../chapter/recognition-principle/index.html" aria-current="page"><span class="context-entry-heading">Chapter 5</span><span class="context-entry-title">The recognition principle</span></a></li><li><a href="../../../chapter/homological-algebra/index.html"><span class="context-entry-heading">Chapter 6</span><span class="context-entry-title">Homological algebra</span></a></li><li><a href="../../../chapter/localization-and-completion/index.html"><span class="context-entry-heading">Chapter 7</span><span class="context-entry-title">Localization and completion</span></a></li><li><a href="../../../chapter/ring-spectra-and-modules/index.html"><span class="context-entry-heading">Chapter 8</span><span class="context-entry-title">Ring spectra and modules</span></a></li><li><a href="../../../chapter/complex-k-theory/index.html"><span class="context-entry-heading">Chapter 9</span><span class="context-entry-title">Complex K-theory</span></a></li><li><a href="../../../chapter/thom-spectra-and-bordism-theory/index.html"><span class="context-entry-heading">Chapter 10</span><span class="context-entry-title">Thom spectra and bordism theory</span></a></li><li><a href="../../../chapter/duality-phenomena/index.html"><span class="context-entry-heading">Chapter 11</span><span class="context-entry-title">Duality phenomena</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../monoids-and-groups/index.html"><span class="context-entry-heading">Section 5.1</span><span class="context-entry-title">Monoids and groups</span></a></li><li><a href="../the-recognition-principle-for-loop-spaces/index.html"><span class="context-entry-heading">Section 5.2</span><span class="context-entry-title">The recognition principle for loop spaces</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 5.3</span><span class="context-entry-title">Commutative monoids and commutative groups</span></a></li><li><a href="../the-recognition-principle-for-connective-spectra/index.html"><span class="context-entry-heading">Section 5.4</span><span class="context-entry-title">The recognition principle for connective spectra</span></a></li><li><a href="../group-completions-as-telescopes/index.html"><span class="context-entry-heading">Section 5.5</span><span class="context-entry-title">Group completions as telescopes</span></a></li><li><a href="../finite-deloopings-online-only/index.html"><span class="context-entry-heading">Section 5.6</span><span class="context-entry-title">Finite deloopings (online only)</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#cons:Span_Category_Fin"><span class="context-entry-heading">Construction 5.3.1</span><span class="context-entry-title">Span category</span></a></li><li><a href="#rmk:Span_Category_Of_Finite_Sets_Is_A_2_1_Category"><span class="context-entry-heading">Remark 5.3.2</span><span class="context-entry-title">remark</span></a></li><li><a href="#lem:Span_Fin_Semiadditive"><span class="context-entry-heading">Lemma 5.3.3</span><span class="context-entry-title">lemma</span></a></li><li><a href="#def:Commutative_Monoid"><span class="context-entry-heading">Definition 5.3.4</span><span class="context-entry-title">Commutative monoid</span></a></li><li><a href="#rmk:Restriction_And_Addition_Maps"><span class="context-entry-heading">Remark 5.3.5</span><span class="context-entry-title">Restriction and addition maps</span></a></li><li><a href="#def:Commutative_Group"><span class="context-entry-heading">Definition 5.3.6</span><span class="context-entry-title">Commutative group</span></a></li><li><a href="#def:Segal_Condition_Pointed"><span class="context-entry-heading">Definition 5.3.7</span><span class="context-entry-title">Segal condition</span></a></li><li><a href="#lem:Fin_Pointed_Equiv_Span"><span class="context-entry-heading">Lemma 5.3.8</span><span class="context-entry-title">lemma</span></a></li><li><a href="#prop:CMon_Equiv_Segal"><span class="context-entry-heading">Proposition 5.3.9</span><span class="context-entry-title">proposition</span></a></li><li><a href="#rmk:Span_Inj"><span class="context-entry-heading">Remark 5.3.10</span><span class="context-entry-title">remark</span></a></li><li><a href="#cons:Cut"><span class="context-entry-heading">Construction 5.3.11</span><span class="context-entry-title">construction</span></a></li><li><a href="#exercise:Underlying_Monoid_Commutative_Monoid"><span class="context-entry-heading">Exercise 5.3.12</span><span class="context-entry-title">exercise</span></a></li><li><a href="#warn:Commutativity_Is_Structure"><span class="context-entry-heading">Warning 5.3.13</span><span class="context-entry-title">warning</span></a></li><li><a href="#prop:Mon_Of_Semiadditive_Category"><span class="context-entry-heading">Proposition 5.3.14</span><span class="context-entry-title">proposition</span></a></li><li><a href="#rmk:CMon_Grp_CGrp"><span class="context-entry-heading">Remark 5.3.15</span><span class="context-entry-title">remark</span></a></li><li><a href="#lem:Forward_Span_Slice_Adjunction"><span class="context-entry-heading">Lemma 5.3.16</span><span class="context-entry-title">A slice adjunction for spans</span></a></li><li><a href="#prop:CMon_Of_Semiadditive_Category"><span class="context-entry-heading">Proposition 5.3.17</span><span class="context-entry-title">proposition</span></a></li><li><a href="#lem:Finite_Products_Of_Commutative_Monoids"><span class="context-entry-heading">Lemma 5.3.18</span><span class="context-entry-title">lemma</span></a></li><li><a href="#lem:Cotensoring_On_CMon"><span class="context-entry-heading">Lemma 5.3.19</span><span class="context-entry-title">lemma</span></a></li><li><a href="#prop:CMon_Semiadditive"><span class="context-entry-heading">Proposition 5.3.20</span><span class="context-entry-title">proposition</span></a></li><li><a href="#rmk:Commutative_Monoids_In_Pointed_Objects"><span class="context-entry-heading">Remark 5.3.21</span><span class="context-entry-title">remark</span></a></li><li><a href="#nota:Product_Semiadditive_And_Additive_Infinity_Categories"><span class="context-entry-heading">Notation 5.3.22</span><span class="context-entry-title">notation</span></a></li><li><a href="#prop:CMon_Right_Adjoint_To_Inclusion"><span class="context-entry-heading">Proposition 5.3.23</span><span class="context-entry-title">proposition</span></a></li><li><a href="#cor:Maps_From_Semiadditive_Category_To_CMon"><span class="context-entry-heading">Corollary 5.3.24</span><span class="context-entry-title">corollary</span></a></li><li><a href="#prop:CMon_Enrichment_Semiadditive_Category"><span class="context-entry-heading">Proposition 5.3.25</span><span class="context-entry-title">proposition</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

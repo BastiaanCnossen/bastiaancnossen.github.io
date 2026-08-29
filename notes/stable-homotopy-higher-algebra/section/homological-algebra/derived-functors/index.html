@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 6.6: Derived functors | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/stable-homotopy-theory/index.html">Part I</a> · <a href="../../../chapter/homological-algebra/index.html">Chapter 6</a> · Section 6.6</p>
+      <h1>Derived functors</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Derived_Functors'>A recurring theme of this chapter is the interplay between the stable and the abelian setting. Exactness
+is better behaved in a stable \(\infty \)-category, while explicit computations are usually easier in an
+abelian category, and the derived \(\infty \)-category \(\D (\Aa )\) relates the two: it is stable, and it contains \(\Aa \) as
+its heart. This relation may also be used to study functors on \(\Aa \) itself. Consider a right t-exact
+functor \(G\colon \D (\Aa ) \to \D (\Bb )\) between derived categories. Given a short exact sequence \[ 0 \to A \rightarrowtail B \twoheadrightarrow C \to 0 \] in \(\Aa \), we showed in <a class="source-reference" data-label="cor:Short_Exact_Sequence_In_Heart_Induces_Exact_Sequence" href="../../../entry/short-exact-sequences-in-the-heart-are-exact/index.html#cor:Short_Exact_Sequence_In_Heart_Induces_Exact_Sequence">Corollary 6.3.16</a> that this
+induces an exact sequence \(A \to B \to C\) in \(\D (\Aa )\). Applying \(G\), we obtain an exact sequence \(G(A) \to G(B) \to G(C)\) in \(\D (\Bb )\), which in turn gives
+rise to a long exact sequence of homology groups: \[ \dots \to G_1(B) \to G_1(C) \to G_0(A) \to G_0(B) \to G_0(C) \to 0, \] where \(G_n := H_n \circ G\colon \Aa \to \Bb \). In particular, the functor \(G_0\colon \Aa \to \Bb \) is right
+exact, and the long exact sequence provides a powerful computational tool for understanding
+it.
+</p><p class='noindent'>The goal of <span class='ntx-Italic-tlf-t1-x-x-109'>derived functors </span>is to reverse this process: given a right exact functor \(F\colon \Aa \to \Bb \), can we obtain it as the
+zeroth homology of some right t-exact functor \(\D (\Aa ) \to \D (\Bb )\)? One might try to obtain such an extension
+by simply applying \(F\) degreewise to chain complexes. However, this naive approach fails: the
+degreewise extension \(\Ch (F)\colon \Ch (\Aa ) \to \Ch (\Bb )\) does not preserve quasi-isomorphisms unless \(F\) is exact. Instead, we could
+ask: does there exist a universal approximation of \(\Ch (F)\) from the left by a functor that descends to
+\(\D (\Aa ) \to \D (\Bb )\)?
+</p><p class='noindent'>If \(\Aa \) has enough projectives, we will see that such an approximation exists, at least at the level of bounded
+below complexes \(\bL F\colon \D ^-(\Aa ) \to \D ^-(\Bb )\). It may be computed on an arbitrary bounded below complex \(C\) by first replacing \(C\) with a
+quasi-isomorphic projective complex \(P\) and then applying \(F\): we have \(\bL F(C) \simeq F(P)\). Dually, a left exact functor gives rise to
+right derived functors.
+</p>
+<h4 class='subsectionHead' id='abstract-derived-functors'><span class='titlemark'>6.6.1    </span> <a id='x1-20006.6.1'></a>Abstract derived functors</h4>
+<p class='noindent' id='subsec_Abstract_Derived_Functors'>We begin by developing the abstract theory of derived functors in terms of universal properties. The key
+observation is that a derived functor should be a ‘best approximation’ to a given functor by one that factors
+through a localization. Our discussion here is inspired by <span class='citation'>[Dwyer et al. (2004), Sections 39-41]</span>, <span class='citation'>[Riehl (2014), Chapter 2]</span> and <span class='citation'>[Cisinski (2019), Section 7.5]</span>.
+</p>
+<div class='newtheorem'>
+                                                                                   
+                                                                                   
+<p class='noindent'><span class='head'>
+<a id='x1-2001r1'></a>
+<a class="entry-heading-link" href="../../../entry/total-left-derived-functors/index.html" aria-label="Definition 6.6.1., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 6.6.1.</span></a>  </span><span id='def:Total_Left_Derived_Functor'></span> Let \(C\) be an \(\infty \)-category with a collection of morphisms \(W\), and let \(\gamma \colon C \to C[W^{-1}]\) be the localization
+functor. Let \(F\colon C \to D\) be a functor. A functor \(\bL F\colon C[W^{-1}] \to D\) is called a <span class='ntx-Italic-tlf-t1-x-x-109'>total left derived functor of</span> \(F\) if it comes equipped
+with a natural transformation \(\alpha \colon \bL F \circ \gamma \Rightarrow F\) of functors \(C \to D\) that exhibits \(\bL F\) as a right Kan extension of \(F\) along \(\gamma \):</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-31a7f138398f.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>Note
+that the functor \(\bL F\) is unique whenever it exists.</p><p class='noindent'>Dually, a <span class='ntx-Italic-tlf-t1-x-x-109'>total right derived functor of</span> \(F\) is a total left derived functor of \(F\catop \colon C\catop \to D\catop \), i.e. a functor \(\bR F\colon C[W^{-1}] \to D\) equipped
+with \(\beta \colon F \Rightarrow \bR F \circ \gamma \) which exhibits \(\bR F\) as a left Kan extension of \(F\) along \(\gamma \).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2002r2'></a>
+<a class="entry-heading-link" href="../../../entry/universal-property-of-total-left-derived-functors/index.html" aria-label="Observation 6.6.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Observation 6.6.2.</span></a>  </span><span id='obs:Total_Left_Derived_Functor'></span> A priori, the condition on \(\bL F\) to be a right Kan extension demands that for every
+functor \(H\colon C[W^{-1}] \to D\), the composite \[ \Nat (H,\bL F) \xrightarrow {\gamma ^*} \Nat (H \circ \gamma , \bL F \circ \gamma ) \xrightarrow {\alpha \circ -} \Nat (H \circ \gamma , F) \] is an equivalence. But since \(\gamma ^*\) is always an equivalence by definition of
+localizations, this is equivalent to asking the second map to be an equivalence. We conclude that a
+transformation \(\alpha \colon \bL F \circ \gamma \Rightarrow F\) is a total left derived functor of \(F\) if and only if for every functor \(G\colon C \to D\) that inverts all maps
+in \(W\), the map \[ \alpha \circ - \colon \Nat (G, \bL F \circ \gamma ) \, \to \, \Nat (G, F) \] is an equivalence.
+</p>
+</div>
+<p class='noindent'>In practice, total left derived functors can often be computed using <span class='ntx-Italic-tlf-t1-x-x-109'>cofibrant replacements</span>.
+The idea is that while \(F\) may not preserve weak equivalences in general, it often does so when
+restricted to some full subcategory of cofibrant objects. The key ingredient then is the fact
+that cofibrant objects compute the localization: see <a class="source-reference" data-label="cor:Localization_Right_Exact" href="../../../entry/right-exact-localization-via-cofibrant-objects/index.html#cor:Localization_Right_Exact">Corollary 2.2.9</a>. This turns out to be enough to produce
+the derived functor, which is the content of the following result of <span class='citation'>Cisinski (2019)</span>. We will use it as a black
+box.
+</p>
+<div class='newtheorem'>
+                                                                                   
+                                                                                   
+<p class='noindent'><span class='head'>
+<a id='x1-2003r3'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 6.6.3 </span>(<span class='citation'>Cisinski (2019), 7.5.25</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Constructing_Left_Derived_Functors'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \((C,W,I)\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with weak equivalences and cofibrations, let</span> \(i\colon C_c \hookrightarrow C\) <span class='ntx-Italic-tlf-t1-x-x-109'>denote
+the full subcategory of cofibrant objects, and let</span> \(F\colon C \to D\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a functor such that the restriction</span> \(F\vert _{C_c}\colon C_c \to D\) <span class='ntx-Italic-tlf-t1-x-x-109'>inverts the
+weak equivalences between cofibrant objects. Then</span> \(F\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a total left derived functor </span>\[ \bL F\colon C[W^{-1}] \to D. \] <span class='ntx-Italic-tlf-t1-x-x-109'>It is uniquely
+characterized by the existence of an isomorphism</span> \(\bL F \circ \gamma \circ i \simeq F \circ i\)<span class='ntx-Italic-tlf-t1-x-x-109'>. In particular, if</span> \(q\colon Q \to X\) <span class='ntx-Italic-tlf-t1-x-x-109'>is any weak equivalence with</span> \(Q\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>cofibrant, then </span>\[ \bL F(\gamma X) \simeq F(Q). \] <span class='ntx-Italic-tlf-t1-x-x-109'>Moreover, the structure transformation</span> \(\bL F\circ \gamma \Rightarrow F\) <span class='ntx-Italic-tlf-t1-x-x-109'>exhibits</span> \(\bL F\) <span class='ntx-Italic-tlf-t1-x-x-109'>as an </span>absolute <span class='ntx-Italic-tlf-t1-x-x-109'>right Kan extension:
+for every functor</span> \(H\colon D\to E\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the composite</span> \(H\circ \bL F\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a total left derived functor of</span> \(H\circ F\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-06-17" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-06-17">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  We  give  the  construction  of  \(\bL F\),  and  refer  to  <span class='citation'>[Cisinski (2019), 7.5.25]</span>  for  the  verification  that  it  has  the  required
+universal property. (The reference treats the dual situation of an \(\infty \)-category with weak equivalences
+and fibrations, and constructs the total <span class='ntx-Italic-tlf-t1-x-x-109'>right </span>derived functor of a functor which inverts the weak
+equivalences between <span class='ntx-Italic-tlf-t1-x-x-109'>fibrant </span>objects.)
+</p><p class='noindent'>Write \(W_c\) for the weak equivalences between cofibrant objects. The restriction \(F\vert _{C_c}\) descends to a functor
+\(F_c\colon C_c[W_c^{-1}] \to D\). By part (1) of <a class="source-reference" data-label="cor:Localization_Right_Exact" href="../../../entry/right-exact-localization-via-cofibrant-objects/index.html#cor:Localization_Right_Exact">Corollary 2.2.9</a>, the inclusion induces an equivalence \(\overline i\colon C_c[W_c^{-1}] \xrightarrow {\simeq } C[W^{-1}]\), and we may thus define \[ \bL F \quad := \quad F_c \circ \overline i^{\,-1}\colon \; C[W^{-1}] \to D \] by choosing an
+inverse of \(\overline i\). By construction, the restriction of \(\bL F\) to the cofibrant objects is isomorphic to \(F\vert _{C_c}\), that is, \(\bL F \circ \gamma \circ i \simeq F \circ i\).
+Since \(\overline i\) is an equivalence, a functor out of \(C[W^{-1}]\) is determined by its restriction along \(\gamma \circ i\), which gives the
+asserted uniqueness. Finally, if \(q\colon Q \to X\) is a weak equivalence with \(Q\) cofibrant, then \(\gamma (q)\) is an isomorphism, and
+hence \[ \bL F(\gamma X) \simeq \bL F(\gamma Q) \simeq F(Q). \] The construction of \(\bL F\) is also compatible with postcomposition: for every \(H\colon D\to E\), the composite \(H\circ \bL F\) is
+obtained by applying the same construction to \(H\circ F\). Its structure transformation is therefore again a right
+Kan extension by <span class='citation'>[Cisinski (2019), (7.5.25.3)]</span>, proving absoluteness.                                                                                           □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2004r4'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/why-derived-functors-require-cofibrant-objects/index.html" aria-label="Remark 6.6.4., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 6.6.4.</span></a>  </span><span id='rmk:Cofibrant_Objects_In_Derived_Functors'></span> Everything in the above proof is formal except for the statement being cited: that
+the functor \(\bL F\), which by construction only knows about the cofibrant objects, is a right Kan extension
+of \(F\) along \(\gamma \). The latter is a statement about <span class='ntx-Italic-tlf-t1-x-x-109'>all </span>objects of \(C\), and it is here that the real work happens: one
+needs to know that Kan extensions along \(\gamma \) may be computed in terms of the cofibrant objects. This
+is <span class='citation'>[Cisinski (2019), Corollary 7.5.17]</span>, whose proof rests on the theory of finite direct diagrams and their Reedy fibrant replacements
+developed in <span class='citation'>[Cisinski (2019), Section 7.4]</span>.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2005r5'></a>
+<a class="entry-heading-link" href="../../../entry/derived-functors-via-functorial-replacement/index.html" aria-label="Remark 6.6.5., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 6.6.5.</span></a>  </span><span id='rem:Derived_Functors_Via_Functorial_Replacement'></span>   The   situation   simplifies   considerably   when   \(C\)   admits   a   <span class='ntx-Italic-tlf-t1-x-x-109'>functorial   cofibrant
+replacement</span>: a functor \(Q\colon C \to C_c\) together with a natural weak equivalence \(q\colon i \circ Q \Rightarrow \id _C\). Such a replacement exists as soon
+as \((C,W,I)\) admits functorial factorizations, by factoring the map \(\emptyset \to X\) functorially in \(X\). One may then simply take
+\(\bL F \circ \gamma \simeq F \circ Q\), with structure map \(F(q)\colon F \circ Q \Rightarrow F\), and the universal property can be deduced directly from the naturality of \(q\),
+without any of the machinery above. This is the route taken in <span class='citation'>[Dwyer et al. (2004), Sections 39-41]</span> and <span class='citation'>[Riehl (2014), Chapter 2]</span>, where such data is called a <span class='ntx-Italic-tlf-t1-x-x-109'>left
+deformation</span>.
+</p><p class='noindent'>We have avoided this hypothesis because it is genuinely restrictive: while \(\Top \) and \(\Ch (\Aa )\) do admit functorial
+factorizations, the projective cofibration structure on bounded below chain complexes from <a class="source-reference" data-label="prop:Projective_Cofibration_Structure" href="../../../entry/projective-cofibration-structure-on-bounded-below-complexes/index.html#prop:Projective_Cofibration_Structure">Proposition 6.6.15</a> does
+not, at least not for an arbitrary abelian category \(\Aa \) with enough projectives: a projective resolution is
+built from a choice of epimorphism \(P \twoheadrightarrow A\) from a projective object for each \(A \in \Aa \), and such choices cannot in
+general be made functorially. (For \(\Aa = \Mod _R\) one can of course take the free module on the underlying set of
+\(A\).)
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2006r6'></a>
+                                                                                   
+                                                                                   
+<a class="entry-heading-link" href="../../../entry/derived-functor-of-a-homotopical-functor/index.html" aria-label="Exercise 6.6.6., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 6.6.6.</span></a>  </span><span id='exercise:Trivial_Left_Derived_Functor'></span> Let \(F\colon C \to D\) be a functor which inverts all morphisms in \(W\). By the universal property of \(C[W^{-1}]\), \(F\)
+factors through a functor \(\bL F \colon C[W^{-1}] \to D\). Show that \(\bL F\) is a total left derived functor of \(F\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2007r7'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 6.6.7 </span>(Products of cofibration structures)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Product_Cofibration_Structure'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \((C_i,W_i,I_i)_{i\in K}\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  a  finite  collection  of</span>  \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories  with
+weak equivalences and cofibrations. Then</span> \(\prod _{i\in K}C_i\)<span class='ntx-Italic-tlf-t1-x-x-109'>, equipped with the componentwise weak equivalences and
+cofibrations, is again an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with weak equivalences and cofibrations. Its cofibrant objects are
+precisely the tuples of cofibrant objects. Consequently, a functor</span> \(F\colon \prod _{i\in K}C_i\to D\) <span class='ntx-Italic-tlf-t1-x-x-109'>which inverts weak equivalences
+between cofibrant objects admits a total left derived functor </span>\[ \bL F\colon \prod _{i\in K}C_i[W_i^{-1}]\longrightarrow D. \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-06-16" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-06-16">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The axioms for weak equivalences and cofibrations, including the factorization and pushout
+axioms, hold componentwise in the product, and the description of the cofibrant objects follows from
+the componentwise initial object. By currying and applying the universal property of localization
+successively in each variable, the canonical functor identifies the localization of the product with \(\prod _{i\in K}C_i[W_i^{-1}]\).
+The final assertion now follows from <a class="source-reference" data-label="prop:Constructing_Left_Derived_Functors" href="../../../entry/constructing-left-derived-functors-from-cofibrant-objects/index.html#prop:Constructing_Left_Derived_Functors">Proposition 6.6.3</a>.                                                                                                □
+</p>
+</div></div>
+<p class='noindent'>This is how derived functors of several variables, such as the derived tensor product of <a class="source-reference" data-label="def:Derived_Tensor_Product" href="../../../entry/derived-tensor-product/index.html#def:Derived_Tensor_Product">Definition 6.6.25</a>, are
+obtained.
+                                                                                   
+                                                                                   
+</p>
+<h4 class='subsectionHead' id='derived-functors-between-derived-categories'><span class='titlemark'>6.6.2    </span> <a id='x1-30006.6.2'></a>Derived functors between derived categories</h4>
+<p class='noindent' id='subsec_Derived_Functors_Derived_Categories'>We now apply the abstract framework to construct derived functors between derived \(\infty \)-categories. The key
+observation is that bounded below projective chain complexes play the role of cofibrant objects:
+quasi-isomorphisms between them are automatically chain homotopy equivalences, so any additive functor
+preserves such quasi-isomorphisms.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3001r8'></a>
+<a class="entry-heading-link" href="../../../entry/projective-chain-complexes/index.html" aria-label="Definition 6.6.8, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 6.6.8 </span></a>(Projective chain complex)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Projective_Chain_Complex'></span>  Let  \(\Aa \)  be  an  abelian  category.  We  write  \(\Ch ^-(\Aa )\subseteq \Ch (\Aa )\)  for  the  full
+subcategory of bounded below chain complexes, those \(C_{\bullet }\) for which \(C_n=0\) for all sufficiently small \(n\). A chain
+complex \(P_{\bullet } \in \Ch (\Aa )\) is called <span class='ntx-Italic-tlf-t1-x-x-109'>projective </span>if each object \(P_n\) is projective in \(\Aa \), in the sense of <a class="source-reference" data-label="sec:Projective_Modules" href="../projective-objects-and-ext-groups/index.html#sec:Projective_Modules">Section 6.4</a>.<span class='footnote-mark'><a href='#chapter-homological-algebra-section-06-fn1x0'><sup class='textsuperscript'>1</sup></a></span><a id='x1-3002f1'></a> 
+We write \(\Ch ^-_{\proj }(\Aa ) \subseteq \Ch ^-(\Aa )\) for the full subcategory of bounded below projective chain complexes.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3004r9'></a>
+<a class="entry-heading-link" href="../../../entry/bounded-below-derived-infinity-categories-as-localizations/index.html" aria-label="Remark 6.6.9., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 6.6.9.</span></a>  </span><span id='rem:Bounded_Below_Localization'></span> The localization functor identifies \[ \Ch ^-(\Aa )[\{\text {quasi-isomorphisms}\}^{-1}] \iso \D ^-(\Aa ), \] where \(\D ^-(\Aa )\) is the full subcategory of bounded below
+objects from <a class="source-reference" data-label="def:Bounded_Objects" href="../../../entry/bounded-objects-in-a-t-structure/index.html#def:Bounded_Objects">Definition 6.3.33</a>. Indeed, <a class="source-reference" data-label="prop:Truncation_Functors_Derived_Category" href="../../../entry/truncation-functors-for-derived-infinity-categories/index.html#prop:Truncation_Functors_Derived_Category">Proposition 6.1.22</a> identifies the localization of \(\Ch (\Aa )_{\geq m}\) with the full subcategory \(\D (\Aa )_{\geq m}\) of \(\D (\Aa )\) for every \(m\). Taking
+the union over all \(m\) gives the displayed identification. We use it without further comment.
+                                                                                   
+                                                                                   
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3005r10'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 6.6.10.</span>  </span><span id='lem:Acyclic_Projective_Contractible'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(P_{\bullet }\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a bounded below projective chain complex with trivial homology, i.e.,</span> \(H_n(P) = 0\) <span class='ntx-Italic-tlf-t1-x-x-109'>for
+all</span> \(n\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then</span> \(P_{\bullet }\) <span class='ntx-Italic-tlf-t1-x-x-109'>is </span>contractible<span class='ntx-Italic-tlf-t1-x-x-109'>: the identity</span> \(\id _{P_{\bullet }}\) <span class='ntx-Italic-tlf-t1-x-x-109'>is chain homotopic to zero.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-06-15" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-06-15">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  We  construct  a  contracting  homotopy  \(s_n\colon P_n \to P_{n+1}\)  satisfying  \(d_{n+1} s_n + s_{n-1} d_n = \id _{P_n}\)  by  induction.  Say  \(P_{\bullet }\)  is  concentrated  in
+degrees \(\geq m\); we set \(s_n = 0\) for \(n &lt; m\).
+</p><p class='noindent'>For the base case \(n = m\): Since \(P_{m-1} = 0\), the differential \(d_m\colon P_m \to P_{m-1}\) is zero. The condition \(H_m(P) = 0\) then says that \(\ker (d_m)/\im (d_{m+1}) = P_m/\im (d_{m+1}) = 0\), meaning \(d_{m+1}\colon P_{m+1} \to P_m\) is an
+epimorphism. Since \(P_m\) is projective, the identity \(\id _{P_m}\) lifts along this epimorphism to give \(s_m\colon P_m \to P_{m+1}\) with \(d_{m+1} s_m = \id _{P_m}\). This
+satisfies our requirement since \(s_{m-1} = 0\).
+</p><p class='noindent'>For the inductive step, suppose we have constructed \(s_k\) for all \(k &lt; n\) satisfying the homotopy relation. Define
+\[ \alpha _n \quad := \quad \id _{P_n} - s_{n-1} d_n \colon P_n \to P_n. \] We claim that \(\im (\alpha _n) \subseteq \im (d_{n+1})\). Indeed, using the induction hypothesis \(d_n s_{n-1} + s_{n-2} d_{n-1} = \id _{P_{n-1}}\), we compute \[ d_n \circ \alpha _n \,=\, d_n - d_n s_{n-1} d_n \,=\, d_n - (\id _{P_{n-1}} - s_{n-2} d_{n-1}) d_n \,=\, s_{n-2} d_{n-1} d_n \,=\, 0. \] Thus \(\im (\alpha _n) \subseteq \ker (d_n) = \im (d_{n+1})\), where the last equality
+uses \(H_n(P) = 0\). Since \(P_n\) is projective and \(d_{n+1}\colon P_{n+1} \to \im (d_{n+1})\) is an epimorphism, there exists \(s_n\colon P_n \to P_{n+1}\) with \(d_{n+1} s_n = \alpha _n = \id _{P_n} - s_{n-1} d_n\), as required.                           □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3006r11'></a>
+                                                                                   
+                                                                                   
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 6.6.11.</span>  </span><span id='prop:Quasi_Iso_Projective_Is_Homotopy_Equivalence'>   </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>   \(P_{\bullet }\)   <span class='ntx-Italic-tlf-t1-x-x-109'>and</span>   \(Q_{\bullet }\)   <span class='ntx-Italic-tlf-t1-x-x-109'>be   bounded   below   projective   chain   complexes.   Then   any
+quasi-isomorphism</span> \(f\colon P_{\bullet } \to Q_{\bullet }\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a chain homotopy equivalence.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-06-14" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-06-14">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  The  mapping  cone  \(\Cone (f)\)  fits  into  a  short  exact  sequence  \[ 0 \to Q_{\bullet } \to \Cone (f) \to P_{\bullet }[1] \to 0. \]  By  <a class="source-reference" data-label="lem:Mapping_Cone_Criterion" href="../../../entry/mapping-cone-criterion-for-quasi-isomorphisms/index.html#lem:Mapping_Cone_Criterion">Lemma 6.1.15</a>,  the  complex  \(\Cone (f)\)  is  acyclic.  It  is
+again bounded below and projective, hence contractible by <a class="source-reference" data-label="lem:Acyclic_Projective_Contractible" href="../../../entry/acyclic-bounded-below-projective-complexes-are-contractible/index.html#lem:Acyclic_Projective_Contractible">Lemma 6.6.10</a>. Write the bottom-left component of a
+contracting homotopy \[ \Cone (f)_n=Q_n\oplus P_{n-1}\longrightarrow Q_{n+1}\oplus P_n=\Cone (f)_{n+1} \] as \(g_n\colon Q_n\to P_n\). The contracting-homotopy equation says that \(g\) is a chain map and that \(fg\)
+and \(gf\) are chain homotopic to the respective identity maps. Thus \(f\) is a chain homotopy equivalence.    □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3007r12'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 6.6.12.</span>  </span><span id='cor:Additive_Functor_Preserves_QI_Projectives'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(F\colon \Ch (\Aa ) \to \Ch (\Bb )\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a functor that preserves chain homotopies (for example, a functor induced
+by an additive functor</span> \(\Aa \to \Bb \)<span class='ntx-Italic-tlf-t1-x-x-109'>). Then</span> \(F\) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves quasi-isomorphisms between bounded below projective
+chain complexes.                                                                                                                                 □</span>
+</p>
+</div>
+<p class='noindent'>We now assume that \(\Aa \) has enough projectives, meaning that every object of \(\Aa \) admits an epimorphism
+from a projective object. This is enough to construct projective resolutions one complex at a
+time.
+</p>
+<div class='newtheorem'>
+                                                                                   
+                                                                                   
+<p class='noindent'><span class='head'>
+<a id='x1-3008r13'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 6.6.13 </span>(Existence of projective resolutions)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Bounded_Below_Projective_Resolutions'>   </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>   \(\Aa \)   <span class='ntx-Italic-tlf-t1-x-x-109'>be   an   abelian   category   with
+enough  projectives.  Every  bounded  below  chain  complex</span>  \(C_{\bullet }\)  <span class='ntx-Italic-tlf-t1-x-x-109'>admits  a  degreewise  epimorphic
+quasi-isomorphism </span>\[ q\colon P_{\bullet }\xrightarrow {\sim }C_{\bullet } \] <span class='ntx-Italic-tlf-t1-x-x-109'>from a bounded below projective chain complex</span> \(P_{\bullet }\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Moreover, if</span> \(C_n=0\) <span class='ntx-Italic-tlf-t1-x-x-109'>for all</span> \(n&lt;m\)<span class='ntx-Italic-tlf-t1-x-x-109'>, then</span> \(P_{\bullet }\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>may be chosen with</span> \(P_n=0\) <span class='ntx-Italic-tlf-t1-x-x-109'>for all</span> \(n&lt;m\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-06-13" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-06-13">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> This is the standard bounded-below projective-replacement theorem. One construction takes
+the total complex of a Cartan–Eilenberg projective resolution; it produces a degreewise epimorphic
+quasi-isomorphism with the stated lower bound. See <span class='citation'>[Weibel (1994), Theorem 10.4.8 and its proof]</span>.                                                                       □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3009r14'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 6.6.14 </span>(Lifting along a projective resolution)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Lifting_Along_Projective_Resolution'>    </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>    \(q\colon Q_{\bullet }\to C_{\bullet }\)    <span class='ntx-Italic-tlf-t1-x-x-109'>be    a    degreewise    epimorphic
+quasi-isomorphism between bounded below chain complexes in an abelian category, and let</span> \(P_{\bullet }\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a
+bounded below projective chain complex. Every chain map</span> \(f\colon P_{\bullet }\to C_{\bullet }\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a lift</span> \(\widetilde f\colon P_{\bullet }\to Q_{\bullet }\) <span class='ntx-Italic-tlf-t1-x-x-109'>satisfying</span> \(q\widetilde f=f\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Any two such
+lifts are chain homotopic through a chain homotopy</span> \(h\) <span class='ntx-Italic-tlf-t1-x-x-109'>satisfying</span> \(qh=0\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+                                                                                   
+
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proof guide.</span>  </span>Set  \(K_{\bullet }:=\ker (q)\).  The  long  exact  sequence  in  homology  shows  that  \(K_{\bullet }\)  is  acyclic.  Comparing
+boundaries,  cycles,  and  homology  shows  that  \(q\colon Z_n(Q)\to Z_n(C)\)  is  an  epimorphism.  More  generally,  the  map  \[ Q_n\longrightarrow C_n\times _{Z_{n-1}(C)}Z_{n-1}(Q), \qquad x\longmapsto (qx,dx), \]  is
+an epimorphism. Starting below the common lower bound, projectivity of each \(P_n\) now constructs \(\widetilde f_n\)
+inductively. The difference of two lifts is a chain map \(P_{\bullet }\to K_{\bullet }\), and the same induction, using the acyclicity
+of \(K_{\bullet }\), constructs the required nullhomotopy. A full proof is given in the online supplementary material.
+</p>
+</div>
+<p class='noindent'>The projective complexes may now be characterized intrinsically as the cofibrant objects in a cofibration
+structure on bounded below chain complexes.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3010r15'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 6.6.15 </span>(The projective cofibration structure)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Projective_Cofibration_Structure'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(\Aa \) <span class='ntx-Italic-tlf-t1-x-x-109'>be an abelian category with enough
+projectives.  Equip</span>  \(\Ch ^-(\Aa )\)  <span class='ntx-Italic-tlf-t1-x-x-109'>with  the  quasi-isomorphisms  as  weak  equivalences  and  the  degreewise  split
+monomorphisms  with  bounded  below  projective  cokernel  as  cofibrations.  This  makes</span>  \(\Ch ^-(\Aa )\)  <span class='ntx-Italic-tlf-t1-x-x-109'>into  an</span>
+\(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with weak equivalences and cofibrations. Its cofibrant objects are precisely the bounded
+below projective chain complexes.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-06-12" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-06-12">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The 2-out-of-3 property is clear. The stated cofibrations contain the isomorphisms and are
+                                                                                   
+                                                                                   
+closed under composition: the cokernel of a composite is a degreewise split extension of the two
+projective cokernels. They are closed under pushout, since a pushout is again degreewise split with
+the same cokernel. This also proves that pushouts of trivial cofibrations are weak equivalences, using
+<a class="source-reference" data-label="cor:Mono_Is_Quasi_Iso_Iff_Cokernel_Acyclic" href="../../../entry/monomorphic-quasi-isomorphisms-and-acyclic-cokernels/index.html#cor:Mono_Is_Quasi_Iso_Iff_Cokernel_Acyclic">Corollary 6.1.18</a>.
+</p><p class='noindent'>It remains to verify the factorization axiom. Let \(f\colon P_{\bullet }\to C_{\bullet }\) be a chain map with \(P_{\bullet }\) cofibrant, i.e. bounded below
+projective. Choose a degreewise epimorphic projective resolution \(q\colon Q_{\bullet }\xrightarrow {\sim }C_{\bullet }\) using <a class="source-reference" data-label="prop:Bounded_Below_Projective_Resolutions" href="../../../entry/existence-of-bounded-below-projective-resolutions/index.html#prop:Bounded_Below_Projective_Resolutions">Proposition 6.6.13</a>. Since \(P_{\bullet }\) is bounded below
+projective and \(q\) is a degreewise epimorphism with acyclic kernel, <a class="source-reference" data-label="lem:Lifting_Along_Projective_Resolution" href="../../../entry/lifting-along-projective-resolutions/index.html#lem:Lifting_Along_Projective_Resolution">Lemma 6.6.14</a> provides a chain map \(\widetilde f\colon P_{\bullet }\to Q_{\bullet }\) with \(q\widetilde f=f\). Now
+consider the mapping-cylinder factorization of \(\widetilde f\) from the proof of <a class="source-reference" data-label="prop:ChA_Weak_Equivalences_Cofibrations" href="../../../entry/cofibration-structure-on-chain-complexes/index.html#prop:ChA_Weak_Equivalences_Cofibrations">Proposition 6.1.27</a>: \[ P_{\bullet }\lhook \joinrel \longrightarrow \Cyl (\widetilde f)_{\bullet }\xrightarrow {\sim }Q_{\bullet }. \] The first map is degreewise
+the inclusion \(P_n \hookrightarrow P_n \oplus P_{n-1}\oplus Q_n\), hence a degreewise split monomorphism whose cokernel is degreewise \(P_{n-1}\oplus Q_n\) and thus
+bounded below projective; so it is a cofibration. The second map is a chain homotopy equivalence,
+and composing it with \(q\) therefore exhibits \(f\) as a cofibration followed by a quasi-isomorphism.
+</p><p class='noindent'>Finally, \(0\to P_{\bullet }\) is a cofibration precisely when \(P_{\bullet }\) is bounded below projective.                                              □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3011r16'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 6.6.16.</span>  </span><span id='prop:Projective_Complexes_Equivalence'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(\Aa \)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  an  abelian  category  with  enough  projectives.  Then  the  inclusion</span>  \(\Ch ^-_{\proj }(\Aa ) \hookrightarrow \Ch ^-(\Aa )\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>induces an equivalence on localizations: </span>\[ \Kk ^-_{\proj }(\Aa ) := \Ch ^-_{\proj }(\Aa )[\textup {chain homotopy equivalences}^{-1}] \quad \iso \quad \D ^-(\Aa ). \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-06-11" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-06-11">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  By  <a class="source-reference" data-label="prop:Projective_Cofibration_Structure" href="../../../entry/projective-cofibration-structure-on-bounded-below-complexes/index.html#prop:Projective_Cofibration_Structure">Proposition 6.6.15</a>  and  part (1)  of  <a class="source-reference" data-label="cor:Localization_Right_Exact" href="../../../entry/right-exact-localization-via-cofibrant-objects/index.html#cor:Localization_Right_Exact">Corollary 2.2.9</a>,  the  inclusion  of  the  cofibrant  objects  induces  an  equivalence
+after localizing at the quasi-isomorphisms. By <a class="source-reference" data-label="prop:Quasi_Iso_Projective_Is_Homotopy_Equivalence" href="../../../entry/quasi-isomorphisms-between-projective-complexes-are-homotopy-equivalences/index.html#prop:Quasi_Iso_Projective_Is_Homotopy_Equivalence">Proposition 6.6.11</a>, the quasi-isomorphisms between bounded below
+projective  complexes  are  precisely  the  chain  homotopy  equivalences,  which  gives  the  displayed
+equivalence.                                                                                                                                        □
+</p>
+                                                                                   
+                                                                                   
+</div></div>
+<p class='noindent'>We can now construct left derived functors between derived categories.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3012r17'></a>
+<a class="entry-heading-link" href="../../../entry/derived-functors-between-derived-infinity-categories/index.html" aria-label="Construction 6.6.17, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 6.6.17 </span></a>(Derived functors between derived categories)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cons:Derived_Functor_DA_DB'></span>   Let   \(\Aa \)   and   \(\Bb \)   be   abelian
+categories, assume that \(\Aa \) has enough projectives, and let \(F\colon \Aa \to \Bb \) be an additive functor. Extending \(F\) degreewise
+gives a functor \(\Ch ^-(F)\colon \Ch ^-(\Aa ) \to \Ch ^-(\Bb )\) that preserves chain homotopies. By <a class="source-reference" data-label="cor:Additive_Functor_Preserves_QI_Projectives" href="../../../entry/additive-functors-preserve-quasi-isomorphisms-between-projective-complexes/index.html#cor:Additive_Functor_Preserves_QI_Projectives">Corollary 6.6.12</a>, the restriction \[ \Ch ^-(F)\vert _{\proj }\colon \Ch ^-_{\proj }(\Aa ) \to \Ch ^-(\Bb ) \] preserves quasi-isomorphisms.
+Composing with the localization \(\gamma _{\Bb }\colon \Ch ^-(\Bb ) \to \D ^-(\Bb )\), we obtain a functor that inverts quasi-isomorphisms between the
+cofibrant objects of the projective cofibration structure on \(\Ch ^-(\Aa )\). By <a class="source-reference" data-label="prop:Constructing_Left_Derived_Functors" href="../../../entry/constructing-left-derived-functors-from-cofibrant-objects/index.html#prop:Constructing_Left_Derived_Functors">Proposition 6.6.3</a>, it therefore admits a total left derived
+functor \[ \bL F \colon \D ^-(\Aa ) \to \D ^-(\Bb ) \] If \(q\colon P_{\bullet }\xrightarrow {\sim }C_{\bullet }\) is any projective resolution, then \[ \bL F(C_{\bullet })\simeq F(P_{\bullet }). \]
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3013r18'></a>
+<a class="entry-heading-link" href="../../../entry/derived-functors-computed-on-projective-resolutions/index.html" aria-label="Exercise 6.6.18., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 6.6.18.</span></a>  </span><span id='exercise:LF_On_Projectives'></span> Let \(P_{\bullet } \to C_{\bullet }\) be a quasi-isomorphism in \(\Ch (\Aa )_{\geq 0}\), with \(P_{\bullet }\) projective. Show that \(\bL F(C_{\bullet }) \simeq F(P_{\bullet })\) in \(\D ^-(\Bb )\). If \(F\) is right exact,
+conclude that \(\pi _0 \bL F(A) \cong F(A)\) for all \(A \in \Aa \).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3014r19'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 6.6.19.</span>  </span><span id='lem:Derived_Functor_Properties'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>In the situation of </span><a class="source-reference" data-label="cons:Derived_Functor_DA_DB" href="../../../entry/derived-functors-between-derived-infinity-categories/index.html#cons:Derived_Functor_DA_DB">Construction 6.6.17</a><span class='ntx-Italic-tlf-t1-x-x-109'>, the functor</span> \(\bL F\colon \D ^-(\Aa ) \to \D ^-(\Bb )\) <span class='ntx-Italic-tlf-t1-x-x-109'>is exact and right t-exact.</span>
+                                                                                   
+
+                                                                                   
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-06-10" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-06-10">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> For right t-exactness, let \(C_{\bullet }\) be concentrated in degrees \(\geq 0\). The construction in <a class="source-reference" data-label="prop:Bounded_Below_Projective_Resolutions" href="../../../entry/existence-of-bounded-below-projective-resolutions/index.html#prop:Bounded_Below_Projective_Resolutions">Proposition 6.6.13</a> gives a projective
+resolution \(P_{\bullet }\to C_{\bullet }\) which is also concentrated in degrees \(\geq 0\). Hence \(\bL F(C_{\bullet })\simeq F(P_{\bullet })\) is connective.
+</p><p class='noindent'>For exactness, it suffices to show that \(\bL F\) preserves cofiber sequences. Every morphism in \(\D ^-(\Aa )\) can be
+represented by a chain map \(f\colon P_{\bullet } \to Q_{\bullet }\) between bounded below projective complexes (by first replacing both
+source and target with projective resolutions). The cofiber in \(\D ^-(\Aa )\) is represented by the mapping cone \(\Cone (f)\),
+which is again a bounded below projective complex. Since \(F\) is additive, it preserves mapping cones:
+\(F(\Cone (f)) \cong \Cone (F(f))\). We then compute \[ \bL F(\cofib (f)) \,\simeq \, F(\Cone (f)) \,\cong \, \Cone (F(f)) \,\simeq \, \cofib (\bL F(f)), \] showing that \(\bL F\) preserves cofiber sequences.                                                         □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3015r20'></a>
+<a class="entry-heading-link" href="../../../entry/classical-left-derived-functors/index.html" aria-label="Remark 6.6.20., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 6.6.20.</span></a>  </span><span id='rmk:Classical_Left_Derived_Functors'></span> Let \(F\colon \Aa \to \Bb \) be a right exact functor between abelian categories. For an object \(A \in \Aa \), viewed as
+a complex concentrated in degree zero, we may define functors \(\bL ^nF \colon \Aa \to \Bb \) by \[ \bL ^nF(A) \quad := \quad H_n(\bL F(A)) \] for \(n \geq 0\). They may be computed as
+the homology groups of \(F(P_{\bullet })\), where \(P_\bullet \to A\) is any choice of projective resolution of \(A\). Moreover, applying \(\bL F\) to
+a short exact sequence \(0 \to A \hookrightarrow B \twoheadrightarrow C \to 0\) in \(\Aa \) yields a cofiber sequence \(\bL F(A) \to \bL F(B) \to \bL F(C)\) in \(\D ^-(\Bb )\) by <a class="source-reference" data-label="lem:Derived_Functor_Properties" href="../../../entry/exactness-and-t-exactness-of-derived-functors/index.html#lem:Derived_Functor_Properties">Lemma 6.6.19</a>; its long exact sequence on homology
+is the classical long exact sequence relating the derived functors \(\bL ^n F\), and in particular the connecting
+homomorphisms  of  the  latter  arise  precisely  from  the  exactness  of  \(\bL F\).  In  classical  treatments  of
+homological algebra, one often merely considers the functors \(\bL ^nF\) rather than the entire derived functor
+\(\bL F\).
+</p>
+</div>
+
+                                                                                   
+                                                                                   
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3016r21'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 6.6.21.</span>  </span><span id='lem:Derived_Functor_Preserves_Colimits'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Assume that</span> \(\Aa \) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(\Bb \) <span class='ntx-Italic-tlf-t1-x-x-109'>satisfy</span> \((AB3)\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \((AB4)\)<span class='ntx-Italic-tlf-t1-x-x-109'>, and that</span> \(F\colon \Aa \to \Bb \) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves arbitrary coproducts. Then</span> \(\bL F\colon \D ^-(\Aa ) \to \D ^-(\Bb )\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>preserves coproducts of uniformly bounded below families.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-06-9" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-06-9">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> A uniformly bounded below family of complexes has a coproduct in \(\Ch ^-(\Aa )\), formed degreewise.
+The assumptions \((AB3)\) and \((AB4)\) imply that this coproduct preserves quasi-isomorphisms, and \(F\) commutes with
+it degreewise. The claim therefore follows by localization.                                                                □
+</p>
+</div></div>
+<p class='noindent'>The construction of derived functors can be generalized by replacing the target \(\D ^-(\Bb )\) with an arbitrary left
+complete t-structure on a stable \(\infty \)-category \(C\): any right exact functor \(F\colon \Aa \to C^{\heartsuit }\) extends uniquely to a right t-exact
+functor \(\D ^-(\Aa ) \to C\) which sends the projective objects of \(\Aa \) into the heart of \(C\). In fact, this property completely
+characterizes the bounded below derived category:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-3017r22'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 6.6.22 </span>(Universal property of the bounded below derived category)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Universal_Property_Bounded_Derived'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(\Aa \) <span class='ntx-Italic-tlf-t1-x-x-109'>be an abelian category
+with enough projectives and let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a stable</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with a left complete t-structure. Then restriction
+along the inclusion</span> \(\Aa \hookrightarrow \D ^-(\Aa )\) <span class='ntx-Italic-tlf-t1-x-x-109'>induces an equivalence of</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories </span>\begin {align*}  \Fun '(\D ^-(\Aa ), C) \xrightarrow {\simeq } \Fun ^{\rex }(\Aa , C^\heartsuit ),  \end {align*}
+</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>where the left-hand side denotes the full subcategory of exact functors</span> \(\D ^-(\Aa ) \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>that are right t-exact and send
+projective objects of</span> \(\Aa \) <span class='ntx-Italic-tlf-t1-x-x-109'>into the heart</span> \(C^{\heartsuit }\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+                                                                                   
+
+                                                                                   
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-06-8" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-06-8">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We refer to <span class='citation'>Lurie (2017), Theorem 1.3.3.2</span>.                                                                                                                            □
+</p>
+</div></div>
+<p class='noindent'>Given a right exact functor \(F\colon \Aa \to C^{\heartsuit }\), its unique extension obtained by the theorem is denoted \(\bL F\colon \D ^-(\Aa ) \to C\), and referred to as the
+<span class='ntx-Italic-tlf-t1-x-x-109'>left derived functor </span>of \(F\). Note that when \(C = \D ^-(\Bb )\) for some abelian category \(\Bb \), this agrees with the functor \(\bL F\) from <a class="source-reference" data-label="cons:Derived_Functor_DA_DB" href="../../../entry/derived-functors-between-derived-infinity-categories/index.html#cons:Derived_Functor_DA_DB">Construction 6.6.17</a> by
+uniqueness: the latter is exact and right t-exact by <a class="source-reference" data-label="lem:Derived_Functor_Properties" href="../../../entry/exactness-and-t-exactness-of-derived-functors/index.html#lem:Derived_Functor_Properties">Lemma 6.6.19</a>, and it sends a projective object \(P \in \Aa \) to \(F(P) \in \Bb \), which lies in the
+heart of \(\D ^-(\Bb )\).
+</p>
+<h4 class='subsectionHead' id='derived-tensor-product-and-derived-hom'><span class='titlemark'>6.6.3    </span> <a id='x1-40006.6.3'></a>Derived tensor product and derived hom</h4>
+<p class='noindent' id='subsec_Derived_Tensor_Hom'>We now apply the derived functor formalism to construct the derived tensor product and derived hom.
+Throughout this subsection, let \(\Aa \) be a closed symmetric monoidal abelian category with enough projectives,
+with tensor product \(\otimes \colon \Aa \times \Aa \to \Aa \) and internal hom \([-,-]\colon \Aa \catop \times \Aa \to \Aa \). These conditions are satisfied, for example, when \(\Aa = \RMod _R\) for a commutative
+ring \(R\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4001r23'></a>
+<a class="entry-heading-link" href="../../../entry/tensor-product-of-chain-complexes/index.html" aria-label="Definition 6.6.23, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 6.6.23 </span></a>(Tensor product of chain complexes)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Tensor_Product_Chain_Complexes'></span> The <span class='ntx-Italic-tlf-t1-x-x-109'>tensor product </span>of chain complexes \(C_{\bullet }, C'_{\bullet } \in \Ch (\Aa )\) is
+the chain complex \((C \otimes C')_{\bullet }\) defined by \[ (C \otimes C')_n \,:=\, \bigoplus _{p + q = n} C_p \otimes C'_q \] whose differential acts on the summand \(C_p \otimes C'_q\) as the sum \(d^C \otimes \id _{C'} + (-1)^p \id _C \otimes d^{C'}\) of the two
+canonical  composite  maps.  This  makes  \(\Ch (\Aa )\)  into  a  symmetric  monoidal  category.  Moreover,  tensor
+                                                                                   
+                                                                                   
+products preserve chain homotopies: if \(f \simeq g\colon C_{\bullet } \to D_{\bullet }\) via a homotopy \(h\), then \(f \otimes \id _{C'} \simeq g \otimes \id _{C'}\) via \(h \otimes \id _{C'}\).
+</p>
+</div>
+<p class='noindent'>The tensor product of chain complexes does not preserve quasi-isomorphisms in general:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4002r24'></a>
+<a class="entry-heading-link" href="../../../entry/tensor-products-do-not-preserve-quasi-isomorphisms/index.html" aria-label="Example 6.6.24., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 6.6.24.</span></a>  </span><span id='ex:Tensor_Not_Preserve_QI'></span> Let \(\Aa = \Ab \) and consider the quasi-isomorphism \(f\colon C_{\bullet } \to D_{\bullet }\) where \(C_{\bullet }\) is the complex \(\Z \xrightarrow {\cdot 2} \Z \) concentrated in
+degrees \(1\) and \(0\), and \(D_{\bullet } = \Z /2\) concentrated in degree \(0\). Then \(\Z /2 \otimes f\) is the map \[ (\Z /2 \xrightarrow {0} \Z /2) \,\longrightarrow \, (0 \to \Z /2), \] which is not a quasi-isomorphism: the
+left-hand side has \(H_1 = \Z /2\), while the right-hand side has \(H_1 = 0\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4003r25'></a>
+<a class="entry-heading-link" href="../../../entry/derived-tensor-product/index.html" aria-label="Definition 6.6.25, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 6.6.25 </span></a>(Derived tensor product)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Derived_Tensor_Product'></span> We define the <span class='ntx-Italic-tlf-t1-x-x-109'>derived tensor product </span>\[ - \otimes ^{\bL } - \colon \D ^-(\Aa ) \times \D ^-(\Aa ) \to \D ^-(\Aa ) \] as the total left
+derived functor of the composite \[ \Ch ^-(\Aa )\times \Ch ^-(\Aa )\xrightarrow {-\otimes -}\Ch ^-(\Aa )\longrightarrow \D ^-(\Aa ), \] where the source is equipped with the product of the projective
+cofibration structures of <a class="source-reference" data-label="prop:Projective_Cofibration_Structure" href="../../../entry/projective-cofibration-structure-on-bounded-below-complexes/index.html#prop:Projective_Cofibration_Structure">Proposition 6.6.15</a>, <a class="source-reference" data-label="lem:Product_Cofibration_Structure" href="../../../entry/products-of-cofibration-structures/index.html#lem:Product_Cofibration_Structure">Lemma 6.6.7</a>. Indeed, on pairs of bounded below projective complexes, tensor product
+preserves  quasi-isomorphisms,  since  these  are  chain  homotopy  equivalences  and  tensor  product
+preserves chain homotopies in each variable. Consequently, if \(P\to C\) and \(Q\to D\) are any projective resolutions,
+then \[ C\otimes ^{\bL }D\simeq P\otimes Q. \] As in <a class="source-reference" data-label="lem:Derived_Functor_Properties" href="../../../entry/exactness-and-t-exactness-of-derived-functors/index.html#lem:Derived_Functor_Properties">Lemma 6.6.19</a>, this functor is exact in both variables, and restricts to \(\D (\Aa )_{\geq 0} \times \D (\Aa )_{\geq 0} \to \D (\Aa )_{\geq 0}\). If \(\Aa \) satisfies \((AB3)\) and \((AB4)\), then it also
+preserves coproducts of uniformly bounded below families in both variables.
+</p>
+</div>
+<p class='noindent'>For objects \(M,N\in \Aa \), regarded as complexes concentrated in degree zero, we abbreviate \[ \Tor _n^{\Aa }(M,N):=H_n(M\otimes ^{\bL }N)=\Tor _n^{\otimes ^{\bL }}(M,N). \]
+                                                                                   
+                                                                                   
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4004r26'></a>
+<a class="entry-heading-link" href="../../../entry/symmetric-monoidal-structure-on-bounded-below-derived-categories/index.html" aria-label="Remark 6.6.26., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 6.6.26.</span></a>  </span><span id='rmk:Symmetric_Monoidal_Bounded_Below_Derived_Category'></span> Suppose in addition that the monoidal unit of \(\Aa \) is projective and that the tensor
+product of two projective objects is again projective. Then the derived tensor product equips \(\D ^-(\Aa )\) with
+a  symmetric  monoidal  structure.  The  construction,  including  the  coherent  symmetric  monoidal
+structure and the identification of its tensor product with \(-\otimes ^{\bL }-\), is given in <a class="source-reference" data-label="ex:Chain_Complexes_Monoidal_Localization" href="../../../entry/chain-complexes-monoidal-localization/index.html#ex:Chain_Complexes_Monoidal_Localization">Example 20.1.7</a>.
+</p>
+</div>
+<p class='noindent'>In practice, it usually suffices to resolve only one of the two variables by a projective complex. This is a
+consequence of the following lemma.
+</p><p class='noindent'>An object \(F\in \Aa \) is called <span class='ntx-Italic-tlf-t1-x-x-109'>flat </span>if the functor \(F\otimes (-)\colon \Aa \to \Aa \) is exact.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4005r27'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 6.6.27.</span>  </span><span id='lem:Tensor_With_Flat_Chain_Complex_Preserves_Quasi_Isos'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(F_{\bullet }\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a bounded below chain complex such that each object</span> \(F_i\) <span class='ntx-Italic-tlf-t1-x-x-109'>is flat. Then the
+functor </span>\[ F_{\bullet } \otimes - \colon \Ch ^-(\Aa ) \to \Ch ^-(\Aa ) \] <span class='ntx-Italic-tlf-t1-x-x-109'>preserves quasi-isomorphisms.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-06-7" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-06-7">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Given a quasi-isomorphism \(f\colon C \to D\), we need to show that the map \(F_{\bullet } \otimes f\) is again a quasi-isomorphism.
+                                                                                   
+                                                                                   
+To this end, filter \(F_{\bullet }\) by the subcomplexes \(F^{\leq n}\), where \((F^{\leq n})_k = F_k\) for \(k \leq n\) and \(0\) otherwise. We have degreewise split short
+exact sequences \(0 \to F^{\leq n-1} \to F^{\leq n} \to F_n[n] \to 0\). The map \(F_n[n] \otimes f\) is a quasi-isomorphism since \(F_n\) is flat. By induction on \(n\) and the five
+lemma, each \(F^{\leq n} \otimes f\) is a quasi-isomorphism. Since \(F_{\bullet }, C_{\bullet }\) and \(D_{\bullet }\) are all bounded below, the sequence \((F^{\leq n} \otimes C)_k\) is eventually
+constant with value \((F \otimes C)_k\) in every degree \(k\), and similarly for \(D\). The map \(F_{\bullet } \otimes f\) is therefore a degreewise colimit
+of the maps \(F^{\leq n} \otimes f\) along which homology is eventually constant, and so it is a quasi-isomorphism.         □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4006r28'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 6.6.28.</span>  </span><span id='cor:Tor_Via_One_Sided_Resolution'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Assume that all projective objects in</span> \(\Aa \) <span class='ntx-Italic-tlf-t1-x-x-109'>are flat.</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The derived tensor product may be computed by resolving only one variable: for any projective
+     resolutions</span> \(P\to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(Q\to D\)<span class='ntx-Italic-tlf-t1-x-x-109'>, there are isomorphisms </span>\[ C \otimes ^{\bL } D \simeq P\otimes D \simeq C\otimes Q \] <span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(\D ^-(\Aa )\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Tor groups in</span> \(\Aa \) <span class='ntx-Italic-tlf-t1-x-x-109'>may be computed by resolving one variable: given objects</span> \(M, N \in \Aa \)<span class='ntx-Italic-tlf-t1-x-x-109'>, we have </span>\[ \Tor _n^{\Aa }(M, N) \; \cong \; H_n(P_{\bullet } \otimes N) \] <span class='ntx-Italic-tlf-t1-x-x-109'>for any
+     projective resolution</span> \(P_{\bullet } \to M\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For a flat object</span> \(F \in \Aa \)<span class='ntx-Italic-tlf-t1-x-x-109'>, the complex</span> \(F[0]\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a t-flat object of</span> \(\D ^-(\Aa )\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-06-6" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-06-6">
+<p class='noindent'><span class='head'>
+                                                                                   
+
+                                                                                   
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Part (1) is immediate from <a class="source-reference" data-label="lem:Tensor_With_Flat_Chain_Complex_Preserves_Quasi_Isos" href="../../../entry/tensoring-with-flat-complexes-preserves-quasi-isomorphisms/index.html#lem:Tensor_With_Flat_Chain_Complex_Preserves_Quasi_Isos">Lemma 6.6.27</a>, as \(P\) and \(Q\) are bounded below flat chain complexes. Part (2) then
+follows, as \(\Tor _n^{\Aa }(M, N)\) is defined as the \(n\)-th homology group of \(M \otimes ^{\bL } N\). Part (3) also follows, as the derived tensor
+\(F \otimes ^{\bL } -\) is quasi-isomorphic to the underived tensor \(F \otimes -\), which preserves both connective and coconnective
+complexes.                                                                                                                                           □
+</p>
+</div></div>
+<p class='noindent'>We now turn to the derived internal hom.
+</p><p class='noindent'>For the explicit construction below, we assume in addition that countable products in \(\Aa \) are exact, that tensor
+products of projective objects are projective, and that projective objects are flat. These hypotheses
+ensure that bounded below projective complexes are K-projective and that tensoring with such a
+complex preserves quasi-isomorphisms. They hold, in particular, for modules over a commutative
+ring.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4010r29'></a>
+<a class="entry-heading-link" href="../../../entry/internal-hom-of-chain-complexes/index.html" aria-label="Definition 6.6.29, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 6.6.29 </span></a>(Internal hom of chain complexes)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Internal_Hom_Chain_Complexes'></span> The <span class='ntx-Italic-tlf-t1-x-x-109'>internal hom </span>of chain complexes \(C_{\bullet }, D_{\bullet } \in \Ch (\Aa )\) is the
+chain complex \(\uHom (C, D)_{\bullet }\) defined by \[ \uHom (C, D)_n \,:=\, \prod _{p \in \Z } [C_p, D_{p+n}] \] with differential \((d\phi )_p = d \circ \phi _p - (-1)^n \phi _{p-1} \circ d\) for \(\phi = (\phi _p)_p \in \uHom (C, D)_n\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4011r30'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 6.6.30 </span>(Tensor–hom adjunction for chain complexes)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Tensor_Hom_Adjunction_Chain'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>For  chain  complexes</span>  \(A,B,C\in \Ch (\Aa )\)<span class='ntx-Italic-tlf-t1-x-x-109'>,  there  is  a
+natural isomorphism of chain complexes </span>\[ \uHom (A\otimes B,C) \cong \uHom (A,\uHom (B,C)), \] <span class='ntx-Italic-tlf-t1-x-x-109'>which induces the tensor-hom adjunction </span>\[ \Hom _{\Ch (\Aa )}(A \otimes B, C) \,\cong \, \Hom _{\Ch (\Aa )}(A, \uHom (B, C)). \]
+</p>
+</div>
+                                                                                   
+
+                                                                                   
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-06-5" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-06-5">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> A proof is given in the standalone supplementary material.                                                  □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4012r31'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 6.6.31.</span>  </span><span id='lem:Bounded_Below_Projective_K_Projective'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>If</span>  \(P_{\bullet }\)  <span class='ntx-Italic-tlf-t1-x-x-109'>is  a  bounded  below  projective  chain  complex,  then  the  functor  </span>\[ \uHom (P,-)\colon \Ch (\Aa )\to \Ch (\Aa ) \]  <span class='ntx-Italic-tlf-t1-x-x-109'>preserves
+quasi-isomorphisms.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-06-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-06-4">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  First  observe  that  \([P_n,-]\colon \Aa \to \Aa \)  is  exact  for  every  \(n\).  Indeed,  exactness  may  be  tested  by  mapping  out
+of projective objects, and for projective objects \(Q\) we have \[ \Hom _{\Aa }(Q,[P_n,-])\cong \Hom _{\Aa }(Q\otimes P_n,-), \] which is exact because \(Q\otimes P_n\) is projective.
+It  follows  that  \(\uHom (P,A)\)  is  acyclic  whenever  \(A\)  is  acyclic:  filter  \(P\)  by  its  bounded  truncations  and  apply  the
+preceding exactness degreewise. The transition maps between the resulting internal hom complexes
+are degreewise split epimorphisms, so exactness of countable products allows us to pass to their
+inverse limit. Applying this to the cone of a quasi-isomorphism proves the claim.                           □
+</p>
+</div></div>
+<div class='newtheorem'>
+                                                                                   
+                                                                                   
+<p class='noindent'><span class='head'>
+<a id='x1-4013r32'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 6.6.32.</span>  </span><span id='lem:Projective_Complexes_Compute_Derived_Mapping_Animae'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(P_{\bullet }\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a bounded below projective chain complex and let</span> \(X_{\bullet }\) <span class='ntx-Italic-tlf-t1-x-x-109'>be any chain complex.
+Then the localization functor induces an isomorphism </span>\[ \Hom _{\Kk (\Aa )}(P_{\bullet },X_{\bullet }) \iso \Hom _{\D (\Aa )}(P_{\bullet },X_{\bullet }). \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-06-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-06-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="lem:Bounded_Below_Projective_K_Projective" href="../../../entry/bounded-below-projective-complexes-are-k-projective/index.html#lem:Bounded_Below_Projective_K_Projective">Lemma 6.6.31</a>, the functor \(\uHom (P_{\bullet },-)\) preserves quasi-isomorphisms. Since \[ \pi _k\Hom _{\Kk (\Aa )}(P_{\bullet },X_{\bullet }) \cong H_k(\uHom (P_{\bullet },X_{\bullet })) \] for every \(k\geq 0\), the functor \(\Hom _{\Kk (\Aa )}(P_{\bullet },-)\) also preserves
+quasi-isomorphisms. Viewing \(\D (\Aa )\) as the localization of \(\Kk (\Aa )\) at the quasi-isomorphisms, the claim follows
+from <a class="source-reference" data-label="lem:Hom_In_Localization" href="../../../entry/maps-from-local-objects-in-a-localization/index.html#lem:Hom_In_Localization">Lemma 6.2.10</a>.                                                                                                                                                   □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4014r33'></a>
+<a class="entry-heading-link" href="../../../entry/derived-internal-hom/index.html" aria-label="Definition 6.6.33, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 6.6.33 </span></a>(Derived hom)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Derived_Hom'></span> Let \(\Ch ^-_{\proj }(\Aa )\) denote the full subcategory of bounded below projective
+chain complexes. The internal hom restricts to a functor \[ \uHom (-,-)\colon \Ch ^-_{\proj }(\Aa )\catop \times \Ch (\Aa )\to \Ch (\Aa ). \] It preserves quasi-isomorphisms in both
+variables: in the first variable this follows from <a class="source-reference" data-label="prop:Quasi_Iso_Projective_Is_Homotopy_Equivalence" href="../../../entry/quasi-isomorphisms-between-projective-complexes-are-homotopy-equivalences/index.html#prop:Quasi_Iso_Projective_Is_Homotopy_Equivalence">Proposition 6.6.11</a>, while in the second it follows from <a class="source-reference" data-label="lem:Bounded_Below_Projective_K_Projective" href="../../../entry/bounded-below-projective-complexes-are-k-projective/index.html#lem:Bounded_Below_Projective_K_Projective">Lemma 6.6.31</a>. Consequently,
+localization and <a class="source-reference" data-label="prop:Projective_Complexes_Equivalence" href="../../../entry/projective-complexes-present-the-bounded-below-derived-category/index.html#prop:Projective_Complexes_Equivalence">Proposition 6.6.16</a> produce a functor \[ \bR \uHom (-,-)\colon \D ^-(\Aa )\catop \times \D (\Aa ) \to \D (\Aa ). \] For any projective resolution \(P\to C\), it is computed by \[ \bR \uHom (C,D)\simeq \uHom (P,D). \]
+</p>
+</div>
+<p class='noindent'>Just as the derived tensor product computes Tor-groups, the derived hom computes Ext-groups, which ties
+the present discussion back to <a class="source-reference" data-label="sec:Projective_Modules" href="../projective-objects-and-ext-groups/index.html#sec:Projective_Modules">Section 6.4</a>:
+                                                                                   
+                                                                                   
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4015r34'></a>
+<a class="entry-heading-link" href="../../../entry/derived-internal-hom-computes-ext/index.html" aria-label="Observation 6.6.34., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Observation 6.6.34.</span></a>  </span><span id='obs:Derived_Hom_Computes_Ext'></span> Let \(R\) be a commutative ring and let \(M,N \in \RMod _R\), regarded as complexes concentrated in
+degree \(0\). Choosing a projective resolution \(P_{\bullet } \to M\), the complex \(\uHom (P,N)\) has \(\uHom (P,N)_{-n} = [P_n,N]\) with the differential induced by that of
+\(P_{\bullet }\); it is thus the cochain complex \(\Hom _R(P_{\bullet },N)\), placed in non-positive degrees. Taking homology, we obtain \[ H_{-n}\bigl (\bR \uHom _R(M,N)\bigr ) \; \cong \; H^n\bigl (\Hom _R(P_{\bullet },N)\bigr ) \; \cong \; \Ext ^n_R(M,N), \] where
+the second isomorphism is <a class="source-reference" data-label="prop:Compute_Ext_Via_Projective_Resolution" href="../../../entry/ext-groups-via-projective-resolutions/index.html#prop:Compute_Ext_Via_Projective_Resolution">Proposition 6.4.14</a>. In particular \(\bR \uHom _R(M,N)\) is coconnective, with \(H_0 = \Hom _R(M,N)\).
+</p>
+</div>
+<p class='noindent'>The key relationship between the derived tensor product and derived hom is that they remain
+adjoint:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4016r35'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 6.6.35 </span>(Derived tensor-hom adjunction)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Derived_Tensor_Hom_Adjunction'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>For</span> \(C, D \in \D ^-(\Aa )\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(E \in \D (\Aa )\)<span class='ntx-Italic-tlf-t1-x-x-109'>, there is a natural equivalence </span>\[ \Hom _{\D (\Aa )}(C \otimes ^{\bL } D, E) \,\simeq \, \Hom _{\D (\Aa )}(C, \bR \uHom (D, E)). \]
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-06-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-06-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Choose a chain complex representing \(E\). By <a class="source-reference" data-label="prop:Projective_Complexes_Equivalence" href="../../../entry/projective-complexes-present-the-bounded-below-derived-category/index.html#prop:Projective_Complexes_Equivalence">Proposition 6.6.16</a>, the \(\infty \)-category \(\D ^-(\Aa )\) is equivalent to the localization of
+\(\Ch ^-_{\proj }(\Aa )\) at chain homotopy equivalences. It therefore suffices to establish the adjunction for bounded below
+projective complexes \(P_{\bullet }\) and \(Q_{\bullet }\). In this case, we have \[ P \otimes ^{\bL } Q \,\simeq \, P \otimes Q \qquadtext { and } \bR \uHom (Q, E) \,\simeq \, \uHom (Q, E). \] The complex \(P\otimes Q\) is again bounded below projective.
+Using <a class="source-reference" data-label="lem:Projective_Complexes_Compute_Derived_Mapping_Animae" href="../../../entry/projective-complexes-compute-derived-mapping-animae/index.html#lem:Projective_Complexes_Compute_Derived_Mapping_Animae">Lemma 6.6.32</a> and the internal tensor-hom adjunction of <a class="source-reference" data-label="lem:Tensor_Hom_Adjunction_Chain" href="../../../entry/tensor-hom-adjunction-for-chain-complexes/index.html#lem:Tensor_Hom_Adjunction_Chain">Lemma 6.6.30</a>, we obtain \[ \Hom _{\D (\Aa )}(P\otimes Q,E) \iso \Hom _{\Kk (\Aa )}(P\otimes Q,E) \iso \Hom _{\Kk (\Aa )}(P,\uHom (Q,E)) \iso \Hom _{\D (\Aa )}(P,\uHom (Q,E)), \] as required. The middle isomorphism
+                                                                                   
+                                                                                   
+is an isomorphism of mapping animae because its \(k\)-th homotopy group is the \(k\)-th homology of the
+internal tensor-hom isomorphism from <a class="source-reference" data-label="lem:Tensor_Hom_Adjunction_Chain" href="../../../entry/tensor-hom-adjunction-for-chain-complexes/index.html#lem:Tensor_Hom_Adjunction_Chain">Lemma 6.6.30</a>.                                                                                            □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-4017r36'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 6.6.36.</span>  </span><span id='cor:Internal_Hom_Preserves_Limits'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Assume in addition that</span> \(\Aa \) <span class='ntx-Italic-tlf-t1-x-x-109'>satisfies</span> \((AB3)\)<span class='ntx-Italic-tlf-t1-x-x-109'>,</span> \((AB4)\)<span class='ntx-Italic-tlf-t1-x-x-109'>,</span> \((AB3^*)\)<span class='ntx-Italic-tlf-t1-x-x-109'>, and</span> \((AB4^*)\)<span class='ntx-Italic-tlf-t1-x-x-109'>. For every</span> \(C \in \D ^-(\Aa )\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the functor</span> \(\bR \uHom (C,-)\colon \D (\Aa ) \to \D (\Aa )\) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves
+all small limits. For every</span> \(E \in \D (\Aa )\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the functor</span> \(\bR \uHom (-,E)\) <span class='ntx-Italic-tlf-t1-x-x-109'>sends colimits of uniformly bounded below diagrams in</span> \(\D ^-(\Aa )\) <span class='ntx-Italic-tlf-t1-x-x-109'>to
+limits.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-06-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-06-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The functor \(\bR \uHom (C,-) \simeq \uHom (P,-)\), for \(P\) a projective resolution of \(C\), is exact and satisfies \(\uHom (P, \prod _i E_i) \cong \prod _i \uHom (P, E_i)\) degreewise. It therefore
+preserves all limits.
+</p><p class='noindent'>In the first variable, the functor is exact and sends coproducts of uniformly bounded below families
+to products: if \(P^i\) is a projective resolution of \(C^i\), chosen with a common lower bound, then \(\bigoplus _i P^i\) is a projective
+resolution  of  \(\bigoplus _i C^i\),  and  \[ \uHom \Bigl (\bigoplus _i P^i, E\Bigr ) \; \cong \; \prod _i \uHom (P^i,E) \]  degreewise.  Together  with  exactness,  this  gives  the  assertion  for  uniformly
+bounded below colimits.                                                                                                                     □
+</p>
+</div></div>
+ 
+<section class="footnotes" aria-label="Notes"><h2>Notes</h2>
+  <div class='footnote-text'>
+  <p class='noindent'><span class='footnote-mark'><a id='chapter-homological-algebra-section-06-fn1x0'><a id='chapter-homological-algebra-section-06-x2-3003x1'></a>    <sup class='textsuperscript'>1</sup></a></span><span class='ntx-Regular-tlf-t1-x-x-90'>This is weaker than</span> \(P_{\bullet }\) <span class='ntx-Regular-tlf-t1-x-x-90'>being a projective object of the abelian category</span> \(\Ch (\Aa )\)<span class='ntx-Regular-tlf-t1-x-x-90'>: the latter are exactly the contractible complexes that are
+  degreewise projective. Throughout, ‘projective chain complex’ always refers to the degreewise condition; some authors instead say
+  </span><span class='ntx-Italic-tlf-t1-x-x-90'>degreewise projective </span><span class='ntx-Regular-tlf-t1-x-x-90'>or </span><span class='ntx-Italic-tlf-t1-x-x-90'>complex of projectives</span><span class='ntx-Regular-tlf-t1-x-x-90'>.</span></p></div> 
+</section>
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../flat-objects-and-tor-groups/index.html" aria-label="Previous section: Flat objects and Tor-groups" title="Previous section: Flat objects and Tor-groups"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../k-nneth-and-universal-coefficient-theorems/index.html" aria-label="Next section: Künneth and universal coefficient theorems" title="Next section: Künneth and universal coefficient theorems"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html" aria-current="page"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/animae-as-spaces/index.html"><span class="context-entry-heading">Chapter 2</span><span class="context-entry-title">Animae as spaces</span></a></li><li><a href="../../../chapter/homology-and-cohomology/index.html"><span class="context-entry-heading">Chapter 3</span><span class="context-entry-title">Homology and cohomology</span></a></li><li><a href="../../../chapter/spectra-and-stable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 4</span><span class="context-entry-title">Spectra and stable ∞-categories</span></a></li><li><a href="../../../chapter/recognition-principle/index.html"><span class="context-entry-heading">Chapter 5</span><span class="context-entry-title">The recognition principle</span></a></li><li><a href="../../../chapter/homological-algebra/index.html" aria-current="page"><span class="context-entry-heading">Chapter 6</span><span class="context-entry-title">Homological algebra</span></a></li><li><a href="../../../chapter/localization-and-completion/index.html"><span class="context-entry-heading">Chapter 7</span><span class="context-entry-title">Localization and completion</span></a></li><li><a href="../../../chapter/ring-spectra-and-modules/index.html"><span class="context-entry-heading">Chapter 8</span><span class="context-entry-title">Ring spectra and modules</span></a></li><li><a href="../../../chapter/complex-k-theory/index.html"><span class="context-entry-heading">Chapter 9</span><span class="context-entry-title">Complex K-theory</span></a></li><li><a href="../../../chapter/thom-spectra-and-bordism-theory/index.html"><span class="context-entry-heading">Chapter 10</span><span class="context-entry-title">Thom spectra and bordism theory</span></a></li><li><a href="../../../chapter/duality-phenomena/index.html"><span class="context-entry-heading">Chapter 11</span><span class="context-entry-title">Duality phenomena</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../derived-categories/index.html"><span class="context-entry-heading">Section 6.1</span><span class="context-entry-title">Derived ∞-categories</span></a></li><li><a href="../ordinary-homology-and-cohomology-via-d-z/index.html"><span class="context-entry-heading">Section 6.2</span><span class="context-entry-title">Ordinary homology and cohomology via D(Z)</span></a></li><li><a href="../connective-objects-and-t-structures/index.html"><span class="context-entry-heading">Section 6.3</span><span class="context-entry-title">Connective objects and t-structures</span></a></li><li><a href="../projective-objects-and-ext-groups/index.html"><span class="context-entry-heading">Section 6.4</span><span class="context-entry-title">Projective objects and Ext-groups</span></a></li><li><a href="../flat-objects-and-tor-groups/index.html"><span class="context-entry-heading">Section 6.5</span><span class="context-entry-title">Flat objects and Tor-groups</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 6.6</span><span class="context-entry-title">Derived functors</span></a></li><li><a href="../k-nneth-and-universal-coefficient-theorems/index.html"><span class="context-entry-heading">Section 6.7</span><span class="context-entry-title">Künneth and universal coefficient theorems</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Total_Left_Derived_Functor"><span class="context-entry-heading">Definition 6.6.1</span><span class="context-entry-title">definition</span></a></li><li><a href="#obs:Total_Left_Derived_Functor"><span class="context-entry-heading">Observation 6.6.2</span><span class="context-entry-title">observation</span></a></li><li><a href="#prop:Constructing_Left_Derived_Functors"><span class="context-entry-heading">Proposition 6.6.3</span><span class="context-entry-title">proposition</span></a></li><li><a href="#rmk:Cofibrant_Objects_In_Derived_Functors"><span class="context-entry-heading">Remark 6.6.4</span><span class="context-entry-title">remark</span></a></li><li><a href="#rem:Derived_Functors_Via_Functorial_Replacement"><span class="context-entry-heading">Remark 6.6.5</span><span class="context-entry-title">remark</span></a></li><li><a href="#exercise:Trivial_Left_Derived_Functor"><span class="context-entry-heading">Exercise 6.6.6</span><span class="context-entry-title">exercise</span></a></li><li><a href="#lem:Product_Cofibration_Structure"><span class="context-entry-heading">Lemma 6.6.7</span><span class="context-entry-title">Products of cofibration structures</span></a></li><li><a href="#def:Projective_Chain_Complex"><span class="context-entry-heading">Definition 6.6.8</span><span class="context-entry-title">Projective chain complex</span></a></li><li><a href="#rem:Bounded_Below_Localization"><span class="context-entry-heading">Remark 6.6.9</span><span class="context-entry-title">remark</span></a></li><li><a href="#lem:Acyclic_Projective_Contractible"><span class="context-entry-heading">Lemma 6.6.10</span><span class="context-entry-title">lemma</span></a></li><li><a href="#prop:Quasi_Iso_Projective_Is_Homotopy_Equivalence"><span class="context-entry-heading">Proposition 6.6.11</span><span class="context-entry-title">proposition</span></a></li><li><a href="#cor:Additive_Functor_Preserves_QI_Projectives"><span class="context-entry-heading">Corollary 6.6.12</span><span class="context-entry-title">corollary</span></a></li><li><a href="#prop:Bounded_Below_Projective_Resolutions"><span class="context-entry-heading">Proposition 6.6.13</span><span class="context-entry-title">Existence of projective resolutions</span></a></li><li><a href="#lem:Lifting_Along_Projective_Resolution"><span class="context-entry-heading">Lemma 6.6.14</span><span class="context-entry-title">Lifting along a projective resolution</span></a></li><li><a href="#prop:Projective_Cofibration_Structure"><span class="context-entry-heading">Proposition 6.6.15</span><span class="context-entry-title">The projective cofibration structure</span></a></li><li><a href="#prop:Projective_Complexes_Equivalence"><span class="context-entry-heading">Proposition 6.6.16</span><span class="context-entry-title">proposition</span></a></li><li><a href="#cons:Derived_Functor_DA_DB"><span class="context-entry-heading">Construction 6.6.17</span><span class="context-entry-title">Derived functors between derived categories</span></a></li><li><a href="#exercise:LF_On_Projectives"><span class="context-entry-heading">Exercise 6.6.18</span><span class="context-entry-title">exercise</span></a></li><li><a href="#lem:Derived_Functor_Properties"><span class="context-entry-heading">Lemma 6.6.19</span><span class="context-entry-title">lemma</span></a></li><li><a href="#rmk:Classical_Left_Derived_Functors"><span class="context-entry-heading">Remark 6.6.20</span><span class="context-entry-title">remark</span></a></li><li><a href="#lem:Derived_Functor_Preserves_Colimits"><span class="context-entry-heading">Lemma 6.6.21</span><span class="context-entry-title">lemma</span></a></li><li><a href="#thm:Universal_Property_Bounded_Derived"><span class="context-entry-heading">Theorem 6.6.22</span><span class="context-entry-title">Universal property of the bounded below derived category</span></a></li><li><a href="#def:Tensor_Product_Chain_Complexes"><span class="context-entry-heading">Definition 6.6.23</span><span class="context-entry-title">Tensor product of chain complexes</span></a></li><li><a href="#ex:Tensor_Not_Preserve_QI"><span class="context-entry-heading">Example 6.6.24</span><span class="context-entry-title">example</span></a></li><li><a href="#def:Derived_Tensor_Product"><span class="context-entry-heading">Definition 6.6.25</span><span class="context-entry-title">Derived tensor product</span></a></li><li><a href="#rmk:Symmetric_Monoidal_Bounded_Below_Derived_Category"><span class="context-entry-heading">Remark 6.6.26</span><span class="context-entry-title">remark</span></a></li><li><a href="#lem:Tensor_With_Flat_Chain_Complex_Preserves_Quasi_Isos"><span class="context-entry-heading">Lemma 6.6.27</span><span class="context-entry-title">lemma</span></a></li><li><a href="#cor:Tor_Via_One_Sided_Resolution"><span class="context-entry-heading">Corollary 6.6.28</span><span class="context-entry-title">corollary</span></a></li><li><a href="#def:Internal_Hom_Chain_Complexes"><span class="context-entry-heading">Definition 6.6.29</span><span class="context-entry-title">Internal hom of chain complexes</span></a></li><li><a href="#lem:Tensor_Hom_Adjunction_Chain"><span class="context-entry-heading">Lemma 6.6.30</span><span class="context-entry-title">Tensor–hom adjunction for chain complexes</span></a></li><li><a href="#lem:Bounded_Below_Projective_K_Projective"><span class="context-entry-heading">Lemma 6.6.31</span><span class="context-entry-title">lemma</span></a></li><li><a href="#lem:Projective_Complexes_Compute_Derived_Mapping_Animae"><span class="context-entry-heading">Lemma 6.6.32</span><span class="context-entry-title">lemma</span></a></li><li><a href="#def:Derived_Hom"><span class="context-entry-heading">Definition 6.6.33</span><span class="context-entry-title">Derived hom</span></a></li><li><a href="#obs:Derived_Hom_Computes_Ext"><span class="context-entry-heading">Observation 6.6.34</span><span class="context-entry-title">observation</span></a></li><li><a href="#prop:Derived_Tensor_Hom_Adjunction"><span class="context-entry-heading">Proposition 6.6.35</span><span class="context-entry-title">Derived tensor-hom adjunction</span></a></li><li><a href="#cor:Internal_Hom_Preserves_Limits"><span class="context-entry-heading">Corollary 6.6.36</span><span class="context-entry-title">corollary</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>

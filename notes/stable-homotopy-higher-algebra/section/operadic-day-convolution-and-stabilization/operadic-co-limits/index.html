@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 18.1: Operadic (co)limits | Stable homotopy theory and higher algebra</title>
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"}},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-label="Reader settings"><h2>Proof display</h2><div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div><h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="../../../book.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+    <div>
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/operads-and-higher-algebra/index.html">Part II</a> · <a href="../../../chapter/operadic-day-convolution-and-stabilization/index.html">Chapter 18</a> · Section 18.1</p>
+      <h1>Operadic (co)limits</h1>
+    </div>
+  </header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='sec:Operadic_Colimits'>For our upcoming discussion of \(\infty \)-operads with additional algebraic structure, we will need notions of limit
+and colimit that respect not only the underlying \(\infty \)-category \(\Oo _{\lra {1}}\) but also the multimorphisms of
+\(\Oo \).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<a class="entry-heading-link" href="../../../entry/operadic-limits-and-colimits/index.html" aria-label="Definition 18.1.1., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 18.1.1.</span></a>  </span><span id='def:Operadic_Limits_And_Colimits'></span> Let \(\Oo \) be an \(\infty \)-operad and let \(F\colon I \to \Oo _{\lra {1}}\) be a functor.
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'>A cone \(\eta \colon \const _y \to F\) in \(\Oo _{\lra {1}}\) is called an <span class='ntx-Italic-tlf-t1-x-x-109'>operadic limit </span>if for every \(n \geq 0\) and all colors \(x_1, \dots , x_n \in \Oo ^{\simeq }\) the induced map \[ \Oo ((x_1, \dots , x_n); y) \to \lim _{i \in I} \Oo ((x_1, \dots , x_n); F(i)) \] is an
+     equivalence of animae.
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'>A cocone \(\epsilon \colon F \to \const _x\) in \(\Oo _{\lra {1}}\) is called an <span class='ntx-Italic-tlf-t1-x-x-109'>operadic colimit </span>if for every \(n \geq 1\) and all colors \(x_2, \dots , x_n, y \in \Oo ^{\simeq }\) the induced map \[ \Oo ((x, x_2, \dots , x_n); y) \to \lim _{i \in I} \Oo ((F(i), x_2, \dots , x_n); y) \] is an
+     equivalence of animae.</p></dd></dl>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1004r2'></a>
+<a class="entry-heading-link" href="../../../entry/operadic-limits-in-envelope/index.html" aria-label="Remark 18.1.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 18.1.2.</span></a>  </span><span id='rmk:Operadic_Limits_In_Envelope'></span>   These   conditions   are   direct   operadic   analogues   of   the   mapping-anima
+                                                                                   
+                                                                                   
+characterizations  of  ordinary  limits  and  colimits,  with  unary  mapping  animae  replaced  by
+multimorphism animae. Taking \(n=1\) shows that an operadic limit is a limit in \(\Oo _{\lra {1}}\), and an operadic colimit is
+a colimit in \(\Oo _{\lra {1}}\). We will therefore usually assume that the relevant (co)limits already exist in \(\Oo _{\lra {1}}\) and only
+ask whether they are operadic.
+</p><p class='noindent'>For limits, there is also a useful reformulation through the envelope. Every object of \(\Env (\Oo )\) is a tensor \(x_1 \otimes \dots \otimes x_n\)
+of colors, and by <a class="source-reference" data-label="lem:Mapping_Animae_Envelope" href="../../../entry/mapping-animae-envelope/index.html#lem:Mapping_Animae_Envelope">Lemma 17.3.17</a> the multimorphism animae compute the mapping animae out of such tensors, \(\Oo ((x_1, \dots , x_n); y) \simeq \Hom _{\Env (\Oo )}(x_1 \otimes \dots \otimes x_n, y)\).
+Testing against all colors \(x_1, \dots , x_n\) therefore shows that a cone in \(\Oo _{\lra {1}}\) is an operadic limit if and only if it becomes
+a limit cone in \(\Env (\Oo )\) under the inclusion \(\Oo _{\lra {1}} \hookrightarrow \Env (\Oo )\).
+</p><p class='noindent'>For colimits, the corresponding statement is only relative: after tensoring with any fixed colors \(x_2,\dots ,x_n\), the
+cocone is colimiting when tested by mapping into colors of \(\Oo \). It need not be a colimit cocone in the
+whole envelope; in particular, an operadic initial object need not be initial there. Compare <a class="source-reference" data-label="ex:Pointed_Objects_Pointed_Operad" href="../../../entry/pointed-objects-pointed-operad/index.html#ex:Pointed_Objects_Pointed_Operad">Example 18.1.7</a>.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1005r3'></a>
+<a class="entry-heading-link" href="../../../entry/operadic-limit-in-sym-mon-category/index.html" aria-label="Example 18.1.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 18.1.3.</span></a>  </span><span id='ex:Operadic_Limit_In_Sym_Mon_Category'></span>  If  \(\Oo = \Mm _C\)  for  a  symmetric  monoidal  \(\infty \)-category  \(C\),  then  any  limit  in  \(C\)  is  automatically
+operadic. This is because the tensor product provides a natural equivalence \[ \Mm _C((x_1, \dots , x_n); -) \simeq \Hom _C(x_1 \otimes \dots \otimes x_n, -), \] and the functor \(\Hom _C(X,-)\) preserves
+limits for any object \(X\).
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1006r4'></a>
+<a class="entry-heading-link" href="../../../entry/nonoperadic-terminal-object/index.html" aria-label="Example 18.1.4., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 18.1.4.</span></a>  </span><span id='ex:Nonoperadic_Terminal_Object'></span>  The  claim  from  the  previous  example  does  not  hold  for  general  operads.  For
+instance, consider the trivial operad \(\Triv \). Its underlying \(\infty \)-category is the terminal category \(*\), which has
+all limits, and in particular a terminal object. However, for \(n \neq 1\), we have \(\Triv ((x_1, \dots , x_n); -) = \emptyset \), so this terminal object is not
+an operadic terminal object.
+                                                                                   
+                                                                                   
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1007r5'></a>
+<a class="entry-heading-link" href="../../../entry/operadic-colimit-in-sym-mon-category/index.html" aria-label="Example 18.1.5., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 18.1.5.</span></a>  </span><span id='ex:Operadic_Colimit_In_Sym_Mon_Category'></span> If \(\Oo = \Mm _C\) for a symmetric monoidal \(\infty \)-category \(C\), then a colimit in \(C\) is operadic if and only
+if it is preserved by the functor \(x \otimes - \colon C \to C\) for every object \(x \in C\); the argument is similar to <a class="source-reference" data-label="ex:Operadic_Limit_In_Sym_Mon_Category" href="../../../entry/operadic-limit-in-sym-mon-category/index.html#ex:Operadic_Limit_In_Sym_Mon_Category">Example 18.1.3</a>.
+</p>
+</div>
+<p class='noindent'>This brings us to the key definitions for this chapter, which are direct analogues of the corresponding
+notions for \(\infty \)-categories:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1008r6'></a>
+<a class="entry-heading-link" href="../../../entry/pointed-semiadditive-additive-stable-operads/index.html" aria-label="Definition 18.1.6., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 18.1.6.</span></a>  </span><span id='def:Pointed_Semiadditive_Additive_Stable_Operads'></span> An \(\infty \)-operad \(\Oo \) is called:
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Pointed </span>if \(\Oo _{\lra {1}}\) has a zero object which is both operadic initial and operadic terminal.
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Semiadditive </span>if \(\Oo _{\lra {1}}\) is semiadditive and all finite products and coproducts are operadic.
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Additive </span>if \(\Oo _{\lra {1}}\) is additive and all finite products and coproducts are operadic.
+                                                                                   
+                                                                                   
+     </p></dd><dt class='enumerate'>
+  (4) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Stable </span>if \(\Oo _{\lra {1}}\) is stable and all finite limits and colimits are operadic.</p></dd></dl>
+<p class='noindent'>This allows us to define various subcategories of the \(\infty \)-category \(\Op _{\infty }\) of \(\infty \)-operads: </p>
+     <ul class='itemize1'>
+     <li class='itemize'>We define \(\Op _{\infty }^* \subseteq \Op _{\infty }\) as the (non-full) subcategory spanned by \(\infty \)-operads with an operadic terminal object
+     and maps preserving them. We denote by \(\Op _{\infty }^{\pt } \subseteq \Op _{\infty }^*\) the full subcategory spanned by pointed \(\infty \)-operads.
+     </li>
+     <li class='itemize'>We define \(\Op _{\infty }^{\mathrm {prod}} \subseteq \Op _{\infty }\) as the (non-full) subcategory spanned by \(\infty \)-operads with finite operadic products
+     and maps preserving them. We denote by \(\Op _{\infty }^{\sadd }, \Op _{\infty }^{\add } \subseteq \Op _{\infty }^{\mathrm {prod}}\) the full subcategories spanned by semiadditive and
+     additive \(\infty \)-operads, respectively.
+     </li>
+     <li class='itemize'>We define \(\Op _{\infty }^{\lex } \subseteq \Op _{\infty }\) as the (non-full) subcategory spanned by \(\infty \)-operads with finite operadic limits and
+     maps preserving them. We denote by \(\Op _{\infty }^{\st } \subseteq \Op _{\infty }^{\lex }\) the full subcategory spanned by stable \(\infty \)-operads.</li></ul>
+</div>
+<p class='noindent'> For example, the operad \(\Mm _{\Sp }\) associated with the symmetric monoidal structure constructed in <a class="source-reference" data-label="sec:Tensor_Product_Spectra_Coherent" href="../../day-convolution-and-the-tensor-product-of-spectra/the-symmetric-monoidal-structure-on-sp/index.html#sec:Tensor_Product_Spectra_Coherent">Section 16.6</a> is
+stable.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1013r7'></a>
+<a class="entry-heading-link" href="../../../entry/pointed-objects-pointed-operad/index.html" aria-label="Example 18.1.7, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 18.1.7 </span></a>(Pointed objects)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='ex:Pointed_Objects_Pointed_Operad'></span> Let \(C\) satisfy the hypotheses of <a class="source-reference" data-label="lem:Smash_Product_Monoidal_Structure" href="../../../entry/existence-of-the-smash-product-monoidal-structure/index.html#lem:Smash_Product_Monoidal_Structure">Lemma 16.3.4</a>, and equip \(C_*\) with its smash product
+monoidal structure. Its zero object is both operadic terminal and operadic initial, so \(\Mm _{C_*}\) is a pointed
+\(\infty \)-operad. Indeed, operadic terminality is automatic by <a class="source-reference" data-label="ex:Operadic_Limit_In_Sym_Mon_Category" href="../../../entry/operadic-limit-in-sym-mon-category/index.html#ex:Operadic_Limit_In_Sym_Mon_Category">Example 18.1.3</a>, while operadic initiality says precisely that
+tensoring with the zero object gives the zero object.
+</p>
+</div>
+                                                                                   
+                                                                                   
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1014r8'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 18.1.8 </span>(Properties inherited by full suboperads)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Stable_Full_Suboperad'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(\Oo \subseteq \Pp \) <span class='ntx-Italic-tlf-t1-x-x-109'>be a full suboperad.</span>
+   </p><dl class='enumerate'><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(1)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(\Pp \) <span class='ntx-Italic-tlf-t1-x-x-109'>is pointed and</span> \(\Oo _{\lra {1}}\) <span class='ntx-Italic-tlf-t1-x-x-109'>contains its zero object, then</span> \(\Oo \) <span class='ntx-Italic-tlf-t1-x-x-109'>is pointed.</span>
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(2)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(\Pp \) <span class='ntx-Italic-tlf-t1-x-x-109'>is semiadditive or additive and</span> \(\Oo _{\lra {1}}\) <span class='ntx-Italic-tlf-t1-x-x-109'>is closed under finite biproducts in</span> \(\Pp _{\lra {1}}\)<span class='ntx-Italic-tlf-t1-x-x-109'>, then</span> \(\Oo \) <span class='ntx-Italic-tlf-t1-x-x-109'>is semiadditive or
+   additive, respectively.</span>
+   </p></dd><dt class='enumerate'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>(3)</span> </dt><dd class='enumerate'>
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(\Pp \) <span class='ntx-Italic-tlf-t1-x-x-109'>is stable and</span> \(\Oo _{\lra {1}}\) <span class='ntx-Italic-tlf-t1-x-x-109'>is closed under finite limits and finite colimits in</span> \(\Pp _{\lra {1}}\)<span class='ntx-Italic-tlf-t1-x-x-109'>, then</span> \(\Oo \) <span class='ntx-Italic-tlf-t1-x-x-109'>is stable.</span></p></dd></dl>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-operadic-day-convolution-and-stabilization-section-01-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-operadic-day-convolution-and-stabilization-section-01-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> In each case the relevant (co)limits in \(\Oo _{\lra {1}}\) are inherited from \(\Pp _{\lra {1}}\). This gives the asserted property
+of the underlying \(\infty \)-category. Since \(\Pp \) has the corresponding operadic (co)limits and \(\Oo \subseteq \Pp \) is full, the same
+multimorphism animae compute the operadic (co)limit conditions in \(\Oo \).                                             □
+</p>
+</div></div>
+<p class='noindent'>The goal of the remainder of this chapter is to show that the four fully faithful inclusion functors
+\begin {align*}  \Op _{\infty }^{\pt } &amp;\hookrightarrow \Op _{\infty }^* \\ \Op _{\infty }^{\sadd } &amp;\hookrightarrow \Op _{\infty }^{\mathrm {prod}} \\ \Op _{\infty }^{\add } &amp;\hookrightarrow \Op _{\infty }^{\mathrm {prod}} \\ \Op _{\infty }^{\st } &amp;\hookrightarrow \Op _{\infty }^{\lex }  \end {align*}
+                                                                                   
+                                                                                   
+</p><p class='noindent'>all admit right adjoints, which will correspond to ‘cofreely adding’ the respective algebraic structure to an
+\(\infty \)-operad.
+</p>
+ 
+
+</div>
+<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <nav class="context-step-controls" aria-label="Previous and next sections">
+    <a class="context-step-control" rel="prev" href="../../the-envelope-of-an-infinity-operad/comparison-to-lurie-s-operads/index.html" aria-label="Previous section: Comparison to Lurie's operads" title="Previous section: Comparison to Lurie's operads"><span aria-hidden="true">←</span></a>
+    <a class="context-step-control" rel="next" href="../the-multiplicative-yoneda-embedding/index.html" aria-label="Next section: The multiplicative Yoneda embedding" title="Next section: The multiplicative Yoneda embedding"><span aria-hidden="true">→</span></a>
+  </nav><div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html" aria-current="page"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/operads-the-heuristics/index.html"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../../../chapter/span-categories/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../../../chapter/basics-on-infinity-operads/index.html"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../../../chapter/cartesian-and-cocartesian-monoidal-structures/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../../../chapter/day-convolution-and-the-tensor-product-of-spectra/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="../../../chapter/the-envelope-of-an-infinity-operad/index.html"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../../../chapter/operadic-day-convolution-and-stabilization/index.html" aria-current="page"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Operadic Day convolution and stabilization</span></a></li><li><a href="../../../chapter/algebras-and-modules/index.html"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 18.1</span><span class="context-entry-title">Operadic (co)limits</span></a></li><li><a href="../the-multiplicative-yoneda-embedding/index.html"><span class="context-entry-heading">Section 18.2</span><span class="context-entry-title">The multiplicative Yoneda embedding</span></a></li><li><a href="../day-convolution-into-arbitrary-operads/index.html"><span class="context-entry-heading">Section 18.3</span><span class="context-entry-title">Day convolution into arbitrary operads</span></a></li><li><a href="../stabilization-of-operads/index.html"><span class="context-entry-heading">Section 18.4</span><span class="context-entry-title">Stabilization of ∞-operads</span></a></li><li><a href="../modes-and-universal-properties/index.html"><span class="context-entry-heading">Section 18.5</span><span class="context-entry-title">Modes and universal properties</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Operadic_Limits_And_Colimits"><span class="context-entry-heading">Definition 18.1.1</span><span class="context-entry-title">definition</span></a></li><li><a href="#rmk:Operadic_Limits_In_Envelope"><span class="context-entry-heading">Remark 18.1.2</span><span class="context-entry-title">remark</span></a></li><li><a href="#ex:Operadic_Limit_In_Sym_Mon_Category"><span class="context-entry-heading">Example 18.1.3</span><span class="context-entry-title">example</span></a></li><li><a href="#ex:Nonoperadic_Terminal_Object"><span class="context-entry-heading">Example 18.1.4</span><span class="context-entry-title">example</span></a></li><li><a href="#ex:Operadic_Colimit_In_Sym_Mon_Category"><span class="context-entry-heading">Example 18.1.5</span><span class="context-entry-title">example</span></a></li><li><a href="#def:Pointed_Semiadditive_Additive_Stable_Operads"><span class="context-entry-heading">Definition 18.1.6</span><span class="context-entry-title">definition</span></a></li><li><a href="#ex:Pointed_Objects_Pointed_Operad"><span class="context-entry-heading">Example 18.1.7</span><span class="context-entry-title">Pointed objects</span></a></li><li><a href="#lem:Stable_Full_Suboperad"><span class="context-entry-heading">Lemma 18.1.8</span><span class="context-entry-title">Properties inherited by full suboperads</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>
