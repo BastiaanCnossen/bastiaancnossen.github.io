@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AI use in my research · Bastiaan Cnossen</title>
-<meta name="description" content="A public record of AI token use in the mathematical work of Bastiaan Cnossen, with per-project figures and methodological limitations.">
+<meta name="description" content="A public record of AI token use in the mathematical work of Bastiaan Cnossen, with per-project figures and an explanation of how they are collected.">
 <meta name="author" content="Bastiaan Cnossen">
 <link rel="canonical" href="https://bastiaancnossen.com/ai-use.html">
 <meta property="og:type" content="website">
@@ -42,8 +42,8 @@
   <main id="main">
     <span class="label">Research practice</span>
     <h1>AI use in my research</h1>
-    <p class="lede">I use AI tools in parts of my mathematical workflow, including mathematical exploration, formalization, literature organization, and the preparation and revision of mathematical text. This page gives a public account of the token usage recorded by those tools.</p>
-    <p>An AI agent extracts these figures automatically from retained local tool logs; I do not enter or check the individual token counts manually.</p>
+    <p class="lede">I use AI tools for mathematical exploration, formalization, literature organization, and the preparation and revision of mathematical text. This page records how many tokens those tools report that I have used.</p>
+    <p>An AI agent extracts these figures automatically from retained local logs. I do not enter or check each token count by hand.</p>
     <p>The totals below cover all recorded usage classified as related to my mathematical work.</p>
     <p>This AI disclosure page should be treated as experimental. At present, it is unclear to me what the standards around disclosure of AI usage should be, and whether the presentation here is suitable. Given the wide range of opinions about AI usage in mathematics, I think that clear transparency about token usage is nevertheless helpful.</p>
 
@@ -57,7 +57,7 @@
     </div>
 
     <h2>Selected projects and activities</h2>
-    <p>For usage that falls under a specific project or recurring activity, the table gives a more detailed breakdown. These figures should be broadly representative, but may slightly undercount actual project-level usage where an individual AI interaction could not be matched reliably to a particular project. I expect to expand this list over time.</p>
+    <p>When usage can be assigned to a specific project or recurring activity, the table gives a more detailed breakdown. These figures should be broadly representative, but may be slightly too low because some individual interactions could not be matched reliably to a project. I expect to add further projects over time.</p>
 
     <div class="table-wrap" role="region" aria-label="AI token use by selected project or activity" tabindex="0">
       <table class="usage-table">
@@ -80,17 +80,17 @@
         </tbody>
       </table>
     </div>
-    <p class="note usage-update">These figures are a dated snapshot, not a live counter. Exact machine-readable figures are available in <a href="ai-use-data.json">JSON format</a>.</p>
+    <p class="note usage-update">These figures were last updated on the date shown above and do not update automatically. The exact figures are also available in <a href="ai-use-data.json">JSON format</a>.</p>
     <!-- AI_USAGE:END -->
 
     <h2>How to read these figures</h2>
-    <p>Fresh input consists of input processed without a cache read. Cached input is repeated context reported as served through provider caching. Generated output includes separately reported reasoning tokens. These classes are shown separately because they should not be assumed to have the same computational cost.</p>
-    <p>These figures record the scale and composition of my AI use. They are token counts reported by the tools, not measurements of energy use or emissions. I do not convert them to carbon or water figures because the necessary model-, hardware-, and data-centre-specific information is not available to me.</p>
+    <p>Fresh input is input processed without using a cache. Cached input is context that the provider reports as having been read from a cache. Generated output includes reasoning tokens when these are reported separately. I list these three categories separately because they may not require the same amount of computation.</p>
+    <p>These figures show how many tokens I have used and of which kind. They come from counts reported by the tools, not from measurements of energy use or emissions. I do not translate them into carbon or water figures because I do not have the necessary information about the models, hardware, and data centres involved.</p>
 
     <h2>Measurement method</h2>
-    <p>The figures are derived from explicit token-usage records in retained local Codex and Claude Code transcripts. The extraction itself is performed automatically by a deterministic Python script, which reads these records, normalizes the different counter formats used by the two tools, and assigns each transcript to a project from its working directory or from a reviewed manual classification. An AI agent invokes the script when the figures are refreshed, but does not read or transcribe the individual records. The script does not reconstruct token counts from prompts or estimate them from text length.</p>
-    <p>Codex generally records cumulative counters, whereas Claude Code records usage for individual assistant responses. To avoid double counting, the collector retains only the final snapshot of each Codex counter epoch, counts repeated Claude response identifiers once, uses only the latest observation of a resumed session, and ignores copied subagent transcripts.</p>
-    <p>The record does not cover deleted transcripts or AI use in unsupported clients. Project attribution is made at the level of a complete session, since the logs do not provide a trustworthy per-token division when one session concerns several projects.</p>
+    <p>The figures come from token counts stored in local Codex and Claude Code transcripts. When this page is updated, an AI agent starts a Python script that reads the counts automatically. The script accounts for the different ways in which Codex and Claude Code store them, and assigns each transcript to a project based on its working directory or an explicit classification recorded in the ledger. The agent does not enter the individual counts by hand. The script also does not try to infer token counts from the prompts or from the length of the text.</p>
+    <p>Codex usually keeps a running total, while Claude Code records usage separately for each assistant response. For Codex, the script uses only the last total before the count starts again. For Claude Code, it counts each response once and uses only the most recent copy of a resumed session. It also ignores duplicate transcripts made for subagents.</p>
+    <p>The figures do not include deleted transcripts or AI use in applications from which the script cannot obtain token records. Each session is assigned to one project as a whole. If a session concerns several projects, the logs do not provide a reliable way of dividing its tokens between them.</p>
 
     <footer class="foot">
       <p>&copy; 2026 Bastiaan Cnossen &middot; <a href="impressum.html">Impressum &amp; privacy</a> &middot; <a href="ai-use.html" aria-current="page">AI use</a></p>
