@@ -156,6 +156,42 @@ function validateLocalReferences(root, publicBase) {
   }
 }
 
+function canonicalizeEmbeddedPdf(root, embeddedPdf, canonicalPdfHref) {
+  if (embeddedPdf === undefined) return;
+  if (typeof embeddedPdf !== "string" || !embeddedPdf || path.isAbsolute(embeddedPdf)) {
+    throw new Error("EmbeddedPdf must be a nonempty relative path inside the candidate bundle.");
+  }
+  const normalized = embeddedPdf.replaceAll("\\", "/");
+  if (normalized.split("/").some((segment) => !segment || segment === "." || segment === "..")) {
+    throw new Error(`Invalid EmbeddedPdf path ${embeddedPdf}.`);
+  }
+  const embeddedPath = path.resolve(root, ...normalized.split("/"));
+  if (!embeddedPath.startsWith(`${path.resolve(root)}${path.sep}`) || !fs.existsSync(embeddedPath) || !fs.statSync(embeddedPath).isFile()) {
+    throw new Error(`The configured embedded PDF does not exist inside the candidate bundle: ${embeddedPdf}.`);
+  }
+
+  const htmlFiles = fs.readdirSync(root, { recursive: true, withFileTypes: true })
+    .filter((entry) => entry.isFile() && entry.name.endsWith(".html"))
+    .map((entry) => path.join(entry.parentPath, entry.name));
+  let replacements = 0;
+  for (const htmlPath of htmlFiles) {
+    const relativePdfHref = path.relative(path.dirname(htmlPath), embeddedPath).replaceAll(path.sep, "/");
+    let html = fs.readFileSync(htmlPath, "utf8");
+    for (const quote of ['"', "'"]) {
+      const source = `href=${quote}${relativePdfHref}${quote}`;
+      const replacement = `href=${quote}${canonicalPdfHref}${quote}`;
+      const occurrences = html.split(source).length - 1;
+      if (occurrences) {
+        html = html.replaceAll(source, replacement);
+        replacements += occurrences;
+      }
+    }
+    fs.writeFileSync(htmlPath, html, "utf8");
+  }
+  if (!replacements) throw new Error(`No HTML page links to the configured embedded PDF ${embeddedPdf}.`);
+  fs.rmSync(embeddedPath, { force: true });
+}
+
 function validateCandidate(sourceRoot, contract, workId, publicBase) {
   if (contract.SchemaVersion !== 1 || contract.WorkId !== workId) throw new Error("The candidate public contract does not match the configured work.");
   const canonicalPath = new URL(contract.CanonicalBase).pathname;
@@ -618,6 +654,7 @@ export function publishWork(configPath, { checkOnly = false, websiteRoot = defau
   if (!fs.existsSync(sourcePdf) || !fs.statSync(sourcePdf).isFile()) throw new Error(`The candidate PDF does not exist: ${sourcePdf}`);
   const publicRoot = assertManagedPath(root, path.resolve(root, config.PublicDirectory), "public site directory");
   const publicPdf = assertManagedPath(root, path.resolve(root, config.PublicPdf), "public PDF");
+  const publicPdfHref = `/${config.PublicPdf.replaceAll("\\", "/")}`;
   const lockPath = assertManagedPath(root, path.resolve(root, config.Lockfile), "public-path lockfile");
   const retirementPath = assertManagedPath(root, path.resolve(root, config.Retirements), "retirement registry");
   recoverInterruptedPublication(root, publicRoot, publicPdf, lockPath);
@@ -640,6 +677,7 @@ export function publishWork(configPath, { checkOnly = false, websiteRoot = defau
   try {
     fs.mkdirSync(path.dirname(stageRoot), { recursive: true });
     fs.cpSync(sourceRoot, stageRoot, { recursive: true, errorOnExist: true });
+    canonicalizeEmbeddedPdf(stageRoot, config.EmbeddedPdf, publicPdfHref);
     fs.mkdirSync(path.dirname(stagedPdf), { recursive: true });
     fs.copyFileSync(sourcePdf, stagedPdf);
     materializeRetirements(stageRoot, ledger, currentRoutes, contract, publicBase);

@@ -6,7 +6,7 @@ import { publishWork } from "./publish-notes.mjs";
 
 const root = fs.mkdtempSync(path.join(os.tmpdir(), "notes-publisher-test-"));
 const candidateRoot = path.join(root, "candidate");
-const candidatePdf = path.join(root, "candidate.pdf");
+const candidatePdf = path.join(candidateRoot, "book.pdf");
 const configPath = path.join(root, "publication", "works", "test-notes.json");
 const retirementsPath = path.join(root, "publication", "retirements", "test-notes.json");
 const publicBase = "/notes/test-notes/";
@@ -24,8 +24,9 @@ function writePage(route, ids, links = []) {
 
 function writeCandidate({ includeRetiredRoute = true, includeOldFragment = true, pdfContents = "PDF version 1" }) {
   fs.rmSync(candidateRoot, { recursive: true, force: true });
+  fs.mkdirSync(candidateRoot, { recursive: true });
   fs.writeFileSync(candidatePdf, pdfContents, "utf8");
-  writePage("/", [], ["entry/current/"]);
+  writePage("/", [], ["entry/current/", "book.pdf"]);
   const routes = [{ Path: "/", Kind: "work", Fragments: [] }];
   if (includeRetiredRoute) {
     writePage("/entry/retired/", ["result:Retired"]);
@@ -37,7 +38,7 @@ function writeCandidate({ includeRetiredRoute = true, includeOldFragment = true,
     });
   }
   const fragmentIds = ["result:Current", ...(includeOldFragment ? ["detail-current--old-detail"] : [])];
-  writePage("/entry/current/", fragmentIds);
+  writePage("/entry/current/", fragmentIds, ["../../book.pdf"]);
   routes.push({
     Path: "/entry/current/",
     Kind: "entry",
@@ -81,7 +82,8 @@ try {
     SchemaVersion: 1,
     WorkId: "test-notes",
     SourceBundle: "candidate",
-    SourcePdf: "candidate.pdf",
+    SourcePdf: "candidate/book.pdf",
+    EmbeddedPdf: "book.pdf",
     PublicDirectory: "notes/test-notes",
     PublicPdf: "notes/test-notes.pdf",
     PublicBase: publicBase,
@@ -97,6 +99,9 @@ try {
   const previousRoot = `${publicRoot}.__previous__`;
   const previousPdf = `${publicPdf}.__previous__`;
   assert.equal(fs.readFileSync(publicPdf, "utf8"), "PDF version 1");
+  assert.ok(!fs.existsSync(path.join(publicRoot, "book.pdf")));
+  assert.match(fs.readFileSync(path.join(publicRoot, "index.html"), "utf8"), /href='\/notes\/test-notes\.pdf'/);
+  assert.match(fs.readFileSync(path.join(publicRoot, "entry", "current", "index.html"), "utf8"), /href='\/notes\/test-notes\.pdf'/);
   fs.renameSync(publicRoot, previousRoot);
   publishWork(configPath, { websiteRoot: root, checkOnly: true });
   assert.ok(fs.existsSync(publicRoot));

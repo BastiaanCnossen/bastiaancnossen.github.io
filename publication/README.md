@@ -54,6 +54,12 @@ lockfile, retirement registry, web directory, and sibling PDF. Entry, section,
 and chapter IDs are scoped by the work's public base and therefore need not be
 globally unique across different works.
 
+If a candidate bundle contains a build-only copy of its PDF for local preview,
+set `EmbeddedPdf` to its relative path. During publication, links to that copy
+are rewritten to `PublicPdf` and the embedded duplicate is omitted from the
+public web directory. The separately staged sibling PDF remains part of the
+same recoverable publication transaction.
+
 ## Public-address contract
 
 Each candidate bundle supplies `_meta/public-contract.json`. It records its
