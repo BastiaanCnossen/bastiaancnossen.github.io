@@ -82,10 +82,10 @@ permutation isomorphism then says that for every bijection \(\sigma \colon J \xr
      <li class='itemize'>The objects of \(\Env (\Oo )\) are unordered tuples \(\{x_i\}_{i \in I}\) of colors of \(\Oo \);
      </li>
      <li class='itemize'>A morphism \(\Phi \colon \{x_i\}_{i \in I} \to \{y_j\}_{j \in J}\) in \(\Env (\Oo )\) consists of a morphism of finite sets \(f\colon I \to J\) together with a multimorphism \(\phi _j \in \Oo (\{x_i\}_{i \in I_j};y_j)\) for
-     every \(j \in J\). Here we write \(I_j := f^{-1}(j)\) for the preimage of \(j\) under \(f\). We will visualize this data as follows:\[\input {Illustrations/Illustration_Morphism_Envelope}\] Here
+     every \(j \in J\). Here we write \(I_j := f^{-1}(j)\) for the preimage of \(j\) under \(f\). We will visualize this data as follows:<div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzpicture-f0e86cf7450f.svg" alt="Five circular nodes $x_1$ to $x_5$ on the left, wired into three rectangular nodes: $x_2$ and $x_3$ enter $\phi_1$, $x_5$ enters $\phi_2$, and $x_1$ and $x_4$ enter $\phi_3$. Each $\phi_j$ has a single output wire, ending in the circular nodes $y_1$, $y_2$ and $y_3$ respectively."></figure></div> Here
      the function \(f\) is indicated by the lines from left to right, so that \(f(1) = f(4) = 3\), \(f(2) = f(3) = 1\) and \(f(5) = 2\).
      </li>
-     <li class='itemize'>The identity of \(\{x_i\}_{i \in I}\) is given by taking \(f = \id _I \colon I \to I\), and taking \(\phi _j = \id _{x_j} \in \Oo (\{x_i\}_{i \in \{j\}};x_j)\):\[\input {Illustrations/Illustration_Identity_Envelope}\]
+     <li class='itemize'>The identity of \(\{x_i\}_{i \in I}\) is given by taking \(f = \id _I \colon I \to I\), and taking \(\phi _j = \id _{x_j} \in \Oo (\{x_i\}_{i \in \{j\}};x_j)\):<div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzpicture-492085ae7ef2.svg" alt="Four parallel rows, none of whose wires cross. In the $i$-th row a circular node $x_i$ is joined by a wire to a rectangular node $\id_{x_i}$, and that node by a further wire to a second circular node $x_i$, for $i = 1, 2, 3, 4$."></figure></div>
      </li>
      <li class='itemize'>The composition of \(\Phi = (f,\phi _j)\colon \{x_i\}_{i \in I} \to \{y_j\}_{j \in J}\) and \(\Psi = (g, \psi _k)\colon \{y_j\}_{j \in J} \to \{z_k\}_{k \in K}\) is given by \(\Psi \circ \Phi = (h, \xi _k)\) where \(h := g \circ f\colon I \to K\) is the composition of \(g\) and \(f\), and for every \(k \in K\) the
      multimorphism \(\xi _k \in \Oo (\{x_i\}_{i \in I_k};z_k)\) is the image of \((\psi _k, (\phi _j)_{j \in J_k})\) under the composition map \[ \circ \colon \Oo (\{y_j\}_{j \in J_k};z_k) \times \prod _{j \in J_k} \Oo (\{x_i\}_{i \in I_j}; y_j) \to \Oo (\{x_i\}_{i \in I_k};z_k); \] here we are implicitly using that
@@ -101,17 +101,16 @@ tuples.
 </div>
 <p class='noindent'>The composition in \(\Env (\Oo )\) may look somewhat difficult when written in formulas, but it becomes clear what one
 needs to do if one visually represents the morphisms using diagrams. For illustration, let us examine the
-composition of the following two morphisms in \(\Env (\Oo )\):\[\input {Illustrations/Illustration_Composition_Envelope_3}\] First, we determine the composite map \(h := g \circ f\colon \{1, \dots , 5\} \to \{1, \dots , 4\}\); in this case, this
+composition of the following two morphisms in \(\Env (\Oo )\):</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzpicture-3f14c1e251ed.svg" alt="Two diagrams side by side. On the left, five circular nodes $x_1$ to $x_5$ are wired into three rectangular nodes: $x_2$ and $x_3$ enter $\phi_1$, $x_5$ enters $\phi_2$, and $x_1$ and $x_4$ enter $\phi_3$, with outputs the circular nodes $y_1$, $y_2$, $y_3$. On the right, those three nodes $y_1$, $y_2$, $y_3$ are wired into four rectangular nodes $\psi_1$ to $\psi_4$: $y_1$ and $y_3$ enter $\psi_2$ and $y_2$ enters $\psi_4$, while $\psi_1$ and $\psi_3$ have no inputs at all and are therefore nullary. The four outputs are the circular nodes $z_1$ to $z_4$."></figure></div><p class='noindent'>First, we determine the composite map \(h := g \circ f\colon \{1, \dots , 5\} \to \{1, \dots , 4\}\); in this case, this
 is given by \(h(1) = h(2) = h(3) = h(4) = 2\) and \(h(5) = 4\). Note that the preimages \(h^{-1}(1)\) and \(h^{-1}(3)\) are empty, so that \(\xi _1\) and \(\xi _3\) will be nullary operations. The
 multimorphism \(\xi _2\) will have \(x_1\), \(x_2\), \(x_3\) and \(x_4\) as input colors, and is obtained by composing \(\psi _2\) with \((\phi _1,\phi _3)\), where we need to
 remember which of the four inputs should go into \(\phi _1\) and which ones go into \(\phi _3\). Finally, the multimorphism
 \(\xi _4\) has only \(x_5\) as input color, and is simply the composite \(\psi _4 \circ \phi _2\). The resulting composite morphism
-can be illustrated as follows:\[\input {Illustrations/Illustration_Composition_Envelope_2}\] Note: we draw the permutation \(\sigma \) here to match the ordered tuple
+can be illustrated as follows:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzpicture-d640a4fbd031.svg" alt="A wide diagram reading left to right. Five circular nodes $x_1$ to $x_5$ on the far left. The wires of $x_1$ to $x_4$ cross inside a narrow rectangle labelled $\sigma$ and re-emerge in the order $x_2$, $x_3$, $x_1$, $x_4$; the first two then enter the rectangular node $\phi_1$ and the last two enter $\phi_3$, with outputs $y_1$ and $y_3$. Both of these feed the node $\psi_2$, whose output is the circular node $z_2$. Separately, $x_5$ enters $\phi_2$ with output $y_2$, which enters $\psi_4$ with output $z_4$. The nodes $\psi_1$ and $\psi_3$ stand alone with no inputs, producing $z_1$ and $z_3$. Four dashed boxes are drawn: around $\psi_1$, labelled $\xi_1$; around the permutation rectangle, $\phi_1$, $\phi_3$, $y_1$, $y_3$ and $\psi_2$, labelled $\xi_2$; around $\psi_3$, labelled $\xi_3$; and around $\phi_2$, $y_2$ and $\psi_4$, labelled $\xi_4$."></figure></div><p class='noindent'>Note: we draw the permutation \(\sigma \) here to match the ordered tuple
 convention used in <a class="source-reference" data-label="sec:Colored_Operads" href="../colored-operads/index.html#sec:Colored_Operads">Section 12.2</a>, since the nodes must be drawn in some fixed order on the page. When
 working with unordered tuples, the \(\sigma \) would not appear: the composition of multimorphisms simply
 remembers that its inputs are indexed by the disjoint union of \(\{1,3\}\) and \(\{2,4\}\) without fixing any order between
-them.
-</p>
+them.</p>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-1004r4'></a>
