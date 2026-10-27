@@ -2,44 +2,9 @@ const proofs = [...document.querySelectorAll(".proof-shell")];
 const detailContents = [...document.querySelectorAll(".proof-detail")];
 const detailToggles = [...document.querySelectorAll("[data-detail-toggle]")];
 const detailLevelButtons = [...document.querySelectorAll("button[data-detail-level]")];
-const navigationVisibilityControl = document.querySelector("[data-navigation-visibility]");
-const utilityItems = [...document.querySelectorAll("[data-utility-item]")];
-const utilityTriggers = [...document.querySelectorAll("[data-utility-trigger]")];
-const contextNavigation = document.querySelector("[data-context-nav]");
-const contextNavigationToggle = document.querySelector("[data-context-nav-toggle]");
-const contextNavigationCollapse = document.querySelector("[data-context-nav-collapse]");
-const contentsNavigations = [...document.querySelectorAll(".contents[data-collapsed]")];
-const contentsToggles = [...document.querySelectorAll("[data-contents-toggle]")];
-const sectionNavigationLinks = [...document.querySelectorAll("[data-section-target]")];
 const locallyOpened = new Set();
 const locallyClosed = new Set();
 const preferenceKey = "layered-notes-reader-preferences-v1";
-const contextNavigationPreferenceKey = "layered-notes-context-navigation-collapsed-v1";
-const contextNavigationVisibilityPreferenceKey = "layered-notes-context-navigation-visible-v1";
-const contentsPreferenceKey = "layered-notes-contents-collapsed-v2";
-const wideContextNavigationQuery = window.matchMedia("(min-width: 1121px)");
-let contextNavigationCollapsed = false;
-let contextNavigationVisible = true;
-let savedContentsPreferences = {};
-
-try {
-  contextNavigationCollapsed = window.localStorage.getItem(contextNavigationPreferenceKey) === "true";
-} catch {
-  // Storage may be unavailable on file URLs or in strict privacy modes.
-}
-
-try {
-  contextNavigationVisible = window.localStorage.getItem(contextNavigationVisibilityPreferenceKey) !== "false";
-} catch {
-  // Storage may be unavailable on file URLs or in strict privacy modes.
-}
-
-try {
-  savedContentsPreferences = JSON.parse(window.localStorage.getItem(contentsPreferenceKey) || "{}");
-} catch {
-  savedContentsPreferences = {};
-}
-
 const maximumDepth = detailContents.reduce(
   (maximum, detail) => Math.max(maximum, Number(detail.dataset.depth)),
   0,
@@ -189,162 +154,10 @@ function revealHashTarget() {
   }
 }
 
-function closeUtilityPanels(except = null) {
-  utilityItems.forEach((item) => {
-    if (item === except) return;
-    item.dataset.open = "false";
-    item.querySelector("[data-utility-trigger]")?.setAttribute("aria-expanded", "false");
-  });
-}
-
-function toggleUtilityPanel(trigger) {
-  const item = trigger.closest("[data-utility-item]");
-  if (!item) return;
-  const shouldOpen = item.dataset.open !== "true";
-  closeUtilityPanels(item);
-  item.dataset.open = String(shouldOpen);
-  trigger.setAttribute("aria-expanded", String(shouldOpen));
-}
-
-function setContextNavigationOpen(open) {
-  if (!contextNavigation || !contextNavigationToggle) return;
-  contextNavigation.dataset.open = String(open);
-  contextNavigationToggle.setAttribute("aria-expanded", String(open));
-}
-
-function renderContextNavigationVisibility() {
-  document.body.dataset.contextNavigation = contextNavigationVisible ? "visible" : "hidden";
-  if (navigationVisibilityControl) navigationVisibilityControl.checked = contextNavigationVisible;
-  if (!contextNavigationVisible) setContextNavigationOpen(false);
-}
-
-function setContextNavigationVisible(visible) {
-  contextNavigationVisible = visible;
-  try {
-    window.localStorage.setItem(contextNavigationVisibilityPreferenceKey, String(visible));
-  } catch {
-    // The preference remains page-local when storage is unavailable.
-  }
-  renderContextNavigationVisibility();
-}
-
-function renderContextNavigationPreference() {
-  if (!contextNavigation || !contextNavigationCollapse) return;
-  const collapsed = wideContextNavigationQuery.matches && contextNavigationCollapsed;
-  contextNavigation.dataset.collapsed = String(collapsed);
-  contextNavigation.closest(".reader-layout")?.setAttribute("data-context-collapsed", String(collapsed));
-  contextNavigationCollapse.setAttribute("aria-expanded", String(!collapsed));
-  contextNavigationCollapse.setAttribute(
-    "aria-label",
-    `${collapsed ? "Show" : "Hide"} ${contextNavigation.getAttribute("aria-label") || "contents"}`,
-  );
-  contextNavigationCollapse.querySelector("span").textContent = collapsed ? "‹" : "›";
-}
-
-function toggleContextNavigationCollapsed() {
-  contextNavigationCollapsed = !contextNavigationCollapsed;
-  try {
-    window.localStorage.setItem(contextNavigationPreferenceKey, String(contextNavigationCollapsed));
-  } catch {
-    // The preference remains page-local when storage is unavailable.
-  }
-  renderContextNavigationPreference();
-}
-
-function preferredContentsCollapsed(navigation) {
-  const key = navigation.dataset.ledgerKey;
-  if (typeof savedContentsPreferences[key] === "boolean") return savedContentsPreferences[key];
-  return navigation.dataset.defaultCollapsed === "true";
-}
-
-function renderContentsPreferences() {
-  contentsNavigations.forEach((navigation) => {
-    const ledger = navigation.closest("[data-contents-ledger]");
-    const button = ledger?.querySelector("[data-contents-toggle]");
-    const collapsed = preferredContentsCollapsed(navigation);
-    navigation.dataset.collapsed = String(collapsed);
-    if (!button) return;
-    button.setAttribute("aria-expanded", String(!collapsed));
-    ledger.dataset.open = String(!collapsed);
-  });
-}
-
-function toggleContents(button) {
-  const ledger = button.closest("[data-contents-ledger]");
-  const navigation = ledger?.querySelector(".contents[data-collapsed]");
-  if (!navigation) return;
-  const collapsed = navigation.dataset.collapsed !== "true";
-  navigation.dataset.collapsed = String(collapsed);
-  ledger.dataset.open = String(!collapsed);
-  button.setAttribute("aria-expanded", String(!collapsed));
-  savedContentsPreferences[navigation.dataset.ledgerKey] = collapsed;
-  try {
-    window.localStorage.setItem(contentsPreferenceKey, JSON.stringify(savedContentsPreferences));
-  } catch {
-    // The preference remains page-local when storage is unavailable.
-  }
-}
-
-function updateSectionNavigationLocation() {
-  if (sectionNavigationLinks.length === 0) return;
-  const threshold = window.innerHeight * 0.32;
-  const targets = sectionNavigationLinks
-    .map((link) => ({ link, target: document.getElementById(link.dataset.sectionTarget) }))
-    .filter(({ target }) => target);
-  let current = targets[0];
-  for (const candidate of targets) {
-    if (candidate.target.getBoundingClientRect().top <= threshold) current = candidate;
-    else break;
-  }
-  targets.forEach(({ link }) => {
-    if (link === current?.link) link.setAttribute("aria-current", "location");
-    else link.removeAttribute("aria-current");
-  });
-}
-
-let sectionScrollFrame = null;
-function scheduleSectionNavigationUpdate() {
-  if (sectionScrollFrame !== null) return;
-  sectionScrollFrame = window.requestAnimationFrame(() => {
-    sectionScrollFrame = null;
-    updateSectionNavigationLocation();
-  });
-}
-
 detailLevelButtons.forEach((button) => button.addEventListener("click", () => setDetailLevel(button.dataset.detailLevel)));
 detailToggles.forEach((toggle) => toggle.addEventListener("click", () => toggleDetail(toggle)));
-navigationVisibilityControl?.addEventListener("change", () => setContextNavigationVisible(navigationVisibilityControl.checked));
-utilityTriggers.forEach((trigger) => trigger.addEventListener("click", () => toggleUtilityPanel(trigger)));
-contextNavigationToggle?.addEventListener("click", () => {
-  setContextNavigationOpen(contextNavigation?.dataset.open !== "true");
-});
-contextNavigationCollapse?.addEventListener("click", toggleContextNavigationCollapsed);
-contentsToggles.forEach((button) => button.addEventListener("click", () => toggleContents(button)));
-contextNavigation?.addEventListener("click", (event) => {
-  if (event.target.closest("a")) setContextNavigationOpen(false);
-});
-document.addEventListener("click", (event) => {
-  if (!event.target.closest(".utility-dock")) closeUtilityPanels();
-});
-document.addEventListener("keydown", (event) => {
-  if (event.key !== "Escape") return;
-  const openTrigger = utilityTriggers.find((trigger) => trigger.getAttribute("aria-expanded") === "true");
-  const contextWasOpen = contextNavigation?.dataset.open === "true";
-  closeUtilityPanels();
-  setContextNavigationOpen(false);
-  openTrigger?.focus();
-  if (!openTrigger && contextWasOpen) contextNavigationToggle?.focus();
-});
+
 window.addEventListener("hashchange", revealHashTarget);
-window.addEventListener("hashchange", updateSectionNavigationLocation);
-window.addEventListener("scroll", scheduleSectionNavigationUpdate, { passive: true });
-window.addEventListener("resize", scheduleSectionNavigationUpdate);
-wideContextNavigationQuery.addEventListener("change", renderContextNavigationPreference);
-wideContextNavigationQuery.addEventListener("change", renderContentsPreferences);
 
 renderView();
-renderContextNavigationVisibility();
-renderContextNavigationPreference();
-renderContentsPreferences();
 revealHashTarget();
-updateSectionNavigationLocation();

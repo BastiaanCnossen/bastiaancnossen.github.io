@@ -2,6 +2,7 @@
 :root {
   color-scheme: light;
   --paper: #fffef9;
+  --diagram-filter: none;
   --ink: #20251f;
   --muted: #667064;
   --rule: #d9ded5;
@@ -30,6 +31,7 @@
   :root:not([data-theme="light"]) {
     color-scheme: dark;
     --paper: #1b1f1d;
+    --diagram-filter: invert(0.88) hue-rotate(180deg);
     --ink: #e2e5de;
     --muted: #9ba59b;
     --rule: #323a34;
@@ -54,6 +56,7 @@
 :root[data-theme="dark"] {
   color-scheme: dark;
   --paper: #1b1f1d;
+  --diagram-filter: invert(0.88) hue-rotate(180deg);
   --ink: #e2e5de;
   --muted: #9ba59b;
   --rule: #323a34;
@@ -321,20 +324,12 @@ code {
   letter-spacing: 0.02em;
 }
 
-.utility-item[data-open="true"] > .utility-panel {
+.utility-item[data-open="true"] > .utility-panel,
+.utility-item:not([data-open="closed"])[data-hover-open="true"] > .utility-panel {
   visibility: visible;
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .utility-item:not([data-open="closed"]):hover > .utility-panel {
-    visibility: visible;
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
 }
 
 .preset-group {
@@ -521,6 +516,71 @@ body.has-context-nav[data-context-navigation="hidden"] footer {
 
 .contents .context-entry-list {
   margin-top: 0;
+}
+
+/* The four reading controls follow SCT's two-by-two header layout. */
+.reading-header-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 22rem);
+  align-items: start;
+  gap: 1.5rem;
+}
+
+body.has-context-nav .site-header > .reading-header-row {
+  max-width: none;
+}
+
+.reader-heading {
+  min-width: 0;
+}
+
+.page-turns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
+  width: 100%;
+  font: 0.8rem/1.35 ui-sans-serif, system-ui, sans-serif;
+}
+
+.page-turns a,
+.page-turns button {
+  display: grid;
+  gap: 0.15rem;
+  min-width: 0;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--rule);
+  border-radius: 0.4rem;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+}
+
+.page-turns a:hover,
+.page-turns a:focus-visible {
+  background: var(--accent-pale);
+  border-color: var(--accent);
+}
+
+.page-turns button:disabled {
+  background: transparent;
+  color: var(--muted);
+  opacity: 0.65;
+}
+
+.turn-direction {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.turn-target {
+  font-weight: 650;
+}
+
+@media (max-width: 900px) {
+  .reading-header-row { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .page-turns { max-width: 22rem; }
 }
 
 .context-step-controls {
@@ -934,6 +994,8 @@ body[data-presentation="headings"] .proof-detail:not([hidden]) {
   width: auto;
   max-width: min(100%, 31rem);
   max-height: 15rem;
+  height: auto;
+  filter: var(--diagram-filter);
 }
 
 ol {
@@ -1002,6 +1064,7 @@ ol {
 }
 
 .chapter-introduction {
+  min-width: 0;
   max-width: 74ch;
 }
 
@@ -1231,11 +1294,107 @@ footer {
   }
 }
 
+.edition-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.4rem;
+  margin-top: 4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.74rem;
+}
+.edition-footer a { color: var(--muted); }
+.edition-footer a:hover, .edition-footer a:focus-visible { color: var(--accent); }
+
+/* Chapter landing pages lay out their blocks on a grid; the introduction is
+   one block, so that its paragraphs keep ordinary paragraph spacing. */
+.chapter-introduction > :first-child { margin-top: 0; }
+.chapter-introduction > :last-child { margin-bottom: 0; }
+
+/* Entry pages: the result's place in the book, and its neighbours. */
+.entry-context {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 0 1.6rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--rule);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.8rem;
+}
+.entry-context a { text-decoration: none; }
+.entry-context a:hover .entry-context-name,
+.entry-context a:focus-visible .entry-context-name,
+.entry-context-section:hover,
+.entry-context-section:focus-visible { text-decoration: underline; }
+.entry-context-previous { justify-self: start; }
+.entry-context-next { justify-self: end; text-align: right; }
+.entry-context-section {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--surface-muted, transparent);
+  white-space: nowrap;
+}
+@media (max-width: 620px) {
+  .entry-context { grid-template-columns: 1fr 1fr; }
+  .entry-context-section { grid-column: 1 / -1; grid-row: 1; justify-self: center; }
+}
+
+/* Copy-LaTeX menu on formulas. */
+.latex-copy-menu {
+  position: fixed;
+  z-index: 50;
+  display: grid;
+  min-width: 11rem;
+  padding: 0.3rem;
+  border: 1px solid var(--rule);
+  border-radius: 0.5rem;
+  background: var(--paper);
+  box-shadow: 0 0.6rem 2rem var(--shadow, rgba(0, 0, 0, 0.15));
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.82rem;
+}
+.latex-copy-menu button {
+  padding: 0.45rem 0.7rem;
+  border: 0;
+  border-radius: 0.35rem;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.latex-copy-menu button:hover, .latex-copy-menu button:focus-visible { background: var(--accent-pale); outline: none; }
+.latex-copy-toast {
+  position: fixed;
+  z-index: 50;
+  bottom: 1.5rem;
+  left: 50%;
+  padding: 0.5rem 0.95rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.8rem;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+@media (min-width: 621px) {
+  .notes-page.chapter-landing,
+  .notes-page.section-page { padding-top: clamp(1.5rem, 3vw, 2.5rem); }
+}
+
 @media print {
   :root:not([data-theme="light"]),
   :root[data-theme="dark"] {
     color-scheme: light;
     --paper: #fff;
+    --diagram-filter: none;
     --ink: #20251f;
     --muted: #667064;
     --rule: #d9ded5;
@@ -1249,6 +1408,8 @@ footer {
 
   .site-header,
   .utility-dock,
+  .latex-copy-menu,
+  .latex-copy-toast,
   .context-nav,
   .context-nav-toggle,
   footer,

@@ -2,6 +2,7 @@ import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { validateReaderShell } from "./reader-shell-v1/install.mjs";
 
 const moduleDirectory = path.dirname(fileURLToPath(import.meta.url));
 const defaultWebsiteRoot = path.resolve(moduleDirectory, "..");
@@ -661,6 +662,7 @@ export function publishWork(configPath, { checkOnly = false, websiteRoot = defau
   const contractPath = path.join(sourceRoot, "_meta", "public-contract.json");
   const contract = readJson(contractPath, "candidate public contract");
   const currentRoutes = validateCandidate(sourceRoot, contract, config.WorkId, publicBase);
+  if (fs.existsSync(path.join(sourceRoot, "_meta", "reader-build.json"))) validateReaderShell(sourceRoot);
   const retirements = loadRetirements(retirementPath, config.WorkId, publicBase);
   const previous = fs.existsSync(lockPath) ? readJson(lockPath, "public-path lockfile") : null;
   if (!previous && (fs.existsSync(publicRoot) || fs.existsSync(publicPdf))) {

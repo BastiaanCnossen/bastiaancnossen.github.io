@@ -1,3 +1,7 @@
+import { readerRevision } from "./install.mjs";
+export { installReaderShell, validateReaderShell } from "./install.mjs";
+export { applyReadingNavigation, renderReadingNavigation, readingNavigationIndex } from "./reading-navigation.mjs";
+
 function escapeHtml(value) {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -24,6 +28,45 @@ export function renderManuscriptControl(href) {
 
 export function renderUtilityDock(content) {
   return `<aside class="utility-dock" aria-label="Page tools">${content}</aside>`;
+}
+
+export function renderReaderSettings({
+  proofAttribute = "data-proof-mode",
+  proofChoices = [
+    { value: "displayed", label: "Proofs displayed" },
+    { value: "collapsed", label: "Proofs collapsed" }
+  ]
+} = {}) {
+  if (!/^data-[a-z]+(?:-[a-z]+)*$/.test(proofAttribute)) throw new Error("Invalid proof control attribute.");
+  return `<div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Default proof display">
+          ${proofChoices.map(({ value, label }) => `<button type="button" ${proofAttribute}="${escapeHtml(value)}">${escapeHtml(label)}</button>`).join("\n          ")}
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>`;
+}
+
+export function renderReaderScripts({ assetPrefix, adapterHref, workId, legacyPreferences = {} }) {
+  if (!workId || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(workId)) throw new Error("Reader scripts need a permanent work ID.");
+  const attributes = Object.entries(legacyPreferences).map(([key, value]) => {
+    if (!["navigation", "contents", "rail"].includes(key)) throw new Error(`Unknown reader preference: ${key}`);
+    return ` data-legacy-${key}="${escapeHtml(value)}"`;
+  }).join("");
+  return `<script defer src="${escapeHtml(assetPrefix)}reader.js" data-notes-reader="${escapeHtml(workId)}" data-reader-revision="${readerRevision()}"${attributes}></script>${adapterHref ? `\n<script defer src="${escapeHtml(adapterHref)}"></script>` : ""}`;
+}
+
+export function renderEditionFooter({ updated = "", pdfHref = "", feedbackEmail = "", workTitle = "", pageTitle = "", pageUrl = "", sourceNote = "" } = {}) {
+  const subject = `${workTitle}: ${pageTitle}`;
+  const body = `Page: ${pageUrl}\n\nDescribe the error (and, if possible, the correction):\n\n`;
+  const mailto = `mailto:${feedbackEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  return `<footer class="edition-footer">${updated ? `\n  <span>Last updated ${escapeHtml(updated)}</span>` : ""}${pdfHref ? `\n  <a href="${escapeHtml(pdfHref)}">PDF</a>` : ""}${feedbackEmail ? `\n  <a href="${escapeHtml(mailto)}">Report an error</a>` : ""}${sourceNote ? `\n  <p class="source-note">${escapeHtml(sourceNote)}</p>` : ""}\n</footer>`;
 }
 
 export function renderReaderHeader({

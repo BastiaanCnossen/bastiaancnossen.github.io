@@ -138,6 +138,15 @@ manuscript PDF control, page header, utility dock, and responsive contextual
 navigation toggle. Manuscript repositories import those renderers at build time
 and copy the stylesheet into their own candidate bundles.
 
+The shell also owns the shared browser runtime for settings, navigation,
+preferences, and formula copying. Manuscripts supply the available proof
+choices and a small proof adapter. Each generated bundle records the shell
+revision and asset hashes in `_meta/reader-build.json`; both production builds
+validate that receipt and run the same reader browser acceptance tests.
+Publication preflight also validates a supplied reader receipt against the
+current shared interface, so a later shell change cannot silently publish an
+outdated candidate. Bundles from other generators may omit this optional receipt.
+
 The shell does not contain theorem conversion, proof logic, mathematical macros,
 or manuscript-specific navigation data. Breaking interface or class-name
 changes require a new versioned shell directory so that each manuscript can be

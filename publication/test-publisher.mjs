@@ -3,6 +3,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { publishWork } from "./publish-notes.mjs";
+import { installReaderShell } from "./reader-shell-v1/install.mjs";
 
 const root = fs.mkdtempSync(path.join(os.tmpdir(), "notes-publisher-test-"));
 const candidateRoot = path.join(root, "candidate");
@@ -92,6 +93,10 @@ try {
   });
   writeCandidate({});
   writeRetirements({});
+  installReaderShell(candidateRoot, "_assets/reader");
+  fs.appendFileSync(path.join(candidateRoot, "_assets/reader/reader.js"), "stale runtime");
+  assert.throws(() => publishWork(configPath, { websiteRoot: root, checkOnly: true }), /Reader asset differs/);
+  installReaderShell(candidateRoot, "_assets/reader");
   publishWork(configPath, { websiteRoot: root });
 
   const publicRoot = path.join(root, "notes", "test-notes");
