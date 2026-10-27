@@ -1,9 +1,11 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Section 6.1: Derived ∞-categories | Stable homotopy theory and higher algebra</title>
+<title>Section 6.1: Derived ∞-categories | Stable Homotopy Theory and Higher Algebra</title>
+<meta name="description" content="Derived ∞-categories. A section of Chapter 6, Homological algebra, in Stable Homotopy Theory and Higher Algebra.">
+<link rel="canonical" href="https://bastiaancnossen.com/notes/stable-homotopy-higher-algebra/section/homological-algebra/derived-categories/">
 <link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
 <link rel="stylesheet" href="../../../_assets/style.css">
-<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"},"load":["[tex]/mathtools","[tex]/boldsymbol"]},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools","boldsymbol"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"},"load":["[tex]/mathtools","[tex]/boldsymbol"]},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools","boldsymbol"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Cc":"\\mathcal{C}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
 <script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
 <script defer src="../../../_assets/script.js"></script></head>
 <body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
@@ -26,7 +28,7 @@
 <header class="site-header work-header">
     <div>
       <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
-      <p class="eyebrow"><a href="../../../index.html">Stable homotopy theory and higher algebra</a> · <a href="../../../part/stable-homotopy-theory/index.html">Part I</a> · <a href="../../../chapter/homological-algebra/index.html">Chapter 6</a> · Section 6.1</p>
+      <p class="eyebrow"><a href="../../../index.html">Stable Homotopy Theory and Higher Algebra</a> · <a href="../../../part/stable-homotopy-theory/index.html">Part I</a> · <a href="../../../chapter/homological-algebra/index.html">Chapter 6</a> · Section 6.1</p>
       <h1>Derived ∞-categories</h1>
     </div>
   </header>
@@ -36,9 +38,9 @@
 <article class="notes-page section-page"><div class="continuous-section">
 <p class='noindent' id='sec:Derived_Infinity_Categories'>One of the foundational definitions of homological algebra is that of a <span class='ntx-Italic-tlf-t1-x-x-109'>chain complex</span>: a sequence \(\{C_n\}_{n \in \Z }\) of abelian
 groups, equipped with boundary maps \(d_n\colon C_n \to C_{n-1}\) satisfying \(d_{n-1} \circ d_n = 0\). For every chain complex \(C_{\bullet }\), we may define its \(n\)<span class='ntx-Italic-tlf-t1-x-x-109'>-th
-homology group </span>as the quotient of the kernel of \(d_{n}\colon C_n \to C_{n-1}\) by the image of \(d_{n+1}\colon C_{n+1} \to C_n\). One of the main examples of chain
-complexes in algebraic topology is the ‘singular chain complex’ \(C_{\bullet }^{\mathrm {sing}}(X;\Z )\) of a topological space \(X\), whose
-homology groups are precisely the ordinary homology groups of \(X\) studied axiomatically in <a class="source-reference" data-label="sec:Ordinary_Homology_And_Cohomology" href="../../homology-and-cohomology/ordinary-homology-and-cohomology/index.html#sec:Ordinary_Homology_And_Cohomology">Section 3.3</a>
+homology group </span>as the quotient of the kernel of \(d_{n}\colon C_n \to C_{n-1}\) by the image of \(d_{n+1}\colon C_{n+1} \to C_n\). One of the main examples of
+chain complexes in algebraic topology is the ‘singular chain complex’ \(C_{\bullet }^{\mathrm {sing}}(X;\Z )\) of a topological space \(X\),
+whose homology groups recover the ordinary homology groups of \(X\) studied axiomatically in <a class="source-reference" data-label="sec:Ordinary_Homology_And_Cohomology" href="../../homology-and-cohomology/ordinary-homology-and-cohomology/index.html#sec:Ordinary_Homology_And_Cohomology">Section 3.3</a>
 (cf. <a class="source-reference" data-label="rmk:Singular_Homology" href="../../../entry/singular-homology-and-cohomology/index.html#rmk:Singular_Homology">Remark 3.3.2</a>).
 </p><p class='noindent'>While chain complexes define a 1-category \(\Ch (\Z )\), this category is in some sense ‘too rigid’ from the perspective
 of homotopy theory. For example, while the homology groups \(H_*(X;\Z )\) of a topological space are homotopy
@@ -60,12 +62,12 @@ its stability in <span class="source-reference" data-label="subsec:Stability_Of_
 <h4 class='subsectionHead' id='chain-complexes-in-abelian-categories'><span class='titlemark'>6.1.1    </span> <a id='x1-20006.1.1'></a>Chain complexes in abelian categories</h4>
 <span class="source-anchor" id='subsec_Chain_Complexes_Abelian'></span>
 <div class='newtheorem'>
-                                                                                   
-                                                                                   
+
+
 <p class='noindent'><span class='head'>
 <a id='x1-2001r1'></a>
 <a class="entry-heading-link" href="../../../entry/kernels-and-cokernels-in-additive-categories/index.html" aria-label="Notation 6.1.1., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Notation 6.1.1.</span></a>  </span><span id='nota:Kernels_And_Cokernels'></span> Let \(\Aa \) be an additive 1-category. We refer to fibers and cofibers in \(\Aa \) as <span class='ntx-Italic-tlf-t1-x-x-109'>kernels </span>and
-<span class='ntx-Italic-tlf-t1-x-x-109'>cokernels</span>, respectively:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-3d5132428201.svg" alt="Commutative diagram generated from the LaTeX source"></figure><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-6c804e36120b.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>If \(f\) is a monomorphism, we will use \(B/A\) as alternative notation for the cokernel.</p>
+<span class='ntx-Italic-tlf-t1-x-x-109'>cokernels</span>, respectively:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-f593e2c97f33.svg" alt="Commutative square with maps ker(f) to A, 0 to B, ker(f) to 0, A to B labeled f." width="94" height="57" loading="lazy"></figure><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-bed03587e1ba.svg" alt="Commutative square with maps A to B labeled f, 0 to coker(f), A to 0, B to coker(f)." width="104" height="62" loading="lazy"></figure></div><p class='noindent'>If \(f\) is a monomorphism, we will use \(B/A\) as alternative notation for the cokernel.</p>
 </div>
 <p class='noindent'>Note that the map \(\ker (f) \to A\) is automatically a monomorphism, while \(B \twoheadrightarrow \coker (f)\) is automatically an epimorphism.
 </p>
@@ -113,23 +115,23 @@ generally the category \(\LMod _R(\Ab )\) of left modules over an associative ri
   (4) </dt><dd class='enumerate'>
      <p class='noindent'><a id='x1-20094'></a> <span class='ntx-Italic-tlf-t1-x-x-109'>Monomorphisms are closed under pushouts, and any pushout square along a monomorphism
      is also a pullback square.</span>
-                                                                                   
 
-                                                                                   
+
+
      </p></dd><dt class='enumerate'>
   (5) </dt><dd class='enumerate'>
      <p class='noindent'><a id='x1-20105'></a> <span class='ntx-Italic-tlf-t1-x-x-109'>Epimorphisms are closed under pullbacks and any pullback square along an epimorphism is
      also a pushout square.</span>
      </p></dd><dt class='enumerate'>
   (6) </dt><dd class='enumerate'>
-     <p class='noindent'><a id='x1-20116'></a> <span class='ntx-Italic-tlf-t1-x-x-109'>Every morphism</span> \(f\colon A \to B\) <span class='ntx-Italic-tlf-t1-x-x-109'>factors uniquely</span><span class='footnote-mark'><a href='#chapter-homological-algebra-section-01-fn1x0'><sup class='textsuperscript'>1</sup></a></span><a id='x1-2012f1'></a> 
+     <p class='noindent'><a id='x1-20116'></a> <span class='ntx-Italic-tlf-t1-x-x-109'>Every morphism</span> \(f\colon A \to B\) <span class='ntx-Italic-tlf-t1-x-x-109'>factors uniquely</span><span class='footnote-mark'><a href='#chapter-homological-algebra-section-01-fn1x0'><sup class='textsuperscript'>1</sup></a></span><a id='x1-2012f1'></a>
      <span class='ntx-Italic-tlf-t1-x-x-109'>as an epimorphism followed by a monomorphism.</span></p></dd></dl>
 </div>
 <p class='noindent'> The factorization from <span class="source-reference equation-reference" data-label="it:Epi_Mono_Factorization_Abelian_Category">(6)</span> is denoted by \(A \twoheadrightarrow \im (f) \hookrightarrow B\), and we refer to the object \(\im (f)\) as the <span class='ntx-Italic-tlf-t1-x-x-109'>image </span>of \(f\).
 </p>
 <div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-01-11" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-01-11">
 <p class='noindent'><span class='head'>
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> These are the standard exactness properties of an abelian category; see <span class='citation'>[Weibel (1994), Section 1.2]</span>. We only recall
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> These are the standard exactness properties of an abelian category; see <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-Weibel_Homological_Algebra" title="Weibel, An introduction to homological algebra">Weibel (1994)</a>, Section 1.2]</span>. We only recall
 that the image factorization is obtained by setting \[ \im (f):=\ker (B\twoheadrightarrow \coker (f)), \] and that a pushout of \(f\colon A \to B\) along \(g\colon A \to C\) is computed as the
 cokernel of \((f,-g)\colon A \to B \oplus C\). These descriptions give the remaining assertions and their duals.                                □
 </p>
@@ -141,8 +143,8 @@ cokernel of \((f,-g)\colon A \to B \oplus C\). These descriptions give the remai
 </p>
 </div>
 
-                                                                                   
-                                                                                   
+
+
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-2015r7'></a>
@@ -170,9 +172,9 @@ with \(C^n := C_{-n}\) and \(d^n := d_{-n}\), and conversely. We use homological
 <p class='noindent'><span class='head'>
 <a id='x1-2017r9'></a>
 <a class="entry-heading-link" href="../../../entry/complexes-concentrated-in-one-degree/index.html" aria-label="Example 6.1.9., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 6.1.9.</span></a>  </span><span id='ex:Complex_Concentrated_In_Degree'></span> Given an object \(A \in \Aa \) and \(k \in \Z \), we let \(A[k]\) denote the chain complex consisting of \(A\) <span class='ntx-Italic-tlf-t1-x-x-109'>concentrated
-                                                                                   
 
-                                                                                   
+
+
 in degree</span> \(k\), meaning that \(A[k]_k := A\) while \(A[k]_n = 0\) for all \(n \neq k\); all boundary maps of \(A[k]\) are necessarily zero. This construction
 defines a fully faithful functor \((-)[k]\colon \Aa \hookrightarrow \Ch (\Aa )\) for all \(k\).
 </p>
@@ -200,8 +202,8 @@ homological invariants.
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-2020r12'></a>
-                                                                                   
-                                                                                   
+
+
 <a class="entry-heading-link" href="../../../entry/homology-of-a-chain-complex/index.html" aria-label="Definition 6.1.12., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 6.1.12.</span></a>  </span><span id='def:Homology_Chain_Complex'></span> Given a chain complex \(C_{\bullet }\) and an integer \(n\), the \(n\)<span class='ntx-Italic-tlf-t1-x-x-109'>-th homology </span>of \(C_{\bullet }\) is the object \[ H_n(C) \quad := \quad \ker (d_n) \, / \, \im (d_{n+1}) \qin \Aa . \] Any
 chain map \(f_{\bullet }\colon C_{\bullet } \to D_{\bullet }\) induces a map \(H_n(f)\colon H_n(C) \to H_n(D)\) on \(n\)-th homology, resulting in a functor \(H_n(-)\colon \Ch (\Aa ) \to \Aa \).
 </p>
@@ -228,8 +230,8 @@ It fits into a natural short exact sequence \(0 \to D_{\bullet } \to \Cone (f) \
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-2023r15'></a>
-                                                                                   
-                                                                                   
+
+
 <span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 6.1.15 </span>(Mapping-cone criterion)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Mapping_Cone_Criterion'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>A chain map</span> \(f\colon C_{\bullet }\to D_{\bullet }\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a quasi-isomorphism if and only if its
 mapping cone</span> \(\Cone (f)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is acyclic.</span>
 </p>
@@ -250,13 +252,13 @@ exactness.                                                                      
 </div>
 <p class='noindent'>An important fact from homological algebra we will use is that short exact sequences of chain complexes
 result in long exact sequences of homology groups. We will state it as a black box; a proof may be found in
-<span class='citation'>[Weibel (1994), Theorem 1.3.1]</span>.
+<span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-Weibel_Homological_Algebra" title="Weibel, An introduction to homological algebra">Weibel (1994)</a>, Theorem 1.3.1]</span>.
 </p>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-2025r17'></a>
-                                                                                   
-                                                                                   
+
+
 <span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 6.1.17.</span>  </span><span id='prop:Long_Exact_Sequence_Homology'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(0 \to C_{\bullet } \xhookrightarrow {f} D_{\bullet } \overset {g}{\twoheadrightarrow } E_{\bullet } \to 0\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a short exact sequence in</span> \(\Ch (\Aa )\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then there exist maps</span> \(\partial _n \colon H_n(E) \to H_{n-1}(C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>for all</span> \(n\)<span class='ntx-Italic-tlf-t1-x-x-109'>, and the
 sequence </span>\[ \dots \xrightarrow {g} H_{n+1}(E) \xrightarrow {\partial _{n+1}} H_{n}(C) \xrightarrow {f} H_n(D) \xrightarrow {g} H_n(E) \xrightarrow {\partial _n} H_{n-1}(C) \xrightarrow {f} \dots \] <span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(\Aa \) <span class='ntx-Italic-tlf-t1-x-x-109'>is exact.                                                                                                                          □</span>
 </p>
@@ -264,7 +266,7 @@ sequence </span>\[ \dots \xrightarrow {g} H_{n+1}(E) \xrightarrow {\partial _{n+
 <p class='noindent'>When \(\Aa \) is modules over a ring, the boundary map has the familiar elementwise description.
 Represent a class in \(H_n(E)\) by a cycle \(x\in E_n\), lift it to \(y\in D_n\), and write \(d(y)=f(z)\) for some \(z\in C_{n-1}\). Then \(z\) is a cycle and \(\partial _n([x])=[z]\). The standard
 diagram chase shows that this is independent of all choices and proves exactness; see again
-<span class='citation'>[Weibel (1994), Theorem 1.3.1]</span>.
+<span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-Weibel_Homological_Algebra" title="Weibel, An introduction to homological algebra">Weibel (1994)</a>, Theorem 1.3.1]</span>.
 </p>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
@@ -280,8 +282,8 @@ diagram chase shows that this is independent of all choices and proves exactness
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-3001r19'></a>
-                                                                                   
-                                                                                   
+
+
 <a class="entry-heading-link" href="../../../entry/derived-infinity-category-of-an-abelian-category/index.html" aria-label="Definition 6.1.19., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 6.1.19.</span></a>  </span><span id='def:Derived_Infinity_Category'></span>  We  define  the  <span class='ntx-Italic-tlf-t1-x-x-109'>derived</span>  \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category  of</span>  \(\Aa \)  as  the  (\(\infty \)-categorical)  localization  of  the
 1-category \(\Ch (\Aa )\) of chain complexes at the class of quasi-isomorphisms: \[ \D (\Aa ) := \Ch (\Aa )[\{\text {quasi-isomorphisms}\}^{-1}]. \] We will sometimes refer to
 objects of \(\D (\Aa )\) as <span class='ntx-Italic-tlf-t1-x-x-109'>complexes</span>. This is slightly abusive terminology: objects of \(\D (\Aa )\) should best be thought
@@ -312,8 +314,8 @@ zero.
 </p>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
-                                                                                   
-                                                                                   
+
+
 <a id='x1-3003r21'></a>
 <a class="entry-heading-link" href="../../../entry/bounded-subcategories-of-chain-complexes/index.html" aria-label="Notation 6.1.21., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Notation 6.1.21.</span></a>  </span><span id='nota:Bounded_Subcategories_Chain_Complexes'></span> Given \(k \in \Z \), we denote by \(\Ch (\Aa )_{\geq k} \subseteq \Ch (\Aa )\) the full subcategory spanned by those chain complexes \(C_{\bullet }\)
 satisfying \(C_n = 0\) for \(n &lt; k\). Similarly, we write \(\Ch (\Aa )_{\leq k}\) for the full subcategory on those chain complexes satisfying \(C_n = 0\) for
@@ -339,17 +341,17 @@ satisfying \(C_n = 0\) for \(n &lt; k\). Similarly, we write \(\Ch (\Aa )_{\leq 
      <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The induced functor</span> \(\D (\Aa )_{\leq k} \to \D (\Aa )\) <span class='ntx-Italic-tlf-t1-x-x-109'>is fully faithful and admits a left adjoint</span> \(\tau _{\leq k}\colon \D (\Aa ) \to \D (\Aa )_{\leq k}\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p></dd></dl>
 </div>
 
-                                                                                   
 
-                                                                                   
+
+
 <div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-01-9" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-01-9">
 <p class='noindent'><span class='head'>
 <span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> (1) Given a chain complex \(C\) and an integer \(k \in \Z \), we construct a new chain complex \(\tau _{\geq k}(C)\) as follows: \[ \tau _{\geq k}(C)_n := \begin {cases} C_n &amp; n &gt; k \\ \ker (d_k\colon C_k \to C_{k-1}) &amp; n = k \\ 0 &amp; n &lt; k. \end {cases} \]
-The structure maps \(d_i\colon \tau _{\geq k}(C)_n \to \tau _{\geq k}(C)_{n-1}\) are the ones from \(C_{\bullet }\) when \(n &gt; k\), are zero when \(n &lt; k\), and for \(n = k\) is the canonical map \(C_{k+1} \to \ker (d_{k})\) induced
-by \(d_{k+1}\colon C_{k+1} \to C_k\). This construction is functorial in \(C\), defining a functor \[ \tau _{\geq k}\colon \Ch (\Aa ) \to \Ch (\Aa )_{\geq k}. \] There is a canonical chain map \(\epsilon \colon \tau _{\geq k}(C) \to C\) given
-by the identity in degree \(n &gt; k\), by the zero map in degree \(n &lt; k\), and in degree \(n = k\) by the inclusion \(\ker (d_k) \hookrightarrow C_k\). It is clear
+The differentials \(d_n\colon \tau _{\geq k}(C)_n \to \tau _{\geq k}(C)_{n-1}\) are the ones from \(C_{\bullet }\) when \(n &gt; k+1\), are zero when \(n \leq k\), and for \(n = k+1\) are given by the canonical map \(C_{k+1} \to \ker (d_{k})\)
+induced by \(d_{k+1}\colon C_{k+1} \to C_k\). This construction is functorial in \(C\), defining a functor \[ \tau _{\geq k}\colon \Ch (\Aa ) \to \Ch (\Aa )_{\geq k}. \] There is a canonical chain map \(\epsilon \colon \tau _{\geq k}(C) \to C\)
+given by the identity in degree \(n &gt; k\), by the zero map in degree \(n &lt; k\), and in degree \(n = k\) by the inclusion \(\ker (d_k) \hookrightarrow C_k\). It is clear
 that this chain map is a monomorphism. Furthermore, if \(D\) is a chain complex such that \(D_n\) vanishes for \(n &lt; k\),
-any chain map \(f\colon D \to C\) uniquely factors through \(\tau _{\geq k}(C)\): the commutative square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-1692b402cd73.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>guarantees that \(f_k\) factors through
+any chain map \(f\colon D \to C\) uniquely factors through \(\tau _{\geq k}(C)\): the commutative square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-03d5d3af3667.svg" alt="Commutative square with maps D k to C k labeled f k, 0 f k-1 to C k-1, D k to 0 f k-1, C k to C k-1." width="94" height="63" loading="lazy"></figure></div><p class='noindent'>guarantees that \(f_k\) factors through
 \(\ker (d_k) \hookrightarrow C_k\). This shows that the transformation \(\epsilon \colon \tau _{\geq k} \to \id \) exhibits the functor \(\tau _{\geq k}\colon \Ch (\Aa ) \to \Ch (\Aa )_{\geq k}\) as right adjoint to the inclusion.</p><p class='noindent'>(2)  Observe  that  the  counit  \(\epsilon \colon \tau _{\geq k}(C) \to C\)  of  the  adjunction  from  part  (1)  induces  isomorphisms  \(H_n(\tau _{\geq k}(C)) \xrightarrow {\cong } H_n(C)\)  for  \(n \geq k\).  Since
 we have \(H_n(\tau _{\geq k}(C)) = 0\) for \(n &lt; k\), it follows that the functor \(\tau _{\geq k}\) sends quasi-isomorphisms to quasi-isomorphisms, hence
 induces a functor \[ \tau _{\geq k}\colon \D (\Aa ) \to \D (\Aa )_{\geq k}. \] In a similar way, the unit and counit of the adjunction from part (1) induce natural
@@ -370,8 +372,8 @@ if \(H_n(A) = 0\) for \(n &gt; k\). When \(k = 0\), we simply speak of <span cla
 
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
-                                                                                   
-                                                                                   
+
+
 <a id='x1-3010r24'></a>
 <span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 6.1.24.</span>  </span><span id='cor:Essential_Images_Derived_Truncations'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>The  image  of  the  inclusion</span>  \(\D (\Aa )_{\geq k} \hookrightarrow \D (\Aa )\)  <span class='ntx-Italic-tlf-t1-x-x-109'>from  the  previous  proposition  consists  of  the</span>
 \(k\)<span class='ntx-Italic-tlf-t1-x-x-109'>-connective complexes, while the image of</span> \(\D (\Aa )_{\leq k} \hookrightarrow \D (\Aa )\) <span class='ntx-Italic-tlf-t1-x-x-109'>consists of the</span> \(k\)<span class='ntx-Italic-tlf-t1-x-x-109'>-coconnective complexes.</span>
@@ -395,9 +397,9 @@ second inclusion is dual.                                                       
 
 <div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-01-7" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-01-7">
 <p class='noindent'><span class='head'>
-                                                                                   
 
-                                                                                   
+
+
 <span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By adjunction we have \(\Hom _{\D (\Aa )}(A,B) \simeq \Hom _{\D (\Aa )}(A,\tau _{\geq k}B) = 0\), where we use that \(\tau _{\geq k}B = 0\) as its homology is trivial.                                 □
 </p>
 </div></div>
@@ -421,8 +423,8 @@ faithful as well.                                                               
 </p>
 </div></div>
 
-                                                                                   
-                                                                                   
+
+
 <h4 class='subsectionHead' id='stability-of-derived-categories'><span class='titlemark'>6.1.3    </span> <a id='x1-40006.1.3'></a>Stability of derived \(\infty \)-categories</h4>
 <p class='noindent' id='subsec_Stability_Of_DA'>We will now show that \(\D (\Aa )\) is a stable \(\infty \)-category, and that it has small (co)limits whenever \(\Aa \) has small
 (co)products that interact nicely with the abelian structure. The main input will be to show that short exact
@@ -448,11 +450,11 @@ property for isomorphisms in \(\Aa \).
 </p><p class='noindent'>(2)   All   isomorphisms   are   monomorphisms,   and   since   \(\Ch (\Aa )\)   is   again   an   abelian   category   the
 monomorphisms are closed under compositions and pushouts; see <a class="source-reference" data-label="prop:Properties_Abelian_Categories" href="../../../entry/basic-properties-of-abelian-categories/index.html#prop:Properties_Abelian_Categories">Proposition 6.1.5</a>. Note that every chain complex
 is cofibrant, since the map \(0 \to C\) is a monomorphism for all \(C \in \Ch (\Aa )\).
-</p><p class='noindent'>(3)  Consider  a  pushout  square  in  \(\Ch (\Aa )\)  of  the  form</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-0dcd46ecbf49.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>where  \(i\)  and  \(i'\)  are  monomorphisms  and  \(i\)  is  a
+</p><p class='noindent'>(3)  Consider  a  pushout  square  in  \(\Ch (\Aa )\)  of  the  form</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-bd78686cebe7.svg" alt="Commutative square with maps C bullet to C' bullet labeled f, D bullet to D' bullet labeled f', C bullet to D bullet labeled i, C' bullet to D' bullet labeled i'." width="79" height="71" loading="lazy"></figure></div><p class='noindent'>where  \(i\)  and  \(i'\)  are  monomorphisms  and  \(i\)  is  a
 quasi-isomorphism. We need to show that also \(i'\) is a quasi-isomorphism. Let \(E_{\bullet }\) be the cokernel of \(i\)
 and let \(E'_{\bullet }\) be the cokernel of \(i'\). Since \(i\) is a quasi-isomorphism, it follows from <a class="source-reference" data-label="cor:Mono_Is_Quasi_Iso_Iff_Cokernel_Acyclic" href="../../../entry/monomorphic-quasi-isomorphisms-and-acyclic-cokernels/index.html#cor:Mono_Is_Quasi_Iso_Iff_Cokernel_Acyclic">Corollary 6.1.18</a> that the homology of \(E_{\bullet }\)
-                                                                                   
-                                                                                   
+
+
 is trivial. By the pasting law for pushout squares, we see that the induced map \(E_{\bullet } \to E'_{\bullet }\) is an isomorphism
 of chain complexes, and so also the homology of \(E'_{\bullet }\) is trivial. By applying <a class="source-reference" data-label="cor:Mono_Is_Quasi_Iso_Iff_Cokernel_Acyclic" href="../../../entry/monomorphic-quasi-isomorphisms-and-acyclic-cokernels/index.html#cor:Mono_Is_Quasi_Iso_Iff_Cokernel_Acyclic">Corollary 6.1.18</a> in the other direction, it
 follows that \(i'\) is a quasi-isomorphism.</p><p class='noindent'>(4)  We  now  show  that  any  chain  map  \(f\colon C_{\bullet } \to D_{\bullet }\)  factors  functorially  as  a  monomorphism  followed  by  a
@@ -483,9 +485,9 @@ and fibrations. It admits functorial factorizations, and is homotopy complete wh
 
 <div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-01-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-01-4">
 <p class='noindent'><span class='head'>
-                                                                                   
 
-                                                                                   
+
+
 <span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> This is a special case of <a class="source-reference" data-label="prop:ChA_Weak_Equivalences_Cofibrations" href="../../../entry/cofibration-structure-on-chain-complexes/index.html#prop:ChA_Weak_Equivalences_Cofibrations">Proposition 6.1.27</a> applied to the abelian category \(\Aa \catop \), using that \(\Ch (\Aa \catop ) \simeq \Ch (\Aa )\catop \).                                  □
 </p>
 </div></div>
@@ -512,9 +514,9 @@ and fibrations. It admits functorial factorizations, and is homotopy complete wh
 
 <div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-01-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-01-3">
 <p class='noindent'><span class='head'>
-                                                                                   
 
-                                                                                   
+
+
 <span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Parts (1)-(3) follow directly from applying <a class="source-reference" data-label="thm:Localization_Left_Exact" href="../../../entry/left-exact-localization-via-fibrant-objects/index.html#thm:Localization_Left_Exact">Theorem 2.2.8</a>, <a class="source-reference" data-label="thm:Localization_Of_Homotopy_Complete_Category" href="../../../entry/limits-in-localizations-of-homotopy-complete-categories/index.html#thm:Localization_Of_Homotopy_Complete_Category">Theorem 2.2.11</a>, and <a class="source-reference" data-label="cor:Localization_Right_Exact" href="../../../entry/right-exact-localization-via-cofibrant-objects/index.html#cor:Localization_Right_Exact">Corollary 2.2.9</a> to the structures established in <a class="source-reference" data-label="prop:ChA_Weak_Equivalences_Cofibrations" href="../../../entry/cofibration-structure-on-chain-complexes/index.html#prop:ChA_Weak_Equivalences_Cofibrations">Proposition 6.1.27</a> and <a class="source-reference" data-label="cor:ChA_Weak_Equivalences_Fibrations" href="../../../entry/fibration-structure-on-chain-complexes/index.html#cor:ChA_Weak_Equivalences_Fibrations">Proposition 6.1.28</a>. Part
 (4) is a specific case of (3).                                                                                                                 □
 </p>
@@ -538,12 +540,12 @@ adjunction \(\Sigma \dashv \Omega \) is an equivalence. By the universal propert
 complex \(C_{\bullet }\), the unit \(\gamma (C_{\bullet }) \to \Omega \Sigma \gamma (C_{\bullet })\) and the counit \(\Sigma \Omega \gamma (C_{\bullet }) \to \gamma (C_{\bullet })\) are isomorphisms in \(\D (\Aa )\).
 </p><p class='noindent'>To this end, consider the chain complex \(C'_{\bullet }\) defined by \(C'_n := C_n \oplus C_{n-1}\), with differential \(d^{C'}_n(c_n,c_{n-1}) = (d^Cc_n + c_{n-1}, -d^Cc_{n-1})\); note that this is the mapping
 cylinder of the map \(C_{\bullet } \to 0\). The maps \(f(c_n) := (c_n,0)\) and \(g(c_n,c_{n-1}) := c_{n-1}\) define a short exact sequence \[ 0 \to C_{\bullet } \xhookrightarrow {f} C'_{\bullet } \overset {g}{\twoheadrightarrow } C[1]_{\bullet } \to 0, \] and by part <span class="source-reference equation-reference" data-label="it:SES_Chain_Complexes_Induce_Exact_Sequences">(4)</span> of <a class="source-reference" data-label="cor:DA_Limits_Colimits" href="../../../entry/limits-and-colimits-in-derived-infinity-categories/index.html#cor:DA_Limits_Colimits">Corollary 6.1.29</a> the resulting
-commutative  square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-4017e246d060.svg" alt="Commutative diagram generated from the LaTeX source"></figure></div><p class='noindent'>in  \(\D (\Aa )\)  is  both  a  pullback  square  and  a  pushout  square.  Since  the  map  \(C'_{\bullet } \to 0\)  is  a
+commutative  square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-354fd312625f.svg" alt="Commutative square with maps gamma(C bullet) to gamma(C' bullet) labeled gamma(f), 0 to gamma(C[1] bullet), gamma(C bullet) to 0 labeled 0, gamma(C' bullet) to gamma(C[1] bullet) labeled gamma(g)." width="126" height="65" loading="lazy"></figure></div><p class='noindent'>in  \(\D (\Aa )\)  is  both  a  pullback  square  and  a  pushout  square.  Since  the  map  \(C'_{\bullet } \to 0\)  is  a
 quasi-isomorphism, we get \(\gamma (C'_{\bullet }) \simeq 0\), so this square simultaneously exhibits \(\gamma (C[1]_{\bullet })\) as the suspension of \(\gamma (C_{\bullet })\) and \(\gamma (C_{\bullet })\) as the
 loops of \(\gamma (C[1]_{\bullet })\). We conclude that the maps \(\gamma (C_{\bullet }) \to \Omega \Sigma \gamma (C_{\bullet })\) and \(\Sigma \Omega \gamma (C_{\bullet }) \to \gamma (C_{\bullet })\) are isomorphisms in \(\D (\Aa )\).                                                     □</p>
 </div></div>
-                                                                                   
-                                                                                   
+
+
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-4009r31'></a>
@@ -567,13 +569,15 @@ The theorem therefore turns the displayed short exact sequence into an exact seq
 universal property of \(\gamma \colon \Ch (\Aa )\to \D (\Aa )\), this descends to the desired exact sequence \(\tau _{\geq n}\to \id \to \tau _{\leq n-1}\).                                                 □
 </p>
 </div></div>
- 
-<section class="footnotes" aria-label="Notes"><h2>Notes</h2>
-  <div class='footnote-text'>
-  <p class='noindent'><span class='footnote-mark'><a id='chapter-homological-algebra-section-01-fn1x0'><a id='chapter-homological-algebra-section-01-x2-2013x1'></a>    <sup class='textsuperscript'>1</sup></a></span><span class='ntx-Regular-tlf-t1-x-x-90'>This is classically formulated as ‘unique up to unique isomorphism’.</span></p></div> 
-</section>
-</div>
-<p class="generated-note">Generated from the authoritative LaTeX source.</p></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+
+
+<section class="footnotes" aria-label="Notes"><h2>Notes</h2><div class='footnote-text'>
+  <p class='noindent'><span class='footnote-mark'><a id='chapter-homological-algebra-section-01-fn1x0'><a id='chapter-homological-algebra-section-01-x2-2013x1'></a>    <sup class='textsuperscript'>1</sup></a></span><span class='ntx-Regular-tlf-t1-x-x-90'>This is classically formulated as ‘unique up to unique isomorphism’.</span></p></div></section></div>
+<footer class="edition-footer">
+  <span>Last updated 27 October 2026</span>
+  <a href="/notes/stable-homotopy-higher-algebra.pdf">PDF</a>
+  <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Section%206.1%3A%20Derived%20%E2%88%9E-categories&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fsection%2Fhomological-algebra%2Fderived-categories%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
+</footer></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
     <nav class="context-step-controls" aria-label="Previous and next sections">
     <a class="context-step-control" rel="prev" href="../../recognition-principle/finite-deloopings-online-only/index.html" aria-label="Previous section: Finite deloopings (online only)" title="Previous section: Finite deloopings (online only)"><span aria-hidden="true">←</span></a>
     <a class="context-step-control" rel="next" href="../ordinary-homology-and-cohomology-via-d-z/index.html" aria-label="Next section: Ordinary homology and cohomology via D(Z)" title="Next section: Ordinary homology and cohomology via D(Z)"><span aria-hidden="true">→</span></a>
@@ -582,7 +586,7 @@ universal property of \(\gamma \colon \Ch (\Aa )\to \D (\Aa )\), this descends t
       <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
     </button></h2>
     <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
-      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html" aria-current="page"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li></ol>
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html" aria-current="page"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li><li><a href="../../../references/index.html"><span class="context-entry-heading">Bibliography</span></a></li></ol>
     </nav>
   </section><section class="contents-ledger" data-contents-ledger data-open="false">
     <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
@@ -600,10 +604,10 @@ universal property of \(\gamma \colon \Ch (\Aa )\to \D (\Aa )\), this descends t
     </nav>
   </section><section class="contents-ledger" data-contents-ledger data-open="true">
     <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
-      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+      <span>In this section</span><span class="contents-chevron" aria-hidden="true"></span>
     </button></h2>
-    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
-      <ol class="context-entry-list"><li><a href="#nota:Kernels_And_Cokernels"><span class="context-entry-heading">Notation 6.1.1</span><span class="context-entry-title">notation</span></a></li><li><a href="#def:Abelian_Category"><span class="context-entry-heading">Definition 6.1.2</span><span class="context-entry-title">definition</span></a></li><li><a href="#ex:Module_Categories_Are_Abelian"><span class="context-entry-heading">Example 6.1.3</span><span class="context-entry-title">example</span></a></li><li><a href="#ex:Opposites_Of_Abelian_Categories"><span class="context-entry-heading">Example 6.1.4</span><span class="context-entry-title">example</span></a></li><li><a href="#prop:Properties_Abelian_Categories"><span class="context-entry-heading">Proposition 6.1.5</span><span class="context-entry-title">proposition</span></a></li><li><a href="#def:Exact_Sequence_Abelian_Category"><span class="context-entry-heading">Definition 6.1.6</span><span class="context-entry-title">definition</span></a></li><li><a href="#def:Chain_Complex"><span class="context-entry-heading">Definition 6.1.7</span><span class="context-entry-title">definition</span></a></li><li><a href="#rem:Cohomological_Grading"><span class="context-entry-heading">Remark 6.1.8</span><span class="context-entry-title">Cohomological grading of complexes</span></a></li><li><a href="#ex:Complex_Concentrated_In_Degree"><span class="context-entry-heading">Example 6.1.9</span><span class="context-entry-title">example</span></a></li><li><a href="#ex:Shift_Functor_Chain_Complexes"><span class="context-entry-heading">Example 6.1.10</span><span class="context-entry-title">example</span></a></li><li><a href="#rem:Shift_Sign_Convention"><span class="context-entry-heading">Remark 6.1.11</span><span class="context-entry-title">remark</span></a></li><li><a href="#def:Homology_Chain_Complex"><span class="context-entry-heading">Definition 6.1.12</span><span class="context-entry-title">definition</span></a></li><li><a href="#def:Quasi_Isomorphism_And_Chain_Homotopy"><span class="context-entry-heading">Definition 6.1.13</span><span class="context-entry-title">definition</span></a></li><li><a href="#def:Mapping_Cone"><span class="context-entry-heading">Definition 6.1.14</span><span class="context-entry-title">Mapping cone</span></a></li><li><a href="#lem:Mapping_Cone_Criterion"><span class="context-entry-heading">Lemma 6.1.15</span><span class="context-entry-title">Mapping-cone criterion</span></a></li><li><a href="#exercise:Chain_Homotopy_Equivalence_Is_Quasi_Isomorphism"><span class="context-entry-heading">Exercise 6.1.16</span><span class="context-entry-title">exercise</span></a></li><li><a href="#prop:Long_Exact_Sequence_Homology"><span class="context-entry-heading">Proposition 6.1.17</span><span class="context-entry-title">proposition</span></a></li><li><a href="#cor:Mono_Is_Quasi_Iso_Iff_Cokernel_Acyclic"><span class="context-entry-heading">Corollary 6.1.18</span><span class="context-entry-title">corollary</span></a></li><li><a href="#def:Derived_Infinity_Category"><span class="context-entry-heading">Definition 6.1.19</span><span class="context-entry-title">definition</span></a></li><li><a href="#ex:Derived_Infinity_Category_Of_A_Ring"><span class="context-entry-heading">Example 6.1.20</span><span class="context-entry-title">example</span></a></li><li><a href="#nota:Bounded_Subcategories_Chain_Complexes"><span class="context-entry-heading">Notation 6.1.21</span><span class="context-entry-title">notation</span></a></li><li><a href="#prop:Truncation_Functors_Derived_Category"><span class="context-entry-heading">Proposition 6.1.22</span><span class="context-entry-title">proposition</span></a></li><li><a href="#def:Connective_And_Coconnective_Complexes"><span class="context-entry-heading">Definition 6.1.23</span><span class="context-entry-title">definition</span></a></li><li><a href="#cor:Essential_Images_Derived_Truncations"><span class="context-entry-heading">Corollary 6.1.24</span><span class="context-entry-title">corollary</span></a></li><li><a href="#cor:Connective_Coconnective_Orthogonality"><span class="context-entry-heading">Corollary 6.1.25</span><span class="context-entry-title">corollary</span></a></li><li><a href="#prop:Inclusion_Abelian_Category_Into_Derived_Category"><span class="context-entry-heading">Proposition 6.1.26</span><span class="context-entry-title">proposition</span></a></li><li><a href="#prop:ChA_Weak_Equivalences_Cofibrations"><span class="context-entry-heading">Proposition 6.1.27</span><span class="context-entry-title">proposition</span></a></li><li><a href="#cor:ChA_Weak_Equivalences_Fibrations"><span class="context-entry-heading">Corollary 6.1.28</span><span class="context-entry-title">corollary</span></a></li><li><a href="#cor:DA_Limits_Colimits"><span class="context-entry-heading">Corollary 6.1.29</span><span class="context-entry-title">corollary</span></a></li><li><a href="#thm:DA_Is_Stable"><span class="context-entry-heading">Theorem 6.1.30</span><span class="context-entry-title">theorem</span></a></li><li><a href="#rmk:Shifts_In_Derived_Infinity_Categories"><span class="context-entry-heading">Remark 6.1.31</span><span class="context-entry-title">remark</span></a></li><li><a href="#cor:Fiber_Sequence_Truncations"><span class="context-entry-heading">Corollary 6.1.32</span><span class="context-entry-title">corollary</span></a></li></ol>
+    <nav class="contents" id="contents-section-contents" aria-label="In this section" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#rem:Cohomological_Grading"><span class="context-entry-heading">Remark 6.1.8</span><span class="context-entry-title">Cohomological grading of complexes</span></a></li><li><a href="#def:Mapping_Cone"><span class="context-entry-heading">Definition 6.1.14</span><span class="context-entry-title">Mapping cone</span></a></li><li><a href="#lem:Mapping_Cone_Criterion"><span class="context-entry-heading">Lemma 6.1.15</span><span class="context-entry-title">Mapping-cone criterion</span></a></li></ol>
     </nav>
   </section></div>
   </aside></main>

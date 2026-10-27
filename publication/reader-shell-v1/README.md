@@ -20,4 +20,10 @@ The default source location can be overridden with the environment variable
 `NOTES_READER_SHELL_ROOT`. This supports checkouts in which the Website and
 manuscript repositories are not siblings under the same GitHub directory.
 
+Colours are defined as custom properties on `:root`. Dark mode follows the
+operating-system setting and redefines the same properties; a page can force
+a scheme with `data-theme="light"` or `data-theme="dark"` on `<html>`.
+Manuscript stylesheets should use these properties (or define their own dark
+variants) rather than fixed colours.
+
 Breaking changes require a new versioned directory and an explicit migration.

@@ -1,8 +1,151 @@
 :root {
   --proof: #f4f5f0;
+  --theorem-rule: #a8b9b8;
+  --theorem-background: rgb(255 255 255 / 62%);
+  --theorem-heading: #263e40;
+  --proof-rule: #c9cdc2;
+  --proof-hover: rgb(255 255 255 / 45%);
+  --unavailable-background: rgb(255 255 255 / 55%);
+  --diagram-filter: none;
 }
 
-.generated-note { margin-top: 4rem; color: var(--muted); font-family: system-ui, sans-serif; font-size: 0.68rem; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --proof: #202522;
+    --theorem-rule: #4f6a66;
+    --theorem-background: rgb(255 255 255 / 3%);
+    --theorem-heading: #b9d6cf;
+    --proof-rule: #3c463f;
+    --proof-hover: rgb(255 255 255 / 4%);
+    --unavailable-background: rgb(255 255 255 / 3%);
+    /* Diagrams are black-on-transparent SVG: invert them, and rotate the hue
+       back so that any coloured strokes keep their colour. */
+    --diagram-filter: invert(0.88) hue-rotate(180deg);
+  }
+}
+
+:root[data-theme="dark"] {
+  --proof: #202522;
+  --theorem-rule: #4f6a66;
+  --theorem-background: rgb(255 255 255 / 3%);
+  --theorem-heading: #b9d6cf;
+  --proof-rule: #3c463f;
+  --proof-hover: rgb(255 255 255 / 4%);
+  --unavailable-background: rgb(255 255 255 / 3%);
+  --diagram-filter: invert(0.88) hue-rotate(180deg);
+}
+
+.edition-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.4rem;
+  margin-top: 4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.74rem;
+}
+.edition-footer a { color: var(--muted); }
+.edition-footer a:hover, .edition-footer a:focus-visible { color: var(--accent); }
+
+/* Chapter landing pages lay out their blocks on a grid; the introduction is
+   one block, so that its paragraphs keep ordinary paragraph spacing. */
+.chapter-introduction > :first-child { margin-top: 0; }
+.chapter-introduction > :last-child { margin-bottom: 0; }
+
+/* Entry pages: the result's place in the book, and its neighbours. */
+.entry-context {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 0 1.6rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--rule);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.8rem;
+}
+.entry-context a { text-decoration: none; }
+.entry-context a:hover .entry-context-name,
+.entry-context a:focus-visible .entry-context-name,
+.entry-context-section:hover,
+.entry-context-section:focus-visible { text-decoration: underline; }
+.entry-context-previous { justify-self: start; }
+.entry-context-next { justify-self: end; text-align: right; }
+.entry-context-section {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--surface-muted, transparent);
+  white-space: nowrap;
+}
+@media (max-width: 620px) {
+  .entry-context { grid-template-columns: 1fr 1fr; }
+  .entry-context-section { grid-column: 1 / -1; grid-row: 1; justify-self: center; }
+}
+
+/* Bibliography. */
+a.citation-item { color: inherit; text-decoration: underline dotted var(--muted); text-underline-offset: 0.18em; }
+a.citation-item:hover, a.citation-item:focus-visible { color: var(--accent); text-decoration: underline; }
+.references-introduction { color: var(--muted); }
+.reference-list { margin: 2rem 0 0; padding: 0; list-style: none; }
+.reference-list > li {
+  display: grid;
+  grid-template-columns: 6.2rem 1fr;
+  gap: 0.9rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--rule);
+  scroll-margin-top: 1.5rem;
+}
+.reference-list > li:target { background: var(--accent-pale); box-shadow: -0.75rem 0 0 var(--accent-pale), 0.75rem 0 0 var(--accent-pale); }
+.reference-label { color: var(--accent); font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.8rem; font-weight: 650; padding-top: 0.2rem; }
+.reference-authors { font-variant: small-caps; }
+.reference-links, .reference-cited-in { display: block; margin-top: 0.3rem; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.78rem; }
+.reference-cited-in { color: var(--muted); }
+@media (max-width: 620px) {
+  .reference-list > li { grid-template-columns: 1fr; gap: 0.2rem; }
+}
+
+/* Copy-LaTeX menu on formulas. */
+.latex-copy-menu {
+  position: fixed;
+  z-index: 50;
+  display: grid;
+  min-width: 11rem;
+  padding: 0.3rem;
+  border: 1px solid var(--rule);
+  border-radius: 0.5rem;
+  background: var(--paper);
+  box-shadow: 0 0.6rem 2rem var(--shadow, rgba(0, 0, 0, 0.15));
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.82rem;
+}
+.latex-copy-menu button {
+  padding: 0.45rem 0.7rem;
+  border: 0;
+  border-radius: 0.35rem;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.latex-copy-menu button:hover, .latex-copy-menu button:focus-visible { background: var(--accent-pale); outline: none; }
+.latex-copy-toast {
+  position: fixed;
+  z-index: 50;
+  bottom: 1.5rem;
+  left: 50%;
+  padding: 0.5rem 0.95rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.8rem;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
 
 .notes-page h2,
 .notes-page h3,
@@ -47,7 +190,7 @@
 .notes-page .chapter-card h3 { margin: 0.5rem 0 0; }
 
 .unavailable-chapter {
-  background: rgb(255 255 255 / 55%);
+  background: var(--unavailable-background);
 }
 
 .unavailable-chapter h3 {
@@ -61,18 +204,18 @@
   position: relative;
   margin: 1.45rem 0;
   padding: 1rem 1.15rem;
-  border-left: 3px solid #a8b9b8;
-  background: rgb(255 255 255 / 62%);
+  border-left: 3px solid var(--theorem-rule);
+  background: var(--theorem-background);
 }
 
 .newtheorem .head { display: inline; }
-.newtheorem .head > span { color: #263e40; }
+.newtheorem .head > span { color: var(--theorem-heading); }
 
 .proof {
   margin: 1rem 0 1.65rem;
   padding: 0;
   overflow: hidden;
-  border-left: 2px solid #c9cdc2;
+  border-left: 2px solid var(--proof-rule);
   background: var(--proof);
 }
 
@@ -91,7 +234,7 @@
 }
 
 .proof-toggle:hover,
-.proof-toggle:focus-visible { background: rgb(255 255 255 / 45%); }
+.proof-toggle:focus-visible { background: var(--proof-hover); }
 
 .proof-chevron {
   width: 0.55rem;
@@ -113,7 +256,7 @@
   color: inherit;
   text-decoration: none;
 }
-.newtheorem .head > .entry-heading-link > span { color: #263e40; }
+.newtheorem .head > .entry-heading-link > span { color: var(--theorem-heading); }
 .entry-heading-link:hover { text-decoration: underline; text-decoration-thickness: 0.08em; text-underline-offset: 0.14em; }
 .entry-heading-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 0.16rem; }
 
@@ -122,7 +265,7 @@ dt.enumerate { float: left; clear: left; margin-right: 0.5rem; }
 dd.enumerate { margin-left: 2rem; }
 
 .figure, .diagram { margin: 1.7rem auto; text-align: center; }
-.figure img, .diagram img { max-width: min(100%, 680px); height: auto; }
+.figure img, .diagram img { max-width: min(100%, 680px); height: auto; filter: var(--diagram-filter); }
 .diagram-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1.2rem; margin: 1.5rem 0; }
 .diagram-row .diagram { flex: 1 1 240px; margin: 0; }
 .source-table { margin: 1.7rem auto; overflow-x: auto; }
