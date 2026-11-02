@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AI use in my research · Bastiaan Cnossen</title>
-<meta name="description" content="A public record of AI token use in the mathematical work of Bastiaan Cnossen, with per-project figures and an explanation of how they are collected.">
+<meta name="description" content="How Bastiaan Cnossen uses AI in his mathematical work.">
 <meta name="author" content="Bastiaan Cnossen">
 <link rel="canonical" href="https://bastiaancnossen.com/ai-use.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="AI use in my research · Bastiaan Cnossen">
-<meta property="og:description" content="A public record of AI token use in my mathematical work.">
+<meta property="og:description" content="How I use AI in my mathematical work.">
 <meta property="og:url" content="https://bastiaancnossen.com/ai-use.html">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
@@ -29,7 +29,7 @@
         <li><a href="books.html">Books &amp; notes</a></li>
         <li><a href="teaching.html">Teaching</a></li>
         <li><a href="talks.html">Talks</a></li>
-        <li><a href="other.html">Other interests</a></li>
+        <li><a href="ai-safety.html">AI safety</a></li>
       </ul>
     </nav>
     <div class="contact">
@@ -40,57 +40,18 @@
   </aside>
 
   <main id="main">
-    <span class="label">Research practice</span>
     <h1>AI use in my research</h1>
-    <p class="lede">I use AI tools for mathematical exploration, formalization, literature organization, and the preparation and revision of mathematical text. This page records how many tokens those tools report that I have used.</p>
-    <p>An AI agent extracts these figures automatically from retained local logs. I do not enter or check each token count by hand.</p>
-    <p>The totals below cover all recorded usage classified as related to my mathematical work.</p>
-    <p>This AI disclosure page should be treated as experimental. At present, it is unclear to me what the standards around disclosure of AI usage should be, and whether the presentation here is suitable. Given the wide range of opinions about AI usage in mathematics, I think that clear transparency about token usage is nevertheless helpful.</p>
-
-    <!-- AI_USAGE:START -->
-    <div class="facts usage-facts">
-      <div class="fact"><span>Last updated</span><span>29 August 2026</span></div>
-      <div class="fact"><span>Recorded period</span><span>15 February 2026&ndash;29 August 2026</span></div>
-      <div class="fact"><span>Fresh input</span><span>594 million tokens</span></div>
-      <div class="fact"><span>Cached input</span><span>12.9 billion tokens</span></div>
-      <div class="fact"><span>Generated output</span><span>73 million tokens</span></div>
-    </div>
-
-    <h2>Selected projects and activities</h2>
-    <p>When usage can be assigned to a specific project or recurring activity, the table gives a more detailed breakdown. These figures should be broadly representative, but may be slightly too low because some individual interactions could not be matched reliably to a project. I expect to add further projects over time.</p>
-
-    <div class="table-wrap" role="region" aria-label="AI token use by selected project or activity" tabindex="0">
-      <table class="usage-table">
-        <thead>
-          <tr><th scope="col">Project or activity</th><th scope="col">Fresh input</th><th scope="col">Cached input</th><th scope="col">Generated output</th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">Agda formalization work</th><td>233M</td><td>4.91B</td><td>27.5M</td></tr>
-          <tr><th scope="row">Stable Homotopy Theory and Higher Algebra</th><td>117M</td><td>2.35B</td><td>13.9M</td></tr>
-          <tr><th scope="row">Lectures on Higher Topos Theory</th><td>32.9M</td><td>1.1B</td><td>4.4M</td></tr>
-          <tr><th scope="row">Synthetic category theory</th><td>35.6M</td><td>894M</td><td>4.33M</td></tr>
-          <tr><th scope="row">Gestalten</th><td>28.2M</td><td>481M</td><td>3.54M</td></tr>
-          <tr><th scope="row">Hammock localization</th><td>11.5M</td><td>234M</td><td>2.47M</td></tr>
-          <tr><th scope="row">Parametrized spans</th><td>8.27M</td><td>198M</td><td>781K</td></tr>
-          <tr><th scope="row">Universality of Span 2-categories</th><td>4.79M</td><td>65.5M</td><td>513K</td></tr>
-          <tr><th scope="row">Global spaces and the homotopy theory of stacks</th><td>1.77M</td><td>45.1M</td><td>185K</td></tr>
-          <tr><th scope="row">Webpage maintenance</th><td>1.25M</td><td>36.7M</td><td>167K</td></tr>
-          <tr><th scope="row">Relative Rezk nerve</th><td>1.18M</td><td>7.18M</td><td>115K</td></tr>
-          <tr><th scope="row">Twisted ambidexterity</th><td>274K</td><td>1.28M</td><td>16.1K</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="note usage-update">These figures were last updated on the date shown above and do not update automatically. The exact figures are also available in <a href="ai-use-data.json">JSON format</a>.</p>
-    <!-- AI_USAGE:END -->
-
-    <h2>How to read these figures</h2>
-    <p>Fresh input is input processed without using a cache. Cached input is context that the provider reports as having been read from a cache. Generated output includes reasoning tokens when these are reported separately. I list these three categories separately because they may not require the same amount of computation.</p>
-    <p>These figures show how many tokens I have used and of which kind. They come from counts reported by the tools, not from measurements of energy use or emissions. I do not translate them into carbon or water figures because I do not have the necessary information about the models, hardware, and data centres involved.</p>
-
-    <h2>Measurement method</h2>
-    <p>The figures come from token counts stored in local Codex and Claude Code transcripts. When this page is updated, an AI agent starts a Python script that reads the counts automatically. The script accounts for the different ways in which Codex and Claude Code store them, and assigns each transcript to a project based on its working directory or an explicit classification recorded in the ledger. The agent does not enter the individual counts by hand. The script also does not try to infer token counts from the prompts or from the length of the text.</p>
-    <p>Codex usually keeps a running total, while Claude Code records usage separately for each assistant response. For Codex, the script uses only the last total before the count starts again. For Claude Code, it counts each response once and uses only the most recent copy of a resumed session. It also ignores duplicate transcripts made for subagents.</p>
-    <p>The figures do not include deleted transcripts or AI use in applications from which the script cannot obtain token records. Each session is assigned to one project as a whole. If a session concerns several projects, the logs do not provide a reliable way of dividing its tokens between them.</p>
+    <p>In recent months, mathematics has seen a rapid change due to increased capabilities of artificial intelligence. This has drastically influenced how I do mathematics:</p>
+    <ul>
+      <li>When thinking through problems or questions, I usually do so through conversations with an AI, mostly Codex.</li>
+      <li>When editing LaTeX files, I frequently use coding agents (Claude or Codex) to make the requested edits. This does not apply to joint projects for which my coauthors expressed a wish not to use coding agents.</li>
+      <li>For my <a href="notes/stable-homotopy-higher-algebra/">textbook on stable homotopy theory and higher algebra</a>, I extensively used AI agents to do proofreading, find weaknesses in the exposition/narrative and suggest improvements, and at times also draft new mathematical material.</li>
+      <li>For various lecture notes, I used AI agents to transform the live notes I took into proper LaTeX notes, fix typos, complete some proofs that were omitted during the lecture, look up and add citations, etcetera.</li>
+    </ul>
+    <p>Each paper or set of notes comes with its own AI declaration. If there&rsquo;s no AI declaration, it means AI was used not at all or only very minimally (e.g. there are a couple of papers from before AI agents were any good where I used it for typo correction, which didn&rsquo;t seem worth mentioning at the time). For the synthetic category theory book, I have also used AI agents for editing; this will be acknowledged in the book itself in due course.</p>
+    <p>I take full responsibility for everything I publish.</p>
+    <p>For the number of tokens I have used, see <a href="ai-tokens.html">AI token usage</a>.</p>
+    <p class="note">Last updated November 2026.</p>
 
     <footer class="foot">
       <p>&copy; 2026 Bastiaan Cnossen &middot; <a href="impressum.html">Impressum &amp; privacy</a> &middot; <a href="ai-use.html" aria-current="page">AI use</a></p>

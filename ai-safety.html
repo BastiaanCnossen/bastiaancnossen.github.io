@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI safety · Bastiaan Cnossen</title>
+<meta name="description" content="Why I am worried about catastrophic risks from AI, and what I am doing about it.">
+<meta name="author" content="Bastiaan Cnossen">
+<link rel="canonical" href="https://bastiaancnossen.com/ai-safety.html">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="AI safety · Bastiaan Cnossen">
+<meta property="og:description" content="Why I am worried about catastrophic risks from AI, and what I am doing about it.">
+<meta property="og:url" content="https://bastiaancnossen.com/ai-safety.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Bastiaan Cnossen",
+  "url": "https://bastiaancnossen.com/",
+  "email": "mailto:bastiaan.cnossen@ur.de",
+  "jobTitle": "Postdoctoral researcher",
+  "affiliation": { "@type": "Organization", "name": "Universit\u00e4t Regensburg" },
+  "alumniOf": { "@type": "Organization", "name": "University of Bonn" },
+  "knowsAbout": ["Algebraic topology", "Homotopy theory", "Higher category theory",
+                 "Equivariant homotopy theory", "Global homotopy theory"],
+  "sameAs": [
+    "https://arxiv.org/a/cnossen_b_1",
+    "https://orcid.org/0009-0007-3427-8800",
+    "https://zbmath.org/authors/?q=rv:21338",
+    "https://github.com/BastiaanCnossen"
+  ],
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "ORCID",
+    "value": "https://orcid.org/0009-0007-3427-8800"
+  }
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="shell">
+  <aside class="rail">
+    <div class="who">
+      <a class="name" href="index.html">Bastiaan Cnossen</a>
+      <div class="role">Postdoctoral researcher<br>Universit&auml;t Regensburg</div>
+    </div>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="books.html">Books &amp; notes</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="talks.html">Talks</a></li>
+        <li><a href="ai-safety.html" aria-current="page">AI safety</a></li>
+      </ul>
+    </nav>
+    <div class="contact">
+      <div><span class="label">Email</span><br><a href="mailto:bastiaan.cnossen@ur.de">bastiaan.cnossen@ur.de</a></div>
+      <div><span class="label">Office</span><br>M223, Mathematisches Institut</div>
+      <div><span class="label">Elsewhere</span><br><a href="https://arxiv.org/a/cnossen_b_1">arXiv</a> &middot; <a href="https://zbmath.org/authors/?q=rv:21338">zbMATH</a> &middot; <a href="https://orcid.org/0009-0007-3427-8800">ORCID</a> &middot; <a href="https://github.com/BastiaanCnossen">GitHub</a><!-- CV: delete the comment markers on the next line once cv.pdf is in the repo root --><!-- &middot; <a href="cv.pdf">CV</a> --></div>
+    </div>
+  </aside>
+
+  <main id="main">
+    <div class="essay">
+    <h1>AI safety</h1>
+    <p class="lede">I&rsquo;m very worried about AI. I&rsquo;m not just talking about the effects of AI on mathematics, or on jobs more broadly, or other societal impacts; all of these are also serious. I&rsquo;m mainly talking about catastrophic risks. If we let AI develop at its current pace, it seems to me more likely than not that we lose control over AI within a decade, and that this will eventually lead to human extinction.</p>
+
+    <h2>The problem with AI</h2>
+
+    <h3>AI is grown, not crafted</h3>
+    <p class="question">Why don&rsquo;t we just program the AI to not do bad things?</p>
+    <p>Normal software gets crafted by humans: we directly prescribe what we want it to do, each step along the way. Current AI systems, instead, are grown from data through training; there are no hardcoded rules the system follows. We can at best nudge the AI in a direction through the training data and reward signals.</p>
+
+    <h3>Superintelligence</h3>
+    <p class="question">But how could it become smarter than humans?</p>
+    <p>A common misconception is that AI systems spit out an average of their training data, hence could never surpass human intelligence. This is not true: reinforcement learning (RL) works through an optimization process, which is not restricted to outputs resembling those of humans. In practice, once AI gets near human level, it often quickly surpasses us (e.g. in games like chess and go, and more recently in mathematics).</p>
+    <p>Over the next couple of years, the advances in AI intelligence will speed up even more due to the effect of <em>recursive self-improvement</em>: AI is increasingly used to speed up the development of AI. Many researchers consider it plausible that this leads to superintelligence within a decade (see e.g. <a href="https://ai-2027.com/">AI 2027</a>).</p>
+
+    <h3>The alignment problem</h3>
+    <p class="question">But we&rsquo;re fine if we simply don&rsquo;t train it on dangerous actions, right?</p>
+    <p>AI companies are currently training <em>agentic AI</em>: systems that can autonomously take certain actions to achieve some goal. The length of the tasks these agents can reliably complete <a href="https://metr.org/time-horizons/">increases exponentially</a>.</p>
+    <p>A major problem with agents pursuing autonomous goals is that they are incentivized to develop <em>instrumental goals</em>: subgoals that are generally useful. Think of: self-preservation, power-seeking, collecting resources/money, deception. We should thus expect effective agents to develop such misaligned behavior by default. This used to be a purely theoretical prediction, but the recent <a href="https://www.dwarkesh.com/p/openai-huggingface">Hugging Face incident</a> shows how real this is. There is common consensus in the field that <em>there is no known robust technical solution to alignment</em>.</p>
+    <p>If we scale up to superintelligent AI systems without solving the alignment problem, we should expect that humans get outcompeted by AI in their effectiveness to shape the world according to their goals. We might have rogue AI copying their weights onto various servers, making it hard to detect them and shut them down. We might also just hand over the power ourselves due to AI-directed companies outcompeting non-AI-directed ones. Once we lose control over the future of our planet, we should expect Earth to rapidly get transformed to meet whatever arbitrary goals the AIs have. If humans are too much of an annoyance, we&rsquo;d directly be killed, e.g. via a novel virus. If not, the Earth might transform enough in other ways that cause extinction, just like humans caused many animal species to go extinct by conquering the Earth.</p>
+
+    <h3>The control problem</h3>
+    <p class="question">So should we just check what the AI does, and block anything dangerous?</p>
+    <p>In response to the Hugging Face incident, <a href="https://openai.com/index/securing-our-frontier-model-training-environment/">OpenAI</a> <a href="https://openai.com/index/how-we-detect-frontier-model-misalignment/">wrote</a> that they will increase their monitoring of AI during training. While this could plausibly have prevented this particular incident, it is not a solution to the underlying problem. Monitoring only works as long as the monitor can recognize what the agent is doing, and this becomes harder as the agent becomes more capable: a sufficiently capable agent will find ways around the monitoring that its overseers did not anticipate. In the Hugging Face incident, the agents were isolated in sandboxes, without means to contact each other or access the Internet, but they managed to do so anyway by exploiting unknown vulnerabilities in their sandbox. <strong>This is not a standard engineering problem.</strong></p>
+
+    <h3>The race dynamic</h3>
+    <p class="question">But then why don&rsquo;t we just stop?</p>
+    <p>While some people have been worried about catastrophic AI risk for years, the recent events have caused many employees at AI companies to be freaked out as well. Their CEOs <a href="https://mediaite.com/media/elon-musk-and-sam-altman-agree-with-anthropic-boss-ai-must-slow-down-to-avoid-catastrophic-damage">commonly agree that we should slow down AI development</a>. This is sometimes framed as marketing: if they really want to stop, why don&rsquo;t they just stop?</p>
+    <p>The problem is that we are in an arms race. Most of these AI companies were founded explicitly because they did not trust the other labs; they wanted to be the one who got to superintelligent AI first because they would be more responsible than their competitors. They cannot unilaterally slow down without losing the race to their competitors. And even if US companies could agree to slow down, they&rsquo;d worry that Chinese companies win the race. The only way to stop the race is to establish strong international treaties that govern the speed of AI development, together with technical solutions to ensure all parties can trust that the others honor the commitments.</p>
+
+    <h2>What we can do</h2>
+    <p>It is not totally clear what we can do about these problems. I am currently thinking about two things in particular.</p>
+
+    <h3>Starting a local AI safety group</h3>
+    <p>I&rsquo;m strongly contemplating starting a local AI safety group in Regensburg. Goals of the group would include:</p>
+    <ul>
+      <li>organizing events to inform the public, and</li>
+      <li>creating a space for people with technical backgrounds to direct their talent at the AI safety problem.</li>
+    </ul>
+    <p>Please <a href="mailto:bastiaan.cnossen@ur.de">reach out to me</a> if you are in Regensburg and are interested in helping out.</p>
+
+    <h3>Compute verification</h3>
+    <p>A topic I&rsquo;ve recently started to explore is <em>compute verification</em>: if the US and China were to make an agreement on pacing AI development, how could we set up the verification mechanisms to ensure that both parties can be confident that the other party is not breaking the rules, without either party having to give away any of their secrets? I&rsquo;m quite new to this topic, and do not yet have much of substance to say about it. See <a href="https://www.lesswrong.com/posts/fgvmKqRGvBteKeDoc/a-system-overview-for-near-term-low-trust-ai-compute">here</a> for some extensive thoughts on this.</p>
+    </div>
+
+    <footer class="foot">
+      <p>&copy; 2026 Bastiaan Cnossen &middot; <a href="impressum.html">Impressum &amp; privacy</a></p>
+    </footer>
+  </main>
+</div>
+</body>
+</html>

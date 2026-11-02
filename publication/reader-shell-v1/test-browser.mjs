@@ -174,9 +174,13 @@ try {
       const boundary = firstWithSections.sections.at(-1);
       const following = sections[sections.findIndex((section) => section.page === boundary.page) + 1];
       await navigate(`${origin}/edition/${boundary.page}`);
-      assert.equal(await run(`return new URL(document.querySelector('[data-step="next-section"]').href).pathname`), `/edition/${following.page}`);
-      await run(`document.querySelector('[data-step="next-section"]').click()`);
-      await waitFor(() => run(`return location.pathname === ${JSON.stringify(`/edition/${following.page}`)} && !!window.NotesReader`), "section navigation across a chapter boundary");
+      if (following) {
+        assert.equal(await run(`return new URL(document.querySelector('[data-step="next-section"]').href).pathname`), `/edition/${following.page}`);
+        await run(`document.querySelector('[data-step="next-section"]').click()`);
+        await waitFor(() => run(`return location.pathname === ${JSON.stringify(`/edition/${following.page}`)} && !!window.NotesReader`), "section navigation across a chapter boundary");
+      } else {
+        assert.equal(await run(`return document.querySelector('[data-step="next-section"]').disabled`), true);
+      }
       await viewport(390, true);
       assert.equal(await run(`const nav=document.querySelector('.page-turns'); return nav.getBoundingClientRect().width <= innerWidth && document.documentElement.scrollWidth <= innerWidth;`), true);
       assert.equal(await run(`return getComputedStyle(document.querySelector('.page-turns')).gridTemplateColumns.split(' ').length`), 2);

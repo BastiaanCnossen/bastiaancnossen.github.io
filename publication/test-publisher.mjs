@@ -39,7 +39,7 @@ function writeCandidate({ includeRetiredRoute = true, includeOldFragment = true,
     });
   }
   const fragmentIds = ["result:Current", ...(includeOldFragment ? ["detail-current--old-detail"] : [])];
-  writePage("/entry/current/", fragmentIds, ["../../book.pdf"]);
+  writePage("/entry/current/", fragmentIds, ["../../book.pdf", "../../book.pdf#nameddest=chapter.5", "../../book.pdf?download=1#page=7"]);
   routes.push({
     Path: "/entry/current/",
     Kind: "entry",
@@ -107,6 +107,9 @@ try {
   assert.ok(!fs.existsSync(path.join(publicRoot, "book.pdf")));
   assert.match(fs.readFileSync(path.join(publicRoot, "index.html"), "utf8"), /href='\/notes\/test-notes\.pdf'/);
   assert.match(fs.readFileSync(path.join(publicRoot, "entry", "current", "index.html"), "utf8"), /href='\/notes\/test-notes\.pdf'/);
+  const currentPage = fs.readFileSync(path.join(publicRoot, "entry", "current", "index.html"), "utf8");
+  assert.match(currentPage, /href='\/notes\/test-notes\.pdf#nameddest=chapter\.5'/);
+  assert.match(currentPage, /href='\/notes\/test-notes\.pdf\?download=1#page=7'/);
   fs.renameSync(publicRoot, previousRoot);
   publishWork(configPath, { websiteRoot: root, checkOnly: true });
   assert.ok(fs.existsSync(publicRoot));

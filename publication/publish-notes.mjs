@@ -179,13 +179,11 @@ function canonicalizeEmbeddedPdf(root, embeddedPdf, canonicalPdfHref) {
     const relativePdfHref = path.relative(path.dirname(htmlPath), embeddedPath).replaceAll(path.sep, "/");
     let html = fs.readFileSync(htmlPath, "utf8");
     for (const quote of ['"', "'"]) {
-      const source = `href=${quote}${relativePdfHref}${quote}`;
-      const replacement = `href=${quote}${canonicalPdfHref}${quote}`;
-      const occurrences = html.split(source).length - 1;
-      if (occurrences) {
-        html = html.replaceAll(source, replacement);
-        replacements += occurrences;
-      }
+      html = html.replace(new RegExp(`\\bhref=${quote}([^${quote}]+)${quote}`, "g"), (attribute, href) => {
+        if (href !== relativePdfHref && !href.startsWith(`${relativePdfHref}#`) && !href.startsWith(`${relativePdfHref}?`)) return attribute;
+        replacements += 1;
+        return `href=${quote}${canonicalPdfHref}${href.slice(relativePdfHref.length)}${quote}`;
+      });
     }
     fs.writeFileSync(htmlPath, html, "utf8");
   }

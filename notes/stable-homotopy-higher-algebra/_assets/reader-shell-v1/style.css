@@ -1043,6 +1043,31 @@ ol {
   gap: 2.5rem;
 }
 
+/* The manuscripts use subsubsections as visual peers of subsections.
+   Preserve HTML heading levels, while matching their existing subsection size.
+   Topos uses h3/h4 in sections and h2/h3 in chapter introductions; TeX4ht
+   supplies explicit heading classes for the SHT+HA edition. */
+body.section-page .notes-page h3,
+body.section-page .notes-page h4 {
+  font-size: 1.17em;
+}
+
+body.chapter-page .chapter-introduction h2,
+body.chapter-page .chapter-introduction h3,
+.manuscript-frontmatter h2,
+.manuscript-frontmatter h3 {
+  font-size: 1.45rem;
+}
+
+.notes-page .subsectionHead,
+.notes-page .likesubsectionHead,
+.notes-page .subsubsectionHead,
+.notes-page .likesubsubsectionHead {
+  font-size: 1.08rem;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
 .work-landing h2,
 .chapter-landing h2 {
   margin: 0 0 0.75rem;
