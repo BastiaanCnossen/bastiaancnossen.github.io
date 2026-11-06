@@ -46,13 +46,13 @@
 <p class='noindent' id='sec:Bousfield_Localizations'>Bousfield localization isolates the information in a spectrum detected by a chosen homology
 theory.
 </p><p class='noindent'>Fix a spectrum \(E\) throughout this section. As discussed in <a class="source-reference" data-label="def:Homotopy_Groups_Spectrum" href="../../../entry/homotopy-groups-of-a-spectrum/index.html#def:Homotopy_Groups_Spectrum">Definition 4.4.21</a>, it defines the \(E\)<span class='ntx-Italic-tlf-t1-x-x-109'>-homology groups </span>of an anima: \[ X \mapsto E_*(X) := \pi _*(E \otimes \S [X]). \] For
-example, taking \(E = HA\) the Eilenberg–MacLane spectrum of an abelian group \(A\) results in singular
+example, taking \(E = A\) for an abelian group \(A\) regarded as an Eilenberg–MacLane spectrum results in singular
 homology with coefficients in \(A\), while taking \(E = \S \) the sphere spectrum results in the stable homotopy
 groups.
 </p><p class='noindent'>The homology groups \(E_*(X)\) will generally only see <span class='ntx-Italic-tlf-t1-x-x-109'>some </span>aspects of the given anima \(X\), and may completely ignore
 others. Consider for example the case of the projective space \(X = \R \!\mathrm {P}^2\). If we considered the Eilenberg–MacLane
-spectrum \(E = H\Q \) of the rational numbers, its homology would give no information beyond that of a point: the
-reduced rational homology of \(\R \!\mathrm {P}^2\) is trivial. But taking \(E = H\Z /2\) <span class='ntx-Italic-tlf-t1-x-x-109'>does </span>capture interesting information about \(\R \!\mathrm {P}^2\). The point
+spectrum \(E = \Q \) of the rational numbers, its homology would give no information beyond that of a point: the
+reduced rational homology of \(\R \!\mathrm {P}^2\) is trivial. But taking \(E = \Z /2\) <span class='ntx-Italic-tlf-t1-x-x-109'>does </span>capture interesting information about \(\R \!\mathrm {P}^2\). The point
 of Bousfield localizations is to isolate those parts of an anima (or spectrum) which are ‘seen by
 \(E\)’.
 </p>
@@ -73,7 +73,7 @@ spectra are those with trivial \(E\)-homology.
 
 
 <a id='x1-1002r2'></a>
-<a class="entry-heading-link" href="../../../entry/rational-equivalences/index.html" aria-label="Example 7.1.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 7.1.2.</span></a>  </span><span id='ex:Rational_Equivalences'></span> For \(E = H\Q \), the \(E\)-equivalences are known as the <span class='ntx-Italic-tlf-t1-x-x-109'>rational equivalences</span>: those that induce
+<a class="entry-heading-link" href="../../../entry/rational-equivalences/index.html" aria-label="Example 7.1.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 7.1.2.</span></a>  </span><span id='ex:Rational_Equivalences'></span> For \(E = \Q \), the \(E\)-equivalences are known as the <span class='ntx-Italic-tlf-t1-x-x-109'>rational equivalences</span>: those that induce
 isomorphisms on rational homology.
 </p>
 </div>
@@ -129,7 +129,7 @@ morphism \(f\colon X \to X'\) of spectra the following conditions are equivalent
    <p class='noindent'>The induced map \(f^*\colon \Hom _{\Sp }(X',L) \to \Hom _{\Sp }(X,L)\) is an isomorphism for all \(E\)-local spectra \(L\).</p></dd></dl>
 
 
-<p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Hint: use that we have</span> \(\pi _n \hom (X,Y) \cong \pi _0 \hom (X,Y[n]) \cong \pi _0 \Hom _{\Sp }(X,Y[n])\)<span class='ntx-Italic-tlf-t1-x-x-109'>, and similarly for</span> \(X'\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+<p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Hint: use that we have</span> \(\pi _n \hom (X,Y) \cong \pi _0 \hom (X,Y[-n]) \cong \pi _0 \Hom _{\Sp }(X,Y[-n])\)<span class='ntx-Italic-tlf-t1-x-x-109'>, and similarly for</span> \(X'\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
 </p>
 </div>
 
@@ -193,23 +193,23 @@ the sense of <a class="source-reference" data-label="def:Left_Adjoint_Object" hr
 <span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Let \(\Sp ^{E\text {-}\mathrm {acyc}}\subseteq \Sp \) be the full subcategory of \(E\)-acyclic spectra. It is the kernel of the colimit-preserving
 functor \[ E\otimes -\colon \Sp \to \Sp , \] so it is presentable and its inclusion \(i\colon \Sp ^{E\text {-}\mathrm {acyc}}\hookrightarrow \Sp \) preserves small colimits by <a class="source-reference" data-label="cor:Presentability_Kernels" href="../../../entry/presentability-of-kernels/index.html#cor:Presentability_Kernels">Corollary 22.2.4</a>. This kernel is stable, since
 \(E\otimes -\) is exact. The adjoint functor theorem <a class="source-reference" data-label="thm:Adjoint_Functor_Theorem_Presentable" href="../../../entry/adjoint-functor-theorem-for-presentable-categories/index.html#thm:Adjoint_Functor_Theorem_Presentable">Theorem 22.2.5</a> therefore supplies a right adjoint \(\Gamma _E\) to \(i\).
-</p><p class='noindent'>For a spectrum \(X\), define \(L_EX\) by the exact sequence \[ i\Gamma _EX\longrightarrow X\longrightarrow L_EX, \] where the first map is the counit of the adjunction. Let \(A\)
-be an \(E\)-acyclic spectrum. Full faithfulness of \(i\) and the adjunction give isomorphisms \[ \Hom _{\Sp }(A,i\Gamma _EX) \iso \Hom _{\Sp ^{E\text {-}\mathrm {acyc}}}(A,\Gamma _EX) \iso \Hom _{\Sp }(A,X). \] Their composite
-is the map induced by the counit. Mapping out of \(A\) carries the defining exact sequence for \(L_EX\) to a fiber
-sequence of animae, so it follows that \(\Hom _{\Sp }(A,L_EX)=*\). The same argument applies to every shift of \(A\), which is again
-\(E\)-acyclic. Hence \(\hom (A,L_EX)=0\), and \(L_EX\) is \(E\)-local by <a class="source-reference" data-label="exercise:Closure_Properties_Local_Objects" href="../../../entry/closure-properties-of-e-local-spectra/index.html#exercise:Closure_Properties_Local_Objects">Exercise 7.1.4</a>. On the other hand, \(E\otimes i\Gamma _EX=0\), so applying \(E\otimes -\) to the exact sequence shows
-that \(X\to L_EX\) is an \(E\)-equivalence. Thus it is an \(E\)-localization.                                                                            □
+</p><p class='noindent'>For a spectrum \(X\), define \(L_EX\) by the exact sequence \[ i\Gamma _EX\longrightarrow X\longrightarrow L_EX, \] where the first map is the counit of the adjunction.
+Let \(A\) be an \(E\)-acyclic spectrum. Full faithfulness of \(i\) and the adjunction give isomorphisms \[ \Hom _{\Sp }(A,i\Gamma _EX) \iso \Hom _{\Sp ^{E\text {-}\mathrm {acyc}}}(A,\Gamma _EX) \iso \Hom _{\Sp }(A,X). \] Their
+composite is the map induced by the counit. Applying the same argument to every shift of \(A\), which
+is again \(E\)-acyclic, shows that \(\hom (A,i\Gamma _EX)\to \hom (A,X)\) is an isomorphism of spectra. Exactness of \(\hom (A,-)\) now gives \(\hom (A,L_EX)=0\), so \(L_EX\) is \(E\)-local by
+<a class="source-reference" data-label="exercise:Closure_Properties_Local_Objects" href="../../../entry/closure-properties-of-e-local-spectra/index.html#exercise:Closure_Properties_Local_Objects">Exercise 7.1.4</a>. On the other hand, \(E\otimes i\Gamma _EX=0\), so applying \(E\otimes -\) to the exact sequence shows that \(X\to L_EX\) is an \(E\)-equivalence. Thus it is an
+\(E\)-localization.                                                                                                                                       □
 </p>
 </div></div>
 <p class='noindent'>The proof packages the required size argument into the general theory of presentable categories. Bousfield’s
-original construction instead builds the reflector explicitly by a transfinite cell-attachment process. The
-general notion of a Bousfield localization is discussed in <a class="source-reference" data-label="subsec:Bousfield_Localizations" href="../../adjunctions/bousfield-localizations/index.html#subsec:Bousfield_Localizations">Section 21.8</a>.
+proof uses a transfinite size-reduction argument followed by a colocalization construction. The general
+notion of a Bousfield localization is discussed in <a class="source-reference" data-label="subsec:Bousfield_Localizations" href="../../adjunctions/bousfield-localizations/index.html#subsec:Bousfield_Localizations">Section 21.8</a>.
 </p>
 
 
 </div>
 <footer class="edition-footer">
-  <span>Last updated 27 October 2026</span>
+  <span>Last updated 6 November 2026</span>
   <a href="/notes/stable-homotopy-higher-algebra.pdf">PDF</a>
   <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Section%207.1%3A%20Bousfield%20localizations&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fsection%2Flocalization-and-completion%2Fbousfield-localizations%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
 </footer></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">

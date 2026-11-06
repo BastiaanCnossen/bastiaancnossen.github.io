@@ -54,10 +54,16 @@
       <span aria-hidden="true">☰</span> Navigation
     </button>
 <article class="notes-page section-page"><div class="continuous-section">
-<p class='noindent' id='sec:Basic_Constructions'>We now record the ambient constructions on \(\infty \)-categories that we will use throughout the book: terminal and
-initial categories, products and coproducts, pullbacks, functor categories, and pushouts. Each universal
-property comes with two parts: it constructs functors from suitable data, and then describes the anima of
-identifications between two such functors.
+<p class='noindent' id='sec:Basic_Constructions'>The theory of \(\infty \)-categories admits most of the basic constructions familiar from classical category theory,
+like terminal and initial categories, products and coproducts of categories, pullbacks, functor categories,
+and pushouts. In classical category theory, one may give explicit constructions of these categories, and
+prove their universal properties ‘by hand’ by writing down what the relevant functors should do on objects
+and morphisms. When working with \(\infty \)-categories, we need to reverse this logic: since functors
+can no longer be prescribed on objects and morphisms, we must always construct them by
+invoking universal properties. We will now introduce these universal properties for the basic
+constructions of \(\infty \)-categories. They always come in two parts: first we prescribe how to construct
+functors from suitable data, and then we pin down the anima of identifications between two such
+functors.
 </p>
 <h4 class='subsectionHead' id='products-and-coproducts'><span class='titlemark'>1.3.1    </span> <a id='x1-20001.3.1'></a>Products and coproducts</h4>
 <p class='noindent'>We start with products and coproducts of \(\infty \)-categories. For animae, the products, projections, and pairings
@@ -72,13 +78,13 @@ functors \(p_T\colon T\to *\). The next axiom specifies their universal properti
 \(i \in I\).
    </p><dl class='enumerate'><dt class='enumerate'>
 (1) </dt><dd class='enumerate'>
+
+
    <p class='noindent'>There is a <span class='ntx-Italic-tlf-t1-x-x-109'>product</span> \(\prod _{i \in I} C_i\), equipped with <span class='ntx-Italic-tlf-t1-x-x-109'>projection functors</span> \(\pr _i\colon \prod _{i \in I} C_i \to C_i\) for every \(i\). Given another \(\infty \)-category \(T\) and
    functors \(f_i\colon T \to C_i\) for every \(i\), we obtain a functor \((f_i)\colon T \to \prod _{i \in I} C_i\) together with identifications \(\pr _i \circ (f_i) = f_i\). For two functors \(g,h\colon T\to \prod _{i\in I}C_i\), the
    projection-induced functor \[ (g=h)\longrightarrow \prod _{i\in I}(\pr _i g=\pr _i h) \] is an equivalence. If every \(C_i\) is an anima, their product is an anima.
    </p></dd><dt class='enumerate'>
 (2) </dt><dd class='enumerate'>
-
-
    <p class='noindent'>There is a <span class='ntx-Italic-tlf-t1-x-x-109'>coproduct  </span>or <span class='ntx-Italic-tlf-t1-x-x-109'>disjoint union</span> \(\bigsqcup _{i \in I} C_i\), equipped with <span class='ntx-Italic-tlf-t1-x-x-109'>inclusion functors</span> \(\incl _i\colon C_i \hookrightarrow \bigsqcup _{i \in I} C_i\) for every \(i\). Given
    another \(\infty \)-category \(T\) and functors \(f_i\colon C_i \to T\) for every \(i\), we obtain a functor \(\lra {f_i}\colon \bigsqcup _{i \in I} C_i \to T\) together with identifications \(\lra {f_i} \circ \incl _i = f_i\).
    For two functors \(g,h\colon \bigsqcup _{i\in I}C_i\to T\), restriction induces an equivalence \[ (g=h)\longrightarrow \prod _{i\in I}(g\incl _i=h\incl _i). \]</p></dd></dl>
@@ -97,16 +103,13 @@ functors \(p_T\colon T\to *\). The next axiom specifies their universal properti
 <p class='noindent'><span class='head'>
 <a id='x1-2005r2'></a>
 <a class="entry-heading-link" href="../../../entry/objects-as-functors-from-the-terminal-category/index.html" aria-label="Remark 1.3.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 1.3.2.</span></a>  </span><span id='rmk:Objects_As_Functors_From_Terminal_Category'></span> In the empty-index cases the displayed equivalences say that \((f=g)\) is contractible for any
-two functors \(f,g\colon T\to *\), and likewise for functors \(\emptyset \to T\). Thus any two such identifications are themselves identified,
-as needed to identify products with pullbacks over \(*\), as in <a class="source-reference" data-label="exercise:Compatibility_Products_And_Pullbacks" href="../../../entry/products-as-pullbacks-over-the-terminal-category/index.html#exercise:Compatibility_Products_And_Pullbacks">Exercise 1.3.10</a>.
+two functors \(f,g\colon T\to *\), and likewise for functors \(\emptyset \to T\). Thus any two such identifications are themselves identified.
 </p>
 </div>
 
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-2006r3'></a>
-
-
 <a class="entry-heading-link" href="../../../entry/binary-products-and-coproducts-of-categories/index.html" aria-label="Notation 1.3.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Notation 1.3.3.</span></a>  </span><span id='not:Binary_Products_And_Coproducts_Of_Categories'></span> When \(I = \{1,2\}\), we write \(C_1 \times C_2\) and \(C_1 \sqcup C_2\) for the resulting product and coproduct. Given functors \(f_1\colon T \to C_1\) and
 \(f_2\colon T \to C_2\), we write \((f_1,f_2)\colon T \to C_1 \times C_2\) for the induced functor. Given functors \(g_1\colon C_1 \to T\) and \(g_2\colon C_2 \to T\), we write \(\lra {g_1,g_2}\colon C_1 \sqcup C_2 \to T\) for the induced functor.
 </p>
@@ -129,12 +132,12 @@ the <span class='ntx-Italic-tlf-t1-x-x-109'>constant functor</span> \(\const _x\
 equivalence.
 </p><p class='noindent'>Observe that an \(\infty \)-category \(C\) is contractible if and only if there exists an object \(x\colon * \to C\) such that the composite
 \(\const _x\colon C \to C\) is identified with the identity \(\id _C\colon C \to C\). An identification \(H\colon \const _x = \id _C\) is called a <span class='ntx-Italic-tlf-t1-x-x-109'>contraction of</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>onto</span> \(x\).
+
+
 </p>
 </div>
 <p class='noindent'>The familiar symmetries of products and coproducts follow from these universal properties just as in
 ordinary category theory, and we will use them freely.
-
-
 </p>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
@@ -154,43 +157,40 @@ functors \(f\colon C \to C'\) and \(g\colon D \to D'\), we obtain new functors \
 </p>
 </div>
 
+
+
 <h4 class='subsectionHead' id='pullbacks-of-categories'><span class='titlemark'>1.3.2    </span> <a id='x1-30001.3.2'></a>Pullbacks of \(\infty \)-categories</h4>
 <p class='noindent'><span id='subsec_Pullbacks_Of_Infty_Cats'></span> We will now axiomatize the <span class='ntx-Italic-tlf-t1-x-x-109'>pullback </span>of two functors \(f\colon C \to E\) and \(g\colon D \to E\) of \(\infty \)-categories. This will be similar to the axiom
 for the product \(C \times D\), but it is more involved due to the fact that we need to record compatibilities with the
 structure maps to \(E\).
 </p>
 <div class='newtheorem'>
-
-
 <p class='noindent'><span class='head'>
 <a id='x1-3001r2'></a>
 <a class="entry-heading-link" href="../../../entry/pullbacks-of-infinity-categories/index.html" aria-label="Axiom C.2, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Axiom C.2 </span></a>(Pullbacks of \(\infty \)-categories)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='axiom:Pullback_Of_Categories'></span> For functors \(f\colon C\to E\) and \(g\colon D\to E\), their <span class='ntx-Italic-tlf-t1-x-x-109'>pullback</span>, or <span class='ntx-Italic-tlf-t1-x-x-109'>fiber product over</span> \(E\), is
 an \(\infty \)-category \(C\times _E D\) with projections \(\pr _1\colon C\times _E D\to C\) and \(\pr _2\colon C\times _E D\to D\), and an identification \(\tau \colon f\circ \pr _1=g\circ \pr _2\); in other words, a commutative square of
-the form</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-e8d0aef759b4.svg" alt="Commutative square with maps C\times E D to C labeled \pr 1, D to E labeled g, C\times E D to D labeled \pr 2, C to E labeled f." width="103" height="60" loading="lazy"></figure></div><p class='noindent'>Given \(t_C\colon T\to C\), \(t_D\colon T\to D\), and \(\sigma \colon f\circ t_C=g\circ t_D\), there is a functor \(t=(t_C,t_D)_\sigma \colon T\to C\times _E D\) with identifications \(\alpha \colon \pr _1\circ t=t_C\), \(\beta \colon \pr _2\circ t=t_D\), and \[ \sigma \circ (f\star \alpha )=(g\star \beta )\circ (\tau \star t). \] For any \(h,k\colon T\to C\times _E D\), the projection-induced
-functor \[ (h=k)\longrightarrow (\pr _1\circ h=\pr _1\circ k)\times _{(f\circ \pr _1\circ h=g\circ \pr _2\circ k)}(\pr _2\circ h=\pr _2\circ k) \] is an equivalence. The two functors defining the pullback on the right are \[ \alpha \longmapsto (\tau \star k)\circ (f\star \alpha ), \qquad \beta \longmapsto (g\star \beta )\circ (\tau \star h); \] interchange
-supplies the identification needed to define the displayed functor. If \(C,D,E\) are animae, then \(C\times _E D\) is an anima.</p>
+the form</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-e8d0aef759b4.svg" alt="Commutative square with maps C\times E D to C labeled \pr 1, D to E labeled g, C\times E D to D labeled \pr 2, C to E labeled f." width="103" height="60" loading="lazy"></figure></div><p class='noindent'>If \(C,D,E\) are animae, then \(C\times _E D\) is an anima. Given \(t_C\colon T\to C\), \(t_D\colon T\to D\), and \(\sigma \colon f\circ t_C=g\circ t_D\), there is a functor \(t=(t_C,t_D)_\sigma \colon T\to C\times _E D\) with identifications \(\alpha \colon \pr _1\circ t=t_C\), \(\beta \colon \pr _2\circ t=t_D\), and
+\[ \sigma \circ (f\star \alpha )=(g\star \beta )\circ (\tau \star t). \] For any \(h,k\colon T\to C\times _E D\), the functor \[ (h=k)\longrightarrow (\pr _1\circ h=\pr _1\circ k)\times _{(f\circ \pr _1\circ h=g\circ \pr _2\circ k)}(\pr _2\circ h=\pr _2\circ k) \] induced by whiskering with the two projections is an equivalence. The two
+functors defining the pullback on the right are \[ \alpha \longmapsto (\tau \star k)\circ (f\star \alpha ), \qquad \beta \longmapsto (g\star \beta )\circ (\tau \star h), \] and the identification needed to define the displayed
+functor is supplied by the interchange law.</p>
 </div>
 
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-3002r8'></a>
-<a class="entry-heading-link" href="../../../entry/formal-shape-of-the-pullback-axiom/index.html" aria-label="Remark 1.3.8., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 1.3.8.</span></a>  </span><span id='rmk:Pullback_Axiom_Formal_Shape'></span> The two clauses of the axiom may be understood as follows. The first clause says
-that every commutative square over the cospan \(C \xrightarrow {f} E \xleftarrow {g} D\) factors a commutative square through the pullback,
-compatibly with its chosen commutativity identification. The second clause says that an identification
-of two such functors consists of projection identifications \(\alpha \colon \pr _1\circ h=\pr _1\circ k\), \(\beta \colon \pr _2\circ h=\pr _2\circ k\), together with an identification \[ H\colon (\tau \star k)\circ (f\star \alpha )=(g\star \beta )\circ (\tau \star h). \] The
-compatibility  \(H\)  is  part  of  the  data.  Formulating  this  as  an  equivalence  of  animae  also  controls
-identifications between such triples \((\alpha ,\beta ,H)\). The pullback on the right is the same construction applied to
-identification animae; this is a simultaneous specification of its universal property. See also <span class="source-reference" data-label="sct-post:Pullback_Of_Categories">Axiom B.6</span> of <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-CCNW_Formalization" title="Cisinski et al., Synthetic category theory">Cisinski et al. (2026)</a>]</span>.
+<a class="entry-heading-link" href="../../../entry/formal-shape-of-the-pullback-axiom/index.html" aria-label="Remark 1.3.8., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 1.3.8.</span></a>  </span><span id='rmk:Pullback_Axiom_Formal_Shape'></span> More informally, the axiom says that functors into a pullback \(C \times _E D\) may be constructed
+by giving functors into \(C\) and \(D\) which agree after mapping to \(E\), and that an identification of two such
+functors \(h,k\colon T \to C \times _E D\) consists of identifications \(\alpha \colon \pr _1\circ h=\pr _1\circ k\) and \(\beta \colon \pr _2\circ h=\pr _2\circ k\), together with an identification \[ H\colon (\tau \star k)\circ (f\star \alpha )=(g\star \beta )\circ (\tau \star h). \]
 </p>
 </div>
 
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-3003r9'></a>
+
+
 <a class="entry-heading-link" href="../../../entry/algebra-of-pullbacks-of-categories/index.html" aria-label="Exercise 1.3.9., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.3.9.</span></a>  </span><span id='exercise:Associativity_Fiber_Products'></span> Show that the fiber product is commutative, associative and unital: for functors \(C\to E\), \(D \to E\)
 and \(B \to E\), there are equivalences \[ C \times _{E} D \iso D \times _{E} C, \qquad B \times _{E} (C \times _{E} D) \iso (B \times _{E} C) \times _{E} D, \qquad C \times _{E} E \iso C. \]
-
-
 </p>
 </div>
 
@@ -214,6 +214,8 @@ functor, then the projection \(C \times _{E} D \to C\) is an equivalence.</p>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-3006r12'></a>
+
+
 <a class="entry-heading-link" href="../../../entry/fibers-of-functors/index.html" aria-label="Definition 1.3.12., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.3.12.</span></a>  </span><span id='def:Fiber_Over_Term'></span> Let \(f\colon C \to D\) be a functor. For every object \(x\) of \(D\), we define the <span class='ntx-Italic-tlf-t1-x-x-109'>fiber </span>of \(f\) over \(x\) as the pullback</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-9027decdafc9.svg" alt="Commutative square with maps C x to C, * to D labeled x, C x to *, C to D labeled f." width="75" height="55" loading="lazy"></figure></div>
 </div>
 <p class='noindent'>The definition of pullbacks of \(\infty \)-categories naturally leads to the notion of a pullback square.
@@ -224,25 +226,22 @@ functor, then the projection \(C \times _{E} D \to C\) is an equivalence.</p>
 <a class="entry-heading-link" href="../../../entry/pullback-squares-of-infinity-categories/index.html" aria-label="Definition 1.3.13, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 1.3.13 </span></a>(Pullback square)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Pullback_Square_Of_Infinity_Categories'></span>  A  commutative  square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-f68f30b42374.svg" alt="Commutative square with maps T to C labeled s, D to E labeled g, T to D labeled t, C to E labeled f." width="71" height="60" loading="lazy"></figure></div><p class='noindent'>is  called  a  <span class='ntx-Italic-tlf-t1-x-x-109'>pullback  square  </span>if  the
 induced functor \((s,t)\colon T \to C \times _{E} D\) is an equivalence.</p>
 </div>
-<p class='noindent'>The identification anima between two objects must also describe families of identifications. The following
-axiom makes this precise.
+<p class='noindent'>Given objects \(x,y\colon * \to C\) and a category \(T\), we expect identifications \(\const _x = \const _y\) between constant functors \(T \to C\) to correspond to
+functors from \(T\) to the identification anima \((x = y)\). The following axiom makes this precise.
 </p>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-3008r3'></a>
-<a class="entry-heading-link" href="../../../entry/representability-of-identifications/index.html" aria-label="Axiom C.3, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Axiom C.3 </span></a>(Representability of identifications)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='axiom:Representability_Of_Identifications'></span> For objects \(x,y\colon *\to C\), there is an identification \(\varepsilon \colon \const _x=\const _y\) of functors
-\((x=y)\to C\) exhibiting a pullback square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-b872c6e55169.svg" alt="Commutative square with maps (x=y) to *, * to C labeled x, (x=y) to *, * to C labeled y." width="98" height="57" loading="lazy"></figure></div><p class='noindent'>For each identification \(\alpha \colon x=y\), its restriction along \(\alpha \colon *\to (x=y)\) is identified with \(\alpha \), using
-the identifications supplied by the terminal universal property. We write this as \(\varepsilon (\alpha )=\alpha \).</p>
+<a class="entry-heading-link" href="../../../entry/representability-of-identifications/index.html" aria-label="Axiom C.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Axiom C.3.</span></a>  </span><span id='axiom:Representability_Of_Identifications'></span> For objects \(x,y\colon *\to C\), there is an identification \(\varepsilon \colon \const _x=\const _y\) of functors \((x=y)\to C\) exhibiting a pullback square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-b872c6e55169.svg" alt="Commutative square with maps (x=y) to *, * to C labeled x, (x=y) to *, * to C labeled y." width="98" height="57" loading="lazy"></figure></div><p class='noindent'>For
+each identification \(\alpha \colon x=y\), its restriction along \(\alpha \colon *\to (x=y)\) is identified with \(\alpha \), using the identifications supplied by the
+terminal universal property. We write this as \(\varepsilon (\alpha )=\alpha \).</p>
 </div>
-<p class='noindent'> Thus a functor \(S\to (x=y)\) supplies an identification between the constant functors \(S\to C\), by restricting \(\varepsilon \). The pullback
-universal property says that it records exactly this data, including identifications between such
-families.
-</p>
+
 <div class='newtheorem'>
+
+
 <p class='noindent'><span class='head'>
 <a id='x1-3009r14'></a>
-
-
 <a class="entry-heading-link" href="../../../entry/iterated-pullbacks-of-infinity-categories/index.html" aria-label="Exercise 1.3.14, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.3.14 </span></a>(Iterated pullbacks)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='exercise:Iterated_Pullbacks_Of_Infinity_Categories'></span> Consider a commutative diagram</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-b203a5158cb4.svg" alt="Commutative diagram involving C 1, C 2, C 3, D 1, D 2, D 3, with arrows labeled g 1, f 1, g 2, f 2, f 3, h 1, h 2." width="146" height="66" loading="lazy"></figure></div><p class='noindent'>Construct an equivalence \[ D_1 \times _{D_3} C_3 \iso D_1 \times _{D_2} (D_2 \times _{D_3} C_3). \]
 <span class='ntx-Italic-tlf-t1-x-x-109'>Hint: </span>define one direction by \((\pr _{D_1}, (h_1 \circ \pr _{D_1}, \pr _{C_3}))\) and construct an inverse by projecting to \(D_1\) and \(C_3\).</p>
 </div>
@@ -306,19 +305,20 @@ pushouts by duality in the next subsection.
 <a id='x1-4001r5'></a>
 <a class="entry-heading-link" href="../../../entry/currying-and-uncurrying-functors/index.html" aria-label="Axiom C.5, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Axiom C.5 </span></a>(Functor category)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='axiom:Functor_Category'></span> The <span class='ntx-Italic-tlf-t1-x-x-109'>functor category </span>between two \(\infty \)-categories \(C\) and \(D\) is an \(\infty \)-category
 denoted by \(\Fun (C,D)\). It comes equipped with a functor \(\ev \colon \Fun (C,D)\times C\to D\), called the <span class='ntx-Italic-tlf-t1-x-x-109'>evaluation functor</span>. For another \(\infty \)-category
-\(E\) and a functor \(g\colon E\to \Fun (C,D)\), we may then define its <span class='ntx-Italic-tlf-t1-x-x-109'>uncurrying</span> \(g^u\colon E\times C\to D\) as the composite \[ E\times C\xrightarrow {g\times \id _C}\Fun (C,D)\times C\xrightarrow {\ev }D. \] We demand that every functor \(f\colon E\times C\to D\)
-gives rise to a functor \(f_c\colon E\to \Fun (C,D)\), called the <span class='ntx-Italic-tlf-t1-x-x-109'>currying </span>of \(f\), equipped with an identification \(f=(f_c)^u\). Moreover, for two
-functors \(g,h\colon E\to \Fun (C,D)\), uncurrying induces an equivalence \[ (g=h)\longrightarrow (g^u=h^u). \] Thus a specified identification between the uncurried
-functors lifts to one between \(g\) and \(h\). By <a class="source-reference" data-label="lem:Equivalences_On_Identification_Animae" href="../../../entry/identifications-and-equivalences/index.html#lem:Equivalences_On_Identification_Animae">Lemma 1.2.9</a>, identifications between prescribed identifications lift as well.
-This allows us to translate back and forth between curried and uncurried functors.
+\(E\) and a functor \(g\colon E\to \Fun (C,D)\), we may then define its <span class='ntx-Italic-tlf-t1-x-x-109'>uncurrying</span> \(g^u\colon E\times C\to D\) as the composite \[ E\times C\xrightarrow {g\times \id _C}\Fun (C,D)\times C\xrightarrow {\ev }D. \] We demand that every functor
+\(f\colon E\times C\to D\) gives rise to a functor \(f_c\colon E\to \Fun (C,D)\), called the <span class='ntx-Italic-tlf-t1-x-x-109'>currying </span>of \(f\), equipped with an identification \(f=(f_c)^u\). Moreover, for
+two functors \(g,h\colon E\to \Fun (C,D)\), we demand that uncurrying induces an equivalence \[ (g=h)\longrightarrow (g^u=h^u). \] Thus a specified identification
+between the uncurried functors lifts to one between \(g\) and \(h\). By <a class="source-reference" data-label="lem:Equivalences_On_Identification_Animae" href="../../../entry/identifications-and-equivalences/index.html#lem:Equivalences_On_Identification_Animae">Lemma 1.2.9</a>, identifications between prescribed
+identifications lift as well. This allows us to translate back and forth between curried and uncurried
+functors.
 </p>
 </div>
 <p class='noindent'>In the case \(E=*\), objects \(*\to \Fun (C,D)\) of the functor category correspond to functors \(C\simeq *\times C\to D\) from \(C\) to \(D\), justifying the terminology for
 \(\Fun (C,D)\).
 </p>
+
+
 <div class='newtheorem'>
-
-
 <p class='noindent'><span class='head'>
 <a id='x1-4002r18'></a>
 <a class="entry-heading-link" href="../../../entry/functoriality-of-currying/index.html" aria-label="Exercise 1.3.18., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.3.18.</span></a>  </span><span id='exercise:Functoriality_Of_Currying'></span>  Show  that,  for  \(k\colon E'\to E\)  and  \(g\colon E\to \Fun (C,D)\),  there  is  a  preferred  identification  \((gk)^u=g^u(k\times \id _C)\),  compatible  with
@@ -344,9 +344,9 @@ an identification \((\beta \circ -) \colon (g \circ -) = (g' \circ -)\) of funct
 <a id='x1-4004r20'></a>
 <a class="entry-heading-link" href="../../../entry/functoriality-of-precomposition-and-postcomposition/index.html" aria-label="Exercise 1.3.20., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 1.3.20.</span></a>  </span><span id='exercise:Functoriality_Pre_Postcomposition'></span> Formulate and prove that the assignments \(g \mapsto (g \circ -)\) and \(f \mapsto (- \circ f)\) are functorial, in the sense that
 they respect identity functors and composition of functors.
+
+
 </p>
-
-
 </div>
 
 <div class='newtheorem'>
@@ -382,16 +382,15 @@ of</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories. The ca
 <div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-introduction-to-infinity-categories-section-03-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-introduction-to-infinity-categories-section-03-2">
 <p class='noindent'><span class='head'>
 <span class='ntx-Italic-tlf-t1-x-x-109'>Proof sketch.</span> </span>
-</p><p class='noindent'>These properties are developed in <span class="source-reference" data-label="sct-sec:Properties_Of_Functor_Categories">Section 1.7.1</span> of <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-CCNW_Formalization" title="Cisinski et al., Synthetic category theory">Cisinski et al. (2026)</a>]</span>, with binary products treated there. We sketch the construction
-of the inverses for the families considered here.
-</p><p class='noindent'>Construct the displayed functors from the projections, inclusions, evaluation, and currying maps. To
-construct their inverses as actual functors, first uncurry: the product and pullback axioms assemble
-the resulting evaluation maps, after which one curries again. In the coproduct case, use universality
-of coproducts to distribute the product with the parameter category over \(\bigsqcup _iC_i\). In the pullback case, the
-projection identifications must agree over the base. After uncurrying, this agreement is supplied
-by the pullback constructor; the equivalence of identification animae in <a class="source-reference" data-label="axiom:Functor_Category" href="../../../entry/currying-and-uncurrying-functors/index.html#axiom:Functor_Category">Axiom C.5</a> lifts it back. The pullback
-universal property then gives the inverse relation; see also <span class="source-reference" data-label="sct-lem:Functor_Category_Preserves_Pullbacks">Lemma 1.7.11</span> of <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-CCNW_Formalization" title="Cisinski et al., Synthetic category theory">Cisinski et al. (2026)</a>]</span>. A complete proof is given in the
-supplementary material.                                                                                                                      □
+</p><p class='noindent'>These properties are developed in <span class="source-reference" data-label="sct-sec:Properties_Of_Functor_Categories">Section 1.7.1</span> of <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-CCNW_Formalization" title="Cisinski et al., Synthetic category theory">Cisinski et al. (2026)</a>]</span>; the proof for binary (co)products treated there adapts to one
+for arbitrary (co)products.
+</p><p class='noindent'>The functor \(\Fun (*,T) \to T\) is the evaluation map. In each other case, the displayed functor is constructed using
+the universal property of its target. For the inverse, we may map into the relevant functor category
+by first uncurrying and then using the universal property of the target. In the coproduct case, we
+use universality of coproducts to distribute the product with the parameter category over \(\bigsqcup _iC_i\). In the
+pullback case, we must show that the projection identifications agree over the base; this may be done
+after uncurrying, where the equivalence of identification animae in <a class="source-reference" data-label="axiom:Functor_Category" href="../../../entry/currying-and-uncurrying-functors/index.html#axiom:Functor_Category">Axiom C.5</a> allows us to use the pullback
+constructor.                                                                                                                                          □
 </p>
 </div></div>
 
@@ -434,7 +433,7 @@ the outer rectangle is a pushout square.</span></p>
 
 </div>
 <footer class="edition-footer">
-  <span>Last updated 27 October 2026</span>
+  <span>Last updated 6 November 2026</span>
   <a href="/notes/stable-homotopy-higher-algebra.pdf">PDF</a>
   <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Section%201.3%3A%20Basic%20constructions%20of%20%E2%88%9E-categories&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fsection%2Fintroduction-to-infinity-categories%2Fbasic-constructions-of-categories%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
 </footer></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
@@ -464,7 +463,7 @@ the outer rectangle is a pushout square.</span></p>
       <span>In this section</span><span class="contents-chevron" aria-hidden="true"></span>
     </button></h2>
     <nav class="contents" id="contents-section-contents" aria-label="In this section" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
-      <ol class="context-entry-list"><li><a href="#axiom:Products_And_Coproducts_Of_Categories"><span class="context-entry-heading">Axiom C.1</span><span class="context-entry-title">Products and coproducts of ∞-categories</span></a></li><li><a href="#def:Contractible_Infinity_Category"><span class="context-entry-heading">Definition 1.3.5</span><span class="context-entry-title">Contractible category</span></a></li><li><a href="#axiom:Pullback_Of_Categories"><span class="context-entry-heading">Axiom C.2</span><span class="context-entry-title">Pullbacks of ∞-categories</span></a></li><li><a href="#def:Pullback_Square_Of_Infinity_Categories"><span class="context-entry-heading">Definition 1.3.13</span><span class="context-entry-title">Pullback square</span></a></li><li><a href="#axiom:Representability_Of_Identifications"><span class="context-entry-heading">Axiom C.3</span><span class="context-entry-title">Representability of identifications</span></a></li><li><a href="#exercise:Iterated_Pullbacks_Of_Infinity_Categories"><span class="context-entry-heading">Exercise 1.3.14</span><span class="context-entry-title">Iterated pullbacks</span></a></li><li><a href="#lem:Pasting_Lemma_Pullbacks"><span class="context-entry-heading">Lemma 1.3.15</span><span class="context-entry-title">Pasting lemma for pullback squares</span></a></li><li><a href="#axiom:Universality_Of_Coproducts"><span class="context-entry-heading">Axiom C.4</span><span class="context-entry-title">Universality of coproducts</span></a></li><li><a href="#axiom:Functor_Category"><span class="context-entry-heading">Axiom C.5</span><span class="context-entry-title">Functor category</span></a></li><li><a href="#cons:Functoriality_Functor_Categories"><span class="context-entry-heading">Construction 1.3.19</span><span class="context-entry-title">Functoriality of functor categories in C and D</span></a></li><li><a href="#prop:Internal_Universal_Properties"><span class="context-entry-heading">Proposition 1.3.23</span><span class="context-entry-title">Internal universal properties</span></a></li><li><a href="#def:Pushout_Square_Of_Infinity_Categories"><span class="context-entry-heading">Definition 1.3.24</span><span class="context-entry-title">Pushout square</span></a></li><li><a href="#axiom:Pushout_Of_Categories"><span class="context-entry-heading">Axiom C.6</span><span class="context-entry-title">Pushout of ∞-categories</span></a></li><li><a href="#lem:Pasting_Lemma_Pushouts"><span class="context-entry-heading">Lemma 1.3.25</span><span class="context-entry-title">Pasting lemma for pushout squares</span></a></li></ol>
+      <ol class="context-entry-list"><li><a href="#axiom:Products_And_Coproducts_Of_Categories"><span class="context-entry-heading">Axiom C.1</span><span class="context-entry-title">Products and coproducts of ∞-categories</span></a></li><li><a href="#def:Contractible_Infinity_Category"><span class="context-entry-heading">Definition 1.3.5</span><span class="context-entry-title">Contractible category</span></a></li><li><a href="#axiom:Pullback_Of_Categories"><span class="context-entry-heading">Axiom C.2</span><span class="context-entry-title">Pullbacks of ∞-categories</span></a></li><li><a href="#def:Pullback_Square_Of_Infinity_Categories"><span class="context-entry-heading">Definition 1.3.13</span><span class="context-entry-title">Pullback square</span></a></li><li><a href="#exercise:Iterated_Pullbacks_Of_Infinity_Categories"><span class="context-entry-heading">Exercise 1.3.14</span><span class="context-entry-title">Iterated pullbacks</span></a></li><li><a href="#lem:Pasting_Lemma_Pullbacks"><span class="context-entry-heading">Lemma 1.3.15</span><span class="context-entry-title">Pasting lemma for pullback squares</span></a></li><li><a href="#axiom:Universality_Of_Coproducts"><span class="context-entry-heading">Axiom C.4</span><span class="context-entry-title">Universality of coproducts</span></a></li><li><a href="#axiom:Functor_Category"><span class="context-entry-heading">Axiom C.5</span><span class="context-entry-title">Functor category</span></a></li><li><a href="#cons:Functoriality_Functor_Categories"><span class="context-entry-heading">Construction 1.3.19</span><span class="context-entry-title">Functoriality of functor categories in C and D</span></a></li><li><a href="#prop:Internal_Universal_Properties"><span class="context-entry-heading">Proposition 1.3.23</span><span class="context-entry-title">Internal universal properties</span></a></li><li><a href="#def:Pushout_Square_Of_Infinity_Categories"><span class="context-entry-heading">Definition 1.3.24</span><span class="context-entry-title">Pushout square</span></a></li><li><a href="#axiom:Pushout_Of_Categories"><span class="context-entry-heading">Axiom C.6</span><span class="context-entry-title">Pushout of ∞-categories</span></a></li><li><a href="#lem:Pasting_Lemma_Pushouts"><span class="context-entry-heading">Lemma 1.3.25</span><span class="context-entry-title">Pasting lemma for pushout squares</span></a></li></ol>
     </nav>
   </section></div>
   </aside><aside class="publication-fragment-notice" id="rmk:Currying_And_Uncurrying"><strong>Retired fragment.</strong> The currying discussion was incorporated into the functor-category axiom. It now appears at <a href="./#axiom:Functor_Category">this address</a>.</aside>

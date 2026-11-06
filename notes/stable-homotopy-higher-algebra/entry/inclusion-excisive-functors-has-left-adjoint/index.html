@@ -57,33 +57,27 @@ Then the two inclusions </span>\[ \Sp ^{\exc }(C)=\Exc _*(\An _*^{\fin },C) \hoo
 \(\const _*\to \id \) induces \(\const _{F(*)}\to F\). Define \[ F^{\mathrm {red}}(X):=*\sqcup _{F(*)}F(X). \] This is reduced. If \(G\) is reduced, every natural transformation \(F\to G\) vanishes on \(F(*)\), and
 hence factors uniquely through \(F\to F^{\mathrm {red}}\). Thus \((-)^{\mathrm {red}}\) is left adjoint to the inclusion of reduced functors.
 </p><p class='noindent'>For \(P_1\), we may replace \(C\) by \(C_*\), which inherits finite and sequential colimits from \(C\), so assume \(C\) is pointed.
-Write \[ T(F):=\Omega F\Sigma \] for the endofunctor of \(\Fun _*(\An _*^{\fin },C)\), equipped with the natural transformation \(\eta \colon \id \to T\) from <a class="source-reference" data-label="cons:Transformation_Excisive_Functors" href="../transformation-excisive-functors/index.html#cons:Transformation_Excisive_Functors">Construction 16.5.4</a>. We first record
-the coherence needed below. For a finite set \(S\) and \(X\in \An _*^{\fin }\), let \(K_S(X)\) be the colimit of the star-shaped diagram
-with central object \(X\) and one map \(X\to 0\) for every element of \(S\). Thus \[ K_{\emptyset }(X)=X,\qquad K_{\{s\}}(X)=0,\qquad K_{\{0,1\}}(X)=\Sigma X. \] Injections of finite sets induce maps
-between these pointed cones. Since finite colimits commute with each other, interchanging the two
-colimit coordinates gives natural isomorphisms \(K_SK_{S'}\simeq K_{S'}K_S\), coherently in \(S\) and \(S'\). This simultaneous interchange
-is the coherence needed below; it does not require choosing an order in which to identify the two
-suspension coordinates. Moreover, \[ T(F)(X)\simeq \lim _{\emptyset \neq S\subseteq \{0,1\}}F(K_S(X)) \simeq F(0)\times _{F(\Sigma X)}F(0) \simeq \Omega F(\Sigma X). \] Under this description, the maps \(K_{\emptyset }(X)\to K_S(X)\) induce \(\eta _F\). The isomorphisms
-which interchange \(K_S\) and \(K_{S'}\) therefore identify the two natural transformations \[ T(\eta _F),\eta _{T(F)}\colon T(F)\longrightarrow T^2(F). \]
-</p><p class='noindent'>Now let \(F\colon \An _*^{\fin }\to C\) be reduced. Iterate \(\eta \) to form \[ F \xrightarrow {\eta _F} T(F) \xrightarrow {\eta _{T(F)}} T^2(F) \longrightarrow \cdots \] and define \[ P_1(F):=\colim _{n\geq 0}T^n(F). \] Thus \(T^n(F)\simeq \Omega ^nF\Sigma ^n\), with the transition maps specified coherently
-by the pointed-cone construction.
+Write \[ T(F):=\Omega F\Sigma \] for the endofunctor of \(\Fun _*(\An _*^{\fin },C)\), equipped with the natural transformation \(\eta \colon \id \to T\) from <a class="source-reference" data-label="cons:Transformation_Excisive_Functors" href="../transformation-excisive-functors/index.html#cons:Transformation_Excisive_Functors">Construction 16.5.4</a>. Apply the final
+composite identity in the proof of <a class="source-reference" data-label="prop:Excisiveness_Criterion" href="../excisiveness-criterion/index.html#prop:Excisiveness_Criterion">Proposition 16.5.5</a> to the suspension square of \(X\). In the notation of that proof, \(P=T(F)(X)\) and \(\beta \) is
+the identity, so it gives a natural identification \[ T(\eta _F)\simeq \eta _{T(F)}. \]
+</p><p class='noindent'>Now let \(F\colon \An _*^{\fin }\to C\) be reduced. Iterate \(\eta \) to form \[ F \xrightarrow {\eta _F} T(F) \xrightarrow {\eta _{T(F)}} T^2(F) \longrightarrow \cdots \] and define \[ P_1(F):=\colim _{n\geq 0}T^n(F). \] Thus \(T^n(F)\simeq \Omega ^nF\Sigma ^n\), with the transition maps given by \(\eta _{T^n(F)}\).
 </p><p class='noindent'>The functor \(T\) preserves sequential colimits by assumption. Consequently, \[ T(P_1(F))\simeq \colim _{n\geq 0}T^{n+1}(F), \] and under this isomorphism
 \(\eta _{P_1(F)}\) is the map from the defining telescope to its tail. The shift \(n\mapsto n+1\) is cofinal, so this map is an isomorphism.
 The excisiveness criterion now shows that \(P_1(F)\) is excisive.
 </p><p class='noindent'>It remains to verify the universal property. The coherence \(T(\eta _G)\simeq \eta _{T(G)}\) identifies the sequential diagram defining
 \(P_1(T(G))\) with the tail of the diagram defining \(P_1(G)\), compatibly with \[ P_1(\eta _G)\colon P_1(G)\longrightarrow P_1(T(G)). \] Thus \(P_1(\eta _G)\) corresponds to the cofinal tail map
 and is an isomorphism. Moreover, \(P_1\) preserves sequential colimits, since \(T\) does.
-
-
 </p><p class='noindent'>Let \(u_F\colon F\to P_1(F)\) be the map into the telescope. Since \(P_1\) preserves sequential colimits, the map \[ P_1(u_F)\colon P_1(F)\longrightarrow P_1(P_1(F)) \] is the sequential
 colimit of the maps \(P_1(F)\to P_1(T^n(F))\). Each of these is a composite of the isomorphisms \(P_1(\eta _{T^k(F)})\), so \(P_1(u_F)\) is an isomorphism. If \(G\)
 is already excisive, the excisiveness criterion shows that every map in the defining telescope for \(P_1(G)\) is
 an isomorphism, so \(u_G\colon G\to P_1(G)\) is an isomorphism. In particular, \(u_{P_1(F)}\) is an isomorphism. By <a class="source-reference" data-label="prop:Characterization_Bousfield_Localizations" href="../characterizations-of-categorical-bousfield-localizations/index.html#prop:Characterization_Bousfield_Localizations">Proposition 21.8.9</a>, the functor \(P_1\) is left
 adjoint to the inclusion of reduced excisive functors.                                                                         □
 </p>
+
+
 </div></div>
 <footer class="edition-footer">
-  <span>Last updated 27 October 2026</span>
+  <span>Last updated 6 November 2026</span>
   <a href="/notes/stable-homotopy-higher-algebra.pdf">PDF</a>
   <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Excisive%20approximation&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fentry%2Finclusion-excisive-functors-has-left-adjoint%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
 </footer></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Result navigation">

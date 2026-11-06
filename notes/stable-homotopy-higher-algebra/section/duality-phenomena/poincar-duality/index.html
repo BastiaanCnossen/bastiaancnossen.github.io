@@ -36,24 +36,18 @@
       <h1>Poincaré duality</h1>
     </div><nav class="page-turns" data-reading-navigation aria-label="Reading navigation"><a rel="prev" data-step="prev-chapter" href="../../../chapter/thom-spectra-and-bordism-theory/index.html" title="Thom spectra and bordism theory" aria-label="Previous chapter: Chapter 10, Thom spectra and bordism theory"><span class="turn-direction">← Previous chapter</span><span class="turn-target">Chapter 10</span></a>
 <a rel="next" data-step="next-chapter" href="../../../chapter/operads-the-heuristics/index.html" title="Operads: the heuristics" aria-label="Next chapter: Chapter 12, Operads: the heuristics"><span class="turn-direction">→ Next chapter</span><span class="turn-target">Chapter 12</span></a>
-<a rel="prev" data-step="prev-section" href="../spanier-whitehead-and-atiyah-duality/index.html" title="Spanier–Whitehead and Atiyah duality" aria-label="Previous section: Section 11.3, Spanier–Whitehead and Atiyah duality"><span class="turn-direction">← Previous section</span><span class="turn-target">Section 11.3</span></a>
+<a rel="prev" data-step="prev-section" href="../atiyah-duality/index.html" title="Atiyah duality" aria-label="Previous section: Section 11.3, Atiyah duality"><span class="turn-direction">← Previous section</span><span class="turn-target">Section 11.3</span></a>
 <a rel="next" data-step="next-section" href="../../operads-the-heuristics/non-colored-operads/index.html" title="Non-colored operads" aria-label="Next section: Section 12.1, Non-colored operads"><span class="turn-direction">→ Next section</span><span class="turn-target">Section 12.1</span></a></nav></div>
 </header>
 <main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
       <span aria-hidden="true">☰</span> Navigation
     </button>
 <article class="notes-page section-page"><div class="continuous-section">
-<p class='noindent' id='sec:Poincare_Duality'>Poincaré duality for closed smooth manifolds is an immediate consequence of Atiyah duality. Recall that
-Poincaré duality says that when \(M\) is a closed orientable smooth \(n\)-manifold, then for each \(k \in \Z \) there is an
-isomorphism \[ - \cap [M] \colon H^{n-k}(M) \iso H_k(M). \]
-</p><p class='noindent'>Many readers will have encountered this statement in their algebraic topology courses, where it is usually
-proved in quite a down-to-earth way, based on manipulations of simplices in the singular simplicial complex
-of \(M\) and using a couple of reduction arguments. This proof makes it look like Poincaré duality is
-intrinsically a statement about singular (co)homology. However, this is not the case: there is a more
-general version of Poincaré duality for cohomology theories represented by commutative ring
-spectra.
-</p><p class='noindent'>The orientation theory of <a class="source-reference" data-label="sec:Orientations_And_Thom_Isomorphisms" href="../../thom-spectra-and-bordism-theory/orientations-and-the-thom-isomorphism/index.html#sec:Orientations_And_Thom_Isomorphisms">Section 10.4</a> applies to the virtual bundles occurring in Atiyah duality, and this is all that is
-needed.
+<p class='noindent' id='sec:Poincare_Duality'>For a closed oriented smooth \(n\)-manifold \(M\), classical Poincaré duality gives an isomorphism \[ - \cap [M] \colon H^{n-k}(M) \iso H_k(M) \]
+</p><p class='noindent'>by cap product with the fundamental class. We now derive this from Atiyah duality and extend it to other
+cohomology theories. Atiyah duality identifies the dual of \(\S [M]\) with \(\th (-T_M)\). An \(E\)-orientation of \(T_M\) gives a Thom
+isomorphism for this spectrum; combined with Atiyah duality, this yields an isomorphism between
+\(E\)-homology and shifted \(E\)-cohomology.
 </p>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
@@ -66,74 +60,78 @@ smooth</span> \(n\)<span class='ntx-Italic-tlf-t1-x-x-109'>-manifold equipped wi
 
 <div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-duality-phenomena-section-04-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-duality-phenomena-section-04-2">
 <p class='noindent'><span class='head'>
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="thm:Atiyah_Duality" href="../../../entry/atiyah-duality/index.html#thm:Atiyah_Duality">Theorem 11.3.14</a>, the dual of the spectrum \(\S [M]\) in \(\Sp \) is \(\th (-T_M)\), and in particular we obtain an isomorphism of spectra \[ \S [M] \otimes E \cong \hom (\th (-T_M), E). \] By <a class="source-reference" data-label="lem:Orientation_Of_Inverse_Virtual_Bundle" href="../../../entry/orientations-of-inverse-virtual-vector-bundles/index.html#lem:Orientation_Of_Inverse_Virtual_Bundle">Lemma 10.4.9</a>, the
-
-
-given orientation of \([T_M]\) induces an orientation of \(-T_M\). Since this virtual bundle has rank \(-n\), <a class="source-reference" data-label="thm:Thom_Isomorphism" href="../../../entry/thom-isomorphism/index.html#thm:Thom_Isomorphism">Theorem 10.4.6</a> gives an isomorphism \(\th (-T_M) \otimes E \cong (\S [M] \otimes E)[-n]\)
-in \(\Mod _E\), and it follows that \begin {align*}  \hom (\th (-T_M), E) &amp;\cong \hom _E(\th (-T_M) \otimes E, E) \\ &amp;\cong \hom _E((\S [M] \otimes E)[-n], E) \\ &amp;\cong \hom (\S [M][-n],E) \\ &amp;\cong \hom (\S [M],E[n]).  \end {align*}
-</p><p class='noindent'>Combining these two isomorphisms thus gives the first claim. The second claim immediately follows by
-applying \(\pi _k(-)\) to both sides.                                                                                                                       □
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  By  <a class="source-reference" data-label="thm:Atiyah_Duality" href="../../../entry/atiyah-duality/index.html#thm:Atiyah_Duality">Theorem 11.3.10</a>,  the  dual  of  the  spectrum  \(\S [M]\)  in  \(\Sp \)  is  \(\th (-T_M)\),  and  in  particular  we  obtain  an  isomorphism  of
+spectra \[ \S [M] \otimes E \cong \hom (\th (-T_M), E). \] By <a class="source-reference" data-label="lem:Orientation_Of_Inverse_Virtual_Bundle" href="../../../entry/orientations-of-inverse-virtual-vector-bundles/index.html#lem:Orientation_Of_Inverse_Virtual_Bundle">Lemma 10.4.9</a>, the given orientation of \([T_M]\) induces an orientation of \(-T_M\). Since this virtual bundle has rank
+\(-n\), the cohomological Thom isomorphism of <a class="source-reference" data-label="thm:Thom_Isomorphism" href="../../../entry/thom-isomorphism/index.html#thm:Thom_Isomorphism">Theorem 10.4.6</a> gives \[ \hom (\th (-T_M),E)\cong \hom (\S [M][-n],E)\cong \hom (\S [M],E[n]). \] This proves the first claim. Applying \(\pi _k(-)\) gives the
+second.                                                                                                                                                □
 </p>
 </div></div>
+
+
 <p class='noindent'>The preceding proof is the abstract form of Poincaré duality. We next relate it to the classical
 fundamental-class formulation. The orientation of \(-T_M\) gives a Thom class \(u_{-T_M}\colon \th (-T_M) \to E[-n]\). Define the \(E\)<span class='ntx-Italic-tlf-t1-x-x-109'>-fundamental class </span>\[ [M]_E \in E_n(M)=\pi _n(E\otimes \S [M]) \] to be
-represented, after shifting, by the composite \[ \S \xrightarrow {\coev } \S [M]\otimes \th (-T_M) \xrightarrow {\id \otimes u_{-T_M}} \S [M]\otimes E[-n]. \] Using the embedding \(M\hookrightarrow \R ^N\) chosen in the proof of <a class="source-reference" data-label="thm:Atiyah_Duality" href="../../../entry/atiyah-duality/index.html#thm:Atiyah_Duality">Theorem 11.3.14</a>, this is
+represented, after shifting, by the composite \[ \S \xrightarrow {\coev } \S [M]\otimes \th (-T_M) \xrightarrow {\id \otimes u_{-T_M}} \S [M]\otimes E[-n]. \] Using the embedding \(M\hookrightarrow \R ^N\) chosen in the proof of <a class="source-reference" data-label="thm:Atiyah_Duality" href="../../../entry/atiyah-duality/index.html#thm:Atiyah_Duality">Theorem 11.3.10</a>, this is
 concretely the class determined by the Pontryagin–Thom collapse \(S^N\to \Th (\nu )\), followed by the diagonal \(\Delta _*\colon \Th (\nu )\to \Th (\nu )\wedge M_+\) and then the
-Thom class of the normal bundle on the first factor.
+Thom class of the normal bundle on the first factor. For \(E=\Z \), restricting this construction to a coordinate
+neighborhood of \(m\in M\) shows that its image in \(H_n(M,M\setminus \{m\};\Z )\) is the local generator determined by the orientation. Thus it is the
+classical fundamental class.
 </p>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-1002r2'></a>
-<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 11.4.2.</span>  </span><span id='prop:Poincare_Duality_Cap_Product'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Under the above identification, the isomorphism</span> \(E^{n-k}(M)\to E_k(M)\) <span class='ntx-Italic-tlf-t1-x-x-109'>inverse to the one in </span><a class="source-reference" data-label="thm:Poincare_Duality" href="../../../entry/poincare-duality/index.html#thm:Poincare_Duality">Theorem 11.4.1 </a><span class='ntx-Italic-tlf-t1-x-x-109'>is cap
-product with the fundamental class: </span>\[ -\cap [M]_E\colon E^{n-k}(M)\iso E_k(M). \]
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 11.4.2.</span>  </span><span id='prop:Poincare_Duality_Cap_Product'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The inverse of the isomorphism in </span><a class="source-reference" data-label="thm:Poincare_Duality" href="../../../entry/poincare-duality/index.html#thm:Poincare_Duality">Theorem 11.4.1 </a><span class='ntx-Italic-tlf-t1-x-x-109'>is cap product with</span> \([M]_E\)<span class='ntx-Italic-tlf-t1-x-x-109'>: </span>\[ -\cap [M]_E\colon E^{n-k}(M)\iso E_k(M). \]
 </p>
 </div>
 
 <div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-duality-phenomena-section-04-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-duality-phenomena-section-04-1">
 <p class='noindent'><span class='head'>
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof sketch.</span> </span>   Represent a cohomology class by a map \(a\colon \S [M]\to E[n-k]\). Cap product with \([M]_E\) is represented, after
-shifting, by the composite \[ \S \xrightarrow {[M]_E} \S [M]\otimes E[-n] \xrightarrow {\S [\Delta ]\otimes \id } \S [M]\otimes \S [M]\otimes E[-n] \xrightarrow {\id \otimes a\otimes \id } \S [M]\otimes E[n-k]\otimes E[-n] \xrightarrow {\id \otimes \mu } \S [M]\otimes E[-k]. \] Substituting the definition of \([M]_E\) expresses this as the composite obtained
-from the Atiyah coevaluation, the class \(a\), and the Thom class. The triangle identity for the Atiyah
-duality datum then identifies it with the inverse of the isomorphism in <a class="source-reference" data-label="thm:Poincare_Duality" href="../../../entry/poincare-duality/index.html#thm:Poincare_Duality">Theorem 11.4.1</a>.                                           □
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Represent a cohomology class by a map \(a\colon \S [M]\to E[n-k]\). Cap product with \([M]_E\) is represented, after shifting,
+by the composite \[ \begin {aligned} \S &amp;\xrightarrow {[M]_E} \S [M]\otimes E[-n] \xrightarrow {\S [\Delta ]\otimes \id } \S [M]\otimes \S [M]\otimes E[-n] \\ &amp;\xrightarrow {\id \otimes a\otimes \id } \S [M]\otimes E[n-k]\otimes E[-n] \xrightarrow {\id \otimes \mu } \S [M]\otimes E[-k]. \end {aligned} \] Let \(\delta \colon \th (-T_M)\to \S [M]\otimes \th (-T_M)\) be the Thom diagonal. The construction of \(\coev \) gives \[ (\S [\Delta ]\otimes \id )\circ \coev \simeq (\id \otimes \delta )\circ \coev \colon \S \longrightarrow \S [M]\otimes \S [M]\otimes \th (-T_M). \] Indeed, both sides apply
+the Pontryagin–Thom collapse and record twice the point of \(M\) over which the normal vector lies.
+Substituting the definition of \([M]_E\) therefore rewrites the cap product as \[ \S \xrightarrow {\coev }\S [M]\otimes \th (-T_M) \xrightarrow {\id \otimes b}\S [M]\otimes E[-k], \] where \[ b\colon \th (-T_M)\xrightarrow {\delta }\S [M]\otimes \th (-T_M) \xrightarrow {a\otimes u_{-T_M}}E[n-k]\otimes E[-n] \xrightarrow {\mu }E[-k]. \] As in the proof of <a class="source-reference" data-label="cor:Classical_Thom_Isomorphism" href="../../../entry/classical-thom-isomorphism/index.html#cor:Classical_Thom_Isomorphism">Corollary 10.4.8</a>, the
+map \((\id \otimes u_{-T_M})\circ \delta \) extends \(E\)-linearly to the Thom isomorphism: on each fiber it applies the chosen trivialization
+and records the point of \(M\) over which the fiber lies. Consequently, \(b\) is the image of \(a\) under the inverse
+cohomological Thom isomorphism. The triangle identities identify \(b\mapsto (\id \otimes b)\circ \coev \) with the inverse of \(\S [M]\otimes E\cong \hom (\th (-T_M),E)\), after shifting
+by \(-k\). The displayed cap product is therefore the inverse of the composite used in <a class="source-reference" data-label="thm:Poincare_Duality" href="../../../entry/poincare-duality/index.html#thm:Poincare_Duality">Theorem 11.4.1</a>.                            □
 </p>
 </div></div>
 <div class='newtheorem'>
-
-
 <p class='noindent'><span class='head'>
 <a id='x1-1003r3'></a>
-<a class="entry-heading-link" href="../../../entry/ordinary-coefficient-poincare-duality/index.html" aria-label="Example 11.4.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 11.4.3.</span></a>  </span><span id='ex:Poincare_Duality_Ordinary_Coefficients'></span> For \(E=H\F _2\), every real vector bundle is \(E\)-orientable because \(\Line _{H\F _2}\simeq *\). Thus every closed smooth
-manifold satisfies mod-\(2\) Poincaré duality. For \(E=H\Z \), <a class="source-reference" data-label="ex:Ordinary_Cohomology_Orientations" href="../../../entry/ordinary-cohomology-orientations/index.html#ex:Ordinary_Cohomology_Orientations">Example 10.4.10</a> identifies an \(H\Z \)-orientation with a classical orientation,
-or  equivalently  with  a  nullhomotopy  of  \(w_1(T_M)\).  This  recovers  integral  Poincaré  duality  for  orientable
-manifolds.
+
+
+<a class="entry-heading-link" href="../../../entry/ordinary-coefficient-poincare-duality/index.html" aria-label="Example 11.4.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 11.4.3.</span></a>  </span><span id='ex:Poincare_Duality_Ordinary_Coefficients'></span> For \(E=\F _2\), every real vector bundle is \(E\)-orientable because \(\Line _{\F _2}\simeq *\). Thus every closed smooth
+manifold satisfies mod-\(2\) Poincaré duality. For \(E=\Z \), <a class="source-reference" data-label="ex:Ordinary_Cohomology_Orientations" href="../../../entry/ordinary-cohomology-orientations/index.html#ex:Ordinary_Cohomology_Orientations">Example 10.4.10</a> identifies an \(\Z \)-orientation with a classical orientation.
+This recovers integral Poincaré duality for oriented manifolds.
 </p>
 </div>
 
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-1004r4'></a>
-<a class="entry-heading-link" href="../../../entry/ku-and-mo-orientations/index.html" aria-label="Remark 11.4.4., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 11.4.4.</span></a>  </span><span id='rmk:KU_And_MO_Orientations'></span> A \(\mathrm {Spin}^c\)-structure on \(M\) determines a \(\KU \)-orientation of \([T_M]\) through the construction of <span class='citation'><a class="citation-item" href="../../../references/index.html#ref-Atiyah_Bott_Shapiro" title="Atiyah et al., Clifford modules">Atiyah et al. (1964)</a></span>. At the
-other extreme, <a class="source-reference" data-label="ex:Universal_MO_Orientation" href="../../../entry/universal-mo-orientation/index.html#ex:Universal_MO_Orientation">Example 10.4.11</a> shows that every real vector bundle is canonically \(\MO \)-orientable. This ties generalized
-Poincaré duality directly to the bordism theory of <a class="source-reference" data-label="sec:Bordism_As_Homology_Theory" href="../../thom-spectra-and-bordism-theory/bordism-and-the-pontryagin-thom-theorem/index.html#sec:Bordism_As_Homology_Theory">Section 10.3</a>.
-</p>
-</div>
-
-<div class='newtheorem'>
-<p class='noindent'><span class='head'>
-<a id='x1-1005r5'></a>
-<a class="entry-heading-link" href="../../../entry/poincare-duality-for-real-projective-plane/index.html" aria-label="Example 11.4.5., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 11.4.5.</span></a>  </span><span id='ex:Poincare_Duality_Real_Projective_Plane'></span> The manifold \(\R P^2\) is not integrally orientable, and integral Poincaré duality indeed
+<a class="entry-heading-link" href="../../../entry/poincare-duality-for-real-projective-plane/index.html" aria-label="Example 11.4.4., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 11.4.4.</span></a>  </span><span id='ex:Poincare_Duality_Real_Projective_Plane'></span> The manifold \(\R P^2\) is not integrally orientable, and integral Poincaré duality indeed
 fails: \(H_0(\R P^2;\Z )\cong \Z \), whereas \(H^2(\R P^2;\Z )\cong \Z /2\). With \(\F _2\)-coefficients, it is orientable and Poincaré duality holds.
 </p>
 </div>
 
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
+<a id='x1-1005r5'></a>
+<a class="entry-heading-link" href="../../../entry/ku-and-mo-orientations/index.html" aria-label="Remark 11.4.5., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 11.4.5.</span></a>  </span><span id='rmk:KU_And_MO_Orientations'></span> A \(\mathrm {Spin}^c\)-structure on \(M\) determines a \(\KU \)-orientation of \([T_M]\) through the construction of <span class='citation'><a class="citation-item" href="../../../references/index.html#ref-Atiyah_Bott_Shapiro" title="Atiyah et al., Clifford modules">Atiyah et al. (1964)</a>, Theorem 12.3(ii)</span>, after
+stabilization. Moreover, <a class="source-reference" data-label="ex:Universal_MO_Orientation" href="../../../entry/universal-mo-orientation/index.html#ex:Universal_MO_Orientation">Example 10.4.11</a> provides a canonical \(\MO \)-orientation of every real vector bundle. Thus every
+closed smooth manifold satisfies \(\MO \)-Poincaré duality.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
 <a id='x1-1006r6'></a>
-<a class="entry-heading-link" href="../../../entry/poincare-lefschetz-duality/index.html" aria-label="Remark 11.4.6., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 11.4.6.</span></a>  </span><span id='rmk:Poincare_Lefschetz_Duality'></span>   For   a   compact   manifold   with   boundary,   the   corresponding   statement   is
-Poincaré–Lefschetz duality: \[ E_k(M)\cong E^{n-k}(M,\partial M). \] under the appropriate \(E\)-orientation hypothesis. At the spectrum level,
-Atiyah duality identifies the Spanier–Whitehead dual of \(M/\partial M\) with the Thom spectrum \(\th (-T_M)\). Together with
-the Thom isomorphism, this gives the displayed identification of the homology of \(M\) with its relative
-cohomology.
+
+
+<a class="entry-heading-link" href="../../../entry/poincare-lefschetz-duality/index.html" aria-label="Remark 11.4.6., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 11.4.6.</span></a>  </span><span id='rmk:Poincare_Lefschetz_Duality'></span> For a compact smooth \(n\)-manifold \(M\) with boundary, equipped with an \(E\)-orientation
+of \([T_M]\), Poincaré–Lefschetz duality gives \[ E_k(M)\cong E^{n-k}(M,\partial M). \] This uses the boundary version of Atiyah duality, which we
+have not proved here: \[ D\bigl (\Sigma ^\infty \Pi _\infty (M/\partial M)\bigr )\cong \th (-T_M); \] see <span class='citation'><a class="citation-item" href="../../../references/index.html#ref-Atiyah1961Thom" title="Atiyah, Thom complexes">Atiyah (1961b)</a>, Proposition 3.2</span>. Tensoring with \(E\) and applying the Thom isomorphism gives the displayed
+identification of the homology of \(M\) with its relative cohomology.
 </p>
 </div>
 <p class='noindent'><a id='likesection.1'></a><a id='x1-1007x11.4'></a>
@@ -143,17 +141,37 @@ cohomology.
 </p><div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-2001r1'></a>
-<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 11.1.</span>  </span>Let  \(C\)  be  the  1-category  \(\Vect _k\)  of  vector  spaces  over  some  field  \(k\).  Show  that  every
-finite-dimensional vector space \(V\) is dualizable in \(\Vect _k\), with dual given by \(V^{\vee } = V^* := \Hom _k(V,k)\).
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 11.1 </span>(Duality for the cartesian monoidal structure)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span>  Let  \(C\)  be  an  \(\infty \)-category  with  finite
+products,  equipped  with  its  cartesian  symmetric  monoidal  structure.  Show  that  an  object  of  \(C\)  is
+dualizable  if  and  only  if  it  is  terminal.  Deduce  the  corresponding  statement  for  the  cocartesian
+monoidal structure on an \(\infty \)-category with finite coproducts.
 </p>
 </div>
 
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-2002r2'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 11.2 </span>(Duality and cofiber sequences)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(C\) be a stably symmetric monoidal \(\infty \)-category.
 
 
-<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 11.2 </span>(The dual of a quotient module)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(R\) be a commutative ring spectrum, let \(x\in \pi _0(R)\), and let \(R/x\)
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>Show that the zero object is dualizable.
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>Let \(f\colon X\to Y\) be a morphism between dualizable objects. Show that \(\cofib (f)\) is dualizable with dual \(\fib (f^\vee \colon Y^\vee \to X^\vee )\).
+   </p></dd><dt class='enumerate'>
+(3) </dt><dd class='enumerate'>
+   <p class='noindent'>Deduce that the full subcategory of dualizable objects is closed under finite colimits. Apply this
+   to \(C=\Sp \) to give a direct proof of <a class="source-reference" data-label="cor:Finite_Animae_Are_Dualizable" href="../../../entry/finite-animae-have-dualizable-suspension-spectra/index.html#cor:Finite_Animae_Are_Dualizable">Corollary 11.2.8</a>.</p></dd></dl>
+<p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Hint: </span>Use the adjunction characterization in <a class="source-reference" data-label="prop:Characterization_Dualizable_Objects" href="../../../entry/characterizations-of-dualizable-objects/index.html#prop:Characterization_Dualizable_Objects">Proposition 11.1.4</a> and the exactness of tensor products.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2006r3'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 11.3 </span>(The dual of a quotient module)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(R\) be a commutative ring spectrum, let \(x\in \pi _0(R)\), and let \(R/x\)
 be the cofiber of multiplication by \(x\) on \(R\). The \(R\)-module \(R/x\) is perfect and hence dualizable. Compute its
 \(R\)-linear dual, showing that \[ \hom _R(R/x,R)\cong (R/x)[-1]. \]
 </p>
@@ -161,55 +179,46 @@ be the cofiber of multiplication by \(x\) on \(R\). The \(R\)-module \(R/x\) is 
 
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
-<a id='x1-2003r3'></a>
-<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 11.3.</span>  </span>Let \(C\) be a symmetric monoidal \(\infty \)-category, and assume that \(C\) is stable and that the tensor
-product \(X \otimes -\colon C \to C\) is exact for every object \(X\) of \(C\).
-   </p><dl class='enumerate'><dt class='enumerate'>
-(1) </dt><dd class='enumerate'>
-   <p class='noindent'>Show that the zero object is dualizable.
-   </p></dd><dt class='enumerate'>
-(2) </dt><dd class='enumerate'>
-   <p class='noindent'>Deduce that the subcategory of \(C\) consisting of the dualizable objects is closed under pushouts.
-   </p></dd><dt class='enumerate'>
-(3) </dt><dd class='enumerate'>
-   <p class='noindent'>Apply the preceding two parts to \(C=\Sp \) to give a direct proof of <a class="source-reference" data-label="cor:Finite_Animae_Are_Dualizable" href="../../../entry/finite-animae-have-dualizable-suspension-spectra/index.html#cor:Finite_Animae_Are_Dualizable">Corollary 11.3.4</a>.</p></dd></dl>
-</div>
-
-<div class='newtheorem'>
-<p class='noindent'><span class='head'>
 <a id='x1-2007r4'></a>
 
 
-<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 11.4 </span>(Duals of finite wedges of spheres)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Show that \(D(\S [n])\cong \S [-n]\) for every \(n\in \Z \). Deduce that \[ D\left (\bigoplus _{i=1}^r\S [n_i]\right ) \cong \bigoplus _{i=1}^r\S [-n_i]. \] Explain why
-the analogous statement for an infinite wedge requires replacing the wedge by a product and does
-not assert dualizability.
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 11.4 </span>(Duals of finite wedges of spheres)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Show that \(D(\S [n])\cong \S [-n]\) for every \(n\in \Z \). Deduce that \[ D\left (\bigoplus _{i=1}^r\S [n_i]\right ) \cong \bigoplus _{i=1}^r\S [-n_i]. \] Show that
+the analogous formula for an infinite wedge has a product on the right, and that an infinite wedge of
+shifted spheres is not dualizable.
 </p>
 </div>
 
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-2008r5'></a>
-<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 11.5 </span>(Atiyah duality for a sphere)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Identify \(\th (-T_{S^n})\) and show that Atiyah duality gives \[ D(\S [S^n])\cong \S \oplus \S [-n], \] Compare
-this with the splitting \(\S [S^n]\cong \S \oplus \S [n]\).
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 11.5 </span>(Atiyah duality for a sphere)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(n\geq 0\). Use the standard embedding \(S^n\hookrightarrow \R ^{n+1}\) and its trivial normal
+line bundle to identify \(\th (-T_{S^n})\). Show that Atiyah duality gives \[ D(\S [S^n])\cong \S \oplus \S [-n]. \] Compare this with the splitting \(\S [S^n]\cong \S \oplus \S [n]\).
 </p>
 </div>
 
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-2009r6'></a>
-<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 11.6 </span>(A consequence of Poincaré duality)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(M\) be a closed oriented smooth \(n\)-manifold.
-Prove that its Betti numbers satisfy \(b_k(M)=b_{n-k}(M)\). Deduce that every closed oriented odd-dimensional manifold
-has Euler characteristic zero.
-</p>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 11.6 </span>(Consequences of Poincaré duality)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(M\) be a closed oriented smooth \(n\)-manifold.
+   </p><dl class='enumerate'><dt class='enumerate'>
+(1) </dt><dd class='enumerate'>
+   <p class='noindent'>Show that the pairing \[ H^k(M;\Q )\otimes _{\Q }H^{n-k}(M;\Q )\longrightarrow \Q , \qquad a\otimes b\longmapsto \langle a\smile b,[M]\rangle , \] is nondegenerate.
+   </p></dd><dt class='enumerate'>
+(2) </dt><dd class='enumerate'>
+   <p class='noindent'>Deduce that the Betti numbers satisfy \(b_k(M)=b_{n-k}(M)\), and that \(M\) has Euler characteristic zero if \(n\) is odd.
+   </p></dd><dt class='enumerate'>
+(3) </dt><dd class='enumerate'>
+
+
+   <p class='noindent'>Use mod-\(2\) Poincaré duality to show that every closed smooth odd-dimensional manifold has
+   Euler characteristic zero, without assuming orientability.</p></dd></dl>
 </div>
 
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
-<a id='x1-2010r7'></a>
-
-
+<a id='x1-2013r7'></a>
 <span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 11.7 </span>(Invertible spectra)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Show that every invertible spectrum is isomorphic to \(\S [n]\) for a unique \(n\in \Z \).
-Conclude that the definitions of \(\Pic (\Sp )\) in <a class="source-reference" data-label="def:Stable_Spherical_Fibration" href="../../../entry/stable-spherical-fibration/index.html#def:Stable_Spherical_Fibration">Definition 10.2.7</a>, <a class="source-reference" data-label="def:Invertible_Object" href="../../../entry/invertible-object/index.html#def:Invertible_Object">Definition 11.1.4</a> agree. Let \(X\) be an invertible spectrum with inverse \(Y\), and proceed as
+Conclude that the definitions of \(\Pic (\Sp )\) in <a class="source-reference" data-label="def:Stable_Spherical_Fibration" href="../../../entry/stable-spherical-fibration/index.html#def:Stable_Spherical_Fibration">Definition 10.2.7</a>, <a class="source-reference" data-label="def:Invertible_Object" href="../../../entry/invertible-object/index.html#def:Invertible_Object">Definition 11.1.6</a> agree. Let \(X\) be an invertible spectrum with inverse \(Y\), and proceed as
 follows:
    </p><dl class='enumerate'><dt class='enumerate'>
 (1) </dt><dd class='enumerate'>
@@ -229,7 +238,7 @@ follows:
 
 </div>
 <footer class="edition-footer">
-  <span>Last updated 27 October 2026</span>
+  <span>Last updated 6 November 2026</span>
   <a href="/notes/stable-homotopy-higher-algebra.pdf">PDF</a>
   <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Section%2011.4%3A%20Poincar%C3%A9%20duality&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fsection%2Fduality-phenomena%2Fpoincar-duality%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
 </footer></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
@@ -252,7 +261,7 @@ follows:
       <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
     </button></h2>
     <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
-      <ol class="context-entry-list"><li><a href="../symmetric-monoidal-duality/index.html"><span class="context-entry-heading">Section 11.1</span><span class="context-entry-title">Symmetric monoidal duality</span></a></li><li><a href="../dualizability-and-compactness/index.html"><span class="context-entry-heading">Section 11.2</span><span class="context-entry-title">Dualizability and compactness</span></a></li><li><a href="../spanier-whitehead-and-atiyah-duality/index.html"><span class="context-entry-heading">Section 11.3</span><span class="context-entry-title">Spanier–Whitehead and Atiyah duality</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 11.4</span><span class="context-entry-title">Poincaré duality</span></a></li></ol>
+      <ol class="context-entry-list"><li><a href="../symmetric-monoidal-duality/index.html"><span class="context-entry-heading">Section 11.1</span><span class="context-entry-title">Symmetric monoidal duality</span></a></li><li><a href="../dualizability-and-compactness/index.html"><span class="context-entry-heading">Section 11.2</span><span class="context-entry-title">Dualizability and compactness</span></a></li><li><a href="../atiyah-duality/index.html"><span class="context-entry-heading">Section 11.3</span><span class="context-entry-title">Atiyah duality</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 11.4</span><span class="context-entry-title">Poincaré duality</span></a></li></ol>
     </nav>
   </section><section class="contents-ledger" data-contents-ledger data-open="true">
     <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">

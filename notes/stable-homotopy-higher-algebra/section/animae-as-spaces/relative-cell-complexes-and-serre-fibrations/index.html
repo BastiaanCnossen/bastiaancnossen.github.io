@@ -76,7 +76,7 @@ subcategory spanned by the cell complexes.
 <a id='x1-5002r2'></a>
 <a class="entry-heading-link" href="../../../entry/cw-complexes-and-relative-cell-complexes/index.html" aria-label="Remark 2.3.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 2.3.2.</span></a>  </span><span id='rmk:CW_Complexes_And_Relative_Cell_Complexes'></span> While the definition involves ordinals to handle potentially transfinite constructions,
 for many common examples the process involves only a finite or countable number of steps. For
-example, every cell complex is homotopy equivalent to a <span class='ntx-Italic-tlf-t1-x-x-109'>CW-complex</span>, which is a cell complex
+example, every cell complex is homotopy equivalent to a <span class='ntx-Italic-tlf-t1-x-x-109'>CW-complex </span><span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-May_Ponto_More_Concise" title="May and Ponto, More concise algebraic topology: Localization, completion, and model categories">May and Ponto (2012)</a>, Section 17.4, p. 358]</span>, which is a cell complex
 where \(\lambda = \omega \) is the set of natural numbers, and where the dimensions of the cells attached at step \(n \in \omega \) is \(n\).
 </p>
 </div>
@@ -93,7 +93,7 @@ having the homotopy type of cell complexes. Then</span> \(f\) <span class='ntx-I
 
 <div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-25" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-25">
 <p class='noindent'><span class='head'>
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Choose homotopy equivalences \(u\colon X' \to X\) and \(v\colon Y' \to Y\) with \(X'\) and \(Y'\) cell complexes, and let \(w\colon Y \to Y'\) be a homotopy
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Choose homotopy equivalences \(u\colon X' \to X\) and \(v\colon Y' \to Y\) with \(X'\) and \(Y'\) CW-complexes, and let \(w\colon Y \to Y'\) be a homotopy
 inverse to \(v\). The composite \(wfu\colon X' \to Y'\) is a weak homotopy equivalence, hence a homotopy equivalence by the
 usual Whitehead theorem. Since \(u\) and \(w\) are homotopy equivalences, so is \(f\).                                        □
 
@@ -137,7 +137,9 @@ the inclusion is an equivalence of \(\infty \)-categories. By <a class="source-r
 transformation \(q\colon Z \Rightarrow \id _{\Top }\) such that the map \(q_X\colon Z(X) \to X\) is a weak homotopy equivalence for all \(X\). Given a weak homotopy
 equivalence \(f\colon X \to Y\), the 2-out-of-3 property applied to the diagram</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-c082f0be8249.svg" alt="Commutative square with maps Z(X) to X labeled q X, Z(Y) to Y labeled q Y, Z(X) to Z(Y) labeled Z(f), X to Y labeled f." width="99" height="62" loading="lazy"></figure></div><p class='noindent'>shows that the map \(Z(f)\) is again a weak
 homotopy equivalence, and by Whitehead’s theorem it is in fact a homotopy equivalence. It follows
-that \(Z\) induces a functor \(\Top [\{\text {weak homotopy equivalences}\}^{-1}] \to \Cell [\{\text {homotopy equivalences}\}^{-1}]\), and the natural transformation \(q\colon Z \to \id \) exhibits this as the requisite inverse functor.    □</p>
+that  \(Z\)  induces  a  functor  \(\Top [\{\text {weak homotopy equivalences}\}^{-1}] \to \Cell [\{\text {homotopy equivalences}\}^{-1}]\).  The  natural  transformation  \(q\)  becomes  invertible  in  the  localization  of  \(\Top \);
+its  restriction  to  \(\Cell \)  also  becomes  invertible,  since  its  components  are  homotopy  equivalences  by
+Whitehead’s theorem. Thus the two induced functors are inverse equivalences.                               □</p>
 </div></div>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
@@ -150,12 +152,14 @@ complexes and whose morphism set between</span> \(X\) <span class='ntx-Italic-tl
 
 <div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-23" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-23">
 <p class='noindent'><span class='head'>
+
+
+
 <span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> It suffices to observe that a functor \(F\colon \Cell \to C\) into a 1-category inverts homotopy equivalences if and
-
-
 only if it identifies homotopic maps. One implication follows by applying \(F\) to homotopy inverses.
-Conversely, if \(H\colon f \sim g\) is a homotopy, then \[ F(f)=F(H)F(i_0)=F(H)F(\pr )^{-1}=F(H)F(i_1)=F(g), \] where \(i_0,i_1\colon X \to X\times [0,1]\) are the endpoint inclusions and \(\pr \colon X\times [0,1]\to X\) is the projection. Thus \(\h \Cell \)
-has the same universal property as the homotopy category of the localization in <a class="source-reference" data-label="prop:Animae_Localization_Of_Cell_Complexes" href="../../../entry/animae-as-the-localization-of-cell-complexes/index.html#prop:Animae_Localization_Of_Cell_Complexes">Proposition 2.3.6</a>.                            □
+Conversely, since \(X\times [0,1]\) is again a cell complex, a homotopy \(H\colon f \sim g\) gives \[ F(f)=F(H)F(i_0)=F(H)F(\pr )^{-1}=F(H)F(i_1)=F(g), \] where \(i_0,i_1\colon X \to X\times [0,1]\) are the endpoint inclusions and \(\pr \colon X\times [0,1]\to X\)
+is the projection. Thus \(\h \Cell \) has the same universal property as the homotopy category of the localization
+in <a class="source-reference" data-label="prop:Animae_Localization_Of_Cell_Complexes" href="../../../entry/animae-as-the-localization-of-cell-complexes/index.html#prop:Animae_Localization_Of_Cell_Complexes">Proposition 2.3.6</a>.                                                                                                                                                       □
 </p>
 </div></div>
 <p class='noindent'>We are now ready to establish the claimed structure on \(\Top \):
@@ -177,17 +181,16 @@ Furthermore, it admits functorial factorizations and is homotopy cocomplete.</sp
    <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>(2-out-of-3): </span>It is clear from the definition that the class \(W_{\text {whe}}\) satisfies the 2-out-of-3 property.
    </p></dd><dt class='enumerate'>
 (2) </dt><dd class='enumerate'>
+
+
    <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>(Class of cofibrations): </span>The class \(I_{\text {cell}}\) contains all isomorphisms (by attaching no cells) and is closed
    under composition (attaching cells iteratively). It is also closed under pushouts: if \(i\colon A \to X\) is a relative
-   cell complex and \(f\colon A \to A'\) is any map, consider the pushout square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-c04551b8d356.svg" alt="Commutative square with maps A to A' labeled f, X to X' labeled f', A to X labeled i, A' to X' labeled i'." width="73" height="67" loading="lazy"></figure></div><p class='noindent'>Then \(i'\) is also a relative cell complex,
-   where the filtration is inductively defined by \(X'_{\lambda +1} := X_{\lambda +1} \sqcup _{X_{\lambda }} X'_{\lambda }\).</p></dd><dt class='enumerate'>
+   cell complex and \(f\colon A \to A'\) is any map, consider the pushout square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-c04551b8d356.svg" alt="Commutative square with maps A to A' labeled f, X to X' labeled f', A to X labeled i, A' to X' labeled i'." width="73" height="67" loading="lazy"></figure></div><p class='noindent'>Then \(i'\) is again a relative cell complex,
+   with filtration \(X'_\alpha =A'\sqcup _A X_\alpha \).</p></dd><dt class='enumerate'>
 (3) </dt><dd class='enumerate'>
-   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>(Pushout axiom): </span>We need to show that if \(i\colon A \to X\) is a trivial cofibration (i.e., a relative cell complex
-   and a weak homotopy equivalence) between cofibrant objects (cell complexes), then the pushout
-   \(i'\colon A' \to X'\) is also a weak homotopy equivalence. This is a non-trivial fact in model category theory. One
-   first shows that every trivial cofibration has the left lifting property with respect to the Serre
-   fibrations (see <a class="source-reference" data-label="def:Serre_Fibration" href="../../../entry/serre-fibration/index.html#def:Serre_Fibration">Definition 2.3.12</a> below), then observes that this property is preserved by pushouts, and finally
-   deduces that every map with this lifting property is a weak homotopy equivalence. See <span class='citation'><a class="citation-item" href="../../../references/index.html#ref-Hovey_Model_Categories" title="Hovey, Model categories">Hovey (1999)</a>, Section 2.4</span>.
+   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>(Pushout axiom): </span>Every relative cell complex is a cofibration in the standard model structure on
+   \(\Top \). Thus, if \(i\colon A\to X\) is also a weak homotopy equivalence, it is a trivial cofibration in that model structure.
+   Its pushout is again a trivial cofibration, hence a weak homotopy equivalence. See <span class='citation'><a class="citation-item" href="../../../references/index.html#ref-Hovey_Model_Categories" title="Hovey, Model categories">Hovey (1999)</a>, Section 2.4</span>.
    </p></dd><dt class='enumerate'>
 (4) </dt><dd class='enumerate'>
    <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>(Factorization axiom): </span>The small object argument functorially factors every map \(f\colon X \to Y\) as \(X \xrightarrow {i} Z \xrightarrow {p} Y\), where \(i\)
@@ -208,9 +211,10 @@ and one of whose maps is a relative cell complex to a pushout square in</span> \
 
 <div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-21" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-21">
 <p class='noindent'><span class='head'>
+
+
+
 <span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> This follows directly from <a class="source-reference" data-label="thm:Top_Quillen_Cofibration_Structure" href="../../../entry/quillen-cofibration-structure-on-topological-spaces/index.html#thm:Top_Quillen_Cofibration_Structure">Theorem 2.3.8</a> and the right exactness of localization functors stated in <a class="source-reference" data-label="cor:Localization_Right_Exact" href="../../../entry/right-exact-localization-via-cofibrant-objects/index.html#cor:Localization_Right_Exact">Corollary 2.2.9</a>.         □
-
-
 </p>
 </div></div>
 <p class='noindent'>We now arrive at the main result of this section.
@@ -225,22 +229,23 @@ this square is a pushout.</span></p>
 
 <div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-20" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-20">
 <p class='noindent'><span class='head'>
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Consider the <span class='ntx-Italic-tlf-t1-x-x-109'>mapping cylinder </span>of the map \(f\): \[ M(f) \quad := \quad (X \sqcup (Z \times [0,1])) / (z,0) \sim f(z). \] The map \(f\) factors as \(Z \xrightarrow {i} M(f) \xrightarrow {p} X\), where \(i(z) := [(z,1)]\), where \(p\vert _X = \id _X\) and where \(p\vert _{Z \times [0,1]}(z,t) := f(z)\).
-Observe that the map \(p\colon M(f) \to X\) is a homotopy equivalence, with homotopy inverse sending \(x\) to \([x]\). In particular, it
-induces an equivalence \(\Pi _{\infty }(M(f)) \iso \Pi _{\infty }(X)\) of animae. Further observe that the homotopy pushout \(X \sqcup _Z^h Y\) can be identified with the
-strict pushout \(M(f) \sqcup _Z Y\) via the maps \(g\) and the projection \(M(f) \to X\):</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-44100034777f.svg" alt="Commutative square with maps Z to Y labeled g, M(f) to X \sqcup Z h Y, Z to M(f) labeled i, Y to X \sqcup Z h Y." width="119" height="63" loading="lazy"></figure></div><p class='noindent'><a id='x1-5015r1'></a> We will show that the functor \(\Pi _{\infty }\colon \Top \to \An \) preserves this pushout
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Consider the <span class='ntx-Italic-tlf-t1-x-x-109'>mapping cylinder </span>of the map \(f\): \[ M(f) \quad := \quad (X \sqcup (Z \times [0,1])) / (z,0) \sim f(z). \] The map \(f\) factors as \(Z \xrightarrow {i} M(f) \xrightarrow {p} X\), where \(i(z) := [(z,1)]\), where \(p\vert _X = \id _X\) and
+where \(p\vert _{Z \times [0,1]}(z,t) := f(z)\). Observe that the map \(p\colon M(f) \to X\) is a homotopy equivalence, with homotopy inverse sending \(x\)
+to \([x]\). In particular, it induces an equivalence \(\Pi _{\infty }(M(f)) \iso \Pi _{\infty }(X)\) of animae. Further observe that the homotopy
+pushout \(X \sqcup _Z^h Y\) is the strict pushout of \(i\colon Z \to M(f)\) and \(g\colon Z \to Y\):</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-44100034777f.svg" alt="Commutative square with maps Z to Y labeled g, M(f) to X \sqcup Z h Y, Z to M(f) labeled i, Y to X \sqcup Z h Y." width="119" height="63" loading="lazy"></figure></div><p class='noindent'><a id='x1-5015r1'></a> We will show that the functor \(\Pi _{\infty }\colon \Top \to \An \) preserves this pushout
 square.</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Case 1: </span>Assume first that the spaces \(X\), \(Y\) and \(Z\) are cell complexes and that the map \(f\) is a relative cell complex. In
 this case, the map \(i\colon Z \to M(f)\) is also a relative cell complex: it may be written as the composite of \(Z \times \{1\} \hookrightarrow Z \times [0,1]\), which is a relative
 cell complex by the product cell filtration, and the map \(Z \times [0,1] \to M(f)\), which is a pushout of the map \(Z \to X\) and hence also a
-relative cell complex. The fact that \(\Pi _{\infty }(-)\) preserves the pushout square in <span class="source-reference" data-label="eq:Auxiliary_Homotopy_Pushouts_Are_Pushouts_Of_Animae">Equation 2.1</span> is now an instance of
-<a class="source-reference" data-label="prop:Localization_Functor_To_An_Preserves_Pushouts_Along_Relative_Cell_Complexes" href="../../../entry/pi-infinity-preserves-pushouts-along-relative-cell-complexes/index.html#prop:Localization_Functor_To_An_Preserves_Pushouts_Along_Relative_Cell_Complexes">Proposition 2.3.9</a>.
+relative cell complex. The fact that \(\Pi _{\infty }(-)\) preserves the pushout square in <span class="source-reference" data-label="eq:Auxiliary_Homotopy_Pushouts_Are_Pushouts_Of_Animae">Equation 2.1</span> is now an instance of <a class="source-reference" data-label="prop:Localization_Functor_To_An_Preserves_Pushouts_Along_Relative_Cell_Complexes" href="../../../entry/pi-infinity-preserves-pushouts-along-relative-cell-complexes/index.html#prop:Localization_Functor_To_An_Preserves_Pushouts_Along_Relative_Cell_Complexes">Proposition 2.3.9</a>. Under the
+homotopy equivalence \(M(f)\to X\), the displayed square corresponds to the square in the statement, with its specified
+homotopy \(H_{\can }\).
 </p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Case 2: </span>We will now prove the general case. By <a class="source-reference" data-label="thm:Functorial_CW_Approximation" href="../../../entry/functorial-cw-approximation/index.html#thm:Functorial_CW_Approximation">Theorem 2.3.4</a>, there exists a cell complex \(Z'\) and a weak homotopy
+
+
 equivalence \(Z' \iso Z\). By factorizing the composite maps \(Z' \to X\) and \(Z' \to Y\) into a relative cell complex followed by a weak
 equivalence, we obtain a commutative diagram</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-570f87b6fc2a.svg" alt="Commutative diagram involving X', Z', Y', X, Z, Y, with arrows labeled sim, f', g', f, g." width="132" height="67" loading="lazy"></figure></div><p class='noindent'>where \(X'\), \(Y'\) and \(Z'\) are cell complexes, the vertical maps are
 weak homotopy equivalences, and \(f'\) and \(g'\) are relative cell complexes. Since all six spaces have
 the homotopy type of a cell complex, it follows from Whitehead’s theorem that the vertical
-
-
 maps are even homotopy equivalences. By homotopy invariance of homotopy pushouts, <a class="source-reference" data-label="prop:Homotopy_Invariance_Hty_Pushout" href="../../../entry/homotopy-invariance-of-homotopy-pushouts/index.html#prop:Homotopy_Invariance_Hty_Pushout">Exercise 2.1.4</a>, the
 induced map \(X' \sqcup _{Z'}^h Y' \to X \sqcup _Z^h Y\) is again a homotopy equivalence, and in particular it becomes an equivalence
 after applying \(\Pi _{\infty }(-)\). This means that we have reduced the problem to Case 1, thus finishing the
@@ -265,9 +270,9 @@ type of cell complexes. Then the quotient map</span> \(Y \to Y/A\) <span class='
 actual quotient \(Y/A\) is a homotopy equivalence; see <span class='citation'><a class="citation-item" href="../../../references/index.html#ref-May_Concise" title="May, A concise course in algebraic topology">May (1999a)</a>, Chapter 8, Section 4</span>. The claim now follows by applying <a class="source-reference" data-label="prop:Homotopy_Pushouts_Are_Pushouts_Of_Animae" href="../../../entry/homotopy-pushouts-of-spaces-become-pushouts-of-animae/index.html#prop:Homotopy_Pushouts_Are_Pushouts_Of_Animae">Proposition 2.3.10</a> to the diagram
 \(Y \leftarrow A \to *\).                                                                                                                                                           □
 </p>
+
+
 </div></div>
-
-
 
 <h4 class='subsectionHead' id='serre-fibrations'><span class='titlemark'>2.3.2    </span> <a id='x1-60002.3.2'></a>Serre fibrations</h4>
 <p class='noindent' id='sec_Homotopy_Pullbacks_Of_Spaces'>We now turn to the fibration structure on \(\Top \).
@@ -293,11 +298,8 @@ fibration.</span>
 
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
-
-
-
 <a id='x1-6003r14'></a>
-<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 2.3.14 </span>(Long exact sequence of homotopy groups, <span class='citation'><a class="citation-item" href="../../../references/index.html#ref-Switzer" title="Switzer, Algebraic topology - homotopy and homology">Switzer (1975)</a>, Theorem 2.59</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Long_Exact_Sequence_Of_Serre_Fibration'>   </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>   \(p\colon E \to B\)   <span class='ntx-Italic-tlf-t1-x-x-109'>be   a   Serre   fibration   and
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 2.3.14 </span>(Long exact sequence of homotopy groups, <span class='citation'><a class="citation-item" href="../../../references/index.html#ref-Hatcher_Algebraic_Topology" title="Hatcher, Algebraic topology">Hatcher (2002)</a>, Theorem 4.41</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Long_Exact_Sequence_Of_Serre_Fibration'>   </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>   \(p\colon E \to B\)   <span class='ntx-Italic-tlf-t1-x-x-109'>be   a   Serre   fibration   and
 consider a point</span> \(e \in E\) <span class='ntx-Italic-tlf-t1-x-x-109'>with image</span> \(b := p(e)\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Define the fiber</span> \(F_b\) <span class='ntx-Italic-tlf-t1-x-x-109'>as the following (strict) pullback of topological
 spaces: </span></p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-0f38e82428bf.svg" alt="Commutative square with maps F b to E labeled i, point to B labeled b, F b to point, E to B labeled p." width="74" height="61" loading="lazy"></figure></div><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Then there is a long exact sequence of homotopy groups of the form </span>\[ \dots \to \pi _{n+1}(B,b) \to \pi _n(F_b,e) \xrightarrow {i_*} \pi _n(E,e) \xrightarrow {p_*} \pi _n(B,b) \to \pi _{n-1}(F_b,e) \to \dots \]</p>
 </div>
@@ -314,14 +316,15 @@ weakly contractible for every</span> \(b \in B\)<span class='ntx-Italic-tlf-t1-x
 <p class='noindent'><span class='head'>
 <span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By working separately over each path component of \(B\), we may assume that \(B\) is path-connected.
 Picking a preferred basepoint \(b_0\) of \(B\), it then suffices to show that \(p\) is a weak homotopy equivalence if
-and only if the fiber \(F := F_{b_0}\) is weakly contractible. This follows immediately from the long exact sequence
-from <a class="source-reference" data-label="thm:Long_Exact_Sequence_Of_Serre_Fibration" href="../../../entry/long-exact-sequence-of-a-serre-fibration/index.html#thm:Long_Exact_Sequence_Of_Serre_Fibration">Theorem 2.3.14</a>.                                                                                                                                                   □
+and only if the fiber \(F := F_{b_0}\) is weakly contractible. Path lifting handles nonemptiness of the fibers and the
+comparison of path components; the remaining assertions follow from the long exact sequence from
+<a class="source-reference" data-label="thm:Long_Exact_Sequence_Of_Serre_Fibration" href="../../../entry/long-exact-sequence-of-a-serre-fibration/index.html#thm:Long_Exact_Sequence_Of_Serre_Fibration">Theorem 2.3.14</a>, including its low-degree terms.                                                                                                         □
+
+
 </p>
 </div></div>
 <p class='noindent'>A general source of Serre fibrations is the path space construction.
 </p>
-
-
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-6005r16'></a>
@@ -341,11 +344,11 @@ from <a class="source-reference" data-label="thm:Long_Exact_Sequence_Of_Serre_Fi
 <span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Consider a solid commutative diagram of the form</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-02caf079d150.svg" alt="Commutative square with maps D n times \0 to P(f) labeled g, D n times [0,1] overlineH to B labeled H, D n times \0 to D n times [0,1] overlineH labeled i, P(f) to B labeled p." width="132" height="62" loading="lazy"></figure></div><p class='noindent'>We may define the dashed map \(\overline {H}\) as \(\overline {H}(x,s) := (e(x),K(x,s,-))\), where</p>
      <ul class='itemize1'>
      <li class='itemize'>The map \(e\colon D^n \to E\) is the first component of \(g\);
+
+
      </li>
      <li class='itemize'>
      <p class='noindent'>The map \(K \colon D^n \times [0,1] \times [0,1] \to B\) is a continuous map satisfying the following three constraints: </p>
-
-
           <ul class='itemize2'>
           <li class='itemize'>To guarantee that \(\overline {H}(x,s) \in P(f)\) we need \(K(x,s,0) = f(e(x))\);
           </li>
@@ -367,20 +370,22 @@ complete.</span>
 
 <div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-16" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-16">
 <p class='noindent'><span class='head'>
+
+
+
 <span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  It  is  clear  that  the  weak  homotopy  equivalences  satisfy  2-out-of-3,  and  it  is  also
 straightforward to check that Serre fibrations are closed under pullbacks and composition and contain
 all homeomorphisms. This gives conditions (1) and (2) from <a class="source-reference" data-label="def:Weak_Equivalences_and_Fibrations" href="../../../entry/infinity-category-with-weak-equivalences-and-fibrations/index.html#def:Weak_Equivalences_and_Fibrations">Definition 2.2.4</a>.
-
-
 </p><p class='noindent'>To see condition (3), consider a pullback square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-9797b60e74f2.svg" alt="Commutative square with maps E' to E labeled f, B' to B labeled g, E' to B' labeled p', E to B labeled p." width="78" height="60" loading="lazy"></figure></div><p class='noindent'>of topological spaces, where \(p\) is both a Serre fibration
 and a weak homotopy equivalence. We need to show that also \(p'\) is a weak homotopy equivalence. By
 <a class="source-reference" data-label="cor:Serre_Fibration_Test_Weak_Homotopy_Equivalence_On_Fibers" href="../../../entry/fiberwise-criterion-for-weak-homotopy-equivalences-of-serre-fibrations/index.html#cor:Serre_Fibration_Test_Weak_Homotopy_Equivalence_On_Fibers">Corollary 2.3.15</a>, it suffices to show that for every point \(b' \in B'\) the fiber \(F'_{b'} := {p'}^{-1}(b')\) is weakly contractible. But since \(p'\) is a pullback of \(p\),
 this fiber is homeomorphic to the fiber \(F_b = p^{-1}(b)\), which in turn is weakly contractible by <a class="source-reference" data-label="cor:Serre_Fibration_Test_Weak_Homotopy_Equivalence_On_Fibers" href="../../../entry/fiberwise-criterion-for-weak-homotopy-equivalences-of-serre-fibrations/index.html#cor:Serre_Fibration_Test_Weak_Homotopy_Equivalence_On_Fibers">Corollary 2.3.15</a>.</p><p class='noindent'>Finally, for condition (4), note that a continuous map \(f\colon E \to B\) may be factored as \[ E \xrightarrow {i} P(f) \xrightarrow {p} B, \] where \(p\) is the path space
-fibration from <a class="source-reference" data-label="lem:Path_Fibration_Is_Serre_Fibration" href="../../../entry/mapping-path-projection-is-a-serre-fibration/index.html#lem:Path_Fibration_Is_Serre_Fibration">Lemma 2.3.17</a>, and where \(i\) maps \(e\) to \((e,\const _{f(e)})\). The first map is a homotopy equivalence, hence in particular a
-weak homotopy equivalence, and the second map is a Serre fibration by <a class="source-reference" data-label="lem:Path_Fibration_Is_Serre_Fibration" href="../../../entry/mapping-path-projection-is-a-serre-fibration/index.html#lem:Path_Fibration_Is_Serre_Fibration">Lemma 2.3.17</a>. Since the definition of \(P(f)\) is
-functorial in \(f\), this finishes the proof that \((\Top , W_{\text {whe}}, F_{\text {Serre}})\) is a category with weak equivalences and fibrations, with
-functorial factorizations. It is also clear that a product of Serre fibrations is again a Serre fibration,
-finishing the proof.                                                                                                                              □
+fibration from <a class="source-reference" data-label="lem:Path_Fibration_Is_Serre_Fibration" href="../../../entry/mapping-path-projection-is-a-serre-fibration/index.html#lem:Path_Fibration_Is_Serre_Fibration">Lemma 2.3.17</a>, and where \(i\) maps \(e\) to \((e,\const _{f(e)})\). The first map is a homotopy equivalence, hence in particular
+a weak homotopy equivalence, and the second map is a Serre fibration by <a class="source-reference" data-label="lem:Path_Fibration_Is_Serre_Fibration" href="../../../entry/mapping-path-projection-is-a-serre-fibration/index.html#lem:Path_Fibration_Is_Serre_Fibration">Lemma 2.3.17</a>. Since the definition of
+\(P(f)\) is functorial in \(f\), this finishes the proof that \((\Top , W_{\text {whe}}, F_{\text {Serre}})\) is a category with weak equivalences and fibrations,
+with functorial factorizations. Finally, all topological spaces are fibrant and small products exist in
+\(\Top \). Products of Serre fibrations are again Serre fibrations, and products of trivial Serre fibrations are
+trivial by <a class="source-reference" data-label="cor:Serre_Fibration_Test_Weak_Homotopy_Equivalence_On_Fibers" href="../../../entry/fiberwise-criterion-for-weak-homotopy-equivalences-of-serre-fibrations/index.html#cor:Serre_Fibration_Test_Weak_Homotopy_Equivalence_On_Fibers">Corollary 2.3.15</a>, since products of weakly contractible spaces are weakly contractible.                             □
 </p>
 </div></div>
 <div class='newtheorem'>
@@ -395,11 +400,11 @@ finishing the proof.                                                            
 <span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> In light of <a class="source-reference" data-label="thm:Top_Category_With_Weak_Equivalences_And_Fibrations" href="../../../entry/serre-fibration-structure-on-topological-spaces/index.html#thm:Top_Category_With_Weak_Equivalences_And_Fibrations">Theorem 2.3.18</a> this is an instance of <a class="source-reference" data-label="thm:Localization_Left_Exact" href="../../../entry/left-exact-localization-via-fibrant-objects/index.html#thm:Localization_Left_Exact">Theorem 2.2.8</a>.                                                                                           □
 </p>
 </div></div>
+
+
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-6009r20'></a>
-
-
 <span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 2.3.20.</span>  </span><span id='cor:Fundamental_Groupoid_Preserves_Products'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The functor</span> \(\Pi _{\infty }\colon \Top \to \An \) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves finite products: </span>\[ \Piinfty {X \times Y} \iso \Piinfty {X} \times \Piinfty {Y}. \qednow \]
 </p>
 </div>
@@ -422,18 +427,20 @@ pullbacks of animae.</span>
 </div>
 
 <div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-animae-as-spaces-14" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-animae-as-spaces-14">
+
+
+
 <p class='noindent'><span class='head'>
-
-
-
 <span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Consider continuous maps \(f\colon X \to Z\) and \(g\colon Y \to Z\), and consider the pullback square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-d8a8911af65e.svg" alt="Commutative square with maps X \times Z h Y to P(f), Y to Z labeled g, X \times Z h Y to Y, P(f) to Z labeled p." width="111" height="60" loading="lazy"></figure></div><p class='noindent'>defining \(X \times _Z^{h} Y\). The path
-fibration \(p\) is a Serre fibration by <a class="source-reference" data-label="lem:Path_Fibration_Is_Serre_Fibration" href="../../../entry/mapping-path-projection-is-a-serre-fibration/index.html#lem:Path_Fibration_Is_Serre_Fibration">Lemma 2.3.17</a>, hence this square is sent to a pullback square in \(\An \) by <a class="source-reference" data-label="prop:Localization_Functor_To_An_Preserves_Pullbacks_Along_Serre_Fibrations" href="../../../entry/pi-infinity-preserves-pullbacks-along-serre-fibrations/index.html#prop:Localization_Functor_To_An_Preserves_Pullbacks_Along_Serre_Fibrations">Proposition 2.3.19</a>. The canonical
-inclusion \(i\colon X \hookrightarrow P(f)\) is a homotopy equivalence, giving an equivalence \(\Pi _{\infty }(P(f)) \simeq \Pi _{\infty }(X)\). This finishes the proof.                    □</p>
+fibration  \(p\)  is  a  Serre  fibration  by  <a class="source-reference" data-label="lem:Path_Fibration_Is_Serre_Fibration" href="../../../entry/mapping-path-projection-is-a-serre-fibration/index.html#lem:Path_Fibration_Is_Serre_Fibration">Lemma 2.3.17</a>,  hence  this  square  is  sent  to  a  pullback  square  in  \(\An \)  by  <a class="source-reference" data-label="prop:Localization_Functor_To_An_Preserves_Pullbacks_Along_Serre_Fibrations" href="../../../entry/pi-infinity-preserves-pullbacks-along-serre-fibrations/index.html#prop:Localization_Functor_To_An_Preserves_Pullbacks_Along_Serre_Fibrations">Proposition 2.3.19</a>.  The
+canonical inclusion \(i\colon X \hookrightarrow P(f)\) is a homotopy equivalence, giving an isomorphism \(\Pi _{\infty }(P(f)) \simeq \Pi _{\infty }(X)\). Under this identification,
+the  displayed  square  corresponds  to  the  homotopy-commutative  square  defining  \(X \times _Z^h Y\),  since  the  path
+coordinate supplies precisely its canonical homotopy. This finishes the proof.                                 □</p>
 </div></div>
 
 </div>
 <footer class="edition-footer">
-  <span>Last updated 27 October 2026</span>
+  <span>Last updated 6 November 2026</span>
   <a href="/notes/stable-homotopy-higher-algebra.pdf">PDF</a>
   <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Section%202.3%3A%20Relative%20cell%20complexes%20and%20Serre%20fibrations&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fsection%2Fanimae-as-spaces%2Frelative-cell-complexes-and-serre-fibrations%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
 </footer></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">

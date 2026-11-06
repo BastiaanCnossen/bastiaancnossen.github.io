@@ -328,19 +328,13 @@ particular, for every spectrum</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-1
 
 <div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-03-12" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-03-12">
 <p class='noindent'><span class='head'>
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Let \(D\) be a stable \(\infty \)-category. We need to show that postcomposition with \(\Omega ^{\infty }\) induces an equivalence
-\[ \Fun ^{\lex }(D,\Sp (C)) \iso \Fun ^{\lex }(D,C). \]
-</p><p class='noindent'>We construct an inverse. Let \(F\colon D \to C\) be left exact. Since \(D\) is pointed, the functor \(F\) has a canonical lift to \(C_*\): the
-object \(F(d)\) is pointed by the map \(* \simeq F(0) \to F(d)\) induced by \(0 \to d\). For every \(n \geq 0\), define a functor \[ \widetilde {F}_n\colon D \to C_*, \qquad \widetilde {F}_n(d) := F(d[n]). \] The unit equivalences \(d[n] \to \Omega _Dd[n+1]\), together
-with left exactness of \(F\), provide natural isomorphisms \[ \widetilde {F}_n \iso \Omega \widetilde {F}_{n+1}. \] Explicitly, these are obtained by applying \(F\) to
-the unit equivalences and then using the natural isomorphisms \(F(\Omega _Dd[n+1]) \iso \Omega F(d[n+1])\) provided by left exactness. Thus the
-functors \(\widetilde {F}_n\) and these structure isomorphisms assemble into a functor \[ \widetilde {F}\colon D \to \Sp (C). \] This construction is natural in
-\(F\), and hence defines a functor \(\Fun ^{\lex }(D,C)\to \Fun ^{\lex }(D,\Sp (C))\). Since limits in \(\Sp (C)\) are computed levelwise, and since each shift \(d\mapsto d[n]\) is an
-equivalence of \(D\), the functor \(\widetilde {F}\) is left exact.
-</p><p class='noindent'>The composite \(\Omega ^{\infty }\widetilde {F}\) is \(F\), since evaluation at level zero gives \(\widetilde {F}(d)_0=F(d)\). Conversely, let \(G\colon D \to \Sp (C)\) be left exact. Since \(D\) and
-\(\Sp (C)\) are stable, \(G\) is exact by <a class="source-reference" data-label="cor:Exact_Iff_Left_Exact" href="../../../entry/exact-left-exact-and-right-exact-functors/index.html#cor:Exact_Iff_Left_Exact">Corollary 4.2.27</a>. Hence \[ G(d[n]) \simeq G(d)[n]. \] By <a class="source-reference" data-label="cor:Suspension_Is_Shift" href="../../../entry/suspension-is-the-shift-on-spectrum-objects/index.html#cor:Suspension_Is_Shift">Corollary 4.3.15</a>, evaluation at level zero gives natural isomorphisms \[ (\Omega ^{\infty }G)(d[n]) = G(d[n])_0 \simeq G(d)_n. \] These
-isomorphisms are compatible with the structure maps, by naturality of the unit \(d[n]\to \Omega _Dd[n+1]\) and of the equivalence
-between suspension and shift in \(\Sp (C)\). Thus \(\widetilde {\Omega ^{\infty }G}\simeq G\), naturally in \(G\).                                                                       □
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Let \(D\) be a stable \(\infty \)-category. Since finite limits of spectrum objects are computed levelwise,
+the definition of spectrum objects gives an equivalence \[ \Fun ^{\lex }(D,\Sp (C)) \simeq \lim \bigl (\cdots \xrightarrow {\Omega _C\circ -} \Fun ^{\lex }(D,C_*) \xrightarrow {\Omega _C\circ -} \Fun ^{\lex }(D,C_*)\bigr ). \] For every left exact \(F\colon D\to C_*\), preservation of the
+pullback defining loops gives a natural isomorphism \[ \Omega _C\circ F\simeq F\circ \Omega _D. \] Since \(D\) is stable, \(\Omega _D\) is an equivalence. Thus all
+transition functors in this tower are equivalences, and evaluation at level zero identifies its limit with
+\(\Fun ^{\lex }(D,C_*)\).
+</p><p class='noindent'>Finally, forgetting the pointing gives an equivalence \[ \Fun ^{\lex }(D,C_*)\simeq \Fun ^{\lex }(D,C), \] whose inverse equips \(F(d)\) with the pointing \(*\simeq F(0)\to F(d)\). The
+composite equivalence is postcomposition with \(\Omega ^{\infty }\), as required.                                                           □
 </p>
 </div></div>
 <div class='newtheorem'>
@@ -349,13 +343,13 @@ between suspension and shift in \(\Sp (C)\). Thus \(\widetilde {\Omega ^{\infty 
 <span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 4.3.17.</span>  </span><span id='cor:Stabilization_Right_Adjoint'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The fully faithful inclusion functor</span> \(\Cat ^{\st }_{\infty } \hookrightarrow \Cat ^{\lex }_{\infty }\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a right adjoint </span>\[ \Sp \colon \Cat ^{\lex }_{\infty } \to \Cat ^{\st }_{\infty } \] <span class='ntx-Italic-tlf-t1-x-x-109'>given on objects by
 sending</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>to its stabilization</span> \(\Sp (C)\)<span class='ntx-Italic-tlf-t1-x-x-109'>. The counit</span> \(\Sp (C) \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>of the adjunction is given by</span> \(\Omega ^{\infty }\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
 </p>
-
-
-
 </div>
 
 <div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-03-11" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-03-11">
 <p class='noindent'><span class='head'>
+
+
+
 <span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By the pointwise criterion for adjunctions from <a class="source-reference" data-label="lem:Pointwise_Criterion_Adjunctions" href="../../../entry/assembly-of-pointwise-adjoint-objects/index.html#lem:Pointwise_Criterion_Adjunctions">Lemma 21.1.4</a>, it suffices to show that for every stable
 \(\infty \)-category \(D\), composition with \(\Omega ^{\infty }\colon \Sp (C) \to C\) induces an equivalence \[ \Omega ^{\infty } \circ -\colon \Hom _{\Cat ^{\st }_{\infty }}(D,\Sp (C)) \iso \Hom _{\Cat ^{\lex }_{\infty }}(D,C). \] But since a functor \(D \to \Sp (C)\) is exact if and only if it
 is left exact, this map is obtained from the defining equivalence \(\Fun ^{\lex }(D,\Sp (C)) \iso \Fun ^{\lex }(D,C)\) by passing to groupoid cores.      □
@@ -376,13 +370,12 @@ then</span> \(\Sp (C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits</span> \(
 </div>
 
 <div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-03-10" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-03-10">
-
-
-
 <p class='noindent'><span class='head'>
 <span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="lem:Limits_And_Colimits_Of_Prespectra" href="../../../entry/limits-and-colimits-of-prespectra/index.html#lem:Limits_And_Colimits_Of_Prespectra">Lemma 4.3.8</a>, the limit of a diagram of spectra can first be computed in \(\PSp (C)\). Since \(\Omega \) preserves limits,
 the structure maps of this pointwise limit are again equivalences. Thus the limit prespectrum is a
 spectrum.                                                                                                                                             □
+
+
 </p>
 </div></div>
 <div class='newtheorem'>
@@ -405,13 +398,14 @@ cofinal in \(\N \). Under this isomorphism, the structure map of \(X^{\mathrm {s
 with \(\eta _X\) induces an equivalence \[ \Hom _{\PSp (C)}(\Omega \sh X,Y) \iso \Hom _{\PSp (C)}(X,Y); \] an inverse sends a map \(f\colon X \to Y\) to the composite \(\Omega \sh X \xrightarrow {\Omega \sh (f)} \Omega \sh Y \xrightarrow {\eta _Y^{-1}} Y\). Therefore \[ \Hom _{\Sp (C)}(X^{\mathrm {sp}},Y) \simeq \lim _k \Hom _{\PSp (C)}((\Omega \sh )^kX,Y) \simeq \Hom _{\PSp (C)}(X,Y), \] which is the
 desired adjunction.                                                                                                                              □
 </p>
-
-
 </div></div>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-3003r20'></a>
 <span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 4.3.20 </span>(Colimits of spectra)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Colimits_Of_Spectra'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with finite limits and sequential colimits,
+
+
+
 and assume that</span> \(\Omega \colon C_* \to C_*\) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves sequential colimits. If</span> \(C_*\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits</span> \(I\)<span class='ntx-Italic-tlf-t1-x-x-109'>-indexed colimits for some</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(I\)<span class='ntx-Italic-tlf-t1-x-x-109'>, then</span>
 \(\Sp (C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits</span> \(I\)<span class='ntx-Italic-tlf-t1-x-x-109'>-indexed colimits.</span>
 </p>
@@ -432,14 +426,13 @@ filtered colimits.</span>
 </p>
 </div>
 
-
-
-
 <div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-03-7" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-03-7">
 <p class='noindent'><span class='head'>
 <span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Filtered colimits in \(\An _*\) are created in \(\An \), and the loop functor \(\Omega \colon \An _* \to \An _*\) preserves them. Hence the levelwise
 colimit in \(\PSp (\An )\) of a filtered diagram of spectra again has isomorphisms as its structure maps, so it is
 already a spectrum. The final claim follows by evaluating at level zero.                                            □
+
+
 </p>
 </div></div>
 <div class='newtheorem'>
@@ -461,13 +454,14 @@ prespectra. The construction is natural in \(X\) and \(Y\) and applies equally t
 so it gives an isomorphism of hom animae \[ \Hom _{\PSp (C)}(\Sigma ^{\infty ,\pre }X,Y) \simeq \Hom _{C_*}(X,Y_0). \]
 </p><p class='noindent'>Now set \[ \Sigma ^{\infty }(X) := (\Sigma ^{\infty ,\pre }X)^{\mathrm {sp}}. \] For \(Y \in \Sp (C)\), spectrification gives natural equivalences \[ \Hom _{\Sp (C)}(\Sigma ^{\infty }X,Y) \simeq \Hom _{\PSp (C)}(\Sigma ^{\infty ,\pre }X,Y) \simeq \Hom _{C_*}(X,\Omega ^{\infty }Y), \] which proves the adjunction.                   □
 </p>
-
-
 </div></div>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-3006r23'></a>
 <span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 4.3.23.</span>  </span><span id='cor:Unreduced_Suspension_Spectra'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>In the situation of </span><a class="source-reference" data-label="lem:Suspension_Spectra" href="../../../entry/suspension-spectra/index.html#lem:Suspension_Spectra">Lemma 4.3.22</a><span class='ntx-Italic-tlf-t1-x-x-109'>, the functor</span> \(\Omega ^{\infty }\colon \Sp (C) \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a left adjoint </span>\[ \Sigma ^{\infty }_+\colon C \to \Sp (C) \] <span class='ntx-Italic-tlf-t1-x-x-109'>given by</span> \(\Sigma ^{\infty }_+(X) := \Sigma ^{\infty }(X_+)\)<span class='ntx-Italic-tlf-t1-x-x-109'>, where</span> \(X_+ := X\sqcup *\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+
+
+
 </p>
 </div>
 
@@ -485,14 +479,14 @@ left adjoint to the forgetful functor \(C_* \to C\) is given by \((-)_+\colon C 
 <p class='noindent'><span class='head'>
 <a id='x1-4001r24'></a>
 <a class="entry-heading-link" href="../../../entry/shifted-infinite-loop-space-functors/index.html" aria-label="Definition 4.3.24., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 4.3.24.</span></a>  </span><span id='def:Shifted_Infinite_Loop_Space_Functors'></span> Let \(C\) be an \(\infty \)-category with finite limits. For \(n \geq 0\), define \[ \Omega ^{\infty - n} \colon \Sp (C) \to C_*, \qquad \qquad \Omega ^{\infty - n}(X) := \Omega ^{\infty }(X[n]), \] where \(X[n]\) denotes the \(n\)-fold
-
-
 suspension of \(X\) in the stable \(\infty \)-category \(\Sp (C)\). By <a class="source-reference" data-label="cor:Suspension_Is_Shift" href="../../../entry/suspension-is-the-shift-on-spectrum-objects/index.html#cor:Suspension_Is_Shift">Corollary 4.3.15</a>, this functor evaluates at the \(n\)-th level in the prespectrum
 model: \(\Omega ^{\infty - n}(X) \simeq X_n\).
 </p>
 </div>
 
 <div class='newtheorem'>
+
+
 <p class='noindent'><span class='head'>
 <a id='x1-4002r25'></a>
 <span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 4.3.25.</span>  </span><span id='lem:Relations_Between_Shifted_Infinite_Loop_Space_Functors'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with finite limits. For</span> \(n \geq 0\) <span class='ntx-Italic-tlf-t1-x-x-109'>there are natural isomorphisms </span>\[ \Omega ^n \Omega ^{\infty - n} \cong \Omega ^{\infty } \qquadtext { and } \Omega \Omega ^{\infty - (n+1)} \cong \Omega ^{\infty - n}. \]
@@ -512,13 +506,12 @@ relations </span>\[ \Sigma ^{\infty - n} \Sigma ^n \cong \Sigma ^{\infty } \qqua
 </p>
 </div>
 
-
-
-
 <div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-spectra-and-stable-infinity-categories-section-03-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-spectra-and-stable-infinity-categories-section-03-3">
 <p class='noindent'><span class='head'>
 <span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Since adjunctions compose, the functor \((\Sigma ^{\infty }(-))[-n]\) is left adjoint to \(\Omega ^{\infty }((-)[n])=\Omega ^{\infty -n}\). The stated relations follow by
 passing to left adjoints in the previous lemma.                                                                                   □
+
+
 </p>
 </div></div>
 <div class='newtheorem'>
@@ -538,8 +531,6 @@ spectrum \(Y \in \Sp (C)\) and any pointed object \(X \in C_*\) there is a natur
 </p>
 </div>
 
-
-
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-4006r29'></a>
@@ -547,6 +538,9 @@ spectrum \(Y \in \Sp (C)\) and any pointed object \(X \in C_*\) there is a natur
 associated spectrum</span> \(X^{\mathrm {sp}}\) <span class='ntx-Italic-tlf-t1-x-x-109'>is naturally isomorphic to the following colimit in</span> \(\Sp (C)\)<span class='ntx-Italic-tlf-t1-x-x-109'>: </span>\[ X^{\mathrm {sp}} \quad \simeq \quad \colim ( \, \Sigma ^{\infty }X_0 \to \Sigma ^{\infty -1}X_1 \to \Sigma ^{\infty -2}X_2 \to \Sigma ^{\infty -3}X_3 \to \cdots \, ). \] <span class='ntx-Italic-tlf-t1-x-x-109'>Here the</span> \(n\)<span class='ntx-Italic-tlf-t1-x-x-109'>-th transition
 map is given by the composite </span>\[ \Sigma ^{\infty - n} X_n \xrightarrow {\cong } \Sigma ^{\infty - (n+1)} \Sigma X_n \xrightarrow {\Sigma \sigma ^X_n} \Sigma ^{\infty - (n+1)} \Sigma \Omega X_{n+1} \xrightarrow {\epsilon } \Sigma ^{\infty - (n+1)}X_{n+1}, \] <span class='ntx-Italic-tlf-t1-x-x-109'>where the first isomorphism is from </span><a class="source-reference" data-label="lem:Shifted_Suspension_Spectrum" href="../../../entry/shifted-suspension-spectrum-adjunctions/index.html#lem:Shifted_Suspension_Spectrum">Lemma 4.3.26</a><span class='ntx-Italic-tlf-t1-x-x-109'>, and the last map is induced by
 the counit</span> \(\epsilon \colon \Sigma \Omega \to \id \) <span class='ntx-Italic-tlf-t1-x-x-109'>of the adjunction</span> \(\Sigma \dashv \Omega \) <span class='ntx-Italic-tlf-t1-x-x-109'>on</span> \(C_*\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+
+
+
 </p>
 </div>
 
@@ -571,12 +565,14 @@ isomorphic to the spectrum associated to its underlying prespectrum: </span>\[ \
 <span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  Apply  the  previous  proposition  to  the  underlying  prespectrum  of  \(X\).  Since  \(X\)  is  already  a
 spectrum, spectrification fixes it.                                                                                                        □
 </p>
+
+
 </div></div>
 
 
 </div>
 <footer class="edition-footer">
-  <span>Last updated 27 October 2026</span>
+  <span>Last updated 6 November 2026</span>
   <a href="/notes/stable-homotopy-higher-algebra.pdf">PDF</a>
   <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Section%204.3%3A%20Stabilization&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fsection%2Fspectra-and-stable-infinity-categories%2Fstabilization%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
 </footer></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">

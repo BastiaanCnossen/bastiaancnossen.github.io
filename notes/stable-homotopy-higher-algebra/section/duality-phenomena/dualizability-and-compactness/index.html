@@ -37,37 +37,38 @@
     </div><nav class="page-turns" data-reading-navigation aria-label="Reading navigation"><a rel="prev" data-step="prev-chapter" href="../../../chapter/thom-spectra-and-bordism-theory/index.html" title="Thom spectra and bordism theory" aria-label="Previous chapter: Chapter 10, Thom spectra and bordism theory"><span class="turn-direction">← Previous chapter</span><span class="turn-target">Chapter 10</span></a>
 <a rel="next" data-step="next-chapter" href="../../../chapter/operads-the-heuristics/index.html" title="Operads: the heuristics" aria-label="Next chapter: Chapter 12, Operads: the heuristics"><span class="turn-direction">→ Next chapter</span><span class="turn-target">Chapter 12</span></a>
 <a rel="prev" data-step="prev-section" href="../symmetric-monoidal-duality/index.html" title="Symmetric monoidal duality" aria-label="Previous section: Section 11.1, Symmetric monoidal duality"><span class="turn-direction">← Previous section</span><span class="turn-target">Section 11.1</span></a>
-<a rel="next" data-step="next-section" href="../spanier-whitehead-and-atiyah-duality/index.html" title="Spanier–Whitehead and Atiyah duality" aria-label="Next section: Section 11.3, Spanier–Whitehead and Atiyah duality"><span class="turn-direction">→ Next section</span><span class="turn-target">Section 11.3</span></a></nav></div>
+<a rel="next" data-step="next-section" href="../atiyah-duality/index.html" title="Atiyah duality" aria-label="Next section: Section 11.3, Atiyah duality"><span class="turn-direction">→ Next section</span><span class="turn-target">Section 11.3</span></a></nav></div>
 </header>
 <main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
       <span aria-hidden="true">☰</span> Navigation
     </button>
 <article class="notes-page section-page"><div class="continuous-section">
-<p class='noindent' id='sec:Dualizability_And_Compactness'>Both compactness and dualizability express a finiteness property of an object, but they are defined
-differently: compactness concerns mapping out of the object, whereas dualizability concerns tensoring with
-it. We will now give conditions under which these notions agree, and then apply them to modules over ring
-spectra.
+<p class='noindent' id='sec:Dualizability_And_Compactness'>For vector spaces, compactness and dualizability both mean finite-dimensionality. In general, we show
+that dualizable objects are compact whenever the unit is compact, and give a criterion for the
+converse. For modules over a commutative ring spectrum, both conditions characterize the perfect
+modules.
 </p>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-1001r1'></a>
-<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 11.2.1.</span>  </span><span id='lem:Dualizables_Are_Compact'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category with filtered colimits, and assume that the
-tensor product in</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves filtered colimits in both variables. If the monoidal unit</span> \(\unit \in C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is compact, then
-every dualizable object is compact.</span>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 11.2.1.</span>  </span><span id='lem:Dualizables_Are_Compact'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category admitting filtered colimits. If its unit</span> \(\unit \) <span class='ntx-Italic-tlf-t1-x-x-109'>is
+compact, then every dualizable object is compact.</span>
 </p>
 </div>
 
-<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-duality-phenomena-section-02-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-duality-phenomena-section-02-4">
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-duality-phenomena-section-02-8" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-duality-phenomena-section-02-8">
 <p class='noindent'><span class='head'>
 <span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Let \(X\) be a dualizable object in \(C\), and let \(X^{\vee }\) denote its dual. Then the functor \(X \otimes -\colon C \to C\) admits a right
-adjoint of the form \(X^{\vee } \otimes -\colon C \to C\). In particular, we have \[ \Hom _C(X,-) \simeq \Hom _C(X \otimes \unit ,-) \simeq \Hom _C(\unit ,X^{\vee } \otimes -), \] and the right-hand side preserves filtered colimits by the
-assumptions on \(C\).                                                                                                                                  □
+adjoint of the form \(X^{\vee } \otimes -\colon C \to C\). In particular, we have \[ \Hom _C(X,-) \simeq \Hom _C(X \otimes \unit ,-) \simeq \Hom _C(\unit ,X^{\vee } \otimes -). \] Since \(X\) is also a dual of \(X^{\vee }\), the functor \(X^{\vee }\otimes -\) is itself a left
+adjoint and preserves filtered colimits. Compactness of \(\unit \) therefore implies that the displayed functor
+preserves filtered colimits.                                                                                                                  □
 </p>
 </div></div>
-<p class='noindent'>In practice, the converse frequently holds as well: all compact objects are dualizable.
+<p class='noindent'>For the converse, we use that dualizable objects form a thick subcategory. It therefore suffices to generate
+the compact objects from dualizable ones.
+
+
 </p>
-
-
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-1002r2'></a>
@@ -77,36 +78,33 @@ compact object of</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is dualiz
 </p>
 </div>
 
-<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-duality-phenomena-section-02-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-duality-phenomena-section-02-3">
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-duality-phenomena-section-02-7" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-duality-phenomena-section-02-7">
 <p class='noindent'><span class='head'>
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The tensor product admits internal homs by <a class="source-reference" data-label="thm:Adjoint_Functor_Theorem_Presentable" href="../../../entry/adjoint-functor-theorem-for-presentable-categories/index.html#thm:Adjoint_Functor_Theorem_Presentable">Theorem 22.2.5</a>. The result on compact generation, <a class="source-reference" data-label="prop:Compact_Objects_Are_Finitely_Dominated" href="../../../entry/compact-generation-criterion/index.html#prop:Compact_Objects_Are_Finitely_Dominated">Proposition 22.3.4</a> from <a class="source-reference" data-label="chap:Presentable_Infty_Categories" href="../../../chapter/presentable-infinity-categories/index.html#chap:Presentable_Infty_Categories">Chapter 22</a>,
-which we use as a black box, identifies the compact objects of \(C\) with the thick subcategory generated
-by \(\Gg \). The claim now follows from <a class="source-reference" data-label="lem:Dualizable_Objects_Form_Thick_Subcategory" href="../../../entry/dualizable-objects-form-a-thick-subcategory/index.html#lem:Dualizable_Objects_Form_Thick_Subcategory">Lemma 11.1.16</a>.                                                                                                      □
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  The  tensor  product  admits  internal  homs  by  <a class="source-reference" data-label="thm:Adjoint_Functor_Theorem_Presentable" href="../../../entry/adjoint-functor-theorem-for-presentable-categories/index.html#thm:Adjoint_Functor_Theorem_Presentable">Theorem 22.2.5</a>.  By  the  compact-generation  theorem  <a class="source-reference" data-label="prop:Compact_Objects_Are_Finitely_Dominated" href="../../../entry/compact-generation-criterion/index.html#prop:Compact_Objects_Are_Finitely_Dominated">Proposition 22.3.4</a>,  the
+compact objects form the thick subcategory generated by \(\Gg \). The claim now follows from <a class="source-reference" data-label="lem:Dualizable_Objects_Form_Thick_Subcategory" href="../../../entry/dualizable-objects-form-a-thick-subcategory/index.html#lem:Dualizable_Objects_Form_Thick_Subcategory">Lemma 11.1.17</a>.               □
 </p>
 </div></div>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-1003r3'></a>
-<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 11.2.3.</span>  </span><span id='cor:Compact_Objects_Equals_Dualizable'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a presentably symmetric monoidal stable</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category in the sense of </span><a class="source-reference" data-label="def:Presentably_Symmetric_Monoidal" href="../../../entry/presentably-symmetric-monoidal-categories/index.html#def:Presentably_Symmetric_Monoidal">Definition 22.5.1</a><span class='ntx-Italic-tlf-t1-x-x-109'>, and
-let</span> \(\Gg \) <span class='ntx-Italic-tlf-t1-x-x-109'>be a small collection of compact generators.  Then the compact objects of</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>are precisely its
-dualizable objects if and only if the unit</span> \(\unit \) <span class='ntx-Italic-tlf-t1-x-x-109'>is compact and every object of</span> \(\Gg \) <span class='ntx-Italic-tlf-t1-x-x-109'>is dualizable.</span>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 11.2.3.</span>  </span><span id='cor:Compact_Objects_Equals_Dualizable'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a presentably symmetric monoidal stable</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category, and let</span> \(\Gg \) <span class='ntx-Italic-tlf-t1-x-x-109'>be a small
+collection of compact generators. Then the compact objects of</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>are precisely its dualizable objects
+if and only if the unit</span> \(\unit \) <span class='ntx-Italic-tlf-t1-x-x-109'>is compact and every object of</span> \(\Gg \) <span class='ntx-Italic-tlf-t1-x-x-109'>is dualizable.</span>
 </p>
 </div>
 
 
 
 
-<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-duality-phenomena-section-02-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-duality-phenomena-section-02-2">
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-duality-phenomena-section-02-6" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-duality-phenomena-section-02-6">
 <p class='noindent'><span class='head'>
 <span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> If the unit is compact and every object of \(\Gg \) is dualizable, the claim follows from <a class="source-reference" data-label="lem:Dualizables_Are_Compact" href="../../../entry/dualizable-objects-are-compact/index.html#lem:Dualizables_Are_Compact">Lemma 11.2.1</a>, <a class="source-reference" data-label="lem:Compact_Objects_Are_Dualizable" href="../../../entry/compact-objects-are-dualizable/index.html#lem:Compact_Objects_Are_Dualizable">Lemma 11.2.2</a>. Conversely, if
 the compact and dualizable objects coincide, then the unit is compact because it is always dualizable,
 while every object of \(\Gg \) is dualizable because it is compact.                                                                □
 </p>
 </div></div>
-<p class='noindent'>We now apply this discussion to the perfect modules introduced in <a class="source-reference" data-label="def:Perfect_Module" href="../../../entry/perfect-modules/index.html#def:Perfect_Module">Definition 8.1.7</a> as the thick subcategory of left \(R\)-modules
-generated by \(R\). When \(R\) is commutative, <a class="source-reference" data-label="prop:Coherent_Algebra_Package" href="../../../entry/coherent-algebra-package/index.html#prop:Coherent_Algebra_Package">Proposition 8.1.5</a> identifies left modules with the symmetric monoidal category \(\Mod _R\), and
-perfectness admits a third characterization in addition to its descriptions by finite construction and
-compactness from <a class="source-reference" data-label="lem:Perfect_Iff_Compact" href="../../../entry/perfect-modules-are-compact-modules/index.html#lem:Perfect_Iff_Compact">Lemma 8.1.8</a>.
+<p class='noindent'>We apply this criterion to modules over a commutative ring spectrum \(R\). Recall from <a class="source-reference" data-label="def:Perfect_Module" href="../../../entry/perfect-modules/index.html#def:Perfect_Module">Definition 8.1.10</a> that the perfect modules
+form the thick subcategory generated by \(R\).
 </p>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
@@ -116,22 +114,108 @@ dualizable in the symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-t
 </p>
 </div>
 
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-duality-phenomena-section-02-5" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-duality-phenomena-section-02-5">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="prop:Coherent_Algebra_Package" href="../../../entry/coherent-algebra-package/index.html#prop:Coherent_Algebra_Package">Proposition 8.1.5</a>, the category \(\Mod _R\) is presentably symmetric monoidal and stable. Its unit \(R\) is a compact
+generator by <a class="source-reference" data-label="lem:Perfect_Iff_Compact" href="../../../entry/perfect-modules-are-compact-modules/index.html#lem:Perfect_Iff_Compact">Lemma 8.1.11</a>, and is dualizable. Thus <a class="source-reference" data-label="cor:Compact_Objects_Equals_Dualizable" href="../../../entry/compact-objects-equal-dualizable-objects/index.html#cor:Compact_Objects_Equals_Dualizable">Corollary 11.2.3</a> identifies the dualizable modules with the compact modules,
+which are precisely the perfect modules.                                                                                            □
+</p>
+</div></div>
+
+
+
+<h4 class='subsectionHead' id='spanierwhitehead-duality'><span class='titlemark'>11.2.1    </span> <a id='x1-200011.2.1'></a>Spanier–Whitehead duality</h4>
+<p class='noindent' id='subsec_Spanier_Whitehead_Duality'>Taking \(R=\S \) in <a class="source-reference" data-label="prop:Perfect_Modules_Are_Dualizable" href="../../../entry/perfect-modules-are-dualizable/index.html#prop:Perfect_Modules_Are_Dualizable">Proposition 11.2.4</a>, we see that a spectrum is dualizable if and only if it is compact. We relate this to the following
+notion of finiteness.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2001r5'></a>
+<a class="entry-heading-link" href="../../../entry/finite-spectra/index.html" aria-label="Definition 11.2.5, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 11.2.5 </span></a>(Finite spectrum)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Finite_Spectrum'></span>  A  spectrum  is  <span class='ntx-Italic-tlf-t1-x-x-109'>finite  </span>if  it  lies  in  the  smallest  full  stable
+subcategory of \(\Sp \) containing the sphere spectrum \(\S \).
+</p>
+</div>
+<p class='noindent'>One can show that the finite spectra are precisely the spectra of the form \(\Sigma ^{\infty }Y[-n]\) for a finite pointed cell complex \(Y\)
+and some \(n\geq 0\). By <a class="source-reference" data-label="prop:Compact_Objects_Are_Finitely_Dominated" href="../../../entry/compact-generation-criterion/index.html#prop:Compact_Objects_Are_Finitely_Dominated">Proposition 22.3.4</a>, the compact spectra are precisely the retracts of finite spectra. For spectra, taking retracts
+does not enlarge this class:
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2002r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 11.2.6.</span>  </span><span id='lem:Retracts_Of_Finite_Spectra'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>A retract of a finite spectrum is finite.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-duality-phenomena-section-02-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-duality-phenomena-section-02-4">
+<p class='noindent'><span class='head'>
+
+
+
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  A  finite  spectrum  is  bounded  below  and  has  finitely  generated  integral  homology
+concentrated in finitely many degrees. These properties pass to retracts. We show that any spectrum
+\(X\) with these properties is finite.
+</p><p class='noindent'>Choose \(a\leq b\) such that \(X\) is \(a\)-connective and \(H_i(X)=0\) for \(i&gt;b\). Set \(X_a=X\). For \(i=a,\ldots ,b\), choose generators of \(H_i(X_i)\) and lift them, by <a class="source-reference" data-label="thm:Stable_Hurewicz" href="../../../entry/stable-hurewicz-theorem/index.html#thm:Stable_Hurewicz">Theorem 6.2.17</a>, to a
+map \(\S [i]^{\oplus r_i}\to X_i\). Its cofiber \(X_{i+1}\) is \((i+1)\)-connective, still has finitely generated homology, and satisfies \(H_j(X_{i+1})\cong H_j(X_i)\) for \(j&gt;i+1\).
+</p><p class='noindent'>Thus \(X_{b+1}\) has homology only in degree \(b+1\), where it is the kernel of \(\Z ^{r_b}\to H_b(X_b)\) and hence free of finite rank. A basis
+lifts to a homology isomorphism \(\S [b+1]^{\oplus r}\to X_{b+1}\), which is an isomorphism by <a class="source-reference" data-label="cor:Homology_Whitehead_Spectra" href="../../../entry/homology-whitehead-theorem/index.html#cor:Homology_Whitehead_Spectra">Corollary 6.2.18</a>. Reversing the finitely many cofiber
+sequences shows that \(X\) is finite.                                                                                                            □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2003r7'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 11.2.7.</span>  </span><span id='cor:Finite_Spectra_Are_Dualizable'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>A spectrum is finite if and only if it is compact, and if and only if it is dualizable.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-duality-phenomena-section-02-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-duality-phenomena-section-02-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The compact spectra are the retracts of finite spectra, so the first equivalence follows from <a class="source-reference" data-label="lem:Retracts_Of_Finite_Spectra" href="../../../entry/retracts-of-finite-spectra/index.html#lem:Retracts_Of_Finite_Spectra">Lemma 11.2.6</a>.
+The second is the case \(R=\S \) of <a class="source-reference" data-label="prop:Perfect_Modules_Are_Dualizable" href="../../../entry/perfect-modules-are-dualizable/index.html#prop:Perfect_Modules_Are_Dualizable">Proposition 11.2.4</a>, <a class="source-reference" data-label="lem:Perfect_Iff_Compact" href="../../../entry/perfect-modules-are-compact-modules/index.html#lem:Perfect_Iff_Compact">Lemma 8.1.11</a>.                                                                                                               □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2004r8'></a>
+
+
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 11.2.8.</span>  </span><span id='cor:Finite_Animae_Are_Dualizable'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a finite anima. Then the spectrum</span> \(\S [X]\) <span class='ntx-Italic-tlf-t1-x-x-109'>is dualizable.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-duality-phenomena-section-02-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-duality-phenomena-section-02-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The collection of animae \(X\) for which \(\S [X]\) is dualizable is closed under finite colimits and contains
+\(* \in \An \); consequently it contains all finite animae.                                                                                        □
+</p>
+</div></div>
+<p class='noindent'>The dual of a finite spectrum is called its <span class='ntx-Italic-tlf-t1-x-x-109'>Spanier–Whitehead dual</span>. Tensoring with this dual computes the
+internal hom out of the original spectrum, so duality interchanges homology and cohomology. For spectra \(X\)
+and \(E\), we use the notation \[ E_k(X):=\pi _k(E\otimes X) \qquadtext {and} E^k(X):=\pi _{-k}\hom (X,E). \] For \(X=\S [A]\), this recovers the conventions for the \(E\)-(co)homology of an anima
+\(A\).
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2005r9'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 11.2.9.</span>  </span><span id='lem:Homology_Of_Dual_Is_Cohomology'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(X\)  <span class='ntx-Italic-tlf-t1-x-x-109'>and</span>  \(E\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  spectra  and  assume  that</span>  \(X\)  <span class='ntx-Italic-tlf-t1-x-x-109'>is  dualizable.  Then  there  are  natural
+isomorphisms </span>\[ E_*(X^{\vee }) \cong E^{-*}(X) \qquadtext {and} E^*(X^{\vee }) \cong E_{-*}(X). \]
+</p>
+</div>
+
 <div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-duality-phenomena-section-02-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-duality-phenomena-section-02-1">
 <p class='noindent'><span class='head'>
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The category \(\Mod _R\) is presentable and its tensor product preserves colimits, so it admits internal
-homs by <a class="source-reference" data-label="prop:Coherent_Algebra_Package" href="../../../entry/coherent-algebra-package/index.html#prop:Coherent_Algebra_Package">Proposition 8.1.5</a>, <a class="source-reference" data-label="thm:Adjoint_Functor_Theorem_Presentable" href="../../../entry/adjoint-functor-theorem-for-presentable-categories/index.html#thm:Adjoint_Functor_Theorem_Presentable">Theorem 22.2.5</a>. By <a class="source-reference" data-label="lem:Dualizable_Objects_Form_Thick_Subcategory" href="../../../entry/dualizable-objects-form-a-thick-subcategory/index.html#lem:Dualizable_Objects_Form_Thick_Subcategory">Lemma 11.1.16</a>, the dualizable \(R\)-modules therefore form a thick subcategory of \(\Mod _R\). Since this subcategory
-contains the monoidal unit \(R\), every perfect \(R\)-module is dualizable. Conversely, the unit \(R\) is compact and
-the tensor product of \(R\)-modules preserves colimits in both variables. Hence every dualizable \(R\)-module
-is compact by <a class="source-reference" data-label="lem:Dualizables_Are_Compact" href="../../../entry/dualizable-objects-are-compact/index.html#lem:Dualizables_Are_Compact">Lemma 11.2.1</a>, and therefore perfect by <a class="source-reference" data-label="lem:Perfect_Iff_Compact" href="../../../entry/perfect-modules-are-compact-modules/index.html#lem:Perfect_Iff_Compact">Lemma 8.1.8</a>.                                                                                           □
 
 
+
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The first isomorphism follows from \[ E_*(X^{\vee }) \cong \pi _*(E \otimes X^{\vee }) \cong \pi _*(\hom (X,E)) \cong E^{-*}(X). \] The second follows by applying the first to \(X^{\vee }\), whose dual
+is \(X\).                                                                                                                                                        □
 </p>
 </div></div>
 
 
 </div>
 <footer class="edition-footer">
-  <span>Last updated 27 October 2026</span>
+  <span>Last updated 6 November 2026</span>
   <a href="/notes/stable-homotopy-higher-algebra.pdf">PDF</a>
   <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Section%2011.2%3A%20Dualizability%20and%20compactness&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fsection%2Fduality-phenomena%2Fdualizability-and-compactness%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
 </footer></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
@@ -154,7 +238,14 @@ is compact by <a class="source-reference" data-label="lem:Dualizables_Are_Compac
       <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
     </button></h2>
     <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
-      <ol class="context-entry-list"><li><a href="../symmetric-monoidal-duality/index.html"><span class="context-entry-heading">Section 11.1</span><span class="context-entry-title">Symmetric monoidal duality</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 11.2</span><span class="context-entry-title">Dualizability and compactness</span></a></li><li><a href="../spanier-whitehead-and-atiyah-duality/index.html"><span class="context-entry-heading">Section 11.3</span><span class="context-entry-title">Spanier–Whitehead and Atiyah duality</span></a></li><li><a href="../poincar-duality/index.html"><span class="context-entry-heading">Section 11.4</span><span class="context-entry-title">Poincaré duality</span></a></li></ol>
+      <ol class="context-entry-list"><li><a href="../symmetric-monoidal-duality/index.html"><span class="context-entry-heading">Section 11.1</span><span class="context-entry-title">Symmetric monoidal duality</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 11.2</span><span class="context-entry-title">Dualizability and compactness</span></a></li><li><a href="../atiyah-duality/index.html"><span class="context-entry-heading">Section 11.3</span><span class="context-entry-title">Atiyah duality</span></a></li><li><a href="../poincar-duality/index.html"><span class="context-entry-heading">Section 11.4</span><span class="context-entry-title">Poincaré duality</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>In this section</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="In this section" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#def:Finite_Spectrum"><span class="context-entry-heading">Definition 11.2.5</span><span class="context-entry-title">Finite spectrum</span></a></li></ol>
     </nav>
   </section></div>
   </aside></main>

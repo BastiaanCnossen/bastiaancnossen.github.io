@@ -50,36 +50,30 @@ groups </span>\[ [X,\Z \times BU] \xrightarrow {\cong } K^0(X). \]
 </p>
 </div><div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-complex-k-theory-section-03-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-complex-k-theory-section-03-1">
 <p class='noindent'><span class='head'>
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  We  first  construct  the  map.  Let  \(f\colon X\to \Z \times BU\)  be  continuous.  Since  \(X\)  is  compact  and  \(\Z \)  is  discrete,  the
-composite \(X\to \Z \) has finite image. Write \(X_m\subseteq X\) for the clopen subset on which this composite has value \(m\). By <a class="source-reference" data-label="lem:Compact_Subset_Sequential_Colimit" href="../compact-subsets-of-sequential-colimits/index.html#lem:Compact_Subset_Sequential_Colimit">Lemma 9.2.18</a>,
-the restriction \(f_m\colon X_m\to BU\) factors through some stage \(\Gr _n(\C ^\infty )\). Let \(E_m\to X_m\) be the pullback of the universal rank \(n\) bundle along
-this factorization. We assign to \(f_m\) the class \[ [E_m]-n[\ul {\C }]+m[\ul {\C }] \in K^0(X_m). \] These classes glue over the finite clopen decomposition \(X=\bigsqcup _m X_m\)
-to a class in \(K^0(X)\).
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Both sides take finite disjoint unions to products. Since a continuous integer-valued function
+on \(X\) has finite image, we may work on clopen pieces where the integer coordinate or virtual rank is
+constant. Let \(f\colon X\to \{m\}\times BU\) be continuous. By <a class="source-reference" data-label="lem:Compact_Subset_Sequential_Colimit" href="../compact-subsets-of-sequential-colimits/index.html#lem:Compact_Subset_Sequential_Colimit">Lemma 9.2.17</a>, its \(BU\)-coordinate factors through some \(\Gr _n(\C ^\infty )\). If \(E\) is the classified bundle,
+we assign to \(f\) the class \[ [E]-n[\ul {\C }]+m[\ul {\C }] \in K^0(X). \] Passing from \(\Gr _n(\C ^\infty )\) to \(\Gr _{n+1}(\C ^\infty )\) replaces \(E\) by \(E\oplus \ul {\C }\), and hence leaves \([E]-n[\ul {\C }]+m[\ul {\C }]\) unchanged. If two maps are
+homotopic, the homotopy has constant \(\Z \)-coordinate on \(X\times [0,1]\) and, again by compactness, factors through
+a common Grassmannian stage after stabilization. Pulling back the universal bundle along the two
+ends gives isomorphic bundles by <a class="source-reference" data-label="thm:Vector_Bundles_Homotopy_Invariant" href="../homotopy-invariance-of-vector-bundles/index.html#thm:Vector_Bundles_Homotopy_Invariant">Theorem 9.1.4</a>. Thus we get a well-defined natural map \[ \Phi _X\colon [X,\Z \times BU] \to K^0(X). \]
 
 
-</p><p class='noindent'>This construction is independent of all choices. Passing from \(\Gr _n(\C ^\infty )\) to \(\Gr _{n+1}(\C ^\infty )\) replaces \(E_m\) by \(E_m\oplus \ul {\C }\), and hence leaves \([E_m]-n[\ul {\C }]+m[\ul {\C }]\)
-unchanged. If two maps are homotopic, the homotopy has constant \(\Z \)-coordinate on each \(X_m\times [0,1]\) and, again
-by compactness, factors through a common Grassmannian stage after stabilization. Pulling back the
-universal bundle along the two ends gives isomorphic bundles by <a class="source-reference" data-label="thm:Vector_Bundles_Homotopy_Invariant" href="../homotopy-invariance-of-vector-bundles/index.html#thm:Vector_Bundles_Homotopy_Invariant">Theorem 9.1.4</a>. Thus we get a well-defined natural
-map \[ \Phi _X\colon [X,\Z \times BU] \to K^0(X). \]
-</p><p class='noindent'>We prove that \(\Phi _X\) is surjective. Let \(\alpha \in K^0(X)\), and let \(X=\bigsqcup _m X_m\) be the finite clopen decomposition according to the virtual
-rank of \(\alpha \). It suffices to work on one \(X_m\), so assume \(\alpha \) has constant rank \(m\). Choose a presentation \(\alpha =[E]-[F]\). By <a class="source-reference" data-label="thm:Stable_Iso_Classes_Form_Group" href="../stable-complements-for-vector-bundles/index.html#thm:Stable_Iso_Classes_Form_Group">Theorem 9.3.6</a>,
-choose \(F'\) and \(N\) such that \(F\oplus F'\cong \ul {\C }^N\). Then \[ \alpha =[E\oplus F']-N[\ul {\C }]. \] The bundle \(E\oplus F'\) has rank \(N+m\), so <a class="source-reference" data-label="thm:Grassmannian_Classifies_Vector_Bundles" href="../grassmannians-classify-vector-bundles/index.html#thm:Grassmannian_Classifies_Vector_Bundles">Theorem 9.2.4</a> classifies it by a map \(g\colon X_m\to \Gr _{N+m}(\C ^\infty )\subseteq BU\). Viewed as a map \(X_m\to \{m\}\times BU\),
-this maps under \(\Phi _{X_m}\) to \[ [E\oplus F']-(N+m)[\ul {\C }]+m[\ul {\C }]=[E]-[F]=\alpha . \] Gluing over the finitely many \(m\) proves surjectivity.
+</p><p class='noindent'>For surjectivity, let \(\alpha =[E]-[F]\in K^0(X)\) have constant virtual rank \(m\). By <a class="source-reference" data-label="thm:Stable_Iso_Classes_Form_Group" href="../stable-complements-for-vector-bundles/index.html#thm:Stable_Iso_Classes_Form_Group">Theorem 9.3.6</a>, choose \(F'\) and \(N\) such that \(F\oplus F'\cong \ul {\C }^N\). Then \[ \alpha =[E\oplus F']-N[\ul {\C }]. \] The bundle \(E\oplus F'\) has
+rank \(N+m\), so <a class="source-reference" data-label="thm:Grassmannian_Classifies_Vector_Bundles" href="../grassmannians-classify-vector-bundles/index.html#thm:Grassmannian_Classifies_Vector_Bundles">Theorem 9.2.4</a> classifies it by a map \(g\colon X\to \Gr _{N+m}(\C ^\infty )\subseteq BU\). Viewed as a map \(X\to \{m\}\times BU\), this maps under \(\Phi _{X}\) to \[ [E\oplus F']-(N+m)[\ul {\C }]+m[\ul {\C }]=[E]-[F]=\alpha . \] This proves surjectivity.
 </p><p class='noindent'>For injectivity, suppose \(f_0,f_1\colon X\to \Z \times BU\) have the same image under \(\Phi _X\). Their images in \(K^0(X)\) have the same rank function,
-so the \(\Z \)-coordinates of \(f_0\) and \(f_1\) agree. We again restrict to a clopen piece \(X_m\) and choose factorizations
-\(f_i\colon X_m\to \Gr _{n_i}(\C ^\infty )\) classifying bundles \(E_i\). The equality \(\Phi _X(f_0)=\Phi _X(f_1)\) gives \[ [E_0]-n_0[\ul {\C }] = [E_1]-n_1[\ul {\C }] \] in \(K^0(X_m)\). By the definition of the Grothendieck group, there
-exists a vector bundle \(F\) and an isomorphism \[ E_0\oplus \ul {\C }^{n_1}\oplus F \cong E_1\oplus \ul {\C }^{n_0}\oplus F. \] Choose \(F'\) with \(F\oplus F'\cong \ul {\C }^q\) by <a class="source-reference" data-label="thm:Stable_Iso_Classes_Form_Group" href="../stable-complements-for-vector-bundles/index.html#thm:Stable_Iso_Classes_Form_Group">Theorem 9.3.6</a>. After stabilizing \(f_0\) by \(n_1+q\) steps and \(f_1\)
-by \(n_0+q\) steps, the two maps land in the same Grassmannian \(\Gr _{n_0+n_1+q}(\C ^\infty )\) and classify isomorphic vector bundles.
-By <a class="source-reference" data-label="thm:Grassmannian_Classifies_Vector_Bundles" href="../grassmannians-classify-vector-bundles/index.html#thm:Grassmannian_Classifies_Vector_Bundles">Theorem 9.2.4</a>, they are homotopic. These homotopies glue over the finite clopen decomposition of \(X\), proving
-injectivity.
+so the \(\Z \)-coordinates of \(f_0\) and \(f_1\) agree. On a piece where their common integer coordinate is \(m\), choose
+factorizations \(f_i\colon X\to \Gr _{n_i}(\C ^\infty )\) classifying bundles \(E_i\). The equality \(\Phi _X(f_0)=\Phi _X(f_1)\) gives \[ [E_0]-n_0[\ul {\C }] = [E_1]-n_1[\ul {\C }] \] in \(K^0(X)\). By the definition of the Grothendieck
+group, there exists a vector bundle \(F\) and an isomorphism \[ E_0\oplus \ul {\C }^{n_1}\oplus F \cong E_1\oplus \ul {\C }^{n_0}\oplus F. \] Choose \(F'\) with \(F\oplus F'\cong \ul {\C }^q\) by <a class="source-reference" data-label="thm:Stable_Iso_Classes_Form_Group" href="../stable-complements-for-vector-bundles/index.html#thm:Stable_Iso_Classes_Form_Group">Theorem 9.3.6</a>. After stabilizing \(f_0\) by \(n_1+q\)
+steps and \(f_1\) by \(n_0+q\) steps, the two maps land in the same Grassmannian \(\Gr _{n_0+n_1+q}(\C ^\infty )\) and classify isomorphic vector
+bundles. By <a class="source-reference" data-label="thm:Grassmannian_Classifies_Vector_Bundles" href="../grassmannians-classify-vector-bundles/index.html#thm:Grassmannian_Classifies_Vector_Bundles">Theorem 9.2.4</a>, they are homotopic. This proves injectivity.
 </p><p class='noindent'>The construction is compatible with addition. If maps through \(\{m\}\times \Gr _n(\C ^\infty )\) and \(\{m'\}\times \Gr _{n'}(\C ^\infty )\) classify bundles \(E\) and \(E'\), then
 their sum classifies \(E\oplus E'\) at stage \(n+n'\) and has \(\Z \)-coordinate \(m+m'\). Therefore \[ [E\oplus E']-(n+n')[\ul {\C }]+(m+m')[\ul {\C }] \] equals the sum of the two associated
 \(K^0\)-classes. Thus \(\Phi _X\) is an isomorphism of abelian groups.                                                                         □
 </p>
 </div></div>
 <footer class="edition-footer">
-  <span>Last updated 27 October 2026</span>
+  <span>Last updated 6 November 2026</span>
   <a href="/notes/stable-homotopy-higher-algebra.pdf">PDF</a>
   <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Representability%20of%20complex%20K-theory&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fentry%2Frepresentability-of-complex-k-theory%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
 </footer></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Result navigation">

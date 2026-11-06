@@ -43,8 +43,8 @@
       <span aria-hidden="true">☰</span> Navigation
     </button>
 <article class="notes-page section-page"><div class="continuous-section">
-<p class='noindent' id='sec:Vector_Bundles'>In this section, we introduce the classical theory of complex vector bundles and isolate the input needed
-later: morphisms, pullbacks, direct sums, tensor products, and homotopy invariance.
+<p class='noindent' id='sec:Vector_Bundles'>We begin with complex vector bundles, their behavior under pullback, and their classification over spheres
+by clutching functions.
 </p>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
@@ -54,24 +54,26 @@ continuous  map  \(p\colon E\to X\),  together  with  a  complex  vector  space 
 following local triviality condition: every point \(x\in X\) admits an open neighborhood \(U\), an integer \(k\geq 0\), and a
 homeomorphism \[ \phi \colon U\times \C ^k\xrightarrow {\cong }p^{-1}(U) \] over \(U\) whose restriction \(\{y\}\times \C ^k\to E_y\) is complex-linear for every \(y\in U\). We will usually simply call
 this a <span class='ntx-Italic-tlf-t1-x-x-109'>complex vector bundle</span>.
-</p><p class='noindent'>The rank function \[ \rk _E\colon X\longrightarrow \N , \qquad x\longmapsto \dim _{\C }(E_x), \] is locally constant. We say that \(E\) has <span class='ntx-Italic-tlf-t1-x-x-109'>rank</span> \(k\) if this function is constant with value \(k\).
-More generally, each subspace \(X_k:=\rk _E^{-1}(k)\) is clopen in \(X\), and the restriction of \(E\) to \(X_k\) has rank \(k\).
+</p><p class='noindent'>The rank function \[ \rk _E\colon X\longrightarrow \N , \qquad x\longmapsto \dim _{\C }(E_x), \] is locally constant. We say that \(E\) has <span class='ntx-Italic-tlf-t1-x-x-109'>rank</span> \(k\) if this function is constant with value \(k\);
+in general, \(E\) has rank \(k\) on the clopen subspace \(\rk _E^{-1}(k)\).
 </p><p class='noindent'>Given another complex vector bundle \(q\colon E'\to X\), a <span class='ntx-Italic-tlf-t1-x-x-109'>morphism of vector bundles</span> \(E\to E'\) is a continuous map \(f\colon E\to E'\) over
 \(X\) whose restriction \(E_x\to E'_x\) is complex-linear for every \(x\in X\). We write \(\pi _0\Vect (X)\) for the set of isomorphism classes of
 finite-rank complex vector bundles over \(X\), and \(\pi _0\Vect _k(X)\) for the subset represented by bundles of rank \(k\).
 </p>
 </div>
-<p class='noindent'>Let \(X\) be a topological space, and let \(p_1\colon E_1 \to X\) and \(p_2\colon E_2 \to X\) be two complex vector bundles over \(X\). Their <span class='ntx-Italic-tlf-t1-x-x-109'>direct sum </span>is defined as
-the fiber product \[ E_1 \oplus E_2 \quad := \quad E_1 \times _X E_2 \quad = \quad \{(e_1,e_2) \mid p_1(e_1) = p_2(e_2)\}, \] equipped on each fiber with the usual direct-sum vector space structure. We leave it
-to the reader to check that this is again a vector bundle; see <span class="source-reference" data-label="exercise:Tensor_Product_On_K_Theory">Chapterexercise 9.3</span>. The trivial rank-zero bundle \(\ul {0} := X \times \C ^0\)
-serves as a unit for direct sum up to the evident isomorphisms, and the usual associativity
-and symmetry isomorphisms show that direct sum induces an abelian monoid structure on
+<p class='noindent'>The notation \(\pi _0\Vect (X)\) anticipates the anima of vector bundles introduced in <a class="source-reference" data-label="sec:Complex_K_Theory_Spectra" href="../complex-k-theory-spectra/index.html#sec:Complex_K_Theory_Spectra">Section 9.4</a>. We write \(\ul {\C }^n:=X\times \C ^n\) for the trivial rank \(n\) bundle
+over \(X\). Given a continuous map \(f\colon Y\to X\) and a vector bundle \(E\to X\), its <span class='ntx-Italic-tlf-t1-x-x-109'>pullback </span>is the bundle \(f^*E:=Y\times _X E\to Y\): pulling back local
+trivializations of \(E\) gives local trivializations of \(f^*E\).
+</p><p class='noindent'>Let \(X\) be a topological space, and let \(p_1\colon E_1 \to X\) and \(p_2\colon E_2 \to X\) be two complex vector bundles over \(X\). Their <span class='ntx-Italic-tlf-t1-x-x-109'>direct sum </span>is defined as
+the fiber product \[ E_1 \oplus E_2 \quad := \quad E_1 \times _X E_2, \] equipped on each fiber with the usual direct-sum vector space structure. We leave it to the
+reader to check that this is again a vector bundle; see <span class="source-reference" data-label="exercise:Tensor_Product_On_K_Theory">Chapterexercise 9.1</span>. The zero bundle \(\ul {0}:=X\times \C ^0\) is the unit for direct sum. Together
+with the usual associativity and symmetry isomorphisms, this gives an abelian monoid structure on
 \(\pi _0\Vect (X)\).
+
+
 </p><p class='noindent'>We will also use the <span class='ntx-Italic-tlf-t1-x-x-109'>tensor product </span>of two vector bundles \(E_1\) and \(E_2\). This is the vector bundle \(E_1 \otimes E_2 \to X\) whose fiber over \(x \in X\)
 is \(E_{1,x} \otimes _{\C } E_{2,x}\); local trivializations of \(E_1\) and \(E_2\) induce local trivializations of \(E_1 \otimes E_2\). Pullback along maps of spaces is compatible
 with direct sums and tensor products, and tensor product distributes over direct sums up to
-
-
 isomorphism. Thus tensor product induces a multiplication on \(\pi _0\Vect (X)\), compatible with its direct-sum monoid
 structure.
 </p>
@@ -88,74 +90,75 @@ three conditions:
    </p><dl class='enumerate'><dt class='enumerate'>
 (1) </dt><dd class='enumerate'>
    <p class='noindent'>The family \((\rho _\alpha )_{\alpha }\) is locally finite: every point of \(X\) has a neighborhood on which all but finitely many \(\rho _\alpha \)
-   vanish;
+   vanish.
    </p></dd><dt class='enumerate'>
 (2) </dt><dd class='enumerate'>
-   <p class='noindent'>The resulting sum satisfies \(\sum _{\alpha } \rho _{\alpha }(x) = 1\) for all \(x\);
+   <p class='noindent'>The resulting sum satisfies \(\sum _{\alpha } \rho _{\alpha }(x) = 1\) for all \(x\).
    </p></dd><dt class='enumerate'>
 (3) </dt><dd class='enumerate'>
    <p class='noindent'>For each \(\alpha \), the support \(\supp (\rho _\alpha ):=\overline {\rho _{\alpha }^{-1}((0,1])}\) is contained in one of the open sets \(U_i\).</p></dd></dl>
 </div>
+
+
 <p class='noindent'> For Hausdorff spaces, this is equivalent to the usual definition in terms of locally finite refinements of open
 covers.
 </p>
-
-
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-2005r3'></a>
 <a class="entry-heading-link" href="../../../entry/examples-of-paracompact-spaces/index.html" aria-label="Example 9.1.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 9.1.3.</span></a>  </span><span id='ex:Examples_Paracompact_Spaces'></span> The following classes of topological spaces are paracompact: </p>
      <ul class='itemize1'>
-     <li class='itemize'>Every compact Hausdorff space is paracompact <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-Hatcher_KTheory" title="Hatcher, Vector bundles and K-theory">Hatcher (2003)</a>, Proposition 1.18]</span>;
+     <li class='itemize'>Every compact Hausdorff space is paracompact <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-Hatcher_KTheory" title="Hatcher, Vector bundles and K-theory">Hatcher (2017)</a>, Proposition 1.18]</span>.
      </li>
      <li class='itemize'>Every direct limit, with the colimit topology, of an increasing sequence \(X_1 \subseteq X_2 \subseteq \dots \) of compact Hausdorff
-     spaces is paracompact <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-Hatcher_KTheory" title="Hatcher, Vector bundles and K-theory">Hatcher (2003)</a>, Proposition 1.19]</span>;
+     spaces is paracompact <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-Hatcher_KTheory" title="Hatcher, Vector bundles and K-theory">Hatcher (2017)</a>, Proposition 1.19]</span>.
      </li>
-     <li class='itemize'>Every CW-complex is paracompact <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-Hatcher_KTheory" title="Hatcher, Vector bundles and K-theory">Hatcher (2003)</a>, Proposition 1.20]</span>.</li></ul>
+     <li class='itemize'>Every CW-complex is paracompact <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-Hatcher_KTheory" title="Hatcher, Vector bundles and K-theory">Hatcher (2017)</a>, Proposition 1.20]</span>.</li></ul>
 </div>
 
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-2006r4'></a>
-<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 9.1.4 </span>(Homotopy invariance of vector bundles, <span class='citation'><a class="citation-item" href="../../../references/index.html#ref-Hatcher_KTheory" title="Hatcher, Vector bundles and K-theory">Hatcher (2003)</a>, Theorem 1.6 and Corollary 1.8</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Vector_Bundles_Homotopy_Invariant'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(p\colon E \to X\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a complex vector bundle and let</span>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 9.1.4 </span>(Homotopy invariance of vector bundles, <span class='citation'><a class="citation-item" href="../../../references/index.html#ref-Hatcher_KTheory" title="Hatcher, Vector bundles and K-theory">Hatcher (2017)</a>, Theorem 1.6 and Corollary 1.8</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Vector_Bundles_Homotopy_Invariant'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(p\colon E \to X\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a complex vector bundle and let</span>
 \(f_0,f_1\colon Y \to X\) <span class='ntx-Italic-tlf-t1-x-x-109'>be homotopic continuous maps. If</span> \(Y\) <span class='ntx-Italic-tlf-t1-x-x-109'>is paracompact Hausdorff, then the pullback bundles</span> \(f_0^*E\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(f_1^*E\) <span class='ntx-Italic-tlf-t1-x-x-109'>are
 isomorphic.</span>
 </p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>In  particular,  every  homotopy  equivalence</span>  \(f\colon X \to Y\)  <span class='ntx-Italic-tlf-t1-x-x-109'>between  paracompact  Hausdorff  spaces  induces  a
 bijection </span>\[ f^*\colon \pi _0\Vect (Y) \xrightarrow {\cong } \pi _0\Vect (X). \]
+
+
+
 </p>
 </div>
 
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-2007r5'></a>
-<a class="entry-heading-link" href="../../../entry/role-of-paracompactness-in-homotopy-invariance/index.html" aria-label="Remark 9.1.5., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 9.1.5.</span></a>  </span><span id='rmk:Role_Of_Paracompactness_In_Homotopy_Invariance'></span> The proof uses the usual partition-of-unity argument: a bundle on \(Y \times [0,1]\) is locally constant
-in the interval direction after subdividing \([0,1]\), and paracompactness lets one patch the resulting local
-isomorphisms. We will use only the conclusion above.
+<a class="entry-heading-link" href="../../../entry/role-of-paracompactness-in-homotopy-invariance/index.html" aria-label="Remark 9.1.5., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 9.1.5.</span></a>  </span><span id='rmk:Role_Of_Paracompactness_In_Homotopy_Invariance'></span>  In  particular,  every  complex  vector  bundle  over  a  contractible  paracompact
+Hausdorff space is trivial, since pullback along the map to a point induces a bijection on isomorphism
+classes.
 </p>
 </div>
 
 <h4 class='subsectionHead' id='clutching-functions'><span class='titlemark'>9.1.2    </span> <a id='x1-30009.1.2'></a>Clutching functions</h4>
-<p class='noindent' id='subsec_Clutching_Functions'>Let \(X = U_+ \cup U_-\) be a topological space written as the union of two open subspaces, and let \(E \to X\) be a rank \(n\) complex vector
-bundle which is trivial over both \(U_+\) and \(U_-\). Choosing trivializations \[ E\vert _{U_+} \cong U_+ \times \C ^n \quad \qquadtext {and}\quad E\vert _{U_-} \cong U_- \times \C ^n \] identifies the gluing of these two trivial
-bundles along \(U_+ \cap U_-\) with a continuous map \[ g\colon U_+ \cap U_- \to \GL _n(\C ), \] called the <span class='ntx-Italic-tlf-t1-x-x-109'>clutching function </span>of \(E\) with respect to the
-chosen trivializations. Conversely, any such map \(g\) defines a vector bundle by the quotient \[ E_g := (U_+ \times \C ^n) \sqcup (U_- \times \C ^n) \,/\, (x,v)_+ \sim (x,g(x)v)_- \] for
-\(x \in U_+ \cap U_-\). Thus clutching functions give a concrete way of building vector bundles by gluing trivial
-bundles.
-</p><p class='noindent'>For spheres this construction gives an elementary classification. Let \(m \geq 1\), and let \(U_+\) and \(U_-\) be slightly enlarged upper
-and lower hemispheres in \(S^m\). Then \(U_+\) and \(U_-\) are contractible paracompact Hausdorff spaces, and their intersection
-deformation retracts onto the equator. Informally, we are using the decomposition \[ S^m = D^m_+ \cup _{S^{m-1}} D^m_-. \] By homotopy invariance,
-every vector bundle over either \(U_+\) or \(U_-\) is trivial, so a rank \(n\) complex vector bundle over \(S^m\) is obtained from a
-clutching function \[ g\colon S^{m-1} \to \GL _n(\C ). \] The clutching construction induces a bijection \[ \pi _0\Vect _n(S^m) \cong [S^{m-1},\GL _n(\C )] \] with the set of free homotopy classes <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-Hatcher_KTheory" title="Hatcher, Vector bundles and K-theory">Hatcher (2003)</a>, Proposition 1.11]</span>.
-Since \(\GL _n(\C )\) is a connected topological group, based and free homotopy classes from a sphere agree,
-and hence this set is \(\pi _{m-1}(\GL _n(\C ))\). The required connectedness is verified in <a class="source-reference" data-label="exercise:Vector_Bundles_On_Circle" href="../../../entry/vector-bundles-over-the-circle/index.html#exercise:Vector_Bundles_On_Circle">Exercise 9.1.6</a>; for \(m=1\), the last statement reads
-\(\pi _0\Vect _n(S^1)\cong \pi _0\GL _n(\C )\).
+<p class='noindent' id='subsec_Clutching_Functions'>If a rank \(n\) vector bundle is trivial over two open subsets covering its base, the two trivializations differ on
+their intersection by a continuous map to \(\GL _n(\C )\). Such transition maps describe how to glue the trivial bundles
+together.
+</p><p class='noindent'>For spheres, we can instead glue along the boundaries of the closed hemispheres. Write \(S^m=D^m_+\cup _{S^{m-1}}D^m_-\), where \(m\geq 1\). Given a
+continuous map \(g\colon S^{m-1}\to \GL _n(\C )\), called a <span class='ntx-Italic-tlf-t1-x-x-109'>clutching function</span>, form \[ E_g:=\big ((D^m_+\times \C ^n)\sqcup (D^m_-\times \C ^n)\big )\big /\big ((x,v)_+\sim (x,g(x)v)_-\big ), \qquad x\in S^{m-1}. \] The projection \(E_g\to S^m\) is a rank \(n\) vector bundle. Conversely,
+every rank \(n\) vector bundle over \(S^m\) is obtained in this way, since its restrictions to the two hemispheres are
+trivial by <a class="source-reference" data-label="thm:Vector_Bundles_Homotopy_Invariant" href="../../../entry/homotopy-invariance-of-vector-bundles/index.html#thm:Vector_Bundles_Homotopy_Invariant">Theorem 9.1.4</a>. The construction induces a bijection \[ [S^{m-1},\GL _n(\C )]\xrightarrow {\cong }\pi _0\Vect _n(S^m) \] from the set of free homotopy classes; see
+<span class='citation'><a class="citation-item" href="../../../references/index.html#ref-Hatcher_KTheory" title="Hatcher, Vector bundles and K-theory">Hatcher (2017)</a>, Proposition 1.11</span>.
+</p><p class='noindent'>The group \(\GL _n(\C )\) is path-connected, as we verify in <a class="source-reference" data-label="exercise:Vector_Bundles_On_Circle" href="../../../entry/vector-bundles-over-the-circle/index.html#exercise:Vector_Bundles_On_Circle">Exercise 9.1.6</a>. For \(m\geq 2\), free homotopy classes therefore agree with
+based homotopy classes: replacing \(g(x)\) by \(g(x_0)^{-1}g(x)\) gives a based map in the same free homotopy class, and
+applying this normalization to a homotopy makes it based. Thus the set above is \(\pi _{m-1}(\GL _n(\C ))\). For \(m=1\), it is a
+singleton.
 </p>
 <div class='newtheorem'>
+
+
 <p class='noindent'><span class='head'>
-
-
 <a id='x1-3001r6'></a>
-<a class="entry-heading-link" href="../../../entry/vector-bundles-over-the-circle/index.html" aria-label="Exercise 9.1.6, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 9.1.6 </span></a>(Vector bundles over the circle)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='exercise:Vector_Bundles_On_Circle'></span>  Show  that  the  topological  group  \(\GL _n(\C )\)  is  connected.
+<a class="entry-heading-link" href="../../../entry/vector-bundles-over-the-circle/index.html" aria-label="Exercise 9.1.6, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 9.1.6 </span></a>(Vector bundles over the circle)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='exercise:Vector_Bundles_On_Circle'></span> Show that the topological group \(\GL _n(\C )\) is path-connected.
 Deduce that every rank \(n\) complex vector bundle over \(S^1\) is trivial, so that \[ \pi _0\Vect (S^1) \cong \N . \]
 </p>
 </div>
@@ -165,9 +168,10 @@ Deduce that every rank \(n\) complex vector bundle over \(S^1\) is trivial, so t
 <a id='x1-3002r7'></a>
 <a class="entry-heading-link" href="../../../entry/vector-bundles-over-the-two-sphere/index.html" aria-label="Exercise 9.1.7, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 9.1.7 </span></a>(Vector bundles over the two-sphere)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='exercise:Vector_Bundles_On_Two_Sphere'></span>  Compute  that  \(\pi _1(\GL _1(\C ))\cong \Z \),  with  \(m\in \Z \)  represented  by  the
 clutching function \(g_m\colon S^1\to \C ^\times \), \(z\mapsto z^m\), and construct an explicit representative \(L_m\) for the corresponding line bundle over
-\(S^2\). Next, show that the inclusion \(U(n) \hookrightarrow \GL _n(\C )\) is a homotopy equivalence. Using the fiber sequence \[ U(n-1) \hookrightarrow U(n) \twoheadrightarrow S^{2n-1}, \] deduce that \(\pi _1(\GL _n(\C )) \cong \Z \)
-for all \(n \geq 1\). Conclude that \(\pi _0\Vect _k(S^2) \cong \Z \) for all \(k \geq 1\), with every rank \(k\) complex vector bundle over \(S^2\) isomorphic to \[ L_m \oplus \ul {\C }^{k-1} \] for a
-unique \(m \in \Z \).
+\(S^2\). Next, let \(U(n)\) be the group of unitary \((n\times n)\)-matrices, and show that the inclusion \(U(n) \hookrightarrow \GL _n(\C )\) is a homotopy equivalence.
+Using the fiber sequence \[ U(n-1) \hookrightarrow U(n) \twoheadrightarrow S^{2n-1}, \] where the projection sends a matrix to its last column, show that the block
+inclusion \(U(1)\hookrightarrow U(n)\) induces an isomorphism on \(\pi _1\) for all \(n\geq 1\). Deduce that \(\pi _1(\GL _n(\C ))\cong \Z \). Conclude that \(\pi _0\Vect _k(S^2) \cong \Z \) for all \(k \geq 1\), with every rank
+\(k\) complex vector bundle over \(S^2\) isomorphic to \[ L_m \oplus \ul {\C }^{k-1} \] for a unique \(m \in \Z \).
 </p>
 </div>
 
@@ -175,7 +179,7 @@ unique \(m \in \Z \).
 
 </div>
 <footer class="edition-footer">
-  <span>Last updated 27 October 2026</span>
+  <span>Last updated 6 November 2026</span>
   <a href="/notes/stable-homotopy-higher-algebra.pdf">PDF</a>
   <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Section%209.1%3A%20Vector%20bundles&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fsection%2Fcomplex-k-theory%2Fvector-bundles%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
 </footer></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">

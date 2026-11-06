@@ -109,16 +109,16 @@ isomorphism for every object</span> \(X \in C\)<span class='ntx-Italic-tlf-t1-x-
 
 <div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-day-convolution-and-the-tensor-product-of-spectra-section-05-10" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-day-convolution-and-the-tensor-product-of-spectra-section-05-10">
 <p class='noindent'><span class='head'>
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> If \(F\) is excisive, it sends the pushout square defining \(\Sigma _CX\) to a pullback square, which identifies \(F(X)\)
-with \(\Omega _DF(\Sigma _CX)\).
-</p><p class='noindent'>Conversely, suppose all maps \(\eta _X\) are isomorphisms. For a commutative square \(Q\) as below, write \[ P_F(Q):=F(X)\times _{F(W)}F(Y) \] and
-let \(\alpha _F(Q)\colon F(Z)\to P_F(Q)\) be the canonical map. Now let \(Q\) be a pushout square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-1997cb8b6811.svg" alt="Commutative square with maps Z to X, Y to W, Z to Y, X to W." width="68" height="53" loading="lazy"></figure></div><p class='noindent'>The standard \(3\times 3\) diagram of cofibers contains
-a map \(W\to \Sigma _CZ\) whose composites with \(X\to W\) and \(Y\to W\) are zero. Applying \(F\) therefore gives a morphism of cospans</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-d75aa79098a5.svg" alt="Commutative diagram involving F(X), F(W), F(Y), 0, F(\Sigma CZ)." width="190" height="58" loading="lazy"></figure></div><p class='noindent'>Taking pullbacks defines a map \[ \beta _F(Q)\colon P_F(Q)\longrightarrow \Omega _DF(\Sigma _CZ). \] Put \(T(F):=\Omega _DF\Sigma _C\). The remaining faces of the \(3\times 3\) diagram identify the two indicated
-length-two composites in</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-5b97519b3b1b.svg" alt="Commutative diagram involving F(Z), P F(Q) P \eta F(Q), T(F)(Z) \alpha T(F)(Q), P T(F)(Q), with arrows labeled \alpha F(Q), \beta F(Q), \eta Z." width="350" height="69" loading="lazy"></figure></div><p class='noindent'>The first identity is the suspension square defining \(\eta _Z\). The second is obtained
-by taking pullbacks of the suspension squares defining \(\eta _X,\eta _W,\eta _Y\); here \(P_{\eta _F}(Q)\) denotes the resulting map on pullbacks.
-The first length-two composite is an isomorphism by assumption, and the second is an isomorphism
-because it is induced on pullbacks by three isomorphisms. Hence the 2-out-of-6 property shows that
-\(\alpha _F(Q)\) is an isomorphism. Thus \(F\) is excisive.                                                                                                 □</p>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> If \(F\) is excisive, it sends the pushout square defining \(\Sigma _CX\) to a pullback square, so the canonical
+map \[ \eta _X\colon F(X)\longrightarrow \Omega _DF(\Sigma _CX) \] is an isomorphism.
+</p><p class='noindent'>Conversely, suppose these maps are isomorphisms. Consider a pushout square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-8f060331cddf.svg" alt="Commutative square with maps Z to X, Y to W, Z to Y, X to W." width="68" height="53" loading="lazy"></figure></div><p class='noindent'>We must show that
+its comparison map \[ \alpha \colon F(Z)\longrightarrow P:=F(X)\times _{F(W)}F(Y) \] is an isomorphism. Put \(A:=X\sqcup _Z 0\) and \(B:=0\sqcup _Z Y\), and extend the square by pushouts to the diagram</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-88794fbf7569.svg" alt="Commutative diagram involving Z, X, 0, Y, W, B, A, \Sigma C Z, \Sigma C Y, \Sigma C X, and further objects." width="164" height="107" loading="lazy"></figure></div><p class='noindent'>Applying \(F\), the map \(W\to \Sigma _C Z\) and its specified nullhomotopies on \(X\) and \(Y\) induce a map \[ \beta \colon P\longrightarrow \Omega _DF(\Sigma _C Z). \] The outer suspension
+square of \(Z\) identifies \(\beta \alpha \) with \(\eta _Z\).</p><p class='noindent'>The suspension rectangles of \(Z,X,Y,W\) form a coherent square of squares. After applying \(F\) and replacing \(F(Z)\)
+by its pullback cone \(P\), they give a square of arrows with vertices \(\beta ,\eta _X,\eta _Y,\eta _W\). Taking the pullback of the last
+three arrows therefore identifies the composite \[ P\xrightarrow {\beta }\Omega _DF(\Sigma _C Z) \longrightarrow \Omega _DF(\Sigma _C X)\times _{\Omega _DF(\Sigma _C W)}\Omega _DF(\Sigma _C Y) \] with the map induced by \(\eta _X,\eta _W,\eta _Y\). This composite is an
+isomorphism, since all three maps are isomorphisms. Since \(\beta \alpha =\eta _Z\) is also an isomorphism, two-out-of-six
+shows that \(\alpha \) is an isomorphism. Thus \(F\) is excisive.                                                                               □
+</p>
 </div></div>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
@@ -244,30 +244,24 @@ Then the two inclusions </span>\[ \Sp ^{\exc }(C)=\Exc _*(\An _*^{\fin },C) \hoo
 \(\const _*\to \id \) induces \(\const _{F(*)}\to F\). Define \[ F^{\mathrm {red}}(X):=*\sqcup _{F(*)}F(X). \] This is reduced. If \(G\) is reduced, every natural transformation \(F\to G\) vanishes on \(F(*)\), and
 hence factors uniquely through \(F\to F^{\mathrm {red}}\). Thus \((-)^{\mathrm {red}}\) is left adjoint to the inclusion of reduced functors.
 </p><p class='noindent'>For \(P_1\), we may replace \(C\) by \(C_*\), which inherits finite and sequential colimits from \(C\), so assume \(C\) is pointed.
-Write \[ T(F):=\Omega F\Sigma \] for the endofunctor of \(\Fun _*(\An _*^{\fin },C)\), equipped with the natural transformation \(\eta \colon \id \to T\) from <a class="source-reference" data-label="cons:Transformation_Excisive_Functors" href="../../../entry/transformation-excisive-functors/index.html#cons:Transformation_Excisive_Functors">Construction 16.5.4</a>. We first record
-the coherence needed below. For a finite set \(S\) and \(X\in \An _*^{\fin }\), let \(K_S(X)\) be the colimit of the star-shaped diagram
-with central object \(X\) and one map \(X\to 0\) for every element of \(S\). Thus \[ K_{\emptyset }(X)=X,\qquad K_{\{s\}}(X)=0,\qquad K_{\{0,1\}}(X)=\Sigma X. \] Injections of finite sets induce maps
-between these pointed cones. Since finite colimits commute with each other, interchanging the two
-colimit coordinates gives natural isomorphisms \(K_SK_{S'}\simeq K_{S'}K_S\), coherently in \(S\) and \(S'\). This simultaneous interchange
-is the coherence needed below; it does not require choosing an order in which to identify the two
-suspension coordinates. Moreover, \[ T(F)(X)\simeq \lim _{\emptyset \neq S\subseteq \{0,1\}}F(K_S(X)) \simeq F(0)\times _{F(\Sigma X)}F(0) \simeq \Omega F(\Sigma X). \] Under this description, the maps \(K_{\emptyset }(X)\to K_S(X)\) induce \(\eta _F\). The isomorphisms
-which interchange \(K_S\) and \(K_{S'}\) therefore identify the two natural transformations \[ T(\eta _F),\eta _{T(F)}\colon T(F)\longrightarrow T^2(F). \]
-</p><p class='noindent'>Now let \(F\colon \An _*^{\fin }\to C\) be reduced. Iterate \(\eta \) to form \[ F \xrightarrow {\eta _F} T(F) \xrightarrow {\eta _{T(F)}} T^2(F) \longrightarrow \cdots \] and define \[ P_1(F):=\colim _{n\geq 0}T^n(F). \] Thus \(T^n(F)\simeq \Omega ^nF\Sigma ^n\), with the transition maps specified coherently
-by the pointed-cone construction.
+Write \[ T(F):=\Omega F\Sigma \] for the endofunctor of \(\Fun _*(\An _*^{\fin },C)\), equipped with the natural transformation \(\eta \colon \id \to T\) from <a class="source-reference" data-label="cons:Transformation_Excisive_Functors" href="../../../entry/transformation-excisive-functors/index.html#cons:Transformation_Excisive_Functors">Construction 16.5.4</a>. Apply the final
+composite identity in the proof of <a class="source-reference" data-label="prop:Excisiveness_Criterion" href="../../../entry/excisiveness-criterion/index.html#prop:Excisiveness_Criterion">Proposition 16.5.5</a> to the suspension square of \(X\). In the notation of that proof, \(P=T(F)(X)\) and \(\beta \) is
+the identity, so it gives a natural identification \[ T(\eta _F)\simeq \eta _{T(F)}. \]
+</p><p class='noindent'>Now let \(F\colon \An _*^{\fin }\to C\) be reduced. Iterate \(\eta \) to form \[ F \xrightarrow {\eta _F} T(F) \xrightarrow {\eta _{T(F)}} T^2(F) \longrightarrow \cdots \] and define \[ P_1(F):=\colim _{n\geq 0}T^n(F). \] Thus \(T^n(F)\simeq \Omega ^nF\Sigma ^n\), with the transition maps given by \(\eta _{T^n(F)}\).
 </p><p class='noindent'>The functor \(T\) preserves sequential colimits by assumption. Consequently, \[ T(P_1(F))\simeq \colim _{n\geq 0}T^{n+1}(F), \] and under this isomorphism
 \(\eta _{P_1(F)}\) is the map from the defining telescope to its tail. The shift \(n\mapsto n+1\) is cofinal, so this map is an isomorphism.
 The excisiveness criterion now shows that \(P_1(F)\) is excisive.
 </p><p class='noindent'>It remains to verify the universal property. The coherence \(T(\eta _G)\simeq \eta _{T(G)}\) identifies the sequential diagram defining
 \(P_1(T(G))\) with the tail of the diagram defining \(P_1(G)\), compatibly with \[ P_1(\eta _G)\colon P_1(G)\longrightarrow P_1(T(G)). \] Thus \(P_1(\eta _G)\) corresponds to the cofinal tail map
 and is an isomorphism. Moreover, \(P_1\) preserves sequential colimits, since \(T\) does.
-
-
 </p><p class='noindent'>Let \(u_F\colon F\to P_1(F)\) be the map into the telescope. Since \(P_1\) preserves sequential colimits, the map \[ P_1(u_F)\colon P_1(F)\longrightarrow P_1(P_1(F)) \] is the sequential
 colimit of the maps \(P_1(F)\to P_1(T^n(F))\). Each of these is a composite of the isomorphisms \(P_1(\eta _{T^k(F)})\), so \(P_1(u_F)\) is an isomorphism. If \(G\)
 is already excisive, the excisiveness criterion shows that every map in the defining telescope for \(P_1(G)\) is
 an isomorphism, so \(u_G\colon G\to P_1(G)\) is an isomorphism. In particular, \(u_{P_1(F)}\) is an isomorphism. By <a class="source-reference" data-label="prop:Characterization_Bousfield_Localizations" href="../../../entry/characterizations-of-categorical-bousfield-localizations/index.html#prop:Characterization_Bousfield_Localizations">Proposition 21.8.9</a>, the functor \(P_1\) is left
 adjoint to the inclusion of reduced excisive functors.                                                                         □
 </p>
+
+
 </div></div>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
@@ -287,14 +281,14 @@ commute with finite limits, so their loop functors preserve sequential colimits.
 <a id='x1-1019r14'></a>
 <span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 16.5.14.</span>  </span><span id='lem:Free_Excisive_Functor_On_Pointed_Anima'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The evaluation functor </span>\[ \ev _{S^0}\colon \Exc _*(\An _*^{\fin },\An _*) \to \An _* \] <span class='ntx-Italic-tlf-t1-x-x-109'>admits a left adjoint. It sends a pointed anima</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>to the
 excisive approximation of the smash product functor </span>\[ P_1(X \wedge -) \colon \An _*^{\fin } \to \An _*. \]
-
-
-
 </p>
 </div>
 
 <div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-day-convolution-and-the-tensor-product-of-spectra-section-05-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-day-convolution-and-the-tensor-product-of-spectra-section-05-1">
 <p class='noindent'><span class='head'>
+
+
+
 <span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  First  consider  evaluation  at  \(S^0\)  on  the  full  functor  category.  Its  left  adjoint  is  the  left  Kan
 extension along \(S^0\colon *\to \An _*^{\fin }\), which sends a pointed anima \(X\) to the functor \[ K\longmapsto X\wedge \fgt (K)_+. \] Its value at the zero object is \(X\). Applying
 the reduction functor gives \(K\mapsto X\wedge K\), since the cofiber of the canonical map \(S^0\to \fgt (K)_+\) is \(K\). Thus \(X\wedge -\) is left adjoint to
@@ -306,7 +300,7 @@ the asserted left adjoint on reduced excisive functors.                         
 
 </div>
 <footer class="edition-footer">
-  <span>Last updated 27 October 2026</span>
+  <span>Last updated 6 November 2026</span>
   <a href="/notes/stable-homotopy-higher-algebra.pdf">PDF</a>
   <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Section%2016.5%3A%20Spectra%20as%20reduced%20excisive%20functors&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fsection%2Fday-convolution-and-the-tensor-product-of-spectra%2Fspectra-as-reduced-excisive-functors%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
 </footer></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">

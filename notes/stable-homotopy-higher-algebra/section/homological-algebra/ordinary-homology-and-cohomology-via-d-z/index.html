@@ -94,7 +94,8 @@ homology groups of \(A\):
 
 that \(HA\) is connective and that \(\Omega ^{\infty }HA\) is the discrete commutative group \(A\). Under the recognition equivalence
 of <a class="source-reference" data-label="thm:Recognition_Principle_Connective_Spectra" href="../../../entry/recognition-principle-for-connective-spectra/index.html#thm:Recognition_Principle_Connective_Spectra">Theorem 5.4.6</a>, it therefore corresponds to \(A\in \CGrp (\Set )\), giving a natural isomorphism \[ HA \iso \bB ^{\infty }A. \] Thus this construction agrees with
-the Eilenberg–MacLane spectrum of <a class="source-reference" data-label="def:Eilenberg_MacLane_Spectrum_Recognition" href="../../../entry/eilenberg-maclane-spectrum-from-an-abelian-group/index.html#def:Eilenberg_MacLane_Spectrum_Recognition">Definition 5.4.9</a>.
+the Eilenberg–MacLane spectrum of <a class="source-reference" data-label="def:Eilenberg_MacLane_Spectrum_Recognition" href="../../../entry/eilenberg-maclane-spectrum-from-an-abelian-group/index.html#def:Eilenberg_MacLane_Spectrum_Recognition">Definition 5.4.9</a>. As there, we usually write \(A\) also for its Eilenberg–MacLane
+spectrum when \(A\) is an abelian group.
 </p>
 </div>
 <p class='noindent'>This has the following useful consequence:
@@ -118,9 +119,9 @@ homology directly. We will then transport this corepresentability across the fur
 \(\D (\Z )\).
 </p>
 <div class='newtheorem'>
+
+
 <p class='noindent'><span class='head'>
-
-
 <a id='x1-2006r6'></a>
 <a class="entry-heading-link" href="../../../entry/homotopy-infinity-category-of-chain-complexes/index.html" aria-label="Definition 6.2.6., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 6.2.6.</span></a>  </span><span id='def:Homotopy_Infinity_Category_Chain_Complexes'></span> Let \(\Aa \) be an abelian category. We define the \(\infty \)-category \(\Kk (\Aa )\) as the localization \[ \Kk (\Aa ) \quad := \quad \Ch (\Aa )[\{\text {chain homotopy equivalences}^{-1}\}]. \] There
 are localization functors \(\Ch (\Aa ) \to \Kk (\Aa ) \to \D (\Aa )\).
@@ -300,19 +301,19 @@ as both sides preserve limits.
 
 <div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-02-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-02-3">
 <p class='noindent'><span class='head'>
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Since both \(\Sigma ^{\infty }_+X\) and \(H\Z \) are connective spectra, so is \(\Sigma ^{\infty }_+X \otimes H\Z \). The functor \(H_0(-)\colon \An \to \Ab \) may thus be written as the
-composite \[ \An \xrightarrow {\Sigma ^{\infty }_+} \Sp _{\geq 0} \xrightarrow {- \otimes H\Z } \Sp _{\geq 0} \xrightarrow {\pi _0} \Ab , \] each of which preserves colimits. Here \(\pi _0\colon \Sp _{\geq 0} \to \Ab \) preserves colimits because it is left adjoint to the
-inclusion of abelian groups as Eilenberg–MacLane spectra. On the other hand, the assignment \(X \mapsto \bigoplus _{\pi _0(X)} \Z \) may
-be written as the composite of \(\pi _0\colon \An \to \Set \) with the free abelian group functor \(\Set \to \Ab \), both of which preserve colimits
-as well. By the universal property of \(\An \), it thus suffices to check the claim for \(X = \pt \), where both sides are
-\(\Z \).                                                                                                                                                           □
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The complexes \(C_*(X;\Z )\) are connective, since they are colimits of copies of \(\Z \) and connective complexes
+are closed under colimits. The truncation adjunction shows that \(H_0\colon \D (\Z )_{\geq 0}\to \Ab \) is left adjoint to the inclusion of \(\Ab \),
+so the composite \(H_0(C_*(-;\Z ))\) preserves colimits. The functor \(X\mapsto \bigoplus _{\pi _0(X)}\Z \) also preserves colimits, being the composite of
+\(\pi _0\colon \An \to \Set \) and the free abelian group functor. Both functors take the point to \(\Z \), so the universal property of \(\An \)
+identifies them.                                                                                                                                    □
 </p>
 </div></div>
-<p class='noindent'>For an abelian group \(A\), one can show that the assignments \(X \mapsto C_*^{\mathrm {sing}}(X;A)\) and \(X \mapsto C^*_{\mathrm {sing}}(X;A)\) from <a class="source-reference" data-label="rmk:Singular_Homology" href="../../../entry/singular-homology-and-cohomology/index.html#rmk:Singular_Homology">Remark 3.3.2</a> are homotopy invariant, send disjoint
-unions to (co)products, satisfy the Mayer–Vietoris property, and carry skeletal colimits of CW-complexes to
-colimits and limits, respectively; see for example <span class='citation'><a class="citation-item" href="../../../references/index.html#ref-Hatcher_Algebraic_Topology" title="Hatcher, Algebraic topology">Hatcher (2002)</a></span>. By restricting these assignments to CW-complexes, it
-follows that they descend to functors \[ C_*^{\mathrm {sing}}(-;A)\colon \An \to \D (\Z ) \qquadtext {and} C^*_{\mathrm {sing}}(-;A)\colon \An \catop \to \D (\Z ) \] that preserve colimits and limits, respectively. Since \(C_*^{\mathrm {sing}}(\pt ;A) \simeq A[0] \simeq C^*_{\mathrm {sing}}(\pt ;A)\), the universal
-property of \(\An \) implies that these functors are naturally equivalent to \(C_*(-;A)\) and \(C^*(-;A)\) from <a class="source-reference" data-label="cons:Chain_Cochain_Complexes" href="../../../entry/chain-and-cochain-complexes-of-animae/index.html#cons:Chain_Cochain_Complexes">Construction 6.2.12</a>. Thus the intrinsic ordinary
+<p class='noindent'>For an abelian group \(A\), singular chains and cochains from <a class="source-reference" data-label="rmk:Singular_Homology" href="../../../entry/singular-homology-and-cohomology/index.html#rmk:Singular_Homology">Remark 3.3.2</a> send weak homotopy equivalences to
+quasi-isomorphisms by <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-Hatcher_Algebraic_Topology" title="Hatcher, Algebraic topology">Hatcher (2002)</a>, Proposition 4.21]</span>, and hence define functors \[ C_*^{\mathrm {sing}}(-;A)\colon \An \to \D (\Z ) \qquadtext {and} C^*_{\mathrm {sing}}(-;A)\colon \An \catop \to \D (\Z ). \] The chain-level Mayer–Vietoris argument of <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-Hatcher_Algebraic_Topology" title="Hatcher, Algebraic topology">Hatcher (2002)</a>, Proposition 2.21 and pp. 149--150, 203--204]</span>,
+applied to double mapping cylinders, shows that these functors carry pushouts of animae to
+pushouts and pullbacks, respectively. They also carry coproducts to coproducts and products,
+respectively, and therefore carry all colimits to colimits and limits. Since \(C_*^{\mathrm {sing}}(\pt ;A) \simeq A[0] \simeq C^*_{\mathrm {sing}}(\pt ;A)\), the universal property of \(\An \)
+implies that these functors are naturally equivalent to \(C_*(-;A)\) and \(C^*(-;A)\) from <a class="source-reference" data-label="cons:Chain_Cochain_Complexes" href="../../../entry/chain-and-cochain-complexes-of-animae/index.html#cons:Chain_Cochain_Complexes">Construction 6.2.12</a>. Thus the intrinsic ordinary
 (co)homology constructed here agrees with singular (co)homology for animae coming from topological
 spaces.
 
@@ -322,8 +323,8 @@ otherwise. This verifies the dimension axiom and completes the construction of t
 postulated in <a class="source-reference" data-label="thm:Existence_Ordinary_Homology" href="../../../entry/existence-of-ordinary-homology-and-cohomology/index.html#thm:Existence_Ordinary_Homology">Theorem 3.3.1</a>.
 </p>
 <h4 class='subsectionHead' id='the-stable-hurewicz-theorem'><span class='titlemark'>6.2.3    </span> <a id='x1-40006.2.3'></a>The stable Hurewicz theorem</h4>
-<p class='noindent' id='subsec_Stable_Hurewicz'>For a spectrum \(X\) and an abelian group \(A\), we write \[ H_k(X;A) := \pi _k(X\otimes HA) \qquadtext {and} H_k(X) := H_k(X;\Z ). \] For \(X=\Sigma ^{\infty }_+Z\) with \(Z\) an anima, this recovers the ordinary homology of
-\(Z\) by <a class="source-reference" data-label="prop:Spectrum_Chain_Complex_Comparison" href="../../../entry/comparison-between-chain-complexes-and-spectra/index.html#prop:Spectrum_Chain_Complex_Comparison">Proposition 6.2.14</a>. The unit map \(\S \to H\Z \) induces a natural map \(X\simeq X\otimes \S \to X\otimes H\Z \), and hence the <span class='ntx-Italic-tlf-t1-x-x-109'>Hurewicz map </span>\[ h\colon \pi _k(X)\longrightarrow H_k(X). \]
+<p class='noindent' id='subsec_Stable_Hurewicz'>For a spectrum \(X\) and an abelian group \(A\), we write \[ H_k(X;A) := \pi _k(X\otimes A) \qquadtext {and} H_k(X) := H_k(X;\Z ). \] For \(X=\Sigma ^{\infty }_+Z\) with \(Z\) an anima, this recovers the ordinary homology of
+\(Z\) by <a class="source-reference" data-label="prop:Spectrum_Chain_Complex_Comparison" href="../../../entry/comparison-between-chain-complexes-and-spectra/index.html#prop:Spectrum_Chain_Complex_Comparison">Proposition 6.2.14</a>. The unit map \(\S \to \Z \) induces a natural map \(X\simeq X\otimes \S \to X\otimes \Z \), and hence the <span class='ntx-Italic-tlf-t1-x-x-109'>Hurewicz map </span>\[ h\colon \pi _k(X)\longrightarrow H_k(X). \]
 </p>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
@@ -335,9 +336,9 @@ postulated in <a class="source-reference" data-label="thm:Existence_Ordinary_Hom
 
 <div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-02-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-02-2">
 <p class='noindent'><span class='head'>
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Let \(F\) be the fiber of the unit map \(u\colon \S \to H\Z \). Both \(\S \) and \(H\Z \) are connective, \(\pi _k(H\Z )=0\) for \(k\neq 0\), and \(u\) induces an isomorphism
-\(\pi _0(\S )\cong \Z \cong \pi _0(H\Z )\) by <a class="source-reference" data-label="ex:Pi_Zero_Sphere_Spectrum" href="../../../entry/zeroth-homotopy-group-of-the-sphere-spectrum/index.html#ex:Pi_Zero_Sphere_Spectrum">Example 4.4.25</a>. The long exact sequence of homotopy groups therefore shows that \(\pi _k(F)=0\) for \(k\leq 0\), so \(F[-1]\) is connective. Since
-\(X\otimes -\) is exact, we obtain a fiber sequence \[ X\otimes F\longrightarrow X\longrightarrow X\otimes H\Z . \] As \(X[-n]\) and \(F[-1]\) are connective, so is \((X\otimes F)[-n-1]\simeq X[-n]\otimes F[-1]\) by <a class="source-reference" data-label="lem:Tensor_Product_Spectra_Preserves_Connectivity" href="../../../entry/tensor-products-of-connective-spectra-are-connective/index.html#lem:Tensor_Product_Spectra_Preserves_Connectivity">Lemma 8.2.4</a>; that is, \(\pi _k(X\otimes F)=0\) for \(k\leq n\). The claims now
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Let \(F\) be the fiber of the unit map \(u\colon \S \to \Z \). Both \(\S \) and \(\Z \) are connective, \(\pi _k(\Z )=0\) for \(k\neq 0\), and \(u\) induces an isomorphism
+\(\pi _0(\S )\cong \Z \cong \pi _0(\Z )\) by <a class="source-reference" data-label="ex:Pi_Zero_Sphere_Spectrum" href="../../../entry/zeroth-homotopy-group-of-the-sphere-spectrum/index.html#ex:Pi_Zero_Sphere_Spectrum">Example 4.4.25</a>. The long exact sequence of homotopy groups therefore shows that \(\pi _k(F)=0\) for \(k\leq 0\), so \(F[-1]\) is connective. Since
+\(X\otimes -\) is exact, we obtain a fiber sequence \[ X\otimes F\longrightarrow X\longrightarrow X\otimes \Z . \] As \(X[-n]\) and \(F[-1]\) are connective, so is \((X\otimes F)[-n-1]\simeq X[-n]\otimes F[-1]\) by <a class="source-reference" data-label="lem:Tensor_Product_Spectra_Preserves_Connectivity" href="../../../entry/tensor-products-of-connective-spectra-are-connective/index.html#lem:Tensor_Product_Spectra_Preserves_Connectivity">Lemma 8.2.1</a>; that is, \(\pi _k(X\otimes F)=0\) for \(k\leq n\). The claims now
 follow from the long exact sequence \[ \pi _k(X\otimes F)\longrightarrow \pi _k(X)\xrightarrow {\ h\ }H_k(X)\longrightarrow \pi _{k-1}(X\otimes F). \qedhere \]                                                                                                  □
 </p>
 </div></div>
@@ -356,7 +357,7 @@ isomorphism if and only if it induces isomorphisms</span> \(H_k(X)\to H_k(Y)\) <
 <div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-homological-algebra-section-02-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-homological-algebra-section-02-1">
 <p class='noindent'><span class='head'>
 <span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> One direction is clear. Conversely, let \(C:=\cofib (f)\). The long exact sequence of homotopy groups shows
-that \(C\) is bounded below. Since \(-\otimes H\Z \) is exact, \(C\otimes H\Z \simeq \cofib (f\otimes H\Z )\), and \(f\otimes H\Z \) is an isomorphism by assumption and <a class="source-reference" data-label="cor:Homotopy_Groups_Jointly_Conservative" href="../../../entry/homotopy-groups-detect-isomorphisms-of-spectra/index.html#cor:Homotopy_Groups_Jointly_Conservative">Corollary 4.4.27</a>. Hence \(H_k(C)=0\) for all \(k\).
+that \(C\) is bounded below. Since \(-\otimes \Z \) is exact, \(C\otimes \Z \simeq \cofib (f\otimes \Z )\), and \(f\otimes \Z \) is an isomorphism by assumption and <a class="source-reference" data-label="cor:Homotopy_Groups_Jointly_Conservative" href="../../../entry/homotopy-groups-detect-isomorphisms-of-spectra/index.html#cor:Homotopy_Groups_Jointly_Conservative">Corollary 4.4.27</a>. Hence \(H_k(C)=0\) for all \(k\).
 If \(C\) were nonzero, then by <a class="source-reference" data-label="cor:Homotopy_Groups_Jointly_Conservative" href="../../../entry/homotopy-groups-detect-isomorphisms-of-spectra/index.html#cor:Homotopy_Groups_Jointly_Conservative">Corollary 4.4.27</a> it would have a nonzero homotopy group, and there would be a smallest \(m\)
 with \(\pi _m(C)\neq 0\). But <a class="source-reference" data-label="thm:Stable_Hurewicz" href="../../../entry/stable-hurewicz-theorem/index.html#thm:Stable_Hurewicz">Theorem 6.2.17</a> gives \(\pi _m(C)\cong H_m(C)=0\), a contradiction. Thus \(C=0\), so \(f\) is an isomorphism.                                                      □
 </p>
@@ -365,7 +366,7 @@ with \(\pi _m(C)\neq 0\). But <a class="source-reference" data-label="thm:Stable
 
 </div>
 <footer class="edition-footer">
-  <span>Last updated 27 October 2026</span>
+  <span>Last updated 6 November 2026</span>
   <a href="/notes/stable-homotopy-higher-algebra.pdf">PDF</a>
   <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Section%206.2%3A%20Ordinary%20homology%20and%20cohomology%20via%20D(Z)&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fsection%2Fhomological-algebra%2Fordinary-homology-and-cohomology-via-d-z%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
 </footer></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">

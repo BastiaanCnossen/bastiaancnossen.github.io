@@ -62,17 +62,18 @@ reading.
 </p>
 <h4 class='subsectionHead' id='fiberwise-compactification'><span class='titlemark'>10.5.1    </span> <a id='x1-200010.5.1'></a>Fiberwise compactification</h4>
 <p class='noindent' id='subsec_Coherence_Fiberwise_Compactification'>Fix a topological space \(X\). Let \(\mathrm {Bun}(X)\) be the 1-category of locally trivial fiber bundles over \(X\) and continuous maps
-over \(X\). Its terminal object is \(X\to X\), and its finite products are fiber products over \(X\). Let \(\mathrm {Bun}_{*,\mathrm {c}}(X)\) be the 1-category of bundles
-with compact Hausdorff pointed fibers, locally trivial as pointed bundles, and pointed bundle
+over \(X\). Its terminal object is \(X\to X\), and its finite products are fiber products over \(X\). Let \(\mathrm {Bun}_{*,\mathrm {c}}(X)\) be the 1-category of
+locally trivial pointed bundles over \(X\) with compact Hausdorff fibers and section-preserving
 maps. That is, the local trivializations carry the distinguished section to the basepoint of the
 fiber.
 </p><p class='noindent'>For \(K,L\in \mathrm {Bun}_{*,\mathrm {c}}(X)\) with sections \(s_K\) and \(s_L\), define the fiberwise wedge \[ K\vee _XL := \bigl (K\times _Xs_L(X)\bigr )\cup \bigl (s_K(X)\times _XL\bigr ) \subseteq K\times _XL. \] The fiberwise smash product is the pushout \[ K\wedge _XL:=(K\times _XL)\amalg _{K\vee _XL}X \] in
-topological spaces over \(X\), pointed by the last term. In each fiber this collapses the wedge to
-a point. Over a common pointed trivializing open subset \(U\subseteq X\), the quotient map is \[ \id _U\times q\colon U\times (K_0\times L_0)\longrightarrow U\times (K_0\wedge L_0). \] Indeed, \(q\) is a
-closed surjection between compact Hausdorff spaces, hence perfect; its product with \(U\) is again a
-quotient map. It follows that \(K\wedge _XL\) is locally trivial with compact Hausdorff pointed fiber \(K_0\wedge L_0\). The same
-argument applies to iterated smash products. Their universal properties give a symmetric monoidal
-structure on \(\mathrm {Bun}_{*,\mathrm {c}}(X)\) with unit \(X\times S^0\). These constructions commute with pullback, as is seen in the same local
+topological spaces over \(X\), pointed by the last term. In each fiber this collapses the wedge to a point.
+Over a common pointed trivializing open subset \(U\subseteq X\), the quotient map is \[ \id _U\times q\colon U\times (K_0\times L_0)\longrightarrow U\times (K_0\wedge L_0). \] Here \(q\colon K_0\times L_0\to K_0\wedge L_0\) is the quotient
+map. Since it is a closed surjection with compact fibers, its product with \(U\) is a quotient map. It
+follows that \(K\wedge _XL\) is locally trivial with compact Hausdorff pointed fiber \(K_0\wedge L_0\). Iterated fiberwise smash
+products are obtained by collapsing tuples with a basepoint coordinate. The associativity, unit
+and symmetry maps therefore satisfy the coherence identities, giving a symmetric monoidal
+structure on \(\mathrm {Bun}_{*,\mathrm {c}}(X)\) with unit \(X\times S^0\). These constructions commute with pullback, as can be checked in local
 trivializations.
 </p>
 <div class='newtheorem'>
@@ -90,34 +91,35 @@ defines a symmetric monoidal functor </span>\[ \Vect _{\R }^{\disc }(X)^{\simeq 
 <span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  A  linear  isomorphism  extends  uniquely  to  a  pointed  homeomorphism  of  one-point
 compactifications. The local description of <a class="source-reference" data-label="cons:Fiberwise_One_Point_Compactification" href="../../../entry/fiberwise-one-point-compactification/index.html#cons:Fiberwise_One_Point_Compactification">Construction 10.1.1</a> shows that this extension is continuous in families. It
 therefore gives a functor on groupoids of vector bundles, commuting with pullback.
-</p><p class='noindent'>The homeomorphisms \(S^{V\oplus W}\cong S^V\wedge S^W\) for vector spaces commute with linear isomorphisms. Applying them in
-bundle charts gives natural isomorphisms \[ S^{E\oplus F}\cong S^E\wedge _XS^F, \qquad S^{0_X}\cong X\times S^0, \] where \(0_X\) denotes the zero vector bundle on \(X\). To check
-the associativity, unit and symmetry diagrams, restrict to the complements of the infinity sections.
-There they are the corresponding diagrams for direct sums of vector bundles. All maps also carry
-the infinity section to the infinity section, so the diagrams commute everywhere.                            □
+</p><p class='noindent'>The natural homeomorphisms \(S^{V\oplus W}\cong S^V\wedge S^W\) give, in bundle charts, isomorphisms \[ S^{E\oplus F}\cong S^E\wedge _XS^F, \qquad S^{0_X}\cong X\times S^0, \] where \(0_X\) denotes the zero vector
+bundle on \(X\). The associativity, unit and symmetry diagrams reduce away from infinity to those for
+direct sums. Since all maps preserve the infinity sections, these diagrams commute everywhere.    □
 </p>
 </div></div>
 
 <h4 class='subsectionHead' id='passage-to-animae'><span class='titlemark'>10.5.2    </span> <a id='x1-300010.5.2'></a>Passage to animae</h4>
-<p class='noindent' id='subsec_Coherence_Passage_To_Animae'>We use the following consequence of the pointed-operad construction. A finite-product-preserving functor \(F\colon C\to D\)
-induces a morphism \[ (\Mm _{(C,\times )})_*\longrightarrow (\Mm _{(D,\times )})_* \] by <a class="source-reference" data-label="prop:Forgetful_Cartesian_Monoidal_Equivalence" href="../../../entry/forgetful-cartesian-monoidal-equivalence/index.html#prop:Forgetful_Cartesian_Monoidal_Equivalence">Proposition 15.3.6</a>, <a class="source-reference" data-label="thm:Additivization_Operads" href="../../../entry/additivization-operads/index.html#thm:Additivization_Operads">Theorem 18.4.12</a>. Its functor on colors sends a pointed object \((*\to K)\) to \((*\to F(K))\). If \(D\) has finite colimits preserved
-separately by cartesian products, the target is the multimorphism operad of \((D_*,\wedge )\) by <a class="source-reference" data-label="lem:Pointed_Day_Realization" href="../../../entry/pointed-day-realization/index.html#lem:Pointed_Day_Realization">Lemma 18.4.10</a>. This construction is
-functorial in \(F\): the cartesian symmetric monoidal refinement is functorial by the equivalence of <a class="source-reference" data-label="prop:Forgetful_Cartesian_Monoidal_Equivalence" href="../../../entry/forgetful-cartesian-monoidal-equivalence/index.html#prop:Forgetful_Cartesian_Monoidal_Equivalence">Proposition 15.3.6</a>, and \((-)_*\) is a
-functor. It supplies a lax symmetric monoidal functor whenever the source pointed operad is represented by
-a symmetric monoidal category.
+<p class='noindent' id='subsec_Coherence_Passage_To_Animae'>We next pass from pointed bundles over \(X\) to families of pointed animae over \(\Pi _\infty (X)\). Taking underlying animae
+preserves fiber products of bundles. The pointed-operad construction turns this compatibility into a lax
+symmetric monoidal functor for smash products; we will then show that its structure maps are
+isomorphisms on sphere bundles.
+</p><p class='noindent'>We use the following consequence of the pointed-operad construction. A finite-product-preserving functor \(F\colon C\to D\)
+induces a morphism \[ (\Mm _{(C,\times )})_*\longrightarrow (\Mm _{(D,\times )})_* \] by <a class="source-reference" data-label="prop:Forgetful_Cartesian_Monoidal_Equivalence" href="../../../entry/forgetful-cartesian-monoidal-equivalence/index.html#prop:Forgetful_Cartesian_Monoidal_Equivalence">Proposition 15.3.6</a>, <a class="source-reference" data-label="thm:Additivization_Operads" href="../../../entry/additivization-operads/index.html#thm:Additivization_Operads">Theorem 18.4.9</a>. On pointed objects, this sends \((*\to K)\) to \((*\to F(K))\). If \(D\) has finite colimits preserved separately by
+cartesian products, the target is the multimorphism operad of \((D_*,\wedge )\) by <a class="source-reference" data-label="lem:Pointed_Day_Realization" href="../../../entry/pointed-day-realization/index.html#lem:Pointed_Day_Realization">Lemma 18.6.2</a>. This construction is functorial in \(F\): the
+cartesian symmetric monoidal refinement is functorial by the equivalence of <a class="source-reference" data-label="prop:Forgetful_Cartesian_Monoidal_Equivalence" href="../../../entry/forgetful-cartesian-monoidal-equivalence/index.html#prop:Forgetful_Cartesian_Monoidal_Equivalence">Proposition 15.3.6</a>, and \((-)_*\) is a functor. It gives a lax
+symmetric monoidal functor whenever the source pointed operad is represented by a symmetric monoidal
+
+
+category.
 </p><p class='noindent'>For \(C=\mathrm {Bun}(X)\), we only need its full pointed suboperad on \(\mathrm {Bun}_{*,\mathrm {c}}(X)\). An operation from \(K_1,\ldots ,K_r\) to \(L\) is a bundle map \[ K_1\times _X\cdots \times _XK_r\longrightarrow L \] which sends a
 tuple with any coordinate in the distinguished section to the distinguished section of \(L\). Such maps factor
-
-
 uniquely through the fiberwise smash product. Nullary operations are sections of \(L\), equivalently pointed
 maps \(X\times S^0\to L\). Thus this full suboperad is represented by \((\mathrm {Bun}_{*,\mathrm {c}}(X),\wedge _X)\).
 </p>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-3001r2'></a>
-<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 10.5.2 </span>(Realization of sphere bundles)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Parametrized_One_Point_Compactification_Natural'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Taking underlying animae of fiberwise one-point
-compactifications defines a natural transformation </span>\[ \xi \colon \Vect _{\R }^{\disc }(-)^{\simeq } \Longrightarrow \Fun (\Pi _\infty (-),\An _*) \] <span class='ntx-Italic-tlf-t1-x-x-109'>of functors</span> \(\Top \catop \to \CMon (\Cat _\infty )\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Its component at</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>sends</span> \(E\) <span class='ntx-Italic-tlf-t1-x-x-109'>to the
-family</span> \(\xi _E\)<span class='ntx-Italic-tlf-t1-x-x-109'>, with fiber</span> \(\Pi _\infty (S^{E_x})\) <span class='ntx-Italic-tlf-t1-x-x-109'>at</span> \(x\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 10.5.2 </span>(Passage to underlying animae)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Parametrized_One_Point_Compactification_Natural'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Taking underlying animae of fiberwise one-point
+compactifications defines symmetric monoidal functors </span>\[ \xi _X\colon \Vect _{\R }^{\disc }(X)^{\simeq } \longrightarrow \Fun (\Pi _\infty (X),\An _*), \qquad E\longmapsto \xi _E, \] <span class='ntx-Italic-tlf-t1-x-x-109'>natural in</span> \(X\) <span class='ntx-Italic-tlf-t1-x-x-109'>under pullback.</span>
 </p>
 </div>
 
@@ -131,17 +133,14 @@ over \(\Top \). Taking underlying animae gives a functor from this fibration to 
 codomain  fibration  \(\Ar (\An )\to \An \).  It  preserves  cartesian  morphisms,  since  a  pullback  square  along  a  bundle
 projection becomes a pullback square of animae. Cartesian straightening therefore gives a natural
 transformation of finite-product-preserving functors.
-</p><p class='noindent'>Pointing now gives lax symmetric monoidal functors on \(\mathrm {Bun}_{*,\mathrm {c}}(X)\), naturally in \(X\). Under straightening, the
-target identifies with \[ (\An _{/\Pi _\infty (X)})_* \simeq \Fun (\Pi _\infty (X),\An _*). \] The unpointed straightening equivalence preserves finite products. Applying
-the pointed-operad construction and <a class="source-reference" data-label="lem:Pointed_Day_Realization" href="../../../entry/pointed-day-realization/index.html#lem:Pointed_Day_Realization">Lemma 18.4.10</a> therefore identifies the smash products on the two sides. In the
-functor category, finite products and finite colimits are computed pointwise, so <a class="source-reference" data-label="lem:Smash_Product_Monoidal_Structure" href="../../../entry/existence-of-the-smash-product-monoidal-structure/index.html#lem:Smash_Product_Monoidal_Structure">Lemma 16.3.4</a> identifies its smash
-product  with  pointwise  smash  product.  Composing  with  <a class="source-reference" data-label="lem:Fiberwise_One_Point_Compactification_Monoidal" href="../../../entry/monoidality-of-fiberwise-one-point-compactification/index.html#lem:Fiberwise_One_Point_Compactification_Monoidal">Lemma 10.5.1</a>  gives  natural  lax  symmetric  monoidal
-functors \(\xi _X\).
+</p><p class='noindent'>Pointing now gives lax symmetric monoidal functors on \(\mathrm {Bun}_{*,\mathrm {c}}(X)\), naturally in \(X\). Straightening preserves finite
+products and colimits, so its pointed refinement identifies the target with \(\Fun (\Pi _\infty (X),\An _*)\), equipped with pointwise
+smash product, by <a class="source-reference" data-label="lem:Pointed_Day_Realization" href="../../../entry/pointed-day-realization/index.html#lem:Pointed_Day_Realization">Lemma 18.6.2</a>. Composing with <a class="source-reference" data-label="lem:Fiberwise_One_Point_Compactification_Monoidal" href="../../../entry/monoidality-of-fiberwise-one-point-compactification/index.html#lem:Fiberwise_One_Point_Compactification_Monoidal">Lemma 10.5.1</a> gives natural lax symmetric monoidal functors \(\xi _X\).
 </p><p class='noindent'>It remains to check that their structure maps are isomorphisms. This can be checked at each point
 \(x\in X\).  Pullback  to  \(x\)  identifies  the  fibers  of  the  realized  bundles  with  the  underlying  animae  of  their
-
-
 topological fibers, again because bundle projections are Serre fibrations. The binary structure map at
+
+
 \(x\) is consequently \[ \Pi _\infty (S^{E_x})\wedge \Pi _\infty (S^{F_x}) \longrightarrow \Pi _\infty (S^{E_x}\wedge S^{F_x}) \cong \Pi _\infty (S^{E_x\oplus F_x}). \] Choose coordinates identifying the two compactifications with \(S^m\) and \(S^n\). The inclusion
 \[ (S^m\times \{\infty \})\cup (\{\infty \}\times S^n) \hookrightarrow S^m\times S^n \] is a relative cell complex, as are the inclusions used to form the wedge. Thus <a class="source-reference" data-label="cor:Fundamental_Groupoid_Preserves_Products" href="../../../entry/pi-infinity-preserves-finite-products/index.html#cor:Fundamental_Groupoid_Preserves_Products">Corollary 2.3.20</a>, <a class="source-reference" data-label="prop:Localization_Functor_To_An_Preserves_Pushouts_Along_Relative_Cell_Complexes" href="../../../entry/pi-infinity-preserves-pushouts-along-relative-cell-complexes/index.html#prop:Localization_Functor_To_An_Preserves_Pushouts_Along_Relative_Cell_Complexes">Proposition 2.3.9</a> identify the displayed
 structure map with an isomorphism. The unit structure map is \(S^0\cong \Pi _\infty (S^0)\). Hence the functors \(\xi _X\) are symmetric
@@ -150,30 +149,31 @@ monoidal, and their naturality gives the asserted transformation.               
 </div></div>
 
 <h4 class='subsectionHead' id='passage-to-the-moduli-anima'><span class='titlemark'>10.5.3    </span> <a id='x1-400010.5.3'></a>Passage to the moduli anima</h4>
-<p class='noindent' id='subsec_Coherence_Passage_To_Moduli'>We can now pass from ordinary bundle groupoids to the moduli anima. The projections \(X\times \abs {\Delta ^q}\to X\) induce
-isomorphisms on underlying animae. Their naturality in both \(X\) and \([q]\) lets us replace the target by a constant
-simplicial diagram.
+<p class='noindent' id='subsec_Coherence_Passage_To_Moduli'>We now apply the preceding lemma over \(X\times \abs {\Delta ^q}\). Pullback along the projections identifies the resulting targets
+with the constant simplicial diagram at \(\Fun (\Pi _\infty (X),\An _*)^\simeq \), allowing us to take the colimit defining the moduli
+anima.
 </p>
 <div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-thom-spectra-and-bordism-theory-section-05-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-thom-spectra-and-bordism-theory-section-05-1">
 <p class='noindent'><span class='head'>
 <span class='ntx-Italic-tlf-t1-x-x-109'>Proof of </span><a class="source-reference" data-label="prop:One_Point_Compactification_Symmetric_Monoidal" href="../../../entry/symmetric-monoidality-of-one-point-compactification/index.html#prop:One_Point_Compactification_Symmetric_Monoidal">Proposition 10.2.12</a><span class='ntx-Italic-tlf-t1-x-x-109'>.</span> </span>  Put \[ D(X):=\Fun (\Pi _\infty (X),\An _*)^\simeq , \] regarded as a commutative monoid in animae under pointwise smash product. Since
 the  source  of  \(\xi _X\)  is  a  groupoid,  <a class="source-reference" data-label="lem:Parametrized_One_Point_Compactification_Natural" href="../../../entry/naturality-of-parametrized-one-point-compactification/index.html#lem:Parametrized_One_Point_Compactification_Natural">Lemma 10.5.2</a>  gives  a  natural  map  \[ \Vect _{\R }^{\disc }(X)^\simeq \longrightarrow D(X) \qquad \text {in }\CMon (\An ). \]  Applying  it  over  \(X\times \abs {\Delta ^q}\)  gives  a  map  of  simplicial
-diagrams \[ \Vect _{\R }^{\disc }(X\times \abs {\Delta ^\bullet })^\simeq \longrightarrow D(X\times \abs {\Delta ^\bullet }). \] On the other hand, pullback along the projections gives \[ \const _{D(X)}\longrightarrow D(X\times \abs {\Delta ^\bullet }). \] Every component of this map is an
-isomorphism, since \(X\times \abs {\Delta ^q}\to X\) is a homotopy equivalence. Inverting it and composing with the preceding map
-gives a cocone in \(\CMon (\An )\). By <a class="source-reference" data-label="cor:Real_Vector_Bundles_Moduli_Anima" href="../../../entry/real-vector-bundles-moduli-anima/index.html#cor:Real_Vector_Bundles_Moduli_Anima">Corollary 19.7.10</a>, its colimit induces \[ S_X^{(-)}\colon \Vect _{\R }(X)^\simeq \longrightarrow D(X) \subseteq \Fun (\Pi _\infty (X),\An _*). \] In degree zero, this sends \(E\) to \(\xi _E\). Both maps of simplicial
-diagrams are natural in \(X\): they are transformations of functors on \(\Top \catop \times \simp \catop \). Their composite and its colimit
-are therefore natural in \(X\) as well.
-</p><p class='noindent'>Finally, the proof of <a class="source-reference" data-label="prop:Vector_Bundles_At_Point_Disjoint_Union_BU" href="../../../entry/moduli-anima-of-vector-bundles-at-a-point/index.html#prop:Vector_Bundles_At_Point_Disjoint_Union_BU">Proposition 9.4.1</a>, with \(\R \) in place of \(\C \), identifies the rank \(n\) component of \(\Vect _{\R }(\pt )^\simeq \) with \(\bB \GL _n(\R )\simeq \bB O(n)\), compatibly with
+diagrams \[ \Vect _{\R }^{\disc }(X\times \abs {\Delta ^\bullet })^\simeq \longrightarrow D(X\times \abs {\Delta ^\bullet }). \] On the other hand, pullback along the projections gives \[ \const _{D(X)}\longrightarrow D(X\times \abs {\Delta ^\bullet }). \] Every component of this map is
+an isomorphism, since \(X\times \abs {\Delta ^q}\to X\) is a homotopy equivalence. Inverting it and composing with the preceding
+map gives a cocone in \(\CMon (\An )\). By <a class="source-reference" data-label="cor:Real_Vector_Bundles_Moduli_Anima" href="../../../entry/real-vector-bundles-moduli-anima/index.html#cor:Real_Vector_Bundles_Moduli_Anima">Corollary 19.7.10</a>, the universal property of the colimit in \(\CMon (\An )\) therefore gives \[ S_X^{(-)}\colon \Vect _{\R }(X)^\simeq \longrightarrow D(X) \subseteq \Fun (\Pi _\infty (X),\An _*). \] This functor
+sends \(E\) to \(\xi _E\), as seen in degree zero, and is natural in \(X\), since both maps of simplicial diagrams are
+natural in \(X\).
+</p><p class='noindent'>It remains to identify the restriction of \(S_{\pt }^{(-)}\) to \(\bB O(n)\) with the functor classified by the standard orthogonal
+action. The proof of <a class="source-reference" data-label="prop:Vector_Bundles_At_Point_Disjoint_Union_BU" href="../../../entry/moduli-anima-of-vector-bundles-at-a-point/index.html#prop:Vector_Bundles_At_Point_Disjoint_Union_BU">Proposition 9.4.1</a>, with \(\R \) in place of \(\C \), identifies the rank \(n\) component of \(\Vect _{\R }(\pt )^\simeq \) with \(\bB \GL _n(\R )\simeq \bB O(n)\), compatibly with
 block sums. In degree \(q\), an automorphism of the trivial bundle is a continuous map \(g\colon \abs {\Delta ^q}\to \GL _n(\R )\). Fiberwise
 compactification sends it to \[ (t,v)\longmapsto (t,g(t)v), \qquad (t,\infty )\longmapsto (t,\infty ). \] These formulas commute with the simplicial operators and composition.
 They identify the restriction to \(\bB \GL _n(\R )\) with the functor obtained by realizing the singular simplicial action
 on \(S^{\R ^n}\). Restricting along \(O(n)\to \GL _n(\R )\) gives the corresponding functor for the orthogonal action.
-</p><p class='noindent'>To relate this description to the associated-bundle definition, let \(P=V_n(\R ^\infty )\) and \(B=\Gr _n(\R ^\infty )\). The principal \(O(n)\)-bundle \(P\to B\) has
-contractible total space, and \[ S^{\gamma _n}\cong P\times _{O(n)}S^{\R ^n}. \] Over \(P\) this pointed bundle is trivial, and under \(P\times _B P\cong P\times O(n)\) its transition maps
+</p><p class='noindent'>To identify this with the associated-bundle description used in <span class="source-reference" data-label="subsec:Virtual_Vector_Bundles">Subsection 10.2.4</span>, take the universal principal \(O(n)\)-bundle
+\(P=V_n(\R ^\infty )\to B=\Gr _n(\R ^\infty )\). Its total space is contractible, and \[ S^{\gamma _n}\cong P\times _{O(n)}S^{\R ^n}. \] Over \(P\) this pointed bundle is trivial, and under \(P\times _B P\cong P\times O(n)\) its transition
 
 
-are the standard orthogonal action. By <a class="source-reference" data-label="lem:Principality_Condition_Functorial" href="../../../entry/functoriality-of-the-principality-criterion/index.html#lem:Principality_Condition_Functorial">Lemma 9.2.10</a>, <a class="source-reference" data-label="prop:Classifying_Spaces_Via_Principal_Bundles" href="../../../entry/classifying-animae-via-principal-bundles/index.html#prop:Classifying_Spaces_Via_Principal_Bundles">Proposition 9.2.11</a>, taking underlying animae identifies the entire Čech nerve
-with the bar construction for \(O(n)\). The transition maps therefore give the same action as the simplicial
+maps are the standard orthogonal action. By <a class="source-reference" data-label="lem:Principality_Condition_Functorial" href="../../../entry/criterion-for-principal-actions/index.html#lem:Principality_Condition_Functorial">Lemma 9.2.9</a>, <a class="source-reference" data-label="prop:Classifying_Spaces_Via_Principal_Bundles" href="../../../entry/classifying-animae-via-principal-bundles/index.html#prop:Classifying_Spaces_Via_Principal_Bundles">Proposition 9.2.10</a>, taking underlying animae identifies the Čech nerve of
+\(P\to B\) with the bar construction for \(O(n)\). The transition maps therefore give the same action as the simplicial
 formulas above, including their compatibility with composition. Descent for animae (<a class="source-reference" data-label="thm:Descent_For_Colimits" href="../../../entry/descent-for-colimits-of-animae/index.html#thm:Descent_For_Colimits">Theorem 5.2.5</a>) identifies
 the resulting pointed object over \(\bB O(n)\) with the underlying pointed object of \(S^{\gamma _n}\to B\). Its straightening is, by
 definition, the functor classified by the pointed orthogonal action. This proves the final assertion of
@@ -214,20 +214,20 @@ external sum as the composite \[ V\boxplus W\colon A\times B\xrightarrow {V\time
      <p class='noindent'>Identify \(\Th (L)\) with \(\R \!\mathrm {P}^2\) as a pointed space.
      </p></dd><dt class='enumerate'>
   (2) </dt><dd class='enumerate'>
-     <p class='noindent'>Show that \(L\) is not \(H\Z \)-orientable.
+     <p class='noindent'>Show that \(L\) is not \(\Z \)-orientable.
      </p></dd><dt class='enumerate'>
   (3) </dt><dd class='enumerate'>
-     <p class='noindent'>Construct its canonical \(H\F _2\)-orientation. Writing \(a\in H^1(\R \!\mathrm {P}^2;\F _2)\) for the standard generator, show that the Thom
+     <p class='noindent'>Construct its canonical \(\F _2\)-orientation. Writing \(a\in H^1(\R \!\mathrm {P}^2;\F _2)\) for the standard generator, show that the Thom
      class is \(a\) and that the Thom isomorphism sends the generators of \(H^0(S^1;\F _2)\) and \(H^1(S^1;\F _2)\) to \(a\) and \(a^2\), respectively.</p></dd></dl>
 </div>
 
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-5007r4'></a>
-<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 10.4 </span>(Collapse of a framed point)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Embed a point in \(\R ^n\) and equip its normal bundle with
-the standard framing. Write down the Pontryagin–Thom collapse map \[ S^n\longrightarrow \Th (\R ^n)\cong S^n. \] Show that, with the standard
-choices of orientation, this map has degree \(1\). Explain how reversing one vector in the framing changes
-the degree.
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 10.4 </span>(Collapse of a framed point)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(n\geq 1\). Embed a point in \(\R ^n\) and equip its normal bundle
+with the standard framing. Write down the Pontryagin–Thom collapse map \[ S^n\longrightarrow \Th (\R ^n)\cong S^n. \] Show that, with the
+standard choices of orientation, this map has degree \(1\). Explain how reversing one vector in the framing
+changes the degree.
 
 
 </p>
@@ -253,7 +253,7 @@ class and its restrictions to the fibers.
 
 </div>
 <footer class="edition-footer">
-  <span>Last updated 27 October 2026</span>
+  <span>Last updated 6 November 2026</span>
   <a href="/notes/stable-homotopy-higher-algebra.pdf">PDF</a>
   <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Section%2010.5%3A%20Coherence%20for%20one-point%20compactification%20(online%20only)&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fsection%2Fthom-spectra-and-bordism-theory%2Fcoherence-for-one-point-compactification-online-only%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
 </footer></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
@@ -283,7 +283,7 @@ class and its restrictions to the fibers.
       <span>In this section</span><span class="contents-chevron" aria-hidden="true"></span>
     </button></h2>
     <nav class="contents" id="contents-section-contents" aria-label="In this section" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
-      <ol class="context-entry-list"><li><a href="#lem:Fiberwise_One_Point_Compactification_Monoidal"><span class="context-entry-heading">Lemma 10.5.1</span><span class="context-entry-title">Fiberwise one-point compactification</span></a></li><li><a href="#lem:Parametrized_One_Point_Compactification_Natural"><span class="context-entry-heading">Lemma 10.5.2</span><span class="context-entry-title">Realization of sphere bundles</span></a></li></ol>
+      <ol class="context-entry-list"><li><a href="#lem:Fiberwise_One_Point_Compactification_Monoidal"><span class="context-entry-heading">Lemma 10.5.1</span><span class="context-entry-title">Fiberwise one-point compactification</span></a></li><li><a href="#lem:Parametrized_One_Point_Compactification_Natural"><span class="context-entry-heading">Lemma 10.5.2</span><span class="context-entry-title">Passage to underlying animae</span></a></li></ol>
     </nav>
   </section></div>
   </aside><aside class="publication-fragment-notice" id="lem:Pointed_Realization_Lax_Monoidal"><strong>Retired fragment.</strong> The realization lemma was replaced by the general pointed Day-convolution result. It now appears at <a href="../../../entry/pointed-day-realization/#lem:Pointed_Day_Realization">this address</a>.</aside>
