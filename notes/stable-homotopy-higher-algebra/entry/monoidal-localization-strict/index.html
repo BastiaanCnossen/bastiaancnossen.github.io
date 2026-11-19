@@ -69,33 +69,21 @@
      the morphisms in</span> \(W\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p></dd></dl>
 </div><div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-monoidal-dwyer-kan-localizations-and-derived-categories-section-01-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-monoidal-dwyer-kan-localizations-and-derived-categories-section-01-4">
 <p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We may replace \(W\) by the wide subcategory it generates. This leaves the localization unchanged,
 
 
-
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We may first replace \(W\) by the smallest class of morphisms in \(C\) that contains \(W\) and is closed under
-isomorphisms, composition, and identifications of morphisms. This does not change the localization,
-since  a  functor  out  of  \(C\)  inverts  the  original  class  \(W\)  if  and  only  if  it  inverts  this  larger  class.  The
-enlarged class is still preserved by tensoring with an arbitrary object, since tensor products preserve
-isomorphisms, composition, and identifications of morphisms. Thus we may assume that \(W\) is a wide
-subcategory of \(C\).
-</p><p class='noindent'>For (1), consider the full subcategory \(\RelCat _{\infty } \subseteq \Ar (\Cat _{\infty })\) spanned by the <span class='ntx-Italic-tlf-t1-x-x-109'>relative</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories</span>: those functors \(W \hookrightarrow C\) which are
-simultaneously monomorphisms in \(\Cat _{\infty }\) and essentially surjective. (Such a choice of \(W\) corresponds to a
-<span class='ntx-Italic-tlf-t1-x-x-109'>wide subcategory </span>of \(C\).) We will generally denote objects of \(\RelCat _{\infty }\) as pairs \((C,W)\).
-</p><p class='noindent'>Observe that there is a fully faithful inclusion functor \[ i_{\mathrm {rel}}\colon \Cat _{\infty } \hookrightarrow \RelCat _{\infty }, \qquad D \mapsto (D, D^{\simeq }). \] Observe that for a relative \(\infty \)-category \((C,W)\), the
-localization functor \(\gamma \colon C \to C[W^{-1}]\) refines to a morphism of relative \(\infty \)-categories \((C,W) \to i_{\mathrm {rel}}(C[W^{-1}])\). We claim that this map exhibits
-\(C[W^{-1}]\) as a left adjoint object to \((C,W)\) under \(i_{\mathrm {rel}}\). For every other \(\infty \)-category \(D\), precomposition with \(\gamma \) by definition
-induces a fully faithful inclusion of animae \[ \Hom _{\Cat _{\infty }}(C[W^{-1}],D) \to \Hom _{\Cat _{\infty }}(C,D) \] whose image consists of the functors \(C \to D\) that send \(W\) to
-isomorphisms. This image coincides with the image of \(\Hom _{\RelCat _{\infty }}((C,W), i_{\mathrm {rel}}(D))\), proving the adjointness.
-</p><p class='noindent'>By the pointwise criterion for left adjoints (<a class="source-reference" data-label="lem:Pointwise_Criterion_Adjunctions" href="../assembly-of-pointwise-adjoint-objects/index.html#lem:Pointwise_Criterion_Adjunctions">Lemma 22.1.4</a>), the assignment \((C,W) \mapsto C[W^{-1}]\) assembles into a functor \(\Ll \colon \RelCat _{\infty } \to \Cat _{\infty }\). Moreover,
-by <a class="source-reference" data-label="obs:Products_Of_Localizations" href="../products-of-localizations/index.html#obs:Products_Of_Localizations">Exercise 1.5.24</a>, this functor preserves finite products, hence induces a functor on commutative monoids: \[ \Ll \colon \CMon (\RelCat _{\infty }) \to \CMon (\Cat _{\infty }). \] Since
-also the right adjoint \(i_{\mathrm {rel}}\) preserves finite products, the entire adjunction lifts to commutative monoids.
-Unwinding definitions, the condition on the pair \((C,W)\) in the statement of the proposition guarantees that
-the symmetric monoidal structure on \(C\) refines to an object \((C,W) \in \CMon (\RelCat _{\infty })\). The unit of the adjunction now takes the
-form of a symmetric monoidal functor \(\gamma \colon C \to C[W^{-1}]\) refining the localization functor.
-</p><p class='noindent'>The adjunction on commutative monoids gives the claimed universal property on mapping animae.
-Applying the same argument with the pointwise symmetric monoidal \(\infty \)-categories \(\Fun ([n],D)\) for every \(n\geq 0\), as
-in <a class="source-reference" data-label="def:Symmetric_Monoidal_Functor_Category" href="../symmetric-monoidal-functor-category/index.html#def:Symmetric_Monoidal_Functor_Category">Definition 14.4.3</a>, gives the asserted fully faithful functor between symmetric monoidal functor categories. The
-uniqueness statement follows immediately.                                                                                        □
+and tensoring with any object still preserves \(W\). Let \(\RelCat _\infty \subseteq \Ar (\Cat _\infty )\) be the full subcategory of <span class='ntx-Italic-tlf-t1-x-x-109'>relative</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories</span>,
+that is, inclusions of wide subcategories \(W\hookrightarrow C\). By the universal property of localization, the functor \((C,W)\mapsto C[W^{-1}]\) is
+left adjoint to \(D\mapsto (D,D^\simeq )\).
+</p><p class='noindent'>Both functors preserve finite products (<a class="source-reference" data-label="obs:Products_Of_Localizations" href="../products-of-localizations/index.html#obs:Products_Of_Localizations">Exercise 1.5.24</a>), so this adjunction induces an adjunction on commutative
+monoids. Tensoring one variable at a time shows that the tensor product carries pairs of morphisms
+in \(W\) to morphisms in \(W\). Thus \((C,W)\) is a commutative monoid in \(\RelCat _\infty \). Applying the left adjoint gives a symmetric
+monoidal structure on \(C[W^{-1}]\), and the adjunction unit gives the symmetric monoidal functor \(\gamma \).
+</p><p class='noindent'>The adjunction identifies the anima of symmetric monoidal functors \(C[W^{-1}]\to D\) with the subanima of symmetric
+monoidal  functors  \(C\to D\)  inverting  \(W\).  Apply  this  also  to  \(\Fun ([n],D)\)  with  its  pointwise  tensor  product.  A  functor  \(C\to \Fun ([n],D)\)
+inverts \(W\) precisely when its evaluation at every vertex does. We thus obtain the same identification on
+\([n]\)-diagrams for every \(n\), proving (2) at the level of functor categories (<a class="source-reference" data-label="def:Symmetric_Monoidal_Functor_Category" href="../symmetric-monoidal-functor-category/index.html#def:Symmetric_Monoidal_Functor_Category">Definition 14.4.3</a>). The universal property gives
+uniqueness in (1).                                                                                                                                □
 </p>
 </div></div>
 <footer class="edition-footer">

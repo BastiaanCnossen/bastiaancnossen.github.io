@@ -17,18 +17,31 @@ function validateRegistry(tags) {
   const byTag = new Map();
   const byEntry = new Map();
   for (const row of tags) {
-    if (!Array.isArray(row) || row.length !== 2) throw new Error("Each tag record must have a tag and a destination or retirement notice.");
+    if (!Array.isArray(row) || row.length !== 2) throw new Error("Each tag record must have a tag and an entry path, alias, or retirement notice.");
     const [tag, target] = row;
     if (typeof tag !== "string" || !tagPattern.test(tag) || byTag.has(tag)) throw new Error(`Invalid or repeated tag ${tag}.`);
     if (typeof target === "string" && entryPattern.test(target)) {
       if (byEntry.has(target)) throw new Error(`Multiple tags are assigned to ${target}.`);
       byEntry.set(target, tag);
+    } else if (target?.Alias !== undefined) {
+      if (typeof target.Alias !== "string" || !tagPattern.test(target.Alias) || target.Retired !== undefined) {
+        throw new Error(`Invalid alias for tag ${tag}.`);
+      }
     } else if (typeof target?.Retired !== "string" || !target.Retired.trim()) {
-      throw new Error(`Tag ${tag} needs a public entry path or a nonempty retirement notice.`);
+      throw new Error(`Tag ${tag} needs a public entry path, an alias, or a nonempty retirement notice.`);
     }
     byTag.set(tag, target);
   }
+  for (const [tag, target] of byTag) {
+    if (target.Alias && (!byTag.has(target.Alias) || byTag.get(target.Alias).Alias)) {
+      throw new Error(`Tag ${tag} must alias an existing tag that is not itself an alias.`);
+    }
+  }
   return { byTag, byEntry };
+}
+
+function resolveTagTarget(registry, target) {
+  return target.Alias ? registry.byTag.get(target.Alias) : target;
 }
 
 function loadRegistry(root, { allowNew = false } = {}) {
@@ -99,7 +112,7 @@ export function loadPublicationTags(root, publicBase, routes) {
   const entries = entryPaths(publicBase, routes);
   validateCoverage(registry, entries, publicBase);
   for (const [tag, target] of registry.byTag) {
-    if (typeof target !== "string") validateTagFile(root, tag, target);
+    if (typeof target !== "string") validateTagFile(root, tag, resolveTagTarget(registry, target));
   }
   return [...entries].map(([entry, route]) => {
     const tag = registry.byEntry.get(entry);
@@ -257,7 +270,8 @@ function updateEntryTags(root, allocate, check) {
       }
     }
   }
-  for (const [tag, target] of registry.byTag) {
+  for (const [tag, record] of registry.byTag) {
+    const target = resolveTagTarget(registry, record);
     if (typeof target === "string" && ![...works.values()].some((work) => target.startsWith(work.PublicBase))) {
       throw new Error(`Tag ${tag} points outside the tagged editions: ${target}.`);
     }

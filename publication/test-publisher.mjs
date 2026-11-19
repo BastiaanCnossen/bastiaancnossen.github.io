@@ -158,6 +158,13 @@ try {
   const retiredTag = fs.readFileSync(path.join(root, "tag", "0001", "index.html"), "utf8");
   assert.match(retiredTag, /This result was withdrawn\./);
   assert.doesNotMatch(retiredTag, /location\.replace/);
+  registry.Tags[0][1] = { Alias: "0001" };
+  writeJson(registryPath, registry);
+  assert.throws(() => manageEntryTags(root), /Tag 0001 must alias an existing tag/);
+  registry.Tags[0][1] = { Alias: "0002" };
+  writeJson(registryPath, registry);
+  manageEntryTags(root);
+  assert.match(fs.readFileSync(path.join(root, "tag", "0001", "index.html"), "utf8"), /href="\/notes\/test-notes\/entry\/current\/"/);
   const tombstone = fs.readFileSync(path.join(root, "notes", "test-notes", "entry", "retired", "index.html"), "utf8");
   assert.match(tombstone, /Page retired/);
   assert.match(tombstone, /id="result:Retired"/);

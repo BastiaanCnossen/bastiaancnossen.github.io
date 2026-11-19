@@ -89,7 +89,9 @@ pages, published editions, and updated publication lockfiles together.
 
 If an entry moves or is renamed, edit its existing row to point to the new
 descriptive URL before allocating tags for any other new entries. Update the
-descriptive URL's retirement rule as part of the move. If a result is withdrawn,
+descriptive URL's retirement rule as part of the move. If the entry is absorbed
+into another tagged entry, use `{ "Alias": "0123" }` with the destination's
+primary tag. If a result is withdrawn,
 replace the destination in its row with `{ "Retired": "Reason for withdrawal." }`.
 Run `node publication/entry-tags.mjs` after editing an existing row to regenerate
 the tag page. Keep the tag in the registry permanently. The current descriptive
