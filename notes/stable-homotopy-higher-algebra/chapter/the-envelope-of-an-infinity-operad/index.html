@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chapter 17: The envelope of an ∞-operad | Stable Homotopy Theory and Higher Algebra</title>
+<title>Chapter 19: The envelope of an ∞-operad | Stable Homotopy Theory and Higher Algebra</title>
 <meta name="description" content="The symmetric monoidal envelope of an ∞-operad and its universal relation to operadic algebras and monoidal categories.">
 <link rel="canonical" href="https://bastiaancnossen.com/notes/stable-homotopy-higher-algebra/chapter/the-envelope-of-an-infinity-operad/">
 <link rel="stylesheet" href="../../_assets/reader-shell-v1/style.css">
@@ -32,66 +32,78 @@
 <header class="site-header work-header">
 <div class="reading-header-row"><div class="reader-heading">
       <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
-      <p class="eyebrow"><a href="../../index.html">Stable Homotopy Theory and Higher Algebra</a> · <a href="../../part/operads-and-higher-algebra/index.html">Part II</a> · Chapter 17</p>
+      <p class="eyebrow"><a href="../../index.html">Stable Homotopy Theory and Higher Algebra</a> · <a href="../../part/operads-and-higher-algebra/index.html">Part II</a> · Chapter 19</p>
       <h1>The envelope of an ∞-operad</h1>
-    </div><nav class="page-turns" data-reading-navigation aria-label="Reading navigation"><a rel="prev" data-step="prev-chapter" href="../day-convolution-and-the-tensor-product-of-spectra/index.html" title="Day convolution and the tensor product of spectra" aria-label="Previous chapter: Chapter 16, Day convolution and the tensor product of spectra"><span class="turn-direction">← Previous chapter</span><span class="turn-target">Chapter 16</span></a>
-<a rel="next" data-step="next-chapter" href="../operadic-day-convolution-and-stabilization/index.html" title="Operadic Day convolution and stabilization" aria-label="Next chapter: Chapter 18, Operadic Day convolution and stabilization"><span class="turn-direction">→ Next chapter</span><span class="turn-target">Chapter 18</span></a>
-<a rel="prev" data-step="prev-section" href="../../section/day-convolution-and-the-tensor-product-of-spectra/the-symmetric-monoidal-structure-on-sp/index.html" title="The symmetric monoidal structure on Sp" aria-label="Previous section: Section 16.6, The symmetric monoidal structure on Sp"><span class="turn-direction">← Previous section</span><span class="turn-target">Section 16.6</span></a>
-<a rel="next" data-step="next-section" href="../../section/the-envelope-of-an-infinity-operad/factorization-systems/index.html" title="Factorization systems" aria-label="Next section: Section 17.1, Factorization systems"><span class="turn-direction">→ Next section</span><span class="turn-target">Section 17.1</span></a></nav></div>
+    </div><nav class="page-turns" data-reading-navigation aria-label="Reading navigation"><a rel="prev" data-step="prev-chapter" href="../tensor-products-and-morita-theory/index.html" title="Tensor products of ∞-categories and Morita theory" aria-label="Previous chapter: Chapter 18, Tensor products of ∞-categories and Morita theory"><span class="turn-direction">← Previous chapter</span><span class="turn-target">Chapter 18</span></a>
+<a rel="next" data-step="next-chapter" href="../operadic-day-convolution-and-stabilization/index.html" title="Operadic stabilization" aria-label="Next chapter: Chapter 20, Operadic stabilization"><span class="turn-direction">→ Next chapter</span><span class="turn-target">Chapter 20</span></a>
+<a rel="prev" data-step="prev-section" href="../../section/tensor-products-and-morita-theory/spectral-morita-theory-and-eilenberg-watts/index.html" title="Spectral Morita theory and Eilenberg–Watts" aria-label="Previous section: Section 18.3, Spectral Morita theory and Eilenberg–Watts"><span class="turn-direction">← Previous section</span><span class="turn-target">Section 18.3</span></a>
+<a rel="next" data-step="next-section" href="../../section/the-envelope-of-an-infinity-operad/factorization-systems/index.html" title="Factorization systems" aria-label="Next section: Section 19.1, Factorization systems"><span class="turn-direction">→ Next section</span><span class="turn-target">Section 19.1</span></a></nav></div>
 </header>
 <main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
       <span aria-hidden="true">☰</span> Navigation
     </button>
 <article class="notes-page chapter-landing"><div class="chapter-introduction">
-<p class='noindent' id='chap:Envelopes'>This chapter constructs the envelope of an \(\infty \)-operad, which freely promotes its operations to a symmetric
-monoidal \(\infty \)-category. It is the \(\infty \)-categorical analogue of the classical construction from <a class="source-reference" data-label="sec:Envelope_Of_Colored_Operad" href="../../section/operads-the-heuristics/encoding-the-coherences-the-envelope-of-an-operad/index.html#sec:Envelope_Of_Colored_Operad">Section 12.3</a>: every colored operad \(\Oo \)
-has an envelope \(\Env (\Oo )\), and \(\Oo \)-algebras in a symmetric monoidal category \(C\) correspond to symmetric monoidal
-functors \(\Env (\Oo )\to C\).
-</p><p class='noindent'>The main result of this chapter is the \(\infty \)-categorical form of this universal property, an adjunction \[ \Env \colon \Op _{\infty } \rightleftarrows \Cat _{\infty }^{\otimes }\noloc \Mm . \] We further
-show that the envelope induces a fully faithful functor \(\Env \colon \Op _{\infty } \hookrightarrow (\Cat _{\infty }^{\otimes })_{/(\Fin ,\amalg )}\) and characterize its essential image.
-Here \((\Fin ,\amalg )\) is the category of finite sets, with the symmetric monoidal structure given by disjoint
-union.
-</p><p class='noindent'>The envelope \(\Env (\Oo )\) of an \(\infty \)-operad \(\Oo \) is obtained by considering the functor \(\Oo ^{\otimes } \to \Span (\Fin )\) and ‘freely adding’ cocartesian lifts of
-all forward spans. Since \(\Oo ^{\otimes }\) already admits cocartesian lifts of backwards spans, the resulting functor to \(\Span (\Fin )\) will
-be a cocartesian fibration, and one can show that its straightening \(\Span (\Fin ) \to \Cat _{\infty }\) preserves finite products, thus encoding a
-symmetric monoidal \(\infty \)-category \(\Env (\Oo )\).
-</p><p class='noindent'>Concretely, the underlying \(\infty \)-category of the envelope is the pullback \[ \Env (\Oo ) \simeq \Fin \times _{\Span (\Fin )} \Oo ^{\otimes }, \] where \(\Fin \hookrightarrow \Span (\Fin )\) is the subcategory of
-forward spans. Thus the objects of \(\Env (\Oo )\) are finite unordered tuples of colors, the tensor product is
-concatenation, and the hom animae are given by \[ \Hom _{\Env (\Oo )}(\{x_i\}_{i \in I},\{y_j\}_{j \in J}) \simeq \coprod _{f\colon I\to J}\prod _{j\in J} \Oo (\{x_i\}_{i\in f^{-1}(j)};y_j). \] This formula, proved in <a class="source-reference" data-label="lem:Mapping_Animae_Envelope" href="../../entry/mapping-animae-envelope/index.html#lem:Mapping_Animae_Envelope">Lemma 17.3.17</a>, makes precise the sense
-in which the envelope captures the operations of \(\Oo \) while freely adjoining tensor products of
-objects.
-</p><p class='noindent'>It will be convenient to construct envelopes in a slightly more general setting, in particular
-encompassing Lurie’s definition of \(\infty \)-operads as well. The same procedure will then produce
-an analogous functor \(\Env ^{\mathrm {Lurie}}\colon \Op _{\infty }^{\mathrm {Lurie}} \to \Cat _{\infty }^{\otimes }\), which is compatible with the functor \(\Env \), in the sense that the following
-diagram commutes:</p><div class="diagram-row"><figure class="diagram"><img src="../../_assets/diagrams/tikzcd-4122c906f1dd.svg" alt="Commutative triangle with vertices \Op infinity - \times Span(Fin) \Fin_*, (\Cat infinity tensor) /(Fin,amalg), \Op infinity Lurie Env Lurie and arrows labeled Env." width="206" height="74" loading="lazy"></figure></div><p class='noindent'>The functor \(\Env ^{\mathrm {Lurie}}\) is also fully faithful when sliced over \((\Fin ,\amalg )\), and has the same
-image as \(\Env \). In particular, the forgetful functor \(\Op _{\infty } \to \Op _{\infty }^{\mathrm {Lurie}}\) is an equivalence, making the span approach
-to \(\infty \)-operads taken in this book compatible with the Lurie model used more commonly in the
-literature.</p>
+<p class='noindent' id='chap:Envelopes'>An \(\infty \)-operad \(\Oo \) describes operations with several inputs without requiring those inputs to have a tensor product.
+Its <span class='ntx-Italic-tlf-t1-x-x-109'>envelope</span> \(\Env (\Oo )\) is a symmetric monoidal \(\infty \)-category that formally supplies such tensor products: its objects are
+finite unordered tuples of colors of \(\Oo \), its tensor product is unordered concatenation, and its morphisms are
+assembled from operations of \(\Oo \). This extends the construction for classical colored operads from
+<a class="source-reference" data-label="sec:Envelope_Of_Colored_Operad" href="../../section/operads-the-heuristics/encoding-the-coherences-the-envelope-of-an-operad/index.html#sec:Envelope_Of_Colored_Operad">Section 12.3</a>.
+</p><p class='noindent'>An \(\Oo \)-algebra in a symmetric monoidal \(\infty \)-category \(C\) determines a symmetric monoidal functor \(\Env (\Oo )\to C\): it sends a tuple
+of colors to the tensor product of their values in \(C\), and sends operations to the algebra’s structure maps. We
+prove in <a class="source-reference" data-label="cor:Algebras_As_Functors_From_Envelope" href="../../entry/algebras-as-functors-from-envelope/index.html#cor:Algebras_As_Functors_From_Envelope">Corollary 19.3.12</a> that this gives a natural equivalence \[ \Alg _{\Oo }(C) \quad \simeq \quad \Fun ^{\otimes }(\Env (\Oo ),C). \] In particular, the envelope construction is left adjoint to the
+multimorphism operad functor.
+</p><p class='noindent'>The envelope also comes with a symmetric monoidal functor \(\Env (\Oo )\to (\Fin ,\amalg )\), which sends each tuple to its indexing set.
+The envelope, together with this functor, determines \(\Oo \): the colors are the objects over a singleton, and
+operations are morphisms from tuples to singleton tuples. More precisely, we show in <a class="source-reference" data-label="prop:Embedding_Operads_Into_Sym_Mon_Cats" href="../../entry/embedding-operads-into-sym-mon-cats/index.html#prop:Embedding_Operads_Into_Sym_Mon_Cats">Proposition 19.3.19</a> that the envelope
+construction is fully faithful when regarded as taking values in symmetric monoidal \(\infty \)-categories over \((\Fin ,\amalg )\), and
+we characterize its essential image.
+</p><p class='noindent'>To construct the envelope, we use the characterization of symmetric monoidal \(\infty \)-categories as \(\infty \)-operads
+whose projections to \(\Span (\Fin )\) are cocartesian fibrations. An \(\infty \)-operad already has cocartesian lifts of backwards
+spans; to construct its envelope, we freely adjoin lifts of forward spans, which encode tensor
+products. The factorization of spans into forwards and backwards allows us to prove that the
+resulting projection is a cocartesian fibration. Following <span class='citation'><a class="citation-item" href="../../references/index.html#ref-BHS_Envelopes" title="Barkan et al., Envelopes for Algebraic Patterns">Barkan et al. (2022)</a></span>, we develop this construction using
+factorization systems and apply it both to our definition of \(\infty \)-operads and to Lurie’s definition over \(\Fin _*\).
+The resulting envelope constructions allow us to prove that the two definitions are equivalent
+(<a class="source-reference" data-label="prop:Comparison_Lurie_Operads" href="../../entry/comparison-lurie-operads/index.html#prop:Comparison_Lurie_Operads">Proposition 19.4.8</a>).
+</p><p class='noindent'>The final two sections give applications of the envelope. The symmetric monoidal Yoneda embedding of \(\Env (\Oo )\)
+induces a fully faithful morphism from \(\Oo \) to the multimorphism operad of its presheaf category, equipped
+with Day convolution (<a class="source-reference" data-label="sec:Multiplicative_Yoneda_Embedding" href="../../section/the-envelope-of-an-infinity-operad/the-multiplicative-yoneda-embedding/index.html#sec:Multiplicative_Yoneda_Embedding">Section 19.5</a>). We also extend Day convolution to arbitrary operadic targets: viewing \(\Oo \) as a full
+suboperad of the multimorphism operad of its envelope allows us to restrict the construction already
+established for symmetric monoidal targets (<a class="source-reference" data-label="sec:Day_Convolution_Arbitrary_Operads" href="../../section/the-envelope-of-an-infinity-operad/day-convolution-into-arbitrary-operads/index.html#sec:Day_Convolution_Arbitrary_Operads">Section 19.6</a>).
+</p>
 
 
 </div><section class="available-sections" aria-labelledby="chapter-sections-heading">
     <h2 id="chapter-sections-heading">Sections</h2>
     <div class="section-card-grid"><article class="section-card">
-      <p class="section-card-meta">Section 17.1</p>
+      <p class="section-card-meta">Section 19.1</p>
       <h3><a href="../../section/the-envelope-of-an-infinity-operad/factorization-systems/index.html">Factorization systems</a></h3>
-      <p>Factorization systems in ∞-categories.</p>
+      <p>A factorization system specifies two classes of morphisms such that every morphism factors uniquely as a morphism in the first class followed by one in the second.</p>
     </article><article class="section-card">
-      <p class="section-card-meta">Section 17.2</p>
+      <p class="section-card-meta">Section 19.2</p>
       <h3><a href="../../section/the-envelope-of-an-infinity-operad/freely-adjoining-cocartesian-lifts/index.html">Freely adjoining cocartesian lifts</a></h3>
-      <p>Free cocartesian completion along a factorization system.</p>
+      <p>Fix an <span class="math-inline">\(\infty \)</span>-category <span class="math-inline">\(S\)</span> and a wide subcategory <span class="math-inline">\(\Rr \subset S\)</span>.</p>
     </article><article class="section-card">
-      <p class="section-card-meta">Section 17.3</p>
+      <p class="section-card-meta">Section 19.3</p>
       <h3><a href="../../section/the-envelope-of-an-infinity-operad/operadic-envelopes/index.html">Operadic envelopes</a></h3>
-      <p>Operadic envelopes and their universal property.</p>
+      <p>The envelope construction will also let us relate our definition of an <span class="math-inline">\(\infty \)</span>-operad to Lurie’s.</p>
     </article><article class="section-card">
-      <p class="section-card-meta">Section 17.4</p>
-      <h3><a href="../../section/the-envelope-of-an-infinity-operad/comparison-to-lurie-s-operads/index.html">Comparison to Lurie's operads</a></h3>
-      <p>Comparison with Lurie's finite-pointed-set model.</p>
+      <p class="section-card-meta">Section 19.4</p>
+      <h3><a href="../../section/the-envelope-of-an-infinity-operad/comparison-to-lurie-s-operads/index.html">Comparison to Lurie's ∞-operads</a></h3>
+      <p>Lurie’s definition of <span class="math-inline">\(\infty \)</span>-operads uses finite pointed sets, or equivalently spans with injective backwards leg.</p>
+    </article><article class="section-card">
+      <p class="section-card-meta">Section 19.5</p>
+      <h3><a href="../../section/the-envelope-of-an-infinity-operad/the-multiplicative-yoneda-embedding/index.html">The multiplicative Yoneda embedding</a></h3>
+      <p>The envelope embeds <span class="math-inline">\(\Oo \)</span> into the multimorphism operad of a symmetric monoidal <span class="math-inline">\(\infty \)</span>-category.</p>
+    </article><article class="section-card">
+      <p class="section-card-meta">Section 19.6</p>
+      <h3><a href="../../section/the-envelope-of-an-infinity-operad/day-convolution-into-arbitrary-operads/index.html">Day convolution into arbitrary ∞-operads</a></h3>
+      <p>Let <span class="math-inline">\(C\)</span> be a symmetric monoidal <span class="math-inline">\(\infty \)</span>-category and <span class="math-inline">\(\Oo \)</span> an <span class="math-inline">\(\infty \)</span>-operad.</p>
     </article></div></section>
 <footer class="edition-footer">
-  <span>Last updated 6 November 2026</span>
+  <span>Last updated 19 November 2026</span>
   <a href="/notes/stable-homotopy-higher-algebra.pdf">PDF</a>
-  <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Chapter%2017%3A%20The%20envelope%20of%20an%20%E2%88%9E-operad&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fchapter%2Fthe-envelope-of-an-infinity-operad%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
+  <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Chapter%2019%3A%20The%20envelope%20of%20an%20%E2%88%9E-operad&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fchapter%2Fthe-envelope-of-an-infinity-operad%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
 </footer></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Chapter navigation">
     <div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
     <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
@@ -105,14 +117,14 @@ literature.</p>
       <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
     </button></h2>
     <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
-      <ol class="context-entry-list"><li><a href="../operads-the-heuristics/index.html"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../span-categories/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../basics-on-infinity-operads/index.html"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../cartesian-and-cocartesian-monoidal-structures/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../day-convolution-and-the-tensor-product-of-spectra/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../operadic-day-convolution-and-stabilization/index.html"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Operadic Day convolution and stabilization</span></a></li><li><a href="../algebras-and-modules/index.html"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../monoidal-dwyer-kan-localizations-and-derived-categories/index.html"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
+      <ol class="context-entry-list"><li><a href="../operads-the-heuristics/index.html"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../span-categories/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../basics-on-infinity-operads/index.html"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../cartesian-and-cocartesian-monoidal-structures/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../day-convolution-and-the-tensor-product-of-spectra/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="../algebras-and-modules/index.html"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../tensor-products-and-morita-theory/index.html"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Tensor products of ∞-categories and Morita theory</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../operadic-day-convolution-and-stabilization/index.html"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Operadic stabilization</span></a></li><li><a href="../monoidal-dwyer-kan-localizations-and-derived-categories/index.html"><span class="context-entry-heading">Chapter 21</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
     </nav>
   </section><section class="contents-ledger" data-contents-ledger data-open="true">
     <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="true">
       <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
     </button></h2>
     <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="false" data-collapsed="false">
-      <ol class="context-entry-list"><li><a href="../../section/the-envelope-of-an-infinity-operad/factorization-systems/index.html"><span class="context-entry-heading">Section 17.1</span><span class="context-entry-title">Factorization systems</span></a></li><li><a href="../../section/the-envelope-of-an-infinity-operad/freely-adjoining-cocartesian-lifts/index.html"><span class="context-entry-heading">Section 17.2</span><span class="context-entry-title">Freely adjoining cocartesian lifts</span></a></li><li><a href="../../section/the-envelope-of-an-infinity-operad/operadic-envelopes/index.html"><span class="context-entry-heading">Section 17.3</span><span class="context-entry-title">Operadic envelopes</span></a></li><li><a href="../../section/the-envelope-of-an-infinity-operad/comparison-to-lurie-s-operads/index.html"><span class="context-entry-heading">Section 17.4</span><span class="context-entry-title">Comparison to Lurie's operads</span></a></li></ol>
+      <ol class="context-entry-list"><li><a href="../../section/the-envelope-of-an-infinity-operad/factorization-systems/index.html"><span class="context-entry-heading">Section 19.1</span><span class="context-entry-title">Factorization systems</span></a></li><li><a href="../../section/the-envelope-of-an-infinity-operad/freely-adjoining-cocartesian-lifts/index.html"><span class="context-entry-heading">Section 19.2</span><span class="context-entry-title">Freely adjoining cocartesian lifts</span></a></li><li><a href="../../section/the-envelope-of-an-infinity-operad/operadic-envelopes/index.html"><span class="context-entry-heading">Section 19.3</span><span class="context-entry-title">Operadic envelopes</span></a></li><li><a href="../../section/the-envelope-of-an-infinity-operad/comparison-to-lurie-s-operads/index.html"><span class="context-entry-heading">Section 19.4</span><span class="context-entry-title">Comparison to Lurie's ∞-operads</span></a></li><li><a href="../../section/the-envelope-of-an-infinity-operad/the-multiplicative-yoneda-embedding/index.html"><span class="context-entry-heading">Section 19.5</span><span class="context-entry-title">The multiplicative Yoneda embedding</span></a></li><li><a href="../../section/the-envelope-of-an-infinity-operad/day-convolution-into-arbitrary-operads/index.html"><span class="context-entry-heading">Section 19.6</span><span class="context-entry-title">Day convolution into arbitrary ∞-operads</span></a></li></ol>
     </nav>
   </section></div>
   </aside></main>

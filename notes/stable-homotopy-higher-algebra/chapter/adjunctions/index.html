@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chapter 21: Adjunctions | Stable Homotopy Theory and Higher Algebra</title>
+<title>Chapter 22: Adjunctions | Stable Homotopy Theory and Higher Algebra</title>
 <meta name="description" content="Adjunctions, slice categories, initial and terminal objects, limits and colimits, Kan extensions, and adjoint functor theorems.">
 <link rel="canonical" href="https://bastiaancnossen.com/notes/stable-homotopy-higher-algebra/chapter/adjunctions/">
 <link rel="stylesheet" href="../../_assets/reader-shell-v1/style.css">
@@ -32,12 +32,12 @@
 <header class="site-header work-header">
 <div class="reading-header-row"><div class="reader-heading">
       <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
-      <p class="eyebrow"><a href="../../index.html">Stable Homotopy Theory and Higher Algebra</a> · <a href="../../part/background-on-infinity-category-theory/index.html">Part III</a> · Chapter 21</p>
+      <p class="eyebrow"><a href="../../index.html">Stable Homotopy Theory and Higher Algebra</a> · <a href="../../part/background-on-infinity-category-theory/index.html">Part III</a> · Chapter 22</p>
       <h1>Adjunctions</h1>
-    </div><nav class="page-turns" data-reading-navigation aria-label="Reading navigation"><a rel="prev" data-step="prev-chapter" href="../monoidal-dwyer-kan-localizations-and-derived-categories/index.html" title="Monoidal Dwyer–Kan localizations and derived categories" aria-label="Previous chapter: Chapter 20, Monoidal Dwyer–Kan localizations and derived categories"><span class="turn-direction">← Previous chapter</span><span class="turn-target">Chapter 20</span></a>
-<a rel="next" data-step="next-chapter" href="../presentable-infinity-categories/index.html" title="Presentable ∞-categories" aria-label="Next chapter: Chapter 22, Presentable ∞-categories"><span class="turn-direction">→ Next chapter</span><span class="turn-target">Chapter 22</span></a>
-<a rel="prev" data-step="prev-section" href="../../section/monoidal-dwyer-kan-localizations-and-derived-categories/the-symmetric-monoidal-derived-category/index.html" title="The symmetric monoidal derived category" aria-label="Previous section: Section 20.2, The symmetric monoidal derived category"><span class="turn-direction">← Previous section</span><span class="turn-target">Section 20.2</span></a>
-<a rel="next" data-step="next-section" href="../../section/adjunctions/definition-and-characterizations/index.html" title="Definition and characterizations" aria-label="Next section: Section 21.1, Definition and characterizations"><span class="turn-direction">→ Next section</span><span class="turn-target">Section 21.1</span></a></nav></div>
+    </div><nav class="page-turns" data-reading-navigation aria-label="Reading navigation"><a rel="prev" data-step="prev-chapter" href="../monoidal-dwyer-kan-localizations-and-derived-categories/index.html" title="Monoidal Dwyer–Kan localizations and derived categories" aria-label="Previous chapter: Chapter 21, Monoidal Dwyer–Kan localizations and derived categories"><span class="turn-direction">← Previous chapter</span><span class="turn-target">Chapter 21</span></a>
+<a rel="next" data-step="next-chapter" href="../presentable-infinity-categories/index.html" title="Presentable ∞-categories" aria-label="Next chapter: Chapter 23, Presentable ∞-categories"><span class="turn-direction">→ Next chapter</span><span class="turn-target">Chapter 23</span></a>
+<a rel="prev" data-step="prev-section" href="../../section/monoidal-dwyer-kan-localizations-and-derived-categories/the-symmetric-monoidal-derived-category/index.html" title="The symmetric monoidal derived category" aria-label="Previous section: Section 21.2, The symmetric monoidal derived category"><span class="turn-direction">← Previous section</span><span class="turn-target">Section 21.2</span></a>
+<a rel="next" data-step="next-section" href="../../section/adjunctions/definition-and-characterizations/index.html" title="Definition and characterizations" aria-label="Next section: Section 22.1, Definition and characterizations"><span class="turn-direction">→ Next section</span><span class="turn-target">Section 22.1</span></a></nav></div>
 </header>
 <main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
       <span aria-hidden="true">☰</span> Navigation
@@ -53,42 +53,38 @@ functor.
 </div><section class="available-sections" aria-labelledby="chapter-sections-heading">
     <h2 id="chapter-sections-heading">Sections</h2>
     <div class="section-card-grid"><article class="section-card">
-      <p class="section-card-meta">Section 21.1</p>
+      <p class="section-card-meta">Section 22.1</p>
       <h3><a href="../../section/adjunctions/definition-and-characterizations/index.html">Definition and characterizations</a></h3>
-      <p>Equivalent characterizations of adjunctions.</p>
+      <p>Recall from Definition 1.8.14 that an adjunction is given by a natural isomorphism of hom animae:.</p>
     </article><article class="section-card">
-      <p class="section-card-meta">Section 21.2</p>
+      <p class="section-card-meta">Section 22.2</p>
       <h3><a href="../../section/adjunctions/co-limits-and-adjunctions/index.html">(Co)limits and adjunctions</a></h3>
-      <p>Limits and colimits in relation to adjunctions.</p>
+      <p>Taking colimits is left adjoint to the constant-diagram functor, while taking limits is right adjoint to it.</p>
     </article><article class="section-card">
-      <p class="section-card-meta">Section 21.3</p>
+      <p class="section-card-meta">Section 22.3</p>
       <h3><a href="../../section/adjunctions/slice-categories/index.html">Slice categories</a></h3>
-      <p>Adjunctions involving slice categories.</p>
+      <p>The slice categories <span class="math-inline">\(C_{/x}\)</span> and <span class="math-inline">\(C_{x/}\)</span> consist of objects of <span class="math-inline">\(C\)</span> equipped with a morphism to or from <span class="math-inline">\(x\)</span>.</p>
     </article><article class="section-card">
-      <p class="section-card-meta">Section 21.4</p>
+      <p class="section-card-meta">Section 22.4</p>
       <h3><a href="../../section/adjunctions/kan-extensions/index.html">Kan extensions</a></h3>
-      <p>Kan extensions and their pointwise formulas.</p>
+      <p>Given a functor <span class="math-inline">\(\phi \colon I \to J\)</span>, we would like to extend a functor <span class="math-inline">\(F\colon I \to C\)</span> to <span class="math-inline">\(J\)</span>.</p>
     </article><article class="section-card">
-      <p class="section-card-meta">Section 21.5</p>
+      <p class="section-card-meta">Section 22.5</p>
       <h3><a href="../../section/adjunctions/cofinal-functors/index.html">Cofinal functors</a></h3>
-      <p>Cofinal functors and preservation of colimits.</p>
+      <p>A final functor allows us to change the indexing <span class="math-inline">\(\infty \)</span>-category of a diagram without changing its colimit.</p>
     </article><article class="section-card">
-      <p class="section-card-meta">Section 21.6</p>
+      <p class="section-card-meta">Section 22.6</p>
       <h3><a href="../../section/adjunctions/filtered-and-sifted-categories/index.html">Filtered and sifted ∞-categories</a></h3>
-      <p>Filtered and sifted indexing categories.</p>
+      <p>In <span class="math-inline">\(\An \)</span>, filtered colimits commute with finite limits, and sifted colimits commute with finite products.</p>
     </article><article class="section-card">
-      <p class="section-card-meta">Section 21.7</p>
-      <h3><a href="../../section/adjunctions/a-comparison-theorem/index.html">A comparison theorem</a></h3>
-      <p>A comparison theorem for structured objects via split simplicial resolutions.</p>
-    </article><article class="section-card">
-      <p class="section-card-meta">Section 21.8</p>
+      <p class="section-card-meta">Section 22.7</p>
       <h3><a href="../../section/adjunctions/bousfield-localizations/index.html">Bousfield localizations</a></h3>
-      <p>Bousfield localization in ∞-categories.</p>
+      <p>A reflective subcategory is a full subcategory such that each object of the ambient <span class="math-inline">\(\infty \)</span>-category admits a universal map to an object of the subcategory; the resulting adjoint is then called a Bousfield localization .</p>
     </article></div></section>
 <footer class="edition-footer">
-  <span>Last updated 6 November 2026</span>
+  <span>Last updated 19 November 2026</span>
   <a href="/notes/stable-homotopy-higher-algebra.pdf">PDF</a>
-  <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Chapter%2021%3A%20Adjunctions&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fchapter%2Fadjunctions%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
+  <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Chapter%2022%3A%20Adjunctions&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fchapter%2Fadjunctions%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
 </footer></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Chapter navigation">
     <div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
     <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
@@ -102,14 +98,14 @@ functor.
       <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
     </button></h2>
     <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
-      <ol class="context-entry-list"><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Chapter 21</span><span class="context-entry-title">Adjunctions</span></a></li><li><a href="../presentable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 22</span><span class="context-entry-title">Presentable ∞-categories</span></a></li><li><a href="../cocartesian-fibrations-and-unstraightening/index.html"><span class="context-entry-heading">Chapter 23</span><span class="context-entry-title">Cocartesian fibrations and (un)straightening</span></a></li><li><a href="../complete-segal-animae/index.html"><span class="context-entry-heading">Chapter 24</span><span class="context-entry-title">Complete Segal animae</span></a></li></ol>
+      <ol class="context-entry-list"><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Chapter 22</span><span class="context-entry-title">Adjunctions</span></a></li><li><a href="../presentable-infinity-categories/index.html"><span class="context-entry-heading">Chapter 23</span><span class="context-entry-title">Presentable ∞-categories</span></a></li><li><a href="../cocartesian-fibrations-and-unstraightening/index.html"><span class="context-entry-heading">Chapter 24</span><span class="context-entry-title">Cocartesian fibrations and (un)straightening</span></a></li><li><a href="../complete-segal-animae/index.html"><span class="context-entry-heading">Chapter 25</span><span class="context-entry-title">Complete Segal animae</span></a></li></ol>
     </nav>
   </section><section class="contents-ledger" data-contents-ledger data-open="true">
     <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="true">
       <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
     </button></h2>
     <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="false" data-collapsed="false">
-      <ol class="context-entry-list"><li><a href="../../section/adjunctions/definition-and-characterizations/index.html"><span class="context-entry-heading">Section 21.1</span><span class="context-entry-title">Definition and characterizations</span></a></li><li><a href="../../section/adjunctions/co-limits-and-adjunctions/index.html"><span class="context-entry-heading">Section 21.2</span><span class="context-entry-title">(Co)limits and adjunctions</span></a></li><li><a href="../../section/adjunctions/slice-categories/index.html"><span class="context-entry-heading">Section 21.3</span><span class="context-entry-title">Slice categories</span></a></li><li><a href="../../section/adjunctions/kan-extensions/index.html"><span class="context-entry-heading">Section 21.4</span><span class="context-entry-title">Kan extensions</span></a></li><li><a href="../../section/adjunctions/cofinal-functors/index.html"><span class="context-entry-heading">Section 21.5</span><span class="context-entry-title">Cofinal functors</span></a></li><li><a href="../../section/adjunctions/filtered-and-sifted-categories/index.html"><span class="context-entry-heading">Section 21.6</span><span class="context-entry-title">Filtered and sifted ∞-categories</span></a></li><li><a href="../../section/adjunctions/a-comparison-theorem/index.html"><span class="context-entry-heading">Section 21.7</span><span class="context-entry-title">A comparison theorem</span></a></li><li><a href="../../section/adjunctions/bousfield-localizations/index.html"><span class="context-entry-heading">Section 21.8</span><span class="context-entry-title">Bousfield localizations</span></a></li></ol>
+      <ol class="context-entry-list"><li><a href="../../section/adjunctions/definition-and-characterizations/index.html"><span class="context-entry-heading">Section 22.1</span><span class="context-entry-title">Definition and characterizations</span></a></li><li><a href="../../section/adjunctions/co-limits-and-adjunctions/index.html"><span class="context-entry-heading">Section 22.2</span><span class="context-entry-title">(Co)limits and adjunctions</span></a></li><li><a href="../../section/adjunctions/slice-categories/index.html"><span class="context-entry-heading">Section 22.3</span><span class="context-entry-title">Slice categories</span></a></li><li><a href="../../section/adjunctions/kan-extensions/index.html"><span class="context-entry-heading">Section 22.4</span><span class="context-entry-title">Kan extensions</span></a></li><li><a href="../../section/adjunctions/cofinal-functors/index.html"><span class="context-entry-heading">Section 22.5</span><span class="context-entry-title">Cofinal functors</span></a></li><li><a href="../../section/adjunctions/filtered-and-sifted-categories/index.html"><span class="context-entry-heading">Section 22.6</span><span class="context-entry-title">Filtered and sifted ∞-categories</span></a></li><li><a href="../../section/adjunctions/bousfield-localizations/index.html"><span class="context-entry-heading">Section 22.7</span><span class="context-entry-title">Bousfield localizations</span></a></li></ol>
     </nav>
   </section></div>
   </aside></main>

@@ -44,7 +44,7 @@
     </button>
 <article class="notes-page section-page"><div class="continuous-section">
 <p class='noindent' id='sec:Commutative_Monoids'>We now move to <span class='ntx-Italic-tlf-t1-x-x-109'>commutative </span>monoids in an \(\infty \)-category. Just as for monoids, these will be defined as
-functors out of a suitable indexing category that encodes all the operations we have in a commutative
+functors out of a suitable indexing \(\infty \)-category that encodes all the operations we have in a commutative
 monoid.
 </p><p class='noindent'>For a commutative monoid \(M\), given a tuple of elements \((x_s)_{s \in S}\) indexed by a finite set \(S\), we can form the sum \(\sum _{s \in S} x_s\).
 Commutativity says precisely that this sum is independent of any chosen ordering of \(S\). Writing \(M^S := \prod _{s \in S} M\) for the \(S\)-fold
@@ -59,7 +59,7 @@ we need an <span class='ntx-Italic-tlf-t1-x-x-109'>a priori </span>way to compar
 covariantly functorial in \(S\) via addition, but also <span class='ntx-Italic-tlf-t1-x-x-109'>contravariantly </span>functorial via restriction: a map \(f\colon S \to T\) induces a
 restriction map \(f^*\colon M^T \to M^S\) given by \(f^*(x_t)_{t \in T} := (x_{f(s)})_{s \in S}\).
 </p><p class='noindent'>To encode commutative monoids, we need both functorialities, addition and restriction, packaged into a
-single category. The objects of this category are finite sets. What should the morphisms from
+single \(\infty \)-category. The objects of this \(\infty \)-category are finite sets. What should the morphisms from
 \(S\) to \(T\) be? These should encode the operation of ‘first restricting along \(f\), then adding along \(g\)’:
 given maps \(f\colon U \to S\) and \(g\colon U \to T\), we obtain a composite \[ M^S \xrightarrow {f^*} M^U \xrightarrow {g_{\oplus }} M^T, \] where the component of the output at \(t \in T\) is given by
 summing \(x_{f(u)}\) over all \(u \in g^{-1}(\{t\})\). Thus, a morphism from \(S\) to \(T\) should be a pair of maps \(S \leftarrow U \to T\), that is, a <span class='ntx-Italic-tlf-t1-x-x-109'>span </span>from \(S\) to
@@ -210,12 +210,12 @@ have that the map \(\alpha _S\colon M(S) \cong M(*)^S \to N(*)^S \cong N(S)\) is
 \(i_*(M)\) exists and the counit map \(i^* i_*(M) \to M\) is an isomorphism. By the pointwise formula for right Kan extensions,
 we must show that for every finite set \(X\) the canonical map \[ \lim _{(X \to S) \in i_{X/}} M(S) \longrightarrow M(X) \] is an isomorphism, where the limit is taken
 over the relative slice category \(i_{X/} = \Span (\Fin ,\inj ,\all ) \times _{\Span (\Fin )} \Span (\Fin )_{X/}\). Consider the embedding \[ \phi \colon (\Fin \catop )_{X/} \times _{\Fin \catop } \Fin _{\inj }\catop \hookrightarrow \Span (\Fin ,\inj ,\all ) \times _{\Span (\Fin )} \Span (\Fin )_{X/} \] that sends a map \(f\colon S \to X\) to the span \(X \xleftarrow {f} S \xrightarrow {\id } S\). This functor
-\(\phi \) has a right adjoint, given by sending a span \(X \leftarrow U \to S\) to the left-pointing map \(U \to X\). By <a class="source-reference" data-label="cor:Right_Adjoint_Is_Final" href="../../../entry/right-adjoints-are-final/index.html#cor:Right_Adjoint_Is_Final">Corollary 21.5.7</a>, the functor \(\phi \) is therefore
+\(\phi \) has a right adjoint, given by sending a span \(X \leftarrow U \to S\) to the left-pointing map \(U \to X\). By <a class="source-reference" data-label="cor:Right_Adjoint_Is_Final" href="../../../entry/right-adjoints-are-final/index.html#cor:Right_Adjoint_Is_Final">Corollary 22.5.7</a>, the functor \(\phi \) is therefore
 
 
 initial, so the limit may be computed over the left-hand category.
 </p><p class='noindent'>On this category, the restriction of \(M\) sends a map \(f\colon S \to X\) to \(M(S) \cong M(*)^S = \lim _{s \in S} M(*)\) (using the Segal condition). By the formula for
-iterated limits from <a class="source-reference" data-label="thm:Iterated_Colimits" href="../../../entry/iterated-colimits/index.html#thm:Iterated_Colimits">Theorem 21.2.11</a>, we may thus write the left-hand side as the limit of \(M(*)\) over the set \(\colim _{(X \to S)} S\). It thus suffices
+iterated limits from <a class="source-reference" data-label="thm:Iterated_Colimits" href="../../../entry/iterated-colimits/index.html#thm:Iterated_Colimits">Theorem 22.2.11</a>, we may thus write the left-hand side as the limit of \(M(*)\) over the set \(\colim _{(X \to S)} S\). It thus suffices
 to show that \(X\) is the colimit of the forgetful functor \[ \Fin _{/X} \times _{\Fin } \Fin _{\inj } \longrightarrow \Fin . \] This functor is left Kan extended from the full
 subcategory spanned by the inclusions \(\{x\} \hookrightarrow X\) for \(x \in X\), and the colimit over this subcategory is \(X\). Moreover, the
 product projections in \(\Span (\Fin )\) have injective left legs and therefore belong to the wide subcategory on which
@@ -252,7 +252,7 @@ non-empty subposets \(P_0,P_1 \subseteq P\) satisfying \(P = P_0 \cup P_1\) and 
 partition of \([n]\): \[ k \quad \leftrightsquigarrow \quad (\{0, \dots , k-1\}, \{k, \dots , n\}). \] On morphisms, \(\Cut (\phi )\) is then simply given by taking preimages of the two subsets \(P_0\) and \(P_1\), which is
 only defined if both of these preimages are non-empty.
 </p><p class='noindent'>Alternatively, we may think of the set \(\Cut ([n])\) as labeling the \(n\) inequalities in the partially ordered set \([n]\) that we can
-use to cut \([n]\) into two pieces: \[ [n] \quad = \quad \{ 0 \,\, \overset {1}{\leq } \,\, 1 \,\, \overset {2}{\leq } \,\, 2 \,\, \overset {3}{\leq } \,\, \dots \,\, \overset {n}{\leq } \,\, n\}. \] This is the bookkeeping already used in <span class="source-reference" data-label="eq:Inequality_Blocks">Equation 5.1</span>: the middle term of the span \(\Cut (\phi )\) consists
+use to cut \([n]\) into two pieces: \[ [n] \quad = \quad \{ 0 \,\, \overset {1}{\leq } \,\, 1 \,\, \overset {2}{\leq } \,\, 2 \,\, \overset {3}{\leq } \,\, \dots \,\, \overset {n}{\leq } \,\, n\}. \] This is the bookkeeping already used in <span class="source-reference equation-reference" data-label="eq:Inequality_Blocks">(5.1)</span>: the middle term of the span \(\Cut (\phi )\) consists
 of those inequalities of \([n]\) which lie in one of the blocks cut out by \(\phi \), the right-pointing map records for each of
 them the inequality of \([m]\) whose block contains it, and the left-pointing inclusion discards the inequalities of \([n]\)
 lying in no block at all.
@@ -281,7 +281,7 @@ general \(\infty \)-category, this is <span class='ntx-Italic-tlf-t1-x-x-109'>no
 
 <h4 class='subsectionHead' id='monoids-and-commutative-monoids-in-semiadditive-categories'><span class='titlemark'>5.3.3    </span> <a id='x1-40005.3.3'></a>Monoids and commutative monoids in semiadditive \(\infty \)-categories</h4>
 <p class='noindent'>For a semiadditive \(\infty \)-category \(C\), it turns out that every object admits a unique structure of a (commutative)
-monoid. The idea is simple: in a semiadditive category, every object \(M\) comes equipped with a canonical
+monoid. The idea is simple: in a semiadditive \(\infty \)-category, every object \(M\) comes equipped with a canonical
 addition map \[ +\colon M \times M \iso M \oplus M \xrightarrow {\nabla } M, \] given by the fold map of the biproduct, and a zero map \(0\colon * \to M\), the unique map from the initial
 object. It readily follows from the universal property of coproducts that this operation is unital,
 associative and commutative, resulting in a commutative monoid object in the homotopy category \(\Ho (C)\).
@@ -309,7 +309,7 @@ If</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is additive, then also t
 <span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Let \(\simp ^{\leq 1}_{\mathrm {int}} \subseteq \simp \) be the subcategory with objects \([0]\) and \([1]\) and whose only non-identity morphisms are the
 two face maps \(d^0, d^1\colon [0] \to [1]\). We will show that restriction along the inclusions \[ j\colon \{[1]\} \hookrightarrow (\simp ^{\leq 1}_{\mathrm {int}})\catop \qquadtext {and} i\colon (\simp ^{\leq 1}_{\mathrm {int}})\catop \hookrightarrow \simp \catop \] define equivalences \[ \Mon (C) \iso \Fun ^{*}\big ((\simp ^{\leq 1}_{\mathrm {int}})\catop , C\big ) \iso C, \] where \(\Fun ^{*}\)
 denotes the full subcategory of those functors whose value at \([0]\) is terminal.
-</p><p class='noindent'>For  the  first  equivalence,  we  use  left  Kan  extension  along  \(i\).  We  apply  the  pointwise  formula  (<a class="source-reference" data-label="thm:Pointwise_Formula_Kan_Extensions" href="../../../entry/pointwise-formula-for-kan-extensions/index.html#thm:Pointwise_Formula_Kan_Extensions">Theorem 21.4.3</a>)
+</p><p class='noindent'>For  the  first  equivalence,  we  use  left  Kan  extension  along  \(i\).  We  apply  the  pointwise  formula  (<a class="source-reference" data-label="thm:Pointwise_Formula_Kan_Extensions" href="../../../entry/pointwise-formula-for-kan-extensions/index.html#thm:Pointwise_Formula_Kan_Extensions">Theorem 22.4.3</a>)
 to compute the left Kan extension. For this, we need to understand the relative slice \(i_{/[n]}\) for each \([n] \in \simp \).
 Objects of this category are pairs \((x, \phi )\) where \(x \in \{[0], [1]\}\) and \(\phi \colon x \to [n]\) is a morphism in \(\simp \catop \), i.e. a morphism \([n] \to x\) in \(\simp \). There are \(n+2\)
 order-preserving maps \([n] \to [1]\), which we may label by the sequence of values they take: there are the two
@@ -318,12 +318,12 @@ in \(i_{/[n]}\), we observe that the only non-identity morphisms in \((\simp ^{\
 checking the commutative triangles, one sees that the only non-identity morphisms in \(i_{/[n]}\) are the maps \(\underline {0} \to \star \)
 and \(\underline {1} \to \star \). It follows that the category \(i_{/[n]}\) has precisely \(n+1\) connected components: there is a ‘span’ component
 \(\underline {0} \to \star \leftarrow \underline {1}\), and there are \(n\) isolated objects \(\phi _1, \ldots , \phi _n\).
-</p><p class='noindent'>Now let \(F\colon (\simp ^{\leq 1}_{\mathrm {int}})\catop \to C\) be a functor with \(F([0]) = *\), and write \(X := F([1])\). The left Kan extension \(i_!F\) evaluated at \([n]\) is the colimit over \(i_{/[n]}\) of
-the composite \(i_{/[n]} \to (\simp ^{\leq 1}_{\mathrm {int}})\catop \xrightarrow {F} C\). This colimit decomposes as a coproduct over the connected components. The span
-component contributes the colimit \(\colim (X \to * \leftarrow X) = *\), the terminal object, which is also initial in the pointed category \(C\).
-Each isolated object \(\phi _k\) contributes a copy of \(X\). Hence \((i_! F)([n]) \simeq X^{\sqcup n}\), the \(n\)-fold coproduct. Under these identifications,
-the Segal map \((i_!F)([n]) \to (i_!F)([1])^n\) is the canonical map from the \(n\)-fold coproduct of \(X\) to its \(n\)-fold product, hence is an
-isomorphism by semiadditivity. Thus \(i_!F\) is a monoid.
+</p><p class='noindent'>Now let \(F\colon (\simp ^{\leq 1}_{\mathrm {int}})\catop \to C\) be a functor with \(F([0]) = *\), and write \(X := F([1])\). The left Kan extension \(i_!F\) evaluated at \([n]\) is the colimit over
+\(i_{/[n]}\) of the composite \(i_{/[n]} \to (\simp ^{\leq 1}_{\mathrm {int}})\catop \xrightarrow {F} C\). This colimit decomposes as a coproduct over the connected components. The
+span component contributes the colimit \(\colim (X \to * \leftarrow X) = *\), the terminal object, which is also initial in the pointed
+\(\infty \)-category \(C\). Each isolated object \(\phi _k\) contributes a copy of \(X\). Hence \((i_! F)([n]) \simeq X^{\sqcup n}\), the \(n\)-fold coproduct. Under these
+identifications, the Segal map \((i_!F)([n]) \to (i_!F)([1])^n\) is the canonical map from the \(n\)-fold coproduct of \(X\) to its \(n\)-fold product,
+hence is an isomorphism by semiadditivity. Thus \(i_!F\) is a monoid.
 </p><p class='noindent'>Conversely, let \(M\colon \simp \catop \to C\) be a monoid. The counit gives a canonical map from the left Kan extension of the
 restriction, \(i_! i^* M \to M\). To show this is an isomorphism, it suffices to check this at the underlying object \([1]\). There
 it is clear: as we just computed, the value at \([1]\) of both sides is simply \(M([1])\).
@@ -404,10 +404,10 @@ extended from the point. Similarly, a functor \(G\colon \Span (\Fin ^{\leq 1}) \
 the point. We now claim that left Kan extension along \(i\) restricts to a functor \[ i_!\colon \Fun ^{*}(\Span (\Fin ^{\leq 1}),C) \to \Fun ^{\Segal }(\Span (\Fin ,\inj ,\all ),C). \] To see this, let \(G\colon \Span (\Fin ^{\leq 1}) \to C\) be a functor
 satisfying \(G(\emptyset ) = *\). It will suffice to show that the restriction \(i_!(G)\vert _{\Fin }\) of the left Kan extension of \(G\) is itself the left Kan
 extension of \(G\vert _{\Fin ^{\leq 1}}\), since then it must be Kan extended from the point. If we let \(i'\colon \Fin ^{\leq 1} \to \Fin \) denote the inclusion,
-there is a canonical map \[ i'_!(G\vert _{\Fin ^{\leq 1}}) \to i_!(G)\vert _{\Fin }. \] Using the pointwise formula for Kan extensions, <a class="source-reference" data-label="thm:Pointwise_Formula_Kan_Extensions" href="../../../entry/pointwise-formula-for-kan-extensions/index.html#thm:Pointwise_Formula_Kan_Extensions">Theorem 21.4.3</a>, we may compute
+there is a canonical map \[ i'_!(G\vert _{\Fin ^{\leq 1}}) \to i_!(G)\vert _{\Fin }. \] Using the pointwise formula for Kan extensions, <a class="source-reference" data-label="thm:Pointwise_Formula_Kan_Extensions" href="../../../entry/pointwise-formula-for-kan-extensions/index.html#thm:Pointwise_Formula_Kan_Extensions">Theorem 22.4.3</a>, we may compute
 both sides as colimits of \(G\) over the relative slices of \(i'\) and \(i\), and the previous comparison map is
 induced by the inclusion map \(\Fin ^{\leq 1}_{/S} \to \Span (\Fin ^{\leq 1})_{/S}\) of relative slices, for \(S \in \Fin \). Since this inclusion admits a left adjoint
-by <a class="source-reference" data-label="lem:Forward_Span_Slice_Adjunction" href="../../../entry/slice-adjunction-for-spans/index.html#lem:Forward_Span_Slice_Adjunction">Lemma 5.3.16</a>, this functor is final by <a class="source-reference" data-label="cor:Right_Adjoint_Is_Final" href="../../../entry/right-adjoints-are-final/index.html#cor:Right_Adjoint_Is_Final">Corollary 21.5.7</a>, and hence restriction along it does not change the value of the
+by <a class="source-reference" data-label="lem:Forward_Span_Slice_Adjunction" href="../../../entry/slice-adjunction-for-spans/index.html#lem:Forward_Span_Slice_Adjunction">Lemma 5.3.16</a>, this functor is final by <a class="source-reference" data-label="cor:Right_Adjoint_Is_Final" href="../../../entry/right-adjoints-are-final/index.html#cor:Right_Adjoint_Is_Final">Corollary 22.5.7</a>, and hence restriction along it does not change the value of the
 colimit.
 </p><p class='noindent'>Finally we observe that the Kan extension \(i_!G\) has the same value on the point as \(G\) itself. From this one
 concludes that the unit \(G \to i^*i_!G\) and counit \(i_!i^*F \to F\) of the adjunction are both natural isomorphisms, and hence these two
@@ -416,8 +416,8 @@ functors are inverse equivalences.                                              
 </div></div>
 
 <h4 class='subsectionHead' id='semiadditivity'><span class='titlemark'>5.3.4    </span> <a id='x1-50005.3.4'></a>Semiadditivity</h4>
-<p class='noindent'>One of the archetypical examples of a semiadditive category is the 1-category of commutative monoids: the
-product \(A \times B\) of two commutative monoids is also the <span class='ntx-Italic-tlf-t1-x-x-109'>co</span>product. In this section, we will generalize this
+<p class='noindent'>One of the archetypical examples of a semiadditive \(\infty \)-category is the 1-category of commutative monoids:
+the product \(A \times B\) of two commutative monoids is also the <span class='ntx-Italic-tlf-t1-x-x-109'>co</span>product. In this section, we will generalize this
 observation: given an arbitrary \(\infty \)-category \(C\) with finite products, the \(\infty \)-category \(\CMon (C)\) is semiadditive. Combining
 this fact with the results from the previous section, we may conclude that the forgetful functor \(\CMon (C) \to C\) is in fact
 <span class='ntx-Italic-tlf-t1-x-x-109'>universal </span>among semiadditive \(\infty \)-categories equipped with a finite-product-preserving functor to \(C\). Similarly,
@@ -437,7 +437,7 @@ and the evaluation map</span> \(\ev _T\colon \CMon (C) \to C\) <span class='ntx-
 
 <div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-recognition-principle-section-03-6" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-recognition-principle-section-03-6">
 <p class='noindent'><span class='head'>
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  The  functor  category  \(\Fun (\Span (\Fin ),C)\)  admits  finite  products  (<a class="source-reference" data-label="lem:Colimits_In_Functor_Categories" href="../../../entry/colimits-in-functor-categories/index.html#lem:Colimits_In_Functor_Categories">Lemma 21.2.8</a>)  which  are  computed  pointwise,  and  the
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  The  functor  category  \(\Fun (\Span (\Fin ),C)\)  admits  finite  products  (<a class="source-reference" data-label="lem:Colimits_In_Functor_Categories" href="../../../entry/colimits-in-functor-categories/index.html#lem:Colimits_In_Functor_Categories">Lemma 22.2.8</a>)  which  are  computed  pointwise,  and  the
 subcategory \(\CMon (C)\) is closed under finite products.                                                                                      □
 </p>
 </div></div>
@@ -491,7 +491,7 @@ the finite-product-preserving functors and contains \(\const _*\), this same obj
 </p><p class='noindent'>For the second claim, we show that for commutative monoids \(X\) and \(Y\), the product \(X \times Y\) equipped with
 the maps \((\id _X,0)\colon X \to X \times Y\) and \((0,\id _Y)\colon Y \to X \times Y\) is also a coproduct. In other words, we need to show that the corresponding natural
 transformation \[ ((\id _X,0), (0,\id _Y))\colon (X,Y) \to (X \times Y, X \times Y) = \Delta (X \times Y) \] is the unit of an adjunction between the product functor and the diagonal functor
-\(\Delta \colon \CMon (C) \to \CMon (C) \times \CMon (C)\) (with  the  product  being  the  <span class='ntx-Italic-tlf-t1-x-x-109'>left  </span>adjoint!).  By  <a class="source-reference" data-label="prop:Characterization_Adjunctions" href="../../../entry/equivalent-data-for-an-adjunction/index.html#prop:Characterization_Adjunctions">Proposition 21.1.2</a>,  it  suffices  to  supplement  this  unit  by  a  counit
+\(\Delta \colon \CMon (C) \to \CMon (C) \times \CMon (C)\) (with  the  product  being  the  <span class='ntx-Italic-tlf-t1-x-x-109'>left  </span>adjoint!).  By  <a class="source-reference" data-label="prop:Characterization_Adjunctions" href="../../../entry/equivalent-data-for-an-adjunction/index.html#prop:Characterization_Adjunctions">Proposition 22.1.2</a>,  it  suffices  to  supplement  this  unit  by  a  counit
 satisfying the triangle identities. We therefore have to produce for every third commutative monoid
 \(Z\) a compatible counit map \[ m_Z\colon Z \times Z \to Z \] satisfying the triangle identities; this is the map that will a posteriori
 correspond to the fold map \(Z \oplus Z \to Z\). Using the cotensoring from <a class="source-reference" data-label="lem:Cotensoring_On_CMon" href="../../../entry/cotensoring-commutative-monoids-by-finite-sets/index.html#lem:Cotensoring_On_CMon">Lemma 5.3.19</a>, we define \(m_Z\) as the composite \[ m_Z\colon Z \times Z \cong Z^{* \sqcup *} \xrightarrow {Z^{\nabla }} Z^* \cong Z, \] where \(\nabla \colon * \sqcup * \to *\) is the
@@ -534,7 +534,7 @@ the semiadditive and additive \(\infty \)-categories, respectively.
 
 <div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-recognition-principle-section-03-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-recognition-principle-section-03-3">
 <p class='noindent'><span class='head'>
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We will check the (dual version of the) criterion from <a class="source-reference" data-label="prop:Characterization_Bousfield_Localizations" href="../../../entry/characterizations-of-categorical-bousfield-localizations/index.html#prop:Characterization_Bousfield_Localizations">Proposition 21.8.9</a>. We will treat the case for \(\CMon (-)\); the case for
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We will check the (dual version of the) criterion from <a class="source-reference" data-label="prop:Characterization_Bousfield_Localizations" href="../../../entry/characterizations-of-categorical-bousfield-localizations/index.html#prop:Characterization_Bousfield_Localizations">Proposition 22.7.9</a>. We will treat the case for \(\CMon (-)\); the case for
 \(\CGrp (-)\) is identical. The forgetful functor defines a natural transformation \(\epsilon \colon \CMon (-) \to \id _{\Cat ^{\mathrm {prod}}}\), and we must check that for every
 \(\infty \)-category \(C\) with finite products the two forgetful functors \[ \hspace {-10pt} \epsilon _{\CMon (C)} \colon \CMon (\CMon (C)) \to \CMon (C) \qquadtext { and } \CMon (\epsilon _C)\colon \CMon (\CMon (C)) \to \CMon (C) \] are equivalences. Since \(\CMon (C)\) is semiadditive by <a class="source-reference" data-label="prop:CMon_Semiadditive" href="../../../entry/commutative-monoids-are-semiadditive/index.html#prop:CMon_Semiadditive">Proposition 5.3.20</a>,
 the claim for \(\epsilon _{\CMon (C)}\) is an instance of <a class="source-reference" data-label="prop:CMon_Of_Semiadditive_Category" href="../../../entry/commutative-monoids-in-semiadditive-infinity-categories/index.html#prop:CMon_Of_Semiadditive_Category">Proposition 5.3.17</a>. But now the case for \(\CMon (\epsilon _C)\) follows immediately: the swap map \(\Span (\Fin ) \times \Span (\Fin ) \iso \Span (\Fin ) \times \Span (\Fin )\) determines
@@ -584,7 +584,7 @@ analogous to that of <a class="source-reference" data-label="prop:Hom_Spectra_In
 
 </div>
 <footer class="edition-footer">
-  <span>Last updated 6 November 2026</span>
+  <span>Last updated 19 November 2026</span>
   <a href="/notes/stable-homotopy-higher-algebra.pdf">PDF</a>
   <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Section%205.3%3A%20Commutative%20monoids%20and%20commutative%20groups&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fsection%2Frecognition-principle%2Fcommutative-monoids-and-commutative-groups%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
 </footer></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">

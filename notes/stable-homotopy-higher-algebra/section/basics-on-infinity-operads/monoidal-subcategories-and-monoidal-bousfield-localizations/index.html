@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Section 14.5: Monoidal subcategories and monoidal Bousfield localizations | Stable Homotopy Theory and Higher Algebra</title>
+<title>Section 14.7: Monoidal subcategories and monoidal Bousfield localizations | Stable Homotopy Theory and Higher Algebra</title>
 <meta name="description" content="Monoidal subcategories and monoidal Bousfield localizations. A section of Chapter 14, Basics on ∞-operads, in Stable Homotopy Theory and Higher Algebra.">
 <link rel="canonical" href="https://bastiaancnossen.com/notes/stable-homotopy-higher-algebra/section/basics-on-infinity-operads/monoidal-subcategories-and-monoidal-bousfield-localizations/">
 <link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
@@ -8,7 +8,18 @@
 <script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"},"load":["[tex]/mathtools","[tex]/boldsymbol"]},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools","boldsymbol"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Cc":"\\mathcal{C}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
 <script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
 <script defer src="../../../_assets/reader-shell-v1/reader.js" data-notes-reader="stable-homotopy-higher-algebra" data-reader-revision="reader-shell-v1-a276d9dd73bb82aa" data-legacy-navigation="sht-ha-context-navigation-visible-v1" data-legacy-contents="sht-ha-contents-collapsed-v3"></script>
-<script defer src="../../../_assets/script.js"></script></head>
+<script defer src="../../../_assets/script.js"></script><style>
+    .publication-fragment-notice { margin: 2rem 0; padding: 1rem; border: 1px solid #b6aa91; background: #faf7ef; }
+    .publication-fragment-notice:not(:target) { display: none; }
+  </style>
+  <script>
+    (() => {
+      const targets = {"cons:Full_Suboperad":"../definition-and-basic-properties/#cons:Suboperad"};
+      const fragment = decodeURIComponent(location.hash.slice(1));
+      if (targets[fragment]) location.replace(targets[fragment]);
+    })();
+  </script>
+</head>
 <body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
       <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
         <span class="utility-icon" aria-hidden="true">⚙</span>
@@ -32,199 +43,156 @@
 <header class="site-header work-header">
 <div class="reading-header-row"><div class="reader-heading">
       <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
-      <p class="eyebrow"><a href="../../../index.html">Stable Homotopy Theory and Higher Algebra</a> · <a href="../../../part/operads-and-higher-algebra/index.html">Part II</a> · <a href="../../../chapter/basics-on-infinity-operads/index.html">Chapter 14</a> · Section 14.5</p>
+      <p class="eyebrow"><a href="../../../index.html">Stable Homotopy Theory and Higher Algebra</a> · <a href="../../../part/operads-and-higher-algebra/index.html">Part II</a> · <a href="../../../chapter/basics-on-infinity-operads/index.html">Chapter 14</a> · Section 14.7</p>
       <h1>Monoidal subcategories and monoidal Bousfield localizations</h1>
     </div><nav class="page-turns" data-reading-navigation aria-label="Reading navigation"><a rel="prev" data-step="prev-chapter" href="../../../chapter/span-categories/index.html" title="Span categories" aria-label="Previous chapter: Chapter 13, Span categories"><span class="turn-direction">← Previous chapter</span><span class="turn-target">Chapter 13</span></a>
 <a rel="next" data-step="next-chapter" href="../../../chapter/cartesian-and-cocartesian-monoidal-structures/index.html" title="Cartesian and cocartesian monoidal structures" aria-label="Next chapter: Chapter 15, Cartesian and cocartesian monoidal structures"><span class="turn-direction">→ Next chapter</span><span class="turn-target">Chapter 15</span></a>
-<a rel="prev" data-step="prev-section" href="../o-monoidal-categories/index.html" title="O-monoidal ∞-categories" aria-label="Previous section: Section 14.4, O-monoidal ∞-categories"><span class="turn-direction">← Previous section</span><span class="turn-target">Section 14.4</span></a>
+<a rel="prev" data-step="prev-section" href="../o-monoids-and-o-monoidal-categories/index.html" title="O-monoids and O-monoidal ∞-categories" aria-label="Previous section: Section 14.6, O-monoids and O-monoidal ∞-categories"><span class="turn-direction">← Previous section</span><span class="turn-target">Section 14.6</span></a>
 <a rel="next" data-step="next-section" href="../../cartesian-and-cocartesian-monoidal-structures/unfurling/index.html" title="Unfurling" aria-label="Next section: Section 15.1, Unfurling"><span class="turn-direction">→ Next section</span><span class="turn-target">Section 15.1</span></a></nav></div>
 </header>
 <main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
       <span aria-hidden="true">☰</span> Navigation
     </button>
 <article class="notes-page section-page"><div class="continuous-section">
-<p class='noindent' id='sec:Monoidal_Subcategories_Monoidal_Localizations'>This section gives criteria under which a full subcategory or a Bousfield localization of a symmetric
-monoidal \(\infty \)-category inherits a symmetric monoidal structure.
+<p class='noindent' id='sec:Monoidal_Subcategories_Monoidal_Localizations'>A full subcategory \(D\) of a symmetric monoidal \(\infty \)-category \(C\) determines a full suboperad of \(\Mm _C\) by <span class="source-reference" data-label="cons:Full_Suboperad">Construction 14.1.7</span>. If \(D\) contains the
+unit and is closed under tensor products, this suboperad is itself symmetric monoidal. For a reflective
+subcategory, there is another possibility: tensor the objects in the ambient \(\infty \)-category and then apply the
+reflector. We will show that this defines a symmetric monoidal structure whenever tensoring preserves the
+morphisms inverted by the reflector.
 </p>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-1001r1'></a>
-<a class="entry-heading-link" href="../../../entry/full-suboperad/index.html" aria-label="Construction 14.5.1., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 14.5.1.</span></a>  </span><span id='cons:Full_Suboperad'></span> Let \(\Oo \) be an \(\infty \)-operad. Given a subanima \(\Pp ^{\simeq } \subseteq \Oo ^{\simeq }\), let \(\Pp ^{\otimes } \subseteq \Oo ^{\otimes }\) be the full subcategory spanned by
-objects \(\{x_i\}_{i \in I}\) with \(x_i \in \Pp ^{\simeq }\) for all \(i\). Observe that the composite \(p_{\Pp }\colon \Pp ^{\otimes } \hookrightarrow \Oo ^{\otimes } \xrightarrow {p_{\Oo }} \Span (\Fin )\) exhibits \(\Pp ^{\otimes }\) as an \(\infty \)-operad and the inclusion \(\Pp ^{\otimes } \hookrightarrow \Oo ^{\otimes }\) is a morphism
-of \(\infty \)-operads:
-     </p><dl class='enumerate'><dt class='enumerate'>
-  (1) </dt><dd class='enumerate'>
-     <p class='noindent'>\(\Pp ^{\otimes }\) admits products inherited from \(\Oo ^{\otimes }\);
-     </p></dd><dt class='enumerate'>
-  (2) </dt><dd class='enumerate'>
-     <p class='noindent'>By definition the equivalence \(\prod _{i \in I} \Oo ^{\otimes }_{\{i\}} \iso \Oo ^{\otimes }_I\) restricts to \(\prod _{i \in I} \Pp ^{\otimes }_{\{i\}} \iso \Pp ^{\otimes }_I\);
-     </p></dd><dt class='enumerate'>
-  (3) </dt><dd class='enumerate'>
-     <p class='noindent'>By full faithfulness, \(p_{\Oo }\)-cocartesian morphisms \(\widetilde {f}\colon \prod _{i \in I} X_i \to \prod _{j \in J} X_{f(j)}\) in \(\Oo ^{\otimes }\) are still \(p_{\Pp }\)-cocartesian as morphisms in \(\Pp ^{\otimes }\).</p></dd></dl>
-<p class='noindent'>We refer to the pair \(\Pp = (\Pp ^{\otimes }, p_{\Pp })\) as the <span class='ntx-Italic-tlf-t1-x-x-109'>full suboperad of</span> \(\Oo \) <span class='ntx-Italic-tlf-t1-x-x-109'>spanned by the colors</span> \(\Pp ^{\simeq }\).
-</p>
-</div>
-<p class='noindent'>If \(\Oo = \Mm _C\) comes from a symmetric monoidal category \(C\), then the choice of a subanima of colors corresponds to a
-choice of a full subcategory \(D \subseteq C\). We will now discuss various conditions that imply that \(D\) inherits a
-symmetric monoidal structure from \(C\), either by restricting the monoidal structure or by localizing
-it.
-
-
-</p>
-<div class='newtheorem'>
-<p class='noindent'><span class='head'>
-<a id='x1-1005r2'></a>
-<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 14.5.2.</span>  </span><span id='lem:Subcategory_SymMon_Structure'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \((C, \otimes _C, \unit _C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category. If</span> \(D \subseteq C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a full subcategory whose collection
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 14.7.1.</span>  </span><span id='lem:Subcategory_SymMon_Structure'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \((C, \otimes _C, \unit _C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category. If</span> \(D \subseteq C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a full subcategory whose collection
 of objects</span> \(D^{\simeq } \subseteq C^{\simeq }\) <span class='ntx-Italic-tlf-t1-x-x-109'>contains</span> \(\unit _C\) <span class='ntx-Italic-tlf-t1-x-x-109'>and is closed under</span> \(\otimes _C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, then</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>inherits a symmetric monoidal structure</span> \((D, \otimes _D, \unit _D)\) <span class='ntx-Italic-tlf-t1-x-x-109'>from</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>such
 that the inclusion</span> \(i\colon D \hookrightarrow C\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a (strong) symmetric monoidal functor.</span>
 </p>
 </div>
 
-<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-basics-on-infinity-operads-section-05-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-basics-on-infinity-operads-section-05-4">
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-basics-on-infinity-operads-section-07-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-basics-on-infinity-operads-section-07-4">
 <p class='noindent'><span class='head'>
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The previous construction provides a suboperad \(D^{\otimes } \subseteq C^{\otimes }\) and it remains to show that the functor \(D^{\otimes } \hookrightarrow C^{\otimes } \xrightarrow {p} \Span (\Fin )\)
-is still a cocartesian fibration. By full faithfulness of the inclusion, it will suffice to show that the
-\(p\)-cocartesian morphisms in \(C^{\otimes }\) starting in an object of \(D^{\otimes }\) have their targets in \(D^{\otimes }\). Using the inert-active
-factorization and <a class="source-reference" data-label="obs:Cocartesian_Transport_Symmetric_Monoidal_Componentwise" href="../../../entry/cocartesian-transport-symmetric-monoidal-componentwise/index.html#obs:Cocartesian_Transport_Symmetric_Monoidal_Componentwise">Observation 14.2.7</a>, we may reduce this to cocartesian morphisms of the form \[ (x_1,\dots ,x_n)\longrightarrow x_1\otimes \dots \otimes x_n. \] The claim is clear for
-\(n=1\). For \(n=0\) it is the condition that \(\unit _C\in D\), and for \(n=2\) it is the condition that \(x\otimes y\in D\) whenever \(x,y\in D\). The case \(n\geq 3\) reduces to \(n=2\) by
-induction, using that composites of cocartesian morphisms are again cocartesian.                           □
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The full suboperad on the colors of \(D\) is closed under cocartesian transport in \(C^{\otimes }\): by <a class="source-reference" data-label="obs:Cocartesian_Transport_Symmetric_Monoidal_Componentwise" href="../../../entry/cocartesian-transport-symmetric-monoidal-componentwise/index.html#obs:Cocartesian_Transport_Symmetric_Monoidal_Componentwise">Observation 14.4.7</a>, this
+transport is computed by finite tensor products, and closure under these follows from closure under
+the unit and binary tensor products. The cocartesian universal properties restrict by full faithfulness,
+so \(D^{\otimes }\to \Span (\Fin )\) is a cocartesian fibration and its inclusion preserves cocartesian morphisms.                              □
 </p>
 </div></div>
+
+
 <p class='noindent'>Recall that a <span class='ntx-Italic-tlf-t1-x-x-109'>Bousfield localization </span>is a functor \(L\colon C \to D\) that admits a fully faithful right adjoint \(i \colon D \hookrightarrow C\). In this case a
 morphism \(x \to y\) is called an \(L\)<span class='ntx-Italic-tlf-t1-x-x-109'>-equivalence </span>if the map \(L(x) \to L(y)\) in \(D\) is an isomorphism.
 </p>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
-<a id='x1-1006r3'></a>
-<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 14.5.3.</span>  </span><span id='prop:Left_Adjoint_To_Inclusion_Gives_SymMon'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \((C,\otimes _C,\unit _C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category, and let</span> \(i\colon D \hookrightarrow C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be the inclusion of a full subcategory
-
-
-
+<a id='x1-1002r2'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 14.7.2.</span>  </span><span id='prop:Left_Adjoint_To_Inclusion_Gives_SymMon'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \((C,\otimes _C,\unit _C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category, and let</span> \(i\colon D \hookrightarrow C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be the inclusion of a full subcategory
 such that</span> \(i\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a left adjoint</span> \(L\colon C \to D\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Assume that for every</span> \(L\)<span class='ntx-Italic-tlf-t1-x-x-109'>-equivalence</span> \(f\colon x \to y\) <span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>and for every</span> \(z \in C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the morphism</span> \(f \otimes _C \id _z\colon x \otimes z \to y \otimes z\) <span class='ntx-Italic-tlf-t1-x-x-109'>is also
 an</span> \(L\)<span class='ntx-Italic-tlf-t1-x-x-109'>-equivalence. Then the following hold:</span>
      </p><dl class='enumerate'><dt class='enumerate'>
   (1) </dt><dd class='enumerate'>
-     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The suboperad</span> \(D^{\otimes }\) <span class='ntx-Italic-tlf-t1-x-x-109'>of</span> \(C^{\otimes }\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a symmetric monoidal structure on</span> \(D\)<span class='ntx-Italic-tlf-t1-x-x-109'>;</span>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The full suboperad</span> \(D^{\otimes }\) <span class='ntx-Italic-tlf-t1-x-x-109'>of</span> \(C^{\otimes }\) <span class='ntx-Italic-tlf-t1-x-x-109'>defines a symmetric monoidal structure on</span> \(D\)<span class='ntx-Italic-tlf-t1-x-x-109'>, with </span>\[ x\otimes _Dy\simeq L(ix\otimes _Ciy),\qquad \unit _D\simeq L(\unit _C). \]
      </p></dd><dt class='enumerate'>
   (2) </dt><dd class='enumerate'>
      <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>The inclusion</span> \(i^{\otimes }\colon D^{\otimes } \hookrightarrow C^{\otimes }\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a left adjoint</span> \(L^{\otimes }\colon C^{\otimes } \to D^{\otimes }\) <span class='ntx-Italic-tlf-t1-x-x-109'>which is a strong symmetric monoidal refinement of the
-     functor</span> \(L\)<span class='ntx-Italic-tlf-t1-x-x-109'>;</span>
+     functor</span> \(L\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
      </p></dd><dt class='enumerate'>
   (3) </dt><dd class='enumerate'>
      <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits small colimits and its tensor product preserves them separately in both variables,
      then the same holds for</span> \(D\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span></p></dd></dl>
 </div>
 
-<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-basics-on-infinity-operads-section-05-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-basics-on-infinity-operads-section-05-3">
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-basics-on-infinity-operads-section-07-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-basics-on-infinity-operads-section-07-3">
 <p class='noindent'><span class='head'>
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> <span class='ntx-Italic-tlf-t1-x-x-109'>Step 1: </span>Let us start by observing that the assumption on \(L\) implies that for every span \(\alpha \colon I \xleftarrow {f} K \xrightarrow {g} J\) of finite
-sets the induced functor \[ \alpha _!\colon C^I \xrightarrow {f^*} C^K \xrightarrow {g_{\otimes }} C^J, \qquad (x_i)_{i \in I} \mapsto (\bigotimes _{k \in g^{-1}(j)} x_{f(k)})_{j \in J} \] preserves componentwise \(L\)-equivalences. This is clear for the restriction
-functor \(f^*\). For the functor \(g_{\otimes }\), it remains to show that if \(x_k \to y_k\) are \(L\)-equivalences in \(C\) for \(k=1, \dots , n\), then their tensor
-product \(x_1 \otimes _C \dots \otimes _C x_n \to y_1 \otimes _C \dots \otimes _C y_n\) is also an \(L\)-equivalence. For \(n = 2\) this follows by writing this map as a composite \[ x_1 \otimes x_2 \to y_1 \otimes x_2 \simeq x_2 \otimes y_1 \to y_2 \otimes y_1 \simeq y_1 \otimes y_2, \] where the two
-non-invertible arrows are \(L\)-equivalences by assumption, and the remaining arrows are the braiding
-equivalences. The general case follows by induction.
-</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Step 2: </span>We will now show that \(i^{\otimes }\) has a left adjoint \(L^{\otimes }\). To simplify notation, we will treat objects of \(D\) as
-objects in \(C\) without writing the inclusion functor \(i\). By the pointwise criterion for adjunctions from <a class="source-reference" data-label="lem:Pointwise_Criterion_Adjunctions" href="../../../entry/assembly-of-pointwise-adjoint-objects/index.html#lem:Pointwise_Criterion_Adjunctions">Lemma 21.1.4</a>,
-we may construct \(L^{\otimes }\) objectwise, and we set \(L^{\otimes }(\{x_k\}_{k \in K}) := \{L(x_k)\}_{k \in K}\). The unit map \(\eta _X\colon X \to L^{\otimes }X\) is given by the collection of maps \(\{\eta _{x_k}\colon x_k \to L(x_k)\}_{k \in K}\). We
-must show that for any other \(Y \in D^{\otimes }\) the precomposition map \[ \Hom _{D^{\otimes }}(L^{\otimes }X, Y) \xrightarrow {- \circ \eta _X} \Hom _{C^{\otimes }}(X,Y) \] is an equivalence. It suffices to check this on
-fibers \(\Hom _{C^{\otimes }}^{\alpha }(-,-)\) over any span \(\alpha \colon K \xleftarrow {f} S \xrightarrow {g} J\). As in the proof of <a class="source-reference" data-label="prop:Strong_Monoidal_Left_Adjoint_To_Lax_Monoidal" href="../../../entry/strong-monoidal-left-adjoint-to-lax-monoidal/index.html#prop:Strong_Monoidal_Left_Adjoint_To_Lax_Monoidal">Proposition 14.3.11</a>, we will reduce this to the case of the identity span where it
-will follow from the adjunction \(L \dashv i\). Let \(X \to \alpha _!X\) and \(L^{\otimes }X \to \alpha _!L^{\otimes }X\) denote \(p_C\)-cocartesian lifts of \(\alpha \) starting in \(X\) and \(L^{\otimes }X\), respectively,
-so that precomposition with these maps induces two vertical equivalences as follows:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-ae9abb727e1f.svg" alt="Commutative square with maps Hom \id J_C tensor(\alpha_!L tensorX, Y) to Hom \id J_C tensor(\alpha_!X,Y) labeled - circ \alpha_!(\eta X), Hom alpha_D tensor(L tensorX, Y) to Hom alpha_C tensor(X,Y) labeled - circ \eta X, Hom \id J_C tensor(\alpha_!L tensorX, Y) to Hom alpha_D tensor(L tensorX, Y) labeled simeq, Hom \id J_C tensor(\alpha_!X,Y) to Hom alpha_C tensor(X,Y) labeled simeq." width="233" height="71" loading="lazy"></figure></div><p class='noindent'>It thus suffices
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We regard objects of \(D\) as objects of \(C\), omitting \(i\). For every span \(\alpha \colon I\leftarrow K\to J\), the transport functor \(\alpha _!\colon C^I\to C^J\) preserves
+componentwise \(L\)-equivalences. Indeed, it is computed by restriction and finite tensor products, and a
+tensor product of \(L\)-equivalences is an \(L\)-equivalence by changing one factor at a time, using symmetry
+and the hypothesis.
 
 
-to show that the top map is an equivalence. Using the identification \(C^{\otimes }_J \simeq C^J\), we may identify this map with
-the product over \(j \in J\) of the maps \[ \Hom _C((\alpha _!L^{\otimes }X)_j, Y_j) \xrightarrow {- \circ \alpha _!(\eta _X)_j} \Hom _C((\alpha _!X)_j, Y_j), \] so we may show that each of these is an equivalence. Applying the
-adjunction \(L \dashv i\), this map is in turn equivalent to the map \[ \Hom _D(L(\alpha _!L^{\otimes }X)_j, Y_j) \xrightarrow {- \circ L\alpha _!(\eta _X)_j} \Hom _D(L(\alpha _!X)_j, Y_j). \] But now note that the map \(\eta _{x_k}\colon x_k \to L(x_k)\) is an \(L\)-equivalence
-for each \(k\) due to full faithfulness of \(i\colon D \hookrightarrow C\), and so by step 1 the maps \(\alpha _!(\eta _X)_j\colon \alpha _!(X)_j \to \alpha _!(L^{\otimes }X)_j\) are also \(L\)-equivalences for all \(j\), i.e.,
-each \(L\alpha _!(\eta _X)_j\) is an isomorphism. This shows the existence of the left adjoint \(L^{\otimes }\). The same argument as in <a class="source-reference" data-label="prop:Strong_Monoidal_Left_Adjoint_To_Lax_Monoidal" href="../../../entry/strong-monoidal-left-adjoint-to-lax-monoidal/index.html#prop:Strong_Monoidal_Left_Adjoint_To_Lax_Monoidal">Proposition 14.3.11</a>
-shows that \(L^{\otimes }\) is a morphism of \(\infty \)-operads.</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Step 3</span>: We will now show that the suboperad \(D^{\otimes } \subseteq C^{\otimes }\) is a symmetric monoidal \(\infty \)-category. Given an object
-\(X \in D^{\otimes }\) and a span \(\alpha \), we need to show that there exists a \(p_D\)-cocartesian lift of \(\alpha \) in \(D^{\otimes }\) starting in \(X\). We construct
-this as the composite \[ X \to \alpha _!X \xrightarrow {\eta } L^{\otimes }\alpha _!X, \] where the first map is a \(p_C\)-cocartesian lift of \(\alpha \) in \(C^{\otimes }\), and the second map is the
-unit for the adjunction \(L^{\otimes }\dashv i^{\otimes }\). To show that this map is \(p_D\)-cocartesian, we have to show that for every other
-object \(Y \in D^{\otimes }\) the following commutative square is a pullback square:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-cd125082c62f.svg" alt="Commutative square with maps \Hom_D tensor(L tensor\alpha_!X, Y) to \Hom_D tensor(X, Y), \Hom Span(Fin)(J,K) to \Hom Span(Fin)(I,K) labeled - circ alpha, \Hom_D tensor(L tensor\alpha_!X, Y) to \Hom Span(Fin)(J,K), \Hom_D tensor(X, Y) to \Hom Span(Fin)(I,K) labeled p." width="251" height="61" loading="lazy"></figure></div><p class='noindent'>But by the adjunction equivalence \(\Hom _{D^{\otimes }}(L^{\otimes }\alpha _!X, Y) \simeq \Hom _{C^{\otimes }}(\alpha _!X,Y)\)
-this immediately follows from \(p_C\)-cocartesianness of the map \(X \to \alpha _! X\). Thus \(p_D\) is a cocartesian fibration. Since \(D^{\otimes }\)
-is already an \(\infty \)-operad, <a class="source-reference" data-label="lem:Sym_Cat_As_Operad" href="../../../entry/sym-cat-as-operad/index.html#lem:Sym_Cat_As_Operad">Lemma 14.2.4</a> shows that it encodes a symmetric monoidal \(\infty \)-category. This proves part (1).</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Step 4</span>: For (2), it remains to show that \(L^{\otimes }\) is strong symmetric monoidal, i.e., that it sends \(p_C\)-cocartesian
-morphisms to \(p_D\)-cocartesian morphisms. Given a \(p_C\)-cocartesian morphism \(X \to \alpha _!X\), applying \(L^{\otimes }\) gives \(L^{\otimes } X \to L^{\otimes }\alpha _! X\), and we
-need to show that this agrees with the composite \(L^{\otimes }X \to \alpha _!L^{\otimes } X \xrightarrow {\eta } L^{\otimes }\alpha _!L^{\otimes }X\). But this again follows from the assumption on \(L\):
-since \(\eta _X \colon X \to L^{\otimes } X\) is an \(L\)-equivalence, so is the map \(\alpha _!X \to \alpha _!L^{\otimes } X\), hence applying \(L^{\otimes }\) gives an isomorphism.
-</p><p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Step 5</span>: Assume that \(C\) admits small colimits and that its tensor product preserves them separately.
-Then \(D\) admits small colimits, with \[ \colim _{j\in J}X_j\simeq L\bigl (\colim _{j\in J}iX_j\bigr ) \] for every small diagram \((X_j)_{j\in J}\) in \(D\). Together with the formula \[ X\otimes _DY\simeq L(iX\otimes _CiY), \] the
-assumptions on the tensor product and on \(L\) now imply part (3) by an easy computation.                 □
+</p><p class='noindent'>We first construct a left adjoint to \(i^{\otimes }\) by sending \(\{x_i\}_{i\in I}\) to \(\{Lx_i\}_{i\in I}\). For a tuple \(X=\{x_i\}_{i\in I}\) in \(C^{\otimes }\) and a tuple \(Y\) of local objects,
+the componentwise unit induces a map \[ \Hom _{D^{\otimes }}(\{Lx_i\},Y)\longrightarrow \Hom _{C^{\otimes }}(X,Y). \] On the fibers over a span \(\alpha \colon I\leftarrow K\to J\), cocartesian transport identifies
+this with \[ \prod _{j\in J}\Hom _C((\alpha _!\{Lx_i\})_j,Y_j) \longrightarrow \prod _{j\in J}\Hom _C((\alpha _!X)_j,Y_j). \] This is an isomorphism: \(\alpha _!\) preserves componentwise \(L\)-equivalences, and maps into the local
+objects \(Y_j\) invert these morphisms. The pointwise criterion for adjunctions therefore gives \(L^{\otimes }\dashv i^{\otimes }\). Its unit lies
+over identity spans, so the adjunction is relative to \(\Span (\Fin )\). Moreover, \(L^{\otimes }\) preserves inert projections, since it
+applies \(L\) componentwise. Hence it is a morphism of \(\infty \)-operads by <a class="source-reference" data-label="cor:Preserve_Inert_Equivalent_Operad_Map" href="../../../entry/preserve-inert-equivalent-operad-map/index.html#cor:Preserve_Inert_Equivalent_Operad_Map">Corollary 14.1.14</a>.
+</p><p class='noindent'>For \(X\in D^{\otimes }\) and a span \(\alpha \), consider the composite \[ X\longrightarrow \alpha _!X\longrightarrow L^{\otimes }\alpha _!X. \] The first morphism is cocartesian in \(C^{\otimes }\) and the second is the
+unit. The relative adjunction identifies maps from its target to any \(Y\in D^{\otimes }\) with maps from \(\alpha _!X\) to \(Y\) in \(C^{\otimes }\), over the
+same spans. Thus the cocartesian universal property in \(C^{\otimes }\) proves that the composite is cocartesian in \(D^{\otimes }\).
+This establishes the symmetric monoidal structure on \(D\) and the stated tensor and unit formulas.
+</p><p class='noindent'>For arbitrary \(X\in C^{\otimes }\), the unit induces an isomorphism \[ L^{\otimes }\alpha _!X\iso L^{\otimes }\alpha _!L^{\otimes }X, \] since \(\alpha _!\) preserves componentwise \(L\)-equivalences.
+Under this identification, naturality of the unit identifies the image under \(L^{\otimes }\) of a cocartesian lift \(X\to \alpha _!X\) with
+the cocartesian lift starting at \(L^{\otimes }X\) just constructed. Hence \(L^{\otimes }\) is strong symmetric monoidal.
+</p><p class='noindent'>Finally, colimits in \(D\) are obtained by applying \(L\) to colimits in \(C\). For a small diagram \((y_j)\) in \(D\) and \(x\in D\), we obtain
+\begin {align*}  x\otimes _D\colim _j^D y_j &amp;\simeq L\bigl (x\otimes _C iL(\colim _j^C iy_j)\bigr )\\ &amp;\simeq L\bigl (x\otimes _C\colim _j^C iy_j\bigr )\\ &amp;\simeq \colim _j^D L(x\otimes _Ciy_j) \simeq \colim _j^D(x\otimes _Dy_j).  \end {align*}
+</p><p class='noindent'>The second isomorphism uses that tensoring the unit of \(L\) with \(x\) is an \(L\)-equivalence. Symmetry gives
+preservation of colimits in the other variable.                                                                                    □
+</p>
+</div></div>
+<p class='noindent'>When \(C\) admits internal homs, the compatibility condition on \(L\) can equivalently be expressed as a closure
+property of the local objects.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1006r3'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 14.7.3.</span>  </span><span id='lem:Local_Subcategory_Closed_Under_Internal_Hom'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category in which each functor</span> \(-\otimes z\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a right adjoint</span> \(\iHom _C(z,-)\)<span class='ntx-Italic-tlf-t1-x-x-109'>, and
+let</span> \(L\colon C\rightleftarrows D\colon i\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a Bousfield localization. The following conditions are equivalent:</span>
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Tensoring with any object of</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves</span> \(L\)<span class='ntx-Italic-tlf-t1-x-x-109'>-equivalences.</span>
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For every</span> \(z\in C\) <span class='ntx-Italic-tlf-t1-x-x-109'>and every local object</span> \(w\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the object</span> \(\iHom _C(z,w)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is local.</span></p></dd></dl>
+
+
+
+<p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Under these conditions,</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>inherits a symmetric monoidal structure for which</span> \(L\) <span class='ntx-Italic-tlf-t1-x-x-109'>is strong symmetric
+monoidal.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-basics-on-infinity-operads-section-07-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-basics-on-infinity-operads-section-07-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> An object is local precisely when mapping into it inverts all \(L\)-equivalences, and a morphism
+is an \(L\)-equivalence precisely when mapping from it into every local object gives an isomorphism.
+Thus, for \(f\colon x\to y\) an \(L\)-equivalence, \(z\in C\), and \(w\) local, the tensor–hom adjunction identifies the conditions in (1)
+and (2) by identifying the maps \[ \Hom _C(y\otimes z,w)\longrightarrow \Hom _C(x\otimes z,w) \] with \[ \Hom _C(y,\iHom _C(z,w))\longrightarrow \Hom _C(x,\iHom _C(z,w)). \] The final assertion follows from <a class="source-reference" data-label="prop:Left_Adjoint_To_Inclusion_Gives_SymMon" href="../../../entry/left-adjoint-to-inclusion-gives-symmon/index.html#prop:Left_Adjoint_To_Inclusion_Gives_SymMon">Proposition 14.7.2</a>.                                          □
 </p>
 </div></div>
 <p class='noindent'>A symmetric monoidal localization descends to algebras.
 </p>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
-<a id='x1-1010r4'></a>
-<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 14.5.4 </span>(cf. <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-lurie2016HA" title="Lurie, Higher algebra">Lurie (2017)</a>, Proposition 2.2.1.9]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cor:Monoidal_Localization_On_Algebras'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(L \colon C \rightleftarrows D \colon i\) <span class='ntx-Italic-tlf-t1-x-x-109'>be as in </span><a class="source-reference" data-label="prop:Left_Adjoint_To_Inclusion_Gives_SymMon" href="../../../entry/left-adjoint-to-inclusion-gives-symmon/index.html#prop:Left_Adjoint_To_Inclusion_Gives_SymMon">Proposition 14.5.3</a><span class='ntx-Italic-tlf-t1-x-x-109'>, and let</span> \(\Oo \) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operad. Then postcomposition with the operad
-maps</span> \(i^{\otimes }\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(L^{\otimes }\) <span class='ntx-Italic-tlf-t1-x-x-109'>induces an adjunction </span>\[ \Alg _{\Oo }(L)\colon \Alg _{\Oo }(C) \rightleftarrows \Alg _{\Oo }(D) \colon \Alg _{\Oo }(i) \] <span class='ntx-Italic-tlf-t1-x-x-109'>in which the right adjoint is fully faithful. Its essential image
-consists of those</span> \(\Oo \)<span class='ntx-Italic-tlf-t1-x-x-109'>-algebras</span> \(A\) <span class='ntx-Italic-tlf-t1-x-x-109'>in</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>whose underlying objects</span> \(A(o) \in C\) <span class='ntx-Italic-tlf-t1-x-x-109'>lie in</span> \(D\)<span class='ntx-Italic-tlf-t1-x-x-109'>, for every color</span> \(o \in \Oo ^{\simeq }\)<span class='ntx-Italic-tlf-t1-x-x-109'>. The left adjoint
-is computed by</span> \(L\) <span class='ntx-Italic-tlf-t1-x-x-109'>on underlying objects, so that</span> \(\Alg _{\Oo }(D)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is the Bousfield localization of</span> \(\Alg _{\Oo }(C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>at those maps of</span>
-\(\Oo \)<span class='ntx-Italic-tlf-t1-x-x-109'>-algebras whose underlying morphisms are</span> \(L\)<span class='ntx-Italic-tlf-t1-x-x-109'>-equivalences.</span>
+<a id='x1-1009r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 14.7.4 </span>(cf. <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-lurie2016HA" title="Lurie, Higher algebra">Lurie (2017)</a>, Proposition 2.2.1.9]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cor:Monoidal_Localization_On_Algebras'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(L \colon C \rightleftarrows D \colon i\) <span class='ntx-Italic-tlf-t1-x-x-109'>be as in </span><a class="source-reference" data-label="prop:Left_Adjoint_To_Inclusion_Gives_SymMon" href="../../../entry/left-adjoint-to-inclusion-gives-symmon/index.html#prop:Left_Adjoint_To_Inclusion_Gives_SymMon">Proposition 14.7.2</a><span class='ntx-Italic-tlf-t1-x-x-109'>, and let</span> \(\Oo \) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operad. Then postcomposition induces a
+Bousfield localization </span>\[ \Alg _{\Oo }(L)\colon \Alg _{\Oo }(C) \rightleftarrows \Alg _{\Oo }(D) \colon \Alg _{\Oo }(i) \] <span class='ntx-Italic-tlf-t1-x-x-109'>Its local objects are precisely the</span> \(\Oo \)<span class='ntx-Italic-tlf-t1-x-x-109'>-algebras whose values on all colors lie in</span>
+\(D\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
 </p>
 </div>
 
-
-
-
-<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-basics-on-infinity-operads-section-05-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-basics-on-infinity-operads-section-05-2">
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-basics-on-infinity-operads-section-07-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-basics-on-infinity-operads-section-07-1">
 <p class='noindent'><span class='head'>
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>  By  part  (1)  of  <a class="source-reference" data-label="prop:Left_Adjoint_To_Inclusion_Gives_SymMon" href="../../../entry/left-adjoint-to-inclusion-gives-symmon/index.html#prop:Left_Adjoint_To_Inclusion_Gives_SymMon">Proposition 14.5.3</a>,  the  symmetric  monoidal  \(\infty \)-category  \(D^{\otimes }\)  is  a  <span class='ntx-Italic-tlf-t1-x-x-109'>full  </span>suboperad  of  \(C^{\otimes }\).  Hence
-postcomposition with \(i^{\otimes }\) is fully faithful, and an \(\infty \)-operad map \(\Oo ^{\otimes } \to C^{\otimes }\) factors through \(D^{\otimes }\) if and only if it does
-so on the colors: an object of \(C^{\otimes }\) lying over \(\lra {n}\) decomposes, via the inert morphisms, into an \(n\)-tuple of
-objects of \(C\), and an \(\infty \)-operad map preserves inert morphisms. This gives full faithfulness of \(\Alg _{\Oo }(i)\) together
-with the description of the essential image.
-</p><p class='noindent'>By part (2) of <a class="source-reference" data-label="prop:Left_Adjoint_To_Inclusion_Gives_SymMon" href="../../../entry/left-adjoint-to-inclusion-gives-symmon/index.html#prop:Left_Adjoint_To_Inclusion_Gives_SymMon">Proposition 14.5.3</a>, \(L\dashv i\) is a symmetric monoidal adjunction, with induced adjunction \(L^{\otimes }\dashv i^{\otimes }\) of total categories.
-Applying <a class="source-reference" data-label="lem:Symmetric_Monoidal_Adjunction_On_Algebras" href="../../../entry/symmetric-monoidal-adjunction-on-algebras/index.html#lem:Symmetric_Monoidal_Adjunction_On_Algebras">Lemma 14.3.9</a> gives the asserted adjunction on \(\Oo \)-algebras. The unit is computed colorwise by the unit
-of \(L\dashv i\), so the left adjoint is computed by \(L\) on underlying objects and inverts precisely the maps whose
-underlying morphisms are \(L\)-equivalences.                                                                                           □
+
+
+
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The symmetric monoidal adjunction \(L\dashv i\) induces the asserted adjunction on algebras by <a class="source-reference" data-label="lem:Symmetric_Monoidal_Adjunction_On_Algebras" href="../../../entry/symmetric-monoidal-adjunction-on-algebras/index.html#lem:Symmetric_Monoidal_Adjunction_On_Algebras">Lemma 14.5.9</a>. Since
+\(D^{\otimes }\) is the full suboperad on the local colors, postcomposition with \(i^{\otimes }\) is fully faithful, with the stated
+image. The left adjoint applies \(L\) on each color, so it inverts precisely the maps whose underlying
+morphisms are \(L\)-equivalences.                                                                                                             □
 </p>
 </div></div>
-<div class='newtheorem'>
-<p class='noindent'><span class='head'>
-<a id='x1-1011r5'></a>
-<a class="entry-heading-link" href="../../../entry/monoidal-localization-calg/index.html" aria-label="Example 14.5.5., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Example 14.5.5.</span></a>  </span><span id='ex:Monoidal_Localization_CAlg'></span> Taking \(\Oo = \Comm \) in <a class="source-reference" data-label="cor:Monoidal_Localization_On_Algebras" href="../../../entry/monoidal-localization-on-algebras/index.html#cor:Monoidal_Localization_On_Algebras">Corollary 14.5.4</a>, we find that \(\CAlg (D) \subseteq \CAlg (C)\) is a Bousfield localization: a commutative algebra of \(C\)
-lies in \(\CAlg (D)\) precisely when its underlying object is local, and the reflection is computed by applying \(L\) to
-the underlying object.
-</p>
-</div>
-<p class='noindent'>We record a special case for which the conditions of <a class="source-reference" data-label="prop:Left_Adjoint_To_Inclusion_Gives_SymMon" href="../../../entry/left-adjoint-to-inclusion-gives-symmon/index.html#prop:Left_Adjoint_To_Inclusion_Gives_SymMon">Proposition 14.5.3</a> are satisfied:
-</p>
-<div class='newtheorem'>
-<p class='noindent'><span class='head'>
-<a id='x1-1012r6'></a>
-
-
-<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 14.5.6.</span>  </span><span id='lem:Local_Subcategory_Closed_Under_Internal_Hom'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category which admits internal homs in the sense
-that the functor</span> \(- \otimes x \colon C \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a right adjoint</span> \(\iHom _C(x,-)\colon C \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>for every object</span> \(x\) <span class='ntx-Italic-tlf-t1-x-x-109'>of</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Let</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a full subcategory of</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>such that
-the inclusion</span> \(D \hookrightarrow C\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits a left adjoint, and assume that for objects</span> \(x \in D\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(z \in C\) <span class='ntx-Italic-tlf-t1-x-x-109'>the internal hom</span> \(\iHom _C(z,x)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is again
-in</span> \(D\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>obtains a symmetric monoidal structure such that the localization functor</span> \(L \colon C \to D\) <span class='ntx-Italic-tlf-t1-x-x-109'>is symmetric
-monoidal.</span>
-</p>
-</div>
-
-<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-basics-on-infinity-operads-section-05-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-basics-on-infinity-operads-section-05-1">
-<p class='noindent'><span class='head'>
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> We must prove the condition from <a class="source-reference" data-label="prop:Left_Adjoint_To_Inclusion_Gives_SymMon" href="../../../entry/left-adjoint-to-inclusion-gives-symmon/index.html#prop:Left_Adjoint_To_Inclusion_Gives_SymMon">Proposition 14.5.3</a>. Let \(f\colon x \to y\) be an \(L\)-equivalence and let \(z \in C\) be an arbitrary object.
-We must show that the morphism \(L(f \otimes \id _z)\colon L(x \otimes z) \to L(y \otimes z)\) is invertible in \(D\). By the Yoneda lemma, this amounts to showing
-that for every object \(w \in D\) the map \[ (f \otimes \id _z)^*\colon \Hom _C(y \otimes z, w) \to \Hom _C(x \otimes z, w) \] is an equivalence of animae. Applying the adjunction \(- \otimes z \dashv \iHom _C(z,-)\), this map can
-be identified with the map \[ f^*\colon \Hom _C(y, \iHom _C(z,w)) \to \Hom _C(x, \iHom _C(z,w)). \] Since \(\iHom _C(z,w) \in D\) by assumption, this map is an equivalence due to the fact that \(f\) is
-an \(L\)-equivalence.                                                                                                                                  □
-</p>
-</div></div>
-<p class='noindent'>The preceding results concern reflective localizations inside an \(\infty \)-category. The complementary problem of
+<p class='noindent'>The reflector applies \(L\) on each color. Consequently, a morphism of \(\Oo \)-algebras is inverted precisely when its
+value on every color is an \(L\)-equivalence. In particular, a commutative algebra is local precisely when its
+underlying object is local, and its localization has underlying object \(L(A)\).
+</p><p class='noindent'>The preceding results concern reflective localizations inside an \(\infty \)-category. The complementary problem of
 constructing a monoidal structure on a Dwyer–Kan localization at a class of weak equivalences is treated
-later in <a class="source-reference" data-label="chap:Monoidal_Dwyer_Kan_Localizations" href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html#chap:Monoidal_Dwyer_Kan_Localizations">Chapter 20</a>.
-</p><p class='noindent'><a id='likesection.1'></a><a id='x1-1013x14.5'></a>
+later in <a class="source-reference" data-label="chap:Monoidal_Dwyer_Kan_Localizations" href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html#chap:Monoidal_Dwyer_Kan_Localizations">Chapter 21</a>.
+</p><p class='noindent'><a id='likesection.1'></a><a id='x1-1010x14.7'></a>
 </p>
 <h3 class='likesectionHead' id='exercises'><a id='x1-2000'></a>Exercises</h3>
 <p id='exercises1'><a id='Q1-1-3'></a>
 </p><div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-2001r1'></a>
-
-
 <span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 14.1.</span>  </span>Show that the following functors are examples of \(\infty \)-operads: </p>
      <ul class='itemize1'>
      <li class='itemize'>\(\Comm = (\Span (\Fin ),\id )\);
@@ -246,22 +214,37 @@ from <a class="source-reference" data-label="sec:Non_Colored_Operads" href="../.
 <span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 14.2.</span>  </span>
      </p><dl class='enumerate'><dt class='enumerate'>
   (1) </dt><dd class='enumerate'>
-     <p class='noindent'>Prove the converse of <a class="source-reference" data-label="lem:Criterion_Operad_Symmetric_Monoidal" href="../../../entry/criterion-for-an-operad-to-be-symmetric-monoidal/index.html#lem:Criterion_Operad_Symmetric_Monoidal">Lemma 14.2.8</a>: if an \(\infty \)-operad \(\Oo \) is the multimorphism operad of a symmetric monoidal
-     \(\infty \)-category, then conditions (1) and (2) of that lemma are satisfied. Conclude that these two
-     conditions characterize the essential image of \(\Mm \colon \Cat _{\infty }^{\otimes }\to \Op _{\infty }\) on objects.
-
-
+     <p class='noindent'>Prove the converse of <a class="source-reference" data-label="lem:Criterion_Operad_Symmetric_Monoidal" href="../../../entry/criterion-for-an-operad-to-be-symmetric-monoidal/index.html#lem:Criterion_Operad_Symmetric_Monoidal">Lemma 14.4.9</a>: if an \(\infty \)-operad \(\Oo \) is the multimorphism operad of a symmetric monoidal
+     \(\infty \)-category, then both hypotheses of that lemma are satisfied. Conclude that these two conditions
+     characterize the essential image of \(\Mm \colon \Cat _{\infty }^{\otimes }\to \Op _{\infty }\) on objects.
      </p></dd><dt class='enumerate'>
   (2) </dt><dd class='enumerate'>
      <p class='noindent'>Given symmetric monoidal \(\infty \)-categories \(C\) and \(D\), show that an operad map \(f\colon \Mm _C \to \Mm _D\) lies in the image of
-     the functor \(\Mm \) if and only if the map \(f^{\otimes }\colon C^{\otimes } \to D^{\otimes }\) preserves the cocartesian lifts \((x_1, \dots , x_n) \to x_1 \otimes \dots \otimes x_n\) of the span \(\lra {n} \xleftarrow {=} \lra {n} \to \lra {1}\) for every \(n \geq 0\). Use <a class="source-reference" data-label="obs:Cocartesian_Transport_Symmetric_Monoidal_Componentwise" href="../../../entry/cocartesian-transport-symmetric-monoidal-componentwise/index.html#obs:Cocartesian_Transport_Symmetric_Monoidal_Componentwise">Observation 14.2.7</a>
+     the functor \(\Mm \) if and only if the map \(f^{\otimes }\colon C^{\otimes } \to D^{\otimes }\) preserves the cocartesian lifts \((x_1, \dots , x_n) \to x_1 \otimes \dots \otimes x_n\) of the span \(\lra {n} \xleftarrow {=} \lra {n} \to \lra {1}\) for every \(n \geq 0\). Use <a class="source-reference" data-label="obs:Cocartesian_Transport_Symmetric_Monoidal_Componentwise" href="../../../entry/cocartesian-transport-symmetric-monoidal-componentwise/index.html#obs:Cocartesian_Transport_Symmetric_Monoidal_Componentwise">Observation 14.4.7</a>
      to pass from these one-output lifts to arbitrary active spans.</p></dd></dl>
 </div>
 
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-2005r3'></a>
-<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 14.3.</span>  </span> Equip \(\Ab \) with its tensor product and \(\Set \) with its cartesian monoidal structure. Show that
+
+
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 14.3 </span>(Nullary and binary operations suffice)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(\Oo \) be an \(\infty \)-operad. Suppose that for every family \(\{x_i\}_{i\in I}\)
+with \(|I|=0\) or \(|I|=2\), there is a multimorphism \(\varphi \colon \{x_i\}_{i\in I}\to y\) such that substitution induces an isomorphism \[ \Oo (\{y\}\sqcup \{z_j\}_{j\in J};w)\longrightarrow \Oo (\{x_i\}_{i\in I}\sqcup \{z_j\}_{j\in J};w) \] for every finite family of
+colors \(\{z_j\}_{j\in J}\) and every color \(w\).
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'>Show  that  multimorphisms  with  this  property  are  closed  under  operadic  substitution,  and
+     deduce that every finite tuple admits such a multimorphism.
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'>Apply <a class="source-reference" data-label="lem:Criterion_Operad_Symmetric_Monoidal" href="../../../entry/criterion-for-an-operad-to-be-symmetric-monoidal/index.html#lem:Criterion_Operad_Symmetric_Monoidal">Lemma 14.4.9</a> to show that \(\Oo \) arises from a symmetric monoidal \(\infty \)-category.</p></dd></dl>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2008r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 14.4.</span>  </span> Equip \(\Ab \) with its tensor product and \(\Set \) with its cartesian monoidal structure. Show that
 the forgetful functor \(U\colon \Ab \to \Set \) is lax symmetric monoidal, with structure maps \[ U(A)\times U(B)\longrightarrow U(A\otimes B), \qquad (a,b)\longmapsto a\otimes b, \] and unit determined by \(1\in \Z \).
 Identify the associative and commutative algebra structures induced on the underlying set of a ring.
 </p>
@@ -269,20 +252,20 @@ Identify the associative and commutative algebra structures induced on the under
 
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
-<a id='x1-2006r4'></a>
-<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 14.4 </span>(Algebras in an arrow category)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(C\) be a symmetric monoidal \(\infty \)-category and equip
+<a id='x1-2009r5'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 14.5 </span>(Algebras in an arrow category)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(C\) be a symmetric monoidal \(\infty \)-category and equip
 \(\Fun ([1],C)\) with the pointwise symmetric monoidal structure. Show that an \(\Oo \)-algebra in \(\Fun ([1],C)\) is precisely a morphism
 of \(\Oo \)-algebras in \(C\). Specialize to \(\Oo =\Assoc \) and show that sources, targets, and composites of algebra morphisms
 are computed on the underlying objects of \(C\).
+
+
 </p>
 </div>
 
-
-
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
-<a id='x1-2007r5'></a>
-<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 14.5 </span>(Arithmetic localization is monoidal)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(P\) be a set of primes and let \(L(X):=X[P^{-1}]\) be the smashing
+<a id='x1-2010r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 14.6 </span>(Arithmetic localization is monoidal)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(P\) be a set of primes and let \(L(X):=X[P^{-1}]\) be the smashing
 localization of spectra from <a class="source-reference" data-label="sec:Localization_At_Prime" href="../../localization-and-completion/localization-at-a-prime/index.html#sec:Localization_At_Prime">Section 7.2</a>. Show that the \(L\)-equivalences are stable under tensoring with arbitrary
 spectra. Construct the symmetric monoidal structure on the full subcategory of \(P\)-divisible spectra
 and describe the localization of associative and commutative ring spectra.
@@ -292,9 +275,9 @@ and describe the localization of associative and commutative ring spectra.
 
 </div>
 <footer class="edition-footer">
-  <span>Last updated 6 November 2026</span>
+  <span>Last updated 19 November 2026</span>
   <a href="/notes/stable-homotopy-higher-algebra.pdf">PDF</a>
-  <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Section%2014.5%3A%20Monoidal%20subcategories%20and%20monoidal%20Bousfield%20localizations&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fsection%2Fbasics-on-infinity-operads%2Fmonoidal-subcategories-and-monoidal-bousfield-localizations%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
+  <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Section%2014.7%3A%20Monoidal%20subcategories%20and%20monoidal%20Bousfield%20localizations&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fsection%2Fbasics-on-infinity-operads%2Fmonoidal-subcategories-and-monoidal-bousfield-localizations%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
 </footer></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
     <div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
     <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
@@ -308,15 +291,17 @@ and describe the localization of associative and commutative ring spectra.
       <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
     </button></h2>
     <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
-      <ol class="context-entry-list"><li><a href="../../../chapter/operads-the-heuristics/index.html"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../../../chapter/span-categories/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../../../chapter/basics-on-infinity-operads/index.html" aria-current="page"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../../../chapter/cartesian-and-cocartesian-monoidal-structures/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../../../chapter/day-convolution-and-the-tensor-product-of-spectra/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="../../../chapter/the-envelope-of-an-infinity-operad/index.html"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../../../chapter/operadic-day-convolution-and-stabilization/index.html"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Operadic Day convolution and stabilization</span></a></li><li><a href="../../../chapter/algebras-and-modules/index.html"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
+      <ol class="context-entry-list"><li><a href="../../../chapter/operads-the-heuristics/index.html"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../../../chapter/span-categories/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../../../chapter/basics-on-infinity-operads/index.html" aria-current="page"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../../../chapter/cartesian-and-cocartesian-monoidal-structures/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../../../chapter/day-convolution-and-the-tensor-product-of-spectra/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="../../../chapter/algebras-and-modules/index.html"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../../../chapter/tensor-products-and-morita-theory/index.html"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Tensor products of ∞-categories and Morita theory</span></a></li><li><a href="../../../chapter/the-envelope-of-an-infinity-operad/index.html"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../../../chapter/operadic-day-convolution-and-stabilization/index.html"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Operadic stabilization</span></a></li><li><a href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html"><span class="context-entry-heading">Chapter 21</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
     </nav>
   </section><section class="contents-ledger" data-contents-ledger data-open="false">
     <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
       <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
     </button></h2>
     <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
-      <ol class="context-entry-list"><li><a href="../definitions-and-examples/index.html"><span class="context-entry-heading">Section 14.1</span><span class="context-entry-title">Definitions and examples</span></a></li><li><a href="../symmetric-monoidal-categories-and-algebras-over-operads/index.html"><span class="context-entry-heading">Section 14.2</span><span class="context-entry-title">Symmetric monoidal ∞-categories and algebras over operads</span></a></li><li><a href="../lax-symmetric-monoidal-functors/index.html"><span class="context-entry-heading">Section 14.3</span><span class="context-entry-title">Lax symmetric monoidal functors</span></a></li><li><a href="../o-monoidal-categories/index.html"><span class="context-entry-heading">Section 14.4</span><span class="context-entry-title">O-monoidal ∞-categories</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 14.5</span><span class="context-entry-title">Monoidal subcategories and monoidal Bousfield localizations</span></a></li></ol>
+      <ol class="context-entry-list"><li><a href="../definition-and-basic-properties/index.html"><span class="context-entry-heading">Section 14.1</span><span class="context-entry-title">Definition and basic properties</span></a></li><li><a href="../classical-colored-operads/index.html"><span class="context-entry-heading">Section 14.2</span><span class="context-entry-title">Classical colored operads</span></a></li><li><a href="../finite-families-and-trivial-operads/index.html"><span class="context-entry-heading">Section 14.3</span><span class="context-entry-title">Finite families and trivial operads</span></a></li><li><a href="../symmetric-monoidal-categories-and-algebras-over-operads/index.html"><span class="context-entry-heading">Section 14.4</span><span class="context-entry-title">Symmetric monoidal ∞-categories and algebras over ∞-operads</span></a></li><li><a href="../lax-symmetric-monoidal-functors/index.html"><span class="context-entry-heading">Section 14.5</span><span class="context-entry-title">Lax symmetric monoidal functors</span></a></li><li><a href="../o-monoids-and-o-monoidal-categories/index.html"><span class="context-entry-heading">Section 14.6</span><span class="context-entry-title">O-monoids and O-monoidal ∞-categories</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 14.7</span><span class="context-entry-title">Monoidal subcategories and monoidal Bousfield localizations</span></a></li></ol>
     </nav>
   </section></div>
-  </aside></main>
+  </aside><aside class="publication-fragment-notice" id="cons:Full_Suboperad"><strong>Retired fragment.</strong> The November 2026 revision moved or relabeled this item. It now appears at <a href="../definition-and-basic-properties/#cons:Suboperad">this address</a>.</aside>
+<aside class="publication-fragment-notice" id="ex:Monoidal_Localization_CAlg"><strong>Retired fragment.</strong> The November 2026 revision removed this label or standalone proof anchor.</aside>
+</main>
 </body></html>

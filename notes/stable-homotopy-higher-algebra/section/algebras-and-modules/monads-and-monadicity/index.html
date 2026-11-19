@@ -1,14 +1,25 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Section 19.6: Monads and monadicity | Stable Homotopy Theory and Higher Algebra</title>
-<meta name="description" content="Monads and monadicity. A section of Chapter 19, Algebras and modules, in Stable Homotopy Theory and Higher Algebra.">
+<title>Section 17.4: Monads and monadicity | Stable Homotopy Theory and Higher Algebra</title>
+<meta name="description" content="Monads and monadicity. A section of Chapter 17, Algebras and modules, in Stable Homotopy Theory and Higher Algebra.">
 <link rel="canonical" href="https://bastiaancnossen.com/notes/stable-homotopy-higher-algebra/section/algebras-and-modules/monads-and-monadicity/">
 <link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
 <link rel="stylesheet" href="../../../_assets/style.css">
 <script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"},"load":["[tex]/mathtools","[tex]/boldsymbol"]},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools","boldsymbol"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Cc":"\\mathcal{C}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
 <script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
 <script defer src="../../../_assets/reader-shell-v1/reader.js" data-notes-reader="stable-homotopy-higher-algebra" data-reader-revision="reader-shell-v1-a276d9dd73bb82aa" data-legacy-navigation="sht-ha-context-navigation-visible-v1" data-legacy-contents="sht-ha-contents-collapsed-v3"></script>
-<script defer src="../../../_assets/script.js"></script></head>
+<script defer src="../../../_assets/script.js"></script><style>
+    .publication-fragment-notice { margin: 2rem 0; padding: 1rem; border: 1px solid #b6aa91; background: #faf7ef; }
+    .publication-fragment-notice:not(:target) { display: none; }
+  </style>
+  <script>
+    (() => {
+      const targets = {"rmk:Barr_Beck_Monogenic_Morita":"../../tensor-products-and-morita-theory/spectral-morita-theory-and-eilenberg-watts/#rmk:Barr_Beck_Monogenic_Morita"};
+      const fragment = decodeURIComponent(location.hash.slice(1));
+      if (targets[fragment]) location.replace(targets[fragment]);
+    })();
+  </script>
+</head>
 <body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
       <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
         <span class="utility-icon" aria-hidden="true">⚙</span>
@@ -32,125 +43,138 @@
 <header class="site-header work-header">
 <div class="reading-header-row"><div class="reader-heading">
       <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
-      <p class="eyebrow"><a href="../../../index.html">Stable Homotopy Theory and Higher Algebra</a> · <a href="../../../part/operads-and-higher-algebra/index.html">Part II</a> · <a href="../../../chapter/algebras-and-modules/index.html">Chapter 19</a> · Section 19.6</p>
+      <p class="eyebrow"><a href="../../../index.html">Stable Homotopy Theory and Higher Algebra</a> · <a href="../../../part/operads-and-higher-algebra/index.html">Part II</a> · <a href="../../../chapter/algebras-and-modules/index.html">Chapter 17</a> · Section 17.4</p>
       <h1>Monads and monadicity</h1>
-    </div><nav class="page-turns" data-reading-navigation aria-label="Reading navigation"><a rel="prev" data-step="prev-chapter" href="../../../chapter/operadic-day-convolution-and-stabilization/index.html" title="Operadic Day convolution and stabilization" aria-label="Previous chapter: Chapter 18, Operadic Day convolution and stabilization"><span class="turn-direction">← Previous chapter</span><span class="turn-target">Chapter 18</span></a>
-<a rel="next" data-step="next-chapter" href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html" title="Monoidal Dwyer–Kan localizations and derived categories" aria-label="Next chapter: Chapter 20, Monoidal Dwyer–Kan localizations and derived categories"><span class="turn-direction">→ Next chapter</span><span class="turn-target">Chapter 20</span></a>
-<a rel="prev" data-step="prev-section" href="../stable-and-spectral-consequences/index.html" title="Stable and spectral consequences" aria-label="Previous section: Section 19.5, Stable and spectral consequences"><span class="turn-direction">← Previous section</span><span class="turn-target">Section 19.5</span></a>
-<a rel="next" data-step="next-section" href="../application-connective-complex-k-theory/index.html" title="Application: connective complex K-theory" aria-label="Next section: Section 19.7, Application: connective complex K-theory"><span class="turn-direction">→ Next section</span><span class="turn-target">Section 19.7</span></a></nav></div>
+    </div><nav class="page-turns" data-reading-navigation aria-label="Reading navigation"><a rel="prev" data-step="prev-chapter" href="../../../chapter/day-convolution-and-the-tensor-product-of-spectra/index.html" title="Day convolution and the tensor product of spectra" aria-label="Previous chapter: Chapter 16, Day convolution and the tensor product of spectra"><span class="turn-direction">← Previous chapter</span><span class="turn-target">Chapter 16</span></a>
+<a rel="next" data-step="next-chapter" href="../../../chapter/tensor-products-and-morita-theory/index.html" title="Tensor products of ∞-categories and Morita theory" aria-label="Next chapter: Chapter 18, Tensor products of ∞-categories and Morita theory"><span class="turn-direction">→ Next chapter</span><span class="turn-target">Chapter 18</span></a>
+<a rel="prev" data-step="prev-section" href="../endomorphism-algebras/index.html" title="Endomorphism algebras" aria-label="Previous section: Section 17.3, Endomorphism algebras"><span class="turn-direction">← Previous section</span><span class="turn-target">Section 17.3</span></a>
+<a rel="next" data-step="next-section" href="../../tensor-products-and-morita-theory/tensor-products-of-presentable-categories/index.html" title="Tensor products of presentable ∞-categories" aria-label="Next section: Section 18.1, Tensor products of presentable ∞-categories"><span class="turn-direction">→ Next section</span><span class="turn-target">Section 18.1</span></a></nav></div>
 </header>
 <main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
       <span aria-hidden="true">☰</span> Navigation
     </button>
 <article class="notes-page section-page"><div class="continuous-section">
-<p class='noindent' id='sec:Monads_And_Monadicity'>An adjunction \(F\dashv G\) determines the endofunctor \(GF\) together with a unit and multiplication. In classical category
-theory these maps satisfy the monad identities strictly. For \(\infty \)-categories, these relations become
-identifications that must be accompanied by higher coherence data; the resulting structure is most
-conveniently described as that of an algebra in the functor category \(\Fun (C,C)\) equipped with the composition
-monoidal structure. The Barr–Beck theorem then recognizes when the target of the adjunction is recovered
-as the \(\infty \)-category of modules over this monad.
-</p><p class='noindent'>We use Lurie’s construction of the coherent monad associated to an adjunction and its Eilenberg–Moore
-category, <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-lurie2016HA" title="Lurie, Higher algebra">Lurie (2017)</a>, Section 4.7]</span>. The recognition criterion follows from his comparison theorem, recorded as <a class="source-reference" data-label="thm:Monadic_Comparison" href="../../../entry/comparison-theorem-over-a-base/index.html#thm:Monadic_Comparison">Theorem 21.7.3</a> in
-Part III.
-</p><p class='noindent'>We first construct the monoidal structure under which monads are algebras, as an instance of the
-endomorphism-algebra construction of <a class="source-reference" data-label="sec:Endomorphism_Algebras" href="../endomorphism-algebras/index.html#sec:Endomorphism_Algebras">Section 19.4</a>. Regard \(\Cat _{\infty }\) as left-tensored over itself via the cartesian product, and
-fix the object \(C\). By the currying axiom for functor categories (<a class="source-reference" data-label="axiom:Functor_Category" href="../../../entry/currying-and-uncurrying-functors/index.html#axiom:Functor_Category">Axiom C.5</a>), the functor category \(\Fun (C,C)\), equipped
-with the evaluation functor \(\ev \colon \Fun (C,C) \times C \to C\), is an endomorphism object of \(C\) in \((\Cat _{\infty },\times )\): precomposition with \(\ev \) induces
-an isomorphism \[ \Hom _{\Cat _{\infty }}(X,\Fun (C,C)) \iso \Hom _{\Cat _{\infty }}(X \times C,C) \] for every \(X \in \Cat _{\infty }\). Applying <a class="source-reference" data-label="cor:Endomorphism_Algebra" href="../../../entry/endomorphism-algebra/index.html#cor:Endomorphism_Algebra">Corollary 19.4.7</a> therefore equips \(\Fun (C,C)\) with a preferred associative algebra
-structure in \((\Cat _{\infty },\times )\). Under the equivalences of <a class="source-reference" data-label="thm:Simplicial_Model_Associative_Algebras" href="../../../entry/simplicial-model-associative-algebras/index.html#thm:Simplicial_Model_Associative_Algebras">Theorem 19.3.2</a>, <a class="source-reference" data-label="thm:Simplicial_Model_Modules" href="../../../entry/simplicial-model-modules/index.html#thm:Simplicial_Model_Modules">Theorem 19.3.5</a>, this is a monoidal structure whose tensor product \(S \otimes T \simeq S \circ T\) is
-given by composition, and the resulting left module structure exhibits \(C\) as left-tensored over \(\Fun (C,C)\)
-through evaluation. When \(C\) is not small we run this construction in a larger universe, exactly as in
-<a class="source-reference" data-label="prop:Endomorphism_Spectra" href="../../../entry/endomorphism-spectra/index.html#prop:Endomorphism_Spectra">Proposition 19.5.5</a>.
+<p class='noindent' id='sec:Monads_And_Monadicity'>For an adjunction \(F\colon C\rightleftarrows D\noloc G\), every object \(d\in D\) gives an object \(Gd\in C\) with an action \(GF(Gd)\to Gd\), induced by the counit. We ask when
+this action determines \(d\): can \(D\) be recovered as the \(\infty \)-category of modules over the endofunctor \(GF\)?
+To formulate this question, we first equip endofunctors with the monoidal structure given by
+composition.
+</p><p class='noindent'>Evaluation exhibits \(\Fun (C,C)\) as the endomorphism object of \(C\) in \((\Cat _{\infty },\times )\), since currying gives \[ \Hom _{\Cat _{\infty }}(X,\Fun (C,C))\iso \Hom _{\Cat _{\infty }}(X\times C,C). \] By <a class="source-reference" data-label="cor:Endomorphism_Algebra" href="../../../entry/endomorphism-algebra/index.html#cor:Endomorphism_Algebra">Corollary 17.3.3</a>, <a class="source-reference" data-label="thm:Universal_Property_Cartesian_Operads" href="../../../entry/universal-property-cartesian-operads/index.html#thm:Universal_Property_Cartesian_Operads">Theorem 15.3.11</a>, it therefore carries a
+monoidal structure with tensor product given by composition, and acts on \(C\) by evaluation. When \(C\) is not
+small, we work in a larger universe.
 </p>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-1001r1'></a>
-<a class="entry-heading-link" href="../../../entry/monad/index.html" aria-label="Definition 19.6.1, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 19.6.1 </span></a>(<span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-lurie2016HA" title="Lurie, Higher algebra">Lurie (2017)</a>, Definition 4.7.0.1]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Monad'></span> A <span class='ntx-Italic-tlf-t1-x-x-109'>monad </span>on an \(\infty \)-category \(C\) is an associative algebra object \[ T \in \Alg (\Fun (C,C)) \] for the composition
+<a class="entry-heading-link" href="../../../entry/monad/index.html" aria-label="Definition 17.4.1, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 17.4.1 </span></a>(<span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-lurie2016HA" title="Lurie, Higher algebra">Lurie (2017)</a>, Definition 4.7.0.1]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='def:Monad'></span> A <span class='ntx-Italic-tlf-t1-x-x-109'>monad </span>on an \(\infty \)-category \(C\) is an associative algebra object \[ T \in \Alg (\Fun (C,C)) \] for the composition
 monoidal  structure.  Its  <span class='ntx-Italic-tlf-t1-x-x-109'>Eilenberg–Moore  category  </span>is  the  \(\infty \)-category  \[ \LMod _T(C) \]  of  left  \(T\)-module  objects  in  \(C\),
 formed using the evaluation left tensoring constructed above. It comes with a forgetful functor \(U_T\colon \LMod _T(C) \to C\).
 </p>
 </div>
 <p class='noindent'>Informally, the algebra structure consists of a unit \(\id _C \to T\) and a multiplication \(T \circ T \to T\), together with all coherent
 associativity and unitality data. A left \(T\)-module is an object \(c \in C\) with a coherent action \(T(c) \to c\).
-</p><p class='noindent'>We record the part of Lurie’s package needed below. Given an adjunction \[ F\colon C \rightleftarrows D \noloc G, \] the composite \(GF\) admits a preferred
-monad structure \(T\), characterized as the endomorphism algebra of \(G\). The resulting \(T\)-action on \(G\) determines a
-<span class='ntx-Italic-tlf-t1-x-x-109'>comparison functor </span>\[ K_G\colon D \longrightarrow \LMod _T(C) \] with \(U_TK_G \simeq G\); here \(\Fun (D,C)\) is left-tensored over \(\Fun (C,C)\) by postcomposition, which is the action
-used to form the endomorphism algebra of \(G\). See <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-lurie2016HA" title="Lurie, Higher algebra">Lurie (2017)</a>, Definition 4.7.3.2, Proposition 4.7.3.3 and the discussion preceding Definition 4.7.3.4]</span>. The forgetful functor \(U_T\) is conservative and
-admits a left adjoint \(F_T\), whose underlying endofunctor is \(T\). The mate \[ F_T \longrightarrow K_GF \] is an isomorphism. Finally,
-every \(U_T\)-split simplicial object of \(\LMod _T(C)\) admits a geometric realization which is preserved by \(U_T\); see
+</p><p class='noindent'>Consider an adjunction \[ F\colon C \rightleftarrows D \noloc G, \] and let \(\eta \) and \(\varepsilon \) denote its unit and counit. The \(\infty \)-category \(\Fun (D,C)\) is left-tensored
+over \(\Fun (C,C)\) by postcomposition. For \(S\in \Fun (C,C)\), the adjunction gives a natural isomorphism \[ \Hom _{\Fun (C,C)}(S,GF)\iso \Hom _{\Fun (D,C)}(SG,G). \] It sends \(\alpha \colon S\to GF\) to \(G\varepsilon \circ \alpha G\); its
+inverse sends \(\beta \colon SG\to G\) to \(\beta F\circ S\eta \). The triangle identities show that these are inverse. Thus \(GF\), with the action
+\(G\varepsilon \colon GFG\to G\), is an endomorphism object of \(G\); see also <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-lurie2016HA" title="Lurie, Higher algebra">Lurie (2017)</a>, Lemma 4.7.3.1]</span>. By <a class="source-reference" data-label="cor:Endomorphism_Algebra" href="../../../entry/endomorphism-algebra/index.html#cor:Endomorphism_Algebra">Corollary 17.3.3</a>, \(GF\) acquires a monad structure, with unit \(\eta \) and
+multiplication \(G\varepsilon F\). Under the equivalence \[ \LMod _{GF}(\Fun (D,C))\simeq \Fun (D,\LMod _{GF}(C)), \] the resulting \(GF\)-module \(G\) in \(\Fun (D,C)\) corresponds to a lift of \(G\):
+\[ D\longrightarrow \LMod _{GF}(C),\qquad d\longmapsto \bigl (Gd,\;G\varepsilon _d\colon GFGd\to Gd\bigr ). \]
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+
+
+<a id='x1-1002r2'></a>
+<a class="entry-heading-link" href="../../../entry/monadic-functor/index.html" aria-label="Definition 17.4.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 17.4.2.</span></a>  </span><span id='def:Monadic_Functor'></span>  A  right  adjoint  \(G\colon D\to C\),  with  left  adjoint  \(F\),  is  <span class='ntx-Italic-tlf-t1-x-x-109'>monadic  </span>if  the  induced  functor  \(D\to \LMod _{GF}(C)\)  is  an
+equivalence.
+</p>
+</div>
+<p class='noindent'>The Barr–Beck theorem gives a criterion for monadicity in terms of conservativity and geometric
+realizations. The relevant simplicial objects are those that become split after applying \(G\); we first explain this
+condition.
+</p><p class='noindent'>Recall the augmented simplicial objects with extra degeneracies from <a class="source-reference" data-label="def:Extra_Degeneracies" href="../../../entry/extra-degeneracies/index.html#def:Extra_Degeneracies">Definition 5.2.3</a>. We use the following
+terminology.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1003r3'></a>
+<a class="entry-heading-link" href="../../../entry/split-simplicial-objects/index.html" aria-label="Definition 17.4.3., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 17.4.3.</span></a>  </span><span id='def:Split_Simplicial_Object'></span> An augmented simplicial object is <span class='ntx-Italic-tlf-t1-x-x-109'>split </span>if it admits extra degeneracies in the
+sense of <a class="source-reference" data-label="def:Extra_Degeneracies" href="../../../entry/extra-degeneracies/index.html#def:Extra_Degeneracies">Definition 5.2.3</a>. A simplicial object is <span class='ntx-Italic-tlf-t1-x-x-109'>split </span>if it extends to a split augmented simplicial object.
+</p><p class='noindent'>Let \(G\colon D\to C\) be a functor. A simplicial object \(X_\bullet \) of \(D\) is \(G\)<span class='ntx-Italic-tlf-t1-x-x-109'>-split </span>if \(GX_\bullet \) is split.
+</p>
+</div>
+<p class='noindent'>Our convention differs from <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-lurie2016HA" title="Lurie, Higher algebra">Lurie (2017)</a>, Definition 4.7.2.2]</span> by reversing the order on the finite linear orders.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1004r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 17.4.4 </span>(Absolute realization of split simplicial objects)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='lem:Split_Simplicial_Objects_Absolute'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Every split augmented simplicial
+object is a colimit diagram. In particular, every split simplicial object admits a geometric realization,
+and every functor preserves this realization.</span>
+
+
+
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-algebras-and-modules-section-04-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-algebras-and-modules-section-04-4">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span>   By   <a class="source-reference" data-label="lem:Extra_Degeneracy_Argument" href="../../../entry/extra-degeneracy-argument/index.html#lem:Extra_Degeneracy_Argument">Lemma 5.2.4</a>,   a   split   augmented   simplicial   object   exhibits   its   augmentation   as   a   colimit.
+Postcomposition with any functor preserves the extra degeneracies, so the same lemma shows that it
+preserves this colimit.                                                                                                                         □
+</p>
+</div></div>
+<p class='noindent'>The forgetful functor \(U_T\) is conservative and admits a left adjoint \(F_T\), whose underlying endofunctor is \(T\).
+Moreover, every \(U_T\)-split simplicial object of \(\LMod _T(C)\) admits a geometric realization which is preserved by \(U_T\); see
 <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-lurie2016HA" title="Lurie, Higher algebra">Lurie (2017)</a>, Corollary 4.2.3.2, Corollary 4.2.4.8, Lemma 4.7.3.12]</span>.
 </p>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
-<a id='x1-1002r2'></a>
-<a class="entry-heading-link" href="../../../entry/monadic-functor/index.html" aria-label="Definition 19.6.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 19.6.2.</span></a>  </span><span id='def:Monadic_Functor'></span>  A  right  adjoint  \(G\colon D \to C\)  is  <span class='ntx-Italic-tlf-t1-x-x-109'>monadic  </span>if  its  comparison  functor  \(K_G\colon D \to \LMod _T(C)\)  is  an  equivalence  of
-\(\infty \)-categories.
-</p>
-</div>
-
-<div class='newtheorem'>
-<p class='noindent'><span class='head'>
-<a id='x1-1003r3'></a>
-<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 19.6.3 </span>(Barr–Beck monadicity, <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-lurie2016HA" title="Lurie, Higher algebra">Lurie (2017)</a>, Theorem 4.7.3.5]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Barr_Beck_Monadicity'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(G\colon D \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a conservative functor admitting a left adjoint.
+<a id='x1-1005r5'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 17.4.5 </span>(Barr–Beck monadicity, <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-lurie2016HA" title="Lurie, Higher algebra">Lurie (2017)</a>, Theorem 4.7.3.5]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Barr_Beck_Monadicity'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(G\colon D \to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a conservative functor admitting a left adjoint.
 Assume that</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits geometric realizations of</span> \(G\)<span class='ntx-Italic-tlf-t1-x-x-109'>-split simplicial objects and that</span> \(G\) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves them. Then</span>
 \(G\) <span class='ntx-Italic-tlf-t1-x-x-109'>is monadic.</span>
 </p>
 </div>
 
-<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-algebras-and-modules-section-06-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-algebras-and-modules-section-06-3">
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-algebras-and-modules-section-04-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-algebras-and-modules-section-04-3">
 <p class='noindent'><span class='head'>
 
 
 
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Let \(T\) be the monad associated to the adjunction and let \(K_G\colon D \to \LMod _T(C)\) be the comparison functor. Apply
-<a class="source-reference" data-label="thm:Monadic_Comparison" href="../../../entry/comparison-theorem-over-a-base/index.html#thm:Monadic_Comparison">Theorem 21.7.3</a> to \(G\), the forgetful functor \(U_T\colon \LMod _T(C) \to C\), and \(K_G\). The identity \(U_TK_G \simeq G\) has mate \(F_T \to K_GF\), which is an isomorphism by the cited
-package. The same package supplies conservativity of \(U_T\) and the required geometric realizations on
-the Eilenberg–Moore side. All the hypotheses of the comparison theorem are therefore satisfied, so \(K_G\)
-is an equivalence.                                                                                                                                □
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof sketch.</span> </span>  Write \(F\dashv G\). The adjunction gives each object \(d\in D\) an augmented simplicial resolution whose
+terms are \((FG)^{n+1}d\). After applying \(G\), the unit of the adjunction supplies an extra degeneracy, so this resolution
+is \(G\)-split. The hypotheses and conservativity of \(G\) imply that its realization is \(d\). The corresponding
+free-module resolution in \(\LMod _{GF}(C)\) is also realized by its augmentation. The induced functor \(D\to \LMod _{GF}(C)\) identifies free
+objects and their mapping animae by the two free-forgetful adjunctions. Realizing the free resolutions
+recovers every \(GF\)-module from an object of \(D\); computing maps out of these realizations as limits gives
+full faithfulness. The coherent construction and the proof are given in <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-lurie2016HA" title="Lurie, Higher algebra">Lurie (2017)</a>, Theorem 4.7.3.5]</span>.                                           □
 </p>
 </div></div>
-<div class='newtheorem'>
-<p class='noindent'><span class='head'>
-<a id='x1-1004r4'></a>
-<a class="entry-heading-link" href="../../../entry/barr-beck-monogenic-morita/index.html" aria-label="Remark 19.6.4., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 19.6.4.</span></a>  </span><span id='rmk:Barr_Beck_Monogenic_Morita'></span>  Barr–Beck  gives  an  alternative  proof  of  the  underlying  equivalence  in  the
-monogenic Morita theorem, <a class="source-reference" data-label="thm:Monogenic_Morita" href="../../../entry/monogenic-morita/index.html#thm:Monogenic_Morita">Theorem 19.5.6</a>. In its notation, consider the adjunction \[ -\otimes \unit \colon \Sp \rightleftarrows C\noloc \hom _C(\unit ,-). \] The right adjoint is conservative
-because  \(\unit \)  is  a  generator.  It  preserves  all  colimits:  compactness  of  \(\unit \)  gives  preservation  of  filtered
-colimits, exactness gives preservation of finite colimits, and arbitrary coproducts are filtered colimits
-of  finite  coproducts.  Barr–Beck  therefore  identifies  \(C\)  with  the  Eilenberg–Moore  category  of  the
-associated monad on \(\Sp \).
-</p><p class='noindent'>If \(A=\hom _C(\unit ,\unit )\), the canonical natural transformation \[ -\otimes A\longrightarrow \hom _C(\unit ,-\otimes \unit ) \] is an isomorphism: both sides preserve colimits and it
-is  an  isomorphism  on  the  sphere  spectrum.  This  identification  respects  the  monad  structures  by
-the construction of multiplication on the endomorphism spectrum \(A\). Hence the Eilenberg–Moore
-category is \(\Mod _A\), and its comparison functor is the functor \(\Phi \) of <a class="source-reference" data-label="thm:Monogenic_Morita" href="../../../entry/monogenic-morita/index.html#thm:Monogenic_Morita">Theorem 19.5.6</a>. The proof given there additionally shows
-directly that this equivalence is symmetric monoidal.
-</p>
-</div>
-<p class='noindent'>The basic example is the forgetful functor from modules. The following result makes precise the idea that an
-\(A\)-module is an algebra for the operation of tensoring with \(A\).
+<p class='noindent'>For the free-module adjunction, the associated monad is \(A\otimes -\). The forgetful functor is always monadic:
 </p>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
-<a id='x1-1005r5'></a>
-
-
-<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 19.6.5 </span>(Monadicity of module categories)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Module_Category_Monadic'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(C\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  a  monoidal</span>  \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category,  let</span>  \(D\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be
+<a id='x1-1006r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 17.4.6 </span>(Monadicity of module categories)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='prop:Module_Category_Monadic'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(C\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  a  monoidal</span>  \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category,  let</span>  \(D\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be
 left-tensored over</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, and let</span> \(A \in \Alg (C)\)<span class='ntx-Italic-tlf-t1-x-x-109'>. The forgetful functor </span>\[ U_A\colon \LMod _A(D) \longrightarrow D \] <span class='ntx-Italic-tlf-t1-x-x-109'>is monadic, and its associated monad is</span> \(A \otimes -\colon D \to D\)<span class='ntx-Italic-tlf-t1-x-x-109'>, with unit
 and multiplication induced by those of</span> \(A\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
 </p>
 </div>
 
-<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-algebras-and-modules-section-06-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-algebras-and-modules-section-06-2">
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-algebras-and-modules-section-04-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-algebras-and-modules-section-04-2">
 <p class='noindent'><span class='head'>
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The left adjoint exists by <a class="source-reference" data-label="prop:Free_Module_Functor" href="../../../entry/free-module-functor/index.html#prop:Free_Module_Functor">Proposition 19.1.13</a>, and its composite with \(U_A\) is \(A \otimes -\). The forgetful functor is conservative
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The left adjoint exists by <a class="source-reference" data-label="prop:Free_Module_Functor" href="../../../entry/free-module-functor/index.html#prop:Free_Module_Functor">Proposition 17.1.14</a>, and its composite with \(U_A\) is \(A \otimes -\). The forgetful functor is conservative
 by <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-lurie2016HA" title="Lurie, Higher algebra">Lurie (2017)</a>, Corollary 4.2.3.2]</span>. Moreover, every \(U_A\)-split simplicial object admits a geometric realization which is preserved by \(U_A\);
-this is <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-lurie2016HA" title="Lurie, Higher algebra">Lurie (2017)</a>, Lemma 4.7.3.12]</span>. The claim follows from <a class="source-reference" data-label="thm:Barr_Beck_Monadicity" href="../../../entry/barr-beck-monadicity/index.html#thm:Barr_Beck_Monadicity">Theorem 19.6.3</a>.                                                                                                        □
+this is <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-lurie2016HA" title="Lurie, Higher algebra">Lurie (2017)</a>, Lemma 4.7.3.12]</span>. The claim follows from <a class="source-reference" data-label="thm:Barr_Beck_Monadicity" href="../../../entry/barr-beck-monadicity/index.html#thm:Barr_Beck_Monadicity">Theorem 17.4.5</a>.                                                                                                        □
 </p>
 </div></div>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
-<a id='x1-1006r6'></a>
-<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 19.6.6 </span>(Limits and colimits of Eilenberg–Moore categories)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cor:Limits_Colimits_Eilenberg_Moore'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(T\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a monad on an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>,
-let</span> \(U_T\colon \LMod _T(C)\to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be its forgetful functor, and let</span> \(I\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a small</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category.</span>
+
+
+<a id='x1-1007r7'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 17.4.7 </span>(Limits and colimits of Eilenberg–Moore categories)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cor:Limits_Colimits_Eilenberg_Moore'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(T\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a monad on an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span>
+\(C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, let</span> \(U_T\colon \LMod _T(C)\to C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be its forgetful functor, and let</span> \(I\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a small</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category.</span>
      </p><dl class='enumerate'><dt class='enumerate'>
   (1) </dt><dd class='enumerate'>
      <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits</span> \(I\)<span class='ntx-Italic-tlf-t1-x-x-109'>-indexed limits, then</span> \(U_T\) <span class='ntx-Italic-tlf-t1-x-x-109'>creates and preserves them.</span>
@@ -159,35 +183,55 @@ let</span> \(U_T\colon \LMod _T(C)\to C\) <span class='ntx-Italic-tlf-t1-x-x-109
      <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>admits</span> \(I\)<span class='ntx-Italic-tlf-t1-x-x-109'>-indexed colimits and</span> \(T\) <span class='ntx-Italic-tlf-t1-x-x-109'>preserves them, then</span> \(U_T\) <span class='ntx-Italic-tlf-t1-x-x-109'>creates and preserves them.</span></p></dd></dl>
 </div>
 
-
-
-
-<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-algebras-and-modules-section-06-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-algebras-and-modules-section-06-1">
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-algebras-and-modules-section-04-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-algebras-and-modules-section-04-1">
 <p class='noindent'><span class='head'>
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> For (1), apply <a class="source-reference" data-label="cor:limits_colimits_modules" href="../../../entry/limits-colimits-modules/index.html#cor:limits_colimits_modules">Corollary 19.1.17</a>(1) to the evaluation left tensoring of \(C\) over \(\Fun (C,C)\).
-</p><p class='noindent'>Part (2) follows from <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-lurie2016HA" title="Lurie, Higher algebra">Lurie (2017)</a>, Proposition 4.2.3.4]</span>, applied to the evaluation left tensoring of \(C\) over \(\Fun (C,C)\) and the algebra \(T\in \Alg (\Fun (C,C))\).                 □
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> For (1), apply <a class="source-reference" data-label="prop:Limits_And_Colimits_Modules" href="../../../entry/limits-colimits-modules/index.html#prop:Limits_And_Colimits_Modules">Proposition 17.1.16</a>(1) to the evaluation left tensoring of \(C\) over \(\Fun (C,C)\).
+</p><p class='noindent'>For (2), restrict the evaluation left tensoring to the full subcategory of \(\Fun (C,C)\) spanned by the endofunctors
+preserving \(I\)-indexed colimits. This subcategory contains the identity and is closed under composition,
+so it is monoidal. Since \(T\) preserves these colimits, its algebra structure belongs to this full monoidal
+subcategory. The \(\infty \)-category of \(T\)-modules is unchanged by this restriction, and every object of the
+acting \(\infty \)-category now preserves \(I\)-indexed colimits. Thus <a class="source-reference" data-label="prop:Limits_And_Colimits_Modules" href="../../../entry/limits-colimits-modules/index.html#prop:Limits_And_Colimits_Modules">Proposition 17.1.16</a>(2) applies.                                                 □
 </p>
 </div></div>
-<p class='noindent'>Applied to the monad \(A\otimes -\) of <a class="source-reference" data-label="prop:Module_Category_Monadic" href="../../../entry/module-category-monadic/index.html#prop:Module_Category_Monadic">Proposition 19.6.5</a>, part (2) shows that the forgetful functor \(\LMod _A(D)\to D\) creates any colimits which exist in \(D\) and
-are preserved by \(A\otimes -\). For a fixed algebra this sharpens <a class="source-reference" data-label="cor:limits_colimits_modules" href="../../../entry/limits-colimits-modules/index.html#cor:limits_colimits_modules">Corollary 19.1.17</a>(2), whose more uniform hypothesis ensures the same
+<p class='noindent'>Applied to the monad \(A\otimes -\) of <a class="source-reference" data-label="prop:Module_Category_Monadic" href="../../../entry/module-category-monadic/index.html#prop:Module_Category_Monadic">Proposition 17.4.6</a>, part (2) shows that the forgetful functor \(\LMod _A(D)\to D\) creates any colimits which exist in \(D\) and
+are preserved by \(A\otimes -\). For a fixed algebra this sharpens <a class="source-reference" data-label="prop:Limits_And_Colimits_Modules" href="../../../entry/limits-colimits-modules/index.html#prop:Limits_And_Colimits_Modules">Proposition 17.1.16</a>(2), whose more uniform hypothesis ensures the same
 conclusion simultaneously for every algebra in \(C\).
+</p><p class='noindent'><a id='likesection.1'></a><a id='x1-1010x17.4'></a>
+
+
 </p>
-<div class='newtheorem'>
+<h3 class='likesectionHead' id='exercises'><a id='x1-2000'></a>Exercises</h3>
+<p id='exercises1'><a id='Q1-1-3'></a>
+</p><div class='newtheorem'>
 <p class='noindent'><span class='head'>
-<a id='x1-1009r7'></a>
-<a class="entry-heading-link" href="../../../entry/role-of-cut-constructions/index.html" aria-label="Remark 19.6.7., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 19.6.7.</span></a>  </span><span id='rmk:Role_Of_Cut_Constructions'></span>  The  monadic  description  does  not  replace  the  cut  constructions  of  <a class="source-reference" data-label="sec:simplicial_model" href="../simplicial-models-for-algebras-and-modules/index.html#sec:simplicial_model">Section 19.3</a>.  They
-provide   the   common   simplicial   language   for   the   two-sided   bar   construction   and   for   the
-endomorphism-category construction of <a class="source-reference" data-label="sec:Endomorphism_Algebras" href="../endomorphism-algebras/index.html#sec:Endomorphism_Algebras">Section 19.4</a>.
-</p>
+<a id='x1-2001r1'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 17.1 </span>(Free modules)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(C\) be a presentably monoidal \(\infty \)-category and let \(A\in \Alg (C)\).
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'>Use <a class="source-reference" data-label="prop:Free_Module_Functor" href="../../../entry/free-module-functor/index.html#prop:Free_Module_Functor">Proposition 17.1.14</a> to show that the free-module functor preserves coproducts, and compute the free \(A\)-module
+     on a finite coproduct.
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'>Specialize to \(C=\Sp \) and identify the free \(R\)-module on \(\S [n]\) for an associative ring spectrum \(R\). Deduce that
+     \(\pi _0\Hom _{\LMod _R}(R[n],M)\cong \pi _n(M)\) for every left \(R\)-module \(M\).</p></dd></dl>
 </div>
 
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-2004r2'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Exercise 17.2 </span>(Transitivity of extension of scalars)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span> Let \(A\to B\to C\) be morphisms of associative algebras in a
+presentably monoidal \(\infty \)-category. For a left \(A\)-module \(M\), construct a natural isomorphism \[ C\otimes _B(B\otimes _AM)\simeq C\otimes _AM. \] Check that it
+identifies the composite of the two extension-of-scalars adjunctions with extension of scalars along
+\(A\to C\).
+</p>
+</div>
 
 
 </div>
 <footer class="edition-footer">
-  <span>Last updated 6 November 2026</span>
+  <span>Last updated 19 November 2026</span>
   <a href="/notes/stable-homotopy-higher-algebra.pdf">PDF</a>
-  <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Section%2019.6%3A%20Monads%20and%20monadicity&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fsection%2Falgebras-and-modules%2Fmonads-and-monadicity%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
+  <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Section%2017.4%3A%20Monads%20and%20monadicity&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fsection%2Falgebras-and-modules%2Fmonads-and-monadicity%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
 </footer></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
     <div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
     <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
@@ -201,22 +245,24 @@ endomorphism-category construction of <a class="source-reference" data-label="se
       <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
     </button></h2>
     <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
-      <ol class="context-entry-list"><li><a href="../../../chapter/operads-the-heuristics/index.html"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../../../chapter/span-categories/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../../../chapter/basics-on-infinity-operads/index.html"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../../../chapter/cartesian-and-cocartesian-monoidal-structures/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../../../chapter/day-convolution-and-the-tensor-product-of-spectra/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="../../../chapter/the-envelope-of-an-infinity-operad/index.html"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../../../chapter/operadic-day-convolution-and-stabilization/index.html"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Operadic Day convolution and stabilization</span></a></li><li><a href="../../../chapter/algebras-and-modules/index.html" aria-current="page"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
+      <ol class="context-entry-list"><li><a href="../../../chapter/operads-the-heuristics/index.html"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../../../chapter/span-categories/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../../../chapter/basics-on-infinity-operads/index.html"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../../../chapter/cartesian-and-cocartesian-monoidal-structures/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../../../chapter/day-convolution-and-the-tensor-product-of-spectra/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="../../../chapter/algebras-and-modules/index.html" aria-current="page"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../../../chapter/tensor-products-and-morita-theory/index.html"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Tensor products of ∞-categories and Morita theory</span></a></li><li><a href="../../../chapter/the-envelope-of-an-infinity-operad/index.html"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../../../chapter/operadic-day-convolution-and-stabilization/index.html"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Operadic stabilization</span></a></li><li><a href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html"><span class="context-entry-heading">Chapter 21</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
     </nav>
   </section><section class="contents-ledger" data-contents-ledger data-open="false">
     <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
       <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
     </button></h2>
     <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
-      <ol class="context-entry-list"><li><a href="../foundations/index.html"><span class="context-entry-heading">Section 19.1</span><span class="context-entry-title">Foundations</span></a></li><li><a href="../relative-tensor-products-and-change-of-algebras/index.html"><span class="context-entry-heading">Section 19.2</span><span class="context-entry-title">Relative tensor products and change of algebras</span></a></li><li><a href="../simplicial-models-for-algebras-and-modules/index.html"><span class="context-entry-heading">Section 19.3</span><span class="context-entry-title">Simplicial models for algebras and modules</span></a></li><li><a href="../endomorphism-algebras/index.html"><span class="context-entry-heading">Section 19.4</span><span class="context-entry-title">Endomorphism algebras</span></a></li><li><a href="../stable-and-spectral-consequences/index.html"><span class="context-entry-heading">Section 19.5</span><span class="context-entry-title">Stable and spectral consequences</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 19.6</span><span class="context-entry-title">Monads and monadicity</span></a></li><li><a href="../application-connective-complex-k-theory/index.html"><span class="context-entry-heading">Section 19.7</span><span class="context-entry-title">Application: connective complex K-theory</span></a></li></ol>
+      <ol class="context-entry-list"><li><a href="../algebras-and-left-modules/index.html"><span class="context-entry-heading">Section 17.1</span><span class="context-entry-title">Algebras and left modules</span></a></li><li><a href="../relative-tensor-products-and-change-of-algebras/index.html"><span class="context-entry-heading">Section 17.2</span><span class="context-entry-title">Relative tensor products and change of algebras</span></a></li><li><a href="../endomorphism-algebras/index.html"><span class="context-entry-heading">Section 17.3</span><span class="context-entry-title">Endomorphism algebras</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 17.4</span><span class="context-entry-title">Monads and monadicity</span></a></li></ol>
     </nav>
   </section><section class="contents-ledger" data-contents-ledger data-open="true">
     <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
       <span>In this section</span><span class="contents-chevron" aria-hidden="true"></span>
     </button></h2>
     <nav class="contents" id="contents-section-contents" aria-label="In this section" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
-      <ol class="context-entry-list"><li><a href="#thm:Barr_Beck_Monadicity"><span class="context-entry-heading">Theorem 19.6.3</span><span class="context-entry-title">Barr–Beck monadicity</span></a></li><li><a href="#prop:Module_Category_Monadic"><span class="context-entry-heading">Proposition 19.6.5</span><span class="context-entry-title">Monadicity of module categories</span></a></li><li><a href="#cor:Limits_Colimits_Eilenberg_Moore"><span class="context-entry-heading">Corollary 19.6.6</span><span class="context-entry-title">Limits and colimits of Eilenberg–Moore categories</span></a></li></ol>
+      <ol class="context-entry-list"><li><a href="#lem:Split_Simplicial_Objects_Absolute"><span class="context-entry-heading">Lemma 17.4.4</span><span class="context-entry-title">Absolute realization of split simplicial objects</span></a></li><li><a href="#thm:Barr_Beck_Monadicity"><span class="context-entry-heading">Theorem 17.4.5</span><span class="context-entry-title">Barr–Beck monadicity</span></a></li><li><a href="#prop:Module_Category_Monadic"><span class="context-entry-heading">Proposition 17.4.6</span><span class="context-entry-title">Monadicity of module categories</span></a></li><li><a href="#cor:Limits_Colimits_Eilenberg_Moore"><span class="context-entry-heading">Proposition 17.4.7</span><span class="context-entry-title">Limits and colimits of Eilenberg–Moore categories</span></a></li></ol>
     </nav>
   </section></div>
-  </aside></main>
+  </aside><aside class="publication-fragment-notice" id="rmk:Barr_Beck_Monogenic_Morita"><strong>Retired fragment.</strong> The November 2026 revision moved or relabeled this item. It now appears at <a href="../../tensor-products-and-morita-theory/spectral-morita-theory-and-eilenberg-watts/#rmk:Barr_Beck_Monogenic_Morita">this address</a>.</aside>
+<aside class="publication-fragment-notice" id="rmk:Role_Of_Cut_Constructions"><strong>Retired fragment.</strong> The November 2026 revision removed this label or standalone proof anchor.</aside>
+</main>
 </body></html>

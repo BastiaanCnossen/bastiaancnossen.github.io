@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chapter 20: Monoidal Dwyer–Kan localizations and derived categories | Stable Homotopy Theory and Higher Algebra</title>
+<title>Chapter 21: Monoidal Dwyer–Kan localizations and derived categories | Stable Homotopy Theory and Higher Algebra</title>
 <meta name="description" content="Monoidal Dwyer–Kan localization and the construction of symmetric monoidal derived ∞-categories.">
 <link rel="canonical" href="https://bastiaancnossen.com/notes/stable-homotopy-higher-algebra/chapter/monoidal-dwyer-kan-localizations-and-derived-categories/">
 <link rel="stylesheet" href="../../_assets/reader-shell-v1/style.css">
@@ -32,52 +32,56 @@
 <header class="site-header work-header">
 <div class="reading-header-row"><div class="reader-heading">
       <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
-      <p class="eyebrow"><a href="../../index.html">Stable Homotopy Theory and Higher Algebra</a> · <a href="../../part/operads-and-higher-algebra/index.html">Part II</a> · Chapter 20</p>
+      <p class="eyebrow"><a href="../../index.html">Stable Homotopy Theory and Higher Algebra</a> · <a href="../../part/operads-and-higher-algebra/index.html">Part II</a> · Chapter 21</p>
       <h1>Monoidal Dwyer–Kan localizations and derived categories</h1>
-    </div><nav class="page-turns" data-reading-navigation aria-label="Reading navigation"><a rel="prev" data-step="prev-chapter" href="../algebras-and-modules/index.html" title="Algebras and modules" aria-label="Previous chapter: Chapter 19, Algebras and modules"><span class="turn-direction">← Previous chapter</span><span class="turn-target">Chapter 19</span></a>
-<a rel="next" data-step="next-chapter" href="../adjunctions/index.html" title="Adjunctions" aria-label="Next chapter: Chapter 21, Adjunctions"><span class="turn-direction">→ Next chapter</span><span class="turn-target">Chapter 21</span></a>
-<a rel="prev" data-step="prev-section" href="../../section/algebras-and-modules/application-connective-complex-k-theory/index.html" title="Application: connective complex K-theory" aria-label="Previous section: Section 19.7, Application: connective complex K-theory"><span class="turn-direction">← Previous section</span><span class="turn-target">Section 19.7</span></a>
-<a rel="next" data-step="next-section" href="../../section/monoidal-dwyer-kan-localizations-and-derived-categories/monoidal-dwyer-kan-localizations/index.html" title="Monoidal Dwyer–Kan localizations" aria-label="Next section: Section 20.1, Monoidal Dwyer–Kan localizations"><span class="turn-direction">→ Next section</span><span class="turn-target">Section 20.1</span></a></nav></div>
+    </div><nav class="page-turns" data-reading-navigation aria-label="Reading navigation"><a rel="prev" data-step="prev-chapter" href="../operadic-day-convolution-and-stabilization/index.html" title="Operadic stabilization" aria-label="Previous chapter: Chapter 20, Operadic stabilization"><span class="turn-direction">← Previous chapter</span><span class="turn-target">Chapter 20</span></a>
+<a rel="next" data-step="next-chapter" href="../adjunctions/index.html" title="Adjunctions" aria-label="Next chapter: Chapter 22, Adjunctions"><span class="turn-direction">→ Next chapter</span><span class="turn-target">Chapter 22</span></a>
+<a rel="prev" data-step="prev-section" href="../../section/operadic-day-convolution-and-stabilization/pointing-and-additivization-online-only/index.html" title="Pointing and additivization (online only)" aria-label="Previous section: Section 20.4, Pointing and additivization (online only)"><span class="turn-direction">← Previous section</span><span class="turn-target">Section 20.4</span></a>
+<a rel="next" data-step="next-section" href="../../section/monoidal-dwyer-kan-localizations-and-derived-categories/monoidal-dwyer-kan-localizations/index.html" title="Monoidal Dwyer–Kan localizations" aria-label="Next section: Section 21.1, Monoidal Dwyer–Kan localizations"><span class="turn-direction">→ Next section</span><span class="turn-target">Section 21.1</span></a></nav></div>
 </header>
 <main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
       <span aria-hidden="true">☰</span> Navigation
     </button>
 <article class="notes-page chapter-landing"><div class="chapter-introduction">
-<p class='noindent' id='chap:Monoidal_Dwyer_Kan_Localizations'>In <a class="source-reference" data-label="sec:Monoidal_Subcategories_Monoidal_Localizations" href="../../section/basics-on-infinity-operads/monoidal-subcategories-and-monoidal-bousfield-localizations/index.html#sec:Monoidal_Subcategories_Monoidal_Localizations">Section 14.5</a> we treated localizations that are <span class='ntx-Italic-tlf-t1-x-x-109'>reflective</span>: the local objects form a full subcategory of \(C\), and the monoidal
-structure is transported along the reflector. Derived categories are not presented in this way. The \(\infty \)-category \(\D (R)\)
-arises from the \(1\)-category \(\Ch (R)\) of chain complexes by inverting the quasi-isomorphisms, which is a Dwyer–Kan
-localization, and the reflective criteria do not apply to it. Supplying the missing monoidal statement is the
-purpose of this chapter.
-</p><p class='noindent'>The difficulty is that a symmetric monoidal structure on \(C\) is not extra structure on \(C\) alone, but a functor \(C^{\otimes } \to \Span (\Fin )\), so
-inverting a class \(W\) of morphisms of \(C\) is not by itself enough to say what should happen to the tensor product.
-The remedy is to invert morphisms upstairs as well: we localize \(C^{\otimes }\) at a class \(W^{\otimes }\) built from \(W\), and give conditions
-under which the result is again a symmetric monoidal \(\infty \)-category with the expected universal
-property.
-</p><p class='noindent'>When tensoring with any object preserves \(W\), the tensor product descends directly to the localization (<a class="source-reference" data-label="prop:Monoidal_Localization_Strict" href="../../entry/monoidal-localization-strict/index.html#prop:Monoidal_Localization_Strict">Proposition 20.1.1</a>). For
-chain complexes, tensoring with an arbitrary complex need not preserve quasi-isomorphisms. The more
-general <a class="source-reference" data-label="thm:Monoidal_Localization_Derivable" href="../../entry/monoidal-localization-of-derivable-functors/index.html#thm:Monoidal_Localization_Derivable">Theorem 20.1.6</a> only requires the monoidal structure to be <span class='ntx-Italic-tlf-t1-x-x-109'>left derivable</span>, following <span class='citation'>[<a class="citation-item" href="../../references/index.html#ref-NikolausScholze2018Cyclic" title="Nikolaus and Scholze, On topological cyclic homology">Nikolaus and Scholze (2018)</a>, Theorem A.7]</span>. Applied to unbounded
-chain complexes, it gives both the derived tensor product on \(\D (R)\) and a lax symmetric monoidal
-refinement of the localization \(\Ch (R)\to \D (R)\). This tensor product preserves colimits. Together with the compact
-presentation of \(\D (R)\), it supplies the input for the equivalence with Eilenberg–MacLane modules in
-<a class="source-reference" data-label="cor:Derived_Category_As_HR_Modules" href="../../entry/derived-categories-as-eilenberg-maclane-module-categories/index.html#cor:Derived_Category_As_HR_Modules">Corollary 8.2.4</a>.
+<p class='noindent' id='chap:Monoidal_Dwyer_Kan_Localizations'>Let \(R\) be a commutative ring and let \(A\) be a differential graded \(R\)-algebra with multiplication \(\mu \). How does its
+multiplication give a multiplication in the derived category? Writing \(\gamma \colon \Ch (R)\to \D (R)\) for the localization functor, we would
+like to form the composite \[ \gamma A\otimes _R^{\bL }\gamma A \longrightarrow \gamma (A\otimes _R A) \xrightarrow {\gamma (\mu )}\gamma A. \] For \(A\) bounded below, we can describe the first map using <a class="source-reference" data-label="def:Derived_Tensor_Product" href="../../entry/derived-tensor-product/index.html#def:Derived_Tensor_Product">Definition 6.6.25</a>. Choose a projective
+resolution \(P\to A\). Then \(P\otimes _R P\) represents the derived tensor product, and the resolution map induces \(P\otimes _R P\to A\otimes _R A\). We will show that
+these maps, for arbitrary pairs of complexes, equip \(\gamma \) with a lax symmetric monoidal structure. It then follows
+that the displayed multiplication makes \(\gamma A\) an associative algebra in \(\D (R)\), and a commutative algebra if \(A\) is
+commutative (<a class="source-reference" data-label="cor:Lax_Monoidal_Derived_Localization" href="../../entry/lax-monoidal-derived-localization/index.html#cor:Lax_Monoidal_Derived_Localization">Corollary 21.2.4</a>).
+</p><p class='noindent'>More generally, suppose we wish to invert a class of morphisms \(W\) in a symmetric monoidal \(\infty \)-category \(C\). If
+tensoring with any object preserves \(W\), the tensor product descends to \(C[W^{-1}]\) and the localization functor is
+symmetric monoidal (<a class="source-reference" data-label="prop:Monoidal_Localization_Strict" href="../../entry/monoidal-localization-strict/index.html#prop:Monoidal_Localization_Strict">Proposition 21.1.1</a>). For chain complexes this hypothesis can fail even when tensoring with a module
+concentrated in degree zero, as we saw for \(\Z /2\) in <a class="source-reference" data-label="ex:Tensor_Not_Preserve_QI" href="../../entry/tensor-products-do-not-preserve-quasi-isomorphisms/index.html#ex:Tensor_Not_Preserve_QI">Example 6.6.24</a>. Following <span class='citation'><a class="citation-item" href="../../references/index.html#ref-NikolausScholze2018Cyclic" title="Nikolaus and Scholze, On topological cyclic homology">Nikolaus and Scholze (2018)</a>, Appendix A</span>, we instead invert the tuples of weak
+equivalences in each fiber of \(C^\otimes \to \Span (\Fin )\). When the tensor products admit absolute left derived functors compatible
+with composition, these derived functors give the transport along spans in the localized \(\infty \)-category. In this
+way we obtain both the symmetric monoidal structure on \(C[W^{-1}]\) and the lax symmetric monoidal localization
+functor to it (<a class="source-reference" data-label="thm:Monoidal_Localization_Derivable" href="../../entry/monoidal-localization-of-derivable-functors/index.html#thm:Monoidal_Localization_Derivable">Theorem 21.1.6</a>).
+</p><p class='noindent'>We apply this construction to unbounded chain complexes. The resulting tensor product on \(\D (R)\) extends the
+bounded below derived tensor product of <a class="source-reference" data-label="chap:Homological_Algebra" href="../homological-algebra/index.html#chap:Homological_Algebra">Chapter 6</a> and preserves colimits separately in each variable (<a class="source-reference" data-label="prop:Symmetric_Monoidal_Derived_Category" href="../../entry/symmetric-monoidal-derived-category/index.html#prop:Symmetric_Monoidal_Derived_Category">Proposition 21.2.2</a>, <a class="source-reference" data-label="prop:Bounded_Below_Derived_Category_Monoidal_Comparison" href="../../entry/bounded-below-derived-category-monoidal-comparison/index.html#prop:Bounded_Below_Derived_Category_Monoidal_Comparison">Proposition 21.2.3</a>). Its unit \(R[0]\) is a
+compact generator. The compact objects are the perfect complexes, and we will see that their
+Ind-completion recovers \(\D (R)\) together with its tensor product (<a class="source-reference" data-label="cor:Derived_Category_Ind_Perfect" href="../../entry/derived-category-ind-perfect/index.html#cor:Derived_Category_Ind_Perfect">Corollary 21.2.6</a>). These are the facts about \(\D (R)\) used in <a class="source-reference" data-label="cor:Derived_Category_As_HR_Modules" href="../../entry/derived-categories-as-eilenberg-maclane-module-categories/index.html#cor:Derived_Category_As_HR_Modules">Corollary 8.2.4</a> to identify it,
+by Morita theory, with the \(\infty \)-category of modules over the Eilenberg–MacLane ring spectrum of
+\(R\).
 </p>
 
 
 </div><section class="available-sections" aria-labelledby="chapter-sections-heading">
     <h2 id="chapter-sections-heading">Sections</h2>
     <div class="section-card-grid"><article class="section-card">
-      <p class="section-card-meta">Section 20.1</p>
+      <p class="section-card-meta">Section 21.1</p>
       <h3><a href="../../section/monoidal-dwyer-kan-localizations-and-derived-categories/monoidal-dwyer-kan-localizations/index.html">Monoidal Dwyer–Kan localizations</a></h3>
-      <p>Monoidal localization through fiberwise localization of cocartesian fibrations.</p>
+      <p>Let <span class="math-inline">\(C\)</span> be a symmetric monoidal <span class="math-inline">\(\infty \)</span>-category and let <span class="math-inline">\(W\)</span> be a class of morphisms in <span class="math-inline">\(C\)</span>.</p>
     </article><article class="section-card">
-      <p class="section-card-meta">Section 20.2</p>
+      <p class="section-card-meta">Section 21.2</p>
       <h3><a href="../../section/monoidal-dwyer-kan-localizations-and-derived-categories/the-symmetric-monoidal-derived-category/index.html">The symmetric monoidal derived category</a></h3>
-      <p>The symmetric monoidal derived category and its perfect objects.</p>
+      <p>### Part III: Background on ∞-category theory.</p>
     </article></div></section>
 <footer class="edition-footer">
-  <span>Last updated 6 November 2026</span>
+  <span>Last updated 19 November 2026</span>
   <a href="/notes/stable-homotopy-higher-algebra.pdf">PDF</a>
-  <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Chapter%2020%3A%20Monoidal%20Dwyer%E2%80%93Kan%20localizations%20and%20derived%20categories&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fchapter%2Fmonoidal-dwyer-kan-localizations-and-derived-categories%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
+  <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Chapter%2021%3A%20Monoidal%20Dwyer%E2%80%93Kan%20localizations%20and%20derived%20categories&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fchapter%2Fmonoidal-dwyer-kan-localizations-and-derived-categories%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
 </footer></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Chapter navigation">
     <div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
     <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
@@ -91,14 +95,14 @@ presentation of \(\D (R)\), it supplies the input for the equivalence with Eilen
       <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
     </button></h2>
     <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
-      <ol class="context-entry-list"><li><a href="../operads-the-heuristics/index.html"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../span-categories/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../basics-on-infinity-operads/index.html"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../cartesian-and-cocartesian-monoidal-structures/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../day-convolution-and-the-tensor-product-of-spectra/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="../the-envelope-of-an-infinity-operad/index.html"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../operadic-day-convolution-and-stabilization/index.html"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Operadic Day convolution and stabilization</span></a></li><li><a href="../algebras-and-modules/index.html"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
+      <ol class="context-entry-list"><li><a href="../operads-the-heuristics/index.html"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../span-categories/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../basics-on-infinity-operads/index.html"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../cartesian-and-cocartesian-monoidal-structures/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../day-convolution-and-the-tensor-product-of-spectra/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="../algebras-and-modules/index.html"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../tensor-products-and-morita-theory/index.html"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Tensor products of ∞-categories and Morita theory</span></a></li><li><a href="../the-envelope-of-an-infinity-operad/index.html"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../operadic-day-convolution-and-stabilization/index.html"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Operadic stabilization</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Chapter 21</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
     </nav>
   </section><section class="contents-ledger" data-contents-ledger data-open="true">
     <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="true">
       <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
     </button></h2>
     <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="false" data-collapsed="false">
-      <ol class="context-entry-list"><li><a href="../../section/monoidal-dwyer-kan-localizations-and-derived-categories/monoidal-dwyer-kan-localizations/index.html"><span class="context-entry-heading">Section 20.1</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations</span></a></li><li><a href="../../section/monoidal-dwyer-kan-localizations-and-derived-categories/the-symmetric-monoidal-derived-category/index.html"><span class="context-entry-heading">Section 20.2</span><span class="context-entry-title">The symmetric monoidal derived category</span></a></li></ol>
+      <ol class="context-entry-list"><li><a href="../../section/monoidal-dwyer-kan-localizations-and-derived-categories/monoidal-dwyer-kan-localizations/index.html"><span class="context-entry-heading">Section 21.1</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations</span></a></li><li><a href="../../section/monoidal-dwyer-kan-localizations-and-derived-categories/the-symmetric-monoidal-derived-category/index.html"><span class="context-entry-heading">Section 21.2</span><span class="context-entry-title">The symmetric monoidal derived category</span></a></li></ol>
     </nav>
   </section></div>
   </aside></main>

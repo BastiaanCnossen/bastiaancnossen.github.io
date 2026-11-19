@@ -1,169 +1,31 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Section 18.3: Day convolution into arbitrary operads | Stable Homotopy Theory and Higher Algebra</title>
-<meta name="description" content="Day convolution into arbitrary operads. A section of Chapter 18, Operadic Day convolution and stabilization, in Stable Homotopy Theory and Higher Algebra.">
-<link rel="canonical" href="https://bastiaancnossen.com/notes/stable-homotopy-higher-algebra/section/operadic-day-convolution-and-stabilization/day-convolution-into-arbitrary-operads/">
-<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
-<link rel="stylesheet" href="../../../_assets/style.css">
-<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"},"load":["[tex]/mathtools","[tex]/boldsymbol"]},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools","boldsymbol"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Cc":"\\mathcal{C}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
-<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
-<script defer src="../../../_assets/reader-shell-v1/reader.js" data-notes-reader="stable-homotopy-higher-algebra" data-reader-revision="reader-shell-v1-a276d9dd73bb82aa" data-legacy-navigation="sht-ha-context-navigation-visible-v1" data-legacy-contents="sht-ha-contents-collapsed-v3"></script>
-<script defer src="../../../_assets/script.js"></script></head>
-<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
-      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
-        <span class="utility-icon" aria-hidden="true">⚙</span>
-      </button>
-      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
-        <h2 id="display-settings-heading">Proof display</h2>
-        <div class="preset-group" role="group" aria-label="Default proof display">
-          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
-          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
-        </div>
-        <h2>Page layout</h2>
-        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
-      </section>
-    </div><div class="utility-item manuscript-item">
-      <a class="utility-trigger manuscript-trigger" href="/notes/stable-homotopy-higher-algebra.pdf" title="View the entire manuscript as a PDF">
-        <span class="utility-expansion">View the entire manuscript as a PDF</span>
-        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
-        <span class="sr-only">View the entire manuscript as a PDF</span>
-      </a>
-    </div></aside>
-<header class="site-header work-header">
-<div class="reading-header-row"><div class="reader-heading">
-      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
-      <p class="eyebrow"><a href="../../../index.html">Stable Homotopy Theory and Higher Algebra</a> · <a href="../../../part/operads-and-higher-algebra/index.html">Part II</a> · <a href="../../../chapter/operadic-day-convolution-and-stabilization/index.html">Chapter 18</a> · Section 18.3</p>
-      <h1>Day convolution into arbitrary operads</h1>
-    </div><nav class="page-turns" data-reading-navigation aria-label="Reading navigation"><a rel="prev" data-step="prev-chapter" href="../../../chapter/the-envelope-of-an-infinity-operad/index.html" title="The envelope of an ∞-operad" aria-label="Previous chapter: Chapter 17, The envelope of an ∞-operad"><span class="turn-direction">← Previous chapter</span><span class="turn-target">Chapter 17</span></a>
-<a rel="next" data-step="next-chapter" href="../../../chapter/algebras-and-modules/index.html" title="Algebras and modules" aria-label="Next chapter: Chapter 19, Algebras and modules"><span class="turn-direction">→ Next chapter</span><span class="turn-target">Chapter 19</span></a>
-<a rel="prev" data-step="prev-section" href="../the-multiplicative-yoneda-embedding/index.html" title="The multiplicative Yoneda embedding" aria-label="Previous section: Section 18.2, The multiplicative Yoneda embedding"><span class="turn-direction">← Previous section</span><span class="turn-target">Section 18.2</span></a>
-<a rel="next" data-step="next-section" href="../stabilization-of-operads/index.html" title="Stabilization of ∞-operads" aria-label="Next section: Section 18.4, Stabilization of ∞-operads"><span class="turn-direction">→ Next section</span><span class="turn-target">Section 18.4</span></a></nav></div>
-</header>
-<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
-      <span aria-hidden="true">☰</span> Navigation
-    </button>
-<article class="notes-page section-page"><div class="continuous-section">
-<p class='noindent' id='sec:Day_Convolution_Arbitrary_Operads'>To construct Day convolution with target \(\Oo \), we embed \(\Oo \) into the multimorphism operad of its envelope and
-restrict to the functors valued in \(\Oo \). We first verify that this restriction has the required universal
-property.
-</p>
-<div class='newtheorem'>
-<p class='noindent'><span class='head'>
-<a id='x1-1001r1'></a>
-<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 18.3.1.</span>  </span><span id='lem:Full_Suboperad_Mapping_Property'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(i\colon \Oo \hookrightarrow \Qq \) <span class='ntx-Italic-tlf-t1-x-x-109'>be a full suboperad. For every</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operad</span> \(\Rr \)<span class='ntx-Italic-tlf-t1-x-x-109'>, the induced functor </span>\[ \Fun _{\Op _{\infty }}(\Rr ,\Oo ) \to \Fun _{\Op _{\infty }}(\Rr ,\Qq ) \] <span class='ntx-Italic-tlf-t1-x-x-109'>is fully faithful.
-Its essential image consists of those operad maps</span> \(\Rr \to \Qq \) <span class='ntx-Italic-tlf-t1-x-x-109'>whose colors land in</span> \(\Oo _{\lra {1}} \subseteq \Qq _{\lra {1}}\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
-</p>
-</div>
-
-<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-operadic-day-convolution-and-stabilization-section-03-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-operadic-day-convolution-and-stabilization-section-03-4">
-<p class='noindent'><span class='head'>
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> This is clear from the fact that the total category \(\Oo ^{\otimes }\) is the full subcategory of \(\Qq ^{\otimes }\) spanned by those
-finite tuples whose entries are colors of \(\Oo \).                                                                                            □
-</p>
-</div></div>
-<div class='newtheorem'>
-<p class='noindent'><span class='head'>
-<a id='x1-1002r2'></a>
-
-
-<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 18.3.2.</span>  </span><span id='lem:Day_Convolution_Full_Suboperads'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(i\colon \Oo \hookrightarrow \Qq \) <span class='ntx-Italic-tlf-t1-x-x-109'>be a full suboperad, let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category, and assume that</span>
-\(\oDay (\Mm _C,\Qq )\) <span class='ntx-Italic-tlf-t1-x-x-109'>exists. Let </span>\[ \Ww \subseteq \oDay (\Mm _C,\Qq ) \] <span class='ntx-Italic-tlf-t1-x-x-109'>be the full suboperad spanned by those functors</span> \(C \to \Qq _{\lra {1}}\) <span class='ntx-Italic-tlf-t1-x-x-109'>whose values lie in</span> \(\Oo _{\lra {1}}\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then</span> \(\Ww \) <span class='ntx-Italic-tlf-t1-x-x-109'>is a Day
-convolution operad</span> \(\oDay (\Mm _C,\Oo )\)<span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
-</p>
-</div>
-
-<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-operadic-day-convolution-and-stabilization-section-03-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-operadic-day-convolution-and-stabilization-section-03-3">
-<p class='noindent'><span class='head'>
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The evaluation map for \(\oDay (\Mm _C,\Qq )\) restricts to a map \[ \Ww \times \Mm _C \to \Oo , \] because on colors it sends a pair \((F,c)\) to \(F(c)\). We verify
-the defining universal property. Let \(\Rr \) be an arbitrary \(\infty \)-operad. By <a class="source-reference" data-label="lem:Full_Suboperad_Mapping_Property" href="../../../entry/full-suboperad-mapping-property/index.html#lem:Full_Suboperad_Mapping_Property">Lemma 18.3.1</a>, maps \(\Rr \to \Ww \) are precisely maps \(\Rr \to \oDay (\Mm _C,\Qq )\) whose
-color functors land in \(\Oo _{\lra {1}}\). Transposing along the Day convolution adjunction for \(\Qq \), these correspond to
-maps \[ \Rr \times \Mm _C \to \Qq \] whose colors land in \(\Oo _{\lra {1}}\). Applying <a class="source-reference" data-label="lem:Full_Suboperad_Mapping_Property" href="../../../entry/full-suboperad-mapping-property/index.html#lem:Full_Suboperad_Mapping_Property">Lemma 18.3.1</a> again, this is the same as giving a map \(\Rr \times \Mm _C \to \Oo \). This identification
-is natural in \(\Rr \), hence \(\Ww \) satisfies the universal property of \(\oDay (\Mm _C,\Oo )\).                                                                    □
-</p>
-</div></div>
-<div class='newtheorem'>
-<p class='noindent'><span class='head'>
-<a id='x1-1003r3'></a>
-<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 18.3.3.</span>  </span><span id='thm:Existence_Day_Convolution_Operad'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category. For every</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operad</span> \(\Oo \)<span class='ntx-Italic-tlf-t1-x-x-109'>, the Day convolution
-operad</span> \(\oDay (\Mm _C,\Oo )\) <span class='ntx-Italic-tlf-t1-x-x-109'>exists.</span>
-</p>
-</div>
-
-<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-operadic-day-convolution-and-stabilization-section-03-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-operadic-day-convolution-and-stabilization-section-03-2">
-<p class='noindent'><span class='head'>
-
-
-
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Put \(E := \Env (\Oo )\). By <a class="source-reference" data-label="lem:Mapping_Animae_Envelope" href="../../../entry/mapping-animae-envelope/index.html#lem:Mapping_Animae_Envelope">Lemma 17.3.17</a>, the unit \[ \eta _{\Oo }\colon \Oo \to \Mm _E \] is fully faithful: its essential image is the full suboperad spanned by
-the singleton tuples of colors in \(E\). We may therefore identify \(\Oo \) with this full suboperad by <a class="source-reference" data-label="lem:Fully_Faithful_Essentially_Surjective_Operad_Map" href="../../../entry/fully-faithful-essentially-surjective-operad-map/index.html#lem:Fully_Faithful_Essentially_Surjective_Operad_Map">Lemma 14.1.8</a>. The Day
-convolution operad \(\oDay (\Mm _C,\Mm _E)\) exists by <a class="source-reference" data-label="thm:Hinich_Winges_Model_Day" href="../../../entry/hinich-winges-model-day/index.html#thm:Hinich_Winges_Model_Day">Theorem 16.2.4</a>, so <a class="source-reference" data-label="lem:Day_Convolution_Full_Suboperads" href="../../../entry/day-convolution-full-suboperads/index.html#lem:Day_Convolution_Full_Suboperads">Lemma 18.3.2</a> gives the result.                                                                            □
-</p>
-</div></div>
-<div class='newtheorem'>
-<p class='noindent'><span class='head'>
-<a id='x1-1004r4'></a>
-<a class="entry-heading-link" href="../../../entry/o-monoidal-day-convolution/index.html" aria-label="Remark 18.3.4., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 18.3.4.</span></a>  </span><span id='rmk:O_Monoidal_Day_Convolution'></span> A relative version of this result was proved by <span class='citation'><a class="citation-item" href="../../../references/index.html#ref-lurie2016HA" title="Lurie, Higher algebra">Lurie (2017)</a>, Theorem 2.2.6.2</span>: if \(f\colon \Oo ' \to \Pp \) is a cocartesian fibration of
-\(\infty \)-operads, then the pullback functor \(f^*\colon (\Op _{\infty })_{/\Pp } \to (\Op _{\infty })_{/\Oo '}\) admits a right adjoint \[ \Nm _{\Oo '/\Pp }\colon (\Op _{\infty })_{/\Oo '} \to (\Op _{\infty })_{/\Pp }. \] By precomposing this functor with \(f^*\), it
-then follows that the product functor \(\Oo ' \times _{\Pp } - \colon (\Op _{\infty })_{/\Pp } \to (\Op _{\infty })_{/\Pp }\) admits a right adjoint \[ \oDay _{/\Pp }(\Oo ', -) \colon (\Op _{\infty })_{/\Pp } \to (\Op _{\infty })_{/\Pp }. \] If \(\Pp = \Comm \) is the terminal \(\infty \)-operad and \(\Oo ' \simeq \Mm _C\) for some
-\(C\), this specializes to <a class="source-reference" data-label="thm:Existence_Day_Convolution_Operad" href="../../../entry/existence-day-convolution-operad/index.html#thm:Existence_Day_Convolution_Operad">Theorem 18.3.3</a>.
-</p>
-</div>
-
-<div class='newtheorem'>
-<p class='noindent'><span class='head'>
-<a id='x1-1005r5'></a>
-<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 18.3.5 </span>(Multimorphism formula for Day convolution)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Day_Multimorphism_End_Formula'>   </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>   \(C\)   <span class='ntx-Italic-tlf-t1-x-x-109'>be   a   small   symmetric
-monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category and let</span> \(\Oo \) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operad. For every finite set</span> \(I\) <span class='ntx-Italic-tlf-t1-x-x-109'>and functors</span> \(F_i,G\colon C \to \Oo _{\lra {1}}\)<span class='ntx-Italic-tlf-t1-x-x-109'>, there is a natural
-equivalence </span>\[ \oDay (\Mm _C,\Oo )(\{F_i\}_{i \in I};G) \simeq \int _{\{c_i\}_{i \in I}\in C^I} \Oo (\{F_i(c_i)\}_{i \in I};G(\bigotimes \nolimits ^I_C c_i)). \]
-</p>
-</div>
-
-<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-operadic-day-convolution-and-stabilization-section-03-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-operadic-day-convolution-and-stabilization-section-03-1">
-<p class='noindent'><span class='head'>
-
-
-
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Put \(E:=\Env (\Oo )\). By <a class="source-reference" data-label="lem:Day_Convolution_Full_Suboperads" href="../../../entry/day-convolution-full-suboperads/index.html#lem:Day_Convolution_Full_Suboperads">Lemma 18.3.2</a>, we may compute the multimorphism anima in \(\oDay (\Mm _C,\Mm _E)\). The Day convolution formula of <a class="source-reference" data-label="prop:Multimorphisms_Day_Operad" href="../../../entry/multimorphisms-day-operad/index.html#prop:Multimorphisms_Day_Operad">Proposition 16.2.6</a> and the
-end formula for natural transformations give \begin {align*}  \oDay (\Mm _C,\Oo )(\{F_i\}_{i\in I};G) &amp;\simeq \Nat \left (\bigotimes \nolimits _E^I\circ \prod _{i\in I}F_i,G\circ \bigotimes \nolimits _C^I\right )\\ &amp;\simeq \int _{\{c_i\}\in C^I} \Hom _E\left (\bigotimes _{i\in I}F_i(c_i),G(\bigotimes _{i\in I}c_i)\right ).  \end {align*}
-</p><p class='noindent'>By <a class="source-reference" data-label="lem:Mapping_Animae_Envelope" href="../../../entry/mapping-animae-envelope/index.html#lem:Mapping_Animae_Envelope">Lemma 17.3.17</a>, the integrand is naturally isomorphic to \(\Oo (\{F_i(c_i)\}_{i\in I};G(\bigotimes _{i\in I}c_i))\), as required.                                                                □
-</p>
-</div></div>
-
-
-</div>
-<footer class="edition-footer">
-  <span>Last updated 6 November 2026</span>
-  <a href="/notes/stable-homotopy-higher-algebra.pdf">PDF</a>
-  <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Section%2018.3%3A%20Day%20convolution%20into%20arbitrary%20operads&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fsection%2Foperadic-day-convolution-and-stabilization%2Fday-convolution-into-arbitrary-operads%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
-</footer></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
-    <div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
-    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
-      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
-    </button></h2>
-    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
-      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html" aria-current="page"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li><li><a href="../../../references/index.html"><span class="context-entry-heading">Bibliography</span></a></li></ol>
-    </nav>
-  </section><section class="contents-ledger" data-contents-ledger data-open="false">
-    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
-      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
-    </button></h2>
-    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
-      <ol class="context-entry-list"><li><a href="../../../chapter/operads-the-heuristics/index.html"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../../../chapter/span-categories/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../../../chapter/basics-on-infinity-operads/index.html"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../../../chapter/cartesian-and-cocartesian-monoidal-structures/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../../../chapter/day-convolution-and-the-tensor-product-of-spectra/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="../../../chapter/the-envelope-of-an-infinity-operad/index.html"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../../../chapter/operadic-day-convolution-and-stabilization/index.html" aria-current="page"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Operadic Day convolution and stabilization</span></a></li><li><a href="../../../chapter/algebras-and-modules/index.html"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
-    </nav>
-  </section><section class="contents-ledger" data-contents-ledger data-open="false">
-    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
-      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
-    </button></h2>
-    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
-      <ol class="context-entry-list"><li><a href="../operadic-co-limits/index.html"><span class="context-entry-heading">Section 18.1</span><span class="context-entry-title">Operadic (co)limits</span></a></li><li><a href="../the-multiplicative-yoneda-embedding/index.html"><span class="context-entry-heading">Section 18.2</span><span class="context-entry-title">The multiplicative Yoneda embedding</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 18.3</span><span class="context-entry-title">Day convolution into arbitrary operads</span></a></li><li><a href="../stabilization-of-operads/index.html"><span class="context-entry-heading">Section 18.4</span><span class="context-entry-title">Stabilization of ∞-operads</span></a></li><li><a href="../modes-and-universal-properties/index.html"><span class="context-entry-heading">Section 18.5</span><span class="context-entry-title">Modes and universal properties</span></a></li><li><a href="../pointing-and-additivization-online-only/index.html"><span class="context-entry-heading">Section 18.6</span><span class="context-entry-title">Pointing and additivization (online only)</span></a></li></ol>
-    </nav>
-  </section><section class="contents-ledger" data-contents-ledger data-open="true">
-    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
-      <span>In this section</span><span class="contents-chevron" aria-hidden="true"></span>
-    </button></h2>
-    <nav class="contents" id="contents-section-contents" aria-label="In this section" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
-      <ol class="context-entry-list"><li><a href="#thm:Day_Multimorphism_End_Formula"><span class="context-entry-heading">Theorem 18.3.5</span><span class="context-entry-title">Multimorphism formula for Day convolution</span></a></li></ol>
-    </nav>
-  </section></div>
-  </aside></main>
-</body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/stable-homotopy-higher-algebra/section/the-envelope-of-an-infinity-operad/day-convolution-into-arbitrary-operads/">
+  <title>Page moved</title>
+  <style>
+    .publication-fragment-notice { margin: 2rem 0; padding: 1rem; border: 1px solid #b6aa91; background: #faf7ef; }
+    .publication-fragment-notice:not(:target) { display: none; }
+  </style>
+  <script>
+    (() => {
+      const fragmentTargets = {"lem:Day_Convolution_Full_Suboperads":"../../the-envelope-of-an-infinity-operad/day-convolution-into-arbitrary-operads/#lem:Day_Convolution_Full_Suboperads","rmk:O_Monoidal_Day_Convolution":"../../the-envelope-of-an-infinity-operad/day-convolution-into-arbitrary-operads/#rmk:O_Monoidal_Day_Convolution","sec:Day_Convolution_Arbitrary_Operads":"../../the-envelope-of-an-infinity-operad/day-convolution-into-arbitrary-operads/#sec:Day_Convolution_Arbitrary_Operads","thm:Day_Multimorphism_End_Formula":"../../the-envelope-of-an-infinity-operad/day-convolution-into-arbitrary-operads/#thm:Day_Multimorphism_End_Formula","thm:Existence_Day_Convolution_Operad":"../../the-envelope-of-an-infinity-operad/day-convolution-into-arbitrary-operads/#thm:Existence_Day_Convolution_Operad"};
+      const tombstones = new Set(["lem:Full_Suboperad_Mapping_Property"]);
+      const fragment = decodeURIComponent(location.hash.slice(1));
+      if (fragment && tombstones.has(fragment)) return;
+      location.replace(fragmentTargets[fragment] || "../../the-envelope-of-an-infinity-operad/day-convolution-into-arbitrary-operads/");
+    })();
+  </script>
+</head>
+<body>
+  <main><h1>Page moved</h1><p>This page has moved to <a href="../../the-envelope-of-an-infinity-operad/day-convolution-into-arbitrary-operads/">its current address</a>.</p><aside class="publication-fragment-notice" id="lem:Day_Convolution_Full_Suboperads"><strong>Retired fragment.</strong> The November 2026 revision moved this material to the linked page. It now appears at <a href="../../the-envelope-of-an-infinity-operad/day-convolution-into-arbitrary-operads/#lem:Day_Convolution_Full_Suboperads">this address</a>.</aside>
+<aside class="publication-fragment-notice" id="lem:Full_Suboperad_Mapping_Property"><strong>Retired fragment.</strong> The November 2026 revision removed this label or standalone proof anchor.</aside>
+<aside class="publication-fragment-notice" id="rmk:O_Monoidal_Day_Convolution"><strong>Retired fragment.</strong> The November 2026 revision moved this material to the linked page. It now appears at <a href="../../the-envelope-of-an-infinity-operad/day-convolution-into-arbitrary-operads/#rmk:O_Monoidal_Day_Convolution">this address</a>.</aside>
+<aside class="publication-fragment-notice" id="sec:Day_Convolution_Arbitrary_Operads"><strong>Retired fragment.</strong> The November 2026 revision moved this material to the linked page. It now appears at <a href="../../the-envelope-of-an-infinity-operad/day-convolution-into-arbitrary-operads/#sec:Day_Convolution_Arbitrary_Operads">this address</a>.</aside>
+<aside class="publication-fragment-notice" id="thm:Day_Multimorphism_End_Formula"><strong>Retired fragment.</strong> The November 2026 revision moved this material to the linked page. It now appears at <a href="../../the-envelope-of-an-infinity-operad/day-convolution-into-arbitrary-operads/#thm:Day_Multimorphism_End_Formula">this address</a>.</aside>
+<aside class="publication-fragment-notice" id="thm:Existence_Day_Convolution_Operad"><strong>Retired fragment.</strong> The November 2026 revision moved this material to the linked page. It now appears at <a href="../../the-envelope-of-an-infinity-operad/day-convolution-into-arbitrary-operads/#thm:Existence_Day_Convolution_Operad">this address</a>.</aside></main>
+</body>
+</html>

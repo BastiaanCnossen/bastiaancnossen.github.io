@@ -2,6 +2,7 @@ import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { installEntryLinks, loadPublicationTags } from "./entry-tags.mjs";
 import { validateReaderShell } from "./reader-shell-v1/install.mjs";
 
 const moduleDirectory = path.dirname(fileURLToPath(import.meta.url));
@@ -667,6 +668,7 @@ export function publishWork(configPath, { checkOnly = false, websiteRoot = defau
     throw new Error(`Refusing to replace unmanaged public artifacts for ${config.WorkId} without a lockfile.`);
   }
   const ledger = buildLedger(contract, currentRoutes, previous, retirements, publicBase);
+  const entryTags = config.EntryTags === true ? loadPublicationTags(root, publicBase, currentRoutes.values()) : null;
   ledger.SourceBundleSha256 = directoryHash(sourceRoot);
   ledger.SourcePdfSha256 = fileHash(sourcePdf);
 
@@ -681,6 +683,7 @@ export function publishWork(configPath, { checkOnly = false, websiteRoot = defau
     fs.mkdirSync(path.dirname(stagedPdf), { recursive: true });
     fs.copyFileSync(sourcePdf, stagedPdf);
     materializeRetirements(stageRoot, ledger, currentRoutes, contract, publicBase);
+    if (entryTags?.length) installEntryLinks(stageRoot, contract.CanonicalBase, entryTags);
     validateLedgerFiles(stageRoot, ledger, publicBase);
     ledger.PublishedBundleSha256 = directoryHash(stageRoot);
     ledger.PublishedPdfSha256 = fileHash(stagedPdf);

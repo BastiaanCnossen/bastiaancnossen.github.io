@@ -44,7 +44,7 @@
     </button>
 <article class="notes-page section-page"><div class="continuous-section">
 <p class='noindent'><span id='sec:Envelope_Of_Colored_Operad'></span> The notion of \(\infty \)-operad we are after is a homotopical version of the notion of colored operad introduced in
-the previous section: the set \(\Oo ^{\simeq }\) of colors should be replaced by an anima, and similarly the sets \(\Oo ((y_1, \dots , y_n);x)\) of
+the previous section: the set of colors should be replaced by an anima, and similarly the sets \(\Oo ((y_1, \dots , y_n);x)\) of
 multimorphisms should be replaced by animae. This leads to some subtleties regarding higher coherences:
 the unitality and associativity conditions required in <a class="source-reference" data-label="def:Colored_Operad" href="../../../entry/colored-operad/index.html#def:Colored_Operad">Definition 12.2.1</a> should now become additional <span class='ntx-Italic-tlf-t1-x-x-109'>data</span>, and this data
 should again satisfy further higher compatibilities. Writing down all the required structure explicitly would
@@ -55,16 +55,16 @@ required in an operad \(\Oo \) can be reformulated in terms of a certain symmetr
 \(\infty \)-categorical setting, thus providing a definition of \(\infty \)-operads. Let us therefore begin by describing this
 envelope construction in the classical setting.
 </p><p class='noindent'>We start with an observation regarding the formulation of colored operads: while we have formulated the
-notion of multimorphisms only for ordered tuples \((y_1, \dots , y_n) \in (\Oo ^{\simeq })^n\), it is actually more natural to formulate them for
+notion of multimorphisms only for ordered tuples \((y_1, \dots , y_n)\) of colors, it is actually more natural to formulate them for
 <span class='ntx-Italic-tlf-t1-x-x-109'>unordered </span>tuples:
 </p>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-1001r1'></a>
-<a class="entry-heading-link" href="../../../entry/unordered-tuple-of-colors/index.html" aria-label="Definition 12.3.1., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 12.3.1.</span></a>  </span><span id='def:Unordered_Tuple_Of_Colors'></span> An <span class='ntx-Italic-tlf-t1-x-x-109'>unordered tuple </span>of the set \(\Oo ^{\simeq }\) is a pair \((I,x)\) where \(I\) is a finite set and where \(x\colon I \to \Oo ^{\simeq }\) is a
-family of colors \(x_i\) indexed by \(I\). We will often denote such unordered tuples by \(\{x_i\}_{i \in I}\).
-</p><p class='noindent'>Given two unordered tuples \(\{x_i\}_{i \in I}\) and \(\{y_j\}_{j \in J}\), we can form their <span class='ntx-Italic-tlf-t1-x-x-109'>unordered concatenation </span>\[ \{x_i\}_{i \in I} \sqcup \{y_j\}_{j \in J} \quad := \quad \{z_k\}_{k \in K}, \qquad \qquad K := I \sqcup J, \quad z_i := x_i, \quad z_j := y_j. \] More generally, if we
-are given a finite family \(\{x^j_i\}_{i \in I_j}\) of unordered tuples for \(j \in J\), then their unordered concatenation is \(\{z_k\}_{k \in K}\) with \(K := \bigsqcup _{j \in J} I_j\) and \(z_{(j,i)} := x^j_i\).
+<a class="entry-heading-link" href="../../../entry/unordered-tuple-of-colors/index.html" aria-label="Definition 12.3.1., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Definition 12.3.1.</span></a>  </span><span id='def:Unordered_Tuple_Of_Colors'></span> Given a set \(S\), an <span class='ntx-Italic-tlf-t1-x-x-109'>unordered tuple </span>of \(S\) is a finite set \(I\) with a map of sets \(x\colon I\to S\). We usually
+denote such unordered tuples by \(\{x_i\}_{i\in I}\). Given two unordered tuples \(\{x_i\}_{i \in I}\) and \(\{y_j\}_{j \in J}\) of \(S\), we can form their <span class='ntx-Italic-tlf-t1-x-x-109'>unordered
+concatenation </span>\[ \{x_i\}_{i \in I} \sqcup \{y_j\}_{j \in J} \quad := \quad \{z_k\}_{k \in K}, \qquad \qquad K := I \sqcup J, \quad z_i := x_i, \quad z_j := y_j. \] More generally, if we are given a finite family \(\{x^j_i\}_{i \in I_j}\) of unordered tuples for \(j \in J\), then their
+unordered concatenation is \(\{z_k\}_{k \in K}\) with \(K := \bigsqcup _{j \in J} I_j\) and \(z_{(j,i)} := x^j_i\).
 </p>
 </div>
 
@@ -73,11 +73,13 @@ are given a finite family \(\{x^j_i\}_{i \in I_j}\) of unordered tuples for \(j 
 <a id='x1-1002r2'></a>
 
 
-<a class="entry-heading-link" href="../../../entry/unordered-multimorphism-notation/index.html" aria-label="Convention 12.3.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Convention 12.3.2.</span></a>  </span><span id='conv:Unordered_Multimorphism_Notation'></span> Given a color \(x \in \Oo ^{\simeq }\) and an unordered tuple \(\{y_i\}_{i \in I}\), we define the set \[ \Oo (\{y_i\}_{i \in I}; x) \] of multimorphisms
-from \(\{y_i\}_{i \in I}\) to \(x\) by choosing a bijection \(I \cong \{1, \dots , n\}\) and using it to order the inputs. The permutation isomorphisms
-canonically identify the sets obtained from different choices, so the notation is independent of the
-chosen ordering.  Under this convention, the composition map in the operad \(\Oo \) has the form \[ \circ \colon \Oo (\{y_i\}_{i \in I}; x) \times \prod _{i\in I} \Oo (\{z^i_j\}_{j \in J_i}; y_i) \to \Oo (\{z^i_j\}_{(i,j) \in \bigsqcup _{i \in I} J_i};x). \] The
-permutation isomorphism then says that for every bijection \(\sigma \colon J \xrightarrow {\cong } I\), there is an isomorphism \[ \Oo (\{y_i\}_{i \in I}; x) \xrightarrow {\cong } \Oo (\{y_{\sigma (j)}\}_{j \in J}; x). \]
+<a class="entry-heading-link" href="../../../entry/unordered-multimorphism-notation/index.html" aria-label="Convention 12.3.2., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Convention 12.3.2.</span></a>  </span><span id='conv:Unordered_Multimorphism_Notation'></span> Given a color \(x\) of \(\Oo \) and an unordered tuple of colors \(\{y_i\}_{i \in I}\), we define the set \[ \Oo (\{y_i\}_{i \in I}; x) \] of
+multimorphisms from \(\{y_i\}_{i \in I}\) to \(x\) as follows. Take pairs consisting of a bijection \(\{1,\dots ,n\}\iso I\) and an operation with
+inputs in that order, and identify pairs using the symmetric actions. For any specified ordering, the
+resulting set identifies canonically with the corresponding operation set. Under this convention, the
+composition map in the operad \(\Oo \) has the form \[ \circ \colon \Oo (\{y_i\}_{i \in I}; x) \times \prod _{i\in I} \Oo (\{z^i_j\}_{j \in J_i}; y_i) \to \Oo (\{z^i_j\}_{(i,j) \in \bigsqcup _{i \in I} J_i};x). \] The permutation isomorphism then says that for every
+bijection \(\sigma \colon J \xrightarrow {\cong } I\), there is an isomorphism \[ \Oo (\{y_i\}_{i \in I}; x) \xrightarrow {\cong } \Oo (\{y_{\sigma (j)}\}_{j \in J}; x). \] This transport is strictly functorial in bijections, and it commutes
+with substitution by the equivariance axioms.
 </p>
 </div>
 <p class='noindent'>Henceforth, we shall use the unordered notation for colored operads.
@@ -99,8 +101,6 @@ permutation isomorphism then says that for every bijection \(\sigma \colon J \xr
      <li class='itemize'>The composition of \(\Phi = (f,\phi _j)\colon \{x_i\}_{i \in I} \to \{y_j\}_{j \in J}\) and \(\Psi = (g, \psi _k)\colon \{y_j\}_{j \in J} \to \{z_k\}_{k \in K}\) is given by \(\Psi \circ \Phi = (h, \xi _k)\) where \(h := g \circ f\colon I \to K\) is the composition of \(g\) and \(f\), and for every \(k \in K\) the
      multimorphism \(\xi _k \in \Oo (\{x_i\}_{i \in I_k};z_k)\) is the image of \((\psi _k, (\phi _j)_{j \in J_k})\) under the composition map \[ \circ \colon \Oo (\{y_j\}_{j \in J_k};z_k) \times \prod _{j \in J_k} \Oo (\{x_i\}_{i \in I_j}; y_j) \to \Oo (\{x_i\}_{i \in I_k};z_k); \] here we are implicitly using that
      \(I_k = (g \circ f)^{-1}(k) = f^{-1}(g^{-1}(k))\) may be written as the disjoint union of the sets \(I_j = f^{-1}(j)\) for \(j \in J_k = g^{-1}(k)\).
-
-
      </li>
      <li class='itemize'>Unitality  and  associativity  of  composition  in  \(\Env (\Oo )\)  amount  to  the  unitality  and  associativity
      conditions for colored operads.</li></ul>
@@ -127,10 +127,10 @@ them.</p>
 symmetric monoidal structure is given by disjoint union.
 </p>
 </div>
+
+
 <p class='noindent'>The construction \(\Oo \mapsto \Env (\Oo )\) is functorial in \(\Oo \) and is left adjoint to the multimorphism-operad construction \(C\mapsto \Mm _C\): operad
 morphisms \(\Oo \to \Mm _C\) correspond naturally to symmetric monoidal functors \(\Env (\Oo )\to C\). Verification of these assertions is left to
-
-
 the reader. In particular, since \(\Comm \) is terminal and \(\Env (\Comm )=\Fin \), every envelope comes with a symmetric monoidal functor
 \[ p\colon \Env (\Oo ) \longrightarrow \Env (\Comm ) = \Fin . \]
 </p><p class='noindent'>The nice feature about the envelope construction is that it allows us to formulate the unitality and
@@ -160,10 +160,10 @@ equipped with a symmetric monoidal functor \(p\colon C \to \Fin \) is of the for
 corresponding analogues of conditions (2) and (3):
 </p><dl class='enumerate'><dt class='enumerate'>
 (2’) </dt><dd class='enumerate'>
+
+
     <p class='noindent'>For every finite set \(I\), the tensor product in \(C\) defines an equivalence \[ \prod _{i \in I} C_{\{i\}} \iso C_I, \] where \(C_I\) is the fiber of \(p\) over
     \(I \in \Fin \);
-
-
     </p></dd><dt class='enumerate'>
 (3’) </dt><dd class='enumerate'>
     <p class='noindent'>For every finite collection \((I_j)_{j \in J}\) of finite sets and every collection of objects \(X_j \in p^{-1}(I_j)\) and \(y_j \in p^{-1}(\{j\})\), the commutative
@@ -180,7 +180,7 @@ colored operad \(\Oo \) and a symmetric monoidal equivalence \(C \iso \Env (\Oo 
 
 </div>
 <footer class="edition-footer">
-  <span>Last updated 6 November 2026</span>
+  <span>Last updated 19 November 2026</span>
   <a href="/notes/stable-homotopy-higher-algebra.pdf">PDF</a>
   <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Section%2012.3%3A%20Encoding%20the%20coherences%3A%20the%20envelope%20of%20an%20operad&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fsection%2Foperads-the-heuristics%2Fencoding-the-coherences-the-envelope-of-an-operad%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
 </footer></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
@@ -196,7 +196,7 @@ colored operad \(\Oo \) and a symmetric monoidal equivalence \(C \iso \Env (\Oo 
       <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
     </button></h2>
     <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
-      <ol class="context-entry-list"><li><a href="../../../chapter/operads-the-heuristics/index.html" aria-current="page"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../../../chapter/span-categories/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../../../chapter/basics-on-infinity-operads/index.html"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../../../chapter/cartesian-and-cocartesian-monoidal-structures/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../../../chapter/day-convolution-and-the-tensor-product-of-spectra/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="../../../chapter/the-envelope-of-an-infinity-operad/index.html"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../../../chapter/operadic-day-convolution-and-stabilization/index.html"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Operadic Day convolution and stabilization</span></a></li><li><a href="../../../chapter/algebras-and-modules/index.html"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
+      <ol class="context-entry-list"><li><a href="../../../chapter/operads-the-heuristics/index.html" aria-current="page"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../../../chapter/span-categories/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../../../chapter/basics-on-infinity-operads/index.html"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../../../chapter/cartesian-and-cocartesian-monoidal-structures/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../../../chapter/day-convolution-and-the-tensor-product-of-spectra/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="../../../chapter/algebras-and-modules/index.html"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../../../chapter/tensor-products-and-morita-theory/index.html"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Tensor products of ∞-categories and Morita theory</span></a></li><li><a href="../../../chapter/the-envelope-of-an-infinity-operad/index.html"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../../../chapter/operadic-day-convolution-and-stabilization/index.html"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Operadic stabilization</span></a></li><li><a href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html"><span class="context-entry-heading">Chapter 21</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
     </nav>
   </section><section class="contents-ledger" data-contents-ledger data-open="false">
     <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">

@@ -60,6 +60,41 @@ are rewritten to `PublicPdf` and the embedded duplicate is omitted from the
 public web directory. The separately staged sibling PDF remains part of the
 same recoverable publication transaction.
 
+## Site-wide entry tags
+
+[`entry-tags.json`](entry-tags.json) is the source of truth for citation tags.
+Each row pairs a permanent four-character tag with its current public entry
+path. Both tagged editions draw from the same sequence. Each entry's heading
+shows its tag and offers copying the tag URL or the descriptive URL.
+
+After building an edition that adds entries, allocate their tags before running
+the publication preflight. Pass both work IDs to allocate for both candidates in
+one run.
+
+```powershell
+node publication/entry-tags.mjs --allocate topos-theory
+.\publish-notes.ps1 -WorkId topos-theory -CheckOnly
+.\publish-notes.ps1 -WorkId topos-theory
+node publication/entry-tags.mjs --check
+```
+
+The allocator assigns new tags in manuscript reading order and generates the
+static pages under `tag/`. The book starts at `0001` and can grow through `01ZZ`.
+The topos theory notes start at `0200`. If the book uses up its reserved range,
+its next tag comes after the highest tag issued for the site. A tag stays in
+the same range when its entry moves between works.
+Publishing installs the copy controls in the staged edition and checks that each
+entry has a registered tag and a matching tag page. Commit the registry, tag
+pages, published editions, and updated publication lockfiles together.
+
+If an entry moves or is renamed, edit its existing row to point to the new
+descriptive URL before allocating tags for any other new entries. Update the
+descriptive URL's retirement rule as part of the move. If a result is withdrawn,
+replace the destination in its row with `{ "Retired": "Reason for withdrawal." }`.
+Run `node publication/entry-tags.mjs` after editing an existing row to regenerate
+the tag page. Keep the tag in the registry permanently. The current descriptive
+URL retirement workflow supports redirects within a work.
+
 ## Public-address contract
 
 Each candidate bundle supplies `_meta/public-contract.json`. It records its

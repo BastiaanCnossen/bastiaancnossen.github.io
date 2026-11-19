@@ -66,6 +66,12 @@ edition path, they also verify its work, chapter, section, and entry pages and
 exercise its real proof adapter. Both manuscript production builds run these
 acceptance tests before their bundle can be published.
 
+## Entry citation links
+
+On tagged editions, the website publisher uses `entry-links.mjs` to add citation
+links below each entry's heading. The accompanying stylesheet and clipboard
+script are installed during publication from this directory.
+
 ## Reading navigation
 
 Chapter, section, and entry headers use SCT-style previous/next chapter and

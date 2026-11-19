@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chapter 19: Algebras and modules | Stable Homotopy Theory and Higher Algebra</title>
-<meta name="description" content="Algebras, modules, relative tensor products, extension of scalars, Eilenberg–Watts theory, and Morita theory for ring spectra.">
+<title>Chapter 17: Algebras and modules | Stable Homotopy Theory and Higher Algebra</title>
+<meta name="description" content="Algebras and left modules, bimodules and relative tensor products, extension and restriction of scalars, and functoriality of spectral module categories.">
 <link rel="canonical" href="https://bastiaancnossen.com/notes/stable-homotopy-higher-algebra/chapter/algebras-and-modules/">
 <link rel="stylesheet" href="../../_assets/reader-shell-v1/style.css">
 <link rel="stylesheet" href="../../_assets/style.css">
@@ -32,78 +32,65 @@
 <header class="site-header work-header">
 <div class="reading-header-row"><div class="reader-heading">
       <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
-      <p class="eyebrow"><a href="../../index.html">Stable Homotopy Theory and Higher Algebra</a> · <a href="../../part/operads-and-higher-algebra/index.html">Part II</a> · Chapter 19</p>
+      <p class="eyebrow"><a href="../../index.html">Stable Homotopy Theory and Higher Algebra</a> · <a href="../../part/operads-and-higher-algebra/index.html">Part II</a> · Chapter 17</p>
       <h1>Algebras and modules</h1>
-    </div><nav class="page-turns" data-reading-navigation aria-label="Reading navigation"><a rel="prev" data-step="prev-chapter" href="../operadic-day-convolution-and-stabilization/index.html" title="Operadic Day convolution and stabilization" aria-label="Previous chapter: Chapter 18, Operadic Day convolution and stabilization"><span class="turn-direction">← Previous chapter</span><span class="turn-target">Chapter 18</span></a>
-<a rel="next" data-step="next-chapter" href="../monoidal-dwyer-kan-localizations-and-derived-categories/index.html" title="Monoidal Dwyer–Kan localizations and derived categories" aria-label="Next chapter: Chapter 20, Monoidal Dwyer–Kan localizations and derived categories"><span class="turn-direction">→ Next chapter</span><span class="turn-target">Chapter 20</span></a>
-<a rel="prev" data-step="prev-section" href="../../section/operadic-day-convolution-and-stabilization/pointing-and-additivization-online-only/index.html" title="Pointing and additivization (online only)" aria-label="Previous section: Section 18.6, Pointing and additivization (online only)"><span class="turn-direction">← Previous section</span><span class="turn-target">Section 18.6</span></a>
-<a rel="next" data-step="next-section" href="../../section/algebras-and-modules/foundations/index.html" title="Foundations" aria-label="Next section: Section 19.1, Foundations"><span class="turn-direction">→ Next section</span><span class="turn-target">Section 19.1</span></a></nav></div>
+    </div><nav class="page-turns" data-reading-navigation aria-label="Reading navigation"><a rel="prev" data-step="prev-chapter" href="../day-convolution-and-the-tensor-product-of-spectra/index.html" title="Day convolution and the tensor product of spectra" aria-label="Previous chapter: Chapter 16, Day convolution and the tensor product of spectra"><span class="turn-direction">← Previous chapter</span><span class="turn-target">Chapter 16</span></a>
+<a rel="next" data-step="next-chapter" href="../tensor-products-and-morita-theory/index.html" title="Tensor products of ∞-categories and Morita theory" aria-label="Next chapter: Chapter 18, Tensor products of ∞-categories and Morita theory"><span class="turn-direction">→ Next chapter</span><span class="turn-target">Chapter 18</span></a>
+<a rel="prev" data-step="prev-section" href="../../section/day-convolution-and-the-tensor-product-of-spectra/the-symmetric-monoidal-structure-on-sp/index.html" title="The symmetric monoidal structure on Sp" aria-label="Previous section: Section 16.6, The symmetric monoidal structure on Sp"><span class="turn-direction">← Previous section</span><span class="turn-target">Section 16.6</span></a>
+<a rel="next" data-step="next-section" href="../../section/algebras-and-modules/algebras-and-left-modules/index.html" title="Algebras and left modules" aria-label="Next section: Section 17.1, Algebras and left modules"><span class="turn-direction">→ Next section</span><span class="turn-target">Section 17.1</span></a></nav></div>
 </header>
 <main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
       <span aria-hidden="true">☰</span> Navigation
     </button>
 <article class="notes-page chapter-landing"><div class="chapter-introduction">
-<p class='noindent' id='chap:Algebras_And_Modules'>The theory of algebras and modules is not specific to spectra, but makes sense in any suitable monoidal
-\(\infty \)-category. Defining the objects requires no new work: an associative algebra is an \(\Assoc \)-algebra and a left module
-is an \(\oLMod \)-algebra, so both are instances of notions we already have. The work lies in showing that they behave
-like their classical counterparts, and this is what we carry out here, in the generality required for the study of
-ring spectra in Part I (<a class="source-reference" data-label="chap:Ring_Spectra" href="../ring-spectra-and-modules/index.html#chap:Ring_Spectra">Chapter 8</a>).
-</p><p class='noindent'>Free modules and relative tensor products extend familiar constructions from algebra to monoidal
-\(\infty \)-categories. The relative tensor product \(M\otimes _A N\) composes bimodules and gives extension of scalars along an
-algebra map. Endomorphism algebras describe actions on a fixed object: an algebra action corresponds to a
-map into its endomorphism algebra.
-</p><p class='noindent'>Endomorphism algebras also underlie the two recognition results of the chapter. If the unit of a presentably
-symmetric monoidal stable \(\infty \)-category \(C\) is a compact generator, the monogenic Morita theorem identifies \(C\)
-with the \(\infty \)-category of modules over the commutative ring spectrum \(\hom _C(\unit ,\unit )\). Applied in \((\Cat _{\infty },\times )\) instead, the same
-construction makes the composite \(GF\) of an adjunction \(F\colon C\rightleftarrows D\noloc G\) between arbitrary \(\infty \)-categories into a monad, namely the
-endomorphism algebra of \(G\). The Barr–Beck theorem then recognizes when \(D\) is recovered as the
-\(\infty \)-category of \(GF\)-modules in \(C\), and gives a second proof of the underlying equivalence in the Morita
-theorem.
-</p><p class='noindent'>We close with an application of Part II as a whole: combining Day convolution of commutative monoids
-with symmetric monoidal group completion, we make \(\ku \) a commutative ring spectrum.
-</p><p class='noindent'>The Morita theorem uses the mode-theoretic universal properties of <a class="source-reference" data-label="sec:Mode_Theory" href="../../section/operadic-day-convolution-and-stabilization/modes-and-universal-properties/index.html#sec:Mode_Theory">Section 18.5</a>; it and the application to \(\ku \) also use
-results established earlier in Part I.
-</p><p class='noindent'>Many results of this chapter, including most of its main theorems, are quoted from <span class='citation'>[<a class="citation-item" href="../../references/index.html#ref-lurie2016HA" title="Lurie, Higher algebra">Lurie (2017)</a>]</span>. Whenever we invoke a
-result formulated for Lurie’s model of \(\infty \)-operads, we transport it through the equivalence of
-<a class="source-reference" data-label="prop:Comparison_Lurie_Operads" href="../../entry/comparison-lurie-operads/index.html#prop:Comparison_Lurie_Operads">Proposition 17.4.8</a>.
+<p class='noindent' id='chap:Algebras_And_Modules'>The operads \(\Assoc \) and \(\oLMod \) introduced in <a class="source-reference" data-label="chap:Operads_Heuristics" href="../operads-the-heuristics/index.html#chap:Operads_Heuristics">Chapter 12</a> allow us to define associative algebras and their modules in an arbitrary
+monoidal \(\infty \)-category. Most of the familiar structures from ordinary algebra admit anaogues in this generality:
+We can construct free modules, form relative tensor products over an algebra, and extend scalars along
+algebra maps. We already encountered these constructions in <a class="source-reference" data-label="chap:Ring_Spectra" href="../ring-spectra-and-modules/index.html#chap:Ring_Spectra">Chapter 8</a>, where we took them as a black box. We now
+provide some details on the constructions.
+</p><p class='noindent'>We start with various basic constructions on algebras and modules. The monoidal unit in a symmetric
+monoidal \(\infty \)-category admits a unique commutative algebra structure, making it the initial commutative
+algebra. The forgetful functor that forgets the left module structure over an associative algebra \(A\) admits a left
+adjoint, given on objects by sending \(X\) to \(A \otimes X\). Limits and colimits of modules may be computed on the
+underlying objects.
+</p><p class='noindent'>Next, we construct relative tensor products by the two-sided bar construction. This construction extends to
+bimodules, and produces an extension of scalars functor along a map of associative algebras.
+For a commutative algebra, it also provides the symmetric monoidal structure on its module
+category.
+</p><p class='noindent'>We then turn to endomorphism algebras, whose universal property identifies algebra actions on
+an object \(M\) with algebra maps into \(\End (M)\). Applied to the \(\infty \)-category of small \(\infty \)-categories, this equips
+the functor category \(\Fun (C,C)\) with a monoidal structure given by composition of functors. Moreover,
+given an adjunction \(F\colon C \rightleftarrows D \noloc G\), the composite \(GF\) becomes a monad, that is, an algebra in \(\Fun (C,C)\). The functor \(G\)
+induces a functor \(D \to \LMod _{GF}(C)\), and the Barr–Beck theorem gives conditions under which this functor is an
+equivalence.
+</p><p class='noindent'>To keep the chapter compact, we quote several results from <span class='citation'><a class="citation-item" href="../../references/index.html#ref-lurie2016HA" title="Lurie, Higher algebra">Lurie (2017)</a></span>. The comparison with Lurie’s model of
+\(\infty \)-operads on which this relies is proved in <a class="source-reference" data-label="prop:Comparison_Lurie_Operads" href="../../entry/comparison-lurie-operads/index.html#prop:Comparison_Lurie_Operads">Proposition 19.4.8</a>.
 </p>
 
 
 </div><section class="available-sections" aria-labelledby="chapter-sections-heading">
     <h2 id="chapter-sections-heading">Sections</h2>
     <div class="section-card-grid"><article class="section-card">
-      <p class="section-card-meta">Section 19.1</p>
-      <h3><a href="../../section/algebras-and-modules/foundations/index.html">Foundations</a></h3>
-      <p>Algebras and modules in symmetric monoidal ∞-categories.</p>
+      <p class="section-card-meta">Section 17.1</p>
+      <h3><a href="../../section/algebras-and-modules/algebras-and-left-modules/index.html">Algebras and left modules</a></h3>
+      <p>Recall the left module <span class="math-inline">\(\infty \)</span>-operad <span class="math-inline">\(\oLMod \)</span> from Example 12.2.9 , Corollary 14.2.6 .</p>
     </article><article class="section-card">
-      <p class="section-card-meta">Section 19.2</p>
+      <p class="section-card-meta">Section 17.2</p>
       <h3><a href="../../section/algebras-and-modules/relative-tensor-products-and-change-of-algebras/index.html">Relative tensor products and change of algebras</a></h3>
-      <p>Relative tensor products and change of algebras.</p>
+      <p>Given associative rings <span class="math-inline">\(A\)</span> and <span class="math-inline">\(B\)</span>, we may consider <span class="math-inline">\((A,B)\)</span> -bimodules : abelian groups equipped with compatible left <span class="math-inline">\(A\)</span>-module and right <span class="math-inline">\(B\)</span>-module structures.</p>
     </article><article class="section-card">
-      <p class="section-card-meta">Section 19.3</p>
-      <h3><a href="../../section/algebras-and-modules/simplicial-models-for-algebras-and-modules/index.html">Simplicial models for algebras and modules</a></h3>
-      <p>Simplicial models for algebras, modules, and bar constructions.</p>
-    </article><article class="section-card">
-      <p class="section-card-meta">Section 19.4</p>
+      <p class="section-card-meta">Section 17.3</p>
       <h3><a href="../../section/algebras-and-modules/endomorphism-algebras/index.html">Endomorphism algebras</a></h3>
-      <p>Endomorphism algebras and actions on a fixed object.</p>
+      <p>For an abelian group <span class="math-inline">\(M\)</span>, the endomorphisms of <span class="math-inline">\(M\)</span> form a ring <span class="math-inline">\(\End (M)\)</span> under pointwise addition and composition.</p>
     </article><article class="section-card">
-      <p class="section-card-meta">Section 19.5</p>
-      <h3><a href="../../section/algebras-and-modules/stable-and-spectral-consequences/index.html">Stable and spectral consequences</a></h3>
-      <p>Stable module categories, Eilenberg–Watts, and monogenic Morita theory.</p>
-    </article><article class="section-card">
-      <p class="section-card-meta">Section 19.6</p>
+      <p class="section-card-meta">Section 17.4</p>
       <h3><a href="../../section/algebras-and-modules/monads-and-monadicity/index.html">Monads and monadicity</a></h3>
-      <p>Coherent monads, Barr–Beck monadicity, and module categories.</p>
-    </article><article class="section-card">
-      <p class="section-card-meta">Section 19.7</p>
-      <h3><a href="../../section/algebras-and-modules/application-connective-complex-k-theory/index.html">Application: connective complex K-theory</a></h3>
-      <p>Semiring structures, vector bundles, and the commutative ring spectrum <span class="math-inline">\(\ku\)</span>.</p>
+      <p>For an adjunction <span class="math-inline">\(F\colon C\rightleftarrows D\noloc G\)</span>, every object <span class="math-inline">\(d\in D\)</span> gives an object <span class="math-inline">\(Gd\in C\)</span> with an action <span class="math-inline">\(GF(Gd)\to Gd\)</span>, induced by the counit.</p>
     </article></div></section>
 <footer class="edition-footer">
-  <span>Last updated 6 November 2026</span>
+  <span>Last updated 19 November 2026</span>
   <a href="/notes/stable-homotopy-higher-algebra.pdf">PDF</a>
-  <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Chapter%2019%3A%20Algebras%20and%20modules&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fchapter%2Falgebras-and-modules%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
+  <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Chapter%2017%3A%20Algebras%20and%20modules&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fchapter%2Falgebras-and-modules%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
 </footer></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Chapter navigation">
     <div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
     <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
@@ -117,14 +104,14 @@ result formulated for Lurie’s model of \(\infty \)-operads, we transport it th
       <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
     </button></h2>
     <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
-      <ol class="context-entry-list"><li><a href="../operads-the-heuristics/index.html"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../span-categories/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../basics-on-infinity-operads/index.html"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../cartesian-and-cocartesian-monoidal-structures/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../day-convolution-and-the-tensor-product-of-spectra/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="../the-envelope-of-an-infinity-operad/index.html"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../operadic-day-convolution-and-stabilization/index.html"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Operadic Day convolution and stabilization</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../monoidal-dwyer-kan-localizations-and-derived-categories/index.html"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
+      <ol class="context-entry-list"><li><a href="../operads-the-heuristics/index.html"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../span-categories/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../basics-on-infinity-operads/index.html"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../cartesian-and-cocartesian-monoidal-structures/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../day-convolution-and-the-tensor-product-of-spectra/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../tensor-products-and-morita-theory/index.html"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Tensor products of ∞-categories and Morita theory</span></a></li><li><a href="../the-envelope-of-an-infinity-operad/index.html"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../operadic-day-convolution-and-stabilization/index.html"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Operadic stabilization</span></a></li><li><a href="../monoidal-dwyer-kan-localizations-and-derived-categories/index.html"><span class="context-entry-heading">Chapter 21</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
     </nav>
   </section><section class="contents-ledger" data-contents-ledger data-open="true">
     <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="true">
       <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
     </button></h2>
     <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="false" data-collapsed="false">
-      <ol class="context-entry-list"><li><a href="../../section/algebras-and-modules/foundations/index.html"><span class="context-entry-heading">Section 19.1</span><span class="context-entry-title">Foundations</span></a></li><li><a href="../../section/algebras-and-modules/relative-tensor-products-and-change-of-algebras/index.html"><span class="context-entry-heading">Section 19.2</span><span class="context-entry-title">Relative tensor products and change of algebras</span></a></li><li><a href="../../section/algebras-and-modules/simplicial-models-for-algebras-and-modules/index.html"><span class="context-entry-heading">Section 19.3</span><span class="context-entry-title">Simplicial models for algebras and modules</span></a></li><li><a href="../../section/algebras-and-modules/endomorphism-algebras/index.html"><span class="context-entry-heading">Section 19.4</span><span class="context-entry-title">Endomorphism algebras</span></a></li><li><a href="../../section/algebras-and-modules/stable-and-spectral-consequences/index.html"><span class="context-entry-heading">Section 19.5</span><span class="context-entry-title">Stable and spectral consequences</span></a></li><li><a href="../../section/algebras-and-modules/monads-and-monadicity/index.html"><span class="context-entry-heading">Section 19.6</span><span class="context-entry-title">Monads and monadicity</span></a></li><li><a href="../../section/algebras-and-modules/application-connective-complex-k-theory/index.html"><span class="context-entry-heading">Section 19.7</span><span class="context-entry-title">Application: connective complex K-theory</span></a></li></ol>
+      <ol class="context-entry-list"><li><a href="../../section/algebras-and-modules/algebras-and-left-modules/index.html"><span class="context-entry-heading">Section 17.1</span><span class="context-entry-title">Algebras and left modules</span></a></li><li><a href="../../section/algebras-and-modules/relative-tensor-products-and-change-of-algebras/index.html"><span class="context-entry-heading">Section 17.2</span><span class="context-entry-title">Relative tensor products and change of algebras</span></a></li><li><a href="../../section/algebras-and-modules/endomorphism-algebras/index.html"><span class="context-entry-heading">Section 17.3</span><span class="context-entry-title">Endomorphism algebras</span></a></li><li><a href="../../section/algebras-and-modules/monads-and-monadicity/index.html"><span class="context-entry-heading">Section 17.4</span><span class="context-entry-title">Monads and monadicity</span></a></li></ol>
     </nav>
   </section></div>
   </aside></main>

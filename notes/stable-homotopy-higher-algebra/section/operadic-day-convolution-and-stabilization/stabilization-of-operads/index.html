@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Section 18.4: Stabilization of ∞-operads | Stable Homotopy Theory and Higher Algebra</title>
-<meta name="description" content="Stabilization of ∞-operads. A section of Chapter 18, Operadic Day convolution and stabilization, in Stable Homotopy Theory and Higher Algebra.">
+<title>Section 20.2: Stabilization of ∞-operads | Stable Homotopy Theory and Higher Algebra</title>
+<meta name="description" content="Stabilization of ∞-operads. A section of Chapter 20, Operadic stabilization, in Stable Homotopy Theory and Higher Algebra.">
 <link rel="canonical" href="https://bastiaancnossen.com/notes/stable-homotopy-higher-algebra/section/operadic-day-convolution-and-stabilization/stabilization-of-operads/">
 <link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
 <link rel="stylesheet" href="../../../_assets/style.css">
@@ -43,131 +43,123 @@
 <header class="site-header work-header">
 <div class="reading-header-row"><div class="reader-heading">
       <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
-      <p class="eyebrow"><a href="../../../index.html">Stable Homotopy Theory and Higher Algebra</a> · <a href="../../../part/operads-and-higher-algebra/index.html">Part II</a> · <a href="../../../chapter/operadic-day-convolution-and-stabilization/index.html">Chapter 18</a> · Section 18.4</p>
+      <p class="eyebrow"><a href="../../../index.html">Stable Homotopy Theory and Higher Algebra</a> · <a href="../../../part/operads-and-higher-algebra/index.html">Part II</a> · <a href="../../../chapter/operadic-day-convolution-and-stabilization/index.html">Chapter 20</a> · Section 20.2</p>
       <h1>Stabilization of ∞-operads</h1>
-    </div><nav class="page-turns" data-reading-navigation aria-label="Reading navigation"><a rel="prev" data-step="prev-chapter" href="../../../chapter/the-envelope-of-an-infinity-operad/index.html" title="The envelope of an ∞-operad" aria-label="Previous chapter: Chapter 17, The envelope of an ∞-operad"><span class="turn-direction">← Previous chapter</span><span class="turn-target">Chapter 17</span></a>
-<a rel="next" data-step="next-chapter" href="../../../chapter/algebras-and-modules/index.html" title="Algebras and modules" aria-label="Next chapter: Chapter 19, Algebras and modules"><span class="turn-direction">→ Next chapter</span><span class="turn-target">Chapter 19</span></a>
-<a rel="prev" data-step="prev-section" href="../day-convolution-into-arbitrary-operads/index.html" title="Day convolution into arbitrary operads" aria-label="Previous section: Section 18.3, Day convolution into arbitrary operads"><span class="turn-direction">← Previous section</span><span class="turn-target">Section 18.3</span></a>
-<a rel="next" data-step="next-section" href="../modes-and-universal-properties/index.html" title="Modes and universal properties" aria-label="Next section: Section 18.5, Modes and universal properties"><span class="turn-direction">→ Next section</span><span class="turn-target">Section 18.5</span></a></nav></div>
+    </div><nav class="page-turns" data-reading-navigation aria-label="Reading navigation"><a rel="prev" data-step="prev-chapter" href="../../../chapter/the-envelope-of-an-infinity-operad/index.html" title="The envelope of an ∞-operad" aria-label="Previous chapter: Chapter 19, The envelope of an ∞-operad"><span class="turn-direction">← Previous chapter</span><span class="turn-target">Chapter 19</span></a>
+<a rel="next" data-step="next-chapter" href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html" title="Monoidal Dwyer–Kan localizations and derived categories" aria-label="Next chapter: Chapter 21, Monoidal Dwyer–Kan localizations and derived categories"><span class="turn-direction">→ Next chapter</span><span class="turn-target">Chapter 21</span></a>
+<a rel="prev" data-step="prev-section" href="../operadic-co-limits/index.html" title="Operadic (co)limits" aria-label="Previous section: Section 20.1, Operadic (co)limits"><span class="turn-direction">← Previous section</span><span class="turn-target">Section 20.1</span></a>
+<a rel="next" data-step="next-section" href="../semiring-objects-from-distributivity/index.html" title="Semiring objects from distributivity" aria-label="Next section: Section 20.3, Semiring objects from distributivity"><span class="turn-direction">→ Next section</span><span class="turn-target">Section 20.3</span></a></nav></div>
 </header>
 <main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
       <span aria-hidden="true">☰</span> Navigation
     </button>
 <article class="notes-page section-page"><div class="continuous-section">
-<p class='noindent' id='sec:Stabilization_Of_Operads'>We construct the stabilization of an operad and prove its right-adjoint universal property. At the end of the
-section, we briefly discuss the analogous constructions for pointed, semiadditive, and additive
-operads.
-</p><p class='noindent'>We define the stabilization of \(\Oo \) using reduced excisive functors. To prove that the resulting operad is stable,
-we use the multiplicative Yoneda embedding to reduce to stabilization in a presheaf category. We then prove
-the right-adjoint universal property by showing that evaluation at \(S^0\) recovers \(\Oo \) when it is already
+<p class='noindent' id='sec:Stabilization_Of_Operads'>Given an \(\infty \)-operad \(\Oo \) with finite operadic limits, the reduced excisive functors \(\An _*^{\fin }\to U(\Oo )\) form the underlying
+\(\infty \)-category of its stabilization, and its multimorphisms are supplied by Day convolution. To prove its
+stability, we embed \(\Oo \) into a presheaf category, using the multiplicative Yoneda embedding. The
+universal property will then follow by showing that evaluation at \(S^0\) recovers \(\Oo \) when it is already
 stable.
 </p>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-1001r1'></a>
-<a class="entry-heading-link" href="../../../entry/operadic-stabilization/index.html" aria-label="Construction 18.4.1., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 18.4.1.</span></a>  </span><span id='cons:Operadic_Stabilization'></span> Let \(\Oo \) be an \(\infty \)-operad that admits finite operadic limits. Consider the \(\infty \)-category
+<a class="entry-heading-link" href="../../../entry/operadic-stabilization/index.html" aria-label="Construction 20.2.1., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 20.2.1.</span></a>  </span><span id='cons:Operadic_Stabilization'></span> Let \(\Oo \) be an \(\infty \)-operad that admits finite operadic limits. Consider the \(\infty \)-category
 \(\An _*^{\fin }\) equipped with the smash product monoidal structure from <a class="source-reference" data-label="def:Smash_Product_Monoidal_Structure" href="../../../entry/definition-of-the-smash-product-monoidal-structure/index.html#def:Smash_Product_Monoidal_Structure">Definition 16.3.5</a>. We define \[ \oSp (\Oo ) \quad \subseteq \quad \oDay (\Mm _{\An _*^{\fin }}, \Oo ) \] to be the full suboperad
-whose colors are those functors \(F\colon \An _*^{\fin } \to \Oo _{\lra {1}}\) that are reduced and excisive. Note that \[ \oSp (\Oo )_{\lra {1}} \simeq \Sp ^{\exc }(\Oo _{\lra {1}}) \] by construction; through <a class="source-reference" data-label="prop:Stabilization_Via_Excisive_Functors" href="../../../entry/stabilization-via-excisive-functors/index.html#prop:Stabilization_Via_Excisive_Functors">Proposition 16.5.10</a>,
-we identify this underlying \(\infty \)-category with the abstract stabilization \(\Sp (\Oo _{\lra {1}})\). The monoidal unit \(S^0\) defines an
-operad map \(\Comm \to \Mm _{\An _*^{\fin }}\), and restricting the evaluation map along it defines a morphism of \(\infty \)-operads \[ \Omega ^\infty \colon \oSp (\Oo ) \to \Oo . \]
+whose colors are those functors \(F\colon \An _*^{\fin } \to U(\Oo )\) that are reduced and excisive. Note that by construction we have \[ U(\oSp (\Oo )) \simeq \Sp ^{\exc }(U(\Oo )), \]
+and so by <a class="source-reference" data-label="prop:Stabilization_Via_Excisive_Functors" href="../../../entry/stabilization-via-excisive-functors/index.html#prop:Stabilization_Via_Excisive_Functors">Proposition 16.5.10</a> we may identify this underlying \(\infty \)-category with the abstract stabilization \(\Sp (U(\Oo ))\). The monoidal
+unit \(S^0\) defines an operad map \(\Comm \to \Mm _{\An _*^{\fin }}\), and restricting the evaluation map along it defines a morphism of
+\(\infty \)-operads \[ \Omega ^\infty \colon \oSp (\Oo ) \to \Oo . \]
 </p>
 </div>
 
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-1002r2'></a>
-<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 18.4.2.</span>  </span><span id='lem:Presheaf_Stabilization_Stable_Operad'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a small symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category and equip</span> \(\PSh (D)\) <span class='ntx-Italic-tlf-t1-x-x-109'>with the Day convolution
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 20.2.2.</span>  </span><span id='lem:Presheaf_Stabilization_Stable_Operad'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(D\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a small symmetric monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category and equip</span> \(\PSh (D)\) <span class='ntx-Italic-tlf-t1-x-x-109'>with the Day convolution
 symmetric monoidal structure. Then</span> \(\oSp (\Mm _{\PSh (D)})\) <span class='ntx-Italic-tlf-t1-x-x-109'>is a stable</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operad.</span>
-
-
-
 </p>
+
+
+
 </div>
 
-<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-operadic-day-convolution-and-stabilization-section-04-6" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-operadic-day-convolution-and-stabilization-section-04-6">
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-operadic-day-convolution-and-stabilization-section-02-7" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-operadic-day-convolution-and-stabilization-section-02-7">
 <p class='noindent'><span class='head'>
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The Day convolution structure on \(\PSh (D)\) identifies \(\Mm _{\PSh (D)}\) with \(\oDay (\Mm _{D\catop },\Mm _{\An })\). Thus, using the universal property of
-Day convolution twice, \(\oDay (\Mm _{\An _*^{\fin }},\Mm _{\PSh (D)})\) identifies with \[ \oDay (\Mm _{D\catop },\oDay (\Mm _{\An _*^{\fin }},\Mm _{\An })). \] Under this identification, \(\oSp (\Mm _{\PSh (D)})\) is obtained by restricting the inner \(\oDay (\Mm _{\An _*^{\fin }},\Mm _{\An })\)
-to reduced excisive functors, using <a class="source-reference" data-label="lem:Day_Convolution_Full_Suboperads" href="../../../entry/day-convolution-full-suboperads/index.html#lem:Day_Convolution_Full_Suboperads">Lemma 18.3.2</a>. By <a class="source-reference" data-label="thm:Tensor_Product_Spectra" href="../../../entry/tensor-product-spectra/index.html#thm:Tensor_Product_Spectra">Theorem 16.6.1</a> and the construction of the symmetric monoidal localization
-there, this restriction is the multimorphism operad \(\Mm _{\Sp }\). Hence \[ \oSp (\Mm _{\PSh (D)}) \simeq \oDay (\Mm _{D\catop },\Mm _{\Sp }). \] The latter is the multimorphism operad
-of \(\Fun (D\catop ,\Sp )\) with Day convolution. Since \(\Sp \) is stable and its tensor product preserves colimits in each variable,
-so does the Day tensor product: for a fixed functor in all but one variable, it is computed as a left
-Kan extension of a pointwise tensor product, and both operations preserve colimits in the remaining
-variable. It follows that \(\oSp (\Mm _{\PSh (D)})\) is stable.                                                                                                        □
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By construction of the Day convolution structure on \(\PSh (D)\), its multimorphism operad \(\Mm _{\PSh (D)}\) is identified
+with \(\oDay (\Mm _{D\catop },\Mm _{\An })\). Thus, using the universal property of Day convolution twice, \(\oDay (\Mm _{\An _*^{\fin }},\Mm _{\PSh (D)})\) identifies with \[ \oDay (\Mm _{D\catop },\oDay (\Mm _{\An _*^{\fin }},\Mm _{\An })). \] Under this
+identification, \(\oSp (\Mm _{\PSh (D)})\) is obtained by restricting the inner \(\oDay (\Mm _{\An _*^{\fin }},\Mm _{\An })\) to reduced excisive functors, using <a class="source-reference" data-label="lem:Day_Convolution_Full_Suboperads" href="../../../entry/day-convolution-full-suboperads/index.html#lem:Day_Convolution_Full_Suboperads">Lemma 19.6.1</a>. By <a class="source-reference" data-label="thm:Tensor_Product_Spectra" href="../../../entry/tensor-product-spectra/index.html#thm:Tensor_Product_Spectra">Theorem 16.6.1</a> and
+the construction of the symmetric monoidal localization there, this restriction is the multimorphism
+operad \(\Mm _{\Sp }\). Hence \[ \oSp (\Mm _{\PSh (D)}) \simeq \oDay (\Mm _{D\catop },\Mm _{\Sp }). \] The latter is the multimorphism operad of \(\Fun (D\catop ,\Sp )\) with Day convolution. This functor
+category is stable, with finite limits and colimits computed pointwise. Its Day tensor product preserves
+colimits separately: it is computed by pointwise tensoring followed by left Kan extension, and both
+preserve  colimits  in  each  variable.  Thus  its  finite  limits  and  colimits  are  operadic,  proving  the
+claim.                                                                                                                                                   □
 </p>
 </div></div>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-1003r3'></a>
-<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 18.4.3.</span>  </span><span id='prop:Stabilization_Of_Lex_Operad_Is_Stable'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(\Oo \) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operad that admits finite operadic limits. Then</span> \(\oSp (\Oo )\) <span class='ntx-Italic-tlf-t1-x-x-109'>is stable.</span>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 20.2.3.</span>  </span><span id='prop:Stabilization_Of_Lex_Operad_Is_Stable'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(\Oo \) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operad that admits finite operadic limits. Then</span> \(\oSp (\Oo )\) <span class='ntx-Italic-tlf-t1-x-x-109'>is stable.</span>
 </p>
 </div>
 
-<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-operadic-day-convolution-and-stabilization-section-04-5" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-operadic-day-convolution-and-stabilization-section-04-5">
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-operadic-day-convolution-and-stabilization-section-02-6" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-operadic-day-convolution-and-stabilization-section-02-6">
 <p class='noindent'><span class='head'>
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Put \(E:=\Env (\Oo )\). By <a class="source-reference" data-label="prop:Multiplicative_Yoneda_Embedding" href="../../../entry/multiplicative-yoneda-embedding/index.html#prop:Multiplicative_Yoneda_Embedding">Proposition 18.2.3</a>, the multiplicative Yoneda embedding realizes \(\Oo \) as a full suboperad of \(\Mm _{\PSh (E)}\) and preserves
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Put \(E:=\Env (\Oo )\). By <a class="source-reference" data-label="cor:Multiplicative_Yoneda_Image_Closed_Under_Limits" href="../../../entry/multiplicative-yoneda-image-closed-under-limits/index.html#cor:Multiplicative_Yoneda_Image_Closed_Under_Limits">Corollary 20.1.6</a>, the multiplicative Yoneda embedding realizes \(\Oo \) as a full suboperad of \(\Mm _{\PSh (E)}\) and preserves
 
 
-finite operadic limits. It therefore induces a fully faithful functor \[ \Sp ^{\exc }(\Oo _{\lra {1}})\longrightarrow \Sp ^{\exc }(\PSh (E)) \] preserving finite limits, since these
-are computed pointwise. Both categories are stable by <a class="source-reference" data-label="prop:Stability_Excisive_Functors" href="../../../entry/stability-excisive-functors/index.html#prop:Stability_Excisive_Functors">Proposition 16.5.7</a>, so this functor is exact and its essential
-image is closed under finite limits and colimits. By <a class="source-reference" data-label="lem:Day_Convolution_Full_Suboperads" href="../../../entry/day-convolution-full-suboperads/index.html#lem:Day_Convolution_Full_Suboperads">Lemma 18.3.2</a>, the corresponding full suboperad of \(\oSp (\Mm _{\PSh (E)})\) is \(\oSp (\Oo )\). The
-ambient operad is stable by <a class="source-reference" data-label="lem:Presheaf_Stabilization_Stable_Operad" href="../../../entry/presheaf-stabilization-stable-operad/index.html#lem:Presheaf_Stabilization_Stable_Operad">Lemma 18.4.2</a>, so <a class="source-reference" data-label="lem:Stable_Full_Suboperad" href="../../../entry/stable-full-suboperad/index.html#lem:Stable_Full_Suboperad">Lemma 18.1.8</a> proves the claim.                                                                             □
+finite operadic limits. It therefore induces a fully faithful functor \[ \Sp ^{\exc }(U(\Oo ))\longrightarrow \Sp ^{\exc }(\PSh (E)) \] preserving finite limits, since these
+are computed pointwise. Both \(\infty \)-categories are stable by <a class="source-reference" data-label="prop:Stability_Excisive_Functors" href="../../../entry/stability-excisive-functors/index.html#prop:Stability_Excisive_Functors">Proposition 16.5.7</a>, so this functor is exact and its essential
+image is closed under finite limits and colimits. By <a class="source-reference" data-label="lem:Day_Convolution_Full_Suboperads" href="../../../entry/day-convolution-full-suboperads/index.html#lem:Day_Convolution_Full_Suboperads">Lemma 19.6.1</a>, the corresponding full suboperad of \(\oSp (\Mm _{\PSh (E)})\) is \(\oSp (\Oo )\). The
+ambient \(\infty \)-operad is stable by <a class="source-reference" data-label="lem:Presheaf_Stabilization_Stable_Operad" href="../../../entry/presheaf-stabilization-stable-operad/index.html#lem:Presheaf_Stabilization_Stable_Operad">Lemma 20.2.2</a>, so <a class="source-reference" data-label="lem:Stable_Full_Suboperad" href="../../../entry/stable-full-suboperad/index.html#lem:Stable_Full_Suboperad">Lemma 20.1.9</a> proves the claim.                                                                            □
 </p>
 </div></div>
-<p class='noindent'>For stable \(\Oo \), evaluation at \(S^0\) already gives an equivalence on underlying categories (<a class="source-reference" data-label="lem:Stabilization_Of_Stable_Category" href="../../../entry/stabilization-of-stable-category/index.html#lem:Stabilization_Of_Stable_Category">Lemma 16.5.8</a>). We must show that it
-also induces equivalences on multimorphism animae. By <a class="source-reference" data-label="thm:Day_Multimorphism_End_Formula" href="../../../entry/day-multimorphism-end-formula/index.html#thm:Day_Multimorphism_End_Formula">Theorem 18.3.5</a>, these consist of coherent families of operations \[ F_1(K_1),\dots ,F_n(K_n)\longrightarrow G(K_1\wedge \cdots \wedge K_n). \]
-We will show that such a family is determined by its value at \(K_1=\cdots =K_n=S^0\). The following lemma allows us to evaluate
-one variable at a time.
+<p class='noindent'>For a stable \(\infty \)-operad \(\Oo \), evaluation at \(S^0\) already gives an equivalence on underlying categories (<a class="source-reference" data-label="lem:Stabilization_Of_Stable_Category" href="../../../entry/stabilization-of-stable-category/index.html#lem:Stabilization_Of_Stable_Category">Lemma 16.5.8</a>). We must show
+that it also induces equivalences on multimorphism animae. By <a class="source-reference" data-label="thm:Day_Multimorphism_End_Formula" href="../../../entry/day-multimorphism-end-formula/index.html#thm:Day_Multimorphism_End_Formula">Theorem 19.6.3</a>, these consist of coherent families of
+operations \[ F_1(K_1),\dots ,F_n(K_n)\longrightarrow G(K_1\wedge \cdots \wedge K_n). \] We will show that such a family is determined by its value at \(K_1=\cdots =K_n=S^0\). The following lemma allows us to
+evaluate one variable at a time.
 </p>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
 <a id='x1-1004r4'></a>
-<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 18.4.4.</span>  </span><span id='lem:Exact_End_Reduction_To_S0'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(T\colon (\An _*^{\fin })\catop \times \An _*^{\fin } \to \An \) <span class='ntx-Italic-tlf-t1-x-x-109'>be a functor with the following properties:</span>
-   </p><dl class='enumerate'><dt class='enumerate'>
-<span class='ntx-Italic-tlf-t1-x-x-109'>(1)</span> </dt><dd class='enumerate'>
-   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For every</span> \(L \in \An _*^{\fin }\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the functor</span> \(T(-,L)\colon (\An _*^{\fin })\catop \to \An \) <span class='ntx-Italic-tlf-t1-x-x-109'>sends finite colimits in</span> \(\An _*^{\fin }\) <span class='ntx-Italic-tlf-t1-x-x-109'>to limits.</span>
-   </p></dd><dt class='enumerate'>
-<span class='ntx-Italic-tlf-t1-x-x-109'>(2)</span> </dt><dd class='enumerate'>
-   <p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>For every</span> \(K \in \An _*^{\fin }\)<span class='ntx-Italic-tlf-t1-x-x-109'>, the functor</span> \(T(K,-)\colon \An _*^{\fin } \to \An \) <span class='ntx-Italic-tlf-t1-x-x-109'>is reduced and excisive.</span></p></dd></dl>
-<p class='noindent'><span class='ntx-Italic-tlf-t1-x-x-109'>Then the projection from the end to the component at</span> \(S^0\)<span class='ntx-Italic-tlf-t1-x-x-109'>, </span>\[ \int _{K \in \An _*^{\fin }} T(K,K) \to T(S^0,S^0), \] <span class='ntx-Italic-tlf-t1-x-x-109'>is an equivalence.</span>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 20.2.4.</span>  </span><span id='lem:Exact_End_Reduction_To_S0'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(T\colon (\An _*^{\fin })\catop \times \An _*^{\fin }\to \An \) <span class='ntx-Italic-tlf-t1-x-x-109'>be a functor such that</span> \(T(-,L)\) <span class='ntx-Italic-tlf-t1-x-x-109'>sends finite colimits to limits for every</span> \(L\)<span class='ntx-Italic-tlf-t1-x-x-109'>, and</span> \(T(K,-)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is reduced
+and excisive for every</span> \(K\)<span class='ntx-Italic-tlf-t1-x-x-109'>. Then the projection </span>\[ \int _{K \in \An _*^{\fin }} T(K,K) \to T(S^0,S^0), \] <span class='ntx-Italic-tlf-t1-x-x-109'>is an equivalence.</span>
 </p>
 </div>
 
-<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-operadic-day-convolution-and-stabilization-section-04-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-operadic-day-convolution-and-stabilization-section-04-4">
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-operadic-day-convolution-and-stabilization-section-02-5" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-operadic-day-convolution-and-stabilization-section-02-5">
 <p class='noindent'><span class='head'>
-
-
-
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="lem:Pointed_Animae_As_Ind_Finite_Pointed_Animae" href="../../../entry/animae-as-ind-completions/index.html#lem:Pointed_Animae_As_Ind_Finite_Pointed_Animae">Lemma 22.3.9</a>, condition (1) gives a functor \(F\colon \An _*^{\fin }\to \An _*\) and natural identifications \[ T(K,L)\simeq \Hom _{\An _*}(K,F(L)). \] Since the restricted Yoneda
-embedding preserves and reflects limits, condition (2) says that \(F\) is reduced and excisive. Let \(j\colon \An _*^{\fin }\hookrightarrow \An _*\) be the
-inclusion. The end formula for natural transformations and <a class="source-reference" data-label="lem:Free_Excisive_Functor_On_Pointed_Anima" href="../../../entry/free-excisive-functor-on-pointed-anima/index.html#lem:Free_Excisive_Functor_On_Pointed_Anima">Lemma 16.5.14</a> give \begin {align*}  \int _{K\in \An _*^{\fin }}T(K,K) &amp;\simeq \Nat (j,F)\simeq \Nat (P_1j,F)\\ &amp;\simeq \Hom _{\An _*}(S^0,F(S^0)) \simeq T(S^0,S^0).  \end {align*}
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="lem:Pointed_Animae_As_Ind_Finite_Pointed_Animae" href="../../../entry/animae-as-ind-completions/index.html#lem:Pointed_Animae_As_Ind_Finite_Pointed_Animae">Lemma 23.3.9</a>, the condition on the first variable gives a functor \(F\colon \An _*^{\fin }\to \An _*\) and natural identifications \[ T(K,L)\simeq \Hom _{\An _*}(K,F(L)). \] Since the
+restricted Yoneda embedding preserves and reflects limits, the condition on the second variable says that \(F\) is
+reduced and excisive. Let \(j\colon \An _*^{\fin }\hookrightarrow \An _*\) be the inclusion. The end formula for natural transformations and <a class="source-reference" data-label="lem:Free_Excisive_Functor_On_Pointed_Anima" href="../../../entry/free-excisive-functor-on-pointed-anima/index.html#lem:Free_Excisive_Functor_On_Pointed_Anima">Lemma 16.5.14</a> give
+\begin {align*}  \int _{K\in \An _*^{\fin }}T(K,K) &amp;\simeq \Nat (j,F)\simeq \Nat (P_1j,F)\\ &amp;\simeq \Hom _{\An _*}(S^0,F(S^0)) \simeq T(S^0,S^0).  \end {align*}
 </p><p class='noindent'>The composite sends a transformation \(j\to F\) to its component at \(S^0\), so it is the stated projection.               □
 </p>
 </div></div>
 <div class='newtheorem'>
+
+
 <p class='noindent'><span class='head'>
-<a id='x1-1007r5'></a>
-<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 18.4.5.</span>  </span><span id='prop:Omega_Infty_Stable_Operad_Equivalence'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(\Oo \) <span class='ntx-Italic-tlf-t1-x-x-109'>is stable, then the evaluation map </span>\[ \Omega ^\infty \colon \oSp (\Oo ) \to \Oo \] <span class='ntx-Italic-tlf-t1-x-x-109'>is an equivalence of</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operads.</span>
+<a id='x1-1005r5'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 20.2.5.</span>  </span><span id='prop:Omega_Infty_Stable_Operad_Equivalence'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>If</span> \(\Oo \) <span class='ntx-Italic-tlf-t1-x-x-109'>is stable, then the evaluation map </span>\[ \Omega ^\infty \colon \oSp (\Oo ) \to \Oo \] <span class='ntx-Italic-tlf-t1-x-x-109'>is an equivalence of</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operads.</span>
 </p>
 </div>
 
-<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-operadic-day-convolution-and-stabilization-section-04-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-operadic-day-convolution-and-stabilization-section-04-3">
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-operadic-day-convolution-and-stabilization-section-02-4" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-operadic-day-convolution-and-stabilization-section-02-4">
 <p class='noindent'><span class='head'>
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> On underlying \(\infty \)-categories this is <a class="source-reference" data-label="lem:Stabilization_Of_Stable_Category" href="../../../entry/stabilization-of-stable-category/index.html#lem:Stabilization_Of_Stable_Category">Lemma 16.5.8</a>. By <a class="source-reference" data-label="lem:Fully_Faithful_Essentially_Surjective_Operad_Map" href="../../../entry/fully-faithful-essentially-surjective-operad-map/index.html#lem:Fully_Faithful_Essentially_Surjective_Operad_Map">Lemma 14.1.8</a>, it remains to prove that \(\Omega ^\infty \) is fully faithful.
-</p><p class='noindent'>Let \(I\) be a finite set, and let \(\{F_i\colon \An _*^{\fin } \to \Oo _{\lra {1}}\}_{i \in I}\) and \(G\colon \An _*^{\fin } \to \Oo _{\lra {1}}\) be reduced excisive functors. By <a class="source-reference" data-label="thm:Day_Multimorphism_End_Formula" href="../../../entry/day-multimorphism-end-formula/index.html#thm:Day_Multimorphism_End_Formula">Theorem 18.3.5</a>, the source of the induced map on
-multimorphism animae is \[ \int _{\{K_i\}_{i \in I}\in (\An _*^{\fin })^I} \Oo (\{F_i(K_i)\}_{i \in I};G(\bigwedge \nolimits _{i \in I}K_i)). \] By naturality of <a class="source-reference" data-label="thm:Day_Multimorphism_End_Formula" href="../../../entry/day-multimorphism-end-formula/index.html#thm:Day_Multimorphism_End_Formula">Theorem 18.3.5</a> in the evaluation operad map and the identification \(\bigwedge _{i\in I}S^0 \simeq S^0\), the
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> On underlying \(\infty \)-categories this is <a class="source-reference" data-label="lem:Stabilization_Of_Stable_Category" href="../../../entry/stabilization-of-stable-category/index.html#lem:Stabilization_Of_Stable_Category">Lemma 16.5.8</a>. By <a class="source-reference" data-label="lem:Fully_Faithful_Essentially_Surjective_Operad_Map" href="../../../entry/fully-faithful-essentially-surjective-operad-map/index.html#lem:Fully_Faithful_Essentially_Surjective_Operad_Map">Lemma 14.1.11</a>, it remains to prove that \(\Omega ^\infty \) is fully faithful.
+</p><p class='noindent'>Let \(I\) be a finite set, and let \(\{F_i\colon \An _*^{\fin } \to U(\Oo )\}_{i \in I}\) and \(G\colon \An _*^{\fin } \to U(\Oo )\) be reduced excisive functors. By <a class="source-reference" data-label="thm:Day_Multimorphism_End_Formula" href="../../../entry/day-multimorphism-end-formula/index.html#thm:Day_Multimorphism_End_Formula">Theorem 19.6.3</a>, the source of the induced map on
+multimorphism animae is \[ \int _{\{K_i\}_{i \in I}\in (\An _*^{\fin })^I} \Oo (\{F_i(K_i)\}_{i \in I};G(\bigwedge \nolimits _{i \in I}K_i)). \] By naturality of <a class="source-reference" data-label="thm:Day_Multimorphism_End_Formula" href="../../../entry/day-multimorphism-end-formula/index.html#thm:Day_Multimorphism_End_Formula">Theorem 19.6.3</a> in the evaluation operad map and the identification \(\bigwedge _{i\in I}S^0 \simeq S^0\), the
 map induced by \(\Omega ^\infty \) is the projection from this end to the component where all \(K_i\) are equal to \(S^0\).
 </p><p class='noindent'>We evaluate the variables at \(S^0\) one at a time. In order to iterate the argument, we allow additional
 fixed colors \(z_1,\dots ,z_m\) among the inputs and prove the assertion by induction on \(|I|\). The case \(I=\emptyset \) is immediate. For
-\(I\neq \emptyset \), choose \(i_0\in I\). By Fubini, the end is \(\int _K T(K,K)\) for the bifunctor \[ T(K,L):= \int _{\{K_i\}_{i\neq i_0}\in (\An _*^{\fin })^{I\setminus \{i_0\}}} \Oo (z_1,\dots ,z_m,F_{i_0}(K),\{F_i(K_i)\}_{i\neq i_0}; G(L\wedge \bigwedge _{i\neq i_0}K_i)). \] We check the two hypotheses of <a class="source-reference" data-label="lem:Exact_End_Reduction_To_S0" href="../../../entry/exact-end-reduction-to-the-zero-sphere/index.html#lem:Exact_End_Reduction_To_S0">Lemma 18.4.4</a>. Since \(\Oo _{\lra {1}}\) is stable,
+\(I\neq \emptyset \), choose \(i_0\in I\). By Fubini, the end is \(\int _K T(K,K)\) for the bifunctor \[ T(K,L):= \int _{\{K_i\}_{i\neq i_0}\in (\An _*^{\fin })^{I\setminus \{i_0\}}} \Oo (z_1,\dots ,z_m,F_{i_0}(K),\{F_i(K_i)\}_{i\neq i_0}; G(L\wedge \bigwedge _{i\neq i_0}K_i)). \] We check the two hypotheses of <a class="source-reference" data-label="lem:Exact_End_Reduction_To_S0" href="../../../entry/exact-end-reduction-to-the-zero-sphere/index.html#lem:Exact_End_Reduction_To_S0">Lemma 20.2.4</a>. Since \(U(\Oo )\) is stable,
 the reduced excisive functor \(F_{i_0}\) preserves finite colimits. These colimits are operadic, so \(T(-,L)\) sends them
 to limits.
 </p><p class='noindent'>For the other variable, smashing with the fixed \(\bigwedge _{i\neq i_0}K_i\) preserves finite colimits. Applying \(G\) gives a reduced
 excisive functor, and its finite limits are operadic. Thus \(T(K,-)\) is reduced and excisive. In both verifications,
 taking the end preserves the relevant limits. These arguments also apply with the fixed inputs \(z_1,\dots ,z_m\), since
 operadic limits and colimits are tested on multimorphism animae with arbitrary other inputs.
-
-
 </p><p class='noindent'>By the lemma, the projection \(\int _K T(K,K)\to T(S^0,S^0)\) is an equivalence. The latter is the end over the remaining variables,
 with \(F_{i_0}(S^0)\) now a fixed input. The induction hypothesis identifies this end with the multimorphism anima
 obtained by setting all remaining \(K_i=S^0\). Taking \(m=0\), we obtain \[ \Oo (\{F_i(S^0)\}_{i\in I};G(S^0)). \] Each step is the projection to the indicated
@@ -176,90 +168,124 @@ component, so the resulting equivalence is the map induced by \(\Omega ^\infty \
 </div></div>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
-<a id='x1-1008r6'></a>
-<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 18.4.6 </span>(Stabilization of operads)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Stabilization_Of_Operads'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(\Oo \) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operad that admits finite operadic limits.
+
+
+<a id='x1-1006r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 20.2.6 </span>(Stabilization of \(\infty \)-operads)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Stabilization_Of_Operads'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(\Oo \) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operad that admits finite operadic limits.
 Then the</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operad</span> \(\oSp (\Oo )\) <span class='ntx-Italic-tlf-t1-x-x-109'>is stable, and the resulting functor </span>\[ \oSp \colon \Op _{\infty }^{\lex } \to \Op _{\infty }^{\st } \] <span class='ntx-Italic-tlf-t1-x-x-109'>is right adjoint to the inclusion functor.</span>
 </p>
 </div>
 
-<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-operadic-day-convolution-and-stabilization-section-04-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-operadic-day-convolution-and-stabilization-section-04-2">
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-operadic-day-convolution-and-stabilization-section-02-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-operadic-day-convolution-and-stabilization-section-02-3">
 <p class='noindent'><span class='head'>
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The first claim is <a class="source-reference" data-label="prop:Stabilization_Of_Lex_Operad_Is_Stable" href="../../../entry/stabilization-of-lex-operad-is-stable/index.html#prop:Stabilization_Of_Lex_Operad_Is_Stable">Proposition 18.4.3</a>. We now prove the adjunction. Postcomposition with a map in \(\Op _{\infty }^{\lex }\) preserves
-reduced excisive functors, since its color functor preserves finite limits. Thus the construction of \(\oSp (\Oo )\)
-is functorial in \(\Oo \in \Op _{\infty }^{\lex }\), and evaluation at \(S^0\) gives a natural transformation \[ \Omega ^\infty \colon \oSp \to \id _{\Op _{\infty }^{\lex }}. \] By the dual of the recognition
-criterion for Bousfield localizations from <a class="source-reference" data-label="prop:Characterization_Bousfield_Localizations" href="../../../entry/characterizations-of-categorical-bousfield-localizations/index.html#prop:Characterization_Bousfield_Localizations">Proposition 21.8.9</a>, applied in \((\Op _{\infty }^{\lex })\catop \), it is enough to show that \(\Omega ^\infty _{\Oo }\) is an equivalence
-whenever \(\Oo \) is stable, and that \[ \oSp (\Omega ^\infty _{\Oo })\colon \oSp (\oSp (\Oo )) \to \oSp (\Oo ) \] is an equivalence for every \(\Oo \in \Op _{\infty }^{\lex }\). The first assertion is <a class="source-reference" data-label="prop:Omega_Infty_Stable_Operad_Equivalence" href="../../../entry/omega-infinity-stable-operad-equivalence/index.html#prop:Omega_Infty_Stable_Operad_Equivalence">Proposition 18.4.5</a>.
-</p><p class='noindent'>For the second assertion, observe that \(\oSp (\oSp (\Oo ))\) may be identified with the full suboperad of \(\oDay (\Mm _{\An _*^{\fin } \times \An _*^{\fin }},\Oo )\) spanned by
-bifunctors  \(\An _*^{\fin } \times \An _*^{\fin } \to \Oo _{\lra {1}}\)  which  are  reduced  and  excisive  in  each  variable.  Under  this  identification,  the  map  \(\oSp (\Omega ^\infty _{\Oo })\)
-evaluates in one variable at \(S^0\), while the map \[ \Omega ^\infty _{\oSp (\Oo )}\colon \oSp (\oSp (\Oo )) \to \oSp (\Oo ) \] evaluates in the other variable at \(S^0\). These two maps are
-conjugate by the symmetry of \(\An _*^{\fin }\times \An _*^{\fin }\). Since \(\oSp (\Oo )\) is stable by the first part of the theorem, <a class="source-reference" data-label="prop:Omega_Infty_Stable_Operad_Equivalence" href="../../../entry/omega-infinity-stable-operad-equivalence/index.html#prop:Omega_Infty_Stable_Operad_Equivalence">Proposition 18.4.5</a> shows that \(\Omega ^\infty _{\oSp (\Oo )}\) is an
-equivalence. Hence \(\oSp (\Omega ^\infty _{\Oo })\) is an equivalence as well.                                                                                   □
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Stability is <a class="source-reference" data-label="prop:Stabilization_Of_Lex_Operad_Is_Stable" href="../../../entry/stabilization-of-lex-operad-is-stable/index.html#prop:Stabilization_Of_Lex_Operad_Is_Stable">Proposition 20.2.3</a>. Postcomposition with a map in \(\Op _{\infty }^{\lex }\) preserves reduced excisive functors. Finite
+limits of these functors are computed pointwise, so postcomposition and evaluation at \(S^0\) preserve
+finite operadic limits. Thus \(\oSp \) is a functor on \(\Op _{\infty }^{\lex }\), with a natural transformation \(\Omega ^\infty \colon \oSp \to \id \).
+</p><p class='noindent'>By <a class="source-reference" data-label="prop:Omega_Infty_Stable_Operad_Equivalence" href="../../../entry/omega-infinity-stable-operad-equivalence/index.html#prop:Omega_Infty_Stable_Operad_Equivalence">Proposition 20.2.5</a>, this transformation is an equivalence on stable \(\infty \)-operads. For the right adjoint criterion dual
+to <a class="source-reference" data-label="prop:Characterization_Bousfield_Localizations" href="../../../entry/characterizations-of-categorical-bousfield-localizations/index.html#prop:Characterization_Bousfield_Localizations">Proposition 22.7.9</a>, it remains to show that \(\oSp (\Omega ^\infty _{\Oo })\) is an equivalence for any \(\Oo \in \Op _{\infty }^{\lex }\). The universal property of Day convolution
+identifies \(\oSp (\oSp (\Oo ))\) with the full suboperad of \(\oDay (\Mm _{\An _*^{\fin }\times \An _*^{\fin }},\Oo )\) on bifunctors that are reduced and excisive separately. The
+maps \(\oSp (\Omega ^\infty _{\Oo })\) and \(\Omega ^\infty _{\oSp (\Oo )}\) evaluate at \(S^0\) in the two respective variables, so interchanging those variables exchanges
+the maps. The latter is an equivalence because \(\oSp (\Oo )\) is stable; hence so is the former.                             □
 </p>
 </div></div>
-
-
-<p class='noindent'>Recall from <a class="source-reference" data-label="def:Stably_Symmetric_Monoidal" href="../../../entry/stably-symmetric-monoidal-infinity-category/index.html#def:Stably_Symmetric_Monoidal">Definition 11.1.16</a> that a symmetric monoidal \(\infty \)-category \(C\) is called <span class='ntx-Italic-tlf-t1-x-x-109'>stably symmetric monoidal </span>if \(C\) is stable and the
-tensor product \(- \otimes -\colon C \times C \to C\) is exact in both variables; equivalently, if \(\Mm _C\) is a stable \(\infty \)-operad.
+<p class='noindent'>For a presentably symmetric monoidal \(\infty \)-category \(C\), <a class="source-reference" data-label="thm:Basic_Modes" href="../../../entry/basic-modes/index.html#thm:Basic_Modes">Theorem 18.2.5</a> equips \(\Sp (C)\simeq \Sp \otimes C\) with a symmetric monoidal structure. Its
+multimorphism operad is the operadic stabilization constructed above.
 </p>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
-<a id='x1-1009r7'></a>
-<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 18.4.7.</span>  </span><span id='cor:Lax_Monoidal_Universal_Property_Stabilization'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(C\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  a  symmetric  monoidal</span>  \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category  with  finite  limits  whose  operadic
+<a id='x1-1007r7'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 20.2.7 </span>(Presentable operadic stabilization, <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-Nikolaus_Stable_Operads" title="Nikolaus, Stable $\infty$-operads and the multiplicative Yoneda lemma">Nikolaus (2016)</a>, Proposition 4.9]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cor:Presentable_Operadic_Stabilization_Representable'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(C\) <span class='ntx-Italic-tlf-t1-x-x-109'>be a presentably symmetric monoidal</span>
+\(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category. For the presentably symmetric monoidal structure on</span> \(\Sp (C)\simeq \Sp \otimes C\)<span class='ntx-Italic-tlf-t1-x-x-109'>, there is a natural equivalence </span>\[ \oSp (\Mm _C) \quad \simeq \quad \Mm _{\Sp (C)}. \]
+</p>
+
+
+
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-operadic-day-convolution-and-stabilization-section-02-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-operadic-day-convolution-and-stabilization-section-02-2">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="prop:Presentability_Structured_Objects" href="../../../entry/presentability-of-structured-objects/index.html#prop:Presentability_Structured_Objects">Proposition 23.2.7</a>(3), the reduced excisive functors form a presentable reflective subcategory of \(\Fun (\An _*^{\fin },C)\). Equip the
+latter with its presentably symmetric monoidal Day convolution structure. For an arbitrary functor
+\(F\) and a reduced excisive functor \(G\), <a class="source-reference" data-label="prop:Internal_Hom_Functor_Category" href="../../../entry/internal-hom-functor-category/index.html#prop:Internal_Hom_Functor_Category">Proposition 16.2.7</a> gives \[ \iHom _{\Day }(F,G)(K)\simeq \int _{L\in \An _*^{\fin }}\iHom _C(F(L),G(K\wedge L)). \] This is reduced excisive: smashing with \(L\) preserves finite
+colimits,  while  internal  homs  and  ends  preserve  limits.  Thus  <a class="source-reference" data-label="lem:Local_Subcategory_Closed_Under_Internal_Hom" href="../../../entry/local-subcategory-closed-under-internal-hom/index.html#lem:Local_Subcategory_Closed_Under_Internal_Hom">Lemma 14.7.3</a>,  <a class="source-reference" data-label="prop:Left_Adjoint_To_Inclusion_Gives_SymMon" href="../../../entry/left-adjoint-to-inclusion-gives-symmon/index.html#prop:Left_Adjoint_To_Inclusion_Gives_SymMon">Proposition 14.7.2</a>  make  the  reflection  symmetric
+monoidal, with a presentably symmetric monoidal target whose multimorphism operad is \(\oSp (\Mm _C)\).
+</p><p class='noindent'>Left Kan extension along \(S^0\colon *\to \An _*^{\fin }\) is symmetric monoidal by <a class="source-reference" data-label="lem:Left_Kan_Extension_Day_Symmetric_Monoidal" href="../../../entry/left-kan-extension-day-symmetric-monoidal/index.html#lem:Left_Kan_Extension_Day_Symmetric_Monoidal">Lemma 16.2.5</a>. Its composite with the reflection is left adjoint
+to evaluation at \(S^0\) on reduced excisive functors, hence is the stabilization functor \(C\to \Sp (C)\). This functor is
+therefore symmetric monoidal.
+</p><p class='noindent'>Since \(\Sp (C)\) is stable, the localization associated to the mode \(\Sp \) factors the stabilization functor through
+a  colimit-preserving  symmetric  monoidal  functor  from  \(\Sp \otimes C\)  (<a class="source-reference" data-label="prop:Multiplicative_Universal_Property_Modes" href="../../../entry/multiplicative-universal-property-cmon/index.html#prop:Multiplicative_Universal_Property_Modes">Proposition 18.2.8</a>).  On  underlying  categories  this  is  the
+stabilization equivalence \(\Sp \otimes C\simeq \Sp (C)\) of <a class="source-reference" data-label="thm:Basic_Modes" href="../../../entry/basic-modes/index.html#thm:Basic_Modes">Theorem 18.2.5</a>. Hence it is an equivalence of symmetric monoidal \(\infty \)-categories, as
+claimed.                                                                                                                                               □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1008r8'></a>
+<a class="entry-heading-link" href="../../../entry/operadic-stabilization-need-not-be-monoidal/index.html" aria-label="Remark 20.2.8., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 20.2.8.</span></a>  </span><span id='rmk:Operadic_Stabilization_Need_Not_Be_Monoidal'></span>  For  a  general  symmetric  monoidal  \(\infty \)-category  \(C\)  with  finite  limits,  \(\oSp (\Mm _C)\)  need  not  be
+represented by a symmetric monoidal structure on \(\Sp (C)\) (see <span class="source-reference" data-label="exercise:Nonrepresentable_Operadic_Stabilization">Chapterexercise 20.2</span>).
+</p>
+</div>
+<p class='noindent'>Recall from <a class="source-reference" data-label="def:Stably_Symmetric_Monoidal" href="../../../entry/stably-symmetric-monoidal-infinity-category/index.html#def:Stably_Symmetric_Monoidal">Definition 11.1.16</a> that a symmetric monoidal \(\infty \)-category \(D\) is <span class='ntx-Italic-tlf-t1-x-x-109'>stably symmetric monoidal </span>if it is stable and its tensor
+product is exact in each variable. Equivalently, its multimorphism operad \(\Mm _D\) is stable. The operadic
+stabilization adjunction therefore gives the following universal property whenever \(\oSp (\Mm _C)\) is represented by a
+
+
+symmetric monoidal structure.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1009r9'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 20.2.9.</span>  </span><span id='cor:Lax_Monoidal_Universal_Property_Stabilization'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(C\)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  a  symmetric  monoidal</span>  \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category  with  finite  limits  whose  operadic
 stabilization</span> \(\oSp (\Mm _C)\) <span class='ntx-Italic-tlf-t1-x-x-109'>is represented by a symmetric monoidal structure on</span> \(\Sp (C)\)<span class='ntx-Italic-tlf-t1-x-x-109'>. For every stably symmetric
 monoidal</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category</span> \(D\)<span class='ntx-Italic-tlf-t1-x-x-109'>, evaluation induces an equivalence </span>\[ \Omega ^{\infty }\circ -\colon \Fun ^{\otimes \dlax ,\lex }(D,\Sp (C))\iso \Fun ^{\otimes \dlax ,\lex }(D,C), \] <span class='ntx-Italic-tlf-t1-x-x-109'>where</span> \(\lex \) <span class='ntx-Italic-tlf-t1-x-x-109'>means that the underlying functor
 preserves finite limits.</span>
 </p>
 </div>
 
-<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-operadic-day-convolution-and-stabilization-section-04-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-operadic-day-convolution-and-stabilization-section-04-1">
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-operadic-day-convolution-and-stabilization-section-02-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-operadic-day-convolution-and-stabilization-section-02-1">
 <p class='noindent'><span class='head'>
-<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Evaluation at \(S^0\) is an operad map, giving \(\Omega ^\infty \) its lax symmetric monoidal structure. For any small
-\(\infty \)-category \(E\), currying identifies \[ \Sp (\Fun (E,C))\simeq \Fun (E,\Sp (C)), \] with pointwise monoidal structures on the functor categories. This
-identification respects the operads: reducedness and excisiveness are checked pointwise, and the
-multimorphism formulas agree by interchanging the ends over \(E\) and \((\An _*^{\fin })^I\) in <a class="source-reference" data-label="thm:Day_Multimorphism_End_Formula" href="../../../entry/day-multimorphism-end-formula/index.html#thm:Day_Multimorphism_End_Formula">Theorem 18.3.5</a>. The interchange respects
-substitution and evaluation at \(S^0\).
-</p><p class='noindent'>Apply <a class="source-reference" data-label="thm:Stabilization_Of_Operads" href="../../../entry/stabilization-of-operads/index.html#thm:Stabilization_Of_Operads">Theorem 18.4.6</a> with target \(\Mm _{\Fun (E,C)}\). By <a class="source-reference" data-label="lem:Algebras_In_Pointwise_Monoidal_Structure" href="../../../entry/algebras-in-pointwise-monoidal-structure/index.html#lem:Algebras_In_Pointwise_Monoidal_Structure">Lemma 14.2.12</a>, this gives an equivalence between the maximal animae of \(E\)-diagrams in the
-two displayed functor categories; preservation of finite limits is checked pointwise. Naturality in \(E\)
-and the Yoneda lemma give the asserted equivalence of \(\infty \)-categories. Compare <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-Nikolaus_Stable_Operads" title="Nikolaus, Stable $\infty$-operads and the multiplicative Yoneda lemma">Nikolaus (2016)</a>, Corollary 4.13]</span> for the case \(C=\An \).          □
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Since \(\Mm _D\) is stable, <a class="source-reference" data-label="thm:Stabilization_Of_Operads" href="../../../entry/stabilization-of-operads/index.html#thm:Stabilization_Of_Operads">Theorem 20.2.6</a> shows that postcomposition with the counit \(\Omega ^\infty \) induces an equivalence on
+groupoid cores. To include the monoidal natural transformations, we apply the same argument with
+\(\Fun (E,C)\) in place of \(C\), for any small \(\infty \)-category \(E\).
+</p><p class='noindent'>A spectrum object in \(\Fun (E,C)\) is an \(E\)-diagram of spectrum objects in \(C\), since reducedness and excisiveness
+are checked pointwise in \(E\). Under this identification, the pointwise tensor product on \(\Fun (E,\Sp (C))\) represents \(\oSp (\Mm _{\Fun (E,C)})\).
+Indeed, the Day formula of <a class="source-reference" data-label="thm:Day_Multimorphism_End_Formula" href="../../../entry/day-multimorphism-end-formula/index.html#thm:Day_Multimorphism_End_Formula">Theorem 19.6.3</a> computes the \(I\)-ary multimorphisms on the two sides by taking the ends
+over \(E\) and \((\An _*^{\fin })^I\) in opposite orders. Interchanging these ends respects substitution, since the operations
+compose pointwise in \(E\). Evaluation at \(S^0\) likewise applies \(\Omega ^\infty \) to each object of the diagram.
+</p><p class='noindent'>By <a class="source-reference" data-label="lem:Algebras_In_Pointwise_Monoidal_Structure" href="../../../entry/algebras-in-pointwise-monoidal-structure/index.html#lem:Algebras_In_Pointwise_Monoidal_Structure">Lemma 14.4.13</a>, a lax symmetric monoidal functor \(D\to \Fun (E,C)\) is an \(E\)-diagram of lax symmetric monoidal functors \(D\to C\), and
+preservation  of  finite  limits  is  again  checked  pointwise.  Thus  postcomposition  with  \(\Omega ^\infty \)  induces  an
+equivalence between the groupoid cores of the two categories of \(E\)-diagrams. As this holds for every
+\(E\), the result follows from the Yoneda lemma. For the case \(C=\An \), see also <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-Nikolaus_Stable_Operads" title="Nikolaus, Stable $\infty$-operads and the multiplicative Yoneda lemma">Nikolaus (2016)</a>, Corollary 4.13]</span>.                                                 □
 </p>
 </div></div>
-<div class='newtheorem'>
-<p class='noindent'><span class='head'>
-<a id='x1-1010r8'></a>
+<p class='noindent'>The other right adjoints from <a class="source-reference" data-label="sec:Operadic_Colimits" href="../operadic-co-limits/index.html#sec:Operadic_Colimits">Section 20.1</a> are obtained by adapting the construction of stabilization.
 
 
-<a class="entry-heading-link" href="../../../entry/operadic-stabilization-need-not-be-monoidal/index.html" aria-label="Remark 18.4.8., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 18.4.8.</span></a>  </span><span id='rmk:Operadic_Stabilization_Need_Not_Be_Monoidal'></span> The construction \(\oSp (\Mm _C)\) always produces an \(\infty \)-operad whose underlying \(\infty \)-category is \(\Sp (C)\),
-but this operad need not be the multimorphism operad of a symmetric monoidal \(\infty \)-category. Thus
-the representability hypothesis in <a class="source-reference" data-label="cor:Lax_Monoidal_Universal_Property_Stabilization" href="../../../entry/lax-monoidal-universal-property-stabilization/index.html#cor:Lax_Monoidal_Universal_Property_Stabilization">Corollary 18.4.7</a> is not automatic. It does hold when \(C\) is presentably symmetric
-monoidal; this will follow from the mode-theoretic construction in <a class="source-reference" data-label="cor:Presentable_Operadic_Stabilization_Representable" href="../../../entry/presentable-operadic-stabilization-representable/index.html#cor:Presentable_Operadic_Stabilization_Representable">Corollary 18.5.5</a>.
-</p>
-</div>
-<p class='noindent'>The other right adjoints from <a class="source-reference" data-label="sec:Operadic_Colimits" href="../operadic-co-limits/index.html#sec:Operadic_Colimits">Section 18.1</a> are obtained by adapting the construction of stabilization.
 </p>
 <div class='newtheorem'>
 <p class='noindent'><span class='head'>
-<a id='x1-1011r9'></a>
-<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 18.4.9 </span>(Additivization of operads, <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-Nikolaus_Stable_Operads" title="Nikolaus, Stable $\infty$-operads and the multiplicative Yoneda lemma">Nikolaus (2016)</a>, Theorem 5.7]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Additivization_Operads'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span> \(\Oo \) <span class='ntx-Italic-tlf-t1-x-x-109'>be an</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operad with an operadic terminal object,
-and  assume  finite  operadic  products  for  the  monoid  and  group  constructions.  The  categories  of
-pointed objects, commutative monoids, and commutative groups in</span> \(\Oo _{\lra {1}}\) <span class='ntx-Italic-tlf-t1-x-x-109'>admit natural operad structures</span>
+<a id='x1-1010r10'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Theorem 20.2.10 </span>(Additivization of \(\infty \)-operads, <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-Nikolaus_Stable_Operads" title="Nikolaus, Stable $\infty$-operads and the multiplicative Yoneda lemma">Nikolaus (2016)</a>, Theorem 5.7]</span>)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='thm:Additivization_Operads'>  </span><span class='ntx-Italic-tlf-t1-x-x-109'>Let</span>  \(\Oo \)  <span class='ntx-Italic-tlf-t1-x-x-109'>be  an</span>  \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operad  with  an  operadic  terminal
+object, and assume finite operadic products for the monoid and group constructions. The</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-categories
+of pointed objects, commutative monoids, and commutative groups in</span> \(U(\Oo )\) <span class='ntx-Italic-tlf-t1-x-x-109'>admit natural operad structures</span>
 \(\Oo _*\)<span class='ntx-Italic-tlf-t1-x-x-109'>,</span> \(\oCMon (\Oo )\)<span class='ntx-Italic-tlf-t1-x-x-109'>, and</span> \(\oCGrp (\Oo )\)<span class='ntx-Italic-tlf-t1-x-x-109'>, respectively. The resulting functors </span>\[ (-)_*\colon \Op _{\infty }^* \to \Op _{\infty }^{\pt }, \qquad \oCMon \colon \Op _{\infty }^{\mathrm {prod}} \to \Op _{\infty }^{\sadd } \qquadtext { and } \oCGrp \colon \Op _{\infty }^{\mathrm {prod}} \to \Op _{\infty }^{\add } \] <span class='ntx-Italic-tlf-t1-x-x-109'>are right adjoint to the respective inclusion functors.</span>
 </p>
 </div>
 <p class='noindent'>For pointed objects, replace \(\An _*^{\fin }\) by \([1]\) with its minimum tensor product and use diagrams whose value at \(0\) is
 terminal. For commutative monoids and groups, use finite-product-preserving diagrams on \(\Span (\Fin )\), with its tensor
 product induced by cartesian products of finite sets, imposing the grouplike condition for groups.
-Restricting Day convolution to these diagrams gives the three operads; evaluation at the monoidal unit gives
-the counits. For a presentable category \(C\) whose cartesian product preserves colimits separately, these
+Restricting Day convolution to these diagrams gives the three \(\infty \)-operads; evaluation at the monoidal unit
+gives the counits. For a presentable \(\infty \)-category \(C\) whose cartesian product preserves colimits separately, these
 constructions on \(\Mm _{(C,\times )}\) recover the smash product on \(C_*\) and the monoidal structures on \(\CMon (C)\) and \(\CGrp (C)\) from <a class="source-reference" data-label="chap:Day_Convolution" href="../../../chapter/day-convolution-and-the-tensor-product-of-spectra/index.html#chap:Day_Convolution">Chapter 16</a>. The
-constructions and proof of <a class="source-reference" data-label="thm:Additivization_Operads" href="../../../entry/additivization-operads/index.html#thm:Additivization_Operads">Theorem 18.4.9</a> are given in <a class="source-reference" data-label="sec:Operadic_Pointing_And_Additivization" href="../pointing-and-additivization-online-only/index.html#sec:Operadic_Pointing_And_Additivization">Section 18.6</a>.
+constructions and proof of <a class="source-reference" data-label="thm:Additivization_Operads" href="../../../entry/additivization-operads/index.html#thm:Additivization_Operads">Theorem 20.2.10</a> are given in <a class="source-reference" data-label="sec:Operadic_Pointing_And_Additivization" href="../pointing-and-additivization-online-only/index.html#sec:Operadic_Pointing_And_Additivization">Section 20.4</a>.
 </p>
 
 
 </div>
 <footer class="edition-footer">
-  <span>Last updated 6 November 2026</span>
+  <span>Last updated 19 November 2026</span>
   <a href="/notes/stable-homotopy-higher-algebra.pdf">PDF</a>
-  <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Section%2018.4%3A%20Stabilization%20of%20%E2%88%9E-operads&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fsection%2Foperadic-day-convolution-and-stabilization%2Fstabilization-of-operads%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
+  <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Section%2020.2%3A%20Stabilization%20of%20%E2%88%9E-operads&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fsection%2Foperadic-day-convolution-and-stabilization%2Fstabilization-of-operads%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
 </footer></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
     <div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
     <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
@@ -273,21 +299,21 @@ constructions and proof of <a class="source-reference" data-label="thm:Additiviz
       <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
     </button></h2>
     <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
-      <ol class="context-entry-list"><li><a href="../../../chapter/operads-the-heuristics/index.html"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../../../chapter/span-categories/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../../../chapter/basics-on-infinity-operads/index.html"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../../../chapter/cartesian-and-cocartesian-monoidal-structures/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../../../chapter/day-convolution-and-the-tensor-product-of-spectra/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="../../../chapter/the-envelope-of-an-infinity-operad/index.html"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../../../chapter/operadic-day-convolution-and-stabilization/index.html" aria-current="page"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Operadic Day convolution and stabilization</span></a></li><li><a href="../../../chapter/algebras-and-modules/index.html"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
+      <ol class="context-entry-list"><li><a href="../../../chapter/operads-the-heuristics/index.html"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../../../chapter/span-categories/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../../../chapter/basics-on-infinity-operads/index.html"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../../../chapter/cartesian-and-cocartesian-monoidal-structures/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../../../chapter/day-convolution-and-the-tensor-product-of-spectra/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="../../../chapter/algebras-and-modules/index.html"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../../../chapter/tensor-products-and-morita-theory/index.html"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Tensor products of ∞-categories and Morita theory</span></a></li><li><a href="../../../chapter/the-envelope-of-an-infinity-operad/index.html"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../../../chapter/operadic-day-convolution-and-stabilization/index.html" aria-current="page"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Operadic stabilization</span></a></li><li><a href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html"><span class="context-entry-heading">Chapter 21</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
     </nav>
   </section><section class="contents-ledger" data-contents-ledger data-open="false">
     <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
       <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
     </button></h2>
     <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
-      <ol class="context-entry-list"><li><a href="../operadic-co-limits/index.html"><span class="context-entry-heading">Section 18.1</span><span class="context-entry-title">Operadic (co)limits</span></a></li><li><a href="../the-multiplicative-yoneda-embedding/index.html"><span class="context-entry-heading">Section 18.2</span><span class="context-entry-title">The multiplicative Yoneda embedding</span></a></li><li><a href="../day-convolution-into-arbitrary-operads/index.html"><span class="context-entry-heading">Section 18.3</span><span class="context-entry-title">Day convolution into arbitrary operads</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 18.4</span><span class="context-entry-title">Stabilization of ∞-operads</span></a></li><li><a href="../modes-and-universal-properties/index.html"><span class="context-entry-heading">Section 18.5</span><span class="context-entry-title">Modes and universal properties</span></a></li><li><a href="../pointing-and-additivization-online-only/index.html"><span class="context-entry-heading">Section 18.6</span><span class="context-entry-title">Pointing and additivization (online only)</span></a></li></ol>
+      <ol class="context-entry-list"><li><a href="../operadic-co-limits/index.html"><span class="context-entry-heading">Section 20.1</span><span class="context-entry-title">Operadic (co)limits</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 20.2</span><span class="context-entry-title">Stabilization of ∞-operads</span></a></li><li><a href="../semiring-objects-from-distributivity/index.html"><span class="context-entry-heading">Section 20.3</span><span class="context-entry-title">Semiring objects from distributivity</span></a></li><li><a href="../pointing-and-additivization-online-only/index.html"><span class="context-entry-heading">Section 20.4</span><span class="context-entry-title">Pointing and additivization (online only)</span></a></li></ol>
     </nav>
   </section><section class="contents-ledger" data-contents-ledger data-open="true">
     <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
       <span>In this section</span><span class="contents-chevron" aria-hidden="true"></span>
     </button></h2>
     <nav class="contents" id="contents-section-contents" aria-label="In this section" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
-      <ol class="context-entry-list"><li><a href="#thm:Stabilization_Of_Operads"><span class="context-entry-heading">Theorem 18.4.6</span><span class="context-entry-title">Stabilization of operads</span></a></li><li><a href="#thm:Additivization_Operads"><span class="context-entry-heading">Theorem 18.4.9</span><span class="context-entry-title">Additivization of operads</span></a></li></ol>
+      <ol class="context-entry-list"><li><a href="#thm:Stabilization_Of_Operads"><span class="context-entry-heading">Theorem 20.2.6</span><span class="context-entry-title">Stabilization of ∞-operads</span></a></li><li><a href="#cor:Presentable_Operadic_Stabilization_Representable"><span class="context-entry-heading">Corollary 20.2.7</span><span class="context-entry-title">Presentable operadic stabilization</span></a></li><li><a href="#thm:Additivization_Operads"><span class="context-entry-heading">Theorem 20.2.10</span><span class="context-entry-title">Additivization of ∞-operads</span></a></li></ol>
     </nav>
   </section></div>
   </aside><aside class="publication-fragment-notice" id="cor:Operadic_Constructions_Recover_Basic_Monoidal_Structures"><strong>Retired fragment.</strong> This result moved to the linked section in the revised manuscript. It now appears at <a href="../pointing-and-additivization-online-only/#cor:Operadic_Constructions_Recover_Basic_Monoidal_Structures">this address</a>.</aside>

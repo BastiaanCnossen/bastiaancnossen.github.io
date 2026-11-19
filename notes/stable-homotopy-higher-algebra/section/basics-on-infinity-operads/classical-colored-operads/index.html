@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 14.2: Classical colored operads | Stable Homotopy Theory and Higher Algebra</title>
+<meta name="description" content="Constructs the ∞-operad of a classical colored operad from labeled pullback diagrams and identifies its underlying category and operations.">
+<link rel="canonical" href="https://bastiaancnossen.com/notes/stable-homotopy-higher-algebra/section/basics-on-infinity-operads/classical-colored-operads/">
+<link rel="stylesheet" href="../../../_assets/reader-shell-v1/style.css">
+<link rel="stylesheet" href="../../../_assets/style.css">
+<script>window.MathJax = {"loader":{"paths":{"fonts":"../../../_assets/mathjax/fonts"},"load":["[tex]/mathtools","[tex]/boldsymbol"]},"tex":{"inlineMath":[["\\(","\\)"]],"displayMath":[["\\[","\\]"]],"tags":"ams","packages":{"[+]":["ams","mathtools","boldsymbol"]},"macros":{"An":"\\mathrm{An}","Ab":"\\mathrm{Ab}","Alg":"\\mathrm{Alg}","BMod":"\\mathrm{BMod}","CAlg":"\\mathrm{CAlg}","CGrp":"\\mathrm{CGrp}","CMon":"\\mathrm{CMon}","CRing":"\\mathrm{CRing}","CRig":"\\mathrm{CRig}","Fin":"\\mathrm{Fin}","FinGrpd":"\\mathrm{FinGrpd}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","LMod":"\\mathrm{LMod}","Mod":"\\mathrm{Mod}","Mon":"\\mathrm{Mon}","Poset":"\\mathrm{Poset}","RMod":"\\mathrm{RMod}","Vect":"\\mathrm{Vect}","RelCat":"\\mathrm{RelCat}","Aa":"\\mathcal{A}","Bb":"\\mathcal{B}","Cc":"\\mathcal{C}","Dd":"\\mathcal{D}","Ee":"\\mathcal{E}","Ff":"\\mathcal{F}","Gg":"\\mathcal{G}","Kk":"\\mathcal{K}","Ll":"\\mathcal{L}","Mm":"\\mathcal{M}","Oo":"\\mathcal{O}","Pp":"\\mathcal{P}","Qq":"\\mathcal{Q}","Rr":"\\mathcal{R}","Ww":"\\mathcal{W}","bbA":"\\mathbb{A}","bB":"\\mathbf{B}","bC":"\\mathbf{C}","bL":"\\mathbf{L}","bR":"\\mathbf{R}","bOmega":"\\boldsymbol{\\Omega}","Top":"\\mathrm{Top}","Set":"\\mathrm{Set}","Cell":"\\mathrm{Cell}","Sp":"\\mathrm{Sp}","PSp":"\\mathrm{PSp}","sAn":"\\mathrm{sAn}","qCat":"\\mathrm{qCat}","Cat":"\\mathrm{Cat}","CatL":"\\mathrm{Cat}^{\\mathrm{L}}","CatR":"\\mathrm{Cat}^{\\mathrm{R}}","sSet":"\\mathrm{sSet}","Fun":"\\operatorname{Fun}","Hom":"\\operatorname{Hom}","Aut":"\\operatorname{Aut}","End":"\\operatorname{End}","iHom":"\\underline{\\operatorname{Hom}}","ihom":"\\underline{\\operatorname{hom}}","Homtop":"\\operatorname{Hom}^{\\mathrm{top}}","uHom":"\\underline{\\operatorname{Hom}}","Map":"\\operatorname{Map}","Nat":"\\operatorname{Nat}","Ar":"\\operatorname{Ar}","Ch":"\\operatorname{Ch}","GL":"\\operatorname{GL}","Gr":"\\operatorname{Gr}","Ind":"\\operatorname{Ind}","Loc":"\\operatorname{Loc}","Op":"\\operatorname{Op}","Perf":"\\operatorname{Perf}","Span":"\\operatorname{Span}","NSpan":"\\operatorname{NSpan}","PSh":"\\operatorname{PSh}","Iso":"\\operatorname{Iso}","Ho":"\\operatorname{Ho}","Sing":"\\operatorname{Sing}","Kan":"\\operatorname{Kan}","add":"\\operatorname{add}","all":"\\operatorname{all}","ac":"\\operatorname{ac}","coker":"\\operatorname{coker}","ex":"\\operatorname{ex}","fgt":"\\operatorname{fgt}","fin":"\\operatorname{fin}","grp":"\\operatorname{grp}","im":"\\operatorname{im}","inj":"\\operatorname{inj}","lex":"\\operatorname{lex}","lim":"\\operatorname{lim}","pre":"\\operatorname{pre}","proj":"\\operatorname{proj}","rk":"\\operatorname{rk}","sadd":"\\operatorname{sadd}","Segal":"\\operatorname{Segal}","Seg":"\\operatorname{Seg}","CSeg":"\\operatorname{CSeg}","sh":"\\operatorname{sh}","shift":"\\operatorname{shift}","sp":"\\operatorname{sp}","st":"\\operatorname{st}","supp":"\\operatorname{supp}","term":"\\operatorname{term}","act":"\\operatorname{act}","AdTrip":"\\operatorname{AdTrip}","BC":"\\operatorname{BC}","cart":"\\operatorname{cart}","Cart":"\\operatorname{Cart}","cc":"\\operatorname{cc}","cocart":"\\operatorname{cocart}","Cocart":"\\operatorname{Cocart}","CoCart":"\\operatorname{CoCart}","ct":"\\operatorname{ct}","Day":"\\operatorname{Day}","Env":"\\operatorname{Env}","Exc":"\\operatorname{Exc}","Fact":"\\operatorname{Fact}","LCut":"\\operatorname{LCut}","BCut":"\\operatorname{BCut}","lax":"\\operatorname{lax}","LFib":"\\operatorname{LFib}","lift":"\\operatorname{lift}","Nm":"\\operatorname{Nm}","oplax":"\\operatorname{oplax}","pb":"\\operatorname{pb}","rev":"\\operatorname{rev}","RFib":"\\operatorname{RFib}","Shift":"\\operatorname{Shift}","Spec":"\\operatorname{Spec}","Str":"\\operatorname{Str}","tiso":"\\operatorname{iso}","Tw":"\\operatorname{Tw}","Un":"\\operatorname{Un}","Unf":"\\operatorname{Unf}","Cone":"\\operatorname{Cone}","Cut":"\\operatorname{Cut}","Cyl":"\\operatorname{Cyl}","Ext":"\\operatorname{Ext}","Tor":"\\operatorname{Tor}","disc":"\\mathrm{disc}","coev":"\\mathrm{coev}","dnil":"\\mathrm{-nil}","dcart":"\\mathrm{-cart}","dlax":"\\mathrm{-lax}","enr":"\\mathrm{enr}","exc":"\\mathrm{exc}","Piinfty":["\\Pi_{\\infty}(#1)",1],"simp":"\\boldsymbol{\\Delta}","abs":["\\lvert #1 \\rvert",1],"geom":["\\lVert #1 \\rVert",1],"lra":["\\langle #1 \\rangle",1],"catop":"^{\\mathrm{op}}","Assoc":"\\mathcal{A}\\mathit{ssoc}","Lie":"\\mathcal{L}\\mathit{ie}","Triv":"\\mathcal{T}\\!\\!\\mathit{riv}","oTens":"\\mathcal{T}\\!\\!\\mathit{ens}","oLMod":"\\mathcal{L}\\!\\mathcal{M}\\mathit{od}","oRMod":"\\mathcal{R}\\!\\mathcal{M}\\mathit{od}","oBMod":"\\mathcal{B}\\!\\mathcal{M}\\mathit{od}","oMod":"\\mathcal{M}\\mathit{od}","oEnd":"\\mathcal{E}\\mathit{nd}","oCMon":"\\mathcal{C}\\!\\mathcal{M}\\mathit{on}","oCGrp":"\\mathcal{C}\\mathcal{G}\\mathit{rp}","oSp":"\\mathcal{S}\\mathit{p}","oDay":"\\mathcal{D}\\mathit{ay}","OpCocart":"\\mathcal{O}^{\\amalg}","OpCart":"\\mathcal{O}^{\\times}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Bar":"\\mathrm{Bar}","fa":"\\mathfrak{a}","fb":"\\mathfrak{b}","fc":"\\mathfrak{c}","fm":"\\mathfrak{m}","fn":"\\mathfrak{n}","pvto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"puto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\downarrow^{\\scriptscriptstyle #3}\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",3],"pwto":["\\left(\\begin{smallmatrix}\\scriptscriptstyle #1\\\\ \\scriptscriptstyle #2\\end{smallmatrix}\\right)",2],"rbox":["#3",3],"ul":["\\underline{#1}",1],"qin":"\\quad\\in\\quad","iso":"\\xrightarrow{\\sim}","rex":"\\operatorname{rex}","id":"\\mathrm{id}","pr":"\\operatorname{pr}","pt":"\\operatorname{pt}","can":"\\mathrm{can}","ev":"\\mathrm{ev}","univ":"\\mathrm{univ}","incl":"\\operatorname{incl}","res":"\\operatorname{res}","const":"\\operatorname{const}","cofib":"\\operatorname{cofib}","fib":"\\operatorname{fib}","hocolim":"\\operatorname{hocolim}","colim":"\\operatorname*{colim}","qadtext":["\\quad\\text{#1}\\quad",1],"quadtext":["\\quad\\text{#1}\\quad",1],"qquadtext":["\\qquad\\text{#1}",1],"pullback":"\\mathbin{\\lrcorner}","pushout":"\\mathbin{\\ulcorner}","pullbackto":"\\mathbin{\\lrcorner}\\to","pushoutto":"\\mathbin{\\ulcorner}\\to","qedhere":"","qednow":"\\qquad\\square","R":"\\mathbb{R}","Q":"\\mathbb{Q}","F":"\\mathbb{F}","C":"\\mathbb{C}","S":"\\mathbb{S}","Ss":"\\mathcal{S}","D":"\\mathrm{D}","CP":"\\mathbb{C}P","RP":"\\mathbb{R}P","Ntop":"N^{\\mathrm{top}}","Comm":"\\mathcal{C}\\!\\,\\mathit{omm}","BOP":"\\operatorname{BOP}","BUP":"\\operatorname{BUP}","ku":"\\operatorname{ku}","KU":"\\operatorname{KU}","MO":"\\operatorname{MO}","MOP":"\\operatorname{MOP}","MSO":"\\operatorname{MSO}","MU":"\\operatorname{MU}","MUP":"\\operatorname{MUP}","Line":"\\operatorname{Line}","Pic":"\\operatorname{Pic}","PT":"\\operatorname{PT}","Th":"\\operatorname{Th}","th":"\\operatorname{th}","unit":"\\mathbb{1}","noloc":"\\mathpunct{:}","h":"\\mathrm{h}","s":"\\mathrm{s}","phi":"\\varphi","epsilon":"\\varepsilon","Z":"\\mathbb{Z}","N":"\\mathbb{N}"}},"chtml":{"scale":1},"options":{"enableMenu":false}};</script>
+<script defer src="../../../_assets/mathjax/tex-chtml.js"></script>
+<script defer src="../../../_assets/reader-shell-v1/reader.js" data-notes-reader="stable-homotopy-higher-algebra" data-reader-revision="reader-shell-v1-a276d9dd73bb82aa" data-legacy-navigation="sht-ha-context-navigation-visible-v1" data-legacy-contents="sht-ha-contents-collapsed-v3"></script>
+<script defer src="../../../_assets/script.js"></script></head>
+<body class="work-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/stable-homotopy-higher-algebra.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside>
+<header class="site-header work-header">
+<div class="reading-header-row"><div class="reader-heading">
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Stable Homotopy Theory and Higher Algebra</a> · <a href="../../../part/operads-and-higher-algebra/index.html">Part II</a> · <a href="../../../chapter/basics-on-infinity-operads/index.html">Chapter 14</a> · Section 14.2</p>
+      <h1>Classical colored operads</h1>
+    </div><nav class="page-turns" data-reading-navigation aria-label="Reading navigation"><a rel="prev" data-step="prev-chapter" href="../../../chapter/span-categories/index.html" title="Span categories" aria-label="Previous chapter: Chapter 13, Span categories"><span class="turn-direction">← Previous chapter</span><span class="turn-target">Chapter 13</span></a>
+<a rel="next" data-step="next-chapter" href="../../../chapter/cartesian-and-cocartesian-monoidal-structures/index.html" title="Cartesian and cocartesian monoidal structures" aria-label="Next chapter: Chapter 15, Cartesian and cocartesian monoidal structures"><span class="turn-direction">→ Next chapter</span><span class="turn-target">Chapter 15</span></a>
+<a rel="prev" data-step="prev-section" href="../definition-and-basic-properties/index.html" title="Definition and basic properties" aria-label="Previous section: Section 14.1, Definition and basic properties"><span class="turn-direction">← Previous section</span><span class="turn-target">Section 14.1</span></a>
+<a rel="next" data-step="next-section" href="../finite-families-and-trivial-operads/index.html" title="Finite families and trivial operads" aria-label="Next section: Section 14.3, Finite families and trivial operads"><span class="turn-direction">→ Next section</span><span class="turn-target">Section 14.3</span></a></nav></div>
+</header>
+<main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+<article class="notes-page section-page"><div class="continuous-section">
+<p class='noindent' id='subsec:Direct_Classical_Operads'>We can now make the construction of <a class="source-reference" data-label="cons:Operad_Gives_Infty_Operad" href="../../../entry/operad-gives-infinity-operad/index.html#cons:Operad_Gives_Infty_Operad">Construction 12.4.1</a> precise. The idea is to repeat the construction of the span category,
+adding the operation labels to its pullback diagrams. The resulting simplicial anima is Segal, but need not
+be complete. The associated category construction from <a class="source-reference" data-label="cons:Associated_Infinity_Category" href="../../../entry/associated-infinity-category-of-a-simplicial-anima/index.html#cons:Associated_Infinity_Category">Construction 1.8.12</a> supplies the desired \(\infty \)-category without changing its
+hom animae.
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<a class="entry-heading-link" href="../../../entry/classical-operad-labeled-diagrams/index.html" aria-label="Construction 14.2.1, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 14.2.1 </span></a>(Labeled pullback diagrams)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cons:Classical_Operad_Labeled_Diagrams'></span> Let \(\Oo \) be a classical colored operad with sets of
+operations. We use the finite-set-indexed operations and their transport along bijections from <a class="source-reference" data-label="conv:Unordered_Multimorphism_Notation" href="../../../entry/unordered-multimorphism-notation/index.html#conv:Unordered_Multimorphism_Notation">Convention 12.3.2</a>. We
+first construct a simplicial object in the strict category of groupoids and functors.
+</p><p class='noindent'>For \(n\geq 0\), define a groupoid \(N_{\mathrm {span}}(\Oo )_n\) as follows. An object consists of:
+     </p><dl class='enumerate'><dt class='enumerate'>
+  (1) </dt><dd class='enumerate'>
+     <p class='noindent'>A diagram \(S\colon \Tw ^r([n])\to \Fin \) belonging to \(\NSpan (\Fin )_n\), as in <a class="source-reference" data-label="cons:NSpan" href="../../../entry/span-nerve/index.html#cons:NSpan">Construction 13.1.10</a>. Write \(S_{ij}=S(i\leq j)\). The induced maps \(S_{ik}\to S_{ij}\times _{S_{jj}}S_{jk}\) are bijections for \(i\leq j\leq k\). The structure
+     maps of \(S\) give spans \[ S_{ii}\xleftarrow {f_{ij}}S_{ij}\xrightarrow {g_{ij}}S_{jj}. \]
+     </p></dd><dt class='enumerate'>
+  (2) </dt><dd class='enumerate'>
+     <p class='noindent'>For each \(i\), a family \(\{x^i_s\}_{s\in S_{ii}}\) of colors of \(\Oo \).
+     </p></dd><dt class='enumerate'>
+  (3) </dt><dd class='enumerate'>
+     <p class='noindent'>For every \(i\leq j\) and \(t\in S_{jj}\), an operation \[ \varphi _{ij,t}\in \Oo \bigl (\{x^i_{f_{ij}(u)}\}_{u\in g_{ij}^{-1}(t)};x^j_t\bigr ). \] For \(i=j\) this is required to be \(\id _{x^i_t}\). For \(i\leq j\leq k\) and \(t\in S_{kk}\), we require that \(\varphi _{ik,t}\) agrees
+     with the composite operation \[ \varphi _{jk,t}\circ \bigl (\varphi _{ij,f_{jk}(v)}\bigr )_{v\in g_{jk}^{-1}(t)} \] under the bijection \(\{(u,v)\in S_{ij}\times _{S_{jj}}S_{jk}\mid g_{jk}(v)=t\} \cong \{w \in S_{ik} \mid g_{ik}(w) = t\}\).</p></dd></dl>
+<p class='noindent'>A morphism is a natural isomorphism of the finite-set diagrams that preserves the diagonal
+colors and carries each operation label to the corresponding label by transport of its input set.
+In particular, it does not include arbitrary invertible unary operations between the diagonal
+
+
+colors.
+</p><p class='noindent'>For a monotone map \(\alpha \colon [m]\to [n]\), define \(\alpha ^*\colon N_{\mathrm {span}}(\Oo )_n\to N_{\mathrm {span}}(\Oo )_m\) by restriction along \(\Tw ^r(\alpha )\), with colors \(x^{\alpha (i)}\) and labels \(\varphi _{\alpha (i)\alpha (j),t}\). Pullback squares remain
+pullback squares under this restriction, and the two conditions in (3) remain valid. Note that we have strict
+equalities \((\alpha \beta )^*=\beta ^*\alpha ^*\) and \(\id ^*=\id \), so that we obtain a strict functor from \(\simp \catop \) to the strict category of groupoids. Composing with
+the functor that regards groupoids as animae gives a simplicial anima, which we also denote by \(N_{\mathrm {span}}(\Oo )\),
+and a forgetful map \(N_{\mathrm {span}}(\Oo )\to \NSpan (\Fin )\). A morphism of classical operads acts on colors and operation labels,
+commuting with restriction and forgetting labels. Thus \(N_{\mathrm {span}}(\Oo )\) is functorial in \(\Oo \), and the forgetful map is
+natural.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1005r2'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Lemma 14.2.2.</span>  </span><span id='lem:Classical_Operad_Diagrams_Segal'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The simplicial anima</span> \(N_{\mathrm {span}}(\Oo )\) <span class='ntx-Italic-tlf-t1-x-x-109'>is Segal. Its hom anima from</span> \(X=\{x_i\}_{i\in I}\) <span class='ntx-Italic-tlf-t1-x-x-109'>to</span> \(Y=\{y_j\}_{j\in J}\) <span class='ntx-Italic-tlf-t1-x-x-109'>is the groupoid of spans</span> \(I\xleftarrow {f}K\xrightarrow {g}J\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>labeled by operations </span>\[ \varphi _j\in \Oo (\{x_{f(k)}\}_{k\in g^{-1}(j)};y_j). \] <span class='ntx-Italic-tlf-t1-x-x-109'>Morphisms in this groupoid are bijections of</span> \(K\) <span class='ntx-Italic-tlf-t1-x-x-109'>over</span> \(I\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(J\) <span class='ntx-Italic-tlf-t1-x-x-109'>that transport the
+labels to one another.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-basics-on-infinity-operads-section-02-3" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-basics-on-infinity-operads-section-02-3">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> The forgetful map gives a commutative square of Segal maps, with \(n\) factors on the right:</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-1d4251a3d5b1.svg" alt="Commutative square with maps N span(Oo) n to N span(Oo) 1\times_N span(Oo) 0cdots\times_N span(Oo) 0N span(Oo) 1, NSpan(Fin) n to NSpan(Fin) 1\times NSpan(Fin) 0cdots\times NSpan(Fin) 0NSpan(Fin) 1 labeled simeq, N span(Oo) n to NSpan(Fin) n, N span(Oo) 1\times_N span(Oo) 0cdots\times_N span(Oo) 0N span(Oo) 1 to NSpan(Fin) 1\times NSpan(Fin) 0cdots\times NSpan(Fin) 0NSpan(Fin) 1." width="389" height="62" loading="lazy"></figure></div><p class='noindent'>The bottom map is an isomorphism by <a class="source-reference" data-label="prop:NSpan_Complete_Segal" href="../../../entry/nspan-complete-segal/index.html#prop:NSpan_Complete_Segal">Proposition 13.1.11</a>, so it suffices to check that the induced maps on fibers are
+isomorphisms. For fixed \(S\in \NSpan (\Fin )_n\), the left fiber consists of families of colors indexed by each finite set \(S_{ii}\) for
+\(0 \leq i \leq n\), and compatible operation labels on all \(S_{ij}\). Since fibers commute with fiber products, the right fiber
+consists of the same color assignments on each \(S_{ii}\), and labels only on the consecutive spans \(S_{i-1,i-1}\leftarrow S_{i-1,i}\to S_{ii}\). The
+induced map that forgets the remaining operations is a bijectio: the diagonal labels are identities,
+
+
+and under the induced bijections \[ S_{ij}\iso S_{i,i+1}\times _{S_{i+1,i+1}}\cdots \times _{S_{j-1,j-1}}S_{j-1,j} \] we recover the labels on \(S_{ij}\) by iterated substitution. This proves the
+Segal condition.</p><p class='noindent'>Finally, the hom anima from \(X\) to \(Y\) is the fiber of \(N_{\mathrm {span}}(\Oo )_1\to N_{\mathrm {span}}(\Oo )_0\times N_{\mathrm {span}}(\Oo )_0\) at \((X,Y)\), which we may identify with the groupoid of
+labeled spans from \(X\) to \(Y\), as stated.                                                                                                       □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1006r3'></a>
+<a class="entry-heading-link" href="../../../entry/direct-classical-operad-category/index.html" aria-label="Construction 14.2.3, open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Construction 14.2.3 </span></a>(The associated category)<span class='ntx-Bold-tlf-t1-x-x-109'>.</span>  </span><span id='cons:Direct_Classical_Operad_Category'></span> Set \(\Oo ^{\otimes }:=\ac (N_{\mathrm {span}}(\Oo ))\). Applying \(\ac \) to the forgetful map gives a functor
+\[ p_{\Oo }\colon \Oo ^{\otimes }\longrightarrow \ac (\NSpan (\Fin ))\simeq \Span (\Fin ), \] where the last equivalence is supplied by <a class="source-reference" data-label="prop:NSpan_Complete_Segal" href="../../../entry/nspan-complete-segal/index.html#prop:NSpan_Complete_Segal">Proposition 13.1.11</a>, <a class="source-reference" data-label="thm:Categories_As_Complete_Segal_Animae" href="../../../entry/infinity-categories-as-complete-segal-animae/index.html#thm:Categories_As_Complete_Segal_Animae">Theorem 25.1.10</a>. By <a class="source-reference" data-label="prop:Completion_Map_Dwyer_Kan_Equivalence" href="../../../entry/completion-maps-are-dwyer-kan-equivalences/index.html#prop:Completion_Map_Dwyer_Kan_Equivalence">Proposition 25.1.9</a>, every object of \(\Oo ^{\otimes }\) is isomorphic to a tuple, and its
+hom animae between tuples are those of <a class="source-reference" data-label="lem:Classical_Operad_Diagrams_Segal" href="../../../entry/classical-operad-diagrams-segal/index.html#lem:Classical_Operad_Diagrams_Segal">Lemma 14.2.2</a>. Naturality of the completion map identifies \(p_{\Oo }\) on these hom
+animae with forgetting the labels. Composition is given by pullback of spans followed by substitution
+on labels. All in all, \(\Oo ^{\otimes }\) is the \((2,1)\)-category described in <a class="source-reference" data-label="cons:Operad_Gives_Infty_Operad" href="../../../entry/operad-gives-infinity-operad/index.html#cons:Operad_Gives_Infty_Operad">Construction 12.4.1</a>.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1007r4'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Proposition 14.2.4.</span>  </span><span id='prop:From_Colored_To_Infinity_Operads'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The construction</span> \(\Oo \mapsto (\Oo ^{\otimes },p_{\Oo })\) <span class='ntx-Italic-tlf-t1-x-x-109'>defines a functor from classical colored operads to</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operads.
+The underlying</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-category of the associated</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operad is naturally equivalent to the classical category</span> \(U(\Oo )\)
+<span class='ntx-Italic-tlf-t1-x-x-109'>of colors and unary operations. For a span</span> \(\alpha =(I\xleftarrow {f}K\xrightarrow {g}J)\) <span class='ntx-Italic-tlf-t1-x-x-109'>and families of colors</span> \(\{x_i\}_{i\in I}\) <span class='ntx-Italic-tlf-t1-x-x-109'>and</span> \(\{y_j\}_{j\in J}\)<span class='ntx-Italic-tlf-t1-x-x-109'>, there is an isomorphism </span>\[ \Hom _{\Oo ^{\otimes }}^{\alpha } (\{x_i\}_{i\in I},\{y_j\}_{j\in J}) \quad \simeq \quad \prod _{j\in J}\Oo (\{x_{f(k)}\}_{k\in g^{-1}(j)};y_j). \] <span class='ntx-Italic-tlf-t1-x-x-109'>In
+particular, its multimorphism animae are the classical operation sets, regarded as discrete animae.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-basics-on-infinity-operads-section-02-2" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-basics-on-infinity-operads-section-02-2">
+
+
+
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> By <a class="source-reference" data-label="lem:Classical_Operad_Diagrams_Segal" href="../../../entry/classical-operad-diagrams-segal/index.html#lem:Classical_Operad_Diagrams_Segal">Lemma 14.2.2</a>, the map \[ \Hom _{\Oo ^{\otimes }}(\{x_i\}_{i \in I}, \{y_j\}_{j \in J}) \to \Hom _{\Span (\Fin )}(I,J) \] on hom animae forgets the operation labels on a span. Its fiber over \(\alpha \) is the
+displayed product of operation sets, since there is a unique way to transport labels along a bijection
+of spans.
+</p><p class='noindent'>We show that concatenation gives binary products in \(\Oo ^{\otimes }\), with projections given by the backwards
+spans for the summand inclusions labeled by the identity. To see this, consider tuples \(\{x_i\}_{i \in I}\), \(\{y_j\}_{j \in J}\) and \(\{z_k\}_{k \in K}\). The
+projections give a commutative square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-4d8dcbbb8a93.svg" alt="Commutative square with maps \Hom_Oo tensor(\x i \y j\sqcup\z k\) to \Hom_Oo tensor(\x i \y j\)times\Hom_Oo tensor(\x i \z k\), \Hom Span(Fin)(I,Jsqcup K) to \Hom Span(Fin)(I,J)times\Hom Span(Fin)(I,K) labeled simeq, \Hom_Oo tensor(\x i \y j\sqcup\z k\) to \Hom Span(Fin)(I,Jsqcup K), \Hom_Oo tensor(\x i \y j\)times\Hom_Oo tensor(\x i \z k\) to \Hom Span(Fin)(I,J)times\Hom Span(Fin)(I,K)." width="395" height="61" loading="lazy"></figure></div><p class='noindent'>in which the bottom map is an isomorphism because disjoint
+union is the product in \(\Span (\Fin )\). From the computation of the first paragraph, it is also clear that the induced
+map on fibers is a bijection showing that \(\{y_j\}\sqcup \{z_k\}\) is a product in \(\Oo ^{\otimes }\) of \(\{y_j\}\) and \(\{z_k\}\). In analogous fashion one shows
+that the empty tuple is the terminal object, so that \(\Oo ^{\otimes }\) admits finite products. It is also clear from these
+computations that \(p_{\Oo }\) preserves finite products.</p><p class='noindent'>Next we identify fiber \(\Oo ^{\otimes }_I\) over a finite set \(I\) with the product \(U(\Oo )^I\). There is a map of simplicial animae \(N(U(\Oo )^I) \to N_{\mathrm {span}}(\Oo )\)
+given in degree \(n\) by sending a string of \(n\) composable morphisms in \(U(\Oo )^I\) to the constant pullback diagram
+\(\const _I \colon \Tw ^r([n]) \to \Fin \) labeled by the composites of the given unary operations. Since the underlying pullback diagram is
+constant on \(I\), passing to associated \(\infty \)-categories results in a functor \[ U(\Oo )^I\longrightarrow \Oo ^{\otimes }_I. \] This functor is clearly essentially
+surjective, and it is fully faithful by the earlier identification of the hom animae for \(\alpha = \id _I\). We conclude it
+is an equivalence.
+</p><p class='noindent'>For \(I=\lra {1}\) this identifies the underlying category as claimed. Under these equivalences, concatenation is
+the equivalence required in condition (2) of <a class="source-reference" data-label="def:Infty_Operad" href="../../../entry/infinity-operad/index.html#def:Infty_Operad">Definition 14.1.1</a>.
+</p><p class='noindent'>Next we verify the full cocartesian universal property. Let \(u\colon K\to I\) be a map in \(\Fin \), let \(\{x_i\}_{i\in I}\) be a family of colors,
+and let \(\widehat b\colon \{x_i\}_{i\in I}\to \{x_{u(k)}\}_{k\in K}\) be the lift of \(b=(I\xleftarrow {u}K\xrightarrow {=}K)\) whose labels are identities. For any tuple \(Y=\{y_j\}_{j\in J}\), consider the square</p><div class="diagram-row"><figure class="diagram"><img src="../../../_assets/diagrams/tikzcd-16c40210439f.svg" alt="Commutative square with maps \Hom_Oo tensor(\x u(k) kin K,Y) to \Hom_Oo tensor(\x i iin I,Y) labeled -circwidehat b, \Hom Span(Fin)(K,J) to \Hom Span(Fin)(I,J) labeled -circ b, \Hom_Oo tensor(\x u(k) kin K,Y) to \Hom Span(Fin)(K,J), \Hom_Oo tensor(\x i iin I,Y) to \Hom Span(Fin)(I,J)." width="273" height="68" loading="lazy"></figure></div><p class='noindent'>For a span
+\(\beta =(K\xleftarrow {a}L\xrightarrow {h}J)\), the induced map from the fiber over \(\beta \) to the fiber over \(\beta \circ b\) is identified with the identity on \[ \prod _{j\in J}\Oo (\{x_{u(a(l))}\}_{l\in h^{-1}(j)};y_j), \] since
+composition with \(\widehat b\) leaves the operation labels unchanged by the unit axiom. Thus the square is a
+pullback, showing that \(\widehat b\) is \(p_{\Oo }\)-cocartesian.</p><p class='noindent'>Finally,  let  \(f\colon B\to A\)  and  let  \(X_a\)  be  arbitrary  objects  of  \(\Oo ^{\otimes }\),  represented  by  tuples  indexed  by  \(T_a\).  The  map  in
+condition (3) of <a class="source-reference" data-label="def:Infty_Operad" href="../../../entry/infinity-operad/index.html#def:Infty_Operad">Definition 14.1.1</a> is the identity-labeled backwards span associated with \[ \bigsqcup _{b\in B}T_{f(b)}\longrightarrow \bigsqcup _{a\in A}T_a,\qquad (b,t)\longmapsto (f(b),t). \] The preceding argument
+proves it cocartesian. This also covers empty tuples.
+</p><p class='noindent'>The functor induced by a morphism of classical operads preserves concatenation, its projections,
+and the empty tuple, hence finite products.                                                                                        □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+
+
+<a id='x1-1008r5'></a>
+<a class="entry-heading-link" href="../../../entry/direct-classical-operads-completion/index.html" aria-label="Remark 14.2.5., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 14.2.5.</span></a>  </span><span id='rmk:Direct_Classical_Operads_Completion'></span>  The  simplicial  anima  \(N_{\mathrm {span}}(\Oo )\)  need  not  be  complete:  non-identity  invertible  unary
+operations are not represented by identifications in \(N_{\mathrm {span}}(\Oo )_0\). The associated category construction producing
+\(\Oo ^{\otimes }\) adds these identifications without changing the hom animae.
+</p><p class='noindent'>Further note that the hom animae of \(\Oo ^{\otimes }\) need not be discrete. For example, \(N_{\mathrm {span}}(\Comm )=\NSpan (\Fin )\), so \(\Comm ^{\otimes }\simeq \Span (\Fin )\), whose hom groupoids
+include the automorphisms of spans.
+</p>
+</div>
+
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1009r6'></a>
+<span class='ntx-Bold-tlf-t1-x-x-109'>Corollary 14.2.6.</span>  </span><span id='cor:Classical_Operads_As_Infinity_Operads'> </span><span class='ntx-Italic-tlf-t1-x-x-109'>The classical colored operads</span> \(\Assoc \)<span class='ntx-Italic-tlf-t1-x-x-109'>,</span> \(\oLMod \)<span class='ntx-Italic-tlf-t1-x-x-109'>, and</span> \(\oMod \) <span class='ntx-Italic-tlf-t1-x-x-109'>determine</span> \(\infty \)<span class='ntx-Italic-tlf-t1-x-x-109'>-operads whose multimorphism
+animae are their classical operation sets. The same construction applies to the bimodule operad of
+</span><a class="source-reference" data-label="def:Bimodule_Operad" href="../../../entry/bimodule-operad/index.html#def:Bimodule_Operad">Definition 17.2.1</a><span class='ntx-Italic-tlf-t1-x-x-109'>.</span>
+</p>
+</div>
+
+<div class='proof'><button class="proof-toggle" type="button" data-proof-toggle aria-controls="proof-chapter-basics-on-infinity-operads-section-02-1" aria-expanded="true" aria-label="Collapse proof"><span>Proof</span><span class="proof-chevron" aria-hidden="true"></span></button><div class="proof-content" id="proof-chapter-basics-on-infinity-operads-section-02-1">
+<p class='noindent'><span class='head'>
+<span class='ntx-Italic-tlf-t1-x-x-109'>Proof.</span> </span> Apply <a class="source-reference" data-label="prop:From_Colored_To_Infinity_Operads" href="../../../entry/from-colored-to-infinity-operads/index.html#prop:From_Colored_To_Infinity_Operads">Proposition 14.2.4</a>.                                                                                                                                   □
+</p>
+</div></div>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<a id='x1-1010r7'></a>
+
+
+<a class="entry-heading-link" href="../../../entry/little-cubes-infinity-operads/index.html" aria-label="Remark 14.2.7., open as a separate entry page" title="Open as a separate entry page"><span class='ntx-Bold-tlf-t1-x-x-109'>Remark 14.2.7.</span></a>  </span><span id='rmk:Little_Cubes_Infinity_Operads'></span>  By  <a class="source-reference" data-label="cor:Classical_Operads_As_Infinity_Operads" href="../../../entry/classical-operads-as-infinity-operads/index.html#cor:Classical_Operads_As_Infinity_Operads">Corollary 14.2.6</a>,  the  classical  associative  operad  determines  the  associative  \(\infty \)-operad  \(\Assoc \).  The
+topological little \(n\)-cubes operad of <a class="source-reference" data-label="ex:Little_Cubes_Operad" href="../../../entry/little-cubes-operad/index.html#ex:Little_Cubes_Operad">Example 12.1.7</a> similarly determines an \(\infty \)-operad \(\Ee _n\); see <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-lurie2016HA" title="Lurie, Higher algebra">Lurie (2017)</a>, Section 5.1.0]</span> for the construction. For \(n=1\),
+the operad morphism \(\Ee _1\to \Assoc \) described after <a class="source-reference" data-label="ex:Little_Cubes_Operad" href="../../../entry/little-cubes-operad/index.html#ex:Little_Cubes_Operad">Example 12.1.7</a> is an equivalence of \(\infty \)-operads by <span class='citation'>[<a class="citation-item" href="../../../references/index.html#ref-lurie2016HA" title="Lurie, Higher algebra">Lurie (2017)</a>, Example 5.1.0.7]</span>.
+</p>
+</div>
+
+
+
+</div>
+<footer class="edition-footer">
+  <span>Last updated 19 November 2026</span>
+  <a href="/notes/stable-homotopy-higher-algebra.pdf">PDF</a>
+  <a href="mailto:bastiaan.cnossen@ur.de?subject=Stable%20Homotopy%20Theory%20and%20Higher%20Algebra%3A%20Section%2014.2%3A%20Classical%20colored%20operads&amp;body=Page%3A%20https%3A%2F%2Fbastiaancnossen.com%2Fnotes%2Fstable-homotopy-higher-algebra%2Fsection%2Fbasics-on-infinity-operads%2Fclassical-colored-operads%2F%0A%0ADescribe%20the%20error%20(and%2C%20if%20possible%2C%20the%20correction)%3A%0A%0A">Report an error</a>
+</footer></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-parts" aria-expanded="false">
+      <span>Parts</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-parts" aria-label="Parts" data-ledger-key="parts" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../introduction/index.html"><span class="context-entry-heading">Introduction</span></a></li><li><a href="../../../chapter/introduction-to-infinity-categories/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">Introduction to ∞-categories</span></a></li><li><a href="../../../part/stable-homotopy-theory/index.html"><span class="context-entry-heading">Part I</span><span class="context-entry-title">Stable homotopy theory</span></a></li><li><a href="../../../part/operads-and-higher-algebra/index.html" aria-current="page"><span class="context-entry-heading">Part II</span><span class="context-entry-title">Operads and higher algebra</span></a></li><li><a href="../../../part/background-on-infinity-category-theory/index.html"><span class="context-entry-heading">Part III</span><span class="context-entry-title">Background on ∞-category theory</span></a></li><li><a href="../../../references/index.html"><span class="context-entry-heading">Bibliography</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../chapter/operads-the-heuristics/index.html"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Operads: the heuristics</span></a></li><li><a href="../../../chapter/span-categories/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Span categories</span></a></li><li><a href="../../../chapter/basics-on-infinity-operads/index.html" aria-current="page"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Basics on ∞-operads</span></a></li><li><a href="../../../chapter/cartesian-and-cocartesian-monoidal-structures/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Cartesian and cocartesian monoidal structures</span></a></li><li><a href="../../../chapter/day-convolution-and-the-tensor-product-of-spectra/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Day convolution and the tensor product of spectra</span></a></li><li><a href="../../../chapter/algebras-and-modules/index.html"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">Algebras and modules</span></a></li><li><a href="../../../chapter/tensor-products-and-morita-theory/index.html"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Tensor products of ∞-categories and Morita theory</span></a></li><li><a href="../../../chapter/the-envelope-of-an-infinity-operad/index.html"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">The envelope of an ∞-operad</span></a></li><li><a href="../../../chapter/operadic-day-convolution-and-stabilization/index.html"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">Operadic stabilization</span></a></li><li><a href="../../../chapter/monoidal-dwyer-kan-localizations-and-derived-categories/index.html"><span class="context-entry-heading">Chapter 21</span><span class="context-entry-title">Monoidal Dwyer–Kan localizations and derived categories</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../definition-and-basic-properties/index.html"><span class="context-entry-heading">Section 14.1</span><span class="context-entry-title">Definition and basic properties</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 14.2</span><span class="context-entry-title">Classical colored operads</span></a></li><li><a href="../finite-families-and-trivial-operads/index.html"><span class="context-entry-heading">Section 14.3</span><span class="context-entry-title">Finite families and trivial operads</span></a></li><li><a href="../symmetric-monoidal-categories-and-algebras-over-operads/index.html"><span class="context-entry-heading">Section 14.4</span><span class="context-entry-title">Symmetric monoidal ∞-categories and algebras over ∞-operads</span></a></li><li><a href="../lax-symmetric-monoidal-functors/index.html"><span class="context-entry-heading">Section 14.5</span><span class="context-entry-title">Lax symmetric monoidal functors</span></a></li><li><a href="../o-monoids-and-o-monoidal-categories/index.html"><span class="context-entry-heading">Section 14.6</span><span class="context-entry-title">O-monoids and O-monoidal ∞-categories</span></a></li><li><a href="../monoidal-subcategories-and-monoidal-bousfield-localizations/index.html"><span class="context-entry-heading">Section 14.7</span><span class="context-entry-title">Monoidal subcategories and monoidal Bousfield localizations</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>In this section</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="In this section" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="#cons:Classical_Operad_Labeled_Diagrams"><span class="context-entry-heading">Construction 14.2.1</span><span class="context-entry-title">Labeled pullback diagrams</span></a></li><li><a href="#cons:Direct_Classical_Operad_Category"><span class="context-entry-heading">Construction 14.2.3</span><span class="context-entry-title">The associated category</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main>
+</body></html>
