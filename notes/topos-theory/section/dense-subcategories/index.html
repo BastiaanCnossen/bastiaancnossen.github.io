@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dense subcategories | Higher Topos Theory notes</title>
+  <meta name="description" content="Generated from the authoritative Higher Topos Theory notes, with expandable layers of mathematical detail.">
+  <link rel="canonical" href="https://bastiaancnossen.com/notes/topos-theory/section/dense-subcategories/">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../_assets/reader-v1/style.css">
+  <script>
+    window.MathJax = {
+      loader: { paths: { fonts: "../../_assets/reader-v1/mathjax/fonts" } },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        macros: {"acc":"\\mathrm{acc}","Act":"\\operatorname{Act}","all":"\\operatorname{all}","Alg":"\\mathrm{Alg}","An":"\\operatorname{An}","AnRing":"\\mathrm{AnRing}","AnStck":"\\mathrm{AnStck}","Aff":"\\operatorname{Aff}","Acyc":"\\operatorname{Acyc}","All":"\\operatorname{All}","bbCat":"\\mathbb{C}\\mathrm{at}","bbB":"\\mathbb{B}","bbLog":"\\mathbb{L}\\mathrm{ogos}","bbTop":"\\mathbb{T}\\mathrm{opos}","Bun":"\\operatorname{Bun}","CAlg":"\\mathrm{CAlg}","Cat":"\\mathrm{Cat}","CAT":"\\mathrm{CAT}","CHaus":"\\mathrm{CHaus}","CMon":"\\mathrm{CMon}","CondAn":"\\mathrm{CondAn}","CRing":"\\mathrm{CRing}","Cong":"\\operatorname{Cong}","Conn":"\\operatorname{Conn}","cosk":"\\operatorname{cosk}","Cotr":"\\operatorname{Cotr}","Epi":"\\operatorname{Epi}","EpiCong":"\\operatorname{EpiCong}","Einf":"\\mathbb{E}_{\\infty}","El":"\\operatorname{El}","End":"\\operatorname{End}","ev":"\\mathrm{ev}","Exc":"\\operatorname{Exc}","Ff":"\\mathcal{F}","fib":"\\operatorname{fib}","FunL":"\\operatorname{Fun}^{\\mathrm{L}}","FunR":"\\operatorname{Fun}^{\\mathrm{R}}","Hh":"\\mathcal{H}","HypCong":"\\operatorname{HypCong}","Im":"\\operatorname{Im}","Ind":"\\operatorname{Ind}","Iso":"\\operatorname{Iso}","Logos":"\\mathrm{Logos}","Topos":"\\mathrm{Topos}","Top":"\\mathrm{Top}","Vect":"\\mathrm{Vect}","Hom":"\\operatorname{Hom}","Fun":"\\operatorname{Fun}","Fam":"\\operatorname{Fam}","Geom":"\\operatorname{Geom}","Gerb":"\\operatorname{Gerb}","Gest":"\\mathrm{Gest}","GZar":"\\mathcal{G}_{\\mathrm{Zar}}","Pt":"\\operatorname{Pt}","Pos":"\\operatorname{Pos}","Pro":"\\operatorname{Pro}","ProFin":"\\mathrm{ProFin}","PrL":"\\mathrm{Pr}^{\\mathrm{L}}","PrR":"\\mathrm{Pr}^{\\mathrm{R}}","Ar":"\\operatorname{Ar}","Ab":"\\mathrm{Ab}","CGrp":"\\mathrm{CGrp}","EffEpi":"\\operatorname{EffEpi}","Gg":"\\mathcal{G}","Grp":"\\mathrm{Grp}","Grpd":"\\mathrm{Grpd}","PSh":"\\operatorname{PSh}","Pp":"\\mathcal{P}","Q":"\\mathbb{Q}","QCoh":"\\operatorname{QCoh}","Sp":"\\mathrm{Sp}","Shv":"\\operatorname{Shv}","Site":"\\operatorname{Site}","Spec":"\\operatorname{Spec}","Span":"\\operatorname{Span}","StRing":"\\mathrm{StRing}","Str":"\\operatorname{Str}","sSet":"\\mathrm{sSet}","Set":"\\mathrm{Set}","abs":["\\lvert #1 \\rvert",1],"cart":"\\mathrm{cart}","cc":"\\mathrm{cc}","ct":"\\mathrm{ct}","ad":"\\mathrm{ad}","cocont":"\\operatorname{cocont}","coh":"\\mathrm{coh}","corp":"\\mathrm{corp}","cocompl":"\\operatorname{cocompl}","coim":"\\operatorname{coim}","colim":"\\operatorname{colim}","cons":"\\operatorname{cons}","const":"\\operatorname{const}","cont":"\\operatorname{cont}","fgt":"\\operatorname{fgt}","hyp":"\\operatorname{hyp}","iHom":"\\underline{\\operatorname{Hom}}","im":"\\operatorname{im}","Mdl":"\\operatorname{Mdl}","Mod":"\\mathrm{Mod}","Mono":"\\operatorname{Mono}","mono":"\\operatorname{mono}","MonoCong":"\\operatorname{MonoCong}","op":"\\operatorname{op}","open":"\\operatorname{open}","Open":"\\operatorname{Open}","pb":"\\operatorname{pb}","post":"\\operatorname{post}","pr":"\\operatorname{pr}","pre":"\\operatorname{pre}","rep":"\\operatorname{rep}","loc":"\\mathrm{loc}","Loc":"\\operatorname{Loc}","Rr":"\\mathcal{R}","quottext":"\\operatorname{quot}","Sat":"\\operatorname{Sat}","Sch":"\\mathrm{Sch}","sk":"\\operatorname{sk}","SSat":"\\operatorname{SSat}","wcons":"\\operatorname{wcons}","pushout":"\\left(\\bullet\\leftarrow\\bullet\\rightarrow\\bullet\\right)","catop":"^{\\mathrm{op}}","bB":"\\mathbf{B}","bOmega":"\\mathbf{\\Omega}","Ee":"\\mathcal{E}","noloc":"\\mathrel{:}","qin":"\\quad\\in\\quad","qquadtext":["\\qquad\\text{#1}",1],"id":"\\mathrm{id}","iso":"\\xrightarrow{\\sim}","xhookrightarrow":["\\mathrel{\\overset{#1}{\\hookrightarrow}}",1],"lra":["\\langle #1 \\rangle",1],"et":"\\mathrm{ét}","fin":"\\operatorname{fin}","lex":"\\operatorname{lex}","Oo":"\\mathcal{O}","phi":"\\varphi","univ":"\\mathrm{univ}","N":"\\mathbb{N}","Z":"\\mathbb{Z}","simp":"\\mathbf{\\Delta}","ssquare":"\\,\\square\\,","S":"\\mathbb{S}","st":"\\mathrm{st}","Uu":"\\mathcal{U}","Xx":"\\mathcal{X}","Yy":"\\mathcal{Y}","Zz":"\\mathcal{Z}","epi":"\\operatorname{epi}","quot":"/\\!\\!/","qednow":"\\qquad\\square","shear":"\\operatorname{shear}","ultra":"\\mathrm{ultra}","wccolim":"\\operatorname{w.c.colim}","unit":"\\mathbf{1}","Zar":"\\operatorname{Zar}"}
+      },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="../../_assets/reader-v1/mathjax/tex-chtml.js"></script>
+  <script defer src="../../_assets/reader-v1/reader.js" data-notes-reader="topos-theory" data-reader-revision="reader-shell-v1-a276d9dd73bb82aa" data-legacy-navigation="layered-notes-context-navigation-visible-v1" data-legacy-contents="layered-notes-contents-collapsed-v2" data-legacy-rail="layered-notes-context-navigation-collapsed-v1"></script>
+<script defer src="../../_assets/reader-v1/script.js"></script>
+</head>
+<body class="section-page has-context-nav" data-record-id="dense-subcategories" data-default-detail="1" data-default-presentation="compact" data-detail-level="1" data-presentation="compact">
+  <aside class="utility-dock" aria-label="Page tools">
+    <div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-detail-level="1">Full text</button>
+          <button type="button" data-detail-level="-1">Statements only</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div>
+    <div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/topos-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div>
+  </aside>
+  <header class="site-header">
+<div class="reading-header-row"><div class="reader-heading">
+      <a class="collection-return" data-site-return href="/books.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      
+      <p class="eyebrow"><a href="../../index.html">Higher Topos Theory</a> · <a href="../../chapter/dense-subcategories-closed-under-finite-limits/index.html">Appendix C</a> · Section C.1</p>
+      <h1>Dense subcategories</h1>
+    </div><nav class="page-turns" data-reading-navigation aria-label="Reading navigation"><a rel="prev" data-step="prev-chapter" href="../../chapter/limits-and-colimits-in-categories-of-sections/index.html" title="Limits and colimits in categories of sections" aria-label="Previous chapter: Appendix B, Limits and colimits in categories of sections"><span class="turn-direction">← Previous chapter</span><span class="turn-target">Appendix B</span></a>
+<button type="button" disabled data-step="next-chapter" aria-label="No next chapter" title="No next chapter in this web edition"><span class="turn-direction">→ Next chapter</span><span class="turn-target">Not available</span></button>
+<a rel="prev" data-step="prev-section" href="../strongly-saturated-classes/index.html" title="Strongly saturated classes" aria-label="Previous section: Section A.3, Strongly saturated classes"><span class="turn-direction">← Previous section</span><span class="turn-target">Section A.3</span></a>
+<a rel="next" data-step="next-section" href="../finite-limit-closures/index.html" title="Finite-limit closures" aria-label="Next section: Section C.2, Finite-limit closures"><span class="turn-direction">→ Next section</span><span class="turn-target">Section C.2</span></a></nav></div>
+</header>
+  <main class="reader-layout">
+    <button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button>
+    <article class="notes-page">
+      
+<h2 id="sec:Dense_Subcategories"><span>C.1.</span> Dense subcategories</h2>
+
+<section class="theorem definition" id="def:Dense_Subcategory">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/dense-subcategory/index.html">Definition C.1.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a locally small category and let <span class="math-inline">\(i\colon C \hookrightarrow T\)</span> be the inclusion of an essentially small full subcategory. We denote by</p>
+<div class="math-display">\[i^*\colon T \longrightarrow \PSh(C), \qquad X \longmapsto \Hom_T(i(-),X)\]</div>
+<p>the <em>restricted Yoneda functor</em>. We say that <span class="math-inline">\(C\)</span> is <em>dense</em> in <span class="math-inline">\(T\)</span> if <span class="math-inline">\(i^*\)</span> is fully faithful.</p></div>
+</section>
+
+<section class="theorem remark" id="rem:Dense_Subcategory_Counit">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/density-and-the-restricted-yoneda-counit/index.html">Remark C.2.</a></span></p>
+  <div class="theorem-statement"><p>If <span class="math-inline">\(T\)</span> admits small colimits, then <span class="math-inline">\(i^*\)</span> admits a left adjoint <span class="math-inline">\(i_!\colon \PSh(C) \to T\)</span>, the colimit-preserving extension of <span class="math-inline">\(i\)</span>. In this case <span class="math-inline">\(C\)</span> is dense if and only if the counit <span class="math-inline">\(i_!i^*X \to X\)</span> is an isomorphism for every <span class="math-inline">\(X \in T\)</span>, i.e. if and only if every object <span class="math-inline">\(X\)</span> is the colimit of the canonical diagram <span class="math-inline">\(C_{/X} \to C \hookrightarrow T\)</span>. Density is condition (1) of <a href="../../entry/dense-subcategory-characterization/index.html">Lemma 6.57</a>.</p></div>
+</section>
+
+<section class="theorem lemma" id="lem:Enlarging_Dense_Subcategories">
+  <p class="theorem-heading"><span><a class="entry-permalink" href="../../entry/enlarging-dense-subcategories/index.html">Lemma C.3.</a></span></p>
+  <div class="theorem-statement"><p>Let <span class="math-inline">\(T\)</span> be a locally small category, and let <span class="math-inline">\(D \subseteq C \subseteq T\)</span> be essentially small full subcategories. If <span class="math-inline">\(D\)</span> is dense in <span class="math-inline">\(T\)</span>, then so is <span class="math-inline">\(C\)</span>.</p></div>
+</section>
+
+<details class="proof-shell" id="proof-lem:Enlarging_Dense_Subcategories-main" data-owner-entry="enlarging-dense-subcategories" data-proof-id="main">
+  <summary>Proof</summary>
+  <div class="proof-body">Write <span class="math-inline">\(i_D\colon D \hookrightarrow T\)</span>, <span class="math-inline">\(i_C\colon C \hookrightarrow T\)</span> and <span class="math-inline">\(j\colon D \hookrightarrow C\)</span> for the inclusions, so that <span class="math-inline">\(i_D^* \simeq j^* \circ i_C^*\)</span>. Since <span class="math-inline">\(\An\)</span> admits small limits, the restriction functor <span class="math-inline">\(j^*\colon \PSh(C) \to \PSh(D)\)</span> admits a right adjoint <span class="math-inline">\(j_*\)</span>, given by right Kan extension. Let <span class="math-inline">\(\eta\colon \id \to j_*j^*\)</span> denote the unit.<div class="proof-paragraph-break" aria-hidden="true"></div><section class="proof-claim" id="proofclaim-ef86cc1c9d25"><p class="theorem-heading"><strong>Claim.</strong></p><p>For every <span class="math-inline">\(Y \in T\)</span>, the map <span class="math-inline">\(\eta_{i_C^*Y}\colon i_C^*Y \to j_*i_D^*Y\)</span> is an isomorphism.</p></section> It suffices to check this after evaluation at every object <span class="math-inline">\(c \in C\)</span>. By the Yoneda lemma and the adjunction <span class="math-inline">\(j^* \dashv j_*\)</span>, the evaluation at <span class="math-inline">\(c\)</span> is identified with the map <div class="math-display">\[\Hom_{\PSh(C)}\bigl(h_C(c), i_C^*Y\bigr) \longrightarrow \Hom_{\PSh(D)}\bigl(j^*h_C(c), j^*i_C^*Y\bigr)\]</div> induced by <span class="math-inline">\(j^*\)</span>. Since <span class="math-inline">\(C\)</span> is a full subcategory of <span class="math-inline">\(T\)</span>, we have <span class="math-inline">\(h_C(c) \simeq i_C^*(c)\)</span>, so <span class="math-inline">\(j^*h_C(c) \simeq i_D^*(c)\)</span> and <span class="math-inline">\(j^*i_C^*Y \simeq i_D^*Y\)</span>. Precomposing with the Yoneda isomorphism <span class="math-inline">\(\Hom_T(c,Y) \simeq \Hom_{\PSh(C)}(h_C(c), i_C^*Y)\)</span>, the displayed map becomes the map <div class="math-display">\[\Hom_T(c,Y) \longrightarrow \Hom_{\PSh(D)}\bigl(i_D^*c, i_D^*Y\bigr)\]</div> induced by <span class="math-inline">\(i_D^*\)</span>. It is an isomorphism because <span class="math-inline">\(D\)</span> is dense. This proves the claim.<div class="proof-paragraph-break" aria-hidden="true"></div>Now let <span class="math-inline">\(X, Y \in T\)</span>. Consider the composite <div class="math-display">\[\Hom_T(X,Y) \xrightarrow{\;i_C^*\;} \Hom_{\PSh(C)}\bigl(i_C^*X, i_C^*Y\bigr) \xrightarrow{\;(\eta_{i_C^*Y})_*\;} \Hom_{\PSh(C)}\bigl(i_C^*X, j_*i_D^*Y\bigr) \simeq \Hom_{\PSh(D)}\bigl(i_D^*X, i_D^*Y\bigr).\]</div> By construction of the adjunction isomorphism, the composite of the last two maps is induced by <span class="math-inline">\(j^*\)</span>. The total composite is therefore the map induced by <span class="math-inline">\(i_D^* \simeq j^*i_C^*\)</span>, which is an isomorphism because <span class="math-inline">\(D\)</span> is dense. The second map is an isomorphism by the claim. Hence the first map is an isomorphism, so <span class="math-inline">\(C\)</span> is dense.<span class="qed" aria-label="End of proof"></span></div>
+</details>
+
+    </article>
+      <aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Section navigation">
+    <div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../chapter/introduction/index.html">
+          <span class="context-entry-heading">Chapter 1</span>
+          <span class="context-entry-title">Introduction</span>
+        </a></li>
+<li><a href="../../chapter/foundations/index.html">
+          <span class="context-entry-heading">Chapter 2</span>
+          <span class="context-entry-title">Foundations</span>
+        </a></li>
+<li><a href="../../chapter/truncation-connectivity/index.html">
+          <span class="context-entry-heading">Chapter 3</span>
+          <span class="context-entry-title">Truncation and connectivity</span>
+        </a></li>
+<li><a href="../../chapter/topoi-logoi/index.html">
+          <span class="context-entry-heading">Chapter 4</span>
+          <span class="context-entry-title">The categories of topoi and logoi</span>
+        </a></li>
+<li><a href="../../chapter/modalities/index.html">
+          <span class="context-entry-heading">Chapter 5</span>
+          <span class="context-entry-title">Modalities</span>
+        </a></li>
+<li><a href="../../chapter/topics-in-topos-theory/index.html">
+          <span class="context-entry-heading">Chapter 6</span>
+          <span class="context-entry-title">Topics in topos theory</span>
+        </a></li>
+<li><a href="../../chapter/geometry/index.html">
+          <span class="context-entry-heading">Chapter 7</span>
+          <span class="context-entry-title">Geometry</span>
+        </a></li>
+<li><a href="../../chapter/factorization-systems-and-saturated-classes/index.html">
+          <span class="context-entry-heading">Appendix A</span>
+          <span class="context-entry-title">Factorization systems and saturated classes</span>
+        </a></li>
+<li><a href="../../chapter/limits-and-colimits-in-categories-of-sections/index.html">
+          <span class="context-entry-heading">Appendix B</span>
+          <span class="context-entry-title">Limits and colimits in categories of sections</span>
+        </a></li>
+<li><a href="../../chapter/dense-subcategories-closed-under-finite-limits/index.html" aria-current="location">
+          <span class="context-entry-heading">Appendix C</span>
+          <span class="context-entry-title">Dense subcategories closed under finite limits</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../dense-subcategories/index.html" aria-current="page">
+          <span class="context-entry-heading">Section C.1</span>
+          <span class="context-entry-title">Dense subcategories</span>
+        </a></li>
+<li><a href="../finite-limit-closures/index.html">
+          <span class="context-entry-heading">Section C.2</span>
+          <span class="context-entry-title">Finite-limit closures</span>
+        </a></li>
+<li><a href="../dense-subcategories-of-presentable-categories/index.html">
+          <span class="context-entry-heading">Section C.3</span>
+          <span class="context-entry-title">Presentable categories</span>
+        </a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-section-contents" aria-expanded="true">
+      <span>Section contents</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-section-contents" aria-label="Section contents" data-ledger-key="section-contents" data-default-collapsed="false" data-collapsed="false">
+      <p class="context-nav-kicker">Section C.1</p>
+      <p class="context-nav-description">Dense subcategories</p>
+      <ol class="context-entry-list">
+        <li><a href="#def:Dense_Subcategory" data-section-target="def:Dense_Subcategory">
+          <span class="context-entry-heading">Definition C.1</span>
+          <span class="context-entry-title">Dense subcategory</span>
+        </a></li>
+<li><a href="#rem:Dense_Subcategory_Counit" data-section-target="rem:Dense_Subcategory_Counit">
+          <span class="context-entry-heading">Remark C.2</span>
+          <span class="context-entry-title">Density and the restricted Yoneda counit</span>
+        </a></li>
+<li><a href="#lem:Enlarging_Dense_Subcategories" data-section-target="lem:Enlarging_Dense_Subcategories">
+          <span class="context-entry-heading">Lemma C.3</span>
+          <span class="context-entry-title">Enlarging dense subcategories</span>
+        </a></li>
+      </ol>
+    </nav>
+  </section></div>
+  </aside>
+  </main>
+  <footer class="edition-footer">
+  <p class="source-note">Generated from the authoritative LaTeX source, including numbered results, cross-references, bibliography, diagrams, and nested proof details.</p>
+</footer>
+</body>
+</html>
