@@ -25,7 +25,7 @@ for (const selector of [".site-header", ".collection-return", ".utility-dock", "
   assert(style.includes(selector), `The shared stylesheet is missing ${selector}.`);
 }
 
-assert(renderCollectionReturn({ href: "/books.html" }).includes('data-site-return'));
+assert(renderCollectionReturn({ href: "/notes.html" }).includes('data-site-return'));
 assert(renderManuscriptControl("book.pdf").includes("📖"));
 assert(renderUtilityDock("control").includes('aria-label="Page tools"'));
 assert(renderReaderHeader({ workTitle: "Work", location: "Chapter 1", title: "Title" }).includes("Work · Chapter 1"));

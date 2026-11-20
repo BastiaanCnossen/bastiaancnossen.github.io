@@ -1,0 +1,122 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Additive categories | Synthetic Category Theory</title><meta name="description" content="Section 20.2 of Synthetic Category Theory: Additive categories."><link rel="canonical" href="https://bastiaancnossen.com/notes/synthetic-category-theory/section/k-theory-after-quillen-waldhausen-and-thomason/additive-categories/"><link rel="stylesheet" href="../../../_assets/sct.css"><link rel="stylesheet" href="../../../_assets/style.css"><script src="../../../_assets/mathjax-config.js"></script><script defer src="../../../_assets/mathjax/tex-chtml.js"></script><script defer src="../../../_assets/reader.js" data-notes-reader="synthetic-category-theory" data-reader-revision="reader-shell-v1-a276d9dd73bb82aa"></script>
+<script defer src="../../../_assets/proofs.js"></script></head><body class="work-page section-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
+      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
+        <span class="utility-icon" aria-hidden="true">⚙</span>
+      </button>
+      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
+        <h2 id="display-settings-heading">Proof display</h2>
+        <div class="preset-group" role="group" aria-label="Default proof display">
+          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
+          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
+        </div>
+        <h2>Page layout</h2>
+        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
+      </section>
+    </div><div class="utility-item manuscript-item">
+      <a class="utility-trigger manuscript-trigger" href="/notes/synthetic-category-theory.pdf" title="View the entire manuscript as a PDF">
+        <span class="utility-expansion">View the entire manuscript as a PDF</span>
+        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
+        <span class="sr-only">View the entire manuscript as a PDF</span>
+      </a>
+    </div></aside><header class="site-header work-header">
+<div class="reading-header-row"><div class="reader-heading">
+      <a class="collection-return" data-site-return href="/notes.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
+      <p class="eyebrow"><a href="../../../index.html">Synthetic Category Theory</a> · <a href="../../../chapter/k-theory-after-quillen-waldhausen-and-thomason/index.html">Chapter 20</a> · Section 20.2</p>
+      <h1>Additive categories</h1>
+    </div><nav class="page-turns" data-reading-navigation aria-label="Reading navigation"><a rel="prev" data-step="prev-chapter" href="../../../chapter/elements-of-stable-category-theory/index.html" title="Elements of stable category theory" aria-label="Previous chapter: Chapter 19, Elements of stable category theory"><span class="turn-direction">← Previous chapter</span><span class="turn-target">Chapter 19</span></a>
+<a rel="next" data-step="next-chapter" href="../../../chapter/presentable-categories/index.html" title="Presentable categories" aria-label="Next chapter: Chapter 21, Presentable categories"><span class="turn-direction">→ Next chapter</span><span class="turn-target">Chapter 21</span></a>
+<a rel="prev" data-step="prev-section" href="../completion-by-small-sifted-colimits/index.html" title="Completion by small sifted colimits" aria-label="Previous section: Section 20.1, Completion by small sifted colimits"><span class="turn-direction">← Previous section</span><span class="turn-target">Section 20.1</span></a>
+<a rel="next" data-step="next-section" href="../waldhausen-categories/index.html" title="Waldhausen categories" aria-label="Next section: Section 20.3, Waldhausen categories"><span class="turn-direction">→ Next section</span><span class="turn-target">Section 20.3</span></a></nav></div>
+</header><main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Navigation
+    </button><article class="notes-page "><div class="theorem-block theorem-plain" data-kind="lemma" id="lemma:Godement"><p><span class="theorem-head"><a class="theorem-name" href="../../../entry/godement/index.html">Lemma 20.2.1</a> <span class="theorem-note">(the Eckmann-Hilton argument, le lemme de Godement)</span>.</span> Let \(A\) be an anima together with a term \(e : A\) as well as two maps 		<span class="math-display">\[
+		\circ \colon A\times A\to A\ , \quad (a,b)\mapsto a\circ b\quadtext{and}
+		\bullet\colon A\times A\to A\ , \quad (a,b)\mapsto a\bullet b\, . 
+		\]</span> 		We assume that the following rules hold.</p><ul class="latex-list latex-itemize"><li><p><span class="item-label">(i)</span> For every term \(a : A\), there are terms of the following types: 			<span class="math-display">\begin{align*}
+				 u^l_a&amp; : a= e\circ a\\
+				 u^r_a&amp; : a\circ e= a\\
+				 v^l_a&amp; : a= e\bullet a\\
+				 v^r_a&amp; : a\bullet e= a \, .
+			\end{align*}</span></p></li><li><p><span class="item-label">(ii)</span> For every term \(a,b,c,d : X\), there is a term of type 			<span class="math-display">\[
+			\gamma_{a,b,c,d} : (a\bullet b)\circ (c\bullet d)= (a\circ c)\bullet (b\circ d)\, .
+			\]</span></p></li></ul><p>Then, for any terms \(a,b : A\), there are terms 		<span class="math-display">\[
+		\kappa_{a,b} : a\bullet b = a\circ b
+		\quadtext{and}
+		\kappa'_{a,b} : a\circ b = b\bullet a\, .
+		\]</span></p></div><details class="proof" open><summary>Proof</summary><div class="proof-content"><p>The term \(\kappa_{a,b}\) is obtained as follows. 	<span class="math-display">\begin{align*}
+		a\bullet b
+		&amp;=(a\circ e)\bullet(e\circ b)\\
+		&amp;=(a\bullet e)\circ(e\bullet b)\\
+		&amp;=a\circ b\, ,
+	\end{align*}</span> 	Similarly, the sequence 	<span class="math-display">\begin{align*}
+		a\circ b
+		&amp;=(e\bullet a)\circ (b\bullet e)\\
+		&amp;=(e\circ b)\bullet (a\circ e)\\
+		&amp;=b\bullet a
+	\end{align*}</span> 	yields \(\kappa'_{a,b}\).</p></div></details><div class="theorem-block theorem-definition" data-kind="example" id="example:double-loop-space-abelian-up-to-homotopy"><p><span class="theorem-head"><a class="theorem-name" href="../../../entry/double-loop-space-abelian-up-to-homotopy/index.html">Example 20.2.2</a>.</span> Given an anima \(X\) and a term \(x : X\), we can form 		<span class="math-display">\[
+		\Omega(X,x):=\Hom_X(x,x)\, .
+		\]</span> 		there is thus a composition law 		<span class="math-display">\[
+		c_{X,x}\colon\Omega(X,x)\times\Omega(X,x)\to\Omega(X,x)\, .
+		\]</span> 		This operation defines a functor 		<span class="math-display">\[
+		\Omega\colon\An_\bullet\to\An_{\bullet}
+		\]</span> 		that commutes with products.  		We define 		<span class="math-display">\[
+		\bullet\colon\Omega^2(X,x)\times\Omega^2(X,x)
+		=\Omega(\Omega(X,\id_x)\times\Omega(X,\id_x))\xrightarrow{\Omega(c_{X,x})}
+		\Omega^2(X,x)
+		\]</span> 		where \(\Omega^2(X,x):=\Omega(\Omega(X,x),\id_x)\). 		There is also the composition law 		<span class="math-display">\[
+		\circ:=c_{\Omega(X,x),\id_x}\colon\Omega^2(X,x)\times\Omega^2(X,x)\to\Omega^2(X,x)\, .
+		\]</span> 		One checks immediately that <a class="source-reference" href="../../../entry/godement/index.html#lemma:Godement">Lemma 20.2.1</a> applies to the anima \(A=\Omega^2(X,x)\) with these definitions of \(\circ\) and \(\bullet\).</p></div><div class="theorem-block theorem-definition" data-kind="definition" id="def:Semiadditive"><p><span class="theorem-head"><a class="theorem-name" href="../../../entry/semiadditive/index.html">Definition 20.2.3</a>.</span> A category \(C\) is <em>semiadditive</em> if its has an initial object \(0\) 		as well as binary coproducts with the following properties:</p><ul class="latex-list latex-itemize"><li><p><span class="item-label">(i)</span> The initial object \(0\) turns out to be a terminal object as well. In particular, for any object \(x\) of \(C\), there is a map \(p_x\colon x\to 0\).</p></li><li><p><span class="item-label">(ii)</span> For any objects \(x\) and \(y\), the maps 			<span class="math-display">\[
+			p_x\amalg\id_y\colon x\amalg y\to x\amalg 0=x
+			\quadtext{and}
+			\id_x\amalg p_y\colon x\amalg y\to 0\amalg y=y
+			\]</span> 			exhibit \(x\amalg y\) as a product of \(x\) and \(y\) in \(C\).</p></li></ul></div><div class="theorem-block theorem-definition" data-kind="construction" id="con:Addition_In_A_Semiadditive_Category"><p><span class="theorem-head"><a class="theorem-name" href="../../../entry/addition-in-a-semiadditive-category/index.html">Construction 20.2.4</a>.</span> Let \(C\) be a semiadditive category. For any objects \(x,y : C^\simeq\), there is 		an operation 		<span class="math-display">\[
+		\Hom_C(x,y)\times\Hom_C(x,y)\to\Hom_C(x,y)\ , \quad\mapsto (f,g)\mapsto f+g
+		\]</span> 		defined by the following composition 		<span class="math-display">\[
+		\Hom_C(x,y)\times\Hom_C(x,y)=\Hom_C(x\amalg x,y)\xrightarrow{\Delta^*}\Hom_C(x,y)
+		\]</span> 		with \(\Delta\colon x\to x\amalg x\) the map defined by the pair \((\id_X,\id_x)\) using the description of \(x\amalg x\) 		as a product.</p><p>This construction is functorial in the sense that for any functor between semiadditive categories 		<span class="math-display">\[
+		f\colon C\to D
+		\]</span> 		that preserves finite coproducts (hence finite products as well), we have a canonical commutative 		square of the form  		<span class="diagram diagram-display"><img src="../../../_assets/diagrams/diagram-51aafd18c36c40cc5ff1.svg" width="null" height="null" alt="Commutative diagram; see the PDF for its LaTeX source" loading="lazy"></span> 		We observe furthermore that \(\Fun(I,C)\) is semiadditive for any category \(I\) whenever \(C\) is pre-additive. 		This expresses how functorial is this construction in the variables \(x,y : C\).</p></div><div class="theorem-block theorem-definition" data-kind="example" id="example:RexCat-pre-additive"><p><span class="theorem-head"><a class="theorem-name" href="../../../entry/rexcat-pre-additive/index.html">Example 20.2.5</a>.</span> The category \(\RexCat\) is semiadditive. The initial object is the category \([0]\) 		and the coproduct is given by the cartesian product of the underlying categories.</p></div><div class="theorem-block theorem-definition" data-kind="construction" id="con:Matrices"><p><span class="theorem-head"><a class="theorem-name" href="../../../entry/matrices/index.html">Construction 20.2.6</a> <span class="theorem-note">(\(2\times 2\) matrices)</span>.</span> In a semiadditive category \(C\), given for objects \(x,y,z,w\) 		a map 		<span class="math-display">\[
+		\varphi \colon x\amalg y\to z\amalg w
+		\]</span> 		amounts to a pair of maps of type \(u\colon x\amalg y\to z\) and \(v\colon x\amalg y\to w\) 		(seeing \(z\amalg w\) as a product) and seeing \(x\amalg y\) as a coproduct,  		\(u\) correspond to a pair of maps of the form 		<span class="math-display">\[
+		a\colon x\to z\quadtext{and} b\colon y\to z
+		\]</span> 		whereas \(v\) corresponds to a pair of maps of the form 		<span class="math-display">\[
+		c\colon x\to w\quadtext{and} d\colon y\to w\, .
+		\]</span> 		In other words, defining a map \(\varphi\) as above is equivalent to defining a \(2\times 2\)-matrix:	     	    <span class="math-display">\[
+	    \varphi= \begin{pmatrix}
+	    	a &amp; b\\
+	    	c &amp; d
+	    \end{pmatrix}
+	    \]</span>  	    The map \(\varphi\) is defined in formula by \(\varphi(x,y)=(a(x)+b(y), c(x)+d(y))\).</p></div><div class="theorem-block theorem-definition" data-kind="definition" id="def:Additive"><p><span class="theorem-head"><a class="theorem-name" href="../../../entry/additive/index.html">Definition 20.2.7</a>.</span> An <em>additive</em> category is a semiadditive category \(C\) with the property that, for any object \(x\) of \(C\), 		the matrix 		<span class="math-display">\[
+		\begin{pmatrix}
+			\id_x &amp; \id_x\\
+			\id_x &amp; 0
+		\end{pmatrix}
+		\]</span> 		(with \(0\colon x\to x\) the unique map factorizing through \(0\)) defines an automorphism 		of \(x\amalg x\).</p></div><div class="theorem-block theorem-plain" data-kind="proposition" id="proposition:stable-categories-are-pre-additive"><p><span class="theorem-head"><a class="theorem-name" href="../../../entry/stable-categories-are-pre-additive/index.html">Proposition 20.2.8</a>.</span> Any stable category is additive.</p></div><details class="proof" open><summary>Proof</summary><div class="proof-content"><p>This means that, for any objects \(x\) and \(y\) in a stable category \(C\), for any maps \(f,g\colon x\to y\) 	   in \(C\), one can reconstruct canonically the pair \((f,g)\) from the pair \((f+g,f)\). 	   For this, it suffices to produce a map \(-g\colon x\to y\) such that \((f+g)+(-g)=f\) holds true. 	   Since we have 	   <span class="math-display">\[
+	   \Hom_C(x,y)=\Omega^2(\Hom_C(x,\Sigma^2(y)),0)\, ,
+	   \]</span> 	   <a class="source-reference" href="../../../entry/godement/index.html#lemma:Godement">Lemma 20.2.1</a> together with 	   <a class="source-reference" href="../../../entry/double-loop-space-abelian-up-to-homotopy/index.html#example:double-loop-space-abelian-up-to-homotopy">Example 20.2.2</a> 	   tell us that one can see the operation \((f,g)\mapsto f+g\) as the composition law in the anima 	   \(\Omega(\Hom_C(x,\Sigma(y)),0)\). 	   Therefore, inverses for this composition law exist and this proves the proposition.</p></div></details><div class="theorem-block theorem-plain" data-kind="corollary" id="corollary:additive-categories-in-stable-ones"><p><span class="theorem-head"><a class="theorem-name" href="../../../entry/additive-categories-in-stable-ones/index.html">Corollary 20.2.9</a>.</span> Any full subcategory closed under finite (co)products of a stable category is additive.</p></div></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Page navigation">
+    <div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
+      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../../../preface/index.html"><span class="context-entry-heading">Preface</span><span class="context-entry-title"></span></a></li><li><a href="../../../change-log/index.html"><span class="context-entry-heading">Change log</span><span class="context-entry-title"></span></a></li><li><a href="../../../chapter/introduction/index.html"><span class="context-entry-heading">Introduction</span><span class="context-entry-title"></span></a></li><li><a href="../../../chapter/overview-of-the-axioms/index.html"><span class="context-entry-heading">Overview of the axioms</span><span class="context-entry-title"></span></a></li><li><a href="../../../chapter/the-language-of-synthetic-category-theory/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">The language of synthetic category theory</span></a></li><li><a href="../../../chapter/the-internal-structure-of-categories/index.html"><span class="context-entry-heading">Chapter 2</span><span class="context-entry-title">The internal structure of categories</span></a></li><li><a href="../../../chapter/constructions-of-categories/index.html"><span class="context-entry-heading">Chapter 3</span><span class="context-entry-title">Constructions of categories</span></a></li><li><a href="../../../chapter/cartesian-and-cocartesian-fibrations/index.html"><span class="context-entry-heading">Chapter 4</span><span class="context-entry-title">Cartesian and cocartesian fibrations</span></a></li><li><a href="../../../chapter/synthetic-categories-and-contexts/index.html"><span class="context-entry-heading">Chapter 5</span><span class="context-entry-title">Synthetic categories and contexts</span></a></li><li><a href="../../../chapter/functoriality-of-universals/index.html"><span class="context-entry-heading">Chapter 6</span><span class="context-entry-title">Functoriality of universals</span></a></li><li><a href="../../../chapter/limits-and-colimits/index.html"><span class="context-entry-heading">Chapter 7</span><span class="context-entry-title">Limits and colimits</span></a></li><li><a href="../../../chapter/universes-and-directed-univalence/index.html"><span class="context-entry-heading">Chapter 8</span><span class="context-entry-title">Universes and directed univalence</span></a></li><li><a href="../../../chapter/cofinality/index.html"><span class="context-entry-heading">Chapter 9</span><span class="context-entry-title">Cofinality</span></a></li><li><a href="../../../chapter/natural-numbers-and-simplices/index.html"><span class="context-entry-heading">Chapter 10</span><span class="context-entry-title">Natural numbers and simplices</span></a></li><li><a href="../../../chapter/covers-and-truncations/index.html"><span class="context-entry-heading">Chapter 11</span><span class="context-entry-title">Covers and truncations</span></a></li><li><a href="../../../chapter/yoneda-and-presheaf-categories/index.html"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Yoneda and presheaf categories</span></a></li><li><a href="../../../chapter/kan-extensions-categorical-colimits-and-descent/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Kan extensions, categorical colimits, and descent</span></a></li><li><a href="../../../chapter/localizations/index.html"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Localizations</span></a></li><li><a href="../../../chapter/rezk-nerves-and-univalent-segal-animae/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Rezk nerves and univalent Segal animae</span></a></li><li><a href="../../../chapter/filtered-colimits-and-finite-categories/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Filtered colimits and finite categories</span></a></li><li><a href="../../../chapter/small-subuniverses-and-presentability/index.html"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">Small subuniverses and presentability</span></a></li><li><a href="../../../chapter/ind-objects/index.html"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Ind-objects</span></a></li><li><a href="../../../chapter/elements-of-stable-category-theory/index.html"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">Elements of stable category theory</span></a></li><li><a href="../../../chapter/k-theory-after-quillen-waldhausen-and-thomason/index.html" aria-current="page"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">$K$-Theory, after Quillen, Waldhausen and Thomason</span></a></li><li><a href="../../../chapter/presentable-categories/index.html"><span class="context-entry-heading">Chapter 21</span><span class="context-entry-title">Presentable categories</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="false">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
+      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
+      <ol class="context-entry-list"><li><a href="../completion-by-small-sifted-colimits/index.html"><span class="context-entry-heading">Section 20.1</span><span class="context-entry-title">Completion by small sifted colimits</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 20.2</span><span class="context-entry-title">Additive categories</span></a></li><li><a href="../waldhausen-categories/index.html"><span class="context-entry-heading">Section 20.3</span><span class="context-entry-title">Waldhausen categories</span></a></li><li><a href="../additive-functors/index.html"><span class="context-entry-heading">Section 20.4</span><span class="context-entry-title">Additive functors</span></a></li><li><a href="../construction-of-k-theory/index.html"><span class="context-entry-heading">Section 20.5</span><span class="context-entry-title">Construction of $K$-theory</span></a></li><li><a href="../the-additivity-theorem/index.html"><span class="context-entry-heading">Section 20.6</span><span class="context-entry-title">The additivity theorem</span></a></li><li><a href="../the-universal-property-of-waldhausen-construction/index.html"><span class="context-entry-heading">Section 20.7</span><span class="context-entry-title">The universal property of Waldhausen construction</span></a></li><li><a href="../the-localization-theorem/index.html"><span class="context-entry-heading">Section 20.8</span><span class="context-entry-title">The localization theorem</span></a></li></ol>
+    </nav>
+  </section><section class="contents-ledger" data-contents-ledger data-open="true">
+    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-named-results" aria-expanded="true">
+      <span>Named results</span><span class="contents-chevron" aria-hidden="true"></span>
+    </button></h2>
+    <nav class="contents" id="contents-named-results" aria-label="Named results" data-ledger-key="named-results" data-default-collapsed="false" data-collapsed="false">
+      <ol class="context-entry-list"><li><a href="../../../entry/godement/index.html"><span class="context-entry-heading">Lemma 20.2.1</span><span class="context-entry-title">the Eckmann-Hilton argument, le lemme de Godement</span></a></li><li><a href="../../../entry/matrices/index.html"><span class="context-entry-heading">Construction 20.2.6</span><span class="context-entry-title">$2\times 2$ matrices</span></a></li></ol>
+    </nav>
+  </section></div>
+  </aside></main><footer class="edition-footer">
+  <a href="/notes/synthetic-category-theory.pdf">PDF</a>
+  <p class="source-note">Generated from the LaTeX source of the manuscript. The PDF is the reference version.</p>
+</footer></body></html>
