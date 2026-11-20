@@ -1,10 +1,7 @@
 # bastiaancnossen.com
 
 Source for my personal website. The hand-written pages use plain HTML and one
-stylesheet, with no build step and no JavaScript. Generated mathematical notes
-are self-contained static bundles published by the maintenance scripts in
-`publication/`. See `publication/README.md` for the transactional publication
-workflow, permanent-address policy, and instructions for adding another work.
+stylesheet, with no build step and no JavaScript. The mathematical web editions live at [Animarium](https://animarium.org/). See [redirect maintenance](redirects/README.md) for the old addresses and frozen PDFs.
 
 The AI token usage page (`ai-tokens.html`, linked from `ai-use.html`) is a static dated snapshot. Its generated table and public JSON
 are produced from the private usage ledger by `knowledge\ai-usage-tooling\publish-web.ps1`.

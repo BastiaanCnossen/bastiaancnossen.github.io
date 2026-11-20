@@ -1,148 +1,0 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The additivity theorem | Synthetic Category Theory</title><meta name="description" content="Section 20.6 of Synthetic Category Theory: The additivity theorem."><link rel="canonical" href="https://bastiaancnossen.com/notes/synthetic-category-theory/section/k-theory-after-quillen-waldhausen-and-thomason/the-additivity-theorem/"><link rel="stylesheet" href="../../../_assets/sct.css"><link rel="stylesheet" href="../../../_assets/style.css"><script src="../../../_assets/mathjax-config.js"></script><script defer src="../../../_assets/mathjax/tex-chtml.js"></script><script defer src="../../../_assets/reader.js" data-notes-reader="synthetic-category-theory" data-reader-revision="reader-shell-v1-a276d9dd73bb82aa"></script>
-<script defer src="../../../_assets/proofs.js"></script></head><body class="work-page section-page has-context-nav" data-proof-mode="displayed"><aside class="utility-dock" aria-label="Page tools"><div class="utility-item settings-item" data-utility-item data-open="false">
-      <button class="utility-trigger" id="display-settings-trigger" type="button" data-utility-trigger aria-controls="display-settings-panel" aria-expanded="false" aria-label="Reader settings" title="Reader settings">
-        <span class="utility-icon" aria-hidden="true">⚙</span>
-      </button>
-      <section class="utility-panel settings-panel" id="display-settings-panel" aria-labelledby="display-settings-heading">
-        <h2 id="display-settings-heading">Proof display</h2>
-        <div class="preset-group" role="group" aria-label="Default proof display">
-          <button type="button" data-proof-mode="displayed">Proofs displayed</button>
-          <button type="button" data-proof-mode="collapsed">Proofs collapsed</button>
-        </div>
-        <h2>Page layout</h2>
-        <label class="settings-check"><input type="checkbox" data-navigation-visibility checked> Show navigation panel</label>
-      </section>
-    </div><div class="utility-item manuscript-item">
-      <a class="utility-trigger manuscript-trigger" href="/notes/synthetic-category-theory.pdf" title="View the entire manuscript as a PDF">
-        <span class="utility-expansion">View the entire manuscript as a PDF</span>
-        <span class="utility-icon book-icon" aria-hidden="true">📖</span>
-        <span class="sr-only">View the entire manuscript as a PDF</span>
-      </a>
-    </div></aside><header class="site-header work-header">
-<div class="reading-header-row"><div class="reader-heading">
-      <a class="collection-return" data-site-return href="/notes.html"><span aria-hidden="true">←</span> Books &amp; notes</a>
-      <p class="eyebrow"><a href="../../../index.html">Synthetic Category Theory</a> · <a href="../../../chapter/k-theory-after-quillen-waldhausen-and-thomason/index.html">Chapter 20</a> · Section 20.6</p>
-      <h1>The additivity theorem</h1>
-    </div><nav class="page-turns" data-reading-navigation aria-label="Reading navigation"><a rel="prev" data-step="prev-chapter" href="../../../chapter/elements-of-stable-category-theory/index.html" title="Elements of stable category theory" aria-label="Previous chapter: Chapter 19, Elements of stable category theory"><span class="turn-direction">← Previous chapter</span><span class="turn-target">Chapter 19</span></a>
-<a rel="next" data-step="next-chapter" href="../../../chapter/presentable-categories/index.html" title="Presentable categories" aria-label="Next chapter: Chapter 21, Presentable categories"><span class="turn-direction">→ Next chapter</span><span class="turn-target">Chapter 21</span></a>
-<a rel="prev" data-step="prev-section" href="../construction-of-k-theory/index.html" title="Construction of $K$-theory" aria-label="Previous section: Section 20.5, Construction of $K$-theory"><span class="turn-direction">← Previous section</span><span class="turn-target">Section 20.5</span></a>
-<a rel="next" data-step="next-section" href="../the-universal-property-of-waldhausen-construction/index.html" title="The universal property of Waldhausen construction" aria-label="Next section: Section 20.7, The universal property of Waldhausen construction"><span class="turn-direction">→ Next section</span><span class="turn-target">Section 20.7</span></a></nav></div>
-</header><main class="reader-layout"><button class="context-nav-toggle" type="button" id="context-navigation-toggle" data-context-nav-toggle aria-controls="context-navigation" aria-expanded="false">
-      <span aria-hidden="true">☰</span> Navigation
-    </button><article class="notes-page "><p>Recall that \(\underset{\Delta\catop}{\colim}\colon\PSh(\Delta)\to\An\)     is called the geometric realization functor.</p><div class="theorem-block theorem-plain" data-kind="lemma" id="lemma:relative-simplicial-Quillen-theorem-A"><p><span class="theorem-head"><a class="theorem-name" href="../../../entry/relative-simplicial-quillen-theorem-a/index.html">Lemma 20.6.1</a>.</span> Let     <span class="diagram diagram-display"><img src="../../../_assets/diagrams/diagram-b6b66f56840e3fdde470.svg" width="null" height="null" alt="Commutative diagram; see the PDF for its LaTeX source" loading="lazy"></span>     be a commutative triangle of simplicial animae.     We assume that, in any anima context, for any     map \(\sigma\colon\Delta^n\to S\), the induced map of type     <span class="math-display">\[
-    \Delta^n\times_SX\to\Delta^n\times_SY
-    \]</span>     induces an isomorphism in \(\An\) after geometric realization.     Then the geometric realization of \(u\) is an isomorphism.</p></div><details class="proof" open><summary>Proof</summary><div class="proof-content"><p>Our assumptions mean that, for any small anima \(\Gamma\) and any term \(n : \N\),    		for any map of the form \(\sigma\colon\Gamma\times\Delta^n\to S\), the induced map of type    	<span class="math-display">\[
-   	\sigma^*(u)\colon(\Gamma\times\Delta^n)\times_SX\to(\Gamma\times\Delta^n)\times_SY
-   	\]</span> 	induces an isomorphism in \(\An\) after geometric realization. 	But any simplicial anima is canonically a colimit of simplicial animae of the form 	\(\Gamma\times\Delta^n\). Furthermore, for any morphism \(f\colon A\to S\) in \(\PSh(\Delta)\),    	the pullback    	<span class="math-display">\[
-	f^*\colon\PSh(\Delta)_{/S}\to\PSh(\Delta)_{/A}
-   	\]</span>    	has a right adjoint: we can identify    	<span class="math-display">\[
-	\PSh(\Delta)_{/S}=\PSh(\Delta_{/S})
-   	\]</span>    	so that \(f^*\) is the pullback functor along the functor    <span class="math-display">\[
-   f_!\colon\Delta_{/A}\to\Delta_{/S}\, .
-   \]</span>     In particular, the functor \(f^*\) commutes with colimits. Therefore, the map \(u\) is canonically a colimit of    morphisms of the form \(\sigma^*(u)\)    induced by pullbacks from maps \(\sigma\) as above. Since the realization functor    commutes with colimits (this is a colimit functor itself by definition),    the geometric realization of \(u\) is the colimit of the geometric realization    of each of the \(\sigma^*(u)\)’s. We conclude by the obvious observation that colimits     preserve isomorphisms.</p></div></details><div class="theorem-block theorem-definition" data-kind="remark" id="remark:induced-homotopies-for-additivity"><p><span class="theorem-head"><a class="theorem-name" href="../../../entry/induced-homotopies-for-additivity/index.html">Remark 20.6.2</a>.</span> Let \(n : \N\) and \(A\) a small category.    		Let \(h\colon\Delta^1\times\Delta^n\to\Delta^n\) be the map induced by the functor expressing the fact that \(n\) is a terminal object of \([n]\).</p><p>The map \(h\) induces a functor    		<span class="math-display">\[
-   		\eta\colon\Delta_{/[1]}\times_\Delta \Delta_{/[n]}\to\Delta_{/\Fun([1],[n])}
-   		\]</span>    		sending \(u\colon [n]\to [m]\) and \(v\colon[m]\to [1]\) to the unique natural transformation    		<span class="math-display">\[
-   		\kappa_{u,v}\colon u\to \bar u
-   		\]</span>    		where \(\bar u\colon [m]\to [n]\) is defined as the composition of \((v,u)\) with \(h\).    		Since \(u(i)\leq\bar u (i)\), this defines \(\kappa_{u,v}\).</p><p>The evaluation functor    		<span class="math-display">\[
-   		\ev\colon[1]\times\Fun([1],[m])\to [m]
-   		\]</span>    		is functorial in \([m]\) hence so is its product with the identity of \([1]\)    		<span class="math-display">\[
-   		\id_{[1]}\times\ev\colon [1]\times [1]\times\Fun([1],[m])\to [1]\times [m]\, .
-   		\]</span>    		This defines a functor    		<span class="math-display">\[
-   		c_{[m]}\colon [1]\times \Fun([1],[m])\to \Fun([1],[1]\times [m])
-   		\]</span>    		functorially in \([m]\). With the identification    		<span class="math-display">\[
-   		\Fun([1]\times \Fun([1],[m]),A)= \Fun( \Fun([1],[m]),\Fun([1],A))
-   		\]</span>    		this defines a functor    		<span class="math-display">\[
-   		c^*_{[m]}\colon\Fun(\Fun([1],[1]\times [m]),A)\to\Fun( \Fun([1],[m]),\Fun([1],A))
-   		\]</span>    		functorially in \([m]\) and \(A\).     		Assigning each \(u\colon [m]\to \Fun([1],[n])\) to the corresponding map \([1]\times [m]\to [n]\)    		defines a functor    		<span class="math-display">\[
-   		u^*\colon \Fun(\Fun([1],[n]),A)\to\Fun(\Fun([1],[1]\times [m]),A)
-   		\]</span>    		functorially in  \(u\), seen as a term of \(\Delta_{/\Fun([1],[n])}\).    		Composing with the functor \(\eta\) above, this means that, for any functor    		<span class="math-display">\[
-   		x\colon\Fun([1],[n])\to A
-   		\]</span>    		if, for any map \(w\colon[m]\to [n]\) one writes    		<span class="math-display">\[
-   		w^*(x)\colon\Fun([1],[n])\to A
-   		\]</span>    		for the composition of \(x\) with the functor induced by \(w\) by applying \(\Fun([1],-)\),    		then for any maps \(u\colon[m]\to[n]\) and \(v\colon[m]\to[1]\), one has a canonical map    		<span class="math-display">\[
-   		\kappa_{u,v,x}\colon u^*(x)\to \bar{u}^*(x)
-   		\]</span>    		functorially in \((u,v)\).</p></div><div class="theorem-block theorem-plain" data-kind="lemma" id="lemma:basic-Waldhausen-additivity"><p><span class="theorem-head"><a class="theorem-name" href="../../../entry/basic-waldhausen-additivity/index.html">Lemma 20.6.3</a>.</span> Let \(A\) be a Waldhausen category in which weak equivalences all are isomorphisms.    		The functor     		<span class="math-display">\[
-   		(\ker,\coker)\colon\ExactSeq(A)\to A\times A
-   		\]</span> 		induces a morphism of simplicial animae    		<span class="math-display">\[
-   		\Scons(\ExactSeq(A))^\simeq\to \Scons(A)^\simeq\times\Scons(A)^\simeq
-   		\]</span>    		that yields an isomorphism after geometric realization.</p></div><details class="proof" open><summary>Proof</summary><div class="proof-content"><p>We have a commutative triangle of the form    		<span class="diagram diagram-display"><img src="../../../_assets/diagrams/diagram-e6a327fef582cf62f536.svg" width="null" height="null" alt="Commutative diagram; see the PDF for its LaTeX source" loading="lazy"></span>    		and we will apply <a class="source-reference" href="../../../entry/relative-simplicial-quillen-theorem-a/index.html#lemma:relative-simplicial-Quillen-theorem-A">Lemma 20.6.1</a> to it.    		We consider a map    		<span class="math-display">\[
-   		x\colon \Delta^n\to \Scons(A)
-   		\]</span> 		i.e. a functor \(x\colon\Fun([1],[n])\to A\) satisfying the conditions of    		<a class="source-reference" href="../../../entry/general-s-construction/index.html#definition:general-S-construction">Definition 20.5.4</a>.    		We have to prove that the induced map    		<span class="math-display">\[
-   		\Delta^n\times_{\Scons(A)^\simeq}	\Scons(\ExactSeq(A))^\simeq
-   		\to 	\Delta^n\times_{\Scons(A)^\simeq}(\Scons(A)^\simeq\times	\Scons(A)^\simeq)
-   		\]</span>    		induces an isomorphism after geometric realization. We will consider first the case where \(n=0\).    		In that case \(x\) simply is the initial object \(*\) in \(A\).    		It suffices to check that the comparison map between pullbacks above 		is an equivalence of simplicial animae, which can be checked objectwise.    		If we evaluate at \([p]\), this is the same as evaluating at \(0\), up    		to replacing \(A\) by \(\Wald([p+1],A)\). Therefore, it suffices to check that    		we have an equivalence when we evaluate at \([0]\).    		The left hand side is then the collection of pushout squares of the form    		<span class="diagram diagram-display"><img src="../../../_assets/diagrams/diagram-d4a76f777723eceef81f.svg" width="null" height="null" alt="Commutative diagram; see the PDF for its LaTeX source" loading="lazy"></span>    		whereas the right hand side is the collection of pairs of objects of the form \((*,x'')\). 		It is clear that assigning \(x''\) to each pushout square as above is an equivalence.    		Let us consider the general case. Let us write \(x_0\colon\Delta^0\to \Scons(A)\)    		for the restriction of \(x\) along \(\{0\}\hookrightarrow\Delta^n\).    		This induces a pullback square of the form    		<span class="diagram diagram-display"><img src="../../../_assets/diagrams/diagram-05b105b34abd5ce1bf00.svg" width="null" height="null" alt="Commutative diagram; see the PDF for its LaTeX source" loading="lazy"></span>    		in which the upper horizontal map is an equivalence (by the preceding discussion).    		Therefore, it suffices to check that the two vertical maps induce an isomorphism    		after geometric realization. But the vertical map \(j\) on the right is equivalent to    		<span class="math-display">\[
-   		\Scons(A)^\simeq\iso\{0\}\times\Scons(A)^\simeq\hookrightarrow
-   		\Delta^n\times\Scons(A)^\simeq\, .
-   		\]</span>    		Since the geometric realization functor commutes with finite products    		(because \(\Delta\catop\) is sifted), it suffices to check that any    		map of the form \(\Delta^0\to \Delta^n\) induces an isomorphism after geometric    		realization. This follows from the fact that the geometric realization of \(\Delta^n\)    		is contractible (as is the colimit of any representable presheaf on a small category).</p><p>What precedes tells us that    		<span class="math-display">\[
-   			\Delta^0\times_{\Scons(A)^\simeq}	\Scons(\ExactSeq(A))^\simeq\simeq\Scons(A)^\simeq\, .
-   		\]</span>    		There is a canonical map    		<span class="math-display">\[
-   		p\colon \Delta^n\times_{\Scons(A)^\simeq}	\Scons(\ExactSeq(A))^\simeq\to
-   		\Scons(A)^\simeq)
-   		\]</span>    		obtained through the second projection    		<span class="math-display">\[
-   		\Delta^n\times_{\Scons(A)^\simeq}	\Scons(\ExactSeq(A))^\simeq
-   		\to 	\Scons(\ExactSeq(A))^\simeq
-   		\]</span>    		followed from the map    		<span class="math-display">\[
-   			\Scons(\ExactSeq(A))^\simeq\to 	\Scons(A)^\simeq
-   		\]</span>    		induced by the functor    		<span class="math-display">\[
-   		\coker\colon\ExactSeq(A)\to A\, .
-   		\]</span>    		It is immediate to see that the vertical map \(i\) on the left hand side of the square above    		is a section of \(p\). It suffices now to prove that the other composite \(i\circ p\) simplicially    		homotopic to the identity.</p><p>Let \(h\colon\Delta^1\times\Delta^n\to\Delta^n\) be the map induced by the functor expressing the fact that \(n\) is a terminal object of \([n]\).    		Keeping track of the notations of <a class="source-reference" href="../../../entry/induced-homotopies-for-additivity/index.html#remark:induced-homotopies-for-additivity">Remark 20.6.2</a>,    		for any maps \(u\colon [m]\to [n]\) and \(v\colon[m]\to [1]\) to the unique natural transformation    		<span class="math-display">\[
-   		\kappa_{u,v}\colon u\to \bar u
-   		\]</span>    		produces a canonical map    		<span class="math-display">\[
-   		\kappa_{u,v,x}\colon u^*(x)\to \bar{u}^*(x)
-   		\]</span>    		functorially in \((u,v)\).    		A term of the category \(\Delta_{/X}\) for    		<span class="math-display">\[
-   		X=\Delta^1\times \Big(\Delta^n\times_{\Scons(A)^\simeq}\Scons(\ExactSeq(A))^\simeq\Big)
-   		\]</span>    		literally is a tuple of the form \((u,v,\xi)\) with \((u,v)\) as above any \(\xi\) a tern of the category of 		pushout square in \(A\) of the form below.    		<span class="diagram diagram-display"><img src="../../../_assets/diagrams/diagram-89021f9a0db939246fd6.svg" width="null" height="null" alt="Commutative diagram; see the PDF for its LaTeX source" loading="lazy"></span>    		Such a term \(\xi\) is thus canonically the back face of a term of the category of    		commutative cubes in \(A\) of the form         <span class="diagram diagram-display"><img src="../../../_assets/diagrams/diagram-54b7b140078495be246d.svg" width="null" height="null" alt="Commutative diagram; see the PDF for its LaTeX source" loading="lazy"></span>         in which the back face, the front face, as well as the top face are pushout squares.         We define         <span class="diagram diagram-display"><img src="../../../_assets/diagrams/diagram-7b35581a43866bf51fbd.svg" width="null" height="null" alt="Commutative diagram; see the PDF for its LaTeX source" loading="lazy"></span>         and the rule         <span class="math-display">\[
-        H(u,v,\xi)=(\bar{u},\bar{\xi})
-        \]</span>         produces a well-defined functor over \(\Delta\), hence a morphism of simplicial animae         <span class="math-display">\[
-        H\colon
-        \Delta^1\times \Big(\Delta^n\times_{\Scons(A)^\simeq}\Scons(\ExactSeq(A))^\simeq\Big)
-        \to
-        \Delta^n\times_{\Scons(A)^\simeq}\Scons(\ExactSeq(A))^\simeq
-        \]</span>         which is a homotopy between the identity and \(i\circ p\).</p></div></details><div class="theorem-block theorem-plain" data-kind="lemma" id="lemma:additivity-for-K-theory2"><p><span class="theorem-head"><a class="theorem-name" href="../../../entry/additivity-for-k-theory2/index.html">Lemma 20.6.4</a>.</span> The functor 	\(\underset{[m] : \Delta\catop}{\colim}\, \underset{[n] : \Delta\catop}{\colim}\,
-	w_m\Scons_n(-)^\simeq\colon\WaldCat\to\An_{\bullet}\)    	is additive.</p></div><details class="proof" open><summary>Proof</summary><div class="proof-content"><p>We observe that    	<span class="math-display">\[
-   	w_m(\ExactSeq(A))=\ExactSeq(w_m(A))
-   	\]</span>    	functorially in \([m]\) and \(A\). Therefore, it follows from <a class="source-reference" href="../../../entry/basic-waldhausen-additivity/index.html#lemma:basic-Waldhausen-additivity">Lemma 20.6.3</a>,    	it suffices to prove that the functor    	<span class="math-display">\[
-	\Phi\colon A\mapsto \underset{[m] : \Delta\catop}{\colim}\, w_m(A)^\simeq
-   	\]</span>    	sends the functor    	<span class="math-display">\[
-   	i\colon A\to w_1(A)\ , \quad x\mapsto \id_x
-   	\]</span>    	to an equivalence. Let us consider the functor    	<span class="math-display">\[
-   	\ev_0\colon w_1(A)\to A\, .
-   	\]</span>    	It suffices to check that \(i\circ\ev_0\) becomes simplicially homotopic to the identity after    	applying the functor    	<span class="math-display">\[
-	w(-)^\simeq \colon\WaldCat\to\PSh(\Delta)\, .
-   	\]</span>    	The map \(\min\colon [1]\times [1]\to [1]\) induces a functor    	<span class="math-display">\[
-   	h\colon[1]\times\Fun([1],A)\to\Fun([1],A)
-   	\]</span>    	corresponding by transposition to the functor    	<span class="math-display">\[
-   	\ev^*_0\colon\Fun([1],A)\to\Fun([1]\times [1],A)\, .
-   	\]</span>    	Taking the Rezk nerve yields a map    	<span class="math-display">\[
-   	N(h)\colon\Delta^1\times N(\Fun([1],A))\to N(\Fun([1],A))\, .
-   	\]</span>    	We observe that there is a canonical embedding    	<span class="math-display">\[
-   	w(A)^\simeq\hookrightarrow  N(\Fun([1],A))
-   	\]</span>    	so that the map \(N(h)\) restricts to a map    	<span class="math-display">\[
-   	H\colon \Delta^1\times w(A)^\simeq\to w(A)^\simeq
-   	\]</span>    	that is the homotopy we were looking for.</p></div></details><div class="theorem-block theorem-plain" data-kind="theorem" id="theorem:additivity-for-K-theory"><p><span class="theorem-head"><a class="theorem-name" href="../../../entry/additivity-for-k-theory/index.html">Theorem 20.6.5</a> <span class="theorem-note">(Waldhausen)</span>.</span> The \(K\)-theory functor 	\(K\colon\WaldCat\to\An_{\bullet}\)    	is additive.</p></div><details class="proof" open><summary>Proof</summary><div class="proof-content"><p>This follows from <a class="source-reference" href="../../../entry/additivity-for-k-theory2/index.html#lemma:additivity-for-K-theory2">Lemma 20.6.4</a> since the loop functor commutes with finite products.</p></div></details></article><aside class="context-nav manuscript-contents-nav" id="context-navigation" data-context-nav data-open="false" aria-label="Page navigation">
-    <div class="contents-ledgers"><section class="contents-ledger" data-contents-ledger data-open="false">
-    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-chapters" aria-expanded="false">
-      <span>Chapters</span><span class="contents-chevron" aria-hidden="true"></span>
-    </button></h2>
-    <nav class="contents" id="contents-chapters" aria-label="Chapters" data-ledger-key="chapters" data-default-collapsed="true" data-collapsed="true">
-      <ol class="context-entry-list"><li><a href="../../../preface/index.html"><span class="context-entry-heading">Preface</span><span class="context-entry-title"></span></a></li><li><a href="../../../change-log/index.html"><span class="context-entry-heading">Change log</span><span class="context-entry-title"></span></a></li><li><a href="../../../chapter/introduction/index.html"><span class="context-entry-heading">Introduction</span><span class="context-entry-title"></span></a></li><li><a href="../../../chapter/overview-of-the-axioms/index.html"><span class="context-entry-heading">Overview of the axioms</span><span class="context-entry-title"></span></a></li><li><a href="../../../chapter/the-language-of-synthetic-category-theory/index.html"><span class="context-entry-heading">Chapter 1</span><span class="context-entry-title">The language of synthetic category theory</span></a></li><li><a href="../../../chapter/the-internal-structure-of-categories/index.html"><span class="context-entry-heading">Chapter 2</span><span class="context-entry-title">The internal structure of categories</span></a></li><li><a href="../../../chapter/constructions-of-categories/index.html"><span class="context-entry-heading">Chapter 3</span><span class="context-entry-title">Constructions of categories</span></a></li><li><a href="../../../chapter/cartesian-and-cocartesian-fibrations/index.html"><span class="context-entry-heading">Chapter 4</span><span class="context-entry-title">Cartesian and cocartesian fibrations</span></a></li><li><a href="../../../chapter/synthetic-categories-and-contexts/index.html"><span class="context-entry-heading">Chapter 5</span><span class="context-entry-title">Synthetic categories and contexts</span></a></li><li><a href="../../../chapter/functoriality-of-universals/index.html"><span class="context-entry-heading">Chapter 6</span><span class="context-entry-title">Functoriality of universals</span></a></li><li><a href="../../../chapter/limits-and-colimits/index.html"><span class="context-entry-heading">Chapter 7</span><span class="context-entry-title">Limits and colimits</span></a></li><li><a href="../../../chapter/universes-and-directed-univalence/index.html"><span class="context-entry-heading">Chapter 8</span><span class="context-entry-title">Universes and directed univalence</span></a></li><li><a href="../../../chapter/cofinality/index.html"><span class="context-entry-heading">Chapter 9</span><span class="context-entry-title">Cofinality</span></a></li><li><a href="../../../chapter/natural-numbers-and-simplices/index.html"><span class="context-entry-heading">Chapter 10</span><span class="context-entry-title">Natural numbers and simplices</span></a></li><li><a href="../../../chapter/covers-and-truncations/index.html"><span class="context-entry-heading">Chapter 11</span><span class="context-entry-title">Covers and truncations</span></a></li><li><a href="../../../chapter/yoneda-and-presheaf-categories/index.html"><span class="context-entry-heading">Chapter 12</span><span class="context-entry-title">Yoneda and presheaf categories</span></a></li><li><a href="../../../chapter/kan-extensions-categorical-colimits-and-descent/index.html"><span class="context-entry-heading">Chapter 13</span><span class="context-entry-title">Kan extensions, categorical colimits, and descent</span></a></li><li><a href="../../../chapter/localizations/index.html"><span class="context-entry-heading">Chapter 14</span><span class="context-entry-title">Localizations</span></a></li><li><a href="../../../chapter/rezk-nerves-and-univalent-segal-animae/index.html"><span class="context-entry-heading">Chapter 15</span><span class="context-entry-title">Rezk nerves and univalent Segal animae</span></a></li><li><a href="../../../chapter/filtered-colimits-and-finite-categories/index.html"><span class="context-entry-heading">Chapter 16</span><span class="context-entry-title">Filtered colimits and finite categories</span></a></li><li><a href="../../../chapter/small-subuniverses-and-presentability/index.html"><span class="context-entry-heading">Chapter 17</span><span class="context-entry-title">Small subuniverses and presentability</span></a></li><li><a href="../../../chapter/ind-objects/index.html"><span class="context-entry-heading">Chapter 18</span><span class="context-entry-title">Ind-objects</span></a></li><li><a href="../../../chapter/elements-of-stable-category-theory/index.html"><span class="context-entry-heading">Chapter 19</span><span class="context-entry-title">Elements of stable category theory</span></a></li><li><a href="../../../chapter/k-theory-after-quillen-waldhausen-and-thomason/index.html" aria-current="page"><span class="context-entry-heading">Chapter 20</span><span class="context-entry-title">$K$-Theory, after Quillen, Waldhausen and Thomason</span></a></li><li><a href="../../../chapter/presentable-categories/index.html"><span class="context-entry-heading">Chapter 21</span><span class="context-entry-title">Presentable categories</span></a></li></ol>
-    </nav>
-  </section><section class="contents-ledger" data-contents-ledger data-open="false">
-    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-sections" aria-expanded="false">
-      <span>Sections</span><span class="contents-chevron" aria-hidden="true"></span>
-    </button></h2>
-    <nav class="contents" id="contents-sections" aria-label="Sections" data-ledger-key="sections" data-default-collapsed="true" data-collapsed="true">
-      <ol class="context-entry-list"><li><a href="../completion-by-small-sifted-colimits/index.html"><span class="context-entry-heading">Section 20.1</span><span class="context-entry-title">Completion by small sifted colimits</span></a></li><li><a href="../additive-categories/index.html"><span class="context-entry-heading">Section 20.2</span><span class="context-entry-title">Additive categories</span></a></li><li><a href="../waldhausen-categories/index.html"><span class="context-entry-heading">Section 20.3</span><span class="context-entry-title">Waldhausen categories</span></a></li><li><a href="../additive-functors/index.html"><span class="context-entry-heading">Section 20.4</span><span class="context-entry-title">Additive functors</span></a></li><li><a href="../construction-of-k-theory/index.html"><span class="context-entry-heading">Section 20.5</span><span class="context-entry-title">Construction of $K$-theory</span></a></li><li><a href="index.html" aria-current="page"><span class="context-entry-heading">Section 20.6</span><span class="context-entry-title">The additivity theorem</span></a></li><li><a href="../the-universal-property-of-waldhausen-construction/index.html"><span class="context-entry-heading">Section 20.7</span><span class="context-entry-title">The universal property of Waldhausen construction</span></a></li><li><a href="../the-localization-theorem/index.html"><span class="context-entry-heading">Section 20.8</span><span class="context-entry-title">The localization theorem</span></a></li></ol>
-    </nav>
-  </section><section class="contents-ledger" data-contents-ledger data-open="true">
-    <h2 class="contents-heading"><button class="contents-toggle" type="button" data-contents-toggle aria-controls="contents-named-results" aria-expanded="true">
-      <span>Named results</span><span class="contents-chevron" aria-hidden="true"></span>
-    </button></h2>
-    <nav class="contents" id="contents-named-results" aria-label="Named results" data-ledger-key="named-results" data-default-collapsed="false" data-collapsed="false">
-      <ol class="context-entry-list"><li><a href="../../../entry/additivity-for-k-theory/index.html"><span class="context-entry-heading">Theorem 20.6.5</span><span class="context-entry-title">Waldhausen</span></a></li></ol>
-    </nav>
-  </section></div>
-  </aside></main><footer class="edition-footer">
-  <a href="/notes/synthetic-category-theory.pdf">PDF</a>
-  <p class="source-note">Generated from the LaTeX source of the manuscript. The PDF is the reference version.</p>
-</footer></body></html>
